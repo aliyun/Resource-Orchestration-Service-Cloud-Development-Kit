@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::RDS::DBInstance</code>, which is used to create an ApsaraDB RDS instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.821Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:23.560Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosDBInstance")
 public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -331,6 +331,24 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getBurstingEnabled() {
+        return software.amazon.jsii.Kernel.get(this, "burstingEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setBurstingEnabled(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "burstingEnabled", value);
+    }
+
+    /**
+     */
+    public void setBurstingEnabled(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "burstingEnabled", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getCategory() {
         return software.amazon.jsii.Kernel.get(this, "category", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -345,6 +363,24 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setCategory(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "category", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getColdDataEnabled() {
+        return software.amazon.jsii.Kernel.get(this, "coldDataEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setColdDataEnabled(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "coldDataEnabled", value);
+    }
+
+    /**
+     */
+    public void setColdDataEnabled(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "coldDataEnabled", value);
     }
 
     /**
@@ -649,6 +685,24 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setInstanceNetworkType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "instanceNetworkType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIoAccelerationEnabled() {
+        return software.amazon.jsii.Kernel.get(this, "ioAccelerationEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIoAccelerationEnabled(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "ioAccelerationEnabled", value);
+    }
+
+    /**
+     */
+    public void setIoAccelerationEnabled(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ioAccelerationEnabled", value);
     }
 
     /**
@@ -2013,6 +2067,23 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param burstingEnabled This parameter is required.
+         */
+        public Builder burstingEnabled(final java.lang.Boolean burstingEnabled) {
+            this.props.burstingEnabled(burstingEnabled);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param burstingEnabled This parameter is required.
+         */
+        public Builder burstingEnabled(final com.aliyun.ros.cdk.core.IResolvable burstingEnabled) {
+            this.props.burstingEnabled(burstingEnabled);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param category This parameter is required.
          */
         public Builder category(final java.lang.String category) {
@@ -2025,6 +2096,23 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder category(final com.aliyun.ros.cdk.core.IResolvable category) {
             this.props.category(category);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param coldDataEnabled This parameter is required.
+         */
+        public Builder coldDataEnabled(final java.lang.Boolean coldDataEnabled) {
+            this.props.coldDataEnabled(coldDataEnabled);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param coldDataEnabled This parameter is required.
+         */
+        public Builder coldDataEnabled(final com.aliyun.ros.cdk.core.IResolvable coldDataEnabled) {
+            this.props.coldDataEnabled(coldDataEnabled);
             return this;
         }
 
@@ -2297,6 +2385,23 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder instanceNetworkType(final com.aliyun.ros.cdk.core.IResolvable instanceNetworkType) {
             this.props.instanceNetworkType(instanceNetworkType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param ioAccelerationEnabled This parameter is required.
+         */
+        public Builder ioAccelerationEnabled(final java.lang.String ioAccelerationEnabled) {
+            this.props.ioAccelerationEnabled(ioAccelerationEnabled);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ioAccelerationEnabled This parameter is required.
+         */
+        public Builder ioAccelerationEnabled(final com.aliyun.ros.cdk.core.IResolvable ioAccelerationEnabled) {
+            this.props.ioAccelerationEnabled(ioAccelerationEnabled);
             return this;
         }
 

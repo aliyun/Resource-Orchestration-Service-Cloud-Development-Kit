@@ -29,10 +29,14 @@
 @alicloud/ros-cdk-oos.StateConfigurationProps=com.aliyun.ros.cdk.oos.StateConfigurationProps
 @alicloud/ros-cdk-oos.Template=com.aliyun.ros.cdk.oos.Template
 @alicloud/ros-cdk-oos.TemplateProps=com.aliyun.ros.cdk.oos.TemplateProps
+@alicloud/ros-cdk-oos.datasource.GitCodeRepo=com.aliyun.ros.cdk.oos.datasource.GitCodeRepo
+@alicloud/ros-cdk-oos.datasource.GitCodeRepoProps=com.aliyun.ros.cdk.oos.datasource.GitCodeRepoProps
 @alicloud/ros-cdk-oos.datasource.PatchBaseline=com.aliyun.ros.cdk.oos.datasource.PatchBaseline
 @alicloud/ros-cdk-oos.datasource.PatchBaselineProps=com.aliyun.ros.cdk.oos.datasource.PatchBaselineProps
 @alicloud/ros-cdk-oos.datasource.PatchBaselines=com.aliyun.ros.cdk.oos.datasource.PatchBaselines
 @alicloud/ros-cdk-oos.datasource.PatchBaselinesProps=com.aliyun.ros.cdk.oos.datasource.PatchBaselinesProps
+@alicloud/ros-cdk-oos.datasource.RosGitCodeRepo=com.aliyun.ros.cdk.oos.datasource.RosGitCodeRepo
+@alicloud/ros-cdk-oos.datasource.RosGitCodeRepoProps=com.aliyun.ros.cdk.oos.datasource.RosGitCodeRepoProps
 @alicloud/ros-cdk-oos.datasource.RosPatchBaseline=com.aliyun.ros.cdk.oos.datasource.RosPatchBaseline
 @alicloud/ros-cdk-oos.datasource.RosPatchBaselineProps=com.aliyun.ros.cdk.oos.datasource.RosPatchBaselineProps
 @alicloud/ros-cdk-oos.datasource.RosPatchBaselines=com.aliyun.ros.cdk.oos.datasource.RosPatchBaselines

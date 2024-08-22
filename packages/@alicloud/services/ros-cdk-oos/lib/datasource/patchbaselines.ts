@@ -20,6 +20,14 @@ export interface PatchBaselinesProps {
     readonly patchBaselineName?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property shareType: Patch baseline sharing type.
      */
     readonly shareType?: string | ros.IResolvable;
@@ -62,6 +70,7 @@ export class PatchBaselines extends ros.Resource {
             patchBaselineName: props.patchBaselineName,
             operationSystem: props.operationSystem,
             shareType: props.shareType,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosPatchBaselines;
         this.attrPatchBaselineNames = rosPatchBaselines.attrPatchBaselineNames;

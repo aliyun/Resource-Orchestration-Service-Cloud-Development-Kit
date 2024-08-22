@@ -69,11 +69,11 @@ function rosAddonReleasePropsToRosTemplate(properties: any, enableResourceProper
         RosAddonReleasePropsValidator(properties).assertSuccess();
     }
     return {
-      AddonVersion: ros.stringToRosTemplate(properties.addonVersion),
-      EnvironmentId: ros.stringToRosTemplate(properties.environmentId),
-      Name: ros.stringToRosTemplate(properties.name),
-      ReleaseName: ros.stringToRosTemplate(properties.releaseName),
-      Values: ros.hashMapper(ros.objectToRosTemplate)(properties.values),
+      'AddonVersion': ros.stringToRosTemplate(properties.addonVersion),
+      'EnvironmentId': ros.stringToRosTemplate(properties.environmentId),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'ReleaseName': ros.stringToRosTemplate(properties.releaseName),
+      'Values': ros.hashMapper(ros.objectToRosTemplate)(properties.values),
     };
 }
 
@@ -254,13 +254,13 @@ function rosAlertContactPropsToRosTemplate(properties: any, enableResourceProper
         RosAlertContactPropsValidator(properties).assertSuccess();
     }
     return {
-      ContactName: ros.stringToRosTemplate(properties.contactName),
-      DingRobotWebhookUrl: ros.stringToRosTemplate(properties.dingRobotWebhookUrl),
-      Email: ros.stringToRosTemplate(properties.email),
-      PhoneNum: ros.stringToRosTemplate(properties.phoneNum),
-      ProxyUserId: ros.stringToRosTemplate(properties.proxyUserId),
-      RegionId: ros.stringToRosTemplate(properties.regionId),
-      SystemNoc: ros.booleanToRosTemplate(properties.systemNoc),
+      'ContactName': ros.stringToRosTemplate(properties.contactName),
+      'DingRobotWebhookUrl': ros.stringToRosTemplate(properties.dingRobotWebhookUrl),
+      'Email': ros.stringToRosTemplate(properties.email),
+      'PhoneNum': ros.stringToRosTemplate(properties.phoneNum),
+      'ProxyUserId': ros.stringToRosTemplate(properties.proxyUserId),
+      'RegionId': ros.stringToRosTemplate(properties.regionId),
+      'SystemNoc': ros.booleanToRosTemplate(properties.systemNoc),
     };
 }
 
@@ -420,10 +420,10 @@ function rosAlertContactGroupPropsToRosTemplate(properties: any, enableResourceP
         RosAlertContactGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      ContactGroupName: ros.stringToRosTemplate(properties.contactGroupName),
-      ContactIds: ros.listMapper(ros.numberToRosTemplate)(properties.contactIds),
-      ProxyUserId: ros.stringToRosTemplate(properties.proxyUserId),
-      RegionId: ros.stringToRosTemplate(properties.regionId),
+      'ContactGroupName': ros.stringToRosTemplate(properties.contactGroupName),
+      'ContactIds': ros.listMapper(ros.numberToRosTemplate)(properties.contactIds),
+      'ProxyUserId': ros.stringToRosTemplate(properties.proxyUserId),
+      'RegionId': ros.stringToRosTemplate(properties.regionId),
     };
 }
 
@@ -562,9 +562,9 @@ function rosApplyAlertRuleTemplatePropsToRosTemplate(properties: any, enableReso
         RosApplyAlertRuleTemplatePropsValidator(properties).assertSuccess();
     }
     return {
-      ClusterIds: ros.listMapper(ros.stringToRosTemplate)(properties.clusterIds),
-      TemplateIds: ros.listMapper(ros.stringToRosTemplate)(properties.templateIds),
-      Update: ros.booleanToRosTemplate(properties.update),
+      'ClusterIds': ros.listMapper(ros.stringToRosTemplate)(properties.clusterIds),
+      'TemplateIds': ros.listMapper(ros.stringToRosTemplate)(properties.templateIds),
+      'Update': ros.booleanToRosTemplate(properties.update),
     };
 }
 
@@ -625,6 +625,286 @@ export class RosApplyAlertRuleTemplate extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosDeliverTask`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-delivertask
+ */
+export interface RosDeliverTaskProps {
+
+    /**
+     * @Property targetList: The list of the target.
+     */
+    readonly targetList: Array<RosDeliverTask.TargetListProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property taskName: The name of the task.
+     */
+    readonly taskName: string | ros.IResolvable;
+
+    /**
+     * @Property dataSourceId: The ID of the data source.
+     */
+    readonly dataSourceId?: string | ros.IResolvable;
+
+    /**
+     * @Property dataSourceName: The name of the data source.
+     */
+    readonly dataSourceName?: string | ros.IResolvable;
+
+    /**
+     * @Property externalLabel: The external label of the task.
+     */
+    readonly externalLabel?: string | ros.IResolvable;
+
+    /**
+     * @Property filterList: Set metrics to filter, support for regular expressions, multiple line breaks, and multiple conditions to deliver.
+     */
+    readonly filterList?: string | ros.IResolvable;
+
+    /**
+     * @Property filterType: Whether the data filtering adopts the whitelist mechanism. Default value: true.
+     */
+    readonly filterType?: boolean | ros.IResolvable;
+
+    /**
+     * @Property taskDescription: The description of the task.
+     */
+    readonly taskDescription?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosDeliverTaskProps`
+ *
+ * @param properties - the TypeScript properties of a `RosDeliverTaskProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosDeliverTaskPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('targetList', ros.requiredValidator)(properties.targetList));
+    errors.collect(ros.propertyValidator('targetList', ros.listValidator(RosDeliverTask_TargetListPropertyValidator))(properties.targetList));
+    errors.collect(ros.propertyValidator('filterType', ros.validateBoolean)(properties.filterType));
+    errors.collect(ros.propertyValidator('taskDescription', ros.validateString)(properties.taskDescription));
+    errors.collect(ros.propertyValidator('dataSourceName', ros.validateString)(properties.dataSourceName));
+    errors.collect(ros.propertyValidator('taskName', ros.requiredValidator)(properties.taskName));
+    if(properties.taskName && (typeof properties.taskName) !== 'object') {
+        errors.collect(ros.propertyValidator('taskName', ros.validateAllowedPattern)({
+          data: properties.taskName,
+          reg: /[a-zA-Z0-9-]{1,64}/
+        }));
+    }
+    errors.collect(ros.propertyValidator('taskName', ros.validateString)(properties.taskName));
+    errors.collect(ros.propertyValidator('externalLabel', ros.validateString)(properties.externalLabel));
+    errors.collect(ros.propertyValidator('filterList', ros.validateString)(properties.filterList));
+    errors.collect(ros.propertyValidator('dataSourceId', ros.validateString)(properties.dataSourceId));
+    return errors.wrap('supplied properties not correct for "RosDeliverTaskProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ARMS::DeliverTask` resource
+ *
+ * @param properties - the TypeScript properties of a `RosDeliverTaskProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ARMS::DeliverTask` resource.
+ */
+// @ts-ignore TS6133
+function rosDeliverTaskPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosDeliverTaskPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'TargetList': ros.listMapper(rosDeliverTaskTargetListPropertyToRosTemplate)(properties.targetList),
+      'TaskName': ros.stringToRosTemplate(properties.taskName),
+      'DataSourceId': ros.stringToRosTemplate(properties.dataSourceId),
+      'DataSourceName': ros.stringToRosTemplate(properties.dataSourceName),
+      'ExternalLabel': ros.stringToRosTemplate(properties.externalLabel),
+      'FilterList': ros.stringToRosTemplate(properties.filterList),
+      'FilterType': ros.booleanToRosTemplate(properties.filterType),
+      'TaskDescription': ros.stringToRosTemplate(properties.taskDescription),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::DeliverTask`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DeliverTask` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-delivertask
+ */
+export class RosDeliverTask extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ARMS::DeliverTask";
+
+    /**
+     * @Attribute TaskId: The ID of the task.
+     */
+    public readonly attrTaskId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property targetList: The list of the target.
+     */
+    public targetList: Array<RosDeliverTask.TargetListProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property taskName: The name of the task.
+     */
+    public taskName: string | ros.IResolvable;
+
+    /**
+     * @Property dataSourceId: The ID of the data source.
+     */
+    public dataSourceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property dataSourceName: The name of the data source.
+     */
+    public dataSourceName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property externalLabel: The external label of the task.
+     */
+    public externalLabel: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property filterList: Set metrics to filter, support for regular expressions, multiple line breaks, and multiple conditions to deliver.
+     */
+    public filterList: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property filterType: Whether the data filtering adopts the whitelist mechanism. Default value: true.
+     */
+    public filterType: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property taskDescription: The description of the task.
+     */
+    public taskDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosDeliverTaskProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosDeliverTask.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrTaskId = this.getAtt('TaskId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.targetList = props.targetList;
+        this.taskName = props.taskName;
+        this.dataSourceId = props.dataSourceId;
+        this.dataSourceName = props.dataSourceName;
+        this.externalLabel = props.externalLabel;
+        this.filterList = props.filterList;
+        this.filterType = props.filterType;
+        this.taskDescription = props.taskDescription;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            targetList: this.targetList,
+            taskName: this.taskName,
+            dataSourceId: this.dataSourceId,
+            dataSourceName: this.dataSourceName,
+            externalLabel: this.externalLabel,
+            filterList: this.filterList,
+            filterType: this.filterType,
+            taskDescription: this.taskDescription,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosDeliverTaskPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosDeliverTask {
+    /**
+     * @stability external
+     */
+    export interface TargetListProperty {
+        /**
+         * @Property targetParam: The parameter of the target.
+         */
+        readonly targetParam?: string | ros.IResolvable;
+        /**
+         * @Property targetType: The type of the target.
+         */
+        readonly targetType: string | ros.IResolvable;
+        /**
+         * @Property faultTolerantPolicy: The fault tolerant policy of the target. Valid values:
+     * - ALL (default): Exception tolerance is allowed. When an exception occurs, the execution will not be blocked, and the message will be delivered to the dead message queue or dropped directly according to the configuration after exceeding the retry policy.
+     * - NONE: Fault tolerance is not allowed and execution is blocked when an exception occurs and exceeds the retry policy configuration.
+         */
+        readonly faultTolerantPolicy?: string | ros.IResolvable;
+        /**
+         * @Property targetName: The name of the target.
+         */
+        readonly targetName?: string | ros.IResolvable;
+        /**
+         * @Property retryPolicy: The retry policy of the target. Valid values:
+     * - BACKOFF_RETRY: retry three times, with a random interval between 10 and 20 seconds
+     * - EXPONENTIAL_DECAY_RETRY (default): retry 176 times, each retry interval exponentially increased to 512 seconds, total retry time is 1 day; The interval for each retry is: 1,2,4,8,... 512 seconds.
+         */
+        readonly retryPolicy?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TargetListProperty`
+ *
+ * @param properties - the TypeScript properties of a `TargetListProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosDeliverTask_TargetListPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('targetParam', ros.validateString)(properties.targetParam));
+    errors.collect(ros.propertyValidator('targetType', ros.requiredValidator)(properties.targetType));
+    errors.collect(ros.propertyValidator('targetType', ros.validateString)(properties.targetType));
+    if(properties.faultTolerantPolicy && (typeof properties.faultTolerantPolicy) !== 'object') {
+        errors.collect(ros.propertyValidator('faultTolerantPolicy', ros.validateAllowedValues)({
+          data: properties.faultTolerantPolicy,
+          allowedValues: ["ALL","NONE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('faultTolerantPolicy', ros.validateString)(properties.faultTolerantPolicy));
+    errors.collect(ros.propertyValidator('targetName', ros.validateString)(properties.targetName));
+    if(properties.retryPolicy && (typeof properties.retryPolicy) !== 'object') {
+        errors.collect(ros.propertyValidator('retryPolicy', ros.validateAllowedValues)({
+          data: properties.retryPolicy,
+          allowedValues: ["BACKOFF_RETRY","EXPONENTIAL_DECAY_RETRY"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('retryPolicy', ros.validateString)(properties.retryPolicy));
+    return errors.wrap('supplied properties not correct for "TargetListProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ARMS::DeliverTask.TargetList` resource
+ *
+ * @param properties - the TypeScript properties of a `TargetListProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ARMS::DeliverTask.TargetList` resource.
+ */
+// @ts-ignore TS6133
+function rosDeliverTaskTargetListPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosDeliverTask_TargetListPropertyValidator(properties).assertSuccess();
+    return {
+      'TargetParam': ros.stringToRosTemplate(properties.targetParam),
+      'TargetType': ros.stringToRosTemplate(properties.targetType),
+      'FaultTolerantPolicy': ros.stringToRosTemplate(properties.faultTolerantPolicy),
+      'TargetName': ros.stringToRosTemplate(properties.targetName),
+      'RetryPolicy': ros.stringToRosTemplate(properties.retryPolicy),
+    };
+}
+
+/**
  * Properties for defining a `RosEnvironment`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-environment
  */
@@ -656,6 +936,11 @@ export interface RosEnvironmentProps {
      * Cloud: cloud service
      */
     readonly environmentType: string | ros.IResolvable;
+
+    /**
+     * @Property deletePromInstance: Cascade delete Prometheus instance. Default value: true.
+     */
+    readonly deletePromInstance?: boolean | ros.IResolvable;
 
     /**
      * @Property feePackage: The payable resource plan. Valid values:
@@ -733,6 +1018,7 @@ function RosEnvironmentPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('bindResourceId', ros.validateString)(properties.bindResourceId));
     errors.collect(ros.propertyValidator('grafanaWorkspaceId', ros.validateString)(properties.grafanaWorkspaceId));
     errors.collect(ros.propertyValidator('prometheusInstanceId', ros.validateString)(properties.prometheusInstanceId));
+    errors.collect(ros.propertyValidator('deletePromInstance', ros.validateBoolean)(properties.deletePromInstance));
     errors.collect(ros.propertyValidator('feePackage', ros.validateString)(properties.feePackage));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
@@ -759,16 +1045,17 @@ function rosEnvironmentPropsToRosTemplate(properties: any, enableResourcePropert
         RosEnvironmentPropsValidator(properties).assertSuccess();
     }
     return {
-      BindResourceId: ros.stringToRosTemplate(properties.bindResourceId),
-      EnvironmentName: ros.stringToRosTemplate(properties.environmentName),
-      EnvironmentSubType: ros.stringToRosTemplate(properties.environmentSubType),
-      EnvironmentType: ros.stringToRosTemplate(properties.environmentType),
-      FeePackage: ros.stringToRosTemplate(properties.feePackage),
-      GrafanaWorkspaceId: ros.stringToRosTemplate(properties.grafanaWorkspaceId),
-      ManagedType: ros.stringToRosTemplate(properties.managedType),
-      PrometheusInstanceId: ros.stringToRosTemplate(properties.prometheusInstanceId),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Tags: ros.listMapper(rosEnvironmentTagsPropertyToRosTemplate)(properties.tags),
+      'BindResourceId': ros.stringToRosTemplate(properties.bindResourceId),
+      'EnvironmentName': ros.stringToRosTemplate(properties.environmentName),
+      'EnvironmentSubType': ros.stringToRosTemplate(properties.environmentSubType),
+      'EnvironmentType': ros.stringToRosTemplate(properties.environmentType),
+      'DeletePromInstance': ros.booleanToRosTemplate(properties.deletePromInstance),
+      'FeePackage': ros.stringToRosTemplate(properties.feePackage),
+      'GrafanaWorkspaceId': ros.stringToRosTemplate(properties.grafanaWorkspaceId),
+      'ManagedType': ros.stringToRosTemplate(properties.managedType),
+      'PrometheusInstanceId': ros.stringToRosTemplate(properties.prometheusInstanceId),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosEnvironmentTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -859,6 +1146,11 @@ export class RosEnvironment extends ros.RosResource {
     public environmentType: string | ros.IResolvable;
 
     /**
+     * @Property deletePromInstance: Cascade delete Prometheus instance. Default value: true.
+     */
+    public deletePromInstance: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property feePackage: The payable resource plan. Valid values:
      * If the EnvironmentType parameter is set to CS, set the value to CS_Basic or CS_Pro. Default value: CS_Basic.
      * Otherwise, leave the parameter empty.
@@ -915,6 +1207,7 @@ export class RosEnvironment extends ros.RosResource {
         this.environmentName = props.environmentName;
         this.environmentSubType = props.environmentSubType;
         this.environmentType = props.environmentType;
+        this.deletePromInstance = props.deletePromInstance;
         this.feePackage = props.feePackage;
         this.grafanaWorkspaceId = props.grafanaWorkspaceId;
         this.managedType = props.managedType;
@@ -930,6 +1223,7 @@ export class RosEnvironment extends ros.RosResource {
             environmentName: this.environmentName,
             environmentSubType: this.environmentSubType,
             environmentType: this.environmentType,
+            deletePromInstance: this.deletePromInstance,
             feePackage: this.feePackage,
             grafanaWorkspaceId: this.grafanaWorkspaceId,
             managedType: this.managedType,
@@ -986,8 +1280,8 @@ function rosEnvironmentTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosEnvironment_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -1054,10 +1348,10 @@ function rosEnvironmentFeaturePropsToRosTemplate(properties: any, enableResource
         RosEnvironmentFeaturePropsValidator(properties).assertSuccess();
     }
     return {
-      EnvironmentId: ros.stringToRosTemplate(properties.environmentId),
-      FeatureName: ros.stringToRosTemplate(properties.featureName),
-      FeatureVersion: ros.stringToRosTemplate(properties.featureVersion),
-      Config: ros.hashMapper(ros.objectToRosTemplate)(properties.config),
+      'EnvironmentId': ros.stringToRosTemplate(properties.environmentId),
+      'FeatureName': ros.stringToRosTemplate(properties.featureName),
+      'FeatureVersion': ros.stringToRosTemplate(properties.featureVersion),
+      'Config': ros.hashMapper(ros.objectToRosTemplate)(properties.config),
     };
 }
 
@@ -1236,13 +1530,13 @@ function rosManagedPrometheusPropsToRosTemplate(properties: any, enableResourceP
         RosManagedPrometheusPropsValidator(properties).assertSuccess();
     }
     return {
-      ClusterType: ros.stringToRosTemplate(properties.clusterType),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      ClusterId: ros.stringToRosTemplate(properties.clusterId),
-      ClusterName: ros.stringToRosTemplate(properties.clusterName),
-      GrafanaInstanceId: ros.stringToRosTemplate(properties.grafanaInstanceId),
+      'ClusterType': ros.stringToRosTemplate(properties.clusterType),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'ClusterId': ros.stringToRosTemplate(properties.clusterId),
+      'ClusterName': ros.stringToRosTemplate(properties.clusterName),
+      'GrafanaInstanceId': ros.stringToRosTemplate(properties.grafanaInstanceId),
     };
 }
 
@@ -1452,16 +1746,16 @@ function rosPrometheusPropsToRosTemplate(properties: any, enableResourceProperty
         RosPrometheusPropsValidator(properties).assertSuccess();
     }
     return {
-      ClusterType: ros.stringToRosTemplate(properties.clusterType),
-      GrafanaInstanceId: ros.stringToRosTemplate(properties.grafanaInstanceId),
-      PrometheusName: ros.stringToRosTemplate(properties.prometheusName),
-      ClusterId: ros.stringToRosTemplate(properties.clusterId),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      SubClustersJson: ros.listMapper(ros.objectToRosTemplate)(properties.subClustersJson),
-      Tags: ros.listMapper(rosPrometheusTagsPropertyToRosTemplate)(properties.tags),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      'ClusterType': ros.stringToRosTemplate(properties.clusterType),
+      'GrafanaInstanceId': ros.stringToRosTemplate(properties.grafanaInstanceId),
+      'PrometheusName': ros.stringToRosTemplate(properties.prometheusName),
+      'ClusterId': ros.stringToRosTemplate(properties.clusterId),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'SubClustersJson': ros.listMapper(ros.objectToRosTemplate)(properties.subClustersJson),
+      'Tags': ros.listMapper(rosPrometheusTagsPropertyToRosTemplate)(properties.tags),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
     };
 }
 
@@ -1685,8 +1979,8 @@ function rosPrometheusTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosPrometheus_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -1751,9 +2045,9 @@ function rosRetcodeAppPropsToRosTemplate(properties: any, enableResourceProperty
         RosRetcodeAppPropsValidator(properties).assertSuccess();
     }
     return {
-      RegionId: ros.stringToRosTemplate(properties.regionId),
-      RetcodeAppName: ros.stringToRosTemplate(properties.retcodeAppName),
-      RetcodeAppType: ros.stringToRosTemplate(properties.retcodeAppType),
+      'RegionId': ros.stringToRosTemplate(properties.regionId),
+      'RetcodeAppName': ros.stringToRosTemplate(properties.retcodeAppName),
+      'RetcodeAppType': ros.stringToRosTemplate(properties.retcodeAppType),
     };
 }
 

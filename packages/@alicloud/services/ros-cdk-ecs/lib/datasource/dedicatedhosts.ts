@@ -30,6 +30,14 @@ export interface DedicatedHostsProps {
     readonly dedicatedHostType?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property resourceGroupId: The ID of the resource group to which the dedicated host belongs.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -96,6 +104,7 @@ export class DedicatedHosts extends ros.Resource {
             dedicatedHostIds: props.dedicatedHostIds,
             tags: props.tags,
             dedicatedHostClusterId: props.dedicatedHostClusterId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDedicatedHosts;
         this.attrDedicatedHostIds = rosDedicatedHosts.attrDedicatedHostIds;

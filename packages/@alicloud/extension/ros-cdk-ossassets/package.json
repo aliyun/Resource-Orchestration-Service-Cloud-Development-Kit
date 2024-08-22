@@ -20,6 +20,9 @@
       "dotnet": {
         "namespace": "AlibabaCloud.SDK.ROS.CDK.Ossassets",
         "packageId": "AlibabaCloud.SDK.ROS.CDK.Ossassets"
+      },
+      "go": {
+        "packageName": "alicloudroscdkossassets"
       }
     }
   },

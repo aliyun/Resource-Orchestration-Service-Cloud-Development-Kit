@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ALB::Rule</code>ALIYUN::Config::Rule is used to create a forwarding rule.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.303Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:17.556Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosRule")
 public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -323,6 +323,350 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final int hashCode() {
                 int result = this.values != null ? this.values.hashCode() : 0;
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosRule.CorsConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(CorsConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface CorsConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAllowCredentials() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAllowHeaders() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAllowMethods() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAllowOrigin() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getExposeHeaders() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getMaxAge() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link CorsConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link CorsConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<CorsConfigProperty> {
+            java.lang.Object allowCredentials;
+            java.lang.Object allowHeaders;
+            java.lang.Object allowMethods;
+            java.lang.Object allowOrigin;
+            java.lang.Object exposeHeaders;
+            java.lang.Object maxAge;
+
+            /**
+             * Sets the value of {@link CorsConfigProperty#getAllowCredentials}
+             * @param allowCredentials the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder allowCredentials(java.lang.String allowCredentials) {
+                this.allowCredentials = allowCredentials;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CorsConfigProperty#getAllowCredentials}
+             * @param allowCredentials the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder allowCredentials(com.aliyun.ros.cdk.core.IResolvable allowCredentials) {
+                this.allowCredentials = allowCredentials;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CorsConfigProperty#getAllowHeaders}
+             * @param allowHeaders the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder allowHeaders(com.aliyun.ros.cdk.core.IResolvable allowHeaders) {
+                this.allowHeaders = allowHeaders;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CorsConfigProperty#getAllowHeaders}
+             * @param allowHeaders the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder allowHeaders(java.util.List<? extends java.lang.Object> allowHeaders) {
+                this.allowHeaders = allowHeaders;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CorsConfigProperty#getAllowMethods}
+             * @param allowMethods the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder allowMethods(com.aliyun.ros.cdk.core.IResolvable allowMethods) {
+                this.allowMethods = allowMethods;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CorsConfigProperty#getAllowMethods}
+             * @param allowMethods the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder allowMethods(java.util.List<? extends java.lang.Object> allowMethods) {
+                this.allowMethods = allowMethods;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CorsConfigProperty#getAllowOrigin}
+             * @param allowOrigin the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder allowOrigin(com.aliyun.ros.cdk.core.IResolvable allowOrigin) {
+                this.allowOrigin = allowOrigin;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CorsConfigProperty#getAllowOrigin}
+             * @param allowOrigin the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder allowOrigin(java.util.List<? extends java.lang.Object> allowOrigin) {
+                this.allowOrigin = allowOrigin;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CorsConfigProperty#getExposeHeaders}
+             * @param exposeHeaders the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder exposeHeaders(com.aliyun.ros.cdk.core.IResolvable exposeHeaders) {
+                this.exposeHeaders = exposeHeaders;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CorsConfigProperty#getExposeHeaders}
+             * @param exposeHeaders the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder exposeHeaders(java.util.List<? extends java.lang.Object> exposeHeaders) {
+                this.exposeHeaders = exposeHeaders;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CorsConfigProperty#getMaxAge}
+             * @param maxAge the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder maxAge(java.lang.Number maxAge) {
+                this.maxAge = maxAge;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CorsConfigProperty#getMaxAge}
+             * @param maxAge the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder maxAge(com.aliyun.ros.cdk.core.IResolvable maxAge) {
+                this.maxAge = maxAge;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link CorsConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public CorsConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link CorsConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements CorsConfigProperty {
+            private final java.lang.Object allowCredentials;
+            private final java.lang.Object allowHeaders;
+            private final java.lang.Object allowMethods;
+            private final java.lang.Object allowOrigin;
+            private final java.lang.Object exposeHeaders;
+            private final java.lang.Object maxAge;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.allowCredentials = software.amazon.jsii.Kernel.get(this, "allowCredentials", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.allowHeaders = software.amazon.jsii.Kernel.get(this, "allowHeaders", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.allowMethods = software.amazon.jsii.Kernel.get(this, "allowMethods", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.allowOrigin = software.amazon.jsii.Kernel.get(this, "allowOrigin", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.exposeHeaders = software.amazon.jsii.Kernel.get(this, "exposeHeaders", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.maxAge = software.amazon.jsii.Kernel.get(this, "maxAge", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.allowCredentials = builder.allowCredentials;
+                this.allowHeaders = builder.allowHeaders;
+                this.allowMethods = builder.allowMethods;
+                this.allowOrigin = builder.allowOrigin;
+                this.exposeHeaders = builder.exposeHeaders;
+                this.maxAge = builder.maxAge;
+            }
+
+            @Override
+            public final java.lang.Object getAllowCredentials() {
+                return this.allowCredentials;
+            }
+
+            @Override
+            public final java.lang.Object getAllowHeaders() {
+                return this.allowHeaders;
+            }
+
+            @Override
+            public final java.lang.Object getAllowMethods() {
+                return this.allowMethods;
+            }
+
+            @Override
+            public final java.lang.Object getAllowOrigin() {
+                return this.allowOrigin;
+            }
+
+            @Override
+            public final java.lang.Object getExposeHeaders() {
+                return this.exposeHeaders;
+            }
+
+            @Override
+            public final java.lang.Object getMaxAge() {
+                return this.maxAge;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getAllowCredentials() != null) {
+                    data.set("allowCredentials", om.valueToTree(this.getAllowCredentials()));
+                }
+                if (this.getAllowHeaders() != null) {
+                    data.set("allowHeaders", om.valueToTree(this.getAllowHeaders()));
+                }
+                if (this.getAllowMethods() != null) {
+                    data.set("allowMethods", om.valueToTree(this.getAllowMethods()));
+                }
+                if (this.getAllowOrigin() != null) {
+                    data.set("allowOrigin", om.valueToTree(this.getAllowOrigin()));
+                }
+                if (this.getExposeHeaders() != null) {
+                    data.set("exposeHeaders", om.valueToTree(this.getExposeHeaders()));
+                }
+                if (this.getMaxAge() != null) {
+                    data.set("maxAge", om.valueToTree(this.getMaxAge()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-alb.RosRule.CorsConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                CorsConfigProperty.Jsii$Proxy that = (CorsConfigProperty.Jsii$Proxy) o;
+
+                if (this.allowCredentials != null ? !this.allowCredentials.equals(that.allowCredentials) : that.allowCredentials != null) return false;
+                if (this.allowHeaders != null ? !this.allowHeaders.equals(that.allowHeaders) : that.allowHeaders != null) return false;
+                if (this.allowMethods != null ? !this.allowMethods.equals(that.allowMethods) : that.allowMethods != null) return false;
+                if (this.allowOrigin != null ? !this.allowOrigin.equals(that.allowOrigin) : that.allowOrigin != null) return false;
+                if (this.exposeHeaders != null ? !this.exposeHeaders.equals(that.exposeHeaders) : that.exposeHeaders != null) return false;
+                return this.maxAge != null ? this.maxAge.equals(that.maxAge) : that.maxAge == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.allowCredentials != null ? this.allowCredentials.hashCode() : 0;
+                result = 31 * result + (this.allowHeaders != null ? this.allowHeaders.hashCode() : 0);
+                result = 31 * result + (this.allowMethods != null ? this.allowMethods.hashCode() : 0);
+                result = 31 * result + (this.allowOrigin != null ? this.allowOrigin.hashCode() : 0);
+                result = 31 * result + (this.exposeHeaders != null ? this.exposeHeaders.hashCode() : 0);
+                result = 31 * result + (this.maxAge != null ? this.maxAge.hashCode() : 0);
                 return result;
             }
         }
@@ -2514,6 +2858,307 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosRule.ResponseHeaderConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(ResponseHeaderConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface ResponseHeaderConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getKey() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getValues() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link ResponseHeaderConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link ResponseHeaderConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<ResponseHeaderConfigProperty> {
+            java.lang.Object key;
+            java.lang.Object values;
+
+            /**
+             * Sets the value of {@link ResponseHeaderConfigProperty#getKey}
+             * @param key the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder key(java.lang.String key) {
+                this.key = key;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ResponseHeaderConfigProperty#getKey}
+             * @param key the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder key(com.aliyun.ros.cdk.core.IResolvable key) {
+                this.key = key;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ResponseHeaderConfigProperty#getValues}
+             * @param values the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder values(com.aliyun.ros.cdk.core.IResolvable values) {
+                this.values = values;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ResponseHeaderConfigProperty#getValues}
+             * @param values the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder values(java.util.List<? extends java.lang.Object> values) {
+                this.values = values;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link ResponseHeaderConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public ResponseHeaderConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link ResponseHeaderConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ResponseHeaderConfigProperty {
+            private final java.lang.Object key;
+            private final java.lang.Object values;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.key = software.amazon.jsii.Kernel.get(this, "key", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.values = software.amazon.jsii.Kernel.get(this, "values", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.key = builder.key;
+                this.values = builder.values;
+            }
+
+            @Override
+            public final java.lang.Object getKey() {
+                return this.key;
+            }
+
+            @Override
+            public final java.lang.Object getValues() {
+                return this.values;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getKey() != null) {
+                    data.set("key", om.valueToTree(this.getKey()));
+                }
+                if (this.getValues() != null) {
+                    data.set("values", om.valueToTree(this.getValues()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-alb.RosRule.ResponseHeaderConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                ResponseHeaderConfigProperty.Jsii$Proxy that = (ResponseHeaderConfigProperty.Jsii$Proxy) o;
+
+                if (this.key != null ? !this.key.equals(that.key) : that.key != null) return false;
+                return this.values != null ? this.values.equals(that.values) : that.values == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.key != null ? this.key.hashCode() : 0;
+                result = 31 * result + (this.values != null ? this.values.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosRule.ResponseStatusCodeConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(ResponseStatusCodeConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface ResponseStatusCodeConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getValues() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link ResponseStatusCodeConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link ResponseStatusCodeConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<ResponseStatusCodeConfigProperty> {
+            java.lang.Object values;
+
+            /**
+             * Sets the value of {@link ResponseStatusCodeConfigProperty#getValues}
+             * @param values the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder values(com.aliyun.ros.cdk.core.IResolvable values) {
+                this.values = values;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ResponseStatusCodeConfigProperty#getValues}
+             * @param values the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder values(java.util.List<? extends java.lang.Object> values) {
+                this.values = values;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link ResponseStatusCodeConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public ResponseStatusCodeConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link ResponseStatusCodeConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ResponseStatusCodeConfigProperty {
+            private final java.lang.Object values;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.values = software.amazon.jsii.Kernel.get(this, "values", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.values = builder.values;
+            }
+
+            @Override
+            public final java.lang.Object getValues() {
+                return this.values;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getValues() != null) {
+                    data.set("values", om.valueToTree(this.getValues()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-alb.RosRule.ResponseStatusCodeConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                ResponseStatusCodeConfigProperty.Jsii$Proxy that = (ResponseStatusCodeConfigProperty.Jsii$Proxy) o;
+
+                return this.values != null ? this.values.equals(that.values) : that.values == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.values != null ? this.values.hashCode() : 0;
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosRule.RewriteConfigProperty")
     @software.amazon.jsii.Jsii.Proxy(RewriteConfigProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -2747,6 +3392,13 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCorsConfig() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getFixedResponseConfig() {
             return null;
         }
@@ -2814,6 +3466,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
         public static final class Builder implements software.amazon.jsii.Builder<RuleActionsProperty> {
             java.lang.Object order;
             java.lang.Object type;
+            java.lang.Object corsConfig;
             java.lang.Object fixedResponseConfig;
             java.lang.Object forwardGroupConfig;
             java.lang.Object insertHeaderConfig;
@@ -2864,6 +3517,28 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
                 this.type = type;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RuleActionsProperty#getCorsConfig}
+             * @param corsConfig the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder corsConfig(com.aliyun.ros.cdk.core.IResolvable corsConfig) {
+                this.corsConfig = corsConfig;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RuleActionsProperty#getCorsConfig}
+             * @param corsConfig the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder corsConfig(com.aliyun.ros.cdk.alb.RosRule.CorsConfigProperty corsConfig) {
+                this.corsConfig = corsConfig;
                 return this;
             }
 
@@ -3063,6 +3738,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RuleActionsProperty {
             private final java.lang.Object order;
             private final java.lang.Object type;
+            private final java.lang.Object corsConfig;
             private final java.lang.Object fixedResponseConfig;
             private final java.lang.Object forwardGroupConfig;
             private final java.lang.Object insertHeaderConfig;
@@ -3080,6 +3756,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
                 super(objRef);
                 this.order = software.amazon.jsii.Kernel.get(this, "order", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.corsConfig = software.amazon.jsii.Kernel.get(this, "corsConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.fixedResponseConfig = software.amazon.jsii.Kernel.get(this, "fixedResponseConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.forwardGroupConfig = software.amazon.jsii.Kernel.get(this, "forwardGroupConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.insertHeaderConfig = software.amazon.jsii.Kernel.get(this, "insertHeaderConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -3097,6 +3774,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.order = java.util.Objects.requireNonNull(builder.order, "order is required");
                 this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
+                this.corsConfig = builder.corsConfig;
                 this.fixedResponseConfig = builder.fixedResponseConfig;
                 this.forwardGroupConfig = builder.forwardGroupConfig;
                 this.insertHeaderConfig = builder.insertHeaderConfig;
@@ -3115,6 +3793,11 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final java.lang.Object getType() {
                 return this.type;
+            }
+
+            @Override
+            public final java.lang.Object getCorsConfig() {
+                return this.corsConfig;
             }
 
             @Override
@@ -3165,6 +3848,9 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
 
                 data.set("order", om.valueToTree(this.getOrder()));
                 data.set("type", om.valueToTree(this.getType()));
+                if (this.getCorsConfig() != null) {
+                    data.set("corsConfig", om.valueToTree(this.getCorsConfig()));
+                }
                 if (this.getFixedResponseConfig() != null) {
                     data.set("fixedResponseConfig", om.valueToTree(this.getFixedResponseConfig()));
                 }
@@ -3209,6 +3895,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
 
                 if (!order.equals(that.order)) return false;
                 if (!type.equals(that.type)) return false;
+                if (this.corsConfig != null ? !this.corsConfig.equals(that.corsConfig) : that.corsConfig != null) return false;
                 if (this.fixedResponseConfig != null ? !this.fixedResponseConfig.equals(that.fixedResponseConfig) : that.fixedResponseConfig != null) return false;
                 if (this.forwardGroupConfig != null ? !this.forwardGroupConfig.equals(that.forwardGroupConfig) : that.forwardGroupConfig != null) return false;
                 if (this.insertHeaderConfig != null ? !this.insertHeaderConfig.equals(that.insertHeaderConfig) : that.insertHeaderConfig != null) return false;
@@ -3223,6 +3910,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             public final int hashCode() {
                 int result = this.order.hashCode();
                 result = 31 * result + (this.type.hashCode());
+                result = 31 * result + (this.corsConfig != null ? this.corsConfig.hashCode() : 0);
                 result = 31 * result + (this.fixedResponseConfig != null ? this.fixedResponseConfig.hashCode() : 0);
                 result = 31 * result + (this.forwardGroupConfig != null ? this.forwardGroupConfig.hashCode() : 0);
                 result = 31 * result + (this.insertHeaderConfig != null ? this.insertHeaderConfig.hashCode() : 0);
@@ -3292,6 +3980,20 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getResponseHeaderConfig() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getResponseStatusCodeConfig() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getSourceIpConfig() {
             return null;
         }
@@ -3315,6 +4017,8 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object methodConfig;
             java.lang.Object pathConfig;
             java.lang.Object queryStringConfig;
+            java.lang.Object responseHeaderConfig;
+            java.lang.Object responseStatusCodeConfig;
             java.lang.Object sourceIpConfig;
 
             /**
@@ -3472,6 +4176,50 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link RuleConditionsProperty#getResponseHeaderConfig}
+             * @param responseHeaderConfig the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder responseHeaderConfig(com.aliyun.ros.cdk.core.IResolvable responseHeaderConfig) {
+                this.responseHeaderConfig = responseHeaderConfig;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RuleConditionsProperty#getResponseHeaderConfig}
+             * @param responseHeaderConfig the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder responseHeaderConfig(com.aliyun.ros.cdk.alb.RosRule.ResponseHeaderConfigProperty responseHeaderConfig) {
+                this.responseHeaderConfig = responseHeaderConfig;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RuleConditionsProperty#getResponseStatusCodeConfig}
+             * @param responseStatusCodeConfig the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder responseStatusCodeConfig(com.aliyun.ros.cdk.core.IResolvable responseStatusCodeConfig) {
+                this.responseStatusCodeConfig = responseStatusCodeConfig;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RuleConditionsProperty#getResponseStatusCodeConfig}
+             * @param responseStatusCodeConfig the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder responseStatusCodeConfig(com.aliyun.ros.cdk.alb.RosRule.ResponseStatusCodeConfigProperty responseStatusCodeConfig) {
+                this.responseStatusCodeConfig = responseStatusCodeConfig;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link RuleConditionsProperty#getSourceIpConfig}
              * @param sourceIpConfig the value to be set.
              * @return {@code this}
@@ -3518,6 +4266,8 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object methodConfig;
             private final java.lang.Object pathConfig;
             private final java.lang.Object queryStringConfig;
+            private final java.lang.Object responseHeaderConfig;
+            private final java.lang.Object responseStatusCodeConfig;
             private final java.lang.Object sourceIpConfig;
 
             /**
@@ -3533,6 +4283,8 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
                 this.methodConfig = software.amazon.jsii.Kernel.get(this, "methodConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.pathConfig = software.amazon.jsii.Kernel.get(this, "pathConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.queryStringConfig = software.amazon.jsii.Kernel.get(this, "queryStringConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.responseHeaderConfig = software.amazon.jsii.Kernel.get(this, "responseHeaderConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.responseStatusCodeConfig = software.amazon.jsii.Kernel.get(this, "responseStatusCodeConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.sourceIpConfig = software.amazon.jsii.Kernel.get(this, "sourceIpConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
@@ -3548,6 +4300,8 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
                 this.methodConfig = builder.methodConfig;
                 this.pathConfig = builder.pathConfig;
                 this.queryStringConfig = builder.queryStringConfig;
+                this.responseHeaderConfig = builder.responseHeaderConfig;
+                this.responseStatusCodeConfig = builder.responseStatusCodeConfig;
                 this.sourceIpConfig = builder.sourceIpConfig;
             }
 
@@ -3587,6 +4341,16 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getResponseHeaderConfig() {
+                return this.responseHeaderConfig;
+            }
+
+            @Override
+            public final java.lang.Object getResponseStatusCodeConfig() {
+                return this.responseStatusCodeConfig;
+            }
+
+            @Override
             public final java.lang.Object getSourceIpConfig() {
                 return this.sourceIpConfig;
             }
@@ -3616,6 +4380,12 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getQueryStringConfig() != null) {
                     data.set("queryStringConfig", om.valueToTree(this.getQueryStringConfig()));
                 }
+                if (this.getResponseHeaderConfig() != null) {
+                    data.set("responseHeaderConfig", om.valueToTree(this.getResponseHeaderConfig()));
+                }
+                if (this.getResponseStatusCodeConfig() != null) {
+                    data.set("responseStatusCodeConfig", om.valueToTree(this.getResponseStatusCodeConfig()));
+                }
                 if (this.getSourceIpConfig() != null) {
                     data.set("sourceIpConfig", om.valueToTree(this.getSourceIpConfig()));
                 }
@@ -3644,6 +4414,8 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.methodConfig != null ? !this.methodConfig.equals(that.methodConfig) : that.methodConfig != null) return false;
                 if (this.pathConfig != null ? !this.pathConfig.equals(that.pathConfig) : that.pathConfig != null) return false;
                 if (this.queryStringConfig != null ? !this.queryStringConfig.equals(that.queryStringConfig) : that.queryStringConfig != null) return false;
+                if (this.responseHeaderConfig != null ? !this.responseHeaderConfig.equals(that.responseHeaderConfig) : that.responseHeaderConfig != null) return false;
+                if (this.responseStatusCodeConfig != null ? !this.responseStatusCodeConfig.equals(that.responseStatusCodeConfig) : that.responseStatusCodeConfig != null) return false;
                 return this.sourceIpConfig != null ? this.sourceIpConfig.equals(that.sourceIpConfig) : that.sourceIpConfig == null;
             }
 
@@ -3656,6 +4428,8 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.methodConfig != null ? this.methodConfig.hashCode() : 0);
                 result = 31 * result + (this.pathConfig != null ? this.pathConfig.hashCode() : 0);
                 result = 31 * result + (this.queryStringConfig != null ? this.queryStringConfig.hashCode() : 0);
+                result = 31 * result + (this.responseHeaderConfig != null ? this.responseHeaderConfig.hashCode() : 0);
+                result = 31 * result + (this.responseStatusCodeConfig != null ? this.responseStatusCodeConfig.hashCode() : 0);
                 result = 31 * result + (this.sourceIpConfig != null ? this.sourceIpConfig.hashCode() : 0);
                 return result;
             }

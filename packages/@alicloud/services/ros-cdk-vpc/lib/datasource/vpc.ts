@@ -13,6 +13,14 @@ export interface VpcProps {
      * Property vpcId: The ID of the VPC.
      */
     readonly vpcId: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -122,6 +130,7 @@ export class Vpc extends ros.Resource {
 
         const rosVpc = new RosVpc(this, id,  {
             vpcId: props.vpcId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosVpc;
         this.attrCidrBlock = rosVpc.attrCidrBlock;

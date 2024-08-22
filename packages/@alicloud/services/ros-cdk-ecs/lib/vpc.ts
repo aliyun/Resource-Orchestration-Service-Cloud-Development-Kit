@@ -96,6 +96,11 @@ export class Vpc extends ros.Resource {
     public readonly attrVpcId: ros.IResolvable;
 
     /**
+     * Attribute VpcName: The name of VPC
+     */
+    public readonly attrVpcName: ros.IResolvable;
+
+    /**
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties
@@ -123,5 +128,6 @@ export class Vpc extends ros.Resource {
         this.attrRouteTableId = rosVPC.attrRouteTableId;
         this.attrVRouterId = rosVPC.attrVRouterId;
         this.attrVpcId = rosVPC.attrVpcId;
+        this.attrVpcName = rosVPC.attrVpcName;
     }
 }

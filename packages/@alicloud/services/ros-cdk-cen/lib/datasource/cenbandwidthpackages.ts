@@ -23,6 +23,14 @@ export interface CenBandwidthPackagesProps {
      * Property isOrKey: The logical operator between the filter conditions.
      */
     readonly isOrKey?: boolean | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -62,6 +70,7 @@ export class CenBandwidthPackages extends ros.Resource {
             isOrKey: props.isOrKey,
             filter: props.filter,
             includeReservationData: props.includeReservationData,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCenBandwidthPackages;
         this.attrCenBandwidthPackageIds = rosCenBandwidthPackages.attrCenBandwidthPackageIds;

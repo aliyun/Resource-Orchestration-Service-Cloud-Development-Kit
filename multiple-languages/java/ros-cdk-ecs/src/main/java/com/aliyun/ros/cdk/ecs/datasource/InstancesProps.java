@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-instances
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.570Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:20.503Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.InstancesProps")
 @software.amazon.jsii.Jsii.Proxy(InstancesProps.Jsii$Proxy.class)
 public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
@@ -184,6 +184,21 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * Property resourceGroupId: The ID of the resource group to which the instance belongs.
      * <p>
      * If this parameter is specified to query resources,up to 1,000 resources that belong to the specified resource group can be displayed in the response.
@@ -271,6 +286,7 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object privateIpAddresses;
         java.lang.Object publicIpAddresses;
         java.lang.Object rdmaIpAddresses;
+        java.lang.Object refreshOptions;
         java.lang.Object resourceGroupId;
         java.lang.Object securityGroupId;
         java.lang.Object status;
@@ -722,6 +738,40 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstancesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstancesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstancesProps#getResourceGroupId}
          * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which the instance belongs.
          *                        If this parameter is specified to query resources,up to 1,000 resources that belong to the specified resource group can be displayed in the response.
@@ -902,6 +952,7 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object privateIpAddresses;
         private final java.lang.Object publicIpAddresses;
         private final java.lang.Object rdmaIpAddresses;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object securityGroupId;
         private final java.lang.Object status;
@@ -936,6 +987,7 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
             this.privateIpAddresses = software.amazon.jsii.Kernel.get(this, "privateIpAddresses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.publicIpAddresses = software.amazon.jsii.Kernel.get(this, "publicIpAddresses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.rdmaIpAddresses = software.amazon.jsii.Kernel.get(this, "rdmaIpAddresses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.status = software.amazon.jsii.Kernel.get(this, "status", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -971,6 +1023,7 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
             this.privateIpAddresses = builder.privateIpAddresses;
             this.publicIpAddresses = builder.publicIpAddresses;
             this.rdmaIpAddresses = builder.rdmaIpAddresses;
+            this.refreshOptions = builder.refreshOptions;
             this.resourceGroupId = builder.resourceGroupId;
             this.securityGroupId = builder.securityGroupId;
             this.status = builder.status;
@@ -1081,6 +1134,11 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
         }
@@ -1181,6 +1239,9 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getRdmaIpAddresses() != null) {
                 data.set("rdmaIpAddresses", om.valueToTree(this.getRdmaIpAddresses()));
             }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
@@ -1240,6 +1301,7 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
             if (this.privateIpAddresses != null ? !this.privateIpAddresses.equals(that.privateIpAddresses) : that.privateIpAddresses != null) return false;
             if (this.publicIpAddresses != null ? !this.publicIpAddresses.equals(that.publicIpAddresses) : that.publicIpAddresses != null) return false;
             if (this.rdmaIpAddresses != null ? !this.rdmaIpAddresses.equals(that.rdmaIpAddresses) : that.rdmaIpAddresses != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
             if (this.status != null ? !this.status.equals(that.status) : that.status != null) return false;
@@ -1271,6 +1333,7 @@ public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.privateIpAddresses != null ? this.privateIpAddresses.hashCode() : 0);
             result = 31 * result + (this.publicIpAddresses != null ? this.publicIpAddresses.hashCode() : 0);
             result = 31 * result + (this.rdmaIpAddresses != null ? this.rdmaIpAddresses.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
             result = 31 * result + (this.status != null ? this.status.hashCode() : 0);

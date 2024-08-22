@@ -74,10 +74,10 @@ function rosProjectPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosProjectPropsValidator(properties).assertSuccess();
     }
     return {
-      Name: ros.stringToRosTemplate(properties.name),
-      ProjectType: ros.stringToRosTemplate(properties.projectType),
-      Description: ros.stringToRosTemplate(properties.description),
-      SdkType: ros.stringToRosTemplate(properties.sdkType),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'ProjectType': ros.stringToRosTemplate(properties.projectType),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'SdkType': ros.stringToRosTemplate(properties.sdkType),
     };
 }
 

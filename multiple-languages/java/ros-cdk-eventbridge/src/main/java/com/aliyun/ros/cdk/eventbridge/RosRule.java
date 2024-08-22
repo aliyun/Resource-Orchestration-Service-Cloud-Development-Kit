@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eventbridge;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::EventBridge::Rule</code>, which is used to create an event rule for an event bus.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.165Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:21.628Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eventbridge.$Module.class, fqn = "@alicloud/ros-cdk-eventbridge.RosRule")
 public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -467,7 +467,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getId();
+        @org.jetbrains.annotations.NotNull java.lang.Object getIdentity();
 
         /**
          */
@@ -499,7 +499,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TargetsProperty> {
             java.lang.Object endpoint;
-            java.lang.Object id;
+            java.lang.Object identity;
             java.lang.Object paramList;
             java.lang.Object type;
             java.lang.Object pushRetryStrategy;
@@ -527,24 +527,24 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
-             * Sets the value of {@link TargetsProperty#getId}
-             * @param id the value to be set. This parameter is required.
+             * Sets the value of {@link TargetsProperty#getIdentity}
+             * @param identity the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder id(java.lang.String id) {
-                this.id = id;
+            public Builder identity(java.lang.String identity) {
+                this.identity = identity;
                 return this;
             }
 
             /**
-             * Sets the value of {@link TargetsProperty#getId}
-             * @param id the value to be set. This parameter is required.
+             * Sets the value of {@link TargetsProperty#getIdentity}
+             * @param identity the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder id(com.aliyun.ros.cdk.core.IResolvable id) {
-                this.id = id;
+            public Builder identity(com.aliyun.ros.cdk.core.IResolvable identity) {
+                this.identity = identity;
                 return this;
             }
 
@@ -633,7 +633,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TargetsProperty {
             private final java.lang.Object endpoint;
-            private final java.lang.Object id;
+            private final java.lang.Object identity;
             private final java.lang.Object paramList;
             private final java.lang.Object type;
             private final java.lang.Object pushRetryStrategy;
@@ -645,7 +645,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
                 this.endpoint = software.amazon.jsii.Kernel.get(this, "endpoint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.id = software.amazon.jsii.Kernel.get(this, "id", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.identity = software.amazon.jsii.Kernel.get(this, "identity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.paramList = software.amazon.jsii.Kernel.get(this, "paramList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.pushRetryStrategy = software.amazon.jsii.Kernel.get(this, "pushRetryStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -657,7 +657,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.endpoint = java.util.Objects.requireNonNull(builder.endpoint, "endpoint is required");
-                this.id = java.util.Objects.requireNonNull(builder.id, "id is required");
+                this.identity = java.util.Objects.requireNonNull(builder.identity, "identity is required");
                 this.paramList = java.util.Objects.requireNonNull(builder.paramList, "paramList is required");
                 this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
                 this.pushRetryStrategy = builder.pushRetryStrategy;
@@ -669,8 +669,8 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.Object getId() {
-                return this.id;
+            public final java.lang.Object getIdentity() {
+                return this.identity;
             }
 
             @Override
@@ -695,7 +695,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
                 data.set("endpoint", om.valueToTree(this.getEndpoint()));
-                data.set("id", om.valueToTree(this.getId()));
+                data.set("identity", om.valueToTree(this.getIdentity()));
                 data.set("paramList", om.valueToTree(this.getParamList()));
                 data.set("type", om.valueToTree(this.getType()));
                 if (this.getPushRetryStrategy() != null) {
@@ -720,7 +720,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
                 TargetsProperty.Jsii$Proxy that = (TargetsProperty.Jsii$Proxy) o;
 
                 if (!endpoint.equals(that.endpoint)) return false;
-                if (!id.equals(that.id)) return false;
+                if (!identity.equals(that.identity)) return false;
                 if (!paramList.equals(that.paramList)) return false;
                 if (!type.equals(that.type)) return false;
                 return this.pushRetryStrategy != null ? this.pushRetryStrategy.equals(that.pushRetryStrategy) : that.pushRetryStrategy == null;
@@ -729,7 +729,7 @@ public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final int hashCode() {
                 int result = this.endpoint.hashCode();
-                result = 31 * result + (this.id.hashCode());
+                result = 31 * result + (this.identity.hashCode());
                 result = 31 * result + (this.paramList.hashCode());
                 result = 31 * result + (this.type.hashCode());
                 result = 31 * result + (this.pushRetryStrategy != null ? this.pushRetryStrategy.hashCode() : 0);

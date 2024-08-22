@@ -712,6 +712,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: proxyProtocolV2Config: ProxyProtocolV2Config of the listener
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "proxyProtocolV2Config", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-nlb.RosListener.ProxyProtocolV2ConfigProperty\"}]}}", isOptional: true)]
+        public virtual object? ProxyProtocolV2Config
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Nlb.RosListener.IProxyProtocolV2ConfigProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Nlb.RosListener.IProxyProtocolV2ConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: secSensorEnabled: Whether to enable the second-level monitoring function
         /// </remarks>
         [JsiiOptional]
@@ -833,6 +864,188 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Nlb.RosListener.ITagsProperty[]?>();
             set => SetInstanceProperty(value);
+        }
+        [JsiiInterface(nativeType: typeof(IProxyProtocolV2ConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-nlb.RosListener.ProxyProtocolV2ConfigProperty")]
+        public interface IProxyProtocolV2ConfigProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: ppv2PrivateLinkEpIdEnabled: Whether to enable Proxy Protocol to carry Ppv2PrivateLinkEpId to the back-end server. Default False.
+            /// </remarks>
+            [JsiiProperty(name: "ppv2PrivateLinkEpIdEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Ppv2PrivateLinkEpIdEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ppv2PrivateLinkEpsIdEnabled: Whether to enable Proxy Protocol to carry PrivateLinkEpsId to the back-end server. Default: False.
+            /// </remarks>
+            [JsiiProperty(name: "ppv2PrivateLinkEpsIdEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Ppv2PrivateLinkEpsIdEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ppv2VpcIdEnabled: Whether to enable Proxy Protocol to carry VpcId to the back-end server. Default False.
+            /// </remarks>
+            [JsiiProperty(name: "ppv2VpcIdEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Ppv2VpcIdEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IProxyProtocolV2ConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-nlb.RosListener.ProxyProtocolV2ConfigProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Nlb.RosListener.IProxyProtocolV2ConfigProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ppv2PrivateLinkEpIdEnabled: Whether to enable Proxy Protocol to carry Ppv2PrivateLinkEpId to the back-end server. Default False.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ppv2PrivateLinkEpIdEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Ppv2PrivateLinkEpIdEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ppv2PrivateLinkEpsIdEnabled: Whether to enable Proxy Protocol to carry PrivateLinkEpsId to the back-end server. Default: False.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ppv2PrivateLinkEpsIdEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Ppv2PrivateLinkEpsIdEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ppv2VpcIdEnabled: Whether to enable Proxy Protocol to carry VpcId to the back-end server. Default False.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ppv2VpcIdEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Ppv2VpcIdEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-nlb.RosListener.ProxyProtocolV2ConfigProperty")]
+        public class ProxyProtocolV2ConfigProperty : AlibabaCloud.SDK.ROS.CDK.Nlb.RosListener.IProxyProtocolV2ConfigProperty
+        {
+            private object? _ppv2PrivateLinkEpIdEnabled;
+
+            /// <remarks>
+            /// <strong>Property</strong>: ppv2PrivateLinkEpIdEnabled: Whether to enable Proxy Protocol to carry Ppv2PrivateLinkEpId to the back-end server. Default False.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ppv2PrivateLinkEpIdEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Ppv2PrivateLinkEpIdEnabled
+            {
+                get => _ppv2PrivateLinkEpIdEnabled;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _ppv2PrivateLinkEpIdEnabled = value;
+                }
+            }
+
+            private object? _ppv2PrivateLinkEpsIdEnabled;
+
+            /// <remarks>
+            /// <strong>Property</strong>: ppv2PrivateLinkEpsIdEnabled: Whether to enable Proxy Protocol to carry PrivateLinkEpsId to the back-end server. Default: False.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ppv2PrivateLinkEpsIdEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Ppv2PrivateLinkEpsIdEnabled
+            {
+                get => _ppv2PrivateLinkEpsIdEnabled;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _ppv2PrivateLinkEpsIdEnabled = value;
+                }
+            }
+
+            private object? _ppv2VpcIdEnabled;
+
+            /// <remarks>
+            /// <strong>Property</strong>: ppv2VpcIdEnabled: Whether to enable Proxy Protocol to carry VpcId to the back-end server. Default False.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ppv2VpcIdEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Ppv2VpcIdEnabled
+            {
+                get => _ppv2VpcIdEnabled;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _ppv2VpcIdEnabled = value;
+                }
+            }
         }
         [JsiiInterface(nativeType: typeof(ITagsProperty), fullyQualifiedName: "@alicloud/ros-cdk-nlb.RosListener.TagsProperty")]
         public interface ITagsProperty

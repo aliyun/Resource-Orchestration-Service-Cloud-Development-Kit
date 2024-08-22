@@ -39,6 +39,14 @@ export interface RosLoadBalancersProps {
     readonly payType?: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property resourceGroupId: Resource group id
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -131,6 +139,13 @@ function RosLoadBalancersPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosLoadBalancers_TagsPropertyValidator))(properties.tags));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosLoadBalancersProps"');
 }
 
@@ -148,16 +163,17 @@ function rosLoadBalancersPropsToRosTemplate(properties: any, enableResourcePrope
         RosLoadBalancersPropsValidator(properties).assertSuccess();
     }
     return {
-      AddressType: ros.stringToRosTemplate(properties.addressType),
-      LoadBalancerBussinessStatus: ros.stringToRosTemplate(properties.loadBalancerBussinessStatus),
-      LoadBalancerIds: ros.listMapper(ros.stringToRosTemplate)(properties.loadBalancerIds),
-      LoadBalancerNames: ros.listMapper(ros.stringToRosTemplate)(properties.loadBalancerNames),
-      LoadBalancerStatus: ros.stringToRosTemplate(properties.loadBalancerStatus),
-      PayType: ros.stringToRosTemplate(properties.payType),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Tags: ros.listMapper(rosLoadBalancersTagsPropertyToRosTemplate)(properties.tags),
-      VpcIds: ros.listMapper(ros.stringToRosTemplate)(properties.vpcIds),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      'AddressType': ros.stringToRosTemplate(properties.addressType),
+      'LoadBalancerBussinessStatus': ros.stringToRosTemplate(properties.loadBalancerBussinessStatus),
+      'LoadBalancerIds': ros.listMapper(ros.stringToRosTemplate)(properties.loadBalancerIds),
+      'LoadBalancerNames': ros.listMapper(ros.stringToRosTemplate)(properties.loadBalancerNames),
+      'LoadBalancerStatus': ros.stringToRosTemplate(properties.loadBalancerStatus),
+      'PayType': ros.stringToRosTemplate(properties.payType),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosLoadBalancersTagsPropertyToRosTemplate)(properties.tags),
+      'VpcIds': ros.listMapper(ros.stringToRosTemplate)(properties.vpcIds),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
     };
 }
 
@@ -216,6 +232,14 @@ export class RosLoadBalancers extends ros.RosResource {
     public payType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: Resource group id
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
@@ -252,6 +276,7 @@ export class RosLoadBalancers extends ros.RosResource {
         this.loadBalancerNames = props.loadBalancerNames;
         this.loadBalancerStatus = props.loadBalancerStatus;
         this.payType = props.payType;
+        this.refreshOptions = props.refreshOptions;
         this.resourceGroupId = props.resourceGroupId;
         this.tags = props.tags;
         this.vpcIds = props.vpcIds;
@@ -267,6 +292,7 @@ export class RosLoadBalancers extends ros.RosResource {
             loadBalancerNames: this.loadBalancerNames,
             loadBalancerStatus: this.loadBalancerStatus,
             payType: this.payType,
+            refreshOptions: this.refreshOptions,
             resourceGroupId: this.resourceGroupId,
             tags: this.tags,
             vpcIds: this.vpcIds,
@@ -321,7 +347,7 @@ function rosLoadBalancersTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosLoadBalancers_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }

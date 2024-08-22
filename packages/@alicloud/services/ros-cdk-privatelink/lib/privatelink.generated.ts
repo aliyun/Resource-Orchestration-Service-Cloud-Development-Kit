@@ -144,17 +144,17 @@ function rosVpcEndpointPropsToRosTemplate(properties: any, enableResourcePropert
         RosVpcEndpointPropsValidator(properties).assertSuccess();
     }
     return {
-      SecurityGroupId: ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupId),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      EndpointDescription: ros.stringToRosTemplate(properties.endpointDescription),
-      EndpointName: ros.stringToRosTemplate(properties.endpointName),
-      EndpointType: ros.stringToRosTemplate(properties.endpointType),
-      ProtectedEnabled: ros.booleanToRosTemplate(properties.protectedEnabled),
-      ServiceId: ros.stringToRosTemplate(properties.serviceId),
-      ServiceName: ros.stringToRosTemplate(properties.serviceName),
-      Tags: ros.listMapper(rosVpcEndpointTagsPropertyToRosTemplate)(properties.tags),
-      Zone: ros.listMapper(rosVpcEndpointZonePropertyToRosTemplate)(properties.zone),
-      ZonePrivateIpAddressCount: ros.numberToRosTemplate(properties.zonePrivateIpAddressCount),
+      'SecurityGroupId': ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupId),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'EndpointDescription': ros.stringToRosTemplate(properties.endpointDescription),
+      'EndpointName': ros.stringToRosTemplate(properties.endpointName),
+      'EndpointType': ros.stringToRosTemplate(properties.endpointType),
+      'ProtectedEnabled': ros.booleanToRosTemplate(properties.protectedEnabled),
+      'ServiceId': ros.stringToRosTemplate(properties.serviceId),
+      'ServiceName': ros.stringToRosTemplate(properties.serviceName),
+      'Tags': ros.listMapper(rosVpcEndpointTagsPropertyToRosTemplate)(properties.tags),
+      'Zone': ros.listMapper(rosVpcEndpointZonePropertyToRosTemplate)(properties.zone),
+      'ZonePrivateIpAddressCount': ros.numberToRosTemplate(properties.zonePrivateIpAddressCount),
     };
 }
 
@@ -366,8 +366,8 @@ function rosVpcEndpointTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosVpcEndpoint_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -418,9 +418,9 @@ function rosVpcEndpointZonePropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosVpcEndpoint_ZonePropertyValidator(properties).assertSuccess();
     return {
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
-      Ip: ros.stringToRosTemplate(properties.ip),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'Ip': ros.stringToRosTemplate(properties.ip),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
     };
 }
 
@@ -573,17 +573,17 @@ function rosVpcEndpointServicePropsToRosTemplate(properties: any, enableResource
         RosVpcEndpointServicePropsValidator(properties).assertSuccess();
     }
     return {
-      AutoAcceptEnabled: ros.booleanToRosTemplate(properties.autoAcceptEnabled),
-      ConnectBandwidth: ros.numberToRosTemplate(properties.connectBandwidth),
-      DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
-      Payer: ros.stringToRosTemplate(properties.payer),
-      Resource: ros.listMapper(rosVpcEndpointServiceResourcePropertyToRosTemplate)(properties.resource),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      ServiceDescription: ros.stringToRosTemplate(properties.serviceDescription),
-      ServiceResourceType: ros.stringToRosTemplate(properties.serviceResourceType),
-      Tags: ros.listMapper(rosVpcEndpointServiceTagsPropertyToRosTemplate)(properties.tags),
-      User: ros.listMapper(ros.stringToRosTemplate)(properties.user),
-      ZoneAffinityEnabled: ros.booleanToRosTemplate(properties.zoneAffinityEnabled),
+      'AutoAcceptEnabled': ros.booleanToRosTemplate(properties.autoAcceptEnabled),
+      'ConnectBandwidth': ros.numberToRosTemplate(properties.connectBandwidth),
+      'DeletionForce': ros.booleanToRosTemplate(properties.deletionForce),
+      'Payer': ros.stringToRosTemplate(properties.payer),
+      'Resource': ros.listMapper(rosVpcEndpointServiceResourcePropertyToRosTemplate)(properties.resource),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'ServiceDescription': ros.stringToRosTemplate(properties.serviceDescription),
+      'ServiceResourceType': ros.stringToRosTemplate(properties.serviceResourceType),
+      'Tags': ros.listMapper(rosVpcEndpointServiceTagsPropertyToRosTemplate)(properties.tags),
+      'User': ros.listMapper(ros.stringToRosTemplate)(properties.user),
+      'ZoneAffinityEnabled': ros.booleanToRosTemplate(properties.zoneAffinityEnabled),
     };
 }
 
@@ -793,9 +793,9 @@ function rosVpcEndpointServiceResourcePropertyToRosTemplate(properties: any): an
     if (!ros.canInspect(properties)) { return properties; }
     RosVpcEndpointService_ResourcePropertyValidator(properties).assertSuccess();
     return {
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
-      ResourceId: ros.stringToRosTemplate(properties.resourceId),
-      ResourceType: ros.stringToRosTemplate(properties.resourceType),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'ResourceId': ros.stringToRosTemplate(properties.resourceId),
+      'ResourceType': ros.stringToRosTemplate(properties.resourceType),
     };
 }
 
@@ -842,8 +842,8 @@ function rosVpcEndpointServiceTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosVpcEndpointService_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -905,9 +905,9 @@ function rosVpcEndpointServiceAttachmentPropsToRosTemplate(properties: any, enab
         RosVpcEndpointServiceAttachmentPropsValidator(properties).assertSuccess();
     }
     return {
-      ResourceId: ros.stringToRosTemplate(properties.resourceId),
-      ResourceType: ros.stringToRosTemplate(properties.resourceType),
-      ServiceId: ros.stringToRosTemplate(properties.serviceId),
+      'ResourceId': ros.stringToRosTemplate(properties.resourceId),
+      'ResourceType': ros.stringToRosTemplate(properties.resourceType),
+      'ServiceId': ros.stringToRosTemplate(properties.serviceId),
     };
 }
 

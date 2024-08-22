@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.nlb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-securitygroupattachment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.849Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:22.636Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.SecurityGroupAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(SecurityGroupAttachmentProps.Jsii$Proxy.class)
 public interface SecurityGroupAttachmentProps extends software.amazon.jsii.JsiiSerializable {

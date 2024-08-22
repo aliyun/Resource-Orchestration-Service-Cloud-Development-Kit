@@ -266,6 +266,72 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
             }
         }
 
+        private object? _acrAssumeRoleArn;
+
+        /// <remarks>
+        /// <strong>Property</strong>: acrAssumeRoleArn: The ARN of the RAM role required when pulling the image across accounts.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "acrAssumeRoleArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? AcrAssumeRoleArn
+        {
+            get => _acrAssumeRoleArn;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _acrAssumeRoleArn = value;
+            }
+        }
+
+        private object? _acrInstanceId;
+
+        /// <remarks>
+        /// <strong>Property</strong>: acrInstanceId: Container Image service ACR Enterprise Edition instance ID. Required when ImageUrl serves enterprise edition for container images.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "acrInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? AcrInstanceId
+        {
+            get => _acrInstanceId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _acrInstanceId = value;
+            }
+        }
+
         private object? _appDescription;
 
         /// <remarks>
@@ -296,6 +362,142 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
                     }
                 }
                 _appDescription = value;
+            }
+        }
+
+        private object? _appSource;
+
+        /// <remarks>
+        /// <strong>Property</strong>: appSource: Application source.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "appSource", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? AppSource
+        {
+            get => _appSource;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _appSource = value;
+            }
+        }
+
+        private object? _associateEip;
+
+        /// <remarks>
+        /// <strong>Property</strong>: associateEip: Whether to bind EIP. The values are explained as follows:
+        /// - true: Binding.
+        /// - false: No binding
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "associateEip", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? AssociateEip
+        {
+            get => _associateEip;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _associateEip = value;
+            }
+        }
+
+        private object? _autoConfig;
+
+        /// <remarks>
+        /// <strong>Property</strong>: autoConfig: Whether to automatically configure the network environment. The values are explained as follows:
+        /// - true: SAE automatically config the network environment when creating the application. The values for NamespaceId, VpcId, vSwitchId, and SecurityGroupId are ignored.
+        /// - false: SAE manually config the network environment when creating the application.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "autoConfig", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? AutoConfig
+        {
+            get => _autoConfig;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _autoConfig = value;
+            }
+        }
+
+        private object? _baseAppId;
+
+        /// <remarks>
+        /// <strong>Property</strong>: baseAppId: Base application ID.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "baseAppId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? BaseAppId
+        {
+            get => _baseAppId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _baseAppId = value;
             }
         }
 
@@ -362,6 +564,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
                     }
                 }
                 _commandArgs = value;
+            }
+        }
+
+        private object? _configMapMountDesc;
+
+        /// <remarks>
+        /// <strong>Property</strong>: configMapMountDesc: ConfigMap mount description. Use the configuration items created on the namespace configuration items page to inject configuration information into the container.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "configMapMountDesc", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ConfigMapMountDesc
+        {
+            get => _configMapMountDesc;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _configMapMountDesc = value;
             }
         }
 
@@ -464,6 +699,41 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
             }
         }
 
+        private object? _enableEbpf;
+
+        /// <remarks>
+        /// <strong>Property</strong>: enableEbpf: Whether to enable EBPF. Enable application monitoring for non-Java applications. The values are explained as follows:
+        /// - true: Enable.
+        /// - false: Disable.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "enableEbpf", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? EnableEbpf
+        {
+            get => _enableEbpf;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _enableEbpf = value;
+            }
+        }
+
         private object? _envs;
 
         /// <remarks>
@@ -494,6 +764,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
                     }
                 }
                 _envs = value;
+            }
+        }
+
+        private object? _imagePullSecrets;
+
+        /// <remarks>
+        /// <strong>Property</strong>: imagePullSecrets: Corresponding to the secret dictionary ID.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "imagePullSecrets", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ImagePullSecrets
+        {
+            get => _imagePullSecrets;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _imagePullSecrets = value;
             }
         }
 
@@ -631,6 +934,42 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
             }
         }
 
+        private object? _kafkaConfigs;
+
+        /// <remarks>
+        /// <strong>Property</strong>: kafkaConfigs: Logs are ingested to Kafka configuration summary information. The values are explained as follows:
+        /// - kafkaEndpoint: The service access address for the Kafka API
+        /// - kafkaInstanceId: Kafka instance ID
+        /// - kafkaConfigs: Configuration summary information for one or more logs See Request parameters kafkaConfigs for a description of these values.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "kafkaConfigs", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? KafkaConfigs
+        {
+            get => _kafkaConfigs;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _kafkaConfigs = value;
+            }
+        }
+
         private object? _liveness;
 
         /// <remarks>
@@ -661,6 +1000,75 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
                     }
                 }
                 _liveness = value;
+            }
+        }
+
+        private object? _microRegistration;
+
+        /// <remarks>
+        /// <strong>Property</strong>: microRegistration: Select the Nacos registry with the following values:
+        /// - 0: SAE built-in Nacos.
+        /// - 1: User-built Nacos.
+        /// - 2: MSE commercial version of Nacos.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "microRegistration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? MicroRegistration
+        {
+            get => _microRegistration;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _microRegistration = value;
+            }
+        }
+
+        private object? _microRegistrationConfig;
+
+        /// <remarks>
+        /// <strong>Property</strong>: microRegistrationConfig: Registry configuration information.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "microRegistrationConfig", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? MicroRegistrationConfig
+        {
+            get => _microRegistrationConfig;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _microRegistrationConfig = value;
             }
         }
 
@@ -730,6 +1138,44 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
             }
         }
 
+        private object? _nasConfigs;
+
+        /// <remarks>
+        /// <strong>Property</strong>: nasConfigs: Configuration to mount the NAS. The values are explained as follows:
+        /// - mountPath: The container mount path
+        /// - readOnly: A value of false indicates read and write permission.
+        /// - nasId: NAS ID
+        /// - mountDomain: The container mount point address For more information, see DescribeMountTargets.
+        /// - nasPath: NAS relative file directory
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "nasConfigs", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? NasConfigs
+        {
+            get => _nasConfigs;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _nasConfigs = value;
+            }
+        }
+
         private object? _nasId;
 
         /// <remarks>
@@ -760,6 +1206,111 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
                     }
                 }
                 _nasId = value;
+            }
+        }
+
+        private object? _ossAkId;
+
+        /// <remarks>
+        /// <strong>Property</strong>: ossAkId: AccessKey ID of the OSS.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "ossAkId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? OssAkId
+        {
+            get => _ossAkId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _ossAkId = value;
+            }
+        }
+
+        private object? _ossAkSecret;
+
+        /// <remarks>
+        /// <strong>Property</strong>: ossAkSecret: AccessKey Secret of the OSS.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "ossAkSecret", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? OssAkSecret
+        {
+            get => _ossAkSecret;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _ossAkSecret = value;
+            }
+        }
+
+        private object? _ossMountDescs;
+
+        /// <remarks>
+        /// <strong>Property</strong>: ossMountDescs: OSS mount description information. The parameters are described as follows:
+        /// - bucketName: The name of the Bucket
+        /// - bucketPath: The directory or OSS object you created in OSS that will raise an exception if the OSS mount directory does not exist.
+        /// - mountPath: Your container path in SAE. If the path already exists, it is a covering relationship. If the path doesn't exist, it will be created.
+        /// - readOnly: This specifies whether the container path has read-only permissions for mount directory resources:
+        /// - true: Read-only permission
+        /// - false: Read and write permissions
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "ossMountDescs", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? OssMountDescs
+        {
+            get => _ossMountDescs;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case object[] cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: object[], {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _ossMountDescs = value;
             }
         }
 
@@ -829,6 +1380,138 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
             }
         }
 
+        private object? _php;
+
+        /// <remarks>
+        /// <strong>Property</strong>: php: PHP version.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "php", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? Php
+        {
+            get => _php;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _php = value;
+            }
+        }
+
+        private object? _phpArmsConfigLocation;
+
+        /// <remarks>
+        /// <strong>Property</strong>: phpArmsConfigLocation: The PHP application monitors the mount path and requires you to ensure that the PHP server loads the configuration file for this path. You don't need to worry about the configuration content; SAE will automatically render the correct configuration file.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "phpArmsConfigLocation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? PhpArmsConfigLocation
+        {
+            get => _phpArmsConfigLocation;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _phpArmsConfigLocation = value;
+            }
+        }
+
+        private object? _phpConfig;
+
+        /// <remarks>
+        /// <strong>Property</strong>: phpConfig: PHP configuration file contents.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "phpConfig", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? PhpConfig
+        {
+            get => _phpConfig;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _phpConfig = value;
+            }
+        }
+
+        private object? _phpConfigLocation;
+
+        /// <remarks>
+        /// <strong>Property</strong>: phpConfigLocation: PHP application launch configuration mount path, you need to ensure that the PHP server will be started with this configuration file.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "phpConfigLocation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? PhpConfigLocation
+        {
+            get => _phpConfigLocation;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _phpConfigLocation = value;
+            }
+        }
+
         private object? _postStart;
 
         /// <remarks>
@@ -895,6 +1578,146 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
             }
         }
 
+        private object? _programmingLanguage;
+
+        /// <remarks>
+        /// <strong>Property</strong>: programmingLanguage: Create the stack language for the application. The values are explained as follows:
+        /// - java: The Java language
+        /// - php: PHP language.
+        /// - other: Multiple languages such as Python, C++, Go,.NET, Node.js, etc.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "programmingLanguage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ProgrammingLanguage
+        {
+            get => _programmingLanguage;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _programmingLanguage = value;
+            }
+        }
+
+        private object? _pvtzDiscoverySvc;
+
+        /// <remarks>
+        /// <strong>Property</strong>: pvtzDiscoverySvc: Enable K8s Service registration discovery. The values are explained as follows:
+        /// - serviceName: The name of the service The format is custom-namespace ID, in which the postfix-namespace ID does not support customization and needs to be filled in according to the namespace of the application. For example, choosing the default namespace for the North China 2 (Beijing) region would be -cn-beijing-default.
+        /// - namespaceId: The namespace ID
+        /// - portProtocols: Ports and protocols The port is in the range [1,65535] and supports both TCP and UDP protocols.
+        /// - portAndProtocol: Ports and protocols The port is in the range [1,65535] and supports both TCP and UDP protocols. portProtocols is preferred. If portProtocols is set, only portProtocols will take effect.
+        /// - enable: Enable K8s Service registration discovery.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "pvtzDiscoverySvc", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? PvtzDiscoverySvc
+        {
+            get => _pvtzDiscoverySvc;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _pvtzDiscoverySvc = value;
+            }
+        }
+
+        private object? _python;
+
+        /// <remarks>
+        /// <strong>Property</strong>: python: Python version. Supports PYTHON 3.9.15
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "python", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? Python
+        {
+            get => _python;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _python = value;
+            }
+        }
+
+        private object? _pythonModules;
+
+        /// <remarks>
+        /// <strong>Property</strong>: pythonModules: Install custom module dependencies. The dependencies defined in requirements.txt in the root directory are installed by default. If the package is not configured or customized, you can specify the dependencies to install.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "pythonModules", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? PythonModules
+        {
+            get => _pythonModules;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _pythonModules = value;
+            }
+        }
+
         private object? _readiness;
 
         /// <remarks>
@@ -928,6 +1751,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
             }
         }
 
+        private object? _saeVersion;
+
+        /// <remarks>
+        /// <strong>Property</strong>: saeVersion: SAE version.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "saeVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? SaeVersion
+        {
+            get => _saeVersion;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _saeVersion = value;
+            }
+        }
+
         private object? _securityGroupId;
 
         /// <remarks>
@@ -958,6 +1814,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
                     }
                 }
                 _securityGroupId = value;
+            }
+        }
+
+        private object? _serviceTags;
+
+        /// <remarks>
+        /// <strong>Property</strong>: serviceTags: Service tags.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "serviceTags", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ServiceTags
+        {
+            get => _serviceTags;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _serviceTags = value;
             }
         }
 
@@ -1005,6 +1894,59 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
             set;
         }
 
+        private object? _terminationGracePeriodSeconds;
+
+        /// <remarks>
+        /// <strong>Property</strong>: terminationGracePeriodSeconds: Graceful offline timeout, default 30, unit of seconds. The value ranges from 1 to 300.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "terminationGracePeriodSeconds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? TerminationGracePeriodSeconds
+        {
+            get => _terminationGracePeriodSeconds;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case double cast_cd4240:
+                            break;
+                        case byte cast_cd4240:
+                            break;
+                        case decimal cast_cd4240:
+                            break;
+                        case float cast_cd4240:
+                            break;
+                        case int cast_cd4240:
+                            break;
+                        case long cast_cd4240:
+                            break;
+                        case sbyte cast_cd4240:
+                            break;
+                        case short cast_cd4240:
+                            break;
+                        case uint cast_cd4240:
+                            break;
+                        case ulong cast_cd4240:
+                            break;
+                        case ushort cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _terminationGracePeriodSeconds = value;
+            }
+        }
+
         private object? _timezone;
 
         /// <remarks>
@@ -1035,6 +1977,44 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
                     }
                 }
                 _timezone = value;
+            }
+        }
+
+        private object? _tomcatConfig;
+
+        /// <remarks>
+        /// <strong>Property</strong>: tomcatConfig: Tomcat file configuration, set to "" or "{}" to delete the configuration:
+        /// - port: Ports in the range of 1024 to 65535 require Root privileges to operate on ports below 1024 Because the container is configured with Admin access, please specify a port greater than 1024. If not configured, it defaults to 8080.
+        /// - contextPath: The access path, defaults to the root directory "\/"
+        /// - maxThreads: This config the number of connections in the pool; the default is 400.
+        /// - uriEncoding: Tomcat's encoding formats, including UTF-8, ISO-8859-1, GBK, and GB2312 If not set, it defaults to ISO-8859-1.
+        /// - useBodyEncodingForUri: Whether to useBodyEncoding for URL (defaults to true).
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tomcatConfig", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? TomcatConfig
+        {
+            get => _tomcatConfig;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _tomcatConfig = value;
             }
         }
 

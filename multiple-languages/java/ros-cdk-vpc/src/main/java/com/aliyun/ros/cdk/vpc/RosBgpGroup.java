@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::BgpGroup</code>, which is used to create a Border Gateway Protocol (BGP) (Multi-ISP) group for a specified virtual border router (VBR).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.653Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:24.708Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosBgpGroup")
 public class RosBgpGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -139,6 +139,24 @@ public class RosBgpGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIpVersion() {
+        return software.amazon.jsii.Kernel.get(this, "ipVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIpVersion(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "ipVersion", value);
+    }
+
+    /**
+     */
+    public void setIpVersion(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ipVersion", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getIsFakeAsn() {
         return software.amazon.jsii.Kernel.get(this, "isFakeAsn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -189,6 +207,24 @@ public class RosBgpGroup extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "name", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRouteQuota() {
+        return software.amazon.jsii.Kernel.get(this, "routeQuota", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRouteQuota(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "routeQuota", value);
+    }
+
+    /**
+     */
+    public void setRouteQuota(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "routeQuota", value);
     }
 
     /**
@@ -287,6 +323,23 @@ public class RosBgpGroup extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param ipVersion This parameter is required.
+         */
+        public Builder ipVersion(final java.lang.String ipVersion) {
+            this.props.ipVersion(ipVersion);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ipVersion This parameter is required.
+         */
+        public Builder ipVersion(final com.aliyun.ros.cdk.core.IResolvable ipVersion) {
+            this.props.ipVersion(ipVersion);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param isFakeAsn This parameter is required.
          */
         public Builder isFakeAsn(final java.lang.Boolean isFakeAsn) {
@@ -333,6 +386,23 @@ public class RosBgpGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param routeQuota This parameter is required.
+         */
+        public Builder routeQuota(final java.lang.Number routeQuota) {
+            this.props.routeQuota(routeQuota);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param routeQuota This parameter is required.
+         */
+        public Builder routeQuota(final com.aliyun.ros.cdk.core.IResolvable routeQuota) {
+            this.props.routeQuota(routeQuota);
             return this;
         }
 

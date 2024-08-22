@@ -85,12 +85,12 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
         RosRulePropsValidator(properties).assertSuccess();
     }
     return {
-      EventBusName: ros.stringToRosTemplate(properties.eventBusName),
-      FilterPattern: ros.hashMapper(ros.objectToRosTemplate)(properties.filterPattern),
-      RuleName: ros.stringToRosTemplate(properties.ruleName),
-      Targets: ros.listMapper(rosRuleTargetsPropertyToRosTemplate)(properties.targets),
-      Description: ros.stringToRosTemplate(properties.description),
-      Status: ros.stringToRosTemplate(properties.status),
+      'EventBusName': ros.stringToRosTemplate(properties.eventBusName),
+      'FilterPattern': ros.hashMapper(ros.objectToRosTemplate)(properties.filterPattern),
+      'RuleName': ros.stringToRosTemplate(properties.ruleName),
+      'Targets': ros.listMapper(rosRuleTargetsPropertyToRosTemplate)(properties.targets),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Status': ros.stringToRosTemplate(properties.status),
     };
 }
 
@@ -246,10 +246,10 @@ function rosRuleParamListPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosRule_ParamListPropertyValidator(properties).assertSuccess();
     return {
-      Form: ros.stringToRosTemplate(properties.form),
-      Value: ros.stringToRosTemplate(properties.value),
-      ResourceKey: ros.stringToRosTemplate(properties.resourceKey),
-      Template: ros.stringToRosTemplate(properties.template),
+      'Form': ros.stringToRosTemplate(properties.form),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'ResourceKey': ros.stringToRosTemplate(properties.resourceKey),
+      'Template': ros.stringToRosTemplate(properties.template),
     };
 }
 
@@ -271,13 +271,13 @@ export namespace RosRule {
          */
         readonly endpoint: string | ros.IResolvable;
         /**
-         * @Property id: The custom ID of the event target.
-         */
-        readonly id: string | ros.IResolvable;
-        /**
          * @Property paramList: The parameters that the event passes.
          */
         readonly paramList: Array<RosRule.ParamListProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property identity: The custom ID of the event target.
+         */
+        readonly identity: string | ros.IResolvable;
     }
 }
 /**
@@ -295,8 +295,6 @@ function RosRule_TargetsPropertyValidator(properties: any): ros.ValidationResult
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
     errors.collect(ros.propertyValidator('endpoint', ros.requiredValidator)(properties.endpoint));
     errors.collect(ros.propertyValidator('endpoint', ros.validateString)(properties.endpoint));
-    errors.collect(ros.propertyValidator('id', ros.requiredValidator)(properties.id));
-    errors.collect(ros.propertyValidator('id', ros.validateString)(properties.id));
     errors.collect(ros.propertyValidator('paramList', ros.requiredValidator)(properties.paramList));
     if(properties.paramList && (Array.isArray(properties.paramList) || (typeof properties.paramList) === 'string')) {
         errors.collect(ros.propertyValidator('paramList', ros.validateLength)({
@@ -306,6 +304,8 @@ function RosRule_TargetsPropertyValidator(properties: any): ros.ValidationResult
           }));
     }
     errors.collect(ros.propertyValidator('paramList', ros.listValidator(RosRule_ParamListPropertyValidator))(properties.paramList));
+    errors.collect(ros.propertyValidator('identity', ros.requiredValidator)(properties.identity));
+    errors.collect(ros.propertyValidator('identity', ros.validateString)(properties.identity));
     return errors.wrap('supplied properties not correct for "TargetsProperty"');
 }
 
@@ -321,10 +321,10 @@ function rosRuleTargetsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosRule_TargetsPropertyValidator(properties).assertSuccess();
     return {
-      PushRetryStrategy: ros.stringToRosTemplate(properties.pushRetryStrategy),
-      Type: ros.stringToRosTemplate(properties.type),
-      Endpoint: ros.stringToRosTemplate(properties.endpoint),
-      Id: ros.stringToRosTemplate(properties.id),
-      ParamList: ros.listMapper(rosRuleParamListPropertyToRosTemplate)(properties.paramList),
+      'PushRetryStrategy': ros.stringToRosTemplate(properties.pushRetryStrategy),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'Endpoint': ros.stringToRosTemplate(properties.endpoint),
+      'ParamList': ros.listMapper(rosRuleParamListPropertyToRosTemplate)(properties.paramList),
+      'Id': ros.stringToRosTemplate(properties.identity),
     };
 }

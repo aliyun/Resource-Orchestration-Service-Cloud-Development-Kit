@@ -5,8 +5,8 @@ export * from './dbcluster';
 export * from './dbclusteraccesswhitelist';
 export * from './dbclusterendpoint';
 export * from './dbclusterendpointaddress';
-export * from './dbinstance';
 export * from './dbnodes';
+export * from './database';
 export * from './globaldatabasenetwork';
 export * from './parametergroup';
 

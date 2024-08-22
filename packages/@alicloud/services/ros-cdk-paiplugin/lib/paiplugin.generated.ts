@@ -49,8 +49,8 @@ function rosCampaignPropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosCampaignPropsValidator(properties).assertSuccess();
     }
     return {
-      Name: ros.stringToRosTemplate(properties.name),
-      Remark: ros.stringToRosTemplate(properties.remark),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'Remark': ros.stringToRosTemplate(properties.remark),
     };
 }
 
@@ -204,15 +204,15 @@ function rosInferenceJobPropsToRosTemplate(properties: any, enableResourceProper
         RosInferenceJobPropsValidator(properties).assertSuccess();
     }
     return {
-      Algorithm: ros.stringToRosTemplate(properties.algorithm),
-      CampaignId: ros.stringToRosTemplate(properties.campaignId),
-      DataPath: ros.stringToRosTemplate(properties.dataPath),
-      Name: ros.stringToRosTemplate(properties.name),
-      TargetPath: ros.stringToRosTemplate(properties.targetPath),
-      TrainingJobId: ros.stringToRosTemplate(properties.trainingJobId),
-      UserConfig: ros.hashMapper(ros.objectToRosTemplate)(properties.userConfig),
-      Remark: ros.stringToRosTemplate(properties.remark),
-      WaitForInferenceFinish: ros.booleanToRosTemplate(properties.waitForInferenceFinish),
+      'Algorithm': ros.stringToRosTemplate(properties.algorithm),
+      'CampaignId': ros.stringToRosTemplate(properties.campaignId),
+      'DataPath': ros.stringToRosTemplate(properties.dataPath),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'TargetPath': ros.stringToRosTemplate(properties.targetPath),
+      'TrainingJobId': ros.stringToRosTemplate(properties.trainingJobId),
+      'UserConfig': ros.hashMapper(ros.objectToRosTemplate)(properties.userConfig),
+      'Remark': ros.stringToRosTemplate(properties.remark),
+      'WaitForInferenceFinish': ros.booleanToRosTemplate(properties.waitForInferenceFinish),
     };
 }
 
@@ -407,13 +407,13 @@ function rosTrainingJobPropsToRosTemplate(properties: any, enableResourcePropert
         RosTrainingJobPropsValidator(properties).assertSuccess();
     }
     return {
-      Algorithm: ros.stringToRosTemplate(properties.algorithm),
-      CampaignId: ros.stringToRosTemplate(properties.campaignId),
-      DataPath: ros.stringToRosTemplate(properties.dataPath),
-      Name: ros.stringToRosTemplate(properties.name),
-      UserConfig: ros.hashMapper(ros.objectToRosTemplate)(properties.userConfig),
-      Remark: ros.stringToRosTemplate(properties.remark),
-      WaitForTrainingFinish: ros.booleanToRosTemplate(properties.waitForTrainingFinish),
+      'Algorithm': ros.stringToRosTemplate(properties.algorithm),
+      'CampaignId': ros.stringToRosTemplate(properties.campaignId),
+      'DataPath': ros.stringToRosTemplate(properties.dataPath),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'UserConfig': ros.hashMapper(ros.objectToRosTemplate)(properties.userConfig),
+      'Remark': ros.stringToRosTemplate(properties.remark),
+      'WaitForTrainingFinish': ros.booleanToRosTemplate(properties.waitForTrainingFinish),
     };
 }
 

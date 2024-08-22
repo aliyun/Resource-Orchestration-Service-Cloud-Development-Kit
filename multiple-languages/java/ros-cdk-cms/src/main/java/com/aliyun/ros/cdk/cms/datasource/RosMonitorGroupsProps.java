@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cms.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-monitorgroups
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:05.209Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:18.727Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.datasource.RosMonitorGroupsProps")
 @software.amazon.jsii.Jsii.Proxy(RosMonitorGroupsProps.Jsii$Proxy.class)
 public interface RosMonitorGroupsProps extends software.amazon.jsii.JsiiSerializable {
@@ -30,6 +30,12 @@ public interface RosMonitorGroupsProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getType() {
         return null;
     }
@@ -47,6 +53,7 @@ public interface RosMonitorGroupsProps extends software.amazon.jsii.JsiiSerializ
         java.lang.Object dynamicTagRuleId;
         java.lang.Object groupId;
         java.lang.Object monitorGroupName;
+        java.lang.Object refreshOptions;
         java.lang.Object type;
 
         /**
@@ -110,6 +117,26 @@ public interface RosMonitorGroupsProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosMonitorGroupsProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosMonitorGroupsProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosMonitorGroupsProps#getType}
          * @param type the value to be set.
          * @return {@code this}
@@ -148,6 +175,7 @@ public interface RosMonitorGroupsProps extends software.amazon.jsii.JsiiSerializ
         private final java.lang.Object dynamicTagRuleId;
         private final java.lang.Object groupId;
         private final java.lang.Object monitorGroupName;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object type;
 
         /**
@@ -159,6 +187,7 @@ public interface RosMonitorGroupsProps extends software.amazon.jsii.JsiiSerializ
             this.dynamicTagRuleId = software.amazon.jsii.Kernel.get(this, "dynamicTagRuleId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.monitorGroupName = software.amazon.jsii.Kernel.get(this, "monitorGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -170,6 +199,7 @@ public interface RosMonitorGroupsProps extends software.amazon.jsii.JsiiSerializ
             this.dynamicTagRuleId = builder.dynamicTagRuleId;
             this.groupId = builder.groupId;
             this.monitorGroupName = builder.monitorGroupName;
+            this.refreshOptions = builder.refreshOptions;
             this.type = builder.type;
         }
 
@@ -186,6 +216,11 @@ public interface RosMonitorGroupsProps extends software.amazon.jsii.JsiiSerializ
         @Override
         public final java.lang.Object getMonitorGroupName() {
             return this.monitorGroupName;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -207,6 +242,9 @@ public interface RosMonitorGroupsProps extends software.amazon.jsii.JsiiSerializ
             }
             if (this.getMonitorGroupName() != null) {
                 data.set("monitorGroupName", om.valueToTree(this.getMonitorGroupName()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
             if (this.getType() != null) {
                 data.set("type", om.valueToTree(this.getType()));
@@ -232,6 +270,7 @@ public interface RosMonitorGroupsProps extends software.amazon.jsii.JsiiSerializ
             if (this.dynamicTagRuleId != null ? !this.dynamicTagRuleId.equals(that.dynamicTagRuleId) : that.dynamicTagRuleId != null) return false;
             if (this.groupId != null ? !this.groupId.equals(that.groupId) : that.groupId != null) return false;
             if (this.monitorGroupName != null ? !this.monitorGroupName.equals(that.monitorGroupName) : that.monitorGroupName != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             return this.type != null ? this.type.equals(that.type) : that.type == null;
         }
 
@@ -240,6 +279,7 @@ public interface RosMonitorGroupsProps extends software.amazon.jsii.JsiiSerializ
             int result = this.dynamicTagRuleId != null ? this.dynamicTagRuleId.hashCode() : 0;
             result = 31 * result + (this.groupId != null ? this.groupId.hashCode() : 0);
             result = 31 * result + (this.monitorGroupName != null ? this.monitorGroupName.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.type != null ? this.type.hashCode() : 0);
             return result;
         }

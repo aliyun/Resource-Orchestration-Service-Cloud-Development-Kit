@@ -31,6 +31,14 @@ export interface StackInstanceProps {
      * Property outputOption: Whether to return the Outputs parameter resource stack output list.
      */
     readonly outputOption?: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -121,6 +129,7 @@ export class StackInstance extends ros.Resource {
             stackGroupName: props.stackGroupName,
             stackInstanceRegionId: props.stackInstanceRegionId,
             outputOption: props.outputOption,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosStackInstance;
         this.attrAccountId = rosStackInstance.attrAccountId;

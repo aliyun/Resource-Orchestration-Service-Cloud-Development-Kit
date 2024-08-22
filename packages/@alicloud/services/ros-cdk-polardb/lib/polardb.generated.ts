@@ -65,10 +65,10 @@ function rosAITaskPropsToRosTemplate(properties: any, enableResourcePropertyCons
         RosAITaskPropsValidator(properties).assertSuccess();
     }
     return {
-      DBClusterId: ros.stringToRosTemplate(properties.dbClusterId),
-      Password: ros.stringToRosTemplate(properties.password),
-      Username: ros.stringToRosTemplate(properties.username),
-      NodeType: ros.stringToRosTemplate(properties.nodeType),
+      'DBClusterId': ros.stringToRosTemplate(properties.dbClusterId),
+      'Password': ros.stringToRosTemplate(properties.password),
+      'Username': ros.stringToRosTemplate(properties.username),
+      'NodeType': ros.stringToRosTemplate(properties.nodeType),
     };
 }
 
@@ -267,13 +267,13 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosAccountPropsValidator(properties).assertSuccess();
     }
     return {
-      AccountName: ros.stringToRosTemplate(properties.accountName),
-      AccountPassword: ros.stringToRosTemplate(properties.accountPassword),
-      DBClusterId: ros.stringToRosTemplate(properties.dbClusterId),
-      AccountDescription: ros.stringToRosTemplate(properties.accountDescription),
-      AccountPrivilege: ros.stringToRosTemplate(properties.accountPrivilege),
-      AccountType: ros.stringToRosTemplate(properties.accountType),
-      DBName: ros.stringToRosTemplate(properties.dbName),
+      'AccountName': ros.stringToRosTemplate(properties.accountName),
+      'AccountPassword': ros.stringToRosTemplate(properties.accountPassword),
+      'DBClusterId': ros.stringToRosTemplate(properties.dbClusterId),
+      'AccountDescription': ros.stringToRosTemplate(properties.accountDescription),
+      'AccountPrivilege': ros.stringToRosTemplate(properties.accountPrivilege),
+      'AccountType': ros.stringToRosTemplate(properties.accountType),
+      'DBName': ros.stringToRosTemplate(properties.dbName),
     };
 }
 
@@ -470,10 +470,10 @@ function rosAccountPrivilegePropsToRosTemplate(properties: any, enableResourcePr
         RosAccountPrivilegePropsValidator(properties).assertSuccess();
     }
     return {
-      AccountName: ros.stringToRosTemplate(properties.accountName),
-      AccountPrivilege: ros.stringToRosTemplate(properties.accountPrivilege),
-      DBClusterId: ros.stringToRosTemplate(properties.dbClusterId),
-      DBName: ros.stringToRosTemplate(properties.dbName),
+      'AccountName': ros.stringToRosTemplate(properties.accountName),
+      'AccountPrivilege': ros.stringToRosTemplate(properties.accountPrivilege),
+      'DBClusterId': ros.stringToRosTemplate(properties.dbClusterId),
+      'DBName': ros.stringToRosTemplate(properties.dbName),
     };
 }
 
@@ -1118,59 +1118,59 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
         RosDBClusterPropsValidator(properties).assertSuccess();
     }
     return {
-      DBNodeClass: ros.stringToRosTemplate(properties.dbNodeClass),
-      DBType: ros.stringToRosTemplate(properties.dbType),
-      DBVersion: ros.stringToRosTemplate(properties.dbVersion),
-      PayType: ros.stringToRosTemplate(properties.payType),
-      AllowShutDown: ros.booleanToRosTemplate(properties.allowShutDown),
-      Architecture: ros.stringToRosTemplate(properties.architecture),
-      AutoRenewPeriod: ros.numberToRosTemplate(properties.autoRenewPeriod),
-      BackupRetentionPolicyOnClusterDeletion: ros.stringToRosTemplate(properties.backupRetentionPolicyOnClusterDeletion),
-      CloneDataPoint: ros.stringToRosTemplate(properties.cloneDataPoint),
-      ClusterNetworkType: ros.stringToRosTemplate(properties.clusterNetworkType),
-      ColdStorageOption: rosDBClusterColdStorageOptionPropertyToRosTemplate(properties.coldStorageOption),
-      CreationCategory: ros.stringToRosTemplate(properties.creationCategory),
-      CreationOption: ros.stringToRosTemplate(properties.creationOption),
-      DBClusterDescription: ros.stringToRosTemplate(properties.dbClusterDescription),
-      DBClusterParameters: rosDBClusterDBClusterParametersPropertyToRosTemplate(properties.dbClusterParameters),
-      DBMinorVersion: ros.stringToRosTemplate(properties.dbMinorVersion),
-      DBNodeNum: ros.numberToRosTemplate(properties.dbNodeNum),
-      DefaultTimeZone: ros.stringToRosTemplate(properties.defaultTimeZone),
-      GDNId: ros.stringToRosTemplate(properties.gdnId),
-      HotStandbyCluster: ros.stringToRosTemplate(properties.hotStandbyCluster),
-      LoosePolarLogBin: ros.stringToRosTemplate(properties.loosePolarLogBin),
-      LooseXEngine: ros.stringToRosTemplate(properties.looseXEngine),
-      LooseXEngineUseMemoryPct: ros.numberToRosTemplate(properties.looseXEngineUseMemoryPct),
-      LowerCaseTableNames: ros.numberToRosTemplate(properties.lowerCaseTableNames),
-      MaintainTime: ros.stringToRosTemplate(properties.maintainTime),
-      ParameterGroupId: ros.stringToRosTemplate(properties.parameterGroupId),
-      Period: ros.numberToRosTemplate(properties.period),
-      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
-      ProxyClass: ros.stringToRosTemplate(properties.proxyClass),
-      ProxyType: ros.stringToRosTemplate(properties.proxyType),
-      RenewalStatus: ros.stringToRosTemplate(properties.renewalStatus),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      RestartMasterNode: ros.booleanToRosTemplate(properties.restartMasterNode),
-      ScaleMax: ros.numberToRosTemplate(properties.scaleMax),
-      ScaleMin: ros.numberToRosTemplate(properties.scaleMin),
-      ScaleRoNumMax: ros.numberToRosTemplate(properties.scaleRoNumMax),
-      ScaleRoNumMin: ros.numberToRosTemplate(properties.scaleRoNumMin),
-      SecurityGroupIds: ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
-      SecurityIPList: ros.stringToRosTemplate(properties.securityIpList),
-      ServerlessType: ros.stringToRosTemplate(properties.serverlessType),
-      SourceResourceId: ros.stringToRosTemplate(properties.sourceResourceId),
-      StandbyAZ: ros.stringToRosTemplate(properties.standbyAz),
-      StorageAutoScale: ros.stringToRosTemplate(properties.storageAutoScale),
-      StoragePayType: ros.stringToRosTemplate(properties.storagePayType),
-      StorageSpace: ros.numberToRosTemplate(properties.storageSpace),
-      StorageType: ros.stringToRosTemplate(properties.storageType),
-      StorageUpperBound: ros.numberToRosTemplate(properties.storageUpperBound),
-      StrictConsistency: ros.stringToRosTemplate(properties.strictConsistency),
-      Tags: ros.listMapper(rosDBClusterTagsPropertyToRosTemplate)(properties.tags),
-      TDEStatus: ros.booleanToRosTemplate(properties.tdeStatus),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      'DBNodeClass': ros.stringToRosTemplate(properties.dbNodeClass),
+      'DBType': ros.stringToRosTemplate(properties.dbType),
+      'DBVersion': ros.stringToRosTemplate(properties.dbVersion),
+      'PayType': ros.stringToRosTemplate(properties.payType),
+      'AllowShutDown': ros.booleanToRosTemplate(properties.allowShutDown),
+      'Architecture': ros.stringToRosTemplate(properties.architecture),
+      'AutoRenewPeriod': ros.numberToRosTemplate(properties.autoRenewPeriod),
+      'BackupRetentionPolicyOnClusterDeletion': ros.stringToRosTemplate(properties.backupRetentionPolicyOnClusterDeletion),
+      'CloneDataPoint': ros.stringToRosTemplate(properties.cloneDataPoint),
+      'ClusterNetworkType': ros.stringToRosTemplate(properties.clusterNetworkType),
+      'ColdStorageOption': rosDBClusterColdStorageOptionPropertyToRosTemplate(properties.coldStorageOption),
+      'CreationCategory': ros.stringToRosTemplate(properties.creationCategory),
+      'CreationOption': ros.stringToRosTemplate(properties.creationOption),
+      'DBClusterDescription': ros.stringToRosTemplate(properties.dbClusterDescription),
+      'DBClusterParameters': rosDBClusterDBClusterParametersPropertyToRosTemplate(properties.dbClusterParameters),
+      'DBMinorVersion': ros.stringToRosTemplate(properties.dbMinorVersion),
+      'DBNodeNum': ros.numberToRosTemplate(properties.dbNodeNum),
+      'DefaultTimeZone': ros.stringToRosTemplate(properties.defaultTimeZone),
+      'GDNId': ros.stringToRosTemplate(properties.gdnId),
+      'HotStandbyCluster': ros.stringToRosTemplate(properties.hotStandbyCluster),
+      'LoosePolarLogBin': ros.stringToRosTemplate(properties.loosePolarLogBin),
+      'LooseXEngine': ros.stringToRosTemplate(properties.looseXEngine),
+      'LooseXEngineUseMemoryPct': ros.numberToRosTemplate(properties.looseXEngineUseMemoryPct),
+      'LowerCaseTableNames': ros.numberToRosTemplate(properties.lowerCaseTableNames),
+      'MaintainTime': ros.stringToRosTemplate(properties.maintainTime),
+      'ParameterGroupId': ros.stringToRosTemplate(properties.parameterGroupId),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
+      'ProxyClass': ros.stringToRosTemplate(properties.proxyClass),
+      'ProxyType': ros.stringToRosTemplate(properties.proxyType),
+      'RenewalStatus': ros.stringToRosTemplate(properties.renewalStatus),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'RestartMasterNode': ros.booleanToRosTemplate(properties.restartMasterNode),
+      'ScaleMax': ros.numberToRosTemplate(properties.scaleMax),
+      'ScaleMin': ros.numberToRosTemplate(properties.scaleMin),
+      'ScaleRoNumMax': ros.numberToRosTemplate(properties.scaleRoNumMax),
+      'ScaleRoNumMin': ros.numberToRosTemplate(properties.scaleRoNumMin),
+      'SecurityGroupIds': ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
+      'SecurityIPList': ros.stringToRosTemplate(properties.securityIpList),
+      'ServerlessType': ros.stringToRosTemplate(properties.serverlessType),
+      'SourceResourceId': ros.stringToRosTemplate(properties.sourceResourceId),
+      'StandbyAZ': ros.stringToRosTemplate(properties.standbyAz),
+      'StorageAutoScale': ros.stringToRosTemplate(properties.storageAutoScale),
+      'StoragePayType': ros.stringToRosTemplate(properties.storagePayType),
+      'StorageSpace': ros.numberToRosTemplate(properties.storageSpace),
+      'StorageType': ros.stringToRosTemplate(properties.storageType),
+      'StorageUpperBound': ros.numberToRosTemplate(properties.storageUpperBound),
+      'StrictConsistency': ros.stringToRosTemplate(properties.strictConsistency),
+      'Tags': ros.listMapper(rosDBClusterTagsPropertyToRosTemplate)(properties.tags),
+      'TDEStatus': ros.booleanToRosTemplate(properties.tdeStatus),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
     };
 }
 
@@ -1209,6 +1209,11 @@ export class RosDBCluster extends ros.RosResource {
      * @Attribute CustomEndpointIds: The custom endpoint IDs of the db cluster.
      */
     public readonly attrCustomEndpointIds: ros.IResolvable;
+
+    /**
+     * @Attribute DBClusterDescription: The description of the db cluster.
+     */
+    public readonly attrDbClusterDescription: ros.IResolvable;
 
     /**
      * @Attribute DBClusterId: The ID of the ApsaraDB for POLARDB cluster.
@@ -1631,6 +1636,7 @@ export class RosDBCluster extends ros.RosResource {
         this.attrColdStorageInstanceId = this.getAtt('ColdStorageInstanceId');
         this.attrCustomConnectionStrings = this.getAtt('CustomConnectionStrings');
         this.attrCustomEndpointIds = this.getAtt('CustomEndpointIds');
+        this.attrDbClusterDescription = this.getAtt('DBClusterDescription');
         this.attrDbClusterId = this.getAtt('DBClusterId');
         this.attrDbNodeIds = this.getAtt('DBNodeIds');
         this.attrOrderId = this.getAtt('OrderId');
@@ -1808,8 +1814,8 @@ function rosDBClusterColdStorageOptionPropertyToRosTemplate(properties: any): an
     if (!ros.canInspect(properties)) { return properties; }
     RosDBCluster_ColdStorageOptionPropertyValidator(properties).assertSuccess();
     return {
-      Description: ros.stringToRosTemplate(properties.description),
-      Enable: ros.booleanToRosTemplate(properties.enable),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Enable': ros.booleanToRosTemplate(properties.enable),
     };
 }
 
@@ -1877,8 +1883,8 @@ function rosDBClusterDBClusterParametersPropertyToRosTemplate(properties: any): 
     if (!ros.canInspect(properties)) { return properties; }
     RosDBCluster_DBClusterParametersPropertyValidator(properties).assertSuccess();
     return {
-      Parameters: ros.stringToRosTemplate(properties.parameters),
-      EffectiveTime: ros.stringToRosTemplate(properties.effectiveTime),
+      'Parameters': ros.stringToRosTemplate(properties.parameters),
+      'EffectiveTime': ros.stringToRosTemplate(properties.effectiveTime),
     };
 }
 
@@ -1925,8 +1931,8 @@ function rosDBClusterTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosDBCluster_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -1999,9 +2005,9 @@ function rosDBClusterAccessWhiteListPropsToRosTemplate(properties: any, enableRe
         RosDBClusterAccessWhiteListPropsValidator(properties).assertSuccess();
     }
     return {
-      DBClusterId: ros.stringToRosTemplate(properties.dbClusterId),
-      SecurityIps: ros.stringToRosTemplate(properties.securityIps),
-      DBClusterIPArrayName: ros.stringToRosTemplate(properties.dbClusterIpArrayName),
+      'DBClusterId': ros.stringToRosTemplate(properties.dbClusterId),
+      'SecurityIps': ros.stringToRosTemplate(properties.securityIps),
+      'DBClusterIPArrayName': ros.stringToRosTemplate(properties.dbClusterIpArrayName),
     };
 }
 
@@ -2171,12 +2177,12 @@ function rosDBClusterEndpointPropsToRosTemplate(properties: any, enableResourceP
         RosDBClusterEndpointPropsValidator(properties).assertSuccess();
     }
     return {
-      DBClusterId: ros.stringToRosTemplate(properties.dbClusterId),
-      AutoAddNewNodes: ros.stringToRosTemplate(properties.autoAddNewNodes),
-      EndpointConfig: rosDBClusterEndpointEndpointConfigPropertyToRosTemplate(properties.endpointConfig),
-      EndpointType: ros.stringToRosTemplate(properties.endpointType),
-      Nodes: ros.listMapper(ros.objectToRosTemplate)(properties.nodes),
-      ReadWriteMode: ros.stringToRosTemplate(properties.readWriteMode),
+      'DBClusterId': ros.stringToRosTemplate(properties.dbClusterId),
+      'AutoAddNewNodes': ros.stringToRosTemplate(properties.autoAddNewNodes),
+      'EndpointConfig': rosDBClusterEndpointEndpointConfigPropertyToRosTemplate(properties.endpointConfig),
+      'EndpointType': ros.stringToRosTemplate(properties.endpointType),
+      'Nodes': ros.listMapper(ros.objectToRosTemplate)(properties.nodes),
+      'ReadWriteMode': ros.stringToRosTemplate(properties.readWriteMode),
     };
 }
 
@@ -2390,16 +2396,16 @@ function rosDBClusterEndpointEndpointConfigPropertyToRosTemplate(properties: any
     if (!ros.canInspect(properties)) { return properties; }
     RosDBClusterEndpoint_EndpointConfigPropertyValidator(properties).assertSuccess();
     return {
-      DistributedTransaction: ros.stringToRosTemplate(properties.distributedTransaction),
-      ConsistTimeoutAction: ros.stringToRosTemplate(properties.consistTimeoutAction),
-      ConsistTimeout: ros.stringToRosTemplate(properties.consistTimeout),
-      ConnectionPersist: ros.stringToRosTemplate(properties.connectionPersist),
-      LoadBalancePolicy: ros.stringToRosTemplate(properties.loadBalancePolicy),
-      ConsistLevel: ros.stringToRosTemplate(properties.consistLevel),
-      EnableOverloadThrottle: ros.stringToRosTemplate(properties.enableOverloadThrottle),
-      MasterAcceptReads: ros.stringToRosTemplate(properties.masterAcceptReads),
-      MaxParallelDegree: ros.stringToRosTemplate(properties.maxParallelDegree),
-      EnableHtapImci: ros.stringToRosTemplate(properties.enableHtapImci),
+      'DistributedTransaction': ros.stringToRosTemplate(properties.distributedTransaction),
+      'ConsistTimeoutAction': ros.stringToRosTemplate(properties.consistTimeoutAction),
+      'ConsistTimeout': ros.stringToRosTemplate(properties.consistTimeout),
+      'ConnectionPersist': ros.stringToRosTemplate(properties.connectionPersist),
+      'LoadBalancePolicy': ros.stringToRosTemplate(properties.loadBalancePolicy),
+      'ConsistLevel': ros.stringToRosTemplate(properties.consistLevel),
+      'EnableOverloadThrottle': ros.stringToRosTemplate(properties.enableOverloadThrottle),
+      'MasterAcceptReads': ros.stringToRosTemplate(properties.masterAcceptReads),
+      'MaxParallelDegree': ros.stringToRosTemplate(properties.maxParallelDegree),
+      'EnableHtapImci': ros.stringToRosTemplate(properties.enableHtapImci),
     };
 }
 
@@ -2480,10 +2486,10 @@ function rosDBClusterEndpointAddressPropsToRosTemplate(properties: any, enableRe
         RosDBClusterEndpointAddressPropsValidator(properties).assertSuccess();
     }
     return {
-      DBClusterId: ros.stringToRosTemplate(properties.dbClusterId),
-      DBEndpointId: ros.stringToRosTemplate(properties.dbEndpointId),
-      ConnectionStringPrefix: ros.stringToRosTemplate(properties.connectionStringPrefix),
-      NetType: ros.stringToRosTemplate(properties.netType),
+      'DBClusterId': ros.stringToRosTemplate(properties.dbClusterId),
+      'DBEndpointId': ros.stringToRosTemplate(properties.dbEndpointId),
+      'ConnectionStringPrefix': ros.stringToRosTemplate(properties.connectionStringPrefix),
+      'NetType': ros.stringToRosTemplate(properties.netType),
     };
 }
 
@@ -2564,244 +2570,6 @@ export class RosDBClusterEndpointAddress extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosDBClusterEndpointAddressPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
-    }
-}
-
-/**
- * Properties for defining a `RosDBInstance`.
- * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbinstance
- */
-export interface RosDBInstanceProps {
-
-    /**
-     * @Property characterSetName: The character set of the database. For more information, see Character sets.
-     */
-    readonly characterSetName: string | ros.IResolvable;
-
-    /**
-     * @Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a database is to be created.
-     */
-    readonly dbClusterId: string | ros.IResolvable;
-
-    /**
-     * @Property dbName: The name of the database to be created. The name must comply with the following rules:
-     * It must start with a lowercase letter and consist of lowercase letters, digits, hyphens
-     * (-), and underscores (_).
-     * It must end with a letter or a digit. It can be up to 64 characters in length.
-     */
-    readonly dbName: string | ros.IResolvable;
-
-    /**
-     * @Property accountName: The name of the database account to be used.
-     */
-    readonly accountName?: string | ros.IResolvable;
-
-    /**
-     * @Property accountPrivilege: The permissions of the database account on the database. Valid values:
-     * ReadWrite: has read and write permissions on the database.
-     * ReadOnly: has the read-only permission on the database.
-     * DMLOnly: runs only data manipulation language (DML) statements.
-     * DDLOnly: runs only data definition language (DDL) statements.
-     * Default value: ReadWrite.
-     */
-    readonly accountPrivilege?: string | ros.IResolvable;
-
-    /**
-     * @Property collate: A locale setting that specifies the collation for newly created databases.
-     * The locale must be compatible with the character set set by the CharacterSetName parameter.When the cluster is PolarDB PostgreSQL (compatible with Oracle) or PolarDB PostgreSQL, this parameter is required; 
-     * when the cluster is PolarDB MySQL, this parameter is not supported.
-     */
-    readonly collate?: string | ros.IResolvable;
-
-    /**
-     * @Property ctype: A locale setting that specifies the character classification of the database.
-     * The locale must be compatible with the character set set by the CharacterSetName parameter.
-     * It is consistent with the incoming information of Collate.
-     * When the cluster is PolarDB PostgreSQL (compatible with Oracle) or PolarDB PostgreSQL, this parameter is required;
-     *  when the cluster is PolarDB MySQL, this parameter is optional.
-     */
-    readonly ctype?: string | ros.IResolvable;
-
-    /**
-     * @Property dbDescription: The description of the database. Valid values:
-     * It cannot start with http:\/\/ or https:\/\/.
-     * It must be 2 to 256 characters in length.
-     */
-    readonly dbDescription?: string | ros.IResolvable;
-}
-
-/**
- * Determine whether the given properties match those of a `RosDBInstanceProps`
- *
- * @param properties - the TypeScript properties of a `RosDBInstanceProps`
- *
- * @returns the result of the validation.
- */
-function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('characterSetName', ros.requiredValidator)(properties.characterSetName));
-    errors.collect(ros.propertyValidator('characterSetName', ros.validateString)(properties.characterSetName));
-    if(properties.accountPrivilege && (typeof properties.accountPrivilege) !== 'object') {
-        errors.collect(ros.propertyValidator('accountPrivilege', ros.validateAllowedValues)({
-          data: properties.accountPrivilege,
-          allowedValues: ["ReadWrite","ReadOnly","DMLOnly","DDLOnly"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('accountPrivilege', ros.validateString)(properties.accountPrivilege));
-    if(properties.dbDescription && (Array.isArray(properties.dbDescription) || (typeof properties.dbDescription) === 'string')) {
-        errors.collect(ros.propertyValidator('dbDescription', ros.validateLength)({
-            data: properties.dbDescription.length,
-            min: 2,
-            max: 256,
-          }));
-    }
-    errors.collect(ros.propertyValidator('dbDescription', ros.validateString)(properties.dbDescription));
-    errors.collect(ros.propertyValidator('dbClusterId', ros.requiredValidator)(properties.dbClusterId));
-    errors.collect(ros.propertyValidator('dbClusterId', ros.validateString)(properties.dbClusterId));
-    errors.collect(ros.propertyValidator('collate', ros.validateString)(properties.collate));
-    errors.collect(ros.propertyValidator('dbName', ros.requiredValidator)(properties.dbName));
-    if(properties.dbName && (typeof properties.dbName) !== 'object') {
-        errors.collect(ros.propertyValidator('dbName', ros.validateAllowedPattern)({
-          data: properties.dbName,
-          reg: /^[a-z0-9][-_a-z0-9]{0,63}(?<![-_]$)$/
-        }));
-    }
-    errors.collect(ros.propertyValidator('dbName', ros.validateString)(properties.dbName));
-    errors.collect(ros.propertyValidator('ctype', ros.validateString)(properties.ctype));
-    errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
-    return errors.wrap('supplied properties not correct for "RosDBInstanceProps"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::DBInstance` resource
- *
- * @param properties - the TypeScript properties of a `RosDBInstanceProps`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::DBInstance` resource.
- */
-// @ts-ignore TS6133
-function rosDBInstancePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    if(enableResourcePropertyConstraint) {
-        RosDBInstancePropsValidator(properties).assertSuccess();
-    }
-    return {
-      CharacterSetName: ros.stringToRosTemplate(properties.characterSetName),
-      DBClusterId: ros.stringToRosTemplate(properties.dbClusterId),
-      DBName: ros.stringToRosTemplate(properties.dbName),
-      AccountName: ros.stringToRosTemplate(properties.accountName),
-      AccountPrivilege: ros.stringToRosTemplate(properties.accountPrivilege),
-      Collate: ros.stringToRosTemplate(properties.collate),
-      Ctype: ros.stringToRosTemplate(properties.ctype),
-      DBDescription: ros.stringToRosTemplate(properties.dbDescription),
-    };
-}
-
-/**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBInstance`, which is used to create a database in a PolarDB cluster.
- * @Note This class does not contain additional functions, so it is recommended to use the `DBInstance` class instead of this class for a more convenient development experience.
- * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbinstance
- */
-export class RosDBInstance extends ros.RosResource {
-    /**
-     * The resource type name for this resource class.
-     */
-    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::POLARDB::DBInstance";
-
-    public enableResourcePropertyConstraint: boolean;
-
-
-    /**
-     * @Property characterSetName: The character set of the database. For more information, see Character sets.
-     */
-    public characterSetName: string | ros.IResolvable;
-
-    /**
-     * @Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a database is to be created.
-     */
-    public dbClusterId: string | ros.IResolvable;
-
-    /**
-     * @Property dbName: The name of the database to be created. The name must comply with the following rules:
-     * It must start with a lowercase letter and consist of lowercase letters, digits, hyphens
-     * (-), and underscores (_).
-     * It must end with a letter or a digit. It can be up to 64 characters in length.
-     */
-    public dbName: string | ros.IResolvable;
-
-    /**
-     * @Property accountName: The name of the database account to be used.
-     */
-    public accountName: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property accountPrivilege: The permissions of the database account on the database. Valid values:
-     * ReadWrite: has read and write permissions on the database.
-     * ReadOnly: has the read-only permission on the database.
-     * DMLOnly: runs only data manipulation language (DML) statements.
-     * DDLOnly: runs only data definition language (DDL) statements.
-     * Default value: ReadWrite.
-     */
-    public accountPrivilege: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property collate: A locale setting that specifies the collation for newly created databases.
-     * The locale must be compatible with the character set set by the CharacterSetName parameter.When the cluster is PolarDB PostgreSQL (compatible with Oracle) or PolarDB PostgreSQL, this parameter is required; 
-     * when the cluster is PolarDB MySQL, this parameter is not supported.
-     */
-    public collate: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property ctype: A locale setting that specifies the character classification of the database.
-     * The locale must be compatible with the character set set by the CharacterSetName parameter.
-     * It is consistent with the incoming information of Collate.
-     * When the cluster is PolarDB PostgreSQL (compatible with Oracle) or PolarDB PostgreSQL, this parameter is required;
-     *  when the cluster is PolarDB MySQL, this parameter is optional.
-     */
-    public ctype: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property dbDescription: The description of the database. Valid values:
-     * It cannot start with http:\/\/ or https:\/\/.
-     * It must be 2 to 256 characters in length.
-     */
-    public dbDescription: string | ros.IResolvable | undefined;
-
-    /**
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
-     */
-    constructor(scope: ros.Construct, id: string, props: RosDBInstanceProps, enableResourcePropertyConstraint: boolean) {
-        super(scope, id, { type: RosDBInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
-
-        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.characterSetName = props.characterSetName;
-        this.dbClusterId = props.dbClusterId;
-        this.dbName = props.dbName;
-        this.accountName = props.accountName;
-        this.accountPrivilege = props.accountPrivilege;
-        this.collate = props.collate;
-        this.ctype = props.ctype;
-        this.dbDescription = props.dbDescription;
-    }
-
-
-    protected get rosProperties(): { [key: string]: any }  {
-        return {
-            characterSetName: this.characterSetName,
-            dbClusterId: this.dbClusterId,
-            dbName: this.dbName,
-            accountName: this.accountName,
-            accountPrivilege: this.accountPrivilege,
-            collate: this.collate,
-            ctype: this.ctype,
-            dbDescription: this.dbDescription,
-        };
-    }
-    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
-        return rosDBInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 
@@ -2890,11 +2658,11 @@ function rosDBNodesPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosDBNodesPropsValidator(properties).assertSuccess();
     }
     return {
-      Amount: ros.numberToRosTemplate(properties.amount),
-      DBClusterId: ros.stringToRosTemplate(properties.dbClusterId),
-      DBNodeType: ros.stringToRosTemplate(properties.dbNodeType),
-      ImciSwitch: ros.stringToRosTemplate(properties.imciSwitch),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      'Amount': ros.numberToRosTemplate(properties.amount),
+      'DBClusterId': ros.stringToRosTemplate(properties.dbClusterId),
+      'DBNodeType': ros.stringToRosTemplate(properties.dbNodeType),
+      'ImciSwitch': ros.stringToRosTemplate(properties.imciSwitch),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
     };
 }
 
@@ -2981,6 +2749,244 @@ export class RosDBNodes extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosDatabase`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-database
+ */
+export interface RosDatabaseProps {
+
+    /**
+     * @Property characterSetName: The character set of the database. For more information, see Character sets.
+     */
+    readonly characterSetName: string | ros.IResolvable;
+
+    /**
+     * @Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a database is to be created.
+     */
+    readonly dbClusterId: string | ros.IResolvable;
+
+    /**
+     * @Property dbName: The name of the database to be created. The name must comply with the following rules:
+     * It must start with a lowercase letter and consist of lowercase letters, digits, hyphens
+     * (-), and underscores (_).
+     * It must end with a letter or a digit. It can be up to 64 characters in length.
+     */
+    readonly dbName: string | ros.IResolvable;
+
+    /**
+     * @Property accountName: The name of the database account to be used.
+     */
+    readonly accountName?: string | ros.IResolvable;
+
+    /**
+     * @Property accountPrivilege: The permissions of the database account on the database. Valid values:
+     * ReadWrite: has read and write permissions on the database.
+     * ReadOnly: has the read-only permission on the database.
+     * DMLOnly: runs only data manipulation language (DML) statements.
+     * DDLOnly: runs only data definition language (DDL) statements.
+     * Default value: ReadWrite.
+     */
+    readonly accountPrivilege?: string | ros.IResolvable;
+
+    /**
+     * @Property collate: A locale setting that specifies the collation for newly created databases.
+     * The locale must be compatible with the character set set by the CharacterSetName parameter.When the cluster is PolarDB PostgreSQL (compatible with Oracle) or PolarDB PostgreSQL, this parameter is required; 
+     * when the cluster is PolarDB MySQL, this parameter is not supported.
+     */
+    readonly collate?: string | ros.IResolvable;
+
+    /**
+     * @Property ctype: A locale setting that specifies the character classification of the database.
+     * The locale must be compatible with the character set set by the CharacterSetName parameter.
+     * It is consistent with the incoming information of Collate.
+     * When the cluster is PolarDB PostgreSQL (compatible with Oracle) or PolarDB PostgreSQL, this parameter is required;
+     *  when the cluster is PolarDB MySQL, this parameter is optional.
+     */
+    readonly ctype?: string | ros.IResolvable;
+
+    /**
+     * @Property dbDescription: The description of the database. Valid values:
+     * It cannot start with http:\/\/ or https:\/\/.
+     * It must be 2 to 256 characters in length.
+     */
+    readonly dbDescription?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosDatabaseProps`
+ *
+ * @param properties - the TypeScript properties of a `RosDatabaseProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosDatabasePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('characterSetName', ros.requiredValidator)(properties.characterSetName));
+    errors.collect(ros.propertyValidator('characterSetName', ros.validateString)(properties.characterSetName));
+    if(properties.accountPrivilege && (typeof properties.accountPrivilege) !== 'object') {
+        errors.collect(ros.propertyValidator('accountPrivilege', ros.validateAllowedValues)({
+          data: properties.accountPrivilege,
+          allowedValues: ["ReadWrite","ReadOnly","DMLOnly","DDLOnly"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('accountPrivilege', ros.validateString)(properties.accountPrivilege));
+    if(properties.dbDescription && (Array.isArray(properties.dbDescription) || (typeof properties.dbDescription) === 'string')) {
+        errors.collect(ros.propertyValidator('dbDescription', ros.validateLength)({
+            data: properties.dbDescription.length,
+            min: 2,
+            max: 256,
+          }));
+    }
+    errors.collect(ros.propertyValidator('dbDescription', ros.validateString)(properties.dbDescription));
+    errors.collect(ros.propertyValidator('dbClusterId', ros.requiredValidator)(properties.dbClusterId));
+    errors.collect(ros.propertyValidator('dbClusterId', ros.validateString)(properties.dbClusterId));
+    errors.collect(ros.propertyValidator('collate', ros.validateString)(properties.collate));
+    errors.collect(ros.propertyValidator('dbName', ros.requiredValidator)(properties.dbName));
+    if(properties.dbName && (typeof properties.dbName) !== 'object') {
+        errors.collect(ros.propertyValidator('dbName', ros.validateAllowedPattern)({
+          data: properties.dbName,
+          reg: /^[a-z0-9][-_a-z0-9]{0,63}(?<![-_]$)$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('dbName', ros.validateString)(properties.dbName));
+    errors.collect(ros.propertyValidator('ctype', ros.validateString)(properties.ctype));
+    errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
+    return errors.wrap('supplied properties not correct for "RosDatabaseProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::Database` resource
+ *
+ * @param properties - the TypeScript properties of a `RosDatabaseProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::Database` resource.
+ */
+// @ts-ignore TS6133
+function rosDatabasePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosDatabasePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'CharacterSetName': ros.stringToRosTemplate(properties.characterSetName),
+      'DBClusterId': ros.stringToRosTemplate(properties.dbClusterId),
+      'DBName': ros.stringToRosTemplate(properties.dbName),
+      'AccountName': ros.stringToRosTemplate(properties.accountName),
+      'AccountPrivilege': ros.stringToRosTemplate(properties.accountPrivilege),
+      'Collate': ros.stringToRosTemplate(properties.collate),
+      'Ctype': ros.stringToRosTemplate(properties.ctype),
+      'DBDescription': ros.stringToRosTemplate(properties.dbDescription),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::Database`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Database` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-database
+ */
+export class RosDatabase extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::POLARDB::Database";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property characterSetName: The character set of the database. For more information, see Character sets.
+     */
+    public characterSetName: string | ros.IResolvable;
+
+    /**
+     * @Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a database is to be created.
+     */
+    public dbClusterId: string | ros.IResolvable;
+
+    /**
+     * @Property dbName: The name of the database to be created. The name must comply with the following rules:
+     * It must start with a lowercase letter and consist of lowercase letters, digits, hyphens
+     * (-), and underscores (_).
+     * It must end with a letter or a digit. It can be up to 64 characters in length.
+     */
+    public dbName: string | ros.IResolvable;
+
+    /**
+     * @Property accountName: The name of the database account to be used.
+     */
+    public accountName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property accountPrivilege: The permissions of the database account on the database. Valid values:
+     * ReadWrite: has read and write permissions on the database.
+     * ReadOnly: has the read-only permission on the database.
+     * DMLOnly: runs only data manipulation language (DML) statements.
+     * DDLOnly: runs only data definition language (DDL) statements.
+     * Default value: ReadWrite.
+     */
+    public accountPrivilege: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property collate: A locale setting that specifies the collation for newly created databases.
+     * The locale must be compatible with the character set set by the CharacterSetName parameter.When the cluster is PolarDB PostgreSQL (compatible with Oracle) or PolarDB PostgreSQL, this parameter is required; 
+     * when the cluster is PolarDB MySQL, this parameter is not supported.
+     */
+    public collate: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ctype: A locale setting that specifies the character classification of the database.
+     * The locale must be compatible with the character set set by the CharacterSetName parameter.
+     * It is consistent with the incoming information of Collate.
+     * When the cluster is PolarDB PostgreSQL (compatible with Oracle) or PolarDB PostgreSQL, this parameter is required;
+     *  when the cluster is PolarDB MySQL, this parameter is optional.
+     */
+    public ctype: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property dbDescription: The description of the database. Valid values:
+     * It cannot start with http:\/\/ or https:\/\/.
+     * It must be 2 to 256 characters in length.
+     */
+    public dbDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosDatabaseProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosDatabase.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.characterSetName = props.characterSetName;
+        this.dbClusterId = props.dbClusterId;
+        this.dbName = props.dbName;
+        this.accountName = props.accountName;
+        this.accountPrivilege = props.accountPrivilege;
+        this.collate = props.collate;
+        this.ctype = props.ctype;
+        this.dbDescription = props.dbDescription;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            characterSetName: this.characterSetName,
+            dbClusterId: this.dbClusterId,
+            dbName: this.dbName,
+            accountName: this.accountName,
+            accountPrivilege: this.accountPrivilege,
+            collate: this.collate,
+            ctype: this.ctype,
+            dbDescription: this.dbDescription,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosDatabasePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosGlobalDatabaseNetwork`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-globaldatabasenetwork
  */
@@ -3033,9 +3039,9 @@ function rosGlobalDatabaseNetworkPropsToRosTemplate(properties: any, enableResou
         RosGlobalDatabaseNetworkPropsValidator(properties).assertSuccess();
     }
     return {
-      DbClusterId: ros.stringToRosTemplate(properties.dbClusterId),
-      GdnDescription: ros.stringToRosTemplate(properties.gdnDescription),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      'DbClusterId': ros.stringToRosTemplate(properties.dbClusterId),
+      'GdnDescription': ros.stringToRosTemplate(properties.gdnDescription),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
     };
 }
 
@@ -3211,12 +3217,12 @@ function rosParameterGroupPropsToRosTemplate(properties: any, enableResourceProp
         RosParameterGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      DbType: ros.stringToRosTemplate(properties.dbType),
-      DbVersion: ros.stringToRosTemplate(properties.dbVersion),
-      ParameterGroupName: ros.stringToRosTemplate(properties.parameterGroupName),
-      Parameters: ros.listMapper(rosParameterGroupParametersPropertyToRosTemplate)(properties.parameters),
-      ParameterGroupDesc: ros.stringToRosTemplate(properties.parameterGroupDesc),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      'DbType': ros.stringToRosTemplate(properties.dbType),
+      'DbVersion': ros.stringToRosTemplate(properties.dbVersion),
+      'ParameterGroupName': ros.stringToRosTemplate(properties.parameterGroupName),
+      'Parameters': ros.listMapper(rosParameterGroupParametersPropertyToRosTemplate)(properties.parameters),
+      'ParameterGroupDesc': ros.stringToRosTemplate(properties.parameterGroupDesc),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
     };
 }
 
@@ -3401,7 +3407,7 @@ function rosParameterGroupParametersPropertyToRosTemplate(properties: any): any 
     if (!ros.canInspect(properties)) { return properties; }
     RosParameterGroup_ParametersPropertyValidator(properties).assertSuccess();
     return {
-      ParamValue: ros.stringToRosTemplate(properties.paramValue),
-      ParamName: ros.stringToRosTemplate(properties.paramName),
+      'ParamValue': ros.stringToRosTemplate(properties.paramValue),
+      'ParamName': ros.stringToRosTemplate(properties.paramName),
     };
 }

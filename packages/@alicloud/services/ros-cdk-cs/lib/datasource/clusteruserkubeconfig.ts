@@ -23,6 +23,14 @@ export interface ClusterUserKubeconfigProps {
     readonly privateIpAddress?: boolean | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property temporaryDurationMinutes: The validity period of a temporary kubeconfig file. Unit: minutes. Valid values: 15 to 4320.
      * Note If you do not specify this parameter, the system automatically specifies a validity period, which is indicated by the expiration field in the response.
      */
@@ -71,6 +79,7 @@ export class ClusterUserKubeconfig extends ros.Resource {
             privateIpAddress: props.privateIpAddress,
             clusterId: props.clusterId,
             temporaryDurationMinutes: props.temporaryDurationMinutes,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosClusterUserKubeconfig;
         this.attrClusterId = rosClusterUserKubeconfig.attrClusterId;

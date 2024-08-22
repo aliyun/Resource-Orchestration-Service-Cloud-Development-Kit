@@ -45,6 +45,14 @@ export interface RouteEntriesProps {
     readonly nextHopType?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property routeEntryId: The ID of the route.
      */
     readonly routeEntryId?: string | ros.IResolvable;
@@ -106,6 +114,7 @@ export class RouteEntries extends ros.Resource {
             routeEntryType: props.routeEntryType,
             nextHopId: props.nextHopId,
             destinationCidrBlock: props.destinationCidrBlock,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosRouteEntries;
         this.attrRouteEntries = rosRouteEntries.attrRouteEntries;

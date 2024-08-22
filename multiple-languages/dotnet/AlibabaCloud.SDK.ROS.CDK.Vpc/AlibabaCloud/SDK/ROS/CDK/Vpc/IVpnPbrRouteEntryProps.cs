@@ -83,6 +83,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        /// <summary>Property priority: Policy priority for policy routing.</summary>
+        /// <remarks>
+        /// Range: 1-100 Default value: 10.
+        /// The smaller the policy priority number, the higher the priority of the policy route.
+        /// </remarks>
+        [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Priority
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `VpnPbrRouteEntry`.</summary>
         /// <remarks>
         /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnpbrrouteentry
@@ -156,6 +171,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             [JsiiOptional]
             [JsiiProperty(name: "overlayMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OverlayMode
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property priority: Policy priority for policy routing.</summary>
+            /// <remarks>
+            /// Range: 1-100 Default value: 10.
+            /// The smaller the policy priority number, the higher the priority of the policy route.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Priority
             {
                 get => GetInstanceProperty<object?>();
             }

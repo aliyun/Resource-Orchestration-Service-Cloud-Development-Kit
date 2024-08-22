@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.datahub;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DATAHUB::Project</code>, which is used to create a DataHub project.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:05.552Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:19.151Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.datahub.$Module.class, fqn = "@alicloud/ros-cdk-datahub.RosProject")
 public class RosProject extends com.aliyun.ros.cdk.core.RosResource {
 

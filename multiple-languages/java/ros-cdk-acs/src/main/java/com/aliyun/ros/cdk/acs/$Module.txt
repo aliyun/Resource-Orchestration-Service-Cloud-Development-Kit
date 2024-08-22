@@ -1,0 +1,7 @@
+@alicloud/ros-cdk-acs.Cluster=com.aliyun.ros.cdk.acs.Cluster
+@alicloud/ros-cdk-acs.ClusterProps=com.aliyun.ros.cdk.acs.ClusterProps
+@alicloud/ros-cdk-acs.RosCluster=com.aliyun.ros.cdk.acs.RosCluster
+@alicloud/ros-cdk-acs.RosCluster.AddonsProperty=com.aliyun.ros.cdk.acs.RosCluster$AddonsProperty
+@alicloud/ros-cdk-acs.RosCluster.MaintenanceWindowProperty=com.aliyun.ros.cdk.acs.RosCluster$MaintenanceWindowProperty
+@alicloud/ros-cdk-acs.RosCluster.TagsProperty=com.aliyun.ros.cdk.acs.RosCluster$TagsProperty
+@alicloud/ros-cdk-acs.RosClusterProps=com.aliyun.ros.cdk.acs.RosClusterProps

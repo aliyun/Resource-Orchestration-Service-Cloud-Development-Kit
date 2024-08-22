@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.nlb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-listener
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.827Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:22.592Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.ListenerProps")
 @software.amazon.jsii.Jsii.Proxy(ListenerProps.Jsii$Proxy.class)
 public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
@@ -119,6 +119,13 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property proxyProtocolV2Config: ProxyProtocolV2Config of the listener.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getProxyProtocolV2Config() {
+        return null;
+    }
+
+    /**
      * Property secSensorEnabled: Whether to enable the second-level monitoring function.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecSensorEnabled() {
@@ -174,6 +181,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object listenerPort;
         java.lang.Object mss;
         java.lang.Object proxyProtocolEnabled;
+        java.lang.Object proxyProtocolV2Config;
         java.lang.Object secSensorEnabled;
         java.lang.Object securityPolicyId;
         java.lang.Object startPort;
@@ -502,6 +510,26 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ListenerProps#getProxyProtocolV2Config}
+         * @param proxyProtocolV2Config Property proxyProtocolV2Config: ProxyProtocolV2Config of the listener.
+         * @return {@code this}
+         */
+        public Builder proxyProtocolV2Config(com.aliyun.ros.cdk.core.IResolvable proxyProtocolV2Config) {
+            this.proxyProtocolV2Config = proxyProtocolV2Config;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ListenerProps#getProxyProtocolV2Config}
+         * @param proxyProtocolV2Config Property proxyProtocolV2Config: ProxyProtocolV2Config of the listener.
+         * @return {@code this}
+         */
+        public Builder proxyProtocolV2Config(com.aliyun.ros.cdk.nlb.RosListener.ProxyProtocolV2ConfigProperty proxyProtocolV2Config) {
+            this.proxyProtocolV2Config = proxyProtocolV2Config;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ListenerProps#getSecSensorEnabled}
          * @param secSensorEnabled Property secSensorEnabled: Whether to enable the second-level monitoring function.
          * @return {@code this}
@@ -605,6 +633,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object listenerPort;
         private final java.lang.Object mss;
         private final java.lang.Object proxyProtocolEnabled;
+        private final java.lang.Object proxyProtocolV2Config;
         private final java.lang.Object secSensorEnabled;
         private final java.lang.Object securityPolicyId;
         private final java.lang.Object startPort;
@@ -632,6 +661,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             this.listenerPort = software.amazon.jsii.Kernel.get(this, "listenerPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.mss = software.amazon.jsii.Kernel.get(this, "mss", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.proxyProtocolEnabled = software.amazon.jsii.Kernel.get(this, "proxyProtocolEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.proxyProtocolV2Config = software.amazon.jsii.Kernel.get(this, "proxyProtocolV2Config", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.secSensorEnabled = software.amazon.jsii.Kernel.get(this, "secSensorEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityPolicyId = software.amazon.jsii.Kernel.get(this, "securityPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.startPort = software.amazon.jsii.Kernel.get(this, "startPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -660,6 +690,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             this.listenerPort = builder.listenerPort;
             this.mss = builder.mss;
             this.proxyProtocolEnabled = builder.proxyProtocolEnabled;
+            this.proxyProtocolV2Config = builder.proxyProtocolV2Config;
             this.secSensorEnabled = builder.secSensorEnabled;
             this.securityPolicyId = builder.securityPolicyId;
             this.startPort = builder.startPort;
@@ -747,6 +778,11 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getProxyProtocolV2Config() {
+            return this.proxyProtocolV2Config;
+        }
+
+        @Override
         public final java.lang.Object getSecSensorEnabled() {
             return this.secSensorEnabled;
         }
@@ -814,6 +850,9 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getProxyProtocolEnabled() != null) {
                 data.set("proxyProtocolEnabled", om.valueToTree(this.getProxyProtocolEnabled()));
             }
+            if (this.getProxyProtocolV2Config() != null) {
+                data.set("proxyProtocolV2Config", om.valueToTree(this.getProxyProtocolV2Config()));
+            }
             if (this.getSecSensorEnabled() != null) {
                 data.set("secSensorEnabled", om.valueToTree(this.getSecSensorEnabled()));
             }
@@ -860,6 +899,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             if (this.listenerPort != null ? !this.listenerPort.equals(that.listenerPort) : that.listenerPort != null) return false;
             if (this.mss != null ? !this.mss.equals(that.mss) : that.mss != null) return false;
             if (this.proxyProtocolEnabled != null ? !this.proxyProtocolEnabled.equals(that.proxyProtocolEnabled) : that.proxyProtocolEnabled != null) return false;
+            if (this.proxyProtocolV2Config != null ? !this.proxyProtocolV2Config.equals(that.proxyProtocolV2Config) : that.proxyProtocolV2Config != null) return false;
             if (this.secSensorEnabled != null ? !this.secSensorEnabled.equals(that.secSensorEnabled) : that.secSensorEnabled != null) return false;
             if (this.securityPolicyId != null ? !this.securityPolicyId.equals(that.securityPolicyId) : that.securityPolicyId != null) return false;
             if (this.startPort != null ? !this.startPort.equals(that.startPort) : that.startPort != null) return false;
@@ -884,6 +924,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.listenerPort != null ? this.listenerPort.hashCode() : 0);
             result = 31 * result + (this.mss != null ? this.mss.hashCode() : 0);
             result = 31 * result + (this.proxyProtocolEnabled != null ? this.proxyProtocolEnabled.hashCode() : 0);
+            result = 31 * result + (this.proxyProtocolV2Config != null ? this.proxyProtocolV2Config.hashCode() : 0);
             result = 31 * result + (this.secSensorEnabled != null ? this.secSensorEnabled.hashCode() : 0);
             result = 31 * result + (this.securityPolicyId != null ? this.securityPolicyId.hashCode() : 0);
             result = 31 * result + (this.startPort != null ? this.startPort.hashCode() : 0);

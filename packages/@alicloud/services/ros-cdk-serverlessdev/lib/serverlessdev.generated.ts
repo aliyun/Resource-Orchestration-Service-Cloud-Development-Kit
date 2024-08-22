@@ -67,10 +67,10 @@ function rosProjectPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosProjectPropsValidator(properties).assertSuccess();
     }
     return {
-      Name: ros.stringToRosTemplate(properties.name),
-      Description: ros.stringToRosTemplate(properties.description),
-      Labels: ros.hashMapper(ros.objectToRosTemplate)(properties.labels),
-      Spec: rosProjectSpecPropertyToRosTemplate(properties.spec),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Labels': ros.hashMapper(ros.objectToRosTemplate)(properties.labels),
+      'Spec': rosProjectSpecPropertyToRosTemplate(properties.spec),
     };
 }
 
@@ -185,8 +185,8 @@ function rosProjectSpecPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosProject_SpecPropertyValidator(properties).assertSuccess();
     return {
-      TemplateConfig: rosProjectTemplateConfigPropertyToRosTemplate(properties.templateConfig),
-      RoleArn: ros.stringToRosTemplate(properties.roleArn),
+      'TemplateConfig': rosProjectTemplateConfigPropertyToRosTemplate(properties.templateConfig),
+      'RoleArn': ros.stringToRosTemplate(properties.roleArn),
     };
 }
 
@@ -233,7 +233,7 @@ function rosProjectTemplateConfigPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosProject_TemplateConfigPropertyValidator(properties).assertSuccess();
     return {
-      Parameters: ros.hashMapper(ros.objectToRosTemplate)(properties.parameters),
-      TemplateName: ros.stringToRosTemplate(properties.templateName),
+      'Parameters': ros.hashMapper(ros.objectToRosTemplate)(properties.parameters),
+      'TemplateName': ros.stringToRosTemplate(properties.templateName),
     };
 }

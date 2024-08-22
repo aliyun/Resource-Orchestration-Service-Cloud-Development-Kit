@@ -5,7 +5,11 @@
 @alicloud/ros-cdk-paidswapi.RosInstance.LabelsProperty=com.aliyun.ros.cdk.paidswapi.RosInstance$LabelsProperty
 @alicloud/ros-cdk-paidswapi.RosInstance.UserVpcProperty=com.aliyun.ros.cdk.paidswapi.RosInstance$UserVpcProperty
 @alicloud/ros-cdk-paidswapi.RosInstanceProps=com.aliyun.ros.cdk.paidswapi.RosInstanceProps
+@alicloud/ros-cdk-paidswapi.datasource.Instance=com.aliyun.ros.cdk.paidswapi.datasource.Instance
+@alicloud/ros-cdk-paidswapi.datasource.InstanceProps=com.aliyun.ros.cdk.paidswapi.datasource.InstanceProps
 @alicloud/ros-cdk-paidswapi.datasource.Instances=com.aliyun.ros.cdk.paidswapi.datasource.Instances
 @alicloud/ros-cdk-paidswapi.datasource.InstancesProps=com.aliyun.ros.cdk.paidswapi.datasource.InstancesProps
+@alicloud/ros-cdk-paidswapi.datasource.RosInstance=com.aliyun.ros.cdk.paidswapi.datasource.RosInstance
+@alicloud/ros-cdk-paidswapi.datasource.RosInstanceProps=com.aliyun.ros.cdk.paidswapi.datasource.RosInstanceProps
 @alicloud/ros-cdk-paidswapi.datasource.RosInstances=com.aliyun.ros.cdk.paidswapi.datasource.RosInstances
 @alicloud/ros-cdk-paidswapi.datasource.RosInstancesProps=com.aliyun.ros.cdk.paidswapi.datasource.RosInstancesProps

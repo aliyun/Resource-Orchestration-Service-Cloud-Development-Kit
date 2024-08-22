@@ -10,6 +10,14 @@ export { RosRepositories as RepositoriesProperty };
 export interface RepositoriesProps {
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property repoNamespace: The namespace of repository.
      */
     readonly repoNamespace?: string | ros.IResolvable;
@@ -56,6 +64,7 @@ export class Repositories extends ros.Resource {
         const rosRepositories = new RosRepositories(this, id,  {
             status: props.status,
             repoNamespace: props.repoNamespace,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosRepositories;
         this.attrRepoNames = rosRepositories.attrRepoNames;

@@ -37,6 +37,14 @@ export interface ManagedInstancesProps {
     readonly osType?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property tags: Tags of managedinstance.
      */
     readonly tags?: RosManagedInstances.TagsProperty[];
@@ -82,6 +90,7 @@ export class ManagedInstances extends ros.Resource {
             activationId: props.activationId,
             instanceIp: props.instanceIp,
             tags: props.tags,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosManagedInstances;
         this.attrInstanceIds = rosManagedInstances.attrInstanceIds;

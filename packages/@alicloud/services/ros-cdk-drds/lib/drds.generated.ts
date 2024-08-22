@@ -127,16 +127,16 @@ function rosDrdsDBPropsToRosTemplate(properties: any, enableResourcePropertyCons
         RosDrdsDBPropsValidator(properties).assertSuccess();
     }
     return {
-      DrdsInstanceId: ros.stringToRosTemplate(properties.drdsInstanceId),
-      AccountName: ros.stringToRosTemplate(properties.accountName),
-      DbInstanceIsCreating: ros.booleanToRosTemplate(properties.dbInstanceIsCreating),
-      DbInstType: ros.stringToRosTemplate(properties.dbInstType),
-      DbName: ros.stringToRosTemplate(properties.dbName),
-      Encode: ros.stringToRosTemplate(properties.encode),
-      InstDbName: ros.listMapper(rosDrdsDBInstDbNamePropertyToRosTemplate)(properties.instDbName),
-      Password: ros.stringToRosTemplate(properties.password),
-      RdsInstance: ros.listMapper(ros.stringToRosTemplate)(properties.rdsInstance),
-      Type: ros.stringToRosTemplate(properties.type),
+      'DrdsInstanceId': ros.stringToRosTemplate(properties.drdsInstanceId),
+      'AccountName': ros.stringToRosTemplate(properties.accountName),
+      'DbInstanceIsCreating': ros.booleanToRosTemplate(properties.dbInstanceIsCreating),
+      'DbInstType': ros.stringToRosTemplate(properties.dbInstType),
+      'DbName': ros.stringToRosTemplate(properties.dbName),
+      'Encode': ros.stringToRosTemplate(properties.encode),
+      'InstDbName': ros.listMapper(rosDrdsDBInstDbNamePropertyToRosTemplate)(properties.instDbName),
+      'Password': ros.stringToRosTemplate(properties.password),
+      'RdsInstance': ros.listMapper(ros.stringToRosTemplate)(properties.rdsInstance),
+      'Type': ros.stringToRosTemplate(properties.type),
     };
 }
 
@@ -300,8 +300,8 @@ function rosDrdsDBInstDbNamePropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosDrdsDB_InstDbNamePropertyValidator(properties).assertSuccess();
     return {
-      ShardDbName: ros.listMapper(ros.stringToRosTemplate)(properties.shardDbName),
-      DbInstanceId: ros.stringToRosTemplate(properties.dbInstanceId),
+      'ShardDbName': ros.listMapper(ros.stringToRosTemplate)(properties.shardDbName),
+      'DbInstanceId': ros.stringToRosTemplate(properties.dbInstanceId),
     };
 }
 
@@ -461,20 +461,20 @@ function rosDrdsInstancePropsToRosTemplate(properties: any, enableResourceProper
         RosDrdsInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      Description: ros.stringToRosTemplate(properties.description),
-      InstanceSeries: ros.stringToRosTemplate(properties.instanceSeries),
-      PayType: ros.stringToRosTemplate(properties.payType),
-      Specification: ros.stringToRosTemplate(properties.specification),
-      Type: ros.stringToRosTemplate(properties.type),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
-      Duration: ros.numberToRosTemplate(properties.duration),
-      IsAutoRenew: ros.booleanToRosTemplate(properties.isAutoRenew),
-      MySQLVersion: ros.stringToRosTemplate(properties.mySqlVersion),
-      PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Tags: ros.listMapper(rosDrdsInstanceTagsPropertyToRosTemplate)(properties.tags),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VswitchId: ros.stringToRosTemplate(properties.vswitchId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'InstanceSeries': ros.stringToRosTemplate(properties.instanceSeries),
+      'PayType': ros.stringToRosTemplate(properties.payType),
+      'Specification': ros.stringToRosTemplate(properties.specification),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'Duration': ros.numberToRosTemplate(properties.duration),
+      'IsAutoRenew': ros.booleanToRosTemplate(properties.isAutoRenew),
+      'MySQLVersion': ros.stringToRosTemplate(properties.mySqlVersion),
+      'PricingCycle': ros.stringToRosTemplate(properties.pricingCycle),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosDrdsInstanceTagsPropertyToRosTemplate)(properties.tags),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VswitchId': ros.stringToRosTemplate(properties.vswitchId),
     };
 }
 
@@ -678,7 +678,7 @@ function rosDrdsInstanceTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosDrdsInstance_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }

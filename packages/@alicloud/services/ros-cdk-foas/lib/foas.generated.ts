@@ -114,12 +114,12 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosClusterPropsValidator(properties).assertSuccess();
     }
     return {
-      ClusterName: ros.stringToRosTemplate(properties.clusterName),
-      Description: ros.stringToRosTemplate(properties.description),
-      OssBucket: ros.stringToRosTemplate(properties.ossBucket),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      Order: rosClusterOrderPropertyToRosTemplate(properties.order),
-      OrderId: ros.stringToRosTemplate(properties.orderId),
+      'ClusterName': ros.stringToRosTemplate(properties.clusterName),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'OssBucket': ros.stringToRosTemplate(properties.ossBucket),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'Order': rosClusterOrderPropertyToRosTemplate(properties.order),
+      'OrderId': ros.stringToRosTemplate(properties.orderId),
     };
 }
 
@@ -354,12 +354,12 @@ function rosClusterOrderPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosCluster_OrderPropertyValidator(properties).assertSuccess();
     return {
-      PayModel: ros.stringToRosTemplate(properties.payModel),
-      Period: ros.numberToRosTemplate(properties.period),
-      MasterNumber: ros.numberToRosTemplate(properties.masterNumber),
-      MasterSpec: ros.stringToRosTemplate(properties.masterSpec),
-      SlaveNumber: ros.numberToRosTemplate(properties.slaveNumber),
-      SlaveSpec: ros.stringToRosTemplate(properties.slaveSpec),
+      'PayModel': ros.stringToRosTemplate(properties.payModel),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'MasterNumber': ros.numberToRosTemplate(properties.masterNumber),
+      'MasterSpec': ros.stringToRosTemplate(properties.masterSpec),
+      'SlaveNumber': ros.numberToRosTemplate(properties.slaveNumber),
+      'SlaveSpec': ros.stringToRosTemplate(properties.slaveSpec),
     };
 }
 
@@ -478,12 +478,12 @@ function rosProjectPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosProjectPropsValidator(properties).assertSuccess();
     }
     return {
-      DeployType: ros.stringToRosTemplate(properties.deployType),
-      ManagerIds: ros.stringToRosTemplate(properties.managerIds),
-      Name: ros.stringToRosTemplate(properties.name),
-      ClusterId: ros.stringToRosTemplate(properties.clusterId),
-      Description: ros.stringToRosTemplate(properties.description),
-      OrderId: ros.stringToRosTemplate(properties.orderId),
+      'DeployType': ros.stringToRosTemplate(properties.deployType),
+      'ManagerIds': ros.stringToRosTemplate(properties.managerIds),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'ClusterId': ros.stringToRosTemplate(properties.clusterId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'OrderId': ros.stringToRosTemplate(properties.orderId),
     };
 }
 

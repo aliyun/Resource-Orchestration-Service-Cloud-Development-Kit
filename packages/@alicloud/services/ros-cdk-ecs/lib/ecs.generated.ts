@@ -100,12 +100,12 @@ function rosActivationPropsToRosTemplate(properties: any, enableResourceProperty
         RosActivationPropsValidator(properties).assertSuccess();
     }
     return {
-      Description: ros.stringToRosTemplate(properties.description),
-      InstanceCount: ros.numberToRosTemplate(properties.instanceCount),
-      InstanceName: ros.stringToRosTemplate(properties.instanceName),
-      IpAddressRange: ros.stringToRosTemplate(properties.ipAddressRange),
-      Tags: ros.listMapper(rosActivationTagsPropertyToRosTemplate)(properties.tags),
-      TimeToLiveInHours: ros.numberToRosTemplate(properties.timeToLiveInHours),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'InstanceCount': ros.numberToRosTemplate(properties.instanceCount),
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'IpAddressRange': ros.stringToRosTemplate(properties.ipAddressRange),
+      'Tags': ros.listMapper(rosActivationTagsPropertyToRosTemplate)(properties.tags),
+      'TimeToLiveInHours': ros.numberToRosTemplate(properties.timeToLiveInHours),
     };
 }
 
@@ -253,8 +253,8 @@ function rosActivationTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosActivation_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -327,9 +327,9 @@ function rosAssignIpv6AddressesPropsToRosTemplate(properties: any, enableResourc
         RosAssignIpv6AddressesPropsValidator(properties).assertSuccess();
     }
     return {
-      NetworkInterfaceId: ros.stringToRosTemplate(properties.networkInterfaceId),
-      Ipv6AddressCount: ros.numberToRosTemplate(properties.ipv6AddressCount),
-      Ipv6Addresses: ros.listMapper(ros.objectToRosTemplate)(properties.ipv6Addresses),
+      'NetworkInterfaceId': ros.stringToRosTemplate(properties.networkInterfaceId),
+      'Ipv6AddressCount': ros.numberToRosTemplate(properties.ipv6AddressCount),
+      'Ipv6Addresses': ros.listMapper(ros.objectToRosTemplate)(properties.ipv6Addresses),
     };
 }
 
@@ -481,9 +481,9 @@ function rosAssignPrivateIpAddressesPropsToRosTemplate(properties: any, enableRe
         RosAssignPrivateIpAddressesPropsValidator(properties).assertSuccess();
     }
     return {
-      NetworkInterfaceId: ros.stringToRosTemplate(properties.networkInterfaceId),
-      PrivateIpAddresses: ros.listMapper(ros.objectToRosTemplate)(properties.privateIpAddresses),
-      SecondaryPrivateIpAddressCount: ros.numberToRosTemplate(properties.secondaryPrivateIpAddressCount),
+      'NetworkInterfaceId': ros.stringToRosTemplate(properties.networkInterfaceId),
+      'PrivateIpAddresses': ros.listMapper(ros.objectToRosTemplate)(properties.privateIpAddresses),
+      'SecondaryPrivateIpAddressCount': ros.numberToRosTemplate(properties.secondaryPrivateIpAddressCount),
     };
 }
 
@@ -819,28 +819,28 @@ function rosAutoProvisioningGroupPropsToRosTemplate(properties: any, enableResou
         RosAutoProvisioningGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      TotalTargetCapacity: ros.stringToRosTemplate(properties.totalTargetCapacity),
-      AutoProvisioningGroupName: ros.stringToRosTemplate(properties.autoProvisioningGroupName),
-      AutoProvisioningGroupType: ros.stringToRosTemplate(properties.autoProvisioningGroupType),
-      CheckExecutionStatus: ros.booleanToRosTemplate(properties.checkExecutionStatus),
-      DefaultTargetCapacityType: ros.stringToRosTemplate(properties.defaultTargetCapacityType),
-      Description: ros.stringToRosTemplate(properties.description),
-      ExcessCapacityTerminationPolicy: ros.stringToRosTemplate(properties.excessCapacityTerminationPolicy),
-      LaunchConfiguration: rosAutoProvisioningGroupLaunchConfigurationPropertyToRosTemplate(properties.launchConfiguration),
-      LaunchTemplateConfig: ros.listMapper(rosAutoProvisioningGroupLaunchTemplateConfigPropertyToRosTemplate)(properties.launchTemplateConfig),
-      LaunchTemplateId: ros.stringToRosTemplate(properties.launchTemplateId),
-      LaunchTemplateVersion: ros.stringToRosTemplate(properties.launchTemplateVersion),
-      MaxSpotPrice: ros.numberToRosTemplate(properties.maxSpotPrice),
-      PayAsYouGoAllocationStrategy: ros.stringToRosTemplate(properties.payAsYouGoAllocationStrategy),
-      PayAsYouGoTargetCapacity: ros.stringToRosTemplate(properties.payAsYouGoTargetCapacity),
-      SpotAllocationStrategy: ros.stringToRosTemplate(properties.spotAllocationStrategy),
-      SpotInstanceInterruptionBehavior: ros.stringToRosTemplate(properties.spotInstanceInterruptionBehavior),
-      SpotInstancePoolsToUseCount: ros.numberToRosTemplate(properties.spotInstancePoolsToUseCount),
-      SpotTargetCapacity: ros.stringToRosTemplate(properties.spotTargetCapacity),
-      TerminateInstances: ros.booleanToRosTemplate(properties.terminateInstances),
-      TerminateInstancesWithExpiration: ros.booleanToRosTemplate(properties.terminateInstancesWithExpiration),
-      ValidFrom: ros.stringToRosTemplate(properties.validFrom),
-      ValidUntil: ros.stringToRosTemplate(properties.validUntil),
+      'TotalTargetCapacity': ros.stringToRosTemplate(properties.totalTargetCapacity),
+      'AutoProvisioningGroupName': ros.stringToRosTemplate(properties.autoProvisioningGroupName),
+      'AutoProvisioningGroupType': ros.stringToRosTemplate(properties.autoProvisioningGroupType),
+      'CheckExecutionStatus': ros.booleanToRosTemplate(properties.checkExecutionStatus),
+      'DefaultTargetCapacityType': ros.stringToRosTemplate(properties.defaultTargetCapacityType),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'ExcessCapacityTerminationPolicy': ros.stringToRosTemplate(properties.excessCapacityTerminationPolicy),
+      'LaunchConfiguration': rosAutoProvisioningGroupLaunchConfigurationPropertyToRosTemplate(properties.launchConfiguration),
+      'LaunchTemplateConfig': ros.listMapper(rosAutoProvisioningGroupLaunchTemplateConfigPropertyToRosTemplate)(properties.launchTemplateConfig),
+      'LaunchTemplateId': ros.stringToRosTemplate(properties.launchTemplateId),
+      'LaunchTemplateVersion': ros.stringToRosTemplate(properties.launchTemplateVersion),
+      'MaxSpotPrice': ros.numberToRosTemplate(properties.maxSpotPrice),
+      'PayAsYouGoAllocationStrategy': ros.stringToRosTemplate(properties.payAsYouGoAllocationStrategy),
+      'PayAsYouGoTargetCapacity': ros.stringToRosTemplate(properties.payAsYouGoTargetCapacity),
+      'SpotAllocationStrategy': ros.stringToRosTemplate(properties.spotAllocationStrategy),
+      'SpotInstanceInterruptionBehavior': ros.stringToRosTemplate(properties.spotInstanceInterruptionBehavior),
+      'SpotInstancePoolsToUseCount': ros.numberToRosTemplate(properties.spotInstancePoolsToUseCount),
+      'SpotTargetCapacity': ros.stringToRosTemplate(properties.spotTargetCapacity),
+      'TerminateInstances': ros.booleanToRosTemplate(properties.terminateInstances),
+      'TerminateInstancesWithExpiration': ros.booleanToRosTemplate(properties.terminateInstancesWithExpiration),
+      'ValidFrom': ros.stringToRosTemplate(properties.validFrom),
+      'ValidUntil': ros.stringToRosTemplate(properties.validUntil),
     };
 }
 
@@ -1193,16 +1193,16 @@ function rosAutoProvisioningGroupDataDiskPropertyToRosTemplate(properties: any):
     if (!ros.canInspect(properties)) { return properties; }
     RosAutoProvisioningGroup_DataDiskPropertyValidator(properties).assertSuccess();
     return {
-      SnapshotId: ros.stringToRosTemplate(properties.snapshotId),
-      Category: ros.stringToRosTemplate(properties.category),
-      Description: ros.stringToRosTemplate(properties.description),
-      KmsKeyId: ros.stringToRosTemplate(properties.kmsKeyId),
-      Encrypted: ros.booleanToRosTemplate(properties.encrypted),
-      PerformanceLevel: ros.stringToRosTemplate(properties.performanceLevel),
-      Size: ros.numberToRosTemplate(properties.size),
-      DeleteWithInstance: ros.booleanToRosTemplate(properties.deleteWithInstance),
-      DiskName: ros.stringToRosTemplate(properties.diskName),
-      InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
+      'SnapshotId': ros.stringToRosTemplate(properties.snapshotId),
+      'Category': ros.stringToRosTemplate(properties.category),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'KmsKeyId': ros.stringToRosTemplate(properties.kmsKeyId),
+      'Encrypted': ros.booleanToRosTemplate(properties.encrypted),
+      'PerformanceLevel': ros.stringToRosTemplate(properties.performanceLevel),
+      'Size': ros.numberToRosTemplate(properties.size),
+      'DeleteWithInstance': ros.booleanToRosTemplate(properties.deleteWithInstance),
+      'DiskName': ros.stringToRosTemplate(properties.diskName),
+      'InternetChargeType': ros.stringToRosTemplate(properties.internetChargeType),
     };
 }
 
@@ -1386,28 +1386,28 @@ function rosAutoProvisioningGroupLaunchConfigurationPropertyToRosTemplate(proper
     if (!ros.canInspect(properties)) { return properties; }
     RosAutoProvisioningGroup_LaunchConfigurationPropertyValidator(properties).assertSuccess();
     return {
-      KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
-      IoOptimized: ros.stringToRosTemplate(properties.ioOptimized),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      SystemDiskSize: ros.numberToRosTemplate(properties.systemDiskSize),
-      UserData: ros.stringToRosTemplate(properties.userData),
-      SystemDiskDescription: ros.stringToRosTemplate(properties.systemDiskDescription),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
-      SystemDiskCategory: ros.stringToRosTemplate(properties.systemDiskCategory),
-      InstanceName: ros.stringToRosTemplate(properties.instanceName),
-      SystemDiskName: ros.stringToRosTemplate(properties.systemDiskName),
-      DataDisk: ros.listMapper(rosAutoProvisioningGroupDataDiskPropertyToRosTemplate)(properties.dataDisk),
-      RamRoleName: ros.stringToRosTemplate(properties.ramRoleName),
-      InternetMaxBandwidthOut: ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
-      SystemDiskPerformanceLevel: ros.stringToRosTemplate(properties.systemDiskPerformanceLevel),
-      ImageId: ros.stringToRosTemplate(properties.imageId),
-      InstanceDescription: ros.stringToRosTemplate(properties.instanceDescription),
-      Tag: ros.listMapper(ros.rosTagToRosTemplate)(properties.tag),
-      HostName: ros.stringToRosTemplate(properties.hostName),
-      CreditSpecification: ros.stringToRosTemplate(properties.creditSpecification),
-      SecurityEnhancementStrategy: ros.stringToRosTemplate(properties.securityEnhancementStrategy),
-      PasswordInherit: ros.booleanToRosTemplate(properties.passwordInherit),
+      'KeyPairName': ros.stringToRosTemplate(properties.keyPairName),
+      'IoOptimized': ros.stringToRosTemplate(properties.ioOptimized),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'SystemDiskSize': ros.numberToRosTemplate(properties.systemDiskSize),
+      'UserData': ros.stringToRosTemplate(properties.userData),
+      'SystemDiskDescription': ros.stringToRosTemplate(properties.systemDiskDescription),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'InternetChargeType': ros.stringToRosTemplate(properties.internetChargeType),
+      'SystemDiskCategory': ros.stringToRosTemplate(properties.systemDiskCategory),
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'SystemDiskName': ros.stringToRosTemplate(properties.systemDiskName),
+      'DataDisk': ros.listMapper(rosAutoProvisioningGroupDataDiskPropertyToRosTemplate)(properties.dataDisk),
+      'RamRoleName': ros.stringToRosTemplate(properties.ramRoleName),
+      'InternetMaxBandwidthOut': ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
+      'SystemDiskPerformanceLevel': ros.stringToRosTemplate(properties.systemDiskPerformanceLevel),
+      'ImageId': ros.stringToRosTemplate(properties.imageId),
+      'InstanceDescription': ros.stringToRosTemplate(properties.instanceDescription),
+      'Tag': ros.listMapper(ros.rosTagToRosTemplate)(properties.tag),
+      'HostName': ros.stringToRosTemplate(properties.hostName),
+      'CreditSpecification': ros.stringToRosTemplate(properties.creditSpecification),
+      'SecurityEnhancementStrategy': ros.stringToRosTemplate(properties.securityEnhancementStrategy),
+      'PasswordInherit': ros.booleanToRosTemplate(properties.passwordInherit),
     };
 }
 
@@ -1479,11 +1479,11 @@ function rosAutoProvisioningGroupLaunchTemplateConfigPropertyToRosTemplate(prope
     if (!ros.canInspect(properties)) { return properties; }
     RosAutoProvisioningGroup_LaunchTemplateConfigPropertyValidator(properties).assertSuccess();
     return {
-      WeightedCapacity: ros.numberToRosTemplate(properties.weightedCapacity),
-      Priority: ros.numberToRosTemplate(properties.priority),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      InstanceType: ros.stringToRosTemplate(properties.instanceType),
-      MaxPrice: ros.numberToRosTemplate(properties.maxPrice),
+      'WeightedCapacity': ros.numberToRosTemplate(properties.weightedCapacity),
+      'Priority': ros.numberToRosTemplate(properties.priority),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'InstanceType': ros.stringToRosTemplate(properties.instanceType),
+      'MaxPrice': ros.numberToRosTemplate(properties.maxPrice),
     };
 }
 
@@ -1530,8 +1530,8 @@ function rosAutoProvisioningGroupTagPropertyToRosTemplate(properties: any): any 
     if (!ros.canInspect(properties)) { return properties; }
     RosAutoProvisioningGroup_TagPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -1639,13 +1639,13 @@ function rosAutoSnapshotPolicyPropsToRosTemplate(properties: any, enableResource
         RosAutoSnapshotPolicyPropsValidator(properties).assertSuccess();
     }
     return {
-      RepeatWeekdays: ros.listMapper(ros.numberToRosTemplate)(properties.repeatWeekdays),
-      RetentionDays: ros.numberToRosTemplate(properties.retentionDays),
-      TimePoints: ros.listMapper(ros.objectToRosTemplate)(properties.timePoints),
-      AutoSnapshotPolicyName: ros.stringToRosTemplate(properties.autoSnapshotPolicyName),
-      DiskIds: ros.listMapper(ros.stringToRosTemplate)(properties.diskIds),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Tags: ros.listMapper(rosAutoSnapshotPolicyTagsPropertyToRosTemplate)(properties.tags),
+      'RepeatWeekdays': ros.listMapper(ros.numberToRosTemplate)(properties.repeatWeekdays),
+      'RetentionDays': ros.numberToRosTemplate(properties.retentionDays),
+      'TimePoints': ros.listMapper(ros.objectToRosTemplate)(properties.timePoints),
+      'AutoSnapshotPolicyName': ros.stringToRosTemplate(properties.autoSnapshotPolicyName),
+      'DiskIds': ros.listMapper(ros.stringToRosTemplate)(properties.diskIds),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosAutoSnapshotPolicyTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -1793,8 +1793,8 @@ function rosAutoSnapshotPolicyTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosAutoSnapshotPolicy_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -1912,15 +1912,15 @@ function rosCapacityReservationPropsToRosTemplate(properties: any, enableResourc
         RosCapacityReservationPropsValidator(properties).assertSuccess();
     }
     return {
-      InstanceAmount: ros.numberToRosTemplate(properties.instanceAmount),
-      InstanceType: ros.stringToRosTemplate(properties.instanceType),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
-      Description: ros.stringToRosTemplate(properties.description),
-      EndTime: ros.stringToRosTemplate(properties.endTime),
-      EndTimeType: ros.stringToRosTemplate(properties.endTimeType),
-      PrivatePoolOptions: rosCapacityReservationPrivatePoolOptionsPropertyToRosTemplate(properties.privatePoolOptions),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Tags: ros.listMapper(rosCapacityReservationTagsPropertyToRosTemplate)(properties.tags),
+      'InstanceAmount': ros.numberToRosTemplate(properties.instanceAmount),
+      'InstanceType': ros.stringToRosTemplate(properties.instanceType),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'EndTime': ros.stringToRosTemplate(properties.endTime),
+      'EndTimeType': ros.stringToRosTemplate(properties.endTimeType),
+      'PrivatePoolOptions': rosCapacityReservationPrivatePoolOptionsPropertyToRosTemplate(properties.privatePoolOptions),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosCapacityReservationTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -2082,8 +2082,8 @@ function rosCapacityReservationPrivatePoolOptionsPropertyToRosTemplate(propertie
     if (!ros.canInspect(properties)) { return properties; }
     RosCapacityReservation_PrivatePoolOptionsPropertyValidator(properties).assertSuccess();
     return {
-      MatchCriteria: ros.stringToRosTemplate(properties.matchCriteria),
-      Name: ros.stringToRosTemplate(properties.name),
+      'MatchCriteria': ros.stringToRosTemplate(properties.matchCriteria),
+      'Name': ros.stringToRosTemplate(properties.name),
     };
 }
 
@@ -2129,8 +2129,8 @@ function rosCapacityReservationTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosCapacityReservation_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -2246,16 +2246,16 @@ function rosCommandPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosCommandPropsValidator(properties).assertSuccess();
     }
     return {
-      Type: ros.stringToRosTemplate(properties.type),
-      CommandContent: ros.stringToRosTemplate(properties.commandContent),
-      ContentEncoding: ros.stringToRosTemplate(properties.contentEncoding),
-      Description: ros.stringToRosTemplate(properties.description),
-      EnableParameter: ros.booleanToRosTemplate(properties.enableParameter),
-      Name: ros.stringToRosTemplate(properties.name),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Tags: ros.listMapper(rosCommandTagsPropertyToRosTemplate)(properties.tags),
-      Timeout: ros.numberToRosTemplate(properties.timeout),
-      WorkingDir: ros.stringToRosTemplate(properties.workingDir),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'CommandContent': ros.stringToRosTemplate(properties.commandContent),
+      'ContentEncoding': ros.stringToRosTemplate(properties.contentEncoding),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'EnableParameter': ros.booleanToRosTemplate(properties.enableParameter),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosCommandTagsPropertyToRosTemplate)(properties.tags),
+      'Timeout': ros.numberToRosTemplate(properties.timeout),
+      'WorkingDir': ros.stringToRosTemplate(properties.workingDir),
     };
 }
 
@@ -2417,8 +2417,8 @@ function rosCommandTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosCommand_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -2519,16 +2519,16 @@ function rosCopyImagePropsToRosTemplate(properties: any, enableResourcePropertyC
         RosCopyImagePropsValidator(properties).assertSuccess();
     }
     return {
-      DestinationRegionId: ros.stringToRosTemplate(properties.destinationRegionId),
-      ImageId: ros.stringToRosTemplate(properties.imageId),
-      AllowCopyInSameRegion: ros.booleanToRosTemplate(properties.allowCopyInSameRegion),
-      DestinationDescription: ros.stringToRosTemplate(properties.destinationDescription),
-      DestinationImageName: ros.stringToRosTemplate(properties.destinationImageName),
-      Encrypted: ros.booleanToRosTemplate(properties.encrypted),
-      KMSKeyId: ros.stringToRosTemplate(properties.kmsKeyId),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      SourceRegionId: ros.stringToRosTemplate(properties.sourceRegionId),
-      Tag: ros.listMapper(ros.rosTagToRosTemplate)(properties.tag),
+      'DestinationRegionId': ros.stringToRosTemplate(properties.destinationRegionId),
+      'ImageId': ros.stringToRosTemplate(properties.imageId),
+      'AllowCopyInSameRegion': ros.booleanToRosTemplate(properties.allowCopyInSameRegion),
+      'DestinationDescription': ros.stringToRosTemplate(properties.destinationDescription),
+      'DestinationImageName': ros.stringToRosTemplate(properties.destinationImageName),
+      'Encrypted': ros.booleanToRosTemplate(properties.encrypted),
+      'KMSKeyId': ros.stringToRosTemplate(properties.kmsKeyId),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'SourceRegionId': ros.stringToRosTemplate(properties.sourceRegionId),
+      'Tag': ros.listMapper(ros.rosTagToRosTemplate)(properties.tag),
     };
 }
 
@@ -2698,8 +2698,8 @@ function rosCopyImageTagPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosCopyImage_TagPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -2838,20 +2838,20 @@ function rosCustomImagePropsToRosTemplate(properties: any, enableResourcePropert
         RosCustomImagePropsValidator(properties).assertSuccess();
     }
     return {
-      Architecture: ros.stringToRosTemplate(properties.architecture),
-      BootMode: ros.stringToRosTemplate(properties.bootMode),
-      Description: ros.stringToRosTemplate(properties.description),
-      DetectionStrategy: ros.stringToRosTemplate(properties.detectionStrategy),
-      DiskDeviceMapping: ros.listMapper(rosCustomImageDiskDeviceMappingPropertyToRosTemplate)(properties.diskDeviceMapping),
-      ImageFamily: ros.stringToRosTemplate(properties.imageFamily),
-      ImageName: ros.stringToRosTemplate(properties.imageName),
-      ImageVersion: ros.stringToRosTemplate(properties.imageVersion),
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      Platform: ros.stringToRosTemplate(properties.platform),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      SnapshotId: ros.stringToRosTemplate(properties.snapshotId),
-      SourceRegionId: ros.stringToRosTemplate(properties.sourceRegionId),
-      Tag: ros.listMapper(ros.rosTagToRosTemplate)(properties.tag),
+      'Architecture': ros.stringToRosTemplate(properties.architecture),
+      'BootMode': ros.stringToRosTemplate(properties.bootMode),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'DetectionStrategy': ros.stringToRosTemplate(properties.detectionStrategy),
+      'DiskDeviceMapping': ros.listMapper(rosCustomImageDiskDeviceMappingPropertyToRosTemplate)(properties.diskDeviceMapping),
+      'ImageFamily': ros.stringToRosTemplate(properties.imageFamily),
+      'ImageName': ros.stringToRosTemplate(properties.imageName),
+      'ImageVersion': ros.stringToRosTemplate(properties.imageVersion),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'Platform': ros.stringToRosTemplate(properties.platform),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'SnapshotId': ros.stringToRosTemplate(properties.snapshotId),
+      'SourceRegionId': ros.stringToRosTemplate(properties.sourceRegionId),
+      'Tag': ros.listMapper(ros.rosTagToRosTemplate)(properties.tag),
     };
 }
 
@@ -3077,10 +3077,10 @@ function rosCustomImageDiskDeviceMappingPropertyToRosTemplate(properties: any): 
     if (!ros.canInspect(properties)) { return properties; }
     RosCustomImage_DiskDeviceMappingPropertyValidator(properties).assertSuccess();
     return {
-      DiskType: ros.stringToRosTemplate(properties.diskType),
-      SnapshotId: ros.stringToRosTemplate(properties.snapshotId),
-      Device: ros.stringToRosTemplate(properties.device),
-      Size: ros.numberToRosTemplate(properties.size),
+      'DiskType': ros.stringToRosTemplate(properties.diskType),
+      'SnapshotId': ros.stringToRosTemplate(properties.snapshotId),
+      'Device': ros.stringToRosTemplate(properties.device),
+      'Size': ros.numberToRosTemplate(properties.size),
     };
 }
 
@@ -3126,8 +3126,8 @@ function rosCustomImageTagPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosCustomImage_TagPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -3338,23 +3338,23 @@ function rosDedicatedHostPropsToRosTemplate(properties: any, enableResourcePrope
         RosDedicatedHostPropsValidator(properties).assertSuccess();
     }
     return {
-      DedicatedHostType: ros.stringToRosTemplate(properties.dedicatedHostType),
-      ActionOnMaintenance: ros.stringToRosTemplate(properties.actionOnMaintenance),
-      AutoPlacement: ros.stringToRosTemplate(properties.autoPlacement),
-      AutoReleaseTime: ros.stringToRosTemplate(properties.autoReleaseTime),
-      AutoRenew: ros.stringToRosTemplate(properties.autoRenew),
-      AutoRenewPeriod: ros.numberToRosTemplate(properties.autoRenewPeriod),
-      ChargeType: ros.stringToRosTemplate(properties.chargeType),
-      DedicatedHostName: ros.stringToRosTemplate(properties.dedicatedHostName),
-      Description: ros.stringToRosTemplate(properties.description),
-      NetworkAttributesSlbUdpTimeout: ros.numberToRosTemplate(properties.networkAttributesSlbUdpTimeout),
-      NetworkAttributesUdpTimeout: ros.numberToRosTemplate(properties.networkAttributesUdpTimeout),
-      Period: ros.numberToRosTemplate(properties.period),
-      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
-      Quantity: ros.numberToRosTemplate(properties.quantity),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Tags: ros.listMapper(rosDedicatedHostTagsPropertyToRosTemplate)(properties.tags),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      'DedicatedHostType': ros.stringToRosTemplate(properties.dedicatedHostType),
+      'ActionOnMaintenance': ros.stringToRosTemplate(properties.actionOnMaintenance),
+      'AutoPlacement': ros.stringToRosTemplate(properties.autoPlacement),
+      'AutoReleaseTime': ros.stringToRosTemplate(properties.autoReleaseTime),
+      'AutoRenew': ros.stringToRosTemplate(properties.autoRenew),
+      'AutoRenewPeriod': ros.numberToRosTemplate(properties.autoRenewPeriod),
+      'ChargeType': ros.stringToRosTemplate(properties.chargeType),
+      'DedicatedHostName': ros.stringToRosTemplate(properties.dedicatedHostName),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'NetworkAttributesSlbUdpTimeout': ros.numberToRosTemplate(properties.networkAttributesSlbUdpTimeout),
+      'NetworkAttributesUdpTimeout': ros.numberToRosTemplate(properties.networkAttributesUdpTimeout),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
+      'Quantity': ros.numberToRosTemplate(properties.quantity),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosDedicatedHostTagsPropertyToRosTemplate)(properties.tags),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
     };
 }
 
@@ -3567,8 +3567,8 @@ function rosDedicatedHostTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosDedicatedHost_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -3667,11 +3667,11 @@ function rosDeploymentSetPropsToRosTemplate(properties: any, enableResourcePrope
         RosDeploymentSetPropsValidator(properties).assertSuccess();
     }
     return {
-      DeploymentSetName: ros.stringToRosTemplate(properties.deploymentSetName),
-      Description: ros.stringToRosTemplate(properties.description),
-      GroupCount: ros.numberToRosTemplate(properties.groupCount),
-      OnUnableToRedeployFailedInstance: ros.stringToRosTemplate(properties.onUnableToRedeployFailedInstance),
-      Strategy: ros.stringToRosTemplate(properties.strategy),
+      'DeploymentSetName': ros.stringToRosTemplate(properties.deploymentSetName),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'GroupCount': ros.numberToRosTemplate(properties.groupCount),
+      'OnUnableToRedeployFailedInstance': ros.stringToRosTemplate(properties.onUnableToRedeployFailedInstance),
+      'Strategy': ros.stringToRosTemplate(properties.strategy),
     };
 }
 
@@ -3939,25 +3939,25 @@ function rosDiskPropsToRosTemplate(properties: any, enableResourcePropertyConstr
         RosDiskPropsValidator(properties).assertSuccess();
     }
     return {
-      AutoSnapshotPolicyId: ros.stringToRosTemplate(properties.autoSnapshotPolicyId),
-      BurstingEnabled: ros.booleanToRosTemplate(properties.burstingEnabled),
-      DeleteAutoSnapshot: ros.booleanToRosTemplate(properties.deleteAutoSnapshot),
-      Description: ros.stringToRosTemplate(properties.description),
-      DiskCategory: ros.stringToRosTemplate(properties.diskCategory),
-      DiskName: ros.stringToRosTemplate(properties.diskName),
-      Encrypted: ros.booleanToRosTemplate(properties.encrypted),
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      KMSKeyId: ros.stringToRosTemplate(properties.kmsKeyId),
-      MultiAttach: ros.stringToRosTemplate(properties.multiAttach),
-      PerformanceLevel: ros.stringToRosTemplate(properties.performanceLevel),
-      ProvisionedIops: ros.numberToRosTemplate(properties.provisionedIops),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Size: ros.numberToRosTemplate(properties.size),
-      SnapshotId: ros.stringToRosTemplate(properties.snapshotId),
-      StorageSetId: ros.stringToRosTemplate(properties.storageSetId),
-      StorageSetPartitionNumber: ros.numberToRosTemplate(properties.storageSetPartitionNumber),
-      Tags: ros.listMapper(rosDiskTagsPropertyToRosTemplate)(properties.tags),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      'AutoSnapshotPolicyId': ros.stringToRosTemplate(properties.autoSnapshotPolicyId),
+      'BurstingEnabled': ros.booleanToRosTemplate(properties.burstingEnabled),
+      'DeleteAutoSnapshot': ros.booleanToRosTemplate(properties.deleteAutoSnapshot),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'DiskCategory': ros.stringToRosTemplate(properties.diskCategory),
+      'DiskName': ros.stringToRosTemplate(properties.diskName),
+      'Encrypted': ros.booleanToRosTemplate(properties.encrypted),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'KMSKeyId': ros.stringToRosTemplate(properties.kmsKeyId),
+      'MultiAttach': ros.stringToRosTemplate(properties.multiAttach),
+      'PerformanceLevel': ros.stringToRosTemplate(properties.performanceLevel),
+      'ProvisionedIops': ros.numberToRosTemplate(properties.provisionedIops),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Size': ros.numberToRosTemplate(properties.size),
+      'SnapshotId': ros.stringToRosTemplate(properties.snapshotId),
+      'StorageSetId': ros.stringToRosTemplate(properties.storageSetId),
+      'StorageSetPartitionNumber': ros.numberToRosTemplate(properties.storageSetPartitionNumber),
+      'Tags': ros.listMapper(rosDiskTagsPropertyToRosTemplate)(properties.tags),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
     };
 }
 
@@ -4192,8 +4192,8 @@ function rosDiskTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosDisk_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -4263,11 +4263,11 @@ function rosDiskAttachmentPropsToRosTemplate(properties: any, enableResourceProp
         RosDiskAttachmentPropsValidator(properties).assertSuccess();
     }
     return {
-      DiskId: ros.stringToRosTemplate(properties.diskId),
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      DeleteAutoSnapshot: ros.booleanToRosTemplate(properties.deleteAutoSnapshot),
-      DeleteWithInstance: ros.booleanToRosTemplate(properties.deleteWithInstance),
-      Device: ros.stringToRosTemplate(properties.device),
+      'DiskId': ros.stringToRosTemplate(properties.diskId),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'DeleteAutoSnapshot': ros.booleanToRosTemplate(properties.deleteAutoSnapshot),
+      'DeleteWithInstance': ros.booleanToRosTemplate(properties.deleteWithInstance),
+      'Device': ros.stringToRosTemplate(properties.device),
     };
 }
 
@@ -4491,16 +4491,16 @@ function rosElasticityAssurancePropsToRosTemplate(properties: any, enableResourc
         RosElasticityAssurancePropsValidator(properties).assertSuccess();
     }
     return {
-      InstanceAmount: ros.numberToRosTemplate(properties.instanceAmount),
-      InstanceTypes: ros.listMapper(ros.stringToRosTemplate)(properties.instanceTypes),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
-      Description: ros.stringToRosTemplate(properties.description),
-      Period: ros.numberToRosTemplate(properties.period),
-      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
-      PrivatePoolOptions: rosElasticityAssurancePrivatePoolOptionsPropertyToRosTemplate(properties.privatePoolOptions),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      StartTime: ros.stringToRosTemplate(properties.startTime),
-      Tags: ros.listMapper(rosElasticityAssuranceTagsPropertyToRosTemplate)(properties.tags),
+      'InstanceAmount': ros.numberToRosTemplate(properties.instanceAmount),
+      'InstanceTypes': ros.listMapper(ros.stringToRosTemplate)(properties.instanceTypes),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
+      'PrivatePoolOptions': rosElasticityAssurancePrivatePoolOptionsPropertyToRosTemplate(properties.privatePoolOptions),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'StartTime': ros.stringToRosTemplate(properties.startTime),
+      'Tags': ros.listMapper(rosElasticityAssuranceTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -4674,8 +4674,8 @@ function rosElasticityAssurancePrivatePoolOptionsPropertyToRosTemplate(propertie
     if (!ros.canInspect(properties)) { return properties; }
     RosElasticityAssurance_PrivatePoolOptionsPropertyValidator(properties).assertSuccess();
     return {
-      MatchCriteria: ros.stringToRosTemplate(properties.matchCriteria),
-      Name: ros.stringToRosTemplate(properties.name),
+      'MatchCriteria': ros.stringToRosTemplate(properties.matchCriteria),
+      'Name': ros.stringToRosTemplate(properties.name),
     };
 }
 
@@ -4721,8 +4721,8 @@ function rosElasticityAssuranceTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosElasticityAssurance_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -4820,14 +4820,14 @@ function rosForwardEntryPropsToRosTemplate(properties: any, enableResourceProper
         RosForwardEntryPropsValidator(properties).assertSuccess();
     }
     return {
-      ExternalIp: ros.stringToRosTemplate(properties.externalIp),
-      ExternalPort: ros.stringToRosTemplate(properties.externalPort),
-      ForwardTableId: ros.stringToRosTemplate(properties.forwardTableId),
-      InternalIp: ros.stringToRosTemplate(properties.internalIp),
-      InternalPort: ros.stringToRosTemplate(properties.internalPort),
-      IpProtocol: ros.stringToRosTemplate(properties.ipProtocol),
-      ForwardEntryName: ros.stringToRosTemplate(properties.forwardEntryName),
-      PortBreak: ros.booleanToRosTemplate(properties.portBreak),
+      'ExternalIp': ros.stringToRosTemplate(properties.externalIp),
+      'ExternalPort': ros.stringToRosTemplate(properties.externalPort),
+      'ForwardTableId': ros.stringToRosTemplate(properties.forwardTableId),
+      'InternalIp': ros.stringToRosTemplate(properties.internalIp),
+      'InternalPort': ros.stringToRosTemplate(properties.internalPort),
+      'IpProtocol': ros.stringToRosTemplate(properties.ipProtocol),
+      'ForwardEntryName': ros.stringToRosTemplate(properties.forwardEntryName),
+      'PortBreak': ros.booleanToRosTemplate(properties.portBreak),
     };
 }
 
@@ -4978,8 +4978,8 @@ function rosHpcClusterPropsToRosTemplate(properties: any, enableResourceProperty
         RosHpcClusterPropsValidator(properties).assertSuccess();
     }
     return {
-      Name: ros.stringToRosTemplate(properties.name),
-      Description: ros.stringToRosTemplate(properties.description),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'Description': ros.stringToRosTemplate(properties.description),
     };
 }
 
@@ -5144,13 +5144,13 @@ function rosImageComponentPropsToRosTemplate(properties: any, enableResourceProp
         RosImageComponentPropsValidator(properties).assertSuccess();
     }
     return {
-      Content: ros.stringToRosTemplate(properties.content),
-      ComponentType: ros.stringToRosTemplate(properties.componentType),
-      Description: ros.stringToRosTemplate(properties.description),
-      Name: ros.stringToRosTemplate(properties.name),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      SystemType: ros.stringToRosTemplate(properties.systemType),
-      Tags: ros.listMapper(rosImageComponentTagsPropertyToRosTemplate)(properties.tags),
+      'Content': ros.stringToRosTemplate(properties.content),
+      'ComponentType': ros.stringToRosTemplate(properties.componentType),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'SystemType': ros.stringToRosTemplate(properties.systemType),
+      'Tags': ros.listMapper(rosImageComponentTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -5287,8 +5287,8 @@ function rosImageComponentTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosImageComponent_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -5466,22 +5466,22 @@ function rosImagePipelinePropsToRosTemplate(properties: any, enableResourcePrope
         RosImagePipelinePropsValidator(properties).assertSuccess();
     }
     return {
-      BaseImage: ros.stringToRosTemplate(properties.baseImage),
-      BaseImageType: ros.stringToRosTemplate(properties.baseImageType),
-      AddAccount: ros.listMapper(ros.stringToRosTemplate)(properties.addAccount),
-      BuildContent: ros.stringToRosTemplate(properties.buildContent),
-      DeleteInstanceOnFailure: ros.booleanToRosTemplate(properties.deleteInstanceOnFailure),
-      Description: ros.stringToRosTemplate(properties.description),
-      ExecutePipeline: ros.booleanToRosTemplate(properties.executePipeline),
-      ImageName: ros.stringToRosTemplate(properties.imageName),
-      InstanceType: ros.stringToRosTemplate(properties.instanceType),
-      InternetMaxBandwidthOut: ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
-      Name: ros.stringToRosTemplate(properties.name),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      SystemDiskSize: ros.numberToRosTemplate(properties.systemDiskSize),
-      Tags: ros.listMapper(rosImagePipelineTagsPropertyToRosTemplate)(properties.tags),
-      ToRegionId: ros.listMapper(ros.stringToRosTemplate)(properties.toRegionId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      'BaseImage': ros.stringToRosTemplate(properties.baseImage),
+      'BaseImageType': ros.stringToRosTemplate(properties.baseImageType),
+      'AddAccount': ros.listMapper(ros.stringToRosTemplate)(properties.addAccount),
+      'BuildContent': ros.stringToRosTemplate(properties.buildContent),
+      'DeleteInstanceOnFailure': ros.booleanToRosTemplate(properties.deleteInstanceOnFailure),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'ExecutePipeline': ros.booleanToRosTemplate(properties.executePipeline),
+      'ImageName': ros.stringToRosTemplate(properties.imageName),
+      'InstanceType': ros.stringToRosTemplate(properties.instanceType),
+      'InternetMaxBandwidthOut': ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'SystemDiskSize': ros.numberToRosTemplate(properties.systemDiskSize),
+      'Tags': ros.listMapper(rosImagePipelineTagsPropertyToRosTemplate)(properties.tags),
+      'ToRegionId': ros.listMapper(ros.stringToRosTemplate)(properties.toRegionId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
     };
 }
 
@@ -5695,8 +5695,8 @@ function rosImagePipelineTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosImagePipeline_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -5767,10 +5767,10 @@ function rosImageSharePermissionPropsToRosTemplate(properties: any, enableResour
         RosImageSharePermissionPropsValidator(properties).assertSuccess();
     }
     return {
-      ImageId: ros.stringToRosTemplate(properties.imageId),
-      Accounts: ros.listMapper(ros.stringToRosTemplate)(properties.accounts),
-      IsPublic: ros.booleanToRosTemplate(properties.isPublic),
-      KeepPermission: ros.booleanToRosTemplate(properties.keepPermission),
+      'ImageId': ros.stringToRosTemplate(properties.imageId),
+      'Accounts': ros.listMapper(ros.stringToRosTemplate)(properties.accounts),
+      'IsPublic': ros.booleanToRosTemplate(properties.isPublic),
+      'KeepPermission': ros.booleanToRosTemplate(properties.keepPermission),
     };
 }
 
@@ -6341,60 +6341,60 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      InstanceType: ros.stringToRosTemplate(properties.instanceType),
-      Affinity: ros.stringToRosTemplate(properties.affinity),
-      AllocatePublicIP: ros.booleanToRosTemplate(properties.allocatePublicIp),
-      AutoRenew: ros.stringToRosTemplate(properties.autoRenew),
-      AutoRenewPeriod: ros.numberToRosTemplate(properties.autoRenewPeriod),
-      CreditSpecification: ros.stringToRosTemplate(properties.creditSpecification),
-      DedicatedHostId: ros.stringToRosTemplate(properties.dedicatedHostId),
-      DeletionProtection: ros.booleanToRosTemplate(properties.deletionProtection),
-      DeploymentSetGroupNo: ros.numberToRosTemplate(properties.deploymentSetGroupNo),
-      DeploymentSetId: ros.stringToRosTemplate(properties.deploymentSetId),
-      Description: ros.stringToRosTemplate(properties.description),
-      DiskMappings: ros.listMapper(rosInstanceDiskMappingsPropertyToRosTemplate)(properties.diskMappings),
-      HostName: ros.stringToRosTemplate(properties.hostName),
-      HpcClusterId: ros.stringToRosTemplate(properties.hpcClusterId),
-      HttpEndpoint: ros.stringToRosTemplate(properties.httpEndpoint),
-      HttpTokens: ros.stringToRosTemplate(properties.httpTokens),
-      ImageFamily: ros.stringToRosTemplate(properties.imageFamily),
-      ImageId: ros.stringToRosTemplate(properties.imageId),
-      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
-      InstanceName: ros.stringToRosTemplate(properties.instanceName),
-      InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
-      InternetMaxBandwidthOut: ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
-      IoOptimized: ros.stringToRosTemplate(properties.ioOptimized),
-      KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
-      Password: ros.stringToRosTemplate(properties.password),
-      PasswordInherit: ros.booleanToRosTemplate(properties.passwordInherit),
-      Period: ros.numberToRosTemplate(properties.period),
-      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
-      PrivateIpAddress: ros.stringToRosTemplate(properties.privateIpAddress),
-      PrivatePoolOptions: rosInstancePrivatePoolOptionsPropertyToRosTemplate(properties.privatePoolOptions),
-      RamRoleName: ros.stringToRosTemplate(properties.ramRoleName),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      SecurityEnhancementStrategy: ros.stringToRosTemplate(properties.securityEnhancementStrategy),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      SecurityGroupIds: ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
-      SpotDuration: ros.numberToRosTemplate(properties.spotDuration),
-      SpotInterruptionBehavior: ros.stringToRosTemplate(properties.spotInterruptionBehavior),
-      SpotPriceLimit: ros.stringToRosTemplate(properties.spotPriceLimit),
-      SpotStrategy: ros.stringToRosTemplate(properties.spotStrategy),
-      StorageSetId: ros.stringToRosTemplate(properties.storageSetId),
-      StorageSetPartitionNumber: ros.numberToRosTemplate(properties.storageSetPartitionNumber),
-      SystemDiskCategory: ros.stringToRosTemplate(properties.systemDiskCategory),
-      SystemDiskDescription: ros.stringToRosTemplate(properties.systemDiskDescription),
-      SystemDiskDiskName: ros.stringToRosTemplate(properties.systemDiskDiskName),
-      SystemDiskPerformanceLevel: ros.stringToRosTemplate(properties.systemDiskPerformanceLevel),
-      SystemDiskSize: ros.numberToRosTemplate(properties.systemDiskSize),
-      Tags: ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
-      Tenancy: ros.stringToRosTemplate(properties.tenancy),
-      UseAdditionalService: ros.booleanToRosTemplate(properties.useAdditionalService),
-      UserData: ros.stringToRosTemplate(properties.userData),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
-      ZoneIds: ros.listMapper(ros.stringToRosTemplate)(properties.zoneIds),
+      'InstanceType': ros.stringToRosTemplate(properties.instanceType),
+      'Affinity': ros.stringToRosTemplate(properties.affinity),
+      'AllocatePublicIP': ros.booleanToRosTemplate(properties.allocatePublicIp),
+      'AutoRenew': ros.stringToRosTemplate(properties.autoRenew),
+      'AutoRenewPeriod': ros.numberToRosTemplate(properties.autoRenewPeriod),
+      'CreditSpecification': ros.stringToRosTemplate(properties.creditSpecification),
+      'DedicatedHostId': ros.stringToRosTemplate(properties.dedicatedHostId),
+      'DeletionProtection': ros.booleanToRosTemplate(properties.deletionProtection),
+      'DeploymentSetGroupNo': ros.numberToRosTemplate(properties.deploymentSetGroupNo),
+      'DeploymentSetId': ros.stringToRosTemplate(properties.deploymentSetId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'DiskMappings': ros.listMapper(rosInstanceDiskMappingsPropertyToRosTemplate)(properties.diskMappings),
+      'HostName': ros.stringToRosTemplate(properties.hostName),
+      'HpcClusterId': ros.stringToRosTemplate(properties.hpcClusterId),
+      'HttpEndpoint': ros.stringToRosTemplate(properties.httpEndpoint),
+      'HttpTokens': ros.stringToRosTemplate(properties.httpTokens),
+      'ImageFamily': ros.stringToRosTemplate(properties.imageFamily),
+      'ImageId': ros.stringToRosTemplate(properties.imageId),
+      'InstanceChargeType': ros.stringToRosTemplate(properties.instanceChargeType),
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'InternetChargeType': ros.stringToRosTemplate(properties.internetChargeType),
+      'InternetMaxBandwidthOut': ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
+      'IoOptimized': ros.stringToRosTemplate(properties.ioOptimized),
+      'KeyPairName': ros.stringToRosTemplate(properties.keyPairName),
+      'Password': ros.stringToRosTemplate(properties.password),
+      'PasswordInherit': ros.booleanToRosTemplate(properties.passwordInherit),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
+      'PrivateIpAddress': ros.stringToRosTemplate(properties.privateIpAddress),
+      'PrivatePoolOptions': rosInstancePrivatePoolOptionsPropertyToRosTemplate(properties.privatePoolOptions),
+      'RamRoleName': ros.stringToRosTemplate(properties.ramRoleName),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'SecurityEnhancementStrategy': ros.stringToRosTemplate(properties.securityEnhancementStrategy),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'SecurityGroupIds': ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
+      'SpotDuration': ros.numberToRosTemplate(properties.spotDuration),
+      'SpotInterruptionBehavior': ros.stringToRosTemplate(properties.spotInterruptionBehavior),
+      'SpotPriceLimit': ros.stringToRosTemplate(properties.spotPriceLimit),
+      'SpotStrategy': ros.stringToRosTemplate(properties.spotStrategy),
+      'StorageSetId': ros.stringToRosTemplate(properties.storageSetId),
+      'StorageSetPartitionNumber': ros.numberToRosTemplate(properties.storageSetPartitionNumber),
+      'SystemDiskCategory': ros.stringToRosTemplate(properties.systemDiskCategory),
+      'SystemDiskDescription': ros.stringToRosTemplate(properties.systemDiskDescription),
+      'SystemDiskDiskName': ros.stringToRosTemplate(properties.systemDiskDiskName),
+      'SystemDiskPerformanceLevel': ros.stringToRosTemplate(properties.systemDiskPerformanceLevel),
+      'SystemDiskSize': ros.numberToRosTemplate(properties.systemDiskSize),
+      'Tags': ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
+      'Tenancy': ros.stringToRosTemplate(properties.tenancy),
+      'UseAdditionalService': ros.booleanToRosTemplate(properties.useAdditionalService),
+      'UserData': ros.stringToRosTemplate(properties.userData),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'ZoneIds': ros.listMapper(ros.stringToRosTemplate)(properties.zoneIds),
     };
 }
 
@@ -6949,13 +6949,13 @@ function rosInstanceDiskMappingsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosInstance_DiskMappingsPropertyValidator(properties).assertSuccess();
     return {
-      SnapshotId: ros.stringToRosTemplate(properties.snapshotId),
-      Category: ros.stringToRosTemplate(properties.category),
-      Description: ros.stringToRosTemplate(properties.description),
-      Device: ros.stringToRosTemplate(properties.device),
-      PerformanceLevel: ros.stringToRosTemplate(properties.performanceLevel),
-      Size: ros.stringToRosTemplate(properties.size),
-      DiskName: ros.stringToRosTemplate(properties.diskName),
+      'SnapshotId': ros.stringToRosTemplate(properties.snapshotId),
+      'Category': ros.stringToRosTemplate(properties.category),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Device': ros.stringToRosTemplate(properties.device),
+      'PerformanceLevel': ros.stringToRosTemplate(properties.performanceLevel),
+      'Size': ros.stringToRosTemplate(properties.size),
+      'DiskName': ros.stringToRosTemplate(properties.diskName),
     };
 }
 
@@ -6977,9 +6977,9 @@ export namespace RosInstance {
          */
         readonly matchCriteria?: string | ros.IResolvable;
         /**
-         * @Property id: The private pool ID. The ID of a private pool is the same as that of the elasticity assurance or capacity reservation for which the private pool is generated.
+         * @Property identity: The private pool ID. The ID of a private pool is the same as that of the elasticity assurance or capacity reservation for which the private pool is generated.
          */
-        readonly id?: string | ros.IResolvable;
+        readonly identity?: string | ros.IResolvable;
     }
 }
 /**
@@ -6993,7 +6993,7 @@ function RosInstance_PrivatePoolOptionsPropertyValidator(properties: any): ros.V
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('matchCriteria', ros.validateString)(properties.matchCriteria));
-    errors.collect(ros.propertyValidator('id', ros.validateString)(properties.id));
+    errors.collect(ros.propertyValidator('identity', ros.validateString)(properties.identity));
     return errors.wrap('supplied properties not correct for "PrivatePoolOptionsProperty"');
 }
 
@@ -7009,8 +7009,8 @@ function rosInstancePrivatePoolOptionsPropertyToRosTemplate(properties: any): an
     if (!ros.canInspect(properties)) { return properties; }
     RosInstance_PrivatePoolOptionsPropertyValidator(properties).assertSuccess();
     return {
-      MatchCriteria: ros.stringToRosTemplate(properties.matchCriteria),
-      Id: ros.stringToRosTemplate(properties.id),
+      'MatchCriteria': ros.stringToRosTemplate(properties.matchCriteria),
+      'Id': ros.stringToRosTemplate(properties.identity),
     };
 }
 
@@ -7057,8 +7057,8 @@ function rosInstanceTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosInstance_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -7272,26 +7272,26 @@ function rosInstanceClonePropsToRosTemplate(properties: any, enableResourcePrope
         RosInstanceClonePropsValidator(properties).assertSuccess();
     }
     return {
-      SourceInstanceId: ros.stringToRosTemplate(properties.sourceInstanceId),
-      BackendServerWeight: ros.numberToRosTemplate(properties.backendServerWeight),
-      DeletionProtection: ros.booleanToRosTemplate(properties.deletionProtection),
-      Description: ros.stringToRosTemplate(properties.description),
-      DiskMappings: ros.listMapper(rosInstanceCloneDiskMappingsPropertyToRosTemplate)(properties.diskMappings),
-      ImageId: ros.stringToRosTemplate(properties.imageId),
-      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
-      InstanceName: ros.stringToRosTemplate(properties.instanceName),
-      InternetMaxBandwidthIn: ros.numberToRosTemplate(properties.internetMaxBandwidthIn),
-      KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
-      LoadBalancerIdToAttach: ros.stringToRosTemplate(properties.loadBalancerIdToAttach),
-      Password: ros.stringToRosTemplate(properties.password),
-      Period: ros.numberToRosTemplate(properties.period),
-      RamRoleName: ros.stringToRosTemplate(properties.ramRoleName),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      SpotPriceLimit: ros.stringToRosTemplate(properties.spotPriceLimit),
-      SpotStrategy: ros.stringToRosTemplate(properties.spotStrategy),
-      Tags: ros.listMapper(rosInstanceCloneTagsPropertyToRosTemplate)(properties.tags),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      'SourceInstanceId': ros.stringToRosTemplate(properties.sourceInstanceId),
+      'BackendServerWeight': ros.numberToRosTemplate(properties.backendServerWeight),
+      'DeletionProtection': ros.booleanToRosTemplate(properties.deletionProtection),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'DiskMappings': ros.listMapper(rosInstanceCloneDiskMappingsPropertyToRosTemplate)(properties.diskMappings),
+      'ImageId': ros.stringToRosTemplate(properties.imageId),
+      'InstanceChargeType': ros.stringToRosTemplate(properties.instanceChargeType),
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'InternetMaxBandwidthIn': ros.numberToRosTemplate(properties.internetMaxBandwidthIn),
+      'KeyPairName': ros.stringToRosTemplate(properties.keyPairName),
+      'LoadBalancerIdToAttach': ros.stringToRosTemplate(properties.loadBalancerIdToAttach),
+      'Password': ros.stringToRosTemplate(properties.password),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'RamRoleName': ros.stringToRosTemplate(properties.ramRoleName),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'SpotPriceLimit': ros.stringToRosTemplate(properties.spotPriceLimit),
+      'SpotStrategy': ros.stringToRosTemplate(properties.spotStrategy),
+      'Tags': ros.listMapper(rosInstanceCloneTagsPropertyToRosTemplate)(properties.tags),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
     };
 }
 
@@ -7589,13 +7589,13 @@ function rosInstanceCloneDiskMappingsPropertyToRosTemplate(properties: any): any
     if (!ros.canInspect(properties)) { return properties; }
     RosInstanceClone_DiskMappingsPropertyValidator(properties).assertSuccess();
     return {
-      SnapshotId: ros.stringToRosTemplate(properties.snapshotId),
-      Category: ros.stringToRosTemplate(properties.category),
-      Description: ros.stringToRosTemplate(properties.description),
-      Device: ros.stringToRosTemplate(properties.device),
-      PerformanceLevel: ros.stringToRosTemplate(properties.performanceLevel),
-      Size: ros.stringToRosTemplate(properties.size),
-      DiskName: ros.stringToRosTemplate(properties.diskName),
+      'SnapshotId': ros.stringToRosTemplate(properties.snapshotId),
+      'Category': ros.stringToRosTemplate(properties.category),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Device': ros.stringToRosTemplate(properties.device),
+      'PerformanceLevel': ros.stringToRosTemplate(properties.performanceLevel),
+      'Size': ros.stringToRosTemplate(properties.size),
+      'DiskName': ros.stringToRosTemplate(properties.diskName),
     };
 }
 
@@ -7642,8 +7642,8 @@ function rosInstanceCloneTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosInstanceClone_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -8397,86 +8397,86 @@ function rosInstanceGroupPropsToRosTemplate(properties: any, enableResourcePrope
         RosInstanceGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      InstanceType: ros.stringToRosTemplate(properties.instanceType),
-      MaxAmount: ros.numberToRosTemplate(properties.maxAmount),
-      Affinity: ros.stringToRosTemplate(properties.affinity),
-      AllocatePublicIP: ros.booleanToRosTemplate(properties.allocatePublicIp),
-      AutoReleaseTime: ros.stringToRosTemplate(properties.autoReleaseTime),
-      AutoRenew: ros.stringToRosTemplate(properties.autoRenew),
-      AutoRenewPeriod: ros.numberToRosTemplate(properties.autoRenewPeriod),
-      CpuOptions: rosInstanceGroupCpuOptionsPropertyToRosTemplate(properties.cpuOptions),
-      CreditSpecification: ros.stringToRosTemplate(properties.creditSpecification),
-      DedicatedHostId: ros.stringToRosTemplate(properties.dedicatedHostId),
-      DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
-      DeletionProtection: ros.booleanToRosTemplate(properties.deletionProtection),
-      DeploymentSetGroupNo: ros.numberToRosTemplate(properties.deploymentSetGroupNo),
-      DeploymentSetId: ros.stringToRosTemplate(properties.deploymentSetId),
-      Description: ros.stringToRosTemplate(properties.description),
-      DiskMappings: ros.listMapper(rosInstanceGroupDiskMappingsPropertyToRosTemplate)(properties.diskMappings),
-      EniMappings: ros.listMapper(rosInstanceGroupEniMappingsPropertyToRosTemplate)(properties.eniMappings),
-      HostName: ros.stringToRosTemplate(properties.hostName),
-      HostNames: ros.listMapper(ros.stringToRosTemplate)(properties.hostNames),
-      HpcClusterId: ros.stringToRosTemplate(properties.hpcClusterId),
-      HttpEndpoint: ros.stringToRosTemplate(properties.httpEndpoint),
-      HttpTokens: ros.stringToRosTemplate(properties.httpTokens),
-      ImageFamily: ros.stringToRosTemplate(properties.imageFamily),
-      ImageId: ros.stringToRosTemplate(properties.imageId),
-      ImageOptions: rosInstanceGroupImageOptionsPropertyToRosTemplate(properties.imageOptions),
-      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
-      InstanceName: ros.stringToRosTemplate(properties.instanceName),
-      InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
-      InternetMaxBandwidthOut: ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
-      IoOptimized: ros.stringToRosTemplate(properties.ioOptimized),
-      Ipv6AddressCount: ros.numberToRosTemplate(properties.ipv6AddressCount),
-      Ipv6Addresses: ros.listMapper(ros.objectToRosTemplate)(properties.ipv6Addresses),
-      KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
-      LaunchTemplateId: ros.stringToRosTemplate(properties.launchTemplateId),
-      LaunchTemplateName: ros.stringToRosTemplate(properties.launchTemplateName),
-      LaunchTemplateVersion: ros.stringToRosTemplate(properties.launchTemplateVersion),
-      NetworkInterfaceQueueNumber: ros.numberToRosTemplate(properties.networkInterfaceQueueNumber),
-      NetworkOptions: rosInstanceGroupNetworkOptionsPropertyToRosTemplate(properties.networkOptions),
-      NetworkType: ros.stringToRosTemplate(properties.networkType),
-      Password: ros.stringToRosTemplate(properties.password),
-      PasswordInherit: ros.booleanToRosTemplate(properties.passwordInherit),
-      Period: ros.numberToRosTemplate(properties.period),
-      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
-      PrivateIpAddress: ros.stringToRosTemplate(properties.privateIpAddress),
-      PrivatePoolOptions: rosInstanceGroupPrivatePoolOptionsPropertyToRosTemplate(properties.privatePoolOptions),
-      RamRoleName: ros.stringToRosTemplate(properties.ramRoleName),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      SchedulerOptions: rosInstanceGroupSchedulerOptionsPropertyToRosTemplate(properties.schedulerOptions),
-      SecurityEnhancementStrategy: ros.stringToRosTemplate(properties.securityEnhancementStrategy),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      SecurityGroupIds: ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
-      SecurityOptions: rosInstanceGroupSecurityOptionsPropertyToRosTemplate(properties.securityOptions),
-      SpotDuration: ros.numberToRosTemplate(properties.spotDuration),
-      SpotInterruptionBehavior: ros.stringToRosTemplate(properties.spotInterruptionBehavior),
-      SpotPriceLimit: ros.stringToRosTemplate(properties.spotPriceLimit),
-      SpotStrategy: ros.stringToRosTemplate(properties.spotStrategy),
-      StorageSetId: ros.stringToRosTemplate(properties.storageSetId),
-      StorageSetPartitionNumber: ros.numberToRosTemplate(properties.storageSetPartitionNumber),
-      SystemDiskAutoSnapshotPolicyId: ros.stringToRosTemplate(properties.systemDiskAutoSnapshotPolicyId),
-      SystemDiskBurstingEnabled: ros.booleanToRosTemplate(properties.systemDiskBurstingEnabled),
-      SystemDiskCategory: ros.stringToRosTemplate(properties.systemDiskCategory),
-      SystemDiskDescription: ros.stringToRosTemplate(properties.systemDiskDescription),
-      SystemDiskDiskName: ros.stringToRosTemplate(properties.systemDiskDiskName),
-      SystemDiskEncryptAlgorithm: ros.stringToRosTemplate(properties.systemDiskEncryptAlgorithm),
-      SystemDiskEncrypted: ros.stringToRosTemplate(properties.systemDiskEncrypted),
-      SystemDiskKMSKeyId: ros.stringToRosTemplate(properties.systemDiskKmsKeyId),
-      SystemDiskPerformanceLevel: ros.stringToRosTemplate(properties.systemDiskPerformanceLevel),
-      SystemDiskProvisionedIops: ros.numberToRosTemplate(properties.systemDiskProvisionedIops),
-      SystemDiskSize: ros.numberToRosTemplate(properties.systemDiskSize),
-      SystemDiskStorageClusterId: ros.stringToRosTemplate(properties.systemDiskStorageClusterId),
-      Tags: ros.listMapper(rosInstanceGroupTagsPropertyToRosTemplate)(properties.tags),
-      Tenancy: ros.stringToRosTemplate(properties.tenancy),
-      UniqueSuffix: ros.booleanToRosTemplate(properties.uniqueSuffix),
-      UpdatePolicy: ros.stringToRosTemplate(properties.updatePolicy),
-      UseAdditionalService: ros.booleanToRosTemplate(properties.useAdditionalService),
-      UserData: ros.stringToRosTemplate(properties.userData),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
-      ZoneIds: ros.listMapper(ros.stringToRosTemplate)(properties.zoneIds),
+      'InstanceType': ros.stringToRosTemplate(properties.instanceType),
+      'MaxAmount': ros.numberToRosTemplate(properties.maxAmount),
+      'Affinity': ros.stringToRosTemplate(properties.affinity),
+      'AllocatePublicIP': ros.booleanToRosTemplate(properties.allocatePublicIp),
+      'AutoReleaseTime': ros.stringToRosTemplate(properties.autoReleaseTime),
+      'AutoRenew': ros.stringToRosTemplate(properties.autoRenew),
+      'AutoRenewPeriod': ros.numberToRosTemplate(properties.autoRenewPeriod),
+      'CpuOptions': rosInstanceGroupCpuOptionsPropertyToRosTemplate(properties.cpuOptions),
+      'CreditSpecification': ros.stringToRosTemplate(properties.creditSpecification),
+      'DedicatedHostId': ros.stringToRosTemplate(properties.dedicatedHostId),
+      'DeletionForce': ros.booleanToRosTemplate(properties.deletionForce),
+      'DeletionProtection': ros.booleanToRosTemplate(properties.deletionProtection),
+      'DeploymentSetGroupNo': ros.numberToRosTemplate(properties.deploymentSetGroupNo),
+      'DeploymentSetId': ros.stringToRosTemplate(properties.deploymentSetId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'DiskMappings': ros.listMapper(rosInstanceGroupDiskMappingsPropertyToRosTemplate)(properties.diskMappings),
+      'EniMappings': ros.listMapper(rosInstanceGroupEniMappingsPropertyToRosTemplate)(properties.eniMappings),
+      'HostName': ros.stringToRosTemplate(properties.hostName),
+      'HostNames': ros.listMapper(ros.stringToRosTemplate)(properties.hostNames),
+      'HpcClusterId': ros.stringToRosTemplate(properties.hpcClusterId),
+      'HttpEndpoint': ros.stringToRosTemplate(properties.httpEndpoint),
+      'HttpTokens': ros.stringToRosTemplate(properties.httpTokens),
+      'ImageFamily': ros.stringToRosTemplate(properties.imageFamily),
+      'ImageId': ros.stringToRosTemplate(properties.imageId),
+      'ImageOptions': rosInstanceGroupImageOptionsPropertyToRosTemplate(properties.imageOptions),
+      'InstanceChargeType': ros.stringToRosTemplate(properties.instanceChargeType),
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'InternetChargeType': ros.stringToRosTemplate(properties.internetChargeType),
+      'InternetMaxBandwidthOut': ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
+      'IoOptimized': ros.stringToRosTemplate(properties.ioOptimized),
+      'Ipv6AddressCount': ros.numberToRosTemplate(properties.ipv6AddressCount),
+      'Ipv6Addresses': ros.listMapper(ros.objectToRosTemplate)(properties.ipv6Addresses),
+      'KeyPairName': ros.stringToRosTemplate(properties.keyPairName),
+      'LaunchTemplateId': ros.stringToRosTemplate(properties.launchTemplateId),
+      'LaunchTemplateName': ros.stringToRosTemplate(properties.launchTemplateName),
+      'LaunchTemplateVersion': ros.stringToRosTemplate(properties.launchTemplateVersion),
+      'NetworkInterfaceQueueNumber': ros.numberToRosTemplate(properties.networkInterfaceQueueNumber),
+      'NetworkOptions': rosInstanceGroupNetworkOptionsPropertyToRosTemplate(properties.networkOptions),
+      'NetworkType': ros.stringToRosTemplate(properties.networkType),
+      'Password': ros.stringToRosTemplate(properties.password),
+      'PasswordInherit': ros.booleanToRosTemplate(properties.passwordInherit),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
+      'PrivateIpAddress': ros.stringToRosTemplate(properties.privateIpAddress),
+      'PrivatePoolOptions': rosInstanceGroupPrivatePoolOptionsPropertyToRosTemplate(properties.privatePoolOptions),
+      'RamRoleName': ros.stringToRosTemplate(properties.ramRoleName),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'SchedulerOptions': rosInstanceGroupSchedulerOptionsPropertyToRosTemplate(properties.schedulerOptions),
+      'SecurityEnhancementStrategy': ros.stringToRosTemplate(properties.securityEnhancementStrategy),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'SecurityGroupIds': ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
+      'SecurityOptions': rosInstanceGroupSecurityOptionsPropertyToRosTemplate(properties.securityOptions),
+      'SpotDuration': ros.numberToRosTemplate(properties.spotDuration),
+      'SpotInterruptionBehavior': ros.stringToRosTemplate(properties.spotInterruptionBehavior),
+      'SpotPriceLimit': ros.stringToRosTemplate(properties.spotPriceLimit),
+      'SpotStrategy': ros.stringToRosTemplate(properties.spotStrategy),
+      'StorageSetId': ros.stringToRosTemplate(properties.storageSetId),
+      'StorageSetPartitionNumber': ros.numberToRosTemplate(properties.storageSetPartitionNumber),
+      'SystemDiskAutoSnapshotPolicyId': ros.stringToRosTemplate(properties.systemDiskAutoSnapshotPolicyId),
+      'SystemDiskBurstingEnabled': ros.booleanToRosTemplate(properties.systemDiskBurstingEnabled),
+      'SystemDiskCategory': ros.stringToRosTemplate(properties.systemDiskCategory),
+      'SystemDiskDescription': ros.stringToRosTemplate(properties.systemDiskDescription),
+      'SystemDiskDiskName': ros.stringToRosTemplate(properties.systemDiskDiskName),
+      'SystemDiskEncryptAlgorithm': ros.stringToRosTemplate(properties.systemDiskEncryptAlgorithm),
+      'SystemDiskEncrypted': ros.stringToRosTemplate(properties.systemDiskEncrypted),
+      'SystemDiskKMSKeyId': ros.stringToRosTemplate(properties.systemDiskKmsKeyId),
+      'SystemDiskPerformanceLevel': ros.stringToRosTemplate(properties.systemDiskPerformanceLevel),
+      'SystemDiskProvisionedIops': ros.numberToRosTemplate(properties.systemDiskProvisionedIops),
+      'SystemDiskSize': ros.numberToRosTemplate(properties.systemDiskSize),
+      'SystemDiskStorageClusterId': ros.stringToRosTemplate(properties.systemDiskStorageClusterId),
+      'Tags': ros.listMapper(rosInstanceGroupTagsPropertyToRosTemplate)(properties.tags),
+      'Tenancy': ros.stringToRosTemplate(properties.tenancy),
+      'UniqueSuffix': ros.booleanToRosTemplate(properties.uniqueSuffix),
+      'UpdatePolicy': ros.stringToRosTemplate(properties.updatePolicy),
+      'UseAdditionalService': ros.booleanToRosTemplate(properties.useAdditionalService),
+      'UserData': ros.stringToRosTemplate(properties.userData),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'ZoneIds': ros.listMapper(ros.stringToRosTemplate)(properties.zoneIds),
     };
 }
 
@@ -9240,8 +9240,8 @@ function rosInstanceGroupCpuOptionsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosInstanceGroup_CpuOptionsPropertyValidator(properties).assertSuccess();
     return {
-      ThreadsPerCore: ros.numberToRosTemplate(properties.threadsPerCore),
-      Core: ros.numberToRosTemplate(properties.core),
+      'ThreadsPerCore': ros.numberToRosTemplate(properties.threadsPerCore),
+      'Core': ros.numberToRosTemplate(properties.core),
     };
 }
 
@@ -9352,19 +9352,19 @@ function rosInstanceGroupDiskMappingsPropertyToRosTemplate(properties: any): any
     if (!ros.canInspect(properties)) { return properties; }
     RosInstanceGroup_DiskMappingsPropertyValidator(properties).assertSuccess();
     return {
-      BurstingEnabled: ros.booleanToRosTemplate(properties.burstingEnabled),
-      StorageClusterId: ros.stringToRosTemplate(properties.storageClusterId),
-      Category: ros.stringToRosTemplate(properties.category),
-      Description: ros.stringToRosTemplate(properties.description),
-      KMSKeyId: ros.stringToRosTemplate(properties.kmsKeyId),
-      Encrypted: ros.stringToRosTemplate(properties.encrypted),
-      Device: ros.stringToRosTemplate(properties.device),
-      PerformanceLevel: ros.stringToRosTemplate(properties.performanceLevel),
-      Size: ros.stringToRosTemplate(properties.size),
-      AutoSnapshotPolicyId: ros.stringToRosTemplate(properties.autoSnapshotPolicyId),
-      DiskName: ros.stringToRosTemplate(properties.diskName),
-      ProvisionedIops: ros.numberToRosTemplate(properties.provisionedIops),
-      SnapshotId: ros.stringToRosTemplate(properties.snapshotId),
+      'BurstingEnabled': ros.booleanToRosTemplate(properties.burstingEnabled),
+      'StorageClusterId': ros.stringToRosTemplate(properties.storageClusterId),
+      'Category': ros.stringToRosTemplate(properties.category),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'KMSKeyId': ros.stringToRosTemplate(properties.kmsKeyId),
+      'Encrypted': ros.stringToRosTemplate(properties.encrypted),
+      'Device': ros.stringToRosTemplate(properties.device),
+      'PerformanceLevel': ros.stringToRosTemplate(properties.performanceLevel),
+      'Size': ros.stringToRosTemplate(properties.size),
+      'AutoSnapshotPolicyId': ros.stringToRosTemplate(properties.autoSnapshotPolicyId),
+      'DiskName': ros.stringToRosTemplate(properties.diskName),
+      'ProvisionedIops': ros.numberToRosTemplate(properties.provisionedIops),
+      'SnapshotId': ros.stringToRosTemplate(properties.snapshotId),
     };
 }
 
@@ -9515,21 +9515,21 @@ function rosInstanceGroupEniMappingsPropertyToRosTemplate(properties: any): any 
     if (!ros.canInspect(properties)) { return properties; }
     RosInstanceGroup_EniMappingsPropertyValidator(properties).assertSuccess();
     return {
-      NetworkInterfaceTrafficMode: ros.stringToRosTemplate(properties.networkInterfaceTrafficMode),
-      Description: ros.stringToRosTemplate(properties.description),
-      DeleteOnRelease: ros.booleanToRosTemplate(properties.deleteOnRelease),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      NetworkInterfaceName: ros.stringToRosTemplate(properties.networkInterfaceName),
-      PrimaryIpAddress: ros.stringToRosTemplate(properties.primaryIpAddress),
-      Ipv6Addresses: ros.listMapper(ros.stringToRosTemplate)(properties.ipv6Addresses),
-      NetworkCardIndex: ros.numberToRosTemplate(properties.networkCardIndex),
-      NetworkInterfaceId: ros.stringToRosTemplate(properties.networkInterfaceId),
-      SecurityGroupIds: ros.listMapper(ros.objectToRosTemplate)(properties.securityGroupIds),
-      QueueNumber: ros.numberToRosTemplate(properties.queueNumber),
-      QueuePairNumber: ros.numberToRosTemplate(properties.queuePairNumber),
-      Ipv6AddressCount: ros.numberToRosTemplate(properties.ipv6AddressCount),
-      InstanceType: ros.stringToRosTemplate(properties.instanceType),
+      'NetworkInterfaceTrafficMode': ros.stringToRosTemplate(properties.networkInterfaceTrafficMode),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'DeleteOnRelease': ros.booleanToRosTemplate(properties.deleteOnRelease),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'NetworkInterfaceName': ros.stringToRosTemplate(properties.networkInterfaceName),
+      'PrimaryIpAddress': ros.stringToRosTemplate(properties.primaryIpAddress),
+      'Ipv6Addresses': ros.listMapper(ros.stringToRosTemplate)(properties.ipv6Addresses),
+      'NetworkCardIndex': ros.numberToRosTemplate(properties.networkCardIndex),
+      'NetworkInterfaceId': ros.stringToRosTemplate(properties.networkInterfaceId),
+      'SecurityGroupIds': ros.listMapper(ros.objectToRosTemplate)(properties.securityGroupIds),
+      'QueueNumber': ros.numberToRosTemplate(properties.queueNumber),
+      'QueuePairNumber': ros.numberToRosTemplate(properties.queuePairNumber),
+      'Ipv6AddressCount': ros.numberToRosTemplate(properties.ipv6AddressCount),
+      'InstanceType': ros.stringToRosTemplate(properties.instanceType),
     };
 }
 
@@ -9572,7 +9572,7 @@ function rosInstanceGroupImageOptionsPropertyToRosTemplate(properties: any): any
     if (!ros.canInspect(properties)) { return properties; }
     RosInstanceGroup_ImageOptionsPropertyValidator(properties).assertSuccess();
     return {
-      LoginAsNonRoot: ros.booleanToRosTemplate(properties.loginAsNonRoot),
+      'LoginAsNonRoot': ros.booleanToRosTemplate(properties.loginAsNonRoot),
     };
 }
 
@@ -9617,7 +9617,7 @@ function rosInstanceGroupNetworkOptionsPropertyToRosTemplate(properties: any): a
     if (!ros.canInspect(properties)) { return properties; }
     RosInstanceGroup_NetworkOptionsPropertyValidator(properties).assertSuccess();
     return {
-      EnableJumboFrame: ros.booleanToRosTemplate(properties.enableJumboFrame),
+      'EnableJumboFrame': ros.booleanToRosTemplate(properties.enableJumboFrame),
     };
 }
 
@@ -9639,9 +9639,9 @@ export namespace RosInstanceGroup {
          */
         readonly matchCriteria?: string | ros.IResolvable;
         /**
-         * @Property id: The private pool ID. The ID of a private pool is the same as that of the elasticity assurance or capacity reservation for which the private pool is generated.
+         * @Property identity: The private pool ID. The ID of a private pool is the same as that of the elasticity assurance or capacity reservation for which the private pool is generated.
          */
-        readonly id?: string | ros.IResolvable;
+        readonly identity?: string | ros.IResolvable;
     }
 }
 /**
@@ -9655,7 +9655,7 @@ function RosInstanceGroup_PrivatePoolOptionsPropertyValidator(properties: any): 
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('matchCriteria', ros.validateString)(properties.matchCriteria));
-    errors.collect(ros.propertyValidator('id', ros.validateString)(properties.id));
+    errors.collect(ros.propertyValidator('identity', ros.validateString)(properties.identity));
     return errors.wrap('supplied properties not correct for "PrivatePoolOptionsProperty"');
 }
 
@@ -9671,8 +9671,8 @@ function rosInstanceGroupPrivatePoolOptionsPropertyToRosTemplate(properties: any
     if (!ros.canInspect(properties)) { return properties; }
     RosInstanceGroup_PrivatePoolOptionsPropertyValidator(properties).assertSuccess();
     return {
-      MatchCriteria: ros.stringToRosTemplate(properties.matchCriteria),
-      Id: ros.stringToRosTemplate(properties.id),
+      'MatchCriteria': ros.stringToRosTemplate(properties.matchCriteria),
+      'Id': ros.stringToRosTemplate(properties.identity),
     };
 }
 
@@ -9722,8 +9722,8 @@ function rosInstanceGroupSchedulerOptionsPropertyToRosTemplate(properties: any):
     if (!ros.canInspect(properties)) { return properties; }
     RosInstanceGroup_SchedulerOptionsPropertyValidator(properties).assertSuccess();
     return {
-      ManagedPrivateSpaceId: ros.stringToRosTemplate(properties.managedPrivateSpaceId),
-      DedicatedHostClusterId: ros.stringToRosTemplate(properties.dedicatedHostClusterId),
+      'ManagedPrivateSpaceId': ros.stringToRosTemplate(properties.managedPrivateSpaceId),
+      'DedicatedHostClusterId': ros.stringToRosTemplate(properties.dedicatedHostClusterId),
     };
 }
 
@@ -9772,7 +9772,7 @@ function rosInstanceGroupSecurityOptionsPropertyToRosTemplate(properties: any): 
     if (!ros.canInspect(properties)) { return properties; }
     RosInstanceGroup_SecurityOptionsPropertyValidator(properties).assertSuccess();
     return {
-      TrustedSystemMode: ros.stringToRosTemplate(properties.trustedSystemMode),
+      'TrustedSystemMode': ros.stringToRosTemplate(properties.trustedSystemMode),
     };
 }
 
@@ -9819,8 +9819,8 @@ function rosInstanceGroupTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosInstanceGroup_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -10346,59 +10346,59 @@ function rosInstanceGroupClonePropsToRosTemplate(properties: any, enableResource
         RosInstanceGroupClonePropsValidator(properties).assertSuccess();
     }
     return {
-      MaxAmount: ros.numberToRosTemplate(properties.maxAmount),
-      SourceInstanceId: ros.stringToRosTemplate(properties.sourceInstanceId),
-      AutoReleaseTime: ros.stringToRosTemplate(properties.autoReleaseTime),
-      AutoRenew: ros.stringToRosTemplate(properties.autoRenew),
-      AutoRenewPeriod: ros.numberToRosTemplate(properties.autoRenewPeriod),
-      BackendServerWeight: ros.numberToRosTemplate(properties.backendServerWeight),
-      CpuOptions: rosInstanceGroupCloneCpuOptionsPropertyToRosTemplate(properties.cpuOptions),
-      DeletionProtection: ros.booleanToRosTemplate(properties.deletionProtection),
-      DeploymentSetId: ros.stringToRosTemplate(properties.deploymentSetId),
-      Description: ros.stringToRosTemplate(properties.description),
-      DiskMappings: ros.listMapper(rosInstanceGroupCloneDiskMappingsPropertyToRosTemplate)(properties.diskMappings),
-      EniMappings: ros.listMapper(rosInstanceGroupCloneEniMappingsPropertyToRosTemplate)(properties.eniMappings),
-      HostNames: ros.listMapper(ros.stringToRosTemplate)(properties.hostNames),
-      HpcClusterId: ros.stringToRosTemplate(properties.hpcClusterId),
-      ImageId: ros.stringToRosTemplate(properties.imageId),
-      ImageOptions: rosInstanceGroupCloneImageOptionsPropertyToRosTemplate(properties.imageOptions),
-      InstanceName: ros.stringToRosTemplate(properties.instanceName),
-      InternetMaxBandwidthIn: ros.numberToRosTemplate(properties.internetMaxBandwidthIn),
-      InternetMaxBandwidthOut: ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
-      Ipv6AddressCount: ros.numberToRosTemplate(properties.ipv6AddressCount),
-      Ipv6Addresses: ros.listMapper(ros.objectToRosTemplate)(properties.ipv6Addresses),
-      KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
-      LaunchTemplateId: ros.stringToRosTemplate(properties.launchTemplateId),
-      LaunchTemplateName: ros.stringToRosTemplate(properties.launchTemplateName),
-      LaunchTemplateVersion: ros.stringToRosTemplate(properties.launchTemplateVersion),
-      LoadBalancerIdToAttach: ros.stringToRosTemplate(properties.loadBalancerIdToAttach),
-      NetworkInterfaceQueueNumber: ros.numberToRosTemplate(properties.networkInterfaceQueueNumber),
-      NetworkOptions: rosInstanceGroupCloneNetworkOptionsPropertyToRosTemplate(properties.networkOptions),
-      Password: ros.stringToRosTemplate(properties.password),
-      PasswordInherit: ros.booleanToRosTemplate(properties.passwordInherit),
-      Period: ros.numberToRosTemplate(properties.period),
-      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
-      RamRoleName: ros.stringToRosTemplate(properties.ramRoleName),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      SecurityGroupIds: ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
-      SecurityOptions: rosInstanceGroupCloneSecurityOptionsPropertyToRosTemplate(properties.securityOptions),
-      SpotPriceLimit: ros.stringToRosTemplate(properties.spotPriceLimit),
-      SpotStrategy: ros.stringToRosTemplate(properties.spotStrategy),
-      SystemDiskAutoSnapshotPolicyId: ros.stringToRosTemplate(properties.systemDiskAutoSnapshotPolicyId),
-      SystemDiskBurstingEnabled: ros.booleanToRosTemplate(properties.systemDiskBurstingEnabled),
-      SystemDiskCategory: ros.stringToRosTemplate(properties.systemDiskCategory),
-      SystemDiskDescription: ros.stringToRosTemplate(properties.systemDiskDescription),
-      SystemDiskDiskName: ros.stringToRosTemplate(properties.systemDiskDiskName),
-      SystemDiskEncryptAlgorithm: ros.stringToRosTemplate(properties.systemDiskEncryptAlgorithm),
-      SystemDiskEncrypted: ros.stringToRosTemplate(properties.systemDiskEncrypted),
-      SystemDiskKMSKeyId: ros.stringToRosTemplate(properties.systemDiskKmsKeyId),
-      SystemDiskProvisionedIops: ros.numberToRosTemplate(properties.systemDiskProvisionedIops),
-      SystemDiskStorageClusterId: ros.stringToRosTemplate(properties.systemDiskStorageClusterId),
-      Tags: ros.listMapper(rosInstanceGroupCloneTagsPropertyToRosTemplate)(properties.tags),
-      UniqueSuffix: ros.booleanToRosTemplate(properties.uniqueSuffix),
-      UpdatePolicy: ros.stringToRosTemplate(properties.updatePolicy),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      'MaxAmount': ros.numberToRosTemplate(properties.maxAmount),
+      'SourceInstanceId': ros.stringToRosTemplate(properties.sourceInstanceId),
+      'AutoReleaseTime': ros.stringToRosTemplate(properties.autoReleaseTime),
+      'AutoRenew': ros.stringToRosTemplate(properties.autoRenew),
+      'AutoRenewPeriod': ros.numberToRosTemplate(properties.autoRenewPeriod),
+      'BackendServerWeight': ros.numberToRosTemplate(properties.backendServerWeight),
+      'CpuOptions': rosInstanceGroupCloneCpuOptionsPropertyToRosTemplate(properties.cpuOptions),
+      'DeletionProtection': ros.booleanToRosTemplate(properties.deletionProtection),
+      'DeploymentSetId': ros.stringToRosTemplate(properties.deploymentSetId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'DiskMappings': ros.listMapper(rosInstanceGroupCloneDiskMappingsPropertyToRosTemplate)(properties.diskMappings),
+      'EniMappings': ros.listMapper(rosInstanceGroupCloneEniMappingsPropertyToRosTemplate)(properties.eniMappings),
+      'HostNames': ros.listMapper(ros.stringToRosTemplate)(properties.hostNames),
+      'HpcClusterId': ros.stringToRosTemplate(properties.hpcClusterId),
+      'ImageId': ros.stringToRosTemplate(properties.imageId),
+      'ImageOptions': rosInstanceGroupCloneImageOptionsPropertyToRosTemplate(properties.imageOptions),
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'InternetMaxBandwidthIn': ros.numberToRosTemplate(properties.internetMaxBandwidthIn),
+      'InternetMaxBandwidthOut': ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
+      'Ipv6AddressCount': ros.numberToRosTemplate(properties.ipv6AddressCount),
+      'Ipv6Addresses': ros.listMapper(ros.objectToRosTemplate)(properties.ipv6Addresses),
+      'KeyPairName': ros.stringToRosTemplate(properties.keyPairName),
+      'LaunchTemplateId': ros.stringToRosTemplate(properties.launchTemplateId),
+      'LaunchTemplateName': ros.stringToRosTemplate(properties.launchTemplateName),
+      'LaunchTemplateVersion': ros.stringToRosTemplate(properties.launchTemplateVersion),
+      'LoadBalancerIdToAttach': ros.stringToRosTemplate(properties.loadBalancerIdToAttach),
+      'NetworkInterfaceQueueNumber': ros.numberToRosTemplate(properties.networkInterfaceQueueNumber),
+      'NetworkOptions': rosInstanceGroupCloneNetworkOptionsPropertyToRosTemplate(properties.networkOptions),
+      'Password': ros.stringToRosTemplate(properties.password),
+      'PasswordInherit': ros.booleanToRosTemplate(properties.passwordInherit),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
+      'RamRoleName': ros.stringToRosTemplate(properties.ramRoleName),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'SecurityGroupIds': ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
+      'SecurityOptions': rosInstanceGroupCloneSecurityOptionsPropertyToRosTemplate(properties.securityOptions),
+      'SpotPriceLimit': ros.stringToRosTemplate(properties.spotPriceLimit),
+      'SpotStrategy': ros.stringToRosTemplate(properties.spotStrategy),
+      'SystemDiskAutoSnapshotPolicyId': ros.stringToRosTemplate(properties.systemDiskAutoSnapshotPolicyId),
+      'SystemDiskBurstingEnabled': ros.booleanToRosTemplate(properties.systemDiskBurstingEnabled),
+      'SystemDiskCategory': ros.stringToRosTemplate(properties.systemDiskCategory),
+      'SystemDiskDescription': ros.stringToRosTemplate(properties.systemDiskDescription),
+      'SystemDiskDiskName': ros.stringToRosTemplate(properties.systemDiskDiskName),
+      'SystemDiskEncryptAlgorithm': ros.stringToRosTemplate(properties.systemDiskEncryptAlgorithm),
+      'SystemDiskEncrypted': ros.stringToRosTemplate(properties.systemDiskEncrypted),
+      'SystemDiskKMSKeyId': ros.stringToRosTemplate(properties.systemDiskKmsKeyId),
+      'SystemDiskProvisionedIops': ros.numberToRosTemplate(properties.systemDiskProvisionedIops),
+      'SystemDiskStorageClusterId': ros.stringToRosTemplate(properties.systemDiskStorageClusterId),
+      'Tags': ros.listMapper(rosInstanceGroupCloneTagsPropertyToRosTemplate)(properties.tags),
+      'UniqueSuffix': ros.booleanToRosTemplate(properties.uniqueSuffix),
+      'UpdatePolicy': ros.stringToRosTemplate(properties.updatePolicy),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
     };
 }
 
@@ -10944,8 +10944,8 @@ function rosInstanceGroupCloneCpuOptionsPropertyToRosTemplate(properties: any): 
     if (!ros.canInspect(properties)) { return properties; }
     RosInstanceGroupClone_CpuOptionsPropertyValidator(properties).assertSuccess();
     return {
-      ThreadsPerCore: ros.numberToRosTemplate(properties.threadsPerCore),
-      Core: ros.numberToRosTemplate(properties.core),
+      'ThreadsPerCore': ros.numberToRosTemplate(properties.threadsPerCore),
+      'Core': ros.numberToRosTemplate(properties.core),
     };
 }
 
@@ -11056,19 +11056,19 @@ function rosInstanceGroupCloneDiskMappingsPropertyToRosTemplate(properties: any)
     if (!ros.canInspect(properties)) { return properties; }
     RosInstanceGroupClone_DiskMappingsPropertyValidator(properties).assertSuccess();
     return {
-      BurstingEnabled: ros.booleanToRosTemplate(properties.burstingEnabled),
-      StorageClusterId: ros.stringToRosTemplate(properties.storageClusterId),
-      Category: ros.stringToRosTemplate(properties.category),
-      Description: ros.stringToRosTemplate(properties.description),
-      KMSKeyId: ros.stringToRosTemplate(properties.kmsKeyId),
-      Encrypted: ros.stringToRosTemplate(properties.encrypted),
-      Device: ros.stringToRosTemplate(properties.device),
-      PerformanceLevel: ros.stringToRosTemplate(properties.performanceLevel),
-      Size: ros.stringToRosTemplate(properties.size),
-      AutoSnapshotPolicyId: ros.stringToRosTemplate(properties.autoSnapshotPolicyId),
-      DiskName: ros.stringToRosTemplate(properties.diskName),
-      ProvisionedIops: ros.numberToRosTemplate(properties.provisionedIops),
-      SnapshotId: ros.stringToRosTemplate(properties.snapshotId),
+      'BurstingEnabled': ros.booleanToRosTemplate(properties.burstingEnabled),
+      'StorageClusterId': ros.stringToRosTemplate(properties.storageClusterId),
+      'Category': ros.stringToRosTemplate(properties.category),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'KMSKeyId': ros.stringToRosTemplate(properties.kmsKeyId),
+      'Encrypted': ros.stringToRosTemplate(properties.encrypted),
+      'Device': ros.stringToRosTemplate(properties.device),
+      'PerformanceLevel': ros.stringToRosTemplate(properties.performanceLevel),
+      'Size': ros.stringToRosTemplate(properties.size),
+      'AutoSnapshotPolicyId': ros.stringToRosTemplate(properties.autoSnapshotPolicyId),
+      'DiskName': ros.stringToRosTemplate(properties.diskName),
+      'ProvisionedIops': ros.numberToRosTemplate(properties.provisionedIops),
+      'SnapshotId': ros.stringToRosTemplate(properties.snapshotId),
     };
 }
 
@@ -11219,21 +11219,21 @@ function rosInstanceGroupCloneEniMappingsPropertyToRosTemplate(properties: any):
     if (!ros.canInspect(properties)) { return properties; }
     RosInstanceGroupClone_EniMappingsPropertyValidator(properties).assertSuccess();
     return {
-      NetworkInterfaceTrafficMode: ros.stringToRosTemplate(properties.networkInterfaceTrafficMode),
-      Description: ros.stringToRosTemplate(properties.description),
-      DeleteOnRelease: ros.booleanToRosTemplate(properties.deleteOnRelease),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      NetworkInterfaceName: ros.stringToRosTemplate(properties.networkInterfaceName),
-      PrimaryIpAddress: ros.stringToRosTemplate(properties.primaryIpAddress),
-      Ipv6Addresses: ros.listMapper(ros.stringToRosTemplate)(properties.ipv6Addresses),
-      NetworkCardIndex: ros.numberToRosTemplate(properties.networkCardIndex),
-      NetworkInterfaceId: ros.stringToRosTemplate(properties.networkInterfaceId),
-      SecurityGroupIds: ros.listMapper(ros.objectToRosTemplate)(properties.securityGroupIds),
-      QueueNumber: ros.numberToRosTemplate(properties.queueNumber),
-      QueuePairNumber: ros.numberToRosTemplate(properties.queuePairNumber),
-      Ipv6AddressCount: ros.numberToRosTemplate(properties.ipv6AddressCount),
-      InstanceType: ros.stringToRosTemplate(properties.instanceType),
+      'NetworkInterfaceTrafficMode': ros.stringToRosTemplate(properties.networkInterfaceTrafficMode),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'DeleteOnRelease': ros.booleanToRosTemplate(properties.deleteOnRelease),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'NetworkInterfaceName': ros.stringToRosTemplate(properties.networkInterfaceName),
+      'PrimaryIpAddress': ros.stringToRosTemplate(properties.primaryIpAddress),
+      'Ipv6Addresses': ros.listMapper(ros.stringToRosTemplate)(properties.ipv6Addresses),
+      'NetworkCardIndex': ros.numberToRosTemplate(properties.networkCardIndex),
+      'NetworkInterfaceId': ros.stringToRosTemplate(properties.networkInterfaceId),
+      'SecurityGroupIds': ros.listMapper(ros.objectToRosTemplate)(properties.securityGroupIds),
+      'QueueNumber': ros.numberToRosTemplate(properties.queueNumber),
+      'QueuePairNumber': ros.numberToRosTemplate(properties.queuePairNumber),
+      'Ipv6AddressCount': ros.numberToRosTemplate(properties.ipv6AddressCount),
+      'InstanceType': ros.stringToRosTemplate(properties.instanceType),
     };
 }
 
@@ -11276,7 +11276,7 @@ function rosInstanceGroupCloneImageOptionsPropertyToRosTemplate(properties: any)
     if (!ros.canInspect(properties)) { return properties; }
     RosInstanceGroupClone_ImageOptionsPropertyValidator(properties).assertSuccess();
     return {
-      LoginAsNonRoot: ros.booleanToRosTemplate(properties.loginAsNonRoot),
+      'LoginAsNonRoot': ros.booleanToRosTemplate(properties.loginAsNonRoot),
     };
 }
 
@@ -11321,7 +11321,7 @@ function rosInstanceGroupCloneNetworkOptionsPropertyToRosTemplate(properties: an
     if (!ros.canInspect(properties)) { return properties; }
     RosInstanceGroupClone_NetworkOptionsPropertyValidator(properties).assertSuccess();
     return {
-      EnableJumboFrame: ros.booleanToRosTemplate(properties.enableJumboFrame),
+      'EnableJumboFrame': ros.booleanToRosTemplate(properties.enableJumboFrame),
     };
 }
 
@@ -11370,7 +11370,7 @@ function rosInstanceGroupCloneSecurityOptionsPropertyToRosTemplate(properties: a
     if (!ros.canInspect(properties)) { return properties; }
     RosInstanceGroupClone_SecurityOptionsPropertyValidator(properties).assertSuccess();
     return {
-      TrustedSystemMode: ros.stringToRosTemplate(properties.trustedSystemMode),
+      'TrustedSystemMode': ros.stringToRosTemplate(properties.trustedSystemMode),
     };
 }
 
@@ -11417,8 +11417,8 @@ function rosInstanceGroupCloneTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosInstanceGroupClone_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -11606,20 +11606,20 @@ function rosInvocationPropsToRosTemplate(properties: any, enableResourceProperty
         RosInvocationPropsValidator(properties).assertSuccess();
     }
     return {
-      InstanceIds: ros.listMapper(ros.objectToRosTemplate)(properties.instanceIds),
-      CommandId: ros.stringToRosTemplate(properties.commandId),
-      CommandName: ros.stringToRosTemplate(properties.commandName),
-      ContainerId: ros.stringToRosTemplate(properties.containerId),
-      ContainerName: ros.stringToRosTemplate(properties.containerName),
-      Frequency: ros.stringToRosTemplate(properties.frequency),
-      Parameters: ros.hashMapper(ros.objectToRosTemplate)(properties.parameters),
-      RepeatMode: ros.stringToRosTemplate(properties.repeatMode),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Sync: ros.booleanToRosTemplate(properties.sync),
-      Tags: ros.listMapper(rosInvocationTagsPropertyToRosTemplate)(properties.tags),
-      Timeout: ros.numberToRosTemplate(properties.timeout),
-      Username: ros.stringToRosTemplate(properties.username),
-      WindowsPasswordName: ros.stringToRosTemplate(properties.windowsPasswordName),
+      'InstanceIds': ros.listMapper(ros.objectToRosTemplate)(properties.instanceIds),
+      'CommandId': ros.stringToRosTemplate(properties.commandId),
+      'CommandName': ros.stringToRosTemplate(properties.commandName),
+      'ContainerId': ros.stringToRosTemplate(properties.containerId),
+      'ContainerName': ros.stringToRosTemplate(properties.containerName),
+      'Frequency': ros.stringToRosTemplate(properties.frequency),
+      'Parameters': ros.hashMapper(ros.objectToRosTemplate)(properties.parameters),
+      'RepeatMode': ros.stringToRosTemplate(properties.repeatMode),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Sync': ros.booleanToRosTemplate(properties.sync),
+      'Tags': ros.listMapper(rosInvocationTagsPropertyToRosTemplate)(properties.tags),
+      'Timeout': ros.numberToRosTemplate(properties.timeout),
+      'Username': ros.stringToRosTemplate(properties.username),
+      'WindowsPasswordName': ros.stringToRosTemplate(properties.windowsPasswordName),
     };
 }
 
@@ -11847,8 +11847,8 @@ function rosInvocationTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosInvocation_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -11911,10 +11911,10 @@ function rosJoinSecurityGroupPropsToRosTemplate(properties: any, enableResourceP
         RosJoinSecurityGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      InstanceIdList: ros.listMapper(ros.objectToRosTemplate)(properties.instanceIdList),
-      NetworkInterfaceList: ros.listMapper(ros.objectToRosTemplate)(properties.networkInterfaceList),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'InstanceIdList': ros.listMapper(ros.objectToRosTemplate)(properties.instanceIdList),
+      'NetworkInterfaceList': ros.listMapper(ros.objectToRosTemplate)(properties.networkInterfaceList),
     };
 }
 
@@ -12386,48 +12386,48 @@ function rosLaunchTemplatePropsToRosTemplate(properties: any, enableResourceProp
         RosLaunchTemplatePropsValidator(properties).assertSuccess();
     }
     return {
-      LaunchTemplateName: ros.stringToRosTemplate(properties.launchTemplateName),
-      AutoReleaseTime: ros.stringToRosTemplate(properties.autoReleaseTime),
-      DeploymentSetId: ros.stringToRosTemplate(properties.deploymentSetId),
-      Description: ros.stringToRosTemplate(properties.description),
-      DiskMappings: ros.listMapper(rosLaunchTemplateDiskMappingsPropertyToRosTemplate)(properties.diskMappings),
-      HostName: ros.stringToRosTemplate(properties.hostName),
-      ImageId: ros.stringToRosTemplate(properties.imageId),
-      ImageOwnerAlias: ros.stringToRosTemplate(properties.imageOwnerAlias),
-      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
-      InstanceName: ros.stringToRosTemplate(properties.instanceName),
-      InstanceType: ros.stringToRosTemplate(properties.instanceType),
-      InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
-      InternetMaxBandwidthOut: ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
-      IoOptimized: ros.stringToRosTemplate(properties.ioOptimized),
-      Ipv6AddressCount: ros.numberToRosTemplate(properties.ipv6AddressCount),
-      KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
-      NetworkInterfaces: ros.listMapper(rosLaunchTemplateNetworkInterfacesPropertyToRosTemplate)(properties.networkInterfaces),
-      NetworkType: ros.stringToRosTemplate(properties.networkType),
-      PasswordInherit: ros.booleanToRosTemplate(properties.passwordInherit),
-      Period: ros.numberToRosTemplate(properties.period),
-      PrivateIpAddress: ros.stringToRosTemplate(properties.privateIpAddress),
-      RamRoleName: ros.stringToRosTemplate(properties.ramRoleName),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      SecurityEnhancementStrategy: ros.stringToRosTemplate(properties.securityEnhancementStrategy),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      SecurityGroupIds: ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
-      SpotDuration: ros.numberToRosTemplate(properties.spotDuration),
-      SpotPriceLimit: ros.stringToRosTemplate(properties.spotPriceLimit),
-      SpotStrategy: ros.stringToRosTemplate(properties.spotStrategy),
-      SystemDiskCategory: ros.stringToRosTemplate(properties.systemDiskCategory),
-      SystemDiskDeleteWithInstance: ros.booleanToRosTemplate(properties.systemDiskDeleteWithInstance),
-      SystemDiskDescription: ros.stringToRosTemplate(properties.systemDiskDescription),
-      SystemDiskDiskName: ros.stringToRosTemplate(properties.systemDiskDiskName),
-      SystemDiskPerformanceLevel: ros.stringToRosTemplate(properties.systemDiskPerformanceLevel),
-      SystemDiskSize: ros.numberToRosTemplate(properties.systemDiskSize),
-      Tags: ros.listMapper(rosLaunchTemplateTagsPropertyToRosTemplate)(properties.tags),
-      TemplateResourceGroupId: ros.stringToRosTemplate(properties.templateResourceGroupId),
-      TemplateTags: ros.listMapper(rosLaunchTemplateTemplateTagsPropertyToRosTemplate)(properties.templateTags),
-      UserData: ros.stringToRosTemplate(properties.userData),
-      VersionDescription: ros.stringToRosTemplate(properties.versionDescription),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      'LaunchTemplateName': ros.stringToRosTemplate(properties.launchTemplateName),
+      'AutoReleaseTime': ros.stringToRosTemplate(properties.autoReleaseTime),
+      'DeploymentSetId': ros.stringToRosTemplate(properties.deploymentSetId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'DiskMappings': ros.listMapper(rosLaunchTemplateDiskMappingsPropertyToRosTemplate)(properties.diskMappings),
+      'HostName': ros.stringToRosTemplate(properties.hostName),
+      'ImageId': ros.stringToRosTemplate(properties.imageId),
+      'ImageOwnerAlias': ros.stringToRosTemplate(properties.imageOwnerAlias),
+      'InstanceChargeType': ros.stringToRosTemplate(properties.instanceChargeType),
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'InstanceType': ros.stringToRosTemplate(properties.instanceType),
+      'InternetChargeType': ros.stringToRosTemplate(properties.internetChargeType),
+      'InternetMaxBandwidthOut': ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
+      'IoOptimized': ros.stringToRosTemplate(properties.ioOptimized),
+      'Ipv6AddressCount': ros.numberToRosTemplate(properties.ipv6AddressCount),
+      'KeyPairName': ros.stringToRosTemplate(properties.keyPairName),
+      'NetworkInterfaces': ros.listMapper(rosLaunchTemplateNetworkInterfacesPropertyToRosTemplate)(properties.networkInterfaces),
+      'NetworkType': ros.stringToRosTemplate(properties.networkType),
+      'PasswordInherit': ros.booleanToRosTemplate(properties.passwordInherit),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PrivateIpAddress': ros.stringToRosTemplate(properties.privateIpAddress),
+      'RamRoleName': ros.stringToRosTemplate(properties.ramRoleName),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'SecurityEnhancementStrategy': ros.stringToRosTemplate(properties.securityEnhancementStrategy),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'SecurityGroupIds': ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
+      'SpotDuration': ros.numberToRosTemplate(properties.spotDuration),
+      'SpotPriceLimit': ros.stringToRosTemplate(properties.spotPriceLimit),
+      'SpotStrategy': ros.stringToRosTemplate(properties.spotStrategy),
+      'SystemDiskCategory': ros.stringToRosTemplate(properties.systemDiskCategory),
+      'SystemDiskDeleteWithInstance': ros.booleanToRosTemplate(properties.systemDiskDeleteWithInstance),
+      'SystemDiskDescription': ros.stringToRosTemplate(properties.systemDiskDescription),
+      'SystemDiskDiskName': ros.stringToRosTemplate(properties.systemDiskDiskName),
+      'SystemDiskPerformanceLevel': ros.stringToRosTemplate(properties.systemDiskPerformanceLevel),
+      'SystemDiskSize': ros.numberToRosTemplate(properties.systemDiskSize),
+      'Tags': ros.listMapper(rosLaunchTemplateTagsPropertyToRosTemplate)(properties.tags),
+      'TemplateResourceGroupId': ros.stringToRosTemplate(properties.templateResourceGroupId),
+      'TemplateTags': ros.listMapper(rosLaunchTemplateTemplateTagsPropertyToRosTemplate)(properties.templateTags),
+      'UserData': ros.stringToRosTemplate(properties.userData),
+      'VersionDescription': ros.stringToRosTemplate(properties.versionDescription),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
     };
 }
 
@@ -12880,14 +12880,14 @@ function rosLaunchTemplateDiskMappingsPropertyToRosTemplate(properties: any): an
     if (!ros.canInspect(properties)) { return properties; }
     RosLaunchTemplate_DiskMappingsPropertyValidator(properties).assertSuccess();
     return {
-      SnapshotId: ros.stringToRosTemplate(properties.snapshotId),
-      Category: ros.stringToRosTemplate(properties.category),
-      Description: ros.stringToRosTemplate(properties.description),
-      Encrypted: ros.booleanToRosTemplate(properties.encrypted),
-      PerformanceLevel: ros.stringToRosTemplate(properties.performanceLevel),
-      Size: ros.stringToRosTemplate(properties.size),
-      DeleteWithInstance: ros.booleanToRosTemplate(properties.deleteWithInstance),
-      DiskName: ros.stringToRosTemplate(properties.diskName),
+      'SnapshotId': ros.stringToRosTemplate(properties.snapshotId),
+      'Category': ros.stringToRosTemplate(properties.category),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Encrypted': ros.booleanToRosTemplate(properties.encrypted),
+      'PerformanceLevel': ros.stringToRosTemplate(properties.performanceLevel),
+      'Size': ros.stringToRosTemplate(properties.size),
+      'DeleteWithInstance': ros.booleanToRosTemplate(properties.deleteWithInstance),
+      'DiskName': ros.stringToRosTemplate(properties.diskName),
     };
 }
 
@@ -12948,11 +12948,11 @@ function rosLaunchTemplateNetworkInterfacesPropertyToRosTemplate(properties: any
     if (!ros.canInspect(properties)) { return properties; }
     RosLaunchTemplate_NetworkInterfacesPropertyValidator(properties).assertSuccess();
     return {
-      Description: ros.stringToRosTemplate(properties.description),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      NetworkInterfaceName: ros.stringToRosTemplate(properties.networkInterfaceName),
-      PrimaryIpAddress: ros.stringToRosTemplate(properties.primaryIpAddress),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'NetworkInterfaceName': ros.stringToRosTemplate(properties.networkInterfaceName),
+      'PrimaryIpAddress': ros.stringToRosTemplate(properties.primaryIpAddress),
     };
 }
 
@@ -12998,8 +12998,8 @@ function rosLaunchTemplateTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosLaunchTemplate_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -13045,8 +13045,8 @@ function rosLaunchTemplateTemplateTagsPropertyToRosTemplate(properties: any): an
     if (!ros.canInspect(properties)) { return properties; }
     RosLaunchTemplate_TemplateTagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -13311,27 +13311,27 @@ function rosNetworkInterfacePropsToRosTemplate(properties: any, enableResourcePr
         RosNetworkInterfacePropsValidator(properties).assertSuccess();
     }
     return {
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      DeleteOnRelease: ros.booleanToRosTemplate(properties.deleteOnRelease),
-      Description: ros.stringToRosTemplate(properties.description),
-      Ipv4PrefixCount: ros.numberToRosTemplate(properties.ipv4PrefixCount),
-      Ipv4Prefixes: ros.listMapper(ros.stringToRosTemplate)(properties.ipv4Prefixes),
-      Ipv6AddressCount: ros.numberToRosTemplate(properties.ipv6AddressCount),
-      Ipv6Addresses: ros.listMapper(ros.stringToRosTemplate)(properties.ipv6Addresses),
-      Ipv6PrefixCount: ros.numberToRosTemplate(properties.ipv6PrefixCount),
-      Ipv6Prefixes: ros.listMapper(ros.stringToRosTemplate)(properties.ipv6Prefixes),
-      NetworkInterfaceName: ros.stringToRosTemplate(properties.networkInterfaceName),
-      NetworkInterfaceTrafficMode: ros.stringToRosTemplate(properties.networkInterfaceTrafficMode),
-      PrimaryIpAddress: ros.stringToRosTemplate(properties.primaryIpAddress),
-      PrivateIpAddresses: ros.listMapper(ros.stringToRosTemplate)(properties.privateIpAddresses),
-      QueueNumber: ros.numberToRosTemplate(properties.queueNumber),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      RxQueueSize: ros.numberToRosTemplate(properties.rxQueueSize),
-      SecondaryPrivateIpAddressCount: ros.numberToRosTemplate(properties.secondaryPrivateIpAddressCount),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      SecurityGroupIds: ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
-      Tags: ros.listMapper(rosNetworkInterfaceTagsPropertyToRosTemplate)(properties.tags),
-      TxQueueSize: ros.numberToRosTemplate(properties.txQueueSize),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'DeleteOnRelease': ros.booleanToRosTemplate(properties.deleteOnRelease),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Ipv4PrefixCount': ros.numberToRosTemplate(properties.ipv4PrefixCount),
+      'Ipv4Prefixes': ros.listMapper(ros.stringToRosTemplate)(properties.ipv4Prefixes),
+      'Ipv6AddressCount': ros.numberToRosTemplate(properties.ipv6AddressCount),
+      'Ipv6Addresses': ros.listMapper(ros.stringToRosTemplate)(properties.ipv6Addresses),
+      'Ipv6PrefixCount': ros.numberToRosTemplate(properties.ipv6PrefixCount),
+      'Ipv6Prefixes': ros.listMapper(ros.stringToRosTemplate)(properties.ipv6Prefixes),
+      'NetworkInterfaceName': ros.stringToRosTemplate(properties.networkInterfaceName),
+      'NetworkInterfaceTrafficMode': ros.stringToRosTemplate(properties.networkInterfaceTrafficMode),
+      'PrimaryIpAddress': ros.stringToRosTemplate(properties.primaryIpAddress),
+      'PrivateIpAddresses': ros.listMapper(ros.stringToRosTemplate)(properties.privateIpAddresses),
+      'QueueNumber': ros.numberToRosTemplate(properties.queueNumber),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'RxQueueSize': ros.numberToRosTemplate(properties.rxQueueSize),
+      'SecondaryPrivateIpAddressCount': ros.numberToRosTemplate(properties.secondaryPrivateIpAddressCount),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'SecurityGroupIds': ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
+      'Tags': ros.listMapper(rosNetworkInterfaceTagsPropertyToRosTemplate)(properties.tags),
+      'TxQueueSize': ros.numberToRosTemplate(properties.txQueueSize),
     };
 }
 
@@ -13594,8 +13594,8 @@ function rosNetworkInterfaceTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosNetworkInterface_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -13665,10 +13665,10 @@ function rosNetworkInterfaceAttachmentPropsToRosTemplate(properties: any, enable
         RosNetworkInterfaceAttachmentPropsValidator(properties).assertSuccess();
     }
     return {
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      NetworkInterfaceId: ros.stringToRosTemplate(properties.networkInterfaceId),
-      EcsRestartOption: ros.stringToRosTemplate(properties.ecsRestartOption),
-      TrunkNetworkInstanceId: ros.stringToRosTemplate(properties.trunkNetworkInstanceId),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'NetworkInterfaceId': ros.stringToRosTemplate(properties.networkInterfaceId),
+      'EcsRestartOption': ros.stringToRosTemplate(properties.ecsRestartOption),
+      'TrunkNetworkInstanceId': ros.stringToRosTemplate(properties.trunkNetworkInstanceId),
     };
 }
 
@@ -13808,9 +13808,9 @@ function rosNetworkInterfacePermissionPropsToRosTemplate(properties: any, enable
         RosNetworkInterfacePermissionPropsValidator(properties).assertSuccess();
     }
     return {
-      AccountId: ros.stringToRosTemplate(properties.accountId),
-      NetworkInterfaceId: ros.stringToRosTemplate(properties.networkInterfaceId),
-      Permission: ros.stringToRosTemplate(properties.permission),
+      'AccountId': ros.stringToRosTemplate(properties.accountId),
+      'NetworkInterfaceId': ros.stringToRosTemplate(properties.networkInterfaceId),
+      'Permission': ros.stringToRosTemplate(properties.permission),
     };
 }
 
@@ -13963,11 +13963,11 @@ function rosPrefixListPropsToRosTemplate(properties: any, enableResourceProperty
         RosPrefixListPropsValidator(properties).assertSuccess();
     }
     return {
-      AddressFamily: ros.stringToRosTemplate(properties.addressFamily),
-      MaxEntries: ros.numberToRosTemplate(properties.maxEntries),
-      PrefixListName: ros.stringToRosTemplate(properties.prefixListName),
-      Description: ros.stringToRosTemplate(properties.description),
-      Entries: ros.listMapper(rosPrefixListEntriesPropertyToRosTemplate)(properties.entries),
+      'AddressFamily': ros.stringToRosTemplate(properties.addressFamily),
+      'MaxEntries': ros.numberToRosTemplate(properties.maxEntries),
+      'PrefixListName': ros.stringToRosTemplate(properties.prefixListName),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Entries': ros.listMapper(rosPrefixListEntriesPropertyToRosTemplate)(properties.entries),
     };
 }
 
@@ -14096,8 +14096,8 @@ function rosPrefixListEntriesPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosPrefixList_EntriesPropertyValidator(properties).assertSuccess();
     return {
-      Description: ros.stringToRosTemplate(properties.description),
-      Cidr: ros.stringToRosTemplate(properties.cidr),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Cidr': ros.stringToRosTemplate(properties.cidr),
     };
 }
 
@@ -14170,9 +14170,9 @@ function rosRamRoleAttachmentPropsToRosTemplate(properties: any, enableResourceP
         RosRamRoleAttachmentPropsValidator(properties).assertSuccess();
     }
     return {
-      InstanceIds: ros.listMapper(ros.stringToRosTemplate)(properties.instanceIds),
-      RamRoleName: ros.stringToRosTemplate(properties.ramRoleName),
-      Policy: ros.stringToRosTemplate(properties.policy),
+      'InstanceIds': ros.listMapper(ros.stringToRosTemplate)(properties.instanceIds),
+      'RamRoleName': ros.stringToRosTemplate(properties.ramRoleName),
+      'Policy': ros.stringToRosTemplate(properties.policy),
     };
 }
 
@@ -14311,11 +14311,11 @@ function rosRoutePropsToRosTemplate(properties: any, enableResourcePropertyConst
         RosRoutePropsValidator(properties).assertSuccess();
     }
     return {
-      DestinationCidrBlock: ros.stringToRosTemplate(properties.destinationCidrBlock),
-      RouteTableId: ros.stringToRosTemplate(properties.routeTableId),
-      NextHopId: ros.stringToRosTemplate(properties.nextHopId),
-      NextHopList: ros.listMapper(rosRouteNextHopListPropertyToRosTemplate)(properties.nextHopList),
-      NextHopType: ros.stringToRosTemplate(properties.nextHopType),
+      'DestinationCidrBlock': ros.stringToRosTemplate(properties.destinationCidrBlock),
+      'RouteTableId': ros.stringToRosTemplate(properties.routeTableId),
+      'NextHopId': ros.stringToRosTemplate(properties.nextHopId),
+      'NextHopList': ros.listMapper(rosRouteNextHopListPropertyToRosTemplate)(properties.nextHopList),
+      'NextHopType': ros.stringToRosTemplate(properties.nextHopType),
     };
 }
 
@@ -14438,8 +14438,8 @@ function rosRouteNextHopListPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosRoute_NextHopListPropertyValidator(properties).assertSuccess();
     return {
-      NextHopType: ros.stringToRosTemplate(properties.nextHopType),
-      NextHopId: ros.stringToRosTemplate(properties.nextHopId),
+      'NextHopType': ros.stringToRosTemplate(properties.nextHopType),
+      'NextHopId': ros.stringToRosTemplate(properties.nextHopId),
     };
 }
 
@@ -14687,27 +14687,27 @@ function rosRunCommandPropsToRosTemplate(properties: any, enableResourceProperty
         RosRunCommandPropsValidator(properties).assertSuccess();
     }
     return {
-      CommandContent: ros.stringToRosTemplate(properties.commandContent),
-      InstanceIds: ros.listMapper(ros.stringToRosTemplate)(properties.instanceIds),
-      Type: ros.stringToRosTemplate(properties.type),
-      ContainerId: ros.stringToRosTemplate(properties.containerId),
-      ContainerName: ros.stringToRosTemplate(properties.containerName),
-      ContentEncoding: ros.stringToRosTemplate(properties.contentEncoding),
-      Description: ros.stringToRosTemplate(properties.description),
-      EnableParameter: ros.booleanToRosTemplate(properties.enableParameter),
-      Frequency: ros.stringToRosTemplate(properties.frequency),
-      KeepCommand: ros.booleanToRosTemplate(properties.keepCommand),
-      Name: ros.stringToRosTemplate(properties.name),
-      Parameters: ros.hashMapper(ros.objectToRosTemplate)(properties.parameters),
-      RepeatMode: ros.stringToRosTemplate(properties.repeatMode),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      RunAgainOn: ros.listMapper(ros.stringToRosTemplate)(properties.runAgainOn),
-      Sync: ros.booleanToRosTemplate(properties.sync),
-      Tags: ros.listMapper(rosRunCommandTagsPropertyToRosTemplate)(properties.tags),
-      Timeout: ros.numberToRosTemplate(properties.timeout),
-      Username: ros.stringToRosTemplate(properties.username),
-      WindowsPasswordName: ros.stringToRosTemplate(properties.windowsPasswordName),
-      WorkingDir: ros.stringToRosTemplate(properties.workingDir),
+      'CommandContent': ros.stringToRosTemplate(properties.commandContent),
+      'InstanceIds': ros.listMapper(ros.stringToRosTemplate)(properties.instanceIds),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'ContainerId': ros.stringToRosTemplate(properties.containerId),
+      'ContainerName': ros.stringToRosTemplate(properties.containerName),
+      'ContentEncoding': ros.stringToRosTemplate(properties.contentEncoding),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'EnableParameter': ros.booleanToRosTemplate(properties.enableParameter),
+      'Frequency': ros.stringToRosTemplate(properties.frequency),
+      'KeepCommand': ros.booleanToRosTemplate(properties.keepCommand),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'Parameters': ros.hashMapper(ros.objectToRosTemplate)(properties.parameters),
+      'RepeatMode': ros.stringToRosTemplate(properties.repeatMode),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'RunAgainOn': ros.listMapper(ros.stringToRosTemplate)(properties.runAgainOn),
+      'Sync': ros.booleanToRosTemplate(properties.sync),
+      'Tags': ros.listMapper(rosRunCommandTagsPropertyToRosTemplate)(properties.tags),
+      'Timeout': ros.numberToRosTemplate(properties.timeout),
+      'Username': ros.stringToRosTemplate(properties.username),
+      'WindowsPasswordName': ros.stringToRosTemplate(properties.windowsPasswordName),
+      'WorkingDir': ros.stringToRosTemplate(properties.workingDir),
     };
 }
 
@@ -15006,8 +15006,8 @@ function rosRunCommandTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosRunCommand_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -15077,11 +15077,11 @@ function rosSNatEntryPropsToRosTemplate(properties: any, enableResourcePropertyC
         RosSNatEntryPropsValidator(properties).assertSuccess();
     }
     return {
-      SNatIp: ros.stringToRosTemplate(properties.sNatIp),
-      SNatTableId: ros.stringToRosTemplate(properties.sNatTableId),
-      SnatEntryName: ros.stringToRosTemplate(properties.snatEntryName),
-      SourceCIDR: ros.stringToRosTemplate(properties.sourceCidr),
-      SourceVSwitchId: ros.stringToRosTemplate(properties.sourceVSwitchId),
+      'SNatIp': ros.stringToRosTemplate(properties.sNatIp),
+      'SNatTableId': ros.stringToRosTemplate(properties.sNatTableId),
+      'SnatEntryName': ros.stringToRosTemplate(properties.snatEntryName),
+      'SourceCIDR': ros.stringToRosTemplate(properties.sourceCidr),
+      'SourceVSwitchId': ros.stringToRosTemplate(properties.sourceVSwitchId),
     };
 }
 
@@ -15227,10 +15227,10 @@ function rosSSHKeyPairPropsToRosTemplate(properties: any, enableResourceProperty
         RosSSHKeyPairPropsValidator(properties).assertSuccess();
     }
     return {
-      KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
-      PublicKeyBody: ros.stringToRosTemplate(properties.publicKeyBody),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Tags: ros.listMapper(rosSSHKeyPairTagsPropertyToRosTemplate)(properties.tags),
+      'KeyPairName': ros.stringToRosTemplate(properties.keyPairName),
+      'PublicKeyBody': ros.stringToRosTemplate(properties.publicKeyBody),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosSSHKeyPairTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -15358,8 +15358,8 @@ function rosSSHKeyPairTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosSSHKeyPair_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -15418,9 +15418,9 @@ function rosSSHKeyPairAttachmentPropsToRosTemplate(properties: any, enableResour
         RosSSHKeyPairAttachmentPropsValidator(properties).assertSuccess();
     }
     return {
-      InstanceIds: ros.listMapper(ros.objectToRosTemplate)(properties.instanceIds),
-      KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
-      AutoReboot: ros.booleanToRosTemplate(properties.autoReboot),
+      'InstanceIds': ros.listMapper(ros.objectToRosTemplate)(properties.instanceIds),
+      'KeyPairName': ros.stringToRosTemplate(properties.keyPairName),
+      'AutoReboot': ros.booleanToRosTemplate(properties.autoReboot),
     };
 }
 
@@ -15578,14 +15578,14 @@ function rosSecurityGroupPropsToRosTemplate(properties: any, enableResourcePrope
         RosSecurityGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      Description: ros.stringToRosTemplate(properties.description),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      SecurityGroupEgress: ros.listMapper(rosSecurityGroupSecurityGroupEgressPropertyToRosTemplate)(properties.securityGroupEgress),
-      SecurityGroupIngress: ros.listMapper(rosSecurityGroupSecurityGroupIngressPropertyToRosTemplate)(properties.securityGroupIngress),
-      SecurityGroupName: ros.stringToRosTemplate(properties.securityGroupName),
-      SecurityGroupType: ros.stringToRosTemplate(properties.securityGroupType),
-      Tags: ros.listMapper(rosSecurityGroupTagsPropertyToRosTemplate)(properties.tags),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'SecurityGroupEgress': ros.listMapper(rosSecurityGroupSecurityGroupEgressPropertyToRosTemplate)(properties.securityGroupEgress),
+      'SecurityGroupIngress': ros.listMapper(rosSecurityGroupSecurityGroupIngressPropertyToRosTemplate)(properties.securityGroupIngress),
+      'SecurityGroupName': ros.stringToRosTemplate(properties.securityGroupName),
+      'SecurityGroupType': ros.stringToRosTemplate(properties.securityGroupType),
+      'Tags': ros.listMapper(rosSecurityGroupTagsPropertyToRosTemplate)(properties.tags),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
     };
 }
 
@@ -15848,21 +15848,21 @@ function rosSecurityGroupSecurityGroupEgressPropertyToRosTemplate(properties: an
     if (!ros.canInspect(properties)) { return properties; }
     RosSecurityGroup_SecurityGroupEgressPropertyValidator(properties).assertSuccess();
     return {
-      Policy: ros.stringToRosTemplate(properties.policy),
-      Description: ros.stringToRosTemplate(properties.description),
-      SourcePortRange: ros.stringToRosTemplate(properties.sourcePortRange),
-      Priority: ros.numberToRosTemplate(properties.priority),
-      Ipv6SourceCidrIp: ros.stringToRosTemplate(properties.ipv6SourceCidrIp),
-      NicType: ros.stringToRosTemplate(properties.nicType),
-      DestGroupId: ros.stringToRosTemplate(properties.destGroupId),
-      PortRange: ros.stringToRosTemplate(properties.portRange),
-      DestGroupOwnerAccount: ros.stringToRosTemplate(properties.destGroupOwnerAccount),
-      DestPrefixListId: ros.stringToRosTemplate(properties.destPrefixListId),
-      SourceCidrIp: ros.stringToRosTemplate(properties.sourceCidrIp),
-      DestGroupOwnerId: ros.stringToRosTemplate(properties.destGroupOwnerId),
-      IpProtocol: ros.stringToRosTemplate(properties.ipProtocol),
-      DestCidrIp: ros.stringToRosTemplate(properties.destCidrIp),
-      Ipv6DestCidrIp: ros.stringToRosTemplate(properties.ipv6DestCidrIp),
+      'Policy': ros.stringToRosTemplate(properties.policy),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'SourcePortRange': ros.stringToRosTemplate(properties.sourcePortRange),
+      'Priority': ros.numberToRosTemplate(properties.priority),
+      'Ipv6SourceCidrIp': ros.stringToRosTemplate(properties.ipv6SourceCidrIp),
+      'NicType': ros.stringToRosTemplate(properties.nicType),
+      'DestGroupId': ros.stringToRosTemplate(properties.destGroupId),
+      'PortRange': ros.stringToRosTemplate(properties.portRange),
+      'DestGroupOwnerAccount': ros.stringToRosTemplate(properties.destGroupOwnerAccount),
+      'DestPrefixListId': ros.stringToRosTemplate(properties.destPrefixListId),
+      'SourceCidrIp': ros.stringToRosTemplate(properties.sourceCidrIp),
+      'DestGroupOwnerId': ros.stringToRosTemplate(properties.destGroupOwnerId),
+      'IpProtocol': ros.stringToRosTemplate(properties.ipProtocol),
+      'DestCidrIp': ros.stringToRosTemplate(properties.destCidrIp),
+      'Ipv6DestCidrIp': ros.stringToRosTemplate(properties.ipv6DestCidrIp),
     };
 }
 
@@ -16010,21 +16010,21 @@ function rosSecurityGroupSecurityGroupIngressPropertyToRosTemplate(properties: a
     if (!ros.canInspect(properties)) { return properties; }
     RosSecurityGroup_SecurityGroupIngressPropertyValidator(properties).assertSuccess();
     return {
-      Policy: ros.stringToRosTemplate(properties.policy),
-      SourceGroupId: ros.stringToRosTemplate(properties.sourceGroupId),
-      Description: ros.stringToRosTemplate(properties.description),
-      SourcePortRange: ros.stringToRosTemplate(properties.sourcePortRange),
-      Priority: ros.numberToRosTemplate(properties.priority),
-      SourceGroupOwnerId: ros.stringToRosTemplate(properties.sourceGroupOwnerId),
-      Ipv6SourceCidrIp: ros.stringToRosTemplate(properties.ipv6SourceCidrIp),
-      NicType: ros.stringToRosTemplate(properties.nicType),
-      PortRange: ros.stringToRosTemplate(properties.portRange),
-      SourceCidrIp: ros.stringToRosTemplate(properties.sourceCidrIp),
-      IpProtocol: ros.stringToRosTemplate(properties.ipProtocol),
-      DestCidrIp: ros.stringToRosTemplate(properties.destCidrIp),
-      SourceGroupOwnerAccount: ros.stringToRosTemplate(properties.sourceGroupOwnerAccount),
-      Ipv6DestCidrIp: ros.stringToRosTemplate(properties.ipv6DestCidrIp),
-      SourcePrefixListId: ros.stringToRosTemplate(properties.sourcePrefixListId),
+      'Policy': ros.stringToRosTemplate(properties.policy),
+      'SourceGroupId': ros.stringToRosTemplate(properties.sourceGroupId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'SourcePortRange': ros.stringToRosTemplate(properties.sourcePortRange),
+      'Priority': ros.numberToRosTemplate(properties.priority),
+      'SourceGroupOwnerId': ros.stringToRosTemplate(properties.sourceGroupOwnerId),
+      'Ipv6SourceCidrIp': ros.stringToRosTemplate(properties.ipv6SourceCidrIp),
+      'NicType': ros.stringToRosTemplate(properties.nicType),
+      'PortRange': ros.stringToRosTemplate(properties.portRange),
+      'SourceCidrIp': ros.stringToRosTemplate(properties.sourceCidrIp),
+      'IpProtocol': ros.stringToRosTemplate(properties.ipProtocol),
+      'DestCidrIp': ros.stringToRosTemplate(properties.destCidrIp),
+      'SourceGroupOwnerAccount': ros.stringToRosTemplate(properties.sourceGroupOwnerAccount),
+      'Ipv6DestCidrIp': ros.stringToRosTemplate(properties.ipv6DestCidrIp),
+      'SourcePrefixListId': ros.stringToRosTemplate(properties.sourcePrefixListId),
     };
 }
 
@@ -16071,8 +16071,8 @@ function rosSecurityGroupTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosSecurityGroup_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -16173,14 +16173,14 @@ function rosSecurityGroupClonePropsToRosTemplate(properties: any, enableResource
         RosSecurityGroupClonePropsValidator(properties).assertSuccess();
     }
     return {
-      SourceSecurityGroupId: ros.stringToRosTemplate(properties.sourceSecurityGroupId),
-      Description: ros.stringToRosTemplate(properties.description),
-      DestinationRegionId: ros.stringToRosTemplate(properties.destinationRegionId),
-      NetworkType: ros.stringToRosTemplate(properties.networkType),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      SecurityGroupName: ros.stringToRosTemplate(properties.securityGroupName),
-      SecurityGroupType: ros.stringToRosTemplate(properties.securityGroupType),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
+      'SourceSecurityGroupId': ros.stringToRosTemplate(properties.sourceSecurityGroupId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'DestinationRegionId': ros.stringToRosTemplate(properties.destinationRegionId),
+      'NetworkType': ros.stringToRosTemplate(properties.networkType),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'SecurityGroupName': ros.stringToRosTemplate(properties.securityGroupName),
+      'SecurityGroupType': ros.stringToRosTemplate(properties.securityGroupType),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
     };
 }
 
@@ -16433,18 +16433,18 @@ function rosSecurityGroupEgressPropsToRosTemplate(properties: any, enableResourc
         RosSecurityGroupEgressPropsValidator(properties).assertSuccess();
     }
     return {
-      IpProtocol: ros.stringToRosTemplate(properties.ipProtocol),
-      PortRange: ros.stringToRosTemplate(properties.portRange),
-      Description: ros.stringToRosTemplate(properties.description),
-      DestCidrIp: ros.stringToRosTemplate(properties.destCidrIp),
-      DestGroupId: ros.stringToRosTemplate(properties.destGroupId),
-      DestGroupOwnerId: ros.stringToRosTemplate(properties.destGroupOwnerId),
-      DestPrefixListId: ros.stringToRosTemplate(properties.destPrefixListId),
-      Ipv6DestCidrIp: ros.stringToRosTemplate(properties.ipv6DestCidrIp),
-      NicType: ros.stringToRosTemplate(properties.nicType),
-      Policy: ros.stringToRosTemplate(properties.policy),
-      Priority: ros.numberToRosTemplate(properties.priority),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
+      'IpProtocol': ros.stringToRosTemplate(properties.ipProtocol),
+      'PortRange': ros.stringToRosTemplate(properties.portRange),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'DestCidrIp': ros.stringToRosTemplate(properties.destCidrIp),
+      'DestGroupId': ros.stringToRosTemplate(properties.destGroupId),
+      'DestGroupOwnerId': ros.stringToRosTemplate(properties.destGroupOwnerId),
+      'DestPrefixListId': ros.stringToRosTemplate(properties.destPrefixListId),
+      'Ipv6DestCidrIp': ros.stringToRosTemplate(properties.ipv6DestCidrIp),
+      'NicType': ros.stringToRosTemplate(properties.nicType),
+      'Policy': ros.stringToRosTemplate(properties.policy),
+      'Priority': ros.numberToRosTemplate(properties.priority),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
     };
 }
 
@@ -16632,8 +16632,8 @@ function rosSecurityGroupEgressesPropsToRosTemplate(properties: any, enableResou
         RosSecurityGroupEgressesPropsValidator(properties).assertSuccess();
     }
     return {
-      Permissions: ros.listMapper(rosSecurityGroupEgressesPermissionsPropertyToRosTemplate)(properties.permissions),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
+      'Permissions': ros.listMapper(rosSecurityGroupEgressesPermissionsPropertyToRosTemplate)(properties.permissions),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
     };
 }
 
@@ -16840,21 +16840,21 @@ function rosSecurityGroupEgressesPermissionsPropertyToRosTemplate(properties: an
     if (!ros.canInspect(properties)) { return properties; }
     RosSecurityGroupEgresses_PermissionsPropertyValidator(properties).assertSuccess();
     return {
-      Policy: ros.stringToRosTemplate(properties.policy),
-      Description: ros.stringToRosTemplate(properties.description),
-      SourcePortRange: ros.stringToRosTemplate(properties.sourcePortRange),
-      Priority: ros.numberToRosTemplate(properties.priority),
-      Ipv6SourceCidrIp: ros.stringToRosTemplate(properties.ipv6SourceCidrIp),
-      NicType: ros.stringToRosTemplate(properties.nicType),
-      DestGroupId: ros.stringToRosTemplate(properties.destGroupId),
-      PortRange: ros.stringToRosTemplate(properties.portRange),
-      DestGroupOwnerAccount: ros.stringToRosTemplate(properties.destGroupOwnerAccount),
-      DestPrefixListId: ros.stringToRosTemplate(properties.destPrefixListId),
-      SourceCidrIp: ros.stringToRosTemplate(properties.sourceCidrIp),
-      DestGroupOwnerId: ros.stringToRosTemplate(properties.destGroupOwnerId),
-      IpProtocol: ros.stringToRosTemplate(properties.ipProtocol),
-      DestCidrIp: ros.stringToRosTemplate(properties.destCidrIp),
-      Ipv6DestCidrIp: ros.stringToRosTemplate(properties.ipv6DestCidrIp),
+      'Policy': ros.stringToRosTemplate(properties.policy),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'SourcePortRange': ros.stringToRosTemplate(properties.sourcePortRange),
+      'Priority': ros.numberToRosTemplate(properties.priority),
+      'Ipv6SourceCidrIp': ros.stringToRosTemplate(properties.ipv6SourceCidrIp),
+      'NicType': ros.stringToRosTemplate(properties.nicType),
+      'DestGroupId': ros.stringToRosTemplate(properties.destGroupId),
+      'PortRange': ros.stringToRosTemplate(properties.portRange),
+      'DestGroupOwnerAccount': ros.stringToRosTemplate(properties.destGroupOwnerAccount),
+      'DestPrefixListId': ros.stringToRosTemplate(properties.destPrefixListId),
+      'SourceCidrIp': ros.stringToRosTemplate(properties.sourceCidrIp),
+      'DestGroupOwnerId': ros.stringToRosTemplate(properties.destGroupOwnerId),
+      'IpProtocol': ros.stringToRosTemplate(properties.ipProtocol),
+      'DestCidrIp': ros.stringToRosTemplate(properties.destCidrIp),
+      'Ipv6DestCidrIp': ros.stringToRosTemplate(properties.ipv6DestCidrIp),
     };
 }
 
@@ -17007,19 +17007,19 @@ function rosSecurityGroupIngressPropsToRosTemplate(properties: any, enableResour
         RosSecurityGroupIngressPropsValidator(properties).assertSuccess();
     }
     return {
-      IpProtocol: ros.stringToRosTemplate(properties.ipProtocol),
-      PortRange: ros.stringToRosTemplate(properties.portRange),
-      Description: ros.stringToRosTemplate(properties.description),
-      Ipv6SourceCidrIp: ros.stringToRosTemplate(properties.ipv6SourceCidrIp),
-      NicType: ros.stringToRosTemplate(properties.nicType),
-      Policy: ros.stringToRosTemplate(properties.policy),
-      Priority: ros.numberToRosTemplate(properties.priority),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      SourceCidrIp: ros.stringToRosTemplate(properties.sourceCidrIp),
-      SourceGroupId: ros.stringToRosTemplate(properties.sourceGroupId),
-      SourceGroupOwnerId: ros.stringToRosTemplate(properties.sourceGroupOwnerId),
-      SourcePortRange: ros.stringToRosTemplate(properties.sourcePortRange),
-      SourcePrefixListId: ros.stringToRosTemplate(properties.sourcePrefixListId),
+      'IpProtocol': ros.stringToRosTemplate(properties.ipProtocol),
+      'PortRange': ros.stringToRosTemplate(properties.portRange),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Ipv6SourceCidrIp': ros.stringToRosTemplate(properties.ipv6SourceCidrIp),
+      'NicType': ros.stringToRosTemplate(properties.nicType),
+      'Policy': ros.stringToRosTemplate(properties.policy),
+      'Priority': ros.numberToRosTemplate(properties.priority),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'SourceCidrIp': ros.stringToRosTemplate(properties.sourceCidrIp),
+      'SourceGroupId': ros.stringToRosTemplate(properties.sourceGroupId),
+      'SourceGroupOwnerId': ros.stringToRosTemplate(properties.sourceGroupOwnerId),
+      'SourcePortRange': ros.stringToRosTemplate(properties.sourcePortRange),
+      'SourcePrefixListId': ros.stringToRosTemplate(properties.sourcePrefixListId),
     };
 }
 
@@ -17207,8 +17207,8 @@ function rosSecurityGroupIngressesPropsToRosTemplate(properties: any, enableReso
         RosSecurityGroupIngressesPropsValidator(properties).assertSuccess();
     }
     return {
-      Permissions: ros.listMapper(rosSecurityGroupIngressesPermissionsPropertyToRosTemplate)(properties.permissions),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
+      'Permissions': ros.listMapper(rosSecurityGroupIngressesPermissionsPropertyToRosTemplate)(properties.permissions),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
     };
 }
 
@@ -17405,21 +17405,21 @@ function rosSecurityGroupIngressesPermissionsPropertyToRosTemplate(properties: a
     if (!ros.canInspect(properties)) { return properties; }
     RosSecurityGroupIngresses_PermissionsPropertyValidator(properties).assertSuccess();
     return {
-      Policy: ros.stringToRosTemplate(properties.policy),
-      SourceGroupId: ros.stringToRosTemplate(properties.sourceGroupId),
-      Description: ros.stringToRosTemplate(properties.description),
-      SourcePortRange: ros.stringToRosTemplate(properties.sourcePortRange),
-      Priority: ros.numberToRosTemplate(properties.priority),
-      SourceGroupOwnerId: ros.stringToRosTemplate(properties.sourceGroupOwnerId),
-      Ipv6SourceCidrIp: ros.stringToRosTemplate(properties.ipv6SourceCidrIp),
-      NicType: ros.stringToRosTemplate(properties.nicType),
-      PortRange: ros.stringToRosTemplate(properties.portRange),
-      SourceCidrIp: ros.stringToRosTemplate(properties.sourceCidrIp),
-      IpProtocol: ros.stringToRosTemplate(properties.ipProtocol),
-      DestCidrIp: ros.stringToRosTemplate(properties.destCidrIp),
-      SourceGroupOwnerAccount: ros.stringToRosTemplate(properties.sourceGroupOwnerAccount),
-      Ipv6DestCidrIp: ros.stringToRosTemplate(properties.ipv6DestCidrIp),
-      SourcePrefixListId: ros.stringToRosTemplate(properties.sourcePrefixListId),
+      'Policy': ros.stringToRosTemplate(properties.policy),
+      'SourceGroupId': ros.stringToRosTemplate(properties.sourceGroupId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'SourcePortRange': ros.stringToRosTemplate(properties.sourcePortRange),
+      'Priority': ros.numberToRosTemplate(properties.priority),
+      'SourceGroupOwnerId': ros.stringToRosTemplate(properties.sourceGroupOwnerId),
+      'Ipv6SourceCidrIp': ros.stringToRosTemplate(properties.ipv6SourceCidrIp),
+      'NicType': ros.stringToRosTemplate(properties.nicType),
+      'PortRange': ros.stringToRosTemplate(properties.portRange),
+      'SourceCidrIp': ros.stringToRosTemplate(properties.sourceCidrIp),
+      'IpProtocol': ros.stringToRosTemplate(properties.ipProtocol),
+      'DestCidrIp': ros.stringToRosTemplate(properties.destCidrIp),
+      'SourceGroupOwnerAccount': ros.stringToRosTemplate(properties.sourceGroupOwnerAccount),
+      'Ipv6DestCidrIp': ros.stringToRosTemplate(properties.ipv6DestCidrIp),
+      'SourcePrefixListId': ros.stringToRosTemplate(properties.sourcePrefixListId),
     };
 }
 
@@ -17543,15 +17543,15 @@ function rosSnapshotPropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosSnapshotPropsValidator(properties).assertSuccess();
     }
     return {
-      DiskId: ros.stringToRosTemplate(properties.diskId),
-      Description: ros.stringToRosTemplate(properties.description),
-      InstantAccess: ros.booleanToRosTemplate(properties.instantAccess),
-      InstantAccessRetentionDays: ros.numberToRosTemplate(properties.instantAccessRetentionDays),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      RetentionDays: ros.numberToRosTemplate(properties.retentionDays),
-      SnapshotName: ros.stringToRosTemplate(properties.snapshotName),
-      Tags: ros.listMapper(rosSnapshotTagsPropertyToRosTemplate)(properties.tags),
-      Timeout: ros.numberToRosTemplate(properties.timeout),
+      'DiskId': ros.stringToRosTemplate(properties.diskId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'InstantAccess': ros.booleanToRosTemplate(properties.instantAccess),
+      'InstantAccessRetentionDays': ros.numberToRosTemplate(properties.instantAccessRetentionDays),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'RetentionDays': ros.numberToRosTemplate(properties.retentionDays),
+      'SnapshotName': ros.stringToRosTemplate(properties.snapshotName),
+      'Tags': ros.listMapper(rosSnapshotTagsPropertyToRosTemplate)(properties.tags),
+      'Timeout': ros.numberToRosTemplate(properties.timeout),
     };
 }
 
@@ -17712,8 +17712,256 @@ function rosSnapshotTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosSnapshot_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
+ * Properties for defining a `RosSnapshotGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snapshotgroup
+ */
+export interface RosSnapshotGroupProps {
+
+    /**
+     * @Property description: The description of the snapshot-consistent group. The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property diskIds: The IDs of cloud disk for which you want to create snapshots. You can specify multiple cloud disk IDs across instances within the same zone. The length of the list ranges from 1 to 16. A single snapshot-consistent group can contain snapshots of up to 16 cloud disks whose total disk size does not exceed 32 TiB.
+     * Take note of the following items:
+     * You cannot specify both DiskIds and ExcludeDiskIdin the same request.
+     * If InstanceId is set, you can use DiskIds to specify only cloud disks attached to the instance specified by InstanceId, and you cannot use DiskIds to specify cloud disks attached to multiple instances.
+     */
+    readonly diskIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property excludeDiskIds: The IDs of cloud disk for which you do not want to create snapshots. If this parameter is specified, the created snapshot-consistent group does not contain snapshots of the cloud disk. The length of the list ranges from 1 to 16.
+     * This parameter is empty by default, which indicates that snapshots are created for all the disks of the instance.
+     * Note You cannot specify ExcludeDiskIds and DiskIds in the same request.
+     */
+    readonly excludeDiskIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The instance ID.
+     */
+    readonly instanceId?: string | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the snapshot-consistent group. The name must be 2 to 128 characters in length. The name can contain letters, digits, periods (.), underscores (_), hyphens (-), and colons (:). It must start with a letter and cannot start with http:\/\/ or https:\/\/.
+     */
+    readonly name?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the snapshot-consistent group belongs.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to snapshot-consistent group. Max support 20 tags to add during create snapshot-consistent group. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosSnapshotGroup.TagsProperty[];
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSnapshotGroupProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSnapshotGroupProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSnapshotGroupPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('diskIds', ros.listValidator(ros.validateString))(properties.diskIds));
+    if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
+        errors.collect(ros.propertyValidator('description', ros.validateLength)({
+            data: properties.description.length,
+            min: 2,
+            max: 256,
+          }));
+    }
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosSnapshotGroup_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('excludeDiskIds', ros.listValidator(ros.validateString))(properties.excludeDiskIds));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "RosSnapshotGroupProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::SnapshotGroup` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSnapshotGroupProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::SnapshotGroup` resource.
+ */
+// @ts-ignore TS6133
+function rosSnapshotGroupPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSnapshotGroupPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Description': ros.stringToRosTemplate(properties.description),
+      'DiskIds': ros.listMapper(ros.stringToRosTemplate)(properties.diskIds),
+      'ExcludeDiskIds': ros.listMapper(ros.stringToRosTemplate)(properties.excludeDiskIds),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosSnapshotGroupTagsPropertyToRosTemplate)(properties.tags),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SnapshotGroup`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SnapshotGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snapshotgroup
+ */
+export class RosSnapshotGroup extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::SnapshotGroup";
+
+    /**
+     * @Attribute SnapshotGroupId: The ID of the snapshot-consistent group.
+     */
+    public readonly attrSnapshotGroupId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property description: The description of the snapshot-consistent group. The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property diskIds: The IDs of cloud disk for which you want to create snapshots. You can specify multiple cloud disk IDs across instances within the same zone. The length of the list ranges from 1 to 16. A single snapshot-consistent group can contain snapshots of up to 16 cloud disks whose total disk size does not exceed 32 TiB.
+     * Take note of the following items:
+     * You cannot specify both DiskIds and ExcludeDiskIdin the same request.
+     * If InstanceId is set, you can use DiskIds to specify only cloud disks attached to the instance specified by InstanceId, and you cannot use DiskIds to specify cloud disks attached to multiple instances.
+     */
+    public diskIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property excludeDiskIds: The IDs of cloud disk for which you do not want to create snapshots. If this parameter is specified, the created snapshot-consistent group does not contain snapshots of the cloud disk. The length of the list ranges from 1 to 16.
+     * This parameter is empty by default, which indicates that snapshots are created for all the disks of the instance.
+     * Note You cannot specify ExcludeDiskIds and DiskIds in the same request.
+     */
+    public excludeDiskIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceId: The instance ID.
+     */
+    public instanceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property name: The name of the snapshot-consistent group. The name must be 2 to 128 characters in length. The name can contain letters, digits, periods (.), underscores (_), hyphens (-), and colons (:). It must start with a letter and cannot start with http:\/\/ or https:\/\/.
+     */
+    public name: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the snapshot-consistent group belongs.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to snapshot-consistent group. Max support 20 tags to add during create snapshot-consistent group. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosSnapshotGroup.TagsProperty[] | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSnapshotGroupProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSnapshotGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrSnapshotGroupId = this.getAtt('SnapshotGroupId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.description = props.description;
+        this.diskIds = props.diskIds;
+        this.excludeDiskIds = props.excludeDiskIds;
+        this.instanceId = props.instanceId;
+        this.name = props.name;
+        this.resourceGroupId = props.resourceGroupId;
+        this.tags = props.tags;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            description: this.description,
+            diskIds: this.diskIds,
+            excludeDiskIds: this.excludeDiskIds,
+            instanceId: this.instanceId,
+            name: this.name,
+            resourceGroupId: this.resourceGroupId,
+            tags: this.tags,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSnapshotGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosSnapshotGroup {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSnapshotGroup_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::SnapshotGroup.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::SnapshotGroup.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosSnapshotGroupTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSnapshotGroup_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -17841,16 +18089,16 @@ function rosVPCPropsToRosTemplate(properties: any, enableResourcePropertyConstra
         RosVPCPropsValidator(properties).assertSuccess();
     }
     return {
-      CidrBlock: ros.stringToRosTemplate(properties.cidrBlock),
-      Description: ros.stringToRosTemplate(properties.description),
-      EnableIpv6: ros.booleanToRosTemplate(properties.enableIpv6),
-      Ipv6CidrBlock: ros.stringToRosTemplate(properties.ipv6CidrBlock),
-      Ipv6Isp: ros.stringToRosTemplate(properties.ipv6Isp),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      SecondaryCidrBlocks: ros.listMapper(ros.stringToRosTemplate)(properties.secondaryCidrBlocks),
-      Tags: ros.listMapper(rosVPCTagsPropertyToRosTemplate)(properties.tags),
-      UserCidr: ros.stringToRosTemplate(properties.userCidr),
-      VpcName: ros.stringToRosTemplate(properties.vpcName),
+      'CidrBlock': ros.stringToRosTemplate(properties.cidrBlock),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'EnableIpv6': ros.booleanToRosTemplate(properties.enableIpv6),
+      'Ipv6CidrBlock': ros.stringToRosTemplate(properties.ipv6CidrBlock),
+      'Ipv6Isp': ros.stringToRosTemplate(properties.ipv6Isp),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'SecondaryCidrBlocks': ros.listMapper(ros.stringToRosTemplate)(properties.secondaryCidrBlocks),
+      'Tags': ros.listMapper(rosVPCTagsPropertyToRosTemplate)(properties.tags),
+      'UserCidr': ros.stringToRosTemplate(properties.userCidr),
+      'VpcName': ros.stringToRosTemplate(properties.vpcName),
     };
 }
 
@@ -17879,6 +18127,11 @@ export class RosVPC extends ros.RosResource {
      * @Attribute VpcId: Id of created VPC.
      */
     public readonly attrVpcId: ros.IResolvable;
+
+    /**
+     * @Attribute VpcName: The name of VPC
+     */
+    public readonly attrVpcName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -17952,6 +18205,7 @@ export class RosVPC extends ros.RosResource {
         this.attrRouteTableId = this.getAtt('RouteTableId');
         this.attrVRouterId = this.getAtt('VRouterId');
         this.attrVpcId = this.getAtt('VpcId');
+        this.attrVpcName = this.getAtt('VpcName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.cidrBlock = props.cidrBlock;
@@ -18029,8 +18283,8 @@ function rosVPCTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosVPC_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -18142,15 +18396,15 @@ function rosVSwitchPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosVSwitchPropsValidator(properties).assertSuccess();
     }
     return {
-      CidrBlock: ros.stringToRosTemplate(properties.cidrBlock),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
-      Description: ros.stringToRosTemplate(properties.description),
-      Ipv6CidrBlock: ros.numberToRosTemplate(properties.ipv6CidrBlock),
-      Tags: ros.listMapper(rosVSwitchTagsPropertyToRosTemplate)(properties.tags),
-      VpcIpv6CidrBlock: ros.stringToRosTemplate(properties.vpcIpv6CidrBlock),
-      VSwitchName: ros.stringToRosTemplate(properties.vSwitchName),
-      ZoneType: ros.stringToRosTemplate(properties.zoneType),
+      'CidrBlock': ros.stringToRosTemplate(properties.cidrBlock),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Ipv6CidrBlock': ros.numberToRosTemplate(properties.ipv6CidrBlock),
+      'Tags': ros.listMapper(rosVSwitchTagsPropertyToRosTemplate)(properties.tags),
+      'VpcIpv6CidrBlock': ros.stringToRosTemplate(properties.vpcIpv6CidrBlock),
+      'VSwitchName': ros.stringToRosTemplate(properties.vSwitchName),
+      'ZoneType': ros.stringToRosTemplate(properties.zoneType),
     };
 }
 
@@ -18179,6 +18433,11 @@ export class RosVSwitch extends ros.RosResource {
      * @Attribute VSwitchId: Id of created VSwitch.
      */
     public readonly attrVSwitchId: ros.IResolvable;
+
+    /**
+     * @Attribute VSwitchName: The name of the VSwitch
+     */
+    public readonly attrVSwitchName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -18241,6 +18500,7 @@ export class RosVSwitch extends ros.RosResource {
         this.attrCidrBlock = this.getAtt('CidrBlock');
         this.attrIpv6CidrBlock = this.getAtt('Ipv6CidrBlock');
         this.attrVSwitchId = this.getAtt('VSwitchId');
+        this.attrVSwitchName = this.getAtt('VSwitchName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.cidrBlock = props.cidrBlock;
@@ -18316,7 +18576,7 @@ function rosVSwitchTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosVSwitch_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }

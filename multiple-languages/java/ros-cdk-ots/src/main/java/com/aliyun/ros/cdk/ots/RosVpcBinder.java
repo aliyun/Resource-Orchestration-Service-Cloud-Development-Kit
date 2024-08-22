@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ots;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::OTS::VpcBinder</code>, which is used to bind a Tablestore instance to a virtual private cloud (VPC).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.202Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:22.821Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.RosVpcBinder")
 public class RosVpcBinder extends com.aliyun.ros.cdk.core.RosResource {
 

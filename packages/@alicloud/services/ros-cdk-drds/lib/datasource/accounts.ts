@@ -13,6 +13,14 @@ export interface AccountsProps {
      * Property instanceId: The ID of the PolarDB-X 1.0 instance.
      */
     readonly instanceId?: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -50,6 +58,7 @@ export class Accounts extends ros.Resource {
 
         const rosAccounts = new RosAccounts(this, id,  {
             instanceId: props.instanceId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAccounts;
         this.attrAccounts = rosAccounts.attrAccounts;

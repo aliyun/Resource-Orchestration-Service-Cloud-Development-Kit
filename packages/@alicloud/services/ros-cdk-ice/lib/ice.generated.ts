@@ -43,7 +43,7 @@ function rosSearchLibPropsToRosTemplate(properties: any, enableResourcePropertyC
         RosSearchLibPropsValidator(properties).assertSuccess();
     }
     return {
-      SearchLibName: ros.stringToRosTemplate(properties.searchLibName),
+      'SearchLibName': ros.stringToRosTemplate(properties.searchLibName),
     };
 }
 

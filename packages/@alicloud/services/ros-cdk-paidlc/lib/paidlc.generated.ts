@@ -158,23 +158,23 @@ function rosJobPropsToRosTemplate(properties: any, enableResourcePropertyConstra
         RosJobPropsValidator(properties).assertSuccess();
     }
     return {
-      DisplayName: ros.stringToRosTemplate(properties.displayName),
-      JobSpecs: ros.listMapper(rosJobJobSpecsPropertyToRosTemplate)(properties.jobSpecs),
-      JobType: ros.stringToRosTemplate(properties.jobType),
-      UserCommand: ros.stringToRosTemplate(properties.userCommand),
-      WorkspaceId: ros.stringToRosTemplate(properties.workspaceId),
-      CodeSource: rosJobCodeSourcePropertyToRosTemplate(properties.codeSource),
-      DataSources: ros.listMapper(rosJobDataSourcesPropertyToRosTemplate)(properties.dataSources),
-      Envs: ros.stringToRosTemplate(properties.envs),
-      JobMaxRunningTimeMinutes: ros.numberToRosTemplate(properties.jobMaxRunningTimeMinutes),
-      Options: ros.stringToRosTemplate(properties.options),
-      Priority: ros.numberToRosTemplate(properties.priority),
-      ResourceId: ros.stringToRosTemplate(properties.resourceId),
-      Settings: ros.hashMapper(ros.objectToRosTemplate)(properties.settings),
-      SuccessPolicy: ros.stringToRosTemplate(properties.successPolicy),
-      ThirdpartyLibDir: ros.stringToRosTemplate(properties.thirdpartyLibDir),
-      ThirdpartyLibs: ros.listMapper(ros.stringToRosTemplate)(properties.thirdpartyLibs),
-      UserVpc: rosJobUserVpcPropertyToRosTemplate(properties.userVpc),
+      'DisplayName': ros.stringToRosTemplate(properties.displayName),
+      'JobSpecs': ros.listMapper(rosJobJobSpecsPropertyToRosTemplate)(properties.jobSpecs),
+      'JobType': ros.stringToRosTemplate(properties.jobType),
+      'UserCommand': ros.stringToRosTemplate(properties.userCommand),
+      'WorkspaceId': ros.stringToRosTemplate(properties.workspaceId),
+      'CodeSource': rosJobCodeSourcePropertyToRosTemplate(properties.codeSource),
+      'DataSources': ros.listMapper(rosJobDataSourcesPropertyToRosTemplate)(properties.dataSources),
+      'Envs': ros.stringToRosTemplate(properties.envs),
+      'JobMaxRunningTimeMinutes': ros.numberToRosTemplate(properties.jobMaxRunningTimeMinutes),
+      'Options': ros.stringToRosTemplate(properties.options),
+      'Priority': ros.numberToRosTemplate(properties.priority),
+      'ResourceId': ros.stringToRosTemplate(properties.resourceId),
+      'Settings': ros.hashMapper(ros.objectToRosTemplate)(properties.settings),
+      'SuccessPolicy': ros.stringToRosTemplate(properties.successPolicy),
+      'ThirdpartyLibDir': ros.stringToRosTemplate(properties.thirdpartyLibDir),
+      'ThirdpartyLibs': ros.listMapper(ros.stringToRosTemplate)(properties.thirdpartyLibs),
+      'UserVpc': rosJobUserVpcPropertyToRosTemplate(properties.userVpc),
     };
 }
 
@@ -400,10 +400,10 @@ function rosJobCodeSourcePropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosJob_CodeSourcePropertyValidator(properties).assertSuccess();
     return {
-      MountPath: ros.stringToRosTemplate(properties.mountPath),
-      Commit: ros.stringToRosTemplate(properties.commit),
-      Branch: ros.stringToRosTemplate(properties.branch),
-      CodeSourceId: ros.stringToRosTemplate(properties.codeSourceId),
+      'MountPath': ros.stringToRosTemplate(properties.mountPath),
+      'Commit': ros.stringToRosTemplate(properties.commit),
+      'Branch': ros.stringToRosTemplate(properties.branch),
+      'CodeSourceId': ros.stringToRosTemplate(properties.codeSourceId),
     };
 }
 
@@ -450,8 +450,8 @@ function rosJobDataSourcesPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosJob_DataSourcesPropertyValidator(properties).assertSuccess();
     return {
-      MountPath: ros.stringToRosTemplate(properties.mountPath),
-      DataSourceId: ros.stringToRosTemplate(properties.dataSourceId),
+      'MountPath': ros.stringToRosTemplate(properties.mountPath),
+      'DataSourceId': ros.stringToRosTemplate(properties.dataSourceId),
     };
 }
 
@@ -537,14 +537,14 @@ function rosJobJobSpecsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosJob_JobSpecsPropertyValidator(properties).assertSuccess();
     return {
-      PodCount: ros.numberToRosTemplate(properties.podCount),
-      ImageConfig: ros.hashMapper(ros.objectToRosTemplate)(properties.imageConfig),
-      UseSpotInstance: ros.booleanToRosTemplate(properties.useSpotInstance),
-      Type: ros.stringToRosTemplate(properties.type),
-      EcsSpec: ros.stringToRosTemplate(properties.ecsSpec),
-      ResourceConfig: ros.hashMapper(ros.objectToRosTemplate)(properties.resourceConfig),
-      Image: ros.stringToRosTemplate(properties.image),
-      ExtraPodSpec: ros.hashMapper(ros.objectToRosTemplate)(properties.extraPodSpec),
+      'PodCount': ros.numberToRosTemplate(properties.podCount),
+      'ImageConfig': ros.hashMapper(ros.objectToRosTemplate)(properties.imageConfig),
+      'UseSpotInstance': ros.booleanToRosTemplate(properties.useSpotInstance),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'EcsSpec': ros.stringToRosTemplate(properties.ecsSpec),
+      'ResourceConfig': ros.hashMapper(ros.objectToRosTemplate)(properties.resourceConfig),
+      'Image': ros.stringToRosTemplate(properties.image),
+      'ExtraPodSpec': ros.hashMapper(ros.objectToRosTemplate)(properties.extraPodSpec),
     };
 }
 
@@ -605,10 +605,10 @@ function rosJobUserVpcPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosJob_UserVpcPropertyValidator(properties).assertSuccess();
     return {
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      SwitchId: ros.stringToRosTemplate(properties.switchId),
-      ExtendedCIDRs: ros.listMapper(ros.stringToRosTemplate)(properties.extendedCidRs),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'SwitchId': ros.stringToRosTemplate(properties.switchId),
+      'ExtendedCIDRs': ros.listMapper(ros.stringToRosTemplate)(properties.extendedCidRs),
     };
 }
 
@@ -747,21 +747,21 @@ function rosTensorboardPropsToRosTemplate(properties: any, enableResourcePropert
         RosTensorboardPropsValidator(properties).assertSuccess();
     }
     return {
-      DataSourceId: ros.stringToRosTemplate(properties.dataSourceId),
-      DisplayName: ros.stringToRosTemplate(properties.displayName),
-      WorkspaceId: ros.stringToRosTemplate(properties.workspaceId),
-      Cpu: ros.numberToRosTemplate(properties.cpu),
-      DataSources: ros.listMapper(ros.objectToRosTemplate)(properties.dataSources),
-      DataSourceType: ros.stringToRosTemplate(properties.dataSourceType),
-      JobId: ros.stringToRosTemplate(properties.jobId),
-      MaxRunningTimeMinutes: ros.numberToRosTemplate(properties.maxRunningTimeMinutes),
-      Memory: ros.numberToRosTemplate(properties.memory),
-      Options: ros.stringToRosTemplate(properties.options),
-      SourceId: ros.stringToRosTemplate(properties.sourceId),
-      SourceType: ros.stringToRosTemplate(properties.sourceType),
-      SummaryPath: ros.stringToRosTemplate(properties.summaryPath),
-      SummaryRelativePath: ros.stringToRosTemplate(properties.summaryRelativePath),
-      Uri: ros.stringToRosTemplate(properties.uri),
+      'DataSourceId': ros.stringToRosTemplate(properties.dataSourceId),
+      'DisplayName': ros.stringToRosTemplate(properties.displayName),
+      'WorkspaceId': ros.stringToRosTemplate(properties.workspaceId),
+      'Cpu': ros.numberToRosTemplate(properties.cpu),
+      'DataSources': ros.listMapper(ros.objectToRosTemplate)(properties.dataSources),
+      'DataSourceType': ros.stringToRosTemplate(properties.dataSourceType),
+      'JobId': ros.stringToRosTemplate(properties.jobId),
+      'MaxRunningTimeMinutes': ros.numberToRosTemplate(properties.maxRunningTimeMinutes),
+      'Memory': ros.numberToRosTemplate(properties.memory),
+      'Options': ros.stringToRosTemplate(properties.options),
+      'SourceId': ros.stringToRosTemplate(properties.sourceId),
+      'SourceType': ros.stringToRosTemplate(properties.sourceType),
+      'SummaryPath': ros.stringToRosTemplate(properties.summaryPath),
+      'SummaryRelativePath': ros.stringToRosTemplate(properties.summaryRelativePath),
+      'Uri': ros.stringToRosTemplate(properties.uri),
     };
 }
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sae;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SAE::Application</code>, which is used to create an application in Serverless App Engine (SAE).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.149Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:23.994Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.RosApplication")
 public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -175,6 +175,42 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAcrAssumeRoleArn() {
+        return software.amazon.jsii.Kernel.get(this, "acrAssumeRoleArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAcrAssumeRoleArn(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "acrAssumeRoleArn", value);
+    }
+
+    /**
+     */
+    public void setAcrAssumeRoleArn(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "acrAssumeRoleArn", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAcrInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "acrInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAcrInstanceId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "acrInstanceId", value);
+    }
+
+    /**
+     */
+    public void setAcrInstanceId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "acrInstanceId", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getAppDescription() {
         return software.amazon.jsii.Kernel.get(this, "appDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -189,6 +225,78 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setAppDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "appDescription", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAppSource() {
+        return software.amazon.jsii.Kernel.get(this, "appSource", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAppSource(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "appSource", value);
+    }
+
+    /**
+     */
+    public void setAppSource(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "appSource", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAssociateEip() {
+        return software.amazon.jsii.Kernel.get(this, "associateEip", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAssociateEip(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "associateEip", value);
+    }
+
+    /**
+     */
+    public void setAssociateEip(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "associateEip", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAutoConfig() {
+        return software.amazon.jsii.Kernel.get(this, "autoConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAutoConfig(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "autoConfig", value);
+    }
+
+    /**
+     */
+    public void setAutoConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "autoConfig", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getBaseAppId() {
+        return software.amazon.jsii.Kernel.get(this, "baseAppId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setBaseAppId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "baseAppId", value);
+    }
+
+    /**
+     */
+    public void setBaseAppId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "baseAppId", value);
     }
 
     /**
@@ -225,6 +333,24 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setCommandArgs(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "commandArgs", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getConfigMapMountDesc() {
+        return software.amazon.jsii.Kernel.get(this, "configMapMountDesc", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setConfigMapMountDesc(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "configMapMountDesc", value);
+    }
+
+    /**
+     */
+    public void setConfigMapMountDesc(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "configMapMountDesc", value);
     }
 
     /**
@@ -283,6 +409,24 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEnableEbpf() {
+        return software.amazon.jsii.Kernel.get(this, "enableEbpf", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEnableEbpf(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "enableEbpf", value);
+    }
+
+    /**
+     */
+    public void setEnableEbpf(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "enableEbpf", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getEnvs() {
         return software.amazon.jsii.Kernel.get(this, "envs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -297,6 +441,24 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setEnvs(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "envs", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getImagePullSecrets() {
+        return software.amazon.jsii.Kernel.get(this, "imagePullSecrets", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setImagePullSecrets(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "imagePullSecrets", value);
+    }
+
+    /**
+     */
+    public void setImagePullSecrets(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "imagePullSecrets", value);
     }
 
     /**
@@ -373,6 +535,24 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getKafkaConfigs() {
+        return software.amazon.jsii.Kernel.get(this, "kafkaConfigs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setKafkaConfigs(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "kafkaConfigs", value);
+    }
+
+    /**
+     */
+    public void setKafkaConfigs(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "kafkaConfigs", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getLiveness() {
         return software.amazon.jsii.Kernel.get(this, "liveness", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -387,6 +567,42 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setLiveness(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "liveness", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMicroRegistration() {
+        return software.amazon.jsii.Kernel.get(this, "microRegistration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setMicroRegistration(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "microRegistration", value);
+    }
+
+    /**
+     */
+    public void setMicroRegistration(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "microRegistration", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMicroRegistrationConfig() {
+        return software.amazon.jsii.Kernel.get(this, "microRegistrationConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setMicroRegistrationConfig(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "microRegistrationConfig", value);
+    }
+
+    /**
+     */
+    public void setMicroRegistrationConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "microRegistrationConfig", value);
     }
 
     /**
@@ -427,6 +643,24 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getNasConfigs() {
+        return software.amazon.jsii.Kernel.get(this, "nasConfigs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setNasConfigs(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "nasConfigs", value);
+    }
+
+    /**
+     */
+    public void setNasConfigs(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "nasConfigs", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getNasId() {
         return software.amazon.jsii.Kernel.get(this, "nasId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -441,6 +675,65 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setNasId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "nasId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getOssAkId() {
+        return software.amazon.jsii.Kernel.get(this, "ossAkId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setOssAkId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "ossAkId", value);
+    }
+
+    /**
+     */
+    public void setOssAkId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ossAkId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getOssAkSecret() {
+        return software.amazon.jsii.Kernel.get(this, "ossAkSecret", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setOssAkSecret(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "ossAkSecret", value);
+    }
+
+    /**
+     */
+    public void setOssAkSecret(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ossAkSecret", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getOssMountDescs() {
+        return software.amazon.jsii.Kernel.get(this, "ossMountDescs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setOssMountDescs(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "ossMountDescs", value);
+    }
+
+    /**
+     */
+    public void setOssMountDescs(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ossMountDescs", value);
     }
 
     /**
@@ -481,6 +774,78 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPhp() {
+        return software.amazon.jsii.Kernel.get(this, "php", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPhp(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "php", value);
+    }
+
+    /**
+     */
+    public void setPhp(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "php", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPhpArmsConfigLocation() {
+        return software.amazon.jsii.Kernel.get(this, "phpArmsConfigLocation", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPhpArmsConfigLocation(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "phpArmsConfigLocation", value);
+    }
+
+    /**
+     */
+    public void setPhpArmsConfigLocation(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "phpArmsConfigLocation", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPhpConfig() {
+        return software.amazon.jsii.Kernel.get(this, "phpConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPhpConfig(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "phpConfig", value);
+    }
+
+    /**
+     */
+    public void setPhpConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "phpConfig", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPhpConfigLocation() {
+        return software.amazon.jsii.Kernel.get(this, "phpConfigLocation", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPhpConfigLocation(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "phpConfigLocation", value);
+    }
+
+    /**
+     */
+    public void setPhpConfigLocation(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "phpConfigLocation", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getPostStart() {
         return software.amazon.jsii.Kernel.get(this, "postStart", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -517,6 +882,78 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getProgrammingLanguage() {
+        return software.amazon.jsii.Kernel.get(this, "programmingLanguage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setProgrammingLanguage(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "programmingLanguage", value);
+    }
+
+    /**
+     */
+    public void setProgrammingLanguage(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "programmingLanguage", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPvtzDiscoverySvc() {
+        return software.amazon.jsii.Kernel.get(this, "pvtzDiscoverySvc", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPvtzDiscoverySvc(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "pvtzDiscoverySvc", value);
+    }
+
+    /**
+     */
+    public void setPvtzDiscoverySvc(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "pvtzDiscoverySvc", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPython() {
+        return software.amazon.jsii.Kernel.get(this, "python", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPython(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "python", value);
+    }
+
+    /**
+     */
+    public void setPython(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "python", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPythonModules() {
+        return software.amazon.jsii.Kernel.get(this, "pythonModules", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPythonModules(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "pythonModules", value);
+    }
+
+    /**
+     */
+    public void setPythonModules(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "pythonModules", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getReadiness() {
         return software.amazon.jsii.Kernel.get(this, "readiness", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -535,6 +972,24 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSaeVersion() {
+        return software.amazon.jsii.Kernel.get(this, "saeVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSaeVersion(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "saeVersion", value);
+    }
+
+    /**
+     */
+    public void setSaeVersion(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "saeVersion", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
         return software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -549,6 +1004,24 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setSecurityGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "securityGroupId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getServiceTags() {
+        return software.amazon.jsii.Kernel.get(this, "serviceTags", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setServiceTags(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "serviceTags", value);
+    }
+
+    /**
+     */
+    public void setServiceTags(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "serviceTags", value);
     }
 
     /**
@@ -583,6 +1056,24 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTerminationGracePeriodSeconds() {
+        return software.amazon.jsii.Kernel.get(this, "terminationGracePeriodSeconds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setTerminationGracePeriodSeconds(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "terminationGracePeriodSeconds", value);
+    }
+
+    /**
+     */
+    public void setTerminationGracePeriodSeconds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "terminationGracePeriodSeconds", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getTimezone() {
         return software.amazon.jsii.Kernel.get(this, "timezone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -597,6 +1088,24 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setTimezone(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "timezone", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTomcatConfig() {
+        return software.amazon.jsii.Kernel.get(this, "tomcatConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setTomcatConfig(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "tomcatConfig", value);
+    }
+
+    /**
+     */
+    public void setTomcatConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "tomcatConfig", value);
     }
 
     /**
@@ -969,6 +1478,40 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param acrAssumeRoleArn This parameter is required.
+         */
+        public Builder acrAssumeRoleArn(final java.lang.String acrAssumeRoleArn) {
+            this.props.acrAssumeRoleArn(acrAssumeRoleArn);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param acrAssumeRoleArn This parameter is required.
+         */
+        public Builder acrAssumeRoleArn(final com.aliyun.ros.cdk.core.IResolvable acrAssumeRoleArn) {
+            this.props.acrAssumeRoleArn(acrAssumeRoleArn);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param acrInstanceId This parameter is required.
+         */
+        public Builder acrInstanceId(final java.lang.String acrInstanceId) {
+            this.props.acrInstanceId(acrInstanceId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param acrInstanceId This parameter is required.
+         */
+        public Builder acrInstanceId(final com.aliyun.ros.cdk.core.IResolvable acrInstanceId) {
+            this.props.acrInstanceId(acrInstanceId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param appDescription This parameter is required.
          */
         public Builder appDescription(final java.lang.String appDescription) {
@@ -981,6 +1524,74 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder appDescription(final com.aliyun.ros.cdk.core.IResolvable appDescription) {
             this.props.appDescription(appDescription);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param appSource This parameter is required.
+         */
+        public Builder appSource(final java.lang.String appSource) {
+            this.props.appSource(appSource);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param appSource This parameter is required.
+         */
+        public Builder appSource(final com.aliyun.ros.cdk.core.IResolvable appSource) {
+            this.props.appSource(appSource);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param associateEip This parameter is required.
+         */
+        public Builder associateEip(final java.lang.Boolean associateEip) {
+            this.props.associateEip(associateEip);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param associateEip This parameter is required.
+         */
+        public Builder associateEip(final com.aliyun.ros.cdk.core.IResolvable associateEip) {
+            this.props.associateEip(associateEip);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param autoConfig This parameter is required.
+         */
+        public Builder autoConfig(final java.lang.Boolean autoConfig) {
+            this.props.autoConfig(autoConfig);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param autoConfig This parameter is required.
+         */
+        public Builder autoConfig(final com.aliyun.ros.cdk.core.IResolvable autoConfig) {
+            this.props.autoConfig(autoConfig);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param baseAppId This parameter is required.
+         */
+        public Builder baseAppId(final java.lang.String baseAppId) {
+            this.props.baseAppId(baseAppId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param baseAppId This parameter is required.
+         */
+        public Builder baseAppId(final com.aliyun.ros.cdk.core.IResolvable baseAppId) {
+            this.props.baseAppId(baseAppId);
             return this;
         }
 
@@ -1015,6 +1626,23 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder commandArgs(final com.aliyun.ros.cdk.core.IResolvable commandArgs) {
             this.props.commandArgs(commandArgs);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param configMapMountDesc This parameter is required.
+         */
+        public Builder configMapMountDesc(final java.lang.String configMapMountDesc) {
+            this.props.configMapMountDesc(configMapMountDesc);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param configMapMountDesc This parameter is required.
+         */
+        public Builder configMapMountDesc(final com.aliyun.ros.cdk.core.IResolvable configMapMountDesc) {
+            this.props.configMapMountDesc(configMapMountDesc);
             return this;
         }
 
@@ -1071,6 +1699,23 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param enableEbpf This parameter is required.
+         */
+        public Builder enableEbpf(final java.lang.String enableEbpf) {
+            this.props.enableEbpf(enableEbpf);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param enableEbpf This parameter is required.
+         */
+        public Builder enableEbpf(final com.aliyun.ros.cdk.core.IResolvable enableEbpf) {
+            this.props.enableEbpf(enableEbpf);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param envs This parameter is required.
          */
         public Builder envs(final java.lang.String envs) {
@@ -1083,6 +1728,23 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder envs(final com.aliyun.ros.cdk.core.IResolvable envs) {
             this.props.envs(envs);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param imagePullSecrets This parameter is required.
+         */
+        public Builder imagePullSecrets(final java.lang.String imagePullSecrets) {
+            this.props.imagePullSecrets(imagePullSecrets);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param imagePullSecrets This parameter is required.
+         */
+        public Builder imagePullSecrets(final com.aliyun.ros.cdk.core.IResolvable imagePullSecrets) {
+            this.props.imagePullSecrets(imagePullSecrets);
             return this;
         }
 
@@ -1156,6 +1818,23 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param kafkaConfigs This parameter is required.
+         */
+        public Builder kafkaConfigs(final java.lang.String kafkaConfigs) {
+            this.props.kafkaConfigs(kafkaConfigs);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param kafkaConfigs This parameter is required.
+         */
+        public Builder kafkaConfigs(final com.aliyun.ros.cdk.core.IResolvable kafkaConfigs) {
+            this.props.kafkaConfigs(kafkaConfigs);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param liveness This parameter is required.
          */
         public Builder liveness(final java.lang.String liveness) {
@@ -1168,6 +1847,40 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder liveness(final com.aliyun.ros.cdk.core.IResolvable liveness) {
             this.props.liveness(liveness);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param microRegistration This parameter is required.
+         */
+        public Builder microRegistration(final java.lang.String microRegistration) {
+            this.props.microRegistration(microRegistration);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param microRegistration This parameter is required.
+         */
+        public Builder microRegistration(final com.aliyun.ros.cdk.core.IResolvable microRegistration) {
+            this.props.microRegistration(microRegistration);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param microRegistrationConfig This parameter is required.
+         */
+        public Builder microRegistrationConfig(final java.lang.String microRegistrationConfig) {
+            this.props.microRegistrationConfig(microRegistrationConfig);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param microRegistrationConfig This parameter is required.
+         */
+        public Builder microRegistrationConfig(final com.aliyun.ros.cdk.core.IResolvable microRegistrationConfig) {
+            this.props.microRegistrationConfig(microRegistrationConfig);
             return this;
         }
 
@@ -1207,6 +1920,23 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param nasConfigs This parameter is required.
+         */
+        public Builder nasConfigs(final java.lang.String nasConfigs) {
+            this.props.nasConfigs(nasConfigs);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param nasConfigs This parameter is required.
+         */
+        public Builder nasConfigs(final com.aliyun.ros.cdk.core.IResolvable nasConfigs) {
+            this.props.nasConfigs(nasConfigs);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param nasId This parameter is required.
          */
         public Builder nasId(final java.lang.String nasId) {
@@ -1219,6 +1949,57 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder nasId(final com.aliyun.ros.cdk.core.IResolvable nasId) {
             this.props.nasId(nasId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param ossAkId This parameter is required.
+         */
+        public Builder ossAkId(final java.lang.String ossAkId) {
+            this.props.ossAkId(ossAkId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ossAkId This parameter is required.
+         */
+        public Builder ossAkId(final com.aliyun.ros.cdk.core.IResolvable ossAkId) {
+            this.props.ossAkId(ossAkId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param ossAkSecret This parameter is required.
+         */
+        public Builder ossAkSecret(final java.lang.String ossAkSecret) {
+            this.props.ossAkSecret(ossAkSecret);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ossAkSecret This parameter is required.
+         */
+        public Builder ossAkSecret(final com.aliyun.ros.cdk.core.IResolvable ossAkSecret) {
+            this.props.ossAkSecret(ossAkSecret);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param ossMountDescs This parameter is required.
+         */
+        public Builder ossMountDescs(final java.util.List<? extends java.lang.Object> ossMountDescs) {
+            this.props.ossMountDescs(ossMountDescs);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ossMountDescs This parameter is required.
+         */
+        public Builder ossMountDescs(final com.aliyun.ros.cdk.core.IResolvable ossMountDescs) {
+            this.props.ossMountDescs(ossMountDescs);
             return this;
         }
 
@@ -1258,6 +2039,74 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param php This parameter is required.
+         */
+        public Builder php(final java.lang.String php) {
+            this.props.php(php);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param php This parameter is required.
+         */
+        public Builder php(final com.aliyun.ros.cdk.core.IResolvable php) {
+            this.props.php(php);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param phpArmsConfigLocation This parameter is required.
+         */
+        public Builder phpArmsConfigLocation(final java.lang.String phpArmsConfigLocation) {
+            this.props.phpArmsConfigLocation(phpArmsConfigLocation);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param phpArmsConfigLocation This parameter is required.
+         */
+        public Builder phpArmsConfigLocation(final com.aliyun.ros.cdk.core.IResolvable phpArmsConfigLocation) {
+            this.props.phpArmsConfigLocation(phpArmsConfigLocation);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param phpConfig This parameter is required.
+         */
+        public Builder phpConfig(final java.lang.String phpConfig) {
+            this.props.phpConfig(phpConfig);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param phpConfig This parameter is required.
+         */
+        public Builder phpConfig(final com.aliyun.ros.cdk.core.IResolvable phpConfig) {
+            this.props.phpConfig(phpConfig);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param phpConfigLocation This parameter is required.
+         */
+        public Builder phpConfigLocation(final java.lang.String phpConfigLocation) {
+            this.props.phpConfigLocation(phpConfigLocation);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param phpConfigLocation This parameter is required.
+         */
+        public Builder phpConfigLocation(final com.aliyun.ros.cdk.core.IResolvable phpConfigLocation) {
+            this.props.phpConfigLocation(phpConfigLocation);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param postStart This parameter is required.
          */
         public Builder postStart(final java.lang.String postStart) {
@@ -1292,6 +2141,74 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param programmingLanguage This parameter is required.
+         */
+        public Builder programmingLanguage(final java.lang.String programmingLanguage) {
+            this.props.programmingLanguage(programmingLanguage);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param programmingLanguage This parameter is required.
+         */
+        public Builder programmingLanguage(final com.aliyun.ros.cdk.core.IResolvable programmingLanguage) {
+            this.props.programmingLanguage(programmingLanguage);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param pvtzDiscoverySvc This parameter is required.
+         */
+        public Builder pvtzDiscoverySvc(final java.lang.String pvtzDiscoverySvc) {
+            this.props.pvtzDiscoverySvc(pvtzDiscoverySvc);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param pvtzDiscoverySvc This parameter is required.
+         */
+        public Builder pvtzDiscoverySvc(final com.aliyun.ros.cdk.core.IResolvable pvtzDiscoverySvc) {
+            this.props.pvtzDiscoverySvc(pvtzDiscoverySvc);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param python This parameter is required.
+         */
+        public Builder python(final java.lang.String python) {
+            this.props.python(python);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param python This parameter is required.
+         */
+        public Builder python(final com.aliyun.ros.cdk.core.IResolvable python) {
+            this.props.python(python);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param pythonModules This parameter is required.
+         */
+        public Builder pythonModules(final java.lang.String pythonModules) {
+            this.props.pythonModules(pythonModules);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param pythonModules This parameter is required.
+         */
+        public Builder pythonModules(final com.aliyun.ros.cdk.core.IResolvable pythonModules) {
+            this.props.pythonModules(pythonModules);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param readiness This parameter is required.
          */
         public Builder readiness(final java.lang.String readiness) {
@@ -1309,6 +2226,23 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param saeVersion This parameter is required.
+         */
+        public Builder saeVersion(final java.lang.String saeVersion) {
+            this.props.saeVersion(saeVersion);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param saeVersion This parameter is required.
+         */
+        public Builder saeVersion(final com.aliyun.ros.cdk.core.IResolvable saeVersion) {
+            this.props.saeVersion(saeVersion);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param securityGroupId This parameter is required.
          */
         public Builder securityGroupId(final java.lang.String securityGroupId) {
@@ -1321,6 +2255,23 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
             this.props.securityGroupId(securityGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param serviceTags This parameter is required.
+         */
+        public Builder serviceTags(final java.lang.String serviceTags) {
+            this.props.serviceTags(serviceTags);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param serviceTags This parameter is required.
+         */
+        public Builder serviceTags(final com.aliyun.ros.cdk.core.IResolvable serviceTags) {
+            this.props.serviceTags(serviceTags);
             return this;
         }
 
@@ -1352,6 +2303,23 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param terminationGracePeriodSeconds This parameter is required.
+         */
+        public Builder terminationGracePeriodSeconds(final java.lang.Number terminationGracePeriodSeconds) {
+            this.props.terminationGracePeriodSeconds(terminationGracePeriodSeconds);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param terminationGracePeriodSeconds This parameter is required.
+         */
+        public Builder terminationGracePeriodSeconds(final com.aliyun.ros.cdk.core.IResolvable terminationGracePeriodSeconds) {
+            this.props.terminationGracePeriodSeconds(terminationGracePeriodSeconds);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param timezone This parameter is required.
          */
         public Builder timezone(final java.lang.String timezone) {
@@ -1364,6 +2332,23 @@ public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder timezone(final com.aliyun.ros.cdk.core.IResolvable timezone) {
             this.props.timezone(timezone);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param tomcatConfig This parameter is required.
+         */
+        public Builder tomcatConfig(final java.lang.String tomcatConfig) {
+            this.props.tomcatConfig(tomcatConfig);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param tomcatConfig This parameter is required.
+         */
+        public Builder tomcatConfig(final com.aliyun.ros.cdk.core.IResolvable tomcatConfig) {
+            this.props.tomcatConfig(tomcatConfig);
             return this;
         }
 

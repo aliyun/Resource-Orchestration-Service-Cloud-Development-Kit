@@ -41,6 +41,14 @@ export interface ZonesProps {
     readonly ioOptimized?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property resourceType: The type of the resource. Valid values:
      * instance: ECS instance
      * disk: cloud disk
@@ -100,6 +108,7 @@ export class Zones extends ros.Resource {
             dataDiskCategory: props.dataDiskCategory,
             instanceType: props.instanceType,
             systemDiskCategory: props.systemDiskCategory,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosZones;
         this.attrZoneIds = rosZones.attrZoneIds;

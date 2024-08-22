@@ -110,17 +110,17 @@ function rosGroupPropsToRosTemplate(properties: any, enableResourcePropertyConst
         RosGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      InProtocol: ros.stringToRosTemplate(properties.inProtocol),
-      Name: ros.stringToRosTemplate(properties.name),
-      OutProtocol: ros.stringToRosTemplate(properties.outProtocol),
-      PlayDomain: ros.stringToRosTemplate(properties.playDomain),
-      PushDomain: ros.stringToRosTemplate(properties.pushDomain),
-      Region: ros.stringToRosTemplate(properties.region),
-      App: ros.stringToRosTemplate(properties.app),
-      Callback: ros.stringToRosTemplate(properties.callback),
-      Description: ros.stringToRosTemplate(properties.description),
-      Enabled: ros.booleanToRosTemplate(properties.enabled),
-      LazyPull: ros.booleanToRosTemplate(properties.lazyPull),
+      'InProtocol': ros.stringToRosTemplate(properties.inProtocol),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'OutProtocol': ros.stringToRosTemplate(properties.outProtocol),
+      'PlayDomain': ros.stringToRosTemplate(properties.playDomain),
+      'PushDomain': ros.stringToRosTemplate(properties.pushDomain),
+      'Region': ros.stringToRosTemplate(properties.region),
+      'App': ros.stringToRosTemplate(properties.app),
+      'Callback': ros.stringToRosTemplate(properties.callback),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Enabled': ros.booleanToRosTemplate(properties.enabled),
+      'LazyPull': ros.booleanToRosTemplate(properties.lazyPull),
     };
 }
 

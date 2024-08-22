@@ -93,13 +93,13 @@ function rosBindingPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosBindingPropsValidator(properties).assertSuccess();
     }
     return {
-      Argument: ros.stringToRosTemplate(properties.argument),
-      BindingKey: ros.stringToRosTemplate(properties.bindingKey),
-      BindingType: ros.stringToRosTemplate(properties.bindingType),
-      DestinationName: ros.stringToRosTemplate(properties.destinationName),
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      SourceExchange: ros.stringToRosTemplate(properties.sourceExchange),
-      VirtualHost: ros.stringToRosTemplate(properties.virtualHost),
+      'Argument': ros.stringToRosTemplate(properties.argument),
+      'BindingKey': ros.stringToRosTemplate(properties.bindingKey),
+      'BindingType': ros.stringToRosTemplate(properties.bindingType),
+      'DestinationName': ros.stringToRosTemplate(properties.destinationName),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'SourceExchange': ros.stringToRosTemplate(properties.sourceExchange),
+      'VirtualHost': ros.stringToRosTemplate(properties.virtualHost),
     };
 }
 
@@ -292,13 +292,13 @@ function rosExchangePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosExchangePropsValidator(properties).assertSuccess();
     }
     return {
-      AutoDeleteState: ros.booleanToRosTemplate(properties.autoDeleteState),
-      ExchangeName: ros.stringToRosTemplate(properties.exchangeName),
-      ExchangeType: ros.stringToRosTemplate(properties.exchangeType),
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      Internal: ros.booleanToRosTemplate(properties.internal),
-      VirtualHost: ros.stringToRosTemplate(properties.virtualHost),
-      AlternateExchange: ros.stringToRosTemplate(properties.alternateExchange),
+      'AutoDeleteState': ros.booleanToRosTemplate(properties.autoDeleteState),
+      'ExchangeName': ros.stringToRosTemplate(properties.exchangeName),
+      'ExchangeType': ros.stringToRosTemplate(properties.exchangeType),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'Internal': ros.booleanToRosTemplate(properties.internal),
+      'VirtualHost': ros.stringToRosTemplate(properties.virtualHost),
+      'AlternateExchange': ros.stringToRosTemplate(properties.alternateExchange),
     };
 }
 
@@ -603,19 +603,19 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      InstanceName: ros.stringToRosTemplate(properties.instanceName),
-      InstanceType: ros.stringToRosTemplate(properties.instanceType),
-      MaxEipTps: ros.numberToRosTemplate(properties.maxEipTps),
-      MaxTps: ros.numberToRosTemplate(properties.maxTps),
-      OrderNum: ros.numberToRosTemplate(properties.orderNum),
-      PayType: ros.stringToRosTemplate(properties.payType),
-      Period: ros.numberToRosTemplate(properties.period),
-      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
-      QueueCapacity: ros.numberToRosTemplate(properties.queueCapacity),
-      StorageSize: ros.numberToRosTemplate(properties.storageSize),
-      SupportEip: ros.stringToRosTemplate(properties.supportEip),
-      SupportTracing: ros.stringToRosTemplate(properties.supportTracing),
-      TracingStorageTime: ros.numberToRosTemplate(properties.tracingStorageTime),
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'InstanceType': ros.stringToRosTemplate(properties.instanceType),
+      'MaxEipTps': ros.numberToRosTemplate(properties.maxEipTps),
+      'MaxTps': ros.numberToRosTemplate(properties.maxTps),
+      'OrderNum': ros.numberToRosTemplate(properties.orderNum),
+      'PayType': ros.stringToRosTemplate(properties.payType),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
+      'QueueCapacity': ros.numberToRosTemplate(properties.queueCapacity),
+      'StorageSize': ros.numberToRosTemplate(properties.storageSize),
+      'SupportEip': ros.stringToRosTemplate(properties.supportEip),
+      'SupportTracing': ros.stringToRosTemplate(properties.supportTracing),
+      'TracingStorageTime': ros.numberToRosTemplate(properties.tracingStorageTime),
     };
 }
 
@@ -644,6 +644,11 @@ export class RosInstance extends ros.RosResource {
      * @Attribute PrivateEndpoint: The private endpoint of the instance.
      */
     public readonly attrPrivateEndpoint: ros.IResolvable;
+
+    /**
+     * @Attribute PublicEndpoint: The public endpoint of the instance.
+     */
+    public readonly attrPublicEndpoint: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -738,6 +743,7 @@ export class RosInstance extends ros.RosResource {
         this.attrClassicEndpoint = this.getAtt('ClassicEndpoint');
         this.attrInstanceId = this.getAtt('InstanceId');
         this.attrPrivateEndpoint = this.getAtt('PrivateEndpoint');
+        this.attrPublicEndpoint = this.getAtt('PublicEndpoint');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.instanceName = props.instanceName;
@@ -899,17 +905,17 @@ function rosQueuePropsToRosTemplate(properties: any, enableResourcePropertyConst
         RosQueuePropsValidator(properties).assertSuccess();
     }
     return {
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      QueueName: ros.stringToRosTemplate(properties.queueName),
-      VirtualHost: ros.stringToRosTemplate(properties.virtualHost),
-      AutoDeleteState: ros.booleanToRosTemplate(properties.autoDeleteState),
-      AutoExpireState: ros.numberToRosTemplate(properties.autoExpireState),
-      DeadLetterExchange: ros.stringToRosTemplate(properties.deadLetterExchange),
-      DeadLetterRoutingKey: ros.stringToRosTemplate(properties.deadLetterRoutingKey),
-      ExclusiveState: ros.booleanToRosTemplate(properties.exclusiveState),
-      MaximumPriority: ros.numberToRosTemplate(properties.maximumPriority),
-      MaxLength: ros.numberToRosTemplate(properties.maxLength),
-      MessageTTL: ros.numberToRosTemplate(properties.messageTtl),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'QueueName': ros.stringToRosTemplate(properties.queueName),
+      'VirtualHost': ros.stringToRosTemplate(properties.virtualHost),
+      'AutoDeleteState': ros.booleanToRosTemplate(properties.autoDeleteState),
+      'AutoExpireState': ros.numberToRosTemplate(properties.autoExpireState),
+      'DeadLetterExchange': ros.stringToRosTemplate(properties.deadLetterExchange),
+      'DeadLetterRoutingKey': ros.stringToRosTemplate(properties.deadLetterRoutingKey),
+      'ExclusiveState': ros.booleanToRosTemplate(properties.exclusiveState),
+      'MaximumPriority': ros.numberToRosTemplate(properties.maximumPriority),
+      'MaxLength': ros.numberToRosTemplate(properties.maxLength),
+      'MessageTTL': ros.numberToRosTemplate(properties.messageTtl),
     };
 }
 
@@ -1097,8 +1103,8 @@ function rosVirtualHostPropsToRosTemplate(properties: any, enableResourcePropert
         RosVirtualHostPropsValidator(properties).assertSuccess();
     }
     return {
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      VirtualHost: ros.stringToRosTemplate(properties.virtualHost),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'VirtualHost': ros.stringToRosTemplate(properties.virtualHost),
     };
 }
 

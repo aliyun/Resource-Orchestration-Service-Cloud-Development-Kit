@@ -8,6 +8,8 @@
 @alicloud/ros-cdk-cloudfw.FwSwitchProps=com.aliyun.ros.cdk.cloudfw.FwSwitchProps
 @alicloud/ros-cdk-cloudfw.Instance=com.aliyun.ros.cdk.cloudfw.Instance
 @alicloud/ros-cdk-cloudfw.InstanceProps=com.aliyun.ros.cdk.cloudfw.InstanceProps
+@alicloud/ros-cdk-cloudfw.NatFirewallControlPolicy=com.aliyun.ros.cdk.cloudfw.NatFirewallControlPolicy
+@alicloud/ros-cdk-cloudfw.NatFirewallControlPolicyProps=com.aliyun.ros.cdk.cloudfw.NatFirewallControlPolicyProps
 @alicloud/ros-cdk-cloudfw.RosAddressBook=com.aliyun.ros.cdk.cloudfw.RosAddressBook
 @alicloud/ros-cdk-cloudfw.RosAddressBook.TagListProperty=com.aliyun.ros.cdk.cloudfw.RosAddressBook$TagListProperty
 @alicloud/ros-cdk-cloudfw.RosAddressBookProps=com.aliyun.ros.cdk.cloudfw.RosAddressBookProps
@@ -19,6 +21,8 @@
 @alicloud/ros-cdk-cloudfw.RosFwSwitchProps=com.aliyun.ros.cdk.cloudfw.RosFwSwitchProps
 @alicloud/ros-cdk-cloudfw.RosInstance=com.aliyun.ros.cdk.cloudfw.RosInstance
 @alicloud/ros-cdk-cloudfw.RosInstanceProps=com.aliyun.ros.cdk.cloudfw.RosInstanceProps
+@alicloud/ros-cdk-cloudfw.RosNatFirewallControlPolicy=com.aliyun.ros.cdk.cloudfw.RosNatFirewallControlPolicy
+@alicloud/ros-cdk-cloudfw.RosNatFirewallControlPolicyProps=com.aliyun.ros.cdk.cloudfw.RosNatFirewallControlPolicyProps
 @alicloud/ros-cdk-cloudfw.RosVpcFirewallControlPolicy=com.aliyun.ros.cdk.cloudfw.RosVpcFirewallControlPolicy
 @alicloud/ros-cdk-cloudfw.RosVpcFirewallControlPolicyProps=com.aliyun.ros.cdk.cloudfw.RosVpcFirewallControlPolicyProps
 @alicloud/ros-cdk-cloudfw.VpcFirewallControlPolicy=com.aliyun.ros.cdk.cloudfw.VpcFirewallControlPolicy

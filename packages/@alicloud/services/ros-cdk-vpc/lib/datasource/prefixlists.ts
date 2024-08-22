@@ -15,6 +15,14 @@ export interface PrefixListsProps {
     readonly prefixListName?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property resourceGroupId: The ID of the resource group to which the VPC belongs.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -56,6 +64,7 @@ export class PrefixLists extends ros.Resource {
         const rosPrefixLists = new RosPrefixLists(this, id,  {
             resourceGroupId: props.resourceGroupId,
             prefixListName: props.prefixListName,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosPrefixLists;
         this.attrPrefixListIds = rosPrefixLists.attrPrefixListIds;

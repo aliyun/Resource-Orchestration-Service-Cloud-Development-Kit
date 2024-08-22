@@ -41,6 +41,7 @@ export * from './securitygroupegresses';
 export * from './securitygroupingress';
 export * from './securitygroupingresses';
 export * from './snapshot';
+export * from './snapshotgroup';
 export * from './vpc';
 export * from './vswitch';
 

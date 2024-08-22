@@ -10,6 +10,14 @@ export { RosTrafficMirrorFilters as TrafficMirrorFiltersProperty };
 export interface TrafficMirrorFiltersProps {
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property trafficMirrorFilterName: The name of the TrafficMirrorFilter.
      */
     readonly trafficMirrorFilterName?: string | ros.IResolvable;
@@ -50,6 +58,7 @@ export class TrafficMirrorFilters extends ros.Resource {
 
         const rosTrafficMirrorFilters = new RosTrafficMirrorFilters(this, id,  {
             trafficMirrorFilterName: props.trafficMirrorFilterName,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosTrafficMirrorFilters;
         this.attrTrafficMirrorFilterIds = rosTrafficMirrorFilters.attrTrafficMirrorFilterIds;

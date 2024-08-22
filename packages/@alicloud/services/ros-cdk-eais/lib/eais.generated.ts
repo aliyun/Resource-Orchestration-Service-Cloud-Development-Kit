@@ -50,8 +50,8 @@ function rosClientInstanceAttachmentPropsToRosTemplate(properties: any, enableRe
         RosClientInstanceAttachmentPropsValidator(properties).assertSuccess();
     }
     return {
-      ClientInstanceId: ros.stringToRosTemplate(properties.clientInstanceId),
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      'ClientInstanceId': ros.stringToRosTemplate(properties.clientInstanceId),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
     };
 }
 
@@ -214,14 +214,14 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      CreateWithNotebook: ros.booleanToRosTemplate(properties.createWithNotebook),
-      InstanceType: ros.stringToRosTemplate(properties.instanceType),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      EnvironmentVar: ros.listMapper(rosInstanceEnvironmentVarPropertyToRosTemplate)(properties.environmentVar),
-      InstanceName: ros.stringToRosTemplate(properties.instanceName),
-      PaymentType: ros.stringToRosTemplate(properties.paymentType),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      'CreateWithNotebook': ros.booleanToRosTemplate(properties.createWithNotebook),
+      'InstanceType': ros.stringToRosTemplate(properties.instanceType),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'EnvironmentVar': ros.listMapper(rosInstanceEnvironmentVarPropertyToRosTemplate)(properties.environmentVar),
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'PaymentType': ros.stringToRosTemplate(properties.paymentType),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
     };
 }
 
@@ -430,7 +430,7 @@ function rosInstanceEnvironmentVarPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosInstance_EnvironmentVarPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }

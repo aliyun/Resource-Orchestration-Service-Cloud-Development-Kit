@@ -115,8 +115,7 @@ export default class CodeGenerator {
     this.code.line();
     this.emitValidator(resourceContext, name, spec.Properties, conversionTable);
     this.code.line();
-    const propsToRosName = spec.PropsToRosName ? spec.PropsToRosName : {};
-    this.emitRosTemplateMapper(resourceContext, name, spec.Properties, conversionTable, true, propsToRosName);
+    this.emitRosTemplateMapper(resourceContext, name, spec.Properties, conversionTable, true);
 
     return name;
   }
@@ -353,7 +352,6 @@ export default class CodeGenerator {
       propSpecs: { [name: string]: schema.Property },
       nameConversionTable: Dictionary<string>,
       isResourceType: boolean = true,
-      propsToRosName: { [name: string]: string } = {},
   ) {
     const mapperName = genspec.rosMapperName(typeName);
 
@@ -446,11 +444,8 @@ export default class CodeGenerator {
           return `${CORE}.unionMapper([${scalarValidator}, ${listValidator}], [${scalarMapper}, ${listMapper}])`;
         },
       });
-      if (rosTypeName in propsToRosName) {
-        self.code.line(`  ${propsToRosName[rosTypeName]}: ${mapperExpression}(properties.${propName}),`);
-      } else {
-        self.code.line(`  ${rosTypeName}: ${mapperExpression}(properties.${propName}),`);
-      }
+
+      self.code.line(`  \'${propSpec.PrimitiveName}\': ${mapperExpression}(properties.${propName}),`);
     });
     this.code.line('};');
     this.code.closeBlock();

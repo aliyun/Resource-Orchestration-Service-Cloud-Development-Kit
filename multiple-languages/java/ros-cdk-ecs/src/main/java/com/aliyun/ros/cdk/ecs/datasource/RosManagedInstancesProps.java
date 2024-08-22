@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-managedinstances
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.642Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:20.622Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.RosManagedInstancesProps")
 @software.amazon.jsii.Jsii.Proxy(RosManagedInstancesProps.Jsii$Proxy.class)
 public interface RosManagedInstancesProps extends software.amazon.jsii.JsiiSerializable {
@@ -42,6 +42,12 @@ public interface RosManagedInstancesProps extends software.amazon.jsii.JsiiSeria
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.datasource.RosManagedInstances.TagsProperty> getTags() {
         return null;
     }
@@ -61,6 +67,7 @@ public interface RosManagedInstancesProps extends software.amazon.jsii.JsiiSeria
         java.lang.Object instanceIp;
         java.lang.Object instanceName;
         java.lang.Object osType;
+        java.lang.Object refreshOptions;
         java.util.List<com.aliyun.ros.cdk.ecs.datasource.RosManagedInstances.TagsProperty> tags;
 
         /**
@@ -164,6 +171,26 @@ public interface RosManagedInstancesProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosManagedInstancesProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosManagedInstancesProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosManagedInstancesProps#getTags}
          * @param tags the value to be set.
          * @return {@code this}
@@ -195,6 +222,7 @@ public interface RosManagedInstancesProps extends software.amazon.jsii.JsiiSeria
         private final java.lang.Object instanceIp;
         private final java.lang.Object instanceName;
         private final java.lang.Object osType;
+        private final java.lang.Object refreshOptions;
         private final java.util.List<com.aliyun.ros.cdk.ecs.datasource.RosManagedInstances.TagsProperty> tags;
 
         /**
@@ -208,6 +236,7 @@ public interface RosManagedInstancesProps extends software.amazon.jsii.JsiiSeria
             this.instanceIp = software.amazon.jsii.Kernel.get(this, "instanceIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.osType = software.amazon.jsii.Kernel.get(this, "osType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.datasource.RosManagedInstances.TagsProperty.class)));
         }
 
@@ -222,6 +251,7 @@ public interface RosManagedInstancesProps extends software.amazon.jsii.JsiiSeria
             this.instanceIp = builder.instanceIp;
             this.instanceName = builder.instanceName;
             this.osType = builder.osType;
+            this.refreshOptions = builder.refreshOptions;
             this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.datasource.RosManagedInstances.TagsProperty>)builder.tags;
         }
 
@@ -251,6 +281,11 @@ public interface RosManagedInstancesProps extends software.amazon.jsii.JsiiSeria
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         public final java.util.List<com.aliyun.ros.cdk.ecs.datasource.RosManagedInstances.TagsProperty> getTags() {
             return this.tags;
         }
@@ -275,6 +310,9 @@ public interface RosManagedInstancesProps extends software.amazon.jsii.JsiiSeria
             }
             if (this.getOsType() != null) {
                 data.set("osType", om.valueToTree(this.getOsType()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
@@ -302,6 +340,7 @@ public interface RosManagedInstancesProps extends software.amazon.jsii.JsiiSeria
             if (this.instanceIp != null ? !this.instanceIp.equals(that.instanceIp) : that.instanceIp != null) return false;
             if (this.instanceName != null ? !this.instanceName.equals(that.instanceName) : that.instanceName != null) return false;
             if (this.osType != null ? !this.osType.equals(that.osType) : that.osType != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
@@ -312,6 +351,7 @@ public interface RosManagedInstancesProps extends software.amazon.jsii.JsiiSeria
             result = 31 * result + (this.instanceIp != null ? this.instanceIp.hashCode() : 0);
             result = 31 * result + (this.instanceName != null ? this.instanceName.hashCode() : 0);
             result = 31 * result + (this.osType != null ? this.osType.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }

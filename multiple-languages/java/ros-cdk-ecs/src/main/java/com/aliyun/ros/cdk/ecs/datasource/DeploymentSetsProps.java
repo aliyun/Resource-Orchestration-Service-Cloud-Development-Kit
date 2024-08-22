@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-deploymentsets
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.534Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:20.451Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.DeploymentSetsProps")
 @software.amazon.jsii.Jsii.Proxy(DeploymentSetsProps.Jsii$Proxy.class)
 public interface DeploymentSetsProps extends software.amazon.jsii.JsiiSerializable {
@@ -34,6 +34,21 @@ public interface DeploymentSetsProps extends software.amazon.jsii.JsiiSerializab
     }
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * Property strategy: The deployment strategy.
      * <p>
      * Valid values:
@@ -57,6 +72,7 @@ public interface DeploymentSetsProps extends software.amazon.jsii.JsiiSerializab
         java.lang.Object deploymentSetIds;
         java.lang.Object deploymentSetName;
         java.lang.Object domain;
+        java.lang.Object refreshOptions;
         java.lang.Object strategy;
 
         /**
@@ -122,6 +138,40 @@ public interface DeploymentSetsProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link DeploymentSetsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DeploymentSetsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DeploymentSetsProps#getStrategy}
          * @param strategy Property strategy: The deployment strategy.
          *                 Valid values:
@@ -166,6 +216,7 @@ public interface DeploymentSetsProps extends software.amazon.jsii.JsiiSerializab
         private final java.lang.Object deploymentSetIds;
         private final java.lang.Object deploymentSetName;
         private final java.lang.Object domain;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object strategy;
 
         /**
@@ -177,6 +228,7 @@ public interface DeploymentSetsProps extends software.amazon.jsii.JsiiSerializab
             this.deploymentSetIds = software.amazon.jsii.Kernel.get(this, "deploymentSetIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deploymentSetName = software.amazon.jsii.Kernel.get(this, "deploymentSetName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.domain = software.amazon.jsii.Kernel.get(this, "domain", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.strategy = software.amazon.jsii.Kernel.get(this, "strategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -188,6 +240,7 @@ public interface DeploymentSetsProps extends software.amazon.jsii.JsiiSerializab
             this.deploymentSetIds = builder.deploymentSetIds;
             this.deploymentSetName = builder.deploymentSetName;
             this.domain = builder.domain;
+            this.refreshOptions = builder.refreshOptions;
             this.strategy = builder.strategy;
         }
 
@@ -204,6 +257,11 @@ public interface DeploymentSetsProps extends software.amazon.jsii.JsiiSerializab
         @Override
         public final java.lang.Object getDomain() {
             return this.domain;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -225,6 +283,9 @@ public interface DeploymentSetsProps extends software.amazon.jsii.JsiiSerializab
             }
             if (this.getDomain() != null) {
                 data.set("domain", om.valueToTree(this.getDomain()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
             if (this.getStrategy() != null) {
                 data.set("strategy", om.valueToTree(this.getStrategy()));
@@ -250,6 +311,7 @@ public interface DeploymentSetsProps extends software.amazon.jsii.JsiiSerializab
             if (this.deploymentSetIds != null ? !this.deploymentSetIds.equals(that.deploymentSetIds) : that.deploymentSetIds != null) return false;
             if (this.deploymentSetName != null ? !this.deploymentSetName.equals(that.deploymentSetName) : that.deploymentSetName != null) return false;
             if (this.domain != null ? !this.domain.equals(that.domain) : that.domain != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             return this.strategy != null ? this.strategy.equals(that.strategy) : that.strategy == null;
         }
 
@@ -258,6 +320,7 @@ public interface DeploymentSetsProps extends software.amazon.jsii.JsiiSerializab
             int result = this.deploymentSetIds != null ? this.deploymentSetIds.hashCode() : 0;
             result = 31 * result + (this.deploymentSetName != null ? this.deploymentSetName.hashCode() : 0);
             result = 31 * result + (this.domain != null ? this.domain.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.strategy != null ? this.strategy.hashCode() : 0);
             return result;
         }

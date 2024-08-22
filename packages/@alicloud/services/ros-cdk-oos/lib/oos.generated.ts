@@ -43,7 +43,7 @@ function rosDefaultPatchBaselinePropsToRosTemplate(properties: any, enableResour
         RosDefaultPatchBaselinePropsValidator(properties).assertSuccess();
     }
     return {
-      PatchBaselineName: ros.stringToRosTemplate(properties.patchBaselineName),
+      'PatchBaselineName': ros.stringToRosTemplate(properties.patchBaselineName),
     };
 }
 
@@ -156,11 +156,6 @@ export class RosDefaultPatchBaseline extends ros.RosResource {
 export interface RosExecutionProps {
 
     /**
-     * @Property templateName: Template name. Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
-     */
-    readonly templateName: string | ros.IResolvable;
-
-    /**
      * @Property description: The description of OOS Execution.
      */
     readonly description?: string | ros.IResolvable;
@@ -211,6 +206,21 @@ export interface RosExecutionProps {
     readonly tags?: { [key: string]: (any) };
 
     /**
+     * @Property templateContent: The content of the template in the JSON or YAML format. This parameter is the same as the Content parameter that you can specify when you call the CreateTemplate operation. You can use this parameter to specify the tasks that you want to run. This way, you do not need to create a template before you start an execution. If you select an existing template, you do not need to specify this parameter.
+     */
+    readonly templateContent?: string | ros.IResolvable;
+
+    /**
+     * @Property templateName: Template name. Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
+     */
+    readonly templateName?: string | ros.IResolvable;
+
+    /**
+     * @Property templateUrl: The Object Storage Service (OSS) URL of the object that stores the content of the Operation Orchestration Service (OOS) template. The access control list (ACL) of the object must be public-read. You can use this parameter to specify the tasks that you want to run. This way, you do not need to create a template before you start an execution. If you select an existing template, you do not need to specify this parameter.
+     */
+    readonly templateUrl?: string | ros.IResolvable;
+
+    /**
      * @Property templateVersion: Version number of template. Default to the latest version.
      */
     readonly templateVersion?: string | ros.IResolvable;
@@ -237,14 +247,15 @@ function RosExecutionPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('loopMode', ros.validateString)(properties.loopMode));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('parameters', ros.hashValidator(ros.validateAny))(properties.parameters));
-    if(properties.safetyCheck && (typeof properties.safetyCheck) !== 'object') {
-        errors.collect(ros.propertyValidator('safetyCheck', ros.validateAllowedValues)({
-          data: properties.safetyCheck,
-          allowedValues: ["ConfirmEveryHighRiskAction","Skip"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('safetyCheck', ros.validateString)(properties.safetyCheck));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    if(properties.templateContent && (Array.isArray(properties.templateContent) || (typeof properties.templateContent) === 'string')) {
+        errors.collect(ros.propertyValidator('templateContent', ros.validateLength)({
+            data: properties.templateContent.length,
+            min: undefined,
+            max: 65536,
+          }));
+    }
+    errors.collect(ros.propertyValidator('templateContent', ros.validateString)(properties.templateContent));
     if(properties.mode && (typeof properties.mode) !== 'object') {
         errors.collect(ros.propertyValidator('mode', ros.validateAllowedValues)({
           data: properties.mode,
@@ -252,7 +263,15 @@ function RosExecutionPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('mode', ros.validateString)(properties.mode));
-    errors.collect(ros.propertyValidator('templateName', ros.requiredValidator)(properties.templateName));
+    errors.collect(ros.propertyValidator('templateVersion', ros.validateString)(properties.templateVersion));
+    errors.collect(ros.propertyValidator('templateUrl', ros.validateString)(properties.templateUrl));
+    if(properties.safetyCheck && (typeof properties.safetyCheck) !== 'object') {
+        errors.collect(ros.propertyValidator('safetyCheck', ros.validateAllowedValues)({
+          data: properties.safetyCheck,
+          allowedValues: ["ConfirmEveryHighRiskAction","Skip"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('safetyCheck', ros.validateString)(properties.safetyCheck));
     if(properties.templateName && (Array.isArray(properties.templateName) || (typeof properties.templateName) === 'string')) {
         errors.collect(ros.propertyValidator('templateName', ros.validateLength)({
             data: properties.templateName.length,
@@ -261,7 +280,6 @@ function RosExecutionPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('templateName', ros.validateString)(properties.templateName));
-    errors.collect(ros.propertyValidator('templateVersion', ros.validateString)(properties.templateVersion));
     errors.collect(ros.propertyValidator('tags', ros.hashValidator(ros.validateAny))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosExecutionProps"');
 }
@@ -280,17 +298,19 @@ function rosExecutionPropsToRosTemplate(properties: any, enableResourcePropertyC
         RosExecutionPropsValidator(properties).assertSuccess();
     }
     return {
-      TemplateName: ros.stringToRosTemplate(properties.templateName),
-      Description: ros.stringToRosTemplate(properties.description),
-      LoopMode: ros.stringToRosTemplate(properties.loopMode),
-      Mode: ros.stringToRosTemplate(properties.mode),
-      Parameters: ros.hashMapper(ros.objectToRosTemplate)(properties.parameters),
-      ParentExecutionId: ros.stringToRosTemplate(properties.parentExecutionId),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      ResourceOptions: rosExecutionResourceOptionsPropertyToRosTemplate(properties.resourceOptions),
-      SafetyCheck: ros.stringToRosTemplate(properties.safetyCheck),
-      Tags: ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
-      TemplateVersion: ros.stringToRosTemplate(properties.templateVersion),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'LoopMode': ros.stringToRosTemplate(properties.loopMode),
+      'Mode': ros.stringToRosTemplate(properties.mode),
+      'Parameters': ros.hashMapper(ros.objectToRosTemplate)(properties.parameters),
+      'ParentExecutionId': ros.stringToRosTemplate(properties.parentExecutionId),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'ResourceOptions': rosExecutionResourceOptionsPropertyToRosTemplate(properties.resourceOptions),
+      'SafetyCheck': ros.stringToRosTemplate(properties.safetyCheck),
+      'Tags': ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
+      'TemplateContent': ros.stringToRosTemplate(properties.templateContent),
+      'TemplateName': ros.stringToRosTemplate(properties.templateName),
+      'TemplateURL': ros.stringToRosTemplate(properties.templateUrl),
+      'TemplateVersion': ros.stringToRosTemplate(properties.templateVersion),
     };
 }
 
@@ -356,11 +376,6 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
 
 
     /**
-     * @Property templateName: Template name. Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
-     */
-    public templateName: string | ros.IResolvable;
-
-    /**
      * @Property description: The description of OOS Execution.
      */
     public description: string | ros.IResolvable | undefined;
@@ -411,6 +426,21 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
     public tags: { [key: string]: (any) } | undefined;
 
     /**
+     * @Property templateContent: The content of the template in the JSON or YAML format. This parameter is the same as the Content parameter that you can specify when you call the CreateTemplate operation. You can use this parameter to specify the tasks that you want to run. This way, you do not need to create a template before you start an execution. If you select an existing template, you do not need to specify this parameter.
+     */
+    public templateContent: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property templateName: Template name. Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
+     */
+    public templateName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property templateUrl: The Object Storage Service (OSS) URL of the object that stores the content of the Operation Orchestration Service (OOS) template. The access control list (ACL) of the object must be public-read. You can use this parameter to specify the tasks that you want to run. This way, you do not need to create a template before you start an execution. If you select an existing template, you do not need to specify this parameter.
+     */
+    public templateUrl: string | ros.IResolvable | undefined;
+
+    /**
      * @Property templateVersion: Version number of template. Default to the latest version.
      */
     public templateVersion: string | ros.IResolvable | undefined;
@@ -432,7 +462,6 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
         this.attrWindowsCurlCli = this.getAtt('WindowsCurlCli');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.templateName = props.templateName;
         this.description = props.description;
         this.loopMode = props.loopMode;
         this.mode = props.mode;
@@ -442,13 +471,15 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
         this.resourceOptions = props.resourceOptions;
         this.safetyCheck = props.safetyCheck;
         this.tags = props.tags;
+        this.templateContent = props.templateContent;
+        this.templateName = props.templateName;
+        this.templateUrl = props.templateUrl;
         this.templateVersion = props.templateVersion;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
-            templateName: this.templateName,
             description: this.description,
             loopMode: this.loopMode,
             mode: this.mode,
@@ -458,6 +489,9 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
             resourceOptions: this.resourceOptions,
             safetyCheck: this.safetyCheck,
             tags: this.tags,
+            templateContent: this.templateContent,
+            templateName: this.templateName,
+            templateUrl: this.templateUrl,
             templateVersion: this.templateVersion,
         };
     }
@@ -532,10 +566,10 @@ function rosExecutionResourceOptionsPropertyToRosTemplate(properties: any): any 
     if (!ros.canInspect(properties)) { return properties; }
     RosExecution_ResourceOptionsPropertyValidator(properties).assertSuccess();
     return {
-      CancelOnDelete: ros.booleanToRosTemplate(properties.cancelOnDelete),
-      Timeout: ros.numberToRosTemplate(properties.timeout),
-      SuccessStatuses: ros.listMapper(ros.objectToRosTemplate)(properties.successStatuses),
-      FailureStatuses: ros.listMapper(ros.objectToRosTemplate)(properties.failureStatuses),
+      'CancelOnDelete': ros.booleanToRosTemplate(properties.cancelOnDelete),
+      'Timeout': ros.numberToRosTemplate(properties.timeout),
+      'SuccessStatuses': ros.listMapper(ros.objectToRosTemplate)(properties.successStatuses),
+      'FailureStatuses': ros.listMapper(ros.objectToRosTemplate)(properties.failureStatuses),
     };
 }
 
@@ -628,12 +662,12 @@ function rosParameterPropsToRosTemplate(properties: any, enableResourcePropertyC
         RosParameterPropsValidator(properties).assertSuccess();
     }
     return {
-      Name: ros.stringToRosTemplate(properties.name),
-      Type: ros.stringToRosTemplate(properties.type),
-      Value: ros.stringToRosTemplate(properties.value),
-      Constraints: ros.stringToRosTemplate(properties.constraints),
-      Description: ros.stringToRosTemplate(properties.description),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Constraints': ros.stringToRosTemplate(properties.constraints),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
     };
 }
 
@@ -846,17 +880,17 @@ function rosPatchBaselinePropsToRosTemplate(properties: any, enableResourcePrope
         RosPatchBaselinePropsValidator(properties).assertSuccess();
     }
     return {
-      ApprovalRules: ros.hashMapper(ros.objectToRosTemplate)(properties.approvalRules),
-      OperationSystem: ros.stringToRosTemplate(properties.operationSystem),
-      PatchBaselineName: ros.stringToRosTemplate(properties.patchBaselineName),
-      ApprovedPatches: ros.listMapper(ros.stringToRosTemplate)(properties.approvedPatches),
-      ApprovedPatchesEnableNonSecurity: ros.booleanToRosTemplate(properties.approvedPatchesEnableNonSecurity),
-      Description: ros.stringToRosTemplate(properties.description),
-      RejectedPatches: ros.listMapper(ros.stringToRosTemplate)(properties.rejectedPatches),
-      RejectedPatchesAction: ros.stringToRosTemplate(properties.rejectedPatchesAction),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Sources: ros.listMapper(ros.stringToRosTemplate)(properties.sources),
-      Tags: ros.listMapper(rosPatchBaselineTagsPropertyToRosTemplate)(properties.tags),
+      'ApprovalRules': ros.hashMapper(ros.objectToRosTemplate)(properties.approvalRules),
+      'OperationSystem': ros.stringToRosTemplate(properties.operationSystem),
+      'PatchBaselineName': ros.stringToRosTemplate(properties.patchBaselineName),
+      'ApprovedPatches': ros.listMapper(ros.stringToRosTemplate)(properties.approvedPatches),
+      'ApprovedPatchesEnableNonSecurity': ros.booleanToRosTemplate(properties.approvedPatchesEnableNonSecurity),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'RejectedPatches': ros.listMapper(ros.stringToRosTemplate)(properties.rejectedPatches),
+      'RejectedPatchesAction': ros.stringToRosTemplate(properties.rejectedPatchesAction),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Sources': ros.listMapper(ros.stringToRosTemplate)(properties.sources),
+      'Tags': ros.listMapper(rosPatchBaselineTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -1123,8 +1157,8 @@ function rosPatchBaselineTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosPatchBaseline_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -1213,13 +1247,13 @@ function rosSecretParameterPropsToRosTemplate(properties: any, enableResourcePro
         RosSecretParameterPropsValidator(properties).assertSuccess();
     }
     return {
-      SecretParameterName: ros.stringToRosTemplate(properties.secretParameterName),
-      Value: ros.stringToRosTemplate(properties.value),
-      Constraints: ros.hashMapper(ros.objectToRosTemplate)(properties.constraints),
-      Description: ros.stringToRosTemplate(properties.description),
-      KeyId: ros.stringToRosTemplate(properties.keyId),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Tags: ros.listMapper(rosSecretParameterTagsPropertyToRosTemplate)(properties.tags),
+      'SecretParameterName': ros.stringToRosTemplate(properties.secretParameterName),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Constraints': ros.hashMapper(ros.objectToRosTemplate)(properties.constraints),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'KeyId': ros.stringToRosTemplate(properties.keyId),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosSecretParameterTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -1434,8 +1468,8 @@ function rosSecretParameterTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosSecretParameter_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -1537,16 +1571,16 @@ function rosStateConfigurationPropsToRosTemplate(properties: any, enableResource
         RosStateConfigurationPropsValidator(properties).assertSuccess();
     }
     return {
-      ScheduleExpression: ros.stringToRosTemplate(properties.scheduleExpression),
-      ScheduleType: ros.stringToRosTemplate(properties.scheduleType),
-      Targets: ros.stringToRosTemplate(properties.targets),
-      TemplateName: ros.stringToRosTemplate(properties.templateName),
-      ConfigureMode: ros.stringToRosTemplate(properties.configureMode),
-      Description: ros.stringToRosTemplate(properties.description),
-      Parameters: ros.stringToRosTemplate(properties.parameters),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Tags: ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
-      TemplateVersion: ros.stringToRosTemplate(properties.templateVersion),
+      'ScheduleExpression': ros.stringToRosTemplate(properties.scheduleExpression),
+      'ScheduleType': ros.stringToRosTemplate(properties.scheduleType),
+      'Targets': ros.stringToRosTemplate(properties.targets),
+      'TemplateName': ros.stringToRosTemplate(properties.templateName),
+      'ConfigureMode': ros.stringToRosTemplate(properties.configureMode),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Parameters': ros.stringToRosTemplate(properties.parameters),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
+      'TemplateVersion': ros.stringToRosTemplate(properties.templateVersion),
     };
 }
 
@@ -1735,10 +1769,10 @@ function rosTemplatePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosTemplatePropsValidator(properties).assertSuccess();
     }
     return {
-      Content: ros.stringToRosTemplate(properties.content),
-      TemplateName: ros.stringToRosTemplate(properties.templateName),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Tags: ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
+      'Content': ros.stringToRosTemplate(properties.content),
+      'TemplateName': ros.stringToRosTemplate(properties.templateName),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
     };
 }
 

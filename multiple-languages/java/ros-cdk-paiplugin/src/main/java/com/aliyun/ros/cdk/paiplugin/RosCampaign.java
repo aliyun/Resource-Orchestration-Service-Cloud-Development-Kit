@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.paiplugin;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::PAIPlugin::Campaign</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.426Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:23.022Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.paiplugin.$Module.class, fqn = "@alicloud/ros-cdk-paiplugin.RosCampaign")
 public class RosCampaign extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -18,6 +18,14 @@ export interface FlowProjectsProps {
      * Property flowProjectName: Project name.
      */
     readonly flowProjectName?: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -56,6 +64,7 @@ export class FlowProjects extends ros.Resource {
         const rosFlowProjects = new RosFlowProjects(this, id,  {
             flowProjectName: props.flowProjectName,
             flowProjectId: props.flowProjectId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosFlowProjects;
         this.attrFlowProjectIds = rosFlowProjects.attrFlowProjectIds;

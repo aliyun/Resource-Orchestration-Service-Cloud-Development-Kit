@@ -182,22 +182,22 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
         RosDBClusterPropsValidator(properties).assertSuccess();
     }
     return {
-      Category: ros.stringToRosTemplate(properties.category),
-      DBClusterNetworkType: ros.stringToRosTemplate(properties.dbClusterNetworkType),
-      DBClusterType: ros.stringToRosTemplate(properties.dbClusterType),
-      DBClusterVersion: ros.stringToRosTemplate(properties.dbClusterVersion),
-      DBNodeCount: ros.numberToRosTemplate(properties.dbNodeCount),
-      DBNodeStorage: ros.numberToRosTemplate(properties.dbNodeStorage),
-      DbNodeStorageType: ros.stringToRosTemplate(properties.dbNodeStorageType),
-      PaymentType: ros.stringToRosTemplate(properties.paymentType),
-      DBClusterDescription: ros.stringToRosTemplate(properties.dbClusterDescription),
-      EncryptionKey: ros.stringToRosTemplate(properties.encryptionKey),
-      EncryptionType: ros.stringToRosTemplate(properties.encryptionType),
-      Period: ros.stringToRosTemplate(properties.period),
-      UsedTime: ros.numberToRosTemplate(properties.usedTime),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      'Category': ros.stringToRosTemplate(properties.category),
+      'DBClusterNetworkType': ros.stringToRosTemplate(properties.dbClusterNetworkType),
+      'DBClusterType': ros.stringToRosTemplate(properties.dbClusterType),
+      'DBClusterVersion': ros.stringToRosTemplate(properties.dbClusterVersion),
+      'DBNodeCount': ros.numberToRosTemplate(properties.dbNodeCount),
+      'DBNodeStorage': ros.numberToRosTemplate(properties.dbNodeStorage),
+      'DbNodeStorageType': ros.stringToRosTemplate(properties.dbNodeStorageType),
+      'PaymentType': ros.stringToRosTemplate(properties.paymentType),
+      'DBClusterDescription': ros.stringToRosTemplate(properties.dbClusterDescription),
+      'EncryptionKey': ros.stringToRosTemplate(properties.encryptionKey),
+      'EncryptionType': ros.stringToRosTemplate(properties.encryptionType),
+      'Period': ros.stringToRosTemplate(properties.period),
+      'UsedTime': ros.numberToRosTemplate(properties.usedTime),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
     };
 }
 
@@ -684,19 +684,19 @@ function rosSynDbPropsToRosTemplate(properties: any, enableResourcePropertyConst
         RosSynDbPropsValidator(properties).assertSuccess();
     }
     return {
-      CkPassword: ros.stringToRosTemplate(properties.ckPassword),
-      CkUserName: ros.stringToRosTemplate(properties.ckUserName),
-      DbClusterId: ros.stringToRosTemplate(properties.dbClusterId),
-      RdsId: ros.stringToRosTemplate(properties.rdsId),
-      RdsPassword: ros.stringToRosTemplate(properties.rdsPassword),
-      RdsUserName: ros.stringToRosTemplate(properties.rdsUserName),
-      SkipUnsupported: ros.booleanToRosTemplate(properties.skipUnsupported),
-      SynDbTables: ros.listMapper(rosSynDbSynDbTablesPropertyToRosTemplate)(properties.synDbTables),
-      ClickhousePort: ros.numberToRosTemplate(properties.clickhousePort),
-      LimitUpper: ros.numberToRosTemplate(properties.limitUpper),
-      RdsPort: ros.numberToRosTemplate(properties.rdsPort),
-      RdsVpcId: ros.stringToRosTemplate(properties.rdsVpcId),
-      RdsVpcUrl: ros.stringToRosTemplate(properties.rdsVpcUrl),
+      'CkPassword': ros.stringToRosTemplate(properties.ckPassword),
+      'CkUserName': ros.stringToRosTemplate(properties.ckUserName),
+      'DbClusterId': ros.stringToRosTemplate(properties.dbClusterId),
+      'RdsId': ros.stringToRosTemplate(properties.rdsId),
+      'RdsPassword': ros.stringToRosTemplate(properties.rdsPassword),
+      'RdsUserName': ros.stringToRosTemplate(properties.rdsUserName),
+      'SkipUnsupported': ros.booleanToRosTemplate(properties.skipUnsupported),
+      'SynDbTables': ros.listMapper(rosSynDbSynDbTablesPropertyToRosTemplate)(properties.synDbTables),
+      'ClickhousePort': ros.numberToRosTemplate(properties.clickhousePort),
+      'LimitUpper': ros.numberToRosTemplate(properties.limitUpper),
+      'RdsPort': ros.numberToRosTemplate(properties.rdsPort),
+      'RdsVpcId': ros.stringToRosTemplate(properties.rdsVpcId),
+      'RdsVpcUrl': ros.stringToRosTemplate(properties.rdsVpcUrl),
     };
 }
 
@@ -895,7 +895,7 @@ function rosSynDbSynDbTablesPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosSynDb_SynDbTablesPropertyValidator(properties).assertSuccess();
     return {
-      Schema: ros.stringToRosTemplate(properties.schema),
-      Tables: ros.listMapper(ros.stringToRosTemplate)(properties.tables),
+      'Schema': ros.stringToRosTemplate(properties.schema),
+      'Tables': ros.listMapper(ros.stringToRosTemplate)(properties.tables),
     };
 }

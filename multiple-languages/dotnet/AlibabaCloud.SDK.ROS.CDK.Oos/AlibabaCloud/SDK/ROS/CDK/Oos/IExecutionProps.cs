@@ -11,16 +11,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
     [JsiiInterface(nativeType: typeof(IExecutionProps), fullyQualifiedName: "@alicloud/ros-cdk-oos.ExecutionProps")]
     public interface IExecutionProps
     {
-        /// <summary>Property templateName: Template name.</summary>
-        /// <remarks>
-        /// Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
-        /// </remarks>
-        [JsiiProperty(name: "templateName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object TemplateName
-        {
-            get;
-        }
-
         /// <summary>Property description: The description of OOS Execution.</summary>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -137,6 +127,48 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             }
         }
 
+        /// <summary>Property templateContent: The content of the template in the JSON or YAML format.</summary>
+        /// <remarks>
+        /// This parameter is the same as the Content parameter that you can specify when you call the CreateTemplate operation. You can use this parameter to specify the tasks that you want to run. This way, you do not need to create a template before you start an execution. If you select an existing template, you do not need to specify this parameter.
+        /// </remarks>
+        [JsiiProperty(name: "templateContent", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? TemplateContent
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property templateName: Template name.</summary>
+        /// <remarks>
+        /// Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
+        /// </remarks>
+        [JsiiProperty(name: "templateName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? TemplateName
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property templateUrl: The Object Storage Service (OSS) URL of the object that stores the content of the Operation Orchestration Service (OOS) template.</summary>
+        /// <remarks>
+        /// The access control list (ACL) of the object must be public-read. You can use this parameter to specify the tasks that you want to run. This way, you do not need to create a template before you start an execution. If you select an existing template, you do not need to specify this parameter.
+        /// </remarks>
+        [JsiiProperty(name: "templateUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? TemplateUrl
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property templateVersion: Version number of template.</summary>
         /// <remarks>
         /// Default to the latest version.
@@ -160,16 +192,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         {
             private _Proxy(ByRefValue reference): base(reference)
             {
-            }
-
-            /// <summary>Property templateName: Template name.</summary>
-            /// <remarks>
-            /// Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
-            /// </remarks>
-            [JsiiProperty(name: "templateName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object TemplateName
-            {
-                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property description: The description of OOS Execution.</summary>
@@ -259,6 +281,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             public System.Collections.Generic.IDictionary<string, object>? Tags
             {
                 get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>?>();
+            }
+
+            /// <summary>Property templateContent: The content of the template in the JSON or YAML format.</summary>
+            /// <remarks>
+            /// This parameter is the same as the Content parameter that you can specify when you call the CreateTemplate operation. You can use this parameter to specify the tasks that you want to run. This way, you do not need to create a template before you start an execution. If you select an existing template, you do not need to specify this parameter.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "templateContent", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? TemplateContent
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property templateName: Template name.</summary>
+            /// <remarks>
+            /// Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "templateName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? TemplateName
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property templateUrl: The Object Storage Service (OSS) URL of the object that stores the content of the Operation Orchestration Service (OOS) template.</summary>
+            /// <remarks>
+            /// The access control list (ACL) of the object must be public-read. You can use this parameter to specify the tasks that you want to run. This way, you do not need to create a template before you start an execution. If you select an existing template, you do not need to specify this parameter.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "templateUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? TemplateUrl
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property templateVersion: Version number of template.</summary>

@@ -182,10 +182,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: id: The ID of the message resource. The ID must be unique in the alert rule.
+            /// <strong>Property</strong>: identity: The ID of the message resource. The ID must be unique in the alert rule.
             /// </remarks>
-            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            object Id
+            [JsiiProperty(name: "identity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Identity
             {
                 get;
             }
@@ -232,10 +232,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: id: The ID of the message resource. The ID must be unique in the alert rule.
+                /// <strong>Property</strong>: identity: The ID of the message resource. The ID must be unique in the alert rule.
                 /// </remarks>
-                [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-                public object Id
+                [JsiiProperty(name: "identity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Identity
                 {
                     get => GetInstanceProperty<object>()!;
                 }
@@ -300,15 +300,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                 }
             }
 
-            private object _id;
+            private object _identity;
 
             /// <remarks>
-            /// <strong>Property</strong>: id: The ID of the message resource. The ID must be unique in the alert rule.
+            /// <strong>Property</strong>: identity: The ID of the message resource. The ID must be unique in the alert rule.
             /// </remarks>
-            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object Id
+            [JsiiProperty(name: "identity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Identity
             {
-                get => _id;
+                get => _identity;
                 set
                 {
                     if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
@@ -328,7 +328,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                                 throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                         }
                     }
-                    _id = value;
+                    _identity = value;
                 }
             }
 

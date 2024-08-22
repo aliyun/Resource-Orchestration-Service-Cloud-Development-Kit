@@ -10,6 +10,14 @@ export { RosRoles as RolesProperty };
 export interface RolesProps {
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property roleName: Filter the results by a specific role name. Supports using * and ?  to fuzzy match.
      */
     readonly roleName?: string | ros.IResolvable;
@@ -50,6 +58,7 @@ export class Roles extends ros.Resource {
 
         const rosRoles = new RosRoles(this, id,  {
             roleName: props.roleName,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosRoles;
         this.attrRoleNames = rosRoles.attrRoleNames;

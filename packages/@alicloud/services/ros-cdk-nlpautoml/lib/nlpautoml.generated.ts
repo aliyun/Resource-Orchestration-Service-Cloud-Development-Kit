@@ -69,9 +69,9 @@ function rosDatasetPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosDatasetPropsValidator(properties).assertSuccess();
     }
     return {
-      DatasetName: ros.stringToRosTemplate(properties.datasetName),
-      ProjectId: ros.numberToRosTemplate(properties.projectId),
-      DatasetRecord: ros.listMapper(ros.stringToRosTemplate)(properties.datasetRecord),
+      'DatasetName': ros.stringToRosTemplate(properties.datasetName),
+      'ProjectId': ros.numberToRosTemplate(properties.projectId),
+      'DatasetRecord': ros.listMapper(ros.stringToRosTemplate)(properties.datasetRecord),
     };
 }
 
@@ -238,13 +238,13 @@ function rosModelPropsToRosTemplate(properties: any, enableResourcePropertyConst
         RosModelPropsValidator(properties).assertSuccess();
     }
     return {
-      DatasetIdList: ros.listMapper(ros.numberToRosTemplate)(properties.datasetIdList),
-      ModelName: ros.stringToRosTemplate(properties.modelName),
-      ModelType: ros.stringToRosTemplate(properties.modelType),
-      ProjectId: ros.numberToRosTemplate(properties.projectId),
-      Lr: ros.stringToRosTemplate(properties.lr),
-      Nepochs: ros.stringToRosTemplate(properties.nepochs),
-      TestDatasetIdList: ros.listMapper(ros.numberToRosTemplate)(properties.testDatasetIdList),
+      'DatasetIdList': ros.listMapper(ros.numberToRosTemplate)(properties.datasetIdList),
+      'ModelName': ros.stringToRosTemplate(properties.modelName),
+      'ModelType': ros.stringToRosTemplate(properties.modelType),
+      'ProjectId': ros.numberToRosTemplate(properties.projectId),
+      'Lr': ros.stringToRosTemplate(properties.lr),
+      'Nepochs': ros.stringToRosTemplate(properties.nepochs),
+      'TestDatasetIdList': ros.listMapper(ros.numberToRosTemplate)(properties.testDatasetIdList),
     };
 }
 
@@ -418,9 +418,9 @@ function rosProjectPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosProjectPropsValidator(properties).assertSuccess();
     }
     return {
-      ProjectDescription: ros.stringToRosTemplate(properties.projectDescription),
-      ProjectName: ros.stringToRosTemplate(properties.projectName),
-      ProjectType: ros.stringToRosTemplate(properties.projectType),
+      'ProjectDescription': ros.stringToRosTemplate(properties.projectDescription),
+      'ProjectName': ros.stringToRosTemplate(properties.projectName),
+      'ProjectType': ros.stringToRosTemplate(properties.projectType),
     };
 }
 

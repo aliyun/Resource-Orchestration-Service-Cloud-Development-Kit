@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eais;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::EAIS::ClientInstanceAttachment</code>, which is used to attach an Elastic Accelerated Computing Instances (EAIS) instance to an Elastic Compute Service (ECS) instance or elastic container instance of a user.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:05.901Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:19.617Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eais.$Module.class, fqn = "@alicloud/ros-cdk-eais.ClientInstanceAttachment")
 public class ClientInstanceAttachment extends com.aliyun.ros.cdk.core.Resource {
 

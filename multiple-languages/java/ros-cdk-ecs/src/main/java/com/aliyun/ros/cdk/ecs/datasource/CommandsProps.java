@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-commands
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.526Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:20.427Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.CommandsProps")
 @software.amazon.jsii.Jsii.Proxy(CommandsProps.Jsii$Proxy.class)
 public interface CommandsProps extends software.amazon.jsii.JsiiSerializable {
@@ -34,6 +34,21 @@ public interface CommandsProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * Property type: The command type.
      * <p>
      * Valid values:
@@ -58,6 +73,7 @@ public interface CommandsProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object commandId;
         java.lang.Object commandName;
         java.lang.Object description;
+        java.lang.Object refreshOptions;
         java.lang.Object type;
 
         /**
@@ -123,6 +139,40 @@ public interface CommandsProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link CommandsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link CommandsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CommandsProps#getType}
          * @param type Property type: The command type.
          *             Valid values:
@@ -169,6 +219,7 @@ public interface CommandsProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object commandId;
         private final java.lang.Object commandName;
         private final java.lang.Object description;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object type;
 
         /**
@@ -180,6 +231,7 @@ public interface CommandsProps extends software.amazon.jsii.JsiiSerializable {
             this.commandId = software.amazon.jsii.Kernel.get(this, "commandId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.commandName = software.amazon.jsii.Kernel.get(this, "commandName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -191,6 +243,7 @@ public interface CommandsProps extends software.amazon.jsii.JsiiSerializable {
             this.commandId = builder.commandId;
             this.commandName = builder.commandName;
             this.description = builder.description;
+            this.refreshOptions = builder.refreshOptions;
             this.type = builder.type;
         }
 
@@ -207,6 +260,11 @@ public interface CommandsProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getDescription() {
             return this.description;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -228,6 +286,9 @@ public interface CommandsProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
             if (this.getType() != null) {
                 data.set("type", om.valueToTree(this.getType()));
@@ -253,6 +314,7 @@ public interface CommandsProps extends software.amazon.jsii.JsiiSerializable {
             if (this.commandId != null ? !this.commandId.equals(that.commandId) : that.commandId != null) return false;
             if (this.commandName != null ? !this.commandName.equals(that.commandName) : that.commandName != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             return this.type != null ? this.type.equals(that.type) : that.type == null;
         }
 
@@ -261,6 +323,7 @@ public interface CommandsProps extends software.amazon.jsii.JsiiSerializable {
             int result = this.commandId != null ? this.commandId.hashCode() : 0;
             result = 31 * result + (this.commandName != null ? this.commandName.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.type != null ? this.type.hashCode() : 0);
             return result;
         }

@@ -25,6 +25,14 @@ export interface MonitorGroupsProps {
     readonly monitorGroupName?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property type: The type of the application group. Valid values:
      * custom: a self-managed application group.
      * ehpc_cluster: an application group that is synchronized from an Elastic High Performance Computing (E-HPC) cluster.
@@ -70,6 +78,7 @@ export class MonitorGroups extends ros.Resource {
             type: props.type,
             dynamicTagRuleId: props.dynamicTagRuleId,
             monitorGroupName: props.monitorGroupName,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             groupId: props.groupId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosMonitorGroups;

@@ -8,6 +8,14 @@ export { RosAntiBruteForceRules as AntiBruteForceRulesProperty };
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-threatdetection-antibruteforcerules
  */
 export interface AntiBruteForceRulesProps {
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -44,8 +52,8 @@ export class AntiBruteForceRules extends ros.Resource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAntiBruteForceRules = new RosAntiBruteForceRules(this, id,  {
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
-        props;
         this.resource = rosAntiBruteForceRules;
         this.attrAntiBruteForceRuleIds = rosAntiBruteForceRules.attrAntiBruteForceRuleIds;
         this.attrAntiBruteForceRules = rosAntiBruteForceRules.attrAntiBruteForceRules;

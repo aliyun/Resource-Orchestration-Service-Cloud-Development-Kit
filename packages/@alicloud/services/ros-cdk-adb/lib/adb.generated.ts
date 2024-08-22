@@ -82,11 +82,11 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosAccountPropsValidator(properties).assertSuccess();
     }
     return {
-      AccountName: ros.stringToRosTemplate(properties.accountName),
-      AccountPassword: ros.stringToRosTemplate(properties.accountPassword),
-      DBClusterId: ros.stringToRosTemplate(properties.dbClusterId),
-      AccountDescription: ros.stringToRosTemplate(properties.accountDescription),
-      AccountType: ros.stringToRosTemplate(properties.accountType),
+      'AccountName': ros.stringToRosTemplate(properties.accountName),
+      'AccountPassword': ros.stringToRosTemplate(properties.accountPassword),
+      'DBClusterId': ros.stringToRosTemplate(properties.dbClusterId),
+      'AccountDescription': ros.stringToRosTemplate(properties.accountDescription),
+      'AccountType': ros.stringToRosTemplate(properties.accountType),
     };
 }
 
@@ -389,24 +389,24 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
         RosDBClusterPropsValidator(properties).assertSuccess();
     }
     return {
-      DBClusterCategory: ros.stringToRosTemplate(properties.dbClusterCategory),
-      DBClusterVersion: ros.stringToRosTemplate(properties.dbClusterVersion),
-      Mode: ros.stringToRosTemplate(properties.mode),
-      PayType: ros.stringToRosTemplate(properties.payType),
-      VPCId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      ComputeResource: ros.stringToRosTemplate(properties.computeResource),
-      DBClusterClass: ros.stringToRosTemplate(properties.dbClusterClass),
-      DBClusterDescription: ros.stringToRosTemplate(properties.dbClusterDescription),
-      DBNodeGroupCount: ros.numberToRosTemplate(properties.dbNodeGroupCount),
-      DBNodeStorage: ros.numberToRosTemplate(properties.dbNodeStorage),
-      ElasticIOResource: ros.numberToRosTemplate(properties.elasticIoResource),
-      ExecutorCount: ros.numberToRosTemplate(properties.executorCount),
-      Period: ros.numberToRosTemplate(properties.period),
-      PeriodType: ros.stringToRosTemplate(properties.periodType),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Tags: ros.listMapper(rosDBClusterTagsPropertyToRosTemplate)(properties.tags),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      'DBClusterCategory': ros.stringToRosTemplate(properties.dbClusterCategory),
+      'DBClusterVersion': ros.stringToRosTemplate(properties.dbClusterVersion),
+      'Mode': ros.stringToRosTemplate(properties.mode),
+      'PayType': ros.stringToRosTemplate(properties.payType),
+      'VPCId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'ComputeResource': ros.stringToRosTemplate(properties.computeResource),
+      'DBClusterClass': ros.stringToRosTemplate(properties.dbClusterClass),
+      'DBClusterDescription': ros.stringToRosTemplate(properties.dbClusterDescription),
+      'DBNodeGroupCount': ros.numberToRosTemplate(properties.dbNodeGroupCount),
+      'DBNodeStorage': ros.numberToRosTemplate(properties.dbNodeStorage),
+      'ElasticIOResource': ros.numberToRosTemplate(properties.elasticIoResource),
+      'ExecutorCount': ros.numberToRosTemplate(properties.executorCount),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PeriodType': ros.stringToRosTemplate(properties.periodType),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosDBClusterTagsPropertyToRosTemplate)(properties.tags),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
     };
 }
 
@@ -655,7 +655,7 @@ function rosDBClusterTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosDBCluster_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }

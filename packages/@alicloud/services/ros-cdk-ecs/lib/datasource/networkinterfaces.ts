@@ -40,6 +40,14 @@ export interface NetworkInterfacesProps {
     readonly privateIpAddresses?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property resourceGroupId: The ID of the resource group to which the eni belongs. 
      * If this parameter is specified to query resources,up to 1,000 resources that belong to the specified resource group can be displayed in the response.
      */
@@ -139,6 +147,7 @@ export class NetworkInterfaces extends ros.Resource {
             networkInterfaceIds: props.networkInterfaceIds,
             primaryIpAddress: props.primaryIpAddress,
             ipv6Addresses: props.ipv6Addresses,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             type: props.type,
             vpcId: props.vpcId,
             tags: props.tags,

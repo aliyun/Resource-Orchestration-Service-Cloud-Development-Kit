@@ -35,6 +35,14 @@ export interface FlowLogsProps {
     readonly projectName?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property resourceId: The ID of the resource group to which the flow log belongs.
      */
     readonly resourceId?: string | ros.IResolvable;
@@ -98,6 +106,7 @@ export class FlowLogs extends ros.Resource {
             resourceType: props.resourceType,
             flowLogId: props.flowLogId,
             trafficType: props.trafficType,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosFlowLogs;
         this.attrFlowLogIds = rosFlowLogs.attrFlowLogIds;

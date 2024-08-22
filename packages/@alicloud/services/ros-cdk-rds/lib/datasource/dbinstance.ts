@@ -13,6 +13,14 @@ export interface DBInstanceProps {
      * Property dbInstanceId: The ID of the instance.
      */
     readonly dbInstanceId?: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -431,6 +439,7 @@ Disabled
 
         const rosDBInstance = new RosDBInstance(this, id,  {
             dbInstanceId: props.dbInstanceId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDBInstance;
         this.attrAccountMaxQuantity = rosDBInstance.attrAccountMaxQuantity;

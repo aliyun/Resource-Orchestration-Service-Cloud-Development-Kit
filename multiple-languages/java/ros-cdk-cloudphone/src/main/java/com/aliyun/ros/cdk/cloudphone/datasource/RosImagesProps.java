@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cloudphone.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudphone-images
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.996Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:18.503Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudphone.$Module.class, fqn = "@alicloud/ros-cdk-cloudphone.datasource.RosImagesProps")
 @software.amazon.jsii.Jsii.Proxy(RosImagesProps.Jsii$Proxy.class)
 public interface RosImagesProps extends software.amazon.jsii.JsiiSerializable {
@@ -29,6 +29,12 @@ public interface RosImagesProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosImagesProps}
      */
     static Builder builder() {
@@ -41,6 +47,7 @@ public interface RosImagesProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object imageCategory;
         java.lang.Object imageId;
         java.lang.Object imageName;
+        java.lang.Object refreshOptions;
 
         /**
          * Sets the value of {@link RosImagesProps#getImageCategory}
@@ -103,6 +110,26 @@ public interface RosImagesProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosImagesProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosImagesProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosImagesProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -121,6 +148,7 @@ public interface RosImagesProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object imageCategory;
         private final java.lang.Object imageId;
         private final java.lang.Object imageName;
+        private final java.lang.Object refreshOptions;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -131,6 +159,7 @@ public interface RosImagesProps extends software.amazon.jsii.JsiiSerializable {
             this.imageCategory = software.amazon.jsii.Kernel.get(this, "imageCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.imageId = software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.imageName = software.amazon.jsii.Kernel.get(this, "imageName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -141,6 +170,7 @@ public interface RosImagesProps extends software.amazon.jsii.JsiiSerializable {
             this.imageCategory = builder.imageCategory;
             this.imageId = builder.imageId;
             this.imageName = builder.imageName;
+            this.refreshOptions = builder.refreshOptions;
         }
 
         @Override
@@ -159,6 +189,11 @@ public interface RosImagesProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -172,6 +207,9 @@ public interface RosImagesProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getImageName() != null) {
                 data.set("imageName", om.valueToTree(this.getImageName()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -193,7 +231,8 @@ public interface RosImagesProps extends software.amazon.jsii.JsiiSerializable {
 
             if (this.imageCategory != null ? !this.imageCategory.equals(that.imageCategory) : that.imageCategory != null) return false;
             if (this.imageId != null ? !this.imageId.equals(that.imageId) : that.imageId != null) return false;
-            return this.imageName != null ? this.imageName.equals(that.imageName) : that.imageName == null;
+            if (this.imageName != null ? !this.imageName.equals(that.imageName) : that.imageName != null) return false;
+            return this.refreshOptions != null ? this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions == null;
         }
 
         @Override
@@ -201,6 +240,7 @@ public interface RosImagesProps extends software.amazon.jsii.JsiiSerializable {
             int result = this.imageCategory != null ? this.imageCategory.hashCode() : 0;
             result = 31 * result + (this.imageId != null ? this.imageId.hashCode() : 0);
             result = 31 * result + (this.imageName != null ? this.imageName.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             return result;
         }
     }

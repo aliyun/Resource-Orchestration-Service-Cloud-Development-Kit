@@ -15,6 +15,14 @@ export interface ClustersProps {
     readonly logicalRegionId?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property resourceGroupId: The ID of the resource group.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -56,6 +64,7 @@ export class Clusters extends ros.Resource {
         const rosClusters = new RosClusters(this, id,  {
             logicalRegionId: props.logicalRegionId,
             resourceGroupId: props.resourceGroupId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosClusters;
         this.attrClusterIds = rosClusters.attrClusterIds;

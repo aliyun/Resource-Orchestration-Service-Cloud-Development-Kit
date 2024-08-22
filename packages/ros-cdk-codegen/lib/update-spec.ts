@@ -56,6 +56,9 @@ export function specGenerator() {
     let codeMappingFileContent = JSON.parse(codeMappingFile);
     let specificationOriginFile = fs.readFileSync(path.join(__dirname, '/../../@alicloud/ros-cdk-spec/spec/specification_origin.json')).toString();
     let specificationOriginFileContent = JSON.parse(specificationOriginFile);
+    let fieldMappingFile = fs.readFileSync(path.join(__dirname, '/../../@alicloud/ros-cdk-spec/spec/field_mapping.json')).toString();
+    const fieldMappingContent = JSON.parse(fieldMappingFile);
+
     for (let [type] of Object.entries(specificationOriginFileContent['ResourceTypes'])) {
         let category: string[] = type.split('::');
         // e.g. ALIYUN::ECS::VPC
@@ -84,9 +87,14 @@ export function specGenerator() {
                 propertyNames.sort()
                 for (let propertyName of propertyNames) {
                     let Property = properties[propertyName];
+                    Property.PrimitiveName = propertyName;
 
                     // replace all property including "." with ""
                     let newPropertyName = propertyName.replace(new RegExp('\\.', 'gm'), '');
+                    // Replace the language-reserved field with the specified field
+                    if (newPropertyName in fieldMappingContent) {
+                        newPropertyName = fieldMappingContent[newPropertyName];
+                    }
                     if (newPropertyName !== propertyName) {
                         properties[newPropertyName] = Property;
                         delete properties[propertyName];
@@ -151,7 +159,6 @@ export function specGenerator() {
             Documentation: typeDetail.Documentation ? typeDetail.Documentation : '',
             Attributes: typeDetail.Attributes ? typeDetail.Attributes : {},
             Properties: typeDetail.Properties ? typeDetail.Properties : {},
-            PropsToRosName: typeDetail.PropsToRosName ? typeDetail.PropsToRosName : {},
         };
     }
     for (let [rosCode] of Object.entries(codeMappingFileContent['CodeMapping'])) {
@@ -181,20 +188,12 @@ export async function specOriginGenerator(endpoint: string, accessKeyId: string,
             let typeDetail = await client.getResourceType({ResourceType: type});
 
             let properties = typeDetail.Properties ? typeDetail.Properties : {};
-            let propsToRosName: { [key: string]: string } = {};
-            if ('Id' in properties) {
-                const value = properties['Id'];
-                delete properties['Id'];
-                properties['Identity'] = value;
-                propsToRosName['Identity'] = 'Id';
-            }
 
             resourceTypes[`${typeDetail.ResourceType}`] = {
                 Description: typeDetail.Description ? typeDetail.Description : '',
                 Documentation: `https://www.alibabacloud.com/help/ros/developer-reference/${type.toLowerCase().replace(/::/g, '-')}`,
                 Attributes: typeDetail.Attributes ? typeDetail.Attributes : {},
                 Properties: properties,
-                PropsToRosName: propsToRosName,
             };
             await sleep(1000);
         }

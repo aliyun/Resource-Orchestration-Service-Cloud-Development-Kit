@@ -214,6 +214,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: burstingEnabled: Whether to enable bursting.
+        /// </remarks>
+        [JsiiProperty(name: "burstingEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? BurstingEnabled
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: category: The edition of the instance. Valid values:
         /// Basic: RDS Basic Edition
         /// HighAvailability: RDS High-availability Edition
@@ -225,6 +238,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         [JsiiProperty(name: "category", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Category
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: coldDataEnabled: Whether to enable cold data storage.
+        /// </remarks>
+        [JsiiProperty(name: "coldDataEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ColdDataEnabled
         {
             get
             {
@@ -468,6 +494,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         [JsiiProperty(name: "instanceNetworkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? InstanceNetworkType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: ioAccelerationEnabled: Whether to enable IO Acceleration, 1 for enable 0 for disable.
+        /// </remarks>
+        [JsiiProperty(name: "ioAccelerationEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? IoAccelerationEnabled
         {
             get
             {
@@ -1132,6 +1171,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: burstingEnabled: Whether to enable bursting.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "burstingEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? BurstingEnabled
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: category: The edition of the instance. Valid values:
             /// Basic: RDS Basic Edition
             /// HighAvailability: RDS High-availability Edition
@@ -1143,6 +1192,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             [JsiiOptional]
             [JsiiProperty(name: "category", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Category
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: coldDataEnabled: Whether to enable cold data storage.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "coldDataEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ColdDataEnabled
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -1335,6 +1394,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             [JsiiOptional]
             [JsiiProperty(name: "instanceNetworkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? InstanceNetworkType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ioAccelerationEnabled: Whether to enable IO Acceleration, 1 for enable 0 for disable.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ioAccelerationEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IoAccelerationEnabled
             {
                 get => GetInstanceProperty<object?>();
             }

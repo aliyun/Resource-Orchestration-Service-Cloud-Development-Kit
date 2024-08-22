@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::OOS::Execution</code>, which is used to start an execution.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.979Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:22.694Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.RosExecution")
 public class RosExecution extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -99,24 +99,6 @@ public class RosExecution extends com.aliyun.ros.cdk.core.RosResource {
 
     public void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
         software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getTemplateName() {
-        return software.amazon.jsii.Kernel.get(this, "templateName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setTemplateName(final @org.jetbrains.annotations.NotNull java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "templateName", java.util.Objects.requireNonNull(value, "templateName is required"));
-    }
-
-    /**
-     */
-    public void setTemplateName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "templateName", java.util.Objects.requireNonNull(value, "templateName is required"));
     }
 
     /**
@@ -285,6 +267,60 @@ public class RosExecution extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setTags(final @org.jetbrains.annotations.Nullable java.util.Map<java.lang.String, java.lang.Object> value) {
         software.amazon.jsii.Kernel.set(this, "tags", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTemplateContent() {
+        return software.amazon.jsii.Kernel.get(this, "templateContent", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setTemplateContent(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "templateContent", value);
+    }
+
+    /**
+     */
+    public void setTemplateContent(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "templateContent", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTemplateName() {
+        return software.amazon.jsii.Kernel.get(this, "templateName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setTemplateName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "templateName", value);
+    }
+
+    /**
+     */
+    public void setTemplateName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "templateName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTemplateUrl() {
+        return software.amazon.jsii.Kernel.get(this, "templateUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setTemplateUrl(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "templateUrl", value);
+    }
+
+    /**
+     */
+    public void setTemplateUrl(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "templateUrl", value);
     }
 
     /**
@@ -591,23 +627,6 @@ public class RosExecution extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param templateName This parameter is required.
-         */
-        public Builder templateName(final java.lang.String templateName) {
-            this.props.templateName(templateName);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param templateName This parameter is required.
-         */
-        public Builder templateName(final com.aliyun.ros.cdk.core.IResolvable templateName) {
-            this.props.templateName(templateName);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param description This parameter is required.
          */
         public Builder description(final java.lang.String description) {
@@ -748,6 +767,57 @@ public class RosExecution extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder tags(final java.util.Map<java.lang.String, ? extends java.lang.Object> tags) {
             this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param templateContent This parameter is required.
+         */
+        public Builder templateContent(final java.lang.String templateContent) {
+            this.props.templateContent(templateContent);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param templateContent This parameter is required.
+         */
+        public Builder templateContent(final com.aliyun.ros.cdk.core.IResolvable templateContent) {
+            this.props.templateContent(templateContent);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param templateName This parameter is required.
+         */
+        public Builder templateName(final java.lang.String templateName) {
+            this.props.templateName(templateName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param templateName This parameter is required.
+         */
+        public Builder templateName(final com.aliyun.ros.cdk.core.IResolvable templateName) {
+            this.props.templateName(templateName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param templateUrl This parameter is required.
+         */
+        public Builder templateUrl(final java.lang.String templateUrl) {
+            this.props.templateUrl(templateUrl);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param templateUrl This parameter is required.
+         */
+        public Builder templateUrl(final com.aliyun.ros.cdk.core.IResolvable templateUrl) {
+            this.props.templateUrl(templateUrl);
             return this;
         }
 

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-sslvpnserver
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.807Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:24.893Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.SslVpnServerProps")
 @software.amazon.jsii.Jsii.Proxy(SslVpnServerProps.Jsii$Proxy.class)
 public interface SslVpnServerProps extends software.amazon.jsii.JsiiSerializable {
@@ -45,6 +45,36 @@ public interface SslVpnServerProps extends software.amazon.jsii.JsiiSerializable
      * Property compress: Whether it is compressed.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCompress() {
+        return null;
+    }
+
+    /**
+     * Property enableMultiFactorAuth: Whether to enable multi-factor authentication.
+     * <p>
+     * The default value is false.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEnableMultiFactorAuth() {
+        return null;
+    }
+
+    /**
+     * Property iDaaSApplicationId: The ID of the IDaaS application.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIDaaSApplicationId() {
+        return null;
+    }
+
+    /**
+     * Property iDaaSInstanceId: The ID of the IDaaS instance.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIDaaSInstanceId() {
+        return null;
+    }
+
+    /**
+     * Property iDaaSRegionId: The region ID of the IDaaS instance.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIDaaSRegionId() {
         return null;
     }
 
@@ -92,6 +122,10 @@ public interface SslVpnServerProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Object vpnGatewayId;
         java.lang.Object cipher;
         java.lang.Object compress;
+        java.lang.Object enableMultiFactorAuth;
+        java.lang.Object iDaaSApplicationId;
+        java.lang.Object iDaaSInstanceId;
+        java.lang.Object iDaaSRegionId;
         java.lang.Object name;
         java.lang.Object port;
         java.lang.Object proto;
@@ -209,6 +243,88 @@ public interface SslVpnServerProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link SslVpnServerProps#getEnableMultiFactorAuth}
+         * @param enableMultiFactorAuth Property enableMultiFactorAuth: Whether to enable multi-factor authentication.
+         *                              The default value is false.
+         * @return {@code this}
+         */
+        public Builder enableMultiFactorAuth(java.lang.Boolean enableMultiFactorAuth) {
+            this.enableMultiFactorAuth = enableMultiFactorAuth;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SslVpnServerProps#getEnableMultiFactorAuth}
+         * @param enableMultiFactorAuth Property enableMultiFactorAuth: Whether to enable multi-factor authentication.
+         *                              The default value is false.
+         * @return {@code this}
+         */
+        public Builder enableMultiFactorAuth(com.aliyun.ros.cdk.core.IResolvable enableMultiFactorAuth) {
+            this.enableMultiFactorAuth = enableMultiFactorAuth;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SslVpnServerProps#getIDaaSApplicationId}
+         * @param iDaaSApplicationId Property iDaaSApplicationId: The ID of the IDaaS application.
+         * @return {@code this}
+         */
+        public Builder iDaaSApplicationId(java.lang.String iDaaSApplicationId) {
+            this.iDaaSApplicationId = iDaaSApplicationId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SslVpnServerProps#getIDaaSApplicationId}
+         * @param iDaaSApplicationId Property iDaaSApplicationId: The ID of the IDaaS application.
+         * @return {@code this}
+         */
+        public Builder iDaaSApplicationId(com.aliyun.ros.cdk.core.IResolvable iDaaSApplicationId) {
+            this.iDaaSApplicationId = iDaaSApplicationId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SslVpnServerProps#getIDaaSInstanceId}
+         * @param iDaaSInstanceId Property iDaaSInstanceId: The ID of the IDaaS instance.
+         * @return {@code this}
+         */
+        public Builder iDaaSInstanceId(java.lang.String iDaaSInstanceId) {
+            this.iDaaSInstanceId = iDaaSInstanceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SslVpnServerProps#getIDaaSInstanceId}
+         * @param iDaaSInstanceId Property iDaaSInstanceId: The ID of the IDaaS instance.
+         * @return {@code this}
+         */
+        public Builder iDaaSInstanceId(com.aliyun.ros.cdk.core.IResolvable iDaaSInstanceId) {
+            this.iDaaSInstanceId = iDaaSInstanceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SslVpnServerProps#getIDaaSRegionId}
+         * @param iDaaSRegionId Property iDaaSRegionId: The region ID of the IDaaS instance.
+         * @return {@code this}
+         */
+        public Builder iDaaSRegionId(java.lang.String iDaaSRegionId) {
+            this.iDaaSRegionId = iDaaSRegionId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SslVpnServerProps#getIDaaSRegionId}
+         * @param iDaaSRegionId Property iDaaSRegionId: The region ID of the IDaaS instance.
+         * @return {@code this}
+         */
+        public Builder iDaaSRegionId(com.aliyun.ros.cdk.core.IResolvable iDaaSRegionId) {
+            this.iDaaSRegionId = iDaaSRegionId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SslVpnServerProps#getName}
          * @param name Property name: The name of the SSL-VPN server.
          *             The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-).
@@ -299,6 +415,10 @@ public interface SslVpnServerProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object vpnGatewayId;
         private final java.lang.Object cipher;
         private final java.lang.Object compress;
+        private final java.lang.Object enableMultiFactorAuth;
+        private final java.lang.Object iDaaSApplicationId;
+        private final java.lang.Object iDaaSInstanceId;
+        private final java.lang.Object iDaaSRegionId;
         private final java.lang.Object name;
         private final java.lang.Object port;
         private final java.lang.Object proto;
@@ -314,6 +434,10 @@ public interface SslVpnServerProps extends software.amazon.jsii.JsiiSerializable
             this.vpnGatewayId = software.amazon.jsii.Kernel.get(this, "vpnGatewayId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.cipher = software.amazon.jsii.Kernel.get(this, "cipher", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.compress = software.amazon.jsii.Kernel.get(this, "compress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.enableMultiFactorAuth = software.amazon.jsii.Kernel.get(this, "enableMultiFactorAuth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.iDaaSApplicationId = software.amazon.jsii.Kernel.get(this, "iDaaSApplicationId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.iDaaSInstanceId = software.amazon.jsii.Kernel.get(this, "iDaaSInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.iDaaSRegionId = software.amazon.jsii.Kernel.get(this, "iDaaSRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.port = software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.proto = software.amazon.jsii.Kernel.get(this, "proto", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -329,6 +453,10 @@ public interface SslVpnServerProps extends software.amazon.jsii.JsiiSerializable
             this.vpnGatewayId = java.util.Objects.requireNonNull(builder.vpnGatewayId, "vpnGatewayId is required");
             this.cipher = builder.cipher;
             this.compress = builder.compress;
+            this.enableMultiFactorAuth = builder.enableMultiFactorAuth;
+            this.iDaaSApplicationId = builder.iDaaSApplicationId;
+            this.iDaaSInstanceId = builder.iDaaSInstanceId;
+            this.iDaaSRegionId = builder.iDaaSRegionId;
             this.name = builder.name;
             this.port = builder.port;
             this.proto = builder.proto;
@@ -360,6 +488,26 @@ public interface SslVpnServerProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.lang.Object getEnableMultiFactorAuth() {
+            return this.enableMultiFactorAuth;
+        }
+
+        @Override
+        public final java.lang.Object getIDaaSApplicationId() {
+            return this.iDaaSApplicationId;
+        }
+
+        @Override
+        public final java.lang.Object getIDaaSInstanceId() {
+            return this.iDaaSInstanceId;
+        }
+
+        @Override
+        public final java.lang.Object getIDaaSRegionId() {
+            return this.iDaaSRegionId;
+        }
+
+        @Override
         public final java.lang.Object getName() {
             return this.name;
         }
@@ -388,6 +536,18 @@ public interface SslVpnServerProps extends software.amazon.jsii.JsiiSerializable
             }
             if (this.getCompress() != null) {
                 data.set("compress", om.valueToTree(this.getCompress()));
+            }
+            if (this.getEnableMultiFactorAuth() != null) {
+                data.set("enableMultiFactorAuth", om.valueToTree(this.getEnableMultiFactorAuth()));
+            }
+            if (this.getIDaaSApplicationId() != null) {
+                data.set("iDaaSApplicationId", om.valueToTree(this.getIDaaSApplicationId()));
+            }
+            if (this.getIDaaSInstanceId() != null) {
+                data.set("iDaaSInstanceId", om.valueToTree(this.getIDaaSInstanceId()));
+            }
+            if (this.getIDaaSRegionId() != null) {
+                data.set("iDaaSRegionId", om.valueToTree(this.getIDaaSRegionId()));
             }
             if (this.getName() != null) {
                 data.set("name", om.valueToTree(this.getName()));
@@ -421,6 +581,10 @@ public interface SslVpnServerProps extends software.amazon.jsii.JsiiSerializable
             if (!vpnGatewayId.equals(that.vpnGatewayId)) return false;
             if (this.cipher != null ? !this.cipher.equals(that.cipher) : that.cipher != null) return false;
             if (this.compress != null ? !this.compress.equals(that.compress) : that.compress != null) return false;
+            if (this.enableMultiFactorAuth != null ? !this.enableMultiFactorAuth.equals(that.enableMultiFactorAuth) : that.enableMultiFactorAuth != null) return false;
+            if (this.iDaaSApplicationId != null ? !this.iDaaSApplicationId.equals(that.iDaaSApplicationId) : that.iDaaSApplicationId != null) return false;
+            if (this.iDaaSInstanceId != null ? !this.iDaaSInstanceId.equals(that.iDaaSInstanceId) : that.iDaaSInstanceId != null) return false;
+            if (this.iDaaSRegionId != null ? !this.iDaaSRegionId.equals(that.iDaaSRegionId) : that.iDaaSRegionId != null) return false;
             if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
             if (this.port != null ? !this.port.equals(that.port) : that.port != null) return false;
             return this.proto != null ? this.proto.equals(that.proto) : that.proto == null;
@@ -433,6 +597,10 @@ public interface SslVpnServerProps extends software.amazon.jsii.JsiiSerializable
             result = 31 * result + (this.vpnGatewayId.hashCode());
             result = 31 * result + (this.cipher != null ? this.cipher.hashCode() : 0);
             result = 31 * result + (this.compress != null ? this.compress.hashCode() : 0);
+            result = 31 * result + (this.enableMultiFactorAuth != null ? this.enableMultiFactorAuth.hashCode() : 0);
+            result = 31 * result + (this.iDaaSApplicationId != null ? this.iDaaSApplicationId.hashCode() : 0);
+            result = 31 * result + (this.iDaaSInstanceId != null ? this.iDaaSInstanceId.hashCode() : 0);
+            result = 31 * result + (this.iDaaSRegionId != null ? this.iDaaSRegionId.hashCode() : 0);
             result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
             result = 31 * result + (this.port != null ? this.port.hashCode() : 0);
             result = 31 * result + (this.proto != null ? this.proto.hashCode() : 0);

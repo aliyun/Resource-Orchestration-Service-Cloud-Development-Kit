@@ -28,6 +28,14 @@ export interface ConfigurationsProps {
      * Property group: The group of configuration
      */
     readonly group?: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -67,6 +75,7 @@ export class Configurations extends ros.Resource {
             group: props.group,
             dataId: props.dataId,
             namespaceId: props.namespaceId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             appName: props.appName,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosConfigurations;

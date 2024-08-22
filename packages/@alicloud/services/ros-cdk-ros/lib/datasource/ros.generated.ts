@@ -9,6 +9,14 @@ import * as ros from '@alicloud/ros-cdk-core';
 export interface RosStackGroupsProps {
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property resourceGroupId: The ID of the resource group.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -25,6 +33,13 @@ function RosStackGroupsPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosStackGroupsProps"');
 }
 
@@ -42,7 +57,8 @@ function rosStackGroupsPropsToRosTemplate(properties: any, enableResourcePropert
         RosStackGroupsPropsValidator(properties).assertSuccess();
     }
     return {
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
     };
 }
 
@@ -71,6 +87,14 @@ export class RosStackGroups extends ros.RosResource {
 
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: The ID of the resource group.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
@@ -86,12 +110,14 @@ export class RosStackGroups extends ros.RosResource {
         this.attrStackGroups = this.getAtt('StackGroups');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.refreshOptions = props.refreshOptions;
         this.resourceGroupId = props.resourceGroupId;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
+            refreshOptions: this.refreshOptions,
             resourceGroupId: this.resourceGroupId,
         };
     }
@@ -128,6 +154,14 @@ export interface RosStackInstanceProps {
      * @Property outputOption: Whether to return the Outputs parameter resource stack output list.
      */
     readonly outputOption?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -147,6 +181,13 @@ function RosStackInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('stackInstanceRegionId', ros.requiredValidator)(properties.stackInstanceRegionId));
     errors.collect(ros.propertyValidator('stackInstanceRegionId', ros.validateString)(properties.stackInstanceRegionId));
     errors.collect(ros.propertyValidator('outputOption', ros.validateString)(properties.outputOption));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosStackInstanceProps"');
 }
 
@@ -164,10 +205,11 @@ function rosStackInstancePropsToRosTemplate(properties: any, enableResourcePrope
         RosStackInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      StackGroupName: ros.stringToRosTemplate(properties.stackGroupName),
-      StackInstanceAccountId: ros.stringToRosTemplate(properties.stackInstanceAccountId),
-      StackInstanceRegionId: ros.stringToRosTemplate(properties.stackInstanceRegionId),
-      OutputOption: ros.stringToRosTemplate(properties.outputOption),
+      'StackGroupName': ros.stringToRosTemplate(properties.stackGroupName),
+      'StackInstanceAccountId': ros.stringToRosTemplate(properties.stackInstanceAccountId),
+      'StackInstanceRegionId': ros.stringToRosTemplate(properties.stackInstanceRegionId),
+      'OutputOption': ros.stringToRosTemplate(properties.outputOption),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -269,6 +311,14 @@ export class RosStackInstance extends ros.RosResource {
     public outputOption: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -293,6 +343,7 @@ export class RosStackInstance extends ros.RosResource {
         this.stackInstanceAccountId = props.stackInstanceAccountId;
         this.stackInstanceRegionId = props.stackInstanceRegionId;
         this.outputOption = props.outputOption;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
@@ -302,6 +353,7 @@ export class RosStackInstance extends ros.RosResource {
             stackInstanceAccountId: this.stackInstanceAccountId,
             stackInstanceRegionId: this.stackInstanceRegionId,
             outputOption: this.outputOption,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

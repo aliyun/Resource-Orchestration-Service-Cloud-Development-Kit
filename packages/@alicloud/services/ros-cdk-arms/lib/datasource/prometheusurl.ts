@@ -13,6 +13,14 @@ export interface PrometheusUrlProps {
      * Property clusterId: Cluster ID.
      */
     readonly clusterId?: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -105,6 +113,7 @@ export class PrometheusUrl extends ros.Resource {
 
         const rosPrometheusUrl = new RosPrometheusUrl(this, id,  {
             clusterId: props.clusterId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosPrometheusUrl;
         this.attrClusterId = rosPrometheusUrl.attrClusterId;

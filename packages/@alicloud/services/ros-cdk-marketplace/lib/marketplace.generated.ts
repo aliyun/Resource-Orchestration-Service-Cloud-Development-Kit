@@ -99,13 +99,13 @@ function rosOrderPropsToRosTemplate(properties: any, enableResourcePropertyConst
         RosOrderPropsValidator(properties).assertSuccess();
     }
     return {
-      ProductCode: ros.stringToRosTemplate(properties.productCode),
-      SkuCode: ros.stringToRosTemplate(properties.skuCode),
-      ChargeType: ros.stringToRosTemplate(properties.chargeType),
-      Duration: ros.numberToRosTemplate(properties.duration),
-      Preference: ros.hashMapper(ros.objectToRosTemplate)(properties.preference),
-      PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
-      Quantity: ros.numberToRosTemplate(properties.quantity),
+      'ProductCode': ros.stringToRosTemplate(properties.productCode),
+      'SkuCode': ros.stringToRosTemplate(properties.skuCode),
+      'ChargeType': ros.stringToRosTemplate(properties.chargeType),
+      'Duration': ros.numberToRosTemplate(properties.duration),
+      'Preference': ros.hashMapper(ros.objectToRosTemplate)(properties.preference),
+      'PricingCycle': ros.stringToRosTemplate(properties.pricingCycle),
+      'Quantity': ros.numberToRosTemplate(properties.quantity),
     };
 }
 

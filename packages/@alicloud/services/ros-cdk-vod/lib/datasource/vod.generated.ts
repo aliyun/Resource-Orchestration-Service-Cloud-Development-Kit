@@ -9,6 +9,14 @@ import * as ros from '@alicloud/ros-cdk-core';
 export interface RosEditingProjectsProps {
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property title: The title of the online editing project.
      */
     readonly title?: string | ros.IResolvable;
@@ -25,6 +33,13 @@ function RosEditingProjectsPropsValidator(properties: any): ros.ValidationResult
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('title', ros.validateString)(properties.title));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosEditingProjectsProps"');
 }
 
@@ -42,7 +57,8 @@ function rosEditingProjectsPropsToRosTemplate(properties: any, enableResourcePro
         RosEditingProjectsPropsValidator(properties).assertSuccess();
     }
     return {
-      Title: ros.stringToRosTemplate(properties.title),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'Title': ros.stringToRosTemplate(properties.title),
     };
 }
 
@@ -71,6 +87,14 @@ export class RosEditingProjects extends ros.RosResource {
 
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property title: The title of the online editing project.
      */
     public title: string | ros.IResolvable | undefined;
@@ -86,12 +110,14 @@ export class RosEditingProjects extends ros.RosResource {
         this.attrEditingProjects = this.getAtt('EditingProjects');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.refreshOptions = props.refreshOptions;
         this.title = props.title;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
+            refreshOptions: this.refreshOptions,
             title: this.title,
         };
     }

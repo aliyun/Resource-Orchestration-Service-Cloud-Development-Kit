@@ -161,6 +161,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb.Datasource
             }
         }
 
+        /// <summary>Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>Never: Never refresh the datasource resource when the stack is updated.</description>
+        /// <description>Always: Always refresh the datasource resource when the stack is updated.
+        /// Default is Never.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "refreshOptions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? RefreshOptions
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property replicationFactor: The number of nodes in a replica set instance.</summary>
         /// <remarks>
         /// Valid values: 3, 5, and 7.
@@ -360,6 +380,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb.Datasource
             [JsiiOptional]
             [JsiiProperty(name: "networkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? NetworkType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.</summary>
+            /// <remarks>
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>Never: Never refresh the datasource resource when the stack is updated.</description>
+            /// <description>Always: Always refresh the datasource resource when the stack is updated.
+            /// Default is Never.</description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "refreshOptions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RefreshOptions
             {
                 get => GetInstanceProperty<object?>();
             }

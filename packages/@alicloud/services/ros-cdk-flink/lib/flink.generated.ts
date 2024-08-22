@@ -148,18 +148,18 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      Bucket: ros.stringToRosTemplate(properties.bucket),
-      ChargeType: ros.stringToRosTemplate(properties.chargeType),
-      InstanceName: ros.stringToRosTemplate(properties.instanceName),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchIds: ros.listMapper(ros.objectToRosTemplate)(properties.vSwitchIds),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
-      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
-      Duration: ros.numberToRosTemplate(properties.duration),
-      PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
-      PromotionCode: ros.stringToRosTemplate(properties.promotionCode),
-      ResourceSpec: rosInstanceResourceSpecPropertyToRosTemplate(properties.resourceSpec),
-      UsePromotionCode: ros.booleanToRosTemplate(properties.usePromotionCode),
+      'Bucket': ros.stringToRosTemplate(properties.bucket),
+      'ChargeType': ros.stringToRosTemplate(properties.chargeType),
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchIds': ros.listMapper(ros.objectToRosTemplate)(properties.vSwitchIds),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'Duration': ros.numberToRosTemplate(properties.duration),
+      'PricingCycle': ros.stringToRosTemplate(properties.pricingCycle),
+      'PromotionCode': ros.stringToRosTemplate(properties.promotionCode),
+      'ResourceSpec': rosInstanceResourceSpecPropertyToRosTemplate(properties.resourceSpec),
+      'UsePromotionCode': ros.booleanToRosTemplate(properties.usePromotionCode),
     };
 }
 
@@ -347,8 +347,8 @@ function rosInstanceResourceSpecPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosInstance_ResourceSpecPropertyValidator(properties).assertSuccess();
     return {
-      Cpu: ros.numberToRosTemplate(properties.cpu),
-      MemoryGB: ros.numberToRosTemplate(properties.memoryGb),
+      'Cpu': ros.numberToRosTemplate(properties.cpu),
+      'MemoryGB': ros.numberToRosTemplate(properties.memoryGb),
     };
 }
 
@@ -412,9 +412,9 @@ function rosNamespacePropsToRosTemplate(properties: any, enableResourcePropertyC
         RosNamespacePropsValidator(properties).assertSuccess();
     }
     return {
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      Namespace: ros.stringToRosTemplate(properties.namespace),
-      ResourceSpec: rosNamespaceResourceSpecPropertyToRosTemplate(properties.resourceSpec),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'Namespace': ros.stringToRosTemplate(properties.namespace),
+      'ResourceSpec': rosNamespaceResourceSpecPropertyToRosTemplate(properties.resourceSpec),
     };
 }
 
@@ -532,7 +532,7 @@ function rosNamespaceResourceSpecPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosNamespace_ResourceSpecPropertyValidator(properties).assertSuccess();
     return {
-      Cpu: ros.numberToRosTemplate(properties.cpu),
-      MemoryGB: ros.numberToRosTemplate(properties.memoryGb),
+      'Cpu': ros.numberToRosTemplate(properties.cpu),
+      'MemoryGB': ros.numberToRosTemplate(properties.memoryGb),
     };
 }

@@ -15,6 +15,14 @@ export interface DedicatedHostClustersProps {
     readonly dedicatedHostClusterName?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property resourceGroupId: The ID of the resource group to which the dedicated host cluster belongs. 
      * If this parameter is specified to query resources,
      * up to 1,000 resources that belong to the specified resource group can be displayed in the response.
@@ -65,6 +73,7 @@ export class DedicatedHostClusters extends ros.Resource {
             dedicatedHostClusterName: props.dedicatedHostClusterName,
             resourceGroupId: props.resourceGroupId,
             zoneId: props.zoneId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDedicatedHostClusters;
         this.attrDedicatedHostClusterIds = rosDedicatedHostClusters.attrDedicatedHostClusterIds;

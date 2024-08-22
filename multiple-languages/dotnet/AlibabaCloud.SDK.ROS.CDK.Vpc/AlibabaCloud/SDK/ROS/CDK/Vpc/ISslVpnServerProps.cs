@@ -66,6 +66,53 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        /// <summary>Property enableMultiFactorAuth: Whether to enable multi-factor authentication.</summary>
+        /// <remarks>
+        /// The default value is false.
+        /// </remarks>
+        [JsiiProperty(name: "enableMultiFactorAuth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? EnableMultiFactorAuth
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property iDaaSApplicationId: The ID of the IDaaS application.</summary>
+        [JsiiProperty(name: "iDaaSApplicationId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? IDaaSApplicationId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property iDaaSInstanceId: The ID of the IDaaS instance.</summary>
+        [JsiiProperty(name: "iDaaSInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? IDaaSInstanceId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property iDaaSRegionId: The region ID of the IDaaS instance.</summary>
+        [JsiiProperty(name: "iDaaSRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? IDaaSRegionId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property name: The name of the SSL-VPN server.</summary>
         /// <remarks>
         /// The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-).
@@ -166,6 +213,41 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             [JsiiOptional]
             [JsiiProperty(name: "compress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Compress
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property enableMultiFactorAuth: Whether to enable multi-factor authentication.</summary>
+            /// <remarks>
+            /// The default value is false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "enableMultiFactorAuth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EnableMultiFactorAuth
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property iDaaSApplicationId: The ID of the IDaaS application.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "iDaaSApplicationId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IDaaSApplicationId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property iDaaSInstanceId: The ID of the IDaaS instance.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "iDaaSInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IDaaSInstanceId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property iDaaSRegionId: The region ID of the IDaaS instance.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "iDaaSRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IDaaSRegionId
             {
                 get => GetInstanceProperty<object?>();
             }

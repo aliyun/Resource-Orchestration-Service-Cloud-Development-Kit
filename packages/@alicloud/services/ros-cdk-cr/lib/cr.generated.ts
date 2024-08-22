@@ -125,14 +125,14 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      ImageScanner: ros.stringToRosTemplate(properties.imageScanner),
-      InstanceName: ros.stringToRosTemplate(properties.instanceName),
-      InstanceType: ros.stringToRosTemplate(properties.instanceType),
-      Period: ros.numberToRosTemplate(properties.period),
-      InstanceStorageName: ros.stringToRosTemplate(properties.instanceStorageName),
-      RenewalStatus: ros.stringToRosTemplate(properties.renewalStatus),
-      RenewPeriod: ros.numberToRosTemplate(properties.renewPeriod),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      'ImageScanner': ros.stringToRosTemplate(properties.imageScanner),
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'InstanceType': ros.stringToRosTemplate(properties.instanceType),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'InstanceStorageName': ros.stringToRosTemplate(properties.instanceStorageName),
+      'RenewalStatus': ros.stringToRosTemplate(properties.renewalStatus),
+      'RenewPeriod': ros.numberToRosTemplate(properties.renewPeriod),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
     };
 }
 
@@ -343,12 +343,12 @@ function rosInstanceEndpointAclPolicyPropsToRosTemplate(properties: any, enableR
         RosInstanceEndpointAclPolicyPropsValidator(properties).assertSuccess();
     }
     return {
-      Entry: ros.stringToRosTemplate(properties.entry),
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      Comment: ros.stringToRosTemplate(properties.comment),
-      EndpointType: ros.stringToRosTemplate(properties.endpointType),
-      ModuleName: ros.stringToRosTemplate(properties.moduleName),
-      RegionId: ros.stringToRosTemplate(properties.regionId),
+      'Entry': ros.stringToRosTemplate(properties.entry),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'Comment': ros.stringToRosTemplate(properties.comment),
+      'EndpointType': ros.stringToRosTemplate(properties.endpointType),
+      'ModuleName': ros.stringToRosTemplate(properties.moduleName),
+      'RegionId': ros.stringToRosTemplate(properties.regionId),
     };
 }
 
@@ -515,11 +515,11 @@ function rosInstanceVpcEndpointLinkedVpcPropsToRosTemplate(properties: any, enab
         RosInstanceVpcEndpointLinkedVpcPropsValidator(properties).assertSuccess();
     }
     return {
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VswitchId: ros.stringToRosTemplate(properties.vswitchId),
-      EnableCreateDNSRecordInPvzt: ros.booleanToRosTemplate(properties.enableCreateDnsRecordInPvzt),
-      ModuleName: ros.stringToRosTemplate(properties.moduleName),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VswitchId': ros.stringToRosTemplate(properties.vswitchId),
+      'EnableCreateDNSRecordInPvzt': ros.booleanToRosTemplate(properties.enableCreateDnsRecordInPvzt),
+      'ModuleName': ros.stringToRosTemplate(properties.moduleName),
     };
 }
 
@@ -689,10 +689,10 @@ function rosNamespacePropsToRosTemplate(properties: any, enableResourcePropertyC
         RosNamespacePropsValidator(properties).assertSuccess();
     }
     return {
-      Namespace: ros.stringToRosTemplate(properties.namespace),
-      AutoCreate: ros.booleanToRosTemplate(properties.autoCreate),
-      DefaultVisibility: ros.stringToRosTemplate(properties.defaultVisibility),
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      'Namespace': ros.stringToRosTemplate(properties.namespace),
+      'AutoCreate': ros.booleanToRosTemplate(properties.autoCreate),
+      'DefaultVisibility': ros.stringToRosTemplate(properties.defaultVisibility),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
     };
 }
 
@@ -897,14 +897,14 @@ function rosRepositoryPropsToRosTemplate(properties: any, enableResourceProperty
         RosRepositoryPropsValidator(properties).assertSuccess();
     }
     return {
-      RepoName: ros.stringToRosTemplate(properties.repoName),
-      RepoNamespace: ros.stringToRosTemplate(properties.repoNamespace),
-      RepoType: ros.stringToRosTemplate(properties.repoType),
-      Summary: ros.stringToRosTemplate(properties.summary),
-      Detail: ros.stringToRosTemplate(properties.detail),
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      RepoSource: rosRepositoryRepoSourcePropertyToRosTemplate(properties.repoSource),
-      TagImmutability: ros.booleanToRosTemplate(properties.tagImmutability),
+      'RepoName': ros.stringToRosTemplate(properties.repoName),
+      'RepoNamespace': ros.stringToRosTemplate(properties.repoNamespace),
+      'RepoType': ros.stringToRosTemplate(properties.repoType),
+      'Summary': ros.stringToRosTemplate(properties.summary),
+      'Detail': ros.stringToRosTemplate(properties.detail),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'RepoSource': rosRepositoryRepoSourcePropertyToRosTemplate(properties.repoSource),
+      'TagImmutability': ros.booleanToRosTemplate(properties.tagImmutability),
     };
 }
 
@@ -1104,12 +1104,12 @@ function rosRepositoryRepoSourcePropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosRepository_RepoSourcePropertyValidator(properties).assertSuccess();
     return {
-      IsAutoBuild: ros.booleanToRosTemplate(properties.isAutoBuild),
-      SourceRepoName: ros.stringToRosTemplate(properties.sourceRepoName),
-      SourceRepoNamespace: ros.stringToRosTemplate(properties.sourceRepoNamespace),
-      IsOversea: ros.booleanToRosTemplate(properties.isOversea),
-      SourceRepoType: ros.stringToRosTemplate(properties.sourceRepoType),
-      IsDisableCache: ros.booleanToRosTemplate(properties.isDisableCache),
+      'IsAutoBuild': ros.booleanToRosTemplate(properties.isAutoBuild),
+      'SourceRepoName': ros.stringToRosTemplate(properties.sourceRepoName),
+      'SourceRepoNamespace': ros.stringToRosTemplate(properties.sourceRepoNamespace),
+      'IsOversea': ros.booleanToRosTemplate(properties.isOversea),
+      'SourceRepoType': ros.stringToRosTemplate(properties.sourceRepoType),
+      'IsDisableCache': ros.booleanToRosTemplate(properties.isDisableCache),
     };
 }
 
@@ -1160,8 +1160,8 @@ function rosUserInfoPropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosUserInfoPropsValidator(properties).assertSuccess();
     }
     return {
-      User: rosUserInfoUserPropertyToRosTemplate(properties.user),
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      'User': rosUserInfoUserPropertyToRosTemplate(properties.user),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
     };
 }
 
@@ -1264,6 +1264,6 @@ function rosUserInfoUserPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosUserInfo_UserPropertyValidator(properties).assertSuccess();
     return {
-      Password: ros.stringToRosTemplate(properties.password),
+      'Password': ros.stringToRosTemplate(properties.password),
     };
 }

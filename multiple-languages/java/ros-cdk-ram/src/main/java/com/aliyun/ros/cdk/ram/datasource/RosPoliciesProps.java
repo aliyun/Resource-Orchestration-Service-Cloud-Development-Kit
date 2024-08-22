@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ram.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-policies
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.709Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:23.425Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.datasource.RosPoliciesProps")
 @software.amazon.jsii.Jsii.Proxy(RosPoliciesProps.Jsii$Proxy.class)
 public interface RosPoliciesProps extends software.amazon.jsii.JsiiSerializable {
@@ -25,6 +25,12 @@ public interface RosPoliciesProps extends software.amazon.jsii.JsiiSerializable 
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPolicyType() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
         return null;
     }
 
@@ -53,6 +59,7 @@ public interface RosPoliciesProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object groupName;
         java.lang.Object policyName;
         java.lang.Object policyType;
+        java.lang.Object refreshOptions;
         java.lang.Object roleName;
         java.lang.Object userName;
 
@@ -117,6 +124,26 @@ public interface RosPoliciesProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosPoliciesProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosPoliciesProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosPoliciesProps#getRoleName}
          * @param roleName the value to be set.
          * @return {@code this}
@@ -175,6 +202,7 @@ public interface RosPoliciesProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object groupName;
         private final java.lang.Object policyName;
         private final java.lang.Object policyType;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object roleName;
         private final java.lang.Object userName;
 
@@ -187,6 +215,7 @@ public interface RosPoliciesProps extends software.amazon.jsii.JsiiSerializable 
             this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.policyName = software.amazon.jsii.Kernel.get(this, "policyName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.policyType = software.amazon.jsii.Kernel.get(this, "policyType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.roleName = software.amazon.jsii.Kernel.get(this, "roleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.userName = software.amazon.jsii.Kernel.get(this, "userName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -199,6 +228,7 @@ public interface RosPoliciesProps extends software.amazon.jsii.JsiiSerializable 
             this.groupName = builder.groupName;
             this.policyName = builder.policyName;
             this.policyType = builder.policyType;
+            this.refreshOptions = builder.refreshOptions;
             this.roleName = builder.roleName;
             this.userName = builder.userName;
         }
@@ -216,6 +246,11 @@ public interface RosPoliciesProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final java.lang.Object getPolicyType() {
             return this.policyType;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -242,6 +277,9 @@ public interface RosPoliciesProps extends software.amazon.jsii.JsiiSerializable 
             }
             if (this.getPolicyType() != null) {
                 data.set("policyType", om.valueToTree(this.getPolicyType()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
             if (this.getRoleName() != null) {
                 data.set("roleName", om.valueToTree(this.getRoleName()));
@@ -270,6 +308,7 @@ public interface RosPoliciesProps extends software.amazon.jsii.JsiiSerializable 
             if (this.groupName != null ? !this.groupName.equals(that.groupName) : that.groupName != null) return false;
             if (this.policyName != null ? !this.policyName.equals(that.policyName) : that.policyName != null) return false;
             if (this.policyType != null ? !this.policyType.equals(that.policyType) : that.policyType != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.roleName != null ? !this.roleName.equals(that.roleName) : that.roleName != null) return false;
             return this.userName != null ? this.userName.equals(that.userName) : that.userName == null;
         }
@@ -279,6 +318,7 @@ public interface RosPoliciesProps extends software.amazon.jsii.JsiiSerializable 
             int result = this.groupName != null ? this.groupName.hashCode() : 0;
             result = 31 * result + (this.policyName != null ? this.policyName.hashCode() : 0);
             result = 31 * result + (this.policyType != null ? this.policyType.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.roleName != null ? this.roleName.hashCode() : 0);
             result = 31 * result + (this.userName != null ? this.userName.hashCode() : 0);
             return result;

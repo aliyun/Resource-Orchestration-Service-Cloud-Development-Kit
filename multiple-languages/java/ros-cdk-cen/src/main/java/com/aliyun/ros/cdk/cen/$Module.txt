@@ -19,6 +19,7 @@
 @alicloud/ros-cdk-cen.RosCenBandwidthLimit=com.aliyun.ros.cdk.cen.RosCenBandwidthLimit
 @alicloud/ros-cdk-cen.RosCenBandwidthLimitProps=com.aliyun.ros.cdk.cen.RosCenBandwidthLimitProps
 @alicloud/ros-cdk-cen.RosCenBandwidthPackage=com.aliyun.ros.cdk.cen.RosCenBandwidthPackage
+@alicloud/ros-cdk-cen.RosCenBandwidthPackage.TagsProperty=com.aliyun.ros.cdk.cen.RosCenBandwidthPackage$TagsProperty
 @alicloud/ros-cdk-cen.RosCenBandwidthPackageAssociation=com.aliyun.ros.cdk.cen.RosCenBandwidthPackageAssociation
 @alicloud/ros-cdk-cen.RosCenBandwidthPackageAssociationProps=com.aliyun.ros.cdk.cen.RosCenBandwidthPackageAssociationProps
 @alicloud/ros-cdk-cen.RosCenBandwidthPackageProps=com.aliyun.ros.cdk.cen.RosCenBandwidthPackageProps

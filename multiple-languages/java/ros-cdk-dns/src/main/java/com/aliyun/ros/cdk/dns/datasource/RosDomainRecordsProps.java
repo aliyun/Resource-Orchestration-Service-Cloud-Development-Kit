@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dns.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dns-domainrecords
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:05.772Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:19.426Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.datasource.RosDomainRecordsProps")
 @software.amazon.jsii.Jsii.Proxy(RosDomainRecordsProps.Jsii$Proxy.class)
 public interface RosDomainRecordsProps extends software.amazon.jsii.JsiiSerializable {
@@ -47,6 +47,12 @@ public interface RosDomainRecordsProps extends software.amazon.jsii.JsiiSerializ
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getOrderBy() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
         return null;
     }
 
@@ -103,6 +109,7 @@ public interface RosDomainRecordsProps extends software.amazon.jsii.JsiiSerializ
         java.lang.Object lang;
         java.lang.Object line;
         java.lang.Object orderBy;
+        java.lang.Object refreshOptions;
         java.lang.Object rrKeyWord;
         java.lang.Object searchMode;
         java.lang.Object status;
@@ -251,6 +258,26 @@ public interface RosDomainRecordsProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosDomainRecordsProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDomainRecordsProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDomainRecordsProps#getRrKeyWord}
          * @param rrKeyWord the value to be set.
          * @return {@code this}
@@ -393,6 +420,7 @@ public interface RosDomainRecordsProps extends software.amazon.jsii.JsiiSerializ
         private final java.lang.Object lang;
         private final java.lang.Object line;
         private final java.lang.Object orderBy;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object rrKeyWord;
         private final java.lang.Object searchMode;
         private final java.lang.Object status;
@@ -413,6 +441,7 @@ public interface RosDomainRecordsProps extends software.amazon.jsii.JsiiSerializ
             this.lang = software.amazon.jsii.Kernel.get(this, "lang", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.line = software.amazon.jsii.Kernel.get(this, "line", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.orderBy = software.amazon.jsii.Kernel.get(this, "orderBy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.rrKeyWord = software.amazon.jsii.Kernel.get(this, "rrKeyWord", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.searchMode = software.amazon.jsii.Kernel.get(this, "searchMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.status = software.amazon.jsii.Kernel.get(this, "status", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -433,6 +462,7 @@ public interface RosDomainRecordsProps extends software.amazon.jsii.JsiiSerializ
             this.lang = builder.lang;
             this.line = builder.line;
             this.orderBy = builder.orderBy;
+            this.refreshOptions = builder.refreshOptions;
             this.rrKeyWord = builder.rrKeyWord;
             this.searchMode = builder.searchMode;
             this.status = builder.status;
@@ -474,6 +504,11 @@ public interface RosDomainRecordsProps extends software.amazon.jsii.JsiiSerializ
         @Override
         public final java.lang.Object getOrderBy() {
             return this.orderBy;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -531,6 +566,9 @@ public interface RosDomainRecordsProps extends software.amazon.jsii.JsiiSerializ
             if (this.getOrderBy() != null) {
                 data.set("orderBy", om.valueToTree(this.getOrderBy()));
             }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
             if (this.getRrKeyWord() != null) {
                 data.set("rrKeyWord", om.valueToTree(this.getRrKeyWord()));
             }
@@ -574,6 +612,7 @@ public interface RosDomainRecordsProps extends software.amazon.jsii.JsiiSerializ
             if (this.lang != null ? !this.lang.equals(that.lang) : that.lang != null) return false;
             if (this.line != null ? !this.line.equals(that.line) : that.line != null) return false;
             if (this.orderBy != null ? !this.orderBy.equals(that.orderBy) : that.orderBy != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.rrKeyWord != null ? !this.rrKeyWord.equals(that.rrKeyWord) : that.rrKeyWord != null) return false;
             if (this.searchMode != null ? !this.searchMode.equals(that.searchMode) : that.searchMode != null) return false;
             if (this.status != null ? !this.status.equals(that.status) : that.status != null) return false;
@@ -591,6 +630,7 @@ public interface RosDomainRecordsProps extends software.amazon.jsii.JsiiSerializ
             result = 31 * result + (this.lang != null ? this.lang.hashCode() : 0);
             result = 31 * result + (this.line != null ? this.line.hashCode() : 0);
             result = 31 * result + (this.orderBy != null ? this.orderBy.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.rrKeyWord != null ? this.rrKeyWord.hashCode() : 0);
             result = 31 * result + (this.searchMode != null ? this.searchMode.hashCode() : 0);
             result = 31 * result + (this.status != null ? this.status.hashCode() : 0);

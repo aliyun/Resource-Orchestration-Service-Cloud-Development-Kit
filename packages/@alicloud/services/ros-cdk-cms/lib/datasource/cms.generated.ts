@@ -12,6 +12,14 @@ export interface RosAlarmContactsProps {
      * @Property alarmContactName: The name of the alert contact.
      */
     readonly alarmContactName?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -25,6 +33,13 @@ function RosAlarmContactsPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('alarmContactName', ros.validateString)(properties.alarmContactName));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosAlarmContactsProps"');
 }
 
@@ -42,7 +57,8 @@ function rosAlarmContactsPropsToRosTemplate(properties: any, enableResourcePrope
         RosAlarmContactsPropsValidator(properties).assertSuccess();
     }
     return {
-      AlarmContactName: ros.stringToRosTemplate(properties.alarmContactName),
+      'AlarmContactName': ros.stringToRosTemplate(properties.alarmContactName),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -76,6 +92,14 @@ export class RosAlarmContacts extends ros.RosResource {
     public alarmContactName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -87,12 +111,14 @@ export class RosAlarmContacts extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.alarmContactName = props.alarmContactName;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             alarmContactName: this.alarmContactName,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -122,6 +148,14 @@ export interface RosMonitorGroupsProps {
     readonly monitorGroupName?: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property type: The type of the application group. Valid values:
      * custom: a self-managed application group.
      * ehpc_cluster: an application group that is synchronized from an Elastic High Performance Computing (E-HPC) cluster.
@@ -143,6 +177,13 @@ function RosMonitorGroupsPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
     errors.collect(ros.propertyValidator('dynamicTagRuleId', ros.validateString)(properties.dynamicTagRuleId));
     errors.collect(ros.propertyValidator('monitorGroupName', ros.validateString)(properties.monitorGroupName));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     errors.collect(ros.propertyValidator('groupId', ros.validateNumber)(properties.groupId));
     return errors.wrap('supplied properties not correct for "RosMonitorGroupsProps"');
 }
@@ -161,10 +202,11 @@ function rosMonitorGroupsPropsToRosTemplate(properties: any, enableResourcePrope
         RosMonitorGroupsPropsValidator(properties).assertSuccess();
     }
     return {
-      DynamicTagRuleId: ros.stringToRosTemplate(properties.dynamicTagRuleId),
-      GroupId: ros.numberToRosTemplate(properties.groupId),
-      MonitorGroupName: ros.stringToRosTemplate(properties.monitorGroupName),
-      Type: ros.stringToRosTemplate(properties.type),
+      'DynamicTagRuleId': ros.stringToRosTemplate(properties.dynamicTagRuleId),
+      'GroupId': ros.numberToRosTemplate(properties.groupId),
+      'MonitorGroupName': ros.stringToRosTemplate(properties.monitorGroupName),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'Type': ros.stringToRosTemplate(properties.type),
     };
 }
 
@@ -208,6 +250,14 @@ export class RosMonitorGroups extends ros.RosResource {
     public monitorGroupName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property type: The type of the application group. Valid values:
      * custom: a self-managed application group.
      * ehpc_cluster: an application group that is synchronized from an Elastic High Performance Computing (E-HPC) cluster.
@@ -229,6 +279,7 @@ export class RosMonitorGroups extends ros.RosResource {
         this.dynamicTagRuleId = props.dynamicTagRuleId;
         this.groupId = props.groupId;
         this.monitorGroupName = props.monitorGroupName;
+        this.refreshOptions = props.refreshOptions;
         this.type = props.type;
     }
 
@@ -238,6 +289,7 @@ export class RosMonitorGroups extends ros.RosResource {
             dynamicTagRuleId: this.dynamicTagRuleId,
             groupId: this.groupId,
             monitorGroupName: this.monitorGroupName,
+            refreshOptions: this.refreshOptions,
             type: this.type,
         };
     }
@@ -256,6 +308,14 @@ export interface RosNamespacesProps {
      * @Property namespace: Indicator warehouse name.
      */
     readonly namespace?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -269,6 +329,13 @@ function RosNamespacesPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('namespace', ros.validateString)(properties.namespace));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosNamespacesProps"');
 }
 
@@ -286,7 +353,8 @@ function rosNamespacesPropsToRosTemplate(properties: any, enableResourceProperty
         RosNamespacesPropsValidator(properties).assertSuccess();
     }
     return {
-      Namespace: ros.stringToRosTemplate(properties.namespace),
+      'Namespace': ros.stringToRosTemplate(properties.namespace),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -315,6 +383,14 @@ export class RosNamespaces extends ros.RosResource {
     public namespace: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -325,12 +401,14 @@ export class RosNamespaces extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.namespace = props.namespace;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             namespace: this.namespace,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -343,6 +421,14 @@ export class RosNamespaces extends ros.RosResource {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-slsgroups
  */
 export interface RosSlsGroupsProps {
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 
     /**
      * @Property slsGroupName: The name of the Logstore group.
@@ -361,6 +447,13 @@ function RosSlsGroupsPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('slsGroupName', ros.validateString)(properties.slsGroupName));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosSlsGroupsProps"');
 }
 
@@ -378,7 +471,8 @@ function rosSlsGroupsPropsToRosTemplate(properties: any, enableResourcePropertyC
         RosSlsGroupsPropsValidator(properties).assertSuccess();
     }
     return {
-      SlsGroupName: ros.stringToRosTemplate(properties.slsGroupName),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'SlsGroupName': ros.stringToRosTemplate(properties.slsGroupName),
     };
 }
 
@@ -407,6 +501,14 @@ export class RosSlsGroups extends ros.RosResource {
 
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property slsGroupName: The name of the Logstore group.
      */
     public slsGroupName: string | ros.IResolvable | undefined;
@@ -422,12 +524,14 @@ export class RosSlsGroups extends ros.RosResource {
         this.attrSlsGroups = this.getAtt('SlsGroups');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.refreshOptions = props.refreshOptions;
         this.slsGroupName = props.slsGroupName;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
+            refreshOptions: this.refreshOptions,
             slsGroupName: this.slsGroupName,
         };
     }

@@ -15,6 +15,14 @@ export interface UsersProps {
     readonly groupName?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property userName: Filter the results by a specific user name. Supports using * and ? to fuzzy match.
      */
     readonly userName?: string | ros.IResolvable;
@@ -56,6 +64,7 @@ export class Users extends ros.Resource {
         const rosUsers = new RosUsers(this, id,  {
             groupName: props.groupName,
             userName: props.userName,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosUsers;
         this.attrUserNames = rosUsers.attrUserNames;

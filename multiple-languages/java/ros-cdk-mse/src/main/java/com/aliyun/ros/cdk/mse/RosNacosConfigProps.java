@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.mse;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-nacosconfig
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.751Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:22.489Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.RosNacosConfigProps")
 @software.amazon.jsii.Jsii.Proxy(RosNacosConfigProps.Jsii$Proxy.class)
 public interface RosNacosConfigProps extends software.amazon.jsii.JsiiSerializable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CMS::MetricRuleTargets</code>, which is used to add or modify one or more message resources of an alert rule.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:05.147Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:18.655Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosMetricRuleTargets")
 public class RosMetricRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -131,7 +131,7 @@ public class RosMetricRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getId();
+        @org.jetbrains.annotations.NotNull java.lang.Object getIdentity();
 
         /**
          */
@@ -153,7 +153,7 @@ public class RosMetricRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TargetsProperty> {
             java.lang.Object arn;
-            java.lang.Object id;
+            java.lang.Object identity;
             java.lang.Object level;
 
             /**
@@ -179,24 +179,24 @@ public class RosMetricRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
-             * Sets the value of {@link TargetsProperty#getId}
-             * @param id the value to be set. This parameter is required.
+             * Sets the value of {@link TargetsProperty#getIdentity}
+             * @param identity the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder id(java.lang.String id) {
-                this.id = id;
+            public Builder identity(java.lang.String identity) {
+                this.identity = identity;
                 return this;
             }
 
             /**
-             * Sets the value of {@link TargetsProperty#getId}
-             * @param id the value to be set. This parameter is required.
+             * Sets the value of {@link TargetsProperty#getIdentity}
+             * @param identity the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder id(com.aliyun.ros.cdk.core.IResolvable id) {
-                this.id = id;
+            public Builder identity(com.aliyun.ros.cdk.core.IResolvable identity) {
+                this.identity = identity;
                 return this;
             }
 
@@ -241,7 +241,7 @@ public class RosMetricRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TargetsProperty {
             private final java.lang.Object arn;
-            private final java.lang.Object id;
+            private final java.lang.Object identity;
             private final java.lang.Object level;
 
             /**
@@ -251,7 +251,7 @@ public class RosMetricRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
                 this.arn = software.amazon.jsii.Kernel.get(this, "arn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.id = software.amazon.jsii.Kernel.get(this, "id", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.identity = software.amazon.jsii.Kernel.get(this, "identity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.level = software.amazon.jsii.Kernel.get(this, "level", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
@@ -261,7 +261,7 @@ public class RosMetricRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.arn = java.util.Objects.requireNonNull(builder.arn, "arn is required");
-                this.id = java.util.Objects.requireNonNull(builder.id, "id is required");
+                this.identity = java.util.Objects.requireNonNull(builder.identity, "identity is required");
                 this.level = builder.level;
             }
 
@@ -271,8 +271,8 @@ public class RosMetricRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.Object getId() {
-                return this.id;
+            public final java.lang.Object getIdentity() {
+                return this.identity;
             }
 
             @Override
@@ -287,7 +287,7 @@ public class RosMetricRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
                 data.set("arn", om.valueToTree(this.getArn()));
-                data.set("id", om.valueToTree(this.getId()));
+                data.set("identity", om.valueToTree(this.getIdentity()));
                 if (this.getLevel() != null) {
                     data.set("level", om.valueToTree(this.getLevel()));
                 }
@@ -310,14 +310,14 @@ public class RosMetricRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
                 TargetsProperty.Jsii$Proxy that = (TargetsProperty.Jsii$Proxy) o;
 
                 if (!arn.equals(that.arn)) return false;
-                if (!id.equals(that.id)) return false;
+                if (!identity.equals(that.identity)) return false;
                 return this.level != null ? this.level.equals(that.level) : that.level == null;
             }
 
             @Override
             public final int hashCode() {
                 int result = this.arn.hashCode();
-                result = 31 * result + (this.id.hashCode());
+                result = 31 * result + (this.identity.hashCode());
                 result = 31 * result + (this.level != null ? this.level.hashCode() : 0);
                 return result;
             }

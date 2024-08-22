@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::BgpGroup</code>, which is used to create a Border Gateway Protocol (BGP) (Multi-ISP) group for a specified virtual border router (VBR).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.574Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:24.598Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.BgpGroup")
 public class BgpGroup extends com.aliyun.ros.cdk.core.Resource {
 
@@ -211,6 +211,31 @@ public class BgpGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property ipVersion: The IP version of the BGP group.
+         * <p>
+         * Valid values: IPv4 and IPv6.
+         * <p>
+         * @return {@code this}
+         * @param ipVersion Property ipVersion: The IP version of the BGP group. This parameter is required.
+         */
+        public Builder ipVersion(final java.lang.String ipVersion) {
+            this.props.ipVersion(ipVersion);
+            return this;
+        }
+        /**
+         * Property ipVersion: The IP version of the BGP group.
+         * <p>
+         * Valid values: IPv4 and IPv6.
+         * <p>
+         * @return {@code this}
+         * @param ipVersion Property ipVersion: The IP version of the BGP group. This parameter is required.
+         */
+        public Builder ipVersion(final com.aliyun.ros.cdk.core.IResolvable ipVersion) {
+            this.props.ipVersion(ipVersion);
+            return this;
+        }
+
+        /**
          * Property isFakeAsn: A router that runs BGP typically belongs to only one AS.
          * <p>
          * In some cases, for example,
@@ -286,6 +311,31 @@ public class BgpGroup extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);
+            return this;
+        }
+
+        /**
+         * Property routeQuota: The upper limit of the BGP neighbor's route entries.
+         * <p>
+         * Unit: entries, default value: 110.
+         * <p>
+         * @return {@code this}
+         * @param routeQuota Property routeQuota: The upper limit of the BGP neighbor's route entries. This parameter is required.
+         */
+        public Builder routeQuota(final java.lang.Number routeQuota) {
+            this.props.routeQuota(routeQuota);
+            return this;
+        }
+        /**
+         * Property routeQuota: The upper limit of the BGP neighbor's route entries.
+         * <p>
+         * Unit: entries, default value: 110.
+         * <p>
+         * @return {@code this}
+         * @param routeQuota Property routeQuota: The upper limit of the BGP neighbor's route entries. This parameter is required.
+         */
+        public Builder routeQuota(final com.aliyun.ros.cdk.core.IResolvable routeQuota) {
+            this.props.routeQuota(routeQuota);
             return this;
         }
 

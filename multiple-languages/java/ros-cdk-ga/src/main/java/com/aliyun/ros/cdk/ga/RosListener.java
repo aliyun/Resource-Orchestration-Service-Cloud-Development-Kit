@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::GA::Listener</code>, which is used to create a listener for a Global Accelerator (GA) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.297Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:21.780Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosListener")
 public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -280,7 +280,7 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getId();
+        @org.jetbrains.annotations.NotNull java.lang.Object getIdentity();
 
         /**
          * @return a {@link Builder} of {@link CertificatesProperty}
@@ -294,27 +294,27 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<CertificatesProperty> {
-            java.lang.Object id;
+            java.lang.Object identity;
 
             /**
-             * Sets the value of {@link CertificatesProperty#getId}
-             * @param id the value to be set. This parameter is required.
+             * Sets the value of {@link CertificatesProperty#getIdentity}
+             * @param identity the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder id(java.lang.String id) {
-                this.id = id;
+            public Builder identity(java.lang.String identity) {
+                this.identity = identity;
                 return this;
             }
 
             /**
-             * Sets the value of {@link CertificatesProperty#getId}
-             * @param id the value to be set. This parameter is required.
+             * Sets the value of {@link CertificatesProperty#getIdentity}
+             * @param identity the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder id(com.aliyun.ros.cdk.core.IResolvable id) {
-                this.id = id;
+            public Builder identity(com.aliyun.ros.cdk.core.IResolvable identity) {
+                this.identity = identity;
                 return this;
             }
 
@@ -336,7 +336,7 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements CertificatesProperty {
-            private final java.lang.Object id;
+            private final java.lang.Object identity;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -344,7 +344,7 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.id = software.amazon.jsii.Kernel.get(this, "id", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.identity = software.amazon.jsii.Kernel.get(this, "identity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -352,12 +352,12 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.id = java.util.Objects.requireNonNull(builder.id, "id is required");
+                this.identity = java.util.Objects.requireNonNull(builder.identity, "identity is required");
             }
 
             @Override
-            public final java.lang.Object getId() {
-                return this.id;
+            public final java.lang.Object getIdentity() {
+                return this.identity;
             }
 
             @Override
@@ -366,7 +366,7 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
-                data.set("id", om.valueToTree(this.getId()));
+                data.set("identity", om.valueToTree(this.getIdentity()));
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
                 struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ga.RosListener.CertificatesProperty"));
@@ -385,12 +385,12 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
                 CertificatesProperty.Jsii$Proxy that = (CertificatesProperty.Jsii$Proxy) o;
 
-                return this.id.equals(that.id);
+                return this.identity.equals(that.identity);
             }
 
             @Override
             public final int hashCode() {
-                int result = this.id.hashCode();
+                int result = this.identity.hashCode();
                 return result;
             }
         }

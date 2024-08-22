@@ -57,8 +57,8 @@ function rosAliasPropsToRosTemplate(properties: any, enableResourcePropertyConst
         RosAliasPropsValidator(properties).assertSuccess();
     }
     return {
-      AliasName: ros.stringToRosTemplate(properties.aliasName),
-      KeyId: ros.stringToRosTemplate(properties.keyId),
+      'AliasName': ros.stringToRosTemplate(properties.aliasName),
+      'KeyId': ros.stringToRosTemplate(properties.keyId),
     };
 }
 
@@ -300,19 +300,19 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      ProductVersion: ros.stringToRosTemplate(properties.productVersion),
-      Connection: rosInstanceConnectionPropertyToRosTemplate(properties.connection),
-      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
-      KeyNum: ros.numberToRosTemplate(properties.keyNum),
-      Log: ros.booleanToRosTemplate(properties.log),
-      LogStorage: ros.numberToRosTemplate(properties.logStorage),
-      Period: ros.numberToRosTemplate(properties.period),
-      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
-      RenewPeriod: ros.numberToRosTemplate(properties.renewPeriod),
-      RenewStatus: ros.stringToRosTemplate(properties.renewStatus),
-      SecretNum: ros.numberToRosTemplate(properties.secretNum),
-      Spec: ros.numberToRosTemplate(properties.spec),
-      VpcNum: ros.numberToRosTemplate(properties.vpcNum),
+      'ProductVersion': ros.stringToRosTemplate(properties.productVersion),
+      'Connection': rosInstanceConnectionPropertyToRosTemplate(properties.connection),
+      'InstanceChargeType': ros.stringToRosTemplate(properties.instanceChargeType),
+      'KeyNum': ros.numberToRosTemplate(properties.keyNum),
+      'Log': ros.booleanToRosTemplate(properties.log),
+      'LogStorage': ros.numberToRosTemplate(properties.logStorage),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
+      'RenewPeriod': ros.numberToRosTemplate(properties.renewPeriod),
+      'RenewStatus': ros.stringToRosTemplate(properties.renewStatus),
+      'SecretNum': ros.numberToRosTemplate(properties.secretNum),
+      'Spec': ros.numberToRosTemplate(properties.spec),
+      'VpcNum': ros.numberToRosTemplate(properties.vpcNum),
     };
 }
 
@@ -517,9 +517,9 @@ function rosInstanceConnectionPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosInstance_ConnectionPropertyValidator(properties).assertSuccess();
     return {
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchIds: ros.listMapper(ros.stringToRosTemplate)(properties.vSwitchIds),
-      ZoneIds: ros.listMapper(ros.stringToRosTemplate)(properties.zoneIds),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchIds': ros.listMapper(ros.stringToRosTemplate)(properties.vSwitchIds),
+      'ZoneIds': ros.listMapper(ros.stringToRosTemplate)(properties.zoneIds),
     };
 }
 
@@ -636,16 +636,16 @@ function rosKeyPropsToRosTemplate(properties: any, enableResourcePropertyConstra
         RosKeyPropsValidator(properties).assertSuccess();
     }
     return {
-      Description: ros.stringToRosTemplate(properties.description),
-      DKMSInstanceId: ros.stringToRosTemplate(properties.dkmsInstanceId),
-      Enable: ros.booleanToRosTemplate(properties.enable),
-      EnableAutomaticRotation: ros.booleanToRosTemplate(properties.enableAutomaticRotation),
-      KeySpec: ros.stringToRosTemplate(properties.keySpec),
-      KeyUsage: ros.stringToRosTemplate(properties.keyUsage),
-      PendingWindowInDays: ros.numberToRosTemplate(properties.pendingWindowInDays),
-      Policy: ros.hashMapper(ros.objectToRosTemplate)(properties.policy),
-      ProtectionLevel: ros.stringToRosTemplate(properties.protectionLevel),
-      RotationInterval: ros.stringToRosTemplate(properties.rotationInterval),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'DKMSInstanceId': ros.stringToRosTemplate(properties.dkmsInstanceId),
+      'Enable': ros.booleanToRosTemplate(properties.enable),
+      'EnableAutomaticRotation': ros.booleanToRosTemplate(properties.enableAutomaticRotation),
+      'KeySpec': ros.stringToRosTemplate(properties.keySpec),
+      'KeyUsage': ros.stringToRosTemplate(properties.keyUsage),
+      'PendingWindowInDays': ros.numberToRosTemplate(properties.pendingWindowInDays),
+      'Policy': ros.hashMapper(ros.objectToRosTemplate)(properties.policy),
+      'ProtectionLevel': ros.stringToRosTemplate(properties.protectionLevel),
+      'RotationInterval': ros.stringToRosTemplate(properties.rotationInterval),
     };
 }
 
@@ -916,20 +916,20 @@ function rosSecretPropsToRosTemplate(properties: any, enableResourcePropertyCons
         RosSecretPropsValidator(properties).assertSuccess();
     }
     return {
-      SecretData: ros.stringToRosTemplate(properties.secretData),
-      SecretName: ros.stringToRosTemplate(properties.secretName),
-      VersionId: ros.stringToRosTemplate(properties.versionId),
-      Description: ros.stringToRosTemplate(properties.description),
-      DKMSInstanceId: ros.stringToRosTemplate(properties.dkmsInstanceId),
-      EnableAutomaticRotation: ros.booleanToRosTemplate(properties.enableAutomaticRotation),
-      EncryptionKeyId: ros.stringToRosTemplate(properties.encryptionKeyId),
-      ExtendedConfig: ros.hashMapper(ros.objectToRosTemplate)(properties.extendedConfig),
-      ForceDeleteWithoutRecovery: ros.booleanToRosTemplate(properties.forceDeleteWithoutRecovery),
-      RecoveryWindowInDays: ros.numberToRosTemplate(properties.recoveryWindowInDays),
-      RotationInterval: ros.stringToRosTemplate(properties.rotationInterval),
-      SecretDataType: ros.stringToRosTemplate(properties.secretDataType),
-      SecretType: ros.stringToRosTemplate(properties.secretType),
-      VersionStages: ros.listMapper(ros.stringToRosTemplate)(properties.versionStages),
+      'SecretData': ros.stringToRosTemplate(properties.secretData),
+      'SecretName': ros.stringToRosTemplate(properties.secretName),
+      'VersionId': ros.stringToRosTemplate(properties.versionId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'DKMSInstanceId': ros.stringToRosTemplate(properties.dkmsInstanceId),
+      'EnableAutomaticRotation': ros.booleanToRosTemplate(properties.enableAutomaticRotation),
+      'EncryptionKeyId': ros.stringToRosTemplate(properties.encryptionKeyId),
+      'ExtendedConfig': ros.hashMapper(ros.objectToRosTemplate)(properties.extendedConfig),
+      'ForceDeleteWithoutRecovery': ros.booleanToRosTemplate(properties.forceDeleteWithoutRecovery),
+      'RecoveryWindowInDays': ros.numberToRosTemplate(properties.recoveryWindowInDays),
+      'RotationInterval': ros.stringToRosTemplate(properties.rotationInterval),
+      'SecretDataType': ros.stringToRosTemplate(properties.secretDataType),
+      'SecretType': ros.stringToRosTemplate(properties.secretType),
+      'VersionStages': ros.listMapper(ros.stringToRosTemplate)(properties.versionStages),
     };
 }
 

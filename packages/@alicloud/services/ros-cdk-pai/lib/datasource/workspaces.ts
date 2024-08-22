@@ -10,6 +10,14 @@ export { RosWorkspaces as WorkspacesProperty };
 export interface WorkspacesProps {
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property workspaceId: The ID of the workspace.
      */
     readonly workspaceId?: string | ros.IResolvable;
@@ -59,6 +67,7 @@ export class Workspaces extends ros.Resource {
         const rosWorkspaces = new RosWorkspaces(this, id,  {
             workspaceId: props.workspaceId,
             workspaceName: props.workspaceName,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosWorkspaces;
         this.attrWorkspaceIds = rosWorkspaces.attrWorkspaceIds;

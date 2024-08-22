@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-vpcs
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.947Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:25.138Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.VpcsProps")
 @software.amazon.jsii.Jsii.Proxy(VpcsProps.Jsii$Proxy.class)
 public interface VpcsProps extends software.amazon.jsii.JsiiSerializable {
@@ -25,6 +25,21 @@ public interface VpcsProps extends software.amazon.jsii.JsiiSerializable {
      * false: does not query the default VPC.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIsDefault() {
+        return null;
+    }
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
         return null;
     }
 
@@ -70,6 +85,7 @@ public interface VpcsProps extends software.amazon.jsii.JsiiSerializable {
     public static final class Builder implements software.amazon.jsii.Builder<VpcsProps> {
         java.lang.Object dhcpOptionsSetId;
         java.lang.Object isDefault;
+        java.lang.Object refreshOptions;
         java.lang.Object resourceGroupId;
         java.lang.Object vpcIds;
         java.lang.Object vpcName;
@@ -118,6 +134,40 @@ public interface VpcsProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder isDefault(com.aliyun.ros.cdk.core.IResolvable isDefault) {
             this.isDefault = isDefault;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link VpcsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link VpcsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
             return this;
         }
 
@@ -221,6 +271,7 @@ public interface VpcsProps extends software.amazon.jsii.JsiiSerializable {
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements VpcsProps {
         private final java.lang.Object dhcpOptionsSetId;
         private final java.lang.Object isDefault;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object vpcIds;
         private final java.lang.Object vpcName;
@@ -234,6 +285,7 @@ public interface VpcsProps extends software.amazon.jsii.JsiiSerializable {
             super(objRef);
             this.dhcpOptionsSetId = software.amazon.jsii.Kernel.get(this, "dhcpOptionsSetId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.isDefault = software.amazon.jsii.Kernel.get(this, "isDefault", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcIds = software.amazon.jsii.Kernel.get(this, "vpcIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcName = software.amazon.jsii.Kernel.get(this, "vpcName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -247,6 +299,7 @@ public interface VpcsProps extends software.amazon.jsii.JsiiSerializable {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.dhcpOptionsSetId = builder.dhcpOptionsSetId;
             this.isDefault = builder.isDefault;
+            this.refreshOptions = builder.refreshOptions;
             this.resourceGroupId = builder.resourceGroupId;
             this.vpcIds = builder.vpcIds;
             this.vpcName = builder.vpcName;
@@ -261,6 +314,11 @@ public interface VpcsProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getIsDefault() {
             return this.isDefault;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -295,6 +353,9 @@ public interface VpcsProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getIsDefault() != null) {
                 data.set("isDefault", om.valueToTree(this.getIsDefault()));
             }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
@@ -327,6 +388,7 @@ public interface VpcsProps extends software.amazon.jsii.JsiiSerializable {
 
             if (this.dhcpOptionsSetId != null ? !this.dhcpOptionsSetId.equals(that.dhcpOptionsSetId) : that.dhcpOptionsSetId != null) return false;
             if (this.isDefault != null ? !this.isDefault.equals(that.isDefault) : that.isDefault != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.vpcIds != null ? !this.vpcIds.equals(that.vpcIds) : that.vpcIds != null) return false;
             if (this.vpcName != null ? !this.vpcName.equals(that.vpcName) : that.vpcName != null) return false;
@@ -337,6 +399,7 @@ public interface VpcsProps extends software.amazon.jsii.JsiiSerializable {
         public final int hashCode() {
             int result = this.dhcpOptionsSetId != null ? this.dhcpOptionsSetId.hashCode() : 0;
             result = 31 * result + (this.isDefault != null ? this.isDefault.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.vpcIds != null ? this.vpcIds.hashCode() : 0);
             result = 31 * result + (this.vpcName != null ? this.vpcName.hashCode() : 0);

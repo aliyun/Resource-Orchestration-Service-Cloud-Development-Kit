@@ -45,6 +45,14 @@ export interface RosDBClustersProps {
     readonly expired?: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property resourceGroupId: The ID of the resource group.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -78,6 +86,13 @@ function RosDBClustersPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('expired', ros.validateString)(properties.expired));
     errors.collect(ros.propertyValidator('dbType', ros.validateString)(properties.dbType));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosDBClustersProps"');
 }
 
@@ -95,12 +110,13 @@ function rosDBClustersPropsToRosTemplate(properties: any, enableResourceProperty
         RosDBClustersPropsValidator(properties).assertSuccess();
     }
     return {
-      DbClusterId: ros.stringToRosTemplate(properties.dbClusterId),
-      DbType: ros.stringToRosTemplate(properties.dbType),
-      DbVersion: ros.stringToRosTemplate(properties.dbVersion),
-      Description: ros.stringToRosTemplate(properties.description),
-      Expired: ros.stringToRosTemplate(properties.expired),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      'DbClusterId': ros.stringToRosTemplate(properties.dbClusterId),
+      'DbType': ros.stringToRosTemplate(properties.dbType),
+      'DbVersion': ros.stringToRosTemplate(properties.dbVersion),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Expired': ros.stringToRosTemplate(properties.expired),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
     };
 }
 
@@ -165,6 +181,14 @@ export class RosDBClusters extends ros.RosResource {
     public expired: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: The ID of the resource group.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
@@ -185,6 +209,7 @@ export class RosDBClusters extends ros.RosResource {
         this.dbVersion = props.dbVersion;
         this.description = props.description;
         this.expired = props.expired;
+        this.refreshOptions = props.refreshOptions;
         this.resourceGroupId = props.resourceGroupId;
     }
 
@@ -196,6 +221,7 @@ export class RosDBClusters extends ros.RosResource {
             dbVersion: this.dbVersion,
             description: this.description,
             expired: this.expired,
+            refreshOptions: this.refreshOptions,
             resourceGroupId: this.resourceGroupId,
         };
     }
@@ -243,6 +269,14 @@ export interface RosDBNodeClassesProps {
     readonly dbVersion?: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property zoneId: The ID of the zone where PolarDB resources that you want to query reside.
      * Note You can call the DescribeRegions operation to query information about zones.
      */
@@ -265,6 +299,13 @@ function RosDBNodeClassesPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('payType', ros.requiredValidator)(properties.payType));
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
     errors.collect(ros.propertyValidator('dbNodeClass', ros.validateString)(properties.dbNodeClass));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosDBNodeClassesProps"');
 }
 
@@ -282,11 +323,12 @@ function rosDBNodeClassesPropsToRosTemplate(properties: any, enableResourcePrope
         RosDBNodeClassesPropsValidator(properties).assertSuccess();
     }
     return {
-      PayType: ros.stringToRosTemplate(properties.payType),
-      DBNodeClass: ros.stringToRosTemplate(properties.dbNodeClass),
-      DBType: ros.stringToRosTemplate(properties.dbType),
-      DBVersion: ros.stringToRosTemplate(properties.dbVersion),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      'PayType': ros.stringToRosTemplate(properties.payType),
+      'DBNodeClass': ros.stringToRosTemplate(properties.dbNodeClass),
+      'DBType': ros.stringToRosTemplate(properties.dbType),
+      'DBVersion': ros.stringToRosTemplate(properties.dbVersion),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
     };
 }
 
@@ -347,6 +389,14 @@ export class RosDBNodeClasses extends ros.RosResource {
     public dbVersion: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property zoneId: The ID of the zone where PolarDB resources that you want to query reside.
      * Note You can call the DescribeRegions operation to query information about zones.
      */
@@ -367,6 +417,7 @@ export class RosDBNodeClasses extends ros.RosResource {
         this.dbNodeClass = props.dbNodeClass;
         this.dbType = props.dbType;
         this.dbVersion = props.dbVersion;
+        this.refreshOptions = props.refreshOptions;
         this.zoneId = props.zoneId;
     }
 
@@ -377,11 +428,171 @@ export class RosDBNodeClasses extends ros.RosResource {
             dbNodeClass: this.dbNodeClass,
             dbType: this.dbType,
             dbVersion: this.dbVersion,
+            refreshOptions: this.refreshOptions,
             zoneId: this.zoneId,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosDBNodeClassesPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosGlobalDatabaseNetwork`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-globaldatabasenetwork
+ */
+export interface RosGlobalDatabaseNetworkProps {
+
+    /**
+     * @Property gdnId: The ID of the GDN.
+     */
+    readonly gdnId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosGlobalDatabaseNetworkProps`
+ *
+ * @param properties - the TypeScript properties of a `RosGlobalDatabaseNetworkProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosGlobalDatabaseNetworkPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('gdnId', ros.requiredValidator)(properties.gdnId));
+    errors.collect(ros.propertyValidator('gdnId', ros.validateString)(properties.gdnId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
+    return errors.wrap('supplied properties not correct for "RosGlobalDatabaseNetworkProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::POLARDB::GlobalDatabaseNetwork` resource
+ *
+ * @param properties - the TypeScript properties of a `RosGlobalDatabaseNetworkProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::POLARDB::GlobalDatabaseNetwork` resource.
+ */
+// @ts-ignore TS6133
+function rosGlobalDatabaseNetworkPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosGlobalDatabaseNetworkPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'GdnId': ros.stringToRosTemplate(properties.gdnId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::POLARDB::GlobalDatabaseNetwork`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `GlobalDatabaseNetwork` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-globaldatabasenetwork
+ */
+export class RosGlobalDatabaseNetwork extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::POLARDB::GlobalDatabaseNetwork";
+
+    /**
+     * @Attribute Connections: The information about the connection to the cluster.
+     */
+    public readonly attrConnections: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The time at which the GDN was created.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute DbClusters: The clusters that are included in the GDN.
+     */
+    public readonly attrDbClusters: ros.IResolvable;
+
+    /**
+     * @Attribute DbType: The type of the database engine. Only MySQL is supported.
+     */
+    public readonly attrDbType: ros.IResolvable;
+
+    /**
+     * @Attribute DbVersion: The version of the database engine. Only version 8.0 is supported.
+     */
+    public readonly attrDbVersion: ros.IResolvable;
+
+    /**
+     * @Attribute GdnDescription: The description of the GDN. The description must meet the following requirements:
+It cannot start with http:// or https://.
+It must start with a letter.
+It can contain letters, digits, underscores (_), and hyphens (-).
+It must be 2 to 126 characters in length.
+     */
+    public readonly attrGdnDescription: ros.IResolvable;
+
+    /**
+     * @Attribute GdnId: The ID of the GDN.
+     */
+    public readonly attrGdnId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property gdnId: The ID of the GDN.
+     */
+    public gdnId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosGlobalDatabaseNetworkProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosGlobalDatabaseNetwork.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrConnections = this.getAtt('Connections');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDbClusters = this.getAtt('DbClusters');
+        this.attrDbType = this.getAtt('DbType');
+        this.attrDbVersion = this.getAtt('DbVersion');
+        this.attrGdnDescription = this.getAtt('GdnDescription');
+        this.attrGdnId = this.getAtt('GdnId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.gdnId = props.gdnId;
+        this.refreshOptions = props.refreshOptions;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            gdnId: this.gdnId,
+            refreshOptions: this.refreshOptions,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosGlobalDatabaseNetworkPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 
@@ -400,6 +611,14 @@ export interface RosGlobalDatabaseNetworksProps {
      * @Property gdnId: The ID of the GDN.
      */
     readonly gdnId?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -414,6 +633,13 @@ function RosGlobalDatabaseNetworksPropsValidator(properties: any): ros.Validatio
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('dbClusterId', ros.validateString)(properties.dbClusterId));
     errors.collect(ros.propertyValidator('gdnId', ros.validateString)(properties.gdnId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosGlobalDatabaseNetworksProps"');
 }
 
@@ -431,8 +657,9 @@ function rosGlobalDatabaseNetworksPropsToRosTemplate(properties: any, enableReso
         RosGlobalDatabaseNetworksPropsValidator(properties).assertSuccess();
     }
     return {
-      DbClusterId: ros.stringToRosTemplate(properties.dbClusterId),
-      GdnId: ros.stringToRosTemplate(properties.gdnId),
+      'DbClusterId': ros.stringToRosTemplate(properties.dbClusterId),
+      'GdnId': ros.stringToRosTemplate(properties.gdnId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -471,6 +698,14 @@ export class RosGlobalDatabaseNetworks extends ros.RosResource {
     public gdnId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -483,6 +718,7 @@ export class RosGlobalDatabaseNetworks extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.dbClusterId = props.dbClusterId;
         this.gdnId = props.gdnId;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
@@ -490,10 +726,189 @@ export class RosGlobalDatabaseNetworks extends ros.RosResource {
         return {
             dbClusterId: this.dbClusterId,
             gdnId: this.gdnId,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosGlobalDatabaseNetworksPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosParameterGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-parametergroup
+ */
+export interface RosParameterGroupProps {
+
+    /**
+     * @Property parameterGroupId: The ID of the parameter template.
+     */
+    readonly parameterGroupId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosParameterGroupProps`
+ *
+ * @param properties - the TypeScript properties of a `RosParameterGroupProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosParameterGroupPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('parameterGroupId', ros.requiredValidator)(properties.parameterGroupId));
+    errors.collect(ros.propertyValidator('parameterGroupId', ros.validateString)(properties.parameterGroupId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
+    return errors.wrap('supplied properties not correct for "RosParameterGroupProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::POLARDB::ParameterGroup` resource
+ *
+ * @param properties - the TypeScript properties of a `RosParameterGroupProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::POLARDB::ParameterGroup` resource.
+ */
+// @ts-ignore TS6133
+function rosParameterGroupPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosParameterGroupPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ParameterGroupId': ros.stringToRosTemplate(properties.parameterGroupId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::POLARDB::ParameterGroup`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ParameterGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-parametergroup
+ */
+export class RosParameterGroup extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::POLARDB::ParameterGroup";
+
+    /**
+     * @Attribute CreateTime: The time when the parameter template was created. The time is in the yyyy-MM-ddTHH:mm:ssZ format. The time is displayed in UTC.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute DbType: The type of the database engine.
+     */
+    public readonly attrDbType: ros.IResolvable;
+
+    /**
+     * @Attribute DbVersion: The version of the database engine.
+     */
+    public readonly attrDbVersion: ros.IResolvable;
+
+    /**
+     * @Attribute ForceRestart: Indicates whether to restart the cluster when this parameter template is applied. Valid values:
+* 0: A restart is not required.
+* 1: A restart is required.
+     */
+    public readonly attrForceRestart: ros.IResolvable;
+
+    /**
+     * @Attribute ParameterCounts: The number of parameters in the parameter template.
+     */
+    public readonly attrParameterCounts: ros.IResolvable;
+
+    /**
+     * @Attribute ParameterGroupDesc: The description of the parameter template.
+     */
+    public readonly attrParameterGroupDesc: ros.IResolvable;
+
+    /**
+     * @Attribute ParameterGroupId: The ID of the parameter template.
+     */
+    public readonly attrParameterGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute ParameterGroupName: The name of the parameter template.
+     */
+    public readonly attrParameterGroupName: ros.IResolvable;
+
+    /**
+     * @Attribute ParameterGroupType: The type of the parameter template. Valid values:
+0: the default parameter template.
+1: a custom parameter template.
+2: an automatic backup parameter template. After you apply this type of template, the system automatically backs up the original parameter settings and saves the backup as a template.
+     */
+    public readonly attrParameterGroupType: ros.IResolvable;
+
+    /**
+     * @Attribute Parameters: Details about the parameter templates.
+     */
+    public readonly attrParameters: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property parameterGroupId: The ID of the parameter template.
+     */
+    public parameterGroupId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosParameterGroupProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosParameterGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDbType = this.getAtt('DbType');
+        this.attrDbVersion = this.getAtt('DbVersion');
+        this.attrForceRestart = this.getAtt('ForceRestart');
+        this.attrParameterCounts = this.getAtt('ParameterCounts');
+        this.attrParameterGroupDesc = this.getAtt('ParameterGroupDesc');
+        this.attrParameterGroupId = this.getAtt('ParameterGroupId');
+        this.attrParameterGroupName = this.getAtt('ParameterGroupName');
+        this.attrParameterGroupType = this.getAtt('ParameterGroupType');
+        this.attrParameters = this.getAtt('Parameters');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.parameterGroupId = props.parameterGroupId;
+        this.refreshOptions = props.refreshOptions;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            parameterGroupId: this.parameterGroupId,
+            refreshOptions: this.refreshOptions,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosParameterGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 
@@ -512,6 +927,14 @@ export interface RosParameterGroupsProps {
      * @Property dbVersion: The version of the database engine.
      */
     readonly dbVersion?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -526,6 +949,13 @@ function RosParameterGroupsPropsValidator(properties: any): ros.ValidationResult
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('dbVersion', ros.validateString)(properties.dbVersion));
     errors.collect(ros.propertyValidator('dbType', ros.validateString)(properties.dbType));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosParameterGroupsProps"');
 }
 
@@ -543,8 +973,9 @@ function rosParameterGroupsPropsToRosTemplate(properties: any, enableResourcePro
         RosParameterGroupsPropsValidator(properties).assertSuccess();
     }
     return {
-      DbType: ros.stringToRosTemplate(properties.dbType),
-      DbVersion: ros.stringToRosTemplate(properties.dbVersion),
+      'DbType': ros.stringToRosTemplate(properties.dbType),
+      'DbVersion': ros.stringToRosTemplate(properties.dbVersion),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -583,6 +1014,14 @@ export class RosParameterGroups extends ros.RosResource {
     public dbVersion: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -595,6 +1034,7 @@ export class RosParameterGroups extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.dbType = props.dbType;
         this.dbVersion = props.dbVersion;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
@@ -602,6 +1042,7 @@ export class RosParameterGroups extends ros.RosResource {
         return {
             dbType: this.dbType,
             dbVersion: this.dbVersion,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

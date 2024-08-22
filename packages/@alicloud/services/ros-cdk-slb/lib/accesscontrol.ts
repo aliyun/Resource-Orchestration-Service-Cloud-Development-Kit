@@ -15,7 +15,7 @@ export interface AccessControlProps {
     readonly aclName: string | ros.IResolvable;
 
     /**
-     * Property aclEntries: A list of acl entries. Each entry can be IP addresses or CIDR blocks. Max length: 50.
+     * Property aclEntries: A list of acl entries. Each entry can be IP addresses or CIDR blocks. Max length: 300.
      */
     readonly aclEntries?: Array<RosAccessControl.AclEntriesProperty | ros.IResolvable> | ros.IResolvable;
 

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.alb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-loadbalancer
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.263Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:17.487Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.LoadBalancerProps")
 @software.amazon.jsii.Jsii.Proxy(LoadBalancerProps.Jsii$Proxy.class)
 public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable {
@@ -115,6 +115,13 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
+     * Property securityGroupIds: The IDs of the security group to which the ALB instance join.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupIds() {
+        return null;
+    }
+
+    /**
      * Property tags: Tags to attach to instance.
      * <p>
      * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
@@ -146,6 +153,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Object deletionProtectionEnabled;
         java.lang.Object modificationProtectionConfig;
         java.lang.Object resourceGroupId;
+        java.lang.Object securityGroupIds;
         java.util.List<com.aliyun.ros.cdk.alb.RosLoadBalancer.TagsProperty> tags;
 
         /**
@@ -443,6 +451,26 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link LoadBalancerProps#getSecurityGroupIds}
+         * @param securityGroupIds Property securityGroupIds: The IDs of the security group to which the ALB instance join.
+         * @return {@code this}
+         */
+        public Builder securityGroupIds(com.aliyun.ros.cdk.core.IResolvable securityGroupIds) {
+            this.securityGroupIds = securityGroupIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link LoadBalancerProps#getSecurityGroupIds}
+         * @param securityGroupIds Property securityGroupIds: The IDs of the security group to which the ALB instance join.
+         * @return {@code this}
+         */
+        public Builder securityGroupIds(java.util.List<? extends java.lang.Object> securityGroupIds) {
+            this.securityGroupIds = securityGroupIds;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LoadBalancerProps#getTags}
          * @param tags Property tags: Tags to attach to instance.
          *             Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
@@ -483,6 +511,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object deletionProtectionEnabled;
         private final java.lang.Object modificationProtectionConfig;
         private final java.lang.Object resourceGroupId;
+        private final java.lang.Object securityGroupIds;
         private final java.util.List<com.aliyun.ros.cdk.alb.RosLoadBalancer.TagsProperty> tags;
 
         /**
@@ -504,6 +533,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             this.deletionProtectionEnabled = software.amazon.jsii.Kernel.get(this, "deletionProtectionEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.modificationProtectionConfig = software.amazon.jsii.Kernel.get(this, "modificationProtectionConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityGroupIds = software.amazon.jsii.Kernel.get(this, "securityGroupIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.alb.RosLoadBalancer.TagsProperty.class)));
         }
 
@@ -526,6 +556,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             this.deletionProtectionEnabled = builder.deletionProtectionEnabled;
             this.modificationProtectionConfig = builder.modificationProtectionConfig;
             this.resourceGroupId = builder.resourceGroupId;
+            this.securityGroupIds = builder.securityGroupIds;
             this.tags = (java.util.List<com.aliyun.ros.cdk.alb.RosLoadBalancer.TagsProperty>)builder.tags;
         }
 
@@ -595,6 +626,11 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.lang.Object getSecurityGroupIds() {
+            return this.securityGroupIds;
+        }
+
+        @Override
         public final java.util.List<com.aliyun.ros.cdk.alb.RosLoadBalancer.TagsProperty> getTags() {
             return this.tags;
         }
@@ -632,6 +668,9 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
+            if (this.getSecurityGroupIds() != null) {
+                data.set("securityGroupIds", om.valueToTree(this.getSecurityGroupIds()));
+            }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
             }
@@ -666,6 +705,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             if (this.deletionProtectionEnabled != null ? !this.deletionProtectionEnabled.equals(that.deletionProtectionEnabled) : that.deletionProtectionEnabled != null) return false;
             if (this.modificationProtectionConfig != null ? !this.modificationProtectionConfig.equals(that.modificationProtectionConfig) : that.modificationProtectionConfig != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            if (this.securityGroupIds != null ? !this.securityGroupIds.equals(that.securityGroupIds) : that.securityGroupIds != null) return false;
             return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
@@ -684,6 +724,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             result = 31 * result + (this.deletionProtectionEnabled != null ? this.deletionProtectionEnabled.hashCode() : 0);
             result = 31 * result + (this.modificationProtectionConfig != null ? this.modificationProtectionConfig.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.securityGroupIds != null ? this.securityGroupIds.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }

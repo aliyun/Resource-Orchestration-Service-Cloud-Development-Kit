@@ -12,6 +12,14 @@ export interface RosAddressProps {
      * @Property allocationId: The ID of the EIP instance.
      */
     readonly allocationId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -26,6 +34,13 @@ function RosAddressPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('allocationId', ros.requiredValidator)(properties.allocationId));
     errors.collect(ros.propertyValidator('allocationId', ros.validateString)(properties.allocationId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosAddressProps"');
 }
 
@@ -43,7 +58,8 @@ function rosAddressPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosAddressPropsValidator(properties).assertSuccess();
     }
     return {
-      AllocationId: ros.stringToRosTemplate(properties.allocationId),
+      'AllocationId': ros.stringToRosTemplate(properties.allocationId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -232,6 +248,14 @@ export class RosAddress extends ros.RosResource {
     public allocationId: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -274,12 +298,14 @@ export class RosAddress extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.allocationId = props.allocationId;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             allocationId: this.allocationId,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -347,6 +373,14 @@ export interface RosAddressesProps {
     readonly paymentType?: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property resourceGroupId: The ID of the resource group to which the EIPs belong.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -383,6 +417,13 @@ function RosAddressesPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('paymentType', ros.validateString)(properties.paymentType));
     errors.collect(ros.propertyValidator('ipAddress', ros.validateString)(properties.ipAddress));
     errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosAddressesProps"');
 }
 
@@ -400,15 +441,16 @@ function rosAddressesPropsToRosTemplate(properties: any, enableResourcePropertyC
         RosAddressesPropsValidator(properties).assertSuccess();
     }
     return {
-      AddressName: ros.stringToRosTemplate(properties.addressName),
-      AllocationId: ros.stringToRosTemplate(properties.allocationId),
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      InstanceType: ros.stringToRosTemplate(properties.instanceType),
-      IpAddress: ros.stringToRosTemplate(properties.ipAddress),
-      Isp: ros.stringToRosTemplate(properties.isp),
-      PaymentType: ros.stringToRosTemplate(properties.paymentType),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      SegmentInstanceId: ros.stringToRosTemplate(properties.segmentInstanceId),
+      'AddressName': ros.stringToRosTemplate(properties.addressName),
+      'AllocationId': ros.stringToRosTemplate(properties.allocationId),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'InstanceType': ros.stringToRosTemplate(properties.instanceType),
+      'IpAddress': ros.stringToRosTemplate(properties.ipAddress),
+      'Isp': ros.stringToRosTemplate(properties.isp),
+      'PaymentType': ros.stringToRosTemplate(properties.paymentType),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'SegmentInstanceId': ros.stringToRosTemplate(properties.segmentInstanceId),
     };
 }
 
@@ -490,6 +532,14 @@ export class RosAddresses extends ros.RosResource {
     public paymentType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: The ID of the resource group to which the EIPs belong.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
@@ -518,6 +568,7 @@ export class RosAddresses extends ros.RosResource {
         this.ipAddress = props.ipAddress;
         this.isp = props.isp;
         this.paymentType = props.paymentType;
+        this.refreshOptions = props.refreshOptions;
         this.resourceGroupId = props.resourceGroupId;
         this.segmentInstanceId = props.segmentInstanceId;
     }
@@ -532,12 +583,892 @@ export class RosAddresses extends ros.RosResource {
             ipAddress: this.ipAddress,
             isp: this.isp,
             paymentType: this.paymentType,
+            refreshOptions: this.refreshOptions,
             resourceGroupId: this.resourceGroupId,
             segmentInstanceId: this.segmentInstanceId,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosAddressesPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosAnycastEipAddress`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eipanycast-anycasteipaddress
+ */
+export interface RosAnycastEipAddressProps {
+
+    /**
+     * @Property anycastId: The ID of the Anycast EIP.
+     */
+    readonly anycastId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAnycastEipAddressProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAnycastEipAddressProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAnycastEipAddressPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('anycastId', ros.requiredValidator)(properties.anycastId));
+    errors.collect(ros.propertyValidator('anycastId', ros.validateString)(properties.anycastId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
+    return errors.wrap('supplied properties not correct for "RosAnycastEipAddressProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::Eipanycast::AnycastEipAddress` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAnycastEipAddressProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::Eipanycast::AnycastEipAddress` resource.
+ */
+// @ts-ignore TS6133
+function rosAnycastEipAddressPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAnycastEipAddressPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AnycastId': ros.stringToRosTemplate(properties.anycastId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::Eipanycast::AnycastEipAddress`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AnycastEipAddress` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eipanycast-anycasteipaddress
+ */
+export class RosAnycastEipAddress extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::Eipanycast::AnycastEipAddress";
+
+    /**
+     * @Attribute AliUid: The ID of the account to which the Anycast EIP belongs.
+     */
+    public readonly attrAliUid: ros.IResolvable;
+
+    /**
+     * @Attribute AnycastEipAddressName: The name of the Anycast EIP.
+     */
+    public readonly attrAnycastEipAddressName: ros.IResolvable;
+
+    /**
+     * @Attribute AnycastId: The ID of the Anycast EIP.
+     */
+    public readonly attrAnycastId: ros.IResolvable;
+
+    /**
+     * @Attribute Bandwidth: The maximum bandwidth of the Anycast EIP. Unit: Mbit/s.
+     */
+    public readonly attrBandwidth: ros.IResolvable;
+
+    /**
+     * @Attribute Bid: The BID of the account to which the Anycast EIP belongs.
+     */
+    public readonly attrBid: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The point in time at which the Anycast EIP was created. The time follows the ISO8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. The time is displayed in UTC.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute InternetChargeType: The billing method of the Anycast EIP. Only PostPaid may be returned, which indicates the pay-as-you-go billing method.
+     */
+    public readonly attrInternetChargeType: ros.IResolvable;
+
+    /**
+     * @Attribute IpAddress: The IP address of the Anycast EIP.
+     */
+    public readonly attrIpAddress: ros.IResolvable;
+
+    /**
+     * @Attribute PaymentType: The billing method of the Anycast EIP.
+     */
+    public readonly attrPaymentType: ros.IResolvable;
+
+    /**
+     * @Attribute ServiceLocation: The access area of the Anycast EIP. Only international may be returned, which indicates the areas outside the Chinese mainland.
+     */
+    public readonly attrServiceLocation: ros.IResolvable;
+
+    /**
+     * @Attribute Status: The status of the Anycast EIP. Valid values:
+* Associating
+* Unassociating
+* Allocated
+* Associated
+* Modifying
+* Releasing
+* Released
+     */
+    public readonly attrStatus: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tags of the EIP.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property anycastId: The ID of the Anycast EIP.
+     */
+    public anycastId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAnycastEipAddressProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAnycastEipAddress.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAliUid = this.getAtt('AliUid');
+        this.attrAnycastEipAddressName = this.getAtt('AnycastEipAddressName');
+        this.attrAnycastId = this.getAtt('AnycastId');
+        this.attrBandwidth = this.getAtt('Bandwidth');
+        this.attrBid = this.getAtt('Bid');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrInternetChargeType = this.getAtt('InternetChargeType');
+        this.attrIpAddress = this.getAtt('IpAddress');
+        this.attrPaymentType = this.getAtt('PaymentType');
+        this.attrServiceLocation = this.getAtt('ServiceLocation');
+        this.attrStatus = this.getAtt('Status');
+        this.attrTags = this.getAtt('Tags');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.anycastId = props.anycastId;
+        this.refreshOptions = props.refreshOptions;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            anycastId: this.anycastId,
+            refreshOptions: this.refreshOptions,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAnycastEipAddressPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosBgpPeer`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-bgppeer
+ */
+export interface RosBgpPeerProps {
+
+    /**
+     * @Property bgpPeerId: The ID of the BGP peer.
+     */
+    readonly bgpPeerId?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosBgpPeerProps`
+ *
+ * @param properties - the TypeScript properties of a `RosBgpPeerProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosBgpPeerPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('bgpPeerId', ros.validateString)(properties.bgpPeerId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
+    return errors.wrap('supplied properties not correct for "RosBgpPeerProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::VPC::BgpPeer` resource
+ *
+ * @param properties - the TypeScript properties of a `RosBgpPeerProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::VPC::BgpPeer` resource.
+ */
+// @ts-ignore TS6133
+function rosBgpPeerPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosBgpPeerPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'BgpPeerId': ros.stringToRosTemplate(properties.bgpPeerId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::BgpPeer`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `BgpPeer` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-bgppeer
+ */
+export class RosBgpPeer extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::BgpPeer";
+
+    /**
+     * @Attribute AdvertisedRouteCount: The number of advertised routes.
+     */
+    public readonly attrAdvertisedRouteCount: ros.IResolvable;
+
+    /**
+     * @Attribute AuthKey: The authentication key of the BGP group.
+     */
+    public readonly attrAuthKey: ros.IResolvable;
+
+    /**
+     * @Attribute BfdMultiHop: The Bidirectional Forwarding Detection (BFD) hop count.
+     */
+    public readonly attrBfdMultiHop: ros.IResolvable;
+
+    /**
+     * @Attribute BgpGroupId: The ID of the BGP group.
+     */
+    public readonly attrBgpGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute BgpPeerId: The ID of the BGP peer.
+     */
+    public readonly attrBgpPeerId: ros.IResolvable;
+
+    /**
+     * @Attribute BgpStatus: The status of the BGP connection. Valid values:
+* Idle: The BGP connection is not used.
+* Connect: The BGP connection is used.
+* Active: The BGP connection is available.
+* Established: The BGP connection is established.
+* Down: The BGP connection is unavailable.
+     */
+    public readonly attrBgpStatus: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description of the BGP group.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute EnableBfd: Indicates whether BFD is enabled. Valid values:
+* false
+* true
+     */
+    public readonly attrEnableBfd: ros.IResolvable;
+
+    /**
+     * @Attribute GmtModified: The time when the BGP peer is modified.
+     */
+    public readonly attrGmtModified: ros.IResolvable;
+
+    /**
+     * @Attribute Hold: The hold time.
+     */
+    public readonly attrHold: ros.IResolvable;
+
+    /**
+     * @Attribute IpVersion: The version of the IP address.
+     */
+    public readonly attrIpVersion: ros.IResolvable;
+
+    /**
+     * @Attribute IsFake: Indicates whether a fake autonomous system number (ASN) is used. Valid values:
+* false
+* true
+     */
+    public readonly attrIsFake: ros.IResolvable;
+
+    /**
+     * @Attribute Keepalive: The Keepalive interval.
+     */
+    public readonly attrKeepalive: ros.IResolvable;
+
+    /**
+     * @Attribute LocalAsn: The ASN of the device on the Alibaba Cloud side.
+     */
+    public readonly attrLocalAsn: ros.IResolvable;
+
+    /**
+     * @Attribute Name: The name of the BGP peer.
+     */
+    public readonly attrName: ros.IResolvable;
+
+    /**
+     * @Attribute PeerAsn: The autonomous system number (ASN)of the BGP peer.
+     */
+    public readonly attrPeerAsn: ros.IResolvable;
+
+    /**
+     * @Attribute PeerIpAddress: The IP address of the BGP peer.
+     */
+    public readonly attrPeerIpAddress: ros.IResolvable;
+
+    /**
+     * @Attribute ReceivedRouteCount: The number of received routes.
+     */
+    public readonly attrReceivedRouteCount: ros.IResolvable;
+
+    /**
+     * @Attribute RouteLimit: The maximum number of routes.
+     */
+    public readonly attrRouteLimit: ros.IResolvable;
+
+    /**
+     * @Attribute RouterId: The Router ID.
+     */
+    public readonly attrRouterId: ros.IResolvable;
+
+    /**
+     * @Attribute Status: The status of the BGP peer. Valid values:
+* Pending
+* Available
+* Modifying
+* Deleting
+* Deleted
+     */
+    public readonly attrStatus: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property bgpPeerId: The ID of the BGP peer.
+     */
+    public bgpPeerId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosBgpPeerProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosBgpPeer.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAdvertisedRouteCount = this.getAtt('AdvertisedRouteCount');
+        this.attrAuthKey = this.getAtt('AuthKey');
+        this.attrBfdMultiHop = this.getAtt('BfdMultiHop');
+        this.attrBgpGroupId = this.getAtt('BgpGroupId');
+        this.attrBgpPeerId = this.getAtt('BgpPeerId');
+        this.attrBgpStatus = this.getAtt('BgpStatus');
+        this.attrDescription = this.getAtt('Description');
+        this.attrEnableBfd = this.getAtt('EnableBfd');
+        this.attrGmtModified = this.getAtt('GmtModified');
+        this.attrHold = this.getAtt('Hold');
+        this.attrIpVersion = this.getAtt('IpVersion');
+        this.attrIsFake = this.getAtt('IsFake');
+        this.attrKeepalive = this.getAtt('Keepalive');
+        this.attrLocalAsn = this.getAtt('LocalAsn');
+        this.attrName = this.getAtt('Name');
+        this.attrPeerAsn = this.getAtt('PeerAsn');
+        this.attrPeerIpAddress = this.getAtt('PeerIpAddress');
+        this.attrReceivedRouteCount = this.getAtt('ReceivedRouteCount');
+        this.attrRouteLimit = this.getAtt('RouteLimit');
+        this.attrRouterId = this.getAtt('RouterId');
+        this.attrStatus = this.getAtt('Status');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.bgpPeerId = props.bgpPeerId;
+        this.refreshOptions = props.refreshOptions;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            bgpPeerId: this.bgpPeerId,
+            refreshOptions: this.refreshOptions,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosBgpPeerPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosBgpPeers`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-bgppeers
+ */
+export interface RosBgpPeersProps {
+
+    /**
+     * @Property bgpGroupId: The ID of the BGP group to which the BGP peer that you want to query belongs.
+     */
+    readonly bgpGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property bgpPeerId: The ID of the BGP peer that you want to query.
+     */
+    readonly bgpPeerId?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
+     * @Property routerId: The ID of the virtual border router (VBR) that is associated with the BGP peer that you want to query.
+     */
+    readonly routerId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosBgpPeersProps`
+ *
+ * @param properties - the TypeScript properties of a `RosBgpPeersProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosBgpPeersPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('bgpPeerId', ros.validateString)(properties.bgpPeerId));
+    errors.collect(ros.propertyValidator('routerId', ros.validateString)(properties.routerId));
+    errors.collect(ros.propertyValidator('bgpGroupId', ros.validateString)(properties.bgpGroupId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
+    return errors.wrap('supplied properties not correct for "RosBgpPeersProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::VPC::BgpPeers` resource
+ *
+ * @param properties - the TypeScript properties of a `RosBgpPeersProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::VPC::BgpPeers` resource.
+ */
+// @ts-ignore TS6133
+function rosBgpPeersPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosBgpPeersPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'BgpGroupId': ros.stringToRosTemplate(properties.bgpGroupId),
+      'BgpPeerId': ros.stringToRosTemplate(properties.bgpPeerId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'RouterId': ros.stringToRosTemplate(properties.routerId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::BgpPeers`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `BgpPeers` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-bgppeers
+ */
+export class RosBgpPeers extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::BgpPeers";
+
+    /**
+     * @Attribute BgpPeerIds: The list of The BGP peer ids.
+     */
+    public readonly attrBgpPeerIds: ros.IResolvable;
+
+    /**
+     * @Attribute BgpPeers: The list of The BGP peers.
+     */
+    public readonly attrBgpPeers: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property bgpGroupId: The ID of the BGP group to which the BGP peer that you want to query belongs.
+     */
+    public bgpGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property bgpPeerId: The ID of the BGP peer that you want to query.
+     */
+    public bgpPeerId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property routerId: The ID of the virtual border router (VBR) that is associated with the BGP peer that you want to query.
+     */
+    public routerId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosBgpPeersProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosBgpPeers.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrBgpPeerIds = this.getAtt('BgpPeerIds');
+        this.attrBgpPeers = this.getAtt('BgpPeers');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.bgpGroupId = props.bgpGroupId;
+        this.bgpPeerId = props.bgpPeerId;
+        this.refreshOptions = props.refreshOptions;
+        this.routerId = props.routerId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            bgpGroupId: this.bgpGroupId,
+            bgpPeerId: this.bgpPeerId,
+            refreshOptions: this.refreshOptions,
+            routerId: this.routerId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosBgpPeersPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosCommonBandwidthPackage`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-commonbandwidthpackage
+ */
+export interface RosCommonBandwidthPackageProps {
+
+    /**
+     * @Property commonBandwidthPackageId: The ID of the Internet shared bandwidth.
+     */
+    readonly commonBandwidthPackageId?: string | ros.IResolvable;
+
+    /**
+     * @Property commonBandwidthPackageName: The name of the Internet Shared Bandwidth instance.
+     */
+    readonly commonBandwidthPackageName?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosCommonBandwidthPackageProps`
+ *
+ * @param properties - the TypeScript properties of a `RosCommonBandwidthPackageProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosCommonBandwidthPackagePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('commonBandwidthPackageName', ros.validateString)(properties.commonBandwidthPackageName));
+    errors.collect(ros.propertyValidator('commonBandwidthPackageId', ros.validateString)(properties.commonBandwidthPackageId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
+    return errors.wrap('supplied properties not correct for "RosCommonBandwidthPackageProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::VPC::CommonBandwidthPackage` resource
+ *
+ * @param properties - the TypeScript properties of a `RosCommonBandwidthPackageProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::VPC::CommonBandwidthPackage` resource.
+ */
+// @ts-ignore TS6133
+function rosCommonBandwidthPackagePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosCommonBandwidthPackagePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'CommonBandwidthPackageId': ros.stringToRosTemplate(properties.commonBandwidthPackageId),
+      'CommonBandwidthPackageName': ros.stringToRosTemplate(properties.commonBandwidthPackageName),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::CommonBandwidthPackage`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CommonBandwidthPackage` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-commonbandwidthpackage
+ */
+export class RosCommonBandwidthPackage extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::CommonBandwidthPackage";
+
+    /**
+     * @Attribute Bandwidth: The maximum bandwidth of the Internet Shared Bandwidth instance. Unit: Mbit/s.
+     */
+    public readonly attrBandwidth: ros.IResolvable;
+
+    /**
+     * @Attribute BusinessStatus: The service status of the Internet Shared Bandwidth instance. Valid values:
+* Normal: The Internet Shared Bandwidth instance runs as expected.
+* FinancialLocked: An overdue payment occurs in the Internet Shared Bandwidth instance
+* Unactivated: The Internet Shared Bandwidth instance is not activated.
+     */
+    public readonly attrBusinessStatus: ros.IResolvable;
+
+    /**
+     * @Attribute CommonBandwidthPackageId: The ID of the Internet shared bandwidth.
+     */
+    public readonly attrCommonBandwidthPackageId: ros.IResolvable;
+
+    /**
+     * @Attribute CommonBandwidthPackageName: The name of the Internet Shared Bandwidth instance.
+     */
+    public readonly attrCommonBandwidthPackageName: ros.IResolvable;
+
+    /**
+     * @Attribute CreationTime: The time when the Internet Shared Bandwidth instance was created. The time is displayed in the YYYY-MM-DDThh:mm:ssZ format.
+     */
+    public readonly attrCreationTime: ros.IResolvable;
+
+    /**
+     * @Attribute DeletionProtection: Indicates whether deletion protection is enabled. Valid values:
+* false
+* true
+     */
+    public readonly attrDeletionProtection: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description of the Internet Shared Bandwidth instance.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute ExpiredTime: The time when the Internet Shared Bandwidth instance expired. The time is displayed in the YYYY-MM-DDThh:mm:ssZ format.
+     */
+    public readonly attrExpiredTime: ros.IResolvable;
+
+    /**
+     * @Attribute HasReservationData: Indicates whether the information about pending orders is returned. Valid values:
+* false
+* true
+     */
+    public readonly attrHasReservationData: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceChargeType: The billing method of the Internet Shared Bandwidth instance. Valid value:
+* PostPaid: pay-as-you-go
+* PrePaid: subscription
+     */
+    public readonly attrInstanceChargeType: ros.IResolvable;
+
+    /**
+     * @Attribute InternetChargeType: The metering method of the Internet Shared Bandwidth instance. Valid value:
+* PayBy95: Charged by Enhanced 95th Percentile.
+* PayByBandwidth: Charged by Bandwidth.
+* PayByDominantTraffic: Charged by Dominant Traffic.
+     */
+    public readonly attrInternetChargeType: ros.IResolvable;
+
+    /**
+     * @Attribute Isp: The line type. Valid values:
+BGP (default): BGP (Multi-ISP) lines.
+BGP_PRO: BGP (Multi-ISP) Pro lines.
+Valid values if you are allowed to use single-ISP bandwidth:
+ChinaTelecom
+ChinaUnicom
+ChinaMobile
+ChinaTelecom_L2
+ChinaUnicom_L2
+ChinaMobile_L2
+     */
+    public readonly attrIsp: ros.IResolvable;
+
+    /**
+     * @Attribute PublicIpAddresses: The elastic IP addresses (EIPs) that are associated with the Internet Shared Bandwidth instance.
+     */
+    public readonly attrPublicIpAddresses: ros.IResolvable;
+
+    /**
+     * @Attribute Ratio: The percentage of the minimum bandwidth commitment. Only 20 is returned.
+     */
+    public readonly attrRatio: ros.IResolvable;
+
+    /**
+     * @Attribute ReservationActiveTime: The time when the renewal took effect. The time is displayed in the YYYY-MM-DDThh:mm:ssZ format.
+     */
+    public readonly attrReservationActiveTime: ros.IResolvable;
+
+    /**
+     * @Attribute ReservationBandwidth: The new maximum bandwidth after the configurations are changed. Unit: Mbit/s.
+     */
+    public readonly attrReservationBandwidth: ros.IResolvable;
+
+    /**
+     * @Attribute ReservationInternetChargeType: The metering method after the configurations are changed. Valid value:
+* PayBy95: Charged by Enhanced 95th Percentile.
+* PayByBandwidth: Charged by Bandwidth.
+* PayByDominantTraffic: Charged by Dominant Traffic.
+     */
+    public readonly attrReservationInternetChargeType: ros.IResolvable;
+
+    /**
+     * @Attribute ReservationOrderType: The renewal method. Valid values:
+* RENEWCHANGE: renewal with a specification change
+* TEMP_UPGRADE: renewal with a temporary upgrade
+* UPGRADE: renewal with an upgrade
+     */
+    public readonly attrReservationOrderType: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute ServiceManaged: Indicates whether the resource is created by the service account. Valid values:
+* 0: The resource is not created by the service account.
+* 1: The resource is created by the service account.
+     */
+    public readonly attrServiceManaged: ros.IResolvable;
+
+    /**
+     * @Attribute Status: The status of the Internet Shared Bandwidth instance. Valid values:
+* Available: The Internet Shared Bandwidth instance is available.
+* Modifying: The Internet Shared Bandwidth instance is being modified.
+     */
+    public readonly attrStatus: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property commonBandwidthPackageId: The ID of the Internet shared bandwidth.
+     */
+    public commonBandwidthPackageId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property commonBandwidthPackageName: The name of the Internet Shared Bandwidth instance.
+     */
+    public commonBandwidthPackageName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosCommonBandwidthPackageProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosCommonBandwidthPackage.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrBandwidth = this.getAtt('Bandwidth');
+        this.attrBusinessStatus = this.getAtt('BusinessStatus');
+        this.attrCommonBandwidthPackageId = this.getAtt('CommonBandwidthPackageId');
+        this.attrCommonBandwidthPackageName = this.getAtt('CommonBandwidthPackageName');
+        this.attrCreationTime = this.getAtt('CreationTime');
+        this.attrDeletionProtection = this.getAtt('DeletionProtection');
+        this.attrDescription = this.getAtt('Description');
+        this.attrExpiredTime = this.getAtt('ExpiredTime');
+        this.attrHasReservationData = this.getAtt('HasReservationData');
+        this.attrInstanceChargeType = this.getAtt('InstanceChargeType');
+        this.attrInternetChargeType = this.getAtt('InternetChargeType');
+        this.attrIsp = this.getAtt('Isp');
+        this.attrPublicIpAddresses = this.getAtt('PublicIpAddresses');
+        this.attrRatio = this.getAtt('Ratio');
+        this.attrReservationActiveTime = this.getAtt('ReservationActiveTime');
+        this.attrReservationBandwidth = this.getAtt('ReservationBandwidth');
+        this.attrReservationInternetChargeType = this.getAtt('ReservationInternetChargeType');
+        this.attrReservationOrderType = this.getAtt('ReservationOrderType');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrServiceManaged = this.getAtt('ServiceManaged');
+        this.attrStatus = this.getAtt('Status');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.commonBandwidthPackageId = props.commonBandwidthPackageId;
+        this.commonBandwidthPackageName = props.commonBandwidthPackageName;
+        this.refreshOptions = props.refreshOptions;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            commonBandwidthPackageId: this.commonBandwidthPackageId,
+            commonBandwidthPackageName: this.commonBandwidthPackageName,
+            refreshOptions: this.refreshOptions,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosCommonBandwidthPackagePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 
@@ -558,6 +1489,14 @@ export interface RosCommonBandwidthPackagesProps {
     readonly commonBandwidthPackageName?: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property resourceGroupId: The ID of the resource group.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -576,6 +1515,13 @@ function RosCommonBandwidthPackagesPropsValidator(properties: any): ros.Validati
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('commonBandwidthPackageName', ros.validateString)(properties.commonBandwidthPackageName));
     errors.collect(ros.propertyValidator('commonBandwidthPackageId', ros.validateString)(properties.commonBandwidthPackageId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosCommonBandwidthPackagesProps"');
 }
 
@@ -593,9 +1539,10 @@ function rosCommonBandwidthPackagesPropsToRosTemplate(properties: any, enableRes
         RosCommonBandwidthPackagesPropsValidator(properties).assertSuccess();
     }
     return {
-      CommonBandwidthPackageId: ros.stringToRosTemplate(properties.commonBandwidthPackageId),
-      CommonBandwidthPackageName: ros.stringToRosTemplate(properties.commonBandwidthPackageName),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      'CommonBandwidthPackageId': ros.stringToRosTemplate(properties.commonBandwidthPackageId),
+      'CommonBandwidthPackageName': ros.stringToRosTemplate(properties.commonBandwidthPackageName),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
     };
 }
 
@@ -634,6 +1581,14 @@ export class RosCommonBandwidthPackages extends ros.RosResource {
     public commonBandwidthPackageName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: The ID of the resource group.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
@@ -651,6 +1606,7 @@ export class RosCommonBandwidthPackages extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.commonBandwidthPackageId = props.commonBandwidthPackageId;
         this.commonBandwidthPackageName = props.commonBandwidthPackageName;
+        this.refreshOptions = props.refreshOptions;
         this.resourceGroupId = props.resourceGroupId;
     }
 
@@ -659,6 +1615,7 @@ export class RosCommonBandwidthPackages extends ros.RosResource {
         return {
             commonBandwidthPackageId: this.commonBandwidthPackageId,
             commonBandwidthPackageName: this.commonBandwidthPackageName,
+            refreshOptions: this.refreshOptions,
             resourceGroupId: this.resourceGroupId,
         };
     }
@@ -677,6 +1634,14 @@ export interface RosCustomerGatewayProps {
      * @Property customerGatewayId: The ID of the customer gateway.
      */
     readonly customerGatewayId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -691,6 +1656,13 @@ function RosCustomerGatewayPropsValidator(properties: any): ros.ValidationResult
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('customerGatewayId', ros.requiredValidator)(properties.customerGatewayId));
     errors.collect(ros.propertyValidator('customerGatewayId', ros.validateString)(properties.customerGatewayId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosCustomerGatewayProps"');
 }
 
@@ -708,7 +1680,8 @@ function rosCustomerGatewayPropsToRosTemplate(properties: any, enableResourcePro
         RosCustomerGatewayPropsValidator(properties).assertSuccess();
     }
     return {
-      CustomerGatewayId: ros.stringToRosTemplate(properties.customerGatewayId),
+      'CustomerGatewayId': ros.stringToRosTemplate(properties.customerGatewayId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -767,6 +1740,14 @@ export class RosCustomerGateway extends ros.RosResource {
     public customerGatewayId: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -783,12 +1764,14 @@ export class RosCustomerGateway extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.customerGatewayId = props.customerGatewayId;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             customerGatewayId: this.customerGatewayId,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -806,6 +1789,14 @@ export interface RosCustomerGatewaysProps {
      * @Property customerGatewayId: The ID of the customer gateway.
      */
     readonly customerGatewayId?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -819,6 +1810,13 @@ function RosCustomerGatewaysPropsValidator(properties: any): ros.ValidationResul
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('customerGatewayId', ros.validateString)(properties.customerGatewayId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosCustomerGatewaysProps"');
 }
 
@@ -836,7 +1834,8 @@ function rosCustomerGatewaysPropsToRosTemplate(properties: any, enableResourcePr
         RosCustomerGatewaysPropsValidator(properties).assertSuccess();
     }
     return {
-      CustomerGatewayId: ros.stringToRosTemplate(properties.customerGatewayId),
+      'CustomerGatewayId': ros.stringToRosTemplate(properties.customerGatewayId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -870,6 +1869,14 @@ export class RosCustomerGateways extends ros.RosResource {
     public customerGatewayId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -881,12 +1888,14 @@ export class RosCustomerGateways extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.customerGatewayId = props.customerGatewayId;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             customerGatewayId: this.customerGatewayId,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -904,6 +1913,14 @@ export interface RosFlowLogProps {
      * @Property flowLogId: The flow log ID.
      */
     readonly flowLogId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -918,6 +1935,13 @@ function RosFlowLogPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('flowLogId', ros.requiredValidator)(properties.flowLogId));
     errors.collect(ros.propertyValidator('flowLogId', ros.validateString)(properties.flowLogId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosFlowLogProps"');
 }
 
@@ -935,7 +1959,8 @@ function rosFlowLogPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosFlowLogPropsValidator(properties).assertSuccess();
     }
     return {
-      FlowLogId: ros.stringToRosTemplate(properties.flowLogId),
+      'FlowLogId': ros.stringToRosTemplate(properties.flowLogId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -1014,6 +2039,14 @@ export class RosFlowLog extends ros.RosResource {
     public flowLogId: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1034,12 +2067,14 @@ export class RosFlowLog extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.flowLogId = props.flowLogId;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             flowLogId: this.flowLogId,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -1077,6 +2112,14 @@ export interface RosFlowLogsProps {
      * @Property projectName: Manage the captured traffic of the Project.
      */
     readonly projectName?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 
     /**
      * @Property resourceId: The ID of the resource group to which the flow log belongs.
@@ -1130,6 +2173,13 @@ function RosFlowLogsPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('trafficType', ros.validateString)(properties.trafficType));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosFlowLogsProps"');
 }
 
@@ -1147,14 +2197,15 @@ function rosFlowLogsPropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosFlowLogsPropsValidator(properties).assertSuccess();
     }
     return {
-      Description: ros.stringToRosTemplate(properties.description),
-      FlowLogId: ros.stringToRosTemplate(properties.flowLogId),
-      FlowLogName: ros.stringToRosTemplate(properties.flowLogName),
-      LogStoreName: ros.stringToRosTemplate(properties.logStoreName),
-      ProjectName: ros.stringToRosTemplate(properties.projectName),
-      ResourceId: ros.stringToRosTemplate(properties.resourceId),
-      ResourceType: ros.stringToRosTemplate(properties.resourceType),
-      TrafficType: ros.stringToRosTemplate(properties.trafficType),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'FlowLogId': ros.stringToRosTemplate(properties.flowLogId),
+      'FlowLogName': ros.stringToRosTemplate(properties.flowLogName),
+      'LogStoreName': ros.stringToRosTemplate(properties.logStoreName),
+      'ProjectName': ros.stringToRosTemplate(properties.projectName),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'ResourceId': ros.stringToRosTemplate(properties.resourceId),
+      'ResourceType': ros.stringToRosTemplate(properties.resourceType),
+      'TrafficType': ros.stringToRosTemplate(properties.trafficType),
     };
 }
 
@@ -1208,6 +2259,14 @@ export class RosFlowLogs extends ros.RosResource {
     public projectName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceId: The ID of the resource group to which the flow log belongs.
      */
     public resourceId: string | ros.IResolvable | undefined;
@@ -1244,6 +2303,7 @@ export class RosFlowLogs extends ros.RosResource {
         this.flowLogName = props.flowLogName;
         this.logStoreName = props.logStoreName;
         this.projectName = props.projectName;
+        this.refreshOptions = props.refreshOptions;
         this.resourceId = props.resourceId;
         this.resourceType = props.resourceType;
         this.trafficType = props.trafficType;
@@ -1257,6 +2317,7 @@ export class RosFlowLogs extends ros.RosResource {
             flowLogName: this.flowLogName,
             logStoreName: this.logStoreName,
             projectName: this.projectName,
+            refreshOptions: this.refreshOptions,
             resourceId: this.resourceId,
             resourceType: this.resourceType,
             trafficType: this.trafficType,
@@ -1277,6 +2338,14 @@ export interface RosHaVipProps {
      * @Property haVipId: The  ID of the resource.
      */
     readonly haVipId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -1291,6 +2360,13 @@ function RosHaVipPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('haVipId', ros.requiredValidator)(properties.haVipId));
     errors.collect(ros.propertyValidator('haVipId', ros.validateString)(properties.haVipId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosHaVipProps"');
 }
 
@@ -1308,7 +2384,8 @@ function rosHaVipPropsToRosTemplate(properties: any, enableResourcePropertyConst
         RosHaVipPropsValidator(properties).assertSuccess();
     }
     return {
-      HaVipId: ros.stringToRosTemplate(properties.haVipId),
+      'HaVipId': ros.stringToRosTemplate(properties.haVipId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -1387,6 +2464,14 @@ export class RosHaVip extends ros.RosResource {
     public haVipId: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1407,12 +2492,14 @@ export class RosHaVip extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.haVipId = props.haVipId;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             haVipId: this.haVipId,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -1430,6 +2517,14 @@ export interface RosHaVipsProps {
      * @Property haVipId: The  ID of the resource
      */
     readonly haVipId?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -1443,6 +2538,13 @@ function RosHaVipsPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('haVipId', ros.validateString)(properties.haVipId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosHaVipsProps"');
 }
 
@@ -1460,7 +2562,8 @@ function rosHaVipsPropsToRosTemplate(properties: any, enableResourcePropertyCons
         RosHaVipsPropsValidator(properties).assertSuccess();
     }
     return {
-      HaVipId: ros.stringToRosTemplate(properties.haVipId),
+      'HaVipId': ros.stringToRosTemplate(properties.haVipId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -1494,6 +2597,14 @@ export class RosHaVips extends ros.RosResource {
     public haVipId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1505,12 +2616,14 @@ export class RosHaVips extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.haVipId = props.haVipId;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             haVipId: this.haVipId,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -1528,6 +2641,14 @@ export interface RosIpv4GatewayProps {
      * @Property ipv4GatewayId: The resource attribute field that represents the resource level 1 ID.
      */
     readonly ipv4GatewayId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -1542,6 +2663,13 @@ function RosIpv4GatewayPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('ipv4GatewayId', ros.requiredValidator)(properties.ipv4GatewayId));
     errors.collect(ros.propertyValidator('ipv4GatewayId', ros.validateString)(properties.ipv4GatewayId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosIpv4GatewayProps"');
 }
 
@@ -1559,7 +2687,8 @@ function rosIpv4GatewayPropsToRosTemplate(properties: any, enableResourcePropert
         RosIpv4GatewayPropsValidator(properties).assertSuccess();
     }
     return {
-      Ipv4GatewayId: ros.stringToRosTemplate(properties.ipv4GatewayId),
+      'Ipv4GatewayId': ros.stringToRosTemplate(properties.ipv4GatewayId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -1618,6 +2747,14 @@ export class RosIpv4Gateway extends ros.RosResource {
     public ipv4GatewayId: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1634,12 +2771,14 @@ export class RosIpv4Gateway extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.ipv4GatewayId = props.ipv4GatewayId;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             ipv4GatewayId: this.ipv4GatewayId,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -1664,6 +2803,14 @@ export interface RosIpv4GatewaysProps {
     readonly ipv4GatewayName?: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property vpcId: The ID of the VPC associated with the IPv4 Gateway.
      */
     readonly vpcId?: string | ros.IResolvable;
@@ -1682,6 +2829,13 @@ function RosIpv4GatewaysPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('ipv4GatewayName', ros.validateString)(properties.ipv4GatewayName));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('ipv4GatewayId', ros.validateString)(properties.ipv4GatewayId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosIpv4GatewaysProps"');
 }
 
@@ -1699,9 +2853,10 @@ function rosIpv4GatewaysPropsToRosTemplate(properties: any, enableResourceProper
         RosIpv4GatewaysPropsValidator(properties).assertSuccess();
     }
     return {
-      Ipv4GatewayId: ros.stringToRosTemplate(properties.ipv4GatewayId),
-      Ipv4GatewayName: ros.stringToRosTemplate(properties.ipv4GatewayName),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
+      'Ipv4GatewayId': ros.stringToRosTemplate(properties.ipv4GatewayId),
+      'Ipv4GatewayName': ros.stringToRosTemplate(properties.ipv4GatewayName),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
     };
 }
 
@@ -1740,6 +2895,14 @@ export class RosIpv4Gateways extends ros.RosResource {
     public ipv4GatewayName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property vpcId: The ID of the VPC associated with the IPv4 Gateway.
      */
     public vpcId: string | ros.IResolvable | undefined;
@@ -1757,6 +2920,7 @@ export class RosIpv4Gateways extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.ipv4GatewayId = props.ipv4GatewayId;
         this.ipv4GatewayName = props.ipv4GatewayName;
+        this.refreshOptions = props.refreshOptions;
         this.vpcId = props.vpcId;
     }
 
@@ -1765,6 +2929,7 @@ export class RosIpv4Gateways extends ros.RosResource {
         return {
             ipv4GatewayId: this.ipv4GatewayId,
             ipv4GatewayName: this.ipv4GatewayName,
+            refreshOptions: this.refreshOptions,
             vpcId: this.vpcId,
         };
     }
@@ -1774,10 +2939,272 @@ export class RosIpv4Gateways extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosNatGateway`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natgateway
+ */
+export interface RosNatGatewayProps {
+
+    /**
+     * @Property natGatewayId: The ID of the NAT gateway.
+     */
+    readonly natGatewayId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosNatGatewayProps`
+ *
+ * @param properties - the TypeScript properties of a `RosNatGatewayProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosNatGatewayPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('natGatewayId', ros.requiredValidator)(properties.natGatewayId));
+    errors.collect(ros.propertyValidator('natGatewayId', ros.validateString)(properties.natGatewayId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
+    return errors.wrap('supplied properties not correct for "RosNatGatewayProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::VPC::NatGateway` resource
+ *
+ * @param properties - the TypeScript properties of a `RosNatGatewayProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::VPC::NatGateway` resource.
+ */
+// @ts-ignore TS6133
+function rosNatGatewayPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosNatGatewayPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'NatGatewayId': ros.stringToRosTemplate(properties.natGatewayId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NatGateway`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `NatGateway` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natgateway
+ */
+export class RosNatGateway extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::VPC::NatGateway";
+
+    /**
+     * @Attribute AutoPay: Indicates whether automatic payment is enabled. Valid values:
+* false: no
+true: yes
+     */
+    public readonly attrAutoPay: ros.IResolvable;
+
+    /**
+     * @Attribute BusinessStatus: The status of the NAT gateway. Valid values:
+* Normal: normal
+* FinancialLocked: locked due to overdue payments
+     */
+    public readonly attrBusinessStatus: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The time when the NAT gateway was created. The time follows the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. The time is displayed in UTC.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute DeletionProtection: Indicates whether the deletion protection feature is enabled. Valid values:
+* true: yes
+* false: no
+     */
+    public readonly attrDeletionProtection: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description of the NAT gateway.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute EipBindMode: The mode in which the NAT gateway is associated with an elastic IP address (EIP). Valid values:
+* MULTI_BINDED: multi-EIP-to-ENI mode* NAT: NAT mode, which is compatible with IPv4 addresses.
+     */
+    public readonly attrEipBindMode: ros.IResolvable;
+
+    /**
+     * @Attribute ExpiredTime: The time when the NAT gateway expires.
+     */
+    public readonly attrExpiredTime: ros.IResolvable;
+
+    /**
+     * @Attribute ForwardTableIds: The ID of the Destination Network Address Translation (DNAT) table.
+     */
+    public readonly attrForwardTableIds: ros.IResolvable;
+
+    /**
+     * @Attribute IcmpReplyEnabled: Indicates whether the ICMP non-retrieval feature is enabled. Valid values:
+* true: yes
+* false: no
+     */
+    public readonly attrIcmpReplyEnabled: ros.IResolvable;
+
+    /**
+     * @Attribute InternetChargeType: The metering method of the NAT gateway. Valid values:
+* PayBySpec: pay-by-specification
+* PayByLcu: pay-by-CU
+     */
+    public readonly attrInternetChargeType: ros.IResolvable;
+
+    /**
+     * @Attribute IpLists: The list of elastic IP addresses (EIPs) that are associated with the Internet NAT gateway.
+     */
+    public readonly attrIpLists: ros.IResolvable;
+
+    /**
+     * @Attribute NatGatewayId: The ID of the NAT gateway.
+     */
+    public readonly attrNatGatewayId: ros.IResolvable;
+
+    /**
+     * @Attribute NatGatewayName: The name of the NAT gateway. The name must be 1 to 128 characters in length, and cannot start with http:// or https://. If this parameter is not set, the system automatically assigns a name to the NAT gateway.
+     */
+    public readonly attrNatGatewayName: ros.IResolvable;
+
+    /**
+     * @Attribute NatGatewayPrivateInfo: The private network information about the enhanced Internet NAT gateway.
+     */
+    public readonly attrNatGatewayPrivateInfo: ros.IResolvable;
+
+    /**
+     * @Attribute NatType: The type of the NAT gateway. The value is set to Enhanced (enhanced NAT gateway).
+     */
+    public readonly attrNatType: ros.IResolvable;
+
+    /**
+     * @Attribute NetworkType: The type of NAT gateway. Valid values:
+* internet: an Internet NAT gateway
+* intranet: a VPC NAT gateway
+     */
+    public readonly attrNetworkType: ros.IResolvable;
+
+    /**
+     * @Attribute PaymentType: The billing method of the NAT gateway. Valid values:  PrePaid: subscription PostPaid: pay-as-you-go.
+     */
+    public readonly attrPaymentType: ros.IResolvable;
+
+    /**
+     * @Attribute SecurityProtectionEnabled: Indicates whether the firewall feature is enabled. Valid values:
+false: no
+true: yes
+     */
+    public readonly attrSecurityProtectionEnabled: ros.IResolvable;
+
+    /**
+     * @Attribute SnatTableIds: The ID of the SNAT table of the NAT gateway.
+     */
+    public readonly attrSnatTableIds: ros.IResolvable;
+
+    /**
+     * @Attribute Spec: The size of the NAT gateway. An empty value is returned for the parameter. If InternetChargeType is set to PayByLcu, an empty value is returned.
+     */
+    public readonly attrSpec: ros.IResolvable;
+
+    /**
+     * @Attribute VpcId: The ID of the VPC where the NAT gateway is deployed.
+     */
+    public readonly attrVpcId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property natGatewayId: The ID of the NAT gateway.
+     */
+    public natGatewayId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosNatGatewayProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosNatGateway.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAutoPay = this.getAtt('AutoPay');
+        this.attrBusinessStatus = this.getAtt('BusinessStatus');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDeletionProtection = this.getAtt('DeletionProtection');
+        this.attrDescription = this.getAtt('Description');
+        this.attrEipBindMode = this.getAtt('EipBindMode');
+        this.attrExpiredTime = this.getAtt('ExpiredTime');
+        this.attrForwardTableIds = this.getAtt('ForwardTableIds');
+        this.attrIcmpReplyEnabled = this.getAtt('IcmpReplyEnabled');
+        this.attrInternetChargeType = this.getAtt('InternetChargeType');
+        this.attrIpLists = this.getAtt('IpLists');
+        this.attrNatGatewayId = this.getAtt('NatGatewayId');
+        this.attrNatGatewayName = this.getAtt('NatGatewayName');
+        this.attrNatGatewayPrivateInfo = this.getAtt('NatGatewayPrivateInfo');
+        this.attrNatType = this.getAtt('NatType');
+        this.attrNetworkType = this.getAtt('NetworkType');
+        this.attrPaymentType = this.getAtt('PaymentType');
+        this.attrSecurityProtectionEnabled = this.getAtt('SecurityProtectionEnabled');
+        this.attrSnatTableIds = this.getAtt('SnatTableIds');
+        this.attrSpec = this.getAtt('Spec');
+        this.attrVpcId = this.getAtt('VpcId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.natGatewayId = props.natGatewayId;
+        this.refreshOptions = props.refreshOptions;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            natGatewayId: this.natGatewayId,
+            refreshOptions: this.refreshOptions,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosNatGatewayPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosNatGatewayZones`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natgatewayzones
  */
 export interface RosNatGatewayZonesProps {
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -1790,6 +3217,13 @@ export interface RosNatGatewayZonesProps {
 function RosNatGatewayZonesPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosNatGatewayZonesProps"');
 }
 
@@ -1807,6 +3241,7 @@ function rosNatGatewayZonesPropsToRosTemplate(properties: any, enableResourcePro
         RosNatGatewayZonesPropsValidator(properties).assertSuccess();
     }
     return {
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -1830,6 +3265,14 @@ export class RosNatGatewayZones extends ros.RosResource {
 
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1839,11 +3282,13 @@ export class RosNatGatewayZones extends ros.RosResource {
         this.attrZoneIds = this.getAtt('ZoneIds');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -1883,6 +3328,14 @@ export interface RosNatGatewaysProps {
      *  intranet: a VPC NAT gateway
      */
     readonly networkType?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: The ID of the resource group to which the NAT gateway belongs.
@@ -1929,6 +3382,13 @@ function RosNatGatewaysPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('natType', ros.validateString)(properties.natType));
     errors.collect(ros.propertyValidator('natGatewayId', ros.validateString)(properties.natGatewayId));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosNatGatewaysProps"');
 }
 
@@ -1946,15 +3406,16 @@ function rosNatGatewaysPropsToRosTemplate(properties: any, enableResourcePropert
         RosNatGatewaysPropsValidator(properties).assertSuccess();
     }
     return {
-      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
-      Name: ros.stringToRosTemplate(properties.name),
-      NatGatewayId: ros.stringToRosTemplate(properties.natGatewayId),
-      NatType: ros.stringToRosTemplate(properties.natType),
-      NetworkType: ros.stringToRosTemplate(properties.networkType),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Status: ros.stringToRosTemplate(properties.status),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      'InstanceChargeType': ros.stringToRosTemplate(properties.instanceChargeType),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'NatGatewayId': ros.stringToRosTemplate(properties.natGatewayId),
+      'NatType': ros.stringToRosTemplate(properties.natType),
+      'NetworkType': ros.stringToRosTemplate(properties.networkType),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Status': ros.stringToRosTemplate(properties.status),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
     };
 }
 
@@ -2010,6 +3471,14 @@ export class RosNatGateways extends ros.RosResource {
     public networkType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: The ID of the resource group to which the NAT gateway belongs.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
@@ -2050,6 +3519,7 @@ export class RosNatGateways extends ros.RosResource {
         this.natGatewayId = props.natGatewayId;
         this.natType = props.natType;
         this.networkType = props.networkType;
+        this.refreshOptions = props.refreshOptions;
         this.resourceGroupId = props.resourceGroupId;
         this.status = props.status;
         this.vpcId = props.vpcId;
@@ -2064,6 +3534,7 @@ export class RosNatGateways extends ros.RosResource {
             natGatewayId: this.natGatewayId,
             natType: this.natType,
             networkType: this.networkType,
+            refreshOptions: this.refreshOptions,
             resourceGroupId: this.resourceGroupId,
             status: this.status,
             vpcId: this.vpcId,
@@ -2090,6 +3561,14 @@ export interface RosNatIpCidrsProps {
      * @Property natIpCidr: Create a NAT IP ADDRESS. The new address segment must meet the following conditions: belong to 10.0.0.0\/8, 172.16.0.0\/12 or 192.168.0.0\/16 network segment and its subnet. Support the subnet mask of the number of bits in the range of 16 to 32-bit. If you want to use the IP address of a public network segment as the NAT IP ADDRESS, the Virtual Private Cloud (VPC NAT is already using the IP address of a public network of permissions. For more information, see create a virtual private cloud (VPC NAT gateway instance.
      */
     readonly natIpCidr?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -2105,6 +3584,13 @@ function RosNatIpCidrsPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('natIpCidr', ros.validateString)(properties.natIpCidr));
     errors.collect(ros.propertyValidator('natGatewayId', ros.requiredValidator)(properties.natGatewayId));
     errors.collect(ros.propertyValidator('natGatewayId', ros.validateString)(properties.natGatewayId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosNatIpCidrsProps"');
 }
 
@@ -2122,8 +3608,9 @@ function rosNatIpCidrsPropsToRosTemplate(properties: any, enableResourceProperty
         RosNatIpCidrsPropsValidator(properties).assertSuccess();
     }
     return {
-      NatGatewayId: ros.stringToRosTemplate(properties.natGatewayId),
-      NatIpCidr: ros.stringToRosTemplate(properties.natIpCidr),
+      'NatGatewayId': ros.stringToRosTemplate(properties.natGatewayId),
+      'NatIpCidr': ros.stringToRosTemplate(properties.natIpCidr),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -2162,6 +3649,14 @@ export class RosNatIpCidrs extends ros.RosResource {
     public natIpCidr: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2174,6 +3669,7 @@ export class RosNatIpCidrs extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.natGatewayId = props.natGatewayId;
         this.natIpCidr = props.natIpCidr;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
@@ -2181,6 +3677,7 @@ export class RosNatIpCidrs extends ros.RosResource {
         return {
             natGatewayId: this.natGatewayId,
             natIpCidr: this.natIpCidr,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -2204,6 +3701,14 @@ export interface RosNetworkAclsProps {
      * The name must be 2 to 128 characters in length, and can contain letters, digits, underscores (_), and hyphens (-). The name must start with a letter but cannot start with http:\/\/ or https:\/\/.
      */
     readonly networkAclName?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 
     /**
      * @Property resourceId: The ID of the associated instance.This parameter is valid only if ResourceType and ResourceId are both set.
@@ -2237,6 +3742,13 @@ function RosNetworkAclsPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('resourceId', ros.validateString)(properties.resourceId));
     errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
     errors.collect(ros.propertyValidator('networkAclName', ros.validateString)(properties.networkAclName));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosNetworkAclsProps"');
 }
 
@@ -2254,11 +3766,12 @@ function rosNetworkAclsPropsToRosTemplate(properties: any, enableResourcePropert
         RosNetworkAclsPropsValidator(properties).assertSuccess();
     }
     return {
-      NetworkAclId: ros.stringToRosTemplate(properties.networkAclId),
-      NetworkAclName: ros.stringToRosTemplate(properties.networkAclName),
-      ResourceId: ros.stringToRosTemplate(properties.resourceId),
-      ResourceType: ros.stringToRosTemplate(properties.resourceType),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
+      'NetworkAclId': ros.stringToRosTemplate(properties.networkAclId),
+      'NetworkAclName': ros.stringToRosTemplate(properties.networkAclName),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'ResourceId': ros.stringToRosTemplate(properties.resourceId),
+      'ResourceType': ros.stringToRosTemplate(properties.resourceType),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
     };
 }
 
@@ -2298,6 +3811,14 @@ export class RosNetworkAcls extends ros.RosResource {
     public networkAclName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceId: The ID of the associated instance.This parameter is valid only if ResourceType and ResourceId are both set.
      */
     public resourceId: string | ros.IResolvable | undefined;
@@ -2326,6 +3847,7 @@ export class RosNetworkAcls extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.networkAclId = props.networkAclId;
         this.networkAclName = props.networkAclName;
+        this.refreshOptions = props.refreshOptions;
         this.resourceId = props.resourceId;
         this.resourceType = props.resourceType;
         this.vpcId = props.vpcId;
@@ -2336,6 +3858,7 @@ export class RosNetworkAcls extends ros.RosResource {
         return {
             networkAclId: this.networkAclId,
             networkAclName: this.networkAclName,
+            refreshOptions: this.refreshOptions,
             resourceId: this.resourceId,
             resourceType: this.resourceType,
             vpcId: this.vpcId,
@@ -2356,6 +3879,14 @@ export interface RosPrefixListProps {
      * @Property prefixListId: The ID of the query Prefix List.
      */
     readonly prefixListId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -2370,6 +3901,13 @@ function RosPrefixListPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('prefixListId', ros.requiredValidator)(properties.prefixListId));
     errors.collect(ros.propertyValidator('prefixListId', ros.validateString)(properties.prefixListId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosPrefixListProps"');
 }
 
@@ -2387,7 +3925,8 @@ function rosPrefixListPropsToRosTemplate(properties: any, enableResourceProperty
         RosPrefixListPropsValidator(properties).assertSuccess();
     }
     return {
-      PrefixListId: ros.stringToRosTemplate(properties.prefixListId),
+      'PrefixListId': ros.stringToRosTemplate(properties.prefixListId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -2466,6 +4005,14 @@ export class RosPrefixList extends ros.RosResource {
     public prefixListId: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2486,12 +4033,14 @@ export class RosPrefixList extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.prefixListId = props.prefixListId;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             prefixListId: this.prefixListId,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -2511,6 +4060,14 @@ export interface RosPrefixListsProps {
     readonly prefixListName?: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property resourceGroupId: The ID of the resource group to which the VPC belongs.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -2528,6 +4085,13 @@ function RosPrefixListsPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('prefixListName', ros.validateString)(properties.prefixListName));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosPrefixListsProps"');
 }
 
@@ -2545,8 +4109,9 @@ function rosPrefixListsPropsToRosTemplate(properties: any, enableResourcePropert
         RosPrefixListsPropsValidator(properties).assertSuccess();
     }
     return {
-      PrefixListName: ros.stringToRosTemplate(properties.prefixListName),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      'PrefixListName': ros.stringToRosTemplate(properties.prefixListName),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
     };
 }
 
@@ -2580,6 +4145,14 @@ export class RosPrefixLists extends ros.RosResource {
     public prefixListName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: The ID of the resource group to which the VPC belongs.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
@@ -2596,6 +4169,7 @@ export class RosPrefixLists extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.prefixListName = props.prefixListName;
+        this.refreshOptions = props.refreshOptions;
         this.resourceGroupId = props.resourceGroupId;
     }
 
@@ -2603,6 +4177,7 @@ export class RosPrefixLists extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             prefixListName: this.prefixListName,
+            refreshOptions: this.refreshOptions,
             resourceGroupId: this.resourceGroupId,
         };
     }
@@ -2621,6 +4196,14 @@ export interface RosPublicIpAddressPoolProps {
      * @Property publicIpAddressPoolId: The first ID of the resource.
      */
     readonly publicIpAddressPoolId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -2635,6 +4218,13 @@ function RosPublicIpAddressPoolPropsValidator(properties: any): ros.ValidationRe
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('publicIpAddressPoolId', ros.requiredValidator)(properties.publicIpAddressPoolId));
     errors.collect(ros.propertyValidator('publicIpAddressPoolId', ros.validateString)(properties.publicIpAddressPoolId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosPublicIpAddressPoolProps"');
 }
 
@@ -2652,7 +4242,8 @@ function rosPublicIpAddressPoolPropsToRosTemplate(properties: any, enableResourc
         RosPublicIpAddressPoolPropsValidator(properties).assertSuccess();
     }
     return {
-      PublicIpAddressPoolId: ros.stringToRosTemplate(properties.publicIpAddressPoolId),
+      'PublicIpAddressPoolId': ros.stringToRosTemplate(properties.publicIpAddressPoolId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -2726,6 +4317,14 @@ export class RosPublicIpAddressPool extends ros.RosResource {
     public publicIpAddressPoolId: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2745,12 +4344,14 @@ export class RosPublicIpAddressPool extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.publicIpAddressPoolId = props.publicIpAddressPoolId;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             publicIpAddressPoolId: this.publicIpAddressPoolId,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -2790,6 +4391,14 @@ export interface RosPublicIpAddressPoolsProps {
     readonly publicIpAddressPoolName?: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property resourceGroupId: The ID of the resource group to which the IP address pool belongs.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -2814,6 +4423,13 @@ function RosPublicIpAddressPoolsPropsValidator(properties: any): ros.ValidationR
         }));
     }
     errors.collect(ros.propertyValidator('isp', ros.validateString)(properties.isp));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosPublicIpAddressPoolsProps"');
 }
 
@@ -2831,9 +4447,10 @@ function rosPublicIpAddressPoolsPropsToRosTemplate(properties: any, enableResour
         RosPublicIpAddressPoolsPropsValidator(properties).assertSuccess();
     }
     return {
-      Isp: ros.stringToRosTemplate(properties.isp),
-      PublicIpAddressPoolName: ros.stringToRosTemplate(properties.publicIpAddressPoolName),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      'Isp': ros.stringToRosTemplate(properties.isp),
+      'PublicIpAddressPoolName': ros.stringToRosTemplate(properties.publicIpAddressPoolName),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
     };
 }
 
@@ -2887,6 +4504,14 @@ export class RosPublicIpAddressPools extends ros.RosResource {
     public publicIpAddressPoolName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: The ID of the resource group to which the IP address pool belongs.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
@@ -2904,6 +4529,7 @@ export class RosPublicIpAddressPools extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.isp = props.isp;
         this.publicIpAddressPoolName = props.publicIpAddressPoolName;
+        this.refreshOptions = props.refreshOptions;
         this.resourceGroupId = props.resourceGroupId;
     }
 
@@ -2912,6 +4538,7 @@ export class RosPublicIpAddressPools extends ros.RosResource {
         return {
             isp: this.isp,
             publicIpAddressPoolName: this.publicIpAddressPoolName,
+            refreshOptions: this.refreshOptions,
             resourceGroupId: this.resourceGroupId,
         };
     }
@@ -2962,6 +4589,14 @@ export interface RosRouteEntriesProps {
     readonly nextHopType?: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * @Property routeEntryId: The ID of the route.
      */
     readonly routeEntryId?: string | ros.IResolvable;
@@ -3000,6 +4635,13 @@ function RosRouteEntriesPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('routeEntryType', ros.validateString)(properties.routeEntryType));
     errors.collect(ros.propertyValidator('nextHopId', ros.validateString)(properties.nextHopId));
     errors.collect(ros.propertyValidator('destinationCidrBlock', ros.validateString)(properties.destinationCidrBlock));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosRouteEntriesProps"');
 }
 
@@ -3017,14 +4659,15 @@ function rosRouteEntriesPropsToRosTemplate(properties: any, enableResourceProper
         RosRouteEntriesPropsValidator(properties).assertSuccess();
     }
     return {
-      RouteTableId: ros.stringToRosTemplate(properties.routeTableId),
-      DestinationCidrBlock: ros.stringToRosTemplate(properties.destinationCidrBlock),
-      IpVersion: ros.stringToRosTemplate(properties.ipVersion),
-      NextHopId: ros.stringToRosTemplate(properties.nextHopId),
-      NextHopType: ros.stringToRosTemplate(properties.nextHopType),
-      RouteEntryId: ros.stringToRosTemplate(properties.routeEntryId),
-      RouteEntryName: ros.stringToRosTemplate(properties.routeEntryName),
-      RouteEntryType: ros.stringToRosTemplate(properties.routeEntryType),
+      'RouteTableId': ros.stringToRosTemplate(properties.routeTableId),
+      'DestinationCidrBlock': ros.stringToRosTemplate(properties.destinationCidrBlock),
+      'IpVersion': ros.stringToRosTemplate(properties.ipVersion),
+      'NextHopId': ros.stringToRosTemplate(properties.nextHopId),
+      'NextHopType': ros.stringToRosTemplate(properties.nextHopType),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'RouteEntryId': ros.stringToRosTemplate(properties.routeEntryId),
+      'RouteEntryName': ros.stringToRosTemplate(properties.routeEntryName),
+      'RouteEntryType': ros.stringToRosTemplate(properties.routeEntryType),
     };
 }
 
@@ -3088,6 +4731,14 @@ export class RosRouteEntries extends ros.RosResource {
     public nextHopType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property routeEntryId: The ID of the route.
      */
     public routeEntryId: string | ros.IResolvable | undefined;
@@ -3122,6 +4773,7 @@ export class RosRouteEntries extends ros.RosResource {
         this.ipVersion = props.ipVersion;
         this.nextHopId = props.nextHopId;
         this.nextHopType = props.nextHopType;
+        this.refreshOptions = props.refreshOptions;
         this.routeEntryId = props.routeEntryId;
         this.routeEntryName = props.routeEntryName;
         this.routeEntryType = props.routeEntryType;
@@ -3135,6 +4787,7 @@ export class RosRouteEntries extends ros.RosResource {
             ipVersion: this.ipVersion,
             nextHopId: this.nextHopId,
             nextHopType: this.nextHopType,
+            refreshOptions: this.refreshOptions,
             routeEntryId: this.routeEntryId,
             routeEntryName: this.routeEntryName,
             routeEntryType: this.routeEntryType,
@@ -3155,6 +4808,14 @@ export interface RosRouteTableProps {
      * @Property routeTableId: The ID of the routing table.
      */
     readonly routeTableId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -3169,6 +4830,13 @@ function RosRouteTablePropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('routeTableId', ros.requiredValidator)(properties.routeTableId));
     errors.collect(ros.propertyValidator('routeTableId', ros.validateString)(properties.routeTableId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosRouteTableProps"');
 }
 
@@ -3186,7 +4854,8 @@ function rosRouteTablePropsToRosTemplate(properties: any, enableResourceProperty
         RosRouteTablePropsValidator(properties).assertSuccess();
     }
     return {
-      RouteTableId: ros.stringToRosTemplate(properties.routeTableId),
+      'RouteTableId': ros.stringToRosTemplate(properties.routeTableId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -3265,6 +4934,14 @@ export class RosRouteTable extends ros.RosResource {
     public routeTableId: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3285,12 +4962,14 @@ export class RosRouteTable extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.routeTableId = props.routeTableId;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             routeTableId: this.routeTableId,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -3303,6 +4982,14 @@ export class RosRouteTable extends ros.RosResource {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-routetables
  */
 export interface RosRouteTablesProps {
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: The ID of the resource group to which the route table belongs.
@@ -3354,6 +5041,13 @@ function RosRouteTablesPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('routerType', ros.validateString)(properties.routerType));
     errors.collect(ros.propertyValidator('routerId', ros.validateString)(properties.routerId));
     errors.collect(ros.propertyValidator('routeTableName', ros.validateString)(properties.routeTableName));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosRouteTablesProps"');
 }
 
@@ -3371,12 +5065,13 @@ function rosRouteTablesPropsToRosTemplate(properties: any, enableResourcePropert
         RosRouteTablesPropsValidator(properties).assertSuccess();
     }
     return {
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      RouterId: ros.stringToRosTemplate(properties.routerId),
-      RouterType: ros.stringToRosTemplate(properties.routerType),
-      RouteTableId: ros.stringToRosTemplate(properties.routeTableId),
-      RouteTableName: ros.stringToRosTemplate(properties.routeTableName),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'RouterId': ros.stringToRosTemplate(properties.routerId),
+      'RouterType': ros.stringToRosTemplate(properties.routerType),
+      'RouteTableId': ros.stringToRosTemplate(properties.routeTableId),
+      'RouteTableName': ros.stringToRosTemplate(properties.routeTableName),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
     };
 }
 
@@ -3403,6 +5098,14 @@ export class RosRouteTables extends ros.RosResource {
 
     public enableResourcePropertyConstraint: boolean;
 
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
 
     /**
      * @Property resourceGroupId: The ID of the resource group to which the route table belongs.
@@ -3448,6 +5151,7 @@ export class RosRouteTables extends ros.RosResource {
         this.attrRouteTables = this.getAtt('RouteTables');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.refreshOptions = props.refreshOptions;
         this.resourceGroupId = props.resourceGroupId;
         this.routerId = props.routerId;
         this.routerType = props.routerType;
@@ -3459,6 +5163,7 @@ export class RosRouteTables extends ros.RosResource {
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
+            refreshOptions: this.refreshOptions,
             resourceGroupId: this.resourceGroupId,
             routerId: this.routerId,
             routerType: this.routerType,
@@ -3482,6 +5187,14 @@ export interface RosTrafficMirrorFilterProps {
      * @Property trafficMirrorFilterId: The first ID of the resource.
      */
     readonly trafficMirrorFilterId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -3496,6 +5209,13 @@ function RosTrafficMirrorFilterPropsValidator(properties: any): ros.ValidationRe
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('trafficMirrorFilterId', ros.requiredValidator)(properties.trafficMirrorFilterId));
     errors.collect(ros.propertyValidator('trafficMirrorFilterId', ros.validateString)(properties.trafficMirrorFilterId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosTrafficMirrorFilterProps"');
 }
 
@@ -3513,7 +5233,8 @@ function rosTrafficMirrorFilterPropsToRosTemplate(properties: any, enableResourc
         RosTrafficMirrorFilterPropsValidator(properties).assertSuccess();
     }
     return {
-      TrafficMirrorFilterId: ros.stringToRosTemplate(properties.trafficMirrorFilterId),
+      'TrafficMirrorFilterId': ros.stringToRosTemplate(properties.trafficMirrorFilterId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -3562,6 +5283,14 @@ export class RosTrafficMirrorFilter extends ros.RosResource {
     public trafficMirrorFilterId: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3576,12 +5305,14 @@ export class RosTrafficMirrorFilter extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.trafficMirrorFilterId = props.trafficMirrorFilterId;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             trafficMirrorFilterId: this.trafficMirrorFilterId,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -3594,6 +5325,14 @@ export class RosTrafficMirrorFilter extends ros.RosResource {
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-trafficmirrorfilters
  */
 export interface RosTrafficMirrorFiltersProps {
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 
     /**
      * @Property trafficMirrorFilterName: The name of the TrafficMirrorFilter.
@@ -3612,6 +5351,13 @@ function RosTrafficMirrorFiltersPropsValidator(properties: any): ros.ValidationR
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('trafficMirrorFilterName', ros.validateString)(properties.trafficMirrorFilterName));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosTrafficMirrorFiltersProps"');
 }
 
@@ -3629,7 +5375,8 @@ function rosTrafficMirrorFiltersPropsToRosTemplate(properties: any, enableResour
         RosTrafficMirrorFiltersPropsValidator(properties).assertSuccess();
     }
     return {
-      TrafficMirrorFilterName: ros.stringToRosTemplate(properties.trafficMirrorFilterName),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'TrafficMirrorFilterName': ros.stringToRosTemplate(properties.trafficMirrorFilterName),
     };
 }
 
@@ -3658,6 +5405,14 @@ export class RosTrafficMirrorFilters extends ros.RosResource {
 
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property trafficMirrorFilterName: The name of the TrafficMirrorFilter.
      */
     public trafficMirrorFilterName: string | ros.IResolvable | undefined;
@@ -3673,12 +5428,14 @@ export class RosTrafficMirrorFilters extends ros.RosResource {
         this.attrTrafficMirrorFilters = this.getAtt('TrafficMirrorFilters');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.refreshOptions = props.refreshOptions;
         this.trafficMirrorFilterName = props.trafficMirrorFilterName;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
+            refreshOptions: this.refreshOptions,
             trafficMirrorFilterName: this.trafficMirrorFilterName,
         };
     }
@@ -3697,6 +5454,14 @@ export interface RosVSwitchProps {
      * @Property vSwitchId: The ID of the VSwitch.
      */
     readonly vSwitchId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -3711,6 +5476,13 @@ function RosVSwitchPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosVSwitchProps"');
 }
 
@@ -3728,7 +5500,8 @@ function rosVSwitchPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosVSwitchPropsValidator(properties).assertSuccess();
     }
     return {
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -3817,6 +5590,14 @@ export class RosVSwitch extends ros.RosResource {
     public vSwitchId: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3839,12 +5620,14 @@ export class RosVSwitch extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.vSwitchId = props.vSwitchId;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             vSwitchId: this.vSwitchId,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -3869,6 +5652,14 @@ export interface RosVSwitchesProps {
      * false: does not query the default VPC.
      */
     readonly isDefault?: boolean | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: The ID of the resource group to which the VPC to be queried belongs.
@@ -3927,6 +5718,13 @@ function RosVSwitchesPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateString))(properties.vSwitchIds));
     errors.collect(ros.propertyValidator('vSwitchOwnerId', ros.validateString)(properties.vSwitchOwnerId));
     errors.collect(ros.propertyValidator('vSwitchName', ros.validateString)(properties.vSwitchName));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosVSwitchesProps"');
 }
 
@@ -3944,14 +5742,15 @@ function rosVSwitchesPropsToRosTemplate(properties: any, enableResourcePropertyC
         RosVSwitchesPropsValidator(properties).assertSuccess();
     }
     return {
-      DhcpOptionsSetId: ros.stringToRosTemplate(properties.dhcpOptionsSetId),
-      IsDefault: ros.booleanToRosTemplate(properties.isDefault),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      RouteTableId: ros.stringToRosTemplate(properties.routeTableId),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchIds: ros.listMapper(ros.stringToRosTemplate)(properties.vSwitchIds),
-      VSwitchName: ros.stringToRosTemplate(properties.vSwitchName),
-      VSwitchOwnerId: ros.stringToRosTemplate(properties.vSwitchOwnerId),
+      'DhcpOptionsSetId': ros.stringToRosTemplate(properties.dhcpOptionsSetId),
+      'IsDefault': ros.booleanToRosTemplate(properties.isDefault),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'RouteTableId': ros.stringToRosTemplate(properties.routeTableId),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchIds': ros.listMapper(ros.stringToRosTemplate)(properties.vSwitchIds),
+      'VSwitchName': ros.stringToRosTemplate(properties.vSwitchName),
+      'VSwitchOwnerId': ros.stringToRosTemplate(properties.vSwitchOwnerId),
     };
 }
 
@@ -3990,6 +5789,14 @@ export class RosVSwitches extends ros.RosResource {
      * false: does not query the default VPC.
      */
     public isDefault: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
 
     /**
      * @Property resourceGroupId: The ID of the resource group to which the VPC to be queried belongs.
@@ -4035,6 +5842,7 @@ export class RosVSwitches extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.dhcpOptionsSetId = props.dhcpOptionsSetId;
         this.isDefault = props.isDefault;
+        this.refreshOptions = props.refreshOptions;
         this.resourceGroupId = props.resourceGroupId;
         this.routeTableId = props.routeTableId;
         this.vpcId = props.vpcId;
@@ -4048,6 +5856,7 @@ export class RosVSwitches extends ros.RosResource {
         return {
             dhcpOptionsSetId: this.dhcpOptionsSetId,
             isDefault: this.isDefault,
+            refreshOptions: this.refreshOptions,
             resourceGroupId: this.resourceGroupId,
             routeTableId: this.routeTableId,
             vpcId: this.vpcId,
@@ -4071,6 +5880,14 @@ export interface RosVpcProps {
      * @Property vpcId: The ID of the VPC.
      */
     readonly vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -4085,6 +5902,13 @@ function RosVpcPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosVpcProps"');
 }
 
@@ -4102,7 +5926,8 @@ function rosVpcPropsToRosTemplate(properties: any, enableResourcePropertyConstra
         RosVpcPropsValidator(properties).assertSuccess();
     }
     return {
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -4208,6 +6033,14 @@ export class RosVpc extends ros.RosResource {
     public vpcId: string | ros.IResolvable;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -4233,12 +6066,14 @@ export class RosVpc extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.vpcId = props.vpcId;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             vpcId: this.vpcId,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -4263,6 +6098,14 @@ export interface RosVpcsProps {
      * false: does not query the default VPC.
      */
     readonly isDefault?: boolean | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: The ID of the resource group to which the VPC to be queried belongs.
@@ -4309,6 +6152,13 @@ function RosVpcsPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('vpcIds', ros.listValidator(ros.validateString))(properties.vpcIds));
     errors.collect(ros.propertyValidator('vpcName', ros.validateString)(properties.vpcName));
     errors.collect(ros.propertyValidator('vpcOwnerId', ros.validateString)(properties.vpcOwnerId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosVpcsProps"');
 }
 
@@ -4326,12 +6176,13 @@ function rosVpcsPropsToRosTemplate(properties: any, enableResourcePropertyConstr
         RosVpcsPropsValidator(properties).assertSuccess();
     }
     return {
-      DhcpOptionsSetId: ros.stringToRosTemplate(properties.dhcpOptionsSetId),
-      IsDefault: ros.booleanToRosTemplate(properties.isDefault),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      VpcIds: ros.listMapper(ros.stringToRosTemplate)(properties.vpcIds),
-      VpcName: ros.stringToRosTemplate(properties.vpcName),
-      VpcOwnerId: ros.stringToRosTemplate(properties.vpcOwnerId),
+      'DhcpOptionsSetId': ros.stringToRosTemplate(properties.dhcpOptionsSetId),
+      'IsDefault': ros.booleanToRosTemplate(properties.isDefault),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'VpcIds': ros.listMapper(ros.stringToRosTemplate)(properties.vpcIds),
+      'VpcName': ros.stringToRosTemplate(properties.vpcName),
+      'VpcOwnerId': ros.stringToRosTemplate(properties.vpcOwnerId),
     };
 }
 
@@ -4372,6 +6223,14 @@ export class RosVpcs extends ros.RosResource {
     public isDefault: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: The ID of the resource group to which the VPC to be queried belongs.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
@@ -4405,6 +6264,7 @@ export class RosVpcs extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.dhcpOptionsSetId = props.dhcpOptionsSetId;
         this.isDefault = props.isDefault;
+        this.refreshOptions = props.refreshOptions;
         this.resourceGroupId = props.resourceGroupId;
         this.vpcIds = props.vpcIds;
         this.vpcName = props.vpcName;
@@ -4416,6 +6276,7 @@ export class RosVpcs extends ros.RosResource {
         return {
             dhcpOptionsSetId: this.dhcpOptionsSetId,
             isDefault: this.isDefault,
+            refreshOptions: this.refreshOptions,
             resourceGroupId: this.resourceGroupId,
             vpcIds: this.vpcIds,
             vpcName: this.vpcName,

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ROS::AutoEnableService</code>, which is used to activate an Alibaba Cloud service.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.064Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:23.886Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.AutoEnableService")
 public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
 
@@ -112,6 +112,10 @@ public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
          * Valid values:
          * AHAS: Application High Availability Service
          * ARMS: Realtime Monitoring Service
+         * ARMS/App: Application Monitoring: Basic Edition
+         * ARMS/Web: Front End Monitoring: Basic Edition
+         * ARMS/PrometheusMonitor: Prometheus Monitoring: Expert Edition
+         * ARMS/SyntheticPost: Cloud Dial Test: Expert Edition (pay as you go)
          * ApiGateway: API Gateway
          * BatchCompute: Batch Compute
          * BrainIndustrial: Brain Industrial
@@ -167,6 +171,10 @@ public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
          * Valid values:
          * AHAS: Application High Availability Service
          * ARMS: Realtime Monitoring Service
+         * ARMS/App: Application Monitoring: Basic Edition
+         * ARMS/Web: Front End Monitoring: Basic Edition
+         * ARMS/PrometheusMonitor: Prometheus Monitoring: Expert Edition
+         * ARMS/SyntheticPost: Cloud Dial Test: Expert Edition (pay as you go)
          * ApiGateway: API Gateway
          * BatchCompute: Batch Compute
          * BrainIndustrial: Brain Industrial

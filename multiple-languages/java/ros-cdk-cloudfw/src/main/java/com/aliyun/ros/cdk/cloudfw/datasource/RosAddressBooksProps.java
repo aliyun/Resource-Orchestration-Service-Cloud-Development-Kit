@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cloudfw.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudfw-addressbooks
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.953Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:18.447Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.datasource.RosAddressBooksProps")
 @software.amazon.jsii.Jsii.Proxy(RosAddressBooksProps.Jsii$Proxy.class)
 public interface RosAddressBooksProps extends software.amazon.jsii.JsiiSerializable {
@@ -23,6 +23,12 @@ public interface RosAddressBooksProps extends software.amazon.jsii.JsiiSerializa
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosAddressBooksProps}
      */
     static Builder builder() {
@@ -34,6 +40,7 @@ public interface RosAddressBooksProps extends software.amazon.jsii.JsiiSerializa
     public static final class Builder implements software.amazon.jsii.Builder<RosAddressBooksProps> {
         java.lang.Object groupType;
         java.lang.Object lang;
+        java.lang.Object refreshOptions;
 
         /**
          * Sets the value of {@link RosAddressBooksProps#getGroupType}
@@ -76,6 +83,26 @@ public interface RosAddressBooksProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosAddressBooksProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAddressBooksProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosAddressBooksProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -93,6 +120,7 @@ public interface RosAddressBooksProps extends software.amazon.jsii.JsiiSerializa
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosAddressBooksProps {
         private final java.lang.Object groupType;
         private final java.lang.Object lang;
+        private final java.lang.Object refreshOptions;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -102,6 +130,7 @@ public interface RosAddressBooksProps extends software.amazon.jsii.JsiiSerializa
             super(objRef);
             this.groupType = software.amazon.jsii.Kernel.get(this, "groupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.lang = software.amazon.jsii.Kernel.get(this, "lang", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -111,6 +140,7 @@ public interface RosAddressBooksProps extends software.amazon.jsii.JsiiSerializa
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.groupType = builder.groupType;
             this.lang = builder.lang;
+            this.refreshOptions = builder.refreshOptions;
         }
 
         @Override
@@ -124,6 +154,11 @@ public interface RosAddressBooksProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -134,6 +169,9 @@ public interface RosAddressBooksProps extends software.amazon.jsii.JsiiSerializa
             }
             if (this.getLang() != null) {
                 data.set("lang", om.valueToTree(this.getLang()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -154,13 +192,15 @@ public interface RosAddressBooksProps extends software.amazon.jsii.JsiiSerializa
             RosAddressBooksProps.Jsii$Proxy that = (RosAddressBooksProps.Jsii$Proxy) o;
 
             if (this.groupType != null ? !this.groupType.equals(that.groupType) : that.groupType != null) return false;
-            return this.lang != null ? this.lang.equals(that.lang) : that.lang == null;
+            if (this.lang != null ? !this.lang.equals(that.lang) : that.lang != null) return false;
+            return this.refreshOptions != null ? this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.groupType != null ? this.groupType.hashCode() : 0;
             result = 31 * result + (this.lang != null ? this.lang.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             return result;
         }
     }

@@ -43,7 +43,7 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
         RosDomainPropsValidator(properties).assertSuccess();
     }
     return {
-      DomainName: ros.stringToRosTemplate(properties.domainName),
+      'DomainName': ros.stringToRosTemplate(properties.domainName),
     };
 }
 
@@ -238,7 +238,7 @@ function rosIpfilterPropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosIpfilterPropsValidator(properties).assertSuccess();
     }
     return {
-      IpAddress: ros.stringToRosTemplate(properties.ipAddress),
+      'IpAddress': ros.stringToRosTemplate(properties.ipAddress),
     };
 }
 

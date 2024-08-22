@@ -8,6 +8,14 @@ export { RosFlows as FlowsProperty };
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fnf-flows
  */
 export interface FlowsProps {
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -44,8 +52,8 @@ export class Flows extends ros.Resource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosFlows = new RosFlows(this, id,  {
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
-        props;
         this.resource = rosFlows;
         this.attrFlowNames = rosFlows.attrFlowNames;
         this.attrFlows = rosFlows.attrFlows;

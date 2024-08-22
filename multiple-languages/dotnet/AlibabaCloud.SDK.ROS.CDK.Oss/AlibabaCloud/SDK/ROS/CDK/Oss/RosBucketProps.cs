@@ -488,16 +488,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
             }
         }
 
-        private object? _websiteConfiguration;
+        private object? _websiteConfigurationV2;
 
         /// <remarks>
-        /// <strong>Property</strong>: websiteConfiguration: The properties of website config.
+        /// <strong>Property</strong>: websiteConfigurationV2: Website configuration.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "websiteConfiguration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-oss.RosBucket.WebsiteConfigurationProperty\"}]}}", isOptional: true)]
-        public object? WebsiteConfiguration
+        [JsiiProperty(name: "websiteConfigurationV2", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-oss.RosBucket.WebsiteConfigurationV2Property\"}]}}", isOptional: true)]
+        public object? WebsiteConfigurationV2
         {
-            get => _websiteConfiguration;
+            get => _websiteConfigurationV2;
             set
             {
                 if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
@@ -506,7 +506,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
                     {
                         case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
                             break;
-                        case AlibabaCloud.SDK.ROS.CDK.Oss.RosBucket.IWebsiteConfigurationProperty cast_cd4240:
+                        case AlibabaCloud.SDK.ROS.CDK.Oss.RosBucket.IWebsiteConfigurationV2Property cast_cd4240:
                             break;
                         case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
                             // Not enough information to type-check...
@@ -514,10 +514,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
                         case null:
                             break;
                         default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Oss.RosBucket.IWebsiteConfigurationProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Oss.RosBucket.IWebsiteConfigurationV2Property).FullName}; received {value.GetType().FullName}", nameof(value));
                     }
                 }
-                _websiteConfiguration = value;
+                _websiteConfigurationV2 = value;
             }
         }
     }

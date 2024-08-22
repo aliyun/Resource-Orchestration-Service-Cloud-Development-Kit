@@ -60,6 +60,14 @@ export interface InstanceClassesProps {
     readonly productType?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property resourceGroupId: The ID of the instance.
      *  Note This parameter is required only if the OrderType parameter is set to UPGRADE or RENEW.
      */
@@ -115,6 +123,7 @@ export class InstanceClasses extends ros.Resource {
             productType: props.productType,
             acceptLanguage: props.acceptLanguage,
             engine: props.engine,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstanceClasses;
         this.attrInstanceClassIds = rosInstanceClasses.attrInstanceClassIds;

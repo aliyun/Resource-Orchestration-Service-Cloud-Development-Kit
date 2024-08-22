@@ -17,6 +17,14 @@ export interface RosAliasesProps {
      * @Property prefix: Qualified returned alias names must be prefixed with Prefix. For example, if the Prefix is "a", the returned alias names should be started with "a".
      */
     readonly prefix?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -32,6 +40,13 @@ function RosAliasesPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('serviceName', ros.requiredValidator)(properties.serviceName));
     errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
     errors.collect(ros.propertyValidator('prefix', ros.validateString)(properties.prefix));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosAliasesProps"');
 }
 
@@ -49,8 +64,9 @@ function rosAliasesPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosAliasesPropsValidator(properties).assertSuccess();
     }
     return {
-      ServiceName: ros.stringToRosTemplate(properties.serviceName),
-      Prefix: ros.stringToRosTemplate(properties.prefix),
+      'ServiceName': ros.stringToRosTemplate(properties.serviceName),
+      'Prefix': ros.stringToRosTemplate(properties.prefix),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -89,6 +105,14 @@ export class RosAliases extends ros.RosResource {
     public prefix: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -101,6 +125,7 @@ export class RosAliases extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.serviceName = props.serviceName;
         this.prefix = props.prefix;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
@@ -108,6 +133,7 @@ export class RosAliases extends ros.RosResource {
         return {
             serviceName: this.serviceName,
             prefix: this.prefix,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -125,6 +151,14 @@ export interface RosCustomDomainsProps {
      * @Property prefix: Qualified returned custom domain names must be prefixed with Prefix. For example, if the Prefix is "a", the returned custom domain names should be started with "a".
      */
     readonly prefix?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -138,6 +172,13 @@ function RosCustomDomainsPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('prefix', ros.validateString)(properties.prefix));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosCustomDomainsProps"');
 }
 
@@ -155,7 +196,8 @@ function rosCustomDomainsPropsToRosTemplate(properties: any, enableResourcePrope
         RosCustomDomainsPropsValidator(properties).assertSuccess();
     }
     return {
-      Prefix: ros.stringToRosTemplate(properties.prefix),
+      'Prefix': ros.stringToRosTemplate(properties.prefix),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -189,6 +231,14 @@ export class RosCustomDomains extends ros.RosResource {
     public prefix: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -200,12 +250,14 @@ export class RosCustomDomains extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.prefix = props.prefix;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             prefix: this.prefix,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -233,6 +285,14 @@ export interface RosFunctionsProps {
      * @Property qualifier: The service version, which can be version ID or alias name.
      */
     readonly qualifier?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -249,6 +309,13 @@ function RosFunctionsPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
     errors.collect(ros.propertyValidator('qualifier', ros.validateString)(properties.qualifier));
     errors.collect(ros.propertyValidator('prefix', ros.validateString)(properties.prefix));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosFunctionsProps"');
 }
 
@@ -266,9 +333,10 @@ function rosFunctionsPropsToRosTemplate(properties: any, enableResourcePropertyC
         RosFunctionsPropsValidator(properties).assertSuccess();
     }
     return {
-      ServiceName: ros.stringToRosTemplate(properties.serviceName),
-      Prefix: ros.stringToRosTemplate(properties.prefix),
-      Qualifier: ros.stringToRosTemplate(properties.qualifier),
+      'ServiceName': ros.stringToRosTemplate(properties.serviceName),
+      'Prefix': ros.stringToRosTemplate(properties.prefix),
+      'Qualifier': ros.stringToRosTemplate(properties.qualifier),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -312,6 +380,14 @@ export class RosFunctions extends ros.RosResource {
     public qualifier: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -325,6 +401,7 @@ export class RosFunctions extends ros.RosResource {
         this.serviceName = props.serviceName;
         this.prefix = props.prefix;
         this.qualifier = props.qualifier;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
@@ -333,6 +410,7 @@ export class RosFunctions extends ros.RosResource {
             serviceName: this.serviceName,
             prefix: this.prefix,
             qualifier: this.qualifier,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -350,6 +428,14 @@ export interface RosServicesProps {
      * @Property prefix: Qualified returned service names must be prefixed with Prefix. For example, if the Prefix is "a", the returned service names should be started with "a".
      */
     readonly prefix?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -363,6 +449,13 @@ function RosServicesPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('prefix', ros.validateString)(properties.prefix));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosServicesProps"');
 }
 
@@ -380,7 +473,8 @@ function rosServicesPropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosServicesPropsValidator(properties).assertSuccess();
     }
     return {
-      Prefix: ros.stringToRosTemplate(properties.prefix),
+      'Prefix': ros.stringToRosTemplate(properties.prefix),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -414,6 +508,14 @@ export class RosServices extends ros.RosResource {
     public prefix: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -425,12 +527,14 @@ export class RosServices extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.prefix = props.prefix;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             prefix: this.prefix,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -458,6 +562,14 @@ export interface RosTriggersProps {
      * @Property prefix: Qualified returned trigger names must be prefixed with Prefix. For example, if the Prefix is "a", the returned trigger names should be started with "a".
      */
     readonly prefix?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -475,6 +587,13 @@ function RosTriggersPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('serviceName', ros.requiredValidator)(properties.serviceName));
     errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
     errors.collect(ros.propertyValidator('prefix', ros.validateString)(properties.prefix));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosTriggersProps"');
 }
 
@@ -492,9 +611,10 @@ function rosTriggersPropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosTriggersPropsValidator(properties).assertSuccess();
     }
     return {
-      FunctionName: ros.stringToRosTemplate(properties.functionName),
-      ServiceName: ros.stringToRosTemplate(properties.serviceName),
-      Prefix: ros.stringToRosTemplate(properties.prefix),
+      'FunctionName': ros.stringToRosTemplate(properties.functionName),
+      'ServiceName': ros.stringToRosTemplate(properties.serviceName),
+      'Prefix': ros.stringToRosTemplate(properties.prefix),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
     };
 }
 
@@ -538,6 +658,14 @@ export class RosTriggers extends ros.RosResource {
     public prefix: string | ros.IResolvable | undefined;
 
     /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -551,6 +679,7 @@ export class RosTriggers extends ros.RosResource {
         this.functionName = props.functionName;
         this.serviceName = props.serviceName;
         this.prefix = props.prefix;
+        this.refreshOptions = props.refreshOptions;
     }
 
 
@@ -559,6 +688,7 @@ export class RosTriggers extends ros.RosResource {
             functionName: this.functionName,
             serviceName: this.serviceName,
             prefix: this.prefix,
+            refreshOptions: this.refreshOptions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

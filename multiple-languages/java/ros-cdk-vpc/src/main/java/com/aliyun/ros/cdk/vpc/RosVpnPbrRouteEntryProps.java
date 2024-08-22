@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnpbrrouteentry
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.778Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:24.852Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosVpnPbrRouteEntryProps")
 @software.amazon.jsii.Jsii.Proxy(RosVpnPbrRouteEntryProps.Jsii$Proxy.class)
 public interface RosVpnPbrRouteEntryProps extends software.amazon.jsii.JsiiSerializable {
@@ -47,6 +47,12 @@ public interface RosVpnPbrRouteEntryProps extends software.amazon.jsii.JsiiSeria
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPriority() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosVpnPbrRouteEntryProps}
      */
     static Builder builder() {
@@ -64,6 +70,7 @@ public interface RosVpnPbrRouteEntryProps extends software.amazon.jsii.JsiiSeria
         java.lang.Object weight;
         java.lang.Object description;
         java.lang.Object overlayMode;
+        java.lang.Object priority;
 
         /**
          * Sets the value of {@link RosVpnPbrRouteEntryProps#getNextHop}
@@ -226,6 +233,26 @@ public interface RosVpnPbrRouteEntryProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosVpnPbrRouteEntryProps#getPriority}
+         * @param priority the value to be set.
+         * @return {@code this}
+         */
+        public Builder priority(java.lang.Number priority) {
+            this.priority = priority;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpnPbrRouteEntryProps#getPriority}
+         * @param priority the value to be set.
+         * @return {@code this}
+         */
+        public Builder priority(com.aliyun.ros.cdk.core.IResolvable priority) {
+            this.priority = priority;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosVpnPbrRouteEntryProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -249,6 +276,7 @@ public interface RosVpnPbrRouteEntryProps extends software.amazon.jsii.JsiiSeria
         private final java.lang.Object weight;
         private final java.lang.Object description;
         private final java.lang.Object overlayMode;
+        private final java.lang.Object priority;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -264,6 +292,7 @@ public interface RosVpnPbrRouteEntryProps extends software.amazon.jsii.JsiiSeria
             this.weight = software.amazon.jsii.Kernel.get(this, "weight", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.overlayMode = software.amazon.jsii.Kernel.get(this, "overlayMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.priority = software.amazon.jsii.Kernel.get(this, "priority", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -279,6 +308,7 @@ public interface RosVpnPbrRouteEntryProps extends software.amazon.jsii.JsiiSeria
             this.weight = java.util.Objects.requireNonNull(builder.weight, "weight is required");
             this.description = builder.description;
             this.overlayMode = builder.overlayMode;
+            this.priority = builder.priority;
         }
 
         @Override
@@ -322,6 +352,11 @@ public interface RosVpnPbrRouteEntryProps extends software.amazon.jsii.JsiiSeria
         }
 
         @Override
+        public final java.lang.Object getPriority() {
+            return this.priority;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -338,6 +373,9 @@ public interface RosVpnPbrRouteEntryProps extends software.amazon.jsii.JsiiSeria
             }
             if (this.getOverlayMode() != null) {
                 data.set("overlayMode", om.valueToTree(this.getOverlayMode()));
+            }
+            if (this.getPriority() != null) {
+                data.set("priority", om.valueToTree(this.getPriority()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -364,7 +402,8 @@ public interface RosVpnPbrRouteEntryProps extends software.amazon.jsii.JsiiSeria
             if (!vpnGatewayId.equals(that.vpnGatewayId)) return false;
             if (!weight.equals(that.weight)) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
-            return this.overlayMode != null ? this.overlayMode.equals(that.overlayMode) : that.overlayMode == null;
+            if (this.overlayMode != null ? !this.overlayMode.equals(that.overlayMode) : that.overlayMode != null) return false;
+            return this.priority != null ? this.priority.equals(that.priority) : that.priority == null;
         }
 
         @Override
@@ -377,6 +416,7 @@ public interface RosVpnPbrRouteEntryProps extends software.amazon.jsii.JsiiSeria
             result = 31 * result + (this.weight.hashCode());
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.overlayMode != null ? this.overlayMode.hashCode() : 0);
+            result = 31 * result + (this.priority != null ? this.priority.hashCode() : 0);
             return result;
         }
     }

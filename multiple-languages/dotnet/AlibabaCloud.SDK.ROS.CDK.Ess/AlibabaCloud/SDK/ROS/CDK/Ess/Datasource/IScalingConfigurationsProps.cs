@@ -11,6 +11,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess.Datasource
     [JsiiInterface(nativeType: typeof(IScalingConfigurationsProps), fullyQualifiedName: "@alicloud/ros-cdk-ess.datasource.ScalingConfigurationsProps")]
     public interface IScalingConfigurationsProps
     {
+        /// <summary>Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>Never: Never refresh the datasource resource when the stack is updated.</description>
+        /// <description>Always: Always refresh the datasource resource when the stack is updated.
+        /// Default is Never.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "refreshOptions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? RefreshOptions
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property scalingConfigurationIds: The ID of scaling configuration that you want to query.</summary>
         /// <remarks>
         /// Valid values : 1 to 10. The IDs of active and inactive scaling configurations are displayed in the query results, and can be differentiated by LifecycleState.
@@ -62,6 +82,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess.Datasource
         {
             private _Proxy(ByRefValue reference): base(reference)
             {
+            }
+
+            /// <summary>Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.</summary>
+            /// <remarks>
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>Never: Never refresh the datasource resource when the stack is updated.</description>
+            /// <description>Always: Always refresh the datasource resource when the stack is updated.
+            /// Default is Never.</description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "refreshOptions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RefreshOptions
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property scalingConfigurationIds: The ID of scaling configuration that you want to query.</summary>

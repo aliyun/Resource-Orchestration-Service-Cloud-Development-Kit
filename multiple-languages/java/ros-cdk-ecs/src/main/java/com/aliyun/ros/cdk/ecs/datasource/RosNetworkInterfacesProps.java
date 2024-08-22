@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-networkinterfaces
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.644Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:20.626Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.RosNetworkInterfacesProps")
 @software.amazon.jsii.Jsii.Proxy(RosNetworkInterfacesProps.Jsii$Proxy.class)
 public interface RosNetworkInterfacesProps extends software.amazon.jsii.JsiiSerializable {
@@ -43,6 +43,12 @@ public interface RosNetworkInterfacesProps extends software.amazon.jsii.JsiiSeri
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPrivateIpAddresses() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
         return null;
     }
 
@@ -110,6 +116,7 @@ public interface RosNetworkInterfacesProps extends software.amazon.jsii.JsiiSeri
         java.lang.Object networkInterfaceName;
         java.lang.Object primaryIpAddress;
         java.lang.Object privateIpAddresses;
+        java.lang.Object refreshOptions;
         java.lang.Object resourceGroupId;
         java.lang.Object securityGroupId;
         java.lang.Object serviceManaged;
@@ -236,6 +243,26 @@ public interface RosNetworkInterfacesProps extends software.amazon.jsii.JsiiSeri
          */
         public Builder privateIpAddresses(java.util.List<? extends java.lang.Object> privateIpAddresses) {
             this.privateIpAddresses = privateIpAddresses;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosNetworkInterfacesProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosNetworkInterfacesProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
             return this;
         }
 
@@ -412,6 +439,7 @@ public interface RosNetworkInterfacesProps extends software.amazon.jsii.JsiiSeri
         private final java.lang.Object networkInterfaceName;
         private final java.lang.Object primaryIpAddress;
         private final java.lang.Object privateIpAddresses;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object securityGroupId;
         private final java.lang.Object serviceManaged;
@@ -433,6 +461,7 @@ public interface RosNetworkInterfacesProps extends software.amazon.jsii.JsiiSeri
             this.networkInterfaceName = software.amazon.jsii.Kernel.get(this, "networkInterfaceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.primaryIpAddress = software.amazon.jsii.Kernel.get(this, "primaryIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.privateIpAddresses = software.amazon.jsii.Kernel.get(this, "privateIpAddresses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceManaged = software.amazon.jsii.Kernel.get(this, "serviceManaged", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -455,6 +484,7 @@ public interface RosNetworkInterfacesProps extends software.amazon.jsii.JsiiSeri
             this.networkInterfaceName = builder.networkInterfaceName;
             this.primaryIpAddress = builder.primaryIpAddress;
             this.privateIpAddresses = builder.privateIpAddresses;
+            this.refreshOptions = builder.refreshOptions;
             this.resourceGroupId = builder.resourceGroupId;
             this.securityGroupId = builder.securityGroupId;
             this.serviceManaged = builder.serviceManaged;
@@ -493,6 +523,11 @@ public interface RosNetworkInterfacesProps extends software.amazon.jsii.JsiiSeri
         @Override
         public final java.lang.Object getPrivateIpAddresses() {
             return this.privateIpAddresses;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -559,6 +594,9 @@ public interface RosNetworkInterfacesProps extends software.amazon.jsii.JsiiSeri
             if (this.getPrivateIpAddresses() != null) {
                 data.set("privateIpAddresses", om.valueToTree(this.getPrivateIpAddresses()));
             }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
@@ -607,6 +645,7 @@ public interface RosNetworkInterfacesProps extends software.amazon.jsii.JsiiSeri
             if (this.networkInterfaceName != null ? !this.networkInterfaceName.equals(that.networkInterfaceName) : that.networkInterfaceName != null) return false;
             if (this.primaryIpAddress != null ? !this.primaryIpAddress.equals(that.primaryIpAddress) : that.primaryIpAddress != null) return false;
             if (this.privateIpAddresses != null ? !this.privateIpAddresses.equals(that.privateIpAddresses) : that.privateIpAddresses != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
             if (this.serviceManaged != null ? !this.serviceManaged.equals(that.serviceManaged) : that.serviceManaged != null) return false;
@@ -625,6 +664,7 @@ public interface RosNetworkInterfacesProps extends software.amazon.jsii.JsiiSeri
             result = 31 * result + (this.networkInterfaceName != null ? this.networkInterfaceName.hashCode() : 0);
             result = 31 * result + (this.primaryIpAddress != null ? this.primaryIpAddress.hashCode() : 0);
             result = 31 * result + (this.privateIpAddresses != null ? this.privateIpAddresses.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
             result = 31 * result + (this.serviceManaged != null ? this.serviceManaged.hashCode() : 0);

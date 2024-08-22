@@ -61,10 +61,10 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosAccountPropsValidator(properties).assertSuccess();
     }
     return {
-      DisplayName: ros.stringToRosTemplate(properties.displayName),
-      DeleteAccount: ros.booleanToRosTemplate(properties.deleteAccount),
-      FolderId: ros.stringToRosTemplate(properties.folderId),
-      PayerAccountId: ros.stringToRosTemplate(properties.payerAccountId),
+      'DisplayName': ros.stringToRosTemplate(properties.displayName),
+      'DeleteAccount': ros.booleanToRosTemplate(properties.deleteAccount),
+      'FolderId': ros.stringToRosTemplate(properties.folderId),
+      'PayerAccountId': ros.stringToRosTemplate(properties.payerAccountId),
     };
 }
 
@@ -228,10 +228,10 @@ function rosControlPolicyPropsToRosTemplate(properties: any, enableResourcePrope
         RosControlPolicyPropsValidator(properties).assertSuccess();
     }
     return {
-      ControlPolicyName: ros.stringToRosTemplate(properties.controlPolicyName),
-      EffectScope: ros.stringToRosTemplate(properties.effectScope),
-      PolicyDocument: ros.stringToRosTemplate(properties.policyDocument),
-      Description: ros.stringToRosTemplate(properties.description),
+      'ControlPolicyName': ros.stringToRosTemplate(properties.controlPolicyName),
+      'EffectScope': ros.stringToRosTemplate(properties.effectScope),
+      'PolicyDocument': ros.stringToRosTemplate(properties.policyDocument),
+      'Description': ros.stringToRosTemplate(properties.description),
     };
 }
 
@@ -388,8 +388,8 @@ function rosControlPolicyAttachmentPropsToRosTemplate(properties: any, enableRes
         RosControlPolicyAttachmentPropsValidator(properties).assertSuccess();
     }
     return {
-      PolicyId: ros.stringToRosTemplate(properties.policyId),
-      TargetId: ros.stringToRosTemplate(properties.targetId),
+      'PolicyId': ros.stringToRosTemplate(properties.policyId),
+      'TargetId': ros.stringToRosTemplate(properties.targetId),
     };
 }
 
@@ -525,8 +525,8 @@ function rosFolderPropsToRosTemplate(properties: any, enableResourcePropertyCons
         RosFolderPropsValidator(properties).assertSuccess();
     }
     return {
-      FolderName: ros.stringToRosTemplate(properties.folderName),
-      ParentFolderId: ros.stringToRosTemplate(properties.parentFolderId),
+      'FolderName': ros.stringToRosTemplate(properties.folderName),
+      'ParentFolderId': ros.stringToRosTemplate(properties.parentFolderId),
     };
 }
 
@@ -651,9 +651,9 @@ function rosHandshakePropsToRosTemplate(properties: any, enableResourcePropertyC
         RosHandshakePropsValidator(properties).assertSuccess();
     }
     return {
-      TargetEntity: ros.stringToRosTemplate(properties.targetEntity),
-      TargetType: ros.stringToRosTemplate(properties.targetType),
-      Note: ros.stringToRosTemplate(properties.note),
+      'TargetEntity': ros.stringToRosTemplate(properties.targetEntity),
+      'TargetType': ros.stringToRosTemplate(properties.targetType),
+      'Note': ros.stringToRosTemplate(properties.note),
     };
 }
 
@@ -823,11 +823,11 @@ function rosPolicyAttachmentPropsToRosTemplate(properties: any, enableResourcePr
         RosPolicyAttachmentPropsValidator(properties).assertSuccess();
     }
     return {
-      PolicyName: ros.stringToRosTemplate(properties.policyName),
-      PolicyType: ros.stringToRosTemplate(properties.policyType),
-      PrincipalName: ros.stringToRosTemplate(properties.principalName),
-      PrincipalType: ros.stringToRosTemplate(properties.principalType),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      'PolicyName': ros.stringToRosTemplate(properties.policyName),
+      'PolicyType': ros.stringToRosTemplate(properties.policyType),
+      'PrincipalName': ros.stringToRosTemplate(properties.principalName),
+      'PrincipalType': ros.stringToRosTemplate(properties.principalType),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
     };
 }
 
@@ -1087,8 +1087,8 @@ function rosResourceGroupPropsToRosTemplate(properties: any, enableResourcePrope
         RosResourceGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      DisplayName: ros.stringToRosTemplate(properties.displayName),
-      Name: ros.stringToRosTemplate(properties.name),
+      'DisplayName': ros.stringToRosTemplate(properties.displayName),
+      'Name': ros.stringToRosTemplate(properties.name),
     };
 }
 
@@ -1270,11 +1270,11 @@ function rosResourceSharePropsToRosTemplate(properties: any, enableResourcePrope
         RosResourceSharePropsValidator(properties).assertSuccess();
     }
     return {
-      ResourceShareName: ros.stringToRosTemplate(properties.resourceShareName),
-      AllowExternalTargets: ros.booleanToRosTemplate(properties.allowExternalTargets),
-      PermissionNames: ros.listMapper(ros.stringToRosTemplate)(properties.permissionNames),
-      Resources: ros.listMapper(rosResourceShareResourcesPropertyToRosTemplate)(properties.resources),
-      Targets: ros.listMapper(ros.stringToRosTemplate)(properties.targets),
+      'ResourceShareName': ros.stringToRosTemplate(properties.resourceShareName),
+      'AllowExternalTargets': ros.booleanToRosTemplate(properties.allowExternalTargets),
+      'PermissionNames': ros.listMapper(ros.stringToRosTemplate)(properties.permissionNames),
+      'Resources': ros.listMapper(rosResourceShareResourcesPropertyToRosTemplate)(properties.resources),
+      'Targets': ros.listMapper(ros.stringToRosTemplate)(properties.targets),
     };
 }
 
@@ -1411,8 +1411,8 @@ function rosResourceShareResourcesPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosResourceShare_ResourcesPropertyValidator(properties).assertSuccess();
     return {
-      ResourceId: ros.stringToRosTemplate(properties.resourceId),
-      ResourceType: ros.stringToRosTemplate(properties.resourceType),
+      'ResourceId': ros.stringToRosTemplate(properties.resourceId),
+      'ResourceType': ros.stringToRosTemplate(properties.resourceType),
     };
 }
 
@@ -1499,10 +1499,10 @@ function rosResourceShareAssociationPropsToRosTemplate(properties: any, enableRe
         RosResourceShareAssociationPropsValidator(properties).assertSuccess();
     }
     return {
-      ResourceShareId: ros.stringToRosTemplate(properties.resourceShareId),
-      PermissionNames: ros.listMapper(ros.stringToRosTemplate)(properties.permissionNames),
-      Resources: ros.listMapper(rosResourceShareAssociationResourcesPropertyToRosTemplate)(properties.resources),
-      Targets: ros.listMapper(ros.stringToRosTemplate)(properties.targets),
+      'ResourceShareId': ros.stringToRosTemplate(properties.resourceShareId),
+      'PermissionNames': ros.listMapper(ros.stringToRosTemplate)(properties.permissionNames),
+      'Resources': ros.listMapper(rosResourceShareAssociationResourcesPropertyToRosTemplate)(properties.resources),
+      'Targets': ros.listMapper(ros.stringToRosTemplate)(properties.targets),
     };
 }
 
@@ -1628,7 +1628,7 @@ function rosResourceShareAssociationResourcesPropertyToRosTemplate(properties: a
     if (!ros.canInspect(properties)) { return properties; }
     RosResourceShareAssociation_ResourcesPropertyValidator(properties).assertSuccess();
     return {
-      ResourceId: ros.stringToRosTemplate(properties.resourceId),
-      ResourceType: ros.stringToRosTemplate(properties.resourceType),
+      'ResourceId': ros.stringToRosTemplate(properties.resourceId),
+      'ResourceType': ros.stringToRosTemplate(properties.resourceType),
     };
 }

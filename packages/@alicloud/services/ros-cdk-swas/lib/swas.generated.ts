@@ -81,12 +81,12 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      ImageId: ros.stringToRosTemplate(properties.imageId),
-      Period: ros.numberToRosTemplate(properties.period),
-      PlanId: ros.stringToRosTemplate(properties.planId),
-      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
-      AutoRenewPeriod: ros.numberToRosTemplate(properties.autoRenewPeriod),
-      DataDiskSize: ros.numberToRosTemplate(properties.dataDiskSize),
+      'ImageId': ros.stringToRosTemplate(properties.imageId),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PlanId': ros.stringToRosTemplate(properties.planId),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'AutoRenewPeriod': ros.numberToRosTemplate(properties.autoRenewPeriod),
+      'DataDiskSize': ros.numberToRosTemplate(properties.dataDiskSize),
     };
 }
 
@@ -284,13 +284,13 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
         RosInstancesPropsValidator(properties).assertSuccess();
     }
     return {
-      ImageId: ros.stringToRosTemplate(properties.imageId),
-      Period: ros.numberToRosTemplate(properties.period),
-      PlanId: ros.stringToRosTemplate(properties.planId),
-      Amount: ros.numberToRosTemplate(properties.amount),
-      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
-      AutoRenewPeriod: ros.numberToRosTemplate(properties.autoRenewPeriod),
-      DataDiskSize: ros.numberToRosTemplate(properties.dataDiskSize),
+      'ImageId': ros.stringToRosTemplate(properties.imageId),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PlanId': ros.stringToRosTemplate(properties.planId),
+      'Amount': ros.numberToRosTemplate(properties.amount),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'AutoRenewPeriod': ros.numberToRosTemplate(properties.autoRenewPeriod),
+      'DataDiskSize': ros.numberToRosTemplate(properties.dataDiskSize),
     };
 }
 

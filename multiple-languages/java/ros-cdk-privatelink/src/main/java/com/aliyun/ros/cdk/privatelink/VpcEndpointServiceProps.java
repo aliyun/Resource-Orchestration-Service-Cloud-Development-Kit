@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.privatelink;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpointservice
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.585Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:23.261Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.VpcEndpointServiceProps")
 @software.amazon.jsii.Jsii.Proxy(VpcEndpointServiceProps.Jsii$Proxy.class)
 public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerializable {

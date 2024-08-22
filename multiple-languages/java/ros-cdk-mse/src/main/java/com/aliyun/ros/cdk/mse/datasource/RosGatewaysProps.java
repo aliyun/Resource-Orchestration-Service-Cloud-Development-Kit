@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.mse.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mse-gateways
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.761Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:22.504Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.datasource.RosGatewaysProps")
 @software.amazon.jsii.Jsii.Proxy(RosGatewaysProps.Jsii$Proxy.class)
 public interface RosGatewaysProps extends software.amazon.jsii.JsiiSerializable {
@@ -36,6 +36,12 @@ public interface RosGatewaysProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVpc() {
         return null;
     }
@@ -54,6 +60,7 @@ public interface RosGatewaysProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object gatewayType;
         java.lang.Object instanceId;
         java.lang.Object name;
+        java.lang.Object refreshOptions;
         java.lang.Object vpc;
 
         /**
@@ -137,6 +144,26 @@ public interface RosGatewaysProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosGatewaysProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosGatewaysProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosGatewaysProps#getVpc}
          * @param vpc the value to be set.
          * @return {@code this}
@@ -176,6 +203,7 @@ public interface RosGatewaysProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object gatewayType;
         private final java.lang.Object instanceId;
         private final java.lang.Object name;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object vpc;
 
         /**
@@ -188,6 +216,7 @@ public interface RosGatewaysProps extends software.amazon.jsii.JsiiSerializable 
             this.gatewayType = software.amazon.jsii.Kernel.get(this, "gatewayType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpc = software.amazon.jsii.Kernel.get(this, "vpc", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -200,6 +229,7 @@ public interface RosGatewaysProps extends software.amazon.jsii.JsiiSerializable 
             this.gatewayType = builder.gatewayType;
             this.instanceId = builder.instanceId;
             this.name = builder.name;
+            this.refreshOptions = builder.refreshOptions;
             this.vpc = builder.vpc;
         }
 
@@ -224,6 +254,11 @@ public interface RosGatewaysProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         public final java.lang.Object getVpc() {
             return this.vpc;
         }
@@ -245,6 +280,9 @@ public interface RosGatewaysProps extends software.amazon.jsii.JsiiSerializable 
             }
             if (this.getName() != null) {
                 data.set("name", om.valueToTree(this.getName()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
             if (this.getVpc() != null) {
                 data.set("vpc", om.valueToTree(this.getVpc()));
@@ -271,6 +309,7 @@ public interface RosGatewaysProps extends software.amazon.jsii.JsiiSerializable 
             if (this.gatewayType != null ? !this.gatewayType.equals(that.gatewayType) : that.gatewayType != null) return false;
             if (this.instanceId != null ? !this.instanceId.equals(that.instanceId) : that.instanceId != null) return false;
             if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             return this.vpc != null ? this.vpc.equals(that.vpc) : that.vpc == null;
         }
 
@@ -280,6 +319,7 @@ public interface RosGatewaysProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.gatewayType != null ? this.gatewayType.hashCode() : 0);
             result = 31 * result + (this.instanceId != null ? this.instanceId.hashCode() : 0);
             result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.vpc != null ? this.vpc.hashCode() : 0);
             return result;
         }

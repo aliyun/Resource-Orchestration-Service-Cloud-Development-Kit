@@ -4,6 +4,7 @@ export * from './application';
 export * from './attachpolicytorole';
 export * from './attachpolicytouser';
 export * from './group';
+export * from './loginprofile';
 export * from './managedpolicy';
 export * from './ramaccountalias';
 export * from './role';

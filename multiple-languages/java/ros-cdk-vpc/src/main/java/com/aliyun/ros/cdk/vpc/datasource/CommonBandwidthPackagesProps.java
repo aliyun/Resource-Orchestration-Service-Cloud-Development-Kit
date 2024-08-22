@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-commonbandwidthpackages
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.854Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:24.986Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.CommonBandwidthPackagesProps")
 @software.amazon.jsii.Jsii.Proxy(CommonBandwidthPackagesProps.Jsii$Proxy.class)
 public interface CommonBandwidthPackagesProps extends software.amazon.jsii.JsiiSerializable {
@@ -21,6 +21,21 @@ public interface CommonBandwidthPackagesProps extends software.amazon.jsii.JsiiS
      * Property commonBandwidthPackageName: The name of the Internet Shared Bandwidth instance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCommonBandwidthPackageName() {
+        return null;
+    }
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
         return null;
     }
 
@@ -43,6 +58,7 @@ public interface CommonBandwidthPackagesProps extends software.amazon.jsii.JsiiS
     public static final class Builder implements software.amazon.jsii.Builder<CommonBandwidthPackagesProps> {
         java.lang.Object commonBandwidthPackageId;
         java.lang.Object commonBandwidthPackageName;
+        java.lang.Object refreshOptions;
         java.lang.Object resourceGroupId;
 
         /**
@@ -86,6 +102,40 @@ public interface CommonBandwidthPackagesProps extends software.amazon.jsii.JsiiS
         }
 
         /**
+         * Sets the value of {@link CommonBandwidthPackagesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link CommonBandwidthPackagesProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CommonBandwidthPackagesProps#getResourceGroupId}
          * @param resourceGroupId Property resourceGroupId: The ID of the resource group.
          * @return {@code this}
@@ -123,6 +173,7 @@ public interface CommonBandwidthPackagesProps extends software.amazon.jsii.JsiiS
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements CommonBandwidthPackagesProps {
         private final java.lang.Object commonBandwidthPackageId;
         private final java.lang.Object commonBandwidthPackageName;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object resourceGroupId;
 
         /**
@@ -133,6 +184,7 @@ public interface CommonBandwidthPackagesProps extends software.amazon.jsii.JsiiS
             super(objRef);
             this.commonBandwidthPackageId = software.amazon.jsii.Kernel.get(this, "commonBandwidthPackageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.commonBandwidthPackageName = software.amazon.jsii.Kernel.get(this, "commonBandwidthPackageName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -143,6 +195,7 @@ public interface CommonBandwidthPackagesProps extends software.amazon.jsii.JsiiS
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.commonBandwidthPackageId = builder.commonBandwidthPackageId;
             this.commonBandwidthPackageName = builder.commonBandwidthPackageName;
+            this.refreshOptions = builder.refreshOptions;
             this.resourceGroupId = builder.resourceGroupId;
         }
 
@@ -154,6 +207,11 @@ public interface CommonBandwidthPackagesProps extends software.amazon.jsii.JsiiS
         @Override
         public final java.lang.Object getCommonBandwidthPackageName() {
             return this.commonBandwidthPackageName;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -172,6 +230,9 @@ public interface CommonBandwidthPackagesProps extends software.amazon.jsii.JsiiS
             }
             if (this.getCommonBandwidthPackageName() != null) {
                 data.set("commonBandwidthPackageName", om.valueToTree(this.getCommonBandwidthPackageName()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
@@ -196,6 +257,7 @@ public interface CommonBandwidthPackagesProps extends software.amazon.jsii.JsiiS
 
             if (this.commonBandwidthPackageId != null ? !this.commonBandwidthPackageId.equals(that.commonBandwidthPackageId) : that.commonBandwidthPackageId != null) return false;
             if (this.commonBandwidthPackageName != null ? !this.commonBandwidthPackageName.equals(that.commonBandwidthPackageName) : that.commonBandwidthPackageName != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             return this.resourceGroupId != null ? this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId == null;
         }
 
@@ -203,6 +265,7 @@ public interface CommonBandwidthPackagesProps extends software.amazon.jsii.JsiiS
         public final int hashCode() {
             int result = this.commonBandwidthPackageId != null ? this.commonBandwidthPackageId.hashCode() : 0;
             result = 31 * result + (this.commonBandwidthPackageName != null ? this.commonBandwidthPackageName.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             return result;
         }

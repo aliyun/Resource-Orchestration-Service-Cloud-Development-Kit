@@ -13,6 +13,14 @@ export interface Ipv4GatewayProps {
      * Property ipv4GatewayId: The resource attribute field that represents the resource level 1 ID.
      */
     readonly ipv4GatewayId: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -75,6 +83,7 @@ export class Ipv4Gateway extends ros.Resource {
 
         const rosIpv4Gateway = new RosIpv4Gateway(this, id,  {
             ipv4GatewayId: props.ipv4GatewayId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosIpv4Gateway;
         this.attrCreateTime = rosIpv4Gateway.attrCreateTime;

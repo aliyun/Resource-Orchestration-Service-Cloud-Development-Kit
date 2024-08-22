@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.oss;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucket
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.071Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:22.748Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.BucketProps")
 @software.amazon.jsii.Jsii.Proxy(BucketProps.Jsii$Proxy.class)
 public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
@@ -124,9 +124,9 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property websiteConfiguration: The properties of website config.
+     * Property websiteConfigurationV2: Website configuration.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getWebsiteConfiguration() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getWebsiteConfigurationV2() {
         return null;
     }
 
@@ -155,7 +155,7 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object storageClass;
         java.util.Map<java.lang.String, java.lang.Object> tags;
         java.lang.Object versioningConfiguration;
-        java.lang.Object websiteConfiguration;
+        java.lang.Object websiteConfigurationV2;
 
         /**
          * Sets the value of {@link BucketProps#getBucketName}
@@ -461,22 +461,22 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
-         * Sets the value of {@link BucketProps#getWebsiteConfiguration}
-         * @param websiteConfiguration Property websiteConfiguration: The properties of website config.
+         * Sets the value of {@link BucketProps#getWebsiteConfigurationV2}
+         * @param websiteConfigurationV2 Property websiteConfigurationV2: Website configuration.
          * @return {@code this}
          */
-        public Builder websiteConfiguration(com.aliyun.ros.cdk.core.IResolvable websiteConfiguration) {
-            this.websiteConfiguration = websiteConfiguration;
+        public Builder websiteConfigurationV2(com.aliyun.ros.cdk.core.IResolvable websiteConfigurationV2) {
+            this.websiteConfigurationV2 = websiteConfigurationV2;
             return this;
         }
 
         /**
-         * Sets the value of {@link BucketProps#getWebsiteConfiguration}
-         * @param websiteConfiguration Property websiteConfiguration: The properties of website config.
+         * Sets the value of {@link BucketProps#getWebsiteConfigurationV2}
+         * @param websiteConfigurationV2 Property websiteConfigurationV2: Website configuration.
          * @return {@code this}
          */
-        public Builder websiteConfiguration(com.aliyun.ros.cdk.oss.RosBucket.WebsiteConfigurationProperty websiteConfiguration) {
-            this.websiteConfiguration = websiteConfiguration;
+        public Builder websiteConfigurationV2(com.aliyun.ros.cdk.oss.RosBucket.WebsiteConfigurationV2Property websiteConfigurationV2) {
+            this.websiteConfigurationV2 = websiteConfigurationV2;
             return this;
         }
 
@@ -511,7 +511,7 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object storageClass;
         private final java.util.Map<java.lang.String, java.lang.Object> tags;
         private final java.lang.Object versioningConfiguration;
-        private final java.lang.Object websiteConfiguration;
+        private final java.lang.Object websiteConfigurationV2;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -534,7 +534,7 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
             this.storageClass = software.amazon.jsii.Kernel.get(this, "storageClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class)));
             this.versioningConfiguration = software.amazon.jsii.Kernel.get(this, "versioningConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.websiteConfiguration = software.amazon.jsii.Kernel.get(this, "websiteConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.websiteConfigurationV2 = software.amazon.jsii.Kernel.get(this, "websiteConfigurationV2", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -558,7 +558,7 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
             this.storageClass = builder.storageClass;
             this.tags = (java.util.Map<java.lang.String, java.lang.Object>)builder.tags;
             this.versioningConfiguration = builder.versioningConfiguration;
-            this.websiteConfiguration = builder.websiteConfiguration;
+            this.websiteConfigurationV2 = builder.websiteConfigurationV2;
         }
 
         @Override
@@ -637,8 +637,8 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Object getWebsiteConfiguration() {
-            return this.websiteConfiguration;
+        public final java.lang.Object getWebsiteConfigurationV2() {
+            return this.websiteConfigurationV2;
         }
 
         @Override
@@ -690,8 +690,8 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getVersioningConfiguration() != null) {
                 data.set("versioningConfiguration", om.valueToTree(this.getVersioningConfiguration()));
             }
-            if (this.getWebsiteConfiguration() != null) {
-                data.set("websiteConfiguration", om.valueToTree(this.getWebsiteConfiguration()));
+            if (this.getWebsiteConfigurationV2() != null) {
+                data.set("websiteConfigurationV2", om.valueToTree(this.getWebsiteConfigurationV2()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -726,7 +726,7 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
             if (this.storageClass != null ? !this.storageClass.equals(that.storageClass) : that.storageClass != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.versioningConfiguration != null ? !this.versioningConfiguration.equals(that.versioningConfiguration) : that.versioningConfiguration != null) return false;
-            return this.websiteConfiguration != null ? this.websiteConfiguration.equals(that.websiteConfiguration) : that.websiteConfiguration == null;
+            return this.websiteConfigurationV2 != null ? this.websiteConfigurationV2.equals(that.websiteConfigurationV2) : that.websiteConfigurationV2 == null;
         }
 
         @Override
@@ -746,7 +746,7 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.storageClass != null ? this.storageClass.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.versioningConfiguration != null ? this.versioningConfiguration.hashCode() : 0);
-            result = 31 * result + (this.websiteConfiguration != null ? this.websiteConfiguration.hashCode() : 0);
+            result = 31 * result + (this.websiteConfigurationV2 != null ? this.websiteConfigurationV2.hashCode() : 0);
             return result;
         }
     }

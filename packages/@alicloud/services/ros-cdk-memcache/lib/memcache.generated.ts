@@ -192,25 +192,25 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      AutoRenew: ros.stringToRosTemplate(properties.autoRenew),
-      AutoRenewPeriod: ros.stringToRosTemplate(properties.autoRenewPeriod),
-      AutoUseCoupon: ros.stringToRosTemplate(properties.autoUseCoupon),
-      BackupPolicy: rosInstanceBackupPolicyPropertyToRosTemplate(properties.backupPolicy),
-      Capacity: ros.numberToRosTemplate(properties.capacity),
-      ChargeType: ros.stringToRosTemplate(properties.chargeType),
-      Config: ros.stringToRosTemplate(properties.config),
-      CouponNo: ros.stringToRosTemplate(properties.couponNo),
-      InstanceClass: ros.stringToRosTemplate(properties.instanceClass),
-      InstanceName: ros.stringToRosTemplate(properties.instanceName),
-      NetworkType: ros.stringToRosTemplate(properties.networkType),
-      Password: ros.stringToRosTemplate(properties.password),
-      Period: ros.stringToRosTemplate(properties.period),
-      PrivateIpAddress: ros.stringToRosTemplate(properties.privateIpAddress),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VpcPasswordFree: ros.booleanToRosTemplate(properties.vpcPasswordFree),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      'AutoRenew': ros.stringToRosTemplate(properties.autoRenew),
+      'AutoRenewPeriod': ros.stringToRosTemplate(properties.autoRenewPeriod),
+      'AutoUseCoupon': ros.stringToRosTemplate(properties.autoUseCoupon),
+      'BackupPolicy': rosInstanceBackupPolicyPropertyToRosTemplate(properties.backupPolicy),
+      'Capacity': ros.numberToRosTemplate(properties.capacity),
+      'ChargeType': ros.stringToRosTemplate(properties.chargeType),
+      'Config': ros.stringToRosTemplate(properties.config),
+      'CouponNo': ros.stringToRosTemplate(properties.couponNo),
+      'InstanceClass': ros.stringToRosTemplate(properties.instanceClass),
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'NetworkType': ros.stringToRosTemplate(properties.networkType),
+      'Password': ros.stringToRosTemplate(properties.password),
+      'Period': ros.stringToRosTemplate(properties.period),
+      'PrivateIpAddress': ros.stringToRosTemplate(properties.privateIpAddress),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VpcPasswordFree': ros.booleanToRosTemplate(properties.vpcPasswordFree),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
     };
 }
 
@@ -499,9 +499,9 @@ function rosInstanceBackupPolicyPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosInstance_BackupPolicyPropertyValidator(properties).assertSuccess();
     return {
-      PreferredBackupPeriod: ros.stringToRosTemplate(properties.preferredBackupPeriod),
-      PreferredBackupTime: ros.stringToRosTemplate(properties.preferredBackupTime),
-      EnableBackupLog: ros.numberToRosTemplate(properties.enableBackupLog),
+      'PreferredBackupPeriod': ros.stringToRosTemplate(properties.preferredBackupPeriod),
+      'PreferredBackupTime': ros.stringToRosTemplate(properties.preferredBackupTime),
+      'EnableBackupLog': ros.numberToRosTemplate(properties.enableBackupLog),
     };
 }
 
@@ -578,10 +578,10 @@ function rosWhitelistPropsToRosTemplate(properties: any, enableResourcePropertyC
         RosWhitelistPropsValidator(properties).assertSuccess();
     }
     return {
-      InstanceId: ros.stringToRosTemplate(properties.instanceId),
-      SecurityIps: ros.stringToRosTemplate(properties.securityIps),
-      SecurityIpGroupAttribute: ros.stringToRosTemplate(properties.securityIpGroupAttribute),
-      SecurityIpGroupName: ros.stringToRosTemplate(properties.securityIpGroupName),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'SecurityIps': ros.stringToRosTemplate(properties.securityIps),
+      'SecurityIpGroupAttribute': ros.stringToRosTemplate(properties.securityIpGroupAttribute),
+      'SecurityIpGroupName': ros.stringToRosTemplate(properties.securityIpGroupName),
     };
 }
 

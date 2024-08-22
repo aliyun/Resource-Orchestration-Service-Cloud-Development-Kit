@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CEN::CenBandwidthLimit</code>, which is used to configure the cross-region interconnection bandwidth in a bandwidth plan.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.724Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:18.151Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosCenBandwidthLimit")
 public class RosCenBandwidthLimit extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -126,6 +126,24 @@ public class RosCenBandwidthLimit extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getBandwidthType() {
+        return software.amazon.jsii.Kernel.get(this, "bandwidthType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setBandwidthType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "bandwidthType", value);
+    }
+
+    /**
+     */
+    public void setBandwidthType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "bandwidthType", value);
+    }
+
+    /**
      * A fluent builder for {@link com.aliyun.ros.cdk.cen.RosCenBandwidthLimit}.
      */
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.cen.RosCenBandwidthLimit> {
@@ -216,6 +234,23 @@ public class RosCenBandwidthLimit extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder oppositeRegionId(final com.aliyun.ros.cdk.core.IResolvable oppositeRegionId) {
             this.props.oppositeRegionId(oppositeRegionId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param bandwidthType This parameter is required.
+         */
+        public Builder bandwidthType(final java.lang.String bandwidthType) {
+            this.props.bandwidthType(bandwidthType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param bandwidthType This parameter is required.
+         */
+        public Builder bandwidthType(final com.aliyun.ros.cdk.core.IResolvable bandwidthType) {
+            this.props.bandwidthType(bandwidthType);
             return this;
         }
 

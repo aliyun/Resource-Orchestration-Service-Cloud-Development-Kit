@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::SslVpnServer</code>, which is used to create an SSL-VPN server.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.730Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:24.814Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosSslVpnServer")
 public class RosSslVpnServer extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -147,6 +147,78 @@ public class RosSslVpnServer extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setCompress(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "compress", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEnableMultiFactorAuth() {
+        return software.amazon.jsii.Kernel.get(this, "enableMultiFactorAuth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEnableMultiFactorAuth(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "enableMultiFactorAuth", value);
+    }
+
+    /**
+     */
+    public void setEnableMultiFactorAuth(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "enableMultiFactorAuth", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIDaaSApplicationId() {
+        return software.amazon.jsii.Kernel.get(this, "iDaaSApplicationId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIDaaSApplicationId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "iDaaSApplicationId", value);
+    }
+
+    /**
+     */
+    public void setIDaaSApplicationId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "iDaaSApplicationId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIDaaSInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "iDaaSInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIDaaSInstanceId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "iDaaSInstanceId", value);
+    }
+
+    /**
+     */
+    public void setIDaaSInstanceId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "iDaaSInstanceId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIDaaSRegionId() {
+        return software.amazon.jsii.Kernel.get(this, "iDaaSRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIDaaSRegionId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "iDaaSRegionId", value);
+    }
+
+    /**
+     */
+    public void setIDaaSRegionId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "iDaaSRegionId", value);
     }
 
     /**
@@ -311,6 +383,74 @@ public class RosSslVpnServer extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder compress(final com.aliyun.ros.cdk.core.IResolvable compress) {
             this.props.compress(compress);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param enableMultiFactorAuth This parameter is required.
+         */
+        public Builder enableMultiFactorAuth(final java.lang.Boolean enableMultiFactorAuth) {
+            this.props.enableMultiFactorAuth(enableMultiFactorAuth);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param enableMultiFactorAuth This parameter is required.
+         */
+        public Builder enableMultiFactorAuth(final com.aliyun.ros.cdk.core.IResolvable enableMultiFactorAuth) {
+            this.props.enableMultiFactorAuth(enableMultiFactorAuth);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param iDaaSApplicationId This parameter is required.
+         */
+        public Builder iDaaSApplicationId(final java.lang.String iDaaSApplicationId) {
+            this.props.iDaaSApplicationId(iDaaSApplicationId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param iDaaSApplicationId This parameter is required.
+         */
+        public Builder iDaaSApplicationId(final com.aliyun.ros.cdk.core.IResolvable iDaaSApplicationId) {
+            this.props.iDaaSApplicationId(iDaaSApplicationId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param iDaaSInstanceId This parameter is required.
+         */
+        public Builder iDaaSInstanceId(final java.lang.String iDaaSInstanceId) {
+            this.props.iDaaSInstanceId(iDaaSInstanceId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param iDaaSInstanceId This parameter is required.
+         */
+        public Builder iDaaSInstanceId(final com.aliyun.ros.cdk.core.IResolvable iDaaSInstanceId) {
+            this.props.iDaaSInstanceId(iDaaSInstanceId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param iDaaSRegionId This parameter is required.
+         */
+        public Builder iDaaSRegionId(final java.lang.String iDaaSRegionId) {
+            this.props.iDaaSRegionId(iDaaSRegionId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param iDaaSRegionId This parameter is required.
+         */
+        public Builder iDaaSRegionId(final com.aliyun.ros.cdk.core.IResolvable iDaaSRegionId) {
+            this.props.iDaaSRegionId(iDaaSRegionId);
             return this;
         }
 

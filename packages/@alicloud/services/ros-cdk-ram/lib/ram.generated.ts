@@ -43,7 +43,7 @@ function rosAccessKeyPropsToRosTemplate(properties: any, enableResourcePropertyC
         RosAccessKeyPropsValidator(properties).assertSuccess();
     }
     return {
-      UserName: ros.stringToRosTemplate(properties.userName),
+      'UserName': ros.stringToRosTemplate(properties.userName),
     };
 }
 
@@ -148,7 +148,7 @@ function rosAppSecretPropsToRosTemplate(properties: any, enableResourcePropertyC
         RosAppSecretPropsValidator(properties).assertSuccess();
     }
     return {
-      AppId: ros.stringToRosTemplate(properties.appId),
+      'AppId': ros.stringToRosTemplate(properties.appId),
     };
 }
 
@@ -345,16 +345,16 @@ function rosApplicationPropsToRosTemplate(properties: any, enableResourcePropert
         RosApplicationPropsValidator(properties).assertSuccess();
     }
     return {
-      AppName: ros.stringToRosTemplate(properties.appName),
-      AppType: ros.stringToRosTemplate(properties.appType),
-      DisplayName: ros.stringToRosTemplate(properties.displayName),
-      AccessTokenValidity: ros.numberToRosTemplate(properties.accessTokenValidity),
-      IsMultiTenant: ros.booleanToRosTemplate(properties.isMultiTenant),
-      PredefinedScopes: ros.listMapper(ros.stringToRosTemplate)(properties.predefinedScopes),
-      RedirectUris: ros.listMapper(ros.stringToRosTemplate)(properties.redirectUris),
-      RefreshTokenValidity: ros.numberToRosTemplate(properties.refreshTokenValidity),
-      RequiredScopes: ros.listMapper(ros.stringToRosTemplate)(properties.requiredScopes),
-      SecretRequired: ros.booleanToRosTemplate(properties.secretRequired),
+      'AppName': ros.stringToRosTemplate(properties.appName),
+      'AppType': ros.stringToRosTemplate(properties.appType),
+      'DisplayName': ros.stringToRosTemplate(properties.displayName),
+      'AccessTokenValidity': ros.numberToRosTemplate(properties.accessTokenValidity),
+      'IsMultiTenant': ros.booleanToRosTemplate(properties.isMultiTenant),
+      'PredefinedScopes': ros.listMapper(ros.stringToRosTemplate)(properties.predefinedScopes),
+      'RedirectUris': ros.listMapper(ros.stringToRosTemplate)(properties.redirectUris),
+      'RefreshTokenValidity': ros.numberToRosTemplate(properties.refreshTokenValidity),
+      'RequiredScopes': ros.listMapper(ros.stringToRosTemplate)(properties.requiredScopes),
+      'SecretRequired': ros.booleanToRosTemplate(properties.secretRequired),
     };
 }
 
@@ -551,9 +551,9 @@ function rosAttachPolicyToRolePropsToRosTemplate(properties: any, enableResource
         RosAttachPolicyToRolePropsValidator(properties).assertSuccess();
     }
     return {
-      PolicyName: ros.stringToRosTemplate(properties.policyName),
-      PolicyType: ros.stringToRosTemplate(properties.policyType),
-      RoleName: ros.stringToRosTemplate(properties.roleName),
+      'PolicyName': ros.stringToRosTemplate(properties.policyName),
+      'PolicyType': ros.stringToRosTemplate(properties.policyType),
+      'RoleName': ros.stringToRosTemplate(properties.roleName),
     };
 }
 
@@ -674,9 +674,9 @@ function rosAttachPolicyToUserPropsToRosTemplate(properties: any, enableResource
         RosAttachPolicyToUserPropsValidator(properties).assertSuccess();
     }
     return {
-      PolicyName: ros.stringToRosTemplate(properties.policyName),
-      PolicyType: ros.stringToRosTemplate(properties.policyType),
-      UserName: ros.stringToRosTemplate(properties.userName),
+      'PolicyName': ros.stringToRosTemplate(properties.policyName),
+      'PolicyType': ros.stringToRosTemplate(properties.policyType),
+      'UserName': ros.stringToRosTemplate(properties.userName),
     };
 }
 
@@ -817,12 +817,12 @@ function rosGroupPropsToRosTemplate(properties: any, enableResourcePropertyConst
         RosGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      GroupName: ros.stringToRosTemplate(properties.groupName),
-      Comments: ros.stringToRosTemplate(properties.comments),
-      DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
-      IgnoreExisting: ros.booleanToRosTemplate(properties.ignoreExisting),
-      Policies: ros.listMapper(rosGroupPoliciesPropertyToRosTemplate)(properties.policies),
-      PolicyAttachments: rosGroupPolicyAttachmentsPropertyToRosTemplate(properties.policyAttachments),
+      'GroupName': ros.stringToRosTemplate(properties.groupName),
+      'Comments': ros.stringToRosTemplate(properties.comments),
+      'DeletionForce': ros.booleanToRosTemplate(properties.deletionForce),
+      'IgnoreExisting': ros.booleanToRosTemplate(properties.ignoreExisting),
+      'Policies': ros.listMapper(rosGroupPoliciesPropertyToRosTemplate)(properties.policies),
+      'PolicyAttachments': rosGroupPolicyAttachmentsPropertyToRosTemplate(properties.policyAttachments),
     };
 }
 
@@ -976,10 +976,10 @@ function rosGroupPoliciesPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosGroup_PoliciesPropertyValidator(properties).assertSuccess();
     return {
-      IgnoreExisting: ros.booleanToRosTemplate(properties.ignoreExisting),
-      Description: ros.stringToRosTemplate(properties.description),
-      PolicyName: ros.stringToRosTemplate(properties.policyName),
-      PolicyDocument: rosGroupPolicyDocumentPropertyToRosTemplate(properties.policyDocument),
+      'IgnoreExisting': ros.booleanToRosTemplate(properties.ignoreExisting),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'PolicyName': ros.stringToRosTemplate(properties.policyName),
+      'PolicyDocument': rosGroupPolicyDocumentPropertyToRosTemplate(properties.policyDocument),
     };
 }
 
@@ -1039,8 +1039,8 @@ function rosGroupPolicyAttachmentsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosGroup_PolicyAttachmentsPropertyValidator(properties).assertSuccess();
     return {
-      Custom: ros.listMapper(ros.stringToRosTemplate)(properties.custom),
-      System: ros.listMapper(ros.stringToRosTemplate)(properties.system),
+      'Custom': ros.listMapper(ros.stringToRosTemplate)(properties.custom),
+      'System': ros.listMapper(ros.stringToRosTemplate)(properties.system),
     };
 }
 
@@ -1088,8 +1088,8 @@ function rosGroupPolicyDocumentPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosGroup_PolicyDocumentPropertyValidator(properties).assertSuccess();
     return {
-      Version: ros.stringToRosTemplate(properties.version),
-      Statement: ros.listMapper(rosGroupStatementPropertyToRosTemplate)(properties.statement),
+      'Version': ros.stringToRosTemplate(properties.version),
+      'Statement': ros.listMapper(rosGroupStatementPropertyToRosTemplate)(properties.statement),
     };
 }
 
@@ -1145,11 +1145,188 @@ function rosGroupStatementPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosGroup_StatementPropertyValidator(properties).assertSuccess();
     return {
-      Condition: ros.hashMapper(ros.objectToRosTemplate)(properties.condition),
-      Action: ros.listMapper(ros.objectToRosTemplate)(properties.action),
-      Resource: ros.listMapper(ros.objectToRosTemplate)(properties.resource),
-      Effect: ros.stringToRosTemplate(properties.effect),
+      'Condition': ros.hashMapper(ros.objectToRosTemplate)(properties.condition),
+      'Action': ros.listMapper(ros.objectToRosTemplate)(properties.action),
+      'Resource': ros.listMapper(ros.objectToRosTemplate)(properties.resource),
+      'Effect': ros.stringToRosTemplate(properties.effect),
     };
+}
+
+/**
+ * Properties for defining a `RosLoginProfile`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-loginprofile
+ */
+export interface RosLoginProfileProps {
+
+    /**
+     * @Property userPrincipalName: The login name of the RAM user.
+     */
+    readonly userPrincipalName: string | ros.IResolvable;
+
+    /**
+     * @Property generateRandomPassword: Whether to generate a random password for the RAM user.
+     */
+    readonly generateRandomPassword?: boolean | ros.IResolvable;
+
+    /**
+     * @Property mfaBindRequired: Whether to force RAM users to enable multi-factor authentication. Valid values:
+     * - true: This is required. RAM users must bind the multifactor authentication device the next time they log in.
+     * - false (default) : This is not required.
+     */
+    readonly mfaBindRequired?: boolean | ros.IResolvable;
+
+    /**
+     * @Property password: The password of the RAM user.
+     */
+    readonly password?: string | ros.IResolvable;
+
+    /**
+     * @Property passwordResetRequired: Whether RAM users must reset their password the next time they log in.
+     */
+    readonly passwordResetRequired?: boolean | ros.IResolvable;
+
+    /**
+     * @Property status: Enable or disable console password login. Valid values:
+     * - Activate (default): Enable.
+     * - Inactivate: Disable.
+     */
+    readonly status?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosLoginProfileProps`
+ *
+ * @param properties - the TypeScript properties of a `RosLoginProfileProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosLoginProfilePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.status && (typeof properties.status) !== 'object') {
+        errors.collect(ros.propertyValidator('status', ros.validateAllowedValues)({
+          data: properties.status,
+          allowedValues: ["Activate","Inactivate"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
+    errors.collect(ros.propertyValidator('passwordResetRequired', ros.validateBoolean)(properties.passwordResetRequired));
+    errors.collect(ros.propertyValidator('userPrincipalName', ros.requiredValidator)(properties.userPrincipalName));
+    errors.collect(ros.propertyValidator('userPrincipalName', ros.validateString)(properties.userPrincipalName));
+    errors.collect(ros.propertyValidator('generateRandomPassword', ros.validateBoolean)(properties.generateRandomPassword));
+    errors.collect(ros.propertyValidator('mfaBindRequired', ros.validateBoolean)(properties.mfaBindRequired));
+    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
+    return errors.wrap('supplied properties not correct for "RosLoginProfileProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::RAM::LoginProfile` resource
+ *
+ * @param properties - the TypeScript properties of a `RosLoginProfileProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::RAM::LoginProfile` resource.
+ */
+// @ts-ignore TS6133
+function rosLoginProfilePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosLoginProfilePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'UserPrincipalName': ros.stringToRosTemplate(properties.userPrincipalName),
+      'GenerateRandomPassword': ros.booleanToRosTemplate(properties.generateRandomPassword),
+      'MFABindRequired': ros.booleanToRosTemplate(properties.mfaBindRequired),
+      'Password': ros.stringToRosTemplate(properties.password),
+      'PasswordResetRequired': ros.booleanToRosTemplate(properties.passwordResetRequired),
+      'Status': ros.stringToRosTemplate(properties.status),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::LoginProfile`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `LoginProfile` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-loginprofile
+ */
+export class RosLoginProfile extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RAM::LoginProfile";
+
+    /**
+     * @Attribute Password: The password of the RAM user.
+     */
+    public readonly attrPassword: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property userPrincipalName: The login name of the RAM user.
+     */
+    public userPrincipalName: string | ros.IResolvable;
+
+    /**
+     * @Property generateRandomPassword: Whether to generate a random password for the RAM user.
+     */
+    public generateRandomPassword: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property mfaBindRequired: Whether to force RAM users to enable multi-factor authentication. Valid values:
+     * - true: This is required. RAM users must bind the multifactor authentication device the next time they log in.
+     * - false (default) : This is not required.
+     */
+    public mfaBindRequired: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property password: The password of the RAM user.
+     */
+    public password: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property passwordResetRequired: Whether RAM users must reset their password the next time they log in.
+     */
+    public passwordResetRequired: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property status: Enable or disable console password login. Valid values:
+     * - Activate (default): Enable.
+     * - Inactivate: Disable.
+     */
+    public status: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosLoginProfileProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosLoginProfile.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrPassword = this.getAtt('Password');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.userPrincipalName = props.userPrincipalName;
+        this.generateRandomPassword = props.generateRandomPassword;
+        this.mfaBindRequired = props.mfaBindRequired;
+        this.password = props.password;
+        this.passwordResetRequired = props.passwordResetRequired;
+        this.status = props.status;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            userPrincipalName: this.userPrincipalName,
+            generateRandomPassword: this.generateRandomPassword,
+            mfaBindRequired: this.mfaBindRequired,
+            password: this.password,
+            passwordResetRequired: this.passwordResetRequired,
+            status: this.status,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosLoginProfilePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }
 
 /**
@@ -1245,14 +1422,14 @@ function rosManagedPolicyPropsToRosTemplate(properties: any, enableResourcePrope
         RosManagedPolicyPropsValidator(properties).assertSuccess();
     }
     return {
-      PolicyName: ros.stringToRosTemplate(properties.policyName),
-      Description: ros.stringToRosTemplate(properties.description),
-      Groups: ros.listMapper(ros.objectToRosTemplate)(properties.groups),
-      IgnoreExisting: ros.booleanToRosTemplate(properties.ignoreExisting),
-      PolicyDocument: rosManagedPolicyPolicyDocumentPropertyToRosTemplate(properties.policyDocument),
-      PolicyDocumentUnchecked: ros.hashMapper(ros.objectToRosTemplate)(properties.policyDocumentUnchecked),
-      Roles: ros.listMapper(ros.objectToRosTemplate)(properties.roles),
-      Users: ros.listMapper(ros.objectToRosTemplate)(properties.users),
+      'PolicyName': ros.stringToRosTemplate(properties.policyName),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Groups': ros.listMapper(ros.objectToRosTemplate)(properties.groups),
+      'IgnoreExisting': ros.booleanToRosTemplate(properties.ignoreExisting),
+      'PolicyDocument': rosManagedPolicyPolicyDocumentPropertyToRosTemplate(properties.policyDocument),
+      'PolicyDocumentUnchecked': ros.hashMapper(ros.objectToRosTemplate)(properties.policyDocumentUnchecked),
+      'Roles': ros.listMapper(ros.objectToRosTemplate)(properties.roles),
+      'Users': ros.listMapper(ros.objectToRosTemplate)(properties.users),
     };
 }
 
@@ -1400,8 +1577,8 @@ function rosManagedPolicyPolicyDocumentPropertyToRosTemplate(properties: any): a
     if (!ros.canInspect(properties)) { return properties; }
     RosManagedPolicy_PolicyDocumentPropertyValidator(properties).assertSuccess();
     return {
-      Version: ros.stringToRosTemplate(properties.version),
-      Statement: ros.listMapper(rosManagedPolicyStatementPropertyToRosTemplate)(properties.statement),
+      'Version': ros.stringToRosTemplate(properties.version),
+      'Statement': ros.listMapper(rosManagedPolicyStatementPropertyToRosTemplate)(properties.statement),
     };
 }
 
@@ -1457,10 +1634,10 @@ function rosManagedPolicyStatementPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosManagedPolicy_StatementPropertyValidator(properties).assertSuccess();
     return {
-      Condition: ros.hashMapper(ros.objectToRosTemplate)(properties.condition),
-      Action: ros.listMapper(ros.objectToRosTemplate)(properties.action),
-      Resource: ros.listMapper(ros.objectToRosTemplate)(properties.resource),
-      Effect: ros.stringToRosTemplate(properties.effect),
+      'Condition': ros.hashMapper(ros.objectToRosTemplate)(properties.condition),
+      'Action': ros.listMapper(ros.objectToRosTemplate)(properties.action),
+      'Resource': ros.listMapper(ros.objectToRosTemplate)(properties.resource),
+      'Effect': ros.stringToRosTemplate(properties.effect),
     };
 }
 
@@ -1522,7 +1699,7 @@ function rosRamAccountAliasPropsToRosTemplate(properties: any, enableResourcePro
         RosRamAccountAliasPropsValidator(properties).assertSuccess();
     }
     return {
-      AccountAlias: ros.stringToRosTemplate(properties.accountAlias),
+      'AccountAlias': ros.stringToRosTemplate(properties.accountAlias),
     };
 }
 
@@ -1681,14 +1858,14 @@ function rosRolePropsToRosTemplate(properties: any, enableResourcePropertyConstr
         RosRolePropsValidator(properties).assertSuccess();
     }
     return {
-      AssumeRolePolicyDocument: rosRoleAssumeRolePolicyDocumentPropertyToRosTemplate(properties.assumeRolePolicyDocument),
-      RoleName: ros.stringToRosTemplate(properties.roleName),
-      DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
-      Description: ros.stringToRosTemplate(properties.description),
-      IgnoreExisting: ros.booleanToRosTemplate(properties.ignoreExisting),
-      MaxSessionDuration: ros.numberToRosTemplate(properties.maxSessionDuration),
-      Policies: ros.listMapper(rosRolePoliciesPropertyToRosTemplate)(properties.policies),
-      PolicyAttachments: rosRolePolicyAttachmentsPropertyToRosTemplate(properties.policyAttachments),
+      'AssumeRolePolicyDocument': rosRoleAssumeRolePolicyDocumentPropertyToRosTemplate(properties.assumeRolePolicyDocument),
+      'RoleName': ros.stringToRosTemplate(properties.roleName),
+      'DeletionForce': ros.booleanToRosTemplate(properties.deletionForce),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'IgnoreExisting': ros.booleanToRosTemplate(properties.ignoreExisting),
+      'MaxSessionDuration': ros.numberToRosTemplate(properties.maxSessionDuration),
+      'Policies': ros.listMapper(rosRolePoliciesPropertyToRosTemplate)(properties.policies),
+      'PolicyAttachments': rosRolePolicyAttachmentsPropertyToRosTemplate(properties.policyAttachments),
     };
 }
 
@@ -1850,8 +2027,8 @@ function rosRoleAssumeRolePolicyDocumentPropertyToRosTemplate(properties: any): 
     if (!ros.canInspect(properties)) { return properties; }
     RosRole_AssumeRolePolicyDocumentPropertyValidator(properties).assertSuccess();
     return {
-      Version: ros.stringToRosTemplate(properties.version),
-      Statement: ros.listMapper(rosRoleStatementPropertyToRosTemplate)(properties.statement),
+      'Version': ros.stringToRosTemplate(properties.version),
+      'Statement': ros.listMapper(rosRoleStatementPropertyToRosTemplate)(properties.statement),
     };
 }
 
@@ -1992,27 +2169,27 @@ function rosRoleConditionPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosRole_ConditionPropertyValidator(properties).assertSuccess();
     return {
-      NumericNotEquals: ros.hashMapper(ros.objectToRosTemplate)(properties.numericNotEquals),
-      StringEquals: ros.hashMapper(ros.objectToRosTemplate)(properties.stringEquals),
-      StringLike: ros.hashMapper(ros.objectToRosTemplate)(properties.stringLike),
-      NumericLessThanEquals: ros.hashMapper(ros.objectToRosTemplate)(properties.numericLessThanEquals),
-      StringNotEquals: ros.hashMapper(ros.objectToRosTemplate)(properties.stringNotEquals),
-      StringNotEqualsIgnoreCase: ros.hashMapper(ros.objectToRosTemplate)(properties.stringNotEqualsIgnoreCase),
-      NumericLessThan: ros.hashMapper(ros.objectToRosTemplate)(properties.numericLessThan),
-      NumericGreaterThan: ros.hashMapper(ros.objectToRosTemplate)(properties.numericGreaterThan),
-      DateLessThanEquals: ros.hashMapper(ros.objectToRosTemplate)(properties.dateLessThanEquals),
-      DateGreaterThanEquals: ros.hashMapper(ros.objectToRosTemplate)(properties.dateGreaterThanEquals),
-      NumericEquals: ros.hashMapper(ros.objectToRosTemplate)(properties.numericEquals),
-      DateLessThan: ros.hashMapper(ros.objectToRosTemplate)(properties.dateLessThan),
-      DateNotEquals: ros.hashMapper(ros.objectToRosTemplate)(properties.dateNotEquals),
-      StringNotLike: ros.hashMapper(ros.objectToRosTemplate)(properties.stringNotLike),
-      NotIpAddress: ros.hashMapper(ros.objectToRosTemplate)(properties.notIpAddress),
-      StringEqualsIgnoreCase: ros.hashMapper(ros.objectToRosTemplate)(properties.stringEqualsIgnoreCase),
-      Bool: ros.hashMapper(ros.objectToRosTemplate)(properties.bool),
-      DateEquals: ros.hashMapper(ros.objectToRosTemplate)(properties.dateEquals),
-      DateGreaterThan: ros.hashMapper(ros.objectToRosTemplate)(properties.dateGreaterThan),
-      NumericGreaterThanEquals: ros.hashMapper(ros.objectToRosTemplate)(properties.numericGreaterThanEquals),
-      IpAddress: ros.hashMapper(ros.objectToRosTemplate)(properties.ipAddress),
+      'NumericNotEquals': ros.hashMapper(ros.objectToRosTemplate)(properties.numericNotEquals),
+      'StringEquals': ros.hashMapper(ros.objectToRosTemplate)(properties.stringEquals),
+      'StringLike': ros.hashMapper(ros.objectToRosTemplate)(properties.stringLike),
+      'NumericLessThanEquals': ros.hashMapper(ros.objectToRosTemplate)(properties.numericLessThanEquals),
+      'StringNotEquals': ros.hashMapper(ros.objectToRosTemplate)(properties.stringNotEquals),
+      'StringNotEqualsIgnoreCase': ros.hashMapper(ros.objectToRosTemplate)(properties.stringNotEqualsIgnoreCase),
+      'NumericLessThan': ros.hashMapper(ros.objectToRosTemplate)(properties.numericLessThan),
+      'NumericGreaterThan': ros.hashMapper(ros.objectToRosTemplate)(properties.numericGreaterThan),
+      'DateLessThanEquals': ros.hashMapper(ros.objectToRosTemplate)(properties.dateLessThanEquals),
+      'DateGreaterThanEquals': ros.hashMapper(ros.objectToRosTemplate)(properties.dateGreaterThanEquals),
+      'NumericEquals': ros.hashMapper(ros.objectToRosTemplate)(properties.numericEquals),
+      'DateLessThan': ros.hashMapper(ros.objectToRosTemplate)(properties.dateLessThan),
+      'DateNotEquals': ros.hashMapper(ros.objectToRosTemplate)(properties.dateNotEquals),
+      'StringNotLike': ros.hashMapper(ros.objectToRosTemplate)(properties.stringNotLike),
+      'NotIpAddress': ros.hashMapper(ros.objectToRosTemplate)(properties.notIpAddress),
+      'StringEqualsIgnoreCase': ros.hashMapper(ros.objectToRosTemplate)(properties.stringEqualsIgnoreCase),
+      'Bool': ros.hashMapper(ros.objectToRosTemplate)(properties.bool),
+      'DateEquals': ros.hashMapper(ros.objectToRosTemplate)(properties.dateEquals),
+      'DateGreaterThan': ros.hashMapper(ros.objectToRosTemplate)(properties.dateGreaterThan),
+      'NumericGreaterThanEquals': ros.hashMapper(ros.objectToRosTemplate)(properties.numericGreaterThanEquals),
+      'IpAddress': ros.hashMapper(ros.objectToRosTemplate)(properties.ipAddress),
     };
 }
 
@@ -2080,10 +2257,10 @@ function rosRolePoliciesPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosRole_PoliciesPropertyValidator(properties).assertSuccess();
     return {
-      IgnoreExisting: ros.booleanToRosTemplate(properties.ignoreExisting),
-      Description: ros.stringToRosTemplate(properties.description),
-      PolicyName: ros.stringToRosTemplate(properties.policyName),
-      PolicyDocument: rosRolePolicyDocumentPropertyToRosTemplate(properties.policyDocument),
+      'IgnoreExisting': ros.booleanToRosTemplate(properties.ignoreExisting),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'PolicyName': ros.stringToRosTemplate(properties.policyName),
+      'PolicyDocument': rosRolePolicyDocumentPropertyToRosTemplate(properties.policyDocument),
     };
 }
 
@@ -2143,8 +2320,8 @@ function rosRolePolicyAttachmentsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosRole_PolicyAttachmentsPropertyValidator(properties).assertSuccess();
     return {
-      Custom: ros.listMapper(ros.stringToRosTemplate)(properties.custom),
-      System: ros.listMapper(ros.stringToRosTemplate)(properties.system),
+      'Custom': ros.listMapper(ros.stringToRosTemplate)(properties.custom),
+      'System': ros.listMapper(ros.stringToRosTemplate)(properties.system),
     };
 }
 
@@ -2192,8 +2369,8 @@ function rosRolePolicyDocumentPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosRole_PolicyDocumentPropertyValidator(properties).assertSuccess();
     return {
-      Version: ros.stringToRosTemplate(properties.version),
-      Statement: ros.listMapper(rosRolePolicyDocumentStatementPropertyToRosTemplate)(properties.statement),
+      'Version': ros.stringToRosTemplate(properties.version),
+      'Statement': ros.listMapper(rosRolePolicyDocumentStatementPropertyToRosTemplate)(properties.statement),
     };
 }
 
@@ -2249,10 +2426,10 @@ function rosRolePolicyDocumentStatementPropertyToRosTemplate(properties: any): a
     if (!ros.canInspect(properties)) { return properties; }
     RosRole_PolicyDocumentStatementPropertyValidator(properties).assertSuccess();
     return {
-      Condition: ros.hashMapper(ros.objectToRosTemplate)(properties.condition),
-      Action: ros.listMapper(ros.objectToRosTemplate)(properties.action),
-      Resource: ros.listMapper(ros.objectToRosTemplate)(properties.resource),
-      Effect: ros.stringToRosTemplate(properties.effect),
+      'Condition': ros.hashMapper(ros.objectToRosTemplate)(properties.condition),
+      'Action': ros.listMapper(ros.objectToRosTemplate)(properties.action),
+      'Resource': ros.listMapper(ros.objectToRosTemplate)(properties.resource),
+      'Effect': ros.stringToRosTemplate(properties.effect),
     };
 }
 
@@ -2303,9 +2480,9 @@ function rosRolePrincipalPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosRole_PrincipalPropertyValidator(properties).assertSuccess();
     return {
-      Service: ros.listMapper(ros.objectToRosTemplate)(properties.service),
-      Federated: ros.listMapper(ros.objectToRosTemplate)(properties.federated),
-      RAM: ros.listMapper(ros.objectToRosTemplate)(properties.ram),
+      'Service': ros.listMapper(ros.objectToRosTemplate)(properties.service),
+      'Federated': ros.listMapper(ros.objectToRosTemplate)(properties.federated),
+      'RAM': ros.listMapper(ros.objectToRosTemplate)(properties.ram),
     };
 }
 
@@ -2361,10 +2538,10 @@ function rosRoleStatementPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosRole_StatementPropertyValidator(properties).assertSuccess();
     return {
-      Condition: rosRoleConditionPropertyToRosTemplate(properties.condition),
-      Action: ros.stringToRosTemplate(properties.action),
-      Effect: ros.stringToRosTemplate(properties.effect),
-      Principal: rosRolePrincipalPropertyToRosTemplate(properties.principal),
+      'Condition': rosRoleConditionPropertyToRosTemplate(properties.condition),
+      'Action': ros.stringToRosTemplate(properties.action),
+      'Effect': ros.stringToRosTemplate(properties.effect),
+      'Principal': rosRolePrincipalPropertyToRosTemplate(properties.principal),
     };
 }
 
@@ -2471,11 +2648,11 @@ function rosSAMLProviderPropsToRosTemplate(properties: any, enableResourceProper
         RosSAMLProviderPropsValidator(properties).assertSuccess();
     }
     return {
-      SAMLProviderName: ros.stringToRosTemplate(properties.samlProviderName),
-      Description: ros.stringToRosTemplate(properties.description),
-      EncodedSAMLMetadataDocument: ros.stringToRosTemplate(properties.encodedSamlMetadataDocument),
-      SAMLMetadataDocument: ros.stringToRosTemplate(properties.samlMetadataDocument),
-      SAMLMetadataDocumentURL: ros.stringToRosTemplate(properties.samlMetadataDocumentUrl),
+      'SAMLProviderName': ros.stringToRosTemplate(properties.samlProviderName),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'EncodedSAMLMetadataDocument': ros.stringToRosTemplate(properties.encodedSamlMetadataDocument),
+      'SAMLMetadataDocument': ros.stringToRosTemplate(properties.samlMetadataDocument),
+      'SAMLMetadataDocumentURL': ros.stringToRosTemplate(properties.samlMetadataDocumentUrl),
     };
 }
 
@@ -2665,13 +2842,13 @@ function rosSecurityPreferencePropsToRosTemplate(properties: any, enableResource
         RosSecurityPreferencePropsValidator(properties).assertSuccess();
     }
     return {
-      AllowUserToChangePassword: ros.booleanToRosTemplate(properties.allowUserToChangePassword),
-      AllowUserToManageAccessKeys: ros.booleanToRosTemplate(properties.allowUserToManageAccessKeys),
-      AllowUserToManageMFADevices: ros.booleanToRosTemplate(properties.allowUserToManageMfaDevices),
-      AllowUserToManagePublicKeys: ros.booleanToRosTemplate(properties.allowUserToManagePublicKeys),
-      EnableSaveMFATicket: ros.booleanToRosTemplate(properties.enableSaveMfaTicket),
-      LoginNetworkMasks: ros.stringToRosTemplate(properties.loginNetworkMasks),
-      LoginSessionDuration: ros.numberToRosTemplate(properties.loginSessionDuration),
+      'AllowUserToChangePassword': ros.booleanToRosTemplate(properties.allowUserToChangePassword),
+      'AllowUserToManageAccessKeys': ros.booleanToRosTemplate(properties.allowUserToManageAccessKeys),
+      'AllowUserToManageMFADevices': ros.booleanToRosTemplate(properties.allowUserToManageMfaDevices),
+      'AllowUserToManagePublicKeys': ros.booleanToRosTemplate(properties.allowUserToManagePublicKeys),
+      'EnableSaveMFATicket': ros.booleanToRosTemplate(properties.enableSaveMfaTicket),
+      'LoginNetworkMasks': ros.stringToRosTemplate(properties.loginNetworkMasks),
+      'LoginSessionDuration': ros.numberToRosTemplate(properties.loginSessionDuration),
     };
 }
 
@@ -2928,16 +3105,16 @@ function rosUserPropsToRosTemplate(properties: any, enableResourcePropertyConstr
         RosUserPropsValidator(properties).assertSuccess();
     }
     return {
-      UserName: ros.stringToRosTemplate(properties.userName),
-      Comments: ros.stringToRosTemplate(properties.comments),
-      DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
-      DisplayName: ros.stringToRosTemplate(properties.displayName),
-      Email: ros.stringToRosTemplate(properties.email),
-      Groups: ros.listMapper(ros.objectToRosTemplate)(properties.groups),
-      LoginProfile: rosUserLoginProfilePropertyToRosTemplate(properties.loginProfile),
-      MobilePhone: ros.stringToRosTemplate(properties.mobilePhone),
-      Policies: ros.listMapper(rosUserPoliciesPropertyToRosTemplate)(properties.policies),
-      PolicyAttachments: rosUserPolicyAttachmentsPropertyToRosTemplate(properties.policyAttachments),
+      'UserName': ros.stringToRosTemplate(properties.userName),
+      'Comments': ros.stringToRosTemplate(properties.comments),
+      'DeletionForce': ros.booleanToRosTemplate(properties.deletionForce),
+      'DisplayName': ros.stringToRosTemplate(properties.displayName),
+      'Email': ros.stringToRosTemplate(properties.email),
+      'Groups': ros.listMapper(ros.objectToRosTemplate)(properties.groups),
+      'LoginProfile': rosUserLoginProfilePropertyToRosTemplate(properties.loginProfile),
+      'MobilePhone': ros.stringToRosTemplate(properties.mobilePhone),
+      'Policies': ros.listMapper(rosUserPoliciesPropertyToRosTemplate)(properties.policies),
+      'PolicyAttachments': rosUserPolicyAttachmentsPropertyToRosTemplate(properties.policyAttachments),
     };
 }
 
@@ -3124,9 +3301,9 @@ function rosUserLoginProfilePropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosUser_LoginProfilePropertyValidator(properties).assertSuccess();
     return {
-      PasswordResetRequired: ros.booleanToRosTemplate(properties.passwordResetRequired),
-      MFABindRequired: ros.booleanToRosTemplate(properties.mfaBindRequired),
-      Password: ros.stringToRosTemplate(properties.password),
+      'PasswordResetRequired': ros.booleanToRosTemplate(properties.passwordResetRequired),
+      'MFABindRequired': ros.booleanToRosTemplate(properties.mfaBindRequired),
+      'Password': ros.stringToRosTemplate(properties.password),
     };
 }
 
@@ -3194,10 +3371,10 @@ function rosUserPoliciesPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosUser_PoliciesPropertyValidator(properties).assertSuccess();
     return {
-      IgnoreExisting: ros.booleanToRosTemplate(properties.ignoreExisting),
-      Description: ros.stringToRosTemplate(properties.description),
-      PolicyName: ros.stringToRosTemplate(properties.policyName),
-      PolicyDocument: rosUserPolicyDocumentPropertyToRosTemplate(properties.policyDocument),
+      'IgnoreExisting': ros.booleanToRosTemplate(properties.ignoreExisting),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'PolicyName': ros.stringToRosTemplate(properties.policyName),
+      'PolicyDocument': rosUserPolicyDocumentPropertyToRosTemplate(properties.policyDocument),
     };
 }
 
@@ -3257,8 +3434,8 @@ function rosUserPolicyAttachmentsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosUser_PolicyAttachmentsPropertyValidator(properties).assertSuccess();
     return {
-      Custom: ros.listMapper(ros.stringToRosTemplate)(properties.custom),
-      System: ros.listMapper(ros.stringToRosTemplate)(properties.system),
+      'Custom': ros.listMapper(ros.stringToRosTemplate)(properties.custom),
+      'System': ros.listMapper(ros.stringToRosTemplate)(properties.system),
     };
 }
 
@@ -3306,8 +3483,8 @@ function rosUserPolicyDocumentPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosUser_PolicyDocumentPropertyValidator(properties).assertSuccess();
     return {
-      Version: ros.stringToRosTemplate(properties.version),
-      Statement: ros.listMapper(rosUserStatementPropertyToRosTemplate)(properties.statement),
+      'Version': ros.stringToRosTemplate(properties.version),
+      'Statement': ros.listMapper(rosUserStatementPropertyToRosTemplate)(properties.statement),
     };
 }
 
@@ -3363,10 +3540,10 @@ function rosUserStatementPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosUser_StatementPropertyValidator(properties).assertSuccess();
     return {
-      Condition: ros.hashMapper(ros.objectToRosTemplate)(properties.condition),
-      Action: ros.listMapper(ros.objectToRosTemplate)(properties.action),
-      Resource: ros.listMapper(ros.objectToRosTemplate)(properties.resource),
-      Effect: ros.stringToRosTemplate(properties.effect),
+      'Condition': ros.hashMapper(ros.objectToRosTemplate)(properties.condition),
+      'Action': ros.listMapper(ros.objectToRosTemplate)(properties.action),
+      'Resource': ros.listMapper(ros.objectToRosTemplate)(properties.resource),
+      'Effect': ros.stringToRosTemplate(properties.effect),
     };
 }
 
@@ -3418,8 +3595,8 @@ function rosUserToGroupAdditionPropsToRosTemplate(properties: any, enableResourc
         RosUserToGroupAdditionPropsValidator(properties).assertSuccess();
     }
     return {
-      GroupName: ros.stringToRosTemplate(properties.groupName),
-      Users: ros.listMapper(ros.objectToRosTemplate)(properties.users),
+      'GroupName': ros.stringToRosTemplate(properties.groupName),
+      'Users': ros.listMapper(ros.objectToRosTemplate)(properties.users),
     };
 }
 

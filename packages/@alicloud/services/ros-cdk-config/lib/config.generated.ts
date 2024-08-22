@@ -131,18 +131,18 @@ function rosAggregateCompliancePackPropsToRosTemplate(properties: any, enableRes
         RosAggregateCompliancePackPropsValidator(properties).assertSuccess();
     }
     return {
-      AggregatorId: ros.stringToRosTemplate(properties.aggregatorId),
-      CompliancePackName: ros.stringToRosTemplate(properties.compliancePackName),
-      ConfigRules: ros.listMapper(rosAggregateCompliancePackConfigRulesPropertyToRosTemplate)(properties.configRules),
-      Description: ros.stringToRosTemplate(properties.description),
-      RiskLevel: ros.numberToRosTemplate(properties.riskLevel),
-      CompliancePackTemplateId: ros.stringToRosTemplate(properties.compliancePackTemplateId),
-      DefaultEnable: ros.booleanToRosTemplate(properties.defaultEnable),
-      ExcludeResourceIdsScope: ros.listMapper(ros.stringToRosTemplate)(properties.excludeResourceIdsScope),
-      RegionIdsScope: ros.listMapper(ros.stringToRosTemplate)(properties.regionIdsScope),
-      ResourceGroupIdsScope: ros.listMapper(ros.stringToRosTemplate)(properties.resourceGroupIdsScope),
-      TagKeyScope: ros.stringToRosTemplate(properties.tagKeyScope),
-      TagValueScope: ros.stringToRosTemplate(properties.tagValueScope),
+      'AggregatorId': ros.stringToRosTemplate(properties.aggregatorId),
+      'CompliancePackName': ros.stringToRosTemplate(properties.compliancePackName),
+      'ConfigRules': ros.listMapper(rosAggregateCompliancePackConfigRulesPropertyToRosTemplate)(properties.configRules),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'RiskLevel': ros.numberToRosTemplate(properties.riskLevel),
+      'CompliancePackTemplateId': ros.stringToRosTemplate(properties.compliancePackTemplateId),
+      'DefaultEnable': ros.booleanToRosTemplate(properties.defaultEnable),
+      'ExcludeResourceIdsScope': ros.listMapper(ros.stringToRosTemplate)(properties.excludeResourceIdsScope),
+      'RegionIdsScope': ros.listMapper(ros.stringToRosTemplate)(properties.regionIdsScope),
+      'ResourceGroupIdsScope': ros.listMapper(ros.stringToRosTemplate)(properties.resourceGroupIdsScope),
+      'TagKeyScope': ros.stringToRosTemplate(properties.tagKeyScope),
+      'TagValueScope': ros.stringToRosTemplate(properties.tagValueScope),
     };
 }
 
@@ -320,8 +320,8 @@ function rosAggregateCompliancePackConfigRuleParametersPropertyToRosTemplate(pro
     if (!ros.canInspect(properties)) { return properties; }
     RosAggregateCompliancePack_ConfigRuleParametersPropertyValidator(properties).assertSuccess();
     return {
-      ParameterValue: ros.stringToRosTemplate(properties.parameterValue),
-      ParameterName: ros.stringToRosTemplate(properties.parameterName),
+      'ParameterValue': ros.stringToRosTemplate(properties.parameterValue),
+      'ParameterName': ros.stringToRosTemplate(properties.parameterName),
     };
 }
 
@@ -397,12 +397,12 @@ function rosAggregateCompliancePackConfigRulesPropertyToRosTemplate(properties: 
     if (!ros.canInspect(properties)) { return properties; }
     RosAggregateCompliancePack_ConfigRulesPropertyValidator(properties).assertSuccess();
     return {
-      ConfigRuleId: ros.stringToRosTemplate(properties.configRuleId),
-      Description: ros.stringToRosTemplate(properties.description),
-      ConfigRuleName: ros.stringToRosTemplate(properties.configRuleName),
-      ManagedRuleIdentifier: ros.stringToRosTemplate(properties.managedRuleIdentifier),
-      RiskLevel: ros.numberToRosTemplate(properties.riskLevel),
-      ConfigRuleParameters: ros.listMapper(rosAggregateCompliancePackConfigRuleParametersPropertyToRosTemplate)(properties.configRuleParameters),
+      'ConfigRuleId': ros.stringToRosTemplate(properties.configRuleId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'ConfigRuleName': ros.stringToRosTemplate(properties.configRuleName),
+      'ManagedRuleIdentifier': ros.stringToRosTemplate(properties.managedRuleIdentifier),
+      'RiskLevel': ros.numberToRosTemplate(properties.riskLevel),
+      'ConfigRuleParameters': ros.listMapper(rosAggregateCompliancePackConfigRuleParametersPropertyToRosTemplate)(properties.configRuleParameters),
     };
 }
 
@@ -473,10 +473,10 @@ function rosAggregatorPropsToRosTemplate(properties: any, enableResourceProperty
         RosAggregatorPropsValidator(properties).assertSuccess();
     }
     return {
-      AggregatorName: ros.stringToRosTemplate(properties.aggregatorName),
-      Description: ros.stringToRosTemplate(properties.description),
-      AggregatorAccounts: ros.listMapper(rosAggregatorAggregatorAccountsPropertyToRosTemplate)(properties.aggregatorAccounts),
-      AggregatorType: ros.stringToRosTemplate(properties.aggregatorType),
+      'AggregatorName': ros.stringToRosTemplate(properties.aggregatorName),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'AggregatorAccounts': ros.listMapper(rosAggregatorAggregatorAccountsPropertyToRosTemplate)(properties.aggregatorAccounts),
+      'AggregatorType': ros.stringToRosTemplate(properties.aggregatorType),
     };
 }
 
@@ -605,9 +605,9 @@ function rosAggregatorAggregatorAccountsPropertyToRosTemplate(properties: any): 
     if (!ros.canInspect(properties)) { return properties; }
     RosAggregator_AggregatorAccountsPropertyValidator(properties).assertSuccess();
     return {
-      AccountId: ros.numberToRosTemplate(properties.accountId),
-      AccountType: ros.stringToRosTemplate(properties.accountType),
-      AccountName: ros.stringToRosTemplate(properties.accountName),
+      'AccountId': ros.numberToRosTemplate(properties.accountId),
+      'AccountType': ros.stringToRosTemplate(properties.accountType),
+      'AccountName': ros.stringToRosTemplate(properties.accountName),
     };
 }
 
@@ -690,12 +690,12 @@ function rosCompliancePackPropsToRosTemplate(properties: any, enableResourceProp
         RosCompliancePackPropsValidator(properties).assertSuccess();
     }
     return {
-      CompliancePackName: ros.stringToRosTemplate(properties.compliancePackName),
-      ConfigRules: ros.stringToRosTemplate(properties.configRules),
-      RiskLevel: ros.numberToRosTemplate(properties.riskLevel),
-      CompliancePackTemplateId: ros.stringToRosTemplate(properties.compliancePackTemplateId),
-      ConfigRuleIds: ros.listMapper(rosCompliancePackConfigRuleIdsPropertyToRosTemplate)(properties.configRuleIds),
-      Description: ros.stringToRosTemplate(properties.description),
+      'CompliancePackName': ros.stringToRosTemplate(properties.compliancePackName),
+      'ConfigRules': ros.stringToRosTemplate(properties.configRules),
+      'RiskLevel': ros.numberToRosTemplate(properties.riskLevel),
+      'CompliancePackTemplateId': ros.stringToRosTemplate(properties.compliancePackTemplateId),
+      'ConfigRuleIds': ros.listMapper(rosCompliancePackConfigRuleIdsPropertyToRosTemplate)(properties.configRuleIds),
+      'Description': ros.stringToRosTemplate(properties.description),
     };
 }
 
@@ -849,7 +849,7 @@ function rosCompliancePackConfigRuleIdsPropertyToRosTemplate(properties: any): a
     if (!ros.canInspect(properties)) { return properties; }
     RosCompliancePack_ConfigRuleIdsPropertyValidator(properties).assertSuccess();
     return {
-      ConfigRuleId: ros.stringToRosTemplate(properties.configRuleId),
+      'ConfigRuleId': ros.stringToRosTemplate(properties.configRuleId),
     };
 }
 
@@ -955,12 +955,12 @@ function rosDeliveryChannelPropsToRosTemplate(properties: any, enableResourcePro
         RosDeliveryChannelPropsValidator(properties).assertSuccess();
     }
     return {
-      DeliveryChannelAssumeRoleArn: ros.stringToRosTemplate(properties.deliveryChannelAssumeRoleArn),
-      DeliveryChannelTargetArn: ros.stringToRosTemplate(properties.deliveryChannelTargetArn),
-      DeliveryChannelType: ros.stringToRosTemplate(properties.deliveryChannelType),
-      DeliveryChannelCondition: ros.stringToRosTemplate(properties.deliveryChannelCondition),
-      DeliveryChannelName: ros.stringToRosTemplate(properties.deliveryChannelName),
-      Description: ros.stringToRosTemplate(properties.description),
+      'DeliveryChannelAssumeRoleArn': ros.stringToRosTemplate(properties.deliveryChannelAssumeRoleArn),
+      'DeliveryChannelTargetArn': ros.stringToRosTemplate(properties.deliveryChannelTargetArn),
+      'DeliveryChannelType': ros.stringToRosTemplate(properties.deliveryChannelType),
+      'DeliveryChannelCondition': ros.stringToRosTemplate(properties.deliveryChannelCondition),
+      'DeliveryChannelName': ros.stringToRosTemplate(properties.deliveryChannelName),
+      'Description': ros.stringToRosTemplate(properties.description),
     };
 }
 
@@ -1200,21 +1200,21 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
         RosRulePropsValidator(properties).assertSuccess();
     }
     return {
-      ConfigRuleTriggerTypes: ros.stringToRosTemplate(properties.configRuleTriggerTypes),
-      ResourceTypesScope: ros.listMapper(ros.stringToRosTemplate)(properties.resourceTypesScope),
-      RiskLevel: ros.numberToRosTemplate(properties.riskLevel),
-      RuleName: ros.stringToRosTemplate(properties.ruleName),
-      SourceIdentifier: ros.stringToRosTemplate(properties.sourceIdentifier),
-      SourceOwner: ros.stringToRosTemplate(properties.sourceOwner),
-      Description: ros.stringToRosTemplate(properties.description),
-      ExcludeResourceIdsScope: ros.stringToRosTemplate(properties.excludeResourceIdsScope),
-      InputParameters: ros.hashMapper(ros.objectToRosTemplate)(properties.inputParameters),
-      MaximumExecutionFrequency: ros.stringToRosTemplate(properties.maximumExecutionFrequency),
-      RegionIdsScope: ros.stringToRosTemplate(properties.regionIdsScope),
-      ResourceGroupIdsScope: ros.stringToRosTemplate(properties.resourceGroupIdsScope),
-      TagKeyLogicScope: ros.stringToRosTemplate(properties.tagKeyLogicScope),
-      TagKeyScope: ros.stringToRosTemplate(properties.tagKeyScope),
-      TagValueScope: ros.stringToRosTemplate(properties.tagValueScope),
+      'ConfigRuleTriggerTypes': ros.stringToRosTemplate(properties.configRuleTriggerTypes),
+      'ResourceTypesScope': ros.listMapper(ros.stringToRosTemplate)(properties.resourceTypesScope),
+      'RiskLevel': ros.numberToRosTemplate(properties.riskLevel),
+      'RuleName': ros.stringToRosTemplate(properties.ruleName),
+      'SourceIdentifier': ros.stringToRosTemplate(properties.sourceIdentifier),
+      'SourceOwner': ros.stringToRosTemplate(properties.sourceOwner),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'ExcludeResourceIdsScope': ros.stringToRosTemplate(properties.excludeResourceIdsScope),
+      'InputParameters': ros.hashMapper(ros.objectToRosTemplate)(properties.inputParameters),
+      'MaximumExecutionFrequency': ros.stringToRosTemplate(properties.maximumExecutionFrequency),
+      'RegionIdsScope': ros.stringToRosTemplate(properties.regionIdsScope),
+      'ResourceGroupIdsScope': ros.stringToRosTemplate(properties.resourceGroupIdsScope),
+      'TagKeyLogicScope': ros.stringToRosTemplate(properties.tagKeyLogicScope),
+      'TagKeyScope': ros.stringToRosTemplate(properties.tagKeyScope),
+      'TagValueScope': ros.stringToRosTemplate(properties.tagValueScope),
     };
 }
 

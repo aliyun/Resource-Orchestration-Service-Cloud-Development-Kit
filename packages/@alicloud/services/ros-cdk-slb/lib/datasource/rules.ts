@@ -23,6 +23,14 @@ export interface RulesProps {
      * Property listenerProtocol: The frontend listener protocol that is used by the SLB instance.
      */
     readonly listenerProtocol?: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -62,6 +70,7 @@ export class Rules extends ros.Resource {
             listenerPort: props.listenerPort,
             loadBalancerId: props.loadBalancerId,
             listenerProtocol: props.listenerProtocol,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosRules;
         this.attrRuleIds = rosRules.attrRuleIds;

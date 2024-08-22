@@ -85,10 +85,10 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosClusterPropsValidator(properties).assertSuccess();
     }
     return {
-      ClusterName: ros.stringToRosTemplate(properties.clusterName),
-      ClusterType: ros.stringToRosTemplate(properties.clusterType),
-      ReplicaCount: ros.numberToRosTemplate(properties.replicaCount),
-      IgnoreExisting: ros.booleanToRosTemplate(properties.ignoreExisting),
+      'ClusterName': ros.stringToRosTemplate(properties.clusterName),
+      'ClusterType': ros.stringToRosTemplate(properties.clusterType),
+      'ReplicaCount': ros.numberToRosTemplate(properties.replicaCount),
+      'IgnoreExisting': ros.booleanToRosTemplate(properties.ignoreExisting),
     };
 }
 

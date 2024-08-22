@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::SslVpnServer</code>, which is used to create an SSL-VPN server.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.806Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:24.891Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.SslVpnServer")
 public class SslVpnServer extends com.aliyun.ros.cdk.core.Resource {
 
@@ -233,6 +233,94 @@ public class SslVpnServer extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder compress(final com.aliyun.ros.cdk.core.IResolvable compress) {
             this.props.compress(compress);
+            return this;
+        }
+
+        /**
+         * Property enableMultiFactorAuth: Whether to enable multi-factor authentication.
+         * <p>
+         * The default value is false.
+         * <p>
+         * @return {@code this}
+         * @param enableMultiFactorAuth Property enableMultiFactorAuth: Whether to enable multi-factor authentication. This parameter is required.
+         */
+        public Builder enableMultiFactorAuth(final java.lang.Boolean enableMultiFactorAuth) {
+            this.props.enableMultiFactorAuth(enableMultiFactorAuth);
+            return this;
+        }
+        /**
+         * Property enableMultiFactorAuth: Whether to enable multi-factor authentication.
+         * <p>
+         * The default value is false.
+         * <p>
+         * @return {@code this}
+         * @param enableMultiFactorAuth Property enableMultiFactorAuth: Whether to enable multi-factor authentication. This parameter is required.
+         */
+        public Builder enableMultiFactorAuth(final com.aliyun.ros.cdk.core.IResolvable enableMultiFactorAuth) {
+            this.props.enableMultiFactorAuth(enableMultiFactorAuth);
+            return this;
+        }
+
+        /**
+         * Property iDaaSApplicationId: The ID of the IDaaS application.
+         * <p>
+         * @return {@code this}
+         * @param iDaaSApplicationId Property iDaaSApplicationId: The ID of the IDaaS application. This parameter is required.
+         */
+        public Builder iDaaSApplicationId(final java.lang.String iDaaSApplicationId) {
+            this.props.iDaaSApplicationId(iDaaSApplicationId);
+            return this;
+        }
+        /**
+         * Property iDaaSApplicationId: The ID of the IDaaS application.
+         * <p>
+         * @return {@code this}
+         * @param iDaaSApplicationId Property iDaaSApplicationId: The ID of the IDaaS application. This parameter is required.
+         */
+        public Builder iDaaSApplicationId(final com.aliyun.ros.cdk.core.IResolvable iDaaSApplicationId) {
+            this.props.iDaaSApplicationId(iDaaSApplicationId);
+            return this;
+        }
+
+        /**
+         * Property iDaaSInstanceId: The ID of the IDaaS instance.
+         * <p>
+         * @return {@code this}
+         * @param iDaaSInstanceId Property iDaaSInstanceId: The ID of the IDaaS instance. This parameter is required.
+         */
+        public Builder iDaaSInstanceId(final java.lang.String iDaaSInstanceId) {
+            this.props.iDaaSInstanceId(iDaaSInstanceId);
+            return this;
+        }
+        /**
+         * Property iDaaSInstanceId: The ID of the IDaaS instance.
+         * <p>
+         * @return {@code this}
+         * @param iDaaSInstanceId Property iDaaSInstanceId: The ID of the IDaaS instance. This parameter is required.
+         */
+        public Builder iDaaSInstanceId(final com.aliyun.ros.cdk.core.IResolvable iDaaSInstanceId) {
+            this.props.iDaaSInstanceId(iDaaSInstanceId);
+            return this;
+        }
+
+        /**
+         * Property iDaaSRegionId: The region ID of the IDaaS instance.
+         * <p>
+         * @return {@code this}
+         * @param iDaaSRegionId Property iDaaSRegionId: The region ID of the IDaaS instance. This parameter is required.
+         */
+        public Builder iDaaSRegionId(final java.lang.String iDaaSRegionId) {
+            this.props.iDaaSRegionId(iDaaSRegionId);
+            return this;
+        }
+        /**
+         * Property iDaaSRegionId: The region ID of the IDaaS instance.
+         * <p>
+         * @return {@code this}
+         * @param iDaaSRegionId Property iDaaSRegionId: The region ID of the IDaaS instance. This parameter is required.
+         */
+        public Builder iDaaSRegionId(final com.aliyun.ros.cdk.core.IResolvable iDaaSRegionId) {
+            this.props.iDaaSRegionId(iDaaSRegionId);
             return this;
         }
 

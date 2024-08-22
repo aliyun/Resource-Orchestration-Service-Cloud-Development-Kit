@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cen;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthlimit
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.701Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:18.105Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenBandwidthLimitProps")
 @software.amazon.jsii.Jsii.Proxy(CenBandwidthLimitProps.Jsii$Proxy.class)
 public interface CenBandwidthLimitProps extends software.amazon.jsii.JsiiSerializable {
@@ -33,6 +33,15 @@ public interface CenBandwidthLimitProps extends software.amazon.jsii.JsiiSeriali
     @org.jetbrains.annotations.NotNull java.lang.Object getOppositeRegionId();
 
     /**
+     * Property bandwidthType: Bandwidth allocation mode.
+     * <p>
+     * Value: BandwidthPackage: Allocates bandwidth from the bandwidth package.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBandwidthType() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link CenBandwidthLimitProps}
      */
     static Builder builder() {
@@ -46,6 +55,7 @@ public interface CenBandwidthLimitProps extends software.amazon.jsii.JsiiSeriali
         java.lang.Object cenId;
         java.lang.Object localRegionId;
         java.lang.Object oppositeRegionId;
+        java.lang.Object bandwidthType;
 
         /**
          * Sets the value of {@link CenBandwidthLimitProps#getBandwidthLimit}
@@ -130,6 +140,28 @@ public interface CenBandwidthLimitProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link CenBandwidthLimitProps#getBandwidthType}
+         * @param bandwidthType Property bandwidthType: Bandwidth allocation mode.
+         *                      Value: BandwidthPackage: Allocates bandwidth from the bandwidth package.
+         * @return {@code this}
+         */
+        public Builder bandwidthType(java.lang.String bandwidthType) {
+            this.bandwidthType = bandwidthType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link CenBandwidthLimitProps#getBandwidthType}
+         * @param bandwidthType Property bandwidthType: Bandwidth allocation mode.
+         *                      Value: BandwidthPackage: Allocates bandwidth from the bandwidth package.
+         * @return {@code this}
+         */
+        public Builder bandwidthType(com.aliyun.ros.cdk.core.IResolvable bandwidthType) {
+            this.bandwidthType = bandwidthType;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link CenBandwidthLimitProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -149,6 +181,7 @@ public interface CenBandwidthLimitProps extends software.amazon.jsii.JsiiSeriali
         private final java.lang.Object cenId;
         private final java.lang.Object localRegionId;
         private final java.lang.Object oppositeRegionId;
+        private final java.lang.Object bandwidthType;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -160,6 +193,7 @@ public interface CenBandwidthLimitProps extends software.amazon.jsii.JsiiSeriali
             this.cenId = software.amazon.jsii.Kernel.get(this, "cenId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.localRegionId = software.amazon.jsii.Kernel.get(this, "localRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.oppositeRegionId = software.amazon.jsii.Kernel.get(this, "oppositeRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.bandwidthType = software.amazon.jsii.Kernel.get(this, "bandwidthType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -171,6 +205,7 @@ public interface CenBandwidthLimitProps extends software.amazon.jsii.JsiiSeriali
             this.cenId = java.util.Objects.requireNonNull(builder.cenId, "cenId is required");
             this.localRegionId = java.util.Objects.requireNonNull(builder.localRegionId, "localRegionId is required");
             this.oppositeRegionId = java.util.Objects.requireNonNull(builder.oppositeRegionId, "oppositeRegionId is required");
+            this.bandwidthType = builder.bandwidthType;
         }
 
         @Override
@@ -194,6 +229,11 @@ public interface CenBandwidthLimitProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
+        public final java.lang.Object getBandwidthType() {
+            return this.bandwidthType;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -203,6 +243,9 @@ public interface CenBandwidthLimitProps extends software.amazon.jsii.JsiiSeriali
             data.set("cenId", om.valueToTree(this.getCenId()));
             data.set("localRegionId", om.valueToTree(this.getLocalRegionId()));
             data.set("oppositeRegionId", om.valueToTree(this.getOppositeRegionId()));
+            if (this.getBandwidthType() != null) {
+                data.set("bandwidthType", om.valueToTree(this.getBandwidthType()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cen.CenBandwidthLimitProps"));
@@ -224,7 +267,8 @@ public interface CenBandwidthLimitProps extends software.amazon.jsii.JsiiSeriali
             if (!bandwidthLimit.equals(that.bandwidthLimit)) return false;
             if (!cenId.equals(that.cenId)) return false;
             if (!localRegionId.equals(that.localRegionId)) return false;
-            return this.oppositeRegionId.equals(that.oppositeRegionId);
+            if (!oppositeRegionId.equals(that.oppositeRegionId)) return false;
+            return this.bandwidthType != null ? this.bandwidthType.equals(that.bandwidthType) : that.bandwidthType == null;
         }
 
         @Override
@@ -233,6 +277,7 @@ public interface CenBandwidthLimitProps extends software.amazon.jsii.JsiiSeriali
             result = 31 * result + (this.cenId.hashCode());
             result = 31 * result + (this.localRegionId.hashCode());
             result = 31 * result + (this.oppositeRegionId.hashCode());
+            result = 31 * result + (this.bandwidthType != null ? this.bandwidthType.hashCode() : 0);
             return result;
         }
     }

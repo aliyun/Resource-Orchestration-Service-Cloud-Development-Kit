@@ -18,6 +18,14 @@ export interface LogstoresProps {
      * Property logstoreName: Logstore name.
      */
     readonly logstoreName?: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -51,6 +59,7 @@ export class Logstores extends ros.Resource {
         const rosLogstores = new RosLogstores(this, id,  {
             project: props.project,
             logstoreName: props.logstoreName,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosLogstores;
         this.attrLogstores = rosLogstores.attrLogstores;

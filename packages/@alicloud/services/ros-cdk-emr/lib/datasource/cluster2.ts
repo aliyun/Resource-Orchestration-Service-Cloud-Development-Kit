@@ -35,6 +35,14 @@ export interface Cluster2Props {
     readonly paymentTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property resourceGroupId: The resource group id of emr cluster.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -86,6 +94,7 @@ export class Cluster2 extends ros.Resource {
             clusterIds: props.clusterIds,
             tags: props.tags,
             clusterStates: props.clusterStates,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCluster2;
         this.attrClusterIds = rosCluster2.attrClusterIds;

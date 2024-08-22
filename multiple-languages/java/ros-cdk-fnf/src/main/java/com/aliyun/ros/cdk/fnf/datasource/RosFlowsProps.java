@@ -5,10 +5,16 @@ package com.aliyun.ros.cdk.fnf.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fnf-flows
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.203Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:21.666Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fnf.$Module.class, fqn = "@alicloud/ros-cdk-fnf.datasource.RosFlowsProps")
 @software.amazon.jsii.Jsii.Proxy(RosFlowsProps.Jsii$Proxy.class)
 public interface RosFlowsProps extends software.amazon.jsii.JsiiSerializable {
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
 
     /**
      * @return a {@link Builder} of {@link RosFlowsProps}
@@ -20,6 +26,27 @@ public interface RosFlowsProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosFlowsProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosFlowsProps> {
+        java.lang.Object refreshOptions;
+
+        /**
+         * Sets the value of {@link RosFlowsProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFlowsProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
 
         /**
          * Builds the configured instance.
@@ -37,6 +64,7 @@ public interface RosFlowsProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosFlowsProps {
+        private final java.lang.Object refreshOptions;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -44,6 +72,7 @@ public interface RosFlowsProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -51,6 +80,12 @@ public interface RosFlowsProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+            this.refreshOptions = builder.refreshOptions;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -59,6 +94,9 @@ public interface RosFlowsProps extends software.amazon.jsii.JsiiSerializable {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-fnf.datasource.RosFlowsProps"));
@@ -68,6 +106,22 @@ public interface RosFlowsProps extends software.amazon.jsii.JsiiSerializable {
             obj.set("$jsii.struct", struct);
 
             return obj;
+        }
+
+        @Override
+        public final boolean equals(final Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+
+            RosFlowsProps.Jsii$Proxy that = (RosFlowsProps.Jsii$Proxy) o;
+
+            return this.refreshOptions != null ? this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions == null;
+        }
+
+        @Override
+        public final int hashCode() {
+            int result = this.refreshOptions != null ? this.refreshOptions.hashCode() : 0;
+            return result;
         }
     }
 }

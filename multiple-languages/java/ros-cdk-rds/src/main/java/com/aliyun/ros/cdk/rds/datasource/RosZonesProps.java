@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.rds.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-zones
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:08.901Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:23.660Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.datasource.RosZonesProps")
 @software.amazon.jsii.Jsii.Proxy(RosZonesProps.Jsii$Proxy.class)
 public interface RosZonesProps extends software.amazon.jsii.JsiiSerializable {
@@ -40,6 +40,12 @@ public interface RosZonesProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
         return null;
     }
@@ -59,6 +65,7 @@ public interface RosZonesProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object commodityCode;
         java.lang.Object dispenseMode;
         java.lang.Object engineVersion;
+        java.lang.Object refreshOptions;
         java.lang.Object zoneId;
 
         /**
@@ -162,6 +169,26 @@ public interface RosZonesProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosZonesProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosZonesProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosZonesProps#getZoneId}
          * @param zoneId the value to be set.
          * @return {@code this}
@@ -202,6 +229,7 @@ public interface RosZonesProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object commodityCode;
         private final java.lang.Object dispenseMode;
         private final java.lang.Object engineVersion;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object zoneId;
 
         /**
@@ -215,6 +243,7 @@ public interface RosZonesProps extends software.amazon.jsii.JsiiSerializable {
             this.commodityCode = software.amazon.jsii.Kernel.get(this, "commodityCode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dispenseMode = software.amazon.jsii.Kernel.get(this, "dispenseMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.engineVersion = software.amazon.jsii.Kernel.get(this, "engineVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -228,6 +257,7 @@ public interface RosZonesProps extends software.amazon.jsii.JsiiSerializable {
             this.commodityCode = builder.commodityCode;
             this.dispenseMode = builder.dispenseMode;
             this.engineVersion = builder.engineVersion;
+            this.refreshOptions = builder.refreshOptions;
             this.zoneId = builder.zoneId;
         }
 
@@ -257,6 +287,11 @@ public interface RosZonesProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
@@ -279,6 +314,9 @@ public interface RosZonesProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getEngineVersion() != null) {
                 data.set("engineVersion", om.valueToTree(this.getEngineVersion()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
             if (this.getZoneId() != null) {
                 data.set("zoneId", om.valueToTree(this.getZoneId()));
@@ -306,6 +344,7 @@ public interface RosZonesProps extends software.amazon.jsii.JsiiSerializable {
             if (this.commodityCode != null ? !this.commodityCode.equals(that.commodityCode) : that.commodityCode != null) return false;
             if (this.dispenseMode != null ? !this.dispenseMode.equals(that.dispenseMode) : that.dispenseMode != null) return false;
             if (this.engineVersion != null ? !this.engineVersion.equals(that.engineVersion) : that.engineVersion != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             return this.zoneId != null ? this.zoneId.equals(that.zoneId) : that.zoneId == null;
         }
 
@@ -316,6 +355,7 @@ public interface RosZonesProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.commodityCode != null ? this.commodityCode.hashCode() : 0);
             result = 31 * result + (this.dispenseMode != null ? this.dispenseMode.hashCode() : 0);
             result = 31 * result + (this.engineVersion != null ? this.engineVersion.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.zoneId != null ? this.zoneId.hashCode() : 0);
             return result;
         }

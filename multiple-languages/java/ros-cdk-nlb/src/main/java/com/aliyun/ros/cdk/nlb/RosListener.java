@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nlb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::NLB::Listener</code>, which is used to create a listener.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:07.832Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:22.599Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.RosListener")
 public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -387,6 +387,24 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getProxyProtocolV2Config() {
+        return software.amazon.jsii.Kernel.get(this, "proxyProtocolV2Config", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setProxyProtocolV2Config(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "proxyProtocolV2Config", value);
+    }
+
+    /**
+     */
+    public void setProxyProtocolV2Config(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.nlb.RosListener.ProxyProtocolV2ConfigProperty value) {
+        software.amazon.jsii.Kernel.set(this, "proxyProtocolV2Config", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getSecSensorEnabled() {
         return software.amazon.jsii.Kernel.get(this, "secSensorEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -449,6 +467,221 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setTags(final @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.nlb.RosListener.TagsProperty> value) {
         software.amazon.jsii.Kernel.set(this, "tags", value);
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.RosListener.ProxyProtocolV2ConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(ProxyProtocolV2ConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface ProxyProtocolV2ConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPpv2PrivateLinkEpIdEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPpv2PrivateLinkEpsIdEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPpv2VpcIdEnabled() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link ProxyProtocolV2ConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link ProxyProtocolV2ConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<ProxyProtocolV2ConfigProperty> {
+            java.lang.Object ppv2PrivateLinkEpIdEnabled;
+            java.lang.Object ppv2PrivateLinkEpsIdEnabled;
+            java.lang.Object ppv2VpcIdEnabled;
+
+            /**
+             * Sets the value of {@link ProxyProtocolV2ConfigProperty#getPpv2PrivateLinkEpIdEnabled}
+             * @param ppv2PrivateLinkEpIdEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ppv2PrivateLinkEpIdEnabled(java.lang.Boolean ppv2PrivateLinkEpIdEnabled) {
+                this.ppv2PrivateLinkEpIdEnabled = ppv2PrivateLinkEpIdEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ProxyProtocolV2ConfigProperty#getPpv2PrivateLinkEpIdEnabled}
+             * @param ppv2PrivateLinkEpIdEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ppv2PrivateLinkEpIdEnabled(com.aliyun.ros.cdk.core.IResolvable ppv2PrivateLinkEpIdEnabled) {
+                this.ppv2PrivateLinkEpIdEnabled = ppv2PrivateLinkEpIdEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ProxyProtocolV2ConfigProperty#getPpv2PrivateLinkEpsIdEnabled}
+             * @param ppv2PrivateLinkEpsIdEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ppv2PrivateLinkEpsIdEnabled(java.lang.Boolean ppv2PrivateLinkEpsIdEnabled) {
+                this.ppv2PrivateLinkEpsIdEnabled = ppv2PrivateLinkEpsIdEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ProxyProtocolV2ConfigProperty#getPpv2PrivateLinkEpsIdEnabled}
+             * @param ppv2PrivateLinkEpsIdEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ppv2PrivateLinkEpsIdEnabled(com.aliyun.ros.cdk.core.IResolvable ppv2PrivateLinkEpsIdEnabled) {
+                this.ppv2PrivateLinkEpsIdEnabled = ppv2PrivateLinkEpsIdEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ProxyProtocolV2ConfigProperty#getPpv2VpcIdEnabled}
+             * @param ppv2VpcIdEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ppv2VpcIdEnabled(java.lang.Boolean ppv2VpcIdEnabled) {
+                this.ppv2VpcIdEnabled = ppv2VpcIdEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ProxyProtocolV2ConfigProperty#getPpv2VpcIdEnabled}
+             * @param ppv2VpcIdEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ppv2VpcIdEnabled(com.aliyun.ros.cdk.core.IResolvable ppv2VpcIdEnabled) {
+                this.ppv2VpcIdEnabled = ppv2VpcIdEnabled;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link ProxyProtocolV2ConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public ProxyProtocolV2ConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link ProxyProtocolV2ConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ProxyProtocolV2ConfigProperty {
+            private final java.lang.Object ppv2PrivateLinkEpIdEnabled;
+            private final java.lang.Object ppv2PrivateLinkEpsIdEnabled;
+            private final java.lang.Object ppv2VpcIdEnabled;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.ppv2PrivateLinkEpIdEnabled = software.amazon.jsii.Kernel.get(this, "ppv2PrivateLinkEpIdEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.ppv2PrivateLinkEpsIdEnabled = software.amazon.jsii.Kernel.get(this, "ppv2PrivateLinkEpsIdEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.ppv2VpcIdEnabled = software.amazon.jsii.Kernel.get(this, "ppv2VpcIdEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.ppv2PrivateLinkEpIdEnabled = builder.ppv2PrivateLinkEpIdEnabled;
+                this.ppv2PrivateLinkEpsIdEnabled = builder.ppv2PrivateLinkEpsIdEnabled;
+                this.ppv2VpcIdEnabled = builder.ppv2VpcIdEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getPpv2PrivateLinkEpIdEnabled() {
+                return this.ppv2PrivateLinkEpIdEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getPpv2PrivateLinkEpsIdEnabled() {
+                return this.ppv2PrivateLinkEpsIdEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getPpv2VpcIdEnabled() {
+                return this.ppv2VpcIdEnabled;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getPpv2PrivateLinkEpIdEnabled() != null) {
+                    data.set("ppv2PrivateLinkEpIdEnabled", om.valueToTree(this.getPpv2PrivateLinkEpIdEnabled()));
+                }
+                if (this.getPpv2PrivateLinkEpsIdEnabled() != null) {
+                    data.set("ppv2PrivateLinkEpsIdEnabled", om.valueToTree(this.getPpv2PrivateLinkEpsIdEnabled()));
+                }
+                if (this.getPpv2VpcIdEnabled() != null) {
+                    data.set("ppv2VpcIdEnabled", om.valueToTree(this.getPpv2VpcIdEnabled()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-nlb.RosListener.ProxyProtocolV2ConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                ProxyProtocolV2ConfigProperty.Jsii$Proxy that = (ProxyProtocolV2ConfigProperty.Jsii$Proxy) o;
+
+                if (this.ppv2PrivateLinkEpIdEnabled != null ? !this.ppv2PrivateLinkEpIdEnabled.equals(that.ppv2PrivateLinkEpIdEnabled) : that.ppv2PrivateLinkEpIdEnabled != null) return false;
+                if (this.ppv2PrivateLinkEpsIdEnabled != null ? !this.ppv2PrivateLinkEpsIdEnabled.equals(that.ppv2PrivateLinkEpsIdEnabled) : that.ppv2PrivateLinkEpsIdEnabled != null) return false;
+                return this.ppv2VpcIdEnabled != null ? this.ppv2VpcIdEnabled.equals(that.ppv2VpcIdEnabled) : that.ppv2VpcIdEnabled == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.ppv2PrivateLinkEpIdEnabled != null ? this.ppv2PrivateLinkEpIdEnabled.hashCode() : 0;
+                result = 31 * result + (this.ppv2PrivateLinkEpsIdEnabled != null ? this.ppv2PrivateLinkEpsIdEnabled.hashCode() : 0);
+                result = 31 * result + (this.ppv2VpcIdEnabled != null ? this.ppv2VpcIdEnabled.hashCode() : 0);
+                return result;
+            }
+        }
     }
     /**
      */
@@ -914,6 +1147,23 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder proxyProtocolEnabled(final com.aliyun.ros.cdk.core.IResolvable proxyProtocolEnabled) {
             this.props.proxyProtocolEnabled(proxyProtocolEnabled);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param proxyProtocolV2Config This parameter is required.
+         */
+        public Builder proxyProtocolV2Config(final com.aliyun.ros.cdk.core.IResolvable proxyProtocolV2Config) {
+            this.props.proxyProtocolV2Config(proxyProtocolV2Config);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param proxyProtocolV2Config This parameter is required.
+         */
+        public Builder proxyProtocolV2Config(final com.aliyun.ros.cdk.nlb.RosListener.ProxyProtocolV2ConfigProperty proxyProtocolV2Config) {
+            this.props.proxyProtocolV2Config(proxyProtocolV2Config);
             return this;
         }
 

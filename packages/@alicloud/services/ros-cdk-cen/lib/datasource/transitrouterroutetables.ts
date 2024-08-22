@@ -15,6 +15,14 @@ export interface TransitRouterRouteTablesProps {
     readonly transitRouterId: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property transitRouterRouteTableIds: The ID of the route table.
      * You can query multiple route tables in each call. Maximum value of N: 20.
      */
@@ -82,6 +90,7 @@ export class TransitRouterRouteTables extends ros.Resource {
             transitRouterRouteTableNames: props.transitRouterRouteTableNames,
             transitRouterRouteTableType: props.transitRouterRouteTableType,
             transitRouterId: props.transitRouterId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosTransitRouterRouteTables;
         this.attrTransitRouterRouteTableIds = rosTransitRouterRouteTables.attrTransitRouterRouteTableIds;

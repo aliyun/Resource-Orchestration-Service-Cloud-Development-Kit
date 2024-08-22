@@ -35,6 +35,14 @@ export interface ApisProps {
     readonly groupId?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property visibility: Whether the API is public.
      */
     readonly visibility?: string | ros.IResolvable;
@@ -79,6 +87,7 @@ export class Apis extends ros.Resource {
             visibility: props.visibility,
             apiId: props.apiId,
             catalogId: props.catalogId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             groupId: props.groupId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosApis;

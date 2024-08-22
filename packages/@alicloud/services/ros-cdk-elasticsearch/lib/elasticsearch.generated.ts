@@ -220,28 +220,28 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      DataNode: rosInstanceDataNodePropertyToRosTemplate(properties.dataNode),
-      Password: ros.stringToRosTemplate(properties.password),
-      Version: ros.stringToRosTemplate(properties.version),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      Description: ros.stringToRosTemplate(properties.description),
-      EnableKibanaPrivate: ros.booleanToRosTemplate(properties.enableKibanaPrivate),
-      EnableKibanaPublic: ros.booleanToRosTemplate(properties.enableKibanaPublic),
-      EnablePublic: ros.booleanToRosTemplate(properties.enablePublic),
-      InstanceCategory: ros.stringToRosTemplate(properties.instanceCategory),
-      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
-      KibanaNode: rosInstanceKibanaNodePropertyToRosTemplate(properties.kibanaNode),
-      KibanaWhitelist: ros.listMapper(ros.objectToRosTemplate)(properties.kibanaWhitelist),
-      MasterNode: rosInstanceMasterNodePropertyToRosTemplate(properties.masterNode),
-      Period: ros.numberToRosTemplate(properties.period),
-      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
-      PrivateWhitelist: ros.listMapper(ros.objectToRosTemplate)(properties.privateWhitelist),
-      PublicWhitelist: ros.listMapper(ros.objectToRosTemplate)(properties.publicWhitelist),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Tags: ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
-      YMLConfig: rosInstanceYMLConfigPropertyToRosTemplate(properties.ymlConfig),
-      ZoneCount: ros.numberToRosTemplate(properties.zoneCount),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      'DataNode': rosInstanceDataNodePropertyToRosTemplate(properties.dataNode),
+      'Password': ros.stringToRosTemplate(properties.password),
+      'Version': ros.stringToRosTemplate(properties.version),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'EnableKibanaPrivate': ros.booleanToRosTemplate(properties.enableKibanaPrivate),
+      'EnableKibanaPublic': ros.booleanToRosTemplate(properties.enableKibanaPublic),
+      'EnablePublic': ros.booleanToRosTemplate(properties.enablePublic),
+      'InstanceCategory': ros.stringToRosTemplate(properties.instanceCategory),
+      'InstanceChargeType': ros.stringToRosTemplate(properties.instanceChargeType),
+      'KibanaNode': rosInstanceKibanaNodePropertyToRosTemplate(properties.kibanaNode),
+      'KibanaWhitelist': ros.listMapper(ros.objectToRosTemplate)(properties.kibanaWhitelist),
+      'MasterNode': rosInstanceMasterNodePropertyToRosTemplate(properties.masterNode),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
+      'PrivateWhitelist': ros.listMapper(ros.objectToRosTemplate)(properties.privateWhitelist),
+      'PublicWhitelist': ros.listMapper(ros.objectToRosTemplate)(properties.publicWhitelist),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
+      'YMLConfig': rosInstanceYMLConfigPropertyToRosTemplate(properties.ymlConfig),
+      'ZoneCount': ros.numberToRosTemplate(properties.zoneCount),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
     };
 }
 
@@ -586,12 +586,12 @@ function rosInstanceDataNodePropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosInstance_DataNodePropertyValidator(properties).assertSuccess();
     return {
-      DiskType: ros.stringToRosTemplate(properties.diskType),
-      DiskEncryption: ros.booleanToRosTemplate(properties.diskEncryption),
-      PerformanceLevel: ros.stringToRosTemplate(properties.performanceLevel),
-      Amount: ros.numberToRosTemplate(properties.amount),
-      DiskSize: ros.numberToRosTemplate(properties.diskSize),
-      Spec: ros.stringToRosTemplate(properties.spec),
+      'DiskType': ros.stringToRosTemplate(properties.diskType),
+      'DiskEncryption': ros.booleanToRosTemplate(properties.diskEncryption),
+      'PerformanceLevel': ros.stringToRosTemplate(properties.performanceLevel),
+      'Amount': ros.numberToRosTemplate(properties.amount),
+      'DiskSize': ros.numberToRosTemplate(properties.diskSize),
+      'Spec': ros.stringToRosTemplate(properties.spec),
     };
 }
 
@@ -633,7 +633,7 @@ function rosInstanceKibanaNodePropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosInstance_KibanaNodePropertyValidator(properties).assertSuccess();
     return {
-      Spec: ros.stringToRosTemplate(properties.spec),
+      'Spec': ros.stringToRosTemplate(properties.spec),
     };
 }
 
@@ -690,10 +690,10 @@ function rosInstanceMasterNodePropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosInstance_MasterNodePropertyValidator(properties).assertSuccess();
     return {
-      DiskType: ros.stringToRosTemplate(properties.diskType),
-      Amount: ros.numberToRosTemplate(properties.amount),
-      DiskSize: ros.numberToRosTemplate(properties.diskSize),
-      Spec: ros.stringToRosTemplate(properties.spec),
+      'DiskType': ros.stringToRosTemplate(properties.diskType),
+      'Amount': ros.numberToRosTemplate(properties.amount),
+      'DiskSize': ros.numberToRosTemplate(properties.diskSize),
+      'Spec': ros.stringToRosTemplate(properties.spec),
     };
 }
 
@@ -740,8 +740,8 @@ function rosInstanceTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosInstance_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -820,10 +820,10 @@ function rosInstanceYMLConfigPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosInstance_YMLConfigPropertyValidator(properties).assertSuccess();
     return {
-      CreateIndex: ros.stringToRosTemplate(properties.createIndex),
-      DestructiveRequiresName: ros.booleanToRosTemplate(properties.destructiveRequiresName),
-      OtherConfigs: ros.hashMapper(ros.objectToRosTemplate)(properties.otherConfigs),
-      Watcher: ros.booleanToRosTemplate(properties.watcher),
-      AuditLog: ros.booleanToRosTemplate(properties.auditLog),
+      'CreateIndex': ros.stringToRosTemplate(properties.createIndex),
+      'DestructiveRequiresName': ros.booleanToRosTemplate(properties.destructiveRequiresName),
+      'OtherConfigs': ros.hashMapper(ros.objectToRosTemplate)(properties.otherConfigs),
+      'Watcher': ros.booleanToRosTemplate(properties.watcher),
+      'AuditLog': ros.booleanToRosTemplate(properties.auditLog),
     };
 }

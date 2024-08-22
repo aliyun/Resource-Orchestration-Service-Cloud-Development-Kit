@@ -22,6 +22,14 @@ export interface ZonesProps {
      * classic_intranet: an internal SLB instance that is deployed in a classic network.
      */
     readonly addressType?: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -60,6 +68,7 @@ export class Zones extends ros.Resource {
         const rosZones = new RosZones(this, id,  {
             addressIpVersion: props.addressIpVersion,
             addressType: props.addressType,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosZones;
         this.attrZoneIds = rosZones.attrZoneIds;

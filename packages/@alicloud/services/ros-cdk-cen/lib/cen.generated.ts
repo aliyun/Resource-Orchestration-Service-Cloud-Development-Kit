@@ -27,6 +27,11 @@ export interface RosCenBandwidthLimitProps {
      * @Property oppositeRegionId: The ID of the other interconnected region.
      */
     readonly oppositeRegionId: string | ros.IResolvable;
+
+    /**
+     * @Property bandwidthType: Bandwidth allocation mode. Value: BandwidthPackage: Allocates bandwidth from the bandwidth package.
+     */
+    readonly bandwidthType?: string | ros.IResolvable;
 }
 
 /**
@@ -39,6 +44,7 @@ export interface RosCenBandwidthLimitProps {
 function RosCenBandwidthLimitPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('bandwidthType', ros.validateString)(properties.bandwidthType));
     errors.collect(ros.propertyValidator('oppositeRegionId', ros.requiredValidator)(properties.oppositeRegionId));
     errors.collect(ros.propertyValidator('oppositeRegionId', ros.validateString)(properties.oppositeRegionId));
     errors.collect(ros.propertyValidator('cenId', ros.requiredValidator)(properties.cenId));
@@ -71,10 +77,11 @@ function rosCenBandwidthLimitPropsToRosTemplate(properties: any, enableResourceP
         RosCenBandwidthLimitPropsValidator(properties).assertSuccess();
     }
     return {
-      BandwidthLimit: ros.numberToRosTemplate(properties.bandwidthLimit),
-      CenId: ros.stringToRosTemplate(properties.cenId),
-      LocalRegionId: ros.stringToRosTemplate(properties.localRegionId),
-      OppositeRegionId: ros.stringToRosTemplate(properties.oppositeRegionId),
+      'BandwidthLimit': ros.numberToRosTemplate(properties.bandwidthLimit),
+      'CenId': ros.stringToRosTemplate(properties.cenId),
+      'LocalRegionId': ros.stringToRosTemplate(properties.localRegionId),
+      'OppositeRegionId': ros.stringToRosTemplate(properties.oppositeRegionId),
+      'BandwidthType': ros.stringToRosTemplate(properties.bandwidthType),
     };
 }
 
@@ -113,6 +120,11 @@ export class RosCenBandwidthLimit extends ros.RosResource {
     public oppositeRegionId: string | ros.IResolvable;
 
     /**
+     * @Property bandwidthType: Bandwidth allocation mode. Value: BandwidthPackage: Allocates bandwidth from the bandwidth package.
+     */
+    public bandwidthType: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -125,6 +137,7 @@ export class RosCenBandwidthLimit extends ros.RosResource {
         this.cenId = props.cenId;
         this.localRegionId = props.localRegionId;
         this.oppositeRegionId = props.oppositeRegionId;
+        this.bandwidthType = props.bandwidthType;
     }
 
 
@@ -134,6 +147,7 @@ export class RosCenBandwidthLimit extends ros.RosResource {
             cenId: this.cenId,
             localRegionId: this.localRegionId,
             oppositeRegionId: this.oppositeRegionId,
+            bandwidthType: this.bandwidthType,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -212,6 +226,11 @@ export interface RosCenBandwidthPackageProps {
      * @Property resourceGroupId: Resource group id.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosCenBandwidthPackage.TagsProperty[];
 }
 
 /**
@@ -224,13 +243,6 @@ export interface RosCenBandwidthPackageProps {
 function RosCenBandwidthPackagePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    if(properties.bandwidthPackageChargeType && (typeof properties.bandwidthPackageChargeType) !== 'object') {
-        errors.collect(ros.propertyValidator('bandwidthPackageChargeType', ros.validateAllowedValues)({
-          data: properties.bandwidthPackageChargeType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('bandwidthPackageChargeType', ros.validateString)(properties.bandwidthPackageChargeType));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('geographicRegionBId', ros.requiredValidator)(properties.geographicRegionBId));
@@ -257,15 +269,6 @@ function RosCenBandwidthPackagePropsValidator(properties: any): ros.ValidationRe
     }
     errors.collect(ros.propertyValidator('pricingCycle', ros.validateString)(properties.pricingCycle));
     errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
-    errors.collect(ros.propertyValidator('bandwidth', ros.requiredValidator)(properties.bandwidth));
-    if(properties.bandwidth && (typeof properties.bandwidth) !== 'object') {
-        errors.collect(ros.propertyValidator('bandwidth', ros.validateRange)({
-            data: properties.bandwidth,
-            min: 2,
-            max: undefined,
-          }));
-    }
-    errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
@@ -276,6 +279,30 @@ function RosCenBandwidthPackagePropsValidator(properties: any): ros.ValidationRe
         }));
     }
     errors.collect(ros.propertyValidator('autoRenewDuration', ros.validateNumber)(properties.autoRenewDuration));
+    if(properties.bandwidthPackageChargeType && (typeof properties.bandwidthPackageChargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('bandwidthPackageChargeType', ros.validateAllowedValues)({
+          data: properties.bandwidthPackageChargeType,
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('bandwidthPackageChargeType', ros.validateString)(properties.bandwidthPackageChargeType));
+    errors.collect(ros.propertyValidator('bandwidth', ros.requiredValidator)(properties.bandwidth));
+    if(properties.bandwidth && (typeof properties.bandwidth) !== 'object') {
+        errors.collect(ros.propertyValidator('bandwidth', ros.validateRange)({
+            data: properties.bandwidth,
+            min: 2,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosCenBandwidthPackage_TagsPropertyValidator))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosCenBandwidthPackageProps"');
 }
 
@@ -293,18 +320,19 @@ function rosCenBandwidthPackagePropsToRosTemplate(properties: any, enableResourc
         RosCenBandwidthPackagePropsValidator(properties).assertSuccess();
     }
     return {
-      Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
-      GeographicRegionAId: ros.stringToRosTemplate(properties.geographicRegionAId),
-      GeographicRegionBId: ros.stringToRosTemplate(properties.geographicRegionBId),
-      AutoPay: ros.booleanToRosTemplate(properties.autoPay),
-      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
-      AutoRenewDuration: ros.numberToRosTemplate(properties.autoRenewDuration),
-      BandwidthPackageChargeType: ros.stringToRosTemplate(properties.bandwidthPackageChargeType),
-      Description: ros.stringToRosTemplate(properties.description),
-      Name: ros.stringToRosTemplate(properties.name),
-      Period: ros.numberToRosTemplate(properties.period),
-      PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      'Bandwidth': ros.numberToRosTemplate(properties.bandwidth),
+      'GeographicRegionAId': ros.stringToRosTemplate(properties.geographicRegionAId),
+      'GeographicRegionBId': ros.stringToRosTemplate(properties.geographicRegionBId),
+      'AutoPay': ros.booleanToRosTemplate(properties.autoPay),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'AutoRenewDuration': ros.numberToRosTemplate(properties.autoRenewDuration),
+      'BandwidthPackageChargeType': ros.stringToRosTemplate(properties.bandwidthPackageChargeType),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PricingCycle': ros.stringToRosTemplate(properties.pricingCycle),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosCenBandwidthPackageTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -394,6 +422,11 @@ export class RosCenBandwidthPackage extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosCenBandwidthPackage.TagsProperty[] | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -415,6 +448,7 @@ export class RosCenBandwidthPackage extends ros.RosResource {
         this.period = props.period;
         this.pricingCycle = props.pricingCycle;
         this.resourceGroupId = props.resourceGroupId;
+        this.tags = props.tags;
     }
 
 
@@ -432,11 +466,60 @@ export class RosCenBandwidthPackage extends ros.RosResource {
             period: this.period,
             pricingCycle: this.pricingCycle,
             resourceGroupId: this.resourceGroupId,
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosCenBandwidthPackagePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosCenBandwidthPackage {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosCenBandwidthPackage_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CEN::CenBandwidthPackage.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CEN::CenBandwidthPackage.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosCenBandwidthPackageTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosCenBandwidthPackage_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -487,8 +570,8 @@ function rosCenBandwidthPackageAssociationPropsToRosTemplate(properties: any, en
         RosCenBandwidthPackageAssociationPropsValidator(properties).assertSuccess();
     }
     return {
-      CenBandwidthPackageId: ros.stringToRosTemplate(properties.cenBandwidthPackageId),
-      CenId: ros.stringToRosTemplate(properties.cenId),
+      'CenBandwidthPackageId': ros.stringToRosTemplate(properties.cenBandwidthPackageId),
+      'CenId': ros.stringToRosTemplate(properties.cenId),
     };
 }
 
@@ -616,11 +699,11 @@ function rosCenInstancePropsToRosTemplate(properties: any, enableResourcePropert
         RosCenInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      Description: ros.stringToRosTemplate(properties.description),
-      Name: ros.stringToRosTemplate(properties.name),
-      ProtectionLevel: ros.stringToRosTemplate(properties.protectionLevel),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Tags: ros.listMapper(rosCenInstanceTagsPropertyToRosTemplate)(properties.tags),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'ProtectionLevel': ros.stringToRosTemplate(properties.protectionLevel),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosCenInstanceTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -747,8 +830,8 @@ function rosCenInstanceTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosCenInstance_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -826,11 +909,11 @@ function rosCenInstanceAttachmentPropsToRosTemplate(properties: any, enableResou
         RosCenInstanceAttachmentPropsValidator(properties).assertSuccess();
     }
     return {
-      CenId: ros.stringToRosTemplate(properties.cenId),
-      ChildInstanceId: ros.stringToRosTemplate(properties.childInstanceId),
-      ChildInstanceRegionId: ros.stringToRosTemplate(properties.childInstanceRegionId),
-      ChildInstanceType: ros.stringToRosTemplate(properties.childInstanceType),
-      ChildInstanceOwnerId: ros.numberToRosTemplate(properties.childInstanceOwnerId),
+      'CenId': ros.stringToRosTemplate(properties.cenId),
+      'ChildInstanceId': ros.stringToRosTemplate(properties.childInstanceId),
+      'ChildInstanceRegionId': ros.stringToRosTemplate(properties.childInstanceRegionId),
+      'ChildInstanceType': ros.stringToRosTemplate(properties.childInstanceType),
+      'ChildInstanceOwnerId': ros.numberToRosTemplate(properties.childInstanceOwnerId),
     };
 }
 
@@ -1151,33 +1234,33 @@ function rosCenRouteMapPropsToRosTemplate(properties: any, enableResourcePropert
         RosCenRouteMapPropsValidator(properties).assertSuccess();
     }
     return {
-      CenId: ros.stringToRosTemplate(properties.cenId),
-      CenRegionId: ros.stringToRosTemplate(properties.cenRegionId),
-      MapResult: ros.stringToRosTemplate(properties.mapResult),
-      Priority: ros.numberToRosTemplate(properties.priority),
-      TransmitDirection: ros.stringToRosTemplate(properties.transmitDirection),
-      AsPathMatchMode: ros.stringToRosTemplate(properties.asPathMatchMode),
-      CidrMatchMode: ros.stringToRosTemplate(properties.cidrMatchMode),
-      CommunityMatchMode: ros.stringToRosTemplate(properties.communityMatchMode),
-      CommunityOperateMode: ros.stringToRosTemplate(properties.communityOperateMode),
-      Description: ros.stringToRosTemplate(properties.description),
-      DestinationChildInstanceTypes: ros.listMapper(ros.stringToRosTemplate)(properties.destinationChildInstanceTypes),
-      DestinationCidrBlocks: ros.listMapper(ros.stringToRosTemplate)(properties.destinationCidrBlocks),
-      DestinationInstanceIds: ros.listMapper(ros.stringToRosTemplate)(properties.destinationInstanceIds),
-      DestinationInstanceIdsReverseMatch: ros.booleanToRosTemplate(properties.destinationInstanceIdsReverseMatch),
-      DestinationRouteTableIds: ros.listMapper(ros.stringToRosTemplate)(properties.destinationRouteTableIds),
-      MatchAsns: ros.listMapper(ros.stringToRosTemplate)(properties.matchAsns),
-      MatchCommunitySet: ros.listMapper(ros.stringToRosTemplate)(properties.matchCommunitySet),
-      NextPriority: ros.numberToRosTemplate(properties.nextPriority),
-      OperateCommunitySet: ros.listMapper(ros.stringToRosTemplate)(properties.operateCommunitySet),
-      Preference: ros.numberToRosTemplate(properties.preference),
-      PrependAsPath: ros.listMapper(ros.stringToRosTemplate)(properties.prependAsPath),
-      RouteTypes: ros.listMapper(ros.stringToRosTemplate)(properties.routeTypes),
-      SourceChildInstanceTypes: ros.listMapper(ros.stringToRosTemplate)(properties.sourceChildInstanceTypes),
-      SourceInstanceIds: ros.listMapper(ros.stringToRosTemplate)(properties.sourceInstanceIds),
-      SourceInstanceIdsReverseMatch: ros.booleanToRosTemplate(properties.sourceInstanceIdsReverseMatch),
-      SourceRegionIds: ros.listMapper(ros.stringToRosTemplate)(properties.sourceRegionIds),
-      SourceRouteTableIds: ros.listMapper(ros.stringToRosTemplate)(properties.sourceRouteTableIds),
+      'CenId': ros.stringToRosTemplate(properties.cenId),
+      'CenRegionId': ros.stringToRosTemplate(properties.cenRegionId),
+      'MapResult': ros.stringToRosTemplate(properties.mapResult),
+      'Priority': ros.numberToRosTemplate(properties.priority),
+      'TransmitDirection': ros.stringToRosTemplate(properties.transmitDirection),
+      'AsPathMatchMode': ros.stringToRosTemplate(properties.asPathMatchMode),
+      'CidrMatchMode': ros.stringToRosTemplate(properties.cidrMatchMode),
+      'CommunityMatchMode': ros.stringToRosTemplate(properties.communityMatchMode),
+      'CommunityOperateMode': ros.stringToRosTemplate(properties.communityOperateMode),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'DestinationChildInstanceTypes': ros.listMapper(ros.stringToRosTemplate)(properties.destinationChildInstanceTypes),
+      'DestinationCidrBlocks': ros.listMapper(ros.stringToRosTemplate)(properties.destinationCidrBlocks),
+      'DestinationInstanceIds': ros.listMapper(ros.stringToRosTemplate)(properties.destinationInstanceIds),
+      'DestinationInstanceIdsReverseMatch': ros.booleanToRosTemplate(properties.destinationInstanceIdsReverseMatch),
+      'DestinationRouteTableIds': ros.listMapper(ros.stringToRosTemplate)(properties.destinationRouteTableIds),
+      'MatchAsns': ros.listMapper(ros.stringToRosTemplate)(properties.matchAsns),
+      'MatchCommunitySet': ros.listMapper(ros.stringToRosTemplate)(properties.matchCommunitySet),
+      'NextPriority': ros.numberToRosTemplate(properties.nextPriority),
+      'OperateCommunitySet': ros.listMapper(ros.stringToRosTemplate)(properties.operateCommunitySet),
+      'Preference': ros.numberToRosTemplate(properties.preference),
+      'PrependAsPath': ros.listMapper(ros.stringToRosTemplate)(properties.prependAsPath),
+      'RouteTypes': ros.listMapper(ros.stringToRosTemplate)(properties.routeTypes),
+      'SourceChildInstanceTypes': ros.listMapper(ros.stringToRosTemplate)(properties.sourceChildInstanceTypes),
+      'SourceInstanceIds': ros.listMapper(ros.stringToRosTemplate)(properties.sourceInstanceIds),
+      'SourceInstanceIdsReverseMatch': ros.booleanToRosTemplate(properties.sourceInstanceIdsReverseMatch),
+      'SourceRegionIds': ros.listMapper(ros.stringToRosTemplate)(properties.sourceRegionIds),
+      'SourceRouteTableIds': ros.listMapper(ros.stringToRosTemplate)(properties.sourceRouteTableIds),
     };
 }
 
@@ -1541,13 +1624,13 @@ function rosCenRouteServicePropsToRosTemplate(properties: any, enableResourcePro
         RosCenRouteServicePropsValidator(properties).assertSuccess();
     }
     return {
-      AccessRegionId: ros.stringToRosTemplate(properties.accessRegionId),
-      CenId: ros.stringToRosTemplate(properties.cenId),
-      Host: ros.stringToRosTemplate(properties.host),
-      HostRegionId: ros.stringToRosTemplate(properties.hostRegionId),
-      HostVpcId: ros.stringToRosTemplate(properties.hostVpcId),
-      ConflictIgnore: ros.booleanToRosTemplate(properties.conflictIgnore),
-      Description: ros.stringToRosTemplate(properties.description),
+      'AccessRegionId': ros.stringToRosTemplate(properties.accessRegionId),
+      'CenId': ros.stringToRosTemplate(properties.cenId),
+      'Host': ros.stringToRosTemplate(properties.host),
+      'HostRegionId': ros.stringToRosTemplate(properties.hostRegionId),
+      'HostVpcId': ros.stringToRosTemplate(properties.hostVpcId),
+      'ConflictIgnore': ros.booleanToRosTemplate(properties.conflictIgnore),
+      'Description': ros.stringToRosTemplate(properties.description),
     };
 }
 
@@ -1730,14 +1813,14 @@ function rosCenVbrHealthCheckPropsToRosTemplate(properties: any, enableResourceP
         RosCenVbrHealthCheckPropsValidator(properties).assertSuccess();
     }
     return {
-      CenId: ros.stringToRosTemplate(properties.cenId),
-      HealthCheckTargetIp: ros.stringToRosTemplate(properties.healthCheckTargetIp),
-      VbrInstanceId: ros.stringToRosTemplate(properties.vbrInstanceId),
-      VbrInstanceRegionId: ros.stringToRosTemplate(properties.vbrInstanceRegionId),
-      HealthCheckInterval: ros.numberToRosTemplate(properties.healthCheckInterval),
-      HealthCheckSourceIp: ros.stringToRosTemplate(properties.healthCheckSourceIp),
-      HealthyThreshold: ros.numberToRosTemplate(properties.healthyThreshold),
-      VbrInstanceOwnerId: ros.numberToRosTemplate(properties.vbrInstanceOwnerId),
+      'CenId': ros.stringToRosTemplate(properties.cenId),
+      'HealthCheckTargetIp': ros.stringToRosTemplate(properties.healthCheckTargetIp),
+      'VbrInstanceId': ros.stringToRosTemplate(properties.vbrInstanceId),
+      'VbrInstanceRegionId': ros.stringToRosTemplate(properties.vbrInstanceRegionId),
+      'HealthCheckInterval': ros.numberToRosTemplate(properties.healthCheckInterval),
+      'HealthCheckSourceIp': ros.stringToRosTemplate(properties.healthCheckSourceIp),
+      'HealthyThreshold': ros.numberToRosTemplate(properties.healthyThreshold),
+      'VbrInstanceOwnerId': ros.numberToRosTemplate(properties.vbrInstanceOwnerId),
     };
 }
 
@@ -1942,10 +2025,10 @@ function rosChildInstanceRouteEntryToAttachmentPropsToRosTemplate(properties: an
         RosChildInstanceRouteEntryToAttachmentPropsValidator(properties).assertSuccess();
     }
     return {
-      CenId: ros.stringToRosTemplate(properties.cenId),
-      DestinationCidrBlock: ros.stringToRosTemplate(properties.destinationCidrBlock),
-      RouteTableId: ros.stringToRosTemplate(properties.routeTableId),
-      TransitRouterAttachmentId: ros.stringToRosTemplate(properties.transitRouterAttachmentId),
+      'CenId': ros.stringToRosTemplate(properties.cenId),
+      'DestinationCidrBlock': ros.stringToRosTemplate(properties.destinationCidrBlock),
+      'RouteTableId': ros.stringToRosTemplate(properties.routeTableId),
+      'TransitRouterAttachmentId': ros.stringToRosTemplate(properties.transitRouterAttachmentId),
     };
 }
 
@@ -2118,12 +2201,12 @@ function rosRouteEntryPropsToRosTemplate(properties: any, enableResourceProperty
         RosRouteEntryPropsValidator(properties).assertSuccess();
     }
     return {
-      CenId: ros.stringToRosTemplate(properties.cenId),
-      ChildInstanceId: ros.stringToRosTemplate(properties.childInstanceId),
-      ChildInstanceRegionId: ros.stringToRosTemplate(properties.childInstanceRegionId),
-      ChildInstanceRouteTableId: ros.stringToRosTemplate(properties.childInstanceRouteTableId),
-      ChildInstanceType: ros.stringToRosTemplate(properties.childInstanceType),
-      DestinationCidrBlock: ros.stringToRosTemplate(properties.destinationCidrBlock),
+      'CenId': ros.stringToRosTemplate(properties.cenId),
+      'ChildInstanceId': ros.stringToRosTemplate(properties.childInstanceId),
+      'ChildInstanceRegionId': ros.stringToRosTemplate(properties.childInstanceRegionId),
+      'ChildInstanceRouteTableId': ros.stringToRosTemplate(properties.childInstanceRouteTableId),
+      'ChildInstanceType': ros.stringToRosTemplate(properties.childInstanceType),
+      'DestinationCidrBlock': ros.stringToRosTemplate(properties.destinationCidrBlock),
     };
 }
 
@@ -2257,9 +2340,9 @@ function rosTransitRouterPropsToRosTemplate(properties: any, enableResourcePrope
         RosTransitRouterPropsValidator(properties).assertSuccess();
     }
     return {
-      CenId: ros.stringToRosTemplate(properties.cenId),
-      TransitRouterDescription: ros.stringToRosTemplate(properties.transitRouterDescription),
-      TransitRouterName: ros.stringToRosTemplate(properties.transitRouterName),
+      'CenId': ros.stringToRosTemplate(properties.cenId),
+      'TransitRouterDescription': ros.stringToRosTemplate(properties.transitRouterDescription),
+      'TransitRouterName': ros.stringToRosTemplate(properties.transitRouterName),
     };
 }
 
@@ -2450,15 +2533,15 @@ function rosTransitRouterPeerAttachmentPropsToRosTemplate(properties: any, enabl
         RosTransitRouterPeerAttachmentPropsValidator(properties).assertSuccess();
     }
     return {
-      PeerTransitRouterId: ros.stringToRosTemplate(properties.peerTransitRouterId),
-      AutoPublishRouteEnabled: ros.booleanToRosTemplate(properties.autoPublishRouteEnabled),
-      Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
-      CenBandwidthPackageId: ros.stringToRosTemplate(properties.cenBandwidthPackageId),
-      CenId: ros.stringToRosTemplate(properties.cenId),
-      PeerTransitRouterRegionId: ros.stringToRosTemplate(properties.peerTransitRouterRegionId),
-      TransitRouterAttachmentDescription: ros.stringToRosTemplate(properties.transitRouterAttachmentDescription),
-      TransitRouterAttachmentName: ros.stringToRosTemplate(properties.transitRouterAttachmentName),
-      TransitRouterId: ros.stringToRosTemplate(properties.transitRouterId),
+      'PeerTransitRouterId': ros.stringToRosTemplate(properties.peerTransitRouterId),
+      'AutoPublishRouteEnabled': ros.booleanToRosTemplate(properties.autoPublishRouteEnabled),
+      'Bandwidth': ros.numberToRosTemplate(properties.bandwidth),
+      'CenBandwidthPackageId': ros.stringToRosTemplate(properties.cenBandwidthPackageId),
+      'CenId': ros.stringToRosTemplate(properties.cenId),
+      'PeerTransitRouterRegionId': ros.stringToRosTemplate(properties.peerTransitRouterRegionId),
+      'TransitRouterAttachmentDescription': ros.stringToRosTemplate(properties.transitRouterAttachmentDescription),
+      'TransitRouterAttachmentName': ros.stringToRosTemplate(properties.transitRouterAttachmentName),
+      'TransitRouterId': ros.stringToRosTemplate(properties.transitRouterId),
     };
 }
 
@@ -2717,12 +2800,12 @@ function rosTransitRouterRouteEntryPropsToRosTemplate(properties: any, enableRes
         RosTransitRouterRouteEntryPropsValidator(properties).assertSuccess();
     }
     return {
-      TransitRouterRouteEntryDestinationCidrBlock: ros.stringToRosTemplate(properties.transitRouterRouteEntryDestinationCidrBlock),
-      TransitRouterRouteEntryNextHopType: ros.stringToRosTemplate(properties.transitRouterRouteEntryNextHopType),
-      TransitRouterRouteTableId: ros.stringToRosTemplate(properties.transitRouterRouteTableId),
-      TransitRouterRouteEntryDescription: ros.stringToRosTemplate(properties.transitRouterRouteEntryDescription),
-      TransitRouterRouteEntryName: ros.stringToRosTemplate(properties.transitRouterRouteEntryName),
-      TransitRouterRouteEntryNextHopId: ros.stringToRosTemplate(properties.transitRouterRouteEntryNextHopId),
+      'TransitRouterRouteEntryDestinationCidrBlock': ros.stringToRosTemplate(properties.transitRouterRouteEntryDestinationCidrBlock),
+      'TransitRouterRouteEntryNextHopType': ros.stringToRosTemplate(properties.transitRouterRouteEntryNextHopType),
+      'TransitRouterRouteTableId': ros.stringToRosTemplate(properties.transitRouterRouteTableId),
+      'TransitRouterRouteEntryDescription': ros.stringToRosTemplate(properties.transitRouterRouteEntryDescription),
+      'TransitRouterRouteEntryName': ros.stringToRosTemplate(properties.transitRouterRouteEntryName),
+      'TransitRouterRouteEntryNextHopId': ros.stringToRosTemplate(properties.transitRouterRouteEntryNextHopId),
     };
 }
 
@@ -2904,9 +2987,9 @@ function rosTransitRouterRouteTablePropsToRosTemplate(properties: any, enableRes
         RosTransitRouterRouteTablePropsValidator(properties).assertSuccess();
     }
     return {
-      TransitRouterId: ros.stringToRosTemplate(properties.transitRouterId),
-      TransitRouterRouteTableDescription: ros.stringToRosTemplate(properties.transitRouterRouteTableDescription),
-      TransitRouterRouteTableName: ros.stringToRosTemplate(properties.transitRouterRouteTableName),
+      'TransitRouterId': ros.stringToRosTemplate(properties.transitRouterId),
+      'TransitRouterRouteTableDescription': ros.stringToRosTemplate(properties.transitRouterRouteTableDescription),
+      'TransitRouterRouteTableName': ros.stringToRosTemplate(properties.transitRouterRouteTableName),
     };
 }
 
@@ -3050,8 +3133,8 @@ function rosTransitRouterRouteTableAssociationPropsToRosTemplate(properties: any
         RosTransitRouterRouteTableAssociationPropsValidator(properties).assertSuccess();
     }
     return {
-      TransitRouterAttachmentId: ros.stringToRosTemplate(properties.transitRouterAttachmentId),
-      TransitRouterRouteTableId: ros.stringToRosTemplate(properties.transitRouterRouteTableId),
+      'TransitRouterAttachmentId': ros.stringToRosTemplate(properties.transitRouterAttachmentId),
+      'TransitRouterRouteTableId': ros.stringToRosTemplate(properties.transitRouterRouteTableId),
     };
 }
 
@@ -3176,8 +3259,8 @@ function rosTransitRouterRouteTablePropagationPropsToRosTemplate(properties: any
         RosTransitRouterRouteTablePropagationPropsValidator(properties).assertSuccess();
     }
     return {
-      TransitRouterAttachmentId: ros.stringToRosTemplate(properties.transitRouterAttachmentId),
-      TransitRouterRouteTableId: ros.stringToRosTemplate(properties.transitRouterRouteTableId),
+      'TransitRouterAttachmentId': ros.stringToRosTemplate(properties.transitRouterAttachmentId),
+      'TransitRouterRouteTableId': ros.stringToRosTemplate(properties.transitRouterRouteTableId),
     };
 }
 
@@ -3331,13 +3414,13 @@ function rosTransitRouterVbrAttachmentPropsToRosTemplate(properties: any, enable
         RosTransitRouterVbrAttachmentPropsValidator(properties).assertSuccess();
     }
     return {
-      VbrId: ros.stringToRosTemplate(properties.vbrId),
-      AutoPublishRouteEnabled: ros.booleanToRosTemplate(properties.autoPublishRouteEnabled),
-      CenId: ros.stringToRosTemplate(properties.cenId),
-      TransitRouterAttachmentDescription: ros.stringToRosTemplate(properties.transitRouterAttachmentDescription),
-      TransitRouterAttachmentName: ros.stringToRosTemplate(properties.transitRouterAttachmentName),
-      TransitRouterId: ros.stringToRosTemplate(properties.transitRouterId),
-      VbrOwnerId: ros.numberToRosTemplate(properties.vbrOwnerId),
+      'VbrId': ros.stringToRosTemplate(properties.vbrId),
+      'AutoPublishRouteEnabled': ros.booleanToRosTemplate(properties.autoPublishRouteEnabled),
+      'CenId': ros.stringToRosTemplate(properties.cenId),
+      'TransitRouterAttachmentDescription': ros.stringToRosTemplate(properties.transitRouterAttachmentDescription),
+      'TransitRouterAttachmentName': ros.stringToRosTemplate(properties.transitRouterAttachmentName),
+      'TransitRouterId': ros.stringToRosTemplate(properties.transitRouterId),
+      'VbrOwnerId': ros.numberToRosTemplate(properties.vbrOwnerId),
     };
 }
 
@@ -3600,18 +3683,18 @@ function rosTransitRouterVpcAttachmentPropsToRosTemplate(properties: any, enable
         RosTransitRouterVpcAttachmentPropsValidator(properties).assertSuccess();
     }
     return {
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      ZoneMappings: ros.listMapper(rosTransitRouterVpcAttachmentZoneMappingsPropertyToRosTemplate)(properties.zoneMappings),
-      AutoCreateVpcRoute: ros.booleanToRosTemplate(properties.autoCreateVpcRoute),
-      CenId: ros.stringToRosTemplate(properties.cenId),
-      ChargeType: ros.stringToRosTemplate(properties.chargeType),
-      DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
-      RouteTableAssociationEnabled: ros.booleanToRosTemplate(properties.routeTableAssociationEnabled),
-      RouteTablePropagationEnabled: ros.booleanToRosTemplate(properties.routeTablePropagationEnabled),
-      TransitRouterAttachmentDescription: ros.stringToRosTemplate(properties.transitRouterAttachmentDescription),
-      TransitRouterAttachmentName: ros.stringToRosTemplate(properties.transitRouterAttachmentName),
-      TransitRouterId: ros.stringToRosTemplate(properties.transitRouterId),
-      VpcOwnerId: ros.numberToRosTemplate(properties.vpcOwnerId),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'ZoneMappings': ros.listMapper(rosTransitRouterVpcAttachmentZoneMappingsPropertyToRosTemplate)(properties.zoneMappings),
+      'AutoCreateVpcRoute': ros.booleanToRosTemplate(properties.autoCreateVpcRoute),
+      'CenId': ros.stringToRosTemplate(properties.cenId),
+      'ChargeType': ros.stringToRosTemplate(properties.chargeType),
+      'DeletionForce': ros.booleanToRosTemplate(properties.deletionForce),
+      'RouteTableAssociationEnabled': ros.booleanToRosTemplate(properties.routeTableAssociationEnabled),
+      'RouteTablePropagationEnabled': ros.booleanToRosTemplate(properties.routeTablePropagationEnabled),
+      'TransitRouterAttachmentDescription': ros.stringToRosTemplate(properties.transitRouterAttachmentDescription),
+      'TransitRouterAttachmentName': ros.stringToRosTemplate(properties.transitRouterAttachmentName),
+      'TransitRouterId': ros.stringToRosTemplate(properties.transitRouterId),
+      'VpcOwnerId': ros.numberToRosTemplate(properties.vpcOwnerId),
     };
 }
 
@@ -3832,8 +3915,8 @@ function rosTransitRouterVpcAttachmentZoneMappingsPropertyToRosTemplate(properti
     if (!ros.canInspect(properties)) { return properties; }
     RosTransitRouterVpcAttachment_ZoneMappingsPropertyValidator(properties).assertSuccess();
     return {
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
     };
 }
 
@@ -3952,18 +4035,18 @@ function rosTransitRouterVpnAttachmentPropsToRosTemplate(properties: any, enable
         RosTransitRouterVpnAttachmentPropsValidator(properties).assertSuccess();
     }
     return {
-      VpnId: ros.stringToRosTemplate(properties.vpnId),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
-      AutoPublishRouteEnabled: ros.booleanToRosTemplate(properties.autoPublishRouteEnabled),
-      CenId: ros.stringToRosTemplate(properties.cenId),
-      DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
-      RouteTableAssociationEnabled: ros.booleanToRosTemplate(properties.routeTableAssociationEnabled),
-      RouteTablePropagationEnabled: ros.booleanToRosTemplate(properties.routeTablePropagationEnabled),
-      Tags: ros.listMapper(rosTransitRouterVpnAttachmentTagsPropertyToRosTemplate)(properties.tags),
-      TransitRouterAttachmentDescription: ros.stringToRosTemplate(properties.transitRouterAttachmentDescription),
-      TransitRouterAttachmentName: ros.stringToRosTemplate(properties.transitRouterAttachmentName),
-      TransitRouterId: ros.stringToRosTemplate(properties.transitRouterId),
-      VpnOwnerId: ros.stringToRosTemplate(properties.vpnOwnerId),
+      'VpnId': ros.stringToRosTemplate(properties.vpnId),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'AutoPublishRouteEnabled': ros.booleanToRosTemplate(properties.autoPublishRouteEnabled),
+      'CenId': ros.stringToRosTemplate(properties.cenId),
+      'DeletionForce': ros.booleanToRosTemplate(properties.deletionForce),
+      'RouteTableAssociationEnabled': ros.booleanToRosTemplate(properties.routeTableAssociationEnabled),
+      'RouteTablePropagationEnabled': ros.booleanToRosTemplate(properties.routeTablePropagationEnabled),
+      'Tags': ros.listMapper(rosTransitRouterVpnAttachmentTagsPropertyToRosTemplate)(properties.tags),
+      'TransitRouterAttachmentDescription': ros.stringToRosTemplate(properties.transitRouterAttachmentDescription),
+      'TransitRouterAttachmentName': ros.stringToRosTemplate(properties.transitRouterAttachmentName),
+      'TransitRouterId': ros.stringToRosTemplate(properties.transitRouterId),
+      'VpnOwnerId': ros.stringToRosTemplate(properties.vpnOwnerId),
     };
 }
 
@@ -4135,7 +4218,7 @@ function rosTransitRouterVpnAttachmentTagsPropertyToRosTemplate(properties: any)
     if (!ros.canInspect(properties)) { return properties; }
     RosTransitRouterVpnAttachment_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cen.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-cenbandwidthpackages
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.820Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:18.263Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.datasource.RosCenBandwidthPackagesProps")
 @software.amazon.jsii.Jsii.Proxy(RosCenBandwidthPackagesProps.Jsii$Proxy.class)
 public interface RosCenBandwidthPackagesProps extends software.amazon.jsii.JsiiSerializable {
@@ -29,6 +29,12 @@ public interface RosCenBandwidthPackagesProps extends software.amazon.jsii.JsiiS
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosCenBandwidthPackagesProps}
      */
     static Builder builder() {
@@ -41,6 +47,7 @@ public interface RosCenBandwidthPackagesProps extends software.amazon.jsii.JsiiS
         java.lang.Object filter;
         java.lang.Object includeReservationData;
         java.lang.Object isOrKey;
+        java.lang.Object refreshOptions;
 
         /**
          * Sets the value of {@link RosCenBandwidthPackagesProps#getFilter}
@@ -103,6 +110,26 @@ public interface RosCenBandwidthPackagesProps extends software.amazon.jsii.JsiiS
         }
 
         /**
+         * Sets the value of {@link RosCenBandwidthPackagesProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCenBandwidthPackagesProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosCenBandwidthPackagesProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -121,6 +148,7 @@ public interface RosCenBandwidthPackagesProps extends software.amazon.jsii.JsiiS
         private final java.lang.Object filter;
         private final java.lang.Object includeReservationData;
         private final java.lang.Object isOrKey;
+        private final java.lang.Object refreshOptions;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -131,6 +159,7 @@ public interface RosCenBandwidthPackagesProps extends software.amazon.jsii.JsiiS
             this.filter = software.amazon.jsii.Kernel.get(this, "filter", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.includeReservationData = software.amazon.jsii.Kernel.get(this, "includeReservationData", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.isOrKey = software.amazon.jsii.Kernel.get(this, "isOrKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -141,6 +170,7 @@ public interface RosCenBandwidthPackagesProps extends software.amazon.jsii.JsiiS
             this.filter = builder.filter;
             this.includeReservationData = builder.includeReservationData;
             this.isOrKey = builder.isOrKey;
+            this.refreshOptions = builder.refreshOptions;
         }
 
         @Override
@@ -159,6 +189,11 @@ public interface RosCenBandwidthPackagesProps extends software.amazon.jsii.JsiiS
         }
 
         @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -172,6 +207,9 @@ public interface RosCenBandwidthPackagesProps extends software.amazon.jsii.JsiiS
             }
             if (this.getIsOrKey() != null) {
                 data.set("isOrKey", om.valueToTree(this.getIsOrKey()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -193,7 +231,8 @@ public interface RosCenBandwidthPackagesProps extends software.amazon.jsii.JsiiS
 
             if (this.filter != null ? !this.filter.equals(that.filter) : that.filter != null) return false;
             if (this.includeReservationData != null ? !this.includeReservationData.equals(that.includeReservationData) : that.includeReservationData != null) return false;
-            return this.isOrKey != null ? this.isOrKey.equals(that.isOrKey) : that.isOrKey == null;
+            if (this.isOrKey != null ? !this.isOrKey.equals(that.isOrKey) : that.isOrKey != null) return false;
+            return this.refreshOptions != null ? this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions == null;
         }
 
         @Override
@@ -201,6 +240,7 @@ public interface RosCenBandwidthPackagesProps extends software.amazon.jsii.JsiiS
             int result = this.filter != null ? this.filter.hashCode() : 0;
             result = 31 * result + (this.includeReservationData != null ? this.includeReservationData.hashCode() : 0);
             result = 31 * result + (this.isOrKey != null ? this.isOrKey.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             return result;
         }
     }

@@ -165,17 +165,17 @@ function rosDatasetPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosDatasetPropsValidator(properties).assertSuccess();
     }
     return {
-      DatasetName: ros.stringToRosTemplate(properties.datasetName),
-      DataSourceType: ros.stringToRosTemplate(properties.dataSourceType),
-      Property: ros.stringToRosTemplate(properties.property),
-      Uri: ros.stringToRosTemplate(properties.uri),
-      WorkspaceId: ros.stringToRosTemplate(properties.workspaceId),
-      Accessibility: ros.stringToRosTemplate(properties.accessibility),
-      DataType: ros.stringToRosTemplate(properties.dataType),
-      Description: ros.stringToRosTemplate(properties.description),
-      Options: ros.stringToRosTemplate(properties.options),
-      SourceId: ros.stringToRosTemplate(properties.sourceId),
-      SourceType: ros.stringToRosTemplate(properties.sourceType),
+      'DatasetName': ros.stringToRosTemplate(properties.datasetName),
+      'DataSourceType': ros.stringToRosTemplate(properties.dataSourceType),
+      'Property': ros.stringToRosTemplate(properties.property),
+      'Uri': ros.stringToRosTemplate(properties.uri),
+      'WorkspaceId': ros.stringToRosTemplate(properties.workspaceId),
+      'Accessibility': ros.stringToRosTemplate(properties.accessibility),
+      'DataType': ros.stringToRosTemplate(properties.dataType),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Options': ros.stringToRosTemplate(properties.options),
+      'SourceId': ros.stringToRosTemplate(properties.sourceId),
+      'SourceType': ros.stringToRosTemplate(properties.sourceType),
     };
 }
 
@@ -468,9 +468,9 @@ function rosServicePropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosServicePropsValidator(properties).assertSuccess();
     }
     return {
-      ServiceConfig: ros.hashMapper(ros.objectToRosTemplate)(properties.serviceConfig),
-      Develop: ros.stringToRosTemplate(properties.develop),
-      Labels: ros.hashMapper(ros.objectToRosTemplate)(properties.labels),
+      'ServiceConfig': ros.hashMapper(ros.objectToRosTemplate)(properties.serviceConfig),
+      'Develop': ros.stringToRosTemplate(properties.develop),
+      'Labels': ros.hashMapper(ros.objectToRosTemplate)(properties.labels),
     };
 }
 
@@ -797,10 +797,10 @@ function rosWorkspacePropsToRosTemplate(properties: any, enableResourcePropertyC
         RosWorkspacePropsValidator(properties).assertSuccess();
     }
     return {
-      Description: ros.stringToRosTemplate(properties.description),
-      EnvTypes: ros.listMapper(ros.stringToRosTemplate)(properties.envTypes),
-      WorkspaceName: ros.stringToRosTemplate(properties.workspaceName),
-      DisplayName: ros.stringToRosTemplate(properties.displayName),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'EnvTypes': ros.listMapper(ros.stringToRosTemplate)(properties.envTypes),
+      'WorkspaceName': ros.stringToRosTemplate(properties.workspaceName),
+      'DisplayName': ros.stringToRosTemplate(properties.displayName),
     };
 }
 
@@ -1017,11 +1017,11 @@ function rosWorkspaceResourceDlcPropsToRosTemplate(properties: any, enableResour
         RosWorkspaceResourceDlcPropsValidator(properties).assertSuccess();
     }
     return {
-      GroupName: ros.stringToRosTemplate(properties.groupName),
-      Resources: ros.listMapper(rosWorkspaceResourceDlcResourcesPropertyToRosTemplate)(properties.resources),
-      WorkspaceId: ros.stringToRosTemplate(properties.workspaceId),
-      IsDefault: ros.booleanToRosTemplate(properties.isDefault),
-      Option: ros.stringToRosTemplate(properties.option),
+      'GroupName': ros.stringToRosTemplate(properties.groupName),
+      'Resources': ros.listMapper(rosWorkspaceResourceDlcResourcesPropertyToRosTemplate)(properties.resources),
+      'WorkspaceId': ros.stringToRosTemplate(properties.workspaceId),
+      'IsDefault': ros.booleanToRosTemplate(properties.isDefault),
+      'Option': ros.stringToRosTemplate(properties.option),
     };
 }
 
@@ -1184,10 +1184,10 @@ function rosWorkspaceResourceDlcResourcesPropertyToRosTemplate(properties: any):
     if (!ros.canInspect(properties)) { return properties; }
     RosWorkspaceResourceDlc_ResourcesPropertyValidator(properties).assertSuccess();
     return {
-      WorkspaceResourceWorkspaceId: ros.stringToRosTemplate(properties.workspaceResourceWorkspaceId),
-      WorkspaceResourceName: ros.stringToRosTemplate(properties.workspaceResourceName),
-      Spec: ros.hashMapper(ros.objectToRosTemplate)(properties.spec),
-      EnvType: ros.stringToRosTemplate(properties.envType),
+      'WorkspaceResourceWorkspaceId': ros.stringToRosTemplate(properties.workspaceResourceWorkspaceId),
+      'WorkspaceResourceName': ros.stringToRosTemplate(properties.workspaceResourceName),
+      'Spec': ros.hashMapper(ros.objectToRosTemplate)(properties.spec),
+      'EnvType': ros.stringToRosTemplate(properties.envType),
     };
 }
 
@@ -1273,11 +1273,11 @@ function rosWorkspaceResourceFlinkPropsToRosTemplate(properties: any, enableReso
         RosWorkspaceResourceFlinkPropsValidator(properties).assertSuccess();
     }
     return {
-      GroupName: ros.stringToRosTemplate(properties.groupName),
-      Resources: ros.listMapper(rosWorkspaceResourceFlinkResourcesPropertyToRosTemplate)(properties.resources),
-      WorkspaceId: ros.stringToRosTemplate(properties.workspaceId),
-      IsDefault: ros.booleanToRosTemplate(properties.isDefault),
-      Option: ros.stringToRosTemplate(properties.option),
+      'GroupName': ros.stringToRosTemplate(properties.groupName),
+      'Resources': ros.listMapper(rosWorkspaceResourceFlinkResourcesPropertyToRosTemplate)(properties.resources),
+      'WorkspaceId': ros.stringToRosTemplate(properties.workspaceId),
+      'IsDefault': ros.booleanToRosTemplate(properties.isDefault),
+      'Option': ros.stringToRosTemplate(properties.option),
     };
 }
 
@@ -1298,7 +1298,7 @@ export class RosWorkspaceResourceFlink extends ros.RosResource {
     public readonly attrCreateTime: ros.IResolvable;
 
     /**
-     * @Attribute GroupName: Resource group name. If you want to obtain a resource group name, see [ListResources](~~ 449143 ~~).
+     * @Attribute GroupName: Resource group name. If you want to obtain a resource group name, see [ListResources].
      */
     public readonly attrGroupName: ros.IResolvable;
 
@@ -1440,10 +1440,10 @@ function rosWorkspaceResourceFlinkResourcesPropertyToRosTemplate(properties: any
     if (!ros.canInspect(properties)) { return properties; }
     RosWorkspaceResourceFlink_ResourcesPropertyValidator(properties).assertSuccess();
     return {
-      WorkspaceResourceWorkspaceId: ros.stringToRosTemplate(properties.workspaceResourceWorkspaceId),
-      WorkspaceResourceName: ros.stringToRosTemplate(properties.workspaceResourceName),
-      Spec: ros.hashMapper(ros.objectToRosTemplate)(properties.spec),
-      EnvType: ros.stringToRosTemplate(properties.envType),
+      'WorkspaceResourceWorkspaceId': ros.stringToRosTemplate(properties.workspaceResourceWorkspaceId),
+      'WorkspaceResourceName': ros.stringToRosTemplate(properties.workspaceResourceName),
+      'Spec': ros.hashMapper(ros.objectToRosTemplate)(properties.spec),
+      'EnvType': ros.stringToRosTemplate(properties.envType),
     };
 }
 
@@ -1529,11 +1529,11 @@ function rosWorkspaceResourceMaxComputePropsToRosTemplate(properties: any, enabl
         RosWorkspaceResourceMaxComputePropsValidator(properties).assertSuccess();
     }
     return {
-      GroupName: ros.stringToRosTemplate(properties.groupName),
-      Resources: ros.listMapper(rosWorkspaceResourceMaxComputeResourcesPropertyToRosTemplate)(properties.resources),
-      WorkspaceId: ros.stringToRosTemplate(properties.workspaceId),
-      IsDefault: ros.booleanToRosTemplate(properties.isDefault),
-      Option: ros.stringToRosTemplate(properties.option),
+      'GroupName': ros.stringToRosTemplate(properties.groupName),
+      'Resources': ros.listMapper(rosWorkspaceResourceMaxComputeResourcesPropertyToRosTemplate)(properties.resources),
+      'WorkspaceId': ros.stringToRosTemplate(properties.workspaceId),
+      'IsDefault': ros.booleanToRosTemplate(properties.isDefault),
+      'Option': ros.stringToRosTemplate(properties.option),
     };
 }
 
@@ -1672,7 +1672,7 @@ function rosWorkspaceResourceMaxComputeQuotasPropertyToRosTemplate(properties: a
     if (!ros.canInspect(properties)) { return properties; }
     RosWorkspaceResourceMaxCompute_QuotasPropertyValidator(properties).assertSuccess();
     return {
-      QuotaId: ros.stringToRosTemplate(properties.quotaId),
+      'QuotaId': ros.stringToRosTemplate(properties.quotaId),
     };
 }
 
@@ -1751,10 +1751,10 @@ function rosWorkspaceResourceMaxComputeResourcesPropertyToRosTemplate(properties
     if (!ros.canInspect(properties)) { return properties; }
     RosWorkspaceResourceMaxCompute_ResourcesPropertyValidator(properties).assertSuccess();
     return {
-      WorkspaceResourceWorkspaceId: ros.stringToRosTemplate(properties.workspaceResourceWorkspaceId),
-      Quotas: ros.listMapper(rosWorkspaceResourceMaxComputeQuotasPropertyToRosTemplate)(properties.quotas),
-      WorkspaceResourceName: ros.stringToRosTemplate(properties.workspaceResourceName),
-      Spec: ros.hashMapper(ros.objectToRosTemplate)(properties.spec),
-      EnvType: ros.stringToRosTemplate(properties.envType),
+      'WorkspaceResourceWorkspaceId': ros.stringToRosTemplate(properties.workspaceResourceWorkspaceId),
+      'Quotas': ros.listMapper(rosWorkspaceResourceMaxComputeQuotasPropertyToRosTemplate)(properties.quotas),
+      'WorkspaceResourceName': ros.stringToRosTemplate(properties.workspaceResourceName),
+      'Spec': ros.hashMapper(ros.objectToRosTemplate)(properties.spec),
+      'EnvType': ros.stringToRosTemplate(properties.envType),
     };
 }

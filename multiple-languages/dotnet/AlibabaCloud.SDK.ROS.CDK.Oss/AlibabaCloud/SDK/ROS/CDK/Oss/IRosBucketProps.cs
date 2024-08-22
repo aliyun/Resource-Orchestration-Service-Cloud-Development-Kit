@@ -206,11 +206,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: websiteConfiguration: The properties of website config.
+        /// <strong>Property</strong>: websiteConfigurationV2: Website configuration.
         /// </remarks>
-        [JsiiProperty(name: "websiteConfiguration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-oss.RosBucket.WebsiteConfigurationProperty\"}]}}", isOptional: true)]
+        [JsiiProperty(name: "websiteConfigurationV2", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-oss.RosBucket.WebsiteConfigurationV2Property\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? WebsiteConfiguration
+        object? WebsiteConfigurationV2
         {
             get
             {
@@ -382,11 +382,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: websiteConfiguration: The properties of website config.
+            /// <strong>Property</strong>: websiteConfigurationV2: Website configuration.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "websiteConfiguration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-oss.RosBucket.WebsiteConfigurationProperty\"}]}}", isOptional: true)]
-            public object? WebsiteConfiguration
+            [JsiiProperty(name: "websiteConfigurationV2", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-oss.RosBucket.WebsiteConfigurationV2Property\"}]}}", isOptional: true)]
+            public object? WebsiteConfigurationV2
             {
                 get => GetInstanceProperty<object?>();
             }

@@ -85,6 +85,11 @@ export interface LoadBalancerProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
+     * Property securityGroupIds: The IDs of the security group to which the ALB instance join.
+     */
+    readonly securityGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosLoadBalancer.TagsProperty[];
@@ -144,12 +149,13 @@ export class LoadBalancer extends ros.Resource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosLoadBalancer = new RosLoadBalancer(this, id,  {
-            addressIpVersion: props.addressIpVersion,
             loadBalancerEdition: props.loadBalancerEdition,
+            addressIpVersion: props.addressIpVersion,
             resourceGroupId: props.resourceGroupId,
             loadBalancerBillingConfig: props.loadBalancerBillingConfig,
             zoneMappings: props.zoneMappings,
             modificationProtectionConfig: props.modificationProtectionConfig,
+            securityGroupIds: props.securityGroupIds,
             loadBalancerName: props.loadBalancerName,
             accessLogConfig: props.accessLogConfig,
             vpcId: props.vpcId,

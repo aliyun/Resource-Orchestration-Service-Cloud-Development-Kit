@@ -75,6 +75,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds.Datasource
             }
         }
 
+        /// <summary>Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>Never: Never refresh the datasource resource when the stack is updated.</description>
+        /// <description>Always: Always refresh the datasource resource when the stack is updated.
+        /// Default is Never.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "refreshOptions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? RefreshOptions
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property zoneId: The ID of the zone in which the instance is located.</summary>
         /// <remarks>
         /// If the instance spans more than one zone, the value of this parameter contains an MAZ part,such as cn-hangzhou-MAZ6(b,f) and cn-hangzhou-MAZ5(b,e,f)
@@ -148,6 +168,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds.Datasource
             [JsiiOptional]
             [JsiiProperty(name: "engineVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EngineVersion
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.</summary>
+            /// <remarks>
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>Never: Never refresh the datasource resource when the stack is updated.</description>
+            /// <description>Always: Always refresh the datasource resource when the stack is updated.
+            /// Default is Never.</description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "refreshOptions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RefreshOptions
             {
                 get => GetInstanceProperty<object?>();
             }

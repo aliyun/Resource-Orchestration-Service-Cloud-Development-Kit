@@ -13,6 +13,14 @@ export interface RouteTableProps {
      * Property routeTableId: The ID of the routing table.
      */
     readonly routeTableId: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -95,6 +103,7 @@ export class RouteTable extends ros.Resource {
 
         const rosRouteTable = new RosRouteTable(this, id,  {
             routeTableId: props.routeTableId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosRouteTable;
         this.attrCreateTime = rosRouteTable.attrCreateTime;

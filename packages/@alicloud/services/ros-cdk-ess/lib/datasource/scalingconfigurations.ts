@@ -10,6 +10,14 @@ export { RosScalingConfigurations as ScalingConfigurationsProperty };
 export interface ScalingConfigurationsProps {
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property scalingConfigurationIds: The ID of scaling configuration that you want to query. Valid values : 1 to 10. The IDs of active and inactive scaling configurations are displayed in the query results, and can be differentiated by LifecycleState.
      */
     readonly scalingConfigurationIds?: Array<string | ros.IResolvable> | ros.IResolvable;
@@ -62,6 +70,7 @@ export class ScalingConfigurations extends ros.Resource {
             scalingGroupId: props.scalingGroupId,
             scalingConfigurationIds: props.scalingConfigurationIds,
             scalingConfigurationNames: props.scalingConfigurationNames,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosScalingConfigurations;
         this.attrScalingConfigurationIds = rosScalingConfigurations.attrScalingConfigurationIds;

@@ -21,6 +21,14 @@ export interface NetworkAclsProps {
     readonly networkAclName?: string | ros.IResolvable;
 
     /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
      * Property resourceId: The ID of the associated instance.This parameter is valid only if ResourceType and ResourceId are both set.
      */
     readonly resourceId?: string | ros.IResolvable;
@@ -76,6 +84,7 @@ export class NetworkAcls extends ros.Resource {
             resourceId: props.resourceId,
             resourceType: props.resourceType,
             networkAclName: props.networkAclName,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosNetworkAcls;
         this.attrNetworkAclIds = rosNetworkAcls.attrNetworkAclIds;

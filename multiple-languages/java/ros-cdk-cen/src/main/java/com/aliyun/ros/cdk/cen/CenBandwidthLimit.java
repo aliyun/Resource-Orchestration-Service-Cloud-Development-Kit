@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::CenBandwidthLimit</code>, which is used to configure the cross-region interconnection bandwidth in a bandwidth plan.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:04.689Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:18.104Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenBandwidthLimit")
 public class CenBandwidthLimit extends com.aliyun.ros.cdk.core.Resource {
 
@@ -191,6 +191,31 @@ public class CenBandwidthLimit extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder oppositeRegionId(final com.aliyun.ros.cdk.core.IResolvable oppositeRegionId) {
             this.props.oppositeRegionId(oppositeRegionId);
+            return this;
+        }
+
+        /**
+         * Property bandwidthType: Bandwidth allocation mode.
+         * <p>
+         * Value: BandwidthPackage: Allocates bandwidth from the bandwidth package.
+         * <p>
+         * @return {@code this}
+         * @param bandwidthType Property bandwidthType: Bandwidth allocation mode. This parameter is required.
+         */
+        public Builder bandwidthType(final java.lang.String bandwidthType) {
+            this.props.bandwidthType(bandwidthType);
+            return this;
+        }
+        /**
+         * Property bandwidthType: Bandwidth allocation mode.
+         * <p>
+         * Value: BandwidthPackage: Allocates bandwidth from the bandwidth package.
+         * <p>
+         * @return {@code this}
+         * @param bandwidthType Property bandwidthType: Bandwidth allocation mode. This parameter is required.
+         */
+        public Builder bandwidthType(final com.aliyun.ros.cdk.core.IResolvable bandwidthType) {
+            this.props.bandwidthType(bandwidthType);
             return this;
         }
 

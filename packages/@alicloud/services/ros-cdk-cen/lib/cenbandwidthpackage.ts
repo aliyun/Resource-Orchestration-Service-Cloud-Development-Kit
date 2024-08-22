@@ -74,6 +74,11 @@ export interface CenBandwidthPackageProps {
      * Property resourceGroupId: Resource group id.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosCenBandwidthPackage.TagsProperty[];
 }
 
 /**
@@ -105,18 +110,19 @@ export class CenBandwidthPackage extends ros.Resource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosCenBandwidthPackage = new RosCenBandwidthPackage(this, id,  {
-            bandwidthPackageChargeType: props.bandwidthPackageChargeType,
             description: props.description,
             resourceGroupId: props.resourceGroupId,
             geographicRegionBId: props.geographicRegionBId,
             geographicRegionAId: props.geographicRegionAId,
             pricingCycle: props.pricingCycle === undefined || props.pricingCycle === null ? 'Month' : props.pricingCycle,
             autoRenew: props.autoRenew,
-            bandwidth: props.bandwidth,
             period: props.period === undefined || props.period === null ? 1 : props.period,
             autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
             name: props.name,
             autoRenewDuration: props.autoRenewDuration,
+            bandwidthPackageChargeType: props.bandwidthPackageChargeType,
+            bandwidth: props.bandwidth,
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCenBandwidthPackage;
         this.attrCenBandwidthPackageId = rosCenBandwidthPackage.attrCenBandwidthPackageId;

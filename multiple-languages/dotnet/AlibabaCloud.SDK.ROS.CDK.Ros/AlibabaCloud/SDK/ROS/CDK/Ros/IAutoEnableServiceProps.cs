@@ -16,6 +16,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// Valid values:
         /// AHAS: Application High Availability Service
         /// ARMS: Realtime Monitoring Service
+        /// ARMS/App: Application Monitoring: Basic Edition
+        /// ARMS/Web: Front End Monitoring: Basic Edition
+        /// ARMS/PrometheusMonitor: Prometheus Monitoring: Expert Edition
+        /// ARMS/SyntheticPost: Cloud Dial Test: Expert Edition (pay as you go)
         /// ApiGateway: API Gateway
         /// BatchCompute: Batch Compute
         /// BrainIndustrial: Brain Industrial
@@ -80,6 +84,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             /// Valid values:
             /// AHAS: Application High Availability Service
             /// ARMS: Realtime Monitoring Service
+            /// ARMS/App: Application Monitoring: Basic Edition
+            /// ARMS/Web: Front End Monitoring: Basic Edition
+            /// ARMS/PrometheusMonitor: Prometheus Monitoring: Expert Edition
+            /// ARMS/SyntheticPost: Cloud Dial Test: Expert Edition (pay as you go)
             /// ApiGateway: API Gateway
             /// BatchCompute: Batch Compute
             /// BrainIndustrial: Brain Industrial

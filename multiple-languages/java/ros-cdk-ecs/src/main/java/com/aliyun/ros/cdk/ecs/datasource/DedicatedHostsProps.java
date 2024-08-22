@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-dedicatedhosts
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:06.531Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:20.446Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.DedicatedHostsProps")
 @software.amazon.jsii.Jsii.Proxy(DedicatedHostsProps.Jsii$Proxy.class)
 public interface DedicatedHostsProps extends software.amazon.jsii.JsiiSerializable {
@@ -37,6 +37,21 @@ public interface DedicatedHostsProps extends software.amazon.jsii.JsiiSerializab
      * Property dedicatedHostType: The type of the dedicated host.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDedicatedHostType() {
+        return null;
+    }
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+     * <li>Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
         return null;
     }
 
@@ -88,6 +103,7 @@ public interface DedicatedHostsProps extends software.amazon.jsii.JsiiSerializab
         java.lang.Object dedicatedHostIds;
         java.lang.Object dedicatedHostName;
         java.lang.Object dedicatedHostType;
+        java.lang.Object refreshOptions;
         java.lang.Object resourceGroupId;
         java.lang.Object status;
         java.util.List<com.aliyun.ros.cdk.ecs.datasource.RosDedicatedHosts.TagsProperty> tags;
@@ -172,6 +188,40 @@ public interface DedicatedHostsProps extends software.amazon.jsii.JsiiSerializab
          */
         public Builder dedicatedHostType(com.aliyun.ros.cdk.core.IResolvable dedicatedHostType) {
             this.dedicatedHostType = dedicatedHostType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DedicatedHostsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DedicatedHostsProps#getRefreshOptions}
+         * @param refreshOptions Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Never: Never refresh the datasource resource when the stack is updated.</li>
+         *                       <li>Always: Always refresh the datasource resource when the stack is updated.
+         *                       Default is Never.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
             return this;
         }
 
@@ -276,6 +326,7 @@ public interface DedicatedHostsProps extends software.amazon.jsii.JsiiSerializab
         private final java.lang.Object dedicatedHostIds;
         private final java.lang.Object dedicatedHostName;
         private final java.lang.Object dedicatedHostType;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object status;
         private final java.util.List<com.aliyun.ros.cdk.ecs.datasource.RosDedicatedHosts.TagsProperty> tags;
@@ -291,6 +342,7 @@ public interface DedicatedHostsProps extends software.amazon.jsii.JsiiSerializab
             this.dedicatedHostIds = software.amazon.jsii.Kernel.get(this, "dedicatedHostIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dedicatedHostName = software.amazon.jsii.Kernel.get(this, "dedicatedHostName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dedicatedHostType = software.amazon.jsii.Kernel.get(this, "dedicatedHostType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.status = software.amazon.jsii.Kernel.get(this, "status", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.datasource.RosDedicatedHosts.TagsProperty.class)));
@@ -307,6 +359,7 @@ public interface DedicatedHostsProps extends software.amazon.jsii.JsiiSerializab
             this.dedicatedHostIds = builder.dedicatedHostIds;
             this.dedicatedHostName = builder.dedicatedHostName;
             this.dedicatedHostType = builder.dedicatedHostType;
+            this.refreshOptions = builder.refreshOptions;
             this.resourceGroupId = builder.resourceGroupId;
             this.status = builder.status;
             this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.datasource.RosDedicatedHosts.TagsProperty>)builder.tags;
@@ -331,6 +384,11 @@ public interface DedicatedHostsProps extends software.amazon.jsii.JsiiSerializab
         @Override
         public final java.lang.Object getDedicatedHostType() {
             return this.dedicatedHostType;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -371,6 +429,9 @@ public interface DedicatedHostsProps extends software.amazon.jsii.JsiiSerializab
             if (this.getDedicatedHostType() != null) {
                 data.set("dedicatedHostType", om.valueToTree(this.getDedicatedHostType()));
             }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
+            }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
@@ -405,6 +466,7 @@ public interface DedicatedHostsProps extends software.amazon.jsii.JsiiSerializab
             if (this.dedicatedHostIds != null ? !this.dedicatedHostIds.equals(that.dedicatedHostIds) : that.dedicatedHostIds != null) return false;
             if (this.dedicatedHostName != null ? !this.dedicatedHostName.equals(that.dedicatedHostName) : that.dedicatedHostName != null) return false;
             if (this.dedicatedHostType != null ? !this.dedicatedHostType.equals(that.dedicatedHostType) : that.dedicatedHostType != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.status != null ? !this.status.equals(that.status) : that.status != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
@@ -417,6 +479,7 @@ public interface DedicatedHostsProps extends software.amazon.jsii.JsiiSerializab
             result = 31 * result + (this.dedicatedHostIds != null ? this.dedicatedHostIds.hashCode() : 0);
             result = 31 * result + (this.dedicatedHostName != null ? this.dedicatedHostName.hashCode() : 0);
             result = 31 * result + (this.dedicatedHostType != null ? this.dedicatedHostType.hashCode() : 0);
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.status != null ? this.status.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);

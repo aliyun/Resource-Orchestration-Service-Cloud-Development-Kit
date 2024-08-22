@@ -437,10 +437,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         public interface ICertificatesProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: id: The ID of the SSL certificate.
+            /// <strong>Property</strong>: identity: The ID of the SSL certificate.
             /// </remarks>
-            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            object Id
+            [JsiiProperty(name: "identity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Identity
             {
                 get;
             }
@@ -453,10 +453,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: id: The ID of the SSL certificate.
+                /// <strong>Property</strong>: identity: The ID of the SSL certificate.
                 /// </remarks>
-                [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-                public object Id
+                [JsiiProperty(name: "identity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Identity
                 {
                     get => GetInstanceProperty<object>()!;
                 }
@@ -467,15 +467,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         [JsiiByValue(fqn: "@alicloud/ros-cdk-ga.RosListener.CertificatesProperty")]
         public class CertificatesProperty : AlibabaCloud.SDK.ROS.CDK.Ga.RosListener.ICertificatesProperty
         {
-            private object _id;
+            private object _identity;
 
             /// <remarks>
-            /// <strong>Property</strong>: id: The ID of the SSL certificate.
+            /// <strong>Property</strong>: identity: The ID of the SSL certificate.
             /// </remarks>
-            [JsiiProperty(name: "id", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object Id
+            [JsiiProperty(name: "identity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Identity
             {
-                get => _id;
+                get => _identity;
                 set
                 {
                     if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
@@ -495,7 +495,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
                                 throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                         }
                     }
-                    _id = value;
+                    _identity = value;
                 }
             }
         }

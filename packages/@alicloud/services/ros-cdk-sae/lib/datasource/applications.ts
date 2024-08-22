@@ -32,6 +32,14 @@ export interface ApplicationsProps {
      * Property namespaceId: The ID of namespace.
      */
     readonly namespaceId?: string | ros.IResolvable;
+
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
 }
 
 /**
@@ -70,8 +78,9 @@ export class Applications extends ros.Resource {
         const rosApplications = new RosApplications(this, id,  {
             namespaceId: props.namespaceId,
             fieldValue: props.fieldValue,
-            appName: props.appName,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             fieldType: props.fieldType,
+            appName: props.appName,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosApplications;
         this.attrApplicationIds = rosApplications.attrApplicationIds;

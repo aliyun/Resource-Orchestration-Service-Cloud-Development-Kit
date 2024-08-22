@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.rocketmq.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq-topics
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-06-24T05:57:09.029Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:23.847Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq.datasource.RosTopicsProps")
 @software.amazon.jsii.Jsii.Proxy(RosTopicsProps.Jsii$Proxy.class)
 public interface RosTopicsProps extends software.amazon.jsii.JsiiSerializable {
@@ -13,6 +13,12 @@ public interface RosTopicsProps extends software.amazon.jsii.JsiiSerializable {
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRefreshOptions() {
         return null;
     }
 
@@ -33,6 +39,7 @@ public interface RosTopicsProps extends software.amazon.jsii.JsiiSerializable {
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosTopicsProps> {
         java.lang.Object instanceId;
+        java.lang.Object refreshOptions;
         java.lang.Object topicName;
 
         /**
@@ -52,6 +59,26 @@ public interface RosTopicsProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder instanceId(com.aliyun.ros.cdk.core.IResolvable instanceId) {
             this.instanceId = instanceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTopicsProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(java.lang.String refreshOptions) {
+            this.refreshOptions = refreshOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTopicsProps#getRefreshOptions}
+         * @param refreshOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder refreshOptions(com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
+            this.refreshOptions = refreshOptions;
             return this;
         }
 
@@ -92,6 +119,7 @@ public interface RosTopicsProps extends software.amazon.jsii.JsiiSerializable {
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosTopicsProps {
         private final java.lang.Object instanceId;
+        private final java.lang.Object refreshOptions;
         private final java.lang.Object topicName;
 
         /**
@@ -101,6 +129,7 @@ public interface RosTopicsProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.topicName = software.amazon.jsii.Kernel.get(this, "topicName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -110,12 +139,18 @@ public interface RosTopicsProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.instanceId = builder.instanceId;
+            this.refreshOptions = builder.refreshOptions;
             this.topicName = builder.topicName;
         }
 
         @Override
         public final java.lang.Object getInstanceId() {
             return this.instanceId;
+        }
+
+        @Override
+        public final java.lang.Object getRefreshOptions() {
+            return this.refreshOptions;
         }
 
         @Override
@@ -131,6 +166,9 @@ public interface RosTopicsProps extends software.amazon.jsii.JsiiSerializable {
 
             if (this.getInstanceId() != null) {
                 data.set("instanceId", om.valueToTree(this.getInstanceId()));
+            }
+            if (this.getRefreshOptions() != null) {
+                data.set("refreshOptions", om.valueToTree(this.getRefreshOptions()));
             }
             if (this.getTopicName() != null) {
                 data.set("topicName", om.valueToTree(this.getTopicName()));
@@ -154,12 +192,14 @@ public interface RosTopicsProps extends software.amazon.jsii.JsiiSerializable {
             RosTopicsProps.Jsii$Proxy that = (RosTopicsProps.Jsii$Proxy) o;
 
             if (this.instanceId != null ? !this.instanceId.equals(that.instanceId) : that.instanceId != null) return false;
+            if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             return this.topicName != null ? this.topicName.equals(that.topicName) : that.topicName == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.instanceId != null ? this.instanceId.hashCode() : 0;
+            result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.topicName != null ? this.topicName.hashCode() : 0);
             return result;
         }

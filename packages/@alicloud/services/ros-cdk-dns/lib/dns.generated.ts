@@ -68,10 +68,10 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
         RosDomainPropsValidator(properties).assertSuccess();
     }
     return {
-      DomainName: ros.stringToRosTemplate(properties.domainName),
-      GroupId: ros.stringToRosTemplate(properties.groupId),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Tags: ros.listMapper(rosDomainTagsPropertyToRosTemplate)(properties.tags),
+      'DomainName': ros.stringToRosTemplate(properties.domainName),
+      'GroupId': ros.stringToRosTemplate(properties.groupId),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosDomainTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -217,8 +217,8 @@ function rosDomainTagsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosDomain_TagsPropertyValidator(properties).assertSuccess();
     return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -263,7 +263,7 @@ function rosDomainGroupPropsToRosTemplate(properties: any, enableResourcePropert
         RosDomainGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      GroupName: ros.stringToRosTemplate(properties.groupName),
+      'GroupName': ros.stringToRosTemplate(properties.groupName),
     };
 }
 
@@ -402,13 +402,13 @@ function rosDomainRecordPropsToRosTemplate(properties: any, enableResourceProper
         RosDomainRecordPropsValidator(properties).assertSuccess();
     }
     return {
-      DomainName: ros.stringToRosTemplate(properties.domainName),
-      RR: ros.stringToRosTemplate(properties.rr),
-      Type: ros.stringToRosTemplate(properties.type),
-      Value: ros.stringToRosTemplate(properties.value),
-      Line: ros.stringToRosTemplate(properties.line),
-      Priority: ros.numberToRosTemplate(properties.priority),
-      TTL: ros.numberToRosTemplate(properties.ttl),
+      'DomainName': ros.stringToRosTemplate(properties.domainName),
+      'RR': ros.stringToRosTemplate(properties.rr),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Line': ros.stringToRosTemplate(properties.line),
+      'Priority': ros.numberToRosTemplate(properties.priority),
+      'TTL': ros.numberToRosTemplate(properties.ttl),
     };
 }
 
@@ -648,14 +648,14 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      DNSSecurity: ros.stringToRosTemplate(properties.dnsSecurity),
-      DomainNumbers: ros.numberToRosTemplate(properties.domainNumbers),
-      Period: ros.numberToRosTemplate(properties.period),
-      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
-      Version: ros.stringToRosTemplate(properties.version),
-      Domain: ros.stringToRosTemplate(properties.domain),
-      InstanceType: ros.stringToRosTemplate(properties.instanceType),
-      RenewalStatus: ros.stringToRosTemplate(properties.renewalStatus),
+      'DNSSecurity': ros.stringToRosTemplate(properties.dnsSecurity),
+      'DomainNumbers': ros.numberToRosTemplate(properties.domainNumbers),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
+      'Version': ros.stringToRosTemplate(properties.version),
+      'Domain': ros.stringToRosTemplate(properties.domain),
+      'InstanceType': ros.stringToRosTemplate(properties.instanceType),
+      'RenewalStatus': ros.stringToRosTemplate(properties.renewalStatus),
     };
 }
 

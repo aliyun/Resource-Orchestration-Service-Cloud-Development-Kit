@@ -67,10 +67,10 @@ function rosCatalogPropsToRosTemplate(properties: any, enableResourcePropertyCon
         RosCatalogPropsValidator(properties).assertSuccess();
     }
     return {
-      CatalogId: ros.stringToRosTemplate(properties.catalogId),
-      Description: ros.stringToRosTemplate(properties.description),
-      LocationUri: ros.stringToRosTemplate(properties.locationUri),
-      Owner: ros.stringToRosTemplate(properties.owner),
+      'CatalogId': ros.stringToRosTemplate(properties.catalogId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'LocationUri': ros.stringToRosTemplate(properties.locationUri),
+      'Owner': ros.stringToRosTemplate(properties.owner),
     };
 }
 
