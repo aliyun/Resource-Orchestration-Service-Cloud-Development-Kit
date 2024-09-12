@@ -92,6 +92,10 @@ func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetApplicationNameParame
 	return nil
 }
 
+func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetApplicationNameListParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetDescriptionParameters(val interface{}) error {
 	return nil
 }
@@ -120,7 +124,15 @@ func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetEnableResourcePropert
 	return nil
 }
 
+func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetEndTimeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetLangParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetMemberUidParameters(val interface{}) error {
 	return nil
 }
 
@@ -136,11 +148,35 @@ func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetRegionIdParameters(va
 	return nil
 }
 
+func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetReleaseParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetRepeatDaysParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetRepeatEndTimeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetRepeatStartTimeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetRepeatTypeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetSourceParameters(val interface{}) error {
 	return nil
 }
 
 func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetSourceTypeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetStartTimeParameters(val interface{}) error {
 	return nil
 }
 

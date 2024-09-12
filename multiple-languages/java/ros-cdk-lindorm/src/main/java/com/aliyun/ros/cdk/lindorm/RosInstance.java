@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.lindorm;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::Lindorm::Instance</code>, which is used to create a Lindorm instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:22.252Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:28.294Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.lindorm.$Module.class, fqn = "@alicloud/ros-cdk-lindorm.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 

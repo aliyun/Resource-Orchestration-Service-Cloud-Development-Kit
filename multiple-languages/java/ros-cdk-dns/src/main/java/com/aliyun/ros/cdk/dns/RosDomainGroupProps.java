@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dns;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-domaingroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:19.406Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:25.336Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.RosDomainGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosDomainGroupProps.Jsii$Proxy.class)
 public interface RosDomainGroupProps extends software.amazon.jsii.JsiiSerializable {

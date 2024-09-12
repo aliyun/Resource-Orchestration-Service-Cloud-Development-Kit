@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cloudfw;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallcontrolpolicy
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:18.415Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:24.333Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.RosVpcFirewallControlPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(RosVpcFirewallControlPolicyProps.Jsii$Proxy.class)
 public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.JsiiSerializable {
@@ -13,10 +13,6 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
     /**
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAclAction();
-
-    /**
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getApplicationName();
 
     /**
      */
@@ -52,6 +48,18 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getApplicationName() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getApplicationNameList() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDestPort() {
         return null;
     }
@@ -70,13 +78,61 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEndTime() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getLang() {
         return null;
     }
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMemberUid() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRegionId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRelease() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRepeatDays() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRepeatEndTime() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRepeatStartTime() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRepeatType() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStartTime() {
         return null;
     }
 
@@ -91,7 +147,6 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosVpcFirewallControlPolicyProps> {
         java.lang.Object aclAction;
-        java.lang.Object applicationName;
         java.lang.Object description;
         java.lang.Object destination;
         java.lang.Object destinationType;
@@ -100,11 +155,21 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
         java.lang.Object source;
         java.lang.Object sourceType;
         java.lang.Object vpcFirewallId;
+        java.lang.Object applicationName;
+        java.lang.Object applicationNameList;
         java.lang.Object destPort;
         java.lang.Object destPortGroup;
         java.lang.Object destPortType;
+        java.lang.Object endTime;
         java.lang.Object lang;
+        java.lang.Object memberUid;
         java.lang.Object regionId;
+        java.lang.Object release;
+        java.lang.Object repeatDays;
+        java.lang.Object repeatEndTime;
+        java.lang.Object repeatStartTime;
+        java.lang.Object repeatType;
+        java.lang.Object startTime;
 
         /**
          * Sets the value of {@link RosVpcFirewallControlPolicyProps#getAclAction}
@@ -123,26 +188,6 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
          */
         public Builder aclAction(com.aliyun.ros.cdk.core.IResolvable aclAction) {
             this.aclAction = aclAction;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosVpcFirewallControlPolicyProps#getApplicationName}
-         * @param applicationName the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder applicationName(java.lang.String applicationName) {
-            this.applicationName = applicationName;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosVpcFirewallControlPolicyProps#getApplicationName}
-         * @param applicationName the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder applicationName(com.aliyun.ros.cdk.core.IResolvable applicationName) {
-            this.applicationName = applicationName;
             return this;
         }
 
@@ -307,6 +352,46 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
         }
 
         /**
+         * Sets the value of {@link RosVpcFirewallControlPolicyProps#getApplicationName}
+         * @param applicationName the value to be set.
+         * @return {@code this}
+         */
+        public Builder applicationName(java.lang.String applicationName) {
+            this.applicationName = applicationName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpcFirewallControlPolicyProps#getApplicationName}
+         * @param applicationName the value to be set.
+         * @return {@code this}
+         */
+        public Builder applicationName(com.aliyun.ros.cdk.core.IResolvable applicationName) {
+            this.applicationName = applicationName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpcFirewallControlPolicyProps#getApplicationNameList}
+         * @param applicationNameList the value to be set.
+         * @return {@code this}
+         */
+        public Builder applicationNameList(com.aliyun.ros.cdk.core.IResolvable applicationNameList) {
+            this.applicationNameList = applicationNameList;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpcFirewallControlPolicyProps#getApplicationNameList}
+         * @param applicationNameList the value to be set.
+         * @return {@code this}
+         */
+        public Builder applicationNameList(java.util.List<? extends java.lang.Object> applicationNameList) {
+            this.applicationNameList = applicationNameList;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosVpcFirewallControlPolicyProps#getDestPort}
          * @param destPort the value to be set.
          * @return {@code this}
@@ -367,6 +452,26 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
         }
 
         /**
+         * Sets the value of {@link RosVpcFirewallControlPolicyProps#getEndTime}
+         * @param endTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder endTime(java.lang.Number endTime) {
+            this.endTime = endTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpcFirewallControlPolicyProps#getEndTime}
+         * @param endTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder endTime(com.aliyun.ros.cdk.core.IResolvable endTime) {
+            this.endTime = endTime;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosVpcFirewallControlPolicyProps#getLang}
          * @param lang the value to be set.
          * @return {@code this}
@@ -383,6 +488,26 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
          */
         public Builder lang(com.aliyun.ros.cdk.core.IResolvable lang) {
             this.lang = lang;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpcFirewallControlPolicyProps#getMemberUid}
+         * @param memberUid the value to be set.
+         * @return {@code this}
+         */
+        public Builder memberUid(java.lang.String memberUid) {
+            this.memberUid = memberUid;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpcFirewallControlPolicyProps#getMemberUid}
+         * @param memberUid the value to be set.
+         * @return {@code this}
+         */
+        public Builder memberUid(com.aliyun.ros.cdk.core.IResolvable memberUid) {
+            this.memberUid = memberUid;
             return this;
         }
 
@@ -407,6 +532,126 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
         }
 
         /**
+         * Sets the value of {@link RosVpcFirewallControlPolicyProps#getRelease}
+         * @param release the value to be set.
+         * @return {@code this}
+         */
+        public Builder release(java.lang.Boolean release) {
+            this.release = release;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpcFirewallControlPolicyProps#getRelease}
+         * @param release the value to be set.
+         * @return {@code this}
+         */
+        public Builder release(com.aliyun.ros.cdk.core.IResolvable release) {
+            this.release = release;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpcFirewallControlPolicyProps#getRepeatDays}
+         * @param repeatDays the value to be set.
+         * @return {@code this}
+         */
+        public Builder repeatDays(com.aliyun.ros.cdk.core.IResolvable repeatDays) {
+            this.repeatDays = repeatDays;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpcFirewallControlPolicyProps#getRepeatDays}
+         * @param repeatDays the value to be set.
+         * @return {@code this}
+         */
+        public Builder repeatDays(java.util.List<? extends java.lang.Object> repeatDays) {
+            this.repeatDays = repeatDays;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpcFirewallControlPolicyProps#getRepeatEndTime}
+         * @param repeatEndTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder repeatEndTime(java.lang.String repeatEndTime) {
+            this.repeatEndTime = repeatEndTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpcFirewallControlPolicyProps#getRepeatEndTime}
+         * @param repeatEndTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder repeatEndTime(com.aliyun.ros.cdk.core.IResolvable repeatEndTime) {
+            this.repeatEndTime = repeatEndTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpcFirewallControlPolicyProps#getRepeatStartTime}
+         * @param repeatStartTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder repeatStartTime(java.lang.String repeatStartTime) {
+            this.repeatStartTime = repeatStartTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpcFirewallControlPolicyProps#getRepeatStartTime}
+         * @param repeatStartTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder repeatStartTime(com.aliyun.ros.cdk.core.IResolvable repeatStartTime) {
+            this.repeatStartTime = repeatStartTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpcFirewallControlPolicyProps#getRepeatType}
+         * @param repeatType the value to be set.
+         * @return {@code this}
+         */
+        public Builder repeatType(java.lang.String repeatType) {
+            this.repeatType = repeatType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpcFirewallControlPolicyProps#getRepeatType}
+         * @param repeatType the value to be set.
+         * @return {@code this}
+         */
+        public Builder repeatType(com.aliyun.ros.cdk.core.IResolvable repeatType) {
+            this.repeatType = repeatType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpcFirewallControlPolicyProps#getStartTime}
+         * @param startTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder startTime(java.lang.Number startTime) {
+            this.startTime = startTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpcFirewallControlPolicyProps#getStartTime}
+         * @param startTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder startTime(com.aliyun.ros.cdk.core.IResolvable startTime) {
+            this.startTime = startTime;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosVpcFirewallControlPolicyProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -423,7 +668,6 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosVpcFirewallControlPolicyProps {
         private final java.lang.Object aclAction;
-        private final java.lang.Object applicationName;
         private final java.lang.Object description;
         private final java.lang.Object destination;
         private final java.lang.Object destinationType;
@@ -432,11 +676,21 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
         private final java.lang.Object source;
         private final java.lang.Object sourceType;
         private final java.lang.Object vpcFirewallId;
+        private final java.lang.Object applicationName;
+        private final java.lang.Object applicationNameList;
         private final java.lang.Object destPort;
         private final java.lang.Object destPortGroup;
         private final java.lang.Object destPortType;
+        private final java.lang.Object endTime;
         private final java.lang.Object lang;
+        private final java.lang.Object memberUid;
         private final java.lang.Object regionId;
+        private final java.lang.Object release;
+        private final java.lang.Object repeatDays;
+        private final java.lang.Object repeatEndTime;
+        private final java.lang.Object repeatStartTime;
+        private final java.lang.Object repeatType;
+        private final java.lang.Object startTime;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -445,7 +699,6 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.aclAction = software.amazon.jsii.Kernel.get(this, "aclAction", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.applicationName = software.amazon.jsii.Kernel.get(this, "applicationName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.destination = software.amazon.jsii.Kernel.get(this, "destination", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.destinationType = software.amazon.jsii.Kernel.get(this, "destinationType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -454,11 +707,21 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
             this.source = software.amazon.jsii.Kernel.get(this, "source", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sourceType = software.amazon.jsii.Kernel.get(this, "sourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcFirewallId = software.amazon.jsii.Kernel.get(this, "vpcFirewallId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.applicationName = software.amazon.jsii.Kernel.get(this, "applicationName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.applicationNameList = software.amazon.jsii.Kernel.get(this, "applicationNameList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.destPort = software.amazon.jsii.Kernel.get(this, "destPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.destPortGroup = software.amazon.jsii.Kernel.get(this, "destPortGroup", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.destPortType = software.amazon.jsii.Kernel.get(this, "destPortType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.endTime = software.amazon.jsii.Kernel.get(this, "endTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.lang = software.amazon.jsii.Kernel.get(this, "lang", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.memberUid = software.amazon.jsii.Kernel.get(this, "memberUid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.regionId = software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.release = software.amazon.jsii.Kernel.get(this, "release", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.repeatDays = software.amazon.jsii.Kernel.get(this, "repeatDays", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.repeatEndTime = software.amazon.jsii.Kernel.get(this, "repeatEndTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.repeatStartTime = software.amazon.jsii.Kernel.get(this, "repeatStartTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.repeatType = software.amazon.jsii.Kernel.get(this, "repeatType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.startTime = software.amazon.jsii.Kernel.get(this, "startTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -467,7 +730,6 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.aclAction = java.util.Objects.requireNonNull(builder.aclAction, "aclAction is required");
-            this.applicationName = java.util.Objects.requireNonNull(builder.applicationName, "applicationName is required");
             this.description = java.util.Objects.requireNonNull(builder.description, "description is required");
             this.destination = java.util.Objects.requireNonNull(builder.destination, "destination is required");
             this.destinationType = java.util.Objects.requireNonNull(builder.destinationType, "destinationType is required");
@@ -476,21 +738,26 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
             this.source = java.util.Objects.requireNonNull(builder.source, "source is required");
             this.sourceType = java.util.Objects.requireNonNull(builder.sourceType, "sourceType is required");
             this.vpcFirewallId = java.util.Objects.requireNonNull(builder.vpcFirewallId, "vpcFirewallId is required");
+            this.applicationName = builder.applicationName;
+            this.applicationNameList = builder.applicationNameList;
             this.destPort = builder.destPort;
             this.destPortGroup = builder.destPortGroup;
             this.destPortType = builder.destPortType;
+            this.endTime = builder.endTime;
             this.lang = builder.lang;
+            this.memberUid = builder.memberUid;
             this.regionId = builder.regionId;
+            this.release = builder.release;
+            this.repeatDays = builder.repeatDays;
+            this.repeatEndTime = builder.repeatEndTime;
+            this.repeatStartTime = builder.repeatStartTime;
+            this.repeatType = builder.repeatType;
+            this.startTime = builder.startTime;
         }
 
         @Override
         public final java.lang.Object getAclAction() {
             return this.aclAction;
-        }
-
-        @Override
-        public final java.lang.Object getApplicationName() {
-            return this.applicationName;
         }
 
         @Override
@@ -534,6 +801,16 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
         }
 
         @Override
+        public final java.lang.Object getApplicationName() {
+            return this.applicationName;
+        }
+
+        @Override
+        public final java.lang.Object getApplicationNameList() {
+            return this.applicationNameList;
+        }
+
+        @Override
         public final java.lang.Object getDestPort() {
             return this.destPort;
         }
@@ -549,13 +826,53 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
         }
 
         @Override
+        public final java.lang.Object getEndTime() {
+            return this.endTime;
+        }
+
+        @Override
         public final java.lang.Object getLang() {
             return this.lang;
         }
 
         @Override
+        public final java.lang.Object getMemberUid() {
+            return this.memberUid;
+        }
+
+        @Override
         public final java.lang.Object getRegionId() {
             return this.regionId;
+        }
+
+        @Override
+        public final java.lang.Object getRelease() {
+            return this.release;
+        }
+
+        @Override
+        public final java.lang.Object getRepeatDays() {
+            return this.repeatDays;
+        }
+
+        @Override
+        public final java.lang.Object getRepeatEndTime() {
+            return this.repeatEndTime;
+        }
+
+        @Override
+        public final java.lang.Object getRepeatStartTime() {
+            return this.repeatStartTime;
+        }
+
+        @Override
+        public final java.lang.Object getRepeatType() {
+            return this.repeatType;
+        }
+
+        @Override
+        public final java.lang.Object getStartTime() {
+            return this.startTime;
         }
 
         @Override
@@ -565,7 +882,6 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("aclAction", om.valueToTree(this.getAclAction()));
-            data.set("applicationName", om.valueToTree(this.getApplicationName()));
             data.set("description", om.valueToTree(this.getDescription()));
             data.set("destination", om.valueToTree(this.getDestination()));
             data.set("destinationType", om.valueToTree(this.getDestinationType()));
@@ -574,6 +890,12 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
             data.set("source", om.valueToTree(this.getSource()));
             data.set("sourceType", om.valueToTree(this.getSourceType()));
             data.set("vpcFirewallId", om.valueToTree(this.getVpcFirewallId()));
+            if (this.getApplicationName() != null) {
+                data.set("applicationName", om.valueToTree(this.getApplicationName()));
+            }
+            if (this.getApplicationNameList() != null) {
+                data.set("applicationNameList", om.valueToTree(this.getApplicationNameList()));
+            }
             if (this.getDestPort() != null) {
                 data.set("destPort", om.valueToTree(this.getDestPort()));
             }
@@ -583,11 +905,35 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
             if (this.getDestPortType() != null) {
                 data.set("destPortType", om.valueToTree(this.getDestPortType()));
             }
+            if (this.getEndTime() != null) {
+                data.set("endTime", om.valueToTree(this.getEndTime()));
+            }
             if (this.getLang() != null) {
                 data.set("lang", om.valueToTree(this.getLang()));
             }
+            if (this.getMemberUid() != null) {
+                data.set("memberUid", om.valueToTree(this.getMemberUid()));
+            }
             if (this.getRegionId() != null) {
                 data.set("regionId", om.valueToTree(this.getRegionId()));
+            }
+            if (this.getRelease() != null) {
+                data.set("release", om.valueToTree(this.getRelease()));
+            }
+            if (this.getRepeatDays() != null) {
+                data.set("repeatDays", om.valueToTree(this.getRepeatDays()));
+            }
+            if (this.getRepeatEndTime() != null) {
+                data.set("repeatEndTime", om.valueToTree(this.getRepeatEndTime()));
+            }
+            if (this.getRepeatStartTime() != null) {
+                data.set("repeatStartTime", om.valueToTree(this.getRepeatStartTime()));
+            }
+            if (this.getRepeatType() != null) {
+                data.set("repeatType", om.valueToTree(this.getRepeatType()));
+            }
+            if (this.getStartTime() != null) {
+                data.set("startTime", om.valueToTree(this.getStartTime()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -608,7 +954,6 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
             RosVpcFirewallControlPolicyProps.Jsii$Proxy that = (RosVpcFirewallControlPolicyProps.Jsii$Proxy) o;
 
             if (!aclAction.equals(that.aclAction)) return false;
-            if (!applicationName.equals(that.applicationName)) return false;
             if (!description.equals(that.description)) return false;
             if (!destination.equals(that.destination)) return false;
             if (!destinationType.equals(that.destinationType)) return false;
@@ -617,17 +962,26 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
             if (!source.equals(that.source)) return false;
             if (!sourceType.equals(that.sourceType)) return false;
             if (!vpcFirewallId.equals(that.vpcFirewallId)) return false;
+            if (this.applicationName != null ? !this.applicationName.equals(that.applicationName) : that.applicationName != null) return false;
+            if (this.applicationNameList != null ? !this.applicationNameList.equals(that.applicationNameList) : that.applicationNameList != null) return false;
             if (this.destPort != null ? !this.destPort.equals(that.destPort) : that.destPort != null) return false;
             if (this.destPortGroup != null ? !this.destPortGroup.equals(that.destPortGroup) : that.destPortGroup != null) return false;
             if (this.destPortType != null ? !this.destPortType.equals(that.destPortType) : that.destPortType != null) return false;
+            if (this.endTime != null ? !this.endTime.equals(that.endTime) : that.endTime != null) return false;
             if (this.lang != null ? !this.lang.equals(that.lang) : that.lang != null) return false;
-            return this.regionId != null ? this.regionId.equals(that.regionId) : that.regionId == null;
+            if (this.memberUid != null ? !this.memberUid.equals(that.memberUid) : that.memberUid != null) return false;
+            if (this.regionId != null ? !this.regionId.equals(that.regionId) : that.regionId != null) return false;
+            if (this.release != null ? !this.release.equals(that.release) : that.release != null) return false;
+            if (this.repeatDays != null ? !this.repeatDays.equals(that.repeatDays) : that.repeatDays != null) return false;
+            if (this.repeatEndTime != null ? !this.repeatEndTime.equals(that.repeatEndTime) : that.repeatEndTime != null) return false;
+            if (this.repeatStartTime != null ? !this.repeatStartTime.equals(that.repeatStartTime) : that.repeatStartTime != null) return false;
+            if (this.repeatType != null ? !this.repeatType.equals(that.repeatType) : that.repeatType != null) return false;
+            return this.startTime != null ? this.startTime.equals(that.startTime) : that.startTime == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.aclAction.hashCode();
-            result = 31 * result + (this.applicationName.hashCode());
             result = 31 * result + (this.description.hashCode());
             result = 31 * result + (this.destination.hashCode());
             result = 31 * result + (this.destinationType.hashCode());
@@ -636,11 +990,21 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
             result = 31 * result + (this.source.hashCode());
             result = 31 * result + (this.sourceType.hashCode());
             result = 31 * result + (this.vpcFirewallId.hashCode());
+            result = 31 * result + (this.applicationName != null ? this.applicationName.hashCode() : 0);
+            result = 31 * result + (this.applicationNameList != null ? this.applicationNameList.hashCode() : 0);
             result = 31 * result + (this.destPort != null ? this.destPort.hashCode() : 0);
             result = 31 * result + (this.destPortGroup != null ? this.destPortGroup.hashCode() : 0);
             result = 31 * result + (this.destPortType != null ? this.destPortType.hashCode() : 0);
+            result = 31 * result + (this.endTime != null ? this.endTime.hashCode() : 0);
             result = 31 * result + (this.lang != null ? this.lang.hashCode() : 0);
+            result = 31 * result + (this.memberUid != null ? this.memberUid.hashCode() : 0);
             result = 31 * result + (this.regionId != null ? this.regionId.hashCode() : 0);
+            result = 31 * result + (this.release != null ? this.release.hashCode() : 0);
+            result = 31 * result + (this.repeatDays != null ? this.repeatDays.hashCode() : 0);
+            result = 31 * result + (this.repeatEndTime != null ? this.repeatEndTime.hashCode() : 0);
+            result = 31 * result + (this.repeatStartTime != null ? this.repeatStartTime.hashCode() : 0);
+            result = 31 * result + (this.repeatType != null ? this.repeatType.hashCode() : 0);
+            result = 31 * result + (this.startTime != null ? this.startTime.hashCode() : 0);
             return result;
         }
     }

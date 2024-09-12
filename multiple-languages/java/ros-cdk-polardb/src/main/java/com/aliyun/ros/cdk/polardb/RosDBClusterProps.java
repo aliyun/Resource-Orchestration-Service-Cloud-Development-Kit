@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.polardb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbcluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:23.131Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:29.408Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosDBClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBClusterProps.Jsii$Proxy.class)
 public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -167,6 +167,12 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriodUnit() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getProvisionedIops() {
         return null;
     }
 
@@ -358,6 +364,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Object parameterGroupId;
         java.lang.Object period;
         java.lang.Object periodUnit;
+        java.lang.Object provisionedIops;
         java.lang.Object proxyClass;
         java.lang.Object proxyType;
         java.lang.Object renewalStatus;
@@ -945,6 +952,26 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link RosDBClusterProps#getProvisionedIops}
+         * @param provisionedIops the value to be set.
+         * @return {@code this}
+         */
+        public Builder provisionedIops(java.lang.Number provisionedIops) {
+            this.provisionedIops = provisionedIops;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getProvisionedIops}
+         * @param provisionedIops the value to be set.
+         * @return {@code this}
+         */
+        public Builder provisionedIops(com.aliyun.ros.cdk.core.IResolvable provisionedIops) {
+            this.provisionedIops = provisionedIops;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBClusterProps#getProxyClass}
          * @param proxyClass the value to be set.
          * @return {@code this}
@@ -1479,6 +1506,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object parameterGroupId;
         private final java.lang.Object period;
         private final java.lang.Object periodUnit;
+        private final java.lang.Object provisionedIops;
         private final java.lang.Object proxyClass;
         private final java.lang.Object proxyType;
         private final java.lang.Object renewalStatus;
@@ -1539,6 +1567,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             this.parameterGroupId = software.amazon.jsii.Kernel.get(this, "parameterGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.provisionedIops = software.amazon.jsii.Kernel.get(this, "provisionedIops", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.proxyClass = software.amazon.jsii.Kernel.get(this, "proxyClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.proxyType = software.amazon.jsii.Kernel.get(this, "proxyType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.renewalStatus = software.amazon.jsii.Kernel.get(this, "renewalStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1600,6 +1629,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             this.parameterGroupId = builder.parameterGroupId;
             this.period = builder.period;
             this.periodUnit = builder.periodUnit;
+            this.provisionedIops = builder.provisionedIops;
             this.proxyClass = builder.proxyClass;
             this.proxyType = builder.proxyType;
             this.renewalStatus = builder.renewalStatus;
@@ -1765,6 +1795,11 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         @Override
         public final java.lang.Object getPeriodUnit() {
             return this.periodUnit;
+        }
+
+        @Override
+        public final java.lang.Object getProvisionedIops() {
+            return this.provisionedIops;
         }
 
         @Override
@@ -1974,6 +2009,9 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             if (this.getPeriodUnit() != null) {
                 data.set("periodUnit", om.valueToTree(this.getPeriodUnit()));
             }
+            if (this.getProvisionedIops() != null) {
+                data.set("provisionedIops", om.valueToTree(this.getProvisionedIops()));
+            }
             if (this.getProxyClass() != null) {
                 data.set("proxyClass", om.valueToTree(this.getProxyClass()));
             }
@@ -2095,6 +2133,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             if (this.parameterGroupId != null ? !this.parameterGroupId.equals(that.parameterGroupId) : that.parameterGroupId != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
+            if (this.provisionedIops != null ? !this.provisionedIops.equals(that.provisionedIops) : that.provisionedIops != null) return false;
             if (this.proxyClass != null ? !this.proxyClass.equals(that.proxyClass) : that.proxyClass != null) return false;
             if (this.proxyType != null ? !this.proxyType.equals(that.proxyType) : that.proxyType != null) return false;
             if (this.renewalStatus != null ? !this.renewalStatus.equals(that.renewalStatus) : that.renewalStatus != null) return false;
@@ -2152,6 +2191,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             result = 31 * result + (this.parameterGroupId != null ? this.parameterGroupId.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.periodUnit != null ? this.periodUnit.hashCode() : 0);
+            result = 31 * result + (this.provisionedIops != null ? this.provisionedIops.hashCode() : 0);
             result = 31 * result + (this.proxyClass != null ? this.proxyClass.hashCode() : 0);
             result = 31 * result + (this.proxyType != null ? this.proxyType.hashCode() : 0);
             result = 31 * result + (this.renewalStatus != null ? this.renewalStatus.hashCode() : 0);

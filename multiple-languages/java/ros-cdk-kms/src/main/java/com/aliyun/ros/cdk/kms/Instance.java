@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::KMS::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:22.158Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:28.193Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CS::ASKCluster</code>, which is used to create a Serverless Kubernetes (ASK) cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:18.997Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:24.930Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosASKCluster")
 public class RosASKCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -187,6 +187,40 @@ public class RosASKCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setClusterSpec(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "clusterSpec", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDeleteOptions() {
+        return software.amazon.jsii.Kernel.get(this, "deleteOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDeleteOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "deleteOptions", value);
+    }
+
+    /**
+     */
+    public void setDeleteOptions(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.cs.RosASKCluster.DeleteOptionsProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.cs.RosASKCluster.DeleteOptionsProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "deleteOptions", value);
     }
 
     /**
@@ -679,6 +713,178 @@ public class RosASKCluster extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosASKCluster.DeleteOptionsProperty")
+    @software.amazon.jsii.Jsii.Proxy(DeleteOptionsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface DeleteOptionsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDeleteMode() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getResourceType() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link DeleteOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link DeleteOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<DeleteOptionsProperty> {
+            java.lang.Object deleteMode;
+            java.lang.Object resourceType;
+
+            /**
+             * Sets the value of {@link DeleteOptionsProperty#getDeleteMode}
+             * @param deleteMode the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder deleteMode(java.lang.String deleteMode) {
+                this.deleteMode = deleteMode;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DeleteOptionsProperty#getDeleteMode}
+             * @param deleteMode the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder deleteMode(com.aliyun.ros.cdk.core.IResolvable deleteMode) {
+                this.deleteMode = deleteMode;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DeleteOptionsProperty#getResourceType}
+             * @param resourceType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder resourceType(java.lang.String resourceType) {
+                this.resourceType = resourceType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DeleteOptionsProperty#getResourceType}
+             * @param resourceType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder resourceType(com.aliyun.ros.cdk.core.IResolvable resourceType) {
+                this.resourceType = resourceType;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link DeleteOptionsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public DeleteOptionsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link DeleteOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DeleteOptionsProperty {
+            private final java.lang.Object deleteMode;
+            private final java.lang.Object resourceType;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.deleteMode = software.amazon.jsii.Kernel.get(this, "deleteMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.resourceType = software.amazon.jsii.Kernel.get(this, "resourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.deleteMode = builder.deleteMode;
+                this.resourceType = builder.resourceType;
+            }
+
+            @Override
+            public final java.lang.Object getDeleteMode() {
+                return this.deleteMode;
+            }
+
+            @Override
+            public final java.lang.Object getResourceType() {
+                return this.resourceType;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getDeleteMode() != null) {
+                    data.set("deleteMode", om.valueToTree(this.getDeleteMode()));
+                }
+                if (this.getResourceType() != null) {
+                    data.set("resourceType", om.valueToTree(this.getResourceType()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cs.RosASKCluster.DeleteOptionsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                DeleteOptionsProperty.Jsii$Proxy that = (DeleteOptionsProperty.Jsii$Proxy) o;
+
+                if (this.deleteMode != null ? !this.deleteMode.equals(that.deleteMode) : that.deleteMode != null) return false;
+                return this.resourceType != null ? this.resourceType.equals(that.resourceType) : that.resourceType == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.deleteMode != null ? this.deleteMode.hashCode() : 0;
+                result = 31 * result + (this.resourceType != null ? this.resourceType.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosASKCluster.TagsProperty")
     @software.amazon.jsii.Jsii.Proxy(TagsProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -920,6 +1126,23 @@ public class RosASKCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder clusterSpec(final com.aliyun.ros.cdk.core.IResolvable clusterSpec) {
             this.props.clusterSpec(clusterSpec);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param deleteOptions This parameter is required.
+         */
+        public Builder deleteOptions(final com.aliyun.ros.cdk.core.IResolvable deleteOptions) {
+            this.props.deleteOptions(deleteOptions);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param deleteOptions This parameter is required.
+         */
+        public Builder deleteOptions(final java.util.List<? extends java.lang.Object> deleteOptions) {
+            this.props.deleteOptions(deleteOptions);
             return this;
         }
 

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.polardb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbnodes
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:23.139Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:29.415Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosDBNodesProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBNodesProps.Jsii$Proxy.class)
 public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
@@ -26,7 +26,25 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEndpointBindList() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getImciSwitch() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPlannedEndTime() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPlannedStartTime() {
         return null;
     }
 
@@ -49,7 +67,10 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object amount;
         java.lang.Object dbClusterId;
         java.lang.Object dbNodeType;
+        java.lang.Object endpointBindList;
         java.lang.Object imciSwitch;
+        java.lang.Object plannedEndTime;
+        java.lang.Object plannedStartTime;
         java.lang.Object resourceGroupId;
 
         /**
@@ -113,6 +134,26 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosDBNodesProps#getEndpointBindList}
+         * @param endpointBindList the value to be set.
+         * @return {@code this}
+         */
+        public Builder endpointBindList(com.aliyun.ros.cdk.core.IResolvable endpointBindList) {
+            this.endpointBindList = endpointBindList;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBNodesProps#getEndpointBindList}
+         * @param endpointBindList the value to be set.
+         * @return {@code this}
+         */
+        public Builder endpointBindList(java.util.List<? extends java.lang.Object> endpointBindList) {
+            this.endpointBindList = endpointBindList;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBNodesProps#getImciSwitch}
          * @param imciSwitch the value to be set.
          * @return {@code this}
@@ -129,6 +170,46 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder imciSwitch(com.aliyun.ros.cdk.core.IResolvable imciSwitch) {
             this.imciSwitch = imciSwitch;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBNodesProps#getPlannedEndTime}
+         * @param plannedEndTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder plannedEndTime(java.lang.String plannedEndTime) {
+            this.plannedEndTime = plannedEndTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBNodesProps#getPlannedEndTime}
+         * @param plannedEndTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder plannedEndTime(com.aliyun.ros.cdk.core.IResolvable plannedEndTime) {
+            this.plannedEndTime = plannedEndTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBNodesProps#getPlannedStartTime}
+         * @param plannedStartTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder plannedStartTime(java.lang.String plannedStartTime) {
+            this.plannedStartTime = plannedStartTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBNodesProps#getPlannedStartTime}
+         * @param plannedStartTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder plannedStartTime(com.aliyun.ros.cdk.core.IResolvable plannedStartTime) {
+            this.plannedStartTime = plannedStartTime;
             return this;
         }
 
@@ -171,7 +252,10 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object amount;
         private final java.lang.Object dbClusterId;
         private final java.lang.Object dbNodeType;
+        private final java.lang.Object endpointBindList;
         private final java.lang.Object imciSwitch;
+        private final java.lang.Object plannedEndTime;
+        private final java.lang.Object plannedStartTime;
         private final java.lang.Object resourceGroupId;
 
         /**
@@ -183,7 +267,10 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
             this.amount = software.amazon.jsii.Kernel.get(this, "amount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbClusterId = software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbNodeType = software.amazon.jsii.Kernel.get(this, "dbNodeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.endpointBindList = software.amazon.jsii.Kernel.get(this, "endpointBindList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.imciSwitch = software.amazon.jsii.Kernel.get(this, "imciSwitch", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.plannedEndTime = software.amazon.jsii.Kernel.get(this, "plannedEndTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.plannedStartTime = software.amazon.jsii.Kernel.get(this, "plannedStartTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -195,7 +282,10 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
             this.amount = java.util.Objects.requireNonNull(builder.amount, "amount is required");
             this.dbClusterId = java.util.Objects.requireNonNull(builder.dbClusterId, "dbClusterId is required");
             this.dbNodeType = builder.dbNodeType;
+            this.endpointBindList = builder.endpointBindList;
             this.imciSwitch = builder.imciSwitch;
+            this.plannedEndTime = builder.plannedEndTime;
+            this.plannedStartTime = builder.plannedStartTime;
             this.resourceGroupId = builder.resourceGroupId;
         }
 
@@ -215,8 +305,23 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getEndpointBindList() {
+            return this.endpointBindList;
+        }
+
+        @Override
         public final java.lang.Object getImciSwitch() {
             return this.imciSwitch;
+        }
+
+        @Override
+        public final java.lang.Object getPlannedEndTime() {
+            return this.plannedEndTime;
+        }
+
+        @Override
+        public final java.lang.Object getPlannedStartTime() {
+            return this.plannedStartTime;
         }
 
         @Override
@@ -235,8 +340,17 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getDbNodeType() != null) {
                 data.set("dbNodeType", om.valueToTree(this.getDbNodeType()));
             }
+            if (this.getEndpointBindList() != null) {
+                data.set("endpointBindList", om.valueToTree(this.getEndpointBindList()));
+            }
             if (this.getImciSwitch() != null) {
                 data.set("imciSwitch", om.valueToTree(this.getImciSwitch()));
+            }
+            if (this.getPlannedEndTime() != null) {
+                data.set("plannedEndTime", om.valueToTree(this.getPlannedEndTime()));
+            }
+            if (this.getPlannedStartTime() != null) {
+                data.set("plannedStartTime", om.valueToTree(this.getPlannedStartTime()));
             }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
@@ -262,7 +376,10 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
             if (!amount.equals(that.amount)) return false;
             if (!dbClusterId.equals(that.dbClusterId)) return false;
             if (this.dbNodeType != null ? !this.dbNodeType.equals(that.dbNodeType) : that.dbNodeType != null) return false;
+            if (this.endpointBindList != null ? !this.endpointBindList.equals(that.endpointBindList) : that.endpointBindList != null) return false;
             if (this.imciSwitch != null ? !this.imciSwitch.equals(that.imciSwitch) : that.imciSwitch != null) return false;
+            if (this.plannedEndTime != null ? !this.plannedEndTime.equals(that.plannedEndTime) : that.plannedEndTime != null) return false;
+            if (this.plannedStartTime != null ? !this.plannedStartTime.equals(that.plannedStartTime) : that.plannedStartTime != null) return false;
             return this.resourceGroupId != null ? this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId == null;
         }
 
@@ -271,7 +388,10 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
             int result = this.amount.hashCode();
             result = 31 * result + (this.dbClusterId.hashCode());
             result = 31 * result + (this.dbNodeType != null ? this.dbNodeType.hashCode() : 0);
+            result = 31 * result + (this.endpointBindList != null ? this.endpointBindList.hashCode() : 0);
             result = 31 * result + (this.imciSwitch != null ? this.imciSwitch.hashCode() : 0);
+            result = 31 * result + (this.plannedEndTime != null ? this.plannedEndTime.hashCode() : 0);
+            result = 31 * result + (this.plannedStartTime != null ? this.plannedStartTime.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             return result;
         }

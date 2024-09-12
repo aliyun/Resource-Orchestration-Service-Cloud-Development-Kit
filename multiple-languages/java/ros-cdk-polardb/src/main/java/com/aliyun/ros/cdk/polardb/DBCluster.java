@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::POLARDB::DBCluster</code>, which is used to create a PolarDB cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:23.055Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:29.342Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBCluster")
 public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -248,7 +248,7 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
          * <p>
          * Valid values:
          * MySQL: 5.6, 5.7 or 8.0
-         * PostgreSQL: 11, 14
+         * PostgreSQL: 11, 14, 15
          * Oracle: 11, 14
          * <p>
          * @return {@code this}
@@ -263,7 +263,7 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
          * <p>
          * Valid values:
          * MySQL: 5.6, 5.7 or 8.0
-         * PostgreSQL: 11, 14
+         * PostgreSQL: 11, 14, 15
          * Oracle: 11, 14
          * <p>
          * @return {@code this}
@@ -503,7 +503,7 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property creationCategory: Cluster series.
          * <p>
-         * The value could be Normal (standard version), Basic and ArchiveNormal.
+         * The value could be Normal (standard version), Basic, ArchiveNormal, NormalMultimaster and SENormal.
          * <p>
          * @return {@code this}
          * @param creationCategory Property creationCategory: Cluster series. This parameter is required.
@@ -515,7 +515,7 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property creationCategory: Cluster series.
          * <p>
-         * The value could be Normal (standard version), Basic and ArchiveNormal.
+         * The value could be Normal (standard version), Basic, ArchiveNormal, NormalMultimaster and SENormal.
          * <p>
          * @return {@code this}
          * @param creationCategory Property creationCategory: Cluster series. This parameter is required.
@@ -535,6 +535,8 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
          * for POLARDB cluster.
          * MigrationFromRDS: migrates data from an existing ApsaraDB for RDS instance to a new ApsaraDB for POLARDB cluster. The created ApsaraDB for POLARDB cluster is in read-only mode and has binary logs enabled by default.
          * CreateGdnStandby: Create a secondary cluster.
+         * RecoverFromRecyclebin: Recovers data from the freed PolarDB cluster to the new PolarDB cluster.
+         * UpgradeFromPolarDB: Upgrade migration from PolarDB.
          * Default value: Normal.
          * Note:
          * When DBType is MySQL and DBVersion is 5.6, this parameter can be specified as CloneFromRDS or MigrationFromRDS.
@@ -557,6 +559,8 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
          * for POLARDB cluster.
          * MigrationFromRDS: migrates data from an existing ApsaraDB for RDS instance to a new ApsaraDB for POLARDB cluster. The created ApsaraDB for POLARDB cluster is in read-only mode and has binary logs enabled by default.
          * CreateGdnStandby: Create a secondary cluster.
+         * RecoverFromRecyclebin: Recovers data from the freed PolarDB cluster to the new PolarDB cluster.
+         * UpgradeFromPolarDB: Upgrade migration from PolarDB.
          * Default value: Normal.
          * Note:
          * When DBType is MySQL and DBVersion is 5.6, this parameter can be specified as CloneFromRDS or MigrationFromRDS.
@@ -962,6 +966,33 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder periodUnit(final com.aliyun.ros.cdk.core.IResolvable periodUnit) {
             this.props.periodUnit(periodUnit);
+            return this;
+        }
+
+        /**
+         * Property provisionedIops: ESSD AutoPL preconfigured read and write IOPS for cloud disk.
+         * <p>
+         * Possible values: 0-min {50,000, 1000* capacity - baseline performance}.
+         * Baseline performance =min{1,800+50* capacity, 50000}.
+         * <p>
+         * @return {@code this}
+         * @param provisionedIops Property provisionedIops: ESSD AutoPL preconfigured read and write IOPS for cloud disk. This parameter is required.
+         */
+        public Builder provisionedIops(final java.lang.Number provisionedIops) {
+            this.props.provisionedIops(provisionedIops);
+            return this;
+        }
+        /**
+         * Property provisionedIops: ESSD AutoPL preconfigured read and write IOPS for cloud disk.
+         * <p>
+         * Possible values: 0-min {50,000, 1000* capacity - baseline performance}.
+         * Baseline performance =min{1,800+50* capacity, 50000}.
+         * <p>
+         * @return {@code this}
+         * @param provisionedIops Property provisionedIops: ESSD AutoPL preconfigured read and write IOPS for cloud disk. This parameter is required.
+         */
+        public Builder provisionedIops(final com.aliyun.ros.cdk.core.IResolvable provisionedIops) {
+            this.props.provisionedIops(provisionedIops);
             return this;
         }
 
@@ -1403,9 +1434,11 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
          * PSL5
          * PSL4
          * Valid values for Standard Edition:
+         * ESSDPL0
          * ESSDPL1
          * ESSDPL2
          * ESSDPL3
+         * ESSDAUTOPL
          * This parameter is invalid for serverless clusters.
          * <p>
          * @return {@code this}
@@ -1422,9 +1455,11 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
          * PSL5
          * PSL4
          * Valid values for Standard Edition:
+         * ESSDPL0
          * ESSDPL1
          * ESSDPL2
          * ESSDPL3
+         * ESSDAUTOPL
          * This parameter is invalid for serverless clusters.
          * <p>
          * @return {@code this}

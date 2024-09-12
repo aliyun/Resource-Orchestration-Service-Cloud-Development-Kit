@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.emr;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-clusterserviceconfigs
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:21.171Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:26.835Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.ClusterServiceConfigsProps")
 @software.amazon.jsii.Jsii.Proxy(ClusterServiceConfigsProps.Jsii$Proxy.class)
 public interface ClusterServiceConfigsProps extends software.amazon.jsii.JsiiSerializable {

@@ -200,6 +200,10 @@ func (j *jsiiProxy_RosDBCluster) validateSetPeriodUnitParameters(val interface{}
 	return nil
 }
 
+func (j *jsiiProxy_RosDBCluster) validateSetProvisionedIopsParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosDBCluster) validateSetProxyClassParameters(val interface{}) error {
 	return nil
 }

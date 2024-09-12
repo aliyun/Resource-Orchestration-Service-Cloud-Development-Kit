@@ -18,6 +18,8 @@ type ASKClusterProps struct {
 	// ack.standard: Standard hosting cluster.
 	// Default value: ack.pro.small.
 	ClusterSpec interface{} `field:"optional" json:"clusterSpec" yaml:"clusterSpec"`
+	// Property deleteOptions: Delete options, only work for deleting resource.
+	DeleteOptions interface{} `field:"optional" json:"deleteOptions" yaml:"deleteOptions"`
 	// Property deletionProtection: Specifies whether to enable deletion protection for the cluster.
 	//
 	// After deletion protection is enabled, the cluster cannot be deleted

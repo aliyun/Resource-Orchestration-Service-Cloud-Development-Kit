@@ -16,6 +16,8 @@ type RosVpcFirewallControlPolicy interface {
 	SetAclAction(val interface{})
 	ApplicationName() interface{}
 	SetApplicationName(val interface{})
+	ApplicationNameList() interface{}
+	SetApplicationNameList(val interface{})
 	AttrAclUuid() alicloudroscdkcore.IResolvable
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
@@ -35,6 +37,8 @@ type RosVpcFirewallControlPolicy interface {
 	SetDestPortType(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	EndTime() interface{}
+	SetEndTime(val interface{})
 	Lang() interface{}
 	SetLang(val interface{})
 	// The logical ID for this stack element.
@@ -47,6 +51,8 @@ type RosVpcFirewallControlPolicy interface {
 	// Returns: the logical ID as a stringified token. This value will only get
 	// resolved during synthesis.
 	LogicalId() *string
+	MemberUid() interface{}
+	SetMemberUid(val interface{})
 	NewOrder() interface{}
 	SetNewOrder(val interface{})
 	// The construct tree node associated with this construct.
@@ -60,6 +66,16 @@ type RosVpcFirewallControlPolicy interface {
 	Ref() *string
 	RegionId() interface{}
 	SetRegionId(val interface{})
+	Release() interface{}
+	SetRelease(val interface{})
+	RepeatDays() interface{}
+	SetRepeatDays(val interface{})
+	RepeatEndTime() interface{}
+	SetRepeatEndTime(val interface{})
+	RepeatStartTime() interface{}
+	SetRepeatStartTime(val interface{})
+	RepeatType() interface{}
+	SetRepeatType(val interface{})
 	// Options for this resource, such as condition, update policy etc.
 	RosOptions() alicloudroscdkcore.IRosResourceOptions
 	RosProperties() *map[string]interface{}
@@ -73,6 +89,8 @@ type RosVpcFirewallControlPolicy interface {
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
 	Stack() alicloudroscdkcore.Stack
+	StartTime() interface{}
+	SetStartTime(val interface{})
 	// Return properties modified after initiation.
 	//
 	// Resources that expose mutable properties should override this function to
@@ -216,6 +234,16 @@ func (j *jsiiProxy_RosVpcFirewallControlPolicy) ApplicationName() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosVpcFirewallControlPolicy) ApplicationNameList() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"applicationNameList",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosVpcFirewallControlPolicy) AttrAclUuid() alicloudroscdkcore.IResolvable {
 	var returns alicloudroscdkcore.IResolvable
 	_jsii_.Get(
@@ -306,6 +334,16 @@ func (j *jsiiProxy_RosVpcFirewallControlPolicy) EnableResourcePropertyConstraint
 	return returns
 }
 
+func (j *jsiiProxy_RosVpcFirewallControlPolicy) EndTime() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"endTime",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosVpcFirewallControlPolicy) Lang() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -321,6 +359,16 @@ func (j *jsiiProxy_RosVpcFirewallControlPolicy) LogicalId() *string {
 	_jsii_.Get(
 		j,
 		"logicalId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosVpcFirewallControlPolicy) MemberUid() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"memberUid",
 		&returns,
 	)
 	return returns
@@ -371,6 +419,56 @@ func (j *jsiiProxy_RosVpcFirewallControlPolicy) RegionId() interface{} {
 	_jsii_.Get(
 		j,
 		"regionId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosVpcFirewallControlPolicy) Release() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"release",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosVpcFirewallControlPolicy) RepeatDays() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"repeatDays",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosVpcFirewallControlPolicy) RepeatEndTime() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"repeatEndTime",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosVpcFirewallControlPolicy) RepeatStartTime() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"repeatStartTime",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosVpcFirewallControlPolicy) RepeatType() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"repeatType",
 		&returns,
 	)
 	return returns
@@ -431,6 +529,16 @@ func (j *jsiiProxy_RosVpcFirewallControlPolicy) Stack() alicloudroscdkcore.Stack
 	_jsii_.Get(
 		j,
 		"stack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosVpcFirewallControlPolicy) StartTime() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"startTime",
 		&returns,
 	)
 	return returns
@@ -502,6 +610,17 @@ func (j *jsiiProxy_RosVpcFirewallControlPolicy)SetApplicationName(val interface{
 	_jsii_.Set(
 		j,
 		"applicationName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosVpcFirewallControlPolicy)SetApplicationNameList(val interface{}) {
+	if err := j.validateSetApplicationNameListParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"applicationNameList",
 		val,
 	)
 }
@@ -583,6 +702,17 @@ func (j *jsiiProxy_RosVpcFirewallControlPolicy)SetEnableResourcePropertyConstrai
 	)
 }
 
+func (j *jsiiProxy_RosVpcFirewallControlPolicy)SetEndTime(val interface{}) {
+	if err := j.validateSetEndTimeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"endTime",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosVpcFirewallControlPolicy)SetLang(val interface{}) {
 	if err := j.validateSetLangParameters(val); err != nil {
 		panic(err)
@@ -590,6 +720,17 @@ func (j *jsiiProxy_RosVpcFirewallControlPolicy)SetLang(val interface{}) {
 	_jsii_.Set(
 		j,
 		"lang",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosVpcFirewallControlPolicy)SetMemberUid(val interface{}) {
+	if err := j.validateSetMemberUidParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"memberUid",
 		val,
 	)
 }
@@ -627,6 +768,61 @@ func (j *jsiiProxy_RosVpcFirewallControlPolicy)SetRegionId(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosVpcFirewallControlPolicy)SetRelease(val interface{}) {
+	if err := j.validateSetReleaseParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"release",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosVpcFirewallControlPolicy)SetRepeatDays(val interface{}) {
+	if err := j.validateSetRepeatDaysParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"repeatDays",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosVpcFirewallControlPolicy)SetRepeatEndTime(val interface{}) {
+	if err := j.validateSetRepeatEndTimeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"repeatEndTime",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosVpcFirewallControlPolicy)SetRepeatStartTime(val interface{}) {
+	if err := j.validateSetRepeatStartTimeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"repeatStartTime",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosVpcFirewallControlPolicy)SetRepeatType(val interface{}) {
+	if err := j.validateSetRepeatTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"repeatType",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosVpcFirewallControlPolicy)SetSource(val interface{}) {
 	if err := j.validateSetSourceParameters(val); err != nil {
 		panic(err)
@@ -645,6 +841,17 @@ func (j *jsiiProxy_RosVpcFirewallControlPolicy)SetSourceType(val interface{}) {
 	_jsii_.Set(
 		j,
 		"sourceType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosVpcFirewallControlPolicy)SetStartTime(val interface{}) {
+	if err := j.validateSetStartTimeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"startTime",
 		val,
 	)
 }

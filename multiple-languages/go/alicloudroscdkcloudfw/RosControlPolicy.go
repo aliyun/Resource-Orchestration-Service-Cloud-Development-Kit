@@ -16,6 +16,8 @@ type RosControlPolicy interface {
 	SetAclAction(val interface{})
 	ApplicationName() interface{}
 	SetApplicationName(val interface{})
+	ApplicationNameList() interface{}
+	SetApplicationNameList(val interface{})
 	AttrAclUuid() alicloudroscdkcore.IResolvable
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
@@ -35,8 +37,14 @@ type RosControlPolicy interface {
 	SetDestPortType(val interface{})
 	Direction() interface{}
 	SetDirection(val interface{})
+	DomainResolveType() interface{}
+	SetDomainResolveType(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	EndTime() interface{}
+	SetEndTime(val interface{})
+	IpVersion() interface{}
+	SetIpVersion(val interface{})
 	// The logical ID for this stack element.
 	//
 	// The logical ID of the element
@@ -60,6 +68,16 @@ type RosControlPolicy interface {
 	Ref() *string
 	RegionId() interface{}
 	SetRegionId(val interface{})
+	Release() interface{}
+	SetRelease(val interface{})
+	RepeatDays() interface{}
+	SetRepeatDays(val interface{})
+	RepeatEndTime() interface{}
+	SetRepeatEndTime(val interface{})
+	RepeatStartTime() interface{}
+	SetRepeatStartTime(val interface{})
+	RepeatType() interface{}
+	SetRepeatType(val interface{})
 	// Options for this resource, such as condition, update policy etc.
 	RosOptions() alicloudroscdkcore.IRosResourceOptions
 	RosProperties() *map[string]interface{}
@@ -73,6 +91,8 @@ type RosControlPolicy interface {
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
 	Stack() alicloudroscdkcore.Stack
+	StartTime() interface{}
+	SetStartTime(val interface{})
 	// Return properties modified after initiation.
 	//
 	// Resources that expose mutable properties should override this function to
@@ -214,6 +234,16 @@ func (j *jsiiProxy_RosControlPolicy) ApplicationName() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosControlPolicy) ApplicationNameList() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"applicationNameList",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosControlPolicy) AttrAclUuid() alicloudroscdkcore.IResolvable {
 	var returns alicloudroscdkcore.IResolvable
 	_jsii_.Get(
@@ -304,11 +334,41 @@ func (j *jsiiProxy_RosControlPolicy) Direction() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosControlPolicy) DomainResolveType() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"domainResolveType",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosControlPolicy) EnableResourcePropertyConstraint() *bool {
 	var returns *bool
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosControlPolicy) EndTime() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"endTime",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosControlPolicy) IpVersion() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ipVersion",
 		&returns,
 	)
 	return returns
@@ -374,6 +434,56 @@ func (j *jsiiProxy_RosControlPolicy) RegionId() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosControlPolicy) Release() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"release",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosControlPolicy) RepeatDays() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"repeatDays",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosControlPolicy) RepeatEndTime() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"repeatEndTime",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosControlPolicy) RepeatStartTime() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"repeatStartTime",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosControlPolicy) RepeatType() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"repeatType",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosControlPolicy) RosOptions() alicloudroscdkcore.IRosResourceOptions {
 	var returns alicloudroscdkcore.IRosResourceOptions
 	_jsii_.Get(
@@ -429,6 +539,16 @@ func (j *jsiiProxy_RosControlPolicy) Stack() alicloudroscdkcore.Stack {
 	_jsii_.Get(
 		j,
 		"stack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosControlPolicy) StartTime() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"startTime",
 		&returns,
 	)
 	return returns
@@ -490,6 +610,17 @@ func (j *jsiiProxy_RosControlPolicy)SetApplicationName(val interface{}) {
 	_jsii_.Set(
 		j,
 		"applicationName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosControlPolicy)SetApplicationNameList(val interface{}) {
+	if err := j.validateSetApplicationNameListParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"applicationNameList",
 		val,
 	)
 }
@@ -571,6 +702,17 @@ func (j *jsiiProxy_RosControlPolicy)SetDirection(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosControlPolicy)SetDomainResolveType(val interface{}) {
+	if err := j.validateSetDomainResolveTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"domainResolveType",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosControlPolicy)SetEnableResourcePropertyConstraint(val *bool) {
 	if err := j.validateSetEnableResourcePropertyConstraintParameters(val); err != nil {
 		panic(err)
@@ -578,6 +720,28 @@ func (j *jsiiProxy_RosControlPolicy)SetEnableResourcePropertyConstraint(val *boo
 	_jsii_.Set(
 		j,
 		"enableResourcePropertyConstraint",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosControlPolicy)SetEndTime(val interface{}) {
+	if err := j.validateSetEndTimeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"endTime",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosControlPolicy)SetIpVersion(val interface{}) {
+	if err := j.validateSetIpVersionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"ipVersion",
 		val,
 	)
 }
@@ -615,6 +779,61 @@ func (j *jsiiProxy_RosControlPolicy)SetRegionId(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosControlPolicy)SetRelease(val interface{}) {
+	if err := j.validateSetReleaseParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"release",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosControlPolicy)SetRepeatDays(val interface{}) {
+	if err := j.validateSetRepeatDaysParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"repeatDays",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosControlPolicy)SetRepeatEndTime(val interface{}) {
+	if err := j.validateSetRepeatEndTimeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"repeatEndTime",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosControlPolicy)SetRepeatStartTime(val interface{}) {
+	if err := j.validateSetRepeatStartTimeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"repeatStartTime",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosControlPolicy)SetRepeatType(val interface{}) {
+	if err := j.validateSetRepeatTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"repeatType",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosControlPolicy)SetSource(val interface{}) {
 	if err := j.validateSetSourceParameters(val); err != nil {
 		panic(err)
@@ -633,6 +852,17 @@ func (j *jsiiProxy_RosControlPolicy)SetSourceType(val interface{}) {
 	_jsii_.Set(
 		j,
 		"sourceType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosControlPolicy)SetStartTime(val interface{}) {
+	if err := j.validateSetStartTimeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"startTime",
 		val,
 	)
 }

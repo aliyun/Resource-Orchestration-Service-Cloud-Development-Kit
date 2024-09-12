@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::VPC::Ipv4Gateways</code>, which is used to query the details of IPv4 gateways.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:25.068Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:31.753Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.RosIpv4Gateways")
 public class RosIpv4Gateways extends com.aliyun.ros.cdk.core.RosResource {
 

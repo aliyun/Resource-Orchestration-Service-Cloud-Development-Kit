@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.polardb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-database
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:23.102Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:29.382Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DatabaseProps")
 @software.amazon.jsii.Jsii.Proxy(DatabaseProps.Jsii$Proxy.class)
 public interface DatabaseProps extends software.amazon.jsii.JsiiSerializable {
@@ -47,6 +47,7 @@ public interface DatabaseProps extends software.amazon.jsii.JsiiSerializable {
      * ReadOnly: has the read-only permission on the database.
      * DMLOnly: runs only data manipulation language (DML) statements.
      * DDLOnly: runs only data definition language (DDL) statements.
+     * ReadIndex: has read and index permissions on the database.
      * Default value: ReadWrite.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAccountPrivilege() {
@@ -203,6 +204,7 @@ public interface DatabaseProps extends software.amazon.jsii.JsiiSerializable {
          *                         ReadOnly: has the read-only permission on the database.
          *                         DMLOnly: runs only data manipulation language (DML) statements.
          *                         DDLOnly: runs only data definition language (DDL) statements.
+         *                         ReadIndex: has read and index permissions on the database.
          *                         Default value: ReadWrite.
          * @return {@code this}
          */
@@ -219,6 +221,7 @@ public interface DatabaseProps extends software.amazon.jsii.JsiiSerializable {
          *                         ReadOnly: has the read-only permission on the database.
          *                         DMLOnly: runs only data manipulation language (DML) statements.
          *                         DDLOnly: runs only data definition language (DDL) statements.
+         *                         ReadIndex: has read and index permissions on the database.
          *                         Default value: ReadWrite.
          * @return {@code this}
          */

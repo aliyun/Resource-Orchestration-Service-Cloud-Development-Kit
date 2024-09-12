@@ -31,6 +31,8 @@ type RosASKCluster interface {
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
 	CreationStack() *[]*string
+	DeleteOptions() interface{}
+	SetDeleteOptions(val interface{})
 	DeletionProtection() interface{}
 	SetDeletionProtection(val interface{})
 	EnableResourcePropertyConstraint() *bool
@@ -350,6 +352,16 @@ func (j *jsiiProxy_RosASKCluster) CreationStack() *[]*string {
 	return returns
 }
 
+func (j *jsiiProxy_RosASKCluster) DeleteOptions() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"deleteOptions",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosASKCluster) DeletionProtection() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -636,6 +648,17 @@ func (j *jsiiProxy_RosASKCluster)SetClusterSpec(val interface{}) {
 	_jsii_.Set(
 		j,
 		"clusterSpec",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosASKCluster)SetDeleteOptions(val interface{}) {
+	if err := j.validateSetDeleteOptionsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"deleteOptions",
 		val,
 	)
 }

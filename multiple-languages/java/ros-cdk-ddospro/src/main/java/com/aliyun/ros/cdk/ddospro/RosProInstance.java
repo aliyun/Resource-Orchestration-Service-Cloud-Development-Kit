@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ddospro;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DDoSPro::ProInstance</code>, which is used to create an Anti-DDoS Proxy (Chinese Mainland) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:19.250Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:25.174Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ddospro.$Module.class, fqn = "@alicloud/ros-cdk-ddospro.RosProInstance")
 public class RosProInstance extends com.aliyun.ros.cdk.core.RosResource {
 

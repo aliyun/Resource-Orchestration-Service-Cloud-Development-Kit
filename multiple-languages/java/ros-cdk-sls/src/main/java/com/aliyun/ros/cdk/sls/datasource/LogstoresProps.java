@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.sls.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sls-logstores
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:24.460Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:31.096Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.datasource.LogstoresProps")
 @software.amazon.jsii.Jsii.Proxy(LogstoresProps.Jsii$Proxy.class)
 public interface LogstoresProps extends software.amazon.jsii.JsiiSerializable {

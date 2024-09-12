@@ -60,6 +60,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// ReadOnly: has the read-only permission on the database.
         /// DMLOnly: runs only data manipulation language (DML) statements.
         /// DDLOnly: runs only data definition language (DDL) statements.
+        /// ReadIndex: has read and index permissions on the database.
         /// Default value: ReadWrite.
         /// </remarks>
         [JsiiProperty(name: "accountPrivilege", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -176,6 +177,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// ReadOnly: has the read-only permission on the database.
             /// DMLOnly: runs only data manipulation language (DML) statements.
             /// DDLOnly: runs only data definition language (DDL) statements.
+            /// ReadIndex: has read and index permissions on the database.
             /// Default value: ReadWrite.
             /// </remarks>
             [JsiiOptional]

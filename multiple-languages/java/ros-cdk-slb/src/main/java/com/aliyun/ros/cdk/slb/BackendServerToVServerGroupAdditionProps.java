@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.slb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-backendservertovservergroupaddition
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:24.158Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:30.714Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.BackendServerToVServerGroupAdditionProps")
 @software.amazon.jsii.Jsii.Proxy(BackendServerToVServerGroupAdditionProps.Jsii$Proxy.class)
 public interface BackendServerToVServerGroupAdditionProps extends software.amazon.jsii.JsiiSerializable {

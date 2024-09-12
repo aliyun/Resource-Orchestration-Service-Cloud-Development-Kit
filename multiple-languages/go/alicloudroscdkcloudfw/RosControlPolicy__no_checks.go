@@ -92,6 +92,10 @@ func (j *jsiiProxy_RosControlPolicy) validateSetApplicationNameParameters(val in
 	return nil
 }
 
+func (j *jsiiProxy_RosControlPolicy) validateSetApplicationNameListParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosControlPolicy) validateSetDescriptionParameters(val interface{}) error {
 	return nil
 }
@@ -120,7 +124,19 @@ func (j *jsiiProxy_RosControlPolicy) validateSetDirectionParameters(val interfac
 	return nil
 }
 
+func (j *jsiiProxy_RosControlPolicy) validateSetDomainResolveTypeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosControlPolicy) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosControlPolicy) validateSetEndTimeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosControlPolicy) validateSetIpVersionParameters(val interface{}) error {
 	return nil
 }
 
@@ -136,11 +152,35 @@ func (j *jsiiProxy_RosControlPolicy) validateSetRegionIdParameters(val interface
 	return nil
 }
 
+func (j *jsiiProxy_RosControlPolicy) validateSetReleaseParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosControlPolicy) validateSetRepeatDaysParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosControlPolicy) validateSetRepeatEndTimeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosControlPolicy) validateSetRepeatStartTimeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosControlPolicy) validateSetRepeatTypeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosControlPolicy) validateSetSourceParameters(val interface{}) error {
 	return nil
 }
 
 func (j *jsiiProxy_RosControlPolicy) validateSetSourceTypeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosControlPolicy) validateSetStartTimeParameters(val interface{}) error {
 	return nil
 }
 

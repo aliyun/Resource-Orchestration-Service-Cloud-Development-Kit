@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudfw;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CLOUDFW::VpcFirewallControlPolicy</code>, which is used to add an access control policy to a specified policy group for a Virtual Private Cloud (VPC) firewall.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:18.416Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:24.341Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.VpcFirewallControlPolicy")
 public class VpcFirewallControlPolicy extends com.aliyun.ros.cdk.core.Resource {
 
@@ -141,61 +141,6 @@ public class VpcFirewallControlPolicy extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder aclAction(final com.aliyun.ros.cdk.core.IResolvable aclAction) {
             this.props.aclAction(aclAction);
-            return this;
-        }
-
-        /**
-         * Property applicationName: The application type that the access control policy supports.
-         * <p>
-         * Valid values:
-         * ANY (indicates that all application types are supported)
-         * FTP
-         * HTTP
-         * HTTPS
-         * MySQL
-         * SMTP
-         * SMTPS
-         * RDP
-         * VNC
-         * SSH
-         * Redis
-         * MQTT
-         * MongoDB
-         * Memcache
-         * SSL
-         * <p>
-         * @return {@code this}
-         * @param applicationName Property applicationName: The application type that the access control policy supports. This parameter is required.
-         */
-        public Builder applicationName(final java.lang.String applicationName) {
-            this.props.applicationName(applicationName);
-            return this;
-        }
-        /**
-         * Property applicationName: The application type that the access control policy supports.
-         * <p>
-         * Valid values:
-         * ANY (indicates that all application types are supported)
-         * FTP
-         * HTTP
-         * HTTPS
-         * MySQL
-         * SMTP
-         * SMTPS
-         * RDP
-         * VNC
-         * SSH
-         * Redis
-         * MQTT
-         * MongoDB
-         * Memcache
-         * SSL
-         * <p>
-         * @return {@code this}
-         * @param applicationName Property applicationName: The application type that the access control policy supports. This parameter is required.
-         */
-        public Builder applicationName(final com.aliyun.ros.cdk.core.IResolvable applicationName) {
-            this.props.applicationName(applicationName);
             return this;
         }
 
@@ -426,6 +371,82 @@ public class VpcFirewallControlPolicy extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property applicationName: The application type that the access control policy supports.
+         * <p>
+         * Valid values:
+         * ANY (indicates that all application types are supported)
+         * FTP
+         * HTTP
+         * HTTPS
+         * MySQL
+         * SMTP
+         * SMTPS
+         * RDP
+         * VNC
+         * SSH
+         * Redis
+         * MQTT
+         * MongoDB
+         * Memcache
+         * SSL
+         * <p>
+         * @return {@code this}
+         * @param applicationName Property applicationName: The application type that the access control policy supports. This parameter is required.
+         */
+        public Builder applicationName(final java.lang.String applicationName) {
+            this.props.applicationName(applicationName);
+            return this;
+        }
+        /**
+         * Property applicationName: The application type that the access control policy supports.
+         * <p>
+         * Valid values:
+         * ANY (indicates that all application types are supported)
+         * FTP
+         * HTTP
+         * HTTPS
+         * MySQL
+         * SMTP
+         * SMTPS
+         * RDP
+         * VNC
+         * SSH
+         * Redis
+         * MQTT
+         * MongoDB
+         * Memcache
+         * SSL
+         * <p>
+         * @return {@code this}
+         * @param applicationName Property applicationName: The application type that the access control policy supports. This parameter is required.
+         */
+        public Builder applicationName(final com.aliyun.ros.cdk.core.IResolvable applicationName) {
+            this.props.applicationName(applicationName);
+            return this;
+        }
+
+        /**
+         * Property applicationNameList: List of application types supported by the access control policy.
+         * <p>
+         * @return {@code this}
+         * @param applicationNameList Property applicationNameList: List of application types supported by the access control policy. This parameter is required.
+         */
+        public Builder applicationNameList(final com.aliyun.ros.cdk.core.IResolvable applicationNameList) {
+            this.props.applicationNameList(applicationNameList);
+            return this;
+        }
+        /**
+         * Property applicationNameList: List of application types supported by the access control policy.
+         * <p>
+         * @return {@code this}
+         * @param applicationNameList Property applicationNameList: List of application types supported by the access control policy. This parameter is required.
+         */
+        public Builder applicationNameList(final java.util.List<? extends java.lang.Object> applicationNameList) {
+            this.props.applicationNameList(applicationNameList);
+            return this;
+        }
+
+        /**
          * Property destPort: The destination port in the access control policy.
          * <p>
          * Note This parameter must be specified if the DestPortType parameter is set to port.
@@ -505,6 +526,33 @@ public class VpcFirewallControlPolicy extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property endTime: The end time of the policy validity period for an access control policy.
+         * <p>
+         * It is represented in a second-level timestamp format. It must be the whole hour or half hour, and at least half an hour greater than the start time.
+         * Notes: When RepeatType is Permanent, EndTime is empty. When RepeatType is None, Daily, Weekly, Monthly, EndTime must havea value, and you need to set the end time.
+         * <p>
+         * @return {@code this}
+         * @param endTime Property endTime: The end time of the policy validity period for an access control policy. This parameter is required.
+         */
+        public Builder endTime(final java.lang.Number endTime) {
+            this.props.endTime(endTime);
+            return this;
+        }
+        /**
+         * Property endTime: The end time of the policy validity period for an access control policy.
+         * <p>
+         * It is represented in a second-level timestamp format. It must be the whole hour or half hour, and at least half an hour greater than the start time.
+         * Notes: When RepeatType is Permanent, EndTime is empty. When RepeatType is None, Daily, Weekly, Monthly, EndTime must havea value, and you need to set the end time.
+         * <p>
+         * @return {@code this}
+         * @param endTime Property endTime: The end time of the policy validity period for an access control policy. This parameter is required.
+         */
+        public Builder endTime(final com.aliyun.ros.cdk.core.IResolvable endTime) {
+            this.props.endTime(endTime);
+            return this;
+        }
+
+        /**
          * Property lang: The natural language of the request and response.
          * <p>
          * Valid values:
@@ -534,6 +582,27 @@ public class VpcFirewallControlPolicy extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property memberUid: Member account UID of current Alibaba Cloud account.
+         * <p>
+         * @return {@code this}
+         * @param memberUid Property memberUid: Member account UID of current Alibaba Cloud account. This parameter is required.
+         */
+        public Builder memberUid(final java.lang.String memberUid) {
+            this.props.memberUid(memberUid);
+            return this;
+        }
+        /**
+         * Property memberUid: Member account UID of current Alibaba Cloud account.
+         * <p>
+         * @return {@code this}
+         * @param memberUid Property memberUid: Member account UID of current Alibaba Cloud account. This parameter is required.
+         */
+        public Builder memberUid(final com.aliyun.ros.cdk.core.IResolvable memberUid) {
+            this.props.memberUid(memberUid);
+            return this;
+        }
+
+        /**
          * Property regionId: Region ID.
          * <p>
          * Default to cn-hangzhou.
@@ -555,6 +624,196 @@ public class VpcFirewallControlPolicy extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder regionId(final com.aliyun.ros.cdk.core.IResolvable regionId) {
             this.props.regionId(regionId);
+            return this;
+        }
+
+        /**
+         * Property release: The enabled state of the access control policy.
+         * <p>
+         * This policy is enabled by default when it is created. Value:
+         * <p>
+         * <ul>
+         * <li>true: Access control policy is enabled</li>
+         * <li>false: Access control policy is not enabled</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param release Property release: The enabled state of the access control policy. This parameter is required.
+         */
+        public Builder release(final java.lang.Boolean release) {
+            this.props.release(release);
+            return this;
+        }
+        /**
+         * Property release: The enabled state of the access control policy.
+         * <p>
+         * This policy is enabled by default when it is created. Value:
+         * <p>
+         * <ul>
+         * <li>true: Access control policy is enabled</li>
+         * <li>false: Access control policy is not enabled</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param release Property release: The enabled state of the access control policy. This parameter is required.
+         */
+        public Builder release(final com.aliyun.ros.cdk.core.IResolvable release) {
+            this.props.release(release);
+            return this;
+        }
+
+        /**
+         * Property repeatDays: A collection of repeated dates of policy validity for an access control policy.
+         * <p>
+         * When RepeatType is Permanent, None, and Daily, RepeatDays is an empty set. For example: []
+         * When RepeatType is Weekly, RepeatDays cannot be empty. Example: [0, 6]
+         * Notes: When RepeatType is set to Weekly, RepeatDays is not allowed.
+         * When RepeatType is Monthly, RepeatDays cannot be empty. Examples: [1, 31]
+         * Notes: When RepeatType is set to Monthly, RepeatDays is not allowed to repeat.
+         * <p>
+         * @return {@code this}
+         * @param repeatDays Property repeatDays: A collection of repeated dates of policy validity for an access control policy. This parameter is required.
+         */
+        public Builder repeatDays(final com.aliyun.ros.cdk.core.IResolvable repeatDays) {
+            this.props.repeatDays(repeatDays);
+            return this;
+        }
+        /**
+         * Property repeatDays: A collection of repeated dates of policy validity for an access control policy.
+         * <p>
+         * When RepeatType is Permanent, None, and Daily, RepeatDays is an empty set. For example: []
+         * When RepeatType is Weekly, RepeatDays cannot be empty. Example: [0, 6]
+         * Notes: When RepeatType is set to Weekly, RepeatDays is not allowed.
+         * When RepeatType is Monthly, RepeatDays cannot be empty. Examples: [1, 31]
+         * Notes: When RepeatType is set to Monthly, RepeatDays is not allowed to repeat.
+         * <p>
+         * @return {@code this}
+         * @param repeatDays Property repeatDays: A collection of repeated dates of policy validity for an access control policy. This parameter is required.
+         */
+        public Builder repeatDays(final java.util.List<? extends java.lang.Object> repeatDays) {
+            this.props.repeatDays(repeatDays);
+            return this;
+        }
+
+        /**
+         * Property repeatEndTime: The repeated end time of the policy validity period for an access control policy.
+         * <p>
+         * For example: 08:00, must be the hour or half time, and less than the repeat start time at least half an hour.
+         * Notes: When RepeatType is Permanent and None, RepeatEndTime is empty. When RepeatType is Daily, Weekly, or Monthly, RepeatEndTime musthave a value, and you need to set the repeat end time.
+         * <p>
+         * @return {@code this}
+         * @param repeatEndTime Property repeatEndTime: The repeated end time of the policy validity period for an access control policy. This parameter is required.
+         */
+        public Builder repeatEndTime(final java.lang.String repeatEndTime) {
+            this.props.repeatEndTime(repeatEndTime);
+            return this;
+        }
+        /**
+         * Property repeatEndTime: The repeated end time of the policy validity period for an access control policy.
+         * <p>
+         * For example: 08:00, must be the hour or half time, and less than the repeat start time at least half an hour.
+         * Notes: When RepeatType is Permanent and None, RepeatEndTime is empty. When RepeatType is Daily, Weekly, or Monthly, RepeatEndTime musthave a value, and you need to set the repeat end time.
+         * <p>
+         * @return {@code this}
+         * @param repeatEndTime Property repeatEndTime: The repeated end time of the policy validity period for an access control policy. This parameter is required.
+         */
+        public Builder repeatEndTime(final com.aliyun.ros.cdk.core.IResolvable repeatEndTime) {
+            this.props.repeatEndTime(repeatEndTime);
+            return this;
+        }
+
+        /**
+         * Property repeatStartTime: The repeated start time of the policy validity period for an access control policy.
+         * <p>
+         * For example: 08:00, must be the hour or half time, and less than the repeat end time at least half an hour.
+         * Notes: When RepeatType is Permanent and None, RepeatStartTime is empty. When RepeatType is Daily, Weekly, or Monthly, RepeatStartTime must have a value, and you need to set the repeat start time.
+         * <p>
+         * @return {@code this}
+         * @param repeatStartTime Property repeatStartTime: The repeated start time of the policy validity period for an access control policy. This parameter is required.
+         */
+        public Builder repeatStartTime(final java.lang.String repeatStartTime) {
+            this.props.repeatStartTime(repeatStartTime);
+            return this;
+        }
+        /**
+         * Property repeatStartTime: The repeated start time of the policy validity period for an access control policy.
+         * <p>
+         * For example: 08:00, must be the hour or half time, and less than the repeat end time at least half an hour.
+         * Notes: When RepeatType is Permanent and None, RepeatStartTime is empty. When RepeatType is Daily, Weekly, or Monthly, RepeatStartTime must have a value, and you need to set the repeat start time.
+         * <p>
+         * @return {@code this}
+         * @param repeatStartTime Property repeatStartTime: The repeated start time of the policy validity period for an access control policy. This parameter is required.
+         */
+        public Builder repeatStartTime(final com.aliyun.ros.cdk.core.IResolvable repeatStartTime) {
+            this.props.repeatStartTime(repeatStartTime);
+            return this;
+        }
+
+        /**
+         * Property repeatType: The repetition type of the policy validity period for an access control policy.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Permanent (default)</li>
+         * <li>None</li>
+         * <li>Daily</li>
+         * <li>Weekly</li>
+         * <li>Monthly.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param repeatType Property repeatType: The repetition type of the policy validity period for an access control policy. This parameter is required.
+         */
+        public Builder repeatType(final java.lang.String repeatType) {
+            this.props.repeatType(repeatType);
+            return this;
+        }
+        /**
+         * Property repeatType: The repetition type of the policy validity period for an access control policy.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Permanent (default)</li>
+         * <li>None</li>
+         * <li>Daily</li>
+         * <li>Weekly</li>
+         * <li>Monthly.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param repeatType Property repeatType: The repetition type of the policy validity period for an access control policy. This parameter is required.
+         */
+        public Builder repeatType(final com.aliyun.ros.cdk.core.IResolvable repeatType) {
+            this.props.repeatType(repeatType);
+            return this;
+        }
+
+        /**
+         * Property startTime: The start time of the policy validity period for an access control policy.
+         * <p>
+         * It is represented in a second-level timestamp format. It must be the whole hour or half hour, and at least half an hour less than the end time.
+         * Notes: When RepeatType is Permanent, StartTime is empty. When RepeatType is None, Daily, Weekly, Monthly, StartTime must have a value, and you need to set the start time.
+         * <p>
+         * @return {@code this}
+         * @param startTime Property startTime: The start time of the policy validity period for an access control policy. This parameter is required.
+         */
+        public Builder startTime(final java.lang.Number startTime) {
+            this.props.startTime(startTime);
+            return this;
+        }
+        /**
+         * Property startTime: The start time of the policy validity period for an access control policy.
+         * <p>
+         * It is represented in a second-level timestamp format. It must be the whole hour or half hour, and at least half an hour less than the end time.
+         * Notes: When RepeatType is Permanent, StartTime is empty. When RepeatType is None, Daily, Weekly, Monthly, StartTime must have a value, and you need to set the start time.
+         * <p>
+         * @return {@code this}
+         * @param startTime Property startTime: The start time of the policy validity period for an access control policy. This parameter is required.
+         */
+        public Builder startTime(final com.aliyun.ros.cdk.core.IResolvable startTime) {
+            this.props.startTime(startTime);
             return this;
         }
 

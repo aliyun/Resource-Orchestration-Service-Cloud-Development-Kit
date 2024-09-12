@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mns.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::MNS::Topics</code>, which is used to query topics.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:22.355Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:28.406Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.datasource.RosTopics")
 public class RosTopics extends com.aliyun.ros.cdk.core.RosResource {
 

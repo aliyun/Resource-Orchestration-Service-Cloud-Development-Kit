@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::POLARDB::DBNodes</code>, which is used to add nodes to a PolarDB cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:23.098Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:29.377Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBNodes")
 public class DBNodes extends com.aliyun.ros.cdk.core.Resource {
 
@@ -188,6 +188,27 @@ public class DBNodes extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property endpointBindList: Address IDs that specifies the cluster connection address to which the new node should join.
+         * <p>
+         * @return {@code this}
+         * @param endpointBindList Property endpointBindList: Address IDs that specifies the cluster connection address to which the new node should join. This parameter is required.
+         */
+        public Builder endpointBindList(final com.aliyun.ros.cdk.core.IResolvable endpointBindList) {
+            this.props.endpointBindList(endpointBindList);
+            return this;
+        }
+        /**
+         * Property endpointBindList: Address IDs that specifies the cluster connection address to which the new node should join.
+         * <p>
+         * @return {@code this}
+         * @param endpointBindList Property endpointBindList: Address IDs that specifies the cluster connection address to which the new node should join. This parameter is required.
+         */
+        public Builder endpointBindList(final java.util.List<? extends java.lang.Object> endpointBindList) {
+            this.props.endpointBindList(endpointBindList);
+            return this;
+        }
+
+        /**
          * Property imciSwitch: Specifies whether to enable the In-Memory Column Index (IMCI) feature.
          * <p>
          * @return {@code this}
@@ -205,6 +226,56 @@ public class DBNodes extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder imciSwitch(final com.aliyun.ros.cdk.core.IResolvable imciSwitch) {
             this.props.imciSwitch(imciSwitch);
+            return this;
+        }
+
+        /**
+         * Property plannedEndTime: The latest time at which a new node task can be added to start executing a timed (that is, within the target time period).
+         * <p>
+         * The format is YYYY-MM-DDThh:mm:ssZ (UTC).
+         * <p>
+         * @return {@code this}
+         * @param plannedEndTime Property plannedEndTime: The latest time at which a new node task can be added to start executing a timed (that is, within the target time period). This parameter is required.
+         */
+        public Builder plannedEndTime(final java.lang.String plannedEndTime) {
+            this.props.plannedEndTime(plannedEndTime);
+            return this;
+        }
+        /**
+         * Property plannedEndTime: The latest time at which a new node task can be added to start executing a timed (that is, within the target time period).
+         * <p>
+         * The format is YYYY-MM-DDThh:mm:ssZ (UTC).
+         * <p>
+         * @return {@code this}
+         * @param plannedEndTime Property plannedEndTime: The latest time at which a new node task can be added to start executing a timed (that is, within the target time period). This parameter is required.
+         */
+        public Builder plannedEndTime(final com.aliyun.ros.cdk.core.IResolvable plannedEndTime) {
+            this.props.plannedEndTime(plannedEndTime);
+            return this;
+        }
+
+        /**
+         * Property plannedStartTime: The earliest time at which a new node task can be added to start executing a timed (that is, within the target time period).
+         * <p>
+         * The format is YYYY-MM-DDThh:mm:ssZ (UTC).
+         * <p>
+         * @return {@code this}
+         * @param plannedStartTime Property plannedStartTime: The earliest time at which a new node task can be added to start executing a timed (that is, within the target time period). This parameter is required.
+         */
+        public Builder plannedStartTime(final java.lang.String plannedStartTime) {
+            this.props.plannedStartTime(plannedStartTime);
+            return this;
+        }
+        /**
+         * Property plannedStartTime: The earliest time at which a new node task can be added to start executing a timed (that is, within the target time period).
+         * <p>
+         * The format is YYYY-MM-DDThh:mm:ssZ (UTC).
+         * <p>
+         * @return {@code this}
+         * @param plannedStartTime Property plannedStartTime: The earliest time at which a new node task can be added to start executing a timed (that is, within the target time period). This parameter is required.
+         */
+        public Builder plannedStartTime(final com.aliyun.ros.cdk.core.IResolvable plannedStartTime) {
+            this.props.plannedStartTime(plannedStartTime);
             return this;
         }
 

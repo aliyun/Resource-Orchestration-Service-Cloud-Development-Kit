@@ -10,12 +10,12 @@ import (
 	_jsii_ "github.com/aws/jsii-runtime-go/runtime"
 )
 
-//go:embed alicloud-ros-cdk-assembly-schema-1.1.0.tgz
+//go:embed alicloud-ros-cdk-assembly-schema-1.2.0.tgz
 var tarball []byte
 
 // Initialize loads the necessary packages in the @jsii/kernel to support the enclosing module.
 // The implementation is idempotent (and hence safe to be called over and over).
 func Initialize() {
 	// Load this library into the kernel
-	_jsii_.Load("@alicloud/ros-cdk-assembly-schema", "1.1.0", tarball)
+	_jsii_.Load("@alicloud/ros-cdk-assembly-schema", "1.2.0", tarball)
 }

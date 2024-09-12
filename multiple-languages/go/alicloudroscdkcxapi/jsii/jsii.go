@@ -12,7 +12,7 @@ import (
 	alicloudroscdkassemblyschema "github.com/alibabacloud-go/ros-cdk/alicloudroscdkassemblyschema/jsii"
 )
 
-//go:embed alicloud-ros-cdk-cxapi-1.1.0.tgz
+//go:embed alicloud-ros-cdk-cxapi-1.2.0.tgz
 var tarball []byte
 
 // Initialize loads the necessary packages in the @jsii/kernel to support the enclosing module.
@@ -22,5 +22,5 @@ func Initialize() {
 	alicloudroscdkassemblyschema.Initialize()
 
 	// Load this library into the kernel
-	_jsii_.Load("@alicloud/ros-cdk-cxapi", "1.1.0", tarball)
+	_jsii_.Load("@alicloud/ros-cdk-cxapi", "1.2.0", tarball)
 }

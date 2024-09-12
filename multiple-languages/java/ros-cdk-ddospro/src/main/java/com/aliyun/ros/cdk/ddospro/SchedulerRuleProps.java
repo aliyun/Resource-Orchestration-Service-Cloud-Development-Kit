@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ddospro;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-schedulerrule
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:19.275Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:25.196Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ddospro.$Module.class, fqn = "@alicloud/ros-cdk-ddospro.SchedulerRuleProps")
 @software.amazon.jsii.Jsii.Proxy(SchedulerRuleProps.Jsii$Proxy.class)
 public interface SchedulerRuleProps extends software.amazon.jsii.JsiiSerializable {

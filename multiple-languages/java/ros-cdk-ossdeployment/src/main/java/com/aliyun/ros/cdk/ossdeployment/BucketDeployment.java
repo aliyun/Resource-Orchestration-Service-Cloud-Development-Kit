@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ossdeployment;
 /**
  * <code>BucketDeployment</code> populates an OSS bucket with the contents of .zip files from other OSS buckets or from local disk.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:25.331Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:32.016Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ossdeployment.$Module.class, fqn = "@alicloud/ros-cdk-ossdeployment.BucketDeployment")
 public class BucketDeployment extends com.aliyun.ros.cdk.core.Resource {
 

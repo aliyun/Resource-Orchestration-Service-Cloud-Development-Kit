@@ -167,6 +167,10 @@
 @alicloud/ros-cdk-vpc.RosVSwitchCidrReservationProps=com.aliyun.ros.cdk.vpc.RosVSwitchCidrReservationProps
 @alicloud/ros-cdk-vpc.RosVirtualBorderRouter=com.aliyun.ros.cdk.vpc.RosVirtualBorderRouter
 @alicloud/ros-cdk-vpc.RosVirtualBorderRouterProps=com.aliyun.ros.cdk.vpc.RosVirtualBorderRouterProps
+@alicloud/ros-cdk-vpc.RosVpcCidrBlockAssociation=com.aliyun.ros.cdk.vpc.RosVpcCidrBlockAssociation
+@alicloud/ros-cdk-vpc.RosVpcCidrBlockAssociationProps=com.aliyun.ros.cdk.vpc.RosVpcCidrBlockAssociationProps
+@alicloud/ros-cdk-vpc.RosVpcIpv6CidrAllocation=com.aliyun.ros.cdk.vpc.RosVpcIpv6CidrAllocation
+@alicloud/ros-cdk-vpc.RosVpcIpv6CidrAllocationProps=com.aliyun.ros.cdk.vpc.RosVpcIpv6CidrAllocationProps
 @alicloud/ros-cdk-vpc.RosVpcPeerConnection=com.aliyun.ros.cdk.vpc.RosVpcPeerConnection
 @alicloud/ros-cdk-vpc.RosVpcPeerConnectionProps=com.aliyun.ros.cdk.vpc.RosVpcPeerConnectionProps
 @alicloud/ros-cdk-vpc.RosVpnAttachment=com.aliyun.ros.cdk.vpc.RosVpnAttachment
@@ -214,6 +218,10 @@
 @alicloud/ros-cdk-vpc.VSwitchCidrReservationProps=com.aliyun.ros.cdk.vpc.VSwitchCidrReservationProps
 @alicloud/ros-cdk-vpc.VirtualBorderRouter=com.aliyun.ros.cdk.vpc.VirtualBorderRouter
 @alicloud/ros-cdk-vpc.VirtualBorderRouterProps=com.aliyun.ros.cdk.vpc.VirtualBorderRouterProps
+@alicloud/ros-cdk-vpc.VpcCidrBlockAssociation=com.aliyun.ros.cdk.vpc.VpcCidrBlockAssociation
+@alicloud/ros-cdk-vpc.VpcCidrBlockAssociationProps=com.aliyun.ros.cdk.vpc.VpcCidrBlockAssociationProps
+@alicloud/ros-cdk-vpc.VpcIpv6CidrAllocation=com.aliyun.ros.cdk.vpc.VpcIpv6CidrAllocation
+@alicloud/ros-cdk-vpc.VpcIpv6CidrAllocationProps=com.aliyun.ros.cdk.vpc.VpcIpv6CidrAllocationProps
 @alicloud/ros-cdk-vpc.VpcPeerConnection=com.aliyun.ros.cdk.vpc.VpcPeerConnection
 @alicloud/ros-cdk-vpc.VpcPeerConnectionProps=com.aliyun.ros.cdk.vpc.VpcPeerConnectionProps
 @alicloud/ros-cdk-vpc.VpnAttachment=com.aliyun.ros.cdk.vpc.VpnAttachment

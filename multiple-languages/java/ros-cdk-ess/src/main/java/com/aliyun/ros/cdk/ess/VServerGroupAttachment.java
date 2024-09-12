@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESS::VServerGroupAttachment</code>, which is used to associate vServer groups of a Sever Load Balancer (SLB) instance with a scaling group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:21.616Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:27.335Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.VServerGroupAttachment")
 public class VServerGroupAttachment extends com.aliyun.ros.cdk.core.Resource {
 

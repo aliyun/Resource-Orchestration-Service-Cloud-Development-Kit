@@ -570,7 +570,7 @@ export interface RosDBClusterProps {
     /**
      * @Property dbVersion: The version of the database. Valid values:
      * MySQL: 5.6, 5.7 or 8.0
-     * PostgreSQL: 11, 14
+     * PostgreSQL: 11, 14, 15
      * Oracle: 11, 14
      */
     readonly dbVersion: string | ros.IResolvable;
@@ -633,7 +633,7 @@ export interface RosDBClusterProps {
     readonly coldStorageOption?: RosDBCluster.ColdStorageOptionProperty | ros.IResolvable;
 
     /**
-     * @Property creationCategory: Cluster series. The value could be Normal (standard version), Basic and ArchiveNormal.
+     * @Property creationCategory: Cluster series. The value could be Normal (standard version), Basic, ArchiveNormal, NormalMultimaster and SENormal.
      */
     readonly creationCategory?: string | ros.IResolvable;
 
@@ -645,6 +645,8 @@ export interface RosDBClusterProps {
      * for POLARDB cluster.
      * MigrationFromRDS: migrates data from an existing ApsaraDB for RDS instance to a new ApsaraDB for POLARDB cluster. The created ApsaraDB for POLARDB cluster is in read-only mode and has binary logs enabled by default.
      * CreateGdnStandby: Create a secondary cluster.
+     * RecoverFromRecyclebin: Recovers data from the freed PolarDB cluster to the new PolarDB cluster.
+     * UpgradeFromPolarDB: Upgrade migration from PolarDB.
      * Default value: Normal.
      * Note:
      * When DBType is MySQL and DBVersion is 5.6, this parameter can be specified as CloneFromRDS or MigrationFromRDS.
@@ -762,6 +764,12 @@ export interface RosDBClusterProps {
     readonly periodUnit?: string | ros.IResolvable;
 
     /**
+     * @Property provisionedIops: ESSD AutoPL preconfigured read and write IOPS for cloud disk. Possible values: 0-min {50,000, 1000* capacity - baseline performance}.
+     * Baseline performance =min{1,800+50* capacity, 50000}.
+     */
+    readonly provisionedIops?: number | ros.IResolvable;
+
+    /**
      * @Property proxyClass: The specifications of the Standard Edition PolarProxy. Valid values:
      * polar.maxscale.g2.medium.c: 2 cores
      * polar.maxscale.g2.large.c: 4 cores
@@ -877,9 +885,11 @@ export interface RosDBClusterProps {
      * PSL5
      * PSL4
      * Valid values for Standard Edition:
+     * ESSDPL0
      * ESSDPL1
      * ESSDPL2
      * ESSDPL3
+     * ESSDAUTOPL
      * This parameter is invalid for serverless clusters.
      */
     readonly storageType?: string | ros.IResolvable;
@@ -1004,6 +1014,14 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
+    if(properties.provisionedIops && (typeof properties.provisionedIops) !== 'object') {
+        errors.collect(ros.propertyValidator('provisionedIops', ros.validateRange)({
+            data: properties.provisionedIops,
+            min: 0,
+            max: 50000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('provisionedIops', ros.validateNumber)(properties.provisionedIops));
     errors.collect(ros.propertyValidator('securityGroupIds', ros.listValidator(ros.validateString))(properties.securityGroupIds));
     errors.collect(ros.propertyValidator('allowShutDown', ros.validateBoolean)(properties.allowShutDown));
     errors.collect(ros.propertyValidator('loosePolarLogBin', ros.validateString)(properties.loosePolarLogBin));
@@ -1079,7 +1097,7 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     if(properties.creationOption && (typeof properties.creationOption) !== 'object') {
         errors.collect(ros.propertyValidator('creationOption', ros.validateAllowedValues)({
           data: properties.creationOption,
-          allowedValues: ["CloneFromPolarDB","CloneFromRDS","MigrationFromRDS","Normal","CreateGdnStandby"],
+          allowedValues: ["CloneFromPolarDB","CloneFromRDS","MigrationFromRDS","Normal","CreateGdnStandby","RecoverFromRecyclebin","UpgradeFromPolarDB"],
         }));
     }
     errors.collect(ros.propertyValidator('creationOption', ros.validateString)(properties.creationOption));
@@ -1146,6 +1164,7 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
       'ParameterGroupId': ros.stringToRosTemplate(properties.parameterGroupId),
       'Period': ros.numberToRosTemplate(properties.period),
       'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
+      'ProvisionedIops': ros.numberToRosTemplate(properties.provisionedIops),
       'ProxyClass': ros.stringToRosTemplate(properties.proxyClass),
       'ProxyType': ros.stringToRosTemplate(properties.proxyType),
       'RenewalStatus': ros.stringToRosTemplate(properties.renewalStatus),
@@ -1269,7 +1288,7 @@ export class RosDBCluster extends ros.RosResource {
     /**
      * @Property dbVersion: The version of the database. Valid values:
      * MySQL: 5.6, 5.7 or 8.0
-     * PostgreSQL: 11, 14
+     * PostgreSQL: 11, 14, 15
      * Oracle: 11, 14
      */
     public dbVersion: string | ros.IResolvable;
@@ -1332,7 +1351,7 @@ export class RosDBCluster extends ros.RosResource {
     public coldStorageOption: RosDBCluster.ColdStorageOptionProperty | ros.IResolvable | undefined;
 
     /**
-     * @Property creationCategory: Cluster series. The value could be Normal (standard version), Basic and ArchiveNormal.
+     * @Property creationCategory: Cluster series. The value could be Normal (standard version), Basic, ArchiveNormal, NormalMultimaster and SENormal.
      */
     public creationCategory: string | ros.IResolvable | undefined;
 
@@ -1344,6 +1363,8 @@ export class RosDBCluster extends ros.RosResource {
      * for POLARDB cluster.
      * MigrationFromRDS: migrates data from an existing ApsaraDB for RDS instance to a new ApsaraDB for POLARDB cluster. The created ApsaraDB for POLARDB cluster is in read-only mode and has binary logs enabled by default.
      * CreateGdnStandby: Create a secondary cluster.
+     * RecoverFromRecyclebin: Recovers data from the freed PolarDB cluster to the new PolarDB cluster.
+     * UpgradeFromPolarDB: Upgrade migration from PolarDB.
      * Default value: Normal.
      * Note:
      * When DBType is MySQL and DBVersion is 5.6, this parameter can be specified as CloneFromRDS or MigrationFromRDS.
@@ -1461,6 +1482,12 @@ export class RosDBCluster extends ros.RosResource {
     public periodUnit: string | ros.IResolvable | undefined;
 
     /**
+     * @Property provisionedIops: ESSD AutoPL preconfigured read and write IOPS for cloud disk. Possible values: 0-min {50,000, 1000* capacity - baseline performance}.
+     * Baseline performance =min{1,800+50* capacity, 50000}.
+     */
+    public provisionedIops: number | ros.IResolvable | undefined;
+
+    /**
      * @Property proxyClass: The specifications of the Standard Edition PolarProxy. Valid values:
      * polar.maxscale.g2.medium.c: 2 cores
      * polar.maxscale.g2.large.c: 4 cores
@@ -1576,9 +1603,11 @@ export class RosDBCluster extends ros.RosResource {
      * PSL5
      * PSL4
      * Valid values for Standard Edition:
+     * ESSDPL0
      * ESSDPL1
      * ESSDPL2
      * ESSDPL3
+     * ESSDAUTOPL
      * This parameter is invalid for serverless clusters.
      */
     public storageType: string | ros.IResolvable | undefined;
@@ -1674,6 +1703,7 @@ export class RosDBCluster extends ros.RosResource {
         this.parameterGroupId = props.parameterGroupId;
         this.period = props.period;
         this.periodUnit = props.periodUnit;
+        this.provisionedIops = props.provisionedIops;
         this.proxyClass = props.proxyClass;
         this.proxyType = props.proxyType;
         this.renewalStatus = props.renewalStatus;
@@ -1732,6 +1762,7 @@ export class RosDBCluster extends ros.RosResource {
             parameterGroupId: this.parameterGroupId,
             period: this.period,
             periodUnit: this.periodUnit,
+            provisionedIops: this.provisionedIops,
             proxyClass: this.proxyClass,
             proxyType: this.proxyType,
             renewalStatus: this.renewalStatus,
@@ -2595,9 +2626,24 @@ export interface RosDBNodesProps {
     readonly dbNodeType?: string | ros.IResolvable;
 
     /**
+     * @Property endpointBindList: Address IDs that specifies the cluster connection address to which the new node should join.
+     */
+    readonly endpointBindList?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * @Property imciSwitch: Specifies whether to enable the In-Memory Column Index (IMCI) feature.
      */
     readonly imciSwitch?: string | ros.IResolvable;
+
+    /**
+     * @Property plannedEndTime: The latest time at which a new node task can be added to start executing a timed (that is, within the target time period). The format is YYYY-MM-DDThh:mm:ssZ (UTC).
+     */
+    readonly plannedEndTime?: string | ros.IResolvable;
+
+    /**
+     * @Property plannedStartTime: The earliest time at which a new node task can be added to start executing a timed (that is, within the target time period). The format is YYYY-MM-DDThh:mm:ssZ (UTC).
+     */
+    readonly plannedStartTime?: string | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: Resource group id.
@@ -2627,6 +2673,15 @@ function RosDBNodesPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('amount', ros.validateNumber)(properties.amount));
     errors.collect(ros.propertyValidator('dbClusterId', ros.requiredValidator)(properties.dbClusterId));
     errors.collect(ros.propertyValidator('dbClusterId', ros.validateString)(properties.dbClusterId));
+    errors.collect(ros.propertyValidator('plannedStartTime', ros.validateString)(properties.plannedStartTime));
+    if(properties.endpointBindList && (Array.isArray(properties.endpointBindList) || (typeof properties.endpointBindList) === 'string')) {
+        errors.collect(ros.propertyValidator('endpointBindList', ros.validateLength)({
+            data: properties.endpointBindList.length,
+            min: 1,
+            max: 16,
+          }));
+    }
+    errors.collect(ros.propertyValidator('endpointBindList', ros.listValidator(ros.validateString))(properties.endpointBindList));
     if(properties.imciSwitch && (typeof properties.imciSwitch) !== 'object') {
         errors.collect(ros.propertyValidator('imciSwitch', ros.validateAllowedValues)({
           data: properties.imciSwitch,
@@ -2641,6 +2696,7 @@ function RosDBNodesPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('dbNodeType', ros.validateString)(properties.dbNodeType));
+    errors.collect(ros.propertyValidator('plannedEndTime', ros.validateString)(properties.plannedEndTime));
     return errors.wrap('supplied properties not correct for "RosDBNodesProps"');
 }
 
@@ -2661,7 +2717,10 @@ function rosDBNodesPropsToRosTemplate(properties: any, enableResourcePropertyCon
       'Amount': ros.numberToRosTemplate(properties.amount),
       'DBClusterId': ros.stringToRosTemplate(properties.dbClusterId),
       'DBNodeType': ros.stringToRosTemplate(properties.dbNodeType),
+      'EndpointBindList': ros.listMapper(ros.stringToRosTemplate)(properties.endpointBindList),
       'ImciSwitch': ros.stringToRosTemplate(properties.imciSwitch),
+      'PlannedEndTime': ros.stringToRosTemplate(properties.plannedEndTime),
+      'PlannedStartTime': ros.stringToRosTemplate(properties.plannedStartTime),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
     };
 }
@@ -2706,9 +2765,24 @@ export class RosDBNodes extends ros.RosResource {
     public dbNodeType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property endpointBindList: Address IDs that specifies the cluster connection address to which the new node should join.
+     */
+    public endpointBindList: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @Property imciSwitch: Specifies whether to enable the In-Memory Column Index (IMCI) feature.
      */
     public imciSwitch: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property plannedEndTime: The latest time at which a new node task can be added to start executing a timed (that is, within the target time period). The format is YYYY-MM-DDThh:mm:ssZ (UTC).
+     */
+    public plannedEndTime: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property plannedStartTime: The earliest time at which a new node task can be added to start executing a timed (that is, within the target time period). The format is YYYY-MM-DDThh:mm:ssZ (UTC).
+     */
+    public plannedStartTime: string | ros.IResolvable | undefined;
 
     /**
      * @Property resourceGroupId: Resource group id.
@@ -2729,7 +2803,10 @@ export class RosDBNodes extends ros.RosResource {
         this.amount = props.amount;
         this.dbClusterId = props.dbClusterId;
         this.dbNodeType = props.dbNodeType;
+        this.endpointBindList = props.endpointBindList;
         this.imciSwitch = props.imciSwitch;
+        this.plannedEndTime = props.plannedEndTime;
+        this.plannedStartTime = props.plannedStartTime;
         this.resourceGroupId = props.resourceGroupId;
     }
 
@@ -2739,7 +2816,10 @@ export class RosDBNodes extends ros.RosResource {
             amount: this.amount,
             dbClusterId: this.dbClusterId,
             dbNodeType: this.dbNodeType,
+            endpointBindList: this.endpointBindList,
             imciSwitch: this.imciSwitch,
+            plannedEndTime: this.plannedEndTime,
+            plannedStartTime: this.plannedStartTime,
             resourceGroupId: this.resourceGroupId,
         };
     }
@@ -2783,6 +2863,7 @@ export interface RosDatabaseProps {
      * ReadOnly: has the read-only permission on the database.
      * DMLOnly: runs only data manipulation language (DML) statements.
      * DDLOnly: runs only data definition language (DDL) statements.
+     * ReadIndex: has read and index permissions on the database.
      * Default value: ReadWrite.
      */
     readonly accountPrivilege?: string | ros.IResolvable;
@@ -2826,7 +2907,7 @@ function RosDatabasePropsValidator(properties: any): ros.ValidationResult {
     if(properties.accountPrivilege && (typeof properties.accountPrivilege) !== 'object') {
         errors.collect(ros.propertyValidator('accountPrivilege', ros.validateAllowedValues)({
           data: properties.accountPrivilege,
-          allowedValues: ["ReadWrite","ReadOnly","DMLOnly","DDLOnly"],
+          allowedValues: ["ReadWrite","ReadOnly","DMLOnly","DDLOnly","ReadIndex"],
         }));
     }
     errors.collect(ros.propertyValidator('accountPrivilege', ros.validateString)(properties.accountPrivilege));
@@ -2922,6 +3003,7 @@ export class RosDatabase extends ros.RosResource {
      * ReadOnly: has the read-only permission on the database.
      * DMLOnly: runs only data manipulation language (DML) statements.
      * DDLOnly: runs only data definition language (DDL) statements.
+     * ReadIndex: has read and index permissions on the database.
      * Default value: ReadWrite.
      */
     public accountPrivilege: string | ros.IResolvable | undefined;

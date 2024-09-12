@@ -15,7 +15,7 @@ type DBClusterProps struct {
 	//
 	// Valid values:
 	// MySQL: 5.6, 5.7 or 8.0
-	// PostgreSQL: 11, 14
+	// PostgreSQL: 11, 14, 15
 	// Oracle: 11, 14.
 	DbVersion interface{} `field:"required" json:"dbVersion" yaml:"dbVersion"`
 	// Property payType: The billing method of the cluster.
@@ -65,7 +65,7 @@ type DBClusterProps struct {
 	ColdStorageOption interface{} `field:"optional" json:"coldStorageOption" yaml:"coldStorageOption"`
 	// Property creationCategory: Cluster series.
 	//
-	// The value could be Normal (standard version), Basic and ArchiveNormal.
+	// The value could be Normal (standard version), Basic, ArchiveNormal, NormalMultimaster and SENormal.
 	CreationCategory interface{} `field:"optional" json:"creationCategory" yaml:"creationCategory"`
 	// Property creationOption: The method for creating an ApsaraDB for POLARDB cluster.
 	//
@@ -76,6 +76,8 @@ type DBClusterProps struct {
 	// for POLARDB cluster.
 	// MigrationFromRDS: migrates data from an existing ApsaraDB for RDS instance to a new ApsaraDB for POLARDB cluster. The created ApsaraDB for POLARDB cluster is in read-only mode and has binary logs enabled by default.
 	// CreateGdnStandby: Create a secondary cluster.
+	// RecoverFromRecyclebin: Recovers data from the freed PolarDB cluster to the new PolarDB cluster.
+	// UpgradeFromPolarDB: Upgrade migration from PolarDB.
 	// Default value: Normal.
 	// Note:
 	// When DBType is MySQL and DBVersion is 5.6, this parameter can be specified as CloneFromRDS or MigrationFromRDS.
@@ -151,6 +153,11 @@ type DBClusterProps struct {
 	// Year
 	// Default value: Month.
 	PeriodUnit interface{} `field:"optional" json:"periodUnit" yaml:"periodUnit"`
+	// Property provisionedIops: ESSD AutoPL preconfigured read and write IOPS for cloud disk.
+	//
+	// Possible values: 0-min {50,000, 1000* capacity - baseline performance}.
+	// Baseline performance =min{1,800+50* capacity, 50000}.
+	ProvisionedIops interface{} `field:"optional" json:"provisionedIops" yaml:"provisionedIops"`
 	// Property proxyClass: The specifications of the Standard Edition PolarProxy.
 	//
 	// Valid values:
@@ -228,9 +235,11 @@ type DBClusterProps struct {
 	// PSL5
 	// PSL4
 	// Valid values for Standard Edition:
+	// ESSDPL0
 	// ESSDPL1
 	// ESSDPL2
 	// ESSDPL3
+	// ESSDAUTOPL
 	// This parameter is invalid for serverless clusters.
 	StorageType interface{} `field:"optional" json:"storageType" yaml:"storageType"`
 	// Property storageUpperBound: Set the upper limit of automatic scale of standard cluster storage, unit: GB.

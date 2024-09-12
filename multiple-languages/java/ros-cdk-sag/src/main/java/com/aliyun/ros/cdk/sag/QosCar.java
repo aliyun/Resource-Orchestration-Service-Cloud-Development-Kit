@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SAG::QosCar</code>, which is used to create a traffic throttling rule for a quality of service (QoS) policy.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:24.060Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:30.596Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.QosCar")
 public class QosCar extends com.aliyun.ros.cdk.core.Resource {
 

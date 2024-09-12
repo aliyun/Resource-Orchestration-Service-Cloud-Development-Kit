@@ -11,11 +11,6 @@ type ControlPolicyProps struct {
 	// drop: rejected
 	// log: Observation.
 	AclAction interface{} `field:"required" json:"aclAction" yaml:"aclAction"`
-	// Property applicationName: Application types supported by the security policy.
-	//
-	// The following types of applications are supported: ANY, HTTP, HTTPS, MySQL, SMTP, SMTPS, RDP, VNC, SSH, Redis, MQTT, MongoDB, Memcache, SSL
-	// NOTE ANY indicates that the policy is applied to all types of applications.
-	ApplicationName interface{} `field:"required" json:"applicationName" yaml:"applicationName"`
 	// Property description: Security access control policy description information.
 	Description interface{} `field:"required" json:"description" yaml:"description"`
 	// Property destination: Security Access Control destination address policy.
@@ -59,6 +54,14 @@ type ControlPolicyProps struct {
 	// group: source address book
 	// location: the source area.
 	SourceType interface{} `field:"required" json:"sourceType" yaml:"sourceType"`
+	// Property applicationName: Application types supported by the security policy.
+	//
+	// The following types of applications are supported: ANY, HTTP, HTTPS, MySQL, SMTP, SMTPS, RDP, VNC, SSH, Redis, MQTT, MongoDB, Memcache, SSL
+	// NOTE ANY indicates that the policy is applied to all types of applications.
+	// Either ApplicationNameList or ApplicationName must be passed, not both.
+	ApplicationName interface{} `field:"optional" json:"applicationName" yaml:"applicationName"`
+	// Property applicationNameList: List of application types supported by the access control policy.
+	ApplicationNameList interface{} `field:"optional" json:"applicationNameList" yaml:"applicationNameList"`
 	// Property destPort: Security access control policy access traffic destination port.
 	//
 	// Note When DestPortType to port, set the item.
@@ -72,9 +75,65 @@ type ControlPolicyProps struct {
 	// port: Port
 	// group: port address book.
 	DestPortType interface{} `field:"optional" json:"destPortType" yaml:"destPortType"`
+	// Property domainResolveType: The domain name resolution method of the access control policy.
+	//
+	// Value:
+	// - FQDN: Based on FQDN
+	// - DNS: Based on DNS dynamic resolution
+	// - FQDN_AND_DNS: Based on FQDN and DNS dynamic resolution.
+	DomainResolveType interface{} `field:"optional" json:"domainResolveType" yaml:"domainResolveType"`
+	// Property endTime: The end time of the policy validity period for an access control policy.
+	//
+	// It is represented in a second-level timestamp format. It must be the whole hour or half hour, and at least half an hour greater than the start time.
+	// Notes: When RepeatType is Permanent, EndTime is empty. When RepeatType is None, Daily, Weekly, Monthly, EndTime must havea value, and you need to set the end time.
+	EndTime interface{} `field:"optional" json:"endTime" yaml:"endTime"`
+	// Property ipVersion: IP version.
+	//
+	// Valid values:
+	// - 4: IPv4
+	// - 6: IPv6.
+	IpVersion interface{} `field:"optional" json:"ipVersion" yaml:"ipVersion"`
 	// Property regionId: Region ID.
 	//
 	// Default to cn-hangzhou.
 	RegionId interface{} `field:"optional" json:"regionId" yaml:"regionId"`
+	// Property release: The enabled state of the access control policy.
+	//
+	// This policy is enabled by default when it is created. Valid values:
+	// - true: Access control policy is enabled
+	// - false: Access control policy is not enabled.
+	Release interface{} `field:"optional" json:"release" yaml:"release"`
+	// Property repeatDays: A collection of repeated dates of policy validity for an access control policy.
+	//
+	// When RepeatType is Permanent, None, and Daily, RepeatDays is an empty set. For example: []
+	// When RepeatType is Weekly, RepeatDays cannot be empty. Example: [0, 6]
+	// Notes: When RepeatType is set to Weekly, RepeatDays is not allowed.
+	// When RepeatType is Monthly, RepeatDays cannot be empty. Examples: [1, 31]
+	// Notes: When RepeatType is set to Monthly, RepeatDays is not allowed to repeat.
+	RepeatDays interface{} `field:"optional" json:"repeatDays" yaml:"repeatDays"`
+	// Property repeatEndTime: The repeated end time of the policy validity period for an access control policy.
+	//
+	// For example: 08:00, must be the hour or half time, and less than the repeat start time at least half an hour.
+	// Notes: When RepeatType is Permanent and None, RepeatEndTime is empty. When RepeatType is Daily, Weekly, or Monthly, RepeatEndTime musthave a value, and you need to set the repeat end time.
+	RepeatEndTime interface{} `field:"optional" json:"repeatEndTime" yaml:"repeatEndTime"`
+	// Property repeatStartTime: The repeated start time of the policy validity period for an access control policy.
+	//
+	// For example: 08:00, must be the hour or half time, and less than the repeat end time at least half an hour.
+	// Notes: When RepeatType is Permanent and None, RepeatStartTime is empty. When RepeatType is Daily, Weekly, or Monthly, RepeatStartTime must have a value, and you need to set the repeat start time.
+	RepeatStartTime interface{} `field:"optional" json:"repeatStartTime" yaml:"repeatStartTime"`
+	// Property repeatType: The repetition type of the policy validity period for an access control policy.
+	//
+	// Valid values:
+	// - Permanent (default)
+	// - None
+	// - Daily
+	// - Weekly
+	// - Monthly.
+	RepeatType interface{} `field:"optional" json:"repeatType" yaml:"repeatType"`
+	// Property startTime: The start time of the policy validity period for an access control policy.
+	//
+	// It is represented in a second-level timestamp format. It must be the whole hour or half hour, and at least half an hour less than the end time.
+	// Notes: When RepeatType is Permanent, StartTime is empty. When RepeatType is None, Daily, Weekly, Monthly, StartTime must have a value, and you need to set the start time.
+	StartTime interface{} `field:"optional" json:"startTime" yaml:"startTime"`
 }
 

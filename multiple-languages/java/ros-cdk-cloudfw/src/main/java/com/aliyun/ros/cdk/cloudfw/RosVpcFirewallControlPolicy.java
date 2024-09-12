@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudfw;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CLOUDFW::VpcFirewallControlPolicy</code>, which is used to add an access control policy to a specified policy group for a Virtual Private Cloud (VPC) firewall.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:18.413Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:24.328Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.RosVpcFirewallControlPolicy")
 public class RosVpcFirewallControlPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -67,24 +67,6 @@ public class RosVpcFirewallControlPolicy extends com.aliyun.ros.cdk.core.RosReso
      */
     public void setAclAction(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "aclAction", java.util.Objects.requireNonNull(value, "aclAction is required"));
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getApplicationName() {
-        return software.amazon.jsii.Kernel.get(this, "applicationName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setApplicationName(final @org.jetbrains.annotations.NotNull java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "applicationName", java.util.Objects.requireNonNull(value, "applicationName is required"));
-    }
-
-    /**
-     */
-    public void setApplicationName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "applicationName", java.util.Objects.requireNonNull(value, "applicationName is required"));
     }
 
     /**
@@ -241,6 +223,58 @@ public class RosVpcFirewallControlPolicy extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getApplicationName() {
+        return software.amazon.jsii.Kernel.get(this, "applicationName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setApplicationName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "applicationName", value);
+    }
+
+    /**
+     */
+    public void setApplicationName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "applicationName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getApplicationNameList() {
+        return software.amazon.jsii.Kernel.get(this, "applicationNameList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setApplicationNameList(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "applicationNameList", value);
+    }
+
+    /**
+     */
+    public void setApplicationNameList(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "applicationNameList", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDestPort() {
         return software.amazon.jsii.Kernel.get(this, "destPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -295,6 +329,24 @@ public class RosVpcFirewallControlPolicy extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEndTime() {
+        return software.amazon.jsii.Kernel.get(this, "endTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEndTime(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "endTime", value);
+    }
+
+    /**
+     */
+    public void setEndTime(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "endTime", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getLang() {
         return software.amazon.jsii.Kernel.get(this, "lang", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -313,6 +365,24 @@ public class RosVpcFirewallControlPolicy extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMemberUid() {
+        return software.amazon.jsii.Kernel.get(this, "memberUid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setMemberUid(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "memberUid", value);
+    }
+
+    /**
+     */
+    public void setMemberUid(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "memberUid", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getRegionId() {
         return software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -327,6 +397,130 @@ public class RosVpcFirewallControlPolicy extends com.aliyun.ros.cdk.core.RosReso
      */
     public void setRegionId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "regionId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRelease() {
+        return software.amazon.jsii.Kernel.get(this, "release", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRelease(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "release", value);
+    }
+
+    /**
+     */
+    public void setRelease(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "release", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRepeatDays() {
+        return software.amazon.jsii.Kernel.get(this, "repeatDays", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRepeatDays(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "repeatDays", value);
+    }
+
+    /**
+     */
+    public void setRepeatDays(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.Number)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.Number, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "repeatDays", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRepeatEndTime() {
+        return software.amazon.jsii.Kernel.get(this, "repeatEndTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRepeatEndTime(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "repeatEndTime", value);
+    }
+
+    /**
+     */
+    public void setRepeatEndTime(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "repeatEndTime", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRepeatStartTime() {
+        return software.amazon.jsii.Kernel.get(this, "repeatStartTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRepeatStartTime(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "repeatStartTime", value);
+    }
+
+    /**
+     */
+    public void setRepeatStartTime(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "repeatStartTime", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRepeatType() {
+        return software.amazon.jsii.Kernel.get(this, "repeatType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRepeatType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "repeatType", value);
+    }
+
+    /**
+     */
+    public void setRepeatType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "repeatType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getStartTime() {
+        return software.amazon.jsii.Kernel.get(this, "startTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setStartTime(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "startTime", value);
+    }
+
+    /**
+     */
+    public void setStartTime(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "startTime", value);
     }
 
     /**
@@ -369,23 +563,6 @@ public class RosVpcFirewallControlPolicy extends com.aliyun.ros.cdk.core.RosReso
          */
         public Builder aclAction(final com.aliyun.ros.cdk.core.IResolvable aclAction) {
             this.props.aclAction(aclAction);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param applicationName This parameter is required.
-         */
-        public Builder applicationName(final java.lang.String applicationName) {
-            this.props.applicationName(applicationName);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param applicationName This parameter is required.
-         */
-        public Builder applicationName(final com.aliyun.ros.cdk.core.IResolvable applicationName) {
-            this.props.applicationName(applicationName);
             return this;
         }
 
@@ -527,6 +704,40 @@ public class RosVpcFirewallControlPolicy extends com.aliyun.ros.cdk.core.RosReso
 
         /**
          * @return {@code this}
+         * @param applicationName This parameter is required.
+         */
+        public Builder applicationName(final java.lang.String applicationName) {
+            this.props.applicationName(applicationName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param applicationName This parameter is required.
+         */
+        public Builder applicationName(final com.aliyun.ros.cdk.core.IResolvable applicationName) {
+            this.props.applicationName(applicationName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param applicationNameList This parameter is required.
+         */
+        public Builder applicationNameList(final com.aliyun.ros.cdk.core.IResolvable applicationNameList) {
+            this.props.applicationNameList(applicationNameList);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param applicationNameList This parameter is required.
+         */
+        public Builder applicationNameList(final java.util.List<? extends java.lang.Object> applicationNameList) {
+            this.props.applicationNameList(applicationNameList);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param destPort This parameter is required.
          */
         public Builder destPort(final java.lang.String destPort) {
@@ -578,6 +789,23 @@ public class RosVpcFirewallControlPolicy extends com.aliyun.ros.cdk.core.RosReso
 
         /**
          * @return {@code this}
+         * @param endTime This parameter is required.
+         */
+        public Builder endTime(final java.lang.Number endTime) {
+            this.props.endTime(endTime);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param endTime This parameter is required.
+         */
+        public Builder endTime(final com.aliyun.ros.cdk.core.IResolvable endTime) {
+            this.props.endTime(endTime);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param lang This parameter is required.
          */
         public Builder lang(final java.lang.String lang) {
@@ -595,6 +823,23 @@ public class RosVpcFirewallControlPolicy extends com.aliyun.ros.cdk.core.RosReso
 
         /**
          * @return {@code this}
+         * @param memberUid This parameter is required.
+         */
+        public Builder memberUid(final java.lang.String memberUid) {
+            this.props.memberUid(memberUid);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param memberUid This parameter is required.
+         */
+        public Builder memberUid(final com.aliyun.ros.cdk.core.IResolvable memberUid) {
+            this.props.memberUid(memberUid);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param regionId This parameter is required.
          */
         public Builder regionId(final java.lang.String regionId) {
@@ -607,6 +852,108 @@ public class RosVpcFirewallControlPolicy extends com.aliyun.ros.cdk.core.RosReso
          */
         public Builder regionId(final com.aliyun.ros.cdk.core.IResolvable regionId) {
             this.props.regionId(regionId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param release This parameter is required.
+         */
+        public Builder release(final java.lang.Boolean release) {
+            this.props.release(release);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param release This parameter is required.
+         */
+        public Builder release(final com.aliyun.ros.cdk.core.IResolvable release) {
+            this.props.release(release);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param repeatDays This parameter is required.
+         */
+        public Builder repeatDays(final com.aliyun.ros.cdk.core.IResolvable repeatDays) {
+            this.props.repeatDays(repeatDays);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param repeatDays This parameter is required.
+         */
+        public Builder repeatDays(final java.util.List<? extends java.lang.Object> repeatDays) {
+            this.props.repeatDays(repeatDays);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param repeatEndTime This parameter is required.
+         */
+        public Builder repeatEndTime(final java.lang.String repeatEndTime) {
+            this.props.repeatEndTime(repeatEndTime);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param repeatEndTime This parameter is required.
+         */
+        public Builder repeatEndTime(final com.aliyun.ros.cdk.core.IResolvable repeatEndTime) {
+            this.props.repeatEndTime(repeatEndTime);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param repeatStartTime This parameter is required.
+         */
+        public Builder repeatStartTime(final java.lang.String repeatStartTime) {
+            this.props.repeatStartTime(repeatStartTime);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param repeatStartTime This parameter is required.
+         */
+        public Builder repeatStartTime(final com.aliyun.ros.cdk.core.IResolvable repeatStartTime) {
+            this.props.repeatStartTime(repeatStartTime);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param repeatType This parameter is required.
+         */
+        public Builder repeatType(final java.lang.String repeatType) {
+            this.props.repeatType(repeatType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param repeatType This parameter is required.
+         */
+        public Builder repeatType(final com.aliyun.ros.cdk.core.IResolvable repeatType) {
+            this.props.repeatType(repeatType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param startTime This parameter is required.
+         */
+        public Builder startTime(final java.lang.Number startTime) {
+            this.props.startTime(startTime);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param startTime This parameter is required.
+         */
+        public Builder startTime(final com.aliyun.ros.cdk.core.IResolvable startTime) {
+            this.props.startTime(startTime);
             return this;
         }
 

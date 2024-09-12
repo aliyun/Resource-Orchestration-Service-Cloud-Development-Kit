@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::TransitRouterVpcAttachment</code>, which is used to connect a virtual private cloud (​VPC) to an Enterprise Edition transit router.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:18.246Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:24.106Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.TransitRouterVpcAttachment")
 public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource {
 

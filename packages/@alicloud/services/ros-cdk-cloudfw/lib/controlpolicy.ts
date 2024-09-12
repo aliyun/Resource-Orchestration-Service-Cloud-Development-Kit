@@ -18,13 +18,6 @@ export interface ControlPolicyProps {
     readonly aclAction: string | ros.IResolvable;
 
     /**
-     * Property applicationName: Application types supported by the security policy.
-     * The following types of applications are supported: ANY, HTTP, HTTPS, MySQL, SMTP, SMTPS, RDP, VNC, SSH, Redis, MQTT, MongoDB, Memcache, SSL
-     * NOTE ANY indicates that the policy is applied to all types of applications.
-     */
-    readonly applicationName: string | ros.IResolvable;
-
-    /**
      * Property description: Security access control policy description information.
      */
     readonly description: string | ros.IResolvable;
@@ -83,6 +76,19 @@ export interface ControlPolicyProps {
     readonly sourceType: string | ros.IResolvable;
 
     /**
+     * Property applicationName: Application types supported by the security policy.
+     * The following types of applications are supported: ANY, HTTP, HTTPS, MySQL, SMTP, SMTPS, RDP, VNC, SSH, Redis, MQTT, MongoDB, Memcache, SSL
+     * NOTE ANY indicates that the policy is applied to all types of applications.
+     * Either ApplicationNameList or ApplicationName must be passed, not both.
+     */
+    readonly applicationName?: string | ros.IResolvable;
+
+    /**
+     * Property applicationNameList: List of application types supported by the access control policy.
+     */
+    readonly applicationNameList?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * Property destPort: Security access control policy access traffic destination port.
      * Note When DestPortType to port, set the item.
      */
@@ -102,9 +108,75 @@ export interface ControlPolicyProps {
     readonly destPortType?: string | ros.IResolvable;
 
     /**
+     * Property domainResolveType: The domain name resolution method of the access control policy. Value:
+     * - FQDN: Based on FQDN
+     * - DNS: Based on DNS dynamic resolution
+     * - FQDN_AND_DNS: Based on FQDN and DNS dynamic resolution
+     */
+    readonly domainResolveType?: string | ros.IResolvable;
+
+    /**
+     * Property endTime: The end time of the policy validity period for an access control policy. It is represented in a second-level timestamp format. It must be the whole hour or half hour, and at least half an hour greater than the start time.
+     * Notes: When RepeatType is Permanent, EndTime is empty. When RepeatType is None, Daily, Weekly, Monthly, EndTime must havea value, and you need to set the end time.
+     */
+    readonly endTime?: number | ros.IResolvable;
+
+    /**
+     * Property ipVersion: IP version. Valid values:
+     * - 4: IPv4
+     * - 6: IPv6
+     */
+    readonly ipVersion?: string | ros.IResolvable;
+
+    /**
      * Property regionId: Region ID. Default to cn-hangzhou.
      */
     readonly regionId?: string | ros.IResolvable;
+
+    /**
+     * Property release: The enabled state of the access control policy. This policy is enabled by default when it is created. Valid values:
+     * - true: Access control policy is enabled
+     * - false: Access control policy is not enabled
+     */
+    readonly release?: boolean | ros.IResolvable;
+
+    /**
+     * Property repeatDays: A collection of repeated dates of policy validity for an access control policy.
+     * When RepeatType is Permanent, None, and Daily, RepeatDays is an empty set. For example: []
+     * When RepeatType is Weekly, RepeatDays cannot be empty. Example: [0, 6]
+     * Notes: When RepeatType is set to Weekly, RepeatDays is not allowed.
+     * When RepeatType is Monthly, RepeatDays cannot be empty. Examples: [1, 31]
+     * Notes: When RepeatType is set to Monthly, RepeatDays is not allowed to repeat.
+     */
+    readonly repeatDays?: Array<number | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property repeatEndTime: The repeated end time of the policy validity period for an access control policy. For example: 08:00, must be the hour or half time, and less than the repeat start time at least half an hour.
+     * Notes: When RepeatType is Permanent and None, RepeatEndTime is empty. When RepeatType is Daily, Weekly, or Monthly, RepeatEndTime musthave a value, and you need to set the repeat end time.
+     */
+    readonly repeatEndTime?: string | ros.IResolvable;
+
+    /**
+     * Property repeatStartTime: The repeated start time of the policy validity period for an access control policy. For example: 08:00, must be the hour or half time, and less than the repeat end time at least half an hour.
+     * Notes: When RepeatType is Permanent and None, RepeatStartTime is empty. When RepeatType is Daily, Weekly, or Monthly, RepeatStartTime must have a value, and you need to set the repeat start time.
+     */
+    readonly repeatStartTime?: string | ros.IResolvable;
+
+    /**
+     * Property repeatType: The repetition type of the policy validity period for an access control policy. Valid values:
+     * - Permanent (default)
+     * - None
+     * - Daily
+     * - Weekly
+     * - Monthly.
+     */
+    readonly repeatType?: string | ros.IResolvable;
+
+    /**
+     * Property startTime: The start time of the policy validity period for an access control policy. It is represented in a second-level timestamp format. It must be the whole hour or half hour, and at least half an hour less than the end time.
+     * Notes: When RepeatType is Permanent, StartTime is empty. When RepeatType is None, Daily, Weekly, Monthly, StartTime must have a value, and you need to set the start time.
+     */
+    readonly startTime?: number | ros.IResolvable;
 }
 
 /**
@@ -137,17 +209,27 @@ export class ControlPolicy extends ros.Resource {
 
         const rosControlPolicy = new RosControlPolicy(this, id,  {
             destination: props.destination,
-            applicationName: props.applicationName,
             description: props.description,
+            applicationName: props.applicationName,
+            endTime: props.endTime,
+            ipVersion: props.ipVersion,
             sourceType: props.sourceType,
             destPort: props.destPort,
+            applicationNameList: props.applicationNameList,
+            startTime: props.startTime,
             aclAction: props.aclAction,
             destinationType: props.destinationType,
             direction: props.direction,
             source: props.source,
             destPortType: props.destPortType,
             proto: props.proto,
+            repeatEndTime: props.repeatEndTime,
+            domainResolveType: props.domainResolveType,
+            repeatDays: props.repeatDays,
+            repeatType: props.repeatType,
             regionId: props.regionId === undefined || props.regionId === null ? 'cn-hangzhou' : props.regionId,
+            repeatStartTime: props.repeatStartTime,
+            release: props.release,
             newOrder: props.newOrder,
             destPortGroup: props.destPortGroup,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

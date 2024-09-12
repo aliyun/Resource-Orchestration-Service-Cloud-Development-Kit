@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.polardb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbcluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:23.073Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:29.358Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBClusterProps")
 @software.amazon.jsii.Jsii.Proxy(DBClusterProps.Jsii$Proxy.class)
 public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -27,7 +27,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
      * <p>
      * Valid values:
      * MySQL: 5.6, 5.7 or 8.0
-     * PostgreSQL: 11, 14
+     * PostgreSQL: 11, 14, 15
      * Oracle: 11, 14
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDbVersion();
@@ -118,7 +118,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property creationCategory: Cluster series.
      * <p>
-     * The value could be Normal (standard version), Basic and ArchiveNormal.
+     * The value could be Normal (standard version), Basic, ArchiveNormal, NormalMultimaster and SENormal.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCreationCategory() {
         return null;
@@ -134,6 +134,8 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
      * for POLARDB cluster.
      * MigrationFromRDS: migrates data from an existing ApsaraDB for RDS instance to a new ApsaraDB for POLARDB cluster. The created ApsaraDB for POLARDB cluster is in read-only mode and has binary logs enabled by default.
      * CreateGdnStandby: Create a secondary cluster.
+     * RecoverFromRecyclebin: Recovers data from the freed PolarDB cluster to the new PolarDB cluster.
+     * UpgradeFromPolarDB: Upgrade migration from PolarDB.
      * Default value: Normal.
      * Note:
      * When DBType is MySQL and DBVersion is 5.6, this parameter can be specified as CloneFromRDS or MigrationFromRDS.
@@ -285,6 +287,16 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
      * Default value: Month.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriodUnit() {
+        return null;
+    }
+
+    /**
+     * Property provisionedIops: ESSD AutoPL preconfigured read and write IOPS for cloud disk.
+     * <p>
+     * Possible values: 0-min {50,000, 1000* capacity - baseline performance}.
+     * Baseline performance =min{1,800+50* capacity, 50000}.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getProvisionedIops() {
         return null;
     }
 
@@ -451,9 +463,11 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
      * PSL5
      * PSL4
      * Valid values for Standard Edition:
+     * ESSDPL0
      * ESSDPL1
      * ESSDPL2
      * ESSDPL3
+     * ESSDAUTOPL
      * This parameter is invalid for serverless clusters.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getStorageType() {
@@ -562,6 +576,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object parameterGroupId;
         java.lang.Object period;
         java.lang.Object periodUnit;
+        java.lang.Object provisionedIops;
         java.lang.Object proxyClass;
         java.lang.Object proxyType;
         java.lang.Object renewalStatus;
@@ -635,7 +650,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
          * @param dbVersion Property dbVersion: The version of the database. This parameter is required.
          *                  Valid values:
          *                  MySQL: 5.6, 5.7 or 8.0
-         *                  PostgreSQL: 11, 14
+         *                  PostgreSQL: 11, 14, 15
          *                  Oracle: 11, 14
          * @return {@code this}
          */
@@ -649,7 +664,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
          * @param dbVersion Property dbVersion: The version of the database. This parameter is required.
          *                  Valid values:
          *                  MySQL: 5.6, 5.7 or 8.0
-         *                  PostgreSQL: 11, 14
+         *                  PostgreSQL: 11, 14, 15
          *                  Oracle: 11, 14
          * @return {@code this}
          */
@@ -865,7 +880,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link DBClusterProps#getCreationCategory}
          * @param creationCategory Property creationCategory: Cluster series.
-         *                         The value could be Normal (standard version), Basic and ArchiveNormal.
+         *                         The value could be Normal (standard version), Basic, ArchiveNormal, NormalMultimaster and SENormal.
          * @return {@code this}
          */
         public Builder creationCategory(java.lang.String creationCategory) {
@@ -876,7 +891,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link DBClusterProps#getCreationCategory}
          * @param creationCategory Property creationCategory: Cluster series.
-         *                         The value could be Normal (standard version), Basic and ArchiveNormal.
+         *                         The value could be Normal (standard version), Basic, ArchiveNormal, NormalMultimaster and SENormal.
          * @return {@code this}
          */
         public Builder creationCategory(com.aliyun.ros.cdk.core.IResolvable creationCategory) {
@@ -894,6 +909,8 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
          *                       for POLARDB cluster.
          *                       MigrationFromRDS: migrates data from an existing ApsaraDB for RDS instance to a new ApsaraDB for POLARDB cluster. The created ApsaraDB for POLARDB cluster is in read-only mode and has binary logs enabled by default.
          *                       CreateGdnStandby: Create a secondary cluster.
+         *                       RecoverFromRecyclebin: Recovers data from the freed PolarDB cluster to the new PolarDB cluster.
+         *                       UpgradeFromPolarDB: Upgrade migration from PolarDB.
          *                       Default value: Normal.
          *                       Note:
          *                       When DBType is MySQL and DBVersion is 5.6, this parameter can be specified as CloneFromRDS or MigrationFromRDS.
@@ -915,6 +932,8 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
          *                       for POLARDB cluster.
          *                       MigrationFromRDS: migrates data from an existing ApsaraDB for RDS instance to a new ApsaraDB for POLARDB cluster. The created ApsaraDB for POLARDB cluster is in read-only mode and has binary logs enabled by default.
          *                       CreateGdnStandby: Create a secondary cluster.
+         *                       RecoverFromRecyclebin: Recovers data from the freed PolarDB cluster to the new PolarDB cluster.
+         *                       UpgradeFromPolarDB: Upgrade migration from PolarDB.
          *                       Default value: Normal.
          *                       Note:
          *                       When DBType is MySQL and DBVersion is 5.6, this parameter can be specified as CloneFromRDS or MigrationFromRDS.
@@ -1281,6 +1300,30 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder periodUnit(com.aliyun.ros.cdk.core.IResolvable periodUnit) {
             this.periodUnit = periodUnit;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBClusterProps#getProvisionedIops}
+         * @param provisionedIops Property provisionedIops: ESSD AutoPL preconfigured read and write IOPS for cloud disk.
+         *                        Possible values: 0-min {50,000, 1000* capacity - baseline performance}.
+         *                        Baseline performance =min{1,800+50* capacity, 50000}.
+         * @return {@code this}
+         */
+        public Builder provisionedIops(java.lang.Number provisionedIops) {
+            this.provisionedIops = provisionedIops;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBClusterProps#getProvisionedIops}
+         * @param provisionedIops Property provisionedIops: ESSD AutoPL preconfigured read and write IOPS for cloud disk.
+         *                        Possible values: 0-min {50,000, 1000* capacity - baseline performance}.
+         *                        Baseline performance =min{1,800+50* capacity, 50000}.
+         * @return {@code this}
+         */
+        public Builder provisionedIops(com.aliyun.ros.cdk.core.IResolvable provisionedIops) {
+            this.provisionedIops = provisionedIops;
             return this;
         }
 
@@ -1689,9 +1732,11 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
          *                    PSL5
          *                    PSL4
          *                    Valid values for Standard Edition:
+         *                    ESSDPL0
          *                    ESSDPL1
          *                    ESSDPL2
          *                    ESSDPL3
+         *                    ESSDAUTOPL
          *                    This parameter is invalid for serverless clusters.
          * @return {@code this}
          */
@@ -1707,9 +1752,11 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
          *                    PSL5
          *                    PSL4
          *                    Valid values for Standard Edition:
+         *                    ESSDPL0
          *                    ESSDPL1
          *                    ESSDPL2
          *                    ESSDPL3
+         *                    ESSDAUTOPL
          *                    This parameter is invalid for serverless clusters.
          * @return {@code this}
          */
@@ -1912,6 +1959,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object parameterGroupId;
         private final java.lang.Object period;
         private final java.lang.Object periodUnit;
+        private final java.lang.Object provisionedIops;
         private final java.lang.Object proxyClass;
         private final java.lang.Object proxyType;
         private final java.lang.Object renewalStatus;
@@ -1972,6 +2020,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.parameterGroupId = software.amazon.jsii.Kernel.get(this, "parameterGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.provisionedIops = software.amazon.jsii.Kernel.get(this, "provisionedIops", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.proxyClass = software.amazon.jsii.Kernel.get(this, "proxyClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.proxyType = software.amazon.jsii.Kernel.get(this, "proxyType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.renewalStatus = software.amazon.jsii.Kernel.get(this, "renewalStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -2033,6 +2082,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.parameterGroupId = builder.parameterGroupId;
             this.period = builder.period;
             this.periodUnit = builder.periodUnit;
+            this.provisionedIops = builder.provisionedIops;
             this.proxyClass = builder.proxyClass;
             this.proxyType = builder.proxyType;
             this.renewalStatus = builder.renewalStatus;
@@ -2198,6 +2248,11 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getPeriodUnit() {
             return this.periodUnit;
+        }
+
+        @Override
+        public final java.lang.Object getProvisionedIops() {
+            return this.provisionedIops;
         }
 
         @Override
@@ -2407,6 +2462,9 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getPeriodUnit() != null) {
                 data.set("periodUnit", om.valueToTree(this.getPeriodUnit()));
             }
+            if (this.getProvisionedIops() != null) {
+                data.set("provisionedIops", om.valueToTree(this.getProvisionedIops()));
+            }
             if (this.getProxyClass() != null) {
                 data.set("proxyClass", om.valueToTree(this.getProxyClass()));
             }
@@ -2528,6 +2586,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.parameterGroupId != null ? !this.parameterGroupId.equals(that.parameterGroupId) : that.parameterGroupId != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
+            if (this.provisionedIops != null ? !this.provisionedIops.equals(that.provisionedIops) : that.provisionedIops != null) return false;
             if (this.proxyClass != null ? !this.proxyClass.equals(that.proxyClass) : that.proxyClass != null) return false;
             if (this.proxyType != null ? !this.proxyType.equals(that.proxyType) : that.proxyType != null) return false;
             if (this.renewalStatus != null ? !this.renewalStatus.equals(that.renewalStatus) : that.renewalStatus != null) return false;
@@ -2585,6 +2644,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.parameterGroupId != null ? this.parameterGroupId.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.periodUnit != null ? this.periodUnit.hashCode() : 0);
+            result = 31 * result + (this.provisionedIops != null ? this.provisionedIops.hashCode() : 0);
             result = 31 * result + (this.proxyClass != null ? this.proxyClass.hashCode() : 0);
             result = 31 * result + (this.proxyType != null ? this.proxyType.hashCode() : 0);
             result = 31 * result + (this.renewalStatus != null ? this.renewalStatus.hashCode() : 0);

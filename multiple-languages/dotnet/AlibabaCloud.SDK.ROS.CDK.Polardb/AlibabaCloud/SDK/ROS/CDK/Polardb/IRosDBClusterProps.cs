@@ -35,7 +35,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <remarks>
         /// <strong>Property</strong>: dbVersion: The version of the database. Valid values:
         /// MySQL: 5.6, 5.7 or 8.0
-        /// PostgreSQL: 11, 14
+        /// PostgreSQL: 11, 14, 15
         /// Oracle: 11, 14
         /// </remarks>
         [JsiiProperty(name: "dbVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
@@ -162,7 +162,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: creationCategory: Cluster series. The value could be Normal (standard version), Basic and ArchiveNormal.
+        /// <strong>Property</strong>: creationCategory: Cluster series. The value could be Normal (standard version), Basic, ArchiveNormal, NormalMultimaster and SENormal.
         /// </remarks>
         [JsiiProperty(name: "creationCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -182,6 +182,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// for POLARDB cluster.
         /// MigrationFromRDS: migrates data from an existing ApsaraDB for RDS instance to a new ApsaraDB for POLARDB cluster. The created ApsaraDB for POLARDB cluster is in read-only mode and has binary logs enabled by default.
         /// CreateGdnStandby: Create a secondary cluster.
+        /// RecoverFromRecyclebin: Recovers data from the freed PolarDB cluster to the new PolarDB cluster.
+        /// UpgradeFromPolarDB: Upgrade migration from PolarDB.
         /// Default value: Normal.
         /// Note:
         /// When DBType is MySQL and DBVersion is 5.6, this parameter can be specified as CloneFromRDS or MigrationFromRDS.
@@ -419,6 +421,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? PeriodUnit
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: provisionedIops: ESSD AutoPL preconfigured read and write IOPS for cloud disk. Possible values: 0-min {50,000, 1000* capacity - baseline performance}.
+        /// Baseline performance =min{1,800+50* capacity, 50000}.
+        /// </remarks>
+        [JsiiProperty(name: "provisionedIops", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ProvisionedIops
         {
             get
             {
@@ -677,9 +693,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// PSL5
         /// PSL4
         /// Valid values for Standard Edition:
+        /// ESSDPL0
         /// ESSDPL1
         /// ESSDPL2
         /// ESSDPL3
+        /// ESSDAUTOPL
         /// This parameter is invalid for serverless clusters.
         /// </remarks>
         [JsiiProperty(name: "storageType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -824,7 +842,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// <remarks>
             /// <strong>Property</strong>: dbVersion: The version of the database. Valid values:
             /// MySQL: 5.6, 5.7 or 8.0
-            /// PostgreSQL: 11, 14
+            /// PostgreSQL: 11, 14, 15
             /// Oracle: 11, 14
             /// </remarks>
             [JsiiProperty(name: "dbVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
@@ -930,7 +948,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: creationCategory: Cluster series. The value could be Normal (standard version), Basic and ArchiveNormal.
+            /// <strong>Property</strong>: creationCategory: Cluster series. The value could be Normal (standard version), Basic, ArchiveNormal, NormalMultimaster and SENormal.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "creationCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -947,6 +965,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// for POLARDB cluster.
             /// MigrationFromRDS: migrates data from an existing ApsaraDB for RDS instance to a new ApsaraDB for POLARDB cluster. The created ApsaraDB for POLARDB cluster is in read-only mode and has binary logs enabled by default.
             /// CreateGdnStandby: Create a secondary cluster.
+            /// RecoverFromRecyclebin: Recovers data from the freed PolarDB cluster to the new PolarDB cluster.
+            /// UpgradeFromPolarDB: Upgrade migration from PolarDB.
             /// Default value: Normal.
             /// Note:
             /// When DBType is MySQL and DBVersion is 5.6, this parameter can be specified as CloneFromRDS or MigrationFromRDS.
@@ -1139,6 +1159,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             [JsiiOptional]
             [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PeriodUnit
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: provisionedIops: ESSD AutoPL preconfigured read and write IOPS for cloud disk. Possible values: 0-min {50,000, 1000* capacity - baseline performance}.
+            /// Baseline performance =min{1,800+50* capacity, 50000}.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "provisionedIops", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ProvisionedIops
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -1343,9 +1374,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// PSL5
             /// PSL4
             /// Valid values for Standard Edition:
+            /// ESSDPL0
             /// ESSDPL1
             /// ESSDPL2
             /// ESSDPL3
+            /// ESSDAUTOPL
             /// This parameter is invalid for serverless clusters.
             /// </remarks>
             [JsiiOptional]

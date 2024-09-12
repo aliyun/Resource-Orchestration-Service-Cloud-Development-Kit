@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.kms.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kms-networkrules
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:22.204Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:28.245Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.datasource.NetworkRulesProps")
 @software.amazon.jsii.Jsii.Proxy(NetworkRulesProps.Jsii$Proxy.class)
 public interface NetworkRulesProps extends software.amazon.jsii.JsiiSerializable {

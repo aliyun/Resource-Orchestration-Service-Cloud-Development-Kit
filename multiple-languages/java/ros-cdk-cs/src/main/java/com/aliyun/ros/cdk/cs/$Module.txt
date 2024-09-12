@@ -20,6 +20,7 @@
 @alicloud/ros-cdk-cs.ManagedKubernetesClusterProps=com.aliyun.ros.cdk.cs.ManagedKubernetesClusterProps
 @alicloud/ros-cdk-cs.RosASKCluster=com.aliyun.ros.cdk.cs.RosASKCluster
 @alicloud/ros-cdk-cs.RosASKCluster.AddonsProperty=com.aliyun.ros.cdk.cs.RosASKCluster$AddonsProperty
+@alicloud/ros-cdk-cs.RosASKCluster.DeleteOptionsProperty=com.aliyun.ros.cdk.cs.RosASKCluster$DeleteOptionsProperty
 @alicloud/ros-cdk-cs.RosASKCluster.TagsProperty=com.aliyun.ros.cdk.cs.RosASKCluster$TagsProperty
 @alicloud/ros-cdk-cs.RosASKClusterProps=com.aliyun.ros.cdk.cs.RosASKClusterProps
 @alicloud/ros-cdk-cs.RosAnyCluster=com.aliyun.ros.cdk.cs.RosAnyCluster

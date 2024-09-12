@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::GA::Acl</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:21.793Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:27.732Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.datasource.RosAcl")
 public class RosAcl extends com.aliyun.ros.cdk.core.RosResource {
 
