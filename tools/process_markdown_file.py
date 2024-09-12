@@ -57,6 +57,9 @@ def write_overview(path):
         file.write('|Typescript|"devDependencies": {{<br>&nbsp;&nbsp;&nbsp;&nbsp;"{}": "^{}"<br>}}|\n'
                    .format(json_content['name'],
                            json_content['version']))
+        file.write('|Go|github.com/alibabacloud-go/ros-cdk/{} v{}|'
+                   .format(json_content['jsii']['targets']['go']['packageName'],
+                           json_content['version']))
 
 
 def process_markdown_file():

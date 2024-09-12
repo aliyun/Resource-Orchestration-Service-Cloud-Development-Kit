@@ -114,6 +114,8 @@ generate_webs() {
     mkdir -p ${DOCDIR}/csharp
     rm -fr ${DOCDIR}/typescript
     mkdir -p ${DOCDIR}/typescript
+    rm -fr ${DOCDIR}/go
+    mkdir -p ${DOCDIR}/go
 
     # Split out jsii and non-jsii packages. Jsii packages will be built all at once.
     # Non-jsii packages will be run individually.
@@ -124,12 +126,13 @@ generate_webs() {
     do
       echo "generate docs on ->" + $line
       cd $line
-      jsii-docgen -o docs/API -l java -l python -l typescript -l csharp
+      npx jsii-docgen -o docs/API -l java -l python -l typescript -l csharp -l go
       basename=$(basename "$line")
       python3 ${root}/tools/process_markdown_file.py --file_path=${line}/docs/API.python.md --output_path=${DOCDIR}/python/${basename}/
       python3 ${root}/tools/process_markdown_file.py --file_path=${line}/docs/API.java.md --output_path=${DOCDIR}/java/${basename}/
       python3 ${root}/tools/process_markdown_file.py --file_path=${line}/docs/API.csharp.md --output_path=${DOCDIR}/csharp/${basename}/
       python3 ${root}/tools/process_markdown_file.py --file_path=${line}/docs/API.typescript.md --output_path=${DOCDIR}/typescript/${basename}/
+      python3 ${root}/tools/process_markdown_file.py --file_path=${line}/docs/API.go.md --output_path=${DOCDIR}/go/${basename}/
       rm -rf docs/
     done
 
@@ -145,6 +148,7 @@ generate_webs() {
     zip -r java.zip java/*
     zip -r python.zip python/*
     zip -r typescript.zip typescript/*
+    zip -r go.zip go/*
     zip -r search.zip search/*
 #    zip -r site.zip site/*
 }

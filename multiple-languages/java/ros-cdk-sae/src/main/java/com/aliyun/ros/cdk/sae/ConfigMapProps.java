@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.sae;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-configmap
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:23.989Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:30.506Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.ConfigMapProps")
 @software.amazon.jsii.Jsii.Proxy(ConfigMapProps.Jsii$Proxy.class)
 public interface ConfigMapProps extends software.amazon.jsii.JsiiSerializable {

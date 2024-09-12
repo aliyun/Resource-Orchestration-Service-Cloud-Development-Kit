@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dts;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-synchronizationjob2
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:19.609Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:25.517Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.SynchronizationJob2Props")
 @software.amazon.jsii.Jsii.Proxy(SynchronizationJob2Props.Jsii$Proxy.class)
 public interface SynchronizationJob2Props extends software.amazon.jsii.JsiiSerializable {

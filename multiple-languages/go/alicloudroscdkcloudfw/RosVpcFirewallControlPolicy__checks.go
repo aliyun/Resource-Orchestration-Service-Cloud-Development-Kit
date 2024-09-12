@@ -256,9 +256,6 @@ func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetAclActionParameters(v
 }
 
 func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetApplicationNameParameters(val interface{}) error {
-	if val == nil {
-		return fmt.Errorf("parameter val is required, but nil was provided")
-	}
 	switch val.(type) {
 	case *string:
 		// ok
@@ -269,6 +266,52 @@ func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetApplicationNameParame
 	default:
 		if !_jsii_.IsAnonymousProxy(val) {
 			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetApplicationNameListParameters(val interface{}) error {
+	switch val.(type) {
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	case *[]interface{}:
+		val := val.(*[]interface{})
+		for idx_97dfc6, v := range *val {
+			switch v.(type) {
+			case *string:
+				// ok
+			case string:
+				// ok
+			case alicloudroscdkcore.IResolvable:
+				// ok
+			default:
+				if !_jsii_.IsAnonymousProxy(v) {
+					return fmt.Errorf("parameter val[%#v] must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", idx_97dfc6, v, v)
+				}
+			}
+		}
+	case []interface{}:
+		val_ := val.([]interface{})
+		val := &val_
+		for idx_97dfc6, v := range *val {
+			switch v.(type) {
+			case *string:
+				// ok
+			case string:
+				// ok
+			case alicloudroscdkcore.IResolvable:
+				// ok
+			default:
+				if !_jsii_.IsAnonymousProxy(v) {
+					return fmt.Errorf("parameter val[%#v] must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", idx_97dfc6, v, v)
+				}
+			}
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *[]interface{}; received %#v (a %T)", val, val)
 		}
 	}
 
@@ -394,7 +437,81 @@ func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetEnableResourcePropert
 	return nil
 }
 
+func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetEndTimeParameters(val interface{}) error {
+	switch val.(type) {
+	case *float64:
+		// ok
+	case float64:
+		// ok
+	case *int:
+		// ok
+	case int:
+		// ok
+	case *uint:
+		// ok
+	case uint:
+		// ok
+	case *int8:
+		// ok
+	case int8:
+		// ok
+	case *int16:
+		// ok
+	case int16:
+		// ok
+	case *int32:
+		// ok
+	case int32:
+		// ok
+	case *int64:
+		// ok
+	case int64:
+		// ok
+	case *uint8:
+		// ok
+	case uint8:
+		// ok
+	case *uint16:
+		// ok
+	case uint16:
+		// ok
+	case *uint32:
+		// ok
+	case uint32:
+		// ok
+	case *uint64:
+		// ok
+	case uint64:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *float64, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetLangParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetMemberUidParameters(val interface{}) error {
 	switch val.(type) {
 	case *string:
 		// ok
@@ -468,6 +585,200 @@ func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetRegionIdParameters(va
 	return nil
 }
 
+func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetReleaseParameters(val interface{}) error {
+	switch val.(type) {
+	case *bool:
+		// ok
+	case bool:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *bool, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetRepeatDaysParameters(val interface{}) error {
+	switch val.(type) {
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	case *[]interface{}:
+		val := val.(*[]interface{})
+		for idx_97dfc6, v := range *val {
+			switch v.(type) {
+			case *float64:
+				// ok
+			case float64:
+				// ok
+			case *int:
+				// ok
+			case int:
+				// ok
+			case *uint:
+				// ok
+			case uint:
+				// ok
+			case *int8:
+				// ok
+			case int8:
+				// ok
+			case *int16:
+				// ok
+			case int16:
+				// ok
+			case *int32:
+				// ok
+			case int32:
+				// ok
+			case *int64:
+				// ok
+			case int64:
+				// ok
+			case *uint8:
+				// ok
+			case uint8:
+				// ok
+			case *uint16:
+				// ok
+			case uint16:
+				// ok
+			case *uint32:
+				// ok
+			case uint32:
+				// ok
+			case *uint64:
+				// ok
+			case uint64:
+				// ok
+			case alicloudroscdkcore.IResolvable:
+				// ok
+			default:
+				if !_jsii_.IsAnonymousProxy(v) {
+					return fmt.Errorf("parameter val[%#v] must be one of the allowed types: *float64, alicloudroscdkcore.IResolvable; received %#v (a %T)", idx_97dfc6, v, v)
+				}
+			}
+		}
+	case []interface{}:
+		val_ := val.([]interface{})
+		val := &val_
+		for idx_97dfc6, v := range *val {
+			switch v.(type) {
+			case *float64:
+				// ok
+			case float64:
+				// ok
+			case *int:
+				// ok
+			case int:
+				// ok
+			case *uint:
+				// ok
+			case uint:
+				// ok
+			case *int8:
+				// ok
+			case int8:
+				// ok
+			case *int16:
+				// ok
+			case int16:
+				// ok
+			case *int32:
+				// ok
+			case int32:
+				// ok
+			case *int64:
+				// ok
+			case int64:
+				// ok
+			case *uint8:
+				// ok
+			case uint8:
+				// ok
+			case *uint16:
+				// ok
+			case uint16:
+				// ok
+			case *uint32:
+				// ok
+			case uint32:
+				// ok
+			case *uint64:
+				// ok
+			case uint64:
+				// ok
+			case alicloudroscdkcore.IResolvable:
+				// ok
+			default:
+				if !_jsii_.IsAnonymousProxy(v) {
+					return fmt.Errorf("parameter val[%#v] must be one of the allowed types: *float64, alicloudroscdkcore.IResolvable; received %#v (a %T)", idx_97dfc6, v, v)
+				}
+			}
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *[]interface{}; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetRepeatEndTimeParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetRepeatStartTimeParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetRepeatTypeParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetSourceParameters(val interface{}) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
@@ -502,6 +813,63 @@ func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetSourceTypeParameters(
 	default:
 		if !_jsii_.IsAnonymousProxy(val) {
 			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetStartTimeParameters(val interface{}) error {
+	switch val.(type) {
+	case *float64:
+		// ok
+	case float64:
+		// ok
+	case *int:
+		// ok
+	case int:
+		// ok
+	case *uint:
+		// ok
+	case uint:
+		// ok
+	case *int8:
+		// ok
+	case int8:
+		// ok
+	case *int16:
+		// ok
+	case int16:
+		// ok
+	case *int32:
+		// ok
+	case int32:
+		// ok
+	case *int64:
+		// ok
+	case int64:
+		// ok
+	case *uint8:
+		// ok
+	case uint8:
+		// ok
+	case *uint16:
+		// ok
+	case uint16:
+		// ok
+	case *uint32:
+		// ok
+	case uint32:
+		// ok
+	case *uint64:
+		// ok
+	case uint64:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *float64, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
 		}
 	}
 

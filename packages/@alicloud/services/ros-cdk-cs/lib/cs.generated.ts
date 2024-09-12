@@ -27,6 +27,11 @@ export interface RosASKClusterProps {
     readonly clusterSpec?: string | ros.IResolvable;
 
     /**
+     * @Property deleteOptions: Delete options, only work for deleting resource.
+     */
+    readonly deleteOptions?: Array<RosASKCluster.DeleteOptionsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * @Property deletionProtection: Specifies whether to enable deletion protection for the cluster. 
      * After deletion protection is enabled, the cluster cannot be deleted 
      * in the ACK console or by calling API operations. Valid values:true: enables deletion protection for the cluster.
@@ -128,6 +133,7 @@ function RosASKClusterPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('kubernetesVersion', ros.validateString)(properties.kubernetesVersion));
     errors.collect(ros.propertyValidator('endpointPublicAccess', ros.validateBoolean)(properties.endpointPublicAccess));
+    errors.collect(ros.propertyValidator('deleteOptions', ros.listValidator(RosASKCluster_DeleteOptionsPropertyValidator))(properties.deleteOptions));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.vSwitchIds && (Array.isArray(properties.vSwitchIds) || (typeof properties.vSwitchIds) === 'string')) {
@@ -178,6 +184,7 @@ function rosASKClusterPropsToRosTemplate(properties: any, enableResourceProperty
       'Name': ros.stringToRosTemplate(properties.name),
       'Addons': ros.listMapper(rosASKClusterAddonsPropertyToRosTemplate)(properties.addons),
       'ClusterSpec': ros.stringToRosTemplate(properties.clusterSpec),
+      'DeleteOptions': ros.listMapper(rosASKClusterDeleteOptionsPropertyToRosTemplate)(properties.deleteOptions),
       'DeletionProtection': ros.booleanToRosTemplate(properties.deletionProtection),
       'EndpointPublicAccess': ros.booleanToRosTemplate(properties.endpointPublicAccess),
       'KubernetesVersion': ros.stringToRosTemplate(properties.kubernetesVersion),
@@ -281,6 +288,11 @@ export class RosASKCluster extends ros.RosResource {
      * Default value: ack.pro.small.
      */
     public clusterSpec: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property deleteOptions: Delete options, only work for deleting resource.
+     */
+    public deleteOptions: Array<RosASKCluster.DeleteOptionsProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property deletionProtection: Specifies whether to enable deletion protection for the cluster. 
@@ -394,6 +406,7 @@ export class RosASKCluster extends ros.RosResource {
         this.name = props.name;
         this.addons = props.addons;
         this.clusterSpec = props.clusterSpec;
+        this.deleteOptions = props.deleteOptions;
         this.deletionProtection = props.deletionProtection;
         this.endpointPublicAccess = props.endpointPublicAccess;
         this.kubernetesVersion = props.kubernetesVersion;
@@ -416,6 +429,7 @@ export class RosASKCluster extends ros.RosResource {
             name: this.name,
             addons: this.addons,
             clusterSpec: this.clusterSpec,
+            deleteOptions: this.deleteOptions,
             deletionProtection: this.deletionProtection,
             endpointPublicAccess: this.endpointPublicAccess,
             kubernetesVersion: this.kubernetesVersion,
@@ -488,6 +502,73 @@ function rosASKClusterAddonsPropertyToRosTemplate(properties: any): any {
       'Config': ros.stringToRosTemplate(properties.config),
       'Disabled': ros.booleanToRosTemplate(properties.disabled),
       'Name': ros.stringToRosTemplate(properties.name),
+    };
+}
+
+export namespace RosASKCluster {
+    /**
+     * @stability external
+     */
+    export interface DeleteOptionsProperty {
+        /**
+         * @Property deleteMode: Deletion policy of this type of resource. The value can be:
+     * - delete: delete the resource.
+     * - retain: retain the resource.
+         */
+        readonly deleteMode?: string | ros.IResolvable;
+        /**
+         * @Property resourceType: Resource type. The value can be:
+     * - SLB: SLB resource created by service. It is deleted by default but can be retained
+     * - ALB: ALB Ingress Controller Created ALB resource. It is reserved by default and can be deleted
+     * - SLS_Data: log service Project used by the cluster log function. This service is reserved by default and can be deleted
+     * - SLS_ControlPlane: Project log service used for logs of the managed cluster control plane. This service is reserved by default and can be deleted
+     * - PrivateZone: ACK Serverless PrivateZone resource created in the cluster. It is reserved by default and can be deleted
+     *
+         */
+        readonly resourceType?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DeleteOptionsProperty`
+ *
+ * @param properties - the TypeScript properties of a `DeleteOptionsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosASKCluster_DeleteOptionsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.deleteMode && (typeof properties.deleteMode) !== 'object') {
+        errors.collect(ros.propertyValidator('deleteMode', ros.validateAllowedValues)({
+          data: properties.deleteMode,
+          allowedValues: ["delete","retain"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('deleteMode', ros.validateString)(properties.deleteMode));
+    if(properties.resourceType && (typeof properties.resourceType) !== 'object') {
+        errors.collect(ros.propertyValidator('resourceType', ros.validateAllowedValues)({
+          data: properties.resourceType,
+          allowedValues: ["SLB","ALB","SLS_Data","SLS_ControlPlane","PrivateZone"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
+    return errors.wrap('supplied properties not correct for "DeleteOptionsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ASKCluster.DeleteOptions` resource
+ *
+ * @param properties - the TypeScript properties of a `DeleteOptionsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ASKCluster.DeleteOptions` resource.
+ */
+// @ts-ignore TS6133
+function rosASKClusterDeleteOptionsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosASKCluster_DeleteOptionsPropertyValidator(properties).assertSuccess();
+    return {
+      'DeleteMode': ros.stringToRosTemplate(properties.deleteMode),
+      'ResourceType': ros.stringToRosTemplate(properties.resourceType),
     };
 }
 

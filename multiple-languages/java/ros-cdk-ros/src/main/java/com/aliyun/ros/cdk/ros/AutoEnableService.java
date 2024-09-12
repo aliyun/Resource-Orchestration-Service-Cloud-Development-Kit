@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ROS::AutoEnableService</code>, which is used to activate an Alibaba Cloud service.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:23.886Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:30.392Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.AutoEnableService")
 public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
 

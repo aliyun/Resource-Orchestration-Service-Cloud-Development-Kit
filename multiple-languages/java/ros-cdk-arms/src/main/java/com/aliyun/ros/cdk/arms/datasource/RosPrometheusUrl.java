@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::ARMS::PrometheusUrl</code>, which is used to query all URLs of a cluster, including the URLs for remote read, remote write, Pushgateway, and Grafana.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:17.925Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:23.452Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.datasource.RosPrometheusUrl")
 public class RosPrometheusUrl extends com.aliyun.ros.cdk.core.RosResource {
 

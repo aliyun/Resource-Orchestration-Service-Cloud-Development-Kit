@@ -92,6 +92,10 @@ func (j *jsiiProxy_RosASKCluster) validateSetClusterSpecParameters(val interface
 	return nil
 }
 
+func (j *jsiiProxy_RosASKCluster) validateSetDeleteOptionsParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosASKCluster) validateSetDeletionProtectionParameters(val interface{}) error {
 	return nil
 }

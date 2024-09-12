@@ -8,6 +8,7 @@ type RosASKClusterProps struct {
 	Name interface{} `field:"required" json:"name" yaml:"name"`
 	Addons interface{} `field:"optional" json:"addons" yaml:"addons"`
 	ClusterSpec interface{} `field:"optional" json:"clusterSpec" yaml:"clusterSpec"`
+	DeleteOptions interface{} `field:"optional" json:"deleteOptions" yaml:"deleteOptions"`
 	DeletionProtection interface{} `field:"optional" json:"deletionProtection" yaml:"deletionProtection"`
 	EndpointPublicAccess interface{} `field:"optional" json:"endpointPublicAccess" yaml:"endpointPublicAccess"`
 	KubernetesVersion interface{} `field:"optional" json:"kubernetesVersion" yaml:"kubernetesVersion"`

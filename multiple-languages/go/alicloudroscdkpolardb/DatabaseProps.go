@@ -27,6 +27,7 @@ type DatabaseProps struct {
 	// ReadOnly: has the read-only permission on the database.
 	// DMLOnly: runs only data manipulation language (DML) statements.
 	// DDLOnly: runs only data definition language (DDL) statements.
+	// ReadIndex: has read and index permissions on the database.
 	// Default value: ReadWrite.
 	AccountPrivilege interface{} `field:"optional" json:"accountPrivilege" yaml:"accountPrivilege"`
 	// Property collate: A locale setting that specifies the collation for newly created databases.

@@ -28,6 +28,11 @@ export interface ASKClusterProps {
     readonly clusterSpec?: string | ros.IResolvable;
 
     /**
+     * Property deleteOptions: Delete options, only work for deleting resource.
+     */
+    readonly deleteOptions?: Array<RosASKCluster.DeleteOptionsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * Property deletionProtection: Specifies whether to enable deletion protection for the cluster. 
      * After deletion protection is enabled, the cluster cannot be deleted 
      * in the ACK console or by calling API operations. Valid values:true: enables deletion protection for the cluster.
@@ -198,6 +203,7 @@ export class ASKCluster extends ros.Resource {
         const rosASKCluster = new RosASKCluster(this, id,  {
             kubernetesVersion: props.kubernetesVersion,
             endpointPublicAccess: props.endpointPublicAccess === undefined || props.endpointPublicAccess === null ? true : props.endpointPublicAccess,
+            deleteOptions: props.deleteOptions,
             zoneId: props.zoneId,
             resourceGroupId: props.resourceGroupId,
             vSwitchIds: props.vSwitchIds,

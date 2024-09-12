@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::ResourceMetricRule</code>, which is used to create an alert rule for a metric of a resource.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:18.617Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:24.555Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.ResourceMetricRule")
 public class ResourceMetricRule extends com.aliyun.ros.cdk.core.Resource {
 

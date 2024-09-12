@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rocketmq5.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::ROCKETMQ5::ConsumerGroups</code>, which is used to query consumer groups in ApsaraMQ for RocketMQ 5.0.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:23.881Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:30.387Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq5.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq5.datasource.RosConsumerGroups")
 public class RosConsumerGroups extends com.aliyun.ros.cdk.core.RosResource {
 

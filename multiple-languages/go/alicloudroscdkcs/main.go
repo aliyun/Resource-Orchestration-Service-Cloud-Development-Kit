@@ -489,6 +489,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "attrWorkerRamRoleName", GoGetter: "AttrWorkerRamRoleName"},
 			_jsii_.MemberProperty{JsiiProperty: "clusterSpec", GoGetter: "ClusterSpec"},
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
+			_jsii_.MemberProperty{JsiiProperty: "deleteOptions", GoGetter: "DeleteOptions"},
 			_jsii_.MemberProperty{JsiiProperty: "deletionProtection", GoGetter: "DeletionProtection"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
 			_jsii_.MemberProperty{JsiiProperty: "endpointPublicAccess", GoGetter: "EndpointPublicAccess"},
@@ -534,6 +535,10 @@ func init() {
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-cs.RosASKCluster.AddonsProperty",
 		reflect.TypeOf((*RosASKCluster_AddonsProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-cs.RosASKCluster.DeleteOptionsProperty",
+		reflect.TypeOf((*RosASKCluster_DeleteOptionsProperty)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-cs.RosASKCluster.TagsProperty",

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dns.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::DNS::DomainRecords</code>, which is used to query domain name system (DNS) records.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:19.424Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:25.354Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.datasource.RosDomainRecords")
 public class RosDomainRecords extends com.aliyun.ros.cdk.core.RosResource {
 

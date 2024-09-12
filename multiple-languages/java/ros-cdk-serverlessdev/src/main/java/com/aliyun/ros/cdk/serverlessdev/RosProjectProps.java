@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.serverlessdev;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-serverlessdev-project
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:24.143Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:30.707Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.serverlessdev.$Module.class, fqn = "@alicloud/ros-cdk-serverlessdev.RosProjectProps")
 @software.amazon.jsii.Jsii.Proxy(RosProjectProps.Jsii$Proxy.class)
 public interface RosProjectProps extends software.amazon.jsii.JsiiSerializable {

@@ -50,6 +50,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: deleteOptions: Delete options, only work for deleting resource.
+        /// </remarks>
+        [JsiiProperty(name: "deleteOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosASKCluster.DeleteOptionsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DeleteOptions
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: deletionProtection: Specifies whether to enable deletion protection for the cluster.
         /// After deletion protection is enabled, the cluster cannot be deleted
         /// in the ACK console or by calling API operations. Valid values:true: enables deletion protection for the cluster.
@@ -289,6 +302,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             [JsiiOptional]
             [JsiiProperty(name: "clusterSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ClusterSpec
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: deleteOptions: Delete options, only work for deleting resource.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "deleteOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosASKCluster.DeleteOptionsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? DeleteOptions
             {
                 get => GetInstanceProperty<object?>();
             }

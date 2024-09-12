@@ -38,6 +38,7 @@ export interface DatabaseProps {
      * ReadOnly: has the read-only permission on the database.
      * DMLOnly: runs only data manipulation language (DML) statements.
      * DDLOnly: runs only data definition language (DDL) statements.
+     * ReadIndex: has read and index permissions on the database.
      * Default value: ReadWrite.
      */
     readonly accountPrivilege?: string | ros.IResolvable;

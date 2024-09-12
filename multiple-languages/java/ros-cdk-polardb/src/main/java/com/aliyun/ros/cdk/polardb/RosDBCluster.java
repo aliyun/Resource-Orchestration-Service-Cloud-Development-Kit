@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::POLARDB::DBCluster</code>, which is used to create a PolarDB cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:23.116Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:29.393Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosDBCluster")
 public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -633,6 +633,24 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setPeriodUnit(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "periodUnit", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getProvisionedIops() {
+        return software.amazon.jsii.Kernel.get(this, "provisionedIops", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setProvisionedIops(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "provisionedIops", value);
+    }
+
+    /**
+     */
+    public void setProvisionedIops(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "provisionedIops", value);
     }
 
     /**
@@ -2106,6 +2124,23 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder periodUnit(final com.aliyun.ros.cdk.core.IResolvable periodUnit) {
             this.props.periodUnit(periodUnit);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param provisionedIops This parameter is required.
+         */
+        public Builder provisionedIops(final java.lang.Number provisionedIops) {
+            this.props.provisionedIops(provisionedIops);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param provisionedIops This parameter is required.
+         */
+        public Builder provisionedIops(final com.aliyun.ros.cdk.core.IResolvable provisionedIops) {
+            this.props.provisionedIops(provisionedIops);
             return this;
         }
 

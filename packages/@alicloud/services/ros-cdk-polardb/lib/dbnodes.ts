@@ -25,9 +25,24 @@ export interface DBNodesProps {
     readonly dbNodeType?: string | ros.IResolvable;
 
     /**
+     * Property endpointBindList: Address IDs that specifies the cluster connection address to which the new node should join.
+     */
+    readonly endpointBindList?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * Property imciSwitch: Specifies whether to enable the In-Memory Column Index (IMCI) feature.
      */
     readonly imciSwitch?: string | ros.IResolvable;
+
+    /**
+     * Property plannedEndTime: The latest time at which a new node task can be added to start executing a timed (that is, within the target time period). The format is YYYY-MM-DDThh:mm:ssZ (UTC).
+     */
+    readonly plannedEndTime?: string | ros.IResolvable;
+
+    /**
+     * Property plannedStartTime: The earliest time at which a new node task can be added to start executing a timed (that is, within the target time period). The format is YYYY-MM-DDThh:mm:ssZ (UTC).
+     */
+    readonly plannedStartTime?: string | ros.IResolvable;
 
     /**
      * Property resourceGroupId: Resource group id.
@@ -72,8 +87,11 @@ export class DBNodes extends ros.Resource {
             resourceGroupId: props.resourceGroupId,
             amount: props.amount,
             dbClusterId: props.dbClusterId,
+            plannedStartTime: props.plannedStartTime,
+            endpointBindList: props.endpointBindList,
             imciSwitch: props.imciSwitch,
             dbNodeType: props.dbNodeType,
+            plannedEndTime: props.plannedEndTime,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDBNodes;
         this.attrDbNodeIds = rosDBNodes.attrDbNodeIds;

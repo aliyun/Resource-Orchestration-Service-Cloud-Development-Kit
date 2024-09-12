@@ -9602,6 +9602,375 @@ export class RosVirtualBorderRouter extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosVpcCidrBlockAssociation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpccidrblockassociation
+ */
+export interface RosVpcCidrBlockAssociationProps {
+
+    /**
+     * @Property vpcId: The ID of the VPC to which you want to add a secondary CIDR block.
+     */
+    readonly vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property ipamPoolId: The ID of the IP Address Manager (IPAM) pool that contains IPv4 addresses.
+     */
+    readonly ipamPoolId?: string | ros.IResolvable;
+
+    /**
+     * @Property iPv6CidrBlock: The IPv6 CIDR block to be added.
+     * Note You must and can specify only one of SecondaryCidrBlock and Ipv6CidrBlock.
+     */
+    readonly iPv6CidrBlock?: string | ros.IResolvable;
+
+    /**
+     * @Property ipv6Isp: The type of the IPv6 CIDR block. Valid values:
+     * BGP (default)
+     * ChinaMobile
+     * ChinaUnicom
+     * ChinaTelecom
+     * Note If your Alibaba Cloud account is allowed to activate single-ISP bandwidth, you can set this parameter to ChinaTelecom, ChinaUnicom, or ChinaMobile.
+     */
+    readonly ipv6Isp?: string | ros.IResolvable;
+
+    /**
+     * @Property ipVersion: The version of the IP address. Valid values:
+     * IPV4: the IPv4 address.
+     * IPV6: the IPv6 address. If you set IpVersion to IPV6 and do not specify SecondaryCidrBlock, you can add a secondary IPv6 CIDR block to the VPC.
+     */
+    readonly ipVersion?: string | ros.IResolvable;
+
+    /**
+     * @Property secondaryCidrBlock: The IPv4 CIDR block to be added. Take note of the following requirements:
+     * You can specify one of the following standard IPv4 CIDR blocks or their subnets as the secondary IPv4 CIDR block of the VPC: 192.168.0.0\/16, 172.16.0.0\/12, and 10.0.0.0\/8.
+     * You can also use a custom CIDR block other than 100.64.0.0\/10, 224.0.0.0\/4, 127.0.0.0\/8, 169.254.0.0\/16, or their subnets as the secondary IPv4 CIDR block of the VPC.
+     * The CIDR block must meet the following requirements:
+     * The CIDR block cannot start with 0. The subnet mask must be 8 to 28 bits in length.
+     * The CIDR block cannot overlap with the primary CIDR block or an existing secondary CIDR block of the VPC.
+     * Note You must and can specify only one of SecondaryCidrBlock and Ipv6CidrBlock.
+     */
+    readonly secondaryCidrBlock?: string | ros.IResolvable;
+
+    /**
+     * @Property secondaryCidrMask: Add an additional network segment to the VPC from the iPam address pool by entering a mask.
+     * Explain that the designated iPam address pool adds additional network segments to VPC, and the parameter SecondaryCidrblock or SecondaryCidrmask inputs at least one.
+     */
+    readonly secondaryCidrMask?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosVpcCidrBlockAssociationProps`
+ *
+ * @param properties - the TypeScript properties of a `RosVpcCidrBlockAssociationProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosVpcCidrBlockAssociationPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.ipv6Isp && (typeof properties.ipv6Isp) !== 'object') {
+        errors.collect(ros.propertyValidator('ipv6Isp', ros.validateAllowedValues)({
+          data: properties.ipv6Isp,
+          allowedValues: ["BGP","ChinaMobile","ChinaTelecom","ChinaUnicom"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ipv6Isp', ros.validateString)(properties.ipv6Isp));
+    errors.collect(ros.propertyValidator('secondaryCidrMask', ros.validateNumber)(properties.secondaryCidrMask));
+    errors.collect(ros.propertyValidator('secondaryCidrBlock', ros.validateString)(properties.secondaryCidrBlock));
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    if(properties.ipVersion && (typeof properties.ipVersion) !== 'object') {
+        errors.collect(ros.propertyValidator('ipVersion', ros.validateAllowedValues)({
+          data: properties.ipVersion,
+          allowedValues: ["IPV4","IPV6"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ipVersion', ros.validateString)(properties.ipVersion));
+    errors.collect(ros.propertyValidator('ipamPoolId', ros.validateString)(properties.ipamPoolId));
+    errors.collect(ros.propertyValidator('iPv6CidrBlock', ros.validateString)(properties.iPv6CidrBlock));
+    return errors.wrap('supplied properties not correct for "RosVpcCidrBlockAssociationProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpcCidrBlockAssociation` resource
+ *
+ * @param properties - the TypeScript properties of a `RosVpcCidrBlockAssociationProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpcCidrBlockAssociation` resource.
+ */
+// @ts-ignore TS6133
+function rosVpcCidrBlockAssociationPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosVpcCidrBlockAssociationPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'IpamPoolId': ros.stringToRosTemplate(properties.ipamPoolId),
+      'IPv6CidrBlock': ros.stringToRosTemplate(properties.iPv6CidrBlock),
+      'Ipv6Isp': ros.stringToRosTemplate(properties.ipv6Isp),
+      'IpVersion': ros.stringToRosTemplate(properties.ipVersion),
+      'SecondaryCidrBlock': ros.stringToRosTemplate(properties.secondaryCidrBlock),
+      'SecondaryCidrMask': ros.numberToRosTemplate(properties.secondaryCidrMask),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpcCidrBlockAssociation`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `VpcCidrBlockAssociation` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpccidrblockassociation
+ */
+export class RosVpcCidrBlockAssociation extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::VpcCidrBlockAssociation";
+
+    /**
+     * @Attribute VpcId: The ID of the VPC to which you want to add a secondary CIDR block.
+     */
+    public readonly attrVpcId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property vpcId: The ID of the VPC to which you want to add a secondary CIDR block.
+     */
+    public vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property ipamPoolId: The ID of the IP Address Manager (IPAM) pool that contains IPv4 addresses.
+     */
+    public ipamPoolId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property iPv6CidrBlock: The IPv6 CIDR block to be added.
+     * Note You must and can specify only one of SecondaryCidrBlock and Ipv6CidrBlock.
+     */
+    public iPv6CidrBlock: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipv6Isp: The type of the IPv6 CIDR block. Valid values:
+     * BGP (default)
+     * ChinaMobile
+     * ChinaUnicom
+     * ChinaTelecom
+     * Note If your Alibaba Cloud account is allowed to activate single-ISP bandwidth, you can set this parameter to ChinaTelecom, ChinaUnicom, or ChinaMobile.
+     */
+    public ipv6Isp: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipVersion: The version of the IP address. Valid values:
+     * IPV4: the IPv4 address.
+     * IPV6: the IPv6 address. If you set IpVersion to IPV6 and do not specify SecondaryCidrBlock, you can add a secondary IPv6 CIDR block to the VPC.
+     */
+    public ipVersion: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property secondaryCidrBlock: The IPv4 CIDR block to be added. Take note of the following requirements:
+     * You can specify one of the following standard IPv4 CIDR blocks or their subnets as the secondary IPv4 CIDR block of the VPC: 192.168.0.0\/16, 172.16.0.0\/12, and 10.0.0.0\/8.
+     * You can also use a custom CIDR block other than 100.64.0.0\/10, 224.0.0.0\/4, 127.0.0.0\/8, 169.254.0.0\/16, or their subnets as the secondary IPv4 CIDR block of the VPC.
+     * The CIDR block must meet the following requirements:
+     * The CIDR block cannot start with 0. The subnet mask must be 8 to 28 bits in length.
+     * The CIDR block cannot overlap with the primary CIDR block or an existing secondary CIDR block of the VPC.
+     * Note You must and can specify only one of SecondaryCidrBlock and Ipv6CidrBlock.
+     */
+    public secondaryCidrBlock: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property secondaryCidrMask: Add an additional network segment to the VPC from the iPam address pool by entering a mask.
+     * Explain that the designated iPam address pool adds additional network segments to VPC, and the parameter SecondaryCidrblock or SecondaryCidrmask inputs at least one.
+     */
+    public secondaryCidrMask: number | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosVpcCidrBlockAssociationProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosVpcCidrBlockAssociation.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrVpcId = this.getAtt('VpcId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.vpcId = props.vpcId;
+        this.ipamPoolId = props.ipamPoolId;
+        this.iPv6CidrBlock = props.iPv6CidrBlock;
+        this.ipv6Isp = props.ipv6Isp;
+        this.ipVersion = props.ipVersion;
+        this.secondaryCidrBlock = props.secondaryCidrBlock;
+        this.secondaryCidrMask = props.secondaryCidrMask;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            vpcId: this.vpcId,
+            ipamPoolId: this.ipamPoolId,
+            iPv6CidrBlock: this.iPv6CidrBlock,
+            ipv6Isp: this.ipv6Isp,
+            ipVersion: this.ipVersion,
+            secondaryCidrBlock: this.secondaryCidrBlock,
+            secondaryCidrMask: this.secondaryCidrMask,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosVpcCidrBlockAssociationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosVpcIpv6CidrAllocation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpcipv6cidrallocation
+ */
+export interface RosVpcIpv6CidrAllocationProps {
+
+    /**
+     * @Property addressPoolType: The type of the IPv6 address pool. Set the value to custom.
+     * Note This parameter is required.
+     */
+    readonly addressPoolType?: string | ros.IResolvable;
+
+    /**
+     * @Property ipv6CidrBlock: The IPv6 CIDR block that you want to reserve.
+     */
+    readonly ipv6CidrBlock?: string | ros.IResolvable;
+
+    /**
+     * @Property ipv6Isp: The type of IPv6 CIDR block. Valid values:
+     * BGP (default)
+     * BGP_International
+     * ChinaMobile
+     * ChinaUnicom
+     * ChinaTelecom
+     * ChinaMobile_L2
+     * ChinaUnicom_L2
+     * ChinaTelecom_L2
+     * Note
+     * If your Alibaba Cloud account is allowed to use single-ISP bandwidth, valid values are: ChinaTelecom, ChinaUnicom, and ChinaMobile.
+     * You can reserve only one IPv6 CIDR block of each type. After a reserved IPv6 CIDR block of a type is allocated to a VPC, you can reserve another IPv6 CIDR of the type.
+     */
+    readonly ipv6Isp?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosVpcIpv6CidrAllocationProps`
+ *
+ * @param properties - the TypeScript properties of a `RosVpcIpv6CidrAllocationProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosVpcIpv6CidrAllocationPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.ipv6Isp && (typeof properties.ipv6Isp) !== 'object') {
+        errors.collect(ros.propertyValidator('ipv6Isp', ros.validateAllowedValues)({
+          data: properties.ipv6Isp,
+          allowedValues: ["BGP","BGP_International","ChinaMobile","ChinaMobile_L2","ChinaTelecom","ChinaTelecom_L2","ChinaUnicom","ChinaUnicom_L2"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ipv6Isp', ros.validateString)(properties.ipv6Isp));
+    errors.collect(ros.propertyValidator('addressPoolType', ros.validateString)(properties.addressPoolType));
+    errors.collect(ros.propertyValidator('ipv6CidrBlock', ros.validateString)(properties.ipv6CidrBlock));
+    return errors.wrap('supplied properties not correct for "RosVpcIpv6CidrAllocationProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpcIpv6CidrAllocation` resource
+ *
+ * @param properties - the TypeScript properties of a `RosVpcIpv6CidrAllocationProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpcIpv6CidrAllocation` resource.
+ */
+// @ts-ignore TS6133
+function rosVpcIpv6CidrAllocationPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosVpcIpv6CidrAllocationPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AddressPoolType': ros.stringToRosTemplate(properties.addressPoolType),
+      'Ipv6CidrBlock': ros.stringToRosTemplate(properties.ipv6CidrBlock),
+      'Ipv6Isp': ros.stringToRosTemplate(properties.ipv6Isp),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpcIpv6CidrAllocation`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `VpcIpv6CidrAllocation` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpcipv6cidrallocation
+ */
+export class RosVpcIpv6CidrAllocation extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::VpcIpv6CidrAllocation";
+
+    /**
+     * @Attribute Ipv6CidrBlock: The IPv6 CIDR block that is reserved.
+     */
+    public readonly attrIpv6CidrBlock: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property addressPoolType: The type of the IPv6 address pool. Set the value to custom.
+     * Note This parameter is required.
+     */
+    public addressPoolType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipv6CidrBlock: The IPv6 CIDR block that you want to reserve.
+     */
+    public ipv6CidrBlock: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipv6Isp: The type of IPv6 CIDR block. Valid values:
+     * BGP (default)
+     * BGP_International
+     * ChinaMobile
+     * ChinaUnicom
+     * ChinaTelecom
+     * ChinaMobile_L2
+     * ChinaUnicom_L2
+     * ChinaTelecom_L2
+     * Note
+     * If your Alibaba Cloud account is allowed to use single-ISP bandwidth, valid values are: ChinaTelecom, ChinaUnicom, and ChinaMobile.
+     * You can reserve only one IPv6 CIDR block of each type. After a reserved IPv6 CIDR block of a type is allocated to a VPC, you can reserve another IPv6 CIDR of the type.
+     */
+    public ipv6Isp: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosVpcIpv6CidrAllocationProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosVpcIpv6CidrAllocation.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrIpv6CidrBlock = this.getAtt('Ipv6CidrBlock');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.addressPoolType = props.addressPoolType;
+        this.ipv6CidrBlock = props.ipv6CidrBlock;
+        this.ipv6Isp = props.ipv6Isp;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            addressPoolType: this.addressPoolType,
+            ipv6CidrBlock: this.ipv6CidrBlock,
+            ipv6Isp: this.ipv6Isp,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosVpcIpv6CidrAllocationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosVpcPeerConnection`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpcpeerconnection
  */

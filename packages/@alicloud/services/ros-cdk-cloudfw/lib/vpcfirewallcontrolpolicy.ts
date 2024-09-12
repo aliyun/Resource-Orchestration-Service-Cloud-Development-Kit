@@ -18,27 +18,6 @@ export interface VpcFirewallControlPolicyProps {
     readonly aclAction: string | ros.IResolvable;
 
     /**
-     * Property applicationName: The application type that the access control policy supports.
-     * Valid values: 
-     * ANY (indicates that all application types are supported) 
-     * FTP 
-     * HTTP 
-     * HTTPS 
-     * MySQL 
-     * SMTP 
-     * SMTPS 
-     * RDP 
-     * VNC 
-     * SSH 
-     * Redis 
-     * MQTT 
-     * MongoDB 
-     * Memcache 
-     * SSL
-     */
-    readonly applicationName: string | ros.IResolvable;
-
-    /**
      * Property description: The description of the access control policy.
      */
     readonly description: string | ros.IResolvable;
@@ -100,6 +79,32 @@ export interface VpcFirewallControlPolicyProps {
     readonly vpcFirewallId: string | ros.IResolvable;
 
     /**
+     * Property applicationName: The application type that the access control policy supports.
+     * Valid values: 
+     * ANY (indicates that all application types are supported) 
+     * FTP 
+     * HTTP 
+     * HTTPS 
+     * MySQL 
+     * SMTP 
+     * SMTPS 
+     * RDP 
+     * VNC 
+     * SSH 
+     * Redis 
+     * MQTT 
+     * MongoDB 
+     * Memcache 
+     * SSL
+     */
+    readonly applicationName?: string | ros.IResolvable;
+
+    /**
+     * Property applicationNameList: List of application types supported by the access control policy.
+     */
+    readonly applicationNameList?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * Property destPort: The destination port in the access control policy.
      * Note This parameter must be specified if the DestPortType parameter is set to port.
      */
@@ -119,6 +124,12 @@ export interface VpcFirewallControlPolicyProps {
     readonly destPortType?: string | ros.IResolvable;
 
     /**
+     * Property endTime: The end time of the policy validity period for an access control policy. It is represented in a second-level timestamp format. It must be the whole hour or half hour, and at least half an hour greater than the start time.
+     * Notes: When RepeatType is Permanent, EndTime is empty. When RepeatType is None, Daily, Weekly, Monthly, EndTime must havea value, and you need to set the end time.
+     */
+    readonly endTime?: number | ros.IResolvable;
+
+    /**
      * Property lang: The natural language of the request and response. Valid values:
      * zh: Chinese
      * en: English
@@ -126,9 +137,59 @@ export interface VpcFirewallControlPolicyProps {
     readonly lang?: string | ros.IResolvable;
 
     /**
+     * Property memberUid: Member account UID of current Alibaba Cloud account.
+     */
+    readonly memberUid?: string | ros.IResolvable;
+
+    /**
      * Property regionId: Region ID. Default to cn-hangzhou.
      */
     readonly regionId?: string | ros.IResolvable;
+
+    /**
+     * Property release: The enabled state of the access control policy. This policy is enabled by default when it is created. Value:
+     * - true: Access control policy is enabled
+     * - false: Access control policy is not enabled
+     */
+    readonly release?: boolean | ros.IResolvable;
+
+    /**
+     * Property repeatDays: A collection of repeated dates of policy validity for an access control policy.
+     * When RepeatType is Permanent, None, and Daily, RepeatDays is an empty set. For example: []
+     * When RepeatType is Weekly, RepeatDays cannot be empty. Example: [0, 6]
+     * Notes: When RepeatType is set to Weekly, RepeatDays is not allowed.
+     * When RepeatType is Monthly, RepeatDays cannot be empty. Examples: [1, 31]
+     * Notes: When RepeatType is set to Monthly, RepeatDays is not allowed to repeat.
+     */
+    readonly repeatDays?: Array<number | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property repeatEndTime: The repeated end time of the policy validity period for an access control policy. For example: 08:00, must be the hour or half time, and less than the repeat start time at least half an hour.
+     * Notes: When RepeatType is Permanent and None, RepeatEndTime is empty. When RepeatType is Daily, Weekly, or Monthly, RepeatEndTime musthave a value, and you need to set the repeat end time.
+     */
+    readonly repeatEndTime?: string | ros.IResolvable;
+
+    /**
+     * Property repeatStartTime: The repeated start time of the policy validity period for an access control policy. For example: 08:00, must be the hour or half time, and less than the repeat end time at least half an hour.
+     * Notes: When RepeatType is Permanent and None, RepeatStartTime is empty. When RepeatType is Daily, Weekly, or Monthly, RepeatStartTime must have a value, and you need to set the repeat start time.
+     */
+    readonly repeatStartTime?: string | ros.IResolvable;
+
+    /**
+     * Property repeatType: The repetition type of the policy validity period for an access control policy. Valid values:
+     * - Permanent (default)
+     * - None
+     * - Daily
+     * - Weekly
+     * - Monthly.
+     */
+    readonly repeatType?: string | ros.IResolvable;
+
+    /**
+     * Property startTime: The start time of the policy validity period for an access control policy. It is represented in a second-level timestamp format. It must be the whole hour or half hour, and at least half an hour less than the end time.
+     * Notes: When RepeatType is Permanent, StartTime is empty. When RepeatType is None, Daily, Weekly, Monthly, StartTime must have a value, and you need to set the start time.
+     */
+    readonly startTime?: number | ros.IResolvable;
 }
 
 /**
@@ -161,10 +222,14 @@ export class VpcFirewallControlPolicy extends ros.Resource {
 
         const rosVpcFirewallControlPolicy = new RosVpcFirewallControlPolicy(this, id,  {
             destination: props.destination,
-            applicationName: props.applicationName,
             description: props.description,
+            applicationName: props.applicationName,
+            endTime: props.endTime,
+            memberUid: props.memberUid,
             sourceType: props.sourceType,
             destPort: props.destPort,
+            applicationNameList: props.applicationNameList,
+            startTime: props.startTime,
             aclAction: props.aclAction,
             lang: props.lang,
             destinationType: props.destinationType,
@@ -172,7 +237,12 @@ export class VpcFirewallControlPolicy extends ros.Resource {
             source: props.source,
             destPortType: props.destPortType,
             proto: props.proto,
+            repeatEndTime: props.repeatEndTime,
+            repeatDays: props.repeatDays,
+            repeatType: props.repeatType,
             regionId: props.regionId === undefined || props.regionId === null ? 'cn-hangzhou' : props.regionId,
+            repeatStartTime: props.repeatStartTime,
+            release: props.release,
             newOrder: props.newOrder,
             destPortGroup: props.destPortGroup,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

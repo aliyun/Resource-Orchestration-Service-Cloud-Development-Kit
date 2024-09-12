@@ -26,6 +26,8 @@ type RosDBNodes interface {
 	SetDbNodeType(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	EndpointBindList() interface{}
+	SetEndpointBindList(val interface{})
 	ImciSwitch() interface{}
 	SetImciSwitch(val interface{})
 	// The logical ID for this stack element.
@@ -40,6 +42,10 @@ type RosDBNodes interface {
 	LogicalId() *string
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
+	PlannedEndTime() interface{}
+	SetPlannedEndTime(val interface{})
+	PlannedStartTime() interface{}
+	SetPlannedStartTime(val interface{})
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
 	//
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
@@ -247,6 +253,16 @@ func (j *jsiiProxy_RosDBNodes) EnableResourcePropertyConstraint() *bool {
 	return returns
 }
 
+func (j *jsiiProxy_RosDBNodes) EndpointBindList() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"endpointBindList",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosDBNodes) ImciSwitch() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -272,6 +288,26 @@ func (j *jsiiProxy_RosDBNodes) Node() alicloudroscdkcore.ConstructNode {
 	_jsii_.Get(
 		j,
 		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDBNodes) PlannedEndTime() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"plannedEndTime",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDBNodes) PlannedStartTime() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"plannedStartTime",
 		&returns,
 	)
 	return returns
@@ -419,6 +455,17 @@ func (j *jsiiProxy_RosDBNodes)SetEnableResourcePropertyConstraint(val *bool) {
 	)
 }
 
+func (j *jsiiProxy_RosDBNodes)SetEndpointBindList(val interface{}) {
+	if err := j.validateSetEndpointBindListParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"endpointBindList",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosDBNodes)SetImciSwitch(val interface{}) {
 	if err := j.validateSetImciSwitchParameters(val); err != nil {
 		panic(err)
@@ -426,6 +473,28 @@ func (j *jsiiProxy_RosDBNodes)SetImciSwitch(val interface{}) {
 	_jsii_.Set(
 		j,
 		"imciSwitch",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDBNodes)SetPlannedEndTime(val interface{}) {
+	if err := j.validateSetPlannedEndTimeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"plannedEndTime",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDBNodes)SetPlannedStartTime(val interface{}) {
+	if err := j.validateSetPlannedStartTimeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"plannedStartTime",
 		val,
 	)
 }

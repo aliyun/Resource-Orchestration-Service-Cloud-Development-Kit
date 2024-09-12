@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ddospro;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::DDoSPro::WebRule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:19.276Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:25.197Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ddospro.$Module.class, fqn = "@alicloud/ros-cdk-ddospro.WebRule")
 public class WebRule extends com.aliyun.ros.cdk.core.Resource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.acm.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ACM::Namespaces</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:17.141Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:22.622Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acm.$Module.class, fqn = "@alicloud/ros-cdk-acm.datasource.Namespaces")
 public class Namespaces extends com.aliyun.ros.cdk.core.Resource {
 

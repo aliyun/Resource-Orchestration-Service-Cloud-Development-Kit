@@ -99,6 +99,8 @@ type RosDBCluster interface {
 	SetPeriod(val interface{})
 	PeriodUnit() interface{}
 	SetPeriodUnit(val interface{})
+	ProvisionedIops() interface{}
+	SetProvisionedIops(val interface{})
 	ProxyClass() interface{}
 	SetProxyClass(val interface{})
 	ProxyType() interface{}
@@ -729,6 +731,16 @@ func (j *jsiiProxy_RosDBCluster) PeriodUnit() interface{} {
 	_jsii_.Get(
 		j,
 		"periodUnit",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDBCluster) ProvisionedIops() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"provisionedIops",
 		&returns,
 	)
 	return returns
@@ -1387,6 +1399,17 @@ func (j *jsiiProxy_RosDBCluster)SetPeriodUnit(val interface{}) {
 	_jsii_.Set(
 		j,
 		"periodUnit",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDBCluster)SetProvisionedIops(val interface{}) {
+	if err := j.validateSetProvisionedIopsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"provisionedIops",
 		val,
 	)
 }

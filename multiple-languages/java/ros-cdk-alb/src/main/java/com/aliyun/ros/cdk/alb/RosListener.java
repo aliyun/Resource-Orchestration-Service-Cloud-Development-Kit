@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ALB::Listener</code>, which is used to create an HTTP, HTTPS, or Quick UDP Internet Connections (QUIC) listener.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:17.539Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:22.841Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosListener")
 public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 

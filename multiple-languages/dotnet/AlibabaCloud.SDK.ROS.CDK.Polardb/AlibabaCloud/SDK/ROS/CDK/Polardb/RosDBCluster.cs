@@ -242,7 +242,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <remarks>
         /// <strong>Property</strong>: dbVersion: The version of the database. Valid values:
         /// MySQL: 5.6, 5.7 or 8.0
-        /// PostgreSQL: 11, 14
+        /// PostgreSQL: 11, 14, 15
         /// Oracle: 11, 14
         /// </remarks>
         [JsiiProperty(name: "dbVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
@@ -564,7 +564,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: creationCategory: Cluster series. The value could be Normal (standard version), Basic and ArchiveNormal.
+        /// <strong>Property</strong>: creationCategory: Cluster series. The value could be Normal (standard version), Basic, ArchiveNormal, NormalMultimaster and SENormal.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "creationCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -602,6 +602,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// for POLARDB cluster.
         /// MigrationFromRDS: migrates data from an existing ApsaraDB for RDS instance to a new ApsaraDB for POLARDB cluster. The created ApsaraDB for POLARDB cluster is in read-only mode and has binary logs enabled by default.
         /// CreateGdnStandby: Create a secondary cluster.
+        /// RecoverFromRecyclebin: Recovers data from the freed PolarDB cluster to the new PolarDB cluster.
+        /// UpgradeFromPolarDB: Upgrade migration from PolarDB.
         /// Default value: Normal.
         /// Note:
         /// When DBType is MySQL and DBVersion is 5.6, this parameter can be specified as CloneFromRDS or MigrationFromRDS.
@@ -1208,6 +1210,58 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                             break;
                         default:
                             throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: provisionedIops: ESSD AutoPL preconfigured read and write IOPS for cloud disk. Possible values: 0-min {50,000, 1000* capacity - baseline performance}.
+        /// Baseline performance =min{1,800+50* capacity, 50000}.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "provisionedIops", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ProvisionedIops
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case double cast_cd4240:
+                            break;
+                        case byte cast_cd4240:
+                            break;
+                        case decimal cast_cd4240:
+                            break;
+                        case float cast_cd4240:
+                            break;
+                        case int cast_cd4240:
+                            break;
+                        case long cast_cd4240:
+                            break;
+                        case sbyte cast_cd4240:
+                            break;
+                        case short cast_cd4240:
+                            break;
+                        case uint cast_cd4240:
+                            break;
+                        case ulong cast_cd4240:
+                            break;
+                        case ushort cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                     }
                 }
                 SetInstanceProperty(value);
@@ -1888,9 +1942,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// PSL5
         /// PSL4
         /// Valid values for Standard Edition:
+        /// ESSDPL0
         /// ESSDPL1
         /// ESSDPL2
         /// ESSDPL3
+        /// ESSDAUTOPL
         /// This parameter is invalid for serverless clusters.
         /// </remarks>
         [JsiiOptional]

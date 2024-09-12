@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.pai;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspaceresourceflink
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:22.876Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:29.161Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.RosWorkspaceResourceFlinkProps")
 @software.amazon.jsii.Jsii.Proxy(RosWorkspaceResourceFlinkProps.Jsii$Proxy.class)
 public interface RosWorkspaceResourceFlinkProps extends software.amazon.jsii.JsiiSerializable {

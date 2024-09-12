@@ -395,13 +395,6 @@ export interface RosControlPolicyProps {
     readonly aclAction: string | ros.IResolvable;
 
     /**
-     * @Property applicationName: Application types supported by the security policy.
-     * The following types of applications are supported: ANY, HTTP, HTTPS, MySQL, SMTP, SMTPS, RDP, VNC, SSH, Redis, MQTT, MongoDB, Memcache, SSL
-     * NOTE ANY indicates that the policy is applied to all types of applications.
-     */
-    readonly applicationName: string | ros.IResolvable;
-
-    /**
      * @Property description: Security access control policy description information.
      */
     readonly description: string | ros.IResolvable;
@@ -460,6 +453,19 @@ export interface RosControlPolicyProps {
     readonly sourceType: string | ros.IResolvable;
 
     /**
+     * @Property applicationName: Application types supported by the security policy.
+     * The following types of applications are supported: ANY, HTTP, HTTPS, MySQL, SMTP, SMTPS, RDP, VNC, SSH, Redis, MQTT, MongoDB, Memcache, SSL
+     * NOTE ANY indicates that the policy is applied to all types of applications.
+     * Either ApplicationNameList or ApplicationName must be passed, not both.
+     */
+    readonly applicationName?: string | ros.IResolvable;
+
+    /**
+     * @Property applicationNameList: List of application types supported by the access control policy.
+     */
+    readonly applicationNameList?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * @Property destPort: Security access control policy access traffic destination port.
      * Note When DestPortType to port, set the item.
      */
@@ -479,9 +485,75 @@ export interface RosControlPolicyProps {
     readonly destPortType?: string | ros.IResolvable;
 
     /**
+     * @Property domainResolveType: The domain name resolution method of the access control policy. Value:
+     * - FQDN: Based on FQDN
+     * - DNS: Based on DNS dynamic resolution
+     * - FQDN_AND_DNS: Based on FQDN and DNS dynamic resolution
+     */
+    readonly domainResolveType?: string | ros.IResolvable;
+
+    /**
+     * @Property endTime: The end time of the policy validity period for an access control policy. It is represented in a second-level timestamp format. It must be the whole hour or half hour, and at least half an hour greater than the start time.
+     * Notes: When RepeatType is Permanent, EndTime is empty. When RepeatType is None, Daily, Weekly, Monthly, EndTime must havea value, and you need to set the end time.
+     */
+    readonly endTime?: number | ros.IResolvable;
+
+    /**
+     * @Property ipVersion: IP version. Valid values:
+     * - 4: IPv4
+     * - 6: IPv6
+     */
+    readonly ipVersion?: string | ros.IResolvable;
+
+    /**
      * @Property regionId: Region ID. Default to cn-hangzhou.
      */
     readonly regionId?: string | ros.IResolvable;
+
+    /**
+     * @Property release: The enabled state of the access control policy. This policy is enabled by default when it is created. Valid values:
+     * - true: Access control policy is enabled
+     * - false: Access control policy is not enabled
+     */
+    readonly release?: boolean | ros.IResolvable;
+
+    /**
+     * @Property repeatDays: A collection of repeated dates of policy validity for an access control policy.
+     * When RepeatType is Permanent, None, and Daily, RepeatDays is an empty set. For example: []
+     * When RepeatType is Weekly, RepeatDays cannot be empty. Example: [0, 6]
+     * Notes: When RepeatType is set to Weekly, RepeatDays is not allowed.
+     * When RepeatType is Monthly, RepeatDays cannot be empty. Examples: [1, 31]
+     * Notes: When RepeatType is set to Monthly, RepeatDays is not allowed to repeat.
+     */
+    readonly repeatDays?: Array<number | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property repeatEndTime: The repeated end time of the policy validity period for an access control policy. For example: 08:00, must be the hour or half time, and less than the repeat start time at least half an hour.
+     * Notes: When RepeatType is Permanent and None, RepeatEndTime is empty. When RepeatType is Daily, Weekly, or Monthly, RepeatEndTime musthave a value, and you need to set the repeat end time.
+     */
+    readonly repeatEndTime?: string | ros.IResolvable;
+
+    /**
+     * @Property repeatStartTime: The repeated start time of the policy validity period for an access control policy. For example: 08:00, must be the hour or half time, and less than the repeat end time at least half an hour.
+     * Notes: When RepeatType is Permanent and None, RepeatStartTime is empty. When RepeatType is Daily, Weekly, or Monthly, RepeatStartTime must have a value, and you need to set the repeat start time.
+     */
+    readonly repeatStartTime?: string | ros.IResolvable;
+
+    /**
+     * @Property repeatType: The repetition type of the policy validity period for an access control policy. Valid values:
+     * - Permanent (default)
+     * - None
+     * - Daily
+     * - Weekly
+     * - Monthly.
+     */
+    readonly repeatType?: string | ros.IResolvable;
+
+    /**
+     * @Property startTime: The start time of the policy validity period for an access control policy. It is represented in a second-level timestamp format. It must be the whole hour or half hour, and at least half an hour less than the end time.
+     * Notes: When RepeatType is Permanent, StartTime is empty. When RepeatType is None, Daily, Weekly, Monthly, StartTime must have a value, and you need to set the start time.
+     */
+    readonly startTime?: number | ros.IResolvable;
 }
 
 /**
@@ -503,14 +575,6 @@ function RosControlPolicyPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('destination', ros.validateString)(properties.destination));
-    errors.collect(ros.propertyValidator('applicationName', ros.requiredValidator)(properties.applicationName));
-    if(properties.applicationName && (typeof properties.applicationName) !== 'object') {
-        errors.collect(ros.propertyValidator('applicationName', ros.validateAllowedValues)({
-          data: properties.applicationName,
-          allowedValues: ["ANY","HTTP","HTTPS","MQTT","Memcache","MongoDB","MySQL","RDP","Redis","SMTP","SMTPS","SSH","SSL","VNC"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('applicationName', ros.validateString)(properties.applicationName));
     errors.collect(ros.propertyValidator('description', ros.requiredValidator)(properties.description));
     if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
         errors.collect(ros.propertyValidator('description', ros.validateLength)({
@@ -520,6 +584,21 @@ function RosControlPolicyPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    if(properties.applicationName && (typeof properties.applicationName) !== 'object') {
+        errors.collect(ros.propertyValidator('applicationName', ros.validateAllowedValues)({
+          data: properties.applicationName,
+          allowedValues: ["ANY","HTTP","HTTPS","MQTT","Memcache","MongoDB","MySQL","RDP","Redis","SMTP","SMTPS","SSH","SSL","VNC"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('applicationName', ros.validateString)(properties.applicationName));
+    errors.collect(ros.propertyValidator('endTime', ros.validateNumber)(properties.endTime));
+    if(properties.ipVersion && (typeof properties.ipVersion) !== 'object') {
+        errors.collect(ros.propertyValidator('ipVersion', ros.validateAllowedValues)({
+          data: properties.ipVersion,
+          allowedValues: ["4","6"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ipVersion', ros.validateString)(properties.ipVersion));
     errors.collect(ros.propertyValidator('sourceType', ros.requiredValidator)(properties.sourceType));
     if(properties.sourceType && (typeof properties.sourceType) !== 'object') {
         errors.collect(ros.propertyValidator('sourceType', ros.validateAllowedValues)({
@@ -529,6 +608,15 @@ function RosControlPolicyPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('sourceType', ros.validateString)(properties.sourceType));
     errors.collect(ros.propertyValidator('destPort', ros.validateString)(properties.destPort));
+    if(properties.applicationNameList && (Array.isArray(properties.applicationNameList) || (typeof properties.applicationNameList) === 'string')) {
+        errors.collect(ros.propertyValidator('applicationNameList', ros.validateLength)({
+            data: properties.applicationNameList.length,
+            min: 1,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('applicationNameList', ros.listValidator(ros.validateString))(properties.applicationNameList));
+    errors.collect(ros.propertyValidator('startTime', ros.validateNumber)(properties.startTime));
     errors.collect(ros.propertyValidator('aclAction', ros.requiredValidator)(properties.aclAction));
     if(properties.aclAction && (typeof properties.aclAction) !== 'object') {
         errors.collect(ros.propertyValidator('aclAction', ros.validateAllowedValues)({
@@ -577,6 +665,29 @@ function RosControlPolicyPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('proto', ros.validateString)(properties.proto));
+    errors.collect(ros.propertyValidator('repeatEndTime', ros.validateString)(properties.repeatEndTime));
+    if(properties.domainResolveType && (typeof properties.domainResolveType) !== 'object') {
+        errors.collect(ros.propertyValidator('domainResolveType', ros.validateAllowedValues)({
+          data: properties.domainResolveType,
+          allowedValues: ["FQDN","DNS","FQDN_AND_DNS"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('domainResolveType', ros.validateString)(properties.domainResolveType));
+    if(properties.repeatDays && (Array.isArray(properties.repeatDays) || (typeof properties.repeatDays) === 'string')) {
+        errors.collect(ros.propertyValidator('repeatDays', ros.validateLength)({
+            data: properties.repeatDays.length,
+            min: 1,
+            max: 31,
+          }));
+    }
+    errors.collect(ros.propertyValidator('repeatDays', ros.listValidator(ros.validateNumber))(properties.repeatDays));
+    if(properties.repeatType && (typeof properties.repeatType) !== 'object') {
+        errors.collect(ros.propertyValidator('repeatType', ros.validateAllowedValues)({
+          data: properties.repeatType,
+          allowedValues: ["Permanent","None","Daily","Weekly","Monthly"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('repeatType', ros.validateString)(properties.repeatType));
     if(properties.regionId && (typeof properties.regionId) !== 'object') {
         errors.collect(ros.propertyValidator('regionId', ros.validateAllowedValues)({
           data: properties.regionId,
@@ -584,6 +695,8 @@ function RosControlPolicyPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('regionId', ros.validateString)(properties.regionId));
+    errors.collect(ros.propertyValidator('repeatStartTime', ros.validateString)(properties.repeatStartTime));
+    errors.collect(ros.propertyValidator('release', ros.validateBoolean)(properties.release));
     errors.collect(ros.propertyValidator('newOrder', ros.requiredValidator)(properties.newOrder));
     if(properties.newOrder && (typeof properties.newOrder) !== 'object') {
         errors.collect(ros.propertyValidator('newOrder', ros.validateRange)({
@@ -612,7 +725,6 @@ function rosControlPolicyPropsToRosTemplate(properties: any, enableResourcePrope
     }
     return {
       'AclAction': ros.stringToRosTemplate(properties.aclAction),
-      'ApplicationName': ros.stringToRosTemplate(properties.applicationName),
       'Description': ros.stringToRosTemplate(properties.description),
       'Destination': ros.stringToRosTemplate(properties.destination),
       'DestinationType': ros.stringToRosTemplate(properties.destinationType),
@@ -621,10 +733,21 @@ function rosControlPolicyPropsToRosTemplate(properties: any, enableResourcePrope
       'Proto': ros.stringToRosTemplate(properties.proto),
       'Source': ros.stringToRosTemplate(properties.source),
       'SourceType': ros.stringToRosTemplate(properties.sourceType),
+      'ApplicationName': ros.stringToRosTemplate(properties.applicationName),
+      'ApplicationNameList': ros.listMapper(ros.stringToRosTemplate)(properties.applicationNameList),
       'DestPort': ros.stringToRosTemplate(properties.destPort),
       'DestPortGroup': ros.stringToRosTemplate(properties.destPortGroup),
       'DestPortType': ros.stringToRosTemplate(properties.destPortType),
+      'DomainResolveType': ros.stringToRosTemplate(properties.domainResolveType),
+      'EndTime': ros.numberToRosTemplate(properties.endTime),
+      'IpVersion': ros.stringToRosTemplate(properties.ipVersion),
       'RegionId': ros.stringToRosTemplate(properties.regionId),
+      'Release': ros.booleanToRosTemplate(properties.release),
+      'RepeatDays': ros.listMapper(ros.numberToRosTemplate)(properties.repeatDays),
+      'RepeatEndTime': ros.stringToRosTemplate(properties.repeatEndTime),
+      'RepeatStartTime': ros.stringToRosTemplate(properties.repeatStartTime),
+      'RepeatType': ros.stringToRosTemplate(properties.repeatType),
+      'StartTime': ros.numberToRosTemplate(properties.startTime),
     };
 }
 
@@ -654,13 +777,6 @@ export class RosControlPolicy extends ros.RosResource {
      * log: Observation
      */
     public aclAction: string | ros.IResolvable;
-
-    /**
-     * @Property applicationName: Application types supported by the security policy.
-     * The following types of applications are supported: ANY, HTTP, HTTPS, MySQL, SMTP, SMTPS, RDP, VNC, SSH, Redis, MQTT, MongoDB, Memcache, SSL
-     * NOTE ANY indicates that the policy is applied to all types of applications.
-     */
-    public applicationName: string | ros.IResolvable;
 
     /**
      * @Property description: Security access control policy description information.
@@ -721,6 +837,19 @@ export class RosControlPolicy extends ros.RosResource {
     public sourceType: string | ros.IResolvable;
 
     /**
+     * @Property applicationName: Application types supported by the security policy.
+     * The following types of applications are supported: ANY, HTTP, HTTPS, MySQL, SMTP, SMTPS, RDP, VNC, SSH, Redis, MQTT, MongoDB, Memcache, SSL
+     * NOTE ANY indicates that the policy is applied to all types of applications.
+     * Either ApplicationNameList or ApplicationName must be passed, not both.
+     */
+    public applicationName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property applicationNameList: List of application types supported by the access control policy.
+     */
+    public applicationNameList: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @Property destPort: Security access control policy access traffic destination port.
      * Note When DestPortType to port, set the item.
      */
@@ -740,9 +869,75 @@ export class RosControlPolicy extends ros.RosResource {
     public destPortType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property domainResolveType: The domain name resolution method of the access control policy. Value:
+     * - FQDN: Based on FQDN
+     * - DNS: Based on DNS dynamic resolution
+     * - FQDN_AND_DNS: Based on FQDN and DNS dynamic resolution
+     */
+    public domainResolveType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property endTime: The end time of the policy validity period for an access control policy. It is represented in a second-level timestamp format. It must be the whole hour or half hour, and at least half an hour greater than the start time.
+     * Notes: When RepeatType is Permanent, EndTime is empty. When RepeatType is None, Daily, Weekly, Monthly, EndTime must havea value, and you need to set the end time.
+     */
+    public endTime: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipVersion: IP version. Valid values:
+     * - 4: IPv4
+     * - 6: IPv6
+     */
+    public ipVersion: string | ros.IResolvable | undefined;
+
+    /**
      * @Property regionId: Region ID. Default to cn-hangzhou.
      */
     public regionId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property release: The enabled state of the access control policy. This policy is enabled by default when it is created. Valid values:
+     * - true: Access control policy is enabled
+     * - false: Access control policy is not enabled
+     */
+    public release: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property repeatDays: A collection of repeated dates of policy validity for an access control policy.
+     * When RepeatType is Permanent, None, and Daily, RepeatDays is an empty set. For example: []
+     * When RepeatType is Weekly, RepeatDays cannot be empty. Example: [0, 6]
+     * Notes: When RepeatType is set to Weekly, RepeatDays is not allowed.
+     * When RepeatType is Monthly, RepeatDays cannot be empty. Examples: [1, 31]
+     * Notes: When RepeatType is set to Monthly, RepeatDays is not allowed to repeat.
+     */
+    public repeatDays: Array<number | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property repeatEndTime: The repeated end time of the policy validity period for an access control policy. For example: 08:00, must be the hour or half time, and less than the repeat start time at least half an hour.
+     * Notes: When RepeatType is Permanent and None, RepeatEndTime is empty. When RepeatType is Daily, Weekly, or Monthly, RepeatEndTime musthave a value, and you need to set the repeat end time.
+     */
+    public repeatEndTime: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property repeatStartTime: The repeated start time of the policy validity period for an access control policy. For example: 08:00, must be the hour or half time, and less than the repeat end time at least half an hour.
+     * Notes: When RepeatType is Permanent and None, RepeatStartTime is empty. When RepeatType is Daily, Weekly, or Monthly, RepeatStartTime must have a value, and you need to set the repeat start time.
+     */
+    public repeatStartTime: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property repeatType: The repetition type of the policy validity period for an access control policy. Valid values:
+     * - Permanent (default)
+     * - None
+     * - Daily
+     * - Weekly
+     * - Monthly.
+     */
+    public repeatType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property startTime: The start time of the policy validity period for an access control policy. It is represented in a second-level timestamp format. It must be the whole hour or half hour, and at least half an hour less than the end time.
+     * Notes: When RepeatType is Permanent, StartTime is empty. When RepeatType is None, Daily, Weekly, Monthly, StartTime must have a value, and you need to set the start time.
+     */
+    public startTime: number | ros.IResolvable | undefined;
 
     /**
      * @param scope - scope in which this resource is defined
@@ -755,7 +950,6 @@ export class RosControlPolicy extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.aclAction = props.aclAction;
-        this.applicationName = props.applicationName;
         this.description = props.description;
         this.destination = props.destination;
         this.destinationType = props.destinationType;
@@ -764,17 +958,27 @@ export class RosControlPolicy extends ros.RosResource {
         this.proto = props.proto;
         this.source = props.source;
         this.sourceType = props.sourceType;
+        this.applicationName = props.applicationName;
+        this.applicationNameList = props.applicationNameList;
         this.destPort = props.destPort;
         this.destPortGroup = props.destPortGroup;
         this.destPortType = props.destPortType;
+        this.domainResolveType = props.domainResolveType;
+        this.endTime = props.endTime;
+        this.ipVersion = props.ipVersion;
         this.regionId = props.regionId;
+        this.release = props.release;
+        this.repeatDays = props.repeatDays;
+        this.repeatEndTime = props.repeatEndTime;
+        this.repeatStartTime = props.repeatStartTime;
+        this.repeatType = props.repeatType;
+        this.startTime = props.startTime;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             aclAction: this.aclAction,
-            applicationName: this.applicationName,
             description: this.description,
             destination: this.destination,
             destinationType: this.destinationType,
@@ -783,10 +987,21 @@ export class RosControlPolicy extends ros.RosResource {
             proto: this.proto,
             source: this.source,
             sourceType: this.sourceType,
+            applicationName: this.applicationName,
+            applicationNameList: this.applicationNameList,
             destPort: this.destPort,
             destPortGroup: this.destPortGroup,
             destPortType: this.destPortType,
+            domainResolveType: this.domainResolveType,
+            endTime: this.endTime,
+            ipVersion: this.ipVersion,
             regionId: this.regionId,
+            release: this.release,
+            repeatDays: this.repeatDays,
+            repeatEndTime: this.repeatEndTime,
+            repeatStartTime: this.repeatStartTime,
+            repeatType: this.repeatType,
+            startTime: this.startTime,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -1965,27 +2180,6 @@ export interface RosVpcFirewallControlPolicyProps {
     readonly aclAction: string | ros.IResolvable;
 
     /**
-     * @Property applicationName: The application type that the access control policy supports.
-     * Valid values: 
-     * ANY (indicates that all application types are supported) 
-     * FTP 
-     * HTTP 
-     * HTTPS 
-     * MySQL 
-     * SMTP 
-     * SMTPS 
-     * RDP 
-     * VNC 
-     * SSH 
-     * Redis 
-     * MQTT 
-     * MongoDB 
-     * Memcache 
-     * SSL
-     */
-    readonly applicationName: string | ros.IResolvable;
-
-    /**
      * @Property description: The description of the access control policy.
      */
     readonly description: string | ros.IResolvable;
@@ -2047,6 +2241,32 @@ export interface RosVpcFirewallControlPolicyProps {
     readonly vpcFirewallId: string | ros.IResolvable;
 
     /**
+     * @Property applicationName: The application type that the access control policy supports.
+     * Valid values: 
+     * ANY (indicates that all application types are supported) 
+     * FTP 
+     * HTTP 
+     * HTTPS 
+     * MySQL 
+     * SMTP 
+     * SMTPS 
+     * RDP 
+     * VNC 
+     * SSH 
+     * Redis 
+     * MQTT 
+     * MongoDB 
+     * Memcache 
+     * SSL
+     */
+    readonly applicationName?: string | ros.IResolvable;
+
+    /**
+     * @Property applicationNameList: List of application types supported by the access control policy.
+     */
+    readonly applicationNameList?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * @Property destPort: The destination port in the access control policy.
      * Note This parameter must be specified if the DestPortType parameter is set to port.
      */
@@ -2066,6 +2286,12 @@ export interface RosVpcFirewallControlPolicyProps {
     readonly destPortType?: string | ros.IResolvable;
 
     /**
+     * @Property endTime: The end time of the policy validity period for an access control policy. It is represented in a second-level timestamp format. It must be the whole hour or half hour, and at least half an hour greater than the start time.
+     * Notes: When RepeatType is Permanent, EndTime is empty. When RepeatType is None, Daily, Weekly, Monthly, EndTime must havea value, and you need to set the end time.
+     */
+    readonly endTime?: number | ros.IResolvable;
+
+    /**
      * @Property lang: The natural language of the request and response. Valid values:
      * zh: Chinese
      * en: English
@@ -2073,9 +2299,59 @@ export interface RosVpcFirewallControlPolicyProps {
     readonly lang?: string | ros.IResolvable;
 
     /**
+     * @Property memberUid: Member account UID of current Alibaba Cloud account.
+     */
+    readonly memberUid?: string | ros.IResolvable;
+
+    /**
      * @Property regionId: Region ID. Default to cn-hangzhou.
      */
     readonly regionId?: string | ros.IResolvable;
+
+    /**
+     * @Property release: The enabled state of the access control policy. This policy is enabled by default when it is created. Value:
+     * - true: Access control policy is enabled
+     * - false: Access control policy is not enabled
+     */
+    readonly release?: boolean | ros.IResolvable;
+
+    /**
+     * @Property repeatDays: A collection of repeated dates of policy validity for an access control policy.
+     * When RepeatType is Permanent, None, and Daily, RepeatDays is an empty set. For example: []
+     * When RepeatType is Weekly, RepeatDays cannot be empty. Example: [0, 6]
+     * Notes: When RepeatType is set to Weekly, RepeatDays is not allowed.
+     * When RepeatType is Monthly, RepeatDays cannot be empty. Examples: [1, 31]
+     * Notes: When RepeatType is set to Monthly, RepeatDays is not allowed to repeat.
+     */
+    readonly repeatDays?: Array<number | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property repeatEndTime: The repeated end time of the policy validity period for an access control policy. For example: 08:00, must be the hour or half time, and less than the repeat start time at least half an hour.
+     * Notes: When RepeatType is Permanent and None, RepeatEndTime is empty. When RepeatType is Daily, Weekly, or Monthly, RepeatEndTime musthave a value, and you need to set the repeat end time.
+     */
+    readonly repeatEndTime?: string | ros.IResolvable;
+
+    /**
+     * @Property repeatStartTime: The repeated start time of the policy validity period for an access control policy. For example: 08:00, must be the hour or half time, and less than the repeat end time at least half an hour.
+     * Notes: When RepeatType is Permanent and None, RepeatStartTime is empty. When RepeatType is Daily, Weekly, or Monthly, RepeatStartTime must have a value, and you need to set the repeat start time.
+     */
+    readonly repeatStartTime?: string | ros.IResolvable;
+
+    /**
+     * @Property repeatType: The repetition type of the policy validity period for an access control policy. Valid values:
+     * - Permanent (default)
+     * - None
+     * - Daily
+     * - Weekly
+     * - Monthly.
+     */
+    readonly repeatType?: string | ros.IResolvable;
+
+    /**
+     * @Property startTime: The start time of the policy validity period for an access control policy. It is represented in a second-level timestamp format. It must be the whole hour or half hour, and at least half an hour less than the end time.
+     * Notes: When RepeatType is Permanent, StartTime is empty. When RepeatType is None, Daily, Weekly, Monthly, StartTime must have a value, and you need to set the start time.
+     */
+    readonly startTime?: number | ros.IResolvable;
 }
 
 /**
@@ -2090,7 +2366,8 @@ function RosVpcFirewallControlPolicyPropsValidator(properties: any): ros.Validat
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('destination', ros.requiredValidator)(properties.destination));
     errors.collect(ros.propertyValidator('destination', ros.validateString)(properties.destination));
-    errors.collect(ros.propertyValidator('applicationName', ros.requiredValidator)(properties.applicationName));
+    errors.collect(ros.propertyValidator('description', ros.requiredValidator)(properties.description));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     if(properties.applicationName && (typeof properties.applicationName) !== 'object') {
         errors.collect(ros.propertyValidator('applicationName', ros.validateAllowedValues)({
           data: properties.applicationName,
@@ -2098,8 +2375,8 @@ function RosVpcFirewallControlPolicyPropsValidator(properties: any): ros.Validat
         }));
     }
     errors.collect(ros.propertyValidator('applicationName', ros.validateString)(properties.applicationName));
-    errors.collect(ros.propertyValidator('description', ros.requiredValidator)(properties.description));
-    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('endTime', ros.validateNumber)(properties.endTime));
+    errors.collect(ros.propertyValidator('memberUid', ros.validateString)(properties.memberUid));
     errors.collect(ros.propertyValidator('sourceType', ros.requiredValidator)(properties.sourceType));
     if(properties.sourceType && (typeof properties.sourceType) !== 'object') {
         errors.collect(ros.propertyValidator('sourceType', ros.validateAllowedValues)({
@@ -2109,6 +2386,15 @@ function RosVpcFirewallControlPolicyPropsValidator(properties: any): ros.Validat
     }
     errors.collect(ros.propertyValidator('sourceType', ros.validateString)(properties.sourceType));
     errors.collect(ros.propertyValidator('destPort', ros.validateString)(properties.destPort));
+    if(properties.applicationNameList && (Array.isArray(properties.applicationNameList) || (typeof properties.applicationNameList) === 'string')) {
+        errors.collect(ros.propertyValidator('applicationNameList', ros.validateLength)({
+            data: properties.applicationNameList.length,
+            min: 1,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('applicationNameList', ros.listValidator(ros.validateString))(properties.applicationNameList));
+    errors.collect(ros.propertyValidator('startTime', ros.validateNumber)(properties.startTime));
     errors.collect(ros.propertyValidator('aclAction', ros.requiredValidator)(properties.aclAction));
     if(properties.aclAction && (typeof properties.aclAction) !== 'object') {
         errors.collect(ros.propertyValidator('aclAction', ros.validateAllowedValues)({
@@ -2151,6 +2437,22 @@ function RosVpcFirewallControlPolicyPropsValidator(properties: any): ros.Validat
         }));
     }
     errors.collect(ros.propertyValidator('proto', ros.validateString)(properties.proto));
+    errors.collect(ros.propertyValidator('repeatEndTime', ros.validateString)(properties.repeatEndTime));
+    if(properties.repeatDays && (Array.isArray(properties.repeatDays) || (typeof properties.repeatDays) === 'string')) {
+        errors.collect(ros.propertyValidator('repeatDays', ros.validateLength)({
+            data: properties.repeatDays.length,
+            min: 1,
+            max: 31,
+          }));
+    }
+    errors.collect(ros.propertyValidator('repeatDays', ros.listValidator(ros.validateNumber))(properties.repeatDays));
+    if(properties.repeatType && (typeof properties.repeatType) !== 'object') {
+        errors.collect(ros.propertyValidator('repeatType', ros.validateAllowedValues)({
+          data: properties.repeatType,
+          allowedValues: ["Permanent","None","Daily","Weekly","Monthly"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('repeatType', ros.validateString)(properties.repeatType));
     if(properties.regionId && (typeof properties.regionId) !== 'object') {
         errors.collect(ros.propertyValidator('regionId', ros.validateAllowedValues)({
           data: properties.regionId,
@@ -2158,6 +2460,8 @@ function RosVpcFirewallControlPolicyPropsValidator(properties: any): ros.Validat
         }));
     }
     errors.collect(ros.propertyValidator('regionId', ros.validateString)(properties.regionId));
+    errors.collect(ros.propertyValidator('repeatStartTime', ros.validateString)(properties.repeatStartTime));
+    errors.collect(ros.propertyValidator('release', ros.validateBoolean)(properties.release));
     errors.collect(ros.propertyValidator('newOrder', ros.requiredValidator)(properties.newOrder));
     errors.collect(ros.propertyValidator('newOrder', ros.validateString)(properties.newOrder));
     errors.collect(ros.propertyValidator('destPortGroup', ros.validateString)(properties.destPortGroup));
@@ -2179,7 +2483,6 @@ function rosVpcFirewallControlPolicyPropsToRosTemplate(properties: any, enableRe
     }
     return {
       'AclAction': ros.stringToRosTemplate(properties.aclAction),
-      'ApplicationName': ros.stringToRosTemplate(properties.applicationName),
       'Description': ros.stringToRosTemplate(properties.description),
       'Destination': ros.stringToRosTemplate(properties.destination),
       'DestinationType': ros.stringToRosTemplate(properties.destinationType),
@@ -2188,11 +2491,21 @@ function rosVpcFirewallControlPolicyPropsToRosTemplate(properties: any, enableRe
       'Source': ros.stringToRosTemplate(properties.source),
       'SourceType': ros.stringToRosTemplate(properties.sourceType),
       'VpcFirewallId': ros.stringToRosTemplate(properties.vpcFirewallId),
+      'ApplicationName': ros.stringToRosTemplate(properties.applicationName),
+      'ApplicationNameList': ros.listMapper(ros.stringToRosTemplate)(properties.applicationNameList),
       'DestPort': ros.stringToRosTemplate(properties.destPort),
       'DestPortGroup': ros.stringToRosTemplate(properties.destPortGroup),
       'DestPortType': ros.stringToRosTemplate(properties.destPortType),
+      'EndTime': ros.numberToRosTemplate(properties.endTime),
       'Lang': ros.stringToRosTemplate(properties.lang),
+      'MemberUid': ros.stringToRosTemplate(properties.memberUid),
       'RegionId': ros.stringToRosTemplate(properties.regionId),
+      'Release': ros.booleanToRosTemplate(properties.release),
+      'RepeatDays': ros.listMapper(ros.numberToRosTemplate)(properties.repeatDays),
+      'RepeatEndTime': ros.stringToRosTemplate(properties.repeatEndTime),
+      'RepeatStartTime': ros.stringToRosTemplate(properties.repeatStartTime),
+      'RepeatType': ros.stringToRosTemplate(properties.repeatType),
+      'StartTime': ros.numberToRosTemplate(properties.startTime),
     };
 }
 
@@ -2222,27 +2535,6 @@ export class RosVpcFirewallControlPolicy extends ros.RosResource {
      * log: monitors the traffic.
      */
     public aclAction: string | ros.IResolvable;
-
-    /**
-     * @Property applicationName: The application type that the access control policy supports.
-     * Valid values: 
-     * ANY (indicates that all application types are supported) 
-     * FTP 
-     * HTTP 
-     * HTTPS 
-     * MySQL 
-     * SMTP 
-     * SMTPS 
-     * RDP 
-     * VNC 
-     * SSH 
-     * Redis 
-     * MQTT 
-     * MongoDB 
-     * Memcache 
-     * SSL
-     */
-    public applicationName: string | ros.IResolvable;
 
     /**
      * @Property description: The description of the access control policy.
@@ -2306,6 +2598,32 @@ export class RosVpcFirewallControlPolicy extends ros.RosResource {
     public vpcFirewallId: string | ros.IResolvable;
 
     /**
+     * @Property applicationName: The application type that the access control policy supports.
+     * Valid values: 
+     * ANY (indicates that all application types are supported) 
+     * FTP 
+     * HTTP 
+     * HTTPS 
+     * MySQL 
+     * SMTP 
+     * SMTPS 
+     * RDP 
+     * VNC 
+     * SSH 
+     * Redis 
+     * MQTT 
+     * MongoDB 
+     * Memcache 
+     * SSL
+     */
+    public applicationName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property applicationNameList: List of application types supported by the access control policy.
+     */
+    public applicationNameList: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @Property destPort: The destination port in the access control policy.
      * Note This parameter must be specified if the DestPortType parameter is set to port.
      */
@@ -2325,6 +2643,12 @@ export class RosVpcFirewallControlPolicy extends ros.RosResource {
     public destPortType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property endTime: The end time of the policy validity period for an access control policy. It is represented in a second-level timestamp format. It must be the whole hour or half hour, and at least half an hour greater than the start time.
+     * Notes: When RepeatType is Permanent, EndTime is empty. When RepeatType is None, Daily, Weekly, Monthly, EndTime must havea value, and you need to set the end time.
+     */
+    public endTime: number | ros.IResolvable | undefined;
+
+    /**
      * @Property lang: The natural language of the request and response. Valid values:
      * zh: Chinese
      * en: English
@@ -2332,9 +2656,59 @@ export class RosVpcFirewallControlPolicy extends ros.RosResource {
     public lang: string | ros.IResolvable | undefined;
 
     /**
+     * @Property memberUid: Member account UID of current Alibaba Cloud account.
+     */
+    public memberUid: string | ros.IResolvable | undefined;
+
+    /**
      * @Property regionId: Region ID. Default to cn-hangzhou.
      */
     public regionId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property release: The enabled state of the access control policy. This policy is enabled by default when it is created. Value:
+     * - true: Access control policy is enabled
+     * - false: Access control policy is not enabled
+     */
+    public release: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property repeatDays: A collection of repeated dates of policy validity for an access control policy.
+     * When RepeatType is Permanent, None, and Daily, RepeatDays is an empty set. For example: []
+     * When RepeatType is Weekly, RepeatDays cannot be empty. Example: [0, 6]
+     * Notes: When RepeatType is set to Weekly, RepeatDays is not allowed.
+     * When RepeatType is Monthly, RepeatDays cannot be empty. Examples: [1, 31]
+     * Notes: When RepeatType is set to Monthly, RepeatDays is not allowed to repeat.
+     */
+    public repeatDays: Array<number | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property repeatEndTime: The repeated end time of the policy validity period for an access control policy. For example: 08:00, must be the hour or half time, and less than the repeat start time at least half an hour.
+     * Notes: When RepeatType is Permanent and None, RepeatEndTime is empty. When RepeatType is Daily, Weekly, or Monthly, RepeatEndTime musthave a value, and you need to set the repeat end time.
+     */
+    public repeatEndTime: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property repeatStartTime: The repeated start time of the policy validity period for an access control policy. For example: 08:00, must be the hour or half time, and less than the repeat end time at least half an hour.
+     * Notes: When RepeatType is Permanent and None, RepeatStartTime is empty. When RepeatType is Daily, Weekly, or Monthly, RepeatStartTime must have a value, and you need to set the repeat start time.
+     */
+    public repeatStartTime: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property repeatType: The repetition type of the policy validity period for an access control policy. Valid values:
+     * - Permanent (default)
+     * - None
+     * - Daily
+     * - Weekly
+     * - Monthly.
+     */
+    public repeatType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property startTime: The start time of the policy validity period for an access control policy. It is represented in a second-level timestamp format. It must be the whole hour or half hour, and at least half an hour less than the end time.
+     * Notes: When RepeatType is Permanent, StartTime is empty. When RepeatType is None, Daily, Weekly, Monthly, StartTime must have a value, and you need to set the start time.
+     */
+    public startTime: number | ros.IResolvable | undefined;
 
     /**
      * @param scope - scope in which this resource is defined
@@ -2347,7 +2721,6 @@ export class RosVpcFirewallControlPolicy extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.aclAction = props.aclAction;
-        this.applicationName = props.applicationName;
         this.description = props.description;
         this.destination = props.destination;
         this.destinationType = props.destinationType;
@@ -2356,18 +2729,27 @@ export class RosVpcFirewallControlPolicy extends ros.RosResource {
         this.source = props.source;
         this.sourceType = props.sourceType;
         this.vpcFirewallId = props.vpcFirewallId;
+        this.applicationName = props.applicationName;
+        this.applicationNameList = props.applicationNameList;
         this.destPort = props.destPort;
         this.destPortGroup = props.destPortGroup;
         this.destPortType = props.destPortType;
+        this.endTime = props.endTime;
         this.lang = props.lang;
+        this.memberUid = props.memberUid;
         this.regionId = props.regionId;
+        this.release = props.release;
+        this.repeatDays = props.repeatDays;
+        this.repeatEndTime = props.repeatEndTime;
+        this.repeatStartTime = props.repeatStartTime;
+        this.repeatType = props.repeatType;
+        this.startTime = props.startTime;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             aclAction: this.aclAction,
-            applicationName: this.applicationName,
             description: this.description,
             destination: this.destination,
             destinationType: this.destinationType,
@@ -2376,11 +2758,21 @@ export class RosVpcFirewallControlPolicy extends ros.RosResource {
             source: this.source,
             sourceType: this.sourceType,
             vpcFirewallId: this.vpcFirewallId,
+            applicationName: this.applicationName,
+            applicationNameList: this.applicationNameList,
             destPort: this.destPort,
             destPortGroup: this.destPortGroup,
             destPortType: this.destPortType,
+            endTime: this.endTime,
             lang: this.lang,
+            memberUid: this.memberUid,
             regionId: this.regionId,
+            release: this.release,
+            repeatDays: this.repeatDays,
+            repeatEndTime: this.repeatEndTime,
+            repeatStartTime: this.repeatStartTime,
+            repeatType: this.repeatType,
+            startTime: this.startTime,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

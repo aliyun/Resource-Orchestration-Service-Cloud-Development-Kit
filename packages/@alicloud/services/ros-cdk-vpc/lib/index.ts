@@ -41,6 +41,8 @@ export * from './trafficmirrorsession';
 export * from './trafficmirrorsessionsourcesaddition';
 export * from './vswitchcidrreservation';
 export * from './virtualborderrouter';
+export * from './vpccidrblockassociation';
+export * from './vpcipv6cidrallocation';
 export * from './vpcpeerconnection';
 export * from './vpnattachment';
 export * from './vpnconnection';

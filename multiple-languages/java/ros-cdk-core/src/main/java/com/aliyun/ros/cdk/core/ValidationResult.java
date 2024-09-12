@@ -6,7 +6,7 @@ package com.aliyun.ros.cdk.core;
  * Models a tree of validation errors so that we have as much information as possible
  * about the failure that occurred.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:17.097Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:22.601Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.ValidationResult")
 public class ValidationResult extends software.amazon.jsii.JsiiObject {
 

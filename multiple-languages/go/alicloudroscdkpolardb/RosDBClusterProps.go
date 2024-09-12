@@ -33,6 +33,7 @@ type RosDBClusterProps struct {
 	ParameterGroupId interface{} `field:"optional" json:"parameterGroupId" yaml:"parameterGroupId"`
 	Period interface{} `field:"optional" json:"period" yaml:"period"`
 	PeriodUnit interface{} `field:"optional" json:"periodUnit" yaml:"periodUnit"`
+	ProvisionedIops interface{} `field:"optional" json:"provisionedIops" yaml:"provisionedIops"`
 	ProxyClass interface{} `field:"optional" json:"proxyClass" yaml:"proxyClass"`
 	ProxyType interface{} `field:"optional" json:"proxyType" yaml:"proxyType"`
 	RenewalStatus interface{} `field:"optional" json:"renewalStatus" yaml:"renewalStatus"`

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::POLARDB::DBNodes</code>, which is used to add nodes to a PolarDB cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:23.137Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:29.413Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosDBNodes")
 public class RosDBNodes extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -121,6 +121,40 @@ public class RosDBNodes extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEndpointBindList() {
+        return software.amazon.jsii.Kernel.get(this, "endpointBindList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEndpointBindList(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "endpointBindList", value);
+    }
+
+    /**
+     */
+    public void setEndpointBindList(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "endpointBindList", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getImciSwitch() {
         return software.amazon.jsii.Kernel.get(this, "imciSwitch", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -135,6 +169,42 @@ public class RosDBNodes extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setImciSwitch(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "imciSwitch", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPlannedEndTime() {
+        return software.amazon.jsii.Kernel.get(this, "plannedEndTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPlannedEndTime(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "plannedEndTime", value);
+    }
+
+    /**
+     */
+    public void setPlannedEndTime(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "plannedEndTime", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPlannedStartTime() {
+        return software.amazon.jsii.Kernel.get(this, "plannedStartTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPlannedStartTime(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "plannedStartTime", value);
+    }
+
+    /**
+     */
+    public void setPlannedStartTime(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "plannedStartTime", value);
     }
 
     /**
@@ -234,6 +304,23 @@ public class RosDBNodes extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param endpointBindList This parameter is required.
+         */
+        public Builder endpointBindList(final com.aliyun.ros.cdk.core.IResolvable endpointBindList) {
+            this.props.endpointBindList(endpointBindList);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param endpointBindList This parameter is required.
+         */
+        public Builder endpointBindList(final java.util.List<? extends java.lang.Object> endpointBindList) {
+            this.props.endpointBindList(endpointBindList);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param imciSwitch This parameter is required.
          */
         public Builder imciSwitch(final java.lang.String imciSwitch) {
@@ -246,6 +333,40 @@ public class RosDBNodes extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder imciSwitch(final com.aliyun.ros.cdk.core.IResolvable imciSwitch) {
             this.props.imciSwitch(imciSwitch);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param plannedEndTime This parameter is required.
+         */
+        public Builder plannedEndTime(final java.lang.String plannedEndTime) {
+            this.props.plannedEndTime(plannedEndTime);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param plannedEndTime This parameter is required.
+         */
+        public Builder plannedEndTime(final com.aliyun.ros.cdk.core.IResolvable plannedEndTime) {
+            this.props.plannedEndTime(plannedEndTime);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param plannedStartTime This parameter is required.
+         */
+        public Builder plannedStartTime(final java.lang.String plannedStartTime) {
+            this.props.plannedStartTime(plannedStartTime);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param plannedStartTime This parameter is required.
+         */
+        public Builder plannedStartTime(final com.aliyun.ros.cdk.core.IResolvable plannedStartTime) {
+            this.props.plannedStartTime(plannedStartTime);
             return this;
         }
 

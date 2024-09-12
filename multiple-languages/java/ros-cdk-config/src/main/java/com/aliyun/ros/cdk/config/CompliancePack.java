@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.config;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::Config::CompliancePack</code>, which is used to create a compliance package.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:18.788Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:24.726Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.CompliancePack")
 public class CompliancePack extends com.aliyun.ros.cdk.core.Resource {
 

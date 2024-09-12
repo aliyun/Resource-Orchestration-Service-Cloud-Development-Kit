@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.waf;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::WAF::AclRule</code>, which is used to add an HTTP access control list (ACL) rule for a specified domain name.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:25.181Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:31.877Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf.$Module.class, fqn = "@alicloud/ros-cdk-waf.RosAclRule")
 public class RosAclRule extends com.aliyun.ros.cdk.core.RosResource {
 

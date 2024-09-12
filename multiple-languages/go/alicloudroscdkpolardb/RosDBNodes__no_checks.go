@@ -100,7 +100,19 @@ func (j *jsiiProxy_RosDBNodes) validateSetEnableResourcePropertyConstraintParame
 	return nil
 }
 
+func (j *jsiiProxy_RosDBNodes) validateSetEndpointBindListParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosDBNodes) validateSetImciSwitchParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDBNodes) validateSetPlannedEndTimeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDBNodes) validateSetPlannedStartTimeParameters(val interface{}) error {
 	return nil
 }
 

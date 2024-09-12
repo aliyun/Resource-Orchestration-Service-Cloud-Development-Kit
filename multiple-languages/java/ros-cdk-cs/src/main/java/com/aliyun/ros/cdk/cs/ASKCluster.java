@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ASKCluster</code>, which is used to create a Serverless Kubernetes (ASK) cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-08-22T08:56:18.885Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:24.823Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ASKCluster")
 public class ASKCluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -259,6 +259,27 @@ public class ASKCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder clusterSpec(final com.aliyun.ros.cdk.core.IResolvable clusterSpec) {
             this.props.clusterSpec(clusterSpec);
+            return this;
+        }
+
+        /**
+         * Property deleteOptions: Delete options, only work for deleting resource.
+         * <p>
+         * @return {@code this}
+         * @param deleteOptions Property deleteOptions: Delete options, only work for deleting resource. This parameter is required.
+         */
+        public Builder deleteOptions(final com.aliyun.ros.cdk.core.IResolvable deleteOptions) {
+            this.props.deleteOptions(deleteOptions);
+            return this;
+        }
+        /**
+         * Property deleteOptions: Delete options, only work for deleting resource.
+         * <p>
+         * @return {@code this}
+         * @param deleteOptions Property deleteOptions: Delete options, only work for deleting resource. This parameter is required.
+         */
+        public Builder deleteOptions(final java.util.List<? extends java.lang.Object> deleteOptions) {
+            this.props.deleteOptions(deleteOptions);
             return this;
         }
 
