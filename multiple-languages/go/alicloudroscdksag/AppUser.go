@@ -14,7 +14,7 @@ type AppUser interface {
 	alicloudroscdkcore.Resource
 	// Attribute SmartAGId: The ID of the SAG APP instance.
 	AttrSmartAgId() alicloudroscdkcore.IResolvable
-	// Attribute UserName: <heat.engine.properties.Schema object at 0x7fe489cc2ad0>.
+	// Attribute UserName: <heat.engine.properties.Schema object at 0x7fc377479d10>.
 	AttrUserName() alicloudroscdkcore.IResolvable
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)

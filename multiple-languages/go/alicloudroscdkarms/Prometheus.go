@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::Prometheus`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::Prometheus`, which is used to create a Prometheus instance.
 type Prometheus interface {
 	alicloudroscdkcore.Resource
 	// Attribute ClusterId: The ID of the cluster.

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenVbrHealthCheck`, which is used to enable the health check feature or modify the health check configuration for a virtual border router (VBR).
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenVbrHealthCheck`, which is used to enable the health check feature or modify the health check configurations for a virtual border router (VBR).
 type RosCenVbrHealthCheck interface {
 	alicloudroscdkcore.RosResource
 	AttrCenId() alicloudroscdkcore.IResolvable

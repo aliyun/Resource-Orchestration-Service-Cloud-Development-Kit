@@ -84,6 +84,10 @@ func validateRosServerGroup_IsRosResourceParameters(construct alicloudroscdkcore
 	return nil
 }
 
+func (j *jsiiProxy_RosServerGroup) validateSetConnectionDrainConfigParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosServerGroup) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
 	return nil
 }
@@ -116,11 +120,23 @@ func (j *jsiiProxy_RosServerGroup) validateSetServiceNameParameters(val interfac
 	return nil
 }
 
+func (j *jsiiProxy_RosServerGroup) validateSetSlowStartConfigParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosServerGroup) validateSetStickySessionConfigParameters(val interface{}) error {
 	return nil
 }
 
 func (j *jsiiProxy_RosServerGroup) validateSetTagsParameters(val *[]*RosServerGroup_TagsProperty) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServerGroup) validateSetUchConfigParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServerGroup) validateSetUpstreamKeepaliveEnabledParameters(val interface{}) error {
 	return nil
 }
 

@@ -115,12 +115,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nls
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: projectType: Type of the project.
+        /// <strong>Property</strong>: description: Description of the project.
         /// </remarks>
-        [JsiiProperty(name: "projectType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        public virtual object ProjectType
+        [JsiiOptional]
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Description
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<object?>();
             set
             {
                 if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
@@ -135,7 +136,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nls
                             // Not enough information to type-check...
                             break;
                         case null:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            break;
                         default:
                             throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                     }
@@ -145,11 +146,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nls
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: description: Description of the project.
+        /// <strong>Property</strong>: projectType: Type of the project.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        public virtual object? Description
+        [JsiiProperty(name: "projectType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ProjectType
         {
             get => GetInstanceProperty<object?>();
             set

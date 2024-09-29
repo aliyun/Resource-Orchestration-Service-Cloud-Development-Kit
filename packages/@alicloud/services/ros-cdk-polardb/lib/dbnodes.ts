@@ -20,7 +20,7 @@ export interface DBNodesProps {
     readonly dbClusterId: string | ros.IResolvable;
 
     /**
-     * Property dbNodeType: Node type. Ranges: RO|STANDBY|DLNode
+     * Property dbNodeType: Node type. Ranges: RO|STANDBY|DLNode|RW
      */
     readonly dbNodeType?: string | ros.IResolvable;
 

@@ -20,6 +20,8 @@ type ServerGroupProps struct {
 	// Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
 	// Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
 	VpcId interface{} `field:"required" json:"vpcId" yaml:"vpcId"`
+	// Property connectionDrainConfig: Configuration related to graceful connection interruption.Enable graceful connection interruption. After the backend server is removed or the health check fails, the load balancing allows the existing connection to be transmitted normally within a certain period of time.Note:  Basic Edition instances do not support enabling graceful connection interruption. Only Standard Edition and WAF Enhanced Edition instances support it.Server type and IP type server group support graceful connection interruption. Function Compute type does not support it.
+	ConnectionDrainConfig interface{} `field:"optional" json:"connectionDrainConfig" yaml:"connectionDrainConfig"`
 	// Property protocol: The backend protocol.
 	//
 	// Valid values:
@@ -49,6 +51,8 @@ type ServerGroupProps struct {
 	//
 	// In this case, set the parameter to the name of the Kubernetes Service that is associated with the server group.
 	ServiceName interface{} `field:"optional" json:"serviceName" yaml:"serviceName"`
+	// Property slowStartConfig: Slow start related configuration.After slow start is enabled, the backend server newly added to the backend server group will be preheated within the set time period, and the number of requests forwarded to the server will increase linearly.Note: Basic Edition instances do not support slow start, only Standard Edition and WAF Enhanced Edition instances support it.Server type and IP type server groups support slow start configuration, but Function Compute type does not.Slow start can only be enabled when the backend scheduling algorithm is the weighted polling algorithm.
+	SlowStartConfig interface{} `field:"optional" json:"slowStartConfig" yaml:"slowStartConfig"`
 	// Property stickySessionConfig: The configuration of session persistence.
 	//
 	// Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
@@ -57,5 +61,9 @@ type ServerGroupProps struct {
 	//
 	// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
 	Tags *[]*RosServerGroup_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
+	// Property uchConfig: URL consistency hash parameter configuration.
+	UchConfig interface{} `field:"optional" json:"uchConfig" yaml:"uchConfig"`
+	// Property upstreamKeepaliveEnabled: Whether to enable upstream keepalive.
+	UpstreamKeepaliveEnabled interface{} `field:"optional" json:"upstreamKeepaliveEnabled" yaml:"upstreamKeepaliveEnabled"`
 }
 

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupegress
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:26.272Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:38.957Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.SecurityGroupEgressProps")
 @software.amazon.jsii.Jsii.Proxy(SecurityGroupEgressProps.Jsii$Proxy.class)
 public interface SecurityGroupEgressProps extends software.amazon.jsii.JsiiSerializable {

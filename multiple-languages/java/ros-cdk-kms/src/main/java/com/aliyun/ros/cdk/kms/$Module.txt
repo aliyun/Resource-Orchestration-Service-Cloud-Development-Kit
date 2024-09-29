@@ -4,6 +4,10 @@
 @alicloud/ros-cdk-kms.InstanceProps=com.aliyun.ros.cdk.kms.InstanceProps
 @alicloud/ros-cdk-kms.Key=com.aliyun.ros.cdk.kms.Key
 @alicloud/ros-cdk-kms.KeyProps=com.aliyun.ros.cdk.kms.KeyProps
+@alicloud/ros-cdk-kms.NetworkRule=com.aliyun.ros.cdk.kms.NetworkRule
+@alicloud/ros-cdk-kms.NetworkRuleProps=com.aliyun.ros.cdk.kms.NetworkRuleProps
+@alicloud/ros-cdk-kms.Policy=com.aliyun.ros.cdk.kms.Policy
+@alicloud/ros-cdk-kms.PolicyProps=com.aliyun.ros.cdk.kms.PolicyProps
 @alicloud/ros-cdk-kms.RosAlias=com.aliyun.ros.cdk.kms.RosAlias
 @alicloud/ros-cdk-kms.RosAliasProps=com.aliyun.ros.cdk.kms.RosAliasProps
 @alicloud/ros-cdk-kms.RosInstance=com.aliyun.ros.cdk.kms.RosInstance
@@ -11,6 +15,11 @@
 @alicloud/ros-cdk-kms.RosInstanceProps=com.aliyun.ros.cdk.kms.RosInstanceProps
 @alicloud/ros-cdk-kms.RosKey=com.aliyun.ros.cdk.kms.RosKey
 @alicloud/ros-cdk-kms.RosKeyProps=com.aliyun.ros.cdk.kms.RosKeyProps
+@alicloud/ros-cdk-kms.RosNetworkRule=com.aliyun.ros.cdk.kms.RosNetworkRule
+@alicloud/ros-cdk-kms.RosNetworkRuleProps=com.aliyun.ros.cdk.kms.RosNetworkRuleProps
+@alicloud/ros-cdk-kms.RosPolicy=com.aliyun.ros.cdk.kms.RosPolicy
+@alicloud/ros-cdk-kms.RosPolicy.AccessControlRulesProperty=com.aliyun.ros.cdk.kms.RosPolicy$AccessControlRulesProperty
+@alicloud/ros-cdk-kms.RosPolicyProps=com.aliyun.ros.cdk.kms.RosPolicyProps
 @alicloud/ros-cdk-kms.RosSecret=com.aliyun.ros.cdk.kms.RosSecret
 @alicloud/ros-cdk-kms.RosSecretProps=com.aliyun.ros.cdk.kms.RosSecretProps
 @alicloud/ros-cdk-kms.Secret=com.aliyun.ros.cdk.kms.Secret

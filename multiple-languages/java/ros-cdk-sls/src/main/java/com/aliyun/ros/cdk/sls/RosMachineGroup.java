@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.sls;
  * <p>
  * Log Service manages all the ECS instances whose logs need to be collected using the Logtail client in the form of machine groups.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:31.033Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:42.797Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosMachineGroup")
 public class RosMachineGroup extends com.aliyun.ros.cdk.core.RosResource {
 

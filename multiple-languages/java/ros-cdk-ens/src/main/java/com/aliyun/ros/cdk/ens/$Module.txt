@@ -2,6 +2,8 @@
 @alicloud/ros-cdk-ens.DiskInstanceAttachment=com.aliyun.ros.cdk.ens.DiskInstanceAttachment
 @alicloud/ros-cdk-ens.DiskInstanceAttachmentProps=com.aliyun.ros.cdk.ens.DiskInstanceAttachmentProps
 @alicloud/ros-cdk-ens.DiskProps=com.aliyun.ros.cdk.ens.DiskProps
+@alicloud/ros-cdk-ens.Image=com.aliyun.ros.cdk.ens.Image
+@alicloud/ros-cdk-ens.ImageProps=com.aliyun.ros.cdk.ens.ImageProps
 @alicloud/ros-cdk-ens.Instance=com.aliyun.ros.cdk.ens.Instance
 @alicloud/ros-cdk-ens.InstanceProps=com.aliyun.ros.cdk.ens.InstanceProps
 @alicloud/ros-cdk-ens.InstanceSecurityGroupAttachment=com.aliyun.ros.cdk.ens.InstanceSecurityGroupAttachment
@@ -18,6 +20,8 @@
 @alicloud/ros-cdk-ens.RosDiskInstanceAttachment=com.aliyun.ros.cdk.ens.RosDiskInstanceAttachment
 @alicloud/ros-cdk-ens.RosDiskInstanceAttachmentProps=com.aliyun.ros.cdk.ens.RosDiskInstanceAttachmentProps
 @alicloud/ros-cdk-ens.RosDiskProps=com.aliyun.ros.cdk.ens.RosDiskProps
+@alicloud/ros-cdk-ens.RosImage=com.aliyun.ros.cdk.ens.RosImage
+@alicloud/ros-cdk-ens.RosImageProps=com.aliyun.ros.cdk.ens.RosImageProps
 @alicloud/ros-cdk-ens.RosInstance=com.aliyun.ros.cdk.ens.RosInstance
 @alicloud/ros-cdk-ens.RosInstanceProps=com.aliyun.ros.cdk.ens.RosInstanceProps
 @alicloud/ros-cdk-ens.RosInstanceSecurityGroupAttachment=com.aliyun.ros.cdk.ens.RosInstanceSecurityGroupAttachment

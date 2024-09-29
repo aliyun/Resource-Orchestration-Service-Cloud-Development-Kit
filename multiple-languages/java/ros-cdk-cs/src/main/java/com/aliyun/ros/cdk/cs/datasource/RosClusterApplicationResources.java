@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::CS::ClusterApplicationResources</code>, which is used to query the details of specified types of resources in a Container Service for Kubernetes (ACK) cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:25.058Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:37.558Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.datasource.RosClusterApplicationResources")
 public class RosClusterApplicationResources extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -93,6 +93,24 @@ public class RosClusterApplicationResources extends com.aliyun.ros.cdk.core.RosR
      */
     public void setKind(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "kind", java.util.Objects.requireNonNull(value, "kind is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getApiVersion() {
+        return software.amazon.jsii.Kernel.get(this, "apiVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setApiVersion(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "apiVersion", value);
+    }
+
+    /**
+     */
+    public void setApiVersion(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "apiVersion", value);
     }
 
     /**
@@ -242,6 +260,23 @@ public class RosClusterApplicationResources extends com.aliyun.ros.cdk.core.RosR
          */
         public Builder kind(final com.aliyun.ros.cdk.core.IResolvable kind) {
             this.props.kind(kind);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param apiVersion This parameter is required.
+         */
+        public Builder apiVersion(final java.lang.String apiVersion) {
+            this.props.apiVersion(apiVersion);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param apiVersion This parameter is required.
+         */
+        public Builder apiVersion(final com.aliyun.ros.cdk.core.IResolvable apiVersion) {
+            this.props.apiVersion(apiVersion);
             return this;
         }
 

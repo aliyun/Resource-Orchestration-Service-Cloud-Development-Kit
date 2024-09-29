@@ -11,7 +11,7 @@ import (
 
 // This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingGroup`, which is used to create a scaling group.
 //
-// A scaling group is a group of Elastic Compute Service (ECS) instances that are dynamically scaled based on the configured scenario. A scaling group does not immediately take effect after it is created. You must use ALIYUN::ESS::ScalingGroupEnable to enable the scaling group to trigger scaling activities and execute scaling rules.
+// A scaling group can be a group of Elastic Compute Service (ECS) instances that are dynamically scaled based on the configured scenario. A scaling group does not immediately take effect after it is created. You must use ALIYUN::ESS::ScalingGroupEnable to enable the scaling group to trigger scaling activities based on scaling rules.
 type RosScalingGroup interface {
 	alicloudroscdkcore.RosResource
 	AllocationStrategy() interface{}

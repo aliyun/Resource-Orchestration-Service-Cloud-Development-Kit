@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::RAM::Roles</code>, which is used to query the details of RAM roles.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:29.708Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:41.683Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.datasource.Roles")
 public class Roles extends com.aliyun.ros.cdk.core.Resource {
 

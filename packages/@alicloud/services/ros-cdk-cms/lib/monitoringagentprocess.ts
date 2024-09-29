@@ -26,7 +26,7 @@ export interface MonitoringAgentProcessProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::MonitoringAgentProcess`, which is used to create a task to monitor a process.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::MonitoringAgentProcess`, which is used to create a process monitoring task.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMonitoringAgentProcess`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitoringagentprocess
  */

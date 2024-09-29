@@ -21,20 +21,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nls
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: projectType: Type of the project.
-        /// </remarks>
-        [JsiiProperty(name: "projectType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object ProjectType
-        {
-            get;
-        }
-
-        /// <remarks>
         /// <strong>Property</strong>: description: Description of the project.
         /// </remarks>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Description
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: projectType: Type of the project.
+        /// </remarks>
+        [JsiiProperty(name: "projectType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ProjectType
         {
             get
             {
@@ -76,20 +80,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nls
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: projectType: Type of the project.
-            /// </remarks>
-            [JsiiProperty(name: "projectType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object ProjectType
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <remarks>
             /// <strong>Property</strong>: description: Description of the project.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Description
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: projectType: Type of the project.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "projectType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ProjectType
             {
                 get => GetInstanceProperty<object?>();
             }

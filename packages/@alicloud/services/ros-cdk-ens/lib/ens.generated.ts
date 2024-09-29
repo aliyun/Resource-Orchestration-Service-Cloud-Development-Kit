@@ -349,6 +349,215 @@ export class RosDiskInstanceAttachment extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosImage`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-image
+ */
+export interface RosImageProps {
+
+    /**
+     * @Property imageName: The name of the image. The name must be 2 to 128 characters in length. 
+     * The name can contain letters, digits, colons (:), underscores (_), and hyphens (-). 
+     * It must start with a letter but cannot start with http:\/\/ or https:\/\/. 
+     * The name can contain letters, digits, colons (:), underscores (_), and hyphens (-).
+     */
+    readonly imageName: string | ros.IResolvable;
+
+    /**
+     * @Property deleteAfterImageUpload: Whether the instance is automatically released after the image is packaged and uploaded successfully, only the build machine is supported.
+     * Optional values:
+     * true: When the instance is released, the image is released together with the instance.
+     * false: When the instance is released, the image is retained and is not released together with the instance.
+     * Empty means false by default.
+     */
+    readonly deleteAfterImageUpload?: boolean | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The ID of the instance corresponding to the image.
+     */
+    readonly instanceId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosImageProps`
+ *
+ * @param properties - the TypeScript properties of a `RosImageProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosImagePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('imageName', ros.requiredValidator)(properties.imageName));
+    errors.collect(ros.propertyValidator('imageName', ros.validateString)(properties.imageName));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('deleteAfterImageUpload', ros.validateBoolean)(properties.deleteAfterImageUpload));
+    return errors.wrap('supplied properties not correct for "RosImageProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ENS::Image` resource
+ *
+ * @param properties - the TypeScript properties of a `RosImageProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ENS::Image` resource.
+ */
+// @ts-ignore TS6133
+function rosImagePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosImagePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ImageName': ros.stringToRosTemplate(properties.imageName),
+      'DeleteAfterImageUpload': ros.booleanToRosTemplate(properties.deleteAfterImageUpload),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Image`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Image` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-image
+ */
+export class RosImage extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ENS::Image";
+
+    /**
+     * @Attribute Architecture: The image architecture. Valid values:
+i386
+x86_64
+     */
+    public readonly attrArchitecture: ros.IResolvable;
+
+    /**
+     * @Attribute ComputeType: Computing type. ens_vm/ens: x86 computing.
+ bare_metal: x86 bare machine or x86 bare metal. 
+arm_vm: ARM computing. 
+arm_bare_metal: ARM bare machine or ARM bare metal.
+pcfarm: heterogeneous computing.
+     */
+    public readonly attrComputeType: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The image creation time. The time follows the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. The time is displayed in UTC.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute ImageId: The ID of the image.
+     */
+    public readonly attrImageId: ros.IResolvable;
+
+    /**
+     * @Attribute ImageName: The name of the image.
+     */
+    public readonly attrImageName: ros.IResolvable;
+
+    /**
+     * @Attribute ImageOwnerAlias: The source of the image. Valid values:
+system: public images
+self: your custom images
+     */
+    public readonly attrImageOwnerAlias: ros.IResolvable;
+
+    /**
+     * @Attribute ImageSize: The size of the image. Unit: GiB.
+     */
+    public readonly attrImageSize: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceId: The ID of the instance corresponding to the image.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute OsVersion: The operating system version.
+     */
+    public readonly attrOsVersion: ros.IResolvable;
+
+    /**
+     * @Attribute Platform: The type of operating system used by the image.
+centos
+ubuntu
+alios
+debian
+rhel
+windows
+     */
+    public readonly attrPlatform: ros.IResolvable;
+
+    /**
+     * @Attribute SnapshotId: The ID of the snapshot corresponding to the image.
+     */
+    public readonly attrSnapshotId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property imageName: The name of the image. The name must be 2 to 128 characters in length. 
+     * The name can contain letters, digits, colons (:), underscores (_), and hyphens (-). 
+     * It must start with a letter but cannot start with http:\/\/ or https:\/\/. 
+     * The name can contain letters, digits, colons (:), underscores (_), and hyphens (-).
+     */
+    public imageName: string | ros.IResolvable;
+
+    /**
+     * @Property deleteAfterImageUpload: Whether the instance is automatically released after the image is packaged and uploaded successfully, only the build machine is supported.
+     * Optional values:
+     * true: When the instance is released, the image is released together with the instance.
+     * false: When the instance is released, the image is retained and is not released together with the instance.
+     * Empty means false by default.
+     */
+    public deleteAfterImageUpload: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceId: The ID of the instance corresponding to the image.
+     */
+    public instanceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosImageProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosImage.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArchitecture = this.getAtt('Architecture');
+        this.attrComputeType = this.getAtt('ComputeType');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrImageId = this.getAtt('ImageId');
+        this.attrImageName = this.getAtt('ImageName');
+        this.attrImageOwnerAlias = this.getAtt('ImageOwnerAlias');
+        this.attrImageSize = this.getAtt('ImageSize');
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrOsVersion = this.getAtt('OsVersion');
+        this.attrPlatform = this.getAtt('Platform');
+        this.attrSnapshotId = this.getAtt('SnapshotId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.imageName = props.imageName;
+        this.deleteAfterImageUpload = props.deleteAfterImageUpload;
+        this.instanceId = props.instanceId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            imageName: this.imageName,
+            deleteAfterImageUpload: this.deleteAfterImageUpload,
+            instanceId: this.instanceId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosImagePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosInstance`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-instance
  */
@@ -1007,7 +1216,7 @@ function rosKeyPairPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::KeyPair`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::KeyPair`, which is used to import the public key of a Rivest-Shamir-Adleman (RSA)-encrypted key pair.
  * @Note This class does not contain additional functions, so it is recommended to use the `KeyPair` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-keypair
  */
@@ -1293,7 +1502,7 @@ function rosNetworkAclPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::NetworkAcl`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::NetworkAcl`, which is used to create a network access control list (ACL).
  * @Note This class does not contain additional functions, so it is recommended to use the `NetworkAcl` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-networkacl
  */
@@ -1538,7 +1747,7 @@ function rosNetworkAclAssociationPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::NetworkAclAssociation`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::NetworkAclAssociation`, which is used to associate a network access control list (ACL) with networks.
  * @Note This class does not contain additional functions, so it is recommended to use the `NetworkAclAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-networkaclassociation
  */
@@ -1658,7 +1867,7 @@ function rosSecurityGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::SecurityGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::SecurityGroup`, which is used to create a security group.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-securitygroup
  */

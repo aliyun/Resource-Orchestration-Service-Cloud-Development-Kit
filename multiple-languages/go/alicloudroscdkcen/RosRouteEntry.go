@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::RouteEntry`, which is used to advertise a routing entry of an attached VPC or VBR to a CEN instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::RouteEntry`, which is used to advertise a route of an attached virtual private cloud (VPC) or virtual border router (VBR) to a Cloud Enterprise Network (CEN) instance.
 type RosRouteEntry interface {
 	alicloudroscdkcore.RosResource
 	CenId() interface{}

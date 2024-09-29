@@ -518,6 +518,47 @@ func init() {
 		reflect.TypeOf((*BasicIpSetProps)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
+		"@alicloud/ros-cdk-ga.Domain",
+		reflect.TypeOf((*Domain)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addCondition", GoMethod: "AddCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "addCount", GoMethod: "AddCount"},
+			_jsii_.MemberMethod{JsiiMethod: "addDependency", GoMethod: "AddDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "addResourceDesc", GoMethod: "AddResourceDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
+			_jsii_.MemberProperty{JsiiProperty: "attrAcceleratorIds", GoGetter: "AttrAcceleratorIds"},
+			_jsii_.MemberProperty{JsiiProperty: "attrDomain", GoGetter: "AttrDomain"},
+			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberMethod{JsiiMethod: "generatePhysicalName", GoMethod: "GeneratePhysicalName"},
+			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "onPrepare", GoMethod: "OnPrepare"},
+			_jsii_.MemberMethod{JsiiMethod: "onSynthesize", GoMethod: "OnSynthesize"},
+			_jsii_.MemberMethod{JsiiMethod: "onValidate", GoMethod: "OnValidate"},
+			_jsii_.MemberProperty{JsiiProperty: "physicalName", GoGetter: "PhysicalName"},
+			_jsii_.MemberMethod{JsiiMethod: "prepare", GoMethod: "Prepare"},
+			_jsii_.MemberProperty{JsiiProperty: "props", GoGetter: "Props"},
+			_jsii_.MemberProperty{JsiiProperty: "ref", GoGetter: "Ref"},
+			_jsii_.MemberProperty{JsiiProperty: "resource", GoGetter: "Resource"},
+			_jsii_.MemberProperty{JsiiProperty: "scope", GoGetter: "Scope"},
+			_jsii_.MemberMethod{JsiiMethod: "setMetadata", GoMethod: "SetMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesize", GoMethod: "Synthesize"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
+		},
+		func() interface{} {
+			j := jsiiProxy_Domain{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-ga.DomainProps",
+		reflect.TypeOf((*DomainProps)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
 		"@alicloud/ros-cdk-ga.EndpointGroup",
 		reflect.TypeOf((*EndpointGroup)(nil)).Elem(),
 		[]_jsii_.Member{
@@ -596,6 +637,46 @@ func init() {
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-ga.EndpointGroupsProps",
 		reflect.TypeOf((*EndpointGroupsProps)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"@alicloud/ros-cdk-ga.ForwardingRules",
+		reflect.TypeOf((*ForwardingRules)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addCondition", GoMethod: "AddCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "addCount", GoMethod: "AddCount"},
+			_jsii_.MemberMethod{JsiiMethod: "addDependency", GoMethod: "AddDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "addResourceDesc", GoMethod: "AddResourceDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
+			_jsii_.MemberProperty{JsiiProperty: "attrForwardingRuleIds", GoGetter: "AttrForwardingRuleIds"},
+			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberMethod{JsiiMethod: "generatePhysicalName", GoMethod: "GeneratePhysicalName"},
+			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "onPrepare", GoMethod: "OnPrepare"},
+			_jsii_.MemberMethod{JsiiMethod: "onSynthesize", GoMethod: "OnSynthesize"},
+			_jsii_.MemberMethod{JsiiMethod: "onValidate", GoMethod: "OnValidate"},
+			_jsii_.MemberProperty{JsiiProperty: "physicalName", GoGetter: "PhysicalName"},
+			_jsii_.MemberMethod{JsiiMethod: "prepare", GoMethod: "Prepare"},
+			_jsii_.MemberProperty{JsiiProperty: "props", GoGetter: "Props"},
+			_jsii_.MemberProperty{JsiiProperty: "ref", GoGetter: "Ref"},
+			_jsii_.MemberProperty{JsiiProperty: "resource", GoGetter: "Resource"},
+			_jsii_.MemberProperty{JsiiProperty: "scope", GoGetter: "Scope"},
+			_jsii_.MemberMethod{JsiiMethod: "setMetadata", GoMethod: "SetMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesize", GoMethod: "Synthesize"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
+		},
+		func() interface{} {
+			j := jsiiProxy_ForwardingRules{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-ga.ForwardingRulesProps",
+		reflect.TypeOf((*ForwardingRulesProps)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
 		"@alicloud/ros-cdk-ga.IpSets",
@@ -1378,6 +1459,57 @@ func init() {
 		reflect.TypeOf((*RosBasicIpSetProps)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
+		"@alicloud/ros-cdk-ga.RosDomain",
+		reflect.TypeOf((*RosDomain)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "acceleratorIds", GoGetter: "AcceleratorIds"},
+			_jsii_.MemberMethod{JsiiMethod: "addCondition", GoMethod: "AddCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "addCount", GoMethod: "AddCount"},
+			_jsii_.MemberMethod{JsiiMethod: "addDeletionOverride", GoMethod: "AddDeletionOverride"},
+			_jsii_.MemberMethod{JsiiMethod: "addDependsOn", GoMethod: "AddDependsOn"},
+			_jsii_.MemberMethod{JsiiMethod: "addDesc", GoMethod: "AddDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "addMetaData", GoMethod: "AddMetaData"},
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberMethod{JsiiMethod: "addPropertyDeletionOverride", GoMethod: "AddPropertyDeletionOverride"},
+			_jsii_.MemberMethod{JsiiMethod: "addPropertyOverride", GoMethod: "AddPropertyOverride"},
+			_jsii_.MemberMethod{JsiiMethod: "addRosDependency", GoMethod: "AddRosDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
+			_jsii_.MemberProperty{JsiiProperty: "attrAcceleratorIds", GoGetter: "AttrAcceleratorIds"},
+			_jsii_.MemberProperty{JsiiProperty: "attrDomain", GoGetter: "AttrDomain"},
+			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
+			_jsii_.MemberProperty{JsiiProperty: "domain", GoGetter: "Domain"},
+			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
+			_jsii_.MemberProperty{JsiiProperty: "logicalId", GoGetter: "LogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "onPrepare", GoMethod: "OnPrepare"},
+			_jsii_.MemberMethod{JsiiMethod: "onSynthesize", GoMethod: "OnSynthesize"},
+			_jsii_.MemberMethod{JsiiMethod: "onValidate", GoMethod: "OnValidate"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberMethod{JsiiMethod: "prepare", GoMethod: "Prepare"},
+			_jsii_.MemberProperty{JsiiProperty: "ref", GoGetter: "Ref"},
+			_jsii_.MemberMethod{JsiiMethod: "renderProperties", GoMethod: "RenderProperties"},
+			_jsii_.MemberProperty{JsiiProperty: "rosOptions", GoGetter: "RosOptions"},
+			_jsii_.MemberProperty{JsiiProperty: "rosProperties", GoGetter: "RosProperties"},
+			_jsii_.MemberProperty{JsiiProperty: "rosResourceType", GoGetter: "RosResourceType"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesize", GoMethod: "Synthesize"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberProperty{JsiiProperty: "updatedProperites", GoGetter: "UpdatedProperites"},
+			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
+			_jsii_.MemberMethod{JsiiMethod: "validateProperties", GoMethod: "ValidateProperties"},
+		},
+		func() interface{} {
+			j := jsiiProxy_RosDomain{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreRosResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-ga.RosDomainProps",
+		reflect.TypeOf((*RosDomainProps)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
 		"@alicloud/ros-cdk-ga.RosEndpointGroup",
 		reflect.TypeOf((*RosEndpointGroup)(nil)).Elem(),
 		[]_jsii_.Member{
@@ -1510,6 +1642,69 @@ func init() {
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-ga.RosEndpointGroupsProps",
 		reflect.TypeOf((*RosEndpointGroupsProps)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"@alicloud/ros-cdk-ga.RosForwardingRules",
+		reflect.TypeOf((*RosForwardingRules)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "acceleratorId", GoGetter: "AcceleratorId"},
+			_jsii_.MemberMethod{JsiiMethod: "addCondition", GoMethod: "AddCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "addCount", GoMethod: "AddCount"},
+			_jsii_.MemberMethod{JsiiMethod: "addDeletionOverride", GoMethod: "AddDeletionOverride"},
+			_jsii_.MemberMethod{JsiiMethod: "addDependsOn", GoMethod: "AddDependsOn"},
+			_jsii_.MemberMethod{JsiiMethod: "addDesc", GoMethod: "AddDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "addMetaData", GoMethod: "AddMetaData"},
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberMethod{JsiiMethod: "addPropertyDeletionOverride", GoMethod: "AddPropertyDeletionOverride"},
+			_jsii_.MemberMethod{JsiiMethod: "addPropertyOverride", GoMethod: "AddPropertyOverride"},
+			_jsii_.MemberMethod{JsiiMethod: "addRosDependency", GoMethod: "AddRosDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
+			_jsii_.MemberProperty{JsiiProperty: "attrForwardingRuleIds", GoGetter: "AttrForwardingRuleIds"},
+			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
+			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberProperty{JsiiProperty: "forwardingRules", GoGetter: "ForwardingRules"},
+			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
+			_jsii_.MemberProperty{JsiiProperty: "listenerId", GoGetter: "ListenerId"},
+			_jsii_.MemberProperty{JsiiProperty: "logicalId", GoGetter: "LogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "onPrepare", GoMethod: "OnPrepare"},
+			_jsii_.MemberMethod{JsiiMethod: "onSynthesize", GoMethod: "OnSynthesize"},
+			_jsii_.MemberMethod{JsiiMethod: "onValidate", GoMethod: "OnValidate"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberMethod{JsiiMethod: "prepare", GoMethod: "Prepare"},
+			_jsii_.MemberProperty{JsiiProperty: "ref", GoGetter: "Ref"},
+			_jsii_.MemberMethod{JsiiMethod: "renderProperties", GoMethod: "RenderProperties"},
+			_jsii_.MemberProperty{JsiiProperty: "rosOptions", GoGetter: "RosOptions"},
+			_jsii_.MemberProperty{JsiiProperty: "rosProperties", GoGetter: "RosProperties"},
+			_jsii_.MemberProperty{JsiiProperty: "rosResourceType", GoGetter: "RosResourceType"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesize", GoMethod: "Synthesize"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberProperty{JsiiProperty: "updatedProperites", GoGetter: "UpdatedProperites"},
+			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
+			_jsii_.MemberMethod{JsiiMethod: "validateProperties", GoMethod: "ValidateProperties"},
+		},
+		func() interface{} {
+			j := jsiiProxy_RosForwardingRules{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreRosResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-ga.RosForwardingRules.ForwardingRulesProperty",
+		reflect.TypeOf((*RosForwardingRules_ForwardingRulesProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-ga.RosForwardingRules.RuleActionsProperty",
+		reflect.TypeOf((*RosForwardingRules_RuleActionsProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-ga.RosForwardingRules.RuleConditionsProperty",
+		reflect.TypeOf((*RosForwardingRules_RuleConditionsProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-ga.RosForwardingRulesProps",
+		reflect.TypeOf((*RosForwardingRulesProps)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
 		"@alicloud/ros-cdk-ga.RosIpSets",

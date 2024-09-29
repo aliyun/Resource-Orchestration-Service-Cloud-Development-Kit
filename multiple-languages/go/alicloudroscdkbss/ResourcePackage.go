@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::BSS::ResourcePackage`, which is used to create an instance that uses a resource plan.
+// This class encapsulates and extends the ROS resource type `ALIYUN::BSS::ResourcePackage`, which is used to create a resource plan.
 type ResourcePackage interface {
 	alicloudroscdkcore.Resource
 	// Attribute InstanceId: The ID of the specified instance.

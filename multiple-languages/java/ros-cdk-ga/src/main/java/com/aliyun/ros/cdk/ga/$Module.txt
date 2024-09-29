@@ -22,10 +22,14 @@
 @alicloud/ros-cdk-ga.BasicEndpointProps=com.aliyun.ros.cdk.ga.BasicEndpointProps
 @alicloud/ros-cdk-ga.BasicIpSet=com.aliyun.ros.cdk.ga.BasicIpSet
 @alicloud/ros-cdk-ga.BasicIpSetProps=com.aliyun.ros.cdk.ga.BasicIpSetProps
+@alicloud/ros-cdk-ga.Domain=com.aliyun.ros.cdk.ga.Domain
+@alicloud/ros-cdk-ga.DomainProps=com.aliyun.ros.cdk.ga.DomainProps
 @alicloud/ros-cdk-ga.EndpointGroup=com.aliyun.ros.cdk.ga.EndpointGroup
 @alicloud/ros-cdk-ga.EndpointGroupProps=com.aliyun.ros.cdk.ga.EndpointGroupProps
 @alicloud/ros-cdk-ga.EndpointGroups=com.aliyun.ros.cdk.ga.EndpointGroups
 @alicloud/ros-cdk-ga.EndpointGroupsProps=com.aliyun.ros.cdk.ga.EndpointGroupsProps
+@alicloud/ros-cdk-ga.ForwardingRules=com.aliyun.ros.cdk.ga.ForwardingRules
+@alicloud/ros-cdk-ga.ForwardingRulesProps=com.aliyun.ros.cdk.ga.ForwardingRulesProps
 @alicloud/ros-cdk-ga.IpSets=com.aliyun.ros.cdk.ga.IpSets
 @alicloud/ros-cdk-ga.IpSetsProps=com.aliyun.ros.cdk.ga.IpSetsProps
 @alicloud/ros-cdk-ga.Listener=com.aliyun.ros.cdk.ga.Listener
@@ -58,6 +62,8 @@
 @alicloud/ros-cdk-ga.RosBasicEndpointProps=com.aliyun.ros.cdk.ga.RosBasicEndpointProps
 @alicloud/ros-cdk-ga.RosBasicIpSet=com.aliyun.ros.cdk.ga.RosBasicIpSet
 @alicloud/ros-cdk-ga.RosBasicIpSetProps=com.aliyun.ros.cdk.ga.RosBasicIpSetProps
+@alicloud/ros-cdk-ga.RosDomain=com.aliyun.ros.cdk.ga.RosDomain
+@alicloud/ros-cdk-ga.RosDomainProps=com.aliyun.ros.cdk.ga.RosDomainProps
 @alicloud/ros-cdk-ga.RosEndpointGroup=com.aliyun.ros.cdk.ga.RosEndpointGroup
 @alicloud/ros-cdk-ga.RosEndpointGroup.EndpointConfigurationsProperty=com.aliyun.ros.cdk.ga.RosEndpointGroup$EndpointConfigurationsProperty
 @alicloud/ros-cdk-ga.RosEndpointGroupProps=com.aliyun.ros.cdk.ga.RosEndpointGroupProps
@@ -67,6 +73,11 @@
 @alicloud/ros-cdk-ga.RosEndpointGroups.PortOverridesProperty=com.aliyun.ros.cdk.ga.RosEndpointGroups$PortOverridesProperty
 @alicloud/ros-cdk-ga.RosEndpointGroups.TagsProperty=com.aliyun.ros.cdk.ga.RosEndpointGroups$TagsProperty
 @alicloud/ros-cdk-ga.RosEndpointGroupsProps=com.aliyun.ros.cdk.ga.RosEndpointGroupsProps
+@alicloud/ros-cdk-ga.RosForwardingRules=com.aliyun.ros.cdk.ga.RosForwardingRules
+@alicloud/ros-cdk-ga.RosForwardingRules.ForwardingRulesProperty=com.aliyun.ros.cdk.ga.RosForwardingRules$ForwardingRulesProperty
+@alicloud/ros-cdk-ga.RosForwardingRules.RuleActionsProperty=com.aliyun.ros.cdk.ga.RosForwardingRules$RuleActionsProperty
+@alicloud/ros-cdk-ga.RosForwardingRules.RuleConditionsProperty=com.aliyun.ros.cdk.ga.RosForwardingRules$RuleConditionsProperty
+@alicloud/ros-cdk-ga.RosForwardingRulesProps=com.aliyun.ros.cdk.ga.RosForwardingRulesProps
 @alicloud/ros-cdk-ga.RosIpSets=com.aliyun.ros.cdk.ga.RosIpSets
 @alicloud/ros-cdk-ga.RosIpSets.AccelerateRegionProperty=com.aliyun.ros.cdk.ga.RosIpSets$AccelerateRegionProperty
 @alicloud/ros-cdk-ga.RosIpSetsProps=com.aliyun.ros.cdk.ga.RosIpSetsProps

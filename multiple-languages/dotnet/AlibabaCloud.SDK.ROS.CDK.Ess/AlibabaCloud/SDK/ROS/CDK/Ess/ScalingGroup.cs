@@ -6,7 +6,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
 {
     /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScalingGroup`, which is used to create a scaling group.</summary>
     /// <remarks>
-    /// A scaling group is a group of Elastic Compute Service (ECS) instances that are dynamically scaled based on the configured scenario. A scaling group does not immediately take effect after it is created. You must use ALIYUN::ESS::ScalingGroupEnable to enable the scaling group to trigger scaling activities and execute scaling rules.
+    /// A scaling group can be a group of Elastic Compute Service (ECS) instances that are dynamically scaled based on the configured scenario. A scaling group does not immediately take effect after it is created. You must use ALIYUN::ESS::ScalingGroupEnable to enable the scaling group to trigger scaling activities based on scaling rules.
     ///
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosScalingGroup`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroup

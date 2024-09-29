@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteEntry`, which is used to add a route to a route table of an Enterprise Edition transit router.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteEntry`, which is used to add routes to a route table of an Enterprise Edition transit router.
 type RosTransitRouterRouteEntry interface {
 	alicloudroscdkcore.RosResource
 	AttrTransitRouterRouteEntryDescription() alicloudroscdkcore.IResolvable

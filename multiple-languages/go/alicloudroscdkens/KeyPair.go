@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ENS::KeyPair`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ENS::KeyPair`, which is used to import the public key of a Rivest-Shamir-Adleman (RSA)-encrypted key pair.
 type KeyPair interface {
 	alicloudroscdkcore.Resource
 	// Attribute KeyPairFingerPrint: The fingerprint of the key pair.

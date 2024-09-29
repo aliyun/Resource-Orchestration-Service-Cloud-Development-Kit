@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ALB::ServerGroup</code>, which is used to create a server group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:22.908Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:36.081Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosServerGroup")
 public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -115,6 +115,24 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getConnectionDrainConfig() {
+        return software.amazon.jsii.Kernel.get(this, "connectionDrainConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setConnectionDrainConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "connectionDrainConfig", value);
+    }
+
+    /**
+     */
+    public void setConnectionDrainConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.alb.RosServerGroup.ConnectionDrainConfigProperty value) {
+        software.amazon.jsii.Kernel.set(this, "connectionDrainConfig", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getProtocol() {
         return software.amazon.jsii.Kernel.get(this, "protocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -205,6 +223,24 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSlowStartConfig() {
+        return software.amazon.jsii.Kernel.get(this, "slowStartConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSlowStartConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "slowStartConfig", value);
+    }
+
+    /**
+     */
+    public void setSlowStartConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.alb.RosServerGroup.SlowStartConfigProperty value) {
+        software.amazon.jsii.Kernel.set(this, "slowStartConfig", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getStickySessionConfig() {
         return software.amazon.jsii.Kernel.get(this, "stickySessionConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -231,6 +267,206 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setTags(final @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.alb.RosServerGroup.TagsProperty> value) {
         software.amazon.jsii.Kernel.set(this, "tags", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getUchConfig() {
+        return software.amazon.jsii.Kernel.get(this, "uchConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setUchConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "uchConfig", value);
+    }
+
+    /**
+     */
+    public void setUchConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.alb.RosServerGroup.UchConfigProperty value) {
+        software.amazon.jsii.Kernel.set(this, "uchConfig", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getUpstreamKeepaliveEnabled() {
+        return software.amazon.jsii.Kernel.get(this, "upstreamKeepaliveEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setUpstreamKeepaliveEnabled(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "upstreamKeepaliveEnabled", value);
+    }
+
+    /**
+     */
+    public void setUpstreamKeepaliveEnabled(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "upstreamKeepaliveEnabled", value);
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosServerGroup.ConnectionDrainConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(ConnectionDrainConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface ConnectionDrainConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getConnectionDrainEnabled();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getConnectionDrainTimeout();
+
+        /**
+         * @return a {@link Builder} of {@link ConnectionDrainConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link ConnectionDrainConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<ConnectionDrainConfigProperty> {
+            java.lang.Object connectionDrainEnabled;
+            java.lang.Object connectionDrainTimeout;
+
+            /**
+             * Sets the value of {@link ConnectionDrainConfigProperty#getConnectionDrainEnabled}
+             * @param connectionDrainEnabled the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder connectionDrainEnabled(java.lang.Boolean connectionDrainEnabled) {
+                this.connectionDrainEnabled = connectionDrainEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConnectionDrainConfigProperty#getConnectionDrainEnabled}
+             * @param connectionDrainEnabled the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder connectionDrainEnabled(com.aliyun.ros.cdk.core.IResolvable connectionDrainEnabled) {
+                this.connectionDrainEnabled = connectionDrainEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConnectionDrainConfigProperty#getConnectionDrainTimeout}
+             * @param connectionDrainTimeout the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder connectionDrainTimeout(java.lang.Number connectionDrainTimeout) {
+                this.connectionDrainTimeout = connectionDrainTimeout;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConnectionDrainConfigProperty#getConnectionDrainTimeout}
+             * @param connectionDrainTimeout the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder connectionDrainTimeout(com.aliyun.ros.cdk.core.IResolvable connectionDrainTimeout) {
+                this.connectionDrainTimeout = connectionDrainTimeout;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link ConnectionDrainConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public ConnectionDrainConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link ConnectionDrainConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ConnectionDrainConfigProperty {
+            private final java.lang.Object connectionDrainEnabled;
+            private final java.lang.Object connectionDrainTimeout;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.connectionDrainEnabled = software.amazon.jsii.Kernel.get(this, "connectionDrainEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.connectionDrainTimeout = software.amazon.jsii.Kernel.get(this, "connectionDrainTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.connectionDrainEnabled = java.util.Objects.requireNonNull(builder.connectionDrainEnabled, "connectionDrainEnabled is required");
+                this.connectionDrainTimeout = java.util.Objects.requireNonNull(builder.connectionDrainTimeout, "connectionDrainTimeout is required");
+            }
+
+            @Override
+            public final java.lang.Object getConnectionDrainEnabled() {
+                return this.connectionDrainEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getConnectionDrainTimeout() {
+                return this.connectionDrainTimeout;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("connectionDrainEnabled", om.valueToTree(this.getConnectionDrainEnabled()));
+                data.set("connectionDrainTimeout", om.valueToTree(this.getConnectionDrainTimeout()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-alb.RosServerGroup.ConnectionDrainConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                ConnectionDrainConfigProperty.Jsii$Proxy that = (ConnectionDrainConfigProperty.Jsii$Proxy) o;
+
+                if (!connectionDrainEnabled.equals(that.connectionDrainEnabled)) return false;
+                return this.connectionDrainTimeout.equals(that.connectionDrainTimeout);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.connectionDrainEnabled.hashCode();
+                result = 31 * result + (this.connectionDrainTimeout.hashCode());
+                return result;
+            }
+        }
     }
     /**
      */
@@ -832,6 +1068,170 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosServerGroup.SlowStartConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(SlowStartConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface SlowStartConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getSlowStartDuration();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getSlowStartEnabled();
+
+        /**
+         * @return a {@link Builder} of {@link SlowStartConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link SlowStartConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<SlowStartConfigProperty> {
+            java.lang.Object slowStartDuration;
+            java.lang.Object slowStartEnabled;
+
+            /**
+             * Sets the value of {@link SlowStartConfigProperty#getSlowStartDuration}
+             * @param slowStartDuration the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder slowStartDuration(java.lang.Number slowStartDuration) {
+                this.slowStartDuration = slowStartDuration;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SlowStartConfigProperty#getSlowStartDuration}
+             * @param slowStartDuration the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder slowStartDuration(com.aliyun.ros.cdk.core.IResolvable slowStartDuration) {
+                this.slowStartDuration = slowStartDuration;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SlowStartConfigProperty#getSlowStartEnabled}
+             * @param slowStartEnabled the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder slowStartEnabled(java.lang.Boolean slowStartEnabled) {
+                this.slowStartEnabled = slowStartEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SlowStartConfigProperty#getSlowStartEnabled}
+             * @param slowStartEnabled the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder slowStartEnabled(com.aliyun.ros.cdk.core.IResolvable slowStartEnabled) {
+                this.slowStartEnabled = slowStartEnabled;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link SlowStartConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public SlowStartConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link SlowStartConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements SlowStartConfigProperty {
+            private final java.lang.Object slowStartDuration;
+            private final java.lang.Object slowStartEnabled;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.slowStartDuration = software.amazon.jsii.Kernel.get(this, "slowStartDuration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.slowStartEnabled = software.amazon.jsii.Kernel.get(this, "slowStartEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.slowStartDuration = java.util.Objects.requireNonNull(builder.slowStartDuration, "slowStartDuration is required");
+                this.slowStartEnabled = java.util.Objects.requireNonNull(builder.slowStartEnabled, "slowStartEnabled is required");
+            }
+
+            @Override
+            public final java.lang.Object getSlowStartDuration() {
+                return this.slowStartDuration;
+            }
+
+            @Override
+            public final java.lang.Object getSlowStartEnabled() {
+                return this.slowStartEnabled;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("slowStartDuration", om.valueToTree(this.getSlowStartDuration()));
+                data.set("slowStartEnabled", om.valueToTree(this.getSlowStartEnabled()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-alb.RosServerGroup.SlowStartConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                SlowStartConfigProperty.Jsii$Proxy that = (SlowStartConfigProperty.Jsii$Proxy) o;
+
+                if (!slowStartDuration.equals(that.slowStartDuration)) return false;
+                return this.slowStartEnabled.equals(that.slowStartEnabled);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.slowStartDuration.hashCode();
+                result = 31 * result + (this.slowStartEnabled.hashCode());
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosServerGroup.StickySessionConfigProperty")
     @software.amazon.jsii.Jsii.Proxy(StickySessionConfigProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1256,6 +1656,170 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
         }
     }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosServerGroup.UchConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(UchConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface UchConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getType();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getValue();
+
+        /**
+         * @return a {@link Builder} of {@link UchConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link UchConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<UchConfigProperty> {
+            java.lang.Object type;
+            java.lang.Object value;
+
+            /**
+             * Sets the value of {@link UchConfigProperty#getType}
+             * @param type the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder type(java.lang.String type) {
+                this.type = type;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link UchConfigProperty#getType}
+             * @param type the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
+                this.type = type;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link UchConfigProperty#getValue}
+             * @param value the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(java.lang.String value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link UchConfigProperty#getValue}
+             * @param value the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(com.aliyun.ros.cdk.core.IResolvable value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link UchConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public UchConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link UchConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements UchConfigProperty {
+            private final java.lang.Object type;
+            private final java.lang.Object value;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.type = java.util.Objects.requireNonNull(builder.type, "type is required");
+                this.value = java.util.Objects.requireNonNull(builder.value, "value is required");
+            }
+
+            @Override
+            public final java.lang.Object getType() {
+                return this.type;
+            }
+
+            @Override
+            public final java.lang.Object getValue() {
+                return this.value;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("type", om.valueToTree(this.getType()));
+                data.set("value", om.valueToTree(this.getValue()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-alb.RosServerGroup.UchConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                UchConfigProperty.Jsii$Proxy that = (UchConfigProperty.Jsii$Proxy) o;
+
+                if (!type.equals(that.type)) return false;
+                return this.value.equals(that.value);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.type.hashCode();
+                result = 31 * result + (this.value.hashCode());
+                return result;
+            }
+        }
+    }
 
     /**
      * A fluent builder for {@link com.aliyun.ros.cdk.alb.RosServerGroup}.
@@ -1331,6 +1895,23 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder vpcId(final com.aliyun.ros.cdk.core.IResolvable vpcId) {
             this.props.vpcId(vpcId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param connectionDrainConfig This parameter is required.
+         */
+        public Builder connectionDrainConfig(final com.aliyun.ros.cdk.core.IResolvable connectionDrainConfig) {
+            this.props.connectionDrainConfig(connectionDrainConfig);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param connectionDrainConfig This parameter is required.
+         */
+        public Builder connectionDrainConfig(final com.aliyun.ros.cdk.alb.RosServerGroup.ConnectionDrainConfigProperty connectionDrainConfig) {
+            this.props.connectionDrainConfig(connectionDrainConfig);
             return this;
         }
 
@@ -1421,6 +2002,23 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param slowStartConfig This parameter is required.
+         */
+        public Builder slowStartConfig(final com.aliyun.ros.cdk.core.IResolvable slowStartConfig) {
+            this.props.slowStartConfig(slowStartConfig);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param slowStartConfig This parameter is required.
+         */
+        public Builder slowStartConfig(final com.aliyun.ros.cdk.alb.RosServerGroup.SlowStartConfigProperty slowStartConfig) {
+            this.props.slowStartConfig(slowStartConfig);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param stickySessionConfig This parameter is required.
          */
         public Builder stickySessionConfig(final com.aliyun.ros.cdk.core.IResolvable stickySessionConfig) {
@@ -1442,6 +2040,40 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.alb.RosServerGroup.TagsProperty> tags) {
             this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param uchConfig This parameter is required.
+         */
+        public Builder uchConfig(final com.aliyun.ros.cdk.core.IResolvable uchConfig) {
+            this.props.uchConfig(uchConfig);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param uchConfig This parameter is required.
+         */
+        public Builder uchConfig(final com.aliyun.ros.cdk.alb.RosServerGroup.UchConfigProperty uchConfig) {
+            this.props.uchConfig(uchConfig);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param upstreamKeepaliveEnabled This parameter is required.
+         */
+        public Builder upstreamKeepaliveEnabled(final java.lang.Boolean upstreamKeepaliveEnabled) {
+            this.props.upstreamKeepaliveEnabled(upstreamKeepaliveEnabled);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param upstreamKeepaliveEnabled This parameter is required.
+         */
+        public Builder upstreamKeepaliveEnabled(final com.aliyun.ros.cdk.core.IResolvable upstreamKeepaliveEnabled) {
+            this.props.upstreamKeepaliveEnabled(upstreamKeepaliveEnabled);
             return this;
         }
 

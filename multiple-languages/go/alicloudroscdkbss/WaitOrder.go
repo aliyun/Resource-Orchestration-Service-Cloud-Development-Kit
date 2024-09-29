@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::BSS::WaitOrder`, which is used to wait for an order to be fulfilled.
+// This class encapsulates and extends the ROS resource type `ALIYUN::BSS::WaitOrder`, which is used to wait for orders to be completed.
 type WaitOrder interface {
 	alicloudroscdkcore.Resource
 	EnableResourcePropertyConstraint() *bool

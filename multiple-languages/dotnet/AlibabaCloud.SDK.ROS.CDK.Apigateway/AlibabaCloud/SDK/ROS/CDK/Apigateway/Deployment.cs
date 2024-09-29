@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Deployment`, which is used to release an API to a specified runtime environment, or switch a released API to a specified version.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Deployment`, which is used to publish an API to a specific runtime environment, or switch a published API to a specific version.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDeployment`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-deployment

@@ -110,7 +110,7 @@ export interface InstanceProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::Instance`, which is used to create an instance of Cloud Firewall.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::Instance`, which is used to create a Cloud Firewall instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-instance
  */

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.oss;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-website
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:29.074Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:41.145Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.WebsiteProps")
 @software.amazon.jsii.Jsii.Proxy(WebsiteProps.Jsii$Proxy.class)
 public interface WebsiteProps extends software.amazon.jsii.JsiiSerializable {

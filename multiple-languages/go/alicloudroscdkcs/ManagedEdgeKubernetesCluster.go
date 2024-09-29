@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CS::ManagedEdgeKubernetesCluster`, which is used to create a managed edge cluster of Container Service for Kubernetes (ACK).
+// This class encapsulates and extends the ROS resource type `ALIYUN::CS::ManagedEdgeKubernetesCluster`, which is used to create a Container Service for Kubernetes (ACK) edge cluster.
 type ManagedEdgeKubernetesCluster interface {
 	alicloudroscdkcore.Resource
 	// Attribute APIServerSLBId: The id of API server SLB.

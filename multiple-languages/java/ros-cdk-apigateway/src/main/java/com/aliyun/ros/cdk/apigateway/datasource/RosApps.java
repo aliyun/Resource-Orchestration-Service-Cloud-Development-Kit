@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::ApiGateway::Apps</code>, which is used to query applications.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:23.285Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:36.327Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.datasource.RosApps")
 public class RosApps extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -114,6 +114,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
         }
 
+        private object? _connectionDrainConfig;
+
+        /// <summary>Property connectionDrainConfig: Configuration related to graceful connection interruption.Enable graceful connection interruption. After the backend server is removed or the health check fails, the load balancing allows the existing connection to be transmitted normally within a certain period of time.Note:  Basic Edition instances do not support enabling graceful connection interruption. Only Standard Edition and WAF Enhanced Edition instances support it.Server type and IP type server group support graceful connection interruption. Function Compute type does not support it.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "connectionDrainConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosServerGroup.ConnectionDrainConfigProperty\"}]}}", isOptional: true)]
+        public object? ConnectionDrainConfig
+        {
+            get => _connectionDrainConfig;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Alb.RosServerGroup.IConnectionDrainConfigProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosServerGroup.IConnectionDrainConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _connectionDrainConfig = value;
+            }
+        }
+
         private object? _protocol;
 
         /// <summary>Property protocol: The backend protocol.</summary>
@@ -292,6 +323,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
         }
 
+        private object? _slowStartConfig;
+
+        /// <summary>Property slowStartConfig: Slow start related configuration.After slow start is enabled, the backend server newly added to the backend server group will be preheated within the set time period, and the number of requests forwarded to the server will increase linearly.Note: Basic Edition instances do not support slow start, only Standard Edition and WAF Enhanced Edition instances support it.Server type and IP type server groups support slow start configuration, but Function Compute type does not.Slow start can only be enabled when the backend scheduling algorithm is the weighted polling algorithm.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "slowStartConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosServerGroup.SlowStartConfigProperty\"}]}}", isOptional: true)]
+        public object? SlowStartConfig
+        {
+            get => _slowStartConfig;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Alb.RosServerGroup.ISlowStartConfigProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosServerGroup.ISlowStartConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _slowStartConfig = value;
+            }
+        }
+
         private object? _stickySessionConfig;
 
         /// <summary>Property stickySessionConfig: The configuration of session persistence.</summary>
@@ -336,6 +398,68 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         {
             get;
             set;
+        }
+
+        private object? _uchConfig;
+
+        /// <summary>Property uchConfig: URL consistency hash parameter configuration.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "uchConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosServerGroup.UchConfigProperty\"}]}}", isOptional: true)]
+        public object? UchConfig
+        {
+            get => _uchConfig;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Alb.RosServerGroup.IUchConfigProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosServerGroup.IUchConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _uchConfig = value;
+            }
+        }
+
+        private object? _upstreamKeepaliveEnabled;
+
+        /// <summary>Property upstreamKeepaliveEnabled: Whether to enable upstream keepalive.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "upstreamKeepaliveEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? UpstreamKeepaliveEnabled
+        {
+            get => _upstreamKeepaliveEnabled;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _upstreamKeepaliveEnabled = value;
+            }
         }
     }
 }

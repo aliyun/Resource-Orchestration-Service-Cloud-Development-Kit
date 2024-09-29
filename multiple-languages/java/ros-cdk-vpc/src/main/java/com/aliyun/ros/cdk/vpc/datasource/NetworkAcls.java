@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::VPC::NetworkAcls</code>, which is used to query created network access control lists (ACLs).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:31.709Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:43.314Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.NetworkAcls")
 public class NetworkAcls extends com.aliyun.ros.cdk.core.Resource {
 

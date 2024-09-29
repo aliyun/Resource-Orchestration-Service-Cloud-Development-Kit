@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CloudPhone::InstanceGroup`, which is used to create and start Elastic Cloud Phone (ECP) instances.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CloudPhone::InstanceGroup`, which is used to create and start cloud phones.
 type RosInstanceGroup interface {
 	alicloudroscdkcore.RosResource
 	Amount() interface{}

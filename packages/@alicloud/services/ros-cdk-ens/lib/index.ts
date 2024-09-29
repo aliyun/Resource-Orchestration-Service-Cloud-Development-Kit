@@ -1,5 +1,6 @@
 export * from './disk';
 export * from './diskinstanceattachment';
+export * from './image';
 export * from './instance';
 export * from './instancesecuritygroupattachment';
 export * from './keypair';

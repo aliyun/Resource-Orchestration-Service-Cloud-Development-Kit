@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cen;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::RouteEntry</code>, which is used to advertise a routing entry of an attached VPC or VBR to a CEN instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::RouteEntry</code>, which is used to advertise a route of an attached virtual private cloud (VPC) or virtual border router (VBR) to a Cloud Enterprise Network (CEN) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:24.076Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:36.699Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RouteEntry")
 public class RouteEntry extends com.aliyun.ros.cdk.core.Resource {
 

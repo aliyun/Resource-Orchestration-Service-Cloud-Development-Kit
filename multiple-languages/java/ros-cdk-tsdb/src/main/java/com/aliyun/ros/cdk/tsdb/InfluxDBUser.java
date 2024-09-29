@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.tsdb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::TSDB::InfluxDBUser</code>, which is used to create a Time Series Database (TSDB) database account.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:31.201Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:42.898Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.tsdb.$Module.class, fqn = "@alicloud/ros-cdk-tsdb.InfluxDBUser")
 public class InfluxDBUser extends com.aliyun.ros.cdk.core.Resource {
 

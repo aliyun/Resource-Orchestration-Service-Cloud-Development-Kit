@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dbs.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dbs-backupplans
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:25.139Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:37.651Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dbs.$Module.class, fqn = "@alicloud/ros-cdk-dbs.datasource.RosBackupPlansProps")
 @software.amazon.jsii.Jsii.Proxy(RosBackupPlansProps.Jsii$Proxy.class)
 public interface RosBackupPlansProps extends software.amazon.jsii.JsiiSerializable {

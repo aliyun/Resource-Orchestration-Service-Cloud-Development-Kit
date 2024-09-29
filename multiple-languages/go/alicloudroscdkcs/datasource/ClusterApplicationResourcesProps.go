@@ -9,6 +9,8 @@ type ClusterApplicationResourcesProps struct {
 	ClusterId interface{} `field:"required" json:"clusterId" yaml:"clusterId"`
 	// Property kind: The kind of kubernetes resources to query.
 	Kind interface{} `field:"required" json:"kind" yaml:"kind"`
+	// Property apiVersion: The api version of kubernetes resource to query.
+	ApiVersion interface{} `field:"optional" json:"apiVersion" yaml:"apiVersion"`
 	// Property firstMatch: Only the first matching result in jsonpath's filtered results is returned.
 	//
 	// Default False.

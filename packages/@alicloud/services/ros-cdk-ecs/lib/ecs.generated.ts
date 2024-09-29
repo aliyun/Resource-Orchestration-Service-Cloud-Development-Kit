@@ -3962,7 +3962,7 @@ function rosDiskPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::Disk`, which is used to create a cloud disk for an Elastic Compute Service (ECS) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::Disk`, which is used to create a cloud disk in Elastic Compute Service (ECS).
  * @Note This class does not contain additional functions, so it is recommended to use the `Disk` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-disk
  */
@@ -8481,7 +8481,7 @@ function rosInstanceGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::InstanceGroup`, which is used to create a group of Elastic Compute Service (ECS) instances that have the same configurations.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::InstanceGroup`, which is used to create Elastic Compute Service (ECS) instances that have the same configurations.
  * @Note This class does not contain additional functions, so it is recommended to use the `InstanceGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroup
  */
@@ -8530,11 +8530,6 @@ export class RosInstanceGroup extends ros.RosResource {
      * @Attribute PublicIps: Public IP address list of created ecs instances.
      */
     public readonly attrPublicIps: ros.IResolvable;
-
-    /**
-     * @Attribute RelatedOrderIds: The related order id list of created ecs instances
-     */
-    public readonly attrRelatedOrderIds: ros.IResolvable;
 
     /**
      * @Attribute ZoneIds: Zone id of created instances.
@@ -9026,7 +9021,6 @@ export class RosInstanceGroup extends ros.RosResource {
         this.attrOrderId = this.getAtt('OrderId');
         this.attrPrivateIps = this.getAtt('PrivateIps');
         this.attrPublicIps = this.getAtt('PublicIps');
-        this.attrRelatedOrderIds = this.getAtt('RelatedOrderIds');
         this.attrZoneIds = this.getAtt('ZoneIds');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -16644,7 +16638,7 @@ function rosSecurityGroupEgressesPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SecurityGroupEgresses`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SecurityGroupEgresses`, which is used to associate multiple outbound rules with a security group at a time.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroupEgresses` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupegresses
  */
@@ -17219,7 +17213,7 @@ function rosSecurityGroupIngressesPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SecurityGroupIngresses`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SecurityGroupIngresses`, which is used to associate multiple inbound rules with a security group at a time.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroupIngresses` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupingresses
  */

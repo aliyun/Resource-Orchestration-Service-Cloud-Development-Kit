@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cddc.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::CDDC::DedicatedHostGroups</code>, which is used to query the resources in a dedicated cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:23.873Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:36.555Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cddc.$Module.class, fqn = "@alicloud/ros-cdk-cddc.datasource.RosDedicatedHostGroups")
 public class RosDedicatedHostGroups extends com.aliyun.ros.cdk.core.RosResource {
 

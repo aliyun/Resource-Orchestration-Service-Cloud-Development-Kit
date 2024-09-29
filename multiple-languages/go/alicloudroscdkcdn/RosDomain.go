@@ -10,7 +10,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CDN::Domain`, which is used to add a domain name to Alibaba Cloud CDN (CDN).
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CDN::Domain`, which is used to add an accelerated domain name.
 type RosDomain interface {
 	alicloudroscdkcore.RosResource
 	AttrCname() alicloudroscdkcore.IResolvable

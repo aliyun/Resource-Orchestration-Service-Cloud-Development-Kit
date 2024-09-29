@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletargets
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:24.596Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:37.116Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosMetricRuleTargetsProps")
 @software.amazon.jsii.Jsii.Proxy(RosMetricRuleTargetsProps.Jsii$Proxy.class)
 public interface RosMetricRuleTargetsProps extends software.amazon.jsii.JsiiSerializable {

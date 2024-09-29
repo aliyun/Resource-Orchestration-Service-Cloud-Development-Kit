@@ -26,7 +26,7 @@ export interface ImageProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CloudPhone::Image`, which is used to create a custom image for an Elastic Cloud Phone (ECP) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CloudPhone::Image`, which is used to create a custom image for a cloud phone.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosImage`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-image
  */

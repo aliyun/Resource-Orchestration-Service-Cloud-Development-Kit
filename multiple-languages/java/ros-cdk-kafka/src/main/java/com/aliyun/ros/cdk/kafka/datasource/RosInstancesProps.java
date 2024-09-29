@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.kafka.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kafka-instances
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:28.179Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:40.489Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.datasource.RosInstancesProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstancesProps.Jsii$Proxy.class)
 public interface RosInstancesProps extends software.amazon.jsii.JsiiSerializable {

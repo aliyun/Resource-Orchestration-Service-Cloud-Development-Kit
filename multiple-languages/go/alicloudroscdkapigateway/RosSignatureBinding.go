@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::SignatureBinding`, which is used to bind backend signatures to APIs.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::SignatureBinding`, which is used to bind a backend signature to APIs.
 type RosSignatureBinding interface {
 	alicloudroscdkcore.RosResource
 	ApiIds() interface{}

@@ -86,7 +86,7 @@ function rosCenBandwidthLimitPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenBandwidthLimit`, which is used to configure the cross-region interconnection bandwidth in a bandwidth plan.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenBandwidthLimit`, which is used to configure the bandwidth for an inter-region connection in a bandwidth plan.
  * @Note This class does not contain additional functions, so it is recommended to use the `CenBandwidthLimit` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthlimit
  */
@@ -337,7 +337,7 @@ function rosCenBandwidthPackagePropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenBandwidthPackage`, which is used to purchase a bandwidth plan before you use Cloud Enterprise Network (CEN) to connect network instances in different regions.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenBandwidthPackage`, which is used to purchase a bandwidth plan before you use Cloud Enterprise Network (CEN) to connect network instances that reside in different regions.
  * @Note This class does not contain additional functions, so it is recommended to use the `CenBandwidthPackage` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthpackage
  */
@@ -576,7 +576,7 @@ function rosCenBandwidthPackageAssociationPropsToRosTemplate(properties: any, en
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenBandwidthPackageAssociation`, which is used to bind a bandwidth package to the specified Cloud Enterprise Network (CEN) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenBandwidthPackageAssociation`, which is used to associate a bandwidth plan with a Cloud Enterprise Network (CEN) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `CenBandwidthPackageAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthpackageassociation
  */
@@ -918,7 +918,7 @@ function rosCenInstanceAttachmentPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenInstanceAttachment`, which is used to attach network instances to a CEN instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenInstanceAttachment`, which is used to attach a network instance to a Cloud Enterprise Network (CEN) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `CenInstanceAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-ceninstanceattachment
  */
@@ -1635,7 +1635,7 @@ function rosCenRouteServicePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenRouteService`, which is used to configure the access to an Alibaba Cloud service.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenRouteService`, which is used to access an Alibaba Cloud service.
  * @Note This class does not contain additional functions, so it is recommended to use the `CenRouteService` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenrouteservice
  */
@@ -1825,7 +1825,7 @@ function rosCenVbrHealthCheckPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenVbrHealthCheck`, which is used to enable the health check feature or modify the health check configuration for a virtual border router (VBR).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenVbrHealthCheck`, which is used to enable the health check feature or modify the health check configurations for a virtual border router (VBR).
  * @Note This class does not contain additional functions, so it is recommended to use the `CenVbrHealthCheck` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenvbrhealthcheck
  */
@@ -2211,7 +2211,7 @@ function rosRouteEntryPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::RouteEntry`, which is used to advertise a routing entry of an attached VPC or VBR to a CEN instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::RouteEntry`, which is used to advertise a route of an attached virtual private cloud (VPC) or virtual border router (VBR) to a Cloud Enterprise Network (CEN) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `RouteEntry` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-routeentry
  */
@@ -2810,7 +2810,7 @@ function rosTransitRouterRouteEntryPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteEntry`, which is used to add a route to a route table of an Enterprise Edition transit router.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteEntry`, which is used to add routes to a route table of an Enterprise Edition transit router.
  * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterRouteEntry` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterrouteentry
  */
@@ -3425,7 +3425,7 @@ function rosTransitRouterVbrAttachmentPropsToRosTemplate(properties: any, enable
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterVbrAttachment`, which is used to create a virtual border router (VBR) connection from an Enterprise Edition transit router.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterVbrAttachment`, which is used to create a virtual border router (VBR) connection on an Enterprise Edition transit router.
  * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterVbrAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervbrattachment
  */
@@ -3699,7 +3699,7 @@ function rosTransitRouterVpcAttachmentPropsToRosTemplate(properties: any, enable
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterVpcAttachment`, which is used to connect a virtual private cloud (​VPC) to an Enterprise Edition transit router.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterVpcAttachment`, which is used to create a virtual private cloud (VPC) connection on an Enterprise Edition transit router.
  * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterVpcAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervpcattachment
  */
@@ -4051,7 +4051,7 @@ function rosTransitRouterVpnAttachmentPropsToRosTemplate(properties: any, enable
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterVpnAttachment`, which is used to create a VPN attachment.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterVpnAttachment`, which is used to create a VPN connection.
  * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterVpnAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervpnattachment
  */

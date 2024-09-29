@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cxapi;
 /**
  * Represents a deployable cloud application.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:22.428Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:35.669Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cxapi.$Module.class, fqn = "@alicloud/ros-cdk-cxapi.CloudAssembly")
 public class CloudAssembly extends software.amazon.jsii.JsiiObject {
 

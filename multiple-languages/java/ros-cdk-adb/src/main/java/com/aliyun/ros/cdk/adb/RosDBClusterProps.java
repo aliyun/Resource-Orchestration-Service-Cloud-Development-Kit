@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.adb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-dbcluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:22.732Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:35.937Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adb.$Module.class, fqn = "@alicloud/ros-cdk-adb.RosDBClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBClusterProps.Jsii$Proxy.class)
 public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable {

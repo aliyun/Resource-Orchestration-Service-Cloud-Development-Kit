@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Instance`, which is used to create an ApsaraDB for Redis instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Instance`, which is used to create a Tair (Redis OSS-compatible) instance.
 type RosInstance interface {
 	alicloudroscdkcore.RosResource
 	AttrArchitectureType() alicloudroscdkcore.IResolvable

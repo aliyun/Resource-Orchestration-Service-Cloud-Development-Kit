@@ -33,7 +33,7 @@ export interface SceneDefensePolicyProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DDoSPro::SceneDefensePolicy`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DDoSPro::SceneDefensePolicy`, which is used to create a scenario-specific custom policy.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSceneDefensePolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-scenedefensepolicy
  */

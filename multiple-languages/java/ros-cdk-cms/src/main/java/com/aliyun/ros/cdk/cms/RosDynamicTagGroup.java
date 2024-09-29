@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cms;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CMS::DynamicTagGroup</code>, which is used to create a tag rule based on which cloud resources can be automatically added to an application group.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CMS::DynamicTagGroup</code>, which is used to create a tag rule based on which cloud resources are automatically added to an application group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:24.571Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:37.099Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosDynamicTagGroup")
 public class RosDynamicTagGroup extends com.aliyun.ros.cdk.core.RosResource {
 

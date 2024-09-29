@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::SchedulerRule`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::SchedulerRule`, which is used to create a scheduling rule for Sec-Traffic Manager.
 type RosSchedulerRule interface {
 	alicloudroscdkcore.RosResource
 	AttrRuleName() alicloudroscdkcore.IResolvable

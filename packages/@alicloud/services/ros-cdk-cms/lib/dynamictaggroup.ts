@@ -55,7 +55,7 @@ export interface DynamicTagGroupProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::DynamicTagGroup`, which is used to create a tag rule based on which cloud resources can be automatically added to an application group.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::DynamicTagGroup`, which is used to create a tag rule based on which cloud resources are automatically added to an application group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDynamicTagGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-dynamictaggroup
  */

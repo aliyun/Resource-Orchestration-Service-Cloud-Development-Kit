@@ -5,6 +5,8 @@
 @alicloud/ros-cdk-ecd.Desktops=com.aliyun.ros.cdk.ecd.Desktops
 @alicloud/ros-cdk-ecd.DesktopsProps=com.aliyun.ros.cdk.ecd.DesktopsProps
 @alicloud/ros-cdk-ecd.NetworkPackage=com.aliyun.ros.cdk.ecd.NetworkPackage
+@alicloud/ros-cdk-ecd.NetworkPackageAssociation=com.aliyun.ros.cdk.ecd.NetworkPackageAssociation
+@alicloud/ros-cdk-ecd.NetworkPackageAssociationProps=com.aliyun.ros.cdk.ecd.NetworkPackageAssociationProps
 @alicloud/ros-cdk-ecd.NetworkPackageProps=com.aliyun.ros.cdk.ecd.NetworkPackageProps
 @alicloud/ros-cdk-ecd.RosBundle=com.aliyun.ros.cdk.ecd.RosBundle
 @alicloud/ros-cdk-ecd.RosBundleProps=com.aliyun.ros.cdk.ecd.RosBundleProps
@@ -14,6 +16,8 @@
 @alicloud/ros-cdk-ecd.RosDesktops.TagsProperty=com.aliyun.ros.cdk.ecd.RosDesktops$TagsProperty
 @alicloud/ros-cdk-ecd.RosDesktopsProps=com.aliyun.ros.cdk.ecd.RosDesktopsProps
 @alicloud/ros-cdk-ecd.RosNetworkPackage=com.aliyun.ros.cdk.ecd.RosNetworkPackage
+@alicloud/ros-cdk-ecd.RosNetworkPackageAssociation=com.aliyun.ros.cdk.ecd.RosNetworkPackageAssociation
+@alicloud/ros-cdk-ecd.RosNetworkPackageAssociationProps=com.aliyun.ros.cdk.ecd.RosNetworkPackageAssociationProps
 @alicloud/ros-cdk-ecd.RosNetworkPackageProps=com.aliyun.ros.cdk.ecd.RosNetworkPackageProps
 @alicloud/ros-cdk-ecd.RosSimpleOfficeSite=com.aliyun.ros.cdk.ecd.RosSimpleOfficeSite
 @alicloud/ros-cdk-ecd.RosSimpleOfficeSiteProps=com.aliyun.ros.cdk.ecd.RosSimpleOfficeSiteProps

@@ -15,7 +15,7 @@ import (
 	constructs              "github.com/aws/constructs-go/constructs/v3/jsii"
 )
 
-//go:embed alicloud-ros-cdk-fc-1.2.0.tgz
+//go:embed alicloud-ros-cdk-fc-1.3.0.tgz
 var tarball []byte
 
 // Initialize loads the necessary packages in the @jsii/kernel to support the enclosing module.
@@ -28,5 +28,5 @@ func Initialize() {
 	constructs.Initialize()
 
 	// Load this library into the kernel
-	_jsii_.Load("@alicloud/ros-cdk-fc", "1.2.0", tarball)
+	_jsii_.Load("@alicloud/ros-cdk-fc", "1.3.0", tarball)
 }

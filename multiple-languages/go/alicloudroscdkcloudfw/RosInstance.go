@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::Instance`, which is used to create an instance of Cloud Firewall.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::Instance`, which is used to create a Cloud Firewall instance.
 type RosInstance interface {
 	alicloudroscdkcore.RosResource
 	AccountNum() interface{}

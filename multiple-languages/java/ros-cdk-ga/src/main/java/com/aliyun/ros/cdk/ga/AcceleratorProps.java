@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ga;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-accelerator
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:27.506Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:40.017Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.AcceleratorProps")
 @software.amazon.jsii.Jsii.Proxy(AcceleratorProps.Jsii$Proxy.class)
 public interface AcceleratorProps extends software.amazon.jsii.JsiiSerializable {

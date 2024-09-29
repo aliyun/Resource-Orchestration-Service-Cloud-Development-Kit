@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hbase;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::HBase::MultiZoneCluster</code>, which is used to create an ApsaraDB for HBase cluster that resides in multiple zones.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:27.920Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:40.291Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbase.$Module.class, fqn = "@alicloud/ros-cdk-hbase.RosMultiZoneCluster")
 public class RosMultiZoneCluster extends com.aliyun.ros.cdk.core.RosResource {
 

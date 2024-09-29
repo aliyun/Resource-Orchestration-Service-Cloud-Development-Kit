@@ -280,7 +280,7 @@ function rosOrderPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CAS::Order`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CAS::Order`, which is used to create a certificate order.
  * @Note This class does not contain additional functions, so it is recommended to use the `Order` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cas-order
  */
@@ -537,7 +537,7 @@ function rosSslCertificatePropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CAS::SslCertificate`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CAS::SslCertificate`, which is used to create an SSL certificate.
  * @Note This class does not contain additional functions, so it is recommended to use the `SslCertificate` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cas-sslcertificate
  */

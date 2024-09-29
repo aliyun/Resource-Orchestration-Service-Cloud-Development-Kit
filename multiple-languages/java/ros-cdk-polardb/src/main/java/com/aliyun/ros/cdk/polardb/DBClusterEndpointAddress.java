@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.polardb;
  * <p>
  * The public endpoint can be a primary endpoint, the default cluster endpoint, or a custom cluster endpoint.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:29.354Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:41.409Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBClusterEndpointAddress")
 public class DBClusterEndpointAddress extends com.aliyun.ros.cdk.core.Resource {
 

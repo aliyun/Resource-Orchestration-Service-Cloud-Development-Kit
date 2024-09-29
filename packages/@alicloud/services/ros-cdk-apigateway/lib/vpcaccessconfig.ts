@@ -31,7 +31,7 @@ export interface VpcAccessConfigProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::VpcAccessConfig`, which is used to configure the VPC authorization for an instance so that VPC API can provide services externally.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::VpcAccessConfig`, which is used to configure virtual private cloud (VPC) access authorization for an instance. This helps APIs provide services based on private networks.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpcAccessConfig`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-vpcaccessconfig
  */

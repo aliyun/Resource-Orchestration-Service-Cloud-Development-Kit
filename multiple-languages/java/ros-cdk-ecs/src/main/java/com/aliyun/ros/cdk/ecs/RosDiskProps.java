@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-disk
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:26.012Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:38.727Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosDiskProps")
 @software.amazon.jsii.Jsii.Proxy(RosDiskProps.Jsii$Proxy.class)
 public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {

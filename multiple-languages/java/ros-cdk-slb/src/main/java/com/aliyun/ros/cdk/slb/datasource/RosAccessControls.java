@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::SLB::AccessControls</code>, which is used to query created access control lists (ACLs).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:30.829Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:42.677Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.datasource.RosAccessControls")
 public class RosAccessControls extends com.aliyun.ros.cdk.core.RosResource {
 

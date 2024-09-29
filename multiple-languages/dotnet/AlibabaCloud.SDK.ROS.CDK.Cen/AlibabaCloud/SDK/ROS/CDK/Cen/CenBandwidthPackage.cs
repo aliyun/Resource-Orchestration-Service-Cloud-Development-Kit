@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cen
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenBandwidthPackage`, which is used to purchase a bandwidth plan before you use Cloud Enterprise Network (CEN) to connect network instances in different regions.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenBandwidthPackage`, which is used to purchase a bandwidth plan before you use Cloud Enterprise Network (CEN) to connect network instances that reside in different regions.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenBandwidthPackage`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthpackage

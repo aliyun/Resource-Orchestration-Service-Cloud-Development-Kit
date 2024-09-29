@@ -6,8 +6,8 @@ package alicloudroscdknls
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nls-project
 type RosProjectProps struct {
 	Name interface{} `field:"required" json:"name" yaml:"name"`
-	ProjectType interface{} `field:"required" json:"projectType" yaml:"projectType"`
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
+	ProjectType interface{} `field:"optional" json:"projectType" yaml:"projectType"`
 	SdkType interface{} `field:"optional" json:"sdkType" yaml:"sdkType"`
 }
 

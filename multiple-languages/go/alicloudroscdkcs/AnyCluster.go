@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CS::AnyCluster`, which is used to create an ACK cluster of a specific type.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CS::AnyCluster`, which is used to create a Container Service for Kubernetes (ACK) cluster of a specific type.
 type AnyCluster interface {
 	alicloudroscdkcore.Resource
 	// Attribute APIServerSLBId: The id of API server SLB.

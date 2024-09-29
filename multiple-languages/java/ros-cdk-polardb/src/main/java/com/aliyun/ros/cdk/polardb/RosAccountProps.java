@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.polardb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-account
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:29.392Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:41.446Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosAccountProps")
 @software.amazon.jsii.Jsii.Proxy(RosAccountProps.Jsii$Proxy.class)
 public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
@@ -47,6 +47,12 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPrivForAllDb() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosAccountProps}
      */
     static Builder builder() {
@@ -63,6 +69,7 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object accountPrivilege;
         java.lang.Object accountType;
         java.lang.Object dbName;
+        java.lang.Object privForAllDb;
 
         /**
          * Sets the value of {@link RosAccountProps#getAccountName}
@@ -205,6 +212,26 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosAccountProps#getPrivForAllDb}
+         * @param privForAllDb the value to be set.
+         * @return {@code this}
+         */
+        public Builder privForAllDb(java.lang.String privForAllDb) {
+            this.privForAllDb = privForAllDb;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAccountProps#getPrivForAllDb}
+         * @param privForAllDb the value to be set.
+         * @return {@code this}
+         */
+        public Builder privForAllDb(com.aliyun.ros.cdk.core.IResolvable privForAllDb) {
+            this.privForAllDb = privForAllDb;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosAccountProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -227,6 +254,7 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object accountPrivilege;
         private final java.lang.Object accountType;
         private final java.lang.Object dbName;
+        private final java.lang.Object privForAllDb;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -241,6 +269,7 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
             this.accountPrivilege = software.amazon.jsii.Kernel.get(this, "accountPrivilege", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.accountType = software.amazon.jsii.Kernel.get(this, "accountType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbName = software.amazon.jsii.Kernel.get(this, "dbName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.privForAllDb = software.amazon.jsii.Kernel.get(this, "privForAllDb", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -255,6 +284,7 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
             this.accountPrivilege = builder.accountPrivilege;
             this.accountType = builder.accountType;
             this.dbName = builder.dbName;
+            this.privForAllDb = builder.privForAllDb;
         }
 
         @Override
@@ -293,6 +323,11 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getPrivForAllDb() {
+            return this.privForAllDb;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -312,6 +347,9 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getDbName() != null) {
                 data.set("dbName", om.valueToTree(this.getDbName()));
+            }
+            if (this.getPrivForAllDb() != null) {
+                data.set("privForAllDb", om.valueToTree(this.getPrivForAllDb()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -337,7 +375,8 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
             if (this.accountDescription != null ? !this.accountDescription.equals(that.accountDescription) : that.accountDescription != null) return false;
             if (this.accountPrivilege != null ? !this.accountPrivilege.equals(that.accountPrivilege) : that.accountPrivilege != null) return false;
             if (this.accountType != null ? !this.accountType.equals(that.accountType) : that.accountType != null) return false;
-            return this.dbName != null ? this.dbName.equals(that.dbName) : that.dbName == null;
+            if (this.dbName != null ? !this.dbName.equals(that.dbName) : that.dbName != null) return false;
+            return this.privForAllDb != null ? this.privForAllDb.equals(that.privForAllDb) : that.privForAllDb == null;
         }
 
         @Override
@@ -349,6 +388,7 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.accountPrivilege != null ? this.accountPrivilege.hashCode() : 0);
             result = 31 * result + (this.accountType != null ? this.accountType.hashCode() : 0);
             result = 31 * result + (this.dbName != null ? this.dbName.hashCode() : 0);
+            result = 31 * result + (this.privForAllDb != null ? this.privForAllDb.hashCode() : 0);
             return result;
         }
     }

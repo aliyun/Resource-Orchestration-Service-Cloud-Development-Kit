@@ -104,7 +104,7 @@ function rosBindingPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Binding`, which is used to bind a queue or exchange to an exchange.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Binding`, which is used to bind a queue or an exchange to an exchange.
  * @Note This class does not contain additional functions, so it is recommended to use the `Binding` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-binding
  */

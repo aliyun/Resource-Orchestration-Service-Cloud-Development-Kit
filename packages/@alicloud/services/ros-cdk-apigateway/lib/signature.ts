@@ -15,7 +15,7 @@ export interface SignatureProps {
     readonly signatureKey: string | ros.IResolvable;
 
     /**
-     * Property signatureName: The name of the Signature.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
+     * Property signatureName: The name of the Signature.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
      */
     readonly signatureName: string | ros.IResolvable;
 

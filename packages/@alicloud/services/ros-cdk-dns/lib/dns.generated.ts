@@ -413,7 +413,7 @@ function rosDomainRecordPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DNS::DomainRecord`, which is used to add a domain name system (DNS) record.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DNS::DomainRecord`, which is used to add a Domain Name System (DNS) record.
  * @Note This class does not contain additional functions, so it is recommended to use the `DomainRecord` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-domainrecord
  */

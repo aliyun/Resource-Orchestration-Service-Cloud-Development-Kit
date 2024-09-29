@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Disk`, which is used to create a cloud disk for an Elastic Compute Service (ECS) instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Disk`, which is used to create a cloud disk in Elastic Compute Service (ECS).
 type Disk interface {
 	alicloudroscdkcore.Resource
 	// Attribute DiskId: Id of created disk.

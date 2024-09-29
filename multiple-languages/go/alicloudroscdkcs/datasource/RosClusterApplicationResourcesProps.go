@@ -7,6 +7,7 @@ package datasource
 type RosClusterApplicationResourcesProps struct {
 	ClusterId interface{} `field:"required" json:"clusterId" yaml:"clusterId"`
 	Kind interface{} `field:"required" json:"kind" yaml:"kind"`
+	ApiVersion interface{} `field:"optional" json:"apiVersion" yaml:"apiVersion"`
 	FirstMatch interface{} `field:"optional" json:"firstMatch" yaml:"firstMatch"`
 	JsonPath interface{} `field:"optional" json:"jsonPath" yaml:"jsonPath"`
 	Name interface{} `field:"optional" json:"name" yaml:"name"`

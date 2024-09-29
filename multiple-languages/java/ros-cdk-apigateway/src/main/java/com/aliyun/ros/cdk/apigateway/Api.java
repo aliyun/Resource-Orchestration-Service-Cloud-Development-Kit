@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ApiGateway::Api</code>, which is used to create an API.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:23.043Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:36.184Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.Api")
 public class Api extends com.aliyun.ros.cdk.core.Resource {
 
@@ -114,20 +114,20 @@ public class Api extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+         * Property apiName: The name of the API.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
          * <p>
          * @return {@code this}
-         * @param apiName Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
+         * @param apiName Property apiName: The name of the API.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter. This parameter is required.
          */
         public Builder apiName(final java.lang.String apiName) {
             this.props.apiName(apiName);
             return this;
         }
         /**
-         * Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+         * Property apiName: The name of the API.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
          * <p>
          * @return {@code this}
-         * @param apiName Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
+         * @param apiName Property apiName: The name of the API.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter. This parameter is required.
          */
         public Builder apiName(final com.aliyun.ros.cdk.core.IResolvable apiName) {
             this.props.apiName(apiName);

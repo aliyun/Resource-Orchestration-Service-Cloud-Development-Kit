@@ -263,7 +263,7 @@ function rosAutoEnableServicePropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::AutoEnableService`, which is used to activate an Alibaba Cloud service.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::AutoEnableService`, which is used to automatically activate an Alibaba Cloud service or feature.
  * @Note This class does not contain additional functions, so it is recommended to use the `AutoEnableService` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-autoenableservice
  */

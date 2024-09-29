@@ -2225,6 +2225,13 @@ function RosEIPAssociationPropsValidator(properties: any): ros.ValidationResult 
     }
     errors.collect(ros.propertyValidator('mode', ros.validateString)(properties.mode));
     errors.collect(ros.propertyValidator('allocationId', ros.requiredValidator)(properties.allocationId));
+    if(properties.allocationId && (Array.isArray(properties.allocationId) || (typeof properties.allocationId) === 'string')) {
+        errors.collect(ros.propertyValidator('allocationId', ros.validateLength)({
+            data: properties.allocationId.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
     errors.collect(ros.propertyValidator('allocationId', ros.validateString)(properties.allocationId));
     return errors.wrap('supplied properties not correct for "RosEIPAssociationProps"');
 }

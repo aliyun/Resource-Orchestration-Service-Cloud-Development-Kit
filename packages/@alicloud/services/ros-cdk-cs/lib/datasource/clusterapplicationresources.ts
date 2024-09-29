@@ -20,6 +20,11 @@ export interface ClusterApplicationResourcesProps {
     readonly kind: string | ros.IResolvable;
 
     /**
+     * Property apiVersion: The api version of kubernetes resource to query.
+     */
+    readonly apiVersion?: string | ros.IResolvable;
+
+    /**
      * Property firstMatch: Only the first matching result in jsonpath's filtered results is returned. Default False
      */
     readonly firstMatch?: boolean | ros.IResolvable;
@@ -77,6 +82,7 @@ export class ClusterApplicationResources extends ros.Resource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosClusterApplicationResources = new RosClusterApplicationResources(this, id,  {
+            apiVersion: props.apiVersion,
             firstMatch: props.firstMatch === undefined || props.firstMatch === null ? false : props.firstMatch,
             clusterId: props.clusterId,
             kind: props.kind,

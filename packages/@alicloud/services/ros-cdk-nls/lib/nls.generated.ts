@@ -14,14 +14,14 @@ export interface RosProjectProps {
     readonly name: string | ros.IResolvable;
 
     /**
-     * @Property projectType: Type of the project.
-     */
-    readonly projectType: string | ros.IResolvable;
-
-    /**
      * @Property description: Description of the project.
      */
     readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property projectType: Type of the project.
+     */
+    readonly projectType?: string | ros.IResolvable;
 
     /**
      * @Property sdkType: Type of the SDK.
@@ -47,7 +47,6 @@ function RosProjectPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('sdkType', ros.validateString)(properties.sdkType));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    errors.collect(ros.propertyValidator('projectType', ros.requiredValidator)(properties.projectType));
     if(properties.projectType && (typeof properties.projectType) !== 'object') {
         errors.collect(ros.propertyValidator('projectType', ros.validateAllowedValues)({
           data: properties.projectType,
@@ -75,8 +74,8 @@ function rosProjectPropsToRosTemplate(properties: any, enableResourcePropertyCon
     }
     return {
       'Name': ros.stringToRosTemplate(properties.name),
-      'ProjectType': ros.stringToRosTemplate(properties.projectType),
       'Description': ros.stringToRosTemplate(properties.description),
+      'ProjectType': ros.stringToRosTemplate(properties.projectType),
       'SdkType': ros.stringToRosTemplate(properties.sdkType),
     };
 }
@@ -111,14 +110,14 @@ export class RosProject extends ros.RosResource {
     public name: string | ros.IResolvable;
 
     /**
-     * @Property projectType: Type of the project.
-     */
-    public projectType: string | ros.IResolvable;
-
-    /**
      * @Property description: Description of the project.
      */
     public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property projectType: Type of the project.
+     */
+    public projectType: string | ros.IResolvable | undefined;
 
     /**
      * @Property sdkType: Type of the SDK.
@@ -137,8 +136,8 @@ export class RosProject extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.name = props.name;
-        this.projectType = props.projectType;
         this.description = props.description;
+        this.projectType = props.projectType;
         this.sdkType = props.sdkType;
     }
 
@@ -146,8 +145,8 @@ export class RosProject extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             name: this.name,
-            projectType: this.projectType,
             description: this.description,
+            projectType: this.projectType,
             sdkType: this.sdkType,
         };
     }

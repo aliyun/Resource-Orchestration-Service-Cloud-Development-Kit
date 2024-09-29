@@ -15,14 +15,14 @@ export interface ProjectProps {
     readonly name: string | ros.IResolvable;
 
     /**
-     * Property projectType: Type of the project.
-     */
-    readonly projectType: string | ros.IResolvable;
-
-    /**
      * Property description: Description of the project.
      */
     readonly description?: string | ros.IResolvable;
+
+    /**
+     * Property projectType: Type of the project.
+     */
+    readonly projectType?: string | ros.IResolvable;
 
     /**
      * Property sdkType: Type of the SDK.

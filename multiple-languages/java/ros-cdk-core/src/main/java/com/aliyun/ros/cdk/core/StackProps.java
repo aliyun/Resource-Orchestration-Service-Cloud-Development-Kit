@@ -1,6 +1,6 @@
 package com.aliyun.ros.cdk.core;
 
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:22.586Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:35.820Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.StackProps")
 @software.amazon.jsii.Jsii.Proxy(StackProps.Jsii$Proxy.class)
 public interface StackProps extends software.amazon.jsii.JsiiSerializable {

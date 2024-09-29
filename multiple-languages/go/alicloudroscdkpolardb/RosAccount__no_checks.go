@@ -116,6 +116,10 @@ func (j *jsiiProxy_RosAccount) validateSetEnableResourcePropertyConstraintParame
 	return nil
 }
 
+func (j *jsiiProxy_RosAccount) validateSetPrivForAllDbParameters(val interface{}) error {
+	return nil
+}
+
 func validateNewRosAccountParameters(scope alicloudroscdkcore.Construct, id *string, props *RosAccountProps, enableResourcePropertyConstraint *bool) error {
 	return nil
 }

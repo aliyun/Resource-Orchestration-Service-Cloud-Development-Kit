@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.fc.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-aliases
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:32.005Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:43.611Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.datasource.RosAliasesProps")
 @software.amazon.jsii.Jsii.Proxy(RosAliasesProps.Jsii$Proxy.class)
 public interface RosAliasesProps extends software.amazon.jsii.JsiiSerializable {

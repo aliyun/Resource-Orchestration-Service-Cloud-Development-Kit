@@ -1,11 +1,11 @@
 package com.aliyun.ros.cdk.cloudfw;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CLOUDFW::AddressBook</code>, which is used to create access control address books.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CLOUDFW::AddressBook</code>, which is used to create an address book that is used for access control.
  * <p>
- * Access control address books include IP address books, Elastic Compute Service (ECS) tag address books, port address books, and domain address books.
+ * Address books include IP address books, Elastic Compute Service (ECS) tag-based address books, port address books, and domain address books.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:24.237Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:36.815Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.AddressBook")
 public class AddressBook extends com.aliyun.ros.cdk.core.Resource {
 

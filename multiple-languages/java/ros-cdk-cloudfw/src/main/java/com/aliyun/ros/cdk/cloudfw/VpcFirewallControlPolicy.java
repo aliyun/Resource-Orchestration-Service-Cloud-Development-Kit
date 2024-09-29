@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudfw;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CLOUDFW::VpcFirewallControlPolicy</code>, which is used to add an access control policy to a specified policy group for a Virtual Private Cloud (VPC) firewall.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CLOUDFW::VpcFirewallControlPolicy</code>, which is used to add an access control policy to a policy group of a virtual private cloud (VPC) firewall.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:24.341Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:36.903Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.VpcFirewallControlPolicy")
 public class VpcFirewallControlPolicy extends com.aliyun.ros.cdk.core.Resource {
 

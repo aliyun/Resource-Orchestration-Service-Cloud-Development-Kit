@@ -432,7 +432,7 @@ function rosDynamicTagGroupPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::DynamicTagGroup`, which is used to create a tag rule based on which cloud resources can be automatically added to an application group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::DynamicTagGroup`, which is used to create a tag rule based on which cloud resources are automatically added to an application group.
  * @Note This class does not contain additional functions, so it is recommended to use the `DynamicTagGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-dynamictaggroup
  */
@@ -2035,7 +2035,7 @@ function rosMetricRuleTargetsPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MetricRuleTargets`, which is used to add or modify one or more message resources of an alert rule.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MetricRuleTargets`, which is used to add or modify one or more message resources for an alert rule.
  * @Note This class does not contain additional functions, so it is recommended to use the `MetricRuleTargets` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletargets
  */
@@ -2245,7 +2245,7 @@ function rosMetricRuleTemplatePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MetricRuleTemplate`, which is used to create an alert template.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MetricRuleTemplate`, which is used to create an alert rule template.
  * @Note This class does not contain additional functions, so it is recommended to use the `MetricRuleTemplate` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletemplate
  */
@@ -3269,7 +3269,7 @@ function rosMonitoringAgentProcessPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MonitoringAgentProcess`, which is used to create a task to monitor a process.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MonitoringAgentProcess`, which is used to create a process monitoring task.
  * @Note This class does not contain additional functions, so it is recommended to use the `MonitoringAgentProcess` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitoringagentprocess
  */
@@ -3724,7 +3724,7 @@ function rosResourceMetricRulePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::ResourceMetricRule`, which is used to create an alert rule for a metric of a resource.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::ResourceMetricRule`, which is used to create a threshold-triggered alert rule for a metric of a resource.
  * @Note This class does not contain additional functions, so it is recommended to use the `ResourceMetricRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-resourcemetricrule
  */
@@ -4701,7 +4701,7 @@ function rosSiteMonitorPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::SiteMonitor`, which is used to create a site monitoring job.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::SiteMonitor`, which is used to create a site monitoring task.
  * @Note This class does not contain additional functions, so it is recommended to use the `SiteMonitor` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-sitemonitor
  */
@@ -4909,7 +4909,7 @@ function rosSlsGroupPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::SlsGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::SlsGroup`, which is used to create a Logstore group for the metrics of Simple Log Service logs.
  * @Note This class does not contain additional functions, so it is recommended to use the `SlsGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-slsgroup
  */

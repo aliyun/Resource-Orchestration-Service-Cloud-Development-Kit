@@ -125,7 +125,7 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CDN::Domain`, which is used to add a domain name to Alibaba Cloud CDN (CDN).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CDN::Domain`, which is used to add an accelerated domain name.
  * @Note This class does not contain additional functions, so it is recommended to use the `Domain` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cdn-domain
  */

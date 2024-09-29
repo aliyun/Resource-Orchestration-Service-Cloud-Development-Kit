@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::CustomDomain`, which is used to bind a custom domain name and upload an SSL certificate to a specified API group.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::CustomDomain`, which is used to bind a custom domain name and upload a Secure Sockets Layer (SSL) certificate to a specific API group.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `CustomDomain` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-customdomain

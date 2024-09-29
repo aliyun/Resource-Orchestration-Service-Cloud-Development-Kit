@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::RDS::ADInfo</code>, which is used to configure Active Directory Domain Services (AD DS).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:29.735Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:41.719Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.ADInfo")
 public class ADInfo extends com.aliyun.ros.cdk.core.Resource {
 

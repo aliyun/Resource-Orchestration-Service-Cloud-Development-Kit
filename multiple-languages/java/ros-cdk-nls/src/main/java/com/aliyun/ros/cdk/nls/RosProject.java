@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nls;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::NLS::Project</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:28.910Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:41.034Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nls.$Module.class, fqn = "@alicloud/ros-cdk-nls.RosProject")
 public class RosProject extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -85,24 +85,6 @@ public class RosProject extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getProjectType() {
-        return software.amazon.jsii.Kernel.get(this, "projectType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setProjectType(final @org.jetbrains.annotations.NotNull java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "projectType", java.util.Objects.requireNonNull(value, "projectType is required"));
-    }
-
-    /**
-     */
-    public void setProjectType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "projectType", java.util.Objects.requireNonNull(value, "projectType is required"));
-    }
-
-    /**
-     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -117,6 +99,24 @@ public class RosProject extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getProjectType() {
+        return software.amazon.jsii.Kernel.get(this, "projectType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setProjectType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "projectType", value);
+    }
+
+    /**
+     */
+    public void setProjectType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "projectType", value);
     }
 
     /**
@@ -182,23 +182,6 @@ public class RosProject extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param projectType This parameter is required.
-         */
-        public Builder projectType(final java.lang.String projectType) {
-            this.props.projectType(projectType);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param projectType This parameter is required.
-         */
-        public Builder projectType(final com.aliyun.ros.cdk.core.IResolvable projectType) {
-            this.props.projectType(projectType);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param description This parameter is required.
          */
         public Builder description(final java.lang.String description) {
@@ -211,6 +194,23 @@ public class RosProject extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param projectType This parameter is required.
+         */
+        public Builder projectType(final java.lang.String projectType) {
+            this.props.projectType(projectType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param projectType This parameter is required.
+         */
+        public Builder projectType(final com.aliyun.ros.cdk.core.IResolvable projectType) {
+            this.props.projectType(projectType);
             return this;
         }
 

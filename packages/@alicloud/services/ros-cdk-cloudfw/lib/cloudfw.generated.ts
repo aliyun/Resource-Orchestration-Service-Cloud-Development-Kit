@@ -141,7 +141,7 @@ function rosAddressBookPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::AddressBook`, which is used to create access control address books. Access control address books include IP address books, Elastic Compute Service (ECS) tag address books, port address books, and domain address books.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::AddressBook`, which is used to create an address book that is used for access control. Address books include IP address books, Elastic Compute Service (ECS) tag-based address books, port address books, and domain address books.
  * @Note This class does not contain additional functions, so it is recommended to use the `AddressBook` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-addressbook
  */
@@ -1426,7 +1426,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::Instance`, which is used to create an instance of Cloud Firewall.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::Instance`, which is used to create a Cloud Firewall instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-instance
  */
@@ -2510,7 +2510,7 @@ function rosVpcFirewallControlPolicyPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`, which is used to add an access control policy to a specified policy group for a Virtual Private Cloud (VPC) firewall.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`, which is used to add an access control policy to a policy group of a virtual private cloud (VPC) firewall.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpcFirewallControlPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallcontrolpolicy
  */

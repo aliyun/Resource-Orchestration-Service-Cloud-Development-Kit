@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ESS::ScalingConfigurations</code>, which is used to query the details of scaling configurations.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:27.349Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:39.900Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.datasource.ScalingConfigurations")
 public class ScalingConfigurations extends com.aliyun.ros.cdk.core.Resource {
 

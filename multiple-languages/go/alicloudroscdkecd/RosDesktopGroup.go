@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::DesktopGroup`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::DesktopGroup`, which is used to create a cloud computer pool.
 type RosDesktopGroup interface {
 	alicloudroscdkcore.RosResource
 	AllowAutoSetup() interface{}

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cloudphone;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-image
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:24.388Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:36.948Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudphone.$Module.class, fqn = "@alicloud/ros-cdk-cloudphone.RosImageProps")
 @software.amazon.jsii.Jsii.Proxy(RosImageProps.Jsii$Proxy.class)
 public interface RosImageProps extends software.amazon.jsii.JsiiSerializable {

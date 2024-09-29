@@ -1,7 +1,12 @@
+@alicloud/ros-cdk-drds.Account=com.aliyun.ros.cdk.drds.Account
+@alicloud/ros-cdk-drds.AccountProps=com.aliyun.ros.cdk.drds.AccountProps
 @alicloud/ros-cdk-drds.DrdsDB=com.aliyun.ros.cdk.drds.DrdsDB
 @alicloud/ros-cdk-drds.DrdsDBProps=com.aliyun.ros.cdk.drds.DrdsDBProps
 @alicloud/ros-cdk-drds.DrdsInstance=com.aliyun.ros.cdk.drds.DrdsInstance
 @alicloud/ros-cdk-drds.DrdsInstanceProps=com.aliyun.ros.cdk.drds.DrdsInstanceProps
+@alicloud/ros-cdk-drds.RosAccount=com.aliyun.ros.cdk.drds.RosAccount
+@alicloud/ros-cdk-drds.RosAccount.DbPrivilegesProperty=com.aliyun.ros.cdk.drds.RosAccount$DbPrivilegesProperty
+@alicloud/ros-cdk-drds.RosAccountProps=com.aliyun.ros.cdk.drds.RosAccountProps
 @alicloud/ros-cdk-drds.RosDrdsDB=com.aliyun.ros.cdk.drds.RosDrdsDB
 @alicloud/ros-cdk-drds.RosDrdsDB.InstDbNameProperty=com.aliyun.ros.cdk.drds.RosDrdsDB$InstDbNameProperty
 @alicloud/ros-cdk-drds.RosDrdsDBProps=com.aliyun.ros.cdk.drds.RosDrdsDBProps

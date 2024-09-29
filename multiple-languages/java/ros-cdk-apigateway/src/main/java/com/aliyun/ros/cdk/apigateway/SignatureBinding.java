@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.apigateway;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ApiGateway::SignatureBinding</code>, which is used to bind backend signatures to APIs.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ApiGateway::SignatureBinding</code>, which is used to bind a backend signature to APIs.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:23.240Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:36.289Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.SignatureBinding")
 public class SignatureBinding extends com.aliyun.ros.cdk.core.Resource {
 

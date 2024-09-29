@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::POLARDB::Account</code>, which is used to create a database account for a specified PolarDB cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:29.389Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:41.432Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosAccount")
 public class RosAccount extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -180,6 +180,24 @@ public class RosAccount extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPrivForAllDb() {
+        return software.amazon.jsii.Kernel.get(this, "privForAllDb", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPrivForAllDb(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "privForAllDb", value);
+    }
+
+    /**
+     */
+    public void setPrivForAllDb(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "privForAllDb", value);
+    }
+
+    /**
      * A fluent builder for {@link com.aliyun.ros.cdk.polardb.RosAccount}.
      */
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.polardb.RosAccount> {
@@ -321,6 +339,23 @@ public class RosAccount extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder dbName(final com.aliyun.ros.cdk.core.IResolvable dbName) {
             this.props.dbName(dbName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param privForAllDb This parameter is required.
+         */
+        public Builder privForAllDb(final java.lang.String privForAllDb) {
+            this.props.privForAllDb(privForAllDb);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param privForAllDb This parameter is required.
+         */
+        public Builder privForAllDb(final com.aliyun.ros.cdk.core.IResolvable privForAllDb) {
+            this.props.privForAllDb(privForAllDb);
             return this;
         }
 

@@ -5,13 +5,13 @@ package com.aliyun.ros.cdk.apigateway;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-group
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:23.088Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:36.208Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.GroupProps")
 @software.amazon.jsii.Jsii.Proxy(GroupProps.Jsii$Proxy.class)
 public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property groupName: The name of the Group.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * Property groupName: The name of the Group.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getGroupName();
 
@@ -96,7 +96,7 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link GroupProps#getGroupName}
-         * @param groupName Property groupName: The name of the Group.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
+         * @param groupName Property groupName: The name of the Group.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter. This parameter is required.
          * @return {@code this}
          */
         public Builder groupName(java.lang.String groupName) {
@@ -106,7 +106,7 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link GroupProps#getGroupName}
-         * @param groupName Property groupName: The name of the Group.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
+         * @param groupName Property groupName: The name of the Group.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter. This parameter is required.
          * @return {@code this}
          */
         public Builder groupName(com.aliyun.ros.cdk.core.IResolvable groupName) {

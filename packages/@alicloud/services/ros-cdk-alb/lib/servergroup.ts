@@ -30,6 +30,12 @@ export interface ServerGroupProps {
     readonly vpcId: string | ros.IResolvable;
 
     /**
+     * Property connectionDrainConfig: Configuration related to graceful connection interruption.Enable graceful connection interruption. After the backend server is removed or the health check fails, the load balancing allows the existing connection to be transmitted normally within a certain period of time.Note: 
+     * Basic Edition instances do not support enabling graceful connection interruption. Only Standard Edition and WAF Enhanced Edition instances support it.Server type and IP type server group support graceful connection interruption. Function Compute type does not support it.
+     */
+    readonly connectionDrainConfig?: RosServerGroup.ConnectionDrainConfigProperty | ros.IResolvable;
+
+    /**
      * Property protocol: The backend protocol. Valid values:
      * HTTP (default): The server group can be associated with HTTPS, HTTP, and QUIC listeners.
      * HTTPS: The server group can be associated with HTTPS listeners.
@@ -66,6 +72,12 @@ export interface ServerGroupProps {
     readonly serviceName?: string | ros.IResolvable;
 
     /**
+     * Property slowStartConfig: Slow start related configuration.After slow start is enabled, the backend server newly added to the backend server group will be preheated within the set time period, and the number of requests forwarded to the server will increase linearly.Note:
+     * Basic Edition instances do not support slow start, only Standard Edition and WAF Enhanced Edition instances support it.Server type and IP type server groups support slow start configuration, but Function Compute type does not.Slow start can only be enabled when the backend scheduling algorithm is the weighted polling algorithm.
+     */
+    readonly slowStartConfig?: RosServerGroup.SlowStartConfigProperty | ros.IResolvable;
+
+    /**
      * Property stickySessionConfig: The configuration of session persistence.
      * Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
      */
@@ -75,6 +87,16 @@ export interface ServerGroupProps {
      * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosServerGroup.TagsProperty[];
+
+    /**
+     * Property uchConfig: URL consistency hash parameter configuration.
+     */
+    readonly uchConfig?: RosServerGroup.UchConfigProperty | ros.IResolvable;
+
+    /**
+     * Property upstreamKeepaliveEnabled: Whether to enable upstream keepalive.
+     */
+    readonly upstreamKeepaliveEnabled?: boolean | ros.IResolvable;
 }
 
 /**
@@ -106,14 +128,18 @@ export class ServerGroup extends ros.Resource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosServerGroup = new RosServerGroup(this, id,  {
-            vpcId: props.vpcId,
+            connectionDrainConfig: props.connectionDrainConfig,
             resourceGroupId: props.resourceGroupId,
-            serviceName: props.serviceName,
+            uchConfig: props.uchConfig,
+            upstreamKeepaliveEnabled: props.upstreamKeepaliveEnabled === undefined || props.upstreamKeepaliveEnabled === null ? false : props.upstreamKeepaliveEnabled,
             scheduler: props.scheduler,
             stickySessionConfig: props.stickySessionConfig,
+            serverGroupType: props.serverGroupType,
+            slowStartConfig: props.slowStartConfig,
+            vpcId: props.vpcId,
+            serviceName: props.serviceName,
             healthCheckConfig: props.healthCheckConfig,
             protocol: props.protocol,
-            serverGroupType: props.serverGroupType,
             tags: props.tags,
             serverGroupName: props.serverGroupName,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

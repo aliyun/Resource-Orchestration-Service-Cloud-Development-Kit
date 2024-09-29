@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ice;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ice-searchlib
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:28.042Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:40.391Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ice.$Module.class, fqn = "@alicloud/ros-cdk-ice.SearchLibProps")
 @software.amazon.jsii.Jsii.Proxy(SearchLibProps.Jsii$Proxy.class)
 public interface SearchLibProps extends software.amazon.jsii.JsiiSerializable {

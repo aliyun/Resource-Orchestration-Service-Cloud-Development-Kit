@@ -203,7 +203,7 @@ function rosASKClusterPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ASKCluster`, which is used to create a Serverless Kubernetes (ASK) cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ASKCluster`, which is used to create a serverless Kubernetes (ASK) cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `ASKCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-askcluster
  */
@@ -666,7 +666,7 @@ function rosAnyClusterPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::AnyCluster`, which is used to create an ACK cluster of a specific type.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::AnyCluster`, which is used to create a Container Service for Kubernetes (ACK) cluster of a specific type.
  * @Note This class does not contain additional functions, so it is recommended to use the `AnyCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-anycluster
  */
@@ -6127,7 +6127,7 @@ function rosManagedEdgeKubernetesClusterPropsToRosTemplate(properties: any, enab
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ManagedEdgeKubernetesCluster`, which is used to create a managed edge cluster of Container Service for Kubernetes (ACK).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ManagedEdgeKubernetesCluster`, which is used to create a Container Service for Kubernetes (ACK) edge cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `ManagedEdgeKubernetesCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managededgekubernetescluster
  */

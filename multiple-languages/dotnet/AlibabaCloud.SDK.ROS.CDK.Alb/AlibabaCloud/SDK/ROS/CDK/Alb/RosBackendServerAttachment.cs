@@ -159,8 +159,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// <strong>Property</strong>: serverId: If the server group consists of servers, you can set this parameter to the ID of a
             /// resource, such as an Elastic Compute Service (ECS) instance, an elastic network interface
             /// (ENI), or an elastic container instance.
-            /// If the server group consists of IP addresses, you can set this parameter to an IP
-            /// address.
+            /// If the server group consists of IP addresses, you can set this parameter to an IP address.
+            /// If the server group consists of FC function, you can set this parameter to an FC function ARN.
             /// </remarks>
             [JsiiProperty(name: "serverId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             object ServerId
@@ -174,6 +174,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// Eni: an ENI
             /// Eci: an elastic container instance
             /// Ip: an IP address
+            /// Fc: an FC function.
             /// </remarks>
             [JsiiProperty(name: "serverType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             object ServerType
@@ -205,6 +206,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? Port
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: remoteIpEnabled: Whether to enable remote ip. Default to false.
+            /// </remarks>
+            [JsiiProperty(name: "remoteIpEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RemoteIpEnabled
             {
                 get
                 {
@@ -249,8 +263,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 /// <strong>Property</strong>: serverId: If the server group consists of servers, you can set this parameter to the ID of a
                 /// resource, such as an Elastic Compute Service (ECS) instance, an elastic network interface
                 /// (ENI), or an elastic container instance.
-                /// If the server group consists of IP addresses, you can set this parameter to an IP
-                /// address.
+                /// If the server group consists of IP addresses, you can set this parameter to an IP address.
+                /// If the server group consists of FC function, you can set this parameter to an FC function ARN.
                 /// </remarks>
                 [JsiiProperty(name: "serverId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
                 public object ServerId
@@ -264,6 +278,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 /// Eni: an ENI
                 /// Eci: an elastic container instance
                 /// Ip: an IP address
+                /// Fc: an FC function.
                 /// </remarks>
                 [JsiiProperty(name: "serverType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
                 public object ServerType
@@ -292,6 +307,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 [JsiiOptional]
                 [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? Port
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: remoteIpEnabled: Whether to enable remote ip. Default to false.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "remoteIpEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RemoteIpEnabled
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -328,8 +353,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// <strong>Property</strong>: serverId: If the server group consists of servers, you can set this parameter to the ID of a
             /// resource, such as an Elastic Compute Service (ECS) instance, an elastic network interface
             /// (ENI), or an elastic container instance.
-            /// If the server group consists of IP addresses, you can set this parameter to an IP
-            /// address.
+            /// If the server group consists of IP addresses, you can set this parameter to an IP address.
+            /// If the server group consists of FC function, you can set this parameter to an FC function ARN.
             /// </remarks>
             [JsiiProperty(name: "serverId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ServerId
@@ -366,6 +391,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// Eni: an ENI
             /// Eci: an elastic container instance
             /// Ip: an IP address
+            /// Fc: an FC function.
             /// </remarks>
             [JsiiProperty(name: "serverType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ServerType
@@ -482,6 +508,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                         }
                     }
                     _port = value;
+                }
+            }
+
+            private object? _remoteIpEnabled;
+
+            /// <remarks>
+            /// <strong>Property</strong>: remoteIpEnabled: Whether to enable remote ip. Default to false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "remoteIpEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RemoteIpEnabled
+            {
+                get => _remoteIpEnabled;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _remoteIpEnabled = value;
                 }
             }
 

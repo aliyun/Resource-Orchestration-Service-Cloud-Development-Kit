@@ -1,5 +1,9 @@
 # Aliyun ROS Cloud Development Toolkit Changelog
 
+## [ros-cdk-cli 1.3.0] (2024-09-26)
+### Features
+- Update ROS resource sdk packages (Added the ALIYUN::POLARDB::Backup,ALIYUN::KMS::NetworkRule,ALIYUN::KMS::Policy,ALIYUN::GA::Domain,ALIYUN::GA::ForwardingRules,ALIYUN::FC3::Function,ALIYUN::FC3::Trigger,ALIYUN::ENS::Image,ALIYUN::ECD::NetworkPackageAssociation,ALIYUN::DRDS::Account,ALIYUN::DMS::Instance2).
+
 ## [ros-cdk-cli 1.2.0] (2024-09-10)
 ### Features
 - Update ROS resource sdk packages (Added the ALIYUN::VPC::VpcCidrBlockAssociation, ALIYUN::VPC::VpcCidrBlockAssociation).

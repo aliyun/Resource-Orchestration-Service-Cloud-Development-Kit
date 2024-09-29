@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::FC::Trigger</code>, which is used to trigger the invocation of a function.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:31.993Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:43.579Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.Trigger")
 public class Trigger extends com.aliyun.ros.cdk.core.Resource {
 
