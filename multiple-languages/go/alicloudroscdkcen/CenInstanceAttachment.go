@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenInstanceAttachment`, which is used to attach network instances to a CEN instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenInstanceAttachment`, which is used to attach a network instance to a Cloud Enterprise Network (CEN) instance.
 type CenInstanceAttachment interface {
 	alicloudroscdkcore.Resource
 	EnableResourcePropertyConstraint() *bool

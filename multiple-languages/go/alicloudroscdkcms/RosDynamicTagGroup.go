@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::DynamicTagGroup`, which is used to create a tag rule based on which cloud resources can be automatically added to an application group.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::DynamicTagGroup`, which is used to create a tag rule based on which cloud resources are automatically added to an application group.
 type RosDynamicTagGroup interface {
 	alicloudroscdkcore.RosResource
 	AttrDynamicTagRuleId() alicloudroscdkcore.IResolvable

@@ -100,7 +100,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         private object? _dbNodeType;
 
         /// <remarks>
-        /// <strong>Property</strong>: dbNodeType: Node type. Ranges: RO|STANDBY|DLNode
+        /// <strong>Property</strong>: dbNodeType: Node type. Ranges: RO|STANDBY|DLNode|RW
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "dbNodeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

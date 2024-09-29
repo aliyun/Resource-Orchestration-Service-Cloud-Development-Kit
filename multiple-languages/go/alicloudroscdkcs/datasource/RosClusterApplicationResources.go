@@ -12,6 +12,8 @@ import (
 // This class is a base encapsulation around the ROS resource type `DATASOURCE::CS::ClusterApplicationResources`, which is used to query the details of specified types of resources in a Container Service for Kubernetes (ACK) cluster.
 type RosClusterApplicationResources interface {
 	alicloudroscdkcore.RosResource
+	ApiVersion() interface{}
+	SetApiVersion(val interface{})
 	AttrResponse() alicloudroscdkcore.IResolvable
 	ClusterId() interface{}
 	SetClusterId(val interface{})
@@ -178,6 +180,16 @@ type RosClusterApplicationResources interface {
 // The jsii proxy struct for RosClusterApplicationResources
 type jsiiProxy_RosClusterApplicationResources struct {
 	internal.Type__alicloudroscdkcoreRosResource
+}
+
+func (j *jsiiProxy_RosClusterApplicationResources) ApiVersion() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"apiVersion",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_RosClusterApplicationResources) AttrResponse() alicloudroscdkcore.IResolvable {
@@ -385,6 +397,17 @@ func NewRosClusterApplicationResources_Override(r RosClusterApplicationResources
 		"@alicloud/ros-cdk-cs.datasource.RosClusterApplicationResources",
 		[]interface{}{scope, id, props, enableResourcePropertyConstraint},
 		r,
+	)
+}
+
+func (j *jsiiProxy_RosClusterApplicationResources)SetApiVersion(val interface{}) {
+	if err := j.validateSetApiVersionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"apiVersion",
+		val,
 	)
 }
 

@@ -3,6 +3,248 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosAccount`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-drds-account
+ */
+export interface RosAccountProps {
+
+    /**
+     * @Property dbPrivileges: Database permission information.
+     */
+    readonly dbPrivileges: Array<RosAccount.DbPrivilegesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property drdsAccountName: The name of the account.
+     */
+    readonly drdsAccountName: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The ID of the instance.
+     */
+    readonly instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property password: The password of the account.
+     */
+    readonly password: string | ros.IResolvable;
+
+    /**
+     * @Property description: Account remarks. The default value of the advanced account is **Created by DRDS**, and the normal account does not have any comments. Remarks can be customized in account management.
+     */
+    readonly description?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAccountProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAccountProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAccountPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('dbPrivileges', ros.requiredValidator)(properties.dbPrivileges));
+    if(properties.dbPrivileges && (Array.isArray(properties.dbPrivileges) || (typeof properties.dbPrivileges) === 'string')) {
+        errors.collect(ros.propertyValidator('dbPrivileges', ros.validateLength)({
+            data: properties.dbPrivileges.length,
+            min: 1,
+            max: 1000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('dbPrivileges', ros.listValidator(RosAccount_DbPrivilegesPropertyValidator))(properties.dbPrivileges));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('drdsAccountName', ros.requiredValidator)(properties.drdsAccountName));
+    errors.collect(ros.propertyValidator('drdsAccountName', ros.validateString)(properties.drdsAccountName));
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('password', ros.requiredValidator)(properties.password));
+    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
+    return errors.wrap('supplied properties not correct for "RosAccountProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DRDS::Account` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAccountProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DRDS::Account` resource.
+ */
+// @ts-ignore TS6133
+function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAccountPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'DbPrivileges': ros.listMapper(rosAccountDbPrivilegesPropertyToRosTemplate)(properties.dbPrivileges),
+      'DrdsAccountName': ros.stringToRosTemplate(properties.drdsAccountName),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'Password': ros.stringToRosTemplate(properties.password),
+      'Description': ros.stringToRosTemplate(properties.description),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DRDS::Account`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-drds-account
+ */
+export class RosAccount extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DRDS::Account";
+
+    /**
+     * @Attribute AccountType: Account type.
+     */
+    public readonly attrAccountType: ros.IResolvable;
+
+    /**
+     * @Attribute DbPrivileges: Database permission information.
+     */
+    public readonly attrDbPrivileges: ros.IResolvable;
+
+    /**
+     * @Attribute Description: Account remarks. The default value of the advanced account is **Created by DRDS**, and the normal account does not have any comments. Remarks can be customized in account management.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute DrdsAccountName: The name of the account.
+     */
+    public readonly attrDrdsAccountName: ros.IResolvable;
+
+    /**
+     * @Attribute Host: You can access the IP address of the database. <note>**%** indicates that any IP address can be accessed.
+     */
+    public readonly attrHost: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property dbPrivileges: Database permission information.
+     */
+    public dbPrivileges: Array<RosAccount.DbPrivilegesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property drdsAccountName: The name of the account.
+     */
+    public drdsAccountName: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The ID of the instance.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property password: The password of the account.
+     */
+    public password: string | ros.IResolvable;
+
+    /**
+     * @Property description: Account remarks. The default value of the advanced account is **Created by DRDS**, and the normal account does not have any comments. Remarks can be customized in account management.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAccountProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAccount.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAccountType = this.getAtt('AccountType');
+        this.attrDbPrivileges = this.getAtt('DbPrivileges');
+        this.attrDescription = this.getAtt('Description');
+        this.attrDrdsAccountName = this.getAtt('DrdsAccountName');
+        this.attrHost = this.getAtt('Host');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.dbPrivileges = props.dbPrivileges;
+        this.drdsAccountName = props.drdsAccountName;
+        this.instanceId = props.instanceId;
+        this.password = props.password;
+        this.description = props.description;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            dbPrivileges: this.dbPrivileges,
+            drdsAccountName: this.drdsAccountName,
+            instanceId: this.instanceId,
+            password: this.password,
+            description: this.description,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAccountPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosAccount {
+    /**
+     * @stability external
+     */
+    export interface DbPrivilegesProperty {
+        /**
+         * @Property dbName: The name of the database.
+         */
+        readonly dbName: string | ros.IResolvable;
+        /**
+         * @Property privilege: Account permissions.
+     * - **R**: read permission.
+     * - **W**: write permission.
+     * - **DDL**: the permission to perform DDL operations.
+     * - **DML**: the permission to perform DML operations.
+         */
+        readonly privilege: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DbPrivilegesProperty`
+ *
+ * @param properties - the TypeScript properties of a `DbPrivilegesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAccount_DbPrivilegesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('dbName', ros.requiredValidator)(properties.dbName));
+    errors.collect(ros.propertyValidator('dbName', ros.validateString)(properties.dbName));
+    errors.collect(ros.propertyValidator('privilege', ros.requiredValidator)(properties.privilege));
+    if(properties.privilege && (typeof properties.privilege) !== 'object') {
+        errors.collect(ros.propertyValidator('privilege', ros.validateAllowedValues)({
+          data: properties.privilege,
+          allowedValues: ["R","W","DDL","DML"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('privilege', ros.validateString)(properties.privilege));
+    return errors.wrap('supplied properties not correct for "DbPrivilegesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DRDS::Account.DbPrivileges` resource
+ *
+ * @param properties - the TypeScript properties of a `DbPrivilegesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DRDS::Account.DbPrivileges` resource.
+ */
+// @ts-ignore TS6133
+function rosAccountDbPrivilegesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAccount_DbPrivilegesPropertyValidator(properties).assertSuccess();
+    return {
+      'DbName': ros.stringToRosTemplate(properties.dbName),
+      'Privilege': ros.stringToRosTemplate(properties.privilege),
+    };
+}
+
+/**
  * Properties for defining a `RosDrdsDB`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-drds-drdsdb
  */

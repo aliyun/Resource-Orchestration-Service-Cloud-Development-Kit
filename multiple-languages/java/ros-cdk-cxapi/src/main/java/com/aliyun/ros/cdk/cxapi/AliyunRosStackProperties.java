@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cxapi;
 /**
  * Artifact properties for ROS stacks.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:22.425Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:35.666Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cxapi.$Module.class, fqn = "@alicloud/ros-cdk-cxapi.AliyunRosStackProperties")
 @software.amazon.jsii.Jsii.Proxy(AliyunRosStackProperties.Jsii$Proxy.class)
 public interface AliyunRosStackProperties extends software.amazon.jsii.JsiiSerializable {

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CMS::SlsGroup`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CMS::SlsGroup`, which is used to create a Logstore group for the metrics of Simple Log Service logs.
 type SlsGroup interface {
 	alicloudroscdkcore.Resource
 	// Attribute CreateTime: The creation time of the Logstore group.

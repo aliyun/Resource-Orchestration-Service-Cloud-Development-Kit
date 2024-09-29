@@ -4,9 +4,9 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::AddressBook`, which is used to create access control address books.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::AddressBook`, which is used to create an address book that is used for access control.</summary>
     /// <remarks>
-    /// Access control address books include IP address books, Elastic Compute Service (ECS) tag address books, port address books, and domain address books.
+    /// Address books include IP address books, Elastic Compute Service (ECS) tag-based address books, port address books, and domain address books.
     ///
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `AddressBook` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-addressbook

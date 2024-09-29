@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Amqp
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::AMQP::Binding`, which is used to bind a queue or exchange to an exchange.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::AMQP::Binding`, which is used to bind a queue or an exchange to an exchange.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBinding`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-binding

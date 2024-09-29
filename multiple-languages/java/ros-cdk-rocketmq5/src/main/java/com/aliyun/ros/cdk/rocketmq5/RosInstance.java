@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rocketmq5;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ROCKETMQ5::Instance</code>, which is used to create an ApsaraMQ for RocketMQ 5.0 instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:30.377Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:42.259Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq5.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq5.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -332,6 +332,13 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getFlowOutType() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getIpWhitelist() {
             return null;
         }
@@ -350,6 +357,7 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
         public static final class Builder implements software.amazon.jsii.Builder<InternetInfoProperty> {
             java.lang.Object internetSpec;
             java.lang.Object flowOutBandwidth;
+            java.lang.Object flowOutType;
             java.lang.Object ipWhitelist;
 
             /**
@@ -397,6 +405,28 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link InternetInfoProperty#getFlowOutType}
+             * @param flowOutType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder flowOutType(java.lang.String flowOutType) {
+                this.flowOutType = flowOutType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InternetInfoProperty#getFlowOutType}
+             * @param flowOutType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder flowOutType(com.aliyun.ros.cdk.core.IResolvable flowOutType) {
+                this.flowOutType = flowOutType;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link InternetInfoProperty#getIpWhitelist}
              * @param ipWhitelist the value to be set.
              * @return {@code this}
@@ -438,6 +468,7 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements InternetInfoProperty {
             private final java.lang.Object internetSpec;
             private final java.lang.Object flowOutBandwidth;
+            private final java.lang.Object flowOutType;
             private final java.lang.Object ipWhitelist;
 
             /**
@@ -448,6 +479,7 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
                 super(objRef);
                 this.internetSpec = software.amazon.jsii.Kernel.get(this, "internetSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.flowOutBandwidth = software.amazon.jsii.Kernel.get(this, "flowOutBandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.flowOutType = software.amazon.jsii.Kernel.get(this, "flowOutType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.ipWhitelist = software.amazon.jsii.Kernel.get(this, "ipWhitelist", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
@@ -458,6 +490,7 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.internetSpec = java.util.Objects.requireNonNull(builder.internetSpec, "internetSpec is required");
                 this.flowOutBandwidth = builder.flowOutBandwidth;
+                this.flowOutType = builder.flowOutType;
                 this.ipWhitelist = builder.ipWhitelist;
             }
 
@@ -469,6 +502,11 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final java.lang.Object getFlowOutBandwidth() {
                 return this.flowOutBandwidth;
+            }
+
+            @Override
+            public final java.lang.Object getFlowOutType() {
+                return this.flowOutType;
             }
 
             @Override
@@ -485,6 +523,9 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
                 data.set("internetSpec", om.valueToTree(this.getInternetSpec()));
                 if (this.getFlowOutBandwidth() != null) {
                     data.set("flowOutBandwidth", om.valueToTree(this.getFlowOutBandwidth()));
+                }
+                if (this.getFlowOutType() != null) {
+                    data.set("flowOutType", om.valueToTree(this.getFlowOutType()));
                 }
                 if (this.getIpWhitelist() != null) {
                     data.set("ipWhitelist", om.valueToTree(this.getIpWhitelist()));
@@ -509,6 +550,7 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
                 if (!internetSpec.equals(that.internetSpec)) return false;
                 if (this.flowOutBandwidth != null ? !this.flowOutBandwidth.equals(that.flowOutBandwidth) : that.flowOutBandwidth != null) return false;
+                if (this.flowOutType != null ? !this.flowOutType.equals(that.flowOutType) : that.flowOutType != null) return false;
                 return this.ipWhitelist != null ? this.ipWhitelist.equals(that.ipWhitelist) : that.ipWhitelist == null;
             }
 
@@ -516,6 +558,7 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             public final int hashCode() {
                 int result = this.internetSpec.hashCode();
                 result = 31 * result + (this.flowOutBandwidth != null ? this.flowOutBandwidth.hashCode() : 0);
+                result = 31 * result + (this.flowOutType != null ? this.flowOutType.hashCode() : 0);
                 result = 31 * result + (this.ipWhitelist != null ? this.ipWhitelist.hashCode() : 0);
                 return result;
             }

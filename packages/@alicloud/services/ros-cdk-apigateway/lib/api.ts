@@ -10,7 +10,7 @@ export { RosApi as ApiProperty };
 export interface ApiProps {
 
     /**
-     * Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
+     * Property apiName: The name of the API.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
      */
     readonly apiName: string | ros.IResolvable;
 

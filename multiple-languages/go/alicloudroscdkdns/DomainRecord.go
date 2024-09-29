@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::DNS::DomainRecord`, which is used to add a domain name system (DNS) record.
+// This class encapsulates and extends the ROS resource type `ALIYUN::DNS::DomainRecord`, which is used to add a Domain Name System (DNS) record.
 type DomainRecord interface {
 	alicloudroscdkcore.Resource
 	// Attribute RecordId: Parse the ID of the record.

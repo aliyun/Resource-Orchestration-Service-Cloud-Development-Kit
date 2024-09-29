@@ -182,6 +182,7 @@ export interface RosAccountProps {
      * ReadOnly: has the read-only permission on the database.
      * DMLOnly: runs only data manipulation language (DML) statements.
      * DDLOnly: runs only data definition language (DDL) statements.
+     * ReadIndex: has read and index permissions on the database.
      * Default value: ReadWrite.
      * Separate multiple permissions with a comma (,).
      */
@@ -201,6 +202,13 @@ export interface RosAccountProps {
      * @Property dbName: The name of the database whose access permissions are to be granted to the database account. Separate multiple databases with a comma (,).
      */
     readonly dbName?: string | ros.IResolvable;
+
+    /**
+     * @Property privForAllDb: Whether to grant permissions to all libraries in the current cluster and any libraries that will be added in the future. Valid values:
+     * - 0 (default)): Not authorized.
+     * - 1: Authorization.
+     */
+    readonly privForAllDb?: string | ros.IResolvable;
 }
 
 /**
@@ -232,6 +240,13 @@ function RosAccountPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('accountType', ros.validateString)(properties.accountType));
+    if(properties.privForAllDb && (typeof properties.privForAllDb) !== 'object') {
+        errors.collect(ros.propertyValidator('privForAllDb', ros.validateAllowedValues)({
+          data: properties.privForAllDb,
+          allowedValues: ["0","1"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('privForAllDb', ros.validateString)(properties.privForAllDb));
     errors.collect(ros.propertyValidator('accountName', ros.requiredValidator)(properties.accountName));
     if(properties.accountName && (Array.isArray(properties.accountName) || (typeof properties.accountName) === 'string')) {
         errors.collect(ros.propertyValidator('accountName', ros.validateLength)({
@@ -274,6 +289,7 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
       'AccountPrivilege': ros.stringToRosTemplate(properties.accountPrivilege),
       'AccountType': ros.stringToRosTemplate(properties.accountType),
       'DBName': ros.stringToRosTemplate(properties.dbName),
+      'PrivForAllDB': ros.stringToRosTemplate(properties.privForAllDb),
     };
 }
 
@@ -324,6 +340,7 @@ export class RosAccount extends ros.RosResource {
      * ReadOnly: has the read-only permission on the database.
      * DMLOnly: runs only data manipulation language (DML) statements.
      * DDLOnly: runs only data definition language (DDL) statements.
+     * ReadIndex: has read and index permissions on the database.
      * Default value: ReadWrite.
      * Separate multiple permissions with a comma (,).
      */
@@ -345,6 +362,13 @@ export class RosAccount extends ros.RosResource {
     public dbName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property privForAllDb: Whether to grant permissions to all libraries in the current cluster and any libraries that will be added in the future. Valid values:
+     * - 0 (default)): Not authorized.
+     * - 1: Authorization.
+     */
+    public privForAllDb: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -360,6 +384,7 @@ export class RosAccount extends ros.RosResource {
         this.accountPrivilege = props.accountPrivilege;
         this.accountType = props.accountType;
         this.dbName = props.dbName;
+        this.privForAllDb = props.privForAllDb;
     }
 
 
@@ -372,6 +397,7 @@ export class RosAccount extends ros.RosResource {
             accountPrivilege: this.accountPrivilege,
             accountType: this.accountType,
             dbName: this.dbName,
+            privForAllDb: this.privForAllDb,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -545,6 +571,105 @@ export class RosAccountPrivilege extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosAccountPrivilegePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosBackup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-backup
+ */
+export interface RosBackupProps {
+
+    /**
+     * @Property dbClusterId: The cluster ID.
+     */
+    readonly dbClusterId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosBackupProps`
+ *
+ * @param properties - the TypeScript properties of a `RosBackupProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosBackupPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('dbClusterId', ros.requiredValidator)(properties.dbClusterId));
+    errors.collect(ros.propertyValidator('dbClusterId', ros.validateString)(properties.dbClusterId));
+    return errors.wrap('supplied properties not correct for "RosBackupProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::Backup` resource
+ *
+ * @param properties - the TypeScript properties of a `RosBackupProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::Backup` resource.
+ */
+// @ts-ignore TS6133
+function rosBackupPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosBackupPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'DBClusterId': ros.stringToRosTemplate(properties.dbClusterId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::Backup`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Backup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-backup
+ */
+export class RosBackup extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::POLARDB::Backup";
+
+    /**
+     * @Attribute BackupJobId: The ID of the backup set.
+     */
+    public readonly attrBackupJobId: ros.IResolvable;
+
+    /**
+     * @Attribute DBClusterId: The ID of the cluster.
+     */
+    public readonly attrDbClusterId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property dbClusterId: The cluster ID.
+     */
+    public dbClusterId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosBackupProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosBackup.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrBackupJobId = this.getAtt('BackupJobId');
+        this.attrDbClusterId = this.getAtt('DBClusterId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.dbClusterId = props.dbClusterId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            dbClusterId: this.dbClusterId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosBackupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 
@@ -2621,7 +2746,7 @@ export interface RosDBNodesProps {
     readonly dbClusterId: string | ros.IResolvable;
 
     /**
-     * @Property dbNodeType: Node type. Ranges: RO|STANDBY|DLNode
+     * @Property dbNodeType: Node type. Ranges: RO|STANDBY|DLNode|RW
      */
     readonly dbNodeType?: string | ros.IResolvable;
 
@@ -2692,7 +2817,7 @@ function RosDBNodesPropsValidator(properties: any): ros.ValidationResult {
     if(properties.dbNodeType && (typeof properties.dbNodeType) !== 'object') {
         errors.collect(ros.propertyValidator('dbNodeType', ros.validateAllowedValues)({
           data: properties.dbNodeType,
-          allowedValues: ["RO","STANDBY","DLNode"],
+          allowedValues: ["RO","STANDBY","DLNode","RW"],
         }));
     }
     errors.collect(ros.propertyValidator('dbNodeType', ros.validateString)(properties.dbNodeType));
@@ -2760,7 +2885,7 @@ export class RosDBNodes extends ros.RosResource {
     public dbClusterId: string | ros.IResolvable;
 
     /**
-     * @Property dbNodeType: Node type. Ranges: RO|STANDBY|DLNode
+     * @Property dbNodeType: Node type. Ranges: RO|STANDBY|DLNode|RW
      */
     public dbNodeType: string | ros.IResolvable | undefined;
 

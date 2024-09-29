@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.maxcompute;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::MaxCompute::Table</code>, which is used to create a table.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:28.325Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:40.652Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.maxcompute.$Module.class, fqn = "@alicloud/ros-cdk-maxcompute.RosTable")
 public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -19,6 +19,11 @@ export interface RosClusterApplicationResourcesProps {
     readonly kind: string | ros.IResolvable;
 
     /**
+     * @Property apiVersion: The api version of kubernetes resource to query.
+     */
+    readonly apiVersion?: string | ros.IResolvable;
+
+    /**
      * @Property firstMatch: Only the first matching result in jsonpath's filtered results is returned. Default False
      */
     readonly firstMatch?: boolean | ros.IResolvable;
@@ -57,6 +62,7 @@ export interface RosClusterApplicationResourcesProps {
 function RosClusterApplicationResourcesPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('apiVersion', ros.validateString)(properties.apiVersion));
     errors.collect(ros.propertyValidator('firstMatch', ros.validateBoolean)(properties.firstMatch));
     errors.collect(ros.propertyValidator('clusterId', ros.requiredValidator)(properties.clusterId));
     errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
@@ -91,6 +97,7 @@ function rosClusterApplicationResourcesPropsToRosTemplate(properties: any, enabl
     return {
       'ClusterId': ros.stringToRosTemplate(properties.clusterId),
       'Kind': ros.stringToRosTemplate(properties.kind),
+      'ApiVersion': ros.stringToRosTemplate(properties.apiVersion),
       'FirstMatch': ros.booleanToRosTemplate(properties.firstMatch),
       'JsonPath': ros.stringToRosTemplate(properties.jsonPath),
       'Name': ros.stringToRosTemplate(properties.name),
@@ -127,6 +134,11 @@ export class RosClusterApplicationResources extends ros.RosResource {
      * @Property kind: The kind of kubernetes resources to query.
      */
     public kind: string | ros.IResolvable;
+
+    /**
+     * @Property apiVersion: The api version of kubernetes resource to query.
+     */
+    public apiVersion: string | ros.IResolvable | undefined;
 
     /**
      * @Property firstMatch: Only the first matching result in jsonpath's filtered results is returned. Default False
@@ -168,6 +180,7 @@ export class RosClusterApplicationResources extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.clusterId = props.clusterId;
         this.kind = props.kind;
+        this.apiVersion = props.apiVersion;
         this.firstMatch = props.firstMatch;
         this.jsonPath = props.jsonPath;
         this.name = props.name;
@@ -180,6 +193,7 @@ export class RosClusterApplicationResources extends ros.RosResource {
         return {
             clusterId: this.clusterId,
             kind: this.kind,
+            apiVersion: this.apiVersion,
             firstMatch: this.firstMatch,
             jsonPath: this.jsonPath,
             name: this.name,

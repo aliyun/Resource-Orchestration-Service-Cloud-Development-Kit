@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::DDoSPro::SceneDefensePolicy`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::DDoSPro::SceneDefensePolicy`, which is used to create a scenario-specific custom policy.
 type SceneDefensePolicy interface {
 	alicloudroscdkcore.Resource
 	// Attribute Name: The name of the policy.

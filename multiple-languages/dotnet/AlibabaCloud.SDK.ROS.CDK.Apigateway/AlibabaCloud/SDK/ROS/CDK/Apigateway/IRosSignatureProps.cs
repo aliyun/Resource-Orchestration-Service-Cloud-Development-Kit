@@ -21,7 +21,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: signatureName: The name of the Signature.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
+        /// <strong>Property</strong>: signatureName: The name of the Signature.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
         /// </remarks>
         [JsiiProperty(name: "signatureName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object SignatureName
@@ -59,7 +59,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: signatureName: The name of the Signature.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
+            /// <strong>Property</strong>: signatureName: The name of the Signature.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
             /// </remarks>
             [JsiiProperty(name: "signatureName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object SignatureName

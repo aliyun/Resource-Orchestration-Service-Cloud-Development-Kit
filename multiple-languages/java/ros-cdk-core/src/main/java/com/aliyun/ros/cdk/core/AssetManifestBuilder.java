@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.core;
  * <p>
  * This class does not need to be used by app builders; it is only necessary for building Stack Synthesizers.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:22.450Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:35.690Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.AssetManifestBuilder")
 public class AssetManifestBuilder extends software.amazon.jsii.JsiiObject {
 

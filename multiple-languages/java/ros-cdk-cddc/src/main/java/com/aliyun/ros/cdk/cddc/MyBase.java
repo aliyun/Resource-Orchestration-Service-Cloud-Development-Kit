@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cddc;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CDDC::MyBase</code>, which is used to create hosts in a dedicated cluster.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CDDC::MyBase</code>, which is used to create a host in a Proprietary MyBase dedicated cluster in ApsaraDB for MyBase.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:23.740Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:36.518Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cddc.$Module.class, fqn = "@alicloud/ros-cdk-cddc.MyBase")
 public class MyBase extends com.aliyun.ros.cdk.core.Resource {
 

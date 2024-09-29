@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Asm
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ASM::ServiceMesh`, which is used to create an Alibaba Cloud Service Mesh (ASM) instance.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ASM::ServiceMesh`, which is used to create a Service Mesh (ASM) instance.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosServiceMesh`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-asm-servicemesh

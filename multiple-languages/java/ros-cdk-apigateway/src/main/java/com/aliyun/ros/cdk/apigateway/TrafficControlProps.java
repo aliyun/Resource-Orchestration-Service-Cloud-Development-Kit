@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.apigateway;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-trafficcontrol
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:23.251Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:36.309Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.TrafficControlProps")
 @software.amazon.jsii.Jsii.Proxy(TrafficControlProps.Jsii$Proxy.class)
 public interface TrafficControlProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,7 +16,7 @@ public interface TrafficControlProps extends software.amazon.jsii.JsiiSerializab
     @org.jetbrains.annotations.NotNull java.lang.Object getApiDefault();
 
     /**
-     * Property trafficControlName: The name of the traffic control.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * Property trafficControlName: The name of the traffic control.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getTrafficControlName();
 
@@ -93,7 +93,7 @@ public interface TrafficControlProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link TrafficControlProps#getTrafficControlName}
-         * @param trafficControlName Property trafficControlName: The name of the traffic control.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
+         * @param trafficControlName Property trafficControlName: The name of the traffic control.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter. This parameter is required.
          * @return {@code this}
          */
         public Builder trafficControlName(java.lang.String trafficControlName) {
@@ -103,7 +103,7 @@ public interface TrafficControlProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link TrafficControlProps#getTrafficControlName}
-         * @param trafficControlName Property trafficControlName: The name of the traffic control.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
+         * @param trafficControlName Property trafficControlName: The name of the traffic control.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter. This parameter is required.
          * @return {@code this}
          */
         public Builder trafficControlName(com.aliyun.ros.cdk.core.IResolvable trafficControlName) {

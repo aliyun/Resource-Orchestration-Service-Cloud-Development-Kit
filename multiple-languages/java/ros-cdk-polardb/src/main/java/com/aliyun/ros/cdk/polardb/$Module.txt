@@ -4,6 +4,8 @@
 @alicloud/ros-cdk-polardb.AccountPrivilege=com.aliyun.ros.cdk.polardb.AccountPrivilege
 @alicloud/ros-cdk-polardb.AccountPrivilegeProps=com.aliyun.ros.cdk.polardb.AccountPrivilegeProps
 @alicloud/ros-cdk-polardb.AccountProps=com.aliyun.ros.cdk.polardb.AccountProps
+@alicloud/ros-cdk-polardb.Backup=com.aliyun.ros.cdk.polardb.Backup
+@alicloud/ros-cdk-polardb.BackupProps=com.aliyun.ros.cdk.polardb.BackupProps
 @alicloud/ros-cdk-polardb.DBCluster=com.aliyun.ros.cdk.polardb.DBCluster
 @alicloud/ros-cdk-polardb.DBClusterAccessWhiteList=com.aliyun.ros.cdk.polardb.DBClusterAccessWhiteList
 @alicloud/ros-cdk-polardb.DBClusterAccessWhiteListProps=com.aliyun.ros.cdk.polardb.DBClusterAccessWhiteListProps
@@ -26,6 +28,8 @@
 @alicloud/ros-cdk-polardb.RosAccountPrivilege=com.aliyun.ros.cdk.polardb.RosAccountPrivilege
 @alicloud/ros-cdk-polardb.RosAccountPrivilegeProps=com.aliyun.ros.cdk.polardb.RosAccountPrivilegeProps
 @alicloud/ros-cdk-polardb.RosAccountProps=com.aliyun.ros.cdk.polardb.RosAccountProps
+@alicloud/ros-cdk-polardb.RosBackup=com.aliyun.ros.cdk.polardb.RosBackup
+@alicloud/ros-cdk-polardb.RosBackupProps=com.aliyun.ros.cdk.polardb.RosBackupProps
 @alicloud/ros-cdk-polardb.RosDBCluster=com.aliyun.ros.cdk.polardb.RosDBCluster
 @alicloud/ros-cdk-polardb.RosDBCluster.ColdStorageOptionProperty=com.aliyun.ros.cdk.polardb.RosDBCluster$ColdStorageOptionProperty
 @alicloud/ros-cdk-polardb.RosDBCluster.DBClusterParametersProperty=com.aliyun.ros.cdk.polardb.RosDBCluster$DBClusterParametersProperty

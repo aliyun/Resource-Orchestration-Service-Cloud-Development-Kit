@@ -21,7 +21,7 @@ export interface SecurityGroupEgressesProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SecurityGroupEgresses`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SecurityGroupEgresses`, which is used to associate multiple outbound rules with a security group at a time.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecurityGroupEgresses`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupegresses
  */

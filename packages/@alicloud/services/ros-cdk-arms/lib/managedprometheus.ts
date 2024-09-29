@@ -46,7 +46,7 @@ export interface ManagedPrometheusProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::ManagedPrometheus`, which is used to install a Prometheus agent in a ACK Serverless (ASK) cluster or an Elastic Compute Service (ECS) cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::ManagedPrometheus`, which is used to install a Prometheus instance to monitor a serverless Kubernetes (ASK) cluster or an Elastic Compute Service (ECS) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosManagedPrometheus`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-managedprometheus
  */

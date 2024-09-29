@@ -589,6 +589,10 @@ export namespace RosInstance {
      */
     export interface InternetInfoProperty {
         /**
+         * @Property flowOutType: The billing method of Internet usage. Valid values: payByBandwidth: pay-by-bandwidth. If Internet access is enabled for an instance, specify this value for the parameter. payByTraffic: pay-by-traffic. If Internet access is enabled for an instance, specify this value for the parameter. uninvolved: No billing method is involved. If Internet access is disabled for an instance, specify this value for the parameter.
+         */
+        readonly flowOutType?: string | ros.IResolvable;
+        /**
          * @Property ipWhitelist: Public network access whitelist address segment.
          */
         readonly ipWhitelist?: Array<string | ros.IResolvable> | ros.IResolvable;
@@ -613,6 +617,7 @@ export namespace RosInstance {
 function RosInstance_InternetInfoPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('flowOutType', ros.validateString)(properties.flowOutType));
     errors.collect(ros.propertyValidator('ipWhitelist', ros.listValidator(ros.validateString))(properties.ipWhitelist));
     errors.collect(ros.propertyValidator('internetSpec', ros.requiredValidator)(properties.internetSpec));
     if(properties.internetSpec && (typeof properties.internetSpec) !== 'object') {
@@ -645,6 +650,7 @@ function rosInstanceInternetInfoPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosInstance_InternetInfoPropertyValidator(properties).assertSuccess();
     return {
+      'FlowOutType': ros.stringToRosTemplate(properties.flowOutType),
       'IpWhitelist': ros.listMapper(ros.stringToRosTemplate)(properties.ipWhitelist),
       'InternetSpec': ros.stringToRosTemplate(properties.internetSpec),
       'FlowOutBandwidth': ros.numberToRosTemplate(properties.flowOutBandwidth),

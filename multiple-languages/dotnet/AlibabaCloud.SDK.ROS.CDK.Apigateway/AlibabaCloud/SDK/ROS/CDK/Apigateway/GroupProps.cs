@@ -15,7 +15,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
     {
         private object _groupName;
 
-        /// <summary>Property groupName: The name of the Group.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.</summary>
+        /// <summary>Property groupName: The name of the Group.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.</summary>
         [JsiiProperty(name: "groupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object GroupName
         {

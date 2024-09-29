@@ -15,7 +15,7 @@ export interface TrafficControlProps {
     readonly apiDefault: number | ros.IResolvable;
 
     /**
-     * Property trafficControlName: The name of the traffic control.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
+     * Property trafficControlName: The name of the traffic control.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
      */
     readonly trafficControlName: string | ros.IResolvable;
 

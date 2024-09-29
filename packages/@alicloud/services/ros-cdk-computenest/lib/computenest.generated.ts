@@ -121,7 +121,7 @@ function rosIntranetConnectorEndpointPropsToRosTemplate(properties: any, enableR
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ComputeNest::IntranetConnectorEndpoint`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ComputeNest::IntranetConnectorEndpoint`, which is used to create an endpoint.
  * @Note This class does not contain additional functions, so it is recommended to use the `IntranetConnectorEndpoint` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-computenest-intranetconnectorendpoint
  */

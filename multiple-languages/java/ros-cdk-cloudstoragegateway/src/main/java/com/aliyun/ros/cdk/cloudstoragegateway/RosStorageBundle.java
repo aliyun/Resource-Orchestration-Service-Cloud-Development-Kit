@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudstoragegateway;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CloudStorageGateway::StorageBundle</code>, which is used to create a gateway cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:24.503Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:37.033Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudstoragegateway.$Module.class, fqn = "@alicloud/ros-cdk-cloudstoragegateway.RosStorageBundle")
 public class RosStorageBundle extends com.aliyun.ros.cdk.core.RosResource {
 

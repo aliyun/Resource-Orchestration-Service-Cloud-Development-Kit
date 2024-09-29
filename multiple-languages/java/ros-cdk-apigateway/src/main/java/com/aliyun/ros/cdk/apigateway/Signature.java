@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ApiGateway::Signature</code>, which is used to create a backend signature.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:23.238Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:36.288Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.Signature")
 public class Signature extends com.aliyun.ros.cdk.core.Resource {
 
@@ -135,20 +135,20 @@ public class Signature extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property signatureName: The name of the Signature.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+         * Property signatureName: The name of the Signature.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
          * <p>
          * @return {@code this}
-         * @param signatureName Property signatureName: The name of the Signature.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
+         * @param signatureName Property signatureName: The name of the Signature.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter. This parameter is required.
          */
         public Builder signatureName(final java.lang.String signatureName) {
             this.props.signatureName(signatureName);
             return this;
         }
         /**
-         * Property signatureName: The name of the Signature.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+         * Property signatureName: The name of the Signature.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
          * <p>
          * @return {@code this}
-         * @param signatureName Property signatureName: The name of the Signature.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
+         * @param signatureName Property signatureName: The name of the Signature.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter. This parameter is required.
          */
         public Builder signatureName(final com.aliyun.ros.cdk.core.IResolvable signatureName) {
             this.props.signatureName(signatureName);

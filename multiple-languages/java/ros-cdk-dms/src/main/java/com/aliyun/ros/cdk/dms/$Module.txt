@@ -1,6 +1,10 @@
 @alicloud/ros-cdk-dms.Instance=com.aliyun.ros.cdk.dms.Instance
+@alicloud/ros-cdk-dms.Instance2=com.aliyun.ros.cdk.dms.Instance2
+@alicloud/ros-cdk-dms.Instance2Props=com.aliyun.ros.cdk.dms.Instance2Props
 @alicloud/ros-cdk-dms.InstanceProps=com.aliyun.ros.cdk.dms.InstanceProps
 @alicloud/ros-cdk-dms.RosInstance=com.aliyun.ros.cdk.dms.RosInstance
+@alicloud/ros-cdk-dms.RosInstance2=com.aliyun.ros.cdk.dms.RosInstance2
+@alicloud/ros-cdk-dms.RosInstance2Props=com.aliyun.ros.cdk.dms.RosInstance2Props
 @alicloud/ros-cdk-dms.RosInstanceProps=com.aliyun.ros.cdk.dms.RosInstanceProps
 @alicloud/ros-cdk-dms.RosUser=com.aliyun.ros.cdk.dms.RosUser
 @alicloud/ros-cdk-dms.RosUserProps=com.aliyun.ros.cdk.dms.RosUserProps

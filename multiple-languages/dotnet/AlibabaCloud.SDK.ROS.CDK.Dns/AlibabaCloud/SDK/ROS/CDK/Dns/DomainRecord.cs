@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Dns
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::DNS::DomainRecord`, which is used to add a domain name system (DNS) record.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::DNS::DomainRecord`, which is used to add a Domain Name System (DNS) record.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomainRecord`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-domainrecord

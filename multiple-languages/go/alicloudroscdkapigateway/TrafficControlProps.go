@@ -7,7 +7,7 @@ package alicloudroscdkapigateway
 type TrafficControlProps struct {
 	// Property apiDefault: Default API traffic value.
 	ApiDefault interface{} `field:"required" json:"apiDefault" yaml:"apiDefault"`
-	// Property trafficControlName: The name of the traffic control.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
+	// Property trafficControlName: The name of the traffic control.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
 	TrafficControlName interface{} `field:"required" json:"trafficControlName" yaml:"trafficControlName"`
 	// Property trafficControlUnit: Traffic control unit, DAY\/HOUR\/MINUTE.
 	TrafficControlUnit interface{} `field:"required" json:"trafficControlUnit" yaml:"trafficControlUnit"`

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.apigateway;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-signature
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:23.242Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:36.290Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.SignatureProps")
 @software.amazon.jsii.Jsii.Proxy(SignatureProps.Jsii$Proxy.class)
 public interface SignatureProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,7 +16,7 @@ public interface SignatureProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getSignatureKey();
 
     /**
-     * Property signatureName: The name of the Signature.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * Property signatureName: The name of the Signature.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getSignatureName();
 
@@ -61,7 +61,7 @@ public interface SignatureProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SignatureProps#getSignatureName}
-         * @param signatureName Property signatureName: The name of the Signature.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
+         * @param signatureName Property signatureName: The name of the Signature.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter. This parameter is required.
          * @return {@code this}
          */
         public Builder signatureName(java.lang.String signatureName) {
@@ -71,7 +71,7 @@ public interface SignatureProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SignatureProps#getSignatureName}
-         * @param signatureName Property signatureName: The name of the Signature.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
+         * @param signatureName Property signatureName: The name of the Signature.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter. This parameter is required.
          * @return {@code this}
          */
         public Builder signatureName(com.aliyun.ros.cdk.core.IResolvable signatureName) {

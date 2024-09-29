@@ -43,6 +43,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             get;
         }
 
+        /// <summary>Property connectionDrainConfig: Configuration related to graceful connection interruption.Enable graceful connection interruption. After the backend server is removed or the health check fails, the load balancing allows the existing connection to be transmitted normally within a certain period of time.Note:  Basic Edition instances do not support enabling graceful connection interruption. Only Standard Edition and WAF Enhanced Edition instances support it.Server type and IP type server group support graceful connection interruption. Function Compute type does not support it.</summary>
+        [JsiiProperty(name: "connectionDrainConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosServerGroup.ConnectionDrainConfigProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ConnectionDrainConfig
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property protocol: The backend protocol.</summary>
         /// <remarks>
         /// Valid values:
@@ -121,6 +132,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
         }
 
+        /// <summary>Property slowStartConfig: Slow start related configuration.After slow start is enabled, the backend server newly added to the backend server group will be preheated within the set time period, and the number of requests forwarded to the server will increase linearly.Note: Basic Edition instances do not support slow start, only Standard Edition and WAF Enhanced Edition instances support it.Server type and IP type server groups support slow start configuration, but Function Compute type does not.Slow start can only be enabled when the backend scheduling algorithm is the weighted polling algorithm.</summary>
+        [JsiiProperty(name: "slowStartConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosServerGroup.SlowStartConfigProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SlowStartConfig
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property stickySessionConfig: The configuration of session persistence.</summary>
         /// <remarks>
         /// Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
@@ -142,6 +164,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-alb.RosServerGroup.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         AlibabaCloud.SDK.ROS.CDK.Alb.RosServerGroup.ITagsProperty[]? Tags
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property uchConfig: URL consistency hash parameter configuration.</summary>
+        [JsiiProperty(name: "uchConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosServerGroup.UchConfigProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? UchConfig
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property upstreamKeepaliveEnabled: Whether to enable upstream keepalive.</summary>
+        [JsiiProperty(name: "upstreamKeepaliveEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? UpstreamKeepaliveEnabled
         {
             get
             {
@@ -190,6 +234,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             public object VpcId
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property connectionDrainConfig: Configuration related to graceful connection interruption.Enable graceful connection interruption. After the backend server is removed or the health check fails, the load balancing allows the existing connection to be transmitted normally within a certain period of time.Note:  Basic Edition instances do not support enabling graceful connection interruption. Only Standard Edition and WAF Enhanced Edition instances support it.Server type and IP type server group support graceful connection interruption. Function Compute type does not support it.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "connectionDrainConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosServerGroup.ConnectionDrainConfigProperty\"}]}}", isOptional: true)]
+            public object? ConnectionDrainConfig
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property protocol: The backend protocol.</summary>
@@ -255,6 +307,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property slowStartConfig: Slow start related configuration.After slow start is enabled, the backend server newly added to the backend server group will be preheated within the set time period, and the number of requests forwarded to the server will increase linearly.Note: Basic Edition instances do not support slow start, only Standard Edition and WAF Enhanced Edition instances support it.Server type and IP type server groups support slow start configuration, but Function Compute type does not.Slow start can only be enabled when the backend scheduling algorithm is the weighted polling algorithm.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "slowStartConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosServerGroup.SlowStartConfigProperty\"}]}}", isOptional: true)]
+            public object? SlowStartConfig
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property stickySessionConfig: The configuration of session persistence.</summary>
             /// <remarks>
             /// Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
@@ -275,6 +335,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             public AlibabaCloud.SDK.ROS.CDK.Alb.RosServerGroup.ITagsProperty[]? Tags
             {
                 get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Alb.RosServerGroup.ITagsProperty[]?>();
+            }
+
+            /// <summary>Property uchConfig: URL consistency hash parameter configuration.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "uchConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosServerGroup.UchConfigProperty\"}]}}", isOptional: true)]
+            public object? UchConfig
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property upstreamKeepaliveEnabled: Whether to enable upstream keepalive.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "upstreamKeepaliveEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? UpstreamKeepaliveEnabled
+            {
+                get => GetInstanceProperty<object?>();
             }
         }
     }

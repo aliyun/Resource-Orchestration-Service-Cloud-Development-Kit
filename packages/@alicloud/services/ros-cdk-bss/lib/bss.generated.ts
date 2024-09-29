@@ -92,7 +92,7 @@ function rosResourcePackagePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::BSS::ResourcePackage`, which is used to create an instance that uses a resource plan.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::BSS::ResourcePackage`, which is used to create a resource plan.
  * @Note This class does not contain additional functions, so it is recommended to use the `ResourcePackage` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bss-resourcepackage
  */
@@ -248,7 +248,7 @@ function rosWaitOrderPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::BSS::WaitOrder`, which is used to wait for an order to be fulfilled.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::BSS::WaitOrder`, which is used to wait for orders to be completed.
  * @Note This class does not contain additional functions, so it is recommended to use the `WaitOrder` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bss-waitorder
  */

@@ -10,7 +10,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::CustomDomain`, which is used to bind a custom domain name and upload an SSL certificate to a specified API group.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::CustomDomain`, which is used to bind a custom domain name and upload a Secure Sockets Layer (SSL) certificate to a specific API group.
 type CustomDomain interface {
 	alicloudroscdkcore.Resource
 	// Attribute CertificateId: The id of the certificate.

@@ -36,7 +36,7 @@ export interface CenBandwidthLimitProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenBandwidthLimit`, which is used to configure the cross-region interconnection bandwidth in a bandwidth plan.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenBandwidthLimit`, which is used to configure the bandwidth for an inter-region connection in a bandwidth plan.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenBandwidthLimit`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthlimit
  */

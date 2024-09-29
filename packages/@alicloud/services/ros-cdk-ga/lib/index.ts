@@ -10,8 +10,10 @@ export * from './basicacceleratoripendpointrelation';
 export * from './basicendpoint';
 export * from './basicendpointgroup';
 export * from './basicipset';
+export * from './domain';
 export * from './endpointgroup';
 export * from './endpointgroups';
+export * from './forwardingrules';
 export * from './ipsets';
 export * from './listener';
 

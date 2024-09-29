@@ -51,7 +51,7 @@ export interface CenVbrHealthCheckProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenVbrHealthCheck`, which is used to enable the health check feature or modify the health check configuration for a virtual border router (VBR).
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenVbrHealthCheck`, which is used to enable the health check feature or modify the health check configurations for a virtual border router (VBR).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenVbrHealthCheck`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenvbrhealthcheck
  */

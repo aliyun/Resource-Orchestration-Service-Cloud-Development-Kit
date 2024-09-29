@@ -586,7 +586,7 @@ function rosDesktopGroupPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::DesktopGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::DesktopGroup`, which is used to create a cloud computer pool.
  * @Note This class does not contain additional functions, so it is recommended to use the `DesktopGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-desktopgroup
  */
@@ -1535,7 +1535,7 @@ function rosNetworkPackagePropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::NetworkPackage`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::NetworkPackage`, which is used to create a premium bandwidth plan for an office network.
  * @Note This class does not contain additional functions, so it is recommended to use the `NetworkPackage` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-networkpackage
  */
@@ -1643,6 +1643,120 @@ export class RosNetworkPackage extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosNetworkPackagePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosNetworkPackageAssociation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-networkpackageassociation
+ */
+export interface RosNetworkPackageAssociationProps {
+
+    /**
+     * @Property networkPackageId: The ID of the Internet access package.
+     */
+    readonly networkPackageId: string | ros.IResolvable;
+
+    /**
+     * @Property officeSiteId: The ID of the workspace.
+     */
+    readonly officeSiteId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosNetworkPackageAssociationProps`
+ *
+ * @param properties - the TypeScript properties of a `RosNetworkPackageAssociationProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosNetworkPackageAssociationPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('officeSiteId', ros.requiredValidator)(properties.officeSiteId));
+    errors.collect(ros.propertyValidator('officeSiteId', ros.validateString)(properties.officeSiteId));
+    errors.collect(ros.propertyValidator('networkPackageId', ros.requiredValidator)(properties.networkPackageId));
+    errors.collect(ros.propertyValidator('networkPackageId', ros.validateString)(properties.networkPackageId));
+    return errors.wrap('supplied properties not correct for "RosNetworkPackageAssociationProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECD::NetworkPackageAssociation` resource
+ *
+ * @param properties - the TypeScript properties of a `RosNetworkPackageAssociationProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECD::NetworkPackageAssociation` resource.
+ */
+// @ts-ignore TS6133
+function rosNetworkPackageAssociationPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosNetworkPackageAssociationPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'NetworkPackageId': ros.stringToRosTemplate(properties.networkPackageId),
+      'OfficeSiteId': ros.stringToRosTemplate(properties.officeSiteId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::NetworkPackageAssociation`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `NetworkPackageAssociation` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-networkpackageassociation
+ */
+export class RosNetworkPackageAssociation extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECD::NetworkPackageAssociation";
+
+    /**
+     * @Attribute NetworkPackageId: The ID of the Internet access package.
+     */
+    public readonly attrNetworkPackageId: ros.IResolvable;
+
+    /**
+     * @Attribute OfficeSiteId: The ID of the workspace.
+     */
+    public readonly attrOfficeSiteId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property networkPackageId: The ID of the Internet access package.
+     */
+    public networkPackageId: string | ros.IResolvable;
+
+    /**
+     * @Property officeSiteId: The ID of the workspace.
+     */
+    public officeSiteId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosNetworkPackageAssociationProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosNetworkPackageAssociation.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrNetworkPackageId = this.getAtt('NetworkPackageId');
+        this.attrOfficeSiteId = this.getAtt('OfficeSiteId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.networkPackageId = props.networkPackageId;
+        this.officeSiteId = props.officeSiteId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            networkPackageId: this.networkPackageId,
+            officeSiteId: this.officeSiteId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosNetworkPackageAssociationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 

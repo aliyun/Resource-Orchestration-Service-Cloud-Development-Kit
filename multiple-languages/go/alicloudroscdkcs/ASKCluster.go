@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CS::ASKCluster`, which is used to create a Serverless Kubernetes (ASK) cluster.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CS::ASKCluster`, which is used to create a serverless Kubernetes (ASK) cluster.
 type ASKCluster interface {
 	alicloudroscdkcore.Resource
 	// Attribute APIServerSLBId: The id of API server SLB.

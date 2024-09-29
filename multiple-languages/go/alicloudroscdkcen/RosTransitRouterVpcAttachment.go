@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterVpcAttachment`, which is used to connect a virtual private cloud (​VPC) to an Enterprise Edition transit router.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterVpcAttachment`, which is used to create a virtual private cloud (VPC) connection on an Enterprise Edition transit router.
 type RosTransitRouterVpcAttachment interface {
 	alicloudroscdkcore.RosResource
 	AttrCenId() alicloudroscdkcore.IResolvable

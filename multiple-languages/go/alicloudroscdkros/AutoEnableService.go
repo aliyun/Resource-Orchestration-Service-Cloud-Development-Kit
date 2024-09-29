@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ROS::AutoEnableService`, which is used to activate an Alibaba Cloud service.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ROS::AutoEnableService`, which is used to automatically activate an Alibaba Cloud service or feature.
 type AutoEnableService interface {
 	alicloudroscdkcore.Resource
 	EnableResourcePropertyConstraint() *bool

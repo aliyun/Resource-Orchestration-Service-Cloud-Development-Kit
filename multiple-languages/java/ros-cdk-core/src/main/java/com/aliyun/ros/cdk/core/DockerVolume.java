@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * A Docker volume.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:22.491Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:35.720Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.DockerVolume")
 @software.amazon.jsii.Jsii.Proxy(DockerVolume.Jsii$Proxy.class)
 public interface DockerVolume extends software.amazon.jsii.JsiiSerializable {

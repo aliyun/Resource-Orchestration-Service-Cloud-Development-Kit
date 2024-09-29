@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CloudPhone::Image`, which is used to create a custom image for an Elastic Cloud Phone (ECP) instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CloudPhone::Image`, which is used to create a custom image for a cloud phone.
 type RosImage interface {
 	alicloudroscdkcore.RosResource
 	AttrCreateTime() alicloudroscdkcore.IResolvable

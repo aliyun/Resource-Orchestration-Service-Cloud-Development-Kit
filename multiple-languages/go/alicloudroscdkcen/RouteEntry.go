@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CEN::RouteEntry`, which is used to advertise a routing entry of an attached VPC or VBR to a CEN instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CEN::RouteEntry`, which is used to advertise a route of an attached virtual private cloud (VPC) or virtual border router (VBR) to a Cloud Enterprise Network (CEN) instance.
 type RouteEntry interface {
 	alicloudroscdkcore.Resource
 	EnableResourcePropertyConstraint() *bool

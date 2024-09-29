@@ -13,6 +13,8 @@ import (
 type RosServerGroup interface {
 	alicloudroscdkcore.RosResource
 	AttrServerGroupId() alicloudroscdkcore.IResolvable
+	ConnectionDrainConfig() interface{}
+	SetConnectionDrainConfig(val interface{})
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
@@ -55,6 +57,8 @@ type RosServerGroup interface {
 	SetServerGroupType(val interface{})
 	ServiceName() interface{}
 	SetServiceName(val interface{})
+	SlowStartConfig() interface{}
+	SetSlowStartConfig(val interface{})
 	// The stack in which this element is defined.
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
@@ -63,11 +67,15 @@ type RosServerGroup interface {
 	SetStickySessionConfig(val interface{})
 	Tags() *[]*RosServerGroup_TagsProperty
 	SetTags(val *[]*RosServerGroup_TagsProperty)
+	UchConfig() interface{}
+	SetUchConfig(val interface{})
 	// Return properties modified after initiation.
 	//
 	// Resources that expose mutable properties should override this function to
 	// collect and return the properties object for this resource.
 	UpdatedProperites() *map[string]interface{}
+	UpstreamKeepaliveEnabled() interface{}
+	SetUpstreamKeepaliveEnabled(val interface{})
 	VpcId() interface{}
 	SetVpcId(val interface{})
 	AddCondition(con alicloudroscdkcore.RosCondition)
@@ -191,6 +199,16 @@ func (j *jsiiProxy_RosServerGroup) AttrServerGroupId() alicloudroscdkcore.IResol
 	_jsii_.Get(
 		j,
 		"attrServerGroupId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosServerGroup) ConnectionDrainConfig() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"connectionDrainConfig",
 		&returns,
 	)
 	return returns
@@ -346,6 +364,16 @@ func (j *jsiiProxy_RosServerGroup) ServiceName() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosServerGroup) SlowStartConfig() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"slowStartConfig",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosServerGroup) Stack() alicloudroscdkcore.Stack {
 	var returns alicloudroscdkcore.Stack
 	_jsii_.Get(
@@ -376,11 +404,31 @@ func (j *jsiiProxy_RosServerGroup) Tags() *[]*RosServerGroup_TagsProperty {
 	return returns
 }
 
+func (j *jsiiProxy_RosServerGroup) UchConfig() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"uchConfig",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosServerGroup) UpdatedProperites() *map[string]interface{} {
 	var returns *map[string]interface{}
 	_jsii_.Get(
 		j,
 		"updatedProperites",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosServerGroup) UpstreamKeepaliveEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"upstreamKeepaliveEnabled",
 		&returns,
 	)
 	return returns
@@ -421,6 +469,17 @@ func NewRosServerGroup_Override(r RosServerGroup, scope alicloudroscdkcore.Const
 		"@alicloud/ros-cdk-alb.RosServerGroup",
 		[]interface{}{scope, id, props, enableResourcePropertyConstraint},
 		r,
+	)
+}
+
+func (j *jsiiProxy_RosServerGroup)SetConnectionDrainConfig(val interface{}) {
+	if err := j.validateSetConnectionDrainConfigParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"connectionDrainConfig",
+		val,
 	)
 }
 
@@ -512,6 +571,17 @@ func (j *jsiiProxy_RosServerGroup)SetServiceName(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosServerGroup)SetSlowStartConfig(val interface{}) {
+	if err := j.validateSetSlowStartConfigParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"slowStartConfig",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosServerGroup)SetStickySessionConfig(val interface{}) {
 	if err := j.validateSetStickySessionConfigParameters(val); err != nil {
 		panic(err)
@@ -530,6 +600,28 @@ func (j *jsiiProxy_RosServerGroup)SetTags(val *[]*RosServerGroup_TagsProperty) {
 	_jsii_.Set(
 		j,
 		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosServerGroup)SetUchConfig(val interface{}) {
+	if err := j.validateSetUchConfigParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"uchConfig",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosServerGroup)SetUpstreamKeepaliveEnabled(val interface{}) {
+	if err := j.validateSetUpstreamKeepaliveEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"upstreamKeepaliveEnabled",
 		val,
 	)
 }

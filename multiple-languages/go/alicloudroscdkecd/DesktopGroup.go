@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ECD::DesktopGroup`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ECD::DesktopGroup`, which is used to create a cloud computer pool.
 type DesktopGroup interface {
 	alicloudroscdkcore.Resource
 	// Attribute DesktopGroupId: Id of created DesktopGroup.

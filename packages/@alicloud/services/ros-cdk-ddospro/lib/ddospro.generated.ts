@@ -93,7 +93,7 @@ function rosPortPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::Port`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::Port`, which is used to create a port forwarding rule for an Anti-DDoS Proxy instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Port` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-port
  */
@@ -1068,7 +1068,7 @@ function rosSceneDefensePolicyPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::SceneDefensePolicy`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::SceneDefensePolicy`, which is used to create a scenario-specific custom policy.
  * @Note This class does not contain additional functions, so it is recommended to use the `SceneDefensePolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-scenedefensepolicy
  */
@@ -1232,7 +1232,7 @@ function rosSchedulerRulePropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::SchedulerRule`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::SchedulerRule`, which is used to create a scheduling rule for Sec-Traffic Manager.
  * @Note This class does not contain additional functions, so it is recommended to use the `SchedulerRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-schedulerrule
  */
@@ -1429,7 +1429,7 @@ function rosWebRulePropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::WebRule`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::WebRule`, which is used to create a forwarding rule for a website.
  * @Note This class does not contain additional functions, so it is recommended to use the `WebRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-webrule
  */

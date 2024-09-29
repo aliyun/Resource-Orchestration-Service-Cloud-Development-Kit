@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::BSS::WaitOrder`, which is used to wait for an order to be fulfilled.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::BSS::WaitOrder`, which is used to wait for orders to be completed.
 type RosWaitOrder interface {
 	alicloudroscdkcore.RosResource
 	CancelOnDelete() interface{}

@@ -6,8 +6,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
 {
     /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Service`, which is used to create a service in Function Compute.</summary>
     /// <remarks>
-    /// All functions of a service share the same settings, such as permission settings and log configurations. A service can have multiple functions, all of which share service resources, such as Logstores and RAM roles.
-    ///
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Service` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-service
     /// </remarks>

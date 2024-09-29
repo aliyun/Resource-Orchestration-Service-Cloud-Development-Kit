@@ -12,5 +12,6 @@ type RosAccountProps struct {
 	AccountPrivilege interface{} `field:"optional" json:"accountPrivilege" yaml:"accountPrivilege"`
 	AccountType interface{} `field:"optional" json:"accountType" yaml:"accountType"`
 	DbName interface{} `field:"optional" json:"dbName" yaml:"dbName"`
+	PrivForAllDb interface{} `field:"optional" json:"privForAllDb" yaml:"privForAllDb"`
 }
 

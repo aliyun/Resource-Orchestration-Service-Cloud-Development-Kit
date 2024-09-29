@@ -84,6 +84,10 @@ func validateRosClusterApplicationResources_IsRosResourceParameters(construct al
 	return nil
 }
 
+func (j *jsiiProxy_RosClusterApplicationResources) validateSetApiVersionParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosClusterApplicationResources) validateSetClusterIdParameters(val interface{}) error {
 	return nil
 }

@@ -9,7 +9,7 @@ import * as ros from '@alicloud/ros-cdk-core';
 export interface RosApiProps {
 
     /**
-     * @Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
+     * @Property apiName: The name of the API.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
      */
     readonly apiName: string | ros.IResolvable;
 
@@ -300,7 +300,7 @@ export class RosApi extends ros.RosResource {
 
 
     /**
-     * @Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
+     * @Property apiName: The name of the API.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
      */
     public apiName: string | ros.IResolvable;
 
@@ -1963,7 +1963,7 @@ function rosAuthorizationPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Authorization`, which is used to authorize APIs to access applications.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Authorization`, which is used to authorize applications to call APIs.
  * @Note This class does not contain additional functions, so it is recommended to use the `Authorization` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-authorization
  */
@@ -2115,7 +2115,7 @@ function rosCustomDomainPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::CustomDomain`, which is used to bind a custom domain name and upload an SSL certificate to a specified API group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::CustomDomain`, which is used to bind a custom domain name and upload a Secure Sockets Layer (SSL) certificate to a specific API group.
  * @Note This class does not contain additional functions, so it is recommended to use the `CustomDomain` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-customdomain
  */
@@ -2272,7 +2272,7 @@ function rosDeploymentPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Deployment`, which is used to release an API to a specified runtime environment, or switch a released API to a specified version.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Deployment`, which is used to publish an API to a specific runtime environment, or switch a published API to a specific version.
  * @Note This class does not contain additional functions, so it is recommended to use the `Deployment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-deployment
  */
@@ -2348,7 +2348,7 @@ export class RosDeployment extends ros.RosResource {
 export interface RosGroupProps {
 
     /**
-     * @Property groupName: The name of the Group.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
+     * @Property groupName: The name of the Group.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
      */
     readonly groupName: string | ros.IResolvable;
 
@@ -2473,7 +2473,7 @@ export class RosGroup extends ros.RosResource {
 
 
     /**
-     * @Property groupName: The name of the Group.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
+     * @Property groupName: The name of the Group.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
      */
     public groupName: string | ros.IResolvable;
 
@@ -3457,7 +3457,7 @@ export interface RosSignatureProps {
     readonly signatureKey: string | ros.IResolvable;
 
     /**
-     * @Property signatureName: The name of the Signature.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
+     * @Property signatureName: The name of the Signature.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
      */
     readonly signatureName: string | ros.IResolvable;
 
@@ -3531,7 +3531,7 @@ export class RosSignature extends ros.RosResource {
     public signatureKey: string | ros.IResolvable;
 
     /**
-     * @Property signatureName: The name of the Signature.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
+     * @Property signatureName: The name of the Signature.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
      */
     public signatureName: string | ros.IResolvable;
 
@@ -3651,7 +3651,7 @@ function rosSignatureBindingPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::SignatureBinding`, which is used to bind backend signatures to APIs.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::SignatureBinding`, which is used to bind a backend signature to APIs.
  * @Note This class does not contain additional functions, so it is recommended to use the `SignatureBinding` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-signaturebinding
  */
@@ -3848,7 +3848,7 @@ export interface RosTrafficControlProps {
     readonly apiDefault: number | ros.IResolvable;
 
     /**
-     * @Property trafficControlName: The name of the traffic control.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
+     * @Property trafficControlName: The name of the traffic control.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
      */
     readonly trafficControlName: string | ros.IResolvable;
 
@@ -3956,7 +3956,7 @@ export class RosTrafficControl extends ros.RosResource {
     public apiDefault: number | ros.IResolvable;
 
     /**
-     * @Property trafficControlName: The name of the traffic control.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
+     * @Property trafficControlName: The name of the traffic control.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
      */
     public trafficControlName: string | ros.IResolvable;
 
@@ -4305,7 +4305,7 @@ function rosVpcAccessConfigPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::VpcAccessConfig`, which is used to configure the VPC authorization for an instance so that VPC API can provide services externally.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::VpcAccessConfig`, which is used to configure virtual private cloud (VPC) access authorization for an instance. This helps APIs provide services based on private networks.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpcAccessConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-vpcaccessconfig
  */

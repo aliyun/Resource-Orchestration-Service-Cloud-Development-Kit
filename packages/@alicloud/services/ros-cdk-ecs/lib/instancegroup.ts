@@ -478,7 +478,7 @@ export interface InstanceGroupProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::InstanceGroup`, which is used to create a group of Elastic Compute Service (ECS) instances that have the same configurations.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::InstanceGroup`, which is used to create Elastic Compute Service (ECS) instances that have the same configurations.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstanceGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroup
  */
@@ -527,11 +527,6 @@ export class InstanceGroup extends ros.Resource {
      * Attribute PublicIps: Public IP address list of created ecs instances.
      */
     public readonly attrPublicIps: ros.IResolvable;
-
-    /**
-     * Attribute RelatedOrderIds: The related order id list of created ecs instances
-     */
-    public readonly attrRelatedOrderIds: ros.IResolvable;
 
     /**
      * Attribute ZoneIds: Zone id of created instances.
@@ -641,7 +636,6 @@ export class InstanceGroup extends ros.Resource {
         this.attrOrderId = rosInstanceGroup.attrOrderId;
         this.attrPrivateIps = rosInstanceGroup.attrPrivateIps;
         this.attrPublicIps = rosInstanceGroup.attrPublicIps;
-        this.attrRelatedOrderIds = rosInstanceGroup.attrRelatedOrderIds;
         this.attrZoneIds = rosInstanceGroup.attrZoneIds;
     }
 }

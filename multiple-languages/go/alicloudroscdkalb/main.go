@@ -1123,6 +1123,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "addRosDependency", GoMethod: "AddRosDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
 			_jsii_.MemberProperty{JsiiProperty: "attrServerGroupId", GoGetter: "AttrServerGroupId"},
+			_jsii_.MemberProperty{JsiiProperty: "connectionDrainConfig", GoGetter: "ConnectionDrainConfig"},
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
@@ -1145,12 +1146,15 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "serverGroupName", GoGetter: "ServerGroupName"},
 			_jsii_.MemberProperty{JsiiProperty: "serverGroupType", GoGetter: "ServerGroupType"},
 			_jsii_.MemberProperty{JsiiProperty: "serviceName", GoGetter: "ServiceName"},
+			_jsii_.MemberProperty{JsiiProperty: "slowStartConfig", GoGetter: "SlowStartConfig"},
 			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
 			_jsii_.MemberProperty{JsiiProperty: "stickySessionConfig", GoGetter: "StickySessionConfig"},
 			_jsii_.MemberMethod{JsiiMethod: "synthesize", GoMethod: "Synthesize"},
 			_jsii_.MemberProperty{JsiiProperty: "tags", GoGetter: "Tags"},
 			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberProperty{JsiiProperty: "uchConfig", GoGetter: "UchConfig"},
 			_jsii_.MemberProperty{JsiiProperty: "updatedProperites", GoGetter: "UpdatedProperites"},
+			_jsii_.MemberProperty{JsiiProperty: "upstreamKeepaliveEnabled", GoGetter: "UpstreamKeepaliveEnabled"},
 			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
 			_jsii_.MemberMethod{JsiiMethod: "validateProperties", GoMethod: "ValidateProperties"},
 			_jsii_.MemberProperty{JsiiProperty: "vpcId", GoGetter: "VpcId"},
@@ -1162,8 +1166,16 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-alb.RosServerGroup.ConnectionDrainConfigProperty",
+		reflect.TypeOf((*RosServerGroup_ConnectionDrainConfigProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-alb.RosServerGroup.HealthCheckConfigProperty",
 		reflect.TypeOf((*RosServerGroup_HealthCheckConfigProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-alb.RosServerGroup.SlowStartConfigProperty",
+		reflect.TypeOf((*RosServerGroup_SlowStartConfigProperty)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-alb.RosServerGroup.StickySessionConfigProperty",
@@ -1172,6 +1184,10 @@ func init() {
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-alb.RosServerGroup.TagsProperty",
 		reflect.TypeOf((*RosServerGroup_TagsProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-alb.RosServerGroup.UchConfigProperty",
+		reflect.TypeOf((*RosServerGroup_UchConfigProperty)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-alb.RosServerGroupProps",

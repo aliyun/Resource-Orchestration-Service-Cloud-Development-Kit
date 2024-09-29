@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.nas.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-filesystems
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:28.775Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:40.943Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.datasource.RosFileSystemsProps")
 @software.amazon.jsii.Jsii.Proxy(RosFileSystemsProps.Jsii$Proxy.class)
 public interface RosFileSystemsProps extends software.amazon.jsii.JsiiSerializable {

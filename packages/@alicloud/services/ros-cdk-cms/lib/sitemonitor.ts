@@ -55,7 +55,7 @@ export interface SiteMonitorProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::SiteMonitor`, which is used to create a site monitoring job.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::SiteMonitor`, which is used to create a site monitoring task.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSiteMonitor`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-sitemonitor
  */

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nls;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::NLS::Project</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:28.907Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:41.033Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nls.$Module.class, fqn = "@alicloud/ros-cdk-nls.Project")
 public class Project extends com.aliyun.ros.cdk.core.Resource {
 
@@ -142,27 +142,6 @@ public class Project extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property projectType: Type of the project.
-         * <p>
-         * @return {@code this}
-         * @param projectType Property projectType: Type of the project. This parameter is required.
-         */
-        public Builder projectType(final java.lang.String projectType) {
-            this.props.projectType(projectType);
-            return this;
-        }
-        /**
-         * Property projectType: Type of the project.
-         * <p>
-         * @return {@code this}
-         * @param projectType Property projectType: Type of the project. This parameter is required.
-         */
-        public Builder projectType(final com.aliyun.ros.cdk.core.IResolvable projectType) {
-            this.props.projectType(projectType);
-            return this;
-        }
-
-        /**
          * Property description: Description of the project.
          * <p>
          * @return {@code this}
@@ -180,6 +159,27 @@ public class Project extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
+            return this;
+        }
+
+        /**
+         * Property projectType: Type of the project.
+         * <p>
+         * @return {@code this}
+         * @param projectType Property projectType: Type of the project. This parameter is required.
+         */
+        public Builder projectType(final java.lang.String projectType) {
+            this.props.projectType(projectType);
+            return this;
+        }
+        /**
+         * Property projectType: Type of the project.
+         * <p>
+         * @return {@code this}
+         * @param projectType Property projectType: Type of the project. This parameter is required.
+         */
+        public Builder projectType(final com.aliyun.ros.cdk.core.IResolvable projectType) {
+            this.props.projectType(projectType);
             return this;
         }
 

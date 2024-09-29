@@ -27,7 +27,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 
         /// <summary>Property dbNodeType: Node type.</summary>
         /// <remarks>
-        /// Ranges: RO|STANDBY|DLNode
+        /// Ranges: RO|STANDBY|DLNode|RW
         /// </remarks>
         [JsiiProperty(name: "dbNodeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -127,7 +127,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 
             /// <summary>Property dbNodeType: Node type.</summary>
             /// <remarks>
-            /// Ranges: RO|STANDBY|DLNode
+            /// Ranges: RO|STANDBY|DLNode|RW
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "dbNodeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

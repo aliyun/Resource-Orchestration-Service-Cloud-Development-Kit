@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CMS::SiteMonitor`, which is used to create a site monitoring job.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CMS::SiteMonitor`, which is used to create a site monitoring task.
 type SiteMonitor interface {
 	alicloudroscdkcore.Resource
 	// Attribute TaskId: The ID of the site monitoring task.

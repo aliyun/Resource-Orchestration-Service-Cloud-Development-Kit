@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SLB::TLSPolicy</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:30.792Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:42.645Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosTLSPolicy")
 public class RosTLSPolicy extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -15,7 +15,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
     {
         private object _apiName;
 
-        /// <summary>Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.</summary>
+        /// <summary>Property apiName: The name of the API.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.</summary>
         [JsiiProperty(name: "apiName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ApiName
         {

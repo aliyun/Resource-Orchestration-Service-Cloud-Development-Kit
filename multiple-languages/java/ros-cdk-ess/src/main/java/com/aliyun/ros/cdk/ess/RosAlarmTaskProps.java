@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ess;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-alarmtask
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:27.040Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:39.715Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosAlarmTaskProps")
 @software.amazon.jsii.Jsii.Proxy(RosAlarmTaskProps.Jsii$Proxy.class)
 public interface RosAlarmTaskProps extends software.amazon.jsii.JsiiSerializable {

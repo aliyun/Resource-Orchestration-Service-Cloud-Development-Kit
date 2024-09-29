@@ -168,6 +168,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// ReadOnly: has the read-only permission on the database.
         /// DMLOnly: runs only data manipulation language (DML) statements.
         /// DDLOnly: runs only data definition language (DDL) statements.
+        /// ReadIndex: has read and index permissions on the database.
         /// Default value: ReadWrite.
         /// Separate multiple permissions with a comma (,).
         /// </remarks>
@@ -272,6 +273,45 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                     }
                 }
                 _dbName = value;
+            }
+        }
+
+        private object? _privForAllDb;
+
+        /// <summary>Property privForAllDb: Whether to grant permissions to all libraries in the current cluster and any libraries that will be added in the future.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>0 (default)): Not authorized.</description>
+        /// <description>1: Authorization.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "privForAllDb", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? PrivForAllDb
+        {
+            get => _privForAllDb;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _privForAllDb = value;
             }
         }
     }

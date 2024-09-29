@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CloudPhone::RunCommand`, which is used to run a command on Elastic Cloud Phone (ECP) instances.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CloudPhone::RunCommand`, which is used to run a command on cloud phones.
 type RosRunCommand interface {
 	alicloudroscdkcore.RosResource
 	Command() interface{}

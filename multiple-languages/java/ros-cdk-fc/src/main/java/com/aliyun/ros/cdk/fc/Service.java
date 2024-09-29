@@ -2,10 +2,8 @@ package com.aliyun.ros.cdk.fc;
 
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::FC::Service</code>, which is used to create a service in Function Compute.
- * <p>
- * All functions of a service share the same settings, such as permission settings and log configurations. A service can have multiple functions, all of which share service resources, such as Logstores and RAM roles.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:31.976Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:43.573Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.Service")
 public class Service extends com.aliyun.ros.cdk.core.Resource {
 

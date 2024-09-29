@@ -417,7 +417,7 @@ function rosAclPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Acl`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Acl`, which is used to create an access control list (ACL).
  * @Note This class does not contain additional functions, so it is recommended to use the `Acl` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-acl
  */
@@ -2622,6 +2622,127 @@ export class RosBasicIpSet extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosDomain`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-domain
+ */
+export interface RosDomainProps {
+
+    /**
+     * @Property acceleratorIds: The IDs of the GA instance to be disassociated. You can specify up to 50 IDs.
+     */
+    readonly acceleratorIds: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property domain: The accelerated domain name to be disassociated.
+     */
+    readonly domain: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosDomainProps`
+ *
+ * @param properties - the TypeScript properties of a `RosDomainProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosDomainPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('acceleratorIds', ros.requiredValidator)(properties.acceleratorIds));
+    if(properties.acceleratorIds && (Array.isArray(properties.acceleratorIds) || (typeof properties.acceleratorIds) === 'string')) {
+        errors.collect(ros.propertyValidator('acceleratorIds', ros.validateLength)({
+            data: properties.acceleratorIds.length,
+            min: 1,
+            max: 50,
+          }));
+    }
+    errors.collect(ros.propertyValidator('acceleratorIds', ros.listValidator(ros.validateString))(properties.acceleratorIds));
+    errors.collect(ros.propertyValidator('domain', ros.requiredValidator)(properties.domain));
+    errors.collect(ros.propertyValidator('domain', ros.validateString)(properties.domain));
+    return errors.wrap('supplied properties not correct for "RosDomainProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::GA::Domain` resource
+ *
+ * @param properties - the TypeScript properties of a `RosDomainProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::GA::Domain` resource.
+ */
+// @ts-ignore TS6133
+function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosDomainPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AcceleratorIds': ros.listMapper(ros.stringToRosTemplate)(properties.acceleratorIds),
+      'Domain': ros.stringToRosTemplate(properties.domain),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Domain`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Domain` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-domain
+ */
+export class RosDomain extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::GA::Domain";
+
+    /**
+     * @Attribute AcceleratorIds: The IDs of GA instances.
+     */
+    public readonly attrAcceleratorIds: ros.IResolvable;
+
+    /**
+     * @Attribute Domain: The accelerated domain name.
+     */
+    public readonly attrDomain: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property acceleratorIds: The IDs of the GA instance to be disassociated. You can specify up to 50 IDs.
+     */
+    public acceleratorIds: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property domain: The accelerated domain name to be disassociated.
+     */
+    public domain: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosDomainProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosDomain.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAcceleratorIds = this.getAtt('AcceleratorIds');
+        this.attrDomain = this.getAtt('Domain');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.acceleratorIds = props.acceleratorIds;
+        this.domain = props.domain;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            acceleratorIds: this.acceleratorIds,
+            domain: this.domain,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosDomainPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosEndpointGroup`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-endpointgroup
  */
@@ -3559,6 +3680,388 @@ function rosEndpointGroupsTagsPropertyToRosTemplate(properties: any): any {
     return {
       'Value': ros.stringToRosTemplate(properties.value),
       'Key': ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
+ * Properties for defining a `RosForwardingRules`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-forwardingrules
+ */
+export interface RosForwardingRulesProps {
+
+    /**
+     * @Property acceleratorId: The ID of the GA instance.
+     */
+    readonly acceleratorId: string | ros.IResolvable;
+
+    /**
+     * @Property forwardingRules: Details about the forwarding rules.
+     */
+    readonly forwardingRules: Array<RosForwardingRules.ForwardingRulesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property listenerId: The ID of the listener.
+     */
+    readonly listenerId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosForwardingRulesProps`
+ *
+ * @param properties - the TypeScript properties of a `RosForwardingRulesProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosForwardingRulesPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('acceleratorId', ros.requiredValidator)(properties.acceleratorId));
+    errors.collect(ros.propertyValidator('acceleratorId', ros.validateString)(properties.acceleratorId));
+    errors.collect(ros.propertyValidator('forwardingRules', ros.requiredValidator)(properties.forwardingRules));
+    if(properties.forwardingRules && (Array.isArray(properties.forwardingRules) || (typeof properties.forwardingRules) === 'string')) {
+        errors.collect(ros.propertyValidator('forwardingRules', ros.validateLength)({
+            data: properties.forwardingRules.length,
+            min: 1,
+            max: 200,
+          }));
+    }
+    errors.collect(ros.propertyValidator('forwardingRules', ros.listValidator(RosForwardingRules_ForwardingRulesPropertyValidator))(properties.forwardingRules));
+    errors.collect(ros.propertyValidator('listenerId', ros.requiredValidator)(properties.listenerId));
+    errors.collect(ros.propertyValidator('listenerId', ros.validateString)(properties.listenerId));
+    return errors.wrap('supplied properties not correct for "RosForwardingRulesProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::GA::ForwardingRules` resource
+ *
+ * @param properties - the TypeScript properties of a `RosForwardingRulesProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::GA::ForwardingRules` resource.
+ */
+// @ts-ignore TS6133
+function rosForwardingRulesPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosForwardingRulesPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AcceleratorId': ros.stringToRosTemplate(properties.acceleratorId),
+      'ForwardingRules': ros.listMapper(rosForwardingRulesForwardingRulesPropertyToRosTemplate)(properties.forwardingRules),
+      'ListenerId': ros.stringToRosTemplate(properties.listenerId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::ForwardingRules`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ForwardingRules` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-forwardingrules
+ */
+export class RosForwardingRules extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::GA::ForwardingRules";
+
+    /**
+     * @Attribute ForwardingRuleIds: The IDs of the endpoint groups.
+     */
+    public readonly attrForwardingRuleIds: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property acceleratorId: The ID of the GA instance.
+     */
+    public acceleratorId: string | ros.IResolvable;
+
+    /**
+     * @Property forwardingRules: Details about the forwarding rules.
+     */
+    public forwardingRules: Array<RosForwardingRules.ForwardingRulesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property listenerId: The ID of the listener.
+     */
+    public listenerId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosForwardingRulesProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosForwardingRules.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrForwardingRuleIds = this.getAtt('ForwardingRuleIds');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.acceleratorId = props.acceleratorId;
+        this.forwardingRules = props.forwardingRules;
+        this.listenerId = props.listenerId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            acceleratorId: this.acceleratorId,
+            forwardingRules: this.forwardingRules,
+            listenerId: this.listenerId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosForwardingRulesPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosForwardingRules {
+    /**
+     * @stability external
+     */
+    export interface ForwardingRulesProperty {
+        /**
+         * @Property ruleActions: The forwarding action.
+         */
+        readonly ruleActions: Array<RosForwardingRules.RuleActionsProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property priority: The priority of the forwarding rule. Valid values: 1 to 10000. A lower value indicates a higher priority.
+         */
+        readonly priority?: number | ros.IResolvable;
+        /**
+         * @Property forwardingRuleName: The name of the forwarding rule. The name must be 2 to 128 characters in length, and can contain letters, digits, periods (.), underscores (_), and hyphens (-). The name must start with a letter.
+         */
+        readonly forwardingRuleName?: string | ros.IResolvable;
+        /**
+         * @Property ruleConditions: The forwarding conditions.
+         */
+        readonly ruleConditions: Array<RosForwardingRules.RuleConditionsProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property ruleDirection: The direction in which the rule takes effect. You do not need to set this parameter. By default, this parameter is set to request, which indicates that the rule takes effect on requests.
+         */
+        readonly ruleDirection?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ForwardingRulesProperty`
+ *
+ * @param properties - the TypeScript properties of a `ForwardingRulesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosForwardingRules_ForwardingRulesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('ruleActions', ros.requiredValidator)(properties.ruleActions));
+    if(properties.ruleActions && (Array.isArray(properties.ruleActions) || (typeof properties.ruleActions) === 'string')) {
+        errors.collect(ros.propertyValidator('ruleActions', ros.validateLength)({
+            data: properties.ruleActions.length,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ruleActions', ros.listValidator(RosForwardingRules_RuleActionsPropertyValidator))(properties.ruleActions));
+    if(properties.priority && (typeof properties.priority) !== 'object') {
+        errors.collect(ros.propertyValidator('priority', ros.validateRange)({
+            data: properties.priority,
+            min: 1,
+            max: 10000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('priority', ros.validateNumber)(properties.priority));
+    if(properties.forwardingRuleName && (Array.isArray(properties.forwardingRuleName) || (typeof properties.forwardingRuleName) === 'string')) {
+        errors.collect(ros.propertyValidator('forwardingRuleName', ros.validateLength)({
+            data: properties.forwardingRuleName.length,
+            min: 2,
+            max: 128,
+          }));
+    }
+    errors.collect(ros.propertyValidator('forwardingRuleName', ros.validateString)(properties.forwardingRuleName));
+    errors.collect(ros.propertyValidator('ruleConditions', ros.requiredValidator)(properties.ruleConditions));
+    if(properties.ruleConditions && (Array.isArray(properties.ruleConditions) || (typeof properties.ruleConditions) === 'string')) {
+        errors.collect(ros.propertyValidator('ruleConditions', ros.validateLength)({
+            data: properties.ruleConditions.length,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ruleConditions', ros.listValidator(RosForwardingRules_RuleConditionsPropertyValidator))(properties.ruleConditions));
+    if(properties.ruleDirection && (typeof properties.ruleDirection) !== 'object') {
+        errors.collect(ros.propertyValidator('ruleDirection', ros.validateAllowedValues)({
+          data: properties.ruleDirection,
+          allowedValues: ["request"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ruleDirection', ros.validateString)(properties.ruleDirection));
+    return errors.wrap('supplied properties not correct for "ForwardingRulesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::GA::ForwardingRules.ForwardingRules` resource
+ *
+ * @param properties - the TypeScript properties of a `ForwardingRulesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::GA::ForwardingRules.ForwardingRules` resource.
+ */
+// @ts-ignore TS6133
+function rosForwardingRulesForwardingRulesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosForwardingRules_ForwardingRulesPropertyValidator(properties).assertSuccess();
+    return {
+      'RuleActions': ros.listMapper(rosForwardingRulesRuleActionsPropertyToRosTemplate)(properties.ruleActions),
+      'Priority': ros.numberToRosTemplate(properties.priority),
+      'ForwardingRuleName': ros.stringToRosTemplate(properties.forwardingRuleName),
+      'RuleConditions': ros.listMapper(rosForwardingRulesRuleConditionsPropertyToRosTemplate)(properties.ruleConditions),
+      'RuleDirection': ros.stringToRosTemplate(properties.ruleDirection),
+    };
+}
+
+export namespace RosForwardingRules {
+    /**
+     * @stability external
+     */
+    export interface RuleActionsProperty {
+        /**
+         * @Property ruleActionType: The type of the forwarding action. Valid values:
+     * * ForwardGroup: forwards a request.
+     * * Redirect: redirects a request.
+     * * FixResponse: returns a fixed response. 
+     * * Rewrite: rewrites a request. 
+     * * AddHeader: adds a header to a request. 
+     * * RemoveHeaderConfig: deletes the header from a request. 
+     *
+         */
+        readonly ruleActionType: string | ros.IResolvable;
+        /**
+         * @Property order: The forwarding priority.
+         */
+        readonly order: number | ros.IResolvable;
+        /**
+         * @Property ruleActionValue: The value of the forwarding action type. You must specify different JSON strings based on the RuleActionType parameter. A forwarding rule can contain only one forwarding action whose type is ForwardGroup, Redirect, or FixResponse. You must specify a forwarding action whose type is Rewrite, AddHeader, or RemoveHeader before a forwarding action whose type is ForwardGroup. 
+     * * If RuleActionType is set to ForwardGroup, this parameter specifies the information of a virtual endpoint group. You can forward requests to only one virtual endpoint group. Example: {"type":"endpointgroup", "value":"epg-bp1enpdcrqhl78g6r****"}. 
+     *   * type: set this parameter to endpointgroup.
+     *   * value: set this parameter to the ID of a virtual endpoint group.
+     * * If RuleActionType is set to Redirect, this parameter specifies redirecting configurations. You cannot leave all of the following parameters empty or configure all of these parameters to use the default values for a forwarding action whose type is Redirect: protocol, domain, port, path, and query. Example: {"protocol":"HTTP", "domain":"www.example.com", "port":"80", "path":"\/a","query":"value1", "code":"301" }.
+     *   * protocol: the protocol of requests after the requests are redirected. Valid values: ${protocol} (default), HTTP, and HTTPS.
+     *   * domain: the domain name to which requests are redirected. Default value: ${host}. You can also enter a domain name. The domain name must be 3 to 128 characters in length, and can contain only letters, digits, and the following special characters: . - ? = ~ _ - + \/ ^ * ! $ & | ( ) [ ].
+     *   * port: the port to which requests are redirected. Default value: ${port}. You can enter a port number that ranges from 1 to 63335.
+     *   * path: the path to which requests are redirected. Default value: ${path}. The path must be 1 to 128 characters in length. To use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? ~ ^ * $ : ( ) [ ] + |. The path must start with a tilde (~). If you do not want to use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? :. The path must start with a forward slash (\/).
+     *   * query: the query string of the requests to be redirected. Default value: ${query}. You can also specify a query string. The query string must be 1 to 128 characters in length, and can contain printable characters whose ASCII values are greater than or equal to 32 and smaller than 127. The query string cannot contain uppercase letters, space characters, or the following special characters: [ ] { } < > # | &.
+     *   * code: the redirecting code. Valid values: 301, 302, 303, 307, and 308.
+     * * If RuleActionType is set to FixResponse, this parameter specifies a fixed response. Example: {"code":"200", "type":"text\/plain", "content":"dssacav" }.
+     *   * code: the HTTP status code to return. The response status code must be one of the following numeric strings: 2xx, 4xx, and 5xx. The letter x indicates a number from 0 to 9.
+     *   * type: the type of the response content. Valid values: text\/plain, text\/css, text\/html, application\/javascript, and application\/json.
+     *   * content: the response content. The response content cannot exceed 1,000 characters in length and does not support Chinese characters.
+     * * If RuleActionType is set to AddHeader, this parameter specifies an HTTP header to be added. If a forwarding rule contains a forwarding action whose type is AddHeader, you must specify another forwarding action whose type is ForwardGroup. Example: [{"name":"header1","type":"userdefined", "value":"value"}].
+     *   * name: the name of the HTTP header. The name must be 1 to 40 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). The name of the HTTP header specified by AddHeader must be unique and cannot be the same as the name of the HTTP header specified by RemoveHeader.
+     *   * type: the content type of the HTTP header. Valid values: user-defined, ref, and system-defined.
+     *   * value: the content of the HTTP header. You cannot leave this parameter empty. If you set type to user-defined, the content must be 1 to 128 characters in length, and can contain printable characters whose ASCII values are greater than or equal to 32 and smaller than 127. The content can contain letters, digits, hyphens (-), and underscores (_). The content cannot start or end with a space character. If you set type to ref, the content must be 1 to 128 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). The content cannot start or end with a space character. If you set type to system-defined, only ClientSrcIp is supported.
+     * * If RuleActionType is set to RemoveHeader, this parameter specifies an HTTP header to be removed. If a forwarding rule contains a forwarding action whose type is RemoveHeader, you must specify another forwarding action whose type is ForwardGroup. The header must be 1 to 40 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). Example: ["header1"].
+     * * If RuleActionType is set to Rewrite, this parameter specifies the rewriting configuration. If a forwarding rule contains a forwarding action whose type is Rewrite, you must specify another forwarding action whose type is ForwardGroup. Example: {"domain":"value1", "path":"value2", "query":"value3"}.
+     *   * domain: the domain name to which requests are redirected. Default value: ${host}. You can also enter a domain name. The domain name must be 3 to 128 characters in length, and can contain only lowercase letters, digits, and the following special characters: . - ? = ~ _ - + \/ ^ * ! $ & | ( ) [ ].
+     *   * path: the path to which requests are redirected. Default value: ${path}. The path must be 1 to 128 characters in length. To use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? ~ ^ * $ : ( ) [ ] + |. The path must start with a tilde (~). If you do not want to use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? :. The path must start with a forward slash (\/).
+     *   * query: the query string of the requests to be redirected. Default value: ${query}. You can also specify a query string. The query string must be 1 to 128 characters in length, and can contain printable characters whose ASCII values are greater than or equal to 32 and smaller than 127. The query string cannot contain uppercase letters, space characters, or the following special characters: [ ] { } < > # | &.
+         */
+        readonly ruleActionValue?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `RuleActionsProperty`
+ *
+ * @param properties - the TypeScript properties of a `RuleActionsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosForwardingRules_RuleActionsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('ruleActionType', ros.requiredValidator)(properties.ruleActionType));
+    if(properties.ruleActionType && (typeof properties.ruleActionType) !== 'object') {
+        errors.collect(ros.propertyValidator('ruleActionType', ros.validateAllowedValues)({
+          data: properties.ruleActionType,
+          allowedValues: ["ForwardGroup","Redirect","FixResponseRewrite","AddHeaderRemoveHeaderConfig"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ruleActionType', ros.validateString)(properties.ruleActionType));
+    errors.collect(ros.propertyValidator('order', ros.requiredValidator)(properties.order));
+    errors.collect(ros.propertyValidator('order', ros.validateNumber)(properties.order));
+    errors.collect(ros.propertyValidator('ruleActionValue', ros.validateString)(properties.ruleActionValue));
+    return errors.wrap('supplied properties not correct for "RuleActionsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::GA::ForwardingRules.RuleActions` resource
+ *
+ * @param properties - the TypeScript properties of a `RuleActionsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::GA::ForwardingRules.RuleActions` resource.
+ */
+// @ts-ignore TS6133
+function rosForwardingRulesRuleActionsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosForwardingRules_RuleActionsPropertyValidator(properties).assertSuccess();
+    return {
+      'RuleActionType': ros.stringToRosTemplate(properties.ruleActionType),
+      'Order': ros.numberToRosTemplate(properties.order),
+      'RuleActionValue': ros.stringToRosTemplate(properties.ruleActionValue),
+    };
+}
+
+export namespace RosForwardingRules {
+    /**
+     * @stability external
+     */
+    export interface RuleConditionsProperty {
+        /**
+         * @Property ruleConditionType: The type of the forwarding conditions. Valid values:
+     * * Host: domain name
+     * * Path: path
+     * * RequestHeader: HTTP header
+     * * Query: query string
+     * * Method: HTTP method
+     * * Cookie: cookie
+     * * SourceIP: source IP address
+         */
+        readonly ruleConditionType?: string | ros.IResolvable;
+        /**
+         * @Property ruleConditionValue: The endpoint port that is mapped to the listener port.
+         */
+        readonly ruleConditionValue?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `RuleConditionsProperty`
+ *
+ * @param properties - the TypeScript properties of a `RuleConditionsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosForwardingRules_RuleConditionsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.ruleConditionType && (typeof properties.ruleConditionType) !== 'object') {
+        errors.collect(ros.propertyValidator('ruleConditionType', ros.validateAllowedValues)({
+          data: properties.ruleConditionType,
+          allowedValues: ["Host","Path","RequestHeader","Query","Method","Cookie","SourceIP"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ruleConditionType', ros.validateString)(properties.ruleConditionType));
+    errors.collect(ros.propertyValidator('ruleConditionValue', ros.validateString)(properties.ruleConditionValue));
+    return errors.wrap('supplied properties not correct for "RuleConditionsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::GA::ForwardingRules.RuleConditions` resource
+ *
+ * @param properties - the TypeScript properties of a `RuleConditionsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::GA::ForwardingRules.RuleConditions` resource.
+ */
+// @ts-ignore TS6133
+function rosForwardingRulesRuleConditionsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosForwardingRules_RuleConditionsPropertyValidator(properties).assertSuccess();
+    return {
+      'RuleConditionType': ros.stringToRosTemplate(properties.ruleConditionType),
+      'RuleConditionValue': ros.stringToRosTemplate(properties.ruleConditionValue),
     };
 }
 

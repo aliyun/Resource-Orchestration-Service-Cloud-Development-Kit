@@ -1,3 +1,4 @@
+export * from './account';
 export * from './drdsdb';
 export * from './drdsinstance';
 

@@ -64,6 +64,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// ReadOnly: has the read-only permission on the database.
         /// DMLOnly: runs only data manipulation language (DML) statements.
         /// DDLOnly: runs only data definition language (DDL) statements.
+        /// ReadIndex: has read and index permissions on the database.
         /// Default value: ReadWrite.
         /// Separate multiple permissions with a comma (,).
         /// </remarks>
@@ -101,6 +102,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         [JsiiProperty(name: "dbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? DbName
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: privForAllDb: Whether to grant permissions to all libraries in the current cluster and any libraries that will be added in the future. Valid values:
+        /// - 0 (default)): Not authorized.
+        /// - 1: Authorization.
+        /// </remarks>
+        [JsiiProperty(name: "privForAllDb", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? PrivForAllDb
         {
             get
             {
@@ -169,6 +185,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// ReadOnly: has the read-only permission on the database.
             /// DMLOnly: runs only data manipulation language (DML) statements.
             /// DDLOnly: runs only data definition language (DDL) statements.
+            /// ReadIndex: has read and index permissions on the database.
             /// Default value: ReadWrite.
             /// Separate multiple permissions with a comma (,).
             /// </remarks>
@@ -200,6 +217,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             [JsiiOptional]
             [JsiiProperty(name: "dbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DbName
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: privForAllDb: Whether to grant permissions to all libraries in the current cluster and any libraries that will be added in the future. Valid values:
+            /// - 0 (default)): Not authorized.
+            /// - 1: Authorization.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "privForAllDb", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PrivForAllDb
             {
                 get => GetInstanceProperty<object?>();
             }

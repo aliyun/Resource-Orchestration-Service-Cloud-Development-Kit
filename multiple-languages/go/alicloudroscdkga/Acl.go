@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::GA::Acl`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::GA::Acl`, which is used to create an access control list (ACL).
 type Acl interface {
 	alicloudroscdkcore.Resource
 	// Attribute AclEntries: The entries of the ACL.

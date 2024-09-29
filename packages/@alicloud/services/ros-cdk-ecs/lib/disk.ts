@@ -114,7 +114,7 @@ export interface DiskProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Disk`, which is used to create a cloud disk for an Elastic Compute Service (ECS) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Disk`, which is used to create a cloud disk in Elastic Compute Service (ECS).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDisk`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-disk
  */

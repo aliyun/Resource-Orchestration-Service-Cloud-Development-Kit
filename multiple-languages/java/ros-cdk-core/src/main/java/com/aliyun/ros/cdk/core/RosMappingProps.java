@@ -1,6 +1,6 @@
 package com.aliyun.ros.cdk.core;
 
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:22.568Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:35.794Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosMappingProps")
 @software.amazon.jsii.Jsii.Proxy(RosMappingProps.Jsii$Proxy.class)
 public interface RosMappingProps extends software.amazon.jsii.JsiiSerializable {

@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cloudphone
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CloudPhone::RunCommand`, which is used to run a command on Elastic Cloud Phone (ECP) instances.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CloudPhone::RunCommand`, which is used to run a command on cloud phones.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `RunCommand` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-runcommand

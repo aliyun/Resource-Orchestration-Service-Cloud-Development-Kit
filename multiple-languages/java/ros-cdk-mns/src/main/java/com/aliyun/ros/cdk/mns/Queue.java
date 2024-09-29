@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.mns;
  * <p>
  * Queues can be classified into standard and delayed queues.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:28.365Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:40.692Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.Queue")
 public class Queue extends com.aliyun.ros.cdk.core.Resource {
 

@@ -11,7 +11,7 @@ type DBNodesProps struct {
 	DbClusterId interface{} `field:"required" json:"dbClusterId" yaml:"dbClusterId"`
 	// Property dbNodeType: Node type.
 	//
-	// Ranges: RO|STANDBY|DLNode.
+	// Ranges: RO|STANDBY|DLNode|RW.
 	DbNodeType interface{} `field:"optional" json:"dbNodeType" yaml:"dbNodeType"`
 	// Property endpointBindList: Address IDs that specifies the cluster connection address to which the new node should join.
 	EndpointBindList interface{} `field:"optional" json:"endpointBindList" yaml:"endpointBindList"`

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ENS::NetworkAclAssociation`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ENS::NetworkAclAssociation`, which is used to associate a network access control list (ACL) with networks.
 type NetworkAclAssociation interface {
 	alicloudroscdkcore.Resource
 	// Attribute NetworkAclId: The network acl id to associate.

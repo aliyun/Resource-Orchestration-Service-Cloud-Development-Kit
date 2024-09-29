@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::CS::ClusterApplicationResources</code>, which is used to query the details of specified types of resources in a Container Service for Kubernetes (ACK) cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:25.036Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:37.525Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.datasource.ClusterApplicationResources")
 public class ClusterApplicationResources extends com.aliyun.ros.cdk.core.Resource {
 
@@ -152,6 +152,27 @@ public class ClusterApplicationResources extends com.aliyun.ros.cdk.core.Resourc
          */
         public Builder kind(final com.aliyun.ros.cdk.core.IResolvable kind) {
             this.props.kind(kind);
+            return this;
+        }
+
+        /**
+         * Property apiVersion: The api version of kubernetes resource to query.
+         * <p>
+         * @return {@code this}
+         * @param apiVersion Property apiVersion: The api version of kubernetes resource to query. This parameter is required.
+         */
+        public Builder apiVersion(final java.lang.String apiVersion) {
+            this.props.apiVersion(apiVersion);
+            return this;
+        }
+        /**
+         * Property apiVersion: The api version of kubernetes resource to query.
+         * <p>
+         * @return {@code this}
+         * @param apiVersion Property apiVersion: The api version of kubernetes resource to query. This parameter is required.
+         */
+        public Builder apiVersion(final com.aliyun.ros.cdk.core.IResolvable apiVersion) {
+            this.props.apiVersion(apiVersion);
             return this;
         }
 

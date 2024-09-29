@@ -235,6 +235,30 @@ func validateRosServerGroup_IsRosResourceParameters(construct alicloudroscdkcore
 	return nil
 }
 
+func (j *jsiiProxy_RosServerGroup) validateSetConnectionDrainConfigParameters(val interface{}) error {
+	switch val.(type) {
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	case *RosServerGroup_ConnectionDrainConfigProperty:
+		val := val.(*RosServerGroup_ConnectionDrainConfigProperty)
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	case RosServerGroup_ConnectionDrainConfigProperty:
+		val_ := val.(RosServerGroup_ConnectionDrainConfigProperty)
+		val := &val_
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosServerGroup_ConnectionDrainConfigProperty; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosServerGroup) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
@@ -375,6 +399,30 @@ func (j *jsiiProxy_RosServerGroup) validateSetServiceNameParameters(val interfac
 	return nil
 }
 
+func (j *jsiiProxy_RosServerGroup) validateSetSlowStartConfigParameters(val interface{}) error {
+	switch val.(type) {
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	case *RosServerGroup_SlowStartConfigProperty:
+		val := val.(*RosServerGroup_SlowStartConfigProperty)
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	case RosServerGroup_SlowStartConfigProperty:
+		val_ := val.(RosServerGroup_SlowStartConfigProperty)
+		val := &val_
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosServerGroup_SlowStartConfigProperty; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosServerGroup) validateSetStickySessionConfigParameters(val interface{}) error {
 	switch val.(type) {
 	case alicloudroscdkcore.IResolvable:
@@ -403,6 +451,47 @@ func (j *jsiiProxy_RosServerGroup) validateSetTagsParameters(val *[]*RosServerGr
 	for idx_97dfc6, v := range *val {
 		if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
 			return err
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosServerGroup) validateSetUchConfigParameters(val interface{}) error {
+	switch val.(type) {
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	case *RosServerGroup_UchConfigProperty:
+		val := val.(*RosServerGroup_UchConfigProperty)
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	case RosServerGroup_UchConfigProperty:
+		val_ := val.(RosServerGroup_UchConfigProperty)
+		val := &val_
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosServerGroup_UchConfigProperty; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosServerGroup) validateSetUpstreamKeepaliveEnabledParameters(val interface{}) error {
+	switch val.(type) {
+	case *bool:
+		// ok
+	case bool:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *bool, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
 		}
 	}
 

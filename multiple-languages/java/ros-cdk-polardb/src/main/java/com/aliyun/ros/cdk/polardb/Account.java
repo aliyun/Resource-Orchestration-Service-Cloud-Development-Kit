@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::POLARDB::Account</code>, which is used to create a database account for a specified PolarDB cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:29.334Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:41.381Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.Account")
 public class Account extends com.aliyun.ros.cdk.core.Resource {
 
@@ -242,6 +242,7 @@ public class Account extends com.aliyun.ros.cdk.core.Resource {
          * ReadOnly: has the read-only permission on the database.
          * DMLOnly: runs only data manipulation language (DML) statements.
          * DDLOnly: runs only data definition language (DDL) statements.
+         * ReadIndex: has read and index permissions on the database.
          * Default value: ReadWrite.
          * Separate multiple permissions with a comma (,).
          * <p>
@@ -260,6 +261,7 @@ public class Account extends com.aliyun.ros.cdk.core.Resource {
          * ReadOnly: has the read-only permission on the database.
          * DMLOnly: runs only data manipulation language (DML) statements.
          * DDLOnly: runs only data definition language (DDL) statements.
+         * ReadIndex: has read and index permissions on the database.
          * Default value: ReadWrite.
          * Separate multiple permissions with a comma (,).
          * <p>
@@ -334,6 +336,41 @@ public class Account extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder dbName(final com.aliyun.ros.cdk.core.IResolvable dbName) {
             this.props.dbName(dbName);
+            return this;
+        }
+
+        /**
+         * Property privForAllDb: Whether to grant permissions to all libraries in the current cluster and any libraries that will be added in the future.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>0 (default)): Not authorized.</li>
+         * <li>1: Authorization.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param privForAllDb Property privForAllDb: Whether to grant permissions to all libraries in the current cluster and any libraries that will be added in the future. This parameter is required.
+         */
+        public Builder privForAllDb(final java.lang.String privForAllDb) {
+            this.props.privForAllDb(privForAllDb);
+            return this;
+        }
+        /**
+         * Property privForAllDb: Whether to grant permissions to all libraries in the current cluster and any libraries that will be added in the future.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>0 (default)): Not authorized.</li>
+         * <li>1: Authorization.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param privForAllDb Property privForAllDb: Whether to grant permissions to all libraries in the current cluster and any libraries that will be added in the future. This parameter is required.
+         */
+        public Builder privForAllDb(final com.aliyun.ros.cdk.core.IResolvable privForAllDb) {
+            this.props.privForAllDb(privForAllDb);
             return this;
         }
 

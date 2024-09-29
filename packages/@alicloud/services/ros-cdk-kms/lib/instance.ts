@@ -81,7 +81,7 @@ export interface InstanceProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Instance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Instance`, which is used to create a Key Management Service (KMS) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-instance
  */

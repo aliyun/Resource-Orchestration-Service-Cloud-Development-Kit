@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ALB::BackendServerAttachment</code>, which is used to add backend servers to a server group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:22.830Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:36.021Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosBackendServerAttachment")
 public class RosBackendServerAttachment extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -144,6 +144,13 @@ public class RosBackendServerAttachment extends com.aliyun.ros.cdk.core.RosResou
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getRemoteIpEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getServerIp() {
             return null;
         }
@@ -171,6 +178,7 @@ public class RosBackendServerAttachment extends com.aliyun.ros.cdk.core.RosResou
             java.lang.Object serverType;
             java.lang.Object description;
             java.lang.Object port;
+            java.lang.Object remoteIpEnabled;
             java.lang.Object serverIp;
             java.lang.Object weight;
 
@@ -263,6 +271,28 @@ public class RosBackendServerAttachment extends com.aliyun.ros.cdk.core.RosResou
             }
 
             /**
+             * Sets the value of {@link ServersProperty#getRemoteIpEnabled}
+             * @param remoteIpEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder remoteIpEnabled(java.lang.Boolean remoteIpEnabled) {
+                this.remoteIpEnabled = remoteIpEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ServersProperty#getRemoteIpEnabled}
+             * @param remoteIpEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder remoteIpEnabled(com.aliyun.ros.cdk.core.IResolvable remoteIpEnabled) {
+                this.remoteIpEnabled = remoteIpEnabled;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link ServersProperty#getServerIp}
              * @param serverIp the value to be set.
              * @return {@code this}
@@ -328,6 +358,7 @@ public class RosBackendServerAttachment extends com.aliyun.ros.cdk.core.RosResou
             private final java.lang.Object serverType;
             private final java.lang.Object description;
             private final java.lang.Object port;
+            private final java.lang.Object remoteIpEnabled;
             private final java.lang.Object serverIp;
             private final java.lang.Object weight;
 
@@ -341,6 +372,7 @@ public class RosBackendServerAttachment extends com.aliyun.ros.cdk.core.RosResou
                 this.serverType = software.amazon.jsii.Kernel.get(this, "serverType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.port = software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.remoteIpEnabled = software.amazon.jsii.Kernel.get(this, "remoteIpEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.serverIp = software.amazon.jsii.Kernel.get(this, "serverIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.weight = software.amazon.jsii.Kernel.get(this, "weight", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
@@ -354,6 +386,7 @@ public class RosBackendServerAttachment extends com.aliyun.ros.cdk.core.RosResou
                 this.serverType = java.util.Objects.requireNonNull(builder.serverType, "serverType is required");
                 this.description = builder.description;
                 this.port = builder.port;
+                this.remoteIpEnabled = builder.remoteIpEnabled;
                 this.serverIp = builder.serverIp;
                 this.weight = builder.weight;
             }
@@ -379,6 +412,11 @@ public class RosBackendServerAttachment extends com.aliyun.ros.cdk.core.RosResou
             }
 
             @Override
+            public final java.lang.Object getRemoteIpEnabled() {
+                return this.remoteIpEnabled;
+            }
+
+            @Override
             public final java.lang.Object getServerIp() {
                 return this.serverIp;
             }
@@ -401,6 +439,9 @@ public class RosBackendServerAttachment extends com.aliyun.ros.cdk.core.RosResou
                 }
                 if (this.getPort() != null) {
                     data.set("port", om.valueToTree(this.getPort()));
+                }
+                if (this.getRemoteIpEnabled() != null) {
+                    data.set("remoteIpEnabled", om.valueToTree(this.getRemoteIpEnabled()));
                 }
                 if (this.getServerIp() != null) {
                     data.set("serverIp", om.valueToTree(this.getServerIp()));
@@ -430,6 +471,7 @@ public class RosBackendServerAttachment extends com.aliyun.ros.cdk.core.RosResou
                 if (!serverType.equals(that.serverType)) return false;
                 if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
                 if (this.port != null ? !this.port.equals(that.port) : that.port != null) return false;
+                if (this.remoteIpEnabled != null ? !this.remoteIpEnabled.equals(that.remoteIpEnabled) : that.remoteIpEnabled != null) return false;
                 if (this.serverIp != null ? !this.serverIp.equals(that.serverIp) : that.serverIp != null) return false;
                 return this.weight != null ? this.weight.equals(that.weight) : that.weight == null;
             }
@@ -440,6 +482,7 @@ public class RosBackendServerAttachment extends com.aliyun.ros.cdk.core.RosResou
                 result = 31 * result + (this.serverType.hashCode());
                 result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
                 result = 31 * result + (this.port != null ? this.port.hashCode() : 0);
+                result = 31 * result + (this.remoteIpEnabled != null ? this.remoteIpEnabled.hashCode() : 0);
                 result = 31 * result + (this.serverIp != null ? this.serverIp.hashCode() : 0);
                 result = 31 * result + (this.weight != null ? this.weight.hashCode() : 0);
                 return result;

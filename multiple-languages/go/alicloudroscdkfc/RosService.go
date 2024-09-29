@@ -10,8 +10,6 @@ import (
 )
 
 // This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Service`, which is used to create a service in Function Compute.
-//
-// All functions of a service share the same settings, such as permission settings and log configurations. A service can have multiple functions, all of which share service resources, such as Logstores and RAM roles.
 type RosService interface {
 	alicloudroscdkcore.RosResource
 	AttrInternetAccess() alicloudroscdkcore.IResolvable

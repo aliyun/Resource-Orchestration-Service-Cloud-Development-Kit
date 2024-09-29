@@ -857,6 +857,7 @@ export namespace RosBackendServerAttachment {
      * Eni: an ENI
      * Eci: an elastic container instance
      * Ip: an IP address
+     * Fc: an FC function.
          */
         readonly serverType: string | ros.IResolvable;
         /**
@@ -869,14 +870,18 @@ export namespace RosBackendServerAttachment {
          * @Property serverId: If the server group consists of servers, you can set this parameter to the ID of a
      * resource, such as an Elastic Compute Service (ECS) instance, an elastic network interface
      * (ENI), or an elastic container instance.
-     * If the server group consists of IP addresses, you can set this parameter to an IP
-     * address.
+     * If the server group consists of IP addresses, you can set this parameter to an IP address.
+     * If the server group consists of FC function, you can set this parameter to an FC function ARN.
          */
         readonly serverId: string | ros.IResolvable;
         /**
          * @Property serverIp: The IP address of the ENI in inclusive ENI mode.
          */
         readonly serverIp?: string | ros.IResolvable;
+        /**
+         * @Property remoteIpEnabled: Whether to enable remote ip. Default to false.
+         */
+        readonly remoteIpEnabled?: boolean | ros.IResolvable;
         /**
          * @Property port: The port that is used by the backend server. Valid values: 1 to 65535.
      * Note This parameter is required if the ServerType parameter is set to Ecs, Eni, Eci, or Ip.
@@ -902,7 +907,7 @@ function RosBackendServerAttachment_ServersPropertyValidator(properties: any): r
     if(properties.serverType && (typeof properties.serverType) !== 'object') {
         errors.collect(ros.propertyValidator('serverType', ros.validateAllowedValues)({
           data: properties.serverType,
-          allowedValues: ["Eci","Ecs","Eni","Ip"],
+          allowedValues: ["Eci","Ecs","Eni","Ip","Fc"],
         }));
     }
     errors.collect(ros.propertyValidator('serverType', ros.validateString)(properties.serverType));
@@ -910,6 +915,7 @@ function RosBackendServerAttachment_ServersPropertyValidator(properties: any): r
     errors.collect(ros.propertyValidator('serverId', ros.requiredValidator)(properties.serverId));
     errors.collect(ros.propertyValidator('serverId', ros.validateString)(properties.serverId));
     errors.collect(ros.propertyValidator('serverIp', ros.validateString)(properties.serverIp));
+    errors.collect(ros.propertyValidator('remoteIpEnabled', ros.validateBoolean)(properties.remoteIpEnabled));
     errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
     errors.collect(ros.propertyValidator('weight', ros.validateNumber)(properties.weight));
     return errors.wrap('supplied properties not correct for "ServersProperty"');
@@ -931,6 +937,7 @@ function rosBackendServerAttachmentServersPropertyToRosTemplate(properties: any)
       'Description': ros.stringToRosTemplate(properties.description),
       'ServerId': ros.stringToRosTemplate(properties.serverId),
       'ServerIp': ros.stringToRosTemplate(properties.serverIp),
+      'RemoteIpEnabled': ros.booleanToRosTemplate(properties.remoteIpEnabled),
       'Port': ros.numberToRosTemplate(properties.port),
       'Weight': ros.numberToRosTemplate(properties.weight),
     };
@@ -2576,9 +2583,19 @@ export namespace RosLoadBalancer {
      */
     export interface LoadBalancerAddressesProperty {
         /**
+         * @Property intranetAddress: The private IP address of the ALB instance.
+         */
+        readonly intranetAddress?: string | ros.IResolvable;
+        /**
          * @Property allocationId: The ID of the elastic IP address (EIP) that is associated with the ALB instance.
          */
         readonly allocationId: string | ros.IResolvable;
+        /**
+         * @Property eipType: The type of the elastic IP address (EIP). Valid values:
+     * Common: elastic IP address, referred to as EIP.
+     * Anycast: Anycast elastic IP address, referred to as Anycast EIP.
+         */
+        readonly eipType?: string | ros.IResolvable;
     }
 }
 /**
@@ -2591,8 +2608,10 @@ export namespace RosLoadBalancer {
 function RosLoadBalancer_LoadBalancerAddressesPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('intranetAddress', ros.validateString)(properties.intranetAddress));
     errors.collect(ros.propertyValidator('allocationId', ros.requiredValidator)(properties.allocationId));
     errors.collect(ros.propertyValidator('allocationId', ros.validateString)(properties.allocationId));
+    errors.collect(ros.propertyValidator('eipType', ros.validateString)(properties.eipType));
     return errors.wrap('supplied properties not correct for "LoadBalancerAddressesProperty"');
 }
 
@@ -2608,7 +2627,9 @@ function rosLoadBalancerLoadBalancerAddressesPropertyToRosTemplate(properties: a
     if (!ros.canInspect(properties)) { return properties; }
     RosLoadBalancer_LoadBalancerAddressesPropertyValidator(properties).assertSuccess();
     return {
+      'IntranetAddress': ros.stringToRosTemplate(properties.intranetAddress),
       'AllocationId': ros.stringToRosTemplate(properties.allocationId),
+      'EipType': ros.stringToRosTemplate(properties.eipType),
     };
 }
 
@@ -2761,6 +2782,10 @@ export namespace RosLoadBalancer {
      */
     export interface ZoneMappingsProperty {
         /**
+         * @Property intranetAddress: The private IP address of the ALB instance.
+         */
+        readonly intranetAddress?: string | ros.IResolvable;
+        /**
          * @Property zoneId: The ID of the zone to which the ALB instance belongs.
          */
         readonly zoneId: string | ros.IResolvable;
@@ -2772,6 +2797,12 @@ export namespace RosLoadBalancer {
          * @Property allocationId: The ID of the elastic IP address (EIP) that is associated with the ALB instance.
          */
         readonly allocationId?: string | ros.IResolvable;
+        /**
+         * @Property eipType: The type of the elastic IP address (EIP). Valid values:
+     * Common: elastic IP address, referred to as EIP.
+     * Anycast: Anycast elastic IP address, referred to as Anycast EIP.
+         */
+        readonly eipType?: string | ros.IResolvable;
         /**
          * @Property loadBalancerAddresses: Load balancer addresses. This property has higher priority than AllocationId and EipType in ZoneMappings.
          */
@@ -2788,11 +2819,13 @@ export namespace RosLoadBalancer {
 function RosLoadBalancer_ZoneMappingsPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('intranetAddress', ros.validateString)(properties.intranetAddress));
     errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('allocationId', ros.validateString)(properties.allocationId));
+    errors.collect(ros.propertyValidator('eipType', ros.validateString)(properties.eipType));
     if(properties.loadBalancerAddresses && (Array.isArray(properties.loadBalancerAddresses) || (typeof properties.loadBalancerAddresses) === 'string')) {
         errors.collect(ros.propertyValidator('loadBalancerAddresses', ros.validateLength)({
             data: properties.loadBalancerAddresses.length,
@@ -2816,9 +2849,11 @@ function rosLoadBalancerZoneMappingsPropertyToRosTemplate(properties: any): any 
     if (!ros.canInspect(properties)) { return properties; }
     RosLoadBalancer_ZoneMappingsPropertyValidator(properties).assertSuccess();
     return {
+      'IntranetAddress': ros.stringToRosTemplate(properties.intranetAddress),
       'ZoneId': ros.stringToRosTemplate(properties.zoneId),
       'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
       'AllocationId': ros.stringToRosTemplate(properties.allocationId),
+      'EipType': ros.stringToRosTemplate(properties.eipType),
       'LoadBalancerAddresses': ros.listMapper(rosLoadBalancerLoadBalancerAddressesPropertyToRosTemplate)(properties.loadBalancerAddresses),
     };
 }
@@ -3836,7 +3871,7 @@ function RosRule_RemoveHeaderConfigPropertyValidator(properties: any): ros.Valid
     if(properties.key && (typeof properties.key) !== 'object') {
         errors.collect(ros.propertyValidator('key', ros.validateAllowedPattern)({
           data: properties.key,
-          reg: /[-a-z0-9_]{1,40}/
+          reg: /[-a-zA-Z0-9_]{1,40}/
         }));
     }
     errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
@@ -4900,6 +4935,12 @@ export interface RosServerGroupProps {
     readonly vpcId: string | ros.IResolvable;
 
     /**
+     * @Property connectionDrainConfig: Configuration related to graceful connection interruption.Enable graceful connection interruption. After the backend server is removed or the health check fails, the load balancing allows the existing connection to be transmitted normally within a certain period of time.Note: 
+     * Basic Edition instances do not support enabling graceful connection interruption. Only Standard Edition and WAF Enhanced Edition instances support it.Server type and IP type server group support graceful connection interruption. Function Compute type does not support it.
+     */
+    readonly connectionDrainConfig?: RosServerGroup.ConnectionDrainConfigProperty | ros.IResolvable;
+
+    /**
      * @Property protocol: The backend protocol. Valid values:
      * HTTP (default): The server group can be associated with HTTPS, HTTP, and QUIC listeners.
      * HTTPS: The server group can be associated with HTTPS listeners.
@@ -4936,6 +4977,12 @@ export interface RosServerGroupProps {
     readonly serviceName?: string | ros.IResolvable;
 
     /**
+     * @Property slowStartConfig: Slow start related configuration.After slow start is enabled, the backend server newly added to the backend server group will be preheated within the set time period, and the number of requests forwarded to the server will increase linearly.Note:
+     * Basic Edition instances do not support slow start, only Standard Edition and WAF Enhanced Edition instances support it.Server type and IP type server groups support slow start configuration, but Function Compute type does not.Slow start can only be enabled when the backend scheduling algorithm is the weighted polling algorithm.
+     */
+    readonly slowStartConfig?: RosServerGroup.SlowStartConfigProperty | ros.IResolvable;
+
+    /**
      * @Property stickySessionConfig: The configuration of session persistence.
      * Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
      */
@@ -4945,6 +4992,16 @@ export interface RosServerGroupProps {
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosServerGroup.TagsProperty[];
+
+    /**
+     * @Property uchConfig: URL consistency hash parameter configuration.
+     */
+    readonly uchConfig?: RosServerGroup.UchConfigProperty | ros.IResolvable;
+
+    /**
+     * @Property upstreamKeepaliveEnabled: Whether to enable upstream keepalive.
+     */
+    readonly upstreamKeepaliveEnabled?: boolean | ros.IResolvable;
 }
 
 /**
@@ -4957,10 +5014,10 @@ export interface RosServerGroupProps {
 function RosServerGroupPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
-    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('connectionDrainConfig', RosServerGroup_ConnectionDrainConfigPropertyValidator)(properties.connectionDrainConfig));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
-    errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
+    errors.collect(ros.propertyValidator('uchConfig', RosServerGroup_UchConfigPropertyValidator)(properties.uchConfig));
+    errors.collect(ros.propertyValidator('upstreamKeepaliveEnabled', ros.validateBoolean)(properties.upstreamKeepaliveEnabled));
     if(properties.scheduler && (typeof properties.scheduler) !== 'object') {
         errors.collect(ros.propertyValidator('scheduler', ros.validateAllowedValues)({
           data: properties.scheduler,
@@ -4969,6 +5026,17 @@ function RosServerGroupPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('scheduler', ros.validateString)(properties.scheduler));
     errors.collect(ros.propertyValidator('stickySessionConfig', RosServerGroup_StickySessionConfigPropertyValidator)(properties.stickySessionConfig));
+    if(properties.serverGroupType && (typeof properties.serverGroupType) !== 'object') {
+        errors.collect(ros.propertyValidator('serverGroupType', ros.validateAllowedValues)({
+          data: properties.serverGroupType,
+          allowedValues: ["Ip","Instance","Fc"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('serverGroupType', ros.validateString)(properties.serverGroupType));
+    errors.collect(ros.propertyValidator('slowStartConfig', RosServerGroup_SlowStartConfigPropertyValidator)(properties.slowStartConfig));
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
     errors.collect(ros.propertyValidator('healthCheckConfig', ros.requiredValidator)(properties.healthCheckConfig));
     errors.collect(ros.propertyValidator('healthCheckConfig', RosServerGroup_HealthCheckConfigPropertyValidator)(properties.healthCheckConfig));
     if(properties.protocol && (typeof properties.protocol) !== 'object') {
@@ -4978,13 +5046,6 @@ function RosServerGroupPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('protocol', ros.validateString)(properties.protocol));
-    if(properties.serverGroupType && (typeof properties.serverGroupType) !== 'object') {
-        errors.collect(ros.propertyValidator('serverGroupType', ros.validateAllowedValues)({
-          data: properties.serverGroupType,
-          allowedValues: ["Ip","Instance","Fc"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('serverGroupType', ros.validateString)(properties.serverGroupType));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -5015,13 +5076,17 @@ function rosServerGroupPropsToRosTemplate(properties: any, enableResourcePropert
       'HealthCheckConfig': rosServerGroupHealthCheckConfigPropertyToRosTemplate(properties.healthCheckConfig),
       'ServerGroupName': ros.stringToRosTemplate(properties.serverGroupName),
       'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'ConnectionDrainConfig': rosServerGroupConnectionDrainConfigPropertyToRosTemplate(properties.connectionDrainConfig),
       'Protocol': ros.stringToRosTemplate(properties.protocol),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
       'Scheduler': ros.stringToRosTemplate(properties.scheduler),
       'ServerGroupType': ros.stringToRosTemplate(properties.serverGroupType),
       'ServiceName': ros.stringToRosTemplate(properties.serviceName),
+      'SlowStartConfig': rosServerGroupSlowStartConfigPropertyToRosTemplate(properties.slowStartConfig),
       'StickySessionConfig': rosServerGroupStickySessionConfigPropertyToRosTemplate(properties.stickySessionConfig),
       'Tags': ros.listMapper(rosServerGroupTagsPropertyToRosTemplate)(properties.tags),
+      'UchConfig': rosServerGroupUchConfigPropertyToRosTemplate(properties.uchConfig),
+      'UpstreamKeepaliveEnabled': ros.booleanToRosTemplate(properties.upstreamKeepaliveEnabled),
     };
 }
 
@@ -5065,6 +5130,12 @@ export class RosServerGroup extends ros.RosResource {
     public vpcId: string | ros.IResolvable;
 
     /**
+     * @Property connectionDrainConfig: Configuration related to graceful connection interruption.Enable graceful connection interruption. After the backend server is removed or the health check fails, the load balancing allows the existing connection to be transmitted normally within a certain period of time.Note: 
+     * Basic Edition instances do not support enabling graceful connection interruption. Only Standard Edition and WAF Enhanced Edition instances support it.Server type and IP type server group support graceful connection interruption. Function Compute type does not support it.
+     */
+    public connectionDrainConfig: RosServerGroup.ConnectionDrainConfigProperty | ros.IResolvable | undefined;
+
+    /**
      * @Property protocol: The backend protocol. Valid values:
      * HTTP (default): The server group can be associated with HTTPS, HTTP, and QUIC listeners.
      * HTTPS: The server group can be associated with HTTPS listeners.
@@ -5101,6 +5172,12 @@ export class RosServerGroup extends ros.RosResource {
     public serviceName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property slowStartConfig: Slow start related configuration.After slow start is enabled, the backend server newly added to the backend server group will be preheated within the set time period, and the number of requests forwarded to the server will increase linearly.Note:
+     * Basic Edition instances do not support slow start, only Standard Edition and WAF Enhanced Edition instances support it.Server type and IP type server groups support slow start configuration, but Function Compute type does not.Slow start can only be enabled when the backend scheduling algorithm is the weighted polling algorithm.
+     */
+    public slowStartConfig: RosServerGroup.SlowStartConfigProperty | ros.IResolvable | undefined;
+
+    /**
      * @Property stickySessionConfig: The configuration of session persistence.
      * Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
      */
@@ -5110,6 +5187,16 @@ export class RosServerGroup extends ros.RosResource {
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     public tags: RosServerGroup.TagsProperty[] | undefined;
+
+    /**
+     * @Property uchConfig: URL consistency hash parameter configuration.
+     */
+    public uchConfig: RosServerGroup.UchConfigProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property upstreamKeepaliveEnabled: Whether to enable upstream keepalive.
+     */
+    public upstreamKeepaliveEnabled: boolean | ros.IResolvable | undefined;
 
     /**
      * @param scope - scope in which this resource is defined
@@ -5124,13 +5211,17 @@ export class RosServerGroup extends ros.RosResource {
         this.healthCheckConfig = props.healthCheckConfig;
         this.serverGroupName = props.serverGroupName;
         this.vpcId = props.vpcId;
+        this.connectionDrainConfig = props.connectionDrainConfig;
         this.protocol = props.protocol;
         this.resourceGroupId = props.resourceGroupId;
         this.scheduler = props.scheduler;
         this.serverGroupType = props.serverGroupType;
         this.serviceName = props.serviceName;
+        this.slowStartConfig = props.slowStartConfig;
         this.stickySessionConfig = props.stickySessionConfig;
         this.tags = props.tags;
+        this.uchConfig = props.uchConfig;
+        this.upstreamKeepaliveEnabled = props.upstreamKeepaliveEnabled;
     }
 
 
@@ -5139,18 +5230,78 @@ export class RosServerGroup extends ros.RosResource {
             healthCheckConfig: this.healthCheckConfig,
             serverGroupName: this.serverGroupName,
             vpcId: this.vpcId,
+            connectionDrainConfig: this.connectionDrainConfig,
             protocol: this.protocol,
             resourceGroupId: this.resourceGroupId,
             scheduler: this.scheduler,
             serverGroupType: this.serverGroupType,
             serviceName: this.serviceName,
+            slowStartConfig: this.slowStartConfig,
             stickySessionConfig: this.stickySessionConfig,
             tags: this.tags,
+            uchConfig: this.uchConfig,
+            upstreamKeepaliveEnabled: this.upstreamKeepaliveEnabled,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosServerGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosServerGroup {
+    /**
+     * @stability external
+     */
+    export interface ConnectionDrainConfigProperty {
+        /**
+         * @Property connectionDrainEnabled: Whether to enable graceful connection interruption.
+         */
+        readonly connectionDrainEnabled: boolean | ros.IResolvable;
+        /**
+         * @Property connectionDrainTimeout: The graceful connection interruption timeout period. Unit: seconds.
+         */
+        readonly connectionDrainTimeout: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ConnectionDrainConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `ConnectionDrainConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosServerGroup_ConnectionDrainConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('connectionDrainEnabled', ros.requiredValidator)(properties.connectionDrainEnabled));
+    errors.collect(ros.propertyValidator('connectionDrainEnabled', ros.validateBoolean)(properties.connectionDrainEnabled));
+    errors.collect(ros.propertyValidator('connectionDrainTimeout', ros.requiredValidator)(properties.connectionDrainTimeout));
+    if(properties.connectionDrainTimeout && (typeof properties.connectionDrainTimeout) !== 'object') {
+        errors.collect(ros.propertyValidator('connectionDrainTimeout', ros.validateRange)({
+            data: properties.connectionDrainTimeout,
+            min: 0,
+            max: 900,
+          }));
+    }
+    errors.collect(ros.propertyValidator('connectionDrainTimeout', ros.validateNumber)(properties.connectionDrainTimeout));
+    return errors.wrap('supplied properties not correct for "ConnectionDrainConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ALB::ServerGroup.ConnectionDrainConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `ConnectionDrainConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ALB::ServerGroup.ConnectionDrainConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosServerGroupConnectionDrainConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosServerGroup_ConnectionDrainConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'ConnectionDrainEnabled': ros.booleanToRosTemplate(properties.connectionDrainEnabled),
+      'ConnectionDrainTimeout': ros.numberToRosTemplate(properties.connectionDrainTimeout),
+    };
 }
 
 export namespace RosServerGroup {
@@ -5319,6 +5470,62 @@ export namespace RosServerGroup {
     /**
      * @stability external
      */
+    export interface SlowStartConfigProperty {
+        /**
+         * @Property slowStartEnabled: Whether to enable slow start.
+         */
+        readonly slowStartEnabled: boolean | ros.IResolvable;
+        /**
+         * @Property slowStartDuration: The duration of slow start. Unit: seconds.
+         */
+        readonly slowStartDuration: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `SlowStartConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `SlowStartConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosServerGroup_SlowStartConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('slowStartEnabled', ros.requiredValidator)(properties.slowStartEnabled));
+    errors.collect(ros.propertyValidator('slowStartEnabled', ros.validateBoolean)(properties.slowStartEnabled));
+    errors.collect(ros.propertyValidator('slowStartDuration', ros.requiredValidator)(properties.slowStartDuration));
+    if(properties.slowStartDuration && (typeof properties.slowStartDuration) !== 'object') {
+        errors.collect(ros.propertyValidator('slowStartDuration', ros.validateRange)({
+            data: properties.slowStartDuration,
+            min: 30,
+            max: 900,
+          }));
+    }
+    errors.collect(ros.propertyValidator('slowStartDuration', ros.validateNumber)(properties.slowStartDuration));
+    return errors.wrap('supplied properties not correct for "SlowStartConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ALB::ServerGroup.SlowStartConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `SlowStartConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ALB::ServerGroup.SlowStartConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosServerGroupSlowStartConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosServerGroup_SlowStartConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'SlowStartEnabled': ros.booleanToRosTemplate(properties.slowStartEnabled),
+      'SlowStartDuration': ros.numberToRosTemplate(properties.slowStartDuration),
+    };
+}
+
+export namespace RosServerGroup {
+    /**
+     * @stability external
+     */
     export interface StickySessionConfigProperty {
         /**
          * @Property cookie: The cookie to be configured on the backend server.
@@ -5443,5 +5650,60 @@ function rosServerGroupTagsPropertyToRosTemplate(properties: any): any {
     return {
       'Value': ros.stringToRosTemplate(properties.value),
       'Key': ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosServerGroup {
+    /**
+     * @stability external
+     */
+    export interface UchConfigProperty {
+        /**
+         * @Property type: Parameter type. Only supports: QueryString.
+         */
+        readonly type: string | ros.IResolvable;
+        /**
+         * @Property value: Consistent hash parameter value.
+         */
+        readonly value: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `UchConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `UchConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosServerGroup_UchConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["QueryString"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('value', ros.requiredValidator)(properties.value));
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    return errors.wrap('supplied properties not correct for "UchConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ALB::ServerGroup.UchConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `UchConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ALB::ServerGroup.UchConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosServerGroupUchConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosServerGroup_UchConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'Type': ros.stringToRosTemplate(properties.type),
+      'Value': ros.stringToRosTemplate(properties.value),
     };
 }

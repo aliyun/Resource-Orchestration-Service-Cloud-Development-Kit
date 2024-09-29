@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ALB::SecurityPolicy</code>, which is used to create a custom security policy.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:22.918Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:36.092Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.SecurityPolicy")
 public class SecurityPolicy extends com.aliyun.ros.cdk.core.Resource {
 

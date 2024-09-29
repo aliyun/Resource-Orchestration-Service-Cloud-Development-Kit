@@ -193,7 +193,7 @@ export interface VpcFirewallControlPolicyProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`, which is used to add an access control policy to a specified policy group for a Virtual Private Cloud (VPC) firewall.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`, which is used to add an access control policy to a policy group of a virtual private cloud (VPC) firewall.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpcFirewallControlPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallcontrolpolicy
  */

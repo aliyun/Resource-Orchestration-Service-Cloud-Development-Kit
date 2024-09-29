@@ -33,6 +33,7 @@ type AccountProps struct {
 	// ReadOnly: has the read-only permission on the database.
 	// DMLOnly: runs only data manipulation language (DML) statements.
 	// DDLOnly: runs only data definition language (DDL) statements.
+	// ReadIndex: has read and index permissions on the database.
 	// Default value: ReadWrite.
 	// Separate multiple permissions with a comma (,).
 	AccountPrivilege interface{} `field:"optional" json:"accountPrivilege" yaml:"accountPrivilege"`
@@ -49,5 +50,11 @@ type AccountProps struct {
 	//
 	// Separate multiple databases with a comma (,).
 	DbName interface{} `field:"optional" json:"dbName" yaml:"dbName"`
+	// Property privForAllDb: Whether to grant permissions to all libraries in the current cluster and any libraries that will be added in the future.
+	//
+	// Valid values:
+	// - 0 (default)): Not authorized.
+	// - 1: Authorization.
+	PrivForAllDb interface{} `field:"optional" json:"privForAllDb" yaml:"privForAllDb"`
 }
 

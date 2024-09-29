@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenRouteService`, which is used to configure the access to an Alibaba Cloud service.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenRouteService`, which is used to access an Alibaba Cloud service.
 type CenRouteService interface {
 	alicloudroscdkcore.Resource
 	// Attribute Id: The ID of the cloud service.

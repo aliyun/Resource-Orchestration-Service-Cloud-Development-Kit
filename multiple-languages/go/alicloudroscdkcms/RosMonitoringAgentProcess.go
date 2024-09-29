@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MonitoringAgentProcess`, which is used to create a task to monitor a process.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MonitoringAgentProcess`, which is used to create a process monitoring task.
 type RosMonitoringAgentProcess interface {
 	alicloudroscdkcore.RosResource
 	AttrId() alicloudroscdkcore.IResolvable

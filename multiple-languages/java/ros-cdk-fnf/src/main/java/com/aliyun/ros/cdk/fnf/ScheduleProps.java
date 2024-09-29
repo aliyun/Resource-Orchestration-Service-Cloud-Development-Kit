@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.fnf;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fnf-schedule
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:27.433Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:39.992Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fnf.$Module.class, fqn = "@alicloud/ros-cdk-fnf.ScheduleProps")
 @software.amazon.jsii.Jsii.Proxy(ScheduleProps.Jsii$Proxy.class)
 public interface ScheduleProps extends software.amazon.jsii.JsiiSerializable {

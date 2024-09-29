@@ -44,6 +44,8 @@ type RosAccount interface {
 	LogicalId() *string
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
+	PrivForAllDb() interface{}
+	SetPrivForAllDb(val interface{})
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
 	//
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
@@ -289,6 +291,16 @@ func (j *jsiiProxy_RosAccount) Node() alicloudroscdkcore.ConstructNode {
 	return returns
 }
 
+func (j *jsiiProxy_RosAccount) PrivForAllDb() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"privForAllDb",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosAccount) Ref() *string {
 	var returns *string
 	_jsii_.Get(
@@ -461,6 +473,17 @@ func (j *jsiiProxy_RosAccount)SetEnableResourcePropertyConstraint(val *bool) {
 	_jsii_.Set(
 		j,
 		"enableResourcePropertyConstraint",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosAccount)SetPrivForAllDb(val interface{}) {
+	if err := j.validateSetPrivForAllDbParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"privForAllDb",
 		val,
 	)
 }

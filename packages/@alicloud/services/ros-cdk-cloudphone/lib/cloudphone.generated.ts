@@ -62,7 +62,7 @@ function rosImagePropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudPhone::Image`, which is used to create a custom image for an Elastic Cloud Phone (ECP) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudPhone::Image`, which is used to create a custom image for a cloud phone.
  * @Note This class does not contain additional functions, so it is recommended to use the `Image` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-image
  */
@@ -392,7 +392,7 @@ function rosInstanceGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudPhone::InstanceGroup`, which is used to create and start Elastic Cloud Phone (ECP) instances.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudPhone::InstanceGroup`, which is used to create and start cloud phones.
  * @Note This class does not contain additional functions, so it is recommended to use the `InstanceGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-instancegroup
  */
@@ -830,7 +830,7 @@ function rosRunCommandPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudPhone::RunCommand`, which is used to run a command on Elastic Cloud Phone (ECP) instances.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudPhone::RunCommand`, which is used to run a command on cloud phones.
  * @Note This class does not contain additional functions, so it is recommended to use the `RunCommand` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-runcommand
  */

@@ -26,7 +26,7 @@ export interface SlsGroupProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::SlsGroup`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::SlsGroup`, which is used to create a Logstore group for the metrics of Simple Log Service logs.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSlsGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-slsgroup
  */

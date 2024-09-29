@@ -568,6 +568,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq5
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: flowOutType: The billing method of Internet usage. Valid values: payByBandwidth: pay-by-bandwidth. If Internet access is enabled for an instance, specify this value for the parameter. payByTraffic: pay-by-traffic. If Internet access is enabled for an instance, specify this value for the parameter. uninvolved: No billing method is involved. If Internet access is disabled for an instance, specify this value for the parameter.
+            /// </remarks>
+            [JsiiProperty(name: "flowOutType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? FlowOutType
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: ipWhitelist: Public network access whitelist address segment.
             /// </remarks>
             [JsiiProperty(name: "ipWhitelist", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -603,6 +616,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq5
                 [JsiiOptional]
                 [JsiiProperty(name: "flowOutBandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? FlowOutBandwidth
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: flowOutType: The billing method of Internet usage. Valid values: payByBandwidth: pay-by-bandwidth. If Internet access is enabled for an instance, specify this value for the parameter. payByTraffic: pay-by-traffic. If Internet access is enabled for an instance, specify this value for the parameter. uninvolved: No billing method is involved. If Internet access is disabled for an instance, specify this value for the parameter.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "flowOutType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? FlowOutType
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -706,6 +729,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq5
                         }
                     }
                     _flowOutBandwidth = value;
+                }
+            }
+
+            private object? _flowOutType;
+
+            /// <remarks>
+            /// <strong>Property</strong>: flowOutType: The billing method of Internet usage. Valid values: payByBandwidth: pay-by-bandwidth. If Internet access is enabled for an instance, specify this value for the parameter. payByTraffic: pay-by-traffic. If Internet access is enabled for an instance, specify this value for the parameter. uninvolved: No billing method is involved. If Internet access is disabled for an instance, specify this value for the parameter.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "flowOutType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? FlowOutType
+            {
+                get => _flowOutType;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _flowOutType = value;
                 }
             }
 

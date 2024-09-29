@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.paidlc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::PAIDLC::Job</code>, which is used to create a Machine Learning Platform for AI (PAI) job to run in a cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:29.250Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:41.319Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.paidlc.$Module.class, fqn = "@alicloud/ros-cdk-paidlc.Job")
 public class Job extends com.aliyun.ros.cdk.core.Resource {
 

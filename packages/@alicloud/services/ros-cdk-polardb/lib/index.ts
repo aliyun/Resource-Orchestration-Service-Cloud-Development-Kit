@@ -1,6 +1,7 @@
 export * from './aitask';
 export * from './account';
 export * from './accountprivilege';
+export * from './backup';
 export * from './dbcluster';
 export * from './dbclusteraccesswhitelist';
 export * from './dbclusterendpoint';

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterVbrAttachment`, which is used to create a virtual border router (VBR) connection from an Enterprise Edition transit router.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterVbrAttachment`, which is used to create a virtual border router (VBR) connection on an Enterprise Edition transit router.
 type TransitRouterVbrAttachment interface {
 	alicloudroscdkcore.Resource
 	// Attribute AutoPublishRouteEnabled: AutoPublishRouteEnabled.

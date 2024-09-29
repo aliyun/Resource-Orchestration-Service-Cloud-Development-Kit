@@ -317,7 +317,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Instance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Instance`, which is used to create a Key Management Service (KMS) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-instance
  */
@@ -763,6 +763,408 @@ export class RosKey extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosKeyPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+/**
+ * Properties for defining a `RosNetworkRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-networkrule
+ */
+export interface RosNetworkRuleProps {
+
+    /**
+     * @Property networkRuleName: The name of the access control rule.
+     */
+    readonly networkRuleName: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the network rule.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property sourcePrivateIp: VPC network whitelist, The private IP address or private CIDR block, Supports binding up to 800 CIDR blocks or IP addresses.
+     */
+    readonly sourcePrivateIp?: Array<string | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosNetworkRuleProps`
+ *
+ * @param properties - the TypeScript properties of a `RosNetworkRuleProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosNetworkRulePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    if(properties.sourcePrivateIp && (Array.isArray(properties.sourcePrivateIp) || (typeof properties.sourcePrivateIp) === 'string')) {
+        errors.collect(ros.propertyValidator('sourcePrivateIp', ros.validateLength)({
+            data: properties.sourcePrivateIp.length,
+            min: 1,
+            max: 800,
+          }));
+    }
+    errors.collect(ros.propertyValidator('sourcePrivateIp', ros.listValidator(ros.validateString))(properties.sourcePrivateIp));
+    errors.collect(ros.propertyValidator('networkRuleName', ros.requiredValidator)(properties.networkRuleName));
+    errors.collect(ros.propertyValidator('networkRuleName', ros.validateString)(properties.networkRuleName));
+    return errors.wrap('supplied properties not correct for "RosNetworkRuleProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::KMS::NetworkRule` resource
+ *
+ * @param properties - the TypeScript properties of a `RosNetworkRuleProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::KMS::NetworkRule` resource.
+ */
+// @ts-ignore TS6133
+function rosNetworkRulePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosNetworkRulePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'NetworkRuleName': ros.stringToRosTemplate(properties.networkRuleName),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'SourcePrivateIp': ros.listMapper(ros.stringToRosTemplate)(properties.sourcePrivateIp),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::NetworkRule`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `NetworkRule` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-networkrule
+ */
+export class RosNetworkRule extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::KMS::NetworkRule";
+
+    /**
+     * @Attribute Description: Description.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute SourcePrivateIp: VPC network whitelist.
+     */
+    public readonly attrSourcePrivateIp: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property networkRuleName: The name of the access control rule.
+     */
+    public networkRuleName: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the network rule.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property sourcePrivateIp: VPC network whitelist, The private IP address or private CIDR block, Supports binding up to 800 CIDR blocks or IP addresses.
+     */
+    public sourcePrivateIp: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosNetworkRuleProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosNetworkRule.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDescription = this.getAtt('Description');
+        this.attrSourcePrivateIp = this.getAtt('SourcePrivateIp');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.networkRuleName = props.networkRuleName;
+        this.description = props.description;
+        this.sourcePrivateIp = props.sourcePrivateIp;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            networkRuleName: this.networkRuleName,
+            description: this.description,
+            sourcePrivateIp: this.sourcePrivateIp,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosNetworkRulePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosPolicy`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-policy
+ */
+export interface RosPolicyProps {
+
+    /**
+     * @Property accessControlRules: Network Rules info.
+     */
+    readonly accessControlRules: RosPolicy.AccessControlRulesProperty | ros.IResolvable;
+
+    /**
+     * @Property kmsInstanceId: The scope of the permission policy. You need to specify the KMS instance that you want to access.
+     */
+    readonly kmsInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property permissions: The operations that can be performed. Valid values:
+     * RbacPermission\/Template\/CryptoServiceKeyUser: allows you to perform cryptographic operations.
+     * RbacPermission\/Template\/CryptoServiceSecretUser: allows you to perform secret-related operations.
+     */
+    readonly permissions: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property policyName: The name of the permission policy.
+     */
+    readonly policyName: string | ros.IResolvable;
+
+    /**
+     * @Property resources: The key and secret that are allowed to access. Supports a maximum of 30 key and secret.
+     * Key: Enter a key in the key\/${KeyId} format. To allow access to all keys of a KMS instance, enter key\/*. 
+     * Secret: Enter a secret in the secret\/${SecretName} format. To allow access to all secrets of a KMS instance, enter secret\/*.
+     */
+    readonly resources: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the permission policy.
+     */
+    readonly description?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosPolicyProps`
+ *
+ * @param properties - the TypeScript properties of a `RosPolicyProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosPolicyPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('accessControlRules', ros.requiredValidator)(properties.accessControlRules));
+    errors.collect(ros.propertyValidator('accessControlRules', RosPolicy_AccessControlRulesPropertyValidator)(properties.accessControlRules));
+    errors.collect(ros.propertyValidator('policyName', ros.requiredValidator)(properties.policyName));
+    errors.collect(ros.propertyValidator('policyName', ros.validateString)(properties.policyName));
+    errors.collect(ros.propertyValidator('permissions', ros.requiredValidator)(properties.permissions));
+    if(properties.permissions && (Array.isArray(properties.permissions) || (typeof properties.permissions) === 'string')) {
+        errors.collect(ros.propertyValidator('permissions', ros.validateLength)({
+            data: properties.permissions.length,
+            min: 1,
+            max: 2,
+          }));
+    }
+    errors.collect(ros.propertyValidator('permissions', ros.listValidator(ros.validateString))(properties.permissions));
+    errors.collect(ros.propertyValidator('kmsInstanceId', ros.requiredValidator)(properties.kmsInstanceId));
+    errors.collect(ros.propertyValidator('kmsInstanceId', ros.validateString)(properties.kmsInstanceId));
+    errors.collect(ros.propertyValidator('resources', ros.requiredValidator)(properties.resources));
+    if(properties.resources && (Array.isArray(properties.resources) || (typeof properties.resources) === 'string')) {
+        errors.collect(ros.propertyValidator('resources', ros.validateLength)({
+            data: properties.resources.length,
+            min: 1,
+            max: 30,
+          }));
+    }
+    errors.collect(ros.propertyValidator('resources', ros.listValidator(ros.validateString))(properties.resources));
+    return errors.wrap('supplied properties not correct for "RosPolicyProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::KMS::Policy` resource
+ *
+ * @param properties - the TypeScript properties of a `RosPolicyProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::KMS::Policy` resource.
+ */
+// @ts-ignore TS6133
+function rosPolicyPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosPolicyPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AccessControlRules': rosPolicyAccessControlRulesPropertyToRosTemplate(properties.accessControlRules),
+      'KmsInstanceId': ros.stringToRosTemplate(properties.kmsInstanceId),
+      'Permissions': ros.listMapper(ros.stringToRosTemplate)(properties.permissions),
+      'PolicyName': ros.stringToRosTemplate(properties.policyName),
+      'Resources': ros.listMapper(ros.stringToRosTemplate)(properties.resources),
+      'Description': ros.stringToRosTemplate(properties.description),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Policy`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Policy` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-policy
+ */
+export class RosPolicy extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::KMS::Policy";
+
+    /**
+     * @Attribute AccessControlRules: Network Rules info.
+     */
+    public readonly attrAccessControlRules: ros.IResolvable;
+
+    /**
+     * @Attribute Description: Description.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute KmsInstanceId: The scope of the permission policy. You need to specify the KMS instance that you want to access.
+     */
+    public readonly attrKmsInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute Permissions: RbacPermission Template, support RbacPermission/Template/CryptoServiceKeyUser and RbacPermission/Template/CryptoServiceSecretUser.
+     */
+    public readonly attrPermissions: ros.IResolvable;
+
+    /**
+     * @Attribute PolicyName: The name of the permission policy.
+     */
+    public readonly attrPolicyName: ros.IResolvable;
+
+    /**
+     * @Attribute Resources: Resources that allowed access by this policy.
+     */
+    public readonly attrResources: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property accessControlRules: Network Rules info.
+     */
+    public accessControlRules: RosPolicy.AccessControlRulesProperty | ros.IResolvable;
+
+    /**
+     * @Property kmsInstanceId: The scope of the permission policy. You need to specify the KMS instance that you want to access.
+     */
+    public kmsInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property permissions: The operations that can be performed. Valid values:
+     * RbacPermission\/Template\/CryptoServiceKeyUser: allows you to perform cryptographic operations.
+     * RbacPermission\/Template\/CryptoServiceSecretUser: allows you to perform secret-related operations.
+     */
+    public permissions: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property policyName: The name of the permission policy.
+     */
+    public policyName: string | ros.IResolvable;
+
+    /**
+     * @Property resources: The key and secret that are allowed to access. Supports a maximum of 30 key and secret.
+     * Key: Enter a key in the key\/${KeyId} format. To allow access to all keys of a KMS instance, enter key\/*. 
+     * Secret: Enter a secret in the secret\/${SecretName} format. To allow access to all secrets of a KMS instance, enter secret\/*.
+     */
+    public resources: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the permission policy.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosPolicyProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosPolicy.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAccessControlRules = this.getAtt('AccessControlRules');
+        this.attrDescription = this.getAtt('Description');
+        this.attrKmsInstanceId = this.getAtt('KmsInstanceId');
+        this.attrPermissions = this.getAtt('Permissions');
+        this.attrPolicyName = this.getAtt('PolicyName');
+        this.attrResources = this.getAtt('Resources');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.accessControlRules = props.accessControlRules;
+        this.kmsInstanceId = props.kmsInstanceId;
+        this.permissions = props.permissions;
+        this.policyName = props.policyName;
+        this.resources = props.resources;
+        this.description = props.description;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            accessControlRules: this.accessControlRules,
+            kmsInstanceId: this.kmsInstanceId,
+            permissions: this.permissions,
+            policyName: this.policyName,
+            resources: this.resources,
+            description: this.description,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosPolicyPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosPolicy {
+    /**
+     * @stability external
+     */
+    export interface AccessControlRulesProperty {
+        /**
+         * @Property networkRules: NetworkRule list, Supports a maximum of 40 network control rules.
+         */
+        readonly networkRules: Array<string | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AccessControlRulesProperty`
+ *
+ * @param properties - the TypeScript properties of a `AccessControlRulesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosPolicy_AccessControlRulesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('networkRules', ros.requiredValidator)(properties.networkRules));
+    if(properties.networkRules && (Array.isArray(properties.networkRules) || (typeof properties.networkRules) === 'string')) {
+        errors.collect(ros.propertyValidator('networkRules', ros.validateLength)({
+            data: properties.networkRules.length,
+            min: 1,
+            max: 40,
+          }));
+    }
+    errors.collect(ros.propertyValidator('networkRules', ros.listValidator(ros.validateString))(properties.networkRules));
+    return errors.wrap('supplied properties not correct for "AccessControlRulesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::KMS::Policy.AccessControlRules` resource
+ *
+ * @param properties - the TypeScript properties of a `AccessControlRulesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::KMS::Policy.AccessControlRules` resource.
+ */
+// @ts-ignore TS6133
+function rosPolicyAccessControlRulesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosPolicy_AccessControlRulesPropertyValidator(properties).assertSuccess();
+    return {
+      'NetworkRules': ros.listMapper(ros.stringToRosTemplate)(properties.networkRules),
+    };
 }
 
 /**

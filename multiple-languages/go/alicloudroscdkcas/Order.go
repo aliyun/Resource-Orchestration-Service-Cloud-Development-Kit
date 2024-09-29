@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CAS::Order`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CAS::Order`, which is used to create a certificate order.
 type Order interface {
 	alicloudroscdkcore.Resource
 	EnableResourcePropertyConstraint() *bool

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ros;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-waitcondition
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:30.442Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:42.337Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.RosWaitConditionProps")
 @software.amazon.jsii.Jsii.Proxy(RosWaitConditionProps.Jsii$Proxy.class)
 public interface RosWaitConditionProps extends software.amazon.jsii.JsiiSerializable {

@@ -12,7 +12,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
     public interface IRosApiProps
     {
         /// <remarks>
-        /// <strong>Property</strong>: apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
+        /// <strong>Property</strong>: apiName: The name of the API.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
         /// </remarks>
         [JsiiProperty(name: "apiName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object ApiName
@@ -335,7 +335,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
+            /// <strong>Property</strong>: apiName: The name of the API.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
             /// </remarks>
             [JsiiProperty(name: "apiName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ApiName

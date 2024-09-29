@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pai.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::PAI::Datasets</code>, which is used to query the basic information about datasets.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:29.180Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:41.252Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.datasource.Datasets")
 public class Datasets extends com.aliyun.ros.cdk.core.Resource {
 

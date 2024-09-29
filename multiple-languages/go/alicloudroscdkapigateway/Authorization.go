@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Authorization`, which is used to authorize APIs to access applications.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Authorization`, which is used to authorize applications to call APIs.
 type Authorization interface {
 	alicloudroscdkcore.Resource
 	EnableResourcePropertyConstraint() *bool

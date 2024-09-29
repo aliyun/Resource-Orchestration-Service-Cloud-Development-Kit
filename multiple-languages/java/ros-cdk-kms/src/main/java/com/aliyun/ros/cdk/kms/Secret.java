@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::KMS::Secret</code>, which is used to create a secret and store the initial version of the secret.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:28.217Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:40.541Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.Secret")
 public class Secret extends com.aliyun.ros.cdk.core.Resource {
 

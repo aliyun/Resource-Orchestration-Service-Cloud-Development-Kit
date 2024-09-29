@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ApiGateway::TrafficControl</code>, which is used to create a custom throttling policy.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:23.246Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:36.292Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.TrafficControl")
 public class TrafficControl extends com.aliyun.ros.cdk.core.Resource {
 
@@ -135,20 +135,20 @@ public class TrafficControl extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property trafficControlName: The name of the traffic control.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+         * Property trafficControlName: The name of the traffic control.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
          * <p>
          * @return {@code this}
-         * @param trafficControlName Property trafficControlName: The name of the traffic control.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
+         * @param trafficControlName Property trafficControlName: The name of the traffic control.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter. This parameter is required.
          */
         public Builder trafficControlName(final java.lang.String trafficControlName) {
             this.props.trafficControlName(trafficControlName);
             return this;
         }
         /**
-         * Property trafficControlName: The name of the traffic control.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+         * Property trafficControlName: The name of the traffic control.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
          * <p>
          * @return {@code this}
-         * @param trafficControlName Property trafficControlName: The name of the traffic control.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
+         * @param trafficControlName Property trafficControlName: The name of the traffic control.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter. This parameter is required.
          */
         public Builder trafficControlName(final com.aliyun.ros.cdk.core.IResolvable trafficControlName) {
             this.props.trafficControlName(trafficControlName);

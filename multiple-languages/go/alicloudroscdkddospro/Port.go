@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::DDoSPro::Port`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::DDoSPro::Port`, which is used to create a port forwarding rule for an Anti-DDoS Proxy instance.
 type Port interface {
 	alicloudroscdkcore.Resource
 	// Attribute FrontendPort: The forwarding port.

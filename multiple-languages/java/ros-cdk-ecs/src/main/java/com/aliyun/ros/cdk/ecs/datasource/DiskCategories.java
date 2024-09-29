@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ECS::DiskCategories</code>, which is used to query the disk types and categories.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:26.359Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:39.044Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.DiskCategories")
 public class DiskCategories extends com.aliyun.ros.cdk.core.Resource {
 

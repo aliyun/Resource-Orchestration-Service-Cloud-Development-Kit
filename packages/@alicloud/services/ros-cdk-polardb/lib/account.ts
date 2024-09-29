@@ -42,6 +42,7 @@ export interface AccountProps {
      * ReadOnly: has the read-only permission on the database.
      * DMLOnly: runs only data manipulation language (DML) statements.
      * DDLOnly: runs only data definition language (DDL) statements.
+     * ReadIndex: has read and index permissions on the database.
      * Default value: ReadWrite.
      * Separate multiple permissions with a comma (,).
      */
@@ -61,6 +62,13 @@ export interface AccountProps {
      * Property dbName: The name of the database whose access permissions are to be granted to the database account. Separate multiple databases with a comma (,).
      */
     readonly dbName?: string | ros.IResolvable;
+
+    /**
+     * Property privForAllDb: Whether to grant permissions to all libraries in the current cluster and any libraries that will be added in the future. Valid values:
+     * - 0 (default)): Not authorized.
+     * - 1: Authorization.
+     */
+    readonly privForAllDb?: string | ros.IResolvable;
 }
 
 /**
@@ -92,6 +100,7 @@ export class Account extends ros.Resource {
             dbClusterId: props.dbClusterId,
             dbName: props.dbName,
             accountType: props.accountType,
+            privForAllDb: props.privForAllDb,
             accountName: props.accountName,
             accountPassword: props.accountPassword,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

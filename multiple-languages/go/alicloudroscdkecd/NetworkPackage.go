@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ECD::NetworkPackage`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ECD::NetworkPackage`, which is used to create a premium bandwidth plan for an office network.
 type NetworkPackage interface {
 	alicloudroscdkcore.Resource
 	// Attribute NetworkPackageId: The ID of the Internet access package.

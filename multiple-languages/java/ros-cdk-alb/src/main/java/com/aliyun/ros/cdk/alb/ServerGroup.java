@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ALB::ServerGroup</code>, which is used to create a server group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-12T02:20:22.920Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:36.110Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.ServerGroup")
 public class ServerGroup extends com.aliyun.ros.cdk.core.Resource {
 
@@ -195,6 +195,27 @@ public class ServerGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property connectionDrainConfig: Configuration related to graceful connection interruption.Enable graceful connection interruption. After the backend server is removed or the health check fails, the load balancing allows the existing connection to be transmitted normally within a certain period of time.Note:  Basic Edition instances do not support enabling graceful connection interruption. Only Standard Edition and WAF Enhanced Edition instances support it.Server type and IP type server group support graceful connection interruption. Function Compute type does not support it.
+         * <p>
+         * @return {@code this}
+         * @param connectionDrainConfig Property connectionDrainConfig: Configuration related to graceful connection interruption.Enable graceful connection interruption. After the backend server is removed or the health check fails, the load balancing allows the existing connection to be transmitted normally within a certain period of time.Note:  Basic Edition instances do not support enabling graceful connection interruption. Only Standard Edition and WAF Enhanced Edition instances support it.Server type and IP type server group support graceful connection interruption. Function Compute type does not support it. This parameter is required.
+         */
+        public Builder connectionDrainConfig(final com.aliyun.ros.cdk.core.IResolvable connectionDrainConfig) {
+            this.props.connectionDrainConfig(connectionDrainConfig);
+            return this;
+        }
+        /**
+         * Property connectionDrainConfig: Configuration related to graceful connection interruption.Enable graceful connection interruption. After the backend server is removed or the health check fails, the load balancing allows the existing connection to be transmitted normally within a certain period of time.Note:  Basic Edition instances do not support enabling graceful connection interruption. Only Standard Edition and WAF Enhanced Edition instances support it.Server type and IP type server group support graceful connection interruption. Function Compute type does not support it.
+         * <p>
+         * @return {@code this}
+         * @param connectionDrainConfig Property connectionDrainConfig: Configuration related to graceful connection interruption.Enable graceful connection interruption. After the backend server is removed or the health check fails, the load balancing allows the existing connection to be transmitted normally within a certain period of time.Note:  Basic Edition instances do not support enabling graceful connection interruption. Only Standard Edition and WAF Enhanced Edition instances support it.Server type and IP type server group support graceful connection interruption. Function Compute type does not support it. This parameter is required.
+         */
+        public Builder connectionDrainConfig(final com.aliyun.ros.cdk.alb.RosServerGroup.ConnectionDrainConfigProperty connectionDrainConfig) {
+            this.props.connectionDrainConfig(connectionDrainConfig);
+            return this;
+        }
+
+        /**
          * Property protocol: The backend protocol.
          * <p>
          * Valid values:
@@ -338,6 +359,27 @@ public class ServerGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property slowStartConfig: Slow start related configuration.After slow start is enabled, the backend server newly added to the backend server group will be preheated within the set time period, and the number of requests forwarded to the server will increase linearly.Note: Basic Edition instances do not support slow start, only Standard Edition and WAF Enhanced Edition instances support it.Server type and IP type server groups support slow start configuration, but Function Compute type does not.Slow start can only be enabled when the backend scheduling algorithm is the weighted polling algorithm.
+         * <p>
+         * @return {@code this}
+         * @param slowStartConfig Property slowStartConfig: Slow start related configuration.After slow start is enabled, the backend server newly added to the backend server group will be preheated within the set time period, and the number of requests forwarded to the server will increase linearly.Note: Basic Edition instances do not support slow start, only Standard Edition and WAF Enhanced Edition instances support it.Server type and IP type server groups support slow start configuration, but Function Compute type does not.Slow start can only be enabled when the backend scheduling algorithm is the weighted polling algorithm. This parameter is required.
+         */
+        public Builder slowStartConfig(final com.aliyun.ros.cdk.core.IResolvable slowStartConfig) {
+            this.props.slowStartConfig(slowStartConfig);
+            return this;
+        }
+        /**
+         * Property slowStartConfig: Slow start related configuration.After slow start is enabled, the backend server newly added to the backend server group will be preheated within the set time period, and the number of requests forwarded to the server will increase linearly.Note: Basic Edition instances do not support slow start, only Standard Edition and WAF Enhanced Edition instances support it.Server type and IP type server groups support slow start configuration, but Function Compute type does not.Slow start can only be enabled when the backend scheduling algorithm is the weighted polling algorithm.
+         * <p>
+         * @return {@code this}
+         * @param slowStartConfig Property slowStartConfig: Slow start related configuration.After slow start is enabled, the backend server newly added to the backend server group will be preheated within the set time period, and the number of requests forwarded to the server will increase linearly.Note: Basic Edition instances do not support slow start, only Standard Edition and WAF Enhanced Edition instances support it.Server type and IP type server groups support slow start configuration, but Function Compute type does not.Slow start can only be enabled when the backend scheduling algorithm is the weighted polling algorithm. This parameter is required.
+         */
+        public Builder slowStartConfig(final com.aliyun.ros.cdk.alb.RosServerGroup.SlowStartConfigProperty slowStartConfig) {
+            this.props.slowStartConfig(slowStartConfig);
+            return this;
+        }
+
+        /**
          * Property stickySessionConfig: The configuration of session persistence.
          * <p>
          * Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
@@ -372,6 +414,48 @@ public class ServerGroup extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.alb.RosServerGroup.TagsProperty> tags) {
             this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * Property uchConfig: URL consistency hash parameter configuration.
+         * <p>
+         * @return {@code this}
+         * @param uchConfig Property uchConfig: URL consistency hash parameter configuration. This parameter is required.
+         */
+        public Builder uchConfig(final com.aliyun.ros.cdk.core.IResolvable uchConfig) {
+            this.props.uchConfig(uchConfig);
+            return this;
+        }
+        /**
+         * Property uchConfig: URL consistency hash parameter configuration.
+         * <p>
+         * @return {@code this}
+         * @param uchConfig Property uchConfig: URL consistency hash parameter configuration. This parameter is required.
+         */
+        public Builder uchConfig(final com.aliyun.ros.cdk.alb.RosServerGroup.UchConfigProperty uchConfig) {
+            this.props.uchConfig(uchConfig);
+            return this;
+        }
+
+        /**
+         * Property upstreamKeepaliveEnabled: Whether to enable upstream keepalive.
+         * <p>
+         * @return {@code this}
+         * @param upstreamKeepaliveEnabled Property upstreamKeepaliveEnabled: Whether to enable upstream keepalive. This parameter is required.
+         */
+        public Builder upstreamKeepaliveEnabled(final java.lang.Boolean upstreamKeepaliveEnabled) {
+            this.props.upstreamKeepaliveEnabled(upstreamKeepaliveEnabled);
+            return this;
+        }
+        /**
+         * Property upstreamKeepaliveEnabled: Whether to enable upstream keepalive.
+         * <p>
+         * @return {@code this}
+         * @param upstreamKeepaliveEnabled Property upstreamKeepaliveEnabled: Whether to enable upstream keepalive. This parameter is required.
+         */
+        public Builder upstreamKeepaliveEnabled(final com.aliyun.ros.cdk.core.IResolvable upstreamKeepaliveEnabled) {
+            this.props.upstreamKeepaliveEnabled(upstreamKeepaliveEnabled);
             return this;
         }
 
