@@ -255,6 +255,184 @@ function rosRuleForwardIpPropertyToRosTemplate(properties: any): any {
 }
 
 /**
+ * Properties for defining a `RosSyncEcsHost`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-syncecshost
+ */
+export interface RosSyncEcsHostProps {
+
+    /**
+     * @Property regions: A list of region information to be synchronized.
+     */
+    readonly regions: Array<RosSyncEcsHost.RegionsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property status: The host synchronizes the task state. Valid values: ON, OFF.
+     */
+    readonly status: string | ros.IResolvable;
+
+    /**
+     * @Property zoneId: Zone ID, a unique identifier for the Zone.
+     */
+    readonly zoneId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSyncEcsHostProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSyncEcsHostProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSyncEcsHostPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('status', ros.requiredValidator)(properties.status));
+    if(properties.status && (typeof properties.status) !== 'object') {
+        errors.collect(ros.propertyValidator('status', ros.validateAllowedValues)({
+          data: properties.status,
+          allowedValues: ["ON","OFF"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
+    errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('regions', ros.requiredValidator)(properties.regions));
+    if(properties.regions && (Array.isArray(properties.regions) || (typeof properties.regions) === 'string')) {
+        errors.collect(ros.propertyValidator('regions', ros.validateLength)({
+            data: properties.regions.length,
+            min: 1,
+            max: 500,
+          }));
+    }
+    errors.collect(ros.propertyValidator('regions', ros.listValidator(RosSyncEcsHost_RegionsPropertyValidator))(properties.regions));
+    return errors.wrap('supplied properties not correct for "RosSyncEcsHostProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PVTZ::SyncEcsHost` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSyncEcsHostProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PVTZ::SyncEcsHost` resource.
+ */
+// @ts-ignore TS6133
+function rosSyncEcsHostPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSyncEcsHostPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Regions': ros.listMapper(rosSyncEcsHostRegionsPropertyToRosTemplate)(properties.regions),
+      'Status': ros.stringToRosTemplate(properties.status),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::SyncEcsHost`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SyncEcsHost` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-syncecshost
+ */
+export class RosSyncEcsHost extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PVTZ::SyncEcsHost";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property regions: A list of region information to be synchronized.
+     */
+    public regions: Array<RosSyncEcsHost.RegionsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property status: The host synchronizes the task state. Valid values: ON, OFF.
+     */
+    public status: string | ros.IResolvable;
+
+    /**
+     * @Property zoneId: Zone ID, a unique identifier for the Zone.
+     */
+    public zoneId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSyncEcsHostProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSyncEcsHost.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.regions = props.regions;
+        this.status = props.status;
+        this.zoneId = props.zoneId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            regions: this.regions,
+            status: this.status,
+            zoneId: this.zoneId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSyncEcsHostPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosSyncEcsHost {
+    /**
+     * @stability external
+     */
+    export interface RegionsProperty {
+        /**
+         * @Property userId: Region-owned user ID for cross-account sync scenarios.
+         */
+        readonly userId?: string | ros.IResolvable;
+        /**
+         * @Property regionId: Region id.
+         */
+        readonly regionId: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `RegionsProperty`
+ *
+ * @param properties - the TypeScript properties of a `RegionsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSyncEcsHost_RegionsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('userId', ros.validateString)(properties.userId));
+    errors.collect(ros.propertyValidator('regionId', ros.requiredValidator)(properties.regionId));
+    errors.collect(ros.propertyValidator('regionId', ros.validateString)(properties.regionId));
+    return errors.wrap('supplied properties not correct for "RegionsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PVTZ::SyncEcsHost.Regions` resource
+ *
+ * @param properties - the TypeScript properties of a `RegionsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PVTZ::SyncEcsHost.Regions` resource.
+ */
+// @ts-ignore TS6133
+function rosSyncEcsHostRegionsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSyncEcsHost_RegionsPropertyValidator(properties).assertSuccess();
+    return {
+      'UserId': ros.stringToRosTemplate(properties.userId),
+      'RegionId': ros.stringToRosTemplate(properties.regionId),
+    };
+}
+
+/**
  * Properties for defining a `RosUserVpcAuthorization`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-uservpcauthorization
  */
@@ -425,6 +603,13 @@ export interface RosZoneProps {
     readonly zoneName: string | ros.IResolvable;
 
     /**
+     * @Property dnsGroup: Built-in authority location area. Valid values:
+     * - NORMAL_ZONE: Default. normal zone (The parsing response result will be cached, and only back to the built-in authority normal zone if the cache is missed, the effect of parsing changes is affected by TTL time; Cannot use custom line analysis, weight analysis function.
+     * - FAST_ZONE: Fast zone (Recommended: directly reply to the parsing request, the parsing delay is the lowest, and the record changes take effect in real time; Support custom line analysis, weight analysis.
+     */
+    readonly dnsGroup?: string | ros.IResolvable;
+
+    /**
      * @Property ignoredStackTagKeys: Stack tag keys to ignore
      */
     readonly ignoredStackTagKeys?: Array<string | ros.IResolvable> | ros.IResolvable;
@@ -450,16 +635,6 @@ export interface RosZoneProps {
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosZone.TagsProperty[];
-
-    /**
-     * @Property zoneTag: Zone label. It will be ignored when ZoneType is AUTH_ZONE.
-     */
-    readonly zoneTag?: string | ros.IResolvable;
-
-    /**
-     * @Property zoneType: Zone type. For instance: AUTH_ZONE, CLOUD_PRODUCT_ZONE.
-     */
-    readonly zoneType?: string | ros.IResolvable;
 }
 
 /**
@@ -490,7 +665,6 @@ function RosZonePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('proxyPattern', ros.validateString)(properties.proxyPattern));
-    errors.collect(ros.propertyValidator('zoneTag', ros.validateString)(properties.zoneTag));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -499,6 +673,13 @@ function RosZonePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosZone_TagsPropertyValidator))(properties.tags));
+    if(properties.dnsGroup && (typeof properties.dnsGroup) !== 'object') {
+        errors.collect(ros.propertyValidator('dnsGroup', ros.validateAllowedValues)({
+          data: properties.dnsGroup,
+          allowedValues: ["NORMAL_ZONE","FAST_ZONE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('dnsGroup', ros.validateString)(properties.dnsGroup));
     if(properties.remark && (Array.isArray(properties.remark) || (typeof properties.remark) === 'string')) {
         errors.collect(ros.propertyValidator('remark', ros.validateLength)({
             data: properties.remark.length,
@@ -513,7 +694,6 @@ function RosZonePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('remark', ros.validateString)(properties.remark));
-    errors.collect(ros.propertyValidator('zoneType', ros.validateString)(properties.zoneType));
     return errors.wrap('supplied properties not correct for "RosZoneProps"');
 }
 
@@ -532,13 +712,12 @@ function rosZonePropsToRosTemplate(properties: any, enableResourcePropertyConstr
     }
     return {
       'ZoneName': ros.stringToRosTemplate(properties.zoneName),
+      'DnsGroup': ros.stringToRosTemplate(properties.dnsGroup),
       'IgnoredStackTagKeys': ros.listMapper(ros.stringToRosTemplate)(properties.ignoredStackTagKeys),
       'ProxyPattern': ros.stringToRosTemplate(properties.proxyPattern),
       'Remark': ros.stringToRosTemplate(properties.remark),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
       'Tags': ros.listMapper(rosZoneTagsPropertyToRosTemplate)(properties.tags),
-      'ZoneTag': ros.stringToRosTemplate(properties.zoneTag),
-      'ZoneType': ros.stringToRosTemplate(properties.zoneType),
     };
 }
 
@@ -582,6 +761,13 @@ export class RosZone extends ros.RosResource {
     public zoneName: string | ros.IResolvable;
 
     /**
+     * @Property dnsGroup: Built-in authority location area. Valid values:
+     * - NORMAL_ZONE: Default. normal zone (The parsing response result will be cached, and only back to the built-in authority normal zone if the cache is missed, the effect of parsing changes is affected by TTL time; Cannot use custom line analysis, weight analysis function.
+     * - FAST_ZONE: Fast zone (Recommended: directly reply to the parsing request, the parsing delay is the lowest, and the record changes take effect in real time; Support custom line analysis, weight analysis.
+     */
+    public dnsGroup: string | ros.IResolvable | undefined;
+
+    /**
      * @Property ignoredStackTagKeys: Stack tag keys to ignore
      */
     public ignoredStackTagKeys: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
@@ -609,16 +795,6 @@ export class RosZone extends ros.RosResource {
     public tags: RosZone.TagsProperty[] | undefined;
 
     /**
-     * @Property zoneTag: Zone label. It will be ignored when ZoneType is AUTH_ZONE.
-     */
-    public zoneTag: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property zoneType: Zone type. For instance: AUTH_ZONE, CLOUD_PRODUCT_ZONE.
-     */
-    public zoneType: string | ros.IResolvable | undefined;
-
-    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -632,26 +808,24 @@ export class RosZone extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.zoneName = props.zoneName;
+        this.dnsGroup = props.dnsGroup;
         this.ignoredStackTagKeys = props.ignoredStackTagKeys;
         this.proxyPattern = props.proxyPattern;
         this.remark = props.remark;
         this.resourceGroupId = props.resourceGroupId;
         this.tags = props.tags;
-        this.zoneTag = props.zoneTag;
-        this.zoneType = props.zoneType;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             zoneName: this.zoneName,
+            dnsGroup: this.dnsGroup,
             ignoredStackTagKeys: this.ignoredStackTagKeys,
             proxyPattern: this.proxyPattern,
             remark: this.remark,
             resourceGroupId: this.resourceGroupId,
             tags: this.tags,
-            zoneTag: this.zoneTag,
-            zoneType: this.zoneType,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

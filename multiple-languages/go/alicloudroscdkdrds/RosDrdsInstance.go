@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::DRDS::DrdsInstance`, which is used to create a Distributed Relational Database Service (DRDS) instance of specific specifications.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::DRDS::DrdsInstance`, which is used to create a PolarDB-X 1.0 instance of specified instance specifications.
 type RosDrdsInstance interface {
 	alicloudroscdkcore.RosResource
 	AttrDrdsInstanceId() alicloudroscdkcore.IResolvable

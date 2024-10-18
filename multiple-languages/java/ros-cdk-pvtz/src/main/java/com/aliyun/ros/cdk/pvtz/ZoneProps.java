@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.pvtz;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zone
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:41.574Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:32.480Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.ZoneProps")
 @software.amazon.jsii.Jsii.Proxy(ZoneProps.Jsii$Proxy.class)
 public interface ZoneProps extends software.amazon.jsii.JsiiSerializable {
@@ -14,6 +14,20 @@ public interface ZoneProps extends software.amazon.jsii.JsiiSerializable {
      * Property zoneName: Zone name.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getZoneName();
+
+    /**
+     * Property dnsGroup: Built-in authority location area.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>NORMAL_ZONE: Default. normal zone (The parsing response result will be cached, and only back to the built-in authority normal zone if the cache is missed, the effect of parsing changes is affected by TTL time; Cannot use custom line analysis, weight analysis function.</li>
+     * <li>FAST_ZONE: Fast zone (Recommended: directly reply to the parsing request, the parsing delay is the lowest, and the record changes take effect in real time; Support custom line analysis, weight analysis.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDnsGroup() {
+        return null;
+    }
 
     /**
      * Property ignoredStackTagKeys: Stack tag keys to ignore.
@@ -58,24 +72,6 @@ public interface ZoneProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property zoneTag: Zone label.
-     * <p>
-     * It will be ignored when ZoneType is AUTH_ZONE.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getZoneTag() {
-        return null;
-    }
-
-    /**
-     * Property zoneType: Zone type.
-     * <p>
-     * For instance: AUTH_ZONE, CLOUD_PRODUCT_ZONE.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getZoneType() {
-        return null;
-    }
-
-    /**
      * @return a {@link Builder} of {@link ZoneProps}
      */
     static Builder builder() {
@@ -86,13 +82,12 @@ public interface ZoneProps extends software.amazon.jsii.JsiiSerializable {
      */
     public static final class Builder implements software.amazon.jsii.Builder<ZoneProps> {
         java.lang.Object zoneName;
+        java.lang.Object dnsGroup;
         java.lang.Object ignoredStackTagKeys;
         java.lang.Object proxyPattern;
         java.lang.Object remark;
         java.lang.Object resourceGroupId;
         java.util.List<com.aliyun.ros.cdk.pvtz.RosZone.TagsProperty> tags;
-        java.lang.Object zoneTag;
-        java.lang.Object zoneType;
 
         /**
          * Sets the value of {@link ZoneProps#getZoneName}
@@ -111,6 +106,38 @@ public interface ZoneProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder zoneName(com.aliyun.ros.cdk.core.IResolvable zoneName) {
             this.zoneName = zoneName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ZoneProps#getDnsGroup}
+         * @param dnsGroup Property dnsGroup: Built-in authority location area.
+         *                 Valid values:
+         *                 <p>
+         *                 <ul>
+         *                 <li>NORMAL_ZONE: Default. normal zone (The parsing response result will be cached, and only back to the built-in authority normal zone if the cache is missed, the effect of parsing changes is affected by TTL time; Cannot use custom line analysis, weight analysis function.</li>
+         *                 <li>FAST_ZONE: Fast zone (Recommended: directly reply to the parsing request, the parsing delay is the lowest, and the record changes take effect in real time; Support custom line analysis, weight analysis.</li>
+         *                 </ul>
+         * @return {@code this}
+         */
+        public Builder dnsGroup(java.lang.String dnsGroup) {
+            this.dnsGroup = dnsGroup;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ZoneProps#getDnsGroup}
+         * @param dnsGroup Property dnsGroup: Built-in authority location area.
+         *                 Valid values:
+         *                 <p>
+         *                 <ul>
+         *                 <li>NORMAL_ZONE: Default. normal zone (The parsing response result will be cached, and only back to the built-in authority normal zone if the cache is missed, the effect of parsing changes is affected by TTL time; Cannot use custom line analysis, weight analysis function.</li>
+         *                 <li>FAST_ZONE: Fast zone (Recommended: directly reply to the parsing request, the parsing delay is the lowest, and the record changes take effect in real time; Support custom line analysis, weight analysis.</li>
+         *                 </ul>
+         * @return {@code this}
+         */
+        public Builder dnsGroup(com.aliyun.ros.cdk.core.IResolvable dnsGroup) {
+            this.dnsGroup = dnsGroup;
             return this;
         }
 
@@ -213,50 +240,6 @@ public interface ZoneProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
-         * Sets the value of {@link ZoneProps#getZoneTag}
-         * @param zoneTag Property zoneTag: Zone label.
-         *                It will be ignored when ZoneType is AUTH_ZONE.
-         * @return {@code this}
-         */
-        public Builder zoneTag(java.lang.String zoneTag) {
-            this.zoneTag = zoneTag;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ZoneProps#getZoneTag}
-         * @param zoneTag Property zoneTag: Zone label.
-         *                It will be ignored when ZoneType is AUTH_ZONE.
-         * @return {@code this}
-         */
-        public Builder zoneTag(com.aliyun.ros.cdk.core.IResolvable zoneTag) {
-            this.zoneTag = zoneTag;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ZoneProps#getZoneType}
-         * @param zoneType Property zoneType: Zone type.
-         *                 For instance: AUTH_ZONE, CLOUD_PRODUCT_ZONE.
-         * @return {@code this}
-         */
-        public Builder zoneType(java.lang.String zoneType) {
-            this.zoneType = zoneType;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ZoneProps#getZoneType}
-         * @param zoneType Property zoneType: Zone type.
-         *                 For instance: AUTH_ZONE, CLOUD_PRODUCT_ZONE.
-         * @return {@code this}
-         */
-        public Builder zoneType(com.aliyun.ros.cdk.core.IResolvable zoneType) {
-            this.zoneType = zoneType;
-            return this;
-        }
-
-        /**
          * Builds the configured instance.
          * @return a new instance of {@link ZoneProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -273,13 +256,12 @@ public interface ZoneProps extends software.amazon.jsii.JsiiSerializable {
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ZoneProps {
         private final java.lang.Object zoneName;
+        private final java.lang.Object dnsGroup;
         private final java.lang.Object ignoredStackTagKeys;
         private final java.lang.Object proxyPattern;
         private final java.lang.Object remark;
         private final java.lang.Object resourceGroupId;
         private final java.util.List<com.aliyun.ros.cdk.pvtz.RosZone.TagsProperty> tags;
-        private final java.lang.Object zoneTag;
-        private final java.lang.Object zoneType;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -288,13 +270,12 @@ public interface ZoneProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.zoneName = software.amazon.jsii.Kernel.get(this, "zoneName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dnsGroup = software.amazon.jsii.Kernel.get(this, "dnsGroup", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ignoredStackTagKeys = software.amazon.jsii.Kernel.get(this, "ignoredStackTagKeys", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.proxyPattern = software.amazon.jsii.Kernel.get(this, "proxyPattern", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.remark = software.amazon.jsii.Kernel.get(this, "remark", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.pvtz.RosZone.TagsProperty.class)));
-            this.zoneTag = software.amazon.jsii.Kernel.get(this, "zoneTag", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.zoneType = software.amazon.jsii.Kernel.get(this, "zoneType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -304,18 +285,22 @@ public interface ZoneProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.zoneName = java.util.Objects.requireNonNull(builder.zoneName, "zoneName is required");
+            this.dnsGroup = builder.dnsGroup;
             this.ignoredStackTagKeys = builder.ignoredStackTagKeys;
             this.proxyPattern = builder.proxyPattern;
             this.remark = builder.remark;
             this.resourceGroupId = builder.resourceGroupId;
             this.tags = (java.util.List<com.aliyun.ros.cdk.pvtz.RosZone.TagsProperty>)builder.tags;
-            this.zoneTag = builder.zoneTag;
-            this.zoneType = builder.zoneType;
         }
 
         @Override
         public final java.lang.Object getZoneName() {
             return this.zoneName;
+        }
+
+        @Override
+        public final java.lang.Object getDnsGroup() {
+            return this.dnsGroup;
         }
 
         @Override
@@ -344,22 +329,15 @@ public interface ZoneProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Object getZoneTag() {
-            return this.zoneTag;
-        }
-
-        @Override
-        public final java.lang.Object getZoneType() {
-            return this.zoneType;
-        }
-
-        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("zoneName", om.valueToTree(this.getZoneName()));
+            if (this.getDnsGroup() != null) {
+                data.set("dnsGroup", om.valueToTree(this.getDnsGroup()));
+            }
             if (this.getIgnoredStackTagKeys() != null) {
                 data.set("ignoredStackTagKeys", om.valueToTree(this.getIgnoredStackTagKeys()));
             }
@@ -374,12 +352,6 @@ public interface ZoneProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
-            }
-            if (this.getZoneTag() != null) {
-                data.set("zoneTag", om.valueToTree(this.getZoneTag()));
-            }
-            if (this.getZoneType() != null) {
-                data.set("zoneType", om.valueToTree(this.getZoneType()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -400,25 +372,23 @@ public interface ZoneProps extends software.amazon.jsii.JsiiSerializable {
             ZoneProps.Jsii$Proxy that = (ZoneProps.Jsii$Proxy) o;
 
             if (!zoneName.equals(that.zoneName)) return false;
+            if (this.dnsGroup != null ? !this.dnsGroup.equals(that.dnsGroup) : that.dnsGroup != null) return false;
             if (this.ignoredStackTagKeys != null ? !this.ignoredStackTagKeys.equals(that.ignoredStackTagKeys) : that.ignoredStackTagKeys != null) return false;
             if (this.proxyPattern != null ? !this.proxyPattern.equals(that.proxyPattern) : that.proxyPattern != null) return false;
             if (this.remark != null ? !this.remark.equals(that.remark) : that.remark != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
-            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
-            if (this.zoneTag != null ? !this.zoneTag.equals(that.zoneTag) : that.zoneTag != null) return false;
-            return this.zoneType != null ? this.zoneType.equals(that.zoneType) : that.zoneType == null;
+            return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.zoneName.hashCode();
+            result = 31 * result + (this.dnsGroup != null ? this.dnsGroup.hashCode() : 0);
             result = 31 * result + (this.ignoredStackTagKeys != null ? this.ignoredStackTagKeys.hashCode() : 0);
             result = 31 * result + (this.proxyPattern != null ? this.proxyPattern.hashCode() : 0);
             result = 31 * result + (this.remark != null ? this.remark.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
-            result = 31 * result + (this.zoneTag != null ? this.zoneTag.hashCode() : 0);
-            result = 31 * result + (this.zoneType != null ? this.zoneType.hashCode() : 0);
             return result;
         }
     }

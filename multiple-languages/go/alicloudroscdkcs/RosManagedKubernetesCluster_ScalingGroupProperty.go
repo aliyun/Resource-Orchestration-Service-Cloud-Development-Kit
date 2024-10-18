@@ -6,6 +6,7 @@ type RosManagedKubernetesCluster_ScalingGroupProperty struct {
 	SystemDiskSize interface{} `field:"required" json:"systemDiskSize" yaml:"systemDiskSize"`
 	VSwitchIds interface{} `field:"required" json:"vSwitchIds" yaml:"vSwitchIds"`
 	DataDisks interface{} `field:"optional" json:"dataDisks" yaml:"dataDisks"`
+	DesiredSize interface{} `field:"optional" json:"desiredSize" yaml:"desiredSize"`
 	ImageId interface{} `field:"optional" json:"imageId" yaml:"imageId"`
 	InstanceChargeType interface{} `field:"optional" json:"instanceChargeType" yaml:"instanceChargeType"`
 	InternetChargeType interface{} `field:"optional" json:"internetChargeType" yaml:"internetChargeType"`
@@ -15,7 +16,6 @@ type RosManagedKubernetesCluster_ScalingGroupProperty struct {
 	LoginPassword interface{} `field:"optional" json:"loginPassword" yaml:"loginPassword"`
 	Period interface{} `field:"optional" json:"period" yaml:"period"`
 	PeriodUnit interface{} `field:"optional" json:"periodUnit" yaml:"periodUnit"`
-	Platform interface{} `field:"optional" json:"platform" yaml:"platform"`
 	RdsInstances interface{} `field:"optional" json:"rdsInstances" yaml:"rdsInstances"`
 	SystemDiskCategory interface{} `field:"optional" json:"systemDiskCategory" yaml:"systemDiskCategory"`
 	SystemDiskPerformanceLevel interface{} `field:"optional" json:"systemDiskPerformanceLevel" yaml:"systemDiskPerformanceLevel"`

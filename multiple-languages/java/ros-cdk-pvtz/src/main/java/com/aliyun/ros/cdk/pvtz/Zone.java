@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pvtz;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::PVTZ::Zone</code>, which is used to create a private zone.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:41.573Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:32.479Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.Zone")
 public class Zone extends com.aliyun.ros.cdk.core.Resource {
 
@@ -156,6 +156,41 @@ public class Zone extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property dnsGroup: Built-in authority location area.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>NORMAL_ZONE: Default. normal zone (The parsing response result will be cached, and only back to the built-in authority normal zone if the cache is missed, the effect of parsing changes is affected by TTL time; Cannot use custom line analysis, weight analysis function.</li>
+         * <li>FAST_ZONE: Fast zone (Recommended: directly reply to the parsing request, the parsing delay is the lowest, and the record changes take effect in real time; Support custom line analysis, weight analysis.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param dnsGroup Property dnsGroup: Built-in authority location area. This parameter is required.
+         */
+        public Builder dnsGroup(final java.lang.String dnsGroup) {
+            this.props.dnsGroup(dnsGroup);
+            return this;
+        }
+        /**
+         * Property dnsGroup: Built-in authority location area.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>NORMAL_ZONE: Default. normal zone (The parsing response result will be cached, and only back to the built-in authority normal zone if the cache is missed, the effect of parsing changes is affected by TTL time; Cannot use custom line analysis, weight analysis function.</li>
+         * <li>FAST_ZONE: Fast zone (Recommended: directly reply to the parsing request, the parsing delay is the lowest, and the record changes take effect in real time; Support custom line analysis, weight analysis.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param dnsGroup Property dnsGroup: Built-in authority location area. This parameter is required.
+         */
+        public Builder dnsGroup(final com.aliyun.ros.cdk.core.IResolvable dnsGroup) {
+            this.props.dnsGroup(dnsGroup);
+            return this;
+        }
+
+        /**
          * Property ignoredStackTagKeys: Stack tag keys to ignore.
          * <p>
          * @return {@code this}
@@ -259,56 +294,6 @@ public class Zone extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.pvtz.RosZone.TagsProperty> tags) {
             this.props.tags(tags);
-            return this;
-        }
-
-        /**
-         * Property zoneTag: Zone label.
-         * <p>
-         * It will be ignored when ZoneType is AUTH_ZONE.
-         * <p>
-         * @return {@code this}
-         * @param zoneTag Property zoneTag: Zone label. This parameter is required.
-         */
-        public Builder zoneTag(final java.lang.String zoneTag) {
-            this.props.zoneTag(zoneTag);
-            return this;
-        }
-        /**
-         * Property zoneTag: Zone label.
-         * <p>
-         * It will be ignored when ZoneType is AUTH_ZONE.
-         * <p>
-         * @return {@code this}
-         * @param zoneTag Property zoneTag: Zone label. This parameter is required.
-         */
-        public Builder zoneTag(final com.aliyun.ros.cdk.core.IResolvable zoneTag) {
-            this.props.zoneTag(zoneTag);
-            return this;
-        }
-
-        /**
-         * Property zoneType: Zone type.
-         * <p>
-         * For instance: AUTH_ZONE, CLOUD_PRODUCT_ZONE.
-         * <p>
-         * @return {@code this}
-         * @param zoneType Property zoneType: Zone type. This parameter is required.
-         */
-        public Builder zoneType(final java.lang.String zoneType) {
-            this.props.zoneType(zoneType);
-            return this;
-        }
-        /**
-         * Property zoneType: Zone type.
-         * <p>
-         * For instance: AUTH_ZONE, CLOUD_PRODUCT_ZONE.
-         * <p>
-         * @return {@code this}
-         * @param zoneType Property zoneType: Zone type. This parameter is required.
-         */
-        public Builder zoneType(final com.aliyun.ros.cdk.core.IResolvable zoneType) {
-            this.props.zoneType(zoneType);
             return this;
         }
 

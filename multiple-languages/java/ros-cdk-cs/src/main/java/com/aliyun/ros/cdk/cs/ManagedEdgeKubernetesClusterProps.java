@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managededgekubernetescluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:37.383Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:28.009Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedEdgeKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ManagedEdgeKubernetesClusterProps.Jsii$Proxy.class)
 public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,13 +16,6 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
      * The cluster name can use uppercase and lowercase letters, Chinese characters, numbers, and dashes.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getName();
-
-    /**
-     * Property numOfNodes: Number of worker nodes.
-     * <p>
-     * The range is [0,300]
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getNumOfNodes();
 
     /**
      * Property addons: The add-ons to be installed for the cluster.
@@ -37,14 +30,15 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
      * It takes effect when the value of ChargeType is PrePaid. The optional values are:
      * true: automatic renewal
      * false: do not renew automatically
-     * Default to true.
+     * Default to true.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenew() {
         return null;
     }
 
     /**
-     * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.
+     * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.  For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenewPeriod() {
         return null;
@@ -57,6 +51,8 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
      * PrePaid: prepaid
      * PostPaid: Pay as you go
      * Default to PostPaid.
+     * Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getChargeType() {
         return null;
@@ -99,15 +95,6 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
      * Default value: false.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionProtection() {
-        return null;
-    }
-
-    /**
-     * Property disableRollback: Whether the failure was rolled back: true: indicates that it fails to roll back false: rollback failed The default is true.
-     * <p>
-     * If rollback fails, resources produced during the creation process will be released. False is not recommended.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getDisableRollback() {
         return null;
     }
 
@@ -168,7 +155,8 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
      * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
      * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
      * When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
-     * Default to 1.
+     * Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
@@ -181,7 +169,8 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
      * Week: Time is measured in weeks
      * Month: time in months
      * Year: time in years
-     * Default to Month
+     * Default to MonthStarting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriodUnit() {
         return null;
@@ -261,75 +250,6 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
     }
 
     /**
-     * Property vSwitchIds: The virtual switch ID of the worker node.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchIds() {
-        return null;
-    }
-
-    /**
-     * Property workerDataDisk: Whether to mount the data disk.
-     * <p>
-     * The options are as follows:
-     * true: indicates that the worker node mounts data disks.
-     * false: indicates that the worker node does not mount data disks.
-     * Default to false.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerDataDisk() {
-        return null;
-    }
-
-    /**
-     * Property workerDataDiskCategory: Data disk type.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerDataDiskCategory() {
-        return null;
-    }
-
-    /**
-     * Property workerDataDisks: A combination of configurations such as worker data disk type and size.
-     * <p>
-     * This parameter is valid only when the worker node data disk is mounted.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerDataDisks() {
-        return null;
-    }
-
-    /**
-     * Property workerDataDiskSize: Data disk size in GiB.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerDataDiskSize() {
-        return null;
-    }
-
-    /**
-     * Property workerInstanceTypes: Worker node ECS specification type code.
-     * <p>
-     * For more details, see Instance Specification Family.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerInstanceTypes() {
-        return null;
-    }
-
-    /**
-     * Property workerSystemDiskCategory: Worker node system disk type.
-     * <p>
-     * Default to cloud_efficiency.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerSystemDiskCategory() {
-        return null;
-    }
-
-    /**
-     * Property workerSystemDiskSize: Worker disk system disk size, the unit is GiB.
-     * <p>
-     * Default to 120.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerSystemDiskSize() {
-        return null;
-    }
-
-    /**
      * Property zoneIds: Zone ids of worker node virtual switches belongs to.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getZoneIds() {
@@ -347,7 +267,6 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
      */
     public static final class Builder implements software.amazon.jsii.Builder<ManagedEdgeKubernetesClusterProps> {
         java.lang.Object name;
-        java.lang.Object numOfNodes;
         java.lang.Object addons;
         java.lang.Object autoRenew;
         java.lang.Object autoRenewPeriod;
@@ -356,7 +275,6 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
         java.lang.Object clusterSpec;
         java.lang.Object containerCidr;
         java.lang.Object deletionProtection;
-        java.lang.Object disableRollback;
         java.lang.Object endpointPublicAccess;
         java.lang.Object isEnterpriseSecurityGroup;
         java.lang.Object keyPair;
@@ -372,14 +290,6 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
         java.util.List<com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.TagsProperty> tags;
         java.lang.Object timeoutMins;
         java.lang.Object vpcId;
-        java.lang.Object vSwitchIds;
-        java.lang.Object workerDataDisk;
-        java.lang.Object workerDataDiskCategory;
-        java.lang.Object workerDataDisks;
-        java.lang.Object workerDataDiskSize;
-        java.lang.Object workerInstanceTypes;
-        java.lang.Object workerSystemDiskCategory;
-        java.lang.Object workerSystemDiskSize;
         java.lang.Object zoneIds;
 
         /**
@@ -401,28 +311,6 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
          */
         public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
             this.name = name;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getNumOfNodes}
-         * @param numOfNodes Property numOfNodes: Number of worker nodes. This parameter is required.
-         *                   The range is [0,300]
-         * @return {@code this}
-         */
-        public Builder numOfNodes(java.lang.Number numOfNodes) {
-            this.numOfNodes = numOfNodes;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getNumOfNodes}
-         * @param numOfNodes Property numOfNodes: Number of worker nodes. This parameter is required.
-         *                   The range is [0,300]
-         * @return {@code this}
-         */
-        public Builder numOfNodes(com.aliyun.ros.cdk.core.IResolvable numOfNodes) {
-            this.numOfNodes = numOfNodes;
             return this;
         }
 
@@ -452,7 +340,8 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
          *                  It takes effect when the value of ChargeType is PrePaid. The optional values are:
          *                  true: automatic renewal
          *                  false: do not renew automatically
-         *                  Default to true.
+         *                  Default to true.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+         *                  For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
          * @return {@code this}
          */
         public Builder autoRenew(java.lang.Boolean autoRenew) {
@@ -466,7 +355,8 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
          *                  It takes effect when the value of ChargeType is PrePaid. The optional values are:
          *                  true: automatic renewal
          *                  false: do not renew automatically
-         *                  Default to true.
+         *                  Default to true.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+         *                  For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
          * @return {@code this}
          */
         public Builder autoRenew(com.aliyun.ros.cdk.core.IResolvable autoRenew) {
@@ -476,7 +366,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
 
         /**
          * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getAutoRenewPeriod}
-         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.
+         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.  For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
          * @return {@code this}
          */
         public Builder autoRenewPeriod(java.lang.Number autoRenewPeriod) {
@@ -486,7 +376,7 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
 
         /**
          * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getAutoRenewPeriod}
-         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.
+         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.  For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
          * @return {@code this}
          */
         public Builder autoRenewPeriod(com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
@@ -501,6 +391,8 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
          *                   PrePaid: prepaid
          *                   PostPaid: Pay as you go
          *                   Default to PostPaid.
+         *                   Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+         *                   For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
          * @return {@code this}
          */
         public Builder chargeType(java.lang.String chargeType) {
@@ -515,6 +407,8 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
          *                   PrePaid: prepaid
          *                   PostPaid: Pay as you go
          *                   Default to PostPaid.
+         *                   Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+         *                   For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
          * @return {@code this}
          */
         public Builder chargeType(com.aliyun.ros.cdk.core.IResolvable chargeType) {
@@ -617,28 +511,6 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
          */
         public Builder deletionProtection(com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
             this.deletionProtection = deletionProtection;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getDisableRollback}
-         * @param disableRollback Property disableRollback: Whether the failure was rolled back: true: indicates that it fails to roll back false: rollback failed The default is true.
-         *                        If rollback fails, resources produced during the creation process will be released. False is not recommended.
-         * @return {@code this}
-         */
-        public Builder disableRollback(java.lang.Boolean disableRollback) {
-            this.disableRollback = disableRollback;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getDisableRollback}
-         * @param disableRollback Property disableRollback: Whether the failure was rolled back: true: indicates that it fails to roll back false: rollback failed The default is true.
-         *                        If rollback fails, resources produced during the creation process will be released. False is not recommended.
-         * @return {@code this}
-         */
-        public Builder disableRollback(com.aliyun.ros.cdk.core.IResolvable disableRollback) {
-            this.disableRollback = disableRollback;
             return this;
         }
 
@@ -769,7 +641,8 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
          *               When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
          *               When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
          *               When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
-         *               Default to 1.
+         *               Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+         *               For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
          * @return {@code this}
          */
         public Builder period(java.lang.Number period) {
@@ -784,7 +657,8 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
          *               When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
          *               When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
          *               When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
-         *               Default to 1.
+         *               Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+         *               For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
          * @return {@code this}
          */
         public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
@@ -799,7 +673,8 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
          *                   Week: Time is measured in weeks
          *                   Month: time in months
          *                   Year: time in years
-         *                   Default to Month
+         *                   Default to MonthStarting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+         *                   For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
          * @return {@code this}
          */
         public Builder periodUnit(java.lang.String periodUnit) {
@@ -814,7 +689,8 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
          *                   Week: Time is measured in weeks
          *                   Month: time in months
          *                   Year: time in years
-         *                   Default to Month
+         *                   Default to MonthStarting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+         *                   For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
          * @return {@code this}
          */
         public Builder periodUnit(com.aliyun.ros.cdk.core.IResolvable periodUnit) {
@@ -996,182 +872,6 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
         }
 
         /**
-         * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getVSwitchIds}
-         * @param vSwitchIds Property vSwitchIds: The virtual switch ID of the worker node.
-         * @return {@code this}
-         */
-        public Builder vSwitchIds(java.util.List<? extends java.lang.Object> vSwitchIds) {
-            this.vSwitchIds = vSwitchIds;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getVSwitchIds}
-         * @param vSwitchIds Property vSwitchIds: The virtual switch ID of the worker node.
-         * @return {@code this}
-         */
-        public Builder vSwitchIds(com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
-            this.vSwitchIds = vSwitchIds;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getWorkerDataDisk}
-         * @param workerDataDisk Property workerDataDisk: Whether to mount the data disk.
-         *                       The options are as follows:
-         *                       true: indicates that the worker node mounts data disks.
-         *                       false: indicates that the worker node does not mount data disks.
-         *                       Default to false.
-         * @return {@code this}
-         */
-        public Builder workerDataDisk(java.lang.Boolean workerDataDisk) {
-            this.workerDataDisk = workerDataDisk;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getWorkerDataDisk}
-         * @param workerDataDisk Property workerDataDisk: Whether to mount the data disk.
-         *                       The options are as follows:
-         *                       true: indicates that the worker node mounts data disks.
-         *                       false: indicates that the worker node does not mount data disks.
-         *                       Default to false.
-         * @return {@code this}
-         */
-        public Builder workerDataDisk(com.aliyun.ros.cdk.core.IResolvable workerDataDisk) {
-            this.workerDataDisk = workerDataDisk;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getWorkerDataDiskCategory}
-         * @param workerDataDiskCategory Property workerDataDiskCategory: Data disk type.
-         * @return {@code this}
-         */
-        public Builder workerDataDiskCategory(java.lang.String workerDataDiskCategory) {
-            this.workerDataDiskCategory = workerDataDiskCategory;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getWorkerDataDiskCategory}
-         * @param workerDataDiskCategory Property workerDataDiskCategory: Data disk type.
-         * @return {@code this}
-         */
-        public Builder workerDataDiskCategory(com.aliyun.ros.cdk.core.IResolvable workerDataDiskCategory) {
-            this.workerDataDiskCategory = workerDataDiskCategory;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getWorkerDataDisks}
-         * @param workerDataDisks Property workerDataDisks: A combination of configurations such as worker data disk type and size.
-         *                        This parameter is valid only when the worker node data disk is mounted.
-         * @return {@code this}
-         */
-        public Builder workerDataDisks(com.aliyun.ros.cdk.core.IResolvable workerDataDisks) {
-            this.workerDataDisks = workerDataDisks;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getWorkerDataDisks}
-         * @param workerDataDisks Property workerDataDisks: A combination of configurations such as worker data disk type and size.
-         *                        This parameter is valid only when the worker node data disk is mounted.
-         * @return {@code this}
-         */
-        public Builder workerDataDisks(java.util.List<? extends java.lang.Object> workerDataDisks) {
-            this.workerDataDisks = workerDataDisks;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getWorkerDataDiskSize}
-         * @param workerDataDiskSize Property workerDataDiskSize: Data disk size in GiB.
-         * @return {@code this}
-         */
-        public Builder workerDataDiskSize(java.lang.Number workerDataDiskSize) {
-            this.workerDataDiskSize = workerDataDiskSize;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getWorkerDataDiskSize}
-         * @param workerDataDiskSize Property workerDataDiskSize: Data disk size in GiB.
-         * @return {@code this}
-         */
-        public Builder workerDataDiskSize(com.aliyun.ros.cdk.core.IResolvable workerDataDiskSize) {
-            this.workerDataDiskSize = workerDataDiskSize;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getWorkerInstanceTypes}
-         * @param workerInstanceTypes Property workerInstanceTypes: Worker node ECS specification type code.
-         *                            For more details, see Instance Specification Family.
-         * @return {@code this}
-         */
-        public Builder workerInstanceTypes(com.aliyun.ros.cdk.core.IResolvable workerInstanceTypes) {
-            this.workerInstanceTypes = workerInstanceTypes;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getWorkerInstanceTypes}
-         * @param workerInstanceTypes Property workerInstanceTypes: Worker node ECS specification type code.
-         *                            For more details, see Instance Specification Family.
-         * @return {@code this}
-         */
-        public Builder workerInstanceTypes(java.util.List<? extends java.lang.Object> workerInstanceTypes) {
-            this.workerInstanceTypes = workerInstanceTypes;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getWorkerSystemDiskCategory}
-         * @param workerSystemDiskCategory Property workerSystemDiskCategory: Worker node system disk type.
-         *                                 Default to cloud_efficiency.
-         * @return {@code this}
-         */
-        public Builder workerSystemDiskCategory(java.lang.String workerSystemDiskCategory) {
-            this.workerSystemDiskCategory = workerSystemDiskCategory;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getWorkerSystemDiskCategory}
-         * @param workerSystemDiskCategory Property workerSystemDiskCategory: Worker node system disk type.
-         *                                 Default to cloud_efficiency.
-         * @return {@code this}
-         */
-        public Builder workerSystemDiskCategory(com.aliyun.ros.cdk.core.IResolvable workerSystemDiskCategory) {
-            this.workerSystemDiskCategory = workerSystemDiskCategory;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getWorkerSystemDiskSize}
-         * @param workerSystemDiskSize Property workerSystemDiskSize: Worker disk system disk size, the unit is GiB.
-         *                             Default to 120.
-         * @return {@code this}
-         */
-        public Builder workerSystemDiskSize(java.lang.Number workerSystemDiskSize) {
-            this.workerSystemDiskSize = workerSystemDiskSize;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getWorkerSystemDiskSize}
-         * @param workerSystemDiskSize Property workerSystemDiskSize: Worker disk system disk size, the unit is GiB.
-         *                             Default to 120.
-         * @return {@code this}
-         */
-        public Builder workerSystemDiskSize(com.aliyun.ros.cdk.core.IResolvable workerSystemDiskSize) {
-            this.workerSystemDiskSize = workerSystemDiskSize;
-            return this;
-        }
-
-        /**
          * Sets the value of {@link ManagedEdgeKubernetesClusterProps#getZoneIds}
          * @param zoneIds Property zoneIds: Zone ids of worker node virtual switches belongs to.
          * @return {@code this}
@@ -1208,7 +908,6 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ManagedEdgeKubernetesClusterProps {
         private final java.lang.Object name;
-        private final java.lang.Object numOfNodes;
         private final java.lang.Object addons;
         private final java.lang.Object autoRenew;
         private final java.lang.Object autoRenewPeriod;
@@ -1217,7 +916,6 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
         private final java.lang.Object clusterSpec;
         private final java.lang.Object containerCidr;
         private final java.lang.Object deletionProtection;
-        private final java.lang.Object disableRollback;
         private final java.lang.Object endpointPublicAccess;
         private final java.lang.Object isEnterpriseSecurityGroup;
         private final java.lang.Object keyPair;
@@ -1233,14 +931,6 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
         private final java.util.List<com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.TagsProperty> tags;
         private final java.lang.Object timeoutMins;
         private final java.lang.Object vpcId;
-        private final java.lang.Object vSwitchIds;
-        private final java.lang.Object workerDataDisk;
-        private final java.lang.Object workerDataDiskCategory;
-        private final java.lang.Object workerDataDisks;
-        private final java.lang.Object workerDataDiskSize;
-        private final java.lang.Object workerInstanceTypes;
-        private final java.lang.Object workerSystemDiskCategory;
-        private final java.lang.Object workerSystemDiskSize;
         private final java.lang.Object zoneIds;
 
         /**
@@ -1250,7 +940,6 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.numOfNodes = software.amazon.jsii.Kernel.get(this, "numOfNodes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.addons = software.amazon.jsii.Kernel.get(this, "addons", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoRenewPeriod = software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1259,7 +948,6 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             this.clusterSpec = software.amazon.jsii.Kernel.get(this, "clusterSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.containerCidr = software.amazon.jsii.Kernel.get(this, "containerCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.disableRollback = software.amazon.jsii.Kernel.get(this, "disableRollback", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.endpointPublicAccess = software.amazon.jsii.Kernel.get(this, "endpointPublicAccess", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.isEnterpriseSecurityGroup = software.amazon.jsii.Kernel.get(this, "isEnterpriseSecurityGroup", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.keyPair = software.amazon.jsii.Kernel.get(this, "keyPair", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1275,14 +963,6 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.TagsProperty.class)));
             this.timeoutMins = software.amazon.jsii.Kernel.get(this, "timeoutMins", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.vSwitchIds = software.amazon.jsii.Kernel.get(this, "vSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.workerDataDisk = software.amazon.jsii.Kernel.get(this, "workerDataDisk", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.workerDataDiskCategory = software.amazon.jsii.Kernel.get(this, "workerDataDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.workerDataDisks = software.amazon.jsii.Kernel.get(this, "workerDataDisks", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.workerDataDiskSize = software.amazon.jsii.Kernel.get(this, "workerDataDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.workerInstanceTypes = software.amazon.jsii.Kernel.get(this, "workerInstanceTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.workerSystemDiskCategory = software.amazon.jsii.Kernel.get(this, "workerSystemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.workerSystemDiskSize = software.amazon.jsii.Kernel.get(this, "workerSystemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneIds = software.amazon.jsii.Kernel.get(this, "zoneIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -1293,7 +973,6 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
-            this.numOfNodes = java.util.Objects.requireNonNull(builder.numOfNodes, "numOfNodes is required");
             this.addons = builder.addons;
             this.autoRenew = builder.autoRenew;
             this.autoRenewPeriod = builder.autoRenewPeriod;
@@ -1302,7 +981,6 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             this.clusterSpec = builder.clusterSpec;
             this.containerCidr = builder.containerCidr;
             this.deletionProtection = builder.deletionProtection;
-            this.disableRollback = builder.disableRollback;
             this.endpointPublicAccess = builder.endpointPublicAccess;
             this.isEnterpriseSecurityGroup = builder.isEnterpriseSecurityGroup;
             this.keyPair = builder.keyPair;
@@ -1318,25 +996,12 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             this.tags = (java.util.List<com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.TagsProperty>)builder.tags;
             this.timeoutMins = builder.timeoutMins;
             this.vpcId = builder.vpcId;
-            this.vSwitchIds = builder.vSwitchIds;
-            this.workerDataDisk = builder.workerDataDisk;
-            this.workerDataDiskCategory = builder.workerDataDiskCategory;
-            this.workerDataDisks = builder.workerDataDisks;
-            this.workerDataDiskSize = builder.workerDataDiskSize;
-            this.workerInstanceTypes = builder.workerInstanceTypes;
-            this.workerSystemDiskCategory = builder.workerSystemDiskCategory;
-            this.workerSystemDiskSize = builder.workerSystemDiskSize;
             this.zoneIds = builder.zoneIds;
         }
 
         @Override
         public final java.lang.Object getName() {
             return this.name;
-        }
-
-        @Override
-        public final java.lang.Object getNumOfNodes() {
-            return this.numOfNodes;
         }
 
         @Override
@@ -1377,11 +1042,6 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
         @Override
         public final java.lang.Object getDeletionProtection() {
             return this.deletionProtection;
-        }
-
-        @Override
-        public final java.lang.Object getDisableRollback() {
-            return this.disableRollback;
         }
 
         @Override
@@ -1460,46 +1120,6 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
         }
 
         @Override
-        public final java.lang.Object getVSwitchIds() {
-            return this.vSwitchIds;
-        }
-
-        @Override
-        public final java.lang.Object getWorkerDataDisk() {
-            return this.workerDataDisk;
-        }
-
-        @Override
-        public final java.lang.Object getWorkerDataDiskCategory() {
-            return this.workerDataDiskCategory;
-        }
-
-        @Override
-        public final java.lang.Object getWorkerDataDisks() {
-            return this.workerDataDisks;
-        }
-
-        @Override
-        public final java.lang.Object getWorkerDataDiskSize() {
-            return this.workerDataDiskSize;
-        }
-
-        @Override
-        public final java.lang.Object getWorkerInstanceTypes() {
-            return this.workerInstanceTypes;
-        }
-
-        @Override
-        public final java.lang.Object getWorkerSystemDiskCategory() {
-            return this.workerSystemDiskCategory;
-        }
-
-        @Override
-        public final java.lang.Object getWorkerSystemDiskSize() {
-            return this.workerSystemDiskSize;
-        }
-
-        @Override
         public final java.lang.Object getZoneIds() {
             return this.zoneIds;
         }
@@ -1511,7 +1131,6 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("name", om.valueToTree(this.getName()));
-            data.set("numOfNodes", om.valueToTree(this.getNumOfNodes()));
             if (this.getAddons() != null) {
                 data.set("addons", om.valueToTree(this.getAddons()));
             }
@@ -1535,9 +1154,6 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             }
             if (this.getDeletionProtection() != null) {
                 data.set("deletionProtection", om.valueToTree(this.getDeletionProtection()));
-            }
-            if (this.getDisableRollback() != null) {
-                data.set("disableRollback", om.valueToTree(this.getDisableRollback()));
             }
             if (this.getEndpointPublicAccess() != null) {
                 data.set("endpointPublicAccess", om.valueToTree(this.getEndpointPublicAccess()));
@@ -1584,30 +1200,6 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             if (this.getVpcId() != null) {
                 data.set("vpcId", om.valueToTree(this.getVpcId()));
             }
-            if (this.getVSwitchIds() != null) {
-                data.set("vSwitchIds", om.valueToTree(this.getVSwitchIds()));
-            }
-            if (this.getWorkerDataDisk() != null) {
-                data.set("workerDataDisk", om.valueToTree(this.getWorkerDataDisk()));
-            }
-            if (this.getWorkerDataDiskCategory() != null) {
-                data.set("workerDataDiskCategory", om.valueToTree(this.getWorkerDataDiskCategory()));
-            }
-            if (this.getWorkerDataDisks() != null) {
-                data.set("workerDataDisks", om.valueToTree(this.getWorkerDataDisks()));
-            }
-            if (this.getWorkerDataDiskSize() != null) {
-                data.set("workerDataDiskSize", om.valueToTree(this.getWorkerDataDiskSize()));
-            }
-            if (this.getWorkerInstanceTypes() != null) {
-                data.set("workerInstanceTypes", om.valueToTree(this.getWorkerInstanceTypes()));
-            }
-            if (this.getWorkerSystemDiskCategory() != null) {
-                data.set("workerSystemDiskCategory", om.valueToTree(this.getWorkerSystemDiskCategory()));
-            }
-            if (this.getWorkerSystemDiskSize() != null) {
-                data.set("workerSystemDiskSize", om.valueToTree(this.getWorkerSystemDiskSize()));
-            }
             if (this.getZoneIds() != null) {
                 data.set("zoneIds", om.valueToTree(this.getZoneIds()));
             }
@@ -1630,7 +1222,6 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             ManagedEdgeKubernetesClusterProps.Jsii$Proxy that = (ManagedEdgeKubernetesClusterProps.Jsii$Proxy) o;
 
             if (!name.equals(that.name)) return false;
-            if (!numOfNodes.equals(that.numOfNodes)) return false;
             if (this.addons != null ? !this.addons.equals(that.addons) : that.addons != null) return false;
             if (this.autoRenew != null ? !this.autoRenew.equals(that.autoRenew) : that.autoRenew != null) return false;
             if (this.autoRenewPeriod != null ? !this.autoRenewPeriod.equals(that.autoRenewPeriod) : that.autoRenewPeriod != null) return false;
@@ -1639,7 +1230,6 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             if (this.clusterSpec != null ? !this.clusterSpec.equals(that.clusterSpec) : that.clusterSpec != null) return false;
             if (this.containerCidr != null ? !this.containerCidr.equals(that.containerCidr) : that.containerCidr != null) return false;
             if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
-            if (this.disableRollback != null ? !this.disableRollback.equals(that.disableRollback) : that.disableRollback != null) return false;
             if (this.endpointPublicAccess != null ? !this.endpointPublicAccess.equals(that.endpointPublicAccess) : that.endpointPublicAccess != null) return false;
             if (this.isEnterpriseSecurityGroup != null ? !this.isEnterpriseSecurityGroup.equals(that.isEnterpriseSecurityGroup) : that.isEnterpriseSecurityGroup != null) return false;
             if (this.keyPair != null ? !this.keyPair.equals(that.keyPair) : that.keyPair != null) return false;
@@ -1655,21 +1245,12 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.timeoutMins != null ? !this.timeoutMins.equals(that.timeoutMins) : that.timeoutMins != null) return false;
             if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
-            if (this.vSwitchIds != null ? !this.vSwitchIds.equals(that.vSwitchIds) : that.vSwitchIds != null) return false;
-            if (this.workerDataDisk != null ? !this.workerDataDisk.equals(that.workerDataDisk) : that.workerDataDisk != null) return false;
-            if (this.workerDataDiskCategory != null ? !this.workerDataDiskCategory.equals(that.workerDataDiskCategory) : that.workerDataDiskCategory != null) return false;
-            if (this.workerDataDisks != null ? !this.workerDataDisks.equals(that.workerDataDisks) : that.workerDataDisks != null) return false;
-            if (this.workerDataDiskSize != null ? !this.workerDataDiskSize.equals(that.workerDataDiskSize) : that.workerDataDiskSize != null) return false;
-            if (this.workerInstanceTypes != null ? !this.workerInstanceTypes.equals(that.workerInstanceTypes) : that.workerInstanceTypes != null) return false;
-            if (this.workerSystemDiskCategory != null ? !this.workerSystemDiskCategory.equals(that.workerSystemDiskCategory) : that.workerSystemDiskCategory != null) return false;
-            if (this.workerSystemDiskSize != null ? !this.workerSystemDiskSize.equals(that.workerSystemDiskSize) : that.workerSystemDiskSize != null) return false;
             return this.zoneIds != null ? this.zoneIds.equals(that.zoneIds) : that.zoneIds == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.name.hashCode();
-            result = 31 * result + (this.numOfNodes.hashCode());
             result = 31 * result + (this.addons != null ? this.addons.hashCode() : 0);
             result = 31 * result + (this.autoRenew != null ? this.autoRenew.hashCode() : 0);
             result = 31 * result + (this.autoRenewPeriod != null ? this.autoRenewPeriod.hashCode() : 0);
@@ -1678,7 +1259,6 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             result = 31 * result + (this.clusterSpec != null ? this.clusterSpec.hashCode() : 0);
             result = 31 * result + (this.containerCidr != null ? this.containerCidr.hashCode() : 0);
             result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
-            result = 31 * result + (this.disableRollback != null ? this.disableRollback.hashCode() : 0);
             result = 31 * result + (this.endpointPublicAccess != null ? this.endpointPublicAccess.hashCode() : 0);
             result = 31 * result + (this.isEnterpriseSecurityGroup != null ? this.isEnterpriseSecurityGroup.hashCode() : 0);
             result = 31 * result + (this.keyPair != null ? this.keyPair.hashCode() : 0);
@@ -1694,14 +1274,6 @@ public interface ManagedEdgeKubernetesClusterProps extends software.amazon.jsii.
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.timeoutMins != null ? this.timeoutMins.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
-            result = 31 * result + (this.vSwitchIds != null ? this.vSwitchIds.hashCode() : 0);
-            result = 31 * result + (this.workerDataDisk != null ? this.workerDataDisk.hashCode() : 0);
-            result = 31 * result + (this.workerDataDiskCategory != null ? this.workerDataDiskCategory.hashCode() : 0);
-            result = 31 * result + (this.workerDataDisks != null ? this.workerDataDisks.hashCode() : 0);
-            result = 31 * result + (this.workerDataDiskSize != null ? this.workerDataDiskSize.hashCode() : 0);
-            result = 31 * result + (this.workerInstanceTypes != null ? this.workerInstanceTypes.hashCode() : 0);
-            result = 31 * result + (this.workerSystemDiskCategory != null ? this.workerSystemDiskCategory.hashCode() : 0);
-            result = 31 * result + (this.workerSystemDiskSize != null ? this.workerSystemDiskSize.hashCode() : 0);
             result = 31 * result + (this.zoneIds != null ? this.zoneIds.hashCode() : 0);
             return result;
         }

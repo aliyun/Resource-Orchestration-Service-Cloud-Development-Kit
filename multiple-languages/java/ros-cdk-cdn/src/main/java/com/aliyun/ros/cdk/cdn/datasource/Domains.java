@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cdn.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::CDN::Domains</code>, which is used to query information about Content Delivery Network (CDN) domain names.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:36.571Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:27.168Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cdn.$Module.class, fqn = "@alicloud/ros-cdk-cdn.datasource.Domains")
 public class Domains extends com.aliyun.ros.cdk.core.Resource {
 

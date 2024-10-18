@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ManagedKubernetesCluster</code>, which is used to create a Container Service for Kubernetes (ACK) managed cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:37.389Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:28.014Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedKubernetesCluster")
 public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -232,27 +232,6 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property vSwitchIds: The virtual switch ID of the worker node.
-         * <p>
-         * @return {@code this}
-         * @param vSwitchIds Property vSwitchIds: The virtual switch ID of the worker node. This parameter is required.
-         */
-        public Builder vSwitchIds(final com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
-            this.props.vSwitchIds(vSwitchIds);
-            return this;
-        }
-        /**
-         * Property vSwitchIds: The virtual switch ID of the worker node.
-         * <p>
-         * @return {@code this}
-         * @param vSwitchIds Property vSwitchIds: The virtual switch ID of the worker node. This parameter is required.
-         */
-        public Builder vSwitchIds(final java.util.List<? extends java.lang.Object> vSwitchIds) {
-            this.props.vSwitchIds(vSwitchIds);
-            return this;
-        }
-
-        /**
          * Property addons: A combination of addon plugins for Kubernetes clusters.
          * <p>
          * Network plug-in: including Flannel and Terway network plug-ins
@@ -287,7 +266,8 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          * It takes effect when the value of ChargeType is PrePaid. The optional values are:
          * true: automatic renewal
          * false: do not renew automatically
-         * Default to true.
+         * Default to true.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+         * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
          * <p>
          * @return {@code this}
          * @param autoRenew Property autoRenew: Whether the cluster automatically renews. This parameter is required.
@@ -302,7 +282,8 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          * It takes effect when the value of ChargeType is PrePaid. The optional values are:
          * true: automatic renewal
          * false: do not renew automatically
-         * Default to true.
+         * Default to true.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+         * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
          * <p>
          * @return {@code this}
          * @param autoRenew Property autoRenew: Whether the cluster automatically renews. This parameter is required.
@@ -313,20 +294,20 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.
+         * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.  For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
          * <p>
          * @return {@code this}
-         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1. This parameter is required.
+         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.  For the configuration of the working node ECS instance, please specify it in the node pool list parameters. This parameter is required.
          */
         public Builder autoRenewPeriod(final java.lang.Number autoRenewPeriod) {
             this.props.autoRenewPeriod(autoRenewPeriod);
             return this;
         }
         /**
-         * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.
+         * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.  For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
          * <p>
          * @return {@code this}
-         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1. This parameter is required.
+         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.  For the configuration of the working node ECS instance, please specify it in the node pool list parameters. This parameter is required.
          */
         public Builder autoRenewPeriod(final com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
             this.props.autoRenewPeriod(autoRenewPeriod);
@@ -340,6 +321,8 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          * PrePaid: prepaid
          * PostPaid: Pay as you go
          * Default to PostPaid.
+         * Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+         * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
          * <p>
          * @return {@code this}
          * @param chargeType Property chargeType: cluster payment type. This parameter is required.
@@ -355,6 +338,8 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          * PrePaid: prepaid
          * PostPaid: Pay as you go
          * Default to PostPaid.
+         * Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+         * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
          * <p>
          * @return {@code this}
          * @param chargeType Property chargeType: cluster payment type. This parameter is required.
@@ -490,31 +475,6 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder deletionProtection(final com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
             this.props.deletionProtection(deletionProtection);
-            return this;
-        }
-
-        /**
-         * Property disableRollback: Whether the failure was rolled back: true: indicates that it fails to roll back false: rollback failed The default is true.
-         * <p>
-         * If rollback fails, resources produced during the creation process will be released. False is not recommended.
-         * <p>
-         * @return {@code this}
-         * @param disableRollback Property disableRollback: Whether the failure was rolled back: true: indicates that it fails to roll back false: rollback failed The default is true. This parameter is required.
-         */
-        public Builder disableRollback(final java.lang.Boolean disableRollback) {
-            this.props.disableRollback(disableRollback);
-            return this;
-        }
-        /**
-         * Property disableRollback: Whether the failure was rolled back: true: indicates that it fails to roll back false: rollback failed The default is true.
-         * <p>
-         * If rollback fails, resources produced during the creation process will be released. False is not recommended.
-         * <p>
-         * @return {@code this}
-         * @param disableRollback Property disableRollback: Whether the failure was rolled back: true: indicates that it fails to roll back false: rollback failed The default is true. This parameter is required.
-         */
-        public Builder disableRollback(final com.aliyun.ros.cdk.core.IResolvable disableRollback) {
-            this.props.disableRollback(disableRollback);
             return this;
         }
 
@@ -857,33 +817,6 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property numOfNodes: Number of worker nodes.
-         * <p>
-         * The range is [0,300].
-         * Default to 3.
-         * <p>
-         * @return {@code this}
-         * @param numOfNodes Property numOfNodes: Number of worker nodes. This parameter is required.
-         */
-        public Builder numOfNodes(final java.lang.Number numOfNodes) {
-            this.props.numOfNodes(numOfNodes);
-            return this;
-        }
-        /**
-         * Property numOfNodes: Number of worker nodes.
-         * <p>
-         * The range is [0,300].
-         * Default to 3.
-         * <p>
-         * @return {@code this}
-         * @param numOfNodes Property numOfNodes: Number of worker nodes. This parameter is required.
-         */
-        public Builder numOfNodes(final com.aliyun.ros.cdk.core.IResolvable numOfNodes) {
-            this.props.numOfNodes(numOfNodes);
-            return this;
-        }
-
-        /**
          * Property osType: The type of operating system.
          * <p>
          * Valid values:
@@ -921,7 +854,8 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
          * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
          * When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
-         * Default to 1.
+         * Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+         * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
          * <p>
          * @return {@code this}
          * @param period Property period: The duration of the annual subscription and monthly subscription. This parameter is required.
@@ -937,7 +871,8 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
          * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
          * When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
-         * Default to 1.
+         * Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+         * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
          * <p>
          * @return {@code this}
          * @param period Property period: The duration of the annual subscription and monthly subscription. This parameter is required.
@@ -954,7 +889,8 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          * Week: Time is measured in weeks
          * Month: time in months
          * Year: time in years
-         * Default to Month
+         * Default to MonthStarting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+         * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
          * <p>
          * @return {@code this}
          * @param periodUnit Property periodUnit: When you specify PrePaid, you need to specify the period. This parameter is required.
@@ -970,7 +906,8 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          * Week: Time is measured in weeks
          * Month: time in months
          * Year: time in years
-         * Default to Month
+         * Default to MonthStarting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+         * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
          * <p>
          * @return {@code this}
          * @param periodUnit Property periodUnit: When you specify PrePaid, you need to specify the period. This parameter is required.
@@ -1347,172 +1284,6 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder userData(final com.aliyun.ros.cdk.core.IResolvable userData) {
             this.props.userData(userData);
-            return this;
-        }
-
-        /**
-         * Property workerDataDisk: Whether to mount the data disk.
-         * <p>
-         * The options are as follows:
-         * true: indicates that the worker node mounts data disks.
-         * false: indicates that the worker node does not mount data disks.
-         * Default to false.
-         * <p>
-         * @return {@code this}
-         * @param workerDataDisk Property workerDataDisk: Whether to mount the data disk. This parameter is required.
-         */
-        public Builder workerDataDisk(final java.lang.Boolean workerDataDisk) {
-            this.props.workerDataDisk(workerDataDisk);
-            return this;
-        }
-        /**
-         * Property workerDataDisk: Whether to mount the data disk.
-         * <p>
-         * The options are as follows:
-         * true: indicates that the worker node mounts data disks.
-         * false: indicates that the worker node does not mount data disks.
-         * Default to false.
-         * <p>
-         * @return {@code this}
-         * @param workerDataDisk Property workerDataDisk: Whether to mount the data disk. This parameter is required.
-         */
-        public Builder workerDataDisk(final com.aliyun.ros.cdk.core.IResolvable workerDataDisk) {
-            this.props.workerDataDisk(workerDataDisk);
-            return this;
-        }
-
-        /**
-         * Property workerDataDisks: A combination of configurations such as worker data disk type and size.
-         * <p>
-         * This parameter is valid only when the worker node data disk is mounted.
-         * <p>
-         * @return {@code this}
-         * @param workerDataDisks Property workerDataDisks: A combination of configurations such as worker data disk type and size. This parameter is required.
-         */
-        public Builder workerDataDisks(final com.aliyun.ros.cdk.core.IResolvable workerDataDisks) {
-            this.props.workerDataDisks(workerDataDisks);
-            return this;
-        }
-        /**
-         * Property workerDataDisks: A combination of configurations such as worker data disk type and size.
-         * <p>
-         * This parameter is valid only when the worker node data disk is mounted.
-         * <p>
-         * @return {@code this}
-         * @param workerDataDisks Property workerDataDisks: A combination of configurations such as worker data disk type and size. This parameter is required.
-         */
-        public Builder workerDataDisks(final java.util.List<? extends java.lang.Object> workerDataDisks) {
-            this.props.workerDataDisks(workerDataDisks);
-            return this;
-        }
-
-        /**
-         * Property workerInstanceTypes: Worker node ECS specification type code.
-         * <p>
-         * For more details, see Instance Specification Family.
-         * <p>
-         * @return {@code this}
-         * @param workerInstanceTypes Property workerInstanceTypes: Worker node ECS specification type code. This parameter is required.
-         */
-        public Builder workerInstanceTypes(final com.aliyun.ros.cdk.core.IResolvable workerInstanceTypes) {
-            this.props.workerInstanceTypes(workerInstanceTypes);
-            return this;
-        }
-        /**
-         * Property workerInstanceTypes: Worker node ECS specification type code.
-         * <p>
-         * For more details, see Instance Specification Family.
-         * <p>
-         * @return {@code this}
-         * @param workerInstanceTypes Property workerInstanceTypes: Worker node ECS specification type code. This parameter is required.
-         */
-        public Builder workerInstanceTypes(final java.util.List<? extends java.lang.Object> workerInstanceTypes) {
-            this.props.workerInstanceTypes(workerInstanceTypes);
-            return this;
-        }
-
-        /**
-         * Property workerSystemDiskCategory: Worker node system disk type.
-         * <p>
-         * The value includes:
-         * cloud_efficiency: efficient cloud disk
-         * cloud_ssd: SSD cloud disk
-         * Default to cloud_efficiency.
-         * <p>
-         * @return {@code this}
-         * @param workerSystemDiskCategory Property workerSystemDiskCategory: Worker node system disk type. This parameter is required.
-         */
-        public Builder workerSystemDiskCategory(final java.lang.String workerSystemDiskCategory) {
-            this.props.workerSystemDiskCategory(workerSystemDiskCategory);
-            return this;
-        }
-        /**
-         * Property workerSystemDiskCategory: Worker node system disk type.
-         * <p>
-         * The value includes:
-         * cloud_efficiency: efficient cloud disk
-         * cloud_ssd: SSD cloud disk
-         * Default to cloud_efficiency.
-         * <p>
-         * @return {@code this}
-         * @param workerSystemDiskCategory Property workerSystemDiskCategory: Worker node system disk type. This parameter is required.
-         */
-        public Builder workerSystemDiskCategory(final com.aliyun.ros.cdk.core.IResolvable workerSystemDiskCategory) {
-            this.props.workerSystemDiskCategory(workerSystemDiskCategory);
-            return this;
-        }
-
-        /**
-         * Property workerSystemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.
-         * <p>
-         * Default value: PL0. Valid values:
-         * PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
-         * PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
-         * <p>
-         * @return {@code this}
-         * @param workerSystemDiskPerformanceLevel Property workerSystemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk. This parameter is required.
-         */
-        public Builder workerSystemDiskPerformanceLevel(final java.lang.String workerSystemDiskPerformanceLevel) {
-            this.props.workerSystemDiskPerformanceLevel(workerSystemDiskPerformanceLevel);
-            return this;
-        }
-        /**
-         * Property workerSystemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.
-         * <p>
-         * Default value: PL0. Valid values:
-         * PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
-         * PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
-         * <p>
-         * @return {@code this}
-         * @param workerSystemDiskPerformanceLevel Property workerSystemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk. This parameter is required.
-         */
-        public Builder workerSystemDiskPerformanceLevel(final com.aliyun.ros.cdk.core.IResolvable workerSystemDiskPerformanceLevel) {
-            this.props.workerSystemDiskPerformanceLevel(workerSystemDiskPerformanceLevel);
-            return this;
-        }
-
-        /**
-         * Property workerSystemDiskSize: Worker disk system disk size, the unit is GiB.
-         * <p>
-         * Default to 120.
-         * <p>
-         * @return {@code this}
-         * @param workerSystemDiskSize Property workerSystemDiskSize: Worker disk system disk size, the unit is GiB. This parameter is required.
-         */
-        public Builder workerSystemDiskSize(final java.lang.Number workerSystemDiskSize) {
-            this.props.workerSystemDiskSize(workerSystemDiskSize);
-            return this;
-        }
-        /**
-         * Property workerSystemDiskSize: Worker disk system disk size, the unit is GiB.
-         * <p>
-         * Default to 120.
-         * <p>
-         * @return {@code this}
-         * @param workerSystemDiskSize Property workerSystemDiskSize: Worker disk system disk size, the unit is GiB. This parameter is required.
-         */
-        public Builder workerSystemDiskSize(final com.aliyun.ros.cdk.core.IResolvable workerSystemDiskSize) {
-            this.props.workerSystemDiskSize(workerSystemDiskSize);
             return this;
         }
 

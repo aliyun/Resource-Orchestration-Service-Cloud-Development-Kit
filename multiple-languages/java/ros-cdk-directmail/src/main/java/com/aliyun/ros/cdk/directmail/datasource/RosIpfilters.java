@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.directmail.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::DirectMail::Ipfilters</code>.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::DirectMail::Ipfilters</code>, which is used to query IP filters.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:37.916Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:28.406Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.directmail.$Module.class, fqn = "@alicloud/ros-cdk-directmail.datasource.RosIpfilters")
 public class RosIpfilters extends com.aliyun.ros.cdk.core.RosResource {
 

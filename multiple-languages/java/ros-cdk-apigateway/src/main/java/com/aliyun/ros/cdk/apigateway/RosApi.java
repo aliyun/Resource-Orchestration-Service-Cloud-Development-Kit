@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ApiGateway::Api</code>, which is used to create an API.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:36.223Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:26.777Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosApi")
 public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -111,42 +111,6 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setRequestConfig(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.apigateway.RosApi.RequestConfigProperty value) {
         software.amazon.jsii.Kernel.set(this, "requestConfig", java.util.Objects.requireNonNull(value, "requestConfig is required"));
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getResultSample() {
-        return software.amazon.jsii.Kernel.get(this, "resultSample", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setResultSample(final @org.jetbrains.annotations.NotNull java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "resultSample", java.util.Objects.requireNonNull(value, "resultSample is required"));
-    }
-
-    /**
-     */
-    public void setResultSample(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "resultSample", java.util.Objects.requireNonNull(value, "resultSample is required"));
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getResultType() {
-        return software.amazon.jsii.Kernel.get(this, "resultType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setResultType(final @org.jetbrains.annotations.NotNull java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "resultType", java.util.Objects.requireNonNull(value, "resultType is required"));
-    }
-
-    /**
-     */
-    public void setResultType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "resultType", java.util.Objects.requireNonNull(value, "resultType is required"));
     }
 
     /**
@@ -465,6 +429,42 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setResultDescriptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "resultDescriptions", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getResultSample() {
+        return software.amazon.jsii.Kernel.get(this, "resultSample", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setResultSample(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "resultSample", value);
+    }
+
+    /**
+     */
+    public void setResultSample(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "resultSample", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getResultType() {
+        return software.amazon.jsii.Kernel.get(this, "resultType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setResultType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "resultType", value);
+    }
+
+    /**
+     */
+    public void setResultType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "resultType", value);
     }
 
     /**
@@ -1096,6 +1096,13 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getFcVersion() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getFunctionName() {
             return null;
         }
@@ -1159,6 +1166,7 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object fcBaseUrl;
             java.lang.Object fcRegionId;
             java.lang.Object fcType;
+            java.lang.Object fcVersion;
             java.lang.Object functionName;
             java.lang.Object method;
             java.lang.Object onlyBusinessPath;
@@ -1274,6 +1282,28 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder fcType(com.aliyun.ros.cdk.core.IResolvable fcType) {
                 this.fcType = fcType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link FunctionComputeConfigProperty#getFcVersion}
+             * @param fcVersion the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder fcVersion(java.lang.String fcVersion) {
+                this.fcVersion = fcVersion;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link FunctionComputeConfigProperty#getFcVersion}
+             * @param fcVersion the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder fcVersion(com.aliyun.ros.cdk.core.IResolvable fcVersion) {
+                this.fcVersion = fcVersion;
                 return this;
             }
 
@@ -1454,6 +1484,7 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object fcBaseUrl;
             private final java.lang.Object fcRegionId;
             private final java.lang.Object fcType;
+            private final java.lang.Object fcVersion;
             private final java.lang.Object functionName;
             private final java.lang.Object method;
             private final java.lang.Object onlyBusinessPath;
@@ -1473,6 +1504,7 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
                 this.fcBaseUrl = software.amazon.jsii.Kernel.get(this, "fcBaseUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.fcRegionId = software.amazon.jsii.Kernel.get(this, "fcRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.fcType = software.amazon.jsii.Kernel.get(this, "fcType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.fcVersion = software.amazon.jsii.Kernel.get(this, "fcVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.functionName = software.amazon.jsii.Kernel.get(this, "functionName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.method = software.amazon.jsii.Kernel.get(this, "method", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.onlyBusinessPath = software.amazon.jsii.Kernel.get(this, "onlyBusinessPath", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1492,6 +1524,7 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
                 this.fcBaseUrl = builder.fcBaseUrl;
                 this.fcRegionId = builder.fcRegionId;
                 this.fcType = builder.fcType;
+                this.fcVersion = builder.fcVersion;
                 this.functionName = builder.functionName;
                 this.method = builder.method;
                 this.onlyBusinessPath = builder.onlyBusinessPath;
@@ -1524,6 +1557,11 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final java.lang.Object getFcType() {
                 return this.fcType;
+            }
+
+            @Override
+            public final java.lang.Object getFcVersion() {
+                return this.fcVersion;
             }
 
             @Override
@@ -1582,6 +1620,9 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getFcType() != null) {
                     data.set("fcType", om.valueToTree(this.getFcType()));
                 }
+                if (this.getFcVersion() != null) {
+                    data.set("fcVersion", om.valueToTree(this.getFcVersion()));
+                }
                 if (this.getFunctionName() != null) {
                     data.set("functionName", om.valueToTree(this.getFunctionName()));
                 }
@@ -1626,6 +1667,7 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.fcBaseUrl != null ? !this.fcBaseUrl.equals(that.fcBaseUrl) : that.fcBaseUrl != null) return false;
                 if (this.fcRegionId != null ? !this.fcRegionId.equals(that.fcRegionId) : that.fcRegionId != null) return false;
                 if (this.fcType != null ? !this.fcType.equals(that.fcType) : that.fcType != null) return false;
+                if (this.fcVersion != null ? !this.fcVersion.equals(that.fcVersion) : that.fcVersion != null) return false;
                 if (this.functionName != null ? !this.functionName.equals(that.functionName) : that.functionName != null) return false;
                 if (this.method != null ? !this.method.equals(that.method) : that.method != null) return false;
                 if (this.onlyBusinessPath != null ? !this.onlyBusinessPath.equals(that.onlyBusinessPath) : that.onlyBusinessPath != null) return false;
@@ -1642,6 +1684,7 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.fcBaseUrl != null ? this.fcBaseUrl.hashCode() : 0);
                 result = 31 * result + (this.fcRegionId != null ? this.fcRegionId.hashCode() : 0);
                 result = 31 * result + (this.fcType != null ? this.fcType.hashCode() : 0);
+                result = 31 * result + (this.fcVersion != null ? this.fcVersion.hashCode() : 0);
                 result = 31 * result + (this.functionName != null ? this.functionName.hashCode() : 0);
                 result = 31 * result + (this.method != null ? this.method.hashCode() : 0);
                 result = 31 * result + (this.onlyBusinessPath != null ? this.onlyBusinessPath.hashCode() : 0);
@@ -4952,40 +4995,6 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param resultSample This parameter is required.
-         */
-        public Builder resultSample(final java.lang.String resultSample) {
-            this.props.resultSample(resultSample);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param resultSample This parameter is required.
-         */
-        public Builder resultSample(final com.aliyun.ros.cdk.core.IResolvable resultSample) {
-            this.props.resultSample(resultSample);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param resultType This parameter is required.
-         */
-        public Builder resultType(final java.lang.String resultType) {
-            this.props.resultType(resultType);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param resultType This parameter is required.
-         */
-        public Builder resultType(final com.aliyun.ros.cdk.core.IResolvable resultType) {
-            this.props.resultType(resultType);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param serviceConfig This parameter is required.
          */
         public Builder serviceConfig(final com.aliyun.ros.cdk.core.IResolvable serviceConfig) {
@@ -5236,6 +5245,40 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder resultDescriptions(final com.aliyun.ros.cdk.core.IResolvable resultDescriptions) {
             this.props.resultDescriptions(resultDescriptions);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param resultSample This parameter is required.
+         */
+        public Builder resultSample(final java.lang.String resultSample) {
+            this.props.resultSample(resultSample);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param resultSample This parameter is required.
+         */
+        public Builder resultSample(final com.aliyun.ros.cdk.core.IResolvable resultSample) {
+            this.props.resultSample(resultSample);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param resultType This parameter is required.
+         */
+        public Builder resultType(final java.lang.String resultType) {
+            this.props.resultType(resultType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param resultType This parameter is required.
+         */
+        public Builder resultType(final com.aliyun.ros.cdk.core.IResolvable resultType) {
+            this.props.resultType(resultType);
             return this;
         }
 

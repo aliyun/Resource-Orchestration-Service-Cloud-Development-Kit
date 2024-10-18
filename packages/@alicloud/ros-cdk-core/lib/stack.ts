@@ -774,6 +774,7 @@ function mergeSection(section: string, val1: any, val2: any): any {
     case "Parameters":
     case "Outputs":
     case "Mappings":
+    case "Rules":
       return mergeObjectsWithoutDuplicates(section, val1, val2);
     case "Metadata":
       return mergeMetadataObjectsWithoutDuplicates(val1, val2);

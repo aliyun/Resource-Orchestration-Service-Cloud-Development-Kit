@@ -16,6 +16,8 @@ type RosParameterProps struct {
 	MinLength *float64 `field:"optional" json:"minLength" yaml:"minLength"`
 	MinValue *float64 `field:"optional" json:"minValue" yaml:"minValue"`
 	NoEcho *bool `field:"optional" json:"noEcho" yaml:"noEcho"`
+	Placeholder interface{} `field:"optional" json:"placeholder" yaml:"placeholder"`
+	Required *bool `field:"optional" json:"required" yaml:"required"`
 	TextArea *bool `field:"optional" json:"textArea" yaml:"textArea"`
 	Type RosParameterType `field:"optional" json:"type" yaml:"type"`
 }

@@ -15,11 +15,6 @@ export interface ManagedEdgeKubernetesClusterProps {
     readonly name: string | ros.IResolvable;
 
     /**
-     * Property numOfNodes: Number of worker nodes. The range is [0,300]
-     */
-    readonly numOfNodes: number | ros.IResolvable;
-
-    /**
      * Property addons: The add-ons to be installed for the cluster.
      */
     readonly addons?: Array<RosManagedEdgeKubernetesCluster.AddonsProperty | ros.IResolvable> | ros.IResolvable;
@@ -28,7 +23,8 @@ export interface ManagedEdgeKubernetesClusterProps {
      * Property autoRenew: Whether the cluster automatically renews. It takes effect when the value of ChargeType is PrePaid. The optional values are:
      * true: automatic renewal
      * false: do not renew automatically
-     * Default to true.
+     * Default to true.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
+     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
      */
     readonly autoRenew?: boolean | ros.IResolvable;
 
@@ -36,7 +32,8 @@ export interface ManagedEdgeKubernetesClusterProps {
      * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required:
      * When PeriodUnit = Week, the values are: {"1", "2", "3"}
      * When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
-     * Default to 1.
+     * Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
+     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
      */
     readonly autoRenewPeriod?: number | ros.IResolvable;
 
@@ -45,6 +42,8 @@ export interface ManagedEdgeKubernetesClusterProps {
      * PrePaid: prepaid
      * PostPaid: Pay as you go
      * Default to PostPaid.
+     * Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
+     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
      */
     readonly chargeType?: string | ros.IResolvable;
 
@@ -77,14 +76,6 @@ export interface ManagedEdgeKubernetesClusterProps {
      * Default value: false.
      */
     readonly deletionProtection?: boolean | ros.IResolvable;
-
-    /**
-     * Property disableRollback: Whether the failure was rolled back:
-     * true: indicates that it fails to roll back
-     * false: rollback failed
-     * The default is true. If rollback fails, resources produced during the creation process will be released. False is not recommended.
-     */
-    readonly disableRollback?: boolean | ros.IResolvable;
 
     /**
      * Property endpointPublicAccess: Whether to enable the public network API Server:
@@ -125,7 +116,8 @@ export interface ManagedEdgeKubernetesClusterProps {
      * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
      * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
      * When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
-     * Default to 1.
+     * Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
+     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
      */
     readonly period?: number | ros.IResolvable;
 
@@ -134,7 +126,8 @@ export interface ManagedEdgeKubernetesClusterProps {
      * Week: Time is measured in weeks
      * Month: time in months
      * Year: time in years
-     * Default to Month
+     * Default to MonthStarting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
+     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
      */
     readonly periodUnit?: string | ros.IResolvable;
 
@@ -183,51 +176,6 @@ export interface ManagedEdgeKubernetesClusterProps {
      * VpcId and VSwitchId can only be empty at the same time or set the corresponding values at the same time.
      */
     readonly vpcId?: string | ros.IResolvable;
-
-    /**
-     * Property vSwitchIds: The virtual switch ID of the worker node.
-     */
-    readonly vSwitchIds?: Array<any | ros.IResolvable> | ros.IResolvable;
-
-    /**
-     * Property workerDataDisk: Whether to mount the data disk. The options are as follows:
-     * true: indicates that the worker node mounts data disks.
-     * false: indicates that the worker node does not mount data disks.
-     * Default to false.
-     */
-    readonly workerDataDisk?: boolean | ros.IResolvable;
-
-    /**
-     * Property workerDataDiskCategory: Data disk type.
-     */
-    readonly workerDataDiskCategory?: string | ros.IResolvable;
-
-    /**
-     * Property workerDataDisks: A combination of configurations such as worker data disk type and size. This parameter is valid only when the worker node data disk is mounted.
-     */
-    readonly workerDataDisks?: Array<RosManagedEdgeKubernetesCluster.WorkerDataDisksProperty | ros.IResolvable> | ros.IResolvable;
-
-    /**
-     * Property workerDataDiskSize: Data disk size in GiB.
-     */
-    readonly workerDataDiskSize?: number | ros.IResolvable;
-
-    /**
-     * Property workerInstanceTypes: Worker node ECS specification type code. For more details, see Instance Specification Family.
-     */
-    readonly workerInstanceTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
-
-    /**
-     * Property workerSystemDiskCategory: Worker node system disk type. 
-     * Default to cloud_efficiency.
-     */
-    readonly workerSystemDiskCategory?: string | ros.IResolvable;
-
-    /**
-     * Property workerSystemDiskSize: Worker disk system disk size, the unit is GiB.
-     * Default to 120.
-     */
-    readonly workerSystemDiskSize?: number | ros.IResolvable;
 
     /**
      * Property zoneIds: Zone ids of worker node virtual switches belongs to.
@@ -318,35 +266,25 @@ export class ManagedEdgeKubernetesCluster extends ros.Resource {
             resourceGroupId: props.resourceGroupId,
             autoRenew: props.autoRenew,
             addons: props.addons,
-            workerSystemDiskCategory: props.workerSystemDiskCategory === undefined || props.workerSystemDiskCategory === null ? 'cloud_efficiency' : props.workerSystemDiskCategory,
-            workerSystemDiskSize: props.workerSystemDiskSize === undefined || props.workerSystemDiskSize === null ? 120 : props.workerSystemDiskSize,
             profile: props.profile === undefined || props.profile === null ? 'Edge' : props.profile,
             name: props.name,
             isEnterpriseSecurityGroup: props.isEnterpriseSecurityGroup,
-            workerDataDiskSize: props.workerDataDiskSize,
             cloudMonitorFlags: props.cloudMonitorFlags === undefined || props.cloudMonitorFlags === null ? false : props.cloudMonitorFlags,
             serviceCidr: props.serviceCidr === undefined || props.serviceCidr === null ? '172.19.0.0/20' : props.serviceCidr,
             zoneIds: props.zoneIds,
             proxyMode: props.proxyMode === undefined || props.proxyMode === null ? 'iptables' : props.proxyMode,
-            disableRollback: props.disableRollback === undefined || props.disableRollback === null ? true : props.disableRollback,
             tags: props.tags,
-            workerInstanceTypes: props.workerInstanceTypes,
             loginPassword: props.loginPassword,
             autoRenewPeriod: props.autoRenewPeriod,
             containerCidr: props.containerCidr === undefined || props.containerCidr === null ? '172.16.0.0/16' : props.containerCidr,
             keyPair: props.keyPair,
             nodeCidrMask: props.nodeCidrMask,
-            vSwitchIds: props.vSwitchIds,
-            workerDataDisks: props.workerDataDisks,
             timeoutMins: props.timeoutMins === undefined || props.timeoutMins === null ? 60 : props.timeoutMins,
             period: props.period,
             clusterSpec: props.clusterSpec,
             deletionProtection: props.deletionProtection,
-            workerDataDisk: props.workerDataDisk === undefined || props.workerDataDisk === null ? false : props.workerDataDisk,
             vpcId: props.vpcId,
-            numOfNodes: props.numOfNodes,
             chargeType: props.chargeType,
-            workerDataDiskCategory: props.workerDataDiskCategory,
             snatEntry: props.snatEntry === undefined || props.snatEntry === null ? true : props.snatEntry,
             periodUnit: props.periodUnit,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

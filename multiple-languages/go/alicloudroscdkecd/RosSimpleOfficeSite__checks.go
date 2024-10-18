@@ -510,6 +510,23 @@ func (j *jsiiProxy_RosSimpleOfficeSite) validateSetVerifyCodeParameters(val inte
 	return nil
 }
 
+func (j *jsiiProxy_RosSimpleOfficeSite) validateSetVpcTypeParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosSimpleOfficeSite) validateSetVSwitchIdParameters(val interface{}) error {
 	switch val.(type) {
 	case *string:

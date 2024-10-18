@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.apigateway;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-api
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:36.250Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:26.792Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosApiProps")
 @software.amazon.jsii.Jsii.Proxy(RosApiProps.Jsii$Proxy.class)
 public interface RosApiProps extends software.amazon.jsii.JsiiSerializable {
@@ -21,14 +21,6 @@ public interface RosApiProps extends software.amazon.jsii.JsiiSerializable {
     /**
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getRequestConfig();
-
-    /**
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getResultSample();
-
-    /**
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getResultType();
 
     /**
      */
@@ -118,6 +110,18 @@ public interface RosApiProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResultSample() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResultType() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getServiceParameters() {
         return null;
     }
@@ -159,8 +163,6 @@ public interface RosApiProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object apiName;
         java.lang.Object groupId;
         java.lang.Object requestConfig;
-        java.lang.Object resultSample;
-        java.lang.Object resultType;
         java.lang.Object serviceConfig;
         java.lang.Object visibility;
         java.lang.Object allowSignatureMethod;
@@ -176,6 +178,8 @@ public interface RosApiProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object requestParameters;
         java.lang.Object resultBodyModel;
         java.lang.Object resultDescriptions;
+        java.lang.Object resultSample;
+        java.lang.Object resultType;
         java.lang.Object serviceParameters;
         java.lang.Object serviceParametersMap;
         java.lang.Object systemParameters;
@@ -239,46 +243,6 @@ public interface RosApiProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder requestConfig(com.aliyun.ros.cdk.apigateway.RosApi.RequestConfigProperty requestConfig) {
             this.requestConfig = requestConfig;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosApiProps#getResultSample}
-         * @param resultSample the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder resultSample(java.lang.String resultSample) {
-            this.resultSample = resultSample;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosApiProps#getResultSample}
-         * @param resultSample the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder resultSample(com.aliyun.ros.cdk.core.IResolvable resultSample) {
-            this.resultSample = resultSample;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosApiProps#getResultType}
-         * @param resultType the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder resultType(java.lang.String resultType) {
-            this.resultType = resultType;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosApiProps#getResultType}
-         * @param resultType the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder resultType(com.aliyun.ros.cdk.core.IResolvable resultType) {
-            this.resultType = resultType;
             return this;
         }
 
@@ -583,6 +547,46 @@ public interface RosApiProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosApiProps#getResultSample}
+         * @param resultSample the value to be set.
+         * @return {@code this}
+         */
+        public Builder resultSample(java.lang.String resultSample) {
+            this.resultSample = resultSample;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApiProps#getResultSample}
+         * @param resultSample the value to be set.
+         * @return {@code this}
+         */
+        public Builder resultSample(com.aliyun.ros.cdk.core.IResolvable resultSample) {
+            this.resultSample = resultSample;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApiProps#getResultType}
+         * @param resultType the value to be set.
+         * @return {@code this}
+         */
+        public Builder resultType(java.lang.String resultType) {
+            this.resultType = resultType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApiProps#getResultType}
+         * @param resultType the value to be set.
+         * @return {@code this}
+         */
+        public Builder resultType(com.aliyun.ros.cdk.core.IResolvable resultType) {
+            this.resultType = resultType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosApiProps#getServiceParameters}
          * @param serviceParameters the value to be set.
          * @return {@code this}
@@ -692,8 +696,6 @@ public interface RosApiProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object apiName;
         private final java.lang.Object groupId;
         private final java.lang.Object requestConfig;
-        private final java.lang.Object resultSample;
-        private final java.lang.Object resultType;
         private final java.lang.Object serviceConfig;
         private final java.lang.Object visibility;
         private final java.lang.Object allowSignatureMethod;
@@ -709,6 +711,8 @@ public interface RosApiProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object requestParameters;
         private final java.lang.Object resultBodyModel;
         private final java.lang.Object resultDescriptions;
+        private final java.lang.Object resultSample;
+        private final java.lang.Object resultType;
         private final java.lang.Object serviceParameters;
         private final java.lang.Object serviceParametersMap;
         private final java.lang.Object systemParameters;
@@ -724,8 +728,6 @@ public interface RosApiProps extends software.amazon.jsii.JsiiSerializable {
             this.apiName = software.amazon.jsii.Kernel.get(this, "apiName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.requestConfig = software.amazon.jsii.Kernel.get(this, "requestConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.resultSample = software.amazon.jsii.Kernel.get(this, "resultSample", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.resultType = software.amazon.jsii.Kernel.get(this, "resultType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceConfig = software.amazon.jsii.Kernel.get(this, "serviceConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.visibility = software.amazon.jsii.Kernel.get(this, "visibility", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.allowSignatureMethod = software.amazon.jsii.Kernel.get(this, "allowSignatureMethod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -741,6 +743,8 @@ public interface RosApiProps extends software.amazon.jsii.JsiiSerializable {
             this.requestParameters = software.amazon.jsii.Kernel.get(this, "requestParameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resultBodyModel = software.amazon.jsii.Kernel.get(this, "resultBodyModel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resultDescriptions = software.amazon.jsii.Kernel.get(this, "resultDescriptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resultSample = software.amazon.jsii.Kernel.get(this, "resultSample", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resultType = software.amazon.jsii.Kernel.get(this, "resultType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceParameters = software.amazon.jsii.Kernel.get(this, "serviceParameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceParametersMap = software.amazon.jsii.Kernel.get(this, "serviceParametersMap", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemParameters = software.amazon.jsii.Kernel.get(this, "systemParameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -757,8 +761,6 @@ public interface RosApiProps extends software.amazon.jsii.JsiiSerializable {
             this.apiName = java.util.Objects.requireNonNull(builder.apiName, "apiName is required");
             this.groupId = java.util.Objects.requireNonNull(builder.groupId, "groupId is required");
             this.requestConfig = java.util.Objects.requireNonNull(builder.requestConfig, "requestConfig is required");
-            this.resultSample = java.util.Objects.requireNonNull(builder.resultSample, "resultSample is required");
-            this.resultType = java.util.Objects.requireNonNull(builder.resultType, "resultType is required");
             this.serviceConfig = java.util.Objects.requireNonNull(builder.serviceConfig, "serviceConfig is required");
             this.visibility = java.util.Objects.requireNonNull(builder.visibility, "visibility is required");
             this.allowSignatureMethod = builder.allowSignatureMethod;
@@ -774,6 +776,8 @@ public interface RosApiProps extends software.amazon.jsii.JsiiSerializable {
             this.requestParameters = builder.requestParameters;
             this.resultBodyModel = builder.resultBodyModel;
             this.resultDescriptions = builder.resultDescriptions;
+            this.resultSample = builder.resultSample;
+            this.resultType = builder.resultType;
             this.serviceParameters = builder.serviceParameters;
             this.serviceParametersMap = builder.serviceParametersMap;
             this.systemParameters = builder.systemParameters;
@@ -794,16 +798,6 @@ public interface RosApiProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getRequestConfig() {
             return this.requestConfig;
-        }
-
-        @Override
-        public final java.lang.Object getResultSample() {
-            return this.resultSample;
-        }
-
-        @Override
-        public final java.lang.Object getResultType() {
-            return this.resultType;
         }
 
         @Override
@@ -882,6 +876,16 @@ public interface RosApiProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getResultSample() {
+            return this.resultSample;
+        }
+
+        @Override
+        public final java.lang.Object getResultType() {
+            return this.resultType;
+        }
+
+        @Override
         public final java.lang.Object getServiceParameters() {
             return this.serviceParameters;
         }
@@ -915,8 +919,6 @@ public interface RosApiProps extends software.amazon.jsii.JsiiSerializable {
             data.set("apiName", om.valueToTree(this.getApiName()));
             data.set("groupId", om.valueToTree(this.getGroupId()));
             data.set("requestConfig", om.valueToTree(this.getRequestConfig()));
-            data.set("resultSample", om.valueToTree(this.getResultSample()));
-            data.set("resultType", om.valueToTree(this.getResultType()));
             data.set("serviceConfig", om.valueToTree(this.getServiceConfig()));
             data.set("visibility", om.valueToTree(this.getVisibility()));
             if (this.getAllowSignatureMethod() != null) {
@@ -958,6 +960,12 @@ public interface RosApiProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getResultDescriptions() != null) {
                 data.set("resultDescriptions", om.valueToTree(this.getResultDescriptions()));
             }
+            if (this.getResultSample() != null) {
+                data.set("resultSample", om.valueToTree(this.getResultSample()));
+            }
+            if (this.getResultType() != null) {
+                data.set("resultType", om.valueToTree(this.getResultType()));
+            }
             if (this.getServiceParameters() != null) {
                 data.set("serviceParameters", om.valueToTree(this.getServiceParameters()));
             }
@@ -994,8 +1002,6 @@ public interface RosApiProps extends software.amazon.jsii.JsiiSerializable {
             if (!apiName.equals(that.apiName)) return false;
             if (!groupId.equals(that.groupId)) return false;
             if (!requestConfig.equals(that.requestConfig)) return false;
-            if (!resultSample.equals(that.resultSample)) return false;
-            if (!resultType.equals(that.resultType)) return false;
             if (!serviceConfig.equals(that.serviceConfig)) return false;
             if (!visibility.equals(that.visibility)) return false;
             if (this.allowSignatureMethod != null ? !this.allowSignatureMethod.equals(that.allowSignatureMethod) : that.allowSignatureMethod != null) return false;
@@ -1011,6 +1017,8 @@ public interface RosApiProps extends software.amazon.jsii.JsiiSerializable {
             if (this.requestParameters != null ? !this.requestParameters.equals(that.requestParameters) : that.requestParameters != null) return false;
             if (this.resultBodyModel != null ? !this.resultBodyModel.equals(that.resultBodyModel) : that.resultBodyModel != null) return false;
             if (this.resultDescriptions != null ? !this.resultDescriptions.equals(that.resultDescriptions) : that.resultDescriptions != null) return false;
+            if (this.resultSample != null ? !this.resultSample.equals(that.resultSample) : that.resultSample != null) return false;
+            if (this.resultType != null ? !this.resultType.equals(that.resultType) : that.resultType != null) return false;
             if (this.serviceParameters != null ? !this.serviceParameters.equals(that.serviceParameters) : that.serviceParameters != null) return false;
             if (this.serviceParametersMap != null ? !this.serviceParametersMap.equals(that.serviceParametersMap) : that.serviceParametersMap != null) return false;
             if (this.systemParameters != null ? !this.systemParameters.equals(that.systemParameters) : that.systemParameters != null) return false;
@@ -1023,8 +1031,6 @@ public interface RosApiProps extends software.amazon.jsii.JsiiSerializable {
             int result = this.apiName.hashCode();
             result = 31 * result + (this.groupId.hashCode());
             result = 31 * result + (this.requestConfig.hashCode());
-            result = 31 * result + (this.resultSample.hashCode());
-            result = 31 * result + (this.resultType.hashCode());
             result = 31 * result + (this.serviceConfig.hashCode());
             result = 31 * result + (this.visibility.hashCode());
             result = 31 * result + (this.allowSignatureMethod != null ? this.allowSignatureMethod.hashCode() : 0);
@@ -1040,6 +1046,8 @@ public interface RosApiProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.requestParameters != null ? this.requestParameters.hashCode() : 0);
             result = 31 * result + (this.resultBodyModel != null ? this.resultBodyModel.hashCode() : 0);
             result = 31 * result + (this.resultDescriptions != null ? this.resultDescriptions.hashCode() : 0);
+            result = 31 * result + (this.resultSample != null ? this.resultSample.hashCode() : 0);
+            result = 31 * result + (this.resultType != null ? this.resultType.hashCode() : 0);
             result = 31 * result + (this.serviceParameters != null ? this.serviceParameters.hashCode() : 0);
             result = 31 * result + (this.serviceParametersMap != null ? this.serviceParametersMap.hashCode() : 0);
             result = 31 * result + (this.systemParameters != null ? this.systemParameters.hashCode() : 0);

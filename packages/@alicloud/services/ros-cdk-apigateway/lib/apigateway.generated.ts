@@ -24,16 +24,6 @@ export interface RosApiProps {
     readonly requestConfig: RosApi.RequestConfigProperty | ros.IResolvable;
 
     /**
-     * @Property resultSample: The sample of the result.
-     */
-    readonly resultSample: string | ros.IResolvable;
-
-    /**
-     * @Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH". Default is "JSON".
-     */
-    readonly resultType: string | ros.IResolvable;
-
-    /**
      * @Property serviceConfig: The configuration of the service.
      */
     readonly serviceConfig: RosApi.ServiceConfigProperty | ros.IResolvable;
@@ -119,6 +109,16 @@ export interface RosApiProps {
      * @Property resultDescriptions: The return description of the API.
      */
     readonly resultDescriptions?: string | ros.IResolvable;
+
+    /**
+     * @Property resultSample: The sample of the result.
+     */
+    readonly resultSample?: string | ros.IResolvable;
+
+    /**
+     * @Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH". Default is "JSON".
+     */
+    readonly resultType?: string | ros.IResolvable;
 
     /**
      * @Property serviceParameters: The service parameters.
@@ -208,12 +208,10 @@ function RosApiPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosApi_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('requestConfig', ros.requiredValidator)(properties.requestConfig));
     errors.collect(ros.propertyValidator('requestConfig', RosApi_RequestConfigPropertyValidator)(properties.requestConfig));
-    errors.collect(ros.propertyValidator('resultSample', ros.requiredValidator)(properties.resultSample));
     errors.collect(ros.propertyValidator('resultSample', ros.validateString)(properties.resultSample));
     errors.collect(ros.propertyValidator('disableInternet', ros.validateBoolean)(properties.disableInternet));
     errors.collect(ros.propertyValidator('apiName', ros.requiredValidator)(properties.apiName));
     errors.collect(ros.propertyValidator('apiName', ros.validateString)(properties.apiName));
-    errors.collect(ros.propertyValidator('resultType', ros.requiredValidator)(properties.resultType));
     if(properties.resultType && (typeof properties.resultType) !== 'object') {
         errors.collect(ros.propertyValidator('resultType', ros.validateAllowedValues)({
           data: properties.resultType,
@@ -255,8 +253,6 @@ function rosApiPropsToRosTemplate(properties: any, enableResourcePropertyConstra
       'ApiName': ros.stringToRosTemplate(properties.apiName),
       'GroupId': ros.stringToRosTemplate(properties.groupId),
       'RequestConfig': rosApiRequestConfigPropertyToRosTemplate(properties.requestConfig),
-      'ResultSample': ros.stringToRosTemplate(properties.resultSample),
-      'ResultType': ros.stringToRosTemplate(properties.resultType),
       'ServiceConfig': rosApiServiceConfigPropertyToRosTemplate(properties.serviceConfig),
       'Visibility': ros.stringToRosTemplate(properties.visibility),
       'AllowSignatureMethod': ros.stringToRosTemplate(properties.allowSignatureMethod),
@@ -272,6 +268,8 @@ function rosApiPropsToRosTemplate(properties: any, enableResourcePropertyConstra
       'RequestParameters': ros.listMapper(rosApiRequestParametersPropertyToRosTemplate)(properties.requestParameters),
       'ResultBodyModel': ros.stringToRosTemplate(properties.resultBodyModel),
       'ResultDescriptions': ros.stringToRosTemplate(properties.resultDescriptions),
+      'ResultSample': ros.stringToRosTemplate(properties.resultSample),
+      'ResultType': ros.stringToRosTemplate(properties.resultType),
       'ServiceParameters': ros.listMapper(rosApiServiceParametersPropertyToRosTemplate)(properties.serviceParameters),
       'ServiceParametersMap': ros.listMapper(rosApiServiceParametersMapPropertyToRosTemplate)(properties.serviceParametersMap),
       'SystemParameters': ros.listMapper(rosApiSystemParametersPropertyToRosTemplate)(properties.systemParameters),
@@ -313,16 +311,6 @@ export class RosApi extends ros.RosResource {
      * @Property requestConfig: The configuration of the request
      */
     public requestConfig: RosApi.RequestConfigProperty | ros.IResolvable;
-
-    /**
-     * @Property resultSample: The sample of the result.
-     */
-    public resultSample: string | ros.IResolvable;
-
-    /**
-     * @Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH". Default is "JSON".
-     */
-    public resultType: string | ros.IResolvable;
 
     /**
      * @Property serviceConfig: The configuration of the service.
@@ -412,6 +400,16 @@ export class RosApi extends ros.RosResource {
     public resultDescriptions: string | ros.IResolvable | undefined;
 
     /**
+     * @Property resultSample: The sample of the result.
+     */
+    public resultSample: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH". Default is "JSON".
+     */
+    public resultType: string | ros.IResolvable | undefined;
+
+    /**
      * @Property serviceParameters: The service parameters.
      */
     public serviceParameters: Array<RosApi.ServiceParametersProperty | ros.IResolvable> | ros.IResolvable | undefined;
@@ -453,8 +451,6 @@ export class RosApi extends ros.RosResource {
         this.apiName = props.apiName;
         this.groupId = props.groupId;
         this.requestConfig = props.requestConfig;
-        this.resultSample = props.resultSample;
-        this.resultType = props.resultType;
         this.serviceConfig = props.serviceConfig;
         this.visibility = props.visibility;
         this.allowSignatureMethod = props.allowSignatureMethod;
@@ -470,6 +466,8 @@ export class RosApi extends ros.RosResource {
         this.requestParameters = props.requestParameters;
         this.resultBodyModel = props.resultBodyModel;
         this.resultDescriptions = props.resultDescriptions;
+        this.resultSample = props.resultSample;
+        this.resultType = props.resultType;
         this.serviceParameters = props.serviceParameters;
         this.serviceParametersMap = props.serviceParametersMap;
         this.systemParameters = props.systemParameters;
@@ -483,8 +481,6 @@ export class RosApi extends ros.RosResource {
             apiName: this.apiName,
             groupId: this.groupId,
             requestConfig: this.requestConfig,
-            resultSample: this.resultSample,
-            resultType: this.resultType,
             serviceConfig: this.serviceConfig,
             visibility: this.visibility,
             allowSignatureMethod: this.allowSignatureMethod,
@@ -500,6 +496,8 @@ export class RosApi extends ros.RosResource {
             requestParameters: this.requestParameters,
             resultBodyModel: this.resultBodyModel,
             resultDescriptions: this.resultDescriptions,
+            resultSample: this.resultSample,
+            resultType: this.resultType,
             serviceParameters: this.serviceParameters,
             serviceParametersMap: this.serviceParametersMap,
             systemParameters: this.systemParameters,
@@ -645,13 +643,38 @@ export namespace RosApi {
          */
         readonly path?: string | ros.IResolvable;
         /**
-         * @Property functionName: The function name of function compute.
+         * @Property fcVersion: Function version. Default: 2.0.
+     * Valid values: 2.0, 3.0.
          */
-        readonly functionName?: string | ros.IResolvable;
+        readonly fcVersion?: string | ros.IResolvable;
         /**
          * @Property contentTypeValue: ContentTypeValue is required if ContentTypeCatagory is DEFAULT or CUSTOM.
          */
         readonly contentTypeValue?: string | ros.IResolvable;
+        /**
+         * @Property method: The HTTP method of the function. Default is GET.
+         */
+        readonly method?: string | ros.IResolvable;
+        /**
+         * @Property onlyBusinessPath: If set true. The path in the trigger path (for example, \/2016-08-15\/proxy\/xxx\/xxx) will not be passed to the backend, and the backend will only receive the customized backend request path.
+         */
+        readonly onlyBusinessPath?: boolean | ros.IResolvable;
+        /**
+         * @Property fcRegionId: The region id of function compute.
+         */
+        readonly fcRegionId?: string | ros.IResolvable;
+        /**
+         * @Property roleArn: Ram authorizes the arn of the API gateway access function compute.
+         */
+        readonly roleArn?: string | ros.IResolvable;
+        /**
+         * @Property fcBaseUrl: Trigger path. Starts with http:\/\/ or https:\/\/
+         */
+        readonly fcBaseUrl?: string | ros.IResolvable;
+        /**
+         * @Property functionName: The function name of function compute.
+         */
+        readonly functionName?: string | ros.IResolvable;
         /**
          * @Property serviceName: The service name of function compute.
          */
@@ -666,29 +689,9 @@ export namespace RosApi {
          */
         readonly qualifier?: string | ros.IResolvable;
         /**
-         * @Property method: The HTTP method of the function. Default is GET.
-         */
-        readonly method?: string | ros.IResolvable;
-        /**
-         * @Property onlyBusinessPath: If set true. The path in the trigger path (for example, \/2016-08-15\/proxy\/xxx\/xxx) will not be passed to the backend, and the backend will only receive the customized backend request path.
-         */
-        readonly onlyBusinessPath?: boolean | ros.IResolvable;
-        /**
-         * @Property fcRegionId: The region id of function compute.
-         */
-        readonly fcRegionId?: string | ros.IResolvable;
-        /**
          * @Property contentTypeCatagory: Specify how to determine ContentType header when using function. "DEFAULT" to use API Gateway's default value. "CUSTOM" to use self defined value. "CLIENT" to use client's ContentType header. Default is CLIENT.
          */
         readonly contentTypeCatagory?: string | ros.IResolvable;
-        /**
-         * @Property roleArn: Ram authorizes the arn of the API gateway access function compute.
-         */
-        readonly roleArn?: string | ros.IResolvable;
-        /**
-         * @Property fcBaseUrl: Trigger path. Starts with http:\/\/ or https:\/\/
-         */
-        readonly fcBaseUrl?: string | ros.IResolvable;
     }
 }
 /**
@@ -702,17 +705,14 @@ function RosApi_FunctionComputeConfigPropertyValidator(properties: any): ros.Val
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('path', ros.validateString)(properties.path));
-    errors.collect(ros.propertyValidator('functionName', ros.validateString)(properties.functionName));
-    errors.collect(ros.propertyValidator('contentTypeValue', ros.validateString)(properties.contentTypeValue));
-    errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
-    if(properties.fcType && (typeof properties.fcType) !== 'object') {
-        errors.collect(ros.propertyValidator('fcType', ros.validateAllowedValues)({
-          data: properties.fcType,
-          allowedValues: ["FCEvent","HttpTrigger"],
+    if(properties.fcVersion && (typeof properties.fcVersion) !== 'object') {
+        errors.collect(ros.propertyValidator('fcVersion', ros.validateAllowedValues)({
+          data: properties.fcVersion,
+          allowedValues: ["2.0","3.0"],
         }));
     }
-    errors.collect(ros.propertyValidator('fcType', ros.validateString)(properties.fcType));
-    errors.collect(ros.propertyValidator('qualifier', ros.validateString)(properties.qualifier));
+    errors.collect(ros.propertyValidator('fcVersion', ros.validateString)(properties.fcVersion));
+    errors.collect(ros.propertyValidator('contentTypeValue', ros.validateString)(properties.contentTypeValue));
     if(properties.method && (typeof properties.method) !== 'object') {
         errors.collect(ros.propertyValidator('method', ros.validateAllowedValues)({
           data: properties.method,
@@ -722,6 +722,18 @@ function RosApi_FunctionComputeConfigPropertyValidator(properties: any): ros.Val
     errors.collect(ros.propertyValidator('method', ros.validateString)(properties.method));
     errors.collect(ros.propertyValidator('onlyBusinessPath', ros.validateBoolean)(properties.onlyBusinessPath));
     errors.collect(ros.propertyValidator('fcRegionId', ros.validateString)(properties.fcRegionId));
+    errors.collect(ros.propertyValidator('roleArn', ros.validateString)(properties.roleArn));
+    errors.collect(ros.propertyValidator('fcBaseUrl', ros.validateString)(properties.fcBaseUrl));
+    errors.collect(ros.propertyValidator('functionName', ros.validateString)(properties.functionName));
+    errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
+    if(properties.fcType && (typeof properties.fcType) !== 'object') {
+        errors.collect(ros.propertyValidator('fcType', ros.validateAllowedValues)({
+          data: properties.fcType,
+          allowedValues: ["FCEvent","HttpTrigger"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('fcType', ros.validateString)(properties.fcType));
+    errors.collect(ros.propertyValidator('qualifier', ros.validateString)(properties.qualifier));
     if(properties.contentTypeCatagory && (typeof properties.contentTypeCatagory) !== 'object') {
         errors.collect(ros.propertyValidator('contentTypeCatagory', ros.validateAllowedValues)({
           data: properties.contentTypeCatagory,
@@ -729,8 +741,6 @@ function RosApi_FunctionComputeConfigPropertyValidator(properties: any): ros.Val
         }));
     }
     errors.collect(ros.propertyValidator('contentTypeCatagory', ros.validateString)(properties.contentTypeCatagory));
-    errors.collect(ros.propertyValidator('roleArn', ros.validateString)(properties.roleArn));
-    errors.collect(ros.propertyValidator('fcBaseUrl', ros.validateString)(properties.fcBaseUrl));
     return errors.wrap('supplied properties not correct for "FunctionComputeConfigProperty"');
 }
 
@@ -747,17 +757,18 @@ function rosApiFunctionComputeConfigPropertyToRosTemplate(properties: any): any 
     RosApi_FunctionComputeConfigPropertyValidator(properties).assertSuccess();
     return {
       'Path': ros.stringToRosTemplate(properties.path),
-      'FunctionName': ros.stringToRosTemplate(properties.functionName),
+      'FcVersion': ros.stringToRosTemplate(properties.fcVersion),
       'ContentTypeValue': ros.stringToRosTemplate(properties.contentTypeValue),
-      'ServiceName': ros.stringToRosTemplate(properties.serviceName),
-      'FcType': ros.stringToRosTemplate(properties.fcType),
-      'Qualifier': ros.stringToRosTemplate(properties.qualifier),
       'Method': ros.stringToRosTemplate(properties.method),
       'OnlyBusinessPath': ros.booleanToRosTemplate(properties.onlyBusinessPath),
       'FcRegionId': ros.stringToRosTemplate(properties.fcRegionId),
-      'ContentTypeCatagory': ros.stringToRosTemplate(properties.contentTypeCatagory),
       'RoleArn': ros.stringToRosTemplate(properties.roleArn),
       'FcBaseUrl': ros.stringToRosTemplate(properties.fcBaseUrl),
+      'FunctionName': ros.stringToRosTemplate(properties.functionName),
+      'ServiceName': ros.stringToRosTemplate(properties.serviceName),
+      'FcType': ros.stringToRosTemplate(properties.fcType),
+      'Qualifier': ros.stringToRosTemplate(properties.qualifier),
+      'ContentTypeCatagory': ros.stringToRosTemplate(properties.contentTypeCatagory),
     };
 }
 

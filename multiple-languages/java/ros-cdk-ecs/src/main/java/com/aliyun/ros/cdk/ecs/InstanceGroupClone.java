@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::InstanceGroupClone</code>, which is used to create clones of an Elastic Compute Service (ECS) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:38.573Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:29.016Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroupClone")
 public class InstanceGroupClone extends com.aliyun.ros.cdk.core.Resource {
 
@@ -1259,9 +1259,9 @@ public class InstanceGroupClone extends com.aliyun.ros.cdk.core.Resource {
          * Valid values:
          * <p>
          * <ul>
-         * <li>ase-256</li>
+         * <li>aes-256</li>
          * <li>sm4-128
-         * Default value: ase-256.</li>
+         * Default value: aes-256.</li>
          * </ul>
          * <p>
          * @return {@code this}
@@ -1277,9 +1277,9 @@ public class InstanceGroupClone extends com.aliyun.ros.cdk.core.Resource {
          * Valid values:
          * <p>
          * <ul>
-         * <li>ase-256</li>
+         * <li>aes-256</li>
          * <li>sm4-128
-         * Default value: ase-256.</li>
+         * Default value: aes-256.</li>
          * </ul>
          * <p>
          * @return {@code this}

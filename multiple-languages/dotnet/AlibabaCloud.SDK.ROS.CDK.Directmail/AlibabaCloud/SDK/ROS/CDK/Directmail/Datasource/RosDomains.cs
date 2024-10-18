@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Directmail.Datasource
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::DirectMail::Domains`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::DirectMail::Domains`, which is used to query domain names.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Domains` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-directmail-domains

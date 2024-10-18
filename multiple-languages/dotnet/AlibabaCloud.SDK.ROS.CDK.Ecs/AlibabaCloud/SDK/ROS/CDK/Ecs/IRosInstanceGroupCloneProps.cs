@@ -600,9 +600,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         /// <remarks>
         /// <strong>Property</strong>: systemDiskEncryptAlgorithm: The algorithm to use to encrypt the system disk. Valid values:
-        /// - ase-256
+        /// - aes-256
         /// - sm4-128
-        /// Default value: ase-256.
+        /// Default value: aes-256.
         /// </remarks>
         [JsiiProperty(name: "systemDiskEncryptAlgorithm", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1204,9 +1204,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
             /// <remarks>
             /// <strong>Property</strong>: systemDiskEncryptAlgorithm: The algorithm to use to encrypt the system disk. Valid values:
-            /// - ase-256
+            /// - aes-256
             /// - sm4-128
-            /// Default value: ase-256.
+            /// Default value: aes-256.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "systemDiskEncryptAlgorithm", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

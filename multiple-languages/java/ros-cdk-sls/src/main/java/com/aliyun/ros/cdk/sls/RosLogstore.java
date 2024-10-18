@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SLS::Logstore</code>, which is used to create a Logstore in a Log Service project.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:42.792Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:33.759Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosLogstore")
 public class RosLogstore extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -189,6 +189,24 @@ public class RosLogstore extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setMaxSplitShard(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "maxSplitShard", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMode() {
+        return software.amazon.jsii.Kernel.get(this, "mode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setMode(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "mode", value);
+    }
+
+    /**
+     */
+    public void setMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "mode", value);
     }
 
     /**
@@ -797,6 +815,23 @@ public class RosLogstore extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder maxSplitShard(final com.aliyun.ros.cdk.core.IResolvable maxSplitShard) {
             this.props.maxSplitShard(maxSplitShard);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param mode This parameter is required.
+         */
+        public Builder mode(final java.lang.String mode) {
+            this.props.mode(mode);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param mode This parameter is required.
+         */
+        public Builder mode(final com.aliyun.ros.cdk.core.IResolvable mode) {
+            this.props.mode(mode);
             return this;
         }
 

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ehpc.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ehpc-nodes
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:39.469Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:29.957Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.datasource.RosNodesProps")
 @software.amazon.jsii.Jsii.Proxy(RosNodesProps.Jsii$Proxy.class)
 public interface RosNodesProps extends software.amazon.jsii.JsiiSerializable {

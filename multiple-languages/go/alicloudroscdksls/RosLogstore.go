@@ -42,6 +42,8 @@ type RosLogstore interface {
 	SetLogstoreName(val interface{})
 	MaxSplitShard() interface{}
 	SetMaxSplitShard(val interface{})
+	Mode() interface{}
+	SetMode(val interface{})
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
 	PreserveStorage() interface{}
@@ -297,6 +299,16 @@ func (j *jsiiProxy_RosLogstore) MaxSplitShard() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosLogstore) Mode() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"mode",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosLogstore) Node() alicloudroscdkcore.ConstructNode {
 	var returns alicloudroscdkcore.ConstructNode
 	_jsii_.Get(
@@ -508,6 +520,17 @@ func (j *jsiiProxy_RosLogstore)SetMaxSplitShard(val interface{}) {
 	_jsii_.Set(
 		j,
 		"maxSplitShard",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosLogstore)SetMode(val interface{}) {
+	if err := j.validateSetModeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"mode",
 		val,
 	)
 }

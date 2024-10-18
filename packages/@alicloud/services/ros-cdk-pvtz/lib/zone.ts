@@ -15,6 +15,13 @@ export interface ZoneProps {
     readonly zoneName: string | ros.IResolvable;
 
     /**
+     * Property dnsGroup: Built-in authority location area. Valid values:
+     * - NORMAL_ZONE: Default. normal zone (The parsing response result will be cached, and only back to the built-in authority normal zone if the cache is missed, the effect of parsing changes is affected by TTL time; Cannot use custom line analysis, weight analysis function.
+     * - FAST_ZONE: Fast zone (Recommended: directly reply to the parsing request, the parsing delay is the lowest, and the record changes take effect in real time; Support custom line analysis, weight analysis.
+     */
+    readonly dnsGroup?: string | ros.IResolvable;
+
+    /**
      * Property ignoredStackTagKeys: Stack tag keys to ignore
      */
     readonly ignoredStackTagKeys?: Array<string | ros.IResolvable> | ros.IResolvable;
@@ -40,16 +47,6 @@ export interface ZoneProps {
      * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosZone.TagsProperty[];
-
-    /**
-     * Property zoneTag: Zone label. It will be ignored when ZoneType is AUTH_ZONE.
-     */
-    readonly zoneTag?: string | ros.IResolvable;
-
-    /**
-     * Property zoneType: Zone type. For instance: AUTH_ZONE, CLOUD_PRODUCT_ZONE.
-     */
-    readonly zoneType?: string | ros.IResolvable;
 }
 
 /**
@@ -100,10 +97,9 @@ export class Zone extends ros.Resource {
             ignoredStackTagKeys: props.ignoredStackTagKeys,
             resourceGroupId: props.resourceGroupId,
             proxyPattern: props.proxyPattern === undefined || props.proxyPattern === null ? 'ZONE' : props.proxyPattern,
-            zoneTag: props.zoneTag,
             tags: props.tags,
+            dnsGroup: props.dnsGroup,
             remark: props.remark,
-            zoneType: props.zoneType,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosZone;
         this.attrZoneId = rosZone.attrZoneId;

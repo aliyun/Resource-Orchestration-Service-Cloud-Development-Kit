@@ -37,6 +37,39 @@ func NewRosParameter_AssociationProperty_Override(r RosParameter_AssociationProp
 	)
 }
 
+func RosParameter_AssociationProperty_ACR_NAMESPACE_NAME() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"ACR_NAMESPACE_NAME",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_ACR_REPO_ATTRIBUTE() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"ACR_REPO_ATTRIBUTE",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_ACR_REPO_TAG() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"ACR_REPO_TAG",
+		&returns,
+	)
+	return returns
+}
+
 func RosParameter_AssociationProperty_ALB_ACL_ID() *string {
 	_init_.Initialize()
 	var returns *string
@@ -103,12 +136,34 @@ func RosParameter_AssociationProperty_ARRAY_TABLE() *string {
 	return returns
 }
 
+func RosParameter_AssociationProperty_AUTO_COMPLETE_INPUT() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"AUTO_COMPLETE_INPUT",
+		&returns,
+	)
+	return returns
+}
+
 func RosParameter_AssociationProperty_BOOLEAN() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
 		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
 		"BOOLEAN",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_BSS_PRICING_MODULE_CODE() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"BSS_PRICING_MODULE_CODE",
 		&returns,
 	)
 	return returns
@@ -147,12 +202,45 @@ func RosParameter_AssociationProperty_CASCADER() *string {
 	return returns
 }
 
+func RosParameter_AssociationProperty_CEN_INSTANCE_CEN_ID() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"CEN_INSTANCE_CEN_ID",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_CEN_TRANSIT_ROUTER_ID() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"CEN_TRANSIT_ROUTER_ID",
+		&returns,
+	)
+	return returns
+}
+
 func RosParameter_AssociationProperty_CHARGE_TYPE() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
 		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
 		"CHARGE_TYPE",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_CMS_ALARM_METRIC_SELECTOR() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"CMS_ALARM_METRIC_SELECTOR",
 		&returns,
 	)
 	return returns
@@ -257,6 +345,28 @@ func RosParameter_AssociationProperty_COMMA_DELIMITED_LIST() *string {
 	return returns
 }
 
+func RosParameter_AssociationProperty_COMPUTE_NEST_ARTIFACT_ID() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"COMPUTE_NEST_ARTIFACT_ID",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_COMPUTE_NEST_ARTIFACT_ID_VERSION() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"COMPUTE_NEST_ARTIFACT_ID_VERSION",
+		&returns,
+	)
+	return returns
+}
+
 func RosParameter_AssociationProperty_COMPUTER_NEST_SERVICE_ID() *string {
 	_init_.Initialize()
 	var returns *string
@@ -285,6 +395,50 @@ func RosParameter_AssociationProperty_COMPUTER_NEST_SUPPLIER_SERVICE_VERSION() *
 	_jsii_.StaticGet(
 		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
 		"COMPUTER_NEST_SUPPLIER_SERVICE_VERSION",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_CR_INSTANCE_ID() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"CR_INSTANCE_ID",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_CR_NAMESPACE_NAME() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"CR_NAMESPACE_NAME",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_CR_REPOSITORY_REPO_NAME() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"CR_REPOSITORY_REPO_NAME",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_CR_REPOSITORY_TAG() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"CR_REPOSITORY_TAG",
 		&returns,
 	)
 	return returns
@@ -323,6 +477,28 @@ func RosParameter_AssociationProperty_CS_CLUSTER_NODE_POOL() *string {
 	return returns
 }
 
+func RosParameter_AssociationProperty_CS_MANAGED_KUBERNETES_CLUSTER_SERVICE_CIDR() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"CS_MANAGED_KUBERNETES_CLUSTER_SERVICE_CIDR",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_DASH_VECTOR_API_KEY() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"DASH_VECTOR_API_KEY",
+		&returns,
+	)
+	return returns
+}
+
 func RosParameter_AssociationProperty_DATE_PICKER() *string {
 	_init_.Initialize()
 	var returns *string
@@ -340,6 +516,72 @@ func RosParameter_AssociationProperty_DATE_TIME() *string {
 	_jsii_.StaticGet(
 		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
 		"DATE_TIME",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_DNS_DOMAIN_VALIDATE_DOMAIN() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"DNS_DOMAIN_VALIDATE_DOMAIN",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_DOMAIN_NAME() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"DOMAIN_NAME",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_EAS_INSTANCE_TYPE() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"EAS_INSTANCE_TYPE",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_EAS_RESOURCE_ID() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"EAS_RESOURCE_ID",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_ECD_BUNDLE_DESKTOP_TYPE() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"ECD_BUNDLE_DESKTOP_TYPE",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_ECI_CONTAINER_GROUP_ID() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"ECI_CONTAINER_GROUP_ID",
 		&returns,
 	)
 	return returns
@@ -373,6 +615,17 @@ func RosParameter_AssociationProperty_ECS_DATA_DISK_CATEGORY() *string {
 	_jsii_.StaticGet(
 		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
 		"ECS_DATA_DISK_CATEGORY",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_ECS_DEPLOYMENT_SET_ID() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"ECS_DEPLOYMENT_SET_ID",
 		&returns,
 	)
 	return returns
@@ -450,6 +703,17 @@ func RosParameter_AssociationProperty_ECS_INSTANCE_MAX_BANDWIDTH_IN() *string {
 	_jsii_.StaticGet(
 		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
 		"ECS_INSTANCE_MAX_BANDWIDTH_IN",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_ECS_INSTANCE_OS_TYPE() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"ECS_INSTANCE_OS_TYPE",
 		&returns,
 	)
 	return returns
@@ -598,6 +862,17 @@ func RosParameter_AssociationProperty_ECS_REGION_ID() *string {
 	return returns
 }
 
+func RosParameter_AssociationProperty_ECS_REGION_ID_DEPLOY() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"ECS_REGION_ID_DEPLOY",
+		&returns,
+	)
+	return returns
+}
+
 func RosParameter_AssociationProperty_ECS_RESOURCE_GROUP_ID() *string {
 	_init_.Initialize()
 	var returns *string
@@ -615,6 +890,17 @@ func RosParameter_AssociationProperty_ECS_SECURITY_GROUP_ID() *string {
 	_jsii_.StaticGet(
 		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
 		"ECS_SECURITY_GROUP_ID",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_ECS_SECURITY_GROUP_PORT_RANGE() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"ECS_SECURITY_GROUP_PORT_RANGE",
 		&returns,
 	)
 	return returns
@@ -774,12 +1060,45 @@ func RosParameter_AssociationProperty_ELASTICSEARCH_INSTANCE_TYPE() *string {
 	return returns
 }
 
+func RosParameter_AssociationProperty_EMR_ECS_CLUSTER_ID() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"EMR_ECS_CLUSTER_ID",
+		&returns,
+	)
+	return returns
+}
+
 func RosParameter_AssociationProperty_ESS_AUTO_SCALING_GROUP_ID() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
 		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
 		"ESS_AUTO_SCALING_GROUP_ID",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_ESS_ECI_SCALING_CONFIGURATION_CONTAINER_NAME() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"ESS_ECI_SCALING_CONFIGURATION_CONTAINER_NAME",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_ESS_ECI_SCALING_CONFIGURATION_ID() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"ESS_ECI_SCALING_CONFIGURATION_ID",
 		&returns,
 	)
 	return returns
@@ -796,12 +1115,67 @@ func RosParameter_AssociationProperty_ESS_SCALING_CONFIGURATION_ID() *string {
 	return returns
 }
 
+func RosParameter_AssociationProperty_FC_FUNCTION_NAME() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"FC_FUNCTION_NAME",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_FC_SERVICE_NAME() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"FC_SERVICE_NAME",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_FC3_FUNCTION_NAME() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"FC3_FUNCTION_NAME",
+		&returns,
+	)
+	return returns
+}
+
 func RosParameter_AssociationProperty_FILE_CONTENT() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
 		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
 		"FILE_CONTENT",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_FLOW_CONNECTION_ID() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"FLOW_CONNECTION_ID",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_FLOW_ORGANIZATION_ID() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"FLOW_ORGANIZATION_ID",
 		&returns,
 	)
 	return returns
@@ -873,6 +1247,17 @@ func RosParameter_AssociationProperty_GMT_ZONE() *string {
 	return returns
 }
 
+func RosParameter_AssociationProperty_HOLOGRES_INSTANCE_ID() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"HOLOGRES_INSTANCE_ID",
+		&returns,
+	)
+	return returns
+}
+
 func RosParameter_AssociationProperty_INFLUX_DB_INSTANCE_TYPE() *string {
 	_init_.Initialize()
 	var returns *string
@@ -917,6 +1302,28 @@ func RosParameter_AssociationProperty_JSON() *string {
 	return returns
 }
 
+func RosParameter_AssociationProperty_KAFKA_INSTANCE_ID() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"KAFKA_INSTANCE_ID",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_LINDORM_INSTANCE_ID() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"LINDORM_INSTANCE_ID",
+		&returns,
+	)
+	return returns
+}
+
 func RosParameter_AssociationProperty_LIST() *string {
 	_init_.Initialize()
 	var returns *string
@@ -956,6 +1363,28 @@ func RosParameter_AssociationProperty_MONGODB_INSTANCE_TYPE() *string {
 	_jsii_.StaticGet(
 		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
 		"MONGODB_INSTANCE_TYPE",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_NAS_FILE_SYSTEM_ID() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"NAS_FILE_SYSTEM_ID",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_NAS_FILE_SYSTEM_MOUNT_TARGET_DOMAIN() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"NAS_FILE_SYSTEM_MOUNT_TARGET_DOMAIN",
 		&returns,
 	)
 	return returns
@@ -1203,6 +1632,17 @@ func RosParameter_AssociationProperty_OOS_PARAMETER_VALUE() *string {
 	return returns
 }
 
+func RosParameter_AssociationProperty_OOS_PATCH_BASE_LINE_NAME() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"OOS_PATCH_BASE_LINE_NAME",
+		&returns,
+	)
+	return returns
+}
+
 func RosParameter_AssociationProperty_OOS_SECRET_PARAMETER_VALUE() *string {
 	_init_.Initialize()
 	var returns *string
@@ -1330,6 +1770,17 @@ func RosParameter_AssociationProperty_POLARDB_DB_CLUSTER_ID() *string {
 	_jsii_.StaticGet(
 		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
 		"POLARDB_DB_CLUSTER_ID",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_POLARDB_DB_NODE_CLASS() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"POLARDB_DB_NODE_CLASS",
 		&returns,
 	)
 	return returns
@@ -1610,6 +2061,17 @@ func RosParameter_AssociationProperty_SLB_LOAD_BALANCER_ID() *string {
 	return returns
 }
 
+func RosParameter_AssociationProperty_SLB_LOAD_BALANCER_ZONE_ID() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"SLB_LOAD_BALANCER_ZONE_ID",
+		&returns,
+	)
+	return returns
+}
+
 func RosParameter_AssociationProperty_STRING() *string {
 	_init_.Initialize()
 	var returns *string
@@ -1627,6 +2089,28 @@ func RosParameter_AssociationProperty_SWITCH() *string {
 	_jsii_.StaticGet(
 		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
 		"SWITCH",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_TAG_KEY() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"TAG_KEY",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_TAG_VALUE() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"TAG_VALUE",
 		&returns,
 	)
 	return returns
@@ -1731,6 +2215,17 @@ func RosParameter_AssociationProperty_TIME_ZONE() *string {
 	return returns
 }
 
+func RosParameter_AssociationProperty_USER_ACCOUNT_ID() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"USER_ACCOUNT_ID",
+		&returns,
+	)
+	return returns
+}
+
 func RosParameter_AssociationProperty_USER_ACCOUNT_IDS() *string {
 	_init_.Initialize()
 	var returns *string
@@ -1742,12 +2237,34 @@ func RosParameter_AssociationProperty_USER_ACCOUNT_IDS() *string {
 	return returns
 }
 
+func RosParameter_AssociationProperty_USER_ID() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"USER_ID",
+		&returns,
+	)
+	return returns
+}
+
 func RosParameter_AssociationProperty_VPC_CIDR_BLOCK() *string {
 	_init_.Initialize()
 	var returns *string
 	_jsii_.StaticGet(
 		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
 		"VPC_CIDR_BLOCK",
+		&returns,
+	)
+	return returns
+}
+
+func RosParameter_AssociationProperty_VPC_EIP_ALLOCATION_ID() *string {
+	_init_.Initialize()
+	var returns *string
+	_jsii_.StaticGet(
+		"@alicloud/ros-cdk-core.RosParameter.AssociationProperty",
+		"VPC_EIP_ALLOCATION_ID",
 		&returns,
 	)
 	return returns

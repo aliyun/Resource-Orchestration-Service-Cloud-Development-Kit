@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oss;
 /**
  * A reference to a bucket outside this stack.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:41.104Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.971Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.BucketAttributes")
 @software.amazon.jsii.Jsii.Proxy(BucketAttributes.Jsii$Proxy.class)
 public interface BucketAttributes extends software.amazon.jsii.JsiiSerializable {

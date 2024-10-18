@@ -25,16 +25,6 @@ export interface ApiProps {
     readonly requestConfig: RosApi.RequestConfigProperty | ros.IResolvable;
 
     /**
-     * Property resultSample: The sample of the result.
-     */
-    readonly resultSample: string | ros.IResolvable;
-
-    /**
-     * Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH". Default is "JSON".
-     */
-    readonly resultType: string | ros.IResolvable;
-
-    /**
      * Property serviceConfig: The configuration of the service.
      */
     readonly serviceConfig: RosApi.ServiceConfigProperty | ros.IResolvable;
@@ -120,6 +110,16 @@ export interface ApiProps {
      * Property resultDescriptions: The return description of the API.
      */
     readonly resultDescriptions?: string | ros.IResolvable;
+
+    /**
+     * Property resultSample: The sample of the result.
+     */
+    readonly resultSample?: string | ros.IResolvable;
+
+    /**
+     * Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH". Default is "JSON".
+     */
+    readonly resultType?: string | ros.IResolvable;
 
     /**
      * Property serviceParameters: The service parameters.

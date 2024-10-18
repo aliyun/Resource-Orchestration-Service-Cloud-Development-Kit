@@ -3402,6 +3402,13 @@ export interface RosLogstoreProps {
     readonly maxSplitShard?: number | ros.IResolvable;
 
     /**
+     * @Property mode: The type of the Logstore. Simple Log Service provides two types of Logstores: Standard Logstores and Query Logstores. Valid values:
+     * standard: Standard Logstore. This type of Logstore supports the log analysis feature and is suitable for scenarios such as real-time monitoring and interactive analysis. You can also use this type of Logstore to build a comprehensive observability system.
+     * query: Query Logstore. This type of Logstore supports high-performance queries. The index traffic fee of a Query Logstore is approximately half that of a Standard Logstore. Query Logstores do not support SQL analysis. Query Logstores are suitable for scenarios in which the amount of data is large, the log retention period is long, or log analysis is not required. If logs are stored for weeks or months, the log retention period is considered long.
+     */
+    readonly mode?: string | ros.IResolvable;
+
+    /**
      * @Property preserveStorage: Whether to keep the log permanently.
      * If set to true, TTL will be ignored.
      * Default to false.
@@ -3466,6 +3473,13 @@ function RosLogstorePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('maxSplitShard', ros.validateNumber)(properties.maxSplitShard));
     errors.collect(ros.propertyValidator('autoSplit', ros.validateBoolean)(properties.autoSplit));
+    if(properties.mode && (typeof properties.mode) !== 'object') {
+        errors.collect(ros.propertyValidator('mode', ros.validateAllowedValues)({
+          data: properties.mode,
+          allowedValues: ["standard","query"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('mode', ros.validateString)(properties.mode));
     errors.collect(ros.propertyValidator('enableTracking', ros.validateBoolean)(properties.enableTracking));
     errors.collect(ros.propertyValidator('encryptConf', RosLogstore_EncryptConfPropertyValidator)(properties.encryptConf));
     if(properties.ttl && (typeof properties.ttl) !== 'object') {
@@ -3508,6 +3522,7 @@ function rosLogstorePropsToRosTemplate(properties: any, enableResourcePropertyCo
       'EnableTracking': ros.booleanToRosTemplate(properties.enableTracking),
       'EncryptConf': rosLogstoreEncryptConfPropertyToRosTemplate(properties.encryptConf),
       'MaxSplitShard': ros.numberToRosTemplate(properties.maxSplitShard),
+      'Mode': ros.stringToRosTemplate(properties.mode),
       'PreserveStorage': ros.booleanToRosTemplate(properties.preserveStorage),
       'ShardCount': ros.numberToRosTemplate(properties.shardCount),
       'TTL': ros.numberToRosTemplate(properties.ttl),
@@ -3584,6 +3599,13 @@ export class RosLogstore extends ros.RosResource {
     public maxSplitShard: number | ros.IResolvable | undefined;
 
     /**
+     * @Property mode: The type of the Logstore. Simple Log Service provides two types of Logstores: Standard Logstores and Query Logstores. Valid values:
+     * standard: Standard Logstore. This type of Logstore supports the log analysis feature and is suitable for scenarios such as real-time monitoring and interactive analysis. You can also use this type of Logstore to build a comprehensive observability system.
+     * query: Query Logstore. This type of Logstore supports high-performance queries. The index traffic fee of a Query Logstore is approximately half that of a Standard Logstore. Query Logstores do not support SQL analysis. Query Logstores are suitable for scenarios in which the amount of data is large, the log retention period is long, or log analysis is not required. If logs are stored for weeks or months, the log retention period is considered long.
+     */
+    public mode: string | ros.IResolvable | undefined;
+
+    /**
      * @Property preserveStorage: Whether to keep the log permanently.
      * If set to true, TTL will be ignored.
      * Default to false.
@@ -3620,6 +3642,7 @@ export class RosLogstore extends ros.RosResource {
         this.enableTracking = props.enableTracking;
         this.encryptConf = props.encryptConf;
         this.maxSplitShard = props.maxSplitShard;
+        this.mode = props.mode;
         this.preserveStorage = props.preserveStorage;
         this.shardCount = props.shardCount;
         this.ttl = props.ttl;
@@ -3635,6 +3658,7 @@ export class RosLogstore extends ros.RosResource {
             enableTracking: this.enableTracking,
             encryptConf: this.encryptConf,
             maxSplitShard: this.maxSplitShard,
+            mode: this.mode,
             preserveStorage: this.preserveStorage,
             shardCount: this.shardCount,
             ttl: this.ttl,

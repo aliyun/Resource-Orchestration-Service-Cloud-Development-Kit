@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.mns.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-queues
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:40.711Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.569Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.datasource.QueuesProps")
 @software.amazon.jsii.Jsii.Proxy(QueuesProps.Jsii$Proxy.class)
 public interface QueuesProps extends software.amazon.jsii.JsiiSerializable {

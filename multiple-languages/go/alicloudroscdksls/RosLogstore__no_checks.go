@@ -112,6 +112,10 @@ func (j *jsiiProxy_RosLogstore) validateSetMaxSplitShardParameters(val interface
 	return nil
 }
 
+func (j *jsiiProxy_RosLogstore) validateSetModeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosLogstore) validateSetPreserveStorageParameters(val interface{}) error {
 	return nil
 }

@@ -1,6 +1,9 @@
 @alicloud/ros-cdk-pvtz.RosRule=com.aliyun.ros.cdk.pvtz.RosRule
 @alicloud/ros-cdk-pvtz.RosRule.ForwardIpProperty=com.aliyun.ros.cdk.pvtz.RosRule$ForwardIpProperty
 @alicloud/ros-cdk-pvtz.RosRuleProps=com.aliyun.ros.cdk.pvtz.RosRuleProps
+@alicloud/ros-cdk-pvtz.RosSyncEcsHost=com.aliyun.ros.cdk.pvtz.RosSyncEcsHost
+@alicloud/ros-cdk-pvtz.RosSyncEcsHost.RegionsProperty=com.aliyun.ros.cdk.pvtz.RosSyncEcsHost$RegionsProperty
+@alicloud/ros-cdk-pvtz.RosSyncEcsHostProps=com.aliyun.ros.cdk.pvtz.RosSyncEcsHostProps
 @alicloud/ros-cdk-pvtz.RosUserVpcAuthorization=com.aliyun.ros.cdk.pvtz.RosUserVpcAuthorization
 @alicloud/ros-cdk-pvtz.RosUserVpcAuthorizationProps=com.aliyun.ros.cdk.pvtz.RosUserVpcAuthorizationProps
 @alicloud/ros-cdk-pvtz.RosZone=com.aliyun.ros.cdk.pvtz.RosZone
@@ -13,6 +16,8 @@
 @alicloud/ros-cdk-pvtz.RosZoneVpcBinderProps=com.aliyun.ros.cdk.pvtz.RosZoneVpcBinderProps
 @alicloud/ros-cdk-pvtz.Rule=com.aliyun.ros.cdk.pvtz.Rule
 @alicloud/ros-cdk-pvtz.RuleProps=com.aliyun.ros.cdk.pvtz.RuleProps
+@alicloud/ros-cdk-pvtz.SyncEcsHost=com.aliyun.ros.cdk.pvtz.SyncEcsHost
+@alicloud/ros-cdk-pvtz.SyncEcsHostProps=com.aliyun.ros.cdk.pvtz.SyncEcsHostProps
 @alicloud/ros-cdk-pvtz.UserVpcAuthorization=com.aliyun.ros.cdk.pvtz.UserVpcAuthorization
 @alicloud/ros-cdk-pvtz.UserVpcAuthorizationProps=com.aliyun.ros.cdk.pvtz.UserVpcAuthorizationProps
 @alicloud/ros-cdk-pvtz.Zone=com.aliyun.ros.cdk.pvtz.Zone

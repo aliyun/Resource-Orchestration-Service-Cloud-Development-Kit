@@ -171,6 +171,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecd
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: vpcType: The type of office network.
+        /// Enumeration value:
+        /// standard: Advanced office network.
+        /// basic: Basic office network.
+        /// </remarks>
+        [JsiiProperty(name: "vpcType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? VpcType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: vSwitchId: The IDs of the vSwitches in the VPC. This parameter is required when you create a CloudBox-based workspace.
         /// </remarks>
         [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -316,6 +332,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecd
             [JsiiOptional]
             [JsiiProperty(name: "verifyCode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? VerifyCode
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: vpcType: The type of office network.
+            /// Enumeration value:
+            /// standard: Advanced office network.
+            /// basic: Basic office network.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "vpcType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VpcType
             {
                 get => GetInstanceProperty<object?>();
             }

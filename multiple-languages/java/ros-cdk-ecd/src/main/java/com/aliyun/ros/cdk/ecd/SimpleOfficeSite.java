@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecd;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECD::SimpleOfficeSite</code>, which is used to create a workspace of the convenience account type.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:38.365Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:28.798Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecd.$Module.class, fqn = "@alicloud/ros-cdk-ecd.SimpleOfficeSite")
 public class SimpleOfficeSite extends com.aliyun.ros.cdk.core.Resource {
 
@@ -415,6 +415,35 @@ public class SimpleOfficeSite extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder verifyCode(final com.aliyun.ros.cdk.core.IResolvable verifyCode) {
             this.props().verifyCode(verifyCode);
+            return this;
+        }
+
+        /**
+         * Property vpcType: The type of office network.
+         * <p>
+         * Enumeration value:
+         * standard: Advanced office network.
+         * basic: Basic office network.
+         * <p>
+         * @return {@code this}
+         * @param vpcType Property vpcType: The type of office network. This parameter is required.
+         */
+        public Builder vpcType(final java.lang.String vpcType) {
+            this.props().vpcType(vpcType);
+            return this;
+        }
+        /**
+         * Property vpcType: The type of office network.
+         * <p>
+         * Enumeration value:
+         * standard: Advanced office network.
+         * basic: Basic office network.
+         * <p>
+         * @return {@code this}
+         * @param vpcType Property vpcType: The type of office network. This parameter is required.
+         */
+        public Builder vpcType(final com.aliyun.ros.cdk.core.IResolvable vpcType) {
+            this.props().vpcType(vpcType);
             return this;
         }
 

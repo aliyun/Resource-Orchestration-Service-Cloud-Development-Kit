@@ -67,6 +67,36 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
         }
 
+        /// <summary>An alias for the output.</summary>
+        /// <remarks>
+        /// <strong>Default</strong>: - No label.
+        /// </remarks>
+        [JsiiProperty(name: "label", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        string? Label
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Whether to output parameter values.</summary>
+        /// <remarks>
+        /// If the value is set to true, only an asterisk (*) is printed.
+        ///
+        /// <strong>Default</strong>: false
+        /// </remarks>
+        [JsiiProperty(name: "noEcho", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        bool? NoEcho
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         [JsiiTypeProxy(nativeType: typeof(IRosOutputProps), fullyQualifiedName: "@alicloud/ros-cdk-core.RosOutputProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Core.IRosOutputProps
         {
@@ -123,6 +153,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             public string? ExportName
             {
                 get => GetInstanceProperty<string?>();
+            }
+
+            /// <summary>An alias for the output.</summary>
+            /// <remarks>
+            /// <strong>Default</strong>: - No label.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "label", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            public string? Label
+            {
+                get => GetInstanceProperty<string?>();
+            }
+
+            /// <summary>Whether to output parameter values.</summary>
+            /// <remarks>
+            /// If the value is set to true, only an asterisk (*) is printed.
+            ///
+            /// <strong>Default</strong>: false
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "noEcho", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
+            public bool? NoEcho
+            {
+                get => GetInstanceProperty<bool?>();
             }
         }
     }

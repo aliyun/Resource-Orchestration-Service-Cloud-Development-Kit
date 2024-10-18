@@ -157,6 +157,41 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             set;
         }
 
+        private object? _placeholder;
+
+        [JsiiOptional]
+        [JsiiProperty(name: "placeholder", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+        public object? Placeholder
+        {
+            get => _placeholder;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case System.Collections.Generic.IDictionary<string, string> cast_cd4240:
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, System.Collections.Generic.IDictionary<string, string>; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _placeholder = value;
+            }
+        }
+
+        [JsiiOptional]
+        [JsiiProperty(name: "required", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
+        public bool? Required
+        {
+            get;
+            set;
+        }
+
         [JsiiOptional]
         [JsiiProperty(name: "textArea", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
         public bool? TextArea

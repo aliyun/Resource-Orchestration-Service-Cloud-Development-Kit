@@ -11,12 +11,6 @@ type ApiProps struct {
 	GroupId interface{} `field:"required" json:"groupId" yaml:"groupId"`
 	// Property requestConfig: The configuration of the request.
 	RequestConfig interface{} `field:"required" json:"requestConfig" yaml:"requestConfig"`
-	// Property resultSample: The sample of the result.
-	ResultSample interface{} `field:"required" json:"resultSample" yaml:"resultSample"`
-	// Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH".
-	//
-	// Default is "JSON".
-	ResultType interface{} `field:"required" json:"resultType" yaml:"resultType"`
 	// Property serviceConfig: The configuration of the service.
 	ServiceConfig interface{} `field:"required" json:"serviceConfig" yaml:"serviceConfig"`
 	// Property visibility: Whether to make the API public.
@@ -65,6 +59,12 @@ type ApiProps struct {
 	ResultBodyModel interface{} `field:"optional" json:"resultBodyModel" yaml:"resultBodyModel"`
 	// Property resultDescriptions: The return description of the API.
 	ResultDescriptions interface{} `field:"optional" json:"resultDescriptions" yaml:"resultDescriptions"`
+	// Property resultSample: The sample of the result.
+	ResultSample interface{} `field:"optional" json:"resultSample" yaml:"resultSample"`
+	// Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH".
+	//
+	// Default is "JSON".
+	ResultType interface{} `field:"optional" json:"resultType" yaml:"resultType"`
 	// Property serviceParameters: The service parameters.
 	ServiceParameters interface{} `field:"optional" json:"serviceParameters" yaml:"serviceParameters"`
 	// Property serviceParametersMap: The mapping relation between (request parameters\const parameters\system parameters) and service parameters.

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ApiGateway::Api</code>, which is used to create an API.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:36.184Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:26.725Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.Api")
 public class Api extends com.aliyun.ros.cdk.core.Resource {
 
@@ -173,52 +173,6 @@ public class Api extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder requestConfig(final com.aliyun.ros.cdk.apigateway.RosApi.RequestConfigProperty requestConfig) {
             this.props.requestConfig(requestConfig);
-            return this;
-        }
-
-        /**
-         * Property resultSample: The sample of the result.
-         * <p>
-         * @return {@code this}
-         * @param resultSample Property resultSample: The sample of the result. This parameter is required.
-         */
-        public Builder resultSample(final java.lang.String resultSample) {
-            this.props.resultSample(resultSample);
-            return this;
-        }
-        /**
-         * Property resultSample: The sample of the result.
-         * <p>
-         * @return {@code this}
-         * @param resultSample Property resultSample: The sample of the result. This parameter is required.
-         */
-        public Builder resultSample(final com.aliyun.ros.cdk.core.IResolvable resultSample) {
-            this.props.resultSample(resultSample);
-            return this;
-        }
-
-        /**
-         * Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH".
-         * <p>
-         * Default is "JSON".
-         * <p>
-         * @return {@code this}
-         * @param resultType Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH". This parameter is required.
-         */
-        public Builder resultType(final java.lang.String resultType) {
-            this.props.resultType(resultType);
-            return this;
-        }
-        /**
-         * Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH".
-         * <p>
-         * Default is "JSON".
-         * <p>
-         * @return {@code this}
-         * @param resultType Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH". This parameter is required.
-         */
-        public Builder resultType(final com.aliyun.ros.cdk.core.IResolvable resultType) {
-            this.props.resultType(resultType);
             return this;
         }
 
@@ -570,6 +524,52 @@ public class Api extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder resultDescriptions(final com.aliyun.ros.cdk.core.IResolvable resultDescriptions) {
             this.props.resultDescriptions(resultDescriptions);
+            return this;
+        }
+
+        /**
+         * Property resultSample: The sample of the result.
+         * <p>
+         * @return {@code this}
+         * @param resultSample Property resultSample: The sample of the result. This parameter is required.
+         */
+        public Builder resultSample(final java.lang.String resultSample) {
+            this.props.resultSample(resultSample);
+            return this;
+        }
+        /**
+         * Property resultSample: The sample of the result.
+         * <p>
+         * @return {@code this}
+         * @param resultSample Property resultSample: The sample of the result. This parameter is required.
+         */
+        public Builder resultSample(final com.aliyun.ros.cdk.core.IResolvable resultSample) {
+            this.props.resultSample(resultSample);
+            return this;
+        }
+
+        /**
+         * Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH".
+         * <p>
+         * Default is "JSON".
+         * <p>
+         * @return {@code this}
+         * @param resultType Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH". This parameter is required.
+         */
+        public Builder resultType(final java.lang.String resultType) {
+            this.props.resultType(resultType);
+            return this;
+        }
+        /**
+         * Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH".
+         * <p>
+         * Default is "JSON".
+         * <p>
+         * @return {@code this}
+         * @param resultType Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH". This parameter is required.
+         */
+        public Builder resultType(final com.aliyun.ros.cdk.core.IResolvable resultType) {
+            this.props.resultType(resultType);
             return this;
         }
 

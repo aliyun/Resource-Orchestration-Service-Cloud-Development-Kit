@@ -1742,6 +1742,37 @@ func init() {
 		"@alicloud/ros-cdk-core.RosResourceProps",
 		reflect.TypeOf((*RosResourceProps)(nil)).Elem(),
 	)
+	_jsii_.RegisterClass(
+		"@alicloud/ros-cdk-core.RosRule",
+		reflect.TypeOf((*RosRule)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
+			_jsii_.MemberProperty{JsiiProperty: "logicalId", GoGetter: "LogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "onPrepare", GoMethod: "OnPrepare"},
+			_jsii_.MemberMethod{JsiiMethod: "onSynthesize", GoMethod: "OnSynthesize"},
+			_jsii_.MemberMethod{JsiiMethod: "onValidate", GoMethod: "OnValidate"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberMethod{JsiiMethod: "prepare", GoMethod: "Prepare"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesize", GoMethod: "Synthesize"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
+		},
+		func() interface{} {
+			j := jsiiProxy_RosRule{}
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_RosElement)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-core.RosRuleAssertionProps",
+		reflect.TypeOf((*RosRuleAssertionProps)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-core.RosRuleProps",
+		reflect.TypeOf((*RosRuleProps)(nil)).Elem(),
+	)
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-core.RosTag",
 		reflect.TypeOf((*RosTag)(nil)).Elem(),

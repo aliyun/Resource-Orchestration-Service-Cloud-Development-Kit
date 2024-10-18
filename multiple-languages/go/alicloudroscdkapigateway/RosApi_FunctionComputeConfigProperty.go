@@ -7,6 +7,7 @@ type RosApi_FunctionComputeConfigProperty struct {
 	FcBaseUrl interface{} `field:"optional" json:"fcBaseUrl" yaml:"fcBaseUrl"`
 	FcRegionId interface{} `field:"optional" json:"fcRegionId" yaml:"fcRegionId"`
 	FcType interface{} `field:"optional" json:"fcType" yaml:"fcType"`
+	FcVersion interface{} `field:"optional" json:"fcVersion" yaml:"fcVersion"`
 	FunctionName interface{} `field:"optional" json:"functionName" yaml:"functionName"`
 	Method interface{} `field:"optional" json:"method" yaml:"method"`
 	OnlyBusinessPath interface{} `field:"optional" json:"onlyBusinessPath" yaml:"onlyBusinessPath"`

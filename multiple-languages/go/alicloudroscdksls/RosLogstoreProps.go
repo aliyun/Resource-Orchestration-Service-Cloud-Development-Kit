@@ -12,6 +12,7 @@ type RosLogstoreProps struct {
 	EnableTracking interface{} `field:"optional" json:"enableTracking" yaml:"enableTracking"`
 	EncryptConf interface{} `field:"optional" json:"encryptConf" yaml:"encryptConf"`
 	MaxSplitShard interface{} `field:"optional" json:"maxSplitShard" yaml:"maxSplitShard"`
+	Mode interface{} `field:"optional" json:"mode" yaml:"mode"`
 	PreserveStorage interface{} `field:"optional" json:"preserveStorage" yaml:"preserveStorage"`
 	ShardCount interface{} `field:"optional" json:"shardCount" yaml:"shardCount"`
 	Ttl interface{} `field:"optional" json:"ttl" yaml:"ttl"`

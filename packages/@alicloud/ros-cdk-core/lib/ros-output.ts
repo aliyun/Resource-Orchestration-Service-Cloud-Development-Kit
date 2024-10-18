@@ -33,6 +33,20 @@ export interface RosOutputProps {
    * @default - No condition is associated with the output.
    */
   readonly condition?: RosCondition;
+
+  /**
+   * An alias for the output.
+   *
+   * @default - No label.
+   */
+  readonly label?: string;
+
+  /**
+   * Whether to output parameter values. If the value is set to true, only an asterisk (*) is printed.
+   *
+   * @default false
+   */
+  readonly noEcho?: boolean;
 }
 
 export class RosOutput extends RosElement {
@@ -40,6 +54,8 @@ export class RosOutput extends RosElement {
   private _condition?: RosCondition;
   private readonly _value?: any;
   private readonly _export?: string;
+  private readonly _label?: string;
+  private readonly _noEcho?: boolean;
 
   /**
    * Creates an RosOutput value for this stack.
@@ -59,6 +75,8 @@ export class RosOutput extends RosElement {
     this._value = props.value;
     this._condition = props.condition;
     this._export = props.exportName;
+    this._label = props.label;
+    this._noEcho = props.noEcho;
   }
 
   /**
@@ -72,6 +90,8 @@ export class RosOutput extends RosElement {
           Value: this._value,
           Export: this._export != null ? { Name: this._export } : undefined,
           Condition: this._condition ? this._condition.logicalId : undefined,
+          Label: this._label,
+          NoEcho: this._noEcho,
         },
       },
     };

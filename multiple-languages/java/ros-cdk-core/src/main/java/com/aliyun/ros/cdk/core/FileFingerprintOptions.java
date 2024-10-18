@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Options related to calculating source hash.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:35.733Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:26.070Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.FileFingerprintOptions")
 @software.amazon.jsii.Jsii.Proxy(FileFingerprintOptions.Jsii$Proxy.class)
 public interface FileFingerprintOptions extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.FileCopyOptions {

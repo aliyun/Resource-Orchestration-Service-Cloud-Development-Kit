@@ -2404,9 +2404,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// Valid values:
         ///
         /// <list type="bullet">
-        /// <description>ase-256</description>
+        /// <description>aes-256</description>
         /// <description>sm4-128
-        /// Default value: ase-256.</description>
+        /// Default value: aes-256.</description>
         /// </list>
         /// </remarks>
         [JsiiOptional]

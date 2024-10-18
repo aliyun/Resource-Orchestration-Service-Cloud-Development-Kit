@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dlf;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dlf-catalog
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:37.924Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:28.409Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dlf.$Module.class, fqn = "@alicloud/ros-cdk-dlf.CatalogProps")
 @software.amazon.jsii.Jsii.Proxy(CatalogProps.Jsii$Proxy.class)
 public interface CatalogProps extends software.amazon.jsii.JsiiSerializable {

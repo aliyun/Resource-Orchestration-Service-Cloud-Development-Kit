@@ -32,23 +32,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             get;
         }
 
-        /// <summary>Property resultSample: The sample of the result.</summary>
-        [JsiiProperty(name: "resultSample", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object ResultSample
-        {
-            get;
-        }
-
-        /// <summary>Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH".</summary>
-        /// <remarks>
-        /// Default is "JSON".
-        /// </remarks>
-        [JsiiProperty(name: "resultType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object ResultType
-        {
-            get;
-        }
-
         /// <summary>Property serviceConfig: The configuration of the service.</summary>
         [JsiiProperty(name: "serviceConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-apigateway.RosApi.ServiceConfigProperty\"}]}}")]
         object ServiceConfig
@@ -230,6 +213,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             }
         }
 
+        /// <summary>Property resultSample: The sample of the result.</summary>
+        [JsiiProperty(name: "resultSample", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ResultSample
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH".</summary>
+        /// <remarks>
+        /// Default is "JSON".
+        /// </remarks>
+        [JsiiProperty(name: "resultType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ResultType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property serviceParameters: The service parameters.</summary>
         [JsiiProperty(name: "serviceParameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-apigateway.RosApi.ServiceParametersProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -322,23 +330,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <summary>Property requestConfig: The configuration of the request.</summary>
             [JsiiProperty(name: "requestConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-apigateway.RosApi.RequestConfigProperty\"}]}}")]
             public object RequestConfig
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <summary>Property resultSample: The sample of the result.</summary>
-            [JsiiProperty(name: "resultSample", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object ResultSample
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <summary>Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH".</summary>
-            /// <remarks>
-            /// Default is "JSON".
-            /// </remarks>
-            [JsiiProperty(name: "resultType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object ResultType
             {
                 get => GetInstanceProperty<object>()!;
             }
@@ -481,6 +472,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             [JsiiOptional]
             [JsiiProperty(name: "resultDescriptions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ResultDescriptions
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property resultSample: The sample of the result.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "resultSample", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResultSample
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH".</summary>
+            /// <remarks>
+            /// Default is "JSON".
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "resultType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResultType
             {
                 get => GetInstanceProperty<object?>();
             }

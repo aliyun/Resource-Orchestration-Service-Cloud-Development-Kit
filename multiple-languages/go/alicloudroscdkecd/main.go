@@ -571,6 +571,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
 			_jsii_.MemberMethod{JsiiMethod: "validateProperties", GoMethod: "ValidateProperties"},
 			_jsii_.MemberProperty{JsiiProperty: "verifyCode", GoGetter: "VerifyCode"},
+			_jsii_.MemberProperty{JsiiProperty: "vpcType", GoGetter: "VpcType"},
 			_jsii_.MemberProperty{JsiiProperty: "vSwitchId", GoGetter: "VSwitchId"},
 		},
 		func() interface{} {

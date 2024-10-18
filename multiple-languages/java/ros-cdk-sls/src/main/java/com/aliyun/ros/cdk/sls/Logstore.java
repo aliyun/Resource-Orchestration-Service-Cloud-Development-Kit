@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SLS::Logstore</code>, which is used to create a Logstore in a Log Service project.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:42.707Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:33.674Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.Logstore")
 public class Logstore extends com.aliyun.ros.cdk.core.Resource {
 
@@ -298,6 +298,35 @@ public class Logstore extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder maxSplitShard(final com.aliyun.ros.cdk.core.IResolvable maxSplitShard) {
             this.props.maxSplitShard(maxSplitShard);
+            return this;
+        }
+
+        /**
+         * Property mode: The type of the Logstore.
+         * <p>
+         * Simple Log Service provides two types of Logstores: Standard Logstores and Query Logstores. Valid values:
+         * standard: Standard Logstore. This type of Logstore supports the log analysis feature and is suitable for scenarios such as real-time monitoring and interactive analysis. You can also use this type of Logstore to build a comprehensive observability system.
+         * query: Query Logstore. This type of Logstore supports high-performance queries. The index traffic fee of a Query Logstore is approximately half that of a Standard Logstore. Query Logstores do not support SQL analysis. Query Logstores are suitable for scenarios in which the amount of data is large, the log retention period is long, or log analysis is not required. If logs are stored for weeks or months, the log retention period is considered long.
+         * <p>
+         * @return {@code this}
+         * @param mode Property mode: The type of the Logstore. This parameter is required.
+         */
+        public Builder mode(final java.lang.String mode) {
+            this.props.mode(mode);
+            return this;
+        }
+        /**
+         * Property mode: The type of the Logstore.
+         * <p>
+         * Simple Log Service provides two types of Logstores: Standard Logstores and Query Logstores. Valid values:
+         * standard: Standard Logstore. This type of Logstore supports the log analysis feature and is suitable for scenarios such as real-time monitoring and interactive analysis. You can also use this type of Logstore to build a comprehensive observability system.
+         * query: Query Logstore. This type of Logstore supports high-performance queries. The index traffic fee of a Query Logstore is approximately half that of a Standard Logstore. Query Logstores do not support SQL analysis. Query Logstores are suitable for scenarios in which the amount of data is large, the log retention period is long, or log analysis is not required. If logs are stored for weeks or months, the log retention period is considered long.
+         * <p>
+         * @return {@code this}
+         * @param mode Property mode: The type of the Logstore. This parameter is required.
+         */
+        public Builder mode(final com.aliyun.ros.cdk.core.IResolvable mode) {
+            this.props.mode(mode);
             return this;
         }
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecd;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECD::SimpleOfficeSite</code>, which is used to create a workspace of the convenience account type.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:38.362Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:28.795Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecd.$Module.class, fqn = "@alicloud/ros-cdk-ecd.RosSimpleOfficeSite")
 public class RosSimpleOfficeSite extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -259,6 +259,24 @@ public class RosSimpleOfficeSite extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getVpcType() {
+        return software.amazon.jsii.Kernel.get(this, "vpcType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setVpcType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "vpcType", value);
+    }
+
+    /**
+     */
+    public void setVpcType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "vpcType", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -485,6 +503,23 @@ public class RosSimpleOfficeSite extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder verifyCode(final com.aliyun.ros.cdk.core.IResolvable verifyCode) {
             this.props.verifyCode(verifyCode);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param vpcType This parameter is required.
+         */
+        public Builder vpcType(final java.lang.String vpcType) {
+            this.props.vpcType(vpcType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param vpcType This parameter is required.
+         */
+        public Builder vpcType(final com.aliyun.ros.cdk.core.IResolvable vpcType) {
+            this.props.vpcType(vpcType);
             return this;
         }
 

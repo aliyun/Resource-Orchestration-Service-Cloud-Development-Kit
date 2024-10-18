@@ -20,6 +20,8 @@ type RosZone interface {
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
 	CreationStack() *[]*string
+	DnsGroup() interface{}
+	SetDnsGroup(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
 	IgnoredStackTagKeys() interface{}
@@ -65,10 +67,6 @@ type RosZone interface {
 	UpdatedProperites() *map[string]interface{}
 	ZoneName() interface{}
 	SetZoneName(val interface{})
-	ZoneTag() interface{}
-	SetZoneTag(val interface{})
-	ZoneType() interface{}
-	SetZoneType(val interface{})
 	AddCondition(con alicloudroscdkcore.RosCondition)
 	AddCount(count interface{})
 	// Syntactic sugar for `addOverride(path, undefined)`.
@@ -235,6 +233,16 @@ func (j *jsiiProxy_RosZone) CreationStack() *[]*string {
 	return returns
 }
 
+func (j *jsiiProxy_RosZone) DnsGroup() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"dnsGroup",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosZone) EnableResourcePropertyConstraint() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -385,26 +393,6 @@ func (j *jsiiProxy_RosZone) ZoneName() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_RosZone) ZoneTag() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"zoneTag",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosZone) ZoneType() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"zoneType",
-		&returns,
-	)
-	return returns
-}
-
 
 func NewRosZone(scope alicloudroscdkcore.Construct, id *string, props *RosZoneProps, enableResourcePropertyConstraint *bool) RosZone {
 	_init_.Initialize()
@@ -430,6 +418,17 @@ func NewRosZone_Override(r RosZone, scope alicloudroscdkcore.Construct, id *stri
 		"@alicloud/ros-cdk-pvtz.RosZone",
 		[]interface{}{scope, id, props, enableResourcePropertyConstraint},
 		r,
+	)
+}
+
+func (j *jsiiProxy_RosZone)SetDnsGroup(val interface{}) {
+	if err := j.validateSetDnsGroupParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"dnsGroup",
+		val,
 	)
 }
 
@@ -506,28 +505,6 @@ func (j *jsiiProxy_RosZone)SetZoneName(val interface{}) {
 	_jsii_.Set(
 		j,
 		"zoneName",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosZone)SetZoneTag(val interface{}) {
-	if err := j.validateSetZoneTagParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"zoneTag",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosZone)SetZoneType(val interface{}) {
-	if err := j.validateSetZoneTypeParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"zoneType",
 		val,
 	)
 }
