@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nas;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::NAS::DataFlow</code>, which is used to create a data flow between a Cloud Parallel File Storage (CPFS) file system and an Object Storage Service (OSS) bucket.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:40.883Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.734Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.DataFlow")
 public class DataFlow extends com.aliyun.ros.cdk.core.Resource {
 

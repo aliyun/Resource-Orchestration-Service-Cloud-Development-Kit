@@ -1838,6 +1838,14 @@ export interface RosSimpleOfficeSiteProps {
     readonly verifyCode?: string | ros.IResolvable;
 
     /**
+     * @Property vpcType: The type of office network.
+     * Enumeration value:
+     * standard: Advanced office network.
+     * basic: Basic office network.
+     */
+    readonly vpcType?: string | ros.IResolvable;
+
+    /**
      * @Property vSwitchId: The IDs of the vSwitches in the VPC. This parameter is required when you create a CloudBox-based workspace.
      */
     readonly vSwitchId?: string | ros.IResolvable;
@@ -1853,15 +1861,22 @@ export interface RosSimpleOfficeSiteProps {
 function RosSimpleOfficeSitePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('verifyCode', ros.validateString)(properties.verifyCode));
-    errors.collect(ros.propertyValidator('needVerifyZeroDevice', ros.validateBoolean)(properties.needVerifyZeroDevice));
-    errors.collect(ros.propertyValidator('cenOwnerId', ros.validateNumber)(properties.cenOwnerId));
-    errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('enableAdminAccess', ros.validateBoolean)(properties.enableAdminAccess));
     errors.collect(ros.propertyValidator('cloudBoxOfficeSite', ros.validateBoolean)(properties.cloudBoxOfficeSite));
+    errors.collect(ros.propertyValidator('cidrBlock', ros.validateString)(properties.cidrBlock));
+    errors.collect(ros.propertyValidator('verifyCode', ros.validateString)(properties.verifyCode));
+    if(properties.vpcType && (typeof properties.vpcType) !== 'object') {
+        errors.collect(ros.propertyValidator('vpcType', ros.validateAllowedValues)({
+          data: properties.vpcType,
+          allowedValues: ["standard","basic"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('vpcType', ros.validateString)(properties.vpcType));
+    errors.collect(ros.propertyValidator('needVerifyZeroDevice', ros.validateBoolean)(properties.needVerifyZeroDevice));
+    errors.collect(ros.propertyValidator('cenOwnerId', ros.validateNumber)(properties.cenOwnerId));
+    errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
     errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
-    errors.collect(ros.propertyValidator('officeSiteName', ros.validateString)(properties.officeSiteName));
     if(properties.desktopAccessType && (typeof properties.desktopAccessType) !== 'object') {
         errors.collect(ros.propertyValidator('desktopAccessType', ros.validateAllowedValues)({
           data: properties.desktopAccessType,
@@ -1869,7 +1884,7 @@ function RosSimpleOfficeSitePropsValidator(properties: any): ros.ValidationResul
         }));
     }
     errors.collect(ros.propertyValidator('desktopAccessType', ros.validateString)(properties.desktopAccessType));
-    errors.collect(ros.propertyValidator('cidrBlock', ros.validateString)(properties.cidrBlock));
+    errors.collect(ros.propertyValidator('officeSiteName', ros.validateString)(properties.officeSiteName));
     errors.collect(ros.propertyValidator('enableInternetAccess', ros.validateBoolean)(properties.enableInternetAccess));
     return errors.wrap('supplied properties not correct for "RosSimpleOfficeSiteProps"');
 }
@@ -1899,6 +1914,7 @@ function rosSimpleOfficeSitePropsToRosTemplate(properties: any, enableResourcePr
       'NeedVerifyZeroDevice': ros.booleanToRosTemplate(properties.needVerifyZeroDevice),
       'OfficeSiteName': ros.stringToRosTemplate(properties.officeSiteName),
       'VerifyCode': ros.stringToRosTemplate(properties.verifyCode),
+      'VpcType': ros.stringToRosTemplate(properties.vpcType),
       'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
     };
 }
@@ -1994,6 +2010,14 @@ export class RosSimpleOfficeSite extends ros.RosResource {
     public verifyCode: string | ros.IResolvable | undefined;
 
     /**
+     * @Property vpcType: The type of office network.
+     * Enumeration value:
+     * standard: Advanced office network.
+     * basic: Basic office network.
+     */
+    public vpcType: string | ros.IResolvable | undefined;
+
+    /**
      * @Property vSwitchId: The IDs of the vSwitches in the VPC. This parameter is required when you create a CloudBox-based workspace.
      */
     public vSwitchId: string | ros.IResolvable | undefined;
@@ -2019,6 +2043,7 @@ export class RosSimpleOfficeSite extends ros.RosResource {
         this.needVerifyZeroDevice = props.needVerifyZeroDevice;
         this.officeSiteName = props.officeSiteName;
         this.verifyCode = props.verifyCode;
+        this.vpcType = props.vpcType;
         this.vSwitchId = props.vSwitchId;
     }
 
@@ -2036,6 +2061,7 @@ export class RosSimpleOfficeSite extends ros.RosResource {
             needVerifyZeroDevice: this.needVerifyZeroDevice,
             officeSiteName: this.officeSiteName,
             verifyCode: this.verifyCode,
+            vpcType: this.vpcType,
             vSwitchId: this.vSwitchId,
         };
     }

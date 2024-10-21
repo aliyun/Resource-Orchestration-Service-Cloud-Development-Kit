@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rocketmq.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ROCKETMQ::Topic</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:42.245Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:33.105Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq.datasource.Topic")
 public class Topic extends com.aliyun.ros.cdk.core.Resource {
 

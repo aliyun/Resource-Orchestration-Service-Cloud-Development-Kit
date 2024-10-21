@@ -7,7 +7,6 @@ package alicloudroscdkcs
 type RosManagedKubernetesClusterProps struct {
 	Name interface{} `field:"required" json:"name" yaml:"name"`
 	VpcId interface{} `field:"required" json:"vpcId" yaml:"vpcId"`
-	VSwitchIds interface{} `field:"required" json:"vSwitchIds" yaml:"vSwitchIds"`
 	Addons interface{} `field:"optional" json:"addons" yaml:"addons"`
 	AutoRenew interface{} `field:"optional" json:"autoRenew" yaml:"autoRenew"`
 	AutoRenewPeriod interface{} `field:"optional" json:"autoRenewPeriod" yaml:"autoRenewPeriod"`
@@ -17,7 +16,6 @@ type RosManagedKubernetesClusterProps struct {
 	ContainerCidr interface{} `field:"optional" json:"containerCidr" yaml:"containerCidr"`
 	DeleteOptions interface{} `field:"optional" json:"deleteOptions" yaml:"deleteOptions"`
 	DeletionProtection interface{} `field:"optional" json:"deletionProtection" yaml:"deletionProtection"`
-	DisableRollback interface{} `field:"optional" json:"disableRollback" yaml:"disableRollback"`
 	EncryptionProviderKey interface{} `field:"optional" json:"encryptionProviderKey" yaml:"encryptionProviderKey"`
 	EndpointPublicAccess interface{} `field:"optional" json:"endpointPublicAccess" yaml:"endpointPublicAccess"`
 	FormatDisk interface{} `field:"optional" json:"formatDisk" yaml:"formatDisk"`
@@ -30,7 +28,6 @@ type RosManagedKubernetesClusterProps struct {
 	NodeCidrMask interface{} `field:"optional" json:"nodeCidrMask" yaml:"nodeCidrMask"`
 	NodeNameMode interface{} `field:"optional" json:"nodeNameMode" yaml:"nodeNameMode"`
 	NodePools interface{} `field:"optional" json:"nodePools" yaml:"nodePools"`
-	NumOfNodes interface{} `field:"optional" json:"numOfNodes" yaml:"numOfNodes"`
 	OsType interface{} `field:"optional" json:"osType" yaml:"osType"`
 	Period interface{} `field:"optional" json:"period" yaml:"period"`
 	PeriodUnit interface{} `field:"optional" json:"periodUnit" yaml:"periodUnit"`
@@ -48,12 +45,6 @@ type RosManagedKubernetesClusterProps struct {
 	Taint interface{} `field:"optional" json:"taint" yaml:"taint"`
 	TimeoutMins interface{} `field:"optional" json:"timeoutMins" yaml:"timeoutMins"`
 	UserData interface{} `field:"optional" json:"userData" yaml:"userData"`
-	WorkerDataDisk interface{} `field:"optional" json:"workerDataDisk" yaml:"workerDataDisk"`
-	WorkerDataDisks interface{} `field:"optional" json:"workerDataDisks" yaml:"workerDataDisks"`
-	WorkerInstanceTypes interface{} `field:"optional" json:"workerInstanceTypes" yaml:"workerInstanceTypes"`
-	WorkerSystemDiskCategory interface{} `field:"optional" json:"workerSystemDiskCategory" yaml:"workerSystemDiskCategory"`
-	WorkerSystemDiskPerformanceLevel interface{} `field:"optional" json:"workerSystemDiskPerformanceLevel" yaml:"workerSystemDiskPerformanceLevel"`
-	WorkerSystemDiskSize interface{} `field:"optional" json:"workerSystemDiskSize" yaml:"workerSystemDiskSize"`
 	ZoneIds interface{} `field:"optional" json:"zoneIds" yaml:"zoneIds"`
 }
 

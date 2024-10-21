@@ -48,7 +48,11 @@
 @alicloud/ros-cdk-kms.datasource.RosPoliciesProps=com.aliyun.ros.cdk.kms.datasource.RosPoliciesProps
 @alicloud/ros-cdk-kms.datasource.RosPolicy=com.aliyun.ros.cdk.kms.datasource.RosPolicy
 @alicloud/ros-cdk-kms.datasource.RosPolicyProps=com.aliyun.ros.cdk.kms.datasource.RosPolicyProps
+@alicloud/ros-cdk-kms.datasource.RosSecret=com.aliyun.ros.cdk.kms.datasource.RosSecret
+@alicloud/ros-cdk-kms.datasource.RosSecretProps=com.aliyun.ros.cdk.kms.datasource.RosSecretProps
 @alicloud/ros-cdk-kms.datasource.RosSecrets=com.aliyun.ros.cdk.kms.datasource.RosSecrets
 @alicloud/ros-cdk-kms.datasource.RosSecretsProps=com.aliyun.ros.cdk.kms.datasource.RosSecretsProps
+@alicloud/ros-cdk-kms.datasource.Secret=com.aliyun.ros.cdk.kms.datasource.Secret
+@alicloud/ros-cdk-kms.datasource.SecretProps=com.aliyun.ros.cdk.kms.datasource.SecretProps
 @alicloud/ros-cdk-kms.datasource.Secrets=com.aliyun.ros.cdk.kms.datasource.Secrets
 @alicloud/ros-cdk-kms.datasource.SecretsProps=com.aliyun.ros.cdk.kms.datasource.SecretsProps

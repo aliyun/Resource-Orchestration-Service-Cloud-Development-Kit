@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pvtz;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::PVTZ::Zone</code>, which is used to create a private zone.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:41.563Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:32.468Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.RosZone")
 public class RosZone extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -93,6 +93,24 @@ public class RosZone extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setZoneName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "zoneName", java.util.Objects.requireNonNull(value, "zoneName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDnsGroup() {
+        return software.amazon.jsii.Kernel.get(this, "dnsGroup", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDnsGroup(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "dnsGroup", value);
+    }
+
+    /**
+     */
+    public void setDnsGroup(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "dnsGroup", value);
     }
 
     /**
@@ -193,42 +211,6 @@ public class RosZone extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setTags(final @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.pvtz.RosZone.TagsProperty> value) {
         software.amazon.jsii.Kernel.set(this, "tags", value);
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getZoneTag() {
-        return software.amazon.jsii.Kernel.get(this, "zoneTag", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setZoneTag(final @org.jetbrains.annotations.Nullable java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "zoneTag", value);
-    }
-
-    /**
-     */
-    public void setZoneTag(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "zoneTag", value);
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getZoneType() {
-        return software.amazon.jsii.Kernel.get(this, "zoneType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setZoneType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "zoneType", value);
-    }
-
-    /**
-     */
-    public void setZoneType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "zoneType", value);
     }
     /**
      */
@@ -444,6 +426,23 @@ public class RosZone extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param dnsGroup This parameter is required.
+         */
+        public Builder dnsGroup(final java.lang.String dnsGroup) {
+            this.props.dnsGroup(dnsGroup);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param dnsGroup This parameter is required.
+         */
+        public Builder dnsGroup(final com.aliyun.ros.cdk.core.IResolvable dnsGroup) {
+            this.props.dnsGroup(dnsGroup);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param ignoredStackTagKeys This parameter is required.
          */
         public Builder ignoredStackTagKeys(final com.aliyun.ros.cdk.core.IResolvable ignoredStackTagKeys) {
@@ -516,40 +515,6 @@ public class RosZone extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.pvtz.RosZone.TagsProperty> tags) {
             this.props.tags(tags);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param zoneTag This parameter is required.
-         */
-        public Builder zoneTag(final java.lang.String zoneTag) {
-            this.props.zoneTag(zoneTag);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param zoneTag This parameter is required.
-         */
-        public Builder zoneTag(final com.aliyun.ros.cdk.core.IResolvable zoneTag) {
-            this.props.zoneTag(zoneTag);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param zoneType This parameter is required.
-         */
-        public Builder zoneType(final java.lang.String zoneType) {
-            this.props.zoneType(zoneType);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param zoneType This parameter is required.
-         */
-        public Builder zoneType(final com.aliyun.ros.cdk.core.IResolvable zoneType) {
-            this.props.zoneType(zoneType);
             return this;
         }
 

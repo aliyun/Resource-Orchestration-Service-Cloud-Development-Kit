@@ -63,5 +63,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             get;
             set;
         }
+
+        /// <summary>An alias for the output.</summary>
+        /// <remarks>
+        /// <strong>Default</strong>: - No label.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "label", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        public string? Label
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Whether to output parameter values.</summary>
+        /// <remarks>
+        /// If the value is set to true, only an asterisk (*) is printed.
+        ///
+        /// <strong>Default</strong>: false
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "noEcho", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
+        public bool? NoEcho
+        {
+            get;
+            set;
+        }
     }
 }

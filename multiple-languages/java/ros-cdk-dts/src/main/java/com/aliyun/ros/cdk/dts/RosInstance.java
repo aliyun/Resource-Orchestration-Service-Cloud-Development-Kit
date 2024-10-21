@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DTS::Instance</code>, which is a new resource type that is used to create a Data Transmission Service (DTS) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:38.203Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:28.620Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 

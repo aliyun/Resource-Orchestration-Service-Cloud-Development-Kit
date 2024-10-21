@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecd;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-simpleofficesite
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:38.367Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:28.801Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecd.$Module.class, fqn = "@alicloud/ros-cdk-ecd.SimpleOfficeSiteProps")
 @software.amazon.jsii.Jsii.Proxy(SimpleOfficeSiteProps.Jsii$Proxy.class)
 public interface SimpleOfficeSiteProps extends software.amazon.jsii.JsiiSerializable {
@@ -120,6 +120,17 @@ public interface SimpleOfficeSiteProps extends software.amazon.jsii.JsiiSerializ
     }
 
     /**
+     * Property vpcType: The type of office network.
+     * <p>
+     * Enumeration value:
+     * standard: Advanced office network.
+     * basic: Basic office network.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpcType() {
+        return null;
+    }
+
+    /**
      * Property vSwitchId: The IDs of the vSwitches in the VPC.
      * <p>
      * This parameter is required when you create a CloudBox-based workspace.
@@ -149,6 +160,7 @@ public interface SimpleOfficeSiteProps extends software.amazon.jsii.JsiiSerializ
         java.lang.Object needVerifyZeroDevice;
         java.lang.Object officeSiteName;
         java.lang.Object verifyCode;
+        java.lang.Object vpcType;
         java.lang.Object vSwitchId;
 
         /**
@@ -414,6 +426,32 @@ public interface SimpleOfficeSiteProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link SimpleOfficeSiteProps#getVpcType}
+         * @param vpcType Property vpcType: The type of office network.
+         *                Enumeration value:
+         *                standard: Advanced office network.
+         *                basic: Basic office network.
+         * @return {@code this}
+         */
+        public Builder vpcType(java.lang.String vpcType) {
+            this.vpcType = vpcType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SimpleOfficeSiteProps#getVpcType}
+         * @param vpcType Property vpcType: The type of office network.
+         *                Enumeration value:
+         *                standard: Advanced office network.
+         *                basic: Basic office network.
+         * @return {@code this}
+         */
+        public Builder vpcType(com.aliyun.ros.cdk.core.IResolvable vpcType) {
+            this.vpcType = vpcType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SimpleOfficeSiteProps#getVSwitchId}
          * @param vSwitchId Property vSwitchId: The IDs of the vSwitches in the VPC.
          *                  This parameter is required when you create a CloudBox-based workspace.
@@ -462,6 +500,7 @@ public interface SimpleOfficeSiteProps extends software.amazon.jsii.JsiiSerializ
         private final java.lang.Object needVerifyZeroDevice;
         private final java.lang.Object officeSiteName;
         private final java.lang.Object verifyCode;
+        private final java.lang.Object vpcType;
         private final java.lang.Object vSwitchId;
 
         /**
@@ -481,6 +520,7 @@ public interface SimpleOfficeSiteProps extends software.amazon.jsii.JsiiSerializ
             this.needVerifyZeroDevice = software.amazon.jsii.Kernel.get(this, "needVerifyZeroDevice", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.officeSiteName = software.amazon.jsii.Kernel.get(this, "officeSiteName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.verifyCode = software.amazon.jsii.Kernel.get(this, "verifyCode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vpcType = software.amazon.jsii.Kernel.get(this, "vpcType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -500,6 +540,7 @@ public interface SimpleOfficeSiteProps extends software.amazon.jsii.JsiiSerializ
             this.needVerifyZeroDevice = builder.needVerifyZeroDevice;
             this.officeSiteName = builder.officeSiteName;
             this.verifyCode = builder.verifyCode;
+            this.vpcType = builder.vpcType;
             this.vSwitchId = builder.vSwitchId;
         }
 
@@ -559,6 +600,11 @@ public interface SimpleOfficeSiteProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
+        public final java.lang.Object getVpcType() {
+            return this.vpcType;
+        }
+
+        @Override
         public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
@@ -602,6 +648,9 @@ public interface SimpleOfficeSiteProps extends software.amazon.jsii.JsiiSerializ
             if (this.getVerifyCode() != null) {
                 data.set("verifyCode", om.valueToTree(this.getVerifyCode()));
             }
+            if (this.getVpcType() != null) {
+                data.set("vpcType", om.valueToTree(this.getVpcType()));
+            }
             if (this.getVSwitchId() != null) {
                 data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
             }
@@ -634,6 +683,7 @@ public interface SimpleOfficeSiteProps extends software.amazon.jsii.JsiiSerializ
             if (this.needVerifyZeroDevice != null ? !this.needVerifyZeroDevice.equals(that.needVerifyZeroDevice) : that.needVerifyZeroDevice != null) return false;
             if (this.officeSiteName != null ? !this.officeSiteName.equals(that.officeSiteName) : that.officeSiteName != null) return false;
             if (this.verifyCode != null ? !this.verifyCode.equals(that.verifyCode) : that.verifyCode != null) return false;
+            if (this.vpcType != null ? !this.vpcType.equals(that.vpcType) : that.vpcType != null) return false;
             return this.vSwitchId != null ? this.vSwitchId.equals(that.vSwitchId) : that.vSwitchId == null;
         }
 
@@ -650,6 +700,7 @@ public interface SimpleOfficeSiteProps extends software.amazon.jsii.JsiiSerializ
             result = 31 * result + (this.needVerifyZeroDevice != null ? this.needVerifyZeroDevice.hashCode() : 0);
             result = 31 * result + (this.officeSiteName != null ? this.officeSiteName.hashCode() : 0);
             result = 31 * result + (this.verifyCode != null ? this.verifyCode.hashCode() : 0);
+            result = 31 * result + (this.vpcType != null ? this.vpcType.hashCode() : 0);
             result = 31 * result + (this.vSwitchId != null ? this.vSwitchId.hashCode() : 0);
             return result;
         }

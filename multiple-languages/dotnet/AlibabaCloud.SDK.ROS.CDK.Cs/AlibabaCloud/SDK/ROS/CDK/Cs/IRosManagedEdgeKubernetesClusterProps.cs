@@ -21,15 +21,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: numOfNodes: Number of worker nodes. The range is [0,300]
-        /// </remarks>
-        [JsiiProperty(name: "numOfNodes", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object NumOfNodes
-        {
-            get;
-        }
-
-        /// <remarks>
         /// <strong>Property</strong>: addons: The add-ons to be installed for the cluster.
         /// </remarks>
         [JsiiProperty(name: "addons", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster.AddonsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -46,7 +37,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// <strong>Property</strong>: autoRenew: Whether the cluster automatically renews. It takes effect when the value of ChargeType is PrePaid. The optional values are:
         /// true: automatic renewal
         /// false: do not renew automatically
-        /// Default to true.
+        /// Default to true.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+        /// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
         /// </remarks>
         [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -62,7 +54,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// <strong>Property</strong>: autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required:
         /// When PeriodUnit = Week, the values are: {"1", "2", "3"}
         /// When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
-        /// Default to 1.
+        /// Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+        /// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
         /// </remarks>
         [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -79,6 +72,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// PrePaid: prepaid
         /// PostPaid: Pay as you go
         /// Default to PostPaid.
+        /// Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+        /// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
         /// </remarks>
         [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -145,22 +140,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? DeletionProtection
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <remarks>
-        /// <strong>Property</strong>: disableRollback: Whether the failure was rolled back:
-        /// true: indicates that it fails to roll back
-        /// false: rollback failed
-        /// The default is true. If rollback fails, resources produced during the creation process will be released. False is not recommended.
-        /// </remarks>
-        [JsiiProperty(name: "disableRollback", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? DisableRollback
         {
             get
             {
@@ -247,7 +226,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
         /// When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
         /// When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
-        /// Default to 1.
+        /// Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+        /// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
         /// </remarks>
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -264,7 +244,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// Week: Time is measured in weeks
         /// Month: time in months
         /// Year: time in years
-        /// Default to Month
+        /// Default to MonthStarting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+        /// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
         /// </remarks>
         [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -387,115 +368,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: vSwitchIds: The virtual switch ID of the worker node.
-        /// </remarks>
-        [JsiiProperty(name: "vSwitchIds", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? VSwitchIds
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <remarks>
-        /// <strong>Property</strong>: workerDataDisk: Whether to mount the data disk. The options are as follows:
-        /// true: indicates that the worker node mounts data disks.
-        /// false: indicates that the worker node does not mount data disks.
-        /// Default to false.
-        /// </remarks>
-        [JsiiProperty(name: "workerDataDisk", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? WorkerDataDisk
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <remarks>
-        /// <strong>Property</strong>: workerDataDiskCategory: Data disk type.
-        /// </remarks>
-        [JsiiProperty(name: "workerDataDiskCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? WorkerDataDiskCategory
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <remarks>
-        /// <strong>Property</strong>: workerDataDisks: A combination of configurations such as worker data disk type and size. This parameter is valid only when the worker node data disk is mounted.
-        /// </remarks>
-        [JsiiProperty(name: "workerDataDisks", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster.WorkerDataDisksProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? WorkerDataDisks
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <remarks>
-        /// <strong>Property</strong>: workerDataDiskSize: Data disk size in GiB.
-        /// </remarks>
-        [JsiiProperty(name: "workerDataDiskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? WorkerDataDiskSize
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <remarks>
-        /// <strong>Property</strong>: workerInstanceTypes: Worker node ECS specification type code. For more details, see Instance Specification Family.
-        /// </remarks>
-        [JsiiProperty(name: "workerInstanceTypes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? WorkerInstanceTypes
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <remarks>
-        /// <strong>Property</strong>: workerSystemDiskCategory: Worker node system disk type.
-        /// Default to cloud_efficiency.
-        /// </remarks>
-        [JsiiProperty(name: "workerSystemDiskCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? WorkerSystemDiskCategory
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <remarks>
-        /// <strong>Property</strong>: workerSystemDiskSize: Worker disk system disk size, the unit is GiB.
-        /// Default to 120.
-        /// </remarks>
-        [JsiiProperty(name: "workerSystemDiskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? WorkerSystemDiskSize
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <remarks>
         /// <strong>Property</strong>: zoneIds: Zone ids of worker node virtual switches belongs to.
         /// </remarks>
         [JsiiProperty(name: "zoneIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -529,15 +401,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: numOfNodes: Number of worker nodes. The range is [0,300]
-            /// </remarks>
-            [JsiiProperty(name: "numOfNodes", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object NumOfNodes
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <remarks>
             /// <strong>Property</strong>: addons: The add-ons to be installed for the cluster.
             /// </remarks>
             [JsiiOptional]
@@ -551,7 +414,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// <strong>Property</strong>: autoRenew: Whether the cluster automatically renews. It takes effect when the value of ChargeType is PrePaid. The optional values are:
             /// true: automatic renewal
             /// false: do not renew automatically
-            /// Default to true.
+            /// Default to true.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+            /// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -564,7 +428,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// <strong>Property</strong>: autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required:
             /// When PeriodUnit = Week, the values are: {"1", "2", "3"}
             /// When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
-            /// Default to 1.
+            /// Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+            /// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -578,6 +443,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// PrePaid: prepaid
             /// PostPaid: Pay as you go
             /// Default to PostPaid.
+            /// Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+            /// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -632,19 +499,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             [JsiiOptional]
             [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DeletionProtection
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: disableRollback: Whether the failure was rolled back:
-            /// true: indicates that it fails to roll back
-            /// false: rollback failed
-            /// The default is true. If rollback fails, resources produced during the creation process will be released. False is not recommended.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "disableRollback", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? DisableRollback
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -713,7 +567,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
             /// When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
             /// When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
-            /// Default to 1.
+            /// Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+            /// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -727,7 +582,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// Week: Time is measured in weeks
             /// Month: time in months
             /// Year: time in years
-            /// Default to Month
+            /// Default to MonthStarting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+            /// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -818,91 +674,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             [JsiiOptional]
             [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? VpcId
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: vSwitchIds: The virtual switch ID of the worker node.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "vSwitchIds", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? VSwitchIds
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: workerDataDisk: Whether to mount the data disk. The options are as follows:
-            /// true: indicates that the worker node mounts data disks.
-            /// false: indicates that the worker node does not mount data disks.
-            /// Default to false.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "workerDataDisk", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? WorkerDataDisk
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: workerDataDiskCategory: Data disk type.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "workerDataDiskCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? WorkerDataDiskCategory
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: workerDataDisks: A combination of configurations such as worker data disk type and size. This parameter is valid only when the worker node data disk is mounted.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "workerDataDisks", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster.WorkerDataDisksProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-            public object? WorkerDataDisks
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: workerDataDiskSize: Data disk size in GiB.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "workerDataDiskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? WorkerDataDiskSize
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: workerInstanceTypes: Worker node ECS specification type code. For more details, see Instance Specification Family.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "workerInstanceTypes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-            public object? WorkerInstanceTypes
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: workerSystemDiskCategory: Worker node system disk type.
-            /// Default to cloud_efficiency.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "workerSystemDiskCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? WorkerSystemDiskCategory
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: workerSystemDiskSize: Worker disk system disk size, the unit is GiB.
-            /// Default to 120.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "workerSystemDiskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? WorkerSystemDiskSize
             {
                 get => GetInstanceProperty<object?>();
             }

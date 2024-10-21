@@ -81,6 +81,14 @@ export interface SimpleOfficeSiteProps {
     readonly verifyCode?: string | ros.IResolvable;
 
     /**
+     * Property vpcType: The type of office network.
+     * Enumeration value:
+     * standard: Advanced office network.
+     * basic: Basic office network.
+     */
+    readonly vpcType?: string | ros.IResolvable;
+
+    /**
      * Property vSwitchId: The IDs of the vSwitches in the VPC. This parameter is required when you create a CloudBox-based workspace.
      */
     readonly vSwitchId?: string | ros.IResolvable;
@@ -115,17 +123,18 @@ export class SimpleOfficeSite extends ros.Resource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSimpleOfficeSite = new RosSimpleOfficeSite(this, id,  {
-            verifyCode: props.verifyCode,
-            needVerifyZeroDevice: props.needVerifyZeroDevice,
-            cenOwnerId: props.cenOwnerId,
-            bandwidth: props.bandwidth,
             vSwitchId: props.vSwitchId,
             enableAdminAccess: props.enableAdminAccess,
             cloudBoxOfficeSite: props.cloudBoxOfficeSite,
-            cenId: props.cenId,
-            officeSiteName: props.officeSiteName,
-            desktopAccessType: props.desktopAccessType,
             cidrBlock: props.cidrBlock,
+            verifyCode: props.verifyCode,
+            vpcType: props.vpcType,
+            needVerifyZeroDevice: props.needVerifyZeroDevice,
+            cenOwnerId: props.cenOwnerId,
+            bandwidth: props.bandwidth,
+            cenId: props.cenId,
+            desktopAccessType: props.desktopAccessType,
+            officeSiteName: props.officeSiteName,
             enableInternetAccess: props.enableInternetAccess,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosSimpleOfficeSite;

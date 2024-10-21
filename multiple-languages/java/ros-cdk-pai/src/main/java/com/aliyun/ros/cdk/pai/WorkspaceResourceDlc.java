@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pai;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::PAI::WorkspaceResourceDlc</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:41.243Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:32.117Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.WorkspaceResourceDlc")
 public class WorkspaceResourceDlc extends com.aliyun.ros.cdk.core.Resource {
 

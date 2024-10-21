@@ -8,8 +8,6 @@ type RosApiProps struct {
 	ApiName interface{} `field:"required" json:"apiName" yaml:"apiName"`
 	GroupId interface{} `field:"required" json:"groupId" yaml:"groupId"`
 	RequestConfig interface{} `field:"required" json:"requestConfig" yaml:"requestConfig"`
-	ResultSample interface{} `field:"required" json:"resultSample" yaml:"resultSample"`
-	ResultType interface{} `field:"required" json:"resultType" yaml:"resultType"`
 	ServiceConfig interface{} `field:"required" json:"serviceConfig" yaml:"serviceConfig"`
 	Visibility interface{} `field:"required" json:"visibility" yaml:"visibility"`
 	AllowSignatureMethod interface{} `field:"optional" json:"allowSignatureMethod" yaml:"allowSignatureMethod"`
@@ -25,6 +23,8 @@ type RosApiProps struct {
 	RequestParameters interface{} `field:"optional" json:"requestParameters" yaml:"requestParameters"`
 	ResultBodyModel interface{} `field:"optional" json:"resultBodyModel" yaml:"resultBodyModel"`
 	ResultDescriptions interface{} `field:"optional" json:"resultDescriptions" yaml:"resultDescriptions"`
+	ResultSample interface{} `field:"optional" json:"resultSample" yaml:"resultSample"`
+	ResultType interface{} `field:"optional" json:"resultType" yaml:"resultType"`
 	ServiceParameters interface{} `field:"optional" json:"serviceParameters" yaml:"serviceParameters"`
 	ServiceParametersMap interface{} `field:"optional" json:"serviceParametersMap" yaml:"serviceParametersMap"`
 	SystemParameters interface{} `field:"optional" json:"systemParameters" yaml:"systemParameters"`

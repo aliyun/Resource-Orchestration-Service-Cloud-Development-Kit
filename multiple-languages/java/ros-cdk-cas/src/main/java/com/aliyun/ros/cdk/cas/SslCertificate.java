@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cas;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CAS::SslCertificate</code>, which is used to create an SSL certificate.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:36.500Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:27.093Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cas.$Module.class, fqn = "@alicloud/ros-cdk-cas.SslCertificate")
 public class SslCertificate extends com.aliyun.ros.cdk.core.Resource {
 

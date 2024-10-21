@@ -8019,9 +8019,9 @@ export interface RosInstanceGroupProps {
 
     /**
      * @Property systemDiskEncryptAlgorithm: The algorithm to use to encrypt the system disk. Valid values:
-     * - ase-256
+     * - aes-256
      * - sm4-128
-     * Default value: ase-256.
+     * Default value: aes-256.
      */
     readonly systemDiskEncryptAlgorithm?: string | ros.IResolvable;
 
@@ -8145,7 +8145,7 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
     if(properties.systemDiskEncryptAlgorithm && (typeof properties.systemDiskEncryptAlgorithm) !== 'object') {
         errors.collect(ros.propertyValidator('systemDiskEncryptAlgorithm', ros.validateAllowedValues)({
           data: properties.systemDiskEncryptAlgorithm,
-          allowedValues: ["ase-256","sm4-128"],
+          allowedValues: ["aes-256","sm4-128"],
         }));
     }
     errors.collect(ros.propertyValidator('systemDiskEncryptAlgorithm', ros.validateString)(properties.systemDiskEncryptAlgorithm));
@@ -8905,9 +8905,9 @@ export class RosInstanceGroup extends ros.RosResource {
 
     /**
      * @Property systemDiskEncryptAlgorithm: The algorithm to use to encrypt the system disk. Valid values:
-     * - ase-256
+     * - aes-256
      * - sm4-128
-     * Default value: ase-256.
+     * Default value: aes-256.
      */
     public systemDiskEncryptAlgorithm: string | ros.IResolvable | undefined;
 
@@ -10075,9 +10075,9 @@ export interface RosInstanceGroupCloneProps {
 
     /**
      * @Property systemDiskEncryptAlgorithm: The algorithm to use to encrypt the system disk. Valid values:
-     * - ase-256
+     * - aes-256
      * - sm4-128
-     * Default value: ase-256.
+     * Default value: aes-256.
      */
     readonly systemDiskEncryptAlgorithm?: string | ros.IResolvable;
 
@@ -10152,7 +10152,7 @@ function RosInstanceGroupClonePropsValidator(properties: any): ros.ValidationRes
     if(properties.systemDiskEncryptAlgorithm && (typeof properties.systemDiskEncryptAlgorithm) !== 'object') {
         errors.collect(ros.propertyValidator('systemDiskEncryptAlgorithm', ros.validateAllowedValues)({
           data: properties.systemDiskEncryptAlgorithm,
-          allowedValues: ["ase-256","sm4-128"],
+          allowedValues: ["aes-256","sm4-128"],
         }));
     }
     errors.collect(ros.propertyValidator('systemDiskEncryptAlgorithm', ros.validateString)(properties.systemDiskEncryptAlgorithm));
@@ -10706,9 +10706,9 @@ export class RosInstanceGroupClone extends ros.RosResource {
 
     /**
      * @Property systemDiskEncryptAlgorithm: The algorithm to use to encrypt the system disk. Valid values:
-     * - ase-256
+     * - aes-256
      * - sm4-128
-     * Default value: ase-256.
+     * Default value: aes-256.
      */
     public systemDiskEncryptAlgorithm: string | ros.IResolvable | undefined;
 

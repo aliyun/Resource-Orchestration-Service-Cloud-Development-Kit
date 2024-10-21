@@ -55,6 +55,13 @@ export interface LogstoreProps {
     readonly maxSplitShard?: number | ros.IResolvable;
 
     /**
+     * Property mode: The type of the Logstore. Simple Log Service provides two types of Logstores: Standard Logstores and Query Logstores. Valid values:
+     * standard: Standard Logstore. This type of Logstore supports the log analysis feature and is suitable for scenarios such as real-time monitoring and interactive analysis. You can also use this type of Logstore to build a comprehensive observability system.
+     * query: Query Logstore. This type of Logstore supports high-performance queries. The index traffic fee of a Query Logstore is approximately half that of a Standard Logstore. Query Logstores do not support SQL analysis. Query Logstores are suitable for scenarios in which the amount of data is large, the log retention period is long, or log analysis is not required. If logs are stored for weeks or months, the log retention period is considered long.
+     */
+    readonly mode?: string | ros.IResolvable;
+
+    /**
      * Property preserveStorage: Whether to keep the log permanently.
      * If set to true, TTL will be ignored.
      * Default to false.
@@ -114,6 +121,7 @@ export class Logstore extends ros.Resource {
             appendMeta: props.appendMeta === undefined || props.appendMeta === null ? false : props.appendMeta,
             maxSplitShard: props.maxSplitShard,
             autoSplit: props.autoSplit === undefined || props.autoSplit === null ? false : props.autoSplit,
+            mode: props.mode,
             enableTracking: props.enableTracking === undefined || props.enableTracking === null ? false : props.enableTracking,
             encryptConf: props.encryptConf,
             ttl: props.ttl === undefined || props.ttl === null ? 30 : props.ttl,

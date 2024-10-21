@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cen;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-childinstancerouteentrytoattachment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:36.633Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:27.224Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.ChildInstanceRouteEntryToAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(ChildInstanceRouteEntryToAttachmentProps.Jsii$Proxy.class)
 public interface ChildInstanceRouteEntryToAttachmentProps extends software.amazon.jsii.JsiiSerializable {

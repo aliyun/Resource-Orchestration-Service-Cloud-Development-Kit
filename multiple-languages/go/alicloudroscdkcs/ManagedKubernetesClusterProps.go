@@ -11,8 +11,6 @@ type ManagedKubernetesClusterProps struct {
 	Name interface{} `field:"required" json:"name" yaml:"name"`
 	// Property vpcId: VPC ID.
 	VpcId interface{} `field:"required" json:"vpcId" yaml:"vpcId"`
-	// Property vSwitchIds: The virtual switch ID of the worker node.
-	VSwitchIds interface{} `field:"required" json:"vSwitchIds" yaml:"vSwitchIds"`
 	// Property addons: A combination of addon plugins for Kubernetes clusters.
 	//
 	// Network plug-in: including Flannel and Terway network plug-ins
@@ -24,9 +22,10 @@ type ManagedKubernetesClusterProps struct {
 	// It takes effect when the value of ChargeType is PrePaid. The optional values are:
 	// true: automatic renewal
 	// false: do not renew automatically
-	// Default to true.
+	// Default to true.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+	// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
 	AutoRenew interface{} `field:"optional" json:"autoRenew" yaml:"autoRenew"`
-	// Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.
+	// Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.  For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
 	AutoRenewPeriod interface{} `field:"optional" json:"autoRenewPeriod" yaml:"autoRenewPeriod"`
 	// Property chargeType: cluster payment type.
 	//
@@ -34,6 +33,8 @@ type ManagedKubernetesClusterProps struct {
 	// PrePaid: prepaid
 	// PostPaid: Pay as you go
 	// Default to PostPaid.
+	// Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+	// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
 	ChargeType interface{} `field:"optional" json:"chargeType" yaml:"chargeType"`
 	// Property cloudMonitorFlags: Whether to install the cloud monitoring plugin: true: indicates installation false: Do not install Default to false.
 	CloudMonitorFlags interface{} `field:"optional" json:"cloudMonitorFlags" yaml:"cloudMonitorFlags"`
@@ -57,10 +58,6 @@ type ManagedKubernetesClusterProps struct {
 	// false: disables deletion protection for the cluster.
 	// Default value: false.
 	DeletionProtection interface{} `field:"optional" json:"deletionProtection" yaml:"deletionProtection"`
-	// Property disableRollback: Whether the failure was rolled back: true: indicates that it fails to roll back false: rollback failed The default is true.
-	//
-	// If rollback fails, resources produced during the creation process will be released. False is not recommended.
-	DisableRollback interface{} `field:"optional" json:"disableRollback" yaml:"disableRollback"`
 	// Property encryptionProviderKey: The ID of the key that is managed by Key Management Service (KMS).
 	//
 	// This key is used to encrypt data disks.You can use KMS in only professional managed Kubernetes clusters.
@@ -125,11 +122,6 @@ type ManagedKubernetesClusterProps struct {
 	NodeNameMode interface{} `field:"optional" json:"nodeNameMode" yaml:"nodeNameMode"`
 	// Property nodePools: The configurations of Node pools.
 	NodePools interface{} `field:"optional" json:"nodePools" yaml:"nodePools"`
-	// Property numOfNodes: Number of worker nodes.
-	//
-	// The range is [0,300].
-	// Default to 3.
-	NumOfNodes interface{} `field:"optional" json:"numOfNodes" yaml:"numOfNodes"`
 	// Property osType: The type of operating system.
 	//
 	// Valid values:
@@ -143,7 +135,8 @@ type ManagedKubernetesClusterProps struct {
 	// When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
 	// When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
 	// When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
-	// Default to 1.
+	// Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+	// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
 	Period interface{} `field:"optional" json:"period" yaml:"period"`
 	// Property periodUnit: When you specify PrePaid, you need to specify the period.
 	//
@@ -151,7 +144,8 @@ type ManagedKubernetesClusterProps struct {
 	// Week: Time is measured in weeks
 	// Month: time in months
 	// Year: time in years
-	// Default to Month.
+	// Default to MonthStarting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+	// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
 	PeriodUnit interface{} `field:"optional" json:"periodUnit" yaml:"periodUnit"`
 	// Property platform: The release version of the operating system.
 	//
@@ -224,38 +218,6 @@ type ManagedKubernetesClusterProps struct {
 	//
 	// [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
 	UserData interface{} `field:"optional" json:"userData" yaml:"userData"`
-	// Property workerDataDisk: Whether to mount the data disk.
-	//
-	// The options are as follows:
-	// true: indicates that the worker node mounts data disks.
-	// false: indicates that the worker node does not mount data disks.
-	// Default to false.
-	WorkerDataDisk interface{} `field:"optional" json:"workerDataDisk" yaml:"workerDataDisk"`
-	// Property workerDataDisks: A combination of configurations such as worker data disk type and size.
-	//
-	// This parameter is valid only when the worker node data disk is mounted.
-	WorkerDataDisks interface{} `field:"optional" json:"workerDataDisks" yaml:"workerDataDisks"`
-	// Property workerInstanceTypes: Worker node ECS specification type code.
-	//
-	// For more details, see Instance Specification Family.
-	WorkerInstanceTypes interface{} `field:"optional" json:"workerInstanceTypes" yaml:"workerInstanceTypes"`
-	// Property workerSystemDiskCategory: Worker node system disk type.
-	//
-	// The value includes:
-	// cloud_efficiency: efficient cloud disk
-	// cloud_ssd: SSD cloud disk
-	// Default to cloud_efficiency.
-	WorkerSystemDiskCategory interface{} `field:"optional" json:"workerSystemDiskCategory" yaml:"workerSystemDiskCategory"`
-	// Property workerSystemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.
-	//
-	// Default value: PL0. Valid values:
-	// PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.
-	// PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.
-	WorkerSystemDiskPerformanceLevel interface{} `field:"optional" json:"workerSystemDiskPerformanceLevel" yaml:"workerSystemDiskPerformanceLevel"`
-	// Property workerSystemDiskSize: Worker disk system disk size, the unit is GiB.
-	//
-	// Default to 120.
-	WorkerSystemDiskSize interface{} `field:"optional" json:"workerSystemDiskSize" yaml:"workerSystemDiskSize"`
 	// Property zoneIds: Zone ids of worker node virtual switches belongs to.
 	ZoneIds interface{} `field:"optional" json:"zoneIds" yaml:"zoneIds"`
 }

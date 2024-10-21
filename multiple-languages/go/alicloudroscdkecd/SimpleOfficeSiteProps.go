@@ -59,6 +59,12 @@ type SimpleOfficeSiteProps struct {
 	//
 	// If the CEN instance that you specify for the CenId parameter belongs to another Alibaba Cloud account, you must call the SendVerifyCode operation to obtain the verification code.
 	VerifyCode interface{} `field:"optional" json:"verifyCode" yaml:"verifyCode"`
+	// Property vpcType: The type of office network.
+	//
+	// Enumeration value:
+	// standard: Advanced office network.
+	// basic: Basic office network.
+	VpcType interface{} `field:"optional" json:"vpcType" yaml:"vpcType"`
 	// Property vSwitchId: The IDs of the vSwitches in the VPC.
 	//
 	// This parameter is required when you create a CloudBox-based workspace.

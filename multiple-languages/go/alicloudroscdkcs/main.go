@@ -311,56 +311,6 @@ func init() {
 		reflect.TypeOf((*GrantPermissionsProps)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"@alicloud/ros-cdk-cs.KubernetesCluster",
-		reflect.TypeOf((*KubernetesCluster)(nil)).Elem(),
-		[]_jsii_.Member{
-			_jsii_.MemberMethod{JsiiMethod: "addCondition", GoMethod: "AddCondition"},
-			_jsii_.MemberMethod{JsiiMethod: "addCount", GoMethod: "AddCount"},
-			_jsii_.MemberMethod{JsiiMethod: "addDependency", GoMethod: "AddDependency"},
-			_jsii_.MemberMethod{JsiiMethod: "addResourceDesc", GoMethod: "AddResourceDesc"},
-			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
-			_jsii_.MemberProperty{JsiiProperty: "attrApiServerSlbId", GoGetter: "AttrApiServerSlbId"},
-			_jsii_.MemberProperty{JsiiProperty: "attrClusterId", GoGetter: "AttrClusterId"},
-			_jsii_.MemberProperty{JsiiProperty: "attrDefaultUserKubeConfig", GoGetter: "AttrDefaultUserKubeConfig"},
-			_jsii_.MemberProperty{JsiiProperty: "attrIngressSlbId", GoGetter: "AttrIngressSlbId"},
-			_jsii_.MemberProperty{JsiiProperty: "attrNodes", GoGetter: "AttrNodes"},
-			_jsii_.MemberProperty{JsiiProperty: "attrPrivateUserKubConfig", GoGetter: "AttrPrivateUserKubConfig"},
-			_jsii_.MemberProperty{JsiiProperty: "attrScalingConfigurationId", GoGetter: "AttrScalingConfigurationId"},
-			_jsii_.MemberProperty{JsiiProperty: "attrScalingGroupId", GoGetter: "AttrScalingGroupId"},
-			_jsii_.MemberProperty{JsiiProperty: "attrScalingRuleId", GoGetter: "AttrScalingRuleId"},
-			_jsii_.MemberProperty{JsiiProperty: "attrTaskId", GoGetter: "AttrTaskId"},
-			_jsii_.MemberProperty{JsiiProperty: "attrWorkerRamRoleName", GoGetter: "AttrWorkerRamRoleName"},
-			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
-			_jsii_.MemberMethod{JsiiMethod: "generatePhysicalName", GoMethod: "GeneratePhysicalName"},
-			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
-			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
-			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
-			_jsii_.MemberMethod{JsiiMethod: "onPrepare", GoMethod: "OnPrepare"},
-			_jsii_.MemberMethod{JsiiMethod: "onSynthesize", GoMethod: "OnSynthesize"},
-			_jsii_.MemberMethod{JsiiMethod: "onValidate", GoMethod: "OnValidate"},
-			_jsii_.MemberProperty{JsiiProperty: "physicalName", GoGetter: "PhysicalName"},
-			_jsii_.MemberMethod{JsiiMethod: "prepare", GoMethod: "Prepare"},
-			_jsii_.MemberProperty{JsiiProperty: "props", GoGetter: "Props"},
-			_jsii_.MemberProperty{JsiiProperty: "ref", GoGetter: "Ref"},
-			_jsii_.MemberProperty{JsiiProperty: "resource", GoGetter: "Resource"},
-			_jsii_.MemberProperty{JsiiProperty: "scope", GoGetter: "Scope"},
-			_jsii_.MemberMethod{JsiiMethod: "setMetadata", GoMethod: "SetMetadata"},
-			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
-			_jsii_.MemberMethod{JsiiMethod: "synthesize", GoMethod: "Synthesize"},
-			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
-			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
-		},
-		func() interface{} {
-			j := jsiiProxy_KubernetesCluster{}
-			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreResource)
-			return &j
-		},
-	)
-	_jsii_.RegisterStruct(
-		"@alicloud/ros-cdk-cs.KubernetesClusterProps",
-		reflect.TypeOf((*KubernetesClusterProps)(nil)).Elem(),
-	)
-	_jsii_.RegisterClass(
 		"@alicloud/ros-cdk-cs.ManagedEdgeKubernetesCluster",
 		reflect.TypeOf((*ManagedEdgeKubernetesCluster)(nil)).Elem(),
 		[]_jsii_.Member{
@@ -954,183 +904,6 @@ func init() {
 		reflect.TypeOf((*RosGrantPermissionsProps)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
-		"@alicloud/ros-cdk-cs.RosKubernetesCluster",
-		reflect.TypeOf((*RosKubernetesCluster)(nil)).Elem(),
-		[]_jsii_.Member{
-			_jsii_.MemberMethod{JsiiMethod: "addCondition", GoMethod: "AddCondition"},
-			_jsii_.MemberMethod{JsiiMethod: "addCount", GoMethod: "AddCount"},
-			_jsii_.MemberMethod{JsiiMethod: "addDeletionOverride", GoMethod: "AddDeletionOverride"},
-			_jsii_.MemberMethod{JsiiMethod: "addDependsOn", GoMethod: "AddDependsOn"},
-			_jsii_.MemberMethod{JsiiMethod: "addDesc", GoMethod: "AddDesc"},
-			_jsii_.MemberMethod{JsiiMethod: "addMetaData", GoMethod: "AddMetaData"},
-			_jsii_.MemberProperty{JsiiProperty: "addons", GoGetter: "Addons"},
-			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
-			_jsii_.MemberMethod{JsiiMethod: "addPropertyDeletionOverride", GoMethod: "AddPropertyDeletionOverride"},
-			_jsii_.MemberMethod{JsiiMethod: "addPropertyOverride", GoMethod: "AddPropertyOverride"},
-			_jsii_.MemberMethod{JsiiMethod: "addRosDependency", GoMethod: "AddRosDependency"},
-			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
-			_jsii_.MemberProperty{JsiiProperty: "attrApiServerSlbId", GoGetter: "AttrApiServerSlbId"},
-			_jsii_.MemberProperty{JsiiProperty: "attrClusterId", GoGetter: "AttrClusterId"},
-			_jsii_.MemberProperty{JsiiProperty: "attrDefaultUserKubeConfig", GoGetter: "AttrDefaultUserKubeConfig"},
-			_jsii_.MemberProperty{JsiiProperty: "attrIngressSlbId", GoGetter: "AttrIngressSlbId"},
-			_jsii_.MemberProperty{JsiiProperty: "attrNodes", GoGetter: "AttrNodes"},
-			_jsii_.MemberProperty{JsiiProperty: "attrPrivateUserKubConfig", GoGetter: "AttrPrivateUserKubConfig"},
-			_jsii_.MemberProperty{JsiiProperty: "attrScalingConfigurationId", GoGetter: "AttrScalingConfigurationId"},
-			_jsii_.MemberProperty{JsiiProperty: "attrScalingGroupId", GoGetter: "AttrScalingGroupId"},
-			_jsii_.MemberProperty{JsiiProperty: "attrScalingRuleId", GoGetter: "AttrScalingRuleId"},
-			_jsii_.MemberProperty{JsiiProperty: "attrTaskId", GoGetter: "AttrTaskId"},
-			_jsii_.MemberProperty{JsiiProperty: "attrWorkerRamRoleName", GoGetter: "AttrWorkerRamRoleName"},
-			_jsii_.MemberProperty{JsiiProperty: "autoRenew", GoGetter: "AutoRenew"},
-			_jsii_.MemberProperty{JsiiProperty: "autoRenewPeriod", GoGetter: "AutoRenewPeriod"},
-			_jsii_.MemberProperty{JsiiProperty: "chargeType", GoGetter: "ChargeType"},
-			_jsii_.MemberProperty{JsiiProperty: "cloudMonitorFlags", GoGetter: "CloudMonitorFlags"},
-			_jsii_.MemberProperty{JsiiProperty: "containerCidr", GoGetter: "ContainerCidr"},
-			_jsii_.MemberProperty{JsiiProperty: "cpuPolicy", GoGetter: "CpuPolicy"},
-			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
-			_jsii_.MemberProperty{JsiiProperty: "deleteOptions", GoGetter: "DeleteOptions"},
-			_jsii_.MemberProperty{JsiiProperty: "deletionProtection", GoGetter: "DeletionProtection"},
-			_jsii_.MemberProperty{JsiiProperty: "disableRollback", GoGetter: "DisableRollback"},
-			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
-			_jsii_.MemberProperty{JsiiProperty: "endpointPublicAccess", GoGetter: "EndpointPublicAccess"},
-			_jsii_.MemberProperty{JsiiProperty: "formatDisk", GoGetter: "FormatDisk"},
-			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
-			_jsii_.MemberProperty{JsiiProperty: "isEnterpriseSecurityGroup", GoGetter: "IsEnterpriseSecurityGroup"},
-			_jsii_.MemberProperty{JsiiProperty: "keepInstanceName", GoGetter: "KeepInstanceName"},
-			_jsii_.MemberProperty{JsiiProperty: "keyPair", GoGetter: "KeyPair"},
-			_jsii_.MemberProperty{JsiiProperty: "kubernetesVersion", GoGetter: "KubernetesVersion"},
-			_jsii_.MemberProperty{JsiiProperty: "loadBalancerSpec", GoGetter: "LoadBalancerSpec"},
-			_jsii_.MemberProperty{JsiiProperty: "logicalId", GoGetter: "LogicalId"},
-			_jsii_.MemberProperty{JsiiProperty: "loginPassword", GoGetter: "LoginPassword"},
-			_jsii_.MemberProperty{JsiiProperty: "masterCount", GoGetter: "MasterCount"},
-			_jsii_.MemberProperty{JsiiProperty: "masterDataDisk", GoGetter: "MasterDataDisk"},
-			_jsii_.MemberProperty{JsiiProperty: "masterDataDisks", GoGetter: "MasterDataDisks"},
-			_jsii_.MemberProperty{JsiiProperty: "masterInstanceTypes", GoGetter: "MasterInstanceTypes"},
-			_jsii_.MemberProperty{JsiiProperty: "masterSystemDiskCategory", GoGetter: "MasterSystemDiskCategory"},
-			_jsii_.MemberProperty{JsiiProperty: "masterSystemDiskPerformanceLevel", GoGetter: "MasterSystemDiskPerformanceLevel"},
-			_jsii_.MemberProperty{JsiiProperty: "masterSystemDiskSize", GoGetter: "MasterSystemDiskSize"},
-			_jsii_.MemberProperty{JsiiProperty: "masterSystemDiskSnapshotPolicyId", GoGetter: "MasterSystemDiskSnapshotPolicyId"},
-			_jsii_.MemberProperty{JsiiProperty: "masterVSwitchIds", GoGetter: "MasterVSwitchIds"},
-			_jsii_.MemberProperty{JsiiProperty: "masterZoneIds", GoGetter: "MasterZoneIds"},
-			_jsii_.MemberProperty{JsiiProperty: "name", GoGetter: "Name"},
-			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
-			_jsii_.MemberProperty{JsiiProperty: "nodeCidrMask", GoGetter: "NodeCidrMask"},
-			_jsii_.MemberProperty{JsiiProperty: "nodeNameMode", GoGetter: "NodeNameMode"},
-			_jsii_.MemberProperty{JsiiProperty: "nodePools", GoGetter: "NodePools"},
-			_jsii_.MemberProperty{JsiiProperty: "nodePortRange", GoGetter: "NodePortRange"},
-			_jsii_.MemberProperty{JsiiProperty: "numOfNodes", GoGetter: "NumOfNodes"},
-			_jsii_.MemberMethod{JsiiMethod: "onPrepare", GoMethod: "OnPrepare"},
-			_jsii_.MemberMethod{JsiiMethod: "onSynthesize", GoMethod: "OnSynthesize"},
-			_jsii_.MemberMethod{JsiiMethod: "onValidate", GoMethod: "OnValidate"},
-			_jsii_.MemberProperty{JsiiProperty: "osType", GoGetter: "OsType"},
-			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
-			_jsii_.MemberProperty{JsiiProperty: "period", GoGetter: "Period"},
-			_jsii_.MemberProperty{JsiiProperty: "periodUnit", GoGetter: "PeriodUnit"},
-			_jsii_.MemberProperty{JsiiProperty: "platform", GoGetter: "Platform"},
-			_jsii_.MemberProperty{JsiiProperty: "podVswitchIds", GoGetter: "PodVswitchIds"},
-			_jsii_.MemberMethod{JsiiMethod: "prepare", GoMethod: "Prepare"},
-			_jsii_.MemberProperty{JsiiProperty: "proxyMode", GoGetter: "ProxyMode"},
-			_jsii_.MemberProperty{JsiiProperty: "ref", GoGetter: "Ref"},
-			_jsii_.MemberMethod{JsiiMethod: "renderProperties", GoMethod: "RenderProperties"},
-			_jsii_.MemberProperty{JsiiProperty: "resourceGroupId", GoGetter: "ResourceGroupId"},
-			_jsii_.MemberProperty{JsiiProperty: "rosOptions", GoGetter: "RosOptions"},
-			_jsii_.MemberProperty{JsiiProperty: "rosProperties", GoGetter: "RosProperties"},
-			_jsii_.MemberProperty{JsiiProperty: "rosResourceType", GoGetter: "RosResourceType"},
-			_jsii_.MemberProperty{JsiiProperty: "runtime", GoGetter: "Runtime"},
-			_jsii_.MemberProperty{JsiiProperty: "securityGroupId", GoGetter: "SecurityGroupId"},
-			_jsii_.MemberProperty{JsiiProperty: "securityHardeningOs", GoGetter: "SecurityHardeningOs"},
-			_jsii_.MemberProperty{JsiiProperty: "serviceCidr", GoGetter: "ServiceCidr"},
-			_jsii_.MemberProperty{JsiiProperty: "snatEntry", GoGetter: "SnatEntry"},
-			_jsii_.MemberProperty{JsiiProperty: "socEnabled", GoGetter: "SocEnabled"},
-			_jsii_.MemberProperty{JsiiProperty: "sshFlags", GoGetter: "SshFlags"},
-			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
-			_jsii_.MemberMethod{JsiiMethod: "synthesize", GoMethod: "Synthesize"},
-			_jsii_.MemberProperty{JsiiProperty: "tags", GoGetter: "Tags"},
-			_jsii_.MemberProperty{JsiiProperty: "taint", GoGetter: "Taint"},
-			_jsii_.MemberProperty{JsiiProperty: "timeoutMins", GoGetter: "TimeoutMins"},
-			_jsii_.MemberProperty{JsiiProperty: "timeZone", GoGetter: "TimeZone"},
-			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
-			_jsii_.MemberProperty{JsiiProperty: "updatedProperites", GoGetter: "UpdatedProperites"},
-			_jsii_.MemberProperty{JsiiProperty: "userCa", GoGetter: "UserCa"},
-			_jsii_.MemberProperty{JsiiProperty: "userData", GoGetter: "UserData"},
-			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
-			_jsii_.MemberMethod{JsiiMethod: "validateProperties", GoMethod: "ValidateProperties"},
-			_jsii_.MemberProperty{JsiiProperty: "vpcId", GoGetter: "VpcId"},
-			_jsii_.MemberProperty{JsiiProperty: "workerDataDisk", GoGetter: "WorkerDataDisk"},
-			_jsii_.MemberProperty{JsiiProperty: "workerDataDisks", GoGetter: "WorkerDataDisks"},
-			_jsii_.MemberProperty{JsiiProperty: "workerInstanceTypes", GoGetter: "WorkerInstanceTypes"},
-			_jsii_.MemberProperty{JsiiProperty: "workerSystemDiskCategory", GoGetter: "WorkerSystemDiskCategory"},
-			_jsii_.MemberProperty{JsiiProperty: "workerSystemDiskSize", GoGetter: "WorkerSystemDiskSize"},
-			_jsii_.MemberProperty{JsiiProperty: "workerSystemDiskSnapshotPolicyId", GoGetter: "WorkerSystemDiskSnapshotPolicyId"},
-			_jsii_.MemberProperty{JsiiProperty: "workerVSwitchIds", GoGetter: "WorkerVSwitchIds"},
-			_jsii_.MemberProperty{JsiiProperty: "workerZoneIds", GoGetter: "WorkerZoneIds"},
-		},
-		func() interface{} {
-			j := jsiiProxy_RosKubernetesCluster{}
-			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreRosResource)
-			return &j
-		},
-	)
-	_jsii_.RegisterStruct(
-		"@alicloud/ros-cdk-cs.RosKubernetesCluster.AddonsProperty",
-		reflect.TypeOf((*RosKubernetesCluster_AddonsProperty)(nil)).Elem(),
-	)
-	_jsii_.RegisterStruct(
-		"@alicloud/ros-cdk-cs.RosKubernetesCluster.DataDisksProperty",
-		reflect.TypeOf((*RosKubernetesCluster_DataDisksProperty)(nil)).Elem(),
-	)
-	_jsii_.RegisterStruct(
-		"@alicloud/ros-cdk-cs.RosKubernetesCluster.DeleteOptionsProperty",
-		reflect.TypeOf((*RosKubernetesCluster_DeleteOptionsProperty)(nil)).Elem(),
-	)
-	_jsii_.RegisterStruct(
-		"@alicloud/ros-cdk-cs.RosKubernetesCluster.KubernetesConfigProperty",
-		reflect.TypeOf((*RosKubernetesCluster_KubernetesConfigProperty)(nil)).Elem(),
-	)
-	_jsii_.RegisterStruct(
-		"@alicloud/ros-cdk-cs.RosKubernetesCluster.LabelsProperty",
-		reflect.TypeOf((*RosKubernetesCluster_LabelsProperty)(nil)).Elem(),
-	)
-	_jsii_.RegisterStruct(
-		"@alicloud/ros-cdk-cs.RosKubernetesCluster.MasterDataDisksProperty",
-		reflect.TypeOf((*RosKubernetesCluster_MasterDataDisksProperty)(nil)).Elem(),
-	)
-	_jsii_.RegisterStruct(
-		"@alicloud/ros-cdk-cs.RosKubernetesCluster.NodePoolInfoProperty",
-		reflect.TypeOf((*RosKubernetesCluster_NodePoolInfoProperty)(nil)).Elem(),
-	)
-	_jsii_.RegisterStruct(
-		"@alicloud/ros-cdk-cs.RosKubernetesCluster.NodePoolsProperty",
-		reflect.TypeOf((*RosKubernetesCluster_NodePoolsProperty)(nil)).Elem(),
-	)
-	_jsii_.RegisterStruct(
-		"@alicloud/ros-cdk-cs.RosKubernetesCluster.RuntimeProperty",
-		reflect.TypeOf((*RosKubernetesCluster_RuntimeProperty)(nil)).Elem(),
-	)
-	_jsii_.RegisterStruct(
-		"@alicloud/ros-cdk-cs.RosKubernetesCluster.ScalingGroupProperty",
-		reflect.TypeOf((*RosKubernetesCluster_ScalingGroupProperty)(nil)).Elem(),
-	)
-	_jsii_.RegisterStruct(
-		"@alicloud/ros-cdk-cs.RosKubernetesCluster.ScalingGroupTagsProperty",
-		reflect.TypeOf((*RosKubernetesCluster_ScalingGroupTagsProperty)(nil)).Elem(),
-	)
-	_jsii_.RegisterStruct(
-		"@alicloud/ros-cdk-cs.RosKubernetesCluster.TagsProperty",
-		reflect.TypeOf((*RosKubernetesCluster_TagsProperty)(nil)).Elem(),
-	)
-	_jsii_.RegisterStruct(
-		"@alicloud/ros-cdk-cs.RosKubernetesCluster.TaintsProperty",
-		reflect.TypeOf((*RosKubernetesCluster_TaintsProperty)(nil)).Elem(),
-	)
-	_jsii_.RegisterStruct(
-		"@alicloud/ros-cdk-cs.RosKubernetesCluster.WorkerDataDisksProperty",
-		reflect.TypeOf((*RosKubernetesCluster_WorkerDataDisksProperty)(nil)).Elem(),
-	)
-	_jsii_.RegisterStruct(
-		"@alicloud/ros-cdk-cs.RosKubernetesClusterProps",
-		reflect.TypeOf((*RosKubernetesClusterProps)(nil)).Elem(),
-	)
-	_jsii_.RegisterClass(
 		"@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster",
 		reflect.TypeOf((*RosManagedEdgeKubernetesCluster)(nil)).Elem(),
 		[]_jsii_.Member{
@@ -1165,7 +938,6 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "containerCidr", GoGetter: "ContainerCidr"},
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
 			_jsii_.MemberProperty{JsiiProperty: "deletionProtection", GoGetter: "DeletionProtection"},
-			_jsii_.MemberProperty{JsiiProperty: "disableRollback", GoGetter: "DisableRollback"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
 			_jsii_.MemberProperty{JsiiProperty: "endpointPublicAccess", GoGetter: "EndpointPublicAccess"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
@@ -1176,7 +948,6 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "name", GoGetter: "Name"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
 			_jsii_.MemberProperty{JsiiProperty: "nodeCidrMask", GoGetter: "NodeCidrMask"},
-			_jsii_.MemberProperty{JsiiProperty: "numOfNodes", GoGetter: "NumOfNodes"},
 			_jsii_.MemberMethod{JsiiMethod: "onPrepare", GoMethod: "OnPrepare"},
 			_jsii_.MemberMethod{JsiiMethod: "onSynthesize", GoMethod: "OnSynthesize"},
 			_jsii_.MemberMethod{JsiiMethod: "onValidate", GoMethod: "OnValidate"},
@@ -1203,14 +974,6 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
 			_jsii_.MemberMethod{JsiiMethod: "validateProperties", GoMethod: "ValidateProperties"},
 			_jsii_.MemberProperty{JsiiProperty: "vpcId", GoGetter: "VpcId"},
-			_jsii_.MemberProperty{JsiiProperty: "vSwitchIds", GoGetter: "VSwitchIds"},
-			_jsii_.MemberProperty{JsiiProperty: "workerDataDisk", GoGetter: "WorkerDataDisk"},
-			_jsii_.MemberProperty{JsiiProperty: "workerDataDiskCategory", GoGetter: "WorkerDataDiskCategory"},
-			_jsii_.MemberProperty{JsiiProperty: "workerDataDisks", GoGetter: "WorkerDataDisks"},
-			_jsii_.MemberProperty{JsiiProperty: "workerDataDiskSize", GoGetter: "WorkerDataDiskSize"},
-			_jsii_.MemberProperty{JsiiProperty: "workerInstanceTypes", GoGetter: "WorkerInstanceTypes"},
-			_jsii_.MemberProperty{JsiiProperty: "workerSystemDiskCategory", GoGetter: "WorkerSystemDiskCategory"},
-			_jsii_.MemberProperty{JsiiProperty: "workerSystemDiskSize", GoGetter: "WorkerSystemDiskSize"},
 			_jsii_.MemberProperty{JsiiProperty: "zoneIds", GoGetter: "ZoneIds"},
 		},
 		func() interface{} {
@@ -1226,10 +989,6 @@ func init() {
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster.TagsProperty",
 		reflect.TypeOf((*RosManagedEdgeKubernetesCluster_TagsProperty)(nil)).Elem(),
-	)
-	_jsii_.RegisterStruct(
-		"@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster.WorkerDataDisksProperty",
-		reflect.TypeOf((*RosManagedEdgeKubernetesCluster_WorkerDataDisksProperty)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesClusterProps",
@@ -1271,7 +1030,6 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
 			_jsii_.MemberProperty{JsiiProperty: "deleteOptions", GoGetter: "DeleteOptions"},
 			_jsii_.MemberProperty{JsiiProperty: "deletionProtection", GoGetter: "DeletionProtection"},
-			_jsii_.MemberProperty{JsiiProperty: "disableRollback", GoGetter: "DisableRollback"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
 			_jsii_.MemberProperty{JsiiProperty: "encryptionProviderKey", GoGetter: "EncryptionProviderKey"},
 			_jsii_.MemberProperty{JsiiProperty: "endpointPublicAccess", GoGetter: "EndpointPublicAccess"},
@@ -1289,7 +1047,6 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "nodeCidrMask", GoGetter: "NodeCidrMask"},
 			_jsii_.MemberProperty{JsiiProperty: "nodeNameMode", GoGetter: "NodeNameMode"},
 			_jsii_.MemberProperty{JsiiProperty: "nodePools", GoGetter: "NodePools"},
-			_jsii_.MemberProperty{JsiiProperty: "numOfNodes", GoGetter: "NumOfNodes"},
 			_jsii_.MemberMethod{JsiiMethod: "onPrepare", GoMethod: "OnPrepare"},
 			_jsii_.MemberMethod{JsiiMethod: "onSynthesize", GoMethod: "OnSynthesize"},
 			_jsii_.MemberMethod{JsiiMethod: "onValidate", GoMethod: "OnValidate"},
@@ -1324,13 +1081,6 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
 			_jsii_.MemberMethod{JsiiMethod: "validateProperties", GoMethod: "ValidateProperties"},
 			_jsii_.MemberProperty{JsiiProperty: "vpcId", GoGetter: "VpcId"},
-			_jsii_.MemberProperty{JsiiProperty: "vSwitchIds", GoGetter: "VSwitchIds"},
-			_jsii_.MemberProperty{JsiiProperty: "workerDataDisk", GoGetter: "WorkerDataDisk"},
-			_jsii_.MemberProperty{JsiiProperty: "workerDataDisks", GoGetter: "WorkerDataDisks"},
-			_jsii_.MemberProperty{JsiiProperty: "workerInstanceTypes", GoGetter: "WorkerInstanceTypes"},
-			_jsii_.MemberProperty{JsiiProperty: "workerSystemDiskCategory", GoGetter: "WorkerSystemDiskCategory"},
-			_jsii_.MemberProperty{JsiiProperty: "workerSystemDiskPerformanceLevel", GoGetter: "WorkerSystemDiskPerformanceLevel"},
-			_jsii_.MemberProperty{JsiiProperty: "workerSystemDiskSize", GoGetter: "WorkerSystemDiskSize"},
 			_jsii_.MemberProperty{JsiiProperty: "zoneIds", GoGetter: "ZoneIds"},
 		},
 		func() interface{} {
@@ -1386,10 +1136,6 @@ func init() {
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.TaintsProperty",
 		reflect.TypeOf((*RosManagedKubernetesCluster_TaintsProperty)(nil)).Elem(),
-	)
-	_jsii_.RegisterStruct(
-		"@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.WorkerDataDisksProperty",
-		reflect.TypeOf((*RosManagedKubernetesCluster_WorkerDataDisksProperty)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-cs.RosManagedKubernetesClusterProps",

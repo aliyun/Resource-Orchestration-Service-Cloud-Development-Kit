@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::FC::Layer</code>, which is used to publish layer versions.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:43.556Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:34.651Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosLayer")
 public class RosLayer extends com.aliyun.ros.cdk.core.RosResource {
 

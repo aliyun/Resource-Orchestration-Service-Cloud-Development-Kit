@@ -20,5 +20,11 @@ type RosOutputProps struct {
 	//
 	// To import the value from another stack, use `Fn.importValue(exportName)`.
 	ExportName *string `field:"optional" json:"exportName" yaml:"exportName"`
+	// An alias for the output.
+	Label *string `field:"optional" json:"label" yaml:"label"`
+	// Whether to output parameter values.
+	//
+	// If the value is set to true, only an asterisk (*) is printed.
+	NoEcho *bool `field:"optional" json:"noEcho" yaml:"noEcho"`
 }
 

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.actiontrail;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-traillogging
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:35.911Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:26.271Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.actiontrail.$Module.class, fqn = "@alicloud/ros-cdk-actiontrail.TrailLoggingProps")
 @software.amazon.jsii.Jsii.Proxy(TrailLoggingProps.Jsii$Proxy.class)
 public interface TrailLoggingProps extends software.amazon.jsii.JsiiSerializable {

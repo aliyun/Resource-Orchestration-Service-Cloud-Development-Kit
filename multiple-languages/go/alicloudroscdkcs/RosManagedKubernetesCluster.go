@@ -45,8 +45,6 @@ type RosManagedKubernetesCluster interface {
 	SetDeleteOptions(val interface{})
 	DeletionProtection() interface{}
 	SetDeletionProtection(val interface{})
-	DisableRollback() interface{}
-	SetDisableRollback(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
 	EncryptionProviderKey() interface{}
@@ -87,8 +85,6 @@ type RosManagedKubernetesCluster interface {
 	SetNodeNameMode(val interface{})
 	NodePools() interface{}
 	SetNodePools(val interface{})
-	NumOfNodes() interface{}
-	SetNumOfNodes(val interface{})
 	OsType() interface{}
 	SetOsType(val interface{})
 	Period() interface{}
@@ -144,20 +140,6 @@ type RosManagedKubernetesCluster interface {
 	SetUserData(val interface{})
 	VpcId() interface{}
 	SetVpcId(val interface{})
-	VSwitchIds() interface{}
-	SetVSwitchIds(val interface{})
-	WorkerDataDisk() interface{}
-	SetWorkerDataDisk(val interface{})
-	WorkerDataDisks() interface{}
-	SetWorkerDataDisks(val interface{})
-	WorkerInstanceTypes() interface{}
-	SetWorkerInstanceTypes(val interface{})
-	WorkerSystemDiskCategory() interface{}
-	SetWorkerSystemDiskCategory(val interface{})
-	WorkerSystemDiskPerformanceLevel() interface{}
-	SetWorkerSystemDiskPerformanceLevel(val interface{})
-	WorkerSystemDiskSize() interface{}
-	SetWorkerSystemDiskSize(val interface{})
 	ZoneIds() interface{}
 	SetZoneIds(val interface{})
 	AddCondition(con alicloudroscdkcore.RosCondition)
@@ -486,16 +468,6 @@ func (j *jsiiProxy_RosManagedKubernetesCluster) DeletionProtection() interface{}
 	return returns
 }
 
-func (j *jsiiProxy_RosManagedKubernetesCluster) DisableRollback() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"disableRollback",
-		&returns,
-	)
-	return returns
-}
-
 func (j *jsiiProxy_RosManagedKubernetesCluster) EnableResourcePropertyConstraint() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -651,16 +623,6 @@ func (j *jsiiProxy_RosManagedKubernetesCluster) NodePools() interface{} {
 	_jsii_.Get(
 		j,
 		"nodePools",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster) NumOfNodes() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"numOfNodes",
 		&returns,
 	)
 	return returns
@@ -906,76 +868,6 @@ func (j *jsiiProxy_RosManagedKubernetesCluster) VpcId() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_RosManagedKubernetesCluster) VSwitchIds() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"vSwitchIds",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster) WorkerDataDisk() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"workerDataDisk",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster) WorkerDataDisks() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"workerDataDisks",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster) WorkerInstanceTypes() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"workerInstanceTypes",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster) WorkerSystemDiskCategory() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"workerSystemDiskCategory",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster) WorkerSystemDiskPerformanceLevel() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"workerSystemDiskPerformanceLevel",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster) WorkerSystemDiskSize() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"workerSystemDiskSize",
-		&returns,
-	)
-	return returns
-}
-
 func (j *jsiiProxy_RosManagedKubernetesCluster) ZoneIds() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -1109,17 +1001,6 @@ func (j *jsiiProxy_RosManagedKubernetesCluster)SetDeletionProtection(val interfa
 	_jsii_.Set(
 		j,
 		"deletionProtection",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster)SetDisableRollback(val interface{}) {
-	if err := j.validateSetDisableRollbackParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"disableRollback",
 		val,
 	)
 }
@@ -1274,17 +1155,6 @@ func (j *jsiiProxy_RosManagedKubernetesCluster)SetNodePools(val interface{}) {
 	_jsii_.Set(
 		j,
 		"nodePools",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster)SetNumOfNodes(val interface{}) {
-	if err := j.validateSetNumOfNodesParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"numOfNodes",
 		val,
 	)
 }
@@ -1483,83 +1353,6 @@ func (j *jsiiProxy_RosManagedKubernetesCluster)SetVpcId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"vpcId",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster)SetVSwitchIds(val interface{}) {
-	if err := j.validateSetVSwitchIdsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"vSwitchIds",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster)SetWorkerDataDisk(val interface{}) {
-	if err := j.validateSetWorkerDataDiskParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"workerDataDisk",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster)SetWorkerDataDisks(val interface{}) {
-	if err := j.validateSetWorkerDataDisksParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"workerDataDisks",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster)SetWorkerInstanceTypes(val interface{}) {
-	if err := j.validateSetWorkerInstanceTypesParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"workerInstanceTypes",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster)SetWorkerSystemDiskCategory(val interface{}) {
-	if err := j.validateSetWorkerSystemDiskCategoryParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"workerSystemDiskCategory",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster)SetWorkerSystemDiskPerformanceLevel(val interface{}) {
-	if err := j.validateSetWorkerSystemDiskPerformanceLevelParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"workerSystemDiskPerformanceLevel",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster)SetWorkerSystemDiskSize(val interface{}) {
-	if err := j.validateSetWorkerSystemDiskSizeParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"workerSystemDiskSize",
 		val,
 	)
 }

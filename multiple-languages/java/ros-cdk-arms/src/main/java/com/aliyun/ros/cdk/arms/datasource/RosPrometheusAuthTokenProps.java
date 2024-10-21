@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.arms.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-prometheusauthtoken
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:36.409Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:27.012Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.datasource.RosPrometheusAuthTokenProps")
 @software.amazon.jsii.Jsii.Proxy(RosPrometheusAuthTokenProps.Jsii$Proxy.class)
 public interface RosPrometheusAuthTokenProps extends software.amazon.jsii.JsiiSerializable {

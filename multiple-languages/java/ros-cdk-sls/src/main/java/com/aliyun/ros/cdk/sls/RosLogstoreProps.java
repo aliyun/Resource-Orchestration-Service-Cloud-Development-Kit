@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.sls;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logstore
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:42.794Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:33.761Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosLogstoreProps")
 @software.amazon.jsii.Jsii.Proxy(RosLogstoreProps.Jsii$Proxy.class)
 public interface RosLogstoreProps extends software.amazon.jsii.JsiiSerializable {
@@ -50,6 +50,12 @@ public interface RosLogstoreProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMode() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPreserveStorage() {
         return null;
     }
@@ -83,6 +89,7 @@ public interface RosLogstoreProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object enableTracking;
         java.lang.Object encryptConf;
         java.lang.Object maxSplitShard;
+        java.lang.Object mode;
         java.lang.Object preserveStorage;
         java.lang.Object shardCount;
         java.lang.Object ttl;
@@ -228,6 +235,26 @@ public interface RosLogstoreProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosLogstoreProps#getMode}
+         * @param mode the value to be set.
+         * @return {@code this}
+         */
+        public Builder mode(java.lang.String mode) {
+            this.mode = mode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLogstoreProps#getMode}
+         * @param mode the value to be set.
+         * @return {@code this}
+         */
+        public Builder mode(com.aliyun.ros.cdk.core.IResolvable mode) {
+            this.mode = mode;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosLogstoreProps#getPreserveStorage}
          * @param preserveStorage the value to be set.
          * @return {@code this}
@@ -310,6 +337,7 @@ public interface RosLogstoreProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object enableTracking;
         private final java.lang.Object encryptConf;
         private final java.lang.Object maxSplitShard;
+        private final java.lang.Object mode;
         private final java.lang.Object preserveStorage;
         private final java.lang.Object shardCount;
         private final java.lang.Object ttl;
@@ -327,6 +355,7 @@ public interface RosLogstoreProps extends software.amazon.jsii.JsiiSerializable 
             this.enableTracking = software.amazon.jsii.Kernel.get(this, "enableTracking", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.encryptConf = software.amazon.jsii.Kernel.get(this, "encryptConf", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.maxSplitShard = software.amazon.jsii.Kernel.get(this, "maxSplitShard", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.mode = software.amazon.jsii.Kernel.get(this, "mode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.preserveStorage = software.amazon.jsii.Kernel.get(this, "preserveStorage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.shardCount = software.amazon.jsii.Kernel.get(this, "shardCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ttl = software.amazon.jsii.Kernel.get(this, "ttl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -344,6 +373,7 @@ public interface RosLogstoreProps extends software.amazon.jsii.JsiiSerializable 
             this.enableTracking = builder.enableTracking;
             this.encryptConf = builder.encryptConf;
             this.maxSplitShard = builder.maxSplitShard;
+            this.mode = builder.mode;
             this.preserveStorage = builder.preserveStorage;
             this.shardCount = builder.shardCount;
             this.ttl = builder.ttl;
@@ -385,6 +415,11 @@ public interface RosLogstoreProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getMode() {
+            return this.mode;
+        }
+
+        @Override
         public final java.lang.Object getPreserveStorage() {
             return this.preserveStorage;
         }
@@ -422,6 +457,9 @@ public interface RosLogstoreProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getMaxSplitShard() != null) {
                 data.set("maxSplitShard", om.valueToTree(this.getMaxSplitShard()));
             }
+            if (this.getMode() != null) {
+                data.set("mode", om.valueToTree(this.getMode()));
+            }
             if (this.getPreserveStorage() != null) {
                 data.set("preserveStorage", om.valueToTree(this.getPreserveStorage()));
             }
@@ -456,6 +494,7 @@ public interface RosLogstoreProps extends software.amazon.jsii.JsiiSerializable 
             if (this.enableTracking != null ? !this.enableTracking.equals(that.enableTracking) : that.enableTracking != null) return false;
             if (this.encryptConf != null ? !this.encryptConf.equals(that.encryptConf) : that.encryptConf != null) return false;
             if (this.maxSplitShard != null ? !this.maxSplitShard.equals(that.maxSplitShard) : that.maxSplitShard != null) return false;
+            if (this.mode != null ? !this.mode.equals(that.mode) : that.mode != null) return false;
             if (this.preserveStorage != null ? !this.preserveStorage.equals(that.preserveStorage) : that.preserveStorage != null) return false;
             if (this.shardCount != null ? !this.shardCount.equals(that.shardCount) : that.shardCount != null) return false;
             return this.ttl != null ? this.ttl.equals(that.ttl) : that.ttl == null;
@@ -470,6 +509,7 @@ public interface RosLogstoreProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.enableTracking != null ? this.enableTracking.hashCode() : 0);
             result = 31 * result + (this.encryptConf != null ? this.encryptConf.hashCode() : 0);
             result = 31 * result + (this.maxSplitShard != null ? this.maxSplitShard.hashCode() : 0);
+            result = 31 * result + (this.mode != null ? this.mode.hashCode() : 0);
             result = 31 * result + (this.preserveStorage != null ? this.preserveStorage.hashCode() : 0);
             result = 31 * result + (this.shardCount != null ? this.shardCount.hashCode() : 0);
             result = 31 * result + (this.ttl != null ? this.ttl.hashCode() : 0);

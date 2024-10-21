@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc3;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::FC3::Trigger</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:39.947Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:30.453Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc3.$Module.class, fqn = "@alicloud/ros-cdk-fc3.RosTrigger")
 public class RosTrigger extends com.aliyun.ros.cdk.core.RosResource {
 

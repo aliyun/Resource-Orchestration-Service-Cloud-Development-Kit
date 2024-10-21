@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fnf;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::FNF::Flow</code>, which is used to create a flow.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:39.984Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:30.486Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fnf.$Module.class, fqn = "@alicloud/ros-cdk-fnf.Flow")
 public class Flow extends com.aliyun.ros.cdk.core.Resource {
 

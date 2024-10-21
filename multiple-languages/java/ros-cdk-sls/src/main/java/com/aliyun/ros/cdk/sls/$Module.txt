@@ -82,9 +82,13 @@
 @alicloud/ros-cdk-sls.ServiceLogProps=com.aliyun.ros.cdk.sls.ServiceLogProps
 @alicloud/ros-cdk-sls.datasource.Logstores=com.aliyun.ros.cdk.sls.datasource.Logstores
 @alicloud/ros-cdk-sls.datasource.LogstoresProps=com.aliyun.ros.cdk.sls.datasource.LogstoresProps
+@alicloud/ros-cdk-sls.datasource.Project=com.aliyun.ros.cdk.sls.datasource.Project
+@alicloud/ros-cdk-sls.datasource.ProjectProps=com.aliyun.ros.cdk.sls.datasource.ProjectProps
 @alicloud/ros-cdk-sls.datasource.Projects=com.aliyun.ros.cdk.sls.datasource.Projects
 @alicloud/ros-cdk-sls.datasource.ProjectsProps=com.aliyun.ros.cdk.sls.datasource.ProjectsProps
 @alicloud/ros-cdk-sls.datasource.RosLogstores=com.aliyun.ros.cdk.sls.datasource.RosLogstores
 @alicloud/ros-cdk-sls.datasource.RosLogstoresProps=com.aliyun.ros.cdk.sls.datasource.RosLogstoresProps
+@alicloud/ros-cdk-sls.datasource.RosProject=com.aliyun.ros.cdk.sls.datasource.RosProject
+@alicloud/ros-cdk-sls.datasource.RosProjectProps=com.aliyun.ros.cdk.sls.datasource.RosProjectProps
 @alicloud/ros-cdk-sls.datasource.RosProjects=com.aliyun.ros.cdk.sls.datasource.RosProjects
 @alicloud/ros-cdk-sls.datasource.RosProjectsProps=com.aliyun.ros.cdk.sls.datasource.RosProjectsProps

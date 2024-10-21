@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ram.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-role
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:41.690Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:32.653Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.datasource.RosRoleProps")
 @software.amazon.jsii.Jsii.Proxy(RosRoleProps.Jsii$Proxy.class)
 public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {

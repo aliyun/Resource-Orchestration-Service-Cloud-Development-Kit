@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:38.594Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:29.046Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroupProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceGroupProps.Jsii$Proxy.class)
 public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -597,9 +597,9 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
      * Valid values:
      * <p>
      * <ul>
-     * <li>ase-256</li>
+     * <li>aes-256</li>
      * <li>sm4-128
-     * Default value: ase-256.</li>
+     * Default value: aes-256.</li>
      * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskEncryptAlgorithm() {
@@ -2324,9 +2324,9 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
          *                                   Valid values:
          *                                   <p>
          *                                   <ul>
-         *                                   <li>ase-256</li>
+         *                                   <li>aes-256</li>
          *                                   <li>sm4-128
-         *                                   Default value: ase-256.</li>
+         *                                   Default value: aes-256.</li>
          *                                   </ul>
          * @return {@code this}
          */
@@ -2341,9 +2341,9 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
          *                                   Valid values:
          *                                   <p>
          *                                   <ul>
-         *                                   <li>ase-256</li>
+         *                                   <li>aes-256</li>
          *                                   <li>sm4-128
-         *                                   Default value: ase-256.</li>
+         *                                   Default value: aes-256.</li>
          *                                   </ul>
          * @return {@code this}
          */

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ehpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-users
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:39.463Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:29.952Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.UsersProps")
 @software.amazon.jsii.Jsii.Proxy(UsersProps.Jsii$Proxy.class)
 public interface UsersProps extends software.amazon.jsii.JsiiSerializable {

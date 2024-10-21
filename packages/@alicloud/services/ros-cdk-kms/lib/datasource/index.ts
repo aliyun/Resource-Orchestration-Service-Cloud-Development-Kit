@@ -4,6 +4,7 @@ export * from './networkrule';
 export * from './networkrules';
 export * from './policies';
 export * from './policy';
+export * from './secret';
 export * from './secrets';
 
 // DATASOURCE::KMS Resources:

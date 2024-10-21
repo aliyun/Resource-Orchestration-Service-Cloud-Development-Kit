@@ -120,10 +120,6 @@ func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetDeletionProtectionPar
 	return nil
 }
 
-func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetDisableRollbackParameters(val interface{}) error {
-	return nil
-}
-
 func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
 	return nil
 }
@@ -177,10 +173,6 @@ func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetNodeNameModeParameter
 }
 
 func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetNodePoolsParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetNumOfNodesParameters(val interface{}) error {
 	return nil
 }
 
@@ -253,34 +245,6 @@ func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetUserDataParameters(va
 }
 
 func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetVpcIdParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetVSwitchIdsParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetWorkerDataDiskParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetWorkerDataDisksParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetWorkerInstanceTypesParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetWorkerSystemDiskCategoryParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetWorkerSystemDiskPerformanceLevelParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetWorkerSystemDiskSizeParameters(val interface{}) error {
 	return nil
 }
 

@@ -16,6 +16,7 @@ type RosSimpleOfficeSiteProps struct {
 	NeedVerifyZeroDevice interface{} `field:"optional" json:"needVerifyZeroDevice" yaml:"needVerifyZeroDevice"`
 	OfficeSiteName interface{} `field:"optional" json:"officeSiteName" yaml:"officeSiteName"`
 	VerifyCode interface{} `field:"optional" json:"verifyCode" yaml:"verifyCode"`
+	VpcType interface{} `field:"optional" json:"vpcType" yaml:"vpcType"`
 	VSwitchId interface{} `field:"optional" json:"vSwitchId" yaml:"vSwitchId"`
 }
 

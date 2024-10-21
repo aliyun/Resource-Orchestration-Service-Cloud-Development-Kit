@@ -1,6 +1,6 @@
 package com.aliyun.ros.cdk.core;
 
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:35.800Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:26.147Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosParameterProps")
 @software.amazon.jsii.Jsii.Proxy(RosParameterProps.Jsii$Proxy.class)
 public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable {
@@ -61,6 +61,14 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
         return null;
     }
 
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPlaceholder() {
+        return null;
+    }
+
+    default @org.jetbrains.annotations.Nullable java.lang.Boolean getRequired() {
+        return null;
+    }
+
     default @org.jetbrains.annotations.Nullable java.lang.Boolean getTextArea() {
         return null;
     }
@@ -93,6 +101,8 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Number minLength;
         java.lang.Number minValue;
         java.lang.Boolean noEcho;
+        java.lang.Object placeholder;
+        java.lang.Boolean required;
         java.lang.Boolean textArea;
         com.aliyun.ros.cdk.core.RosParameterType type;
 
@@ -259,6 +269,36 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link RosParameterProps#getPlaceholder}
+         * @param placeholder the value to be set.
+         * @return {@code this}
+         */
+        public Builder placeholder(java.lang.String placeholder) {
+            this.placeholder = placeholder;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosParameterProps#getPlaceholder}
+         * @param placeholder the value to be set.
+         * @return {@code this}
+         */
+        public Builder placeholder(java.util.Map<java.lang.String, java.lang.String> placeholder) {
+            this.placeholder = placeholder;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosParameterProps#getRequired}
+         * @param required the value to be set.
+         * @return {@code this}
+         */
+        public Builder required(java.lang.Boolean required) {
+            this.required = required;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosParameterProps#getTextArea}
          * @param textArea the value to be set.
          * @return {@code this}
@@ -308,6 +348,8 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Number minLength;
         private final java.lang.Number minValue;
         private final java.lang.Boolean noEcho;
+        private final java.lang.Object placeholder;
+        private final java.lang.Boolean required;
         private final java.lang.Boolean textArea;
         private final com.aliyun.ros.cdk.core.RosParameterType type;
 
@@ -331,6 +373,8 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
             this.minLength = software.amazon.jsii.Kernel.get(this, "minLength", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
             this.minValue = software.amazon.jsii.Kernel.get(this, "minValue", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
             this.noEcho = software.amazon.jsii.Kernel.get(this, "noEcho", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
+            this.placeholder = software.amazon.jsii.Kernel.get(this, "placeholder", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.required = software.amazon.jsii.Kernel.get(this, "required", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
             this.textArea = software.amazon.jsii.Kernel.get(this, "textArea", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
             this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.RosParameterType.class));
         }
@@ -355,6 +399,8 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
             this.minLength = builder.minLength;
             this.minValue = builder.minValue;
             this.noEcho = builder.noEcho;
+            this.placeholder = builder.placeholder;
+            this.required = builder.required;
             this.textArea = builder.textArea;
             this.type = builder.type;
         }
@@ -430,6 +476,16 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.lang.Object getPlaceholder() {
+            return this.placeholder;
+        }
+
+        @Override
+        public final java.lang.Boolean getRequired() {
+            return this.required;
+        }
+
+        @Override
         public final java.lang.Boolean getTextArea() {
             return this.textArea;
         }
@@ -487,6 +543,12 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
             if (this.getNoEcho() != null) {
                 data.set("noEcho", om.valueToTree(this.getNoEcho()));
             }
+            if (this.getPlaceholder() != null) {
+                data.set("placeholder", om.valueToTree(this.getPlaceholder()));
+            }
+            if (this.getRequired() != null) {
+                data.set("required", om.valueToTree(this.getRequired()));
+            }
             if (this.getTextArea() != null) {
                 data.set("textArea", om.valueToTree(this.getTextArea()));
             }
@@ -525,6 +587,8 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
             if (this.minLength != null ? !this.minLength.equals(that.minLength) : that.minLength != null) return false;
             if (this.minValue != null ? !this.minValue.equals(that.minValue) : that.minValue != null) return false;
             if (this.noEcho != null ? !this.noEcho.equals(that.noEcho) : that.noEcho != null) return false;
+            if (this.placeholder != null ? !this.placeholder.equals(that.placeholder) : that.placeholder != null) return false;
+            if (this.required != null ? !this.required.equals(that.required) : that.required != null) return false;
             if (this.textArea != null ? !this.textArea.equals(that.textArea) : that.textArea != null) return false;
             return this.type != null ? this.type.equals(that.type) : that.type == null;
         }
@@ -545,6 +609,8 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
             result = 31 * result + (this.minLength != null ? this.minLength.hashCode() : 0);
             result = 31 * result + (this.minValue != null ? this.minValue.hashCode() : 0);
             result = 31 * result + (this.noEcho != null ? this.noEcho.hashCode() : 0);
+            result = 31 * result + (this.placeholder != null ? this.placeholder.hashCode() : 0);
+            result = 31 * result + (this.required != null ? this.required.hashCode() : 0);
             result = 31 * result + (this.textArea != null ? this.textArea.hashCode() : 0);
             result = 31 * result + (this.type != null ? this.type.hashCode() : 0);
             return result;

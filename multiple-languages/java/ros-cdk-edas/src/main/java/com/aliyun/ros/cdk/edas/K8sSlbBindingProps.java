@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.edas;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8sslbbinding
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:39.306Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:29.810Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.K8sSlbBindingProps")
 @software.amazon.jsii.Jsii.Proxy(K8sSlbBindingProps.Jsii$Proxy.class)
 public interface K8sSlbBindingProps extends software.amazon.jsii.JsiiSerializable {

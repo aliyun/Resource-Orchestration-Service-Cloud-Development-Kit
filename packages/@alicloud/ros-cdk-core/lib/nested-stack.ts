@@ -143,6 +143,7 @@ function mergeSection(section: string, val1: any, val2: any): any {
     case "Outputs":
     case "Mappings":
     case "Metadata":
+    case "Rules":
       return mergeObjectsWithoutDuplicates(section, val1, val2);
     default:
       throw new Error(

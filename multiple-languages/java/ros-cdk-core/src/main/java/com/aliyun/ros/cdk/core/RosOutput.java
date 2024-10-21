@@ -1,6 +1,6 @@
 package com.aliyun.ros.cdk.core;
 
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:35.795Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:26.140Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosOutput")
 public class RosOutput extends com.aliyun.ros.cdk.core.RosElement {
 
@@ -108,6 +108,34 @@ public class RosOutput extends com.aliyun.ros.cdk.core.RosElement {
          */
         public Builder exportName(final java.lang.String exportName) {
             this.props.exportName(exportName);
+            return this;
+        }
+
+        /**
+         * An alias for the output.
+         * <p>
+         * Default: - No label.
+         * <p>
+         * @return {@code this}
+         * @param label An alias for the output. This parameter is required.
+         */
+        public Builder label(final java.lang.String label) {
+            this.props.label(label);
+            return this;
+        }
+
+        /**
+         * Whether to output parameter values.
+         * <p>
+         * If the value is set to true, only an asterisk (*) is printed.
+         * <p>
+         * Default: false
+         * <p>
+         * @return {@code this}
+         * @param noEcho Whether to output parameter values. This parameter is required.
+         */
+        public Builder noEcho(final java.lang.Boolean noEcho) {
+            this.props.noEcho(noEcho);
             return this;
         }
 

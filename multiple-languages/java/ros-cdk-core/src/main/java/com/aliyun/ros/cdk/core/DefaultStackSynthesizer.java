@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Uses conventionally named roles and reify asset storage locations.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:35.707Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:26.036Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.DefaultStackSynthesizer")
 public class DefaultStackSynthesizer extends com.aliyun.ros.cdk.core.StackSynthesizer implements com.aliyun.ros.cdk.core.IReusableStackSynthesizer, com.aliyun.ros.cdk.core.IBoundStackSynthesizer {
 

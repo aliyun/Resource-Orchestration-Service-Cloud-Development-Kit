@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ApiGateway::TrafficControlBinding</code>, which is used to bind a custom throttling policy to APIs.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:36.284Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:26.849Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosTrafficControlBinding")
 public class RosTrafficControlBinding extends com.aliyun.ros.cdk.core.RosResource {
 

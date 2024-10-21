@@ -137,6 +137,9 @@
 @alicloud/ros-cdk-core.RosRefElement=com.aliyun.ros.cdk.core.RosRefElement
 @alicloud/ros-cdk-core.RosResource=com.aliyun.ros.cdk.core.RosResource
 @alicloud/ros-cdk-core.RosResourceProps=com.aliyun.ros.cdk.core.RosResourceProps
+@alicloud/ros-cdk-core.RosRule=com.aliyun.ros.cdk.core.RosRule
+@alicloud/ros-cdk-core.RosRuleAssertionProps=com.aliyun.ros.cdk.core.RosRuleAssertionProps
+@alicloud/ros-cdk-core.RosRuleProps=com.aliyun.ros.cdk.core.RosRuleProps
 @alicloud/ros-cdk-core.RosTag=com.aliyun.ros.cdk.core.RosTag
 @alicloud/ros-cdk-core.Stack=com.aliyun.ros.cdk.core.Stack
 @alicloud/ros-cdk-core.StackProps=com.aliyun.ros.cdk.core.StackProps

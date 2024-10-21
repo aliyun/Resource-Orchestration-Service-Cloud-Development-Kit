@@ -254,9 +254,9 @@ export interface InstanceGroupCloneProps {
 
     /**
      * Property systemDiskEncryptAlgorithm: The algorithm to use to encrypt the system disk. Valid values:
-     * - ase-256
+     * - aes-256
      * - sm4-128
-     * Default value: ase-256.
+     * Default value: aes-256.
      */
     readonly systemDiskEncryptAlgorithm?: string | ros.IResolvable;
 

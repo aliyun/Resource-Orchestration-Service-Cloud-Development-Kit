@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SLS::Project</code>, which is used to create a Log Service project.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:42.742Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:33.704Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.Project")
 public class Project extends com.aliyun.ros.cdk.core.Resource {
 

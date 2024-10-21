@@ -84,6 +84,10 @@ func validateRosZone_IsRosResourceParameters(construct alicloudroscdkcore.IConst
 	return nil
 }
 
+func (j *jsiiProxy_RosZone) validateSetDnsGroupParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosZone) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
 	return nil
 }
@@ -109,14 +113,6 @@ func (j *jsiiProxy_RosZone) validateSetTagsParameters(val *[]*RosZone_TagsProper
 }
 
 func (j *jsiiProxy_RosZone) validateSetZoneNameParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosZone) validateSetZoneTagParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosZone) validateSetZoneTypeParameters(val interface{}) error {
 	return nil
 }
 

@@ -1,5 +1,9 @@
 # Aliyun ROS Cloud Development Toolkit Changelog
 
+## [ros-cdk-cli 1.4.0] (2024-10-18)
+### Features
+- Update ROS resource sdk packages (Added the ALIYUN::AppFlow::Flow, ALIYUN::AppFlow::UserAuthConfig, DATASOURCE::AppFlow::UserAuthConfigs, DATASOURCE::CDDC::DedicatedHostGroup, DATASOURCE::CMS::MonitorGroup, DATASOURCE::CMS::Namespace, DATASOURCE::KMS::Secret, DATASOURCE::PVTZ::SyncEcsHost, DATASOURCE::ROCKETMQ5::ConsumerGroup, DATASOURCE::ROCKETMQ5::Instance, DATASOURCE::ROCKETMQ5::Topic, DATASOURCE::SLB::AccessControl, DATASOURCE::SLB::DomainExtension, DATASOURCE::SLB::LoadBalancer,DATASOURCE::SLB::LoadBalancerTCPListener,DATASOURCE::SLB::LoadBalancerTCPListeners, DATASOURCE::SLB::Rule, DATASOURCE::SLB::TLSPolicy, DATASOURCE::SLB::VServerGroup, DATASOURCE::SLS::Project).
+
 ## [ros-cdk-cli 1.3.0] (2024-09-26)
 ### Features
 - Update ROS resource sdk packages (Added the ALIYUN::POLARDB::Backup,ALIYUN::KMS::NetworkRule,ALIYUN::KMS::Policy,ALIYUN::GA::Domain,ALIYUN::GA::ForwardingRules,ALIYUN::FC3::Function,ALIYUN::FC3::Trigger,ALIYUN::ENS::Image,ALIYUN::ECD::NetworkPackageAssociation,ALIYUN::DRDS::Account,ALIYUN::DMS::Instance2).

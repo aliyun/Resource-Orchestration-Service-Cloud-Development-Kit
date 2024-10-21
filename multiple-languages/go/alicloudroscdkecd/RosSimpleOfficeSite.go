@@ -72,6 +72,8 @@ type RosSimpleOfficeSite interface {
 	UpdatedProperites() *map[string]interface{}
 	VerifyCode() interface{}
 	SetVerifyCode(val interface{})
+	VpcType() interface{}
+	SetVpcType(val interface{})
 	VSwitchId() interface{}
 	SetVSwitchId(val interface{})
 	AddCondition(con alicloudroscdkcore.RosCondition)
@@ -410,6 +412,16 @@ func (j *jsiiProxy_RosSimpleOfficeSite) VerifyCode() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosSimpleOfficeSite) VpcType() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"vpcType",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosSimpleOfficeSite) VSwitchId() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -576,6 +588,17 @@ func (j *jsiiProxy_RosSimpleOfficeSite)SetVerifyCode(val interface{}) {
 	_jsii_.Set(
 		j,
 		"verifyCode",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosSimpleOfficeSite)SetVpcType(val interface{}) {
+	if err := j.validateSetVpcTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"vpcType",
 		val,
 	)
 }

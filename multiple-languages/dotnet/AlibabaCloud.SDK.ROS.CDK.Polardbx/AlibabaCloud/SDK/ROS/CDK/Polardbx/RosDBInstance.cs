@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Polardbx
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::PolarDBX::DBInstance`, which is used to create a PolarDB-X 1.0 instance.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::PolarDBX::DBInstance`, which is used to create a PolarDB for Xscale (PolarDB-X) instance.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `DBInstance` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardbx-dbinstance

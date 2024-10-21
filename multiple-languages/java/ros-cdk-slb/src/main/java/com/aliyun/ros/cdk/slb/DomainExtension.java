@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SLB::DomainExtension</code>, which is used to create a domain extension for an SLB instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:42.559Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:33.462Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.DomainExtension")
 public class DomainExtension extends com.aliyun.ros.cdk.core.Resource {
 

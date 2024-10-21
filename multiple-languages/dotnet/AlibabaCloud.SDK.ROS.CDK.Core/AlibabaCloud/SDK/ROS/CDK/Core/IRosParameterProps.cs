@@ -147,6 +147,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
         }
 
+        [JsiiProperty(name: "placeholder", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Placeholder
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        [JsiiProperty(name: "required", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        bool? Required
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         [JsiiProperty(name: "textArea", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         bool? TextArea
@@ -268,6 +288,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             [JsiiOptional]
             [JsiiProperty(name: "noEcho", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
             public bool? NoEcho
+            {
+                get => GetInstanceProperty<bool?>();
+            }
+
+            [JsiiOptional]
+            [JsiiProperty(name: "placeholder", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+            public object? Placeholder
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            [JsiiOptional]
+            [JsiiProperty(name: "required", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
+            public bool? Required
             {
                 get => GetInstanceProperty<bool?>();
             }

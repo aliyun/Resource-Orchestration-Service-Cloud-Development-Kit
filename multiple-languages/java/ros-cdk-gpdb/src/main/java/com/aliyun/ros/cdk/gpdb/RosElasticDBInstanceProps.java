@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.gpdb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-elasticdbinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:40.223Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.011Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.RosElasticDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosElasticDBInstanceProps.Jsii$Proxy.class)
 public interface RosElasticDBInstanceProps extends software.amazon.jsii.JsiiSerializable {

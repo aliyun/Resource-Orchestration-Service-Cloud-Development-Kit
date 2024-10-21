@@ -132,6 +132,10 @@ func (j *jsiiProxy_RosSimpleOfficeSite) validateSetVerifyCodeParameters(val inte
 	return nil
 }
 
+func (j *jsiiProxy_RosSimpleOfficeSite) validateSetVpcTypeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosSimpleOfficeSite) validateSetVSwitchIdParameters(val interface{}) error {
 	return nil
 }

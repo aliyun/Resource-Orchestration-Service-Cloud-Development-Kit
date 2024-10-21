@@ -780,6 +780,203 @@ export class RosPolicy extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosSecret`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kms-secret
+ */
+export interface RosSecretProps {
+
+    /**
+     * @Property secretName: The name of the secret.
+     */
+    readonly secretName: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSecretProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSecretProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSecretPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('secretName', ros.requiredValidator)(properties.secretName));
+    errors.collect(ros.propertyValidator('secretName', ros.validateString)(properties.secretName));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
+    return errors.wrap('supplied properties not correct for "RosSecretProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::KMS::Secret` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSecretProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::KMS::Secret` resource.
+ */
+// @ts-ignore TS6133
+function rosSecretPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSecretPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'SecretName': ros.stringToRosTemplate(properties.secretName),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::KMS::Secret`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Secret` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kms-secret
+ */
+export class RosSecret extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::KMS::Secret";
+
+    /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN) of the secret.
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
+     * @Attribute AutomaticRotation: Indicates whether automatic rotation is enabled.
+     */
+    public readonly attrAutomaticRotation: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The time when the secret was created.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute DKMSInstanceId: The ID of the dedicated KMS instance.
+     */
+    public readonly attrDkmsInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description of the secret.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute EncryptionKeyId: The ID of the customer master key (CMK) that is used to encrypt the secret value.
+     */
+    public readonly attrEncryptionKeyId: ros.IResolvable;
+
+    /**
+     * @Attribute ExtendedConfig: The extended configuration of the secret.
+     */
+    public readonly attrExtendedConfig: ros.IResolvable;
+
+    /**
+     * @Attribute LastRotationDate: The time when the last rotation was performed.
+     */
+    public readonly attrLastRotationDate: ros.IResolvable;
+
+    /**
+     * @Attribute NextRotationDate: The time when the next rotation will be performed.
+     */
+    public readonly attrNextRotationDate: ros.IResolvable;
+
+    /**
+     * @Attribute PlannedDeleteTime: The time when the secret is scheduled to be deleted.
+     */
+    public readonly attrPlannedDeleteTime: ros.IResolvable;
+
+    /**
+     * @Attribute RotationInterval: The interval for automatic rotation. The value is in the integer[unit] format. integer indicates the length of time. unit: indicates the time unit. The value of unit is fixed as s. For example, if the value is 604800s, automatic rotation is performed at a 7-day interval.The value is in the integer[unit] format. integer indicates the length of time. unit: indicates the time unit. The value of unit is fixed as s. For example, if the value is 604800s, automatic rotation is performed at a 7-day interval.
+     */
+    public readonly attrRotationInterval: ros.IResolvable;
+
+    /**
+     * @Attribute SecretName: The name of the secret.
+     */
+    public readonly attrSecretName: ros.IResolvable;
+
+    /**
+     * @Attribute SecretType: The type of the secret.
+     */
+    public readonly attrSecretType: ros.IResolvable;
+
+    /**
+     * @Attribute UpdateTime: The time when the secret was updated.
+     */
+    public readonly attrUpdateTime: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property secretName: The name of the secret.
+     */
+    public secretName: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSecretProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSecret.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
+        this.attrAutomaticRotation = this.getAtt('AutomaticRotation');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDkmsInstanceId = this.getAtt('DKMSInstanceId');
+        this.attrDescription = this.getAtt('Description');
+        this.attrEncryptionKeyId = this.getAtt('EncryptionKeyId');
+        this.attrExtendedConfig = this.getAtt('ExtendedConfig');
+        this.attrLastRotationDate = this.getAtt('LastRotationDate');
+        this.attrNextRotationDate = this.getAtt('NextRotationDate');
+        this.attrPlannedDeleteTime = this.getAtt('PlannedDeleteTime');
+        this.attrRotationInterval = this.getAtt('RotationInterval');
+        this.attrSecretName = this.getAtt('SecretName');
+        this.attrSecretType = this.getAtt('SecretType');
+        this.attrUpdateTime = this.getAtt('UpdateTime');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.secretName = props.secretName;
+        this.refreshOptions = props.refreshOptions;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            secretName: this.secretName,
+            refreshOptions: this.refreshOptions,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSecretPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosSecrets`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kms-secrets
  */

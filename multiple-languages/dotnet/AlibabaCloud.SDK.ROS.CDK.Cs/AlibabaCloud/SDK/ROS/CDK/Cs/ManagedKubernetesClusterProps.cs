@@ -76,53 +76,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
-        private object _vSwitchIds;
-
-        /// <summary>Property vSwitchIds: The virtual switch ID of the worker node.</summary>
-        [JsiiProperty(name: "vSwitchIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
-        public object VSwitchIds
-        {
-            get => _vSwitchIds;
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case object[] cast_cd4240:
-                            for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
-                            {
-                                switch (cast_cd4240[__idx_f64a5c])
-                                {
-                                    case string cast_201718:
-                                        break;
-                                    case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
-                                        break;
-                                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
-                                        // Not enough information to type-check...
-                                        break;
-                                    case null:
-                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
-                                    default:
-                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
-                                }
-                            }
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received null", nameof(value));
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                _vSwitchIds = value;
-            }
-        }
-
         private object? _addons;
 
         /// <summary>Property addons: A combination of addon plugins for Kubernetes clusters.</summary>
@@ -183,7 +136,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// It takes effect when the value of ChargeType is PrePaid. The optional values are:
         /// true: automatic renewal
         /// false: do not renew automatically
-        /// Default to true.
+        /// Default to true.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+        /// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -215,7 +169,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
 
         private object? _autoRenewPeriod;
 
-        /// <summary>Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.</summary>
+        /// <summary>Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.  For the configuration of the working node ECS instance, please specify it in the node pool list parameters.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? AutoRenewPeriod
@@ -272,6 +226,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// PrePaid: prepaid
         /// PostPaid: Pay as you go
         /// Default to PostPaid.
+        /// Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+        /// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -485,40 +441,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                     }
                 }
                 _deletionProtection = value;
-            }
-        }
-
-        private object? _disableRollback;
-
-        /// <summary>Property disableRollback: Whether the failure was rolled back: true: indicates that it fails to roll back false: rollback failed The default is true.</summary>
-        /// <remarks>
-        /// If rollback fails, resources produced during the creation process will be released. False is not recommended.
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "disableRollback", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        public object? DisableRollback
-        {
-            get => _disableRollback;
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case bool cast_cd4240:
-                            break;
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            break;
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                _disableRollback = value;
             }
         }
 
@@ -964,61 +886,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
-        private object? _numOfNodes;
-
-        /// <summary>Property numOfNodes: Number of worker nodes.</summary>
-        /// <remarks>
-        /// The range is [0,300].
-        /// Default to 3.
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "numOfNodes", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        public object? NumOfNodes
-        {
-            get => _numOfNodes;
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case double cast_cd4240:
-                            break;
-                        case byte cast_cd4240:
-                            break;
-                        case decimal cast_cd4240:
-                            break;
-                        case float cast_cd4240:
-                            break;
-                        case int cast_cd4240:
-                            break;
-                        case long cast_cd4240:
-                            break;
-                        case sbyte cast_cd4240:
-                            break;
-                        case short cast_cd4240:
-                            break;
-                        case uint cast_cd4240:
-                            break;
-                        case ulong cast_cd4240:
-                            break;
-                        case ushort cast_cd4240:
-                            break;
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            break;
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                _numOfNodes = value;
-            }
-        }
-
         private object? _osType;
 
         /// <summary>Property osType: The type of operating system.</summary>
@@ -1064,7 +931,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
         /// When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
         /// When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
-        /// Default to 1.
+        /// Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+        /// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1122,7 +990,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// Week: Time is measured in weeks
         /// Month: time in months
         /// Year: time in years
-        /// Default to Month
+        /// Default to MonthStarting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
+        /// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1652,272 +1521,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                     }
                 }
                 _userData = value;
-            }
-        }
-
-        private object? _workerDataDisk;
-
-        /// <summary>Property workerDataDisk: Whether to mount the data disk.</summary>
-        /// <remarks>
-        /// The options are as follows:
-        /// true: indicates that the worker node mounts data disks.
-        /// false: indicates that the worker node does not mount data disks.
-        /// Default to false.
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "workerDataDisk", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        public object? WorkerDataDisk
-        {
-            get => _workerDataDisk;
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case bool cast_cd4240:
-                            break;
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            break;
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                _workerDataDisk = value;
-            }
-        }
-
-        private object? _workerDataDisks;
-
-        /// <summary>Property workerDataDisks: A combination of configurations such as worker data disk type and size.</summary>
-        /// <remarks>
-        /// This parameter is valid only when the worker node data disk is mounted.
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "workerDataDisks", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.WorkerDataDisksProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-        public object? WorkerDataDisks
-        {
-            get => _workerDataDisks;
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case object[] cast_cd4240:
-                            for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
-                            {
-                                switch (cast_cd4240[__idx_f64a5c])
-                                {
-                                    case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
-                                        break;
-                                    case AlibabaCloud.SDK.ROS.CDK.Cs.RosManagedKubernetesCluster.IWorkerDataDisksProperty cast_201718:
-                                        break;
-                                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
-                                        // Not enough information to type-check...
-                                        break;
-                                    case null:
-                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Cs.RosManagedKubernetesCluster.IWorkerDataDisksProperty).FullName}; received null", nameof(value));
-                                    default:
-                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Cs.RosManagedKubernetesCluster.IWorkerDataDisksProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
-                                }
-                            }
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            break;
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                _workerDataDisks = value;
-            }
-        }
-
-        private object? _workerInstanceTypes;
-
-        /// <summary>Property workerInstanceTypes: Worker node ECS specification type code.</summary>
-        /// <remarks>
-        /// For more details, see Instance Specification Family.
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "workerInstanceTypes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-        public object? WorkerInstanceTypes
-        {
-            get => _workerInstanceTypes;
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case object[] cast_cd4240:
-                            for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
-                            {
-                                switch (cast_cd4240[__idx_f64a5c])
-                                {
-                                    case string cast_201718:
-                                        break;
-                                    case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
-                                        break;
-                                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
-                                        // Not enough information to type-check...
-                                        break;
-                                    case null:
-                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
-                                    default:
-                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
-                                }
-                            }
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            break;
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                _workerInstanceTypes = value;
-            }
-        }
-
-        private object? _workerSystemDiskCategory;
-
-        /// <summary>Property workerSystemDiskCategory: Worker node system disk type.</summary>
-        /// <remarks>
-        /// The value includes:
-        /// cloud_efficiency: efficient cloud disk
-        /// cloud_ssd: SSD cloud disk
-        /// Default to cloud_efficiency.
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "workerSystemDiskCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        public object? WorkerSystemDiskCategory
-        {
-            get => _workerSystemDiskCategory;
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case string cast_cd4240:
-                            break;
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            break;
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                _workerSystemDiskCategory = value;
-            }
-        }
-
-        private object? _workerSystemDiskPerformanceLevel;
-
-        /// <summary>Property workerSystemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.</summary>
-        /// <remarks>
-        /// Default value: PL0. Valid values:
-        /// PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
-        /// PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "workerSystemDiskPerformanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        public object? WorkerSystemDiskPerformanceLevel
-        {
-            get => _workerSystemDiskPerformanceLevel;
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case string cast_cd4240:
-                            break;
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            break;
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                _workerSystemDiskPerformanceLevel = value;
-            }
-        }
-
-        private object? _workerSystemDiskSize;
-
-        /// <summary>Property workerSystemDiskSize: Worker disk system disk size, the unit is GiB.</summary>
-        /// <remarks>
-        /// Default to 120.
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "workerSystemDiskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        public object? WorkerSystemDiskSize
-        {
-            get => _workerSystemDiskSize;
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case double cast_cd4240:
-                            break;
-                        case byte cast_cd4240:
-                            break;
-                        case decimal cast_cd4240:
-                            break;
-                        case float cast_cd4240:
-                            break;
-                        case int cast_cd4240:
-                            break;
-                        case long cast_cd4240:
-                            break;
-                        case sbyte cast_cd4240:
-                            break;
-                        case short cast_cd4240:
-                            break;
-                        case uint cast_cd4240:
-                            break;
-                        case ulong cast_cd4240:
-                            break;
-                        case ushort cast_cd4240:
-                            break;
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            break;
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                _workerSystemDiskSize = value;
             }
         }
 

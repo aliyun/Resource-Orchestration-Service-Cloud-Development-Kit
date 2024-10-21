@@ -116,10 +116,6 @@ func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetDeletionProtectio
 	return nil
 }
 
-func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetDisableRollbackParameters(val interface{}) error {
-	return nil
-}
-
 func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
 	return nil
 }
@@ -145,10 +141,6 @@ func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetNameParameters(va
 }
 
 func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetNodeCidrMaskParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetNumOfNodesParameters(val interface{}) error {
 	return nil
 }
 
@@ -189,38 +181,6 @@ func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetTimeoutMinsParame
 }
 
 func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetVpcIdParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetVSwitchIdsParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetWorkerDataDiskParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetWorkerDataDiskCategoryParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetWorkerDataDisksParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetWorkerDataDiskSizeParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetWorkerInstanceTypesParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetWorkerSystemDiskCategoryParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetWorkerSystemDiskSizeParameters(val interface{}) error {
 	return nil
 }
 

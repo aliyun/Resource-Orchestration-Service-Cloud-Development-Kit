@@ -20,11 +20,6 @@ export interface ManagedKubernetesClusterProps {
     readonly vpcId: string | ros.IResolvable;
 
     /**
-     * Property vSwitchIds: The virtual switch ID of the worker node.
-     */
-    readonly vSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable;
-
-    /**
      * Property addons: A combination of addon plugins for Kubernetes clusters.
      * Network plug-in: including Flannel and Terway network plug-ins
      * Log service: Optional. If the log service is not enabled, the cluster audit function cannot be used.
@@ -36,7 +31,8 @@ export interface ManagedKubernetesClusterProps {
      * Property autoRenew: Whether the cluster automatically renews. It takes effect when the value of ChargeType is PrePaid. The optional values are:
      * true: automatic renewal
      * false: do not renew automatically
-     * Default to true.
+     * Default to true.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
+     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
      */
     readonly autoRenew?: boolean | ros.IResolvable;
 
@@ -44,7 +40,8 @@ export interface ManagedKubernetesClusterProps {
      * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required:
      * When PeriodUnit = Week, the values are: {"1", "2", "3"}
      * When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
-     * Default to 1.
+     * Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
+     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
      */
     readonly autoRenewPeriod?: number | ros.IResolvable;
 
@@ -53,6 +50,8 @@ export interface ManagedKubernetesClusterProps {
      * PrePaid: prepaid
      * PostPaid: Pay as you go
      * Default to PostPaid.
+     * Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
+     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
      */
     readonly chargeType?: string | ros.IResolvable;
 
@@ -90,14 +89,6 @@ export interface ManagedKubernetesClusterProps {
      * Default value: false.
      */
     readonly deletionProtection?: boolean | ros.IResolvable;
-
-    /**
-     * Property disableRollback: Whether the failure was rolled back:
-     * true: indicates that it fails to roll back
-     * false: rollback failed
-     * The default is true. If rollback fails, resources produced during the creation process will be released. False is not recommended.
-     */
-    readonly disableRollback?: boolean | ros.IResolvable;
 
     /**
      * Property encryptionProviderKey: The ID of the key that is managed by Key Management Service (KMS). This key is used to encrypt data disks.You can use KMS in only professional managed Kubernetes clusters.
@@ -186,12 +177,6 @@ export interface ManagedKubernetesClusterProps {
     readonly nodePools?: Array<RosManagedKubernetesCluster.NodePoolsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property numOfNodes: Number of worker nodes. The range is [0,300].
-     * Default to 3.
-     */
-    readonly numOfNodes?: number | ros.IResolvable;
-
-    /**
      * Property osType: The type of operating system. Valid values:
      * Windows
      * Linux
@@ -204,7 +189,8 @@ export interface ManagedKubernetesClusterProps {
      * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
      * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
      * When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
-     * Default to 1.
+     * Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
+     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
      */
     readonly period?: number | ros.IResolvable;
 
@@ -213,7 +199,8 @@ export interface ManagedKubernetesClusterProps {
      * Week: Time is measured in weeks
      * Month: time in months
      * Year: time in years
-     * Default to Month
+     * Default to MonthStarting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
+     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
      */
     readonly periodUnit?: string | ros.IResolvable;
 
@@ -312,46 +299,6 @@ export interface ManagedKubernetesClusterProps {
     readonly userData?: string | ros.IResolvable;
 
     /**
-     * Property workerDataDisk: Whether to mount the data disk. The options are as follows:
-     * true: indicates that the worker node mounts data disks.
-     * false: indicates that the worker node does not mount data disks.
-     * Default to false.
-     */
-    readonly workerDataDisk?: boolean | ros.IResolvable;
-
-    /**
-     * Property workerDataDisks: A combination of configurations such as worker data disk type and size. This parameter is valid only when the worker node data disk is mounted.
-     */
-    readonly workerDataDisks?: Array<RosManagedKubernetesCluster.WorkerDataDisksProperty | ros.IResolvable> | ros.IResolvable;
-
-    /**
-     * Property workerInstanceTypes: Worker node ECS specification type code. For more details, see Instance Specification Family.
-     */
-    readonly workerInstanceTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
-
-    /**
-     * Property workerSystemDiskCategory: Worker node system disk type. The value includes:
-     * cloud_efficiency: efficient cloud disk
-     * cloud_ssd: SSD cloud disk
-     * Default to cloud_efficiency.
-     */
-    readonly workerSystemDiskCategory?: string | ros.IResolvable;
-
-    /**
-     * Property workerSystemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL0. Valid values:
-     * PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.
-     * PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.
-     *
-     */
-    readonly workerSystemDiskPerformanceLevel?: string | ros.IResolvable;
-
-    /**
-     * Property workerSystemDiskSize: Worker disk system disk size, the unit is GiB.
-     * Default to 120.
-     */
-    readonly workerSystemDiskSize?: number | ros.IResolvable;
-
-    /**
      * Property zoneIds: Zone ids of worker node virtual switches belongs to.
      */
     readonly zoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
@@ -438,54 +385,45 @@ export class ManagedKubernetesCluster extends ros.Resource {
         const rosManagedKubernetesCluster = new RosManagedKubernetesCluster(this, id,  {
             endpointPublicAccess: props.endpointPublicAccess === undefined || props.endpointPublicAccess === null ? false : props.endpointPublicAccess,
             socEnabled: props.socEnabled,
+            formatDisk: props.formatDisk,
             platform: props.platform,
             resourceGroupId: props.resourceGroupId,
+            userData: props.userData,
+            autoRenew: props.autoRenew,
+            addons: props.addons,
             loadBalancerSpec: props.loadBalancerSpec,
             name: props.name,
             taint: props.taint,
             isEnterpriseSecurityGroup: props.isEnterpriseSecurityGroup,
             runtime: props.runtime,
+            cloudMonitorFlags: props.cloudMonitorFlags === undefined || props.cloudMonitorFlags === null ? false : props.cloudMonitorFlags,
             osType: props.osType,
             nodeNameMode: props.nodeNameMode,
-            proxyMode: props.proxyMode === undefined || props.proxyMode === null ? 'iptables' : props.proxyMode,
-            disableRollback: props.disableRollback === undefined || props.disableRollback === null ? true : props.disableRollback,
-            tags: props.tags,
-            containerCidr: props.containerCidr === undefined || props.containerCidr === null ? '172.16.0.0/16' : props.containerCidr,
-            deleteOptions: props.deleteOptions,
-            keyPair: props.keyPair,
-            nodeCidrMask: props.nodeCidrMask,
-            vSwitchIds: props.vSwitchIds,
-            period: props.period,
-            deletionProtection: props.deletionProtection,
-            vpcId: props.vpcId,
-            nodePools: props.nodePools,
-            encryptionProviderKey: props.encryptionProviderKey,
-            snatEntry: props.snatEntry === undefined || props.snatEntry === null ? true : props.snatEntry,
-            periodUnit: props.periodUnit,
-            formatDisk: props.formatDisk,
-            userData: props.userData,
-            autoRenew: props.autoRenew,
-            addons: props.addons,
-            workerSystemDiskCategory: props.workerSystemDiskCategory === undefined || props.workerSystemDiskCategory === null ? 'cloud_efficiency' : props.workerSystemDiskCategory,
-            workerSystemDiskSize: props.workerSystemDiskSize === undefined || props.workerSystemDiskSize === null ? 120 : props.workerSystemDiskSize,
-            cloudMonitorFlags: props.cloudMonitorFlags === undefined || props.cloudMonitorFlags === null ? false : props.cloudMonitorFlags,
             securityHardeningOs: props.securityHardeningOs,
             serviceCidr: props.serviceCidr === undefined || props.serviceCidr === null ? '172.19.0.0/20' : props.serviceCidr,
             podVswitchIds: props.podVswitchIds,
             zoneIds: props.zoneIds,
-            workerSystemDiskPerformanceLevel: props.workerSystemDiskPerformanceLevel,
-            workerInstanceTypes: props.workerInstanceTypes,
+            proxyMode: props.proxyMode === undefined || props.proxyMode === null ? 'iptables' : props.proxyMode,
+            tags: props.tags,
             loginPassword: props.loginPassword,
             autoRenewPeriod: props.autoRenewPeriod,
             kubernetesVersion: props.kubernetesVersion,
-            workerDataDisks: props.workerDataDisks,
+            containerCidr: props.containerCidr === undefined || props.containerCidr === null ? '172.16.0.0/16' : props.containerCidr,
+            deleteOptions: props.deleteOptions,
+            keyPair: props.keyPair,
+            nodeCidrMask: props.nodeCidrMask,
             securityGroupId: props.securityGroupId,
             timeoutMins: props.timeoutMins === undefined || props.timeoutMins === null ? 60 : props.timeoutMins,
+            period: props.period,
             clusterSpec: props.clusterSpec,
-            workerDataDisk: props.workerDataDisk === undefined || props.workerDataDisk === null ? false : props.workerDataDisk,
-            numOfNodes: props.numOfNodes === undefined || props.numOfNodes === null ? 3 : props.numOfNodes,
+            deletionProtection: props.deletionProtection,
+            vpcId: props.vpcId,
             keepInstanceName: props.keepInstanceName,
+            nodePools: props.nodePools,
             chargeType: props.chargeType,
+            encryptionProviderKey: props.encryptionProviderKey,
+            snatEntry: props.snatEntry === undefined || props.snatEntry === null ? true : props.snatEntry,
+            periodUnit: props.periodUnit,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosManagedKubernetesCluster;
         this.attrApiServerSlbId = rosManagedKubernetesCluster.attrApiServerSlbId;

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::KMS::Policies</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:40.566Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.431Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.datasource.RosPolicies")
 public class RosPolicies extends com.aliyun.ros.cdk.core.RosResource {
 

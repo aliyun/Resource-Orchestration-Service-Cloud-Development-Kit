@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managededgekubernetescluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:37.493Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:28.113Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosManagedEdgeKubernetesClusterProps.Jsii$Proxy.class)
 public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -13,10 +13,6 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
     /**
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getName();
-
-    /**
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getNumOfNodes();
 
     /**
      */
@@ -63,12 +59,6 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionProtection() {
-        return null;
-    }
-
-    /**
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getDisableRollback() {
         return null;
     }
 
@@ -164,54 +154,6 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchIds() {
-        return null;
-    }
-
-    /**
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerDataDisk() {
-        return null;
-    }
-
-    /**
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerDataDiskCategory() {
-        return null;
-    }
-
-    /**
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerDataDisks() {
-        return null;
-    }
-
-    /**
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerDataDiskSize() {
-        return null;
-    }
-
-    /**
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerInstanceTypes() {
-        return null;
-    }
-
-    /**
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerSystemDiskCategory() {
-        return null;
-    }
-
-    /**
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkerSystemDiskSize() {
-        return null;
-    }
-
-    /**
-     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getZoneIds() {
         return null;
     }
@@ -227,7 +169,6 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosManagedEdgeKubernetesClusterProps> {
         java.lang.Object name;
-        java.lang.Object numOfNodes;
         java.lang.Object addons;
         java.lang.Object autoRenew;
         java.lang.Object autoRenewPeriod;
@@ -236,7 +177,6 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         java.lang.Object clusterSpec;
         java.lang.Object containerCidr;
         java.lang.Object deletionProtection;
-        java.lang.Object disableRollback;
         java.lang.Object endpointPublicAccess;
         java.lang.Object isEnterpriseSecurityGroup;
         java.lang.Object keyPair;
@@ -252,14 +192,6 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         java.util.List<com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.TagsProperty> tags;
         java.lang.Object timeoutMins;
         java.lang.Object vpcId;
-        java.lang.Object vSwitchIds;
-        java.lang.Object workerDataDisk;
-        java.lang.Object workerDataDiskCategory;
-        java.lang.Object workerDataDisks;
-        java.lang.Object workerDataDiskSize;
-        java.lang.Object workerInstanceTypes;
-        java.lang.Object workerSystemDiskCategory;
-        java.lang.Object workerSystemDiskSize;
         java.lang.Object zoneIds;
 
         /**
@@ -279,26 +211,6 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
          */
         public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
             this.name = name;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getNumOfNodes}
-         * @param numOfNodes the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder numOfNodes(java.lang.Number numOfNodes) {
-            this.numOfNodes = numOfNodes;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getNumOfNodes}
-         * @param numOfNodes the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder numOfNodes(com.aliyun.ros.cdk.core.IResolvable numOfNodes) {
-            this.numOfNodes = numOfNodes;
             return this;
         }
 
@@ -459,26 +371,6 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
          */
         public Builder deletionProtection(com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
             this.deletionProtection = deletionProtection;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getDisableRollback}
-         * @param disableRollback the value to be set.
-         * @return {@code this}
-         */
-        public Builder disableRollback(java.lang.Boolean disableRollback) {
-            this.disableRollback = disableRollback;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getDisableRollback}
-         * @param disableRollback the value to be set.
-         * @return {@code this}
-         */
-        public Builder disableRollback(com.aliyun.ros.cdk.core.IResolvable disableRollback) {
-            this.disableRollback = disableRollback;
             return this;
         }
 
@@ -774,166 +666,6 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         }
 
         /**
-         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getVSwitchIds}
-         * @param vSwitchIds the value to be set.
-         * @return {@code this}
-         */
-        public Builder vSwitchIds(java.util.List<? extends java.lang.Object> vSwitchIds) {
-            this.vSwitchIds = vSwitchIds;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getVSwitchIds}
-         * @param vSwitchIds the value to be set.
-         * @return {@code this}
-         */
-        public Builder vSwitchIds(com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
-            this.vSwitchIds = vSwitchIds;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getWorkerDataDisk}
-         * @param workerDataDisk the value to be set.
-         * @return {@code this}
-         */
-        public Builder workerDataDisk(java.lang.Boolean workerDataDisk) {
-            this.workerDataDisk = workerDataDisk;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getWorkerDataDisk}
-         * @param workerDataDisk the value to be set.
-         * @return {@code this}
-         */
-        public Builder workerDataDisk(com.aliyun.ros.cdk.core.IResolvable workerDataDisk) {
-            this.workerDataDisk = workerDataDisk;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getWorkerDataDiskCategory}
-         * @param workerDataDiskCategory the value to be set.
-         * @return {@code this}
-         */
-        public Builder workerDataDiskCategory(java.lang.String workerDataDiskCategory) {
-            this.workerDataDiskCategory = workerDataDiskCategory;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getWorkerDataDiskCategory}
-         * @param workerDataDiskCategory the value to be set.
-         * @return {@code this}
-         */
-        public Builder workerDataDiskCategory(com.aliyun.ros.cdk.core.IResolvable workerDataDiskCategory) {
-            this.workerDataDiskCategory = workerDataDiskCategory;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getWorkerDataDisks}
-         * @param workerDataDisks the value to be set.
-         * @return {@code this}
-         */
-        public Builder workerDataDisks(com.aliyun.ros.cdk.core.IResolvable workerDataDisks) {
-            this.workerDataDisks = workerDataDisks;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getWorkerDataDisks}
-         * @param workerDataDisks the value to be set.
-         * @return {@code this}
-         */
-        public Builder workerDataDisks(java.util.List<? extends java.lang.Object> workerDataDisks) {
-            this.workerDataDisks = workerDataDisks;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getWorkerDataDiskSize}
-         * @param workerDataDiskSize the value to be set.
-         * @return {@code this}
-         */
-        public Builder workerDataDiskSize(java.lang.Number workerDataDiskSize) {
-            this.workerDataDiskSize = workerDataDiskSize;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getWorkerDataDiskSize}
-         * @param workerDataDiskSize the value to be set.
-         * @return {@code this}
-         */
-        public Builder workerDataDiskSize(com.aliyun.ros.cdk.core.IResolvable workerDataDiskSize) {
-            this.workerDataDiskSize = workerDataDiskSize;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getWorkerInstanceTypes}
-         * @param workerInstanceTypes the value to be set.
-         * @return {@code this}
-         */
-        public Builder workerInstanceTypes(com.aliyun.ros.cdk.core.IResolvable workerInstanceTypes) {
-            this.workerInstanceTypes = workerInstanceTypes;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getWorkerInstanceTypes}
-         * @param workerInstanceTypes the value to be set.
-         * @return {@code this}
-         */
-        public Builder workerInstanceTypes(java.util.List<? extends java.lang.Object> workerInstanceTypes) {
-            this.workerInstanceTypes = workerInstanceTypes;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getWorkerSystemDiskCategory}
-         * @param workerSystemDiskCategory the value to be set.
-         * @return {@code this}
-         */
-        public Builder workerSystemDiskCategory(java.lang.String workerSystemDiskCategory) {
-            this.workerSystemDiskCategory = workerSystemDiskCategory;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getWorkerSystemDiskCategory}
-         * @param workerSystemDiskCategory the value to be set.
-         * @return {@code this}
-         */
-        public Builder workerSystemDiskCategory(com.aliyun.ros.cdk.core.IResolvable workerSystemDiskCategory) {
-            this.workerSystemDiskCategory = workerSystemDiskCategory;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getWorkerSystemDiskSize}
-         * @param workerSystemDiskSize the value to be set.
-         * @return {@code this}
-         */
-        public Builder workerSystemDiskSize(java.lang.Number workerSystemDiskSize) {
-            this.workerSystemDiskSize = workerSystemDiskSize;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getWorkerSystemDiskSize}
-         * @param workerSystemDiskSize the value to be set.
-         * @return {@code this}
-         */
-        public Builder workerSystemDiskSize(com.aliyun.ros.cdk.core.IResolvable workerSystemDiskSize) {
-            this.workerSystemDiskSize = workerSystemDiskSize;
-            return this;
-        }
-
-        /**
          * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getZoneIds}
          * @param zoneIds the value to be set.
          * @return {@code this}
@@ -970,7 +702,6 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosManagedEdgeKubernetesClusterProps {
         private final java.lang.Object name;
-        private final java.lang.Object numOfNodes;
         private final java.lang.Object addons;
         private final java.lang.Object autoRenew;
         private final java.lang.Object autoRenewPeriod;
@@ -979,7 +710,6 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         private final java.lang.Object clusterSpec;
         private final java.lang.Object containerCidr;
         private final java.lang.Object deletionProtection;
-        private final java.lang.Object disableRollback;
         private final java.lang.Object endpointPublicAccess;
         private final java.lang.Object isEnterpriseSecurityGroup;
         private final java.lang.Object keyPair;
@@ -995,14 +725,6 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         private final java.util.List<com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.TagsProperty> tags;
         private final java.lang.Object timeoutMins;
         private final java.lang.Object vpcId;
-        private final java.lang.Object vSwitchIds;
-        private final java.lang.Object workerDataDisk;
-        private final java.lang.Object workerDataDiskCategory;
-        private final java.lang.Object workerDataDisks;
-        private final java.lang.Object workerDataDiskSize;
-        private final java.lang.Object workerInstanceTypes;
-        private final java.lang.Object workerSystemDiskCategory;
-        private final java.lang.Object workerSystemDiskSize;
         private final java.lang.Object zoneIds;
 
         /**
@@ -1012,7 +734,6 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.numOfNodes = software.amazon.jsii.Kernel.get(this, "numOfNodes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.addons = software.amazon.jsii.Kernel.get(this, "addons", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoRenewPeriod = software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1021,7 +742,6 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             this.clusterSpec = software.amazon.jsii.Kernel.get(this, "clusterSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.containerCidr = software.amazon.jsii.Kernel.get(this, "containerCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.disableRollback = software.amazon.jsii.Kernel.get(this, "disableRollback", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.endpointPublicAccess = software.amazon.jsii.Kernel.get(this, "endpointPublicAccess", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.isEnterpriseSecurityGroup = software.amazon.jsii.Kernel.get(this, "isEnterpriseSecurityGroup", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.keyPair = software.amazon.jsii.Kernel.get(this, "keyPair", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1037,14 +757,6 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.TagsProperty.class)));
             this.timeoutMins = software.amazon.jsii.Kernel.get(this, "timeoutMins", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.vSwitchIds = software.amazon.jsii.Kernel.get(this, "vSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.workerDataDisk = software.amazon.jsii.Kernel.get(this, "workerDataDisk", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.workerDataDiskCategory = software.amazon.jsii.Kernel.get(this, "workerDataDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.workerDataDisks = software.amazon.jsii.Kernel.get(this, "workerDataDisks", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.workerDataDiskSize = software.amazon.jsii.Kernel.get(this, "workerDataDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.workerInstanceTypes = software.amazon.jsii.Kernel.get(this, "workerInstanceTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.workerSystemDiskCategory = software.amazon.jsii.Kernel.get(this, "workerSystemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.workerSystemDiskSize = software.amazon.jsii.Kernel.get(this, "workerSystemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneIds = software.amazon.jsii.Kernel.get(this, "zoneIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -1055,7 +767,6 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
-            this.numOfNodes = java.util.Objects.requireNonNull(builder.numOfNodes, "numOfNodes is required");
             this.addons = builder.addons;
             this.autoRenew = builder.autoRenew;
             this.autoRenewPeriod = builder.autoRenewPeriod;
@@ -1064,7 +775,6 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             this.clusterSpec = builder.clusterSpec;
             this.containerCidr = builder.containerCidr;
             this.deletionProtection = builder.deletionProtection;
-            this.disableRollback = builder.disableRollback;
             this.endpointPublicAccess = builder.endpointPublicAccess;
             this.isEnterpriseSecurityGroup = builder.isEnterpriseSecurityGroup;
             this.keyPair = builder.keyPair;
@@ -1080,25 +790,12 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             this.tags = (java.util.List<com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.TagsProperty>)builder.tags;
             this.timeoutMins = builder.timeoutMins;
             this.vpcId = builder.vpcId;
-            this.vSwitchIds = builder.vSwitchIds;
-            this.workerDataDisk = builder.workerDataDisk;
-            this.workerDataDiskCategory = builder.workerDataDiskCategory;
-            this.workerDataDisks = builder.workerDataDisks;
-            this.workerDataDiskSize = builder.workerDataDiskSize;
-            this.workerInstanceTypes = builder.workerInstanceTypes;
-            this.workerSystemDiskCategory = builder.workerSystemDiskCategory;
-            this.workerSystemDiskSize = builder.workerSystemDiskSize;
             this.zoneIds = builder.zoneIds;
         }
 
         @Override
         public final java.lang.Object getName() {
             return this.name;
-        }
-
-        @Override
-        public final java.lang.Object getNumOfNodes() {
-            return this.numOfNodes;
         }
 
         @Override
@@ -1139,11 +836,6 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         @Override
         public final java.lang.Object getDeletionProtection() {
             return this.deletionProtection;
-        }
-
-        @Override
-        public final java.lang.Object getDisableRollback() {
-            return this.disableRollback;
         }
 
         @Override
@@ -1222,46 +914,6 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         }
 
         @Override
-        public final java.lang.Object getVSwitchIds() {
-            return this.vSwitchIds;
-        }
-
-        @Override
-        public final java.lang.Object getWorkerDataDisk() {
-            return this.workerDataDisk;
-        }
-
-        @Override
-        public final java.lang.Object getWorkerDataDiskCategory() {
-            return this.workerDataDiskCategory;
-        }
-
-        @Override
-        public final java.lang.Object getWorkerDataDisks() {
-            return this.workerDataDisks;
-        }
-
-        @Override
-        public final java.lang.Object getWorkerDataDiskSize() {
-            return this.workerDataDiskSize;
-        }
-
-        @Override
-        public final java.lang.Object getWorkerInstanceTypes() {
-            return this.workerInstanceTypes;
-        }
-
-        @Override
-        public final java.lang.Object getWorkerSystemDiskCategory() {
-            return this.workerSystemDiskCategory;
-        }
-
-        @Override
-        public final java.lang.Object getWorkerSystemDiskSize() {
-            return this.workerSystemDiskSize;
-        }
-
-        @Override
         public final java.lang.Object getZoneIds() {
             return this.zoneIds;
         }
@@ -1273,7 +925,6 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("name", om.valueToTree(this.getName()));
-            data.set("numOfNodes", om.valueToTree(this.getNumOfNodes()));
             if (this.getAddons() != null) {
                 data.set("addons", om.valueToTree(this.getAddons()));
             }
@@ -1297,9 +948,6 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             }
             if (this.getDeletionProtection() != null) {
                 data.set("deletionProtection", om.valueToTree(this.getDeletionProtection()));
-            }
-            if (this.getDisableRollback() != null) {
-                data.set("disableRollback", om.valueToTree(this.getDisableRollback()));
             }
             if (this.getEndpointPublicAccess() != null) {
                 data.set("endpointPublicAccess", om.valueToTree(this.getEndpointPublicAccess()));
@@ -1346,30 +994,6 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             if (this.getVpcId() != null) {
                 data.set("vpcId", om.valueToTree(this.getVpcId()));
             }
-            if (this.getVSwitchIds() != null) {
-                data.set("vSwitchIds", om.valueToTree(this.getVSwitchIds()));
-            }
-            if (this.getWorkerDataDisk() != null) {
-                data.set("workerDataDisk", om.valueToTree(this.getWorkerDataDisk()));
-            }
-            if (this.getWorkerDataDiskCategory() != null) {
-                data.set("workerDataDiskCategory", om.valueToTree(this.getWorkerDataDiskCategory()));
-            }
-            if (this.getWorkerDataDisks() != null) {
-                data.set("workerDataDisks", om.valueToTree(this.getWorkerDataDisks()));
-            }
-            if (this.getWorkerDataDiskSize() != null) {
-                data.set("workerDataDiskSize", om.valueToTree(this.getWorkerDataDiskSize()));
-            }
-            if (this.getWorkerInstanceTypes() != null) {
-                data.set("workerInstanceTypes", om.valueToTree(this.getWorkerInstanceTypes()));
-            }
-            if (this.getWorkerSystemDiskCategory() != null) {
-                data.set("workerSystemDiskCategory", om.valueToTree(this.getWorkerSystemDiskCategory()));
-            }
-            if (this.getWorkerSystemDiskSize() != null) {
-                data.set("workerSystemDiskSize", om.valueToTree(this.getWorkerSystemDiskSize()));
-            }
             if (this.getZoneIds() != null) {
                 data.set("zoneIds", om.valueToTree(this.getZoneIds()));
             }
@@ -1392,7 +1016,6 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             RosManagedEdgeKubernetesClusterProps.Jsii$Proxy that = (RosManagedEdgeKubernetesClusterProps.Jsii$Proxy) o;
 
             if (!name.equals(that.name)) return false;
-            if (!numOfNodes.equals(that.numOfNodes)) return false;
             if (this.addons != null ? !this.addons.equals(that.addons) : that.addons != null) return false;
             if (this.autoRenew != null ? !this.autoRenew.equals(that.autoRenew) : that.autoRenew != null) return false;
             if (this.autoRenewPeriod != null ? !this.autoRenewPeriod.equals(that.autoRenewPeriod) : that.autoRenewPeriod != null) return false;
@@ -1401,7 +1024,6 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             if (this.clusterSpec != null ? !this.clusterSpec.equals(that.clusterSpec) : that.clusterSpec != null) return false;
             if (this.containerCidr != null ? !this.containerCidr.equals(that.containerCidr) : that.containerCidr != null) return false;
             if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
-            if (this.disableRollback != null ? !this.disableRollback.equals(that.disableRollback) : that.disableRollback != null) return false;
             if (this.endpointPublicAccess != null ? !this.endpointPublicAccess.equals(that.endpointPublicAccess) : that.endpointPublicAccess != null) return false;
             if (this.isEnterpriseSecurityGroup != null ? !this.isEnterpriseSecurityGroup.equals(that.isEnterpriseSecurityGroup) : that.isEnterpriseSecurityGroup != null) return false;
             if (this.keyPair != null ? !this.keyPair.equals(that.keyPair) : that.keyPair != null) return false;
@@ -1417,21 +1039,12 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.timeoutMins != null ? !this.timeoutMins.equals(that.timeoutMins) : that.timeoutMins != null) return false;
             if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
-            if (this.vSwitchIds != null ? !this.vSwitchIds.equals(that.vSwitchIds) : that.vSwitchIds != null) return false;
-            if (this.workerDataDisk != null ? !this.workerDataDisk.equals(that.workerDataDisk) : that.workerDataDisk != null) return false;
-            if (this.workerDataDiskCategory != null ? !this.workerDataDiskCategory.equals(that.workerDataDiskCategory) : that.workerDataDiskCategory != null) return false;
-            if (this.workerDataDisks != null ? !this.workerDataDisks.equals(that.workerDataDisks) : that.workerDataDisks != null) return false;
-            if (this.workerDataDiskSize != null ? !this.workerDataDiskSize.equals(that.workerDataDiskSize) : that.workerDataDiskSize != null) return false;
-            if (this.workerInstanceTypes != null ? !this.workerInstanceTypes.equals(that.workerInstanceTypes) : that.workerInstanceTypes != null) return false;
-            if (this.workerSystemDiskCategory != null ? !this.workerSystemDiskCategory.equals(that.workerSystemDiskCategory) : that.workerSystemDiskCategory != null) return false;
-            if (this.workerSystemDiskSize != null ? !this.workerSystemDiskSize.equals(that.workerSystemDiskSize) : that.workerSystemDiskSize != null) return false;
             return this.zoneIds != null ? this.zoneIds.equals(that.zoneIds) : that.zoneIds == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.name.hashCode();
-            result = 31 * result + (this.numOfNodes.hashCode());
             result = 31 * result + (this.addons != null ? this.addons.hashCode() : 0);
             result = 31 * result + (this.autoRenew != null ? this.autoRenew.hashCode() : 0);
             result = 31 * result + (this.autoRenewPeriod != null ? this.autoRenewPeriod.hashCode() : 0);
@@ -1440,7 +1053,6 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             result = 31 * result + (this.clusterSpec != null ? this.clusterSpec.hashCode() : 0);
             result = 31 * result + (this.containerCidr != null ? this.containerCidr.hashCode() : 0);
             result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
-            result = 31 * result + (this.disableRollback != null ? this.disableRollback.hashCode() : 0);
             result = 31 * result + (this.endpointPublicAccess != null ? this.endpointPublicAccess.hashCode() : 0);
             result = 31 * result + (this.isEnterpriseSecurityGroup != null ? this.isEnterpriseSecurityGroup.hashCode() : 0);
             result = 31 * result + (this.keyPair != null ? this.keyPair.hashCode() : 0);
@@ -1456,14 +1068,6 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.timeoutMins != null ? this.timeoutMins.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
-            result = 31 * result + (this.vSwitchIds != null ? this.vSwitchIds.hashCode() : 0);
-            result = 31 * result + (this.workerDataDisk != null ? this.workerDataDisk.hashCode() : 0);
-            result = 31 * result + (this.workerDataDiskCategory != null ? this.workerDataDiskCategory.hashCode() : 0);
-            result = 31 * result + (this.workerDataDisks != null ? this.workerDataDisks.hashCode() : 0);
-            result = 31 * result + (this.workerDataDiskSize != null ? this.workerDataDiskSize.hashCode() : 0);
-            result = 31 * result + (this.workerInstanceTypes != null ? this.workerInstanceTypes.hashCode() : 0);
-            result = 31 * result + (this.workerSystemDiskCategory != null ? this.workerSystemDiskCategory.hashCode() : 0);
-            result = 31 * result + (this.workerSystemDiskSize != null ? this.workerSystemDiskSize.hashCode() : 0);
             result = 31 * result + (this.zoneIds != null ? this.zoneIds.hashCode() : 0);
             return result;
         }

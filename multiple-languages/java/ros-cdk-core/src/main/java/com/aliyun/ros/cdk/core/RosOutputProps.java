@@ -1,6 +1,6 @@
 package com.aliyun.ros.cdk.core;
 
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:35.796Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:26.142Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosOutputProps")
 @software.amazon.jsii.Jsii.Proxy(RosOutputProps.Jsii$Proxy.class)
 public interface RosOutputProps extends software.amazon.jsii.JsiiSerializable {
@@ -48,6 +48,26 @@ public interface RosOutputProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * An alias for the output.
+     * <p>
+     * Default: - No label.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.String getLabel() {
+        return null;
+    }
+
+    /**
+     * Whether to output parameter values.
+     * <p>
+     * If the value is set to true, only an asterisk (*) is printed.
+     * <p>
+     * Default: false
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Boolean getNoEcho() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosOutputProps}
      */
     static Builder builder() {
@@ -61,6 +81,8 @@ public interface RosOutputProps extends software.amazon.jsii.JsiiSerializable {
         com.aliyun.ros.cdk.core.RosCondition condition;
         java.lang.String description;
         java.lang.String exportName;
+        java.lang.String label;
+        java.lang.Boolean noEcho;
 
         /**
          * Sets the value of {@link RosOutputProps#getValue}
@@ -109,6 +131,27 @@ public interface RosOutputProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosOutputProps#getLabel}
+         * @param label An alias for the output.
+         * @return {@code this}
+         */
+        public Builder label(java.lang.String label) {
+            this.label = label;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosOutputProps#getNoEcho}
+         * @param noEcho Whether to output parameter values.
+         *               If the value is set to true, only an asterisk (*) is printed.
+         * @return {@code this}
+         */
+        public Builder noEcho(java.lang.Boolean noEcho) {
+            this.noEcho = noEcho;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosOutputProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -128,6 +171,8 @@ public interface RosOutputProps extends software.amazon.jsii.JsiiSerializable {
         private final com.aliyun.ros.cdk.core.RosCondition condition;
         private final java.lang.String description;
         private final java.lang.String exportName;
+        private final java.lang.String label;
+        private final java.lang.Boolean noEcho;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -139,6 +184,8 @@ public interface RosOutputProps extends software.amazon.jsii.JsiiSerializable {
             this.condition = software.amazon.jsii.Kernel.get(this, "condition", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.RosCondition.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             this.exportName = software.amazon.jsii.Kernel.get(this, "exportName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.label = software.amazon.jsii.Kernel.get(this, "label", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.noEcho = software.amazon.jsii.Kernel.get(this, "noEcho", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
         }
 
         /**
@@ -150,6 +197,8 @@ public interface RosOutputProps extends software.amazon.jsii.JsiiSerializable {
             this.condition = builder.condition;
             this.description = builder.description;
             this.exportName = builder.exportName;
+            this.label = builder.label;
+            this.noEcho = builder.noEcho;
         }
 
         @Override
@@ -173,6 +222,16 @@ public interface RosOutputProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.String getLabel() {
+            return this.label;
+        }
+
+        @Override
+        public final java.lang.Boolean getNoEcho() {
+            return this.noEcho;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -187,6 +246,12 @@ public interface RosOutputProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getExportName() != null) {
                 data.set("exportName", om.valueToTree(this.getExportName()));
+            }
+            if (this.getLabel() != null) {
+                data.set("label", om.valueToTree(this.getLabel()));
+            }
+            if (this.getNoEcho() != null) {
+                data.set("noEcho", om.valueToTree(this.getNoEcho()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -209,7 +274,9 @@ public interface RosOutputProps extends software.amazon.jsii.JsiiSerializable {
             if (!value.equals(that.value)) return false;
             if (this.condition != null ? !this.condition.equals(that.condition) : that.condition != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
-            return this.exportName != null ? this.exportName.equals(that.exportName) : that.exportName == null;
+            if (this.exportName != null ? !this.exportName.equals(that.exportName) : that.exportName != null) return false;
+            if (this.label != null ? !this.label.equals(that.label) : that.label != null) return false;
+            return this.noEcho != null ? this.noEcho.equals(that.noEcho) : that.noEcho == null;
         }
 
         @Override
@@ -218,6 +285,8 @@ public interface RosOutputProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.condition != null ? this.condition.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.exportName != null ? this.exportName.hashCode() : 0);
+            result = 31 * result + (this.label != null ? this.label.hashCode() : 0);
+            result = 31 * result + (this.noEcho != null ? this.noEcho.hashCode() : 0);
             return result;
         }
     }

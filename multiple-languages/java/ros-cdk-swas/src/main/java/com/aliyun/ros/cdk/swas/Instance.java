@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.swas;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SWAS::Instance</code>, which is used to create a subscription simple application server.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:42.840Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:33.790Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.swas.$Module.class, fqn = "@alicloud/ros-cdk-swas.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 

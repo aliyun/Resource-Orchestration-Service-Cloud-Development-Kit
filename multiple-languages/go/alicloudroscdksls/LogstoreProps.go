@@ -36,6 +36,12 @@ type LogstoreProps struct {
 	// Must be specified if AutoSplit is set to true.
 	// Allowed Values: 1-64.
 	MaxSplitShard interface{} `field:"optional" json:"maxSplitShard" yaml:"maxSplitShard"`
+	// Property mode: The type of the Logstore.
+	//
+	// Simple Log Service provides two types of Logstores: Standard Logstores and Query Logstores. Valid values:
+	// standard: Standard Logstore. This type of Logstore supports the log analysis feature and is suitable for scenarios such as real-time monitoring and interactive analysis. You can also use this type of Logstore to build a comprehensive observability system.
+	// query: Query Logstore. This type of Logstore supports high-performance queries. The index traffic fee of a Query Logstore is approximately half that of a Standard Logstore. Query Logstores do not support SQL analysis. Query Logstores are suitable for scenarios in which the amount of data is large, the log retention period is long, or log analysis is not required. If logs are stored for weeks or months, the log retention period is considered long.
+	Mode interface{} `field:"optional" json:"mode" yaml:"mode"`
 	// Property preserveStorage: Whether to keep the log permanently.
 	//
 	// If set to true, TTL will be ignored.

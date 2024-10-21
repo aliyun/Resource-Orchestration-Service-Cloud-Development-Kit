@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.sls;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logstore
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:42.708Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:33.676Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.LogstoreProps")
 @software.amazon.jsii.Jsii.Proxy(LogstoreProps.Jsii$Proxy.class)
 public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
@@ -73,6 +73,17 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property mode: The type of the Logstore.
+     * <p>
+     * Simple Log Service provides two types of Logstores: Standard Logstores and Query Logstores. Valid values:
+     * standard: Standard Logstore. This type of Logstore supports the log analysis feature and is suitable for scenarios such as real-time monitoring and interactive analysis. You can also use this type of Logstore to build a comprehensive observability system.
+     * query: Query Logstore. This type of Logstore supports high-performance queries. The index traffic fee of a Query Logstore is approximately half that of a Standard Logstore. Query Logstores do not support SQL analysis. Query Logstores are suitable for scenarios in which the amount of data is large, the log retention period is long, or log analysis is not required. If logs are stored for weeks or months, the log retention period is considered long.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMode() {
+        return null;
+    }
+
+    /**
      * Property preserveStorage: Whether to keep the log permanently.
      * <p>
      * If set to true, TTL will be ignored.
@@ -117,6 +128,7 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object enableTracking;
         java.lang.Object encryptConf;
         java.lang.Object maxSplitShard;
+        java.lang.Object mode;
         java.lang.Object preserveStorage;
         java.lang.Object shardCount;
         java.lang.Object ttl;
@@ -284,6 +296,32 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link LogstoreProps#getMode}
+         * @param mode Property mode: The type of the Logstore.
+         *             Simple Log Service provides two types of Logstores: Standard Logstores and Query Logstores. Valid values:
+         *             standard: Standard Logstore. This type of Logstore supports the log analysis feature and is suitable for scenarios such as real-time monitoring and interactive analysis. You can also use this type of Logstore to build a comprehensive observability system.
+         *             query: Query Logstore. This type of Logstore supports high-performance queries. The index traffic fee of a Query Logstore is approximately half that of a Standard Logstore. Query Logstores do not support SQL analysis. Query Logstores are suitable for scenarios in which the amount of data is large, the log retention period is long, or log analysis is not required. If logs are stored for weeks or months, the log retention period is considered long.
+         * @return {@code this}
+         */
+        public Builder mode(java.lang.String mode) {
+            this.mode = mode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link LogstoreProps#getMode}
+         * @param mode Property mode: The type of the Logstore.
+         *             Simple Log Service provides two types of Logstores: Standard Logstores and Query Logstores. Valid values:
+         *             standard: Standard Logstore. This type of Logstore supports the log analysis feature and is suitable for scenarios such as real-time monitoring and interactive analysis. You can also use this type of Logstore to build a comprehensive observability system.
+         *             query: Query Logstore. This type of Logstore supports high-performance queries. The index traffic fee of a Query Logstore is approximately half that of a Standard Logstore. Query Logstores do not support SQL analysis. Query Logstores are suitable for scenarios in which the amount of data is large, the log retention period is long, or log analysis is not required. If logs are stored for weeks or months, the log retention period is considered long.
+         * @return {@code this}
+         */
+        public Builder mode(com.aliyun.ros.cdk.core.IResolvable mode) {
+            this.mode = mode;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LogstoreProps#getPreserveStorage}
          * @param preserveStorage Property preserveStorage: Whether to keep the log permanently.
          *                        If set to true, TTL will be ignored.
@@ -374,6 +412,7 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object enableTracking;
         private final java.lang.Object encryptConf;
         private final java.lang.Object maxSplitShard;
+        private final java.lang.Object mode;
         private final java.lang.Object preserveStorage;
         private final java.lang.Object shardCount;
         private final java.lang.Object ttl;
@@ -391,6 +430,7 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
             this.enableTracking = software.amazon.jsii.Kernel.get(this, "enableTracking", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.encryptConf = software.amazon.jsii.Kernel.get(this, "encryptConf", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.maxSplitShard = software.amazon.jsii.Kernel.get(this, "maxSplitShard", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.mode = software.amazon.jsii.Kernel.get(this, "mode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.preserveStorage = software.amazon.jsii.Kernel.get(this, "preserveStorage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.shardCount = software.amazon.jsii.Kernel.get(this, "shardCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ttl = software.amazon.jsii.Kernel.get(this, "ttl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -408,6 +448,7 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
             this.enableTracking = builder.enableTracking;
             this.encryptConf = builder.encryptConf;
             this.maxSplitShard = builder.maxSplitShard;
+            this.mode = builder.mode;
             this.preserveStorage = builder.preserveStorage;
             this.shardCount = builder.shardCount;
             this.ttl = builder.ttl;
@@ -449,6 +490,11 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getMode() {
+            return this.mode;
+        }
+
+        @Override
         public final java.lang.Object getPreserveStorage() {
             return this.preserveStorage;
         }
@@ -486,6 +532,9 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getMaxSplitShard() != null) {
                 data.set("maxSplitShard", om.valueToTree(this.getMaxSplitShard()));
             }
+            if (this.getMode() != null) {
+                data.set("mode", om.valueToTree(this.getMode()));
+            }
             if (this.getPreserveStorage() != null) {
                 data.set("preserveStorage", om.valueToTree(this.getPreserveStorage()));
             }
@@ -520,6 +569,7 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
             if (this.enableTracking != null ? !this.enableTracking.equals(that.enableTracking) : that.enableTracking != null) return false;
             if (this.encryptConf != null ? !this.encryptConf.equals(that.encryptConf) : that.encryptConf != null) return false;
             if (this.maxSplitShard != null ? !this.maxSplitShard.equals(that.maxSplitShard) : that.maxSplitShard != null) return false;
+            if (this.mode != null ? !this.mode.equals(that.mode) : that.mode != null) return false;
             if (this.preserveStorage != null ? !this.preserveStorage.equals(that.preserveStorage) : that.preserveStorage != null) return false;
             if (this.shardCount != null ? !this.shardCount.equals(that.shardCount) : that.shardCount != null) return false;
             return this.ttl != null ? this.ttl.equals(that.ttl) : that.ttl == null;
@@ -534,6 +584,7 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.enableTracking != null ? this.enableTracking.hashCode() : 0);
             result = 31 * result + (this.encryptConf != null ? this.encryptConf.hashCode() : 0);
             result = 31 * result + (this.maxSplitShard != null ? this.maxSplitShard.hashCode() : 0);
+            result = 31 * result + (this.mode != null ? this.mode.hashCode() : 0);
             result = 31 * result + (this.preserveStorage != null ? this.preserveStorage.hashCode() : 0);
             result = 31 * result + (this.shardCount != null ? this.shardCount.hashCode() : 0);
             result = 31 * result + (this.ttl != null ? this.ttl.hashCode() : 0);

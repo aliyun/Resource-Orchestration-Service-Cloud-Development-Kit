@@ -11,7 +11,11 @@
 @alicloud/ros-cdk-cddc.RosDedicatedHostProps=com.aliyun.ros.cdk.cddc.RosDedicatedHostProps
 @alicloud/ros-cdk-cddc.RosMyBase=com.aliyun.ros.cdk.cddc.RosMyBase
 @alicloud/ros-cdk-cddc.RosMyBaseProps=com.aliyun.ros.cdk.cddc.RosMyBaseProps
+@alicloud/ros-cdk-cddc.datasource.DedicatedHostGroup=com.aliyun.ros.cdk.cddc.datasource.DedicatedHostGroup
+@alicloud/ros-cdk-cddc.datasource.DedicatedHostGroupProps=com.aliyun.ros.cdk.cddc.datasource.DedicatedHostGroupProps
 @alicloud/ros-cdk-cddc.datasource.DedicatedHostGroups=com.aliyun.ros.cdk.cddc.datasource.DedicatedHostGroups
 @alicloud/ros-cdk-cddc.datasource.DedicatedHostGroupsProps=com.aliyun.ros.cdk.cddc.datasource.DedicatedHostGroupsProps
+@alicloud/ros-cdk-cddc.datasource.RosDedicatedHostGroup=com.aliyun.ros.cdk.cddc.datasource.RosDedicatedHostGroup
+@alicloud/ros-cdk-cddc.datasource.RosDedicatedHostGroupProps=com.aliyun.ros.cdk.cddc.datasource.RosDedicatedHostGroupProps
 @alicloud/ros-cdk-cddc.datasource.RosDedicatedHostGroups=com.aliyun.ros.cdk.cddc.datasource.RosDedicatedHostGroups
 @alicloud/ros-cdk-cddc.datasource.RosDedicatedHostGroupsProps=com.aliyun.ros.cdk.cddc.datasource.RosDedicatedHostGroupsProps

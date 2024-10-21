@@ -668,9 +668,6 @@ func (j *jsiiProxy_RosApi) validateSetResultDescriptionsParameters(val interface
 }
 
 func (j *jsiiProxy_RosApi) validateSetResultSampleParameters(val interface{}) error {
-	if val == nil {
-		return fmt.Errorf("parameter val is required, but nil was provided")
-	}
 	switch val.(type) {
 	case *string:
 		// ok
@@ -688,9 +685,6 @@ func (j *jsiiProxy_RosApi) validateSetResultSampleParameters(val interface{}) er
 }
 
 func (j *jsiiProxy_RosApi) validateSetResultTypeParameters(val interface{}) error {
-	if val == nil {
-		return fmt.Errorf("parameter val is required, but nil was provided")
-	}
 	switch val.(type) {
 	case *string:
 		// ok

@@ -7,7 +7,7 @@ package com.aliyun.ros.cdk.core;
  * <p>
  * @see <a href="https://docs.docker.com/build/buildkit/">https://docs.docker.com/build/buildkit/</a>
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:35.713Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:26.043Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.DockerBuildSecret")
 public class DockerBuildSecret extends software.amazon.jsii.JsiiObject {
 

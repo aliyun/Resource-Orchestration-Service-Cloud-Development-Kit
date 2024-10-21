@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hbr;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::HBR::RestoreJob</code>, which is used to create a restore job.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-09-29T07:52:40.329Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.167Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.RosRestoreJob")
 public class RosRestoreJob extends com.aliyun.ros.cdk.core.RosResource {
 
