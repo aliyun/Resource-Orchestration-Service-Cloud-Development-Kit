@@ -1,0 +1,8 @@
+{
+	"app": "node bin/demo.js",
+	"context": {
+		"ros-cdk:enableStackNameDuplicates": "true",
+		"ros-cdk:enableDiffNoFail": "true"
+	},
+	"languageInfo": "javascript"
+}

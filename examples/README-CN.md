@@ -29,9 +29,10 @@ CDK 使用代码的示例和最佳实践分类如下：
 
 #### ros
 
-|文档               |语言示例               |
-|-------------------|---------------------|
-|[CDK 使用示例](https://help.aliyun.com/zh/ros/developer-reference/usage-examples)|[python](./documents/ros/usage-examples/python/)/[java](./documents/ros/usage-examples/java/)/[javascript](./documents/ros/usage-examples/javascript/)/[typescript](./documents/ros/usage-examples/typescript/)/[csharp](./documents/ros/usage-examples/csharp/)|
+| 文档                                                                            |语言示例               |
+|-------------------------------------------------------------------------------|---------------------|
+| [部署2048小游戏](https://help.aliyun.com/zh/ros/developer-reference/use-ros-cdk-to-deploy-the-2048-game-on-the-cloud)                                  |[python](./documents/ros/deploy-2048/python/)/[java](./documents/ros/deploy-2048/java/)/[javascript](./documents/ros/deploy-2048/javascript/)/[typescript](./documents/ros/deploy-2048/typescript/)/[csharp](./documents/ros/deploy-2048/csharp/)/[go](./documents/ros/deploy-2048/go/)|
+| [CDK 使用示例](https://help.aliyun.com/zh/ros/developer-reference/usage-examples) |[python](./documents/ros/usage-examples/python/)/[java](./documents/ros/usage-examples/java/)/[javascript](./documents/ros/usage-examples/javascript/)/[typescript](./documents/ros/usage-examples/typescript/)/[csharp](./documents/ros/usage-examples/csharp/)|
 
 ### 解决方案
 

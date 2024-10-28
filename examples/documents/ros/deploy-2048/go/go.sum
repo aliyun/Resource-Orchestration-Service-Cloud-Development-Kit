@@ -1,0 +1,15 @@
+github.com/Masterminds/semver/v3 v3.2.1 h1:RN9w6+7QoMeJVGyfmbcgs28Br8cvmnucEXnY0rYXWg0=
+github.com/Masterminds/semver/v3 v3.2.1/go.mod h1:qvl/7zhW3nngYb5+80sSMF+FG2BjYrf8m9wsX0PNOMQ=
+github.com/alibabacloud-go/ros-cdk/alicloudroscdkassemblyschema v1.2.0 h1:+3W+r065JxXfErenAzT+VrHa5B40OS9mfBK6kKMp1UE=
+github.com/alibabacloud-go/ros-cdk/alicloudroscdkassemblyschema v1.2.0/go.mod h1:E6/qLokdFFSVgsHZm4eg/HsvYpYAkyePsgBnYMkEwa4=
+github.com/alibabacloud-go/ros-cdk/alicloudroscdkcore v1.2.0 h1:LrJQuAfFIBAgyCel4/SeBoN2bB9E7DS3PwRn/EcDM1E=
+github.com/alibabacloud-go/ros-cdk/alicloudroscdkcore v1.2.0/go.mod h1:yiNnYhO0vB8ds5KRwghfDeWRM+8ILv3oRIDeazsmPuk=
+github.com/alibabacloud-go/ros-cdk/alicloudroscdkcxapi v1.2.0 h1:ARiXraDVF+jb5QisQi77MnnL+HVYTIRkx1E4P5xbkc8=
+github.com/alibabacloud-go/ros-cdk/alicloudroscdkcxapi v1.2.0/go.mod h1:zeCuJsvJ2ri6XNctDnnlPSBmwHNH9lFhxAzzCt1Jr10=
+github.com/alibabacloud-go/ros-cdk/alicloudroscdkecs v1.2.0 h1:CV/Byi8mKqMJiMe8DqWkkCc2hi8Ai8Ido7FnTemtJvs=
+github.com/alibabacloud-go/ros-cdk/alicloudroscdkecs v1.2.0/go.mod h1:plIMW0MLIB3ZtCOKx8oZi075niinY63t0MMnS/bzPGk=
+github.com/aws/constructs-go/constructs/v3 v3.4.344 h1:wj+DLqyVWc1ujffTw+M3tGVKsOOjJv5PeDsP4LzxVL8=
+github.com/aws/constructs-go/constructs/v3 v3.4.344/go.mod h1:WYmZlmHWrQk5EAd30zZO/reLvE62Va920Cpgcc1Yp+k=
+github.com/aws/jsii-runtime-go v1.85.0 h1:oRK9X0YSo31iHW6JqQceO9q59W4Jke8t6NabiMf1r5M=
+github.com/aws/jsii-runtime-go v1.85.0/go.mod h1:4onTREXyqS1dVxkaFhHn2eJ58LKhJGVp2pQBhOw27aY=
+github.com/stretchr/testify v1.8.4/go.mod h1:sz/lmYIOXD/1dqDmKjjqLyZ2RngseejIcXlSw2iwfAo=
