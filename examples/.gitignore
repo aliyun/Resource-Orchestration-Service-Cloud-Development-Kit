@@ -2,3 +2,4 @@
 **/node_modules
 **/account.config.json
 **/.md5
+**/go.sum
