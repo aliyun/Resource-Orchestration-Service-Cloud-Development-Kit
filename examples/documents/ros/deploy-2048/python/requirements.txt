@@ -1,0 +1,2 @@
+ros-cdk-core==1.1.0
+ros-cdk-ecs==1.1.0

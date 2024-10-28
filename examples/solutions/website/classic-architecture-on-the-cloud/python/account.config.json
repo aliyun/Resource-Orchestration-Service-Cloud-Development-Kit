@@ -1,7 +1,0 @@
-{
-	"type": "access_key",
-	"accessKeyId": "29f74422fe963453fc7dc3ddea9997c6e402c88bac76556b33629e9b11d15360",
-	"accessKeySecret": "b7151c5961c6b98e2e646f6eb250fd9a5bdddc13911fdcb489a0d277cca576f6",
-	"endpoint": "https://ros.aliyuncs.com",
-	"regionId": "cn-hangzhou"
-}
