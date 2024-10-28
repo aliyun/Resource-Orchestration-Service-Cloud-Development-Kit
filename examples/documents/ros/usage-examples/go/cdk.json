@@ -1,0 +1,20 @@
+{
+	"app": "go mod download && go run demo.go",
+	"watch": {
+		"include": [
+			"**"
+		],
+		"exclude": [
+			"README.md",
+			"cdk*.json",
+			"go.mod",
+			"go.sum",
+			"**/*test.go"
+		]
+	},
+	"context": {
+		"ros-cdk:enableStackNameDuplicates": "true",
+		"ros-cdk:enableDiffNoFail": "true"
+	},
+	"languageInfo": "go"
+}
