@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ACS::Cluster`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ACS::Cluster`, which is used to create an Alibaba Cloud Container Compute Service (ACS) cluster.
 type RosCluster interface {
 	alicloudroscdkcore.RosResource
 	Addons() interface{}
@@ -100,8 +100,8 @@ type RosCluster interface {
 	SetVpcId(val interface{})
 	VSwitchIds() interface{}
 	SetVSwitchIds(val interface{})
-	ZoneId() interface{}
-	SetZoneId(val interface{})
+	ZoneIds() interface{}
+	SetZoneIds(val interface{})
 	AddCondition(con alicloudroscdkcore.RosCondition)
 	AddCount(count interface{})
 	// Syntactic sugar for `addOverride(path, undefined)`.
@@ -628,11 +628,11 @@ func (j *jsiiProxy_RosCluster) VSwitchIds() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_RosCluster) ZoneId() interface{} {
+func (j *jsiiProxy_RosCluster) ZoneIds() interface{} {
 	var returns interface{}
 	_jsii_.Get(
 		j,
-		"zoneId",
+		"zoneIds",
 		&returns,
 	)
 	return returns
@@ -897,13 +897,13 @@ func (j *jsiiProxy_RosCluster)SetVSwitchIds(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_RosCluster)SetZoneId(val interface{}) {
-	if err := j.validateSetZoneIdParameters(val); err != nil {
+func (j *jsiiProxy_RosCluster)SetZoneIds(val interface{}) {
+	if err := j.validateSetZoneIdsParameters(val); err != nil {
 		panic(err)
 	}
 	_jsii_.Set(
 		j,
-		"zoneId",
+		"zoneIds",
 		val,
 	)
 }

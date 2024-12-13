@@ -28,7 +28,6 @@ type DatasetProps struct {
 	Uri interface{} `field:"required" json:"uri" yaml:"uri"`
 	// Property workspaceId: The ID of the workspace where the dataset is located.
 	//
-	// For details about how to obtain the workspace ID, see [ListWorkspaces](~~ 449124 ~~).
 	// If this parameter is not configured, the default workspace is used. If the default workspace does not exist, an error is reported.
 	WorkspaceId interface{} `field:"required" json:"workspaceId" yaml:"workspaceId"`
 	// Property accessibility: Workspace visibility.

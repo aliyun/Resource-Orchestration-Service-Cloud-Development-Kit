@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.appflow;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-appflow-flow
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:26.896Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:04.564Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.appflow.$Module.class, fqn = "@alicloud/ros-cdk-appflow.RosFlowProps")
 @software.amazon.jsii.Jsii.Proxy(RosFlowProps.Jsii$Proxy.class)
 public interface RosFlowProps extends software.amazon.jsii.JsiiSerializable {
@@ -23,6 +23,12 @@ public interface RosFlowProps extends software.amazon.jsii.JsiiSerializable {
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getFlowId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getFlowStatus() {
         return null;
     }
 
@@ -63,6 +69,7 @@ public interface RosFlowProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object flowName;
         java.lang.Object flowDesc;
         java.lang.Object flowId;
+        java.lang.Object flowStatus;
         java.lang.Object launchFlow;
         java.lang.Object parameters;
         java.lang.Object template;
@@ -125,6 +132,26 @@ public interface RosFlowProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder flowId(com.aliyun.ros.cdk.core.IResolvable flowId) {
             this.flowId = flowId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFlowProps#getFlowStatus}
+         * @param flowStatus the value to be set.
+         * @return {@code this}
+         */
+        public Builder flowStatus(java.lang.String flowStatus) {
+            this.flowStatus = flowStatus;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFlowProps#getFlowStatus}
+         * @param flowStatus the value to be set.
+         * @return {@code this}
+         */
+        public Builder flowStatus(com.aliyun.ros.cdk.core.IResolvable flowStatus) {
+            this.flowStatus = flowStatus;
             return this;
         }
 
@@ -227,6 +254,7 @@ public interface RosFlowProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object flowName;
         private final java.lang.Object flowDesc;
         private final java.lang.Object flowId;
+        private final java.lang.Object flowStatus;
         private final java.lang.Object launchFlow;
         private final java.lang.Object parameters;
         private final java.lang.Object template;
@@ -241,6 +269,7 @@ public interface RosFlowProps extends software.amazon.jsii.JsiiSerializable {
             this.flowName = software.amazon.jsii.Kernel.get(this, "flowName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.flowDesc = software.amazon.jsii.Kernel.get(this, "flowDesc", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.flowId = software.amazon.jsii.Kernel.get(this, "flowId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.flowStatus = software.amazon.jsii.Kernel.get(this, "flowStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.launchFlow = software.amazon.jsii.Kernel.get(this, "launchFlow", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.parameters = software.amazon.jsii.Kernel.get(this, "parameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.template = software.amazon.jsii.Kernel.get(this, "template", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -255,6 +284,7 @@ public interface RosFlowProps extends software.amazon.jsii.JsiiSerializable {
             this.flowName = java.util.Objects.requireNonNull(builder.flowName, "flowName is required");
             this.flowDesc = builder.flowDesc;
             this.flowId = builder.flowId;
+            this.flowStatus = builder.flowStatus;
             this.launchFlow = builder.launchFlow;
             this.parameters = builder.parameters;
             this.template = builder.template;
@@ -274,6 +304,11 @@ public interface RosFlowProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getFlowId() {
             return this.flowId;
+        }
+
+        @Override
+        public final java.lang.Object getFlowStatus() {
+            return this.flowStatus;
         }
 
         @Override
@@ -309,6 +344,9 @@ public interface RosFlowProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getFlowId() != null) {
                 data.set("flowId", om.valueToTree(this.getFlowId()));
             }
+            if (this.getFlowStatus() != null) {
+                data.set("flowStatus", om.valueToTree(this.getFlowStatus()));
+            }
             if (this.getLaunchFlow() != null) {
                 data.set("launchFlow", om.valueToTree(this.getLaunchFlow()));
             }
@@ -342,6 +380,7 @@ public interface RosFlowProps extends software.amazon.jsii.JsiiSerializable {
             if (!flowName.equals(that.flowName)) return false;
             if (this.flowDesc != null ? !this.flowDesc.equals(that.flowDesc) : that.flowDesc != null) return false;
             if (this.flowId != null ? !this.flowId.equals(that.flowId) : that.flowId != null) return false;
+            if (this.flowStatus != null ? !this.flowStatus.equals(that.flowStatus) : that.flowStatus != null) return false;
             if (this.launchFlow != null ? !this.launchFlow.equals(that.launchFlow) : that.launchFlow != null) return false;
             if (this.parameters != null ? !this.parameters.equals(that.parameters) : that.parameters != null) return false;
             if (this.template != null ? !this.template.equals(that.template) : that.template != null) return false;
@@ -353,6 +392,7 @@ public interface RosFlowProps extends software.amazon.jsii.JsiiSerializable {
             int result = this.flowName.hashCode();
             result = 31 * result + (this.flowDesc != null ? this.flowDesc.hashCode() : 0);
             result = 31 * result + (this.flowId != null ? this.flowId.hashCode() : 0);
+            result = 31 * result + (this.flowStatus != null ? this.flowStatus.hashCode() : 0);
             result = 31 * result + (this.launchFlow != null ? this.launchFlow.hashCode() : 0);
             result = 31 * result + (this.parameters != null ? this.parameters.hashCode() : 0);
             result = 31 * result + (this.template != null ? this.template.hashCode() : 0);

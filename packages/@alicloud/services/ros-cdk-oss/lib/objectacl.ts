@@ -26,7 +26,7 @@ export interface ObjectAclProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::OSS::ObjectAcl`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OSS::ObjectAcl`, which is used to modify the access control list (ACL) of an Object Storage Service (OSS) object.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosObjectAcl`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-objectacl
  */

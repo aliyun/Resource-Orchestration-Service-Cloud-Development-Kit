@@ -73,7 +73,7 @@ function rosDatasetPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::PAI::Dataset`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::PAI::Dataset`, which is used to query a dataset.
  * @Note This class does not contain additional functions, so it is recommended to use the `Dataset` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-dataset
  */
@@ -235,7 +235,7 @@ export class RosDataset extends ros.RosResource {
 export interface RosDatasetsProps {
 
     /**
-     * @Property workspaceId: The ID of the workspace where the dataset is located. For details about how to obtain the workspace ID, see [ListWorkspaces](~~ 449124 ~~).
+     * @Property workspaceId: The ID of the workspace where the dataset is located.
      * If this parameter is not configured, the default workspace is used. If the default workspace does not exist, an error is reported.
      */
     readonly workspaceId: string | ros.IResolvable;
@@ -325,7 +325,7 @@ export class RosDatasets extends ros.RosResource {
 
 
     /**
-     * @Property workspaceId: The ID of the workspace where the dataset is located. For details about how to obtain the workspace ID, see [ListWorkspaces](~~ 449124 ~~).
+     * @Property workspaceId: The ID of the workspace where the dataset is located.
      * If this parameter is not configured, the default workspace is used. If the default workspace does not exist, an error is reported.
      */
     public workspaceId: string | ros.IResolvable;
@@ -437,7 +437,7 @@ function rosServicePropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::PAI::Service`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::PAI::Service`, which is used to query the information about a service in Elastic Algorithm Service (EAS).
  * @Note This class does not contain additional functions, so it is recommended to use the `Service` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-service
  */
@@ -742,7 +742,7 @@ function rosServicesPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::PAI::Services`, which is used to query the information about Elastic Algorithm Service (EAS) services of Machine Learning Platform for AI (PAI).
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::PAI::Services`, which is used to query the information about Elastic Algorithm Service (EAS) services.
  * @Note This class does not contain additional functions, so it is recommended to use the `Services` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-services
  */
@@ -874,7 +874,7 @@ function rosWorkspacePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::PAI::Workspace`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::PAI::Workspace`, which is used to query the information about a Platform for AI (PAI) workspace.
  * @Note This class does not contain additional functions, so it is recommended to use the `Workspace` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-workspace
  */
@@ -1055,7 +1055,7 @@ function rosWorkspaceResourceDlcPropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::PAI::WorkspaceResourceDlc`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::PAI::WorkspaceResourceDlc`, which is used to query the information about a Deep Learning Containers (DLC) resource that is associated with a Platform for AI (PAI) workspace.
  * @Note This class does not contain additional functions, so it is recommended to use the `WorkspaceResourceDlc` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-workspaceresourcedlc
  */
@@ -1206,7 +1206,7 @@ function rosWorkspaceResourceDlcsPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::PAI::WorkspaceResourceDlcs`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::PAI::WorkspaceResourceDlcs`, which is used to query a list of Deep Learning Containers (DLC) resources that are associated with a Platform for AI (PAI) workspace.
  * @Note This class does not contain additional functions, so it is recommended to use the `WorkspaceResourceDlcs` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-workspaceresourcedlcs
  */
@@ -1346,7 +1346,7 @@ function rosWorkspaceResourceFlinkPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::PAI::WorkspaceResourceFlink`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::PAI::WorkspaceResourceFlink`, which is used to query the information about a Realtime Compute for Apache Flink resource that is associated with a workspace.
  * @Note This class does not contain additional functions, so it is recommended to use the `WorkspaceResourceFlink` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-workspaceresourceflink
  */
@@ -1497,7 +1497,7 @@ function rosWorkspaceResourceFlinksPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::PAI::WorkspaceResourceFlinks`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::PAI::WorkspaceResourceFlinks`, which is used to query the Realtime Compute for Apache Flink resources that are associated with a workspace.
  * @Note This class does not contain additional functions, so it is recommended to use the `WorkspaceResourceFlinks` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-workspaceresourceflinks
  */
@@ -1637,7 +1637,7 @@ function rosWorkspaceResourceMaxComputePropsToRosTemplate(properties: any, enabl
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::PAI::WorkspaceResourceMaxCompute`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::PAI::WorkspaceResourceMaxCompute`, which is used to query the information about a MaxCompute resource that is associated with a workspace.
  * @Note This class does not contain additional functions, so it is recommended to use the `WorkspaceResourceMaxCompute` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-workspaceresourcemaxcompute
  */
@@ -1788,7 +1788,7 @@ function rosWorkspaceResourceMaxComputesPropsToRosTemplate(properties: any, enab
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::PAI::WorkspaceResourceMaxComputes`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::PAI::WorkspaceResourceMaxComputes`, which is used to query the MaxCompute resources that are associated with a workspace.
  * @Note This class does not contain additional functions, so it is recommended to use the `WorkspaceResourceMaxComputes` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-workspaceresourcemaxcomputes
  */

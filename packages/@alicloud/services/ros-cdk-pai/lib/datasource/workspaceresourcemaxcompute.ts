@@ -29,7 +29,7 @@ export interface WorkspaceResourceMaxComputeProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::WorkspaceResourceMaxCompute`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::WorkspaceResourceMaxCompute`, which is used to query the information about a MaxCompute resource that is associated with a workspace.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWorkspaceResourceMaxCompute`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-workspaceresourcemaxcompute
  */

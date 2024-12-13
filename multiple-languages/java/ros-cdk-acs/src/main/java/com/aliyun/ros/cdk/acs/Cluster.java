@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.acs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ACS::Cluster</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ACS::Cluster</code>, which is used to create an Alibaba Cloud Container Compute Service (ACS) cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:26.220Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:03.786Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acs.$Module.class, fqn = "@alicloud/ros-cdk-acs.Cluster")
 public class Cluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -688,23 +688,23 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property zoneId: The zone ID.
+         * Property zoneIds: The zone IDs of the cluster.
          * <p>
          * @return {@code this}
-         * @param zoneId Property zoneId: The zone ID. This parameter is required.
+         * @param zoneIds Property zoneIds: The zone IDs of the cluster. This parameter is required.
          */
-        public Builder zoneId(final java.lang.String zoneId) {
-            this.props.zoneId(zoneId);
+        public Builder zoneIds(final com.aliyun.ros.cdk.core.IResolvable zoneIds) {
+            this.props.zoneIds(zoneIds);
             return this;
         }
         /**
-         * Property zoneId: The zone ID.
+         * Property zoneIds: The zone IDs of the cluster.
          * <p>
          * @return {@code this}
-         * @param zoneId Property zoneId: The zone ID. This parameter is required.
+         * @param zoneIds Property zoneIds: The zone IDs of the cluster. This parameter is required.
          */
-        public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
-            this.props.zoneId(zoneId);
+        public Builder zoneIds(final java.util.List<? extends java.lang.Object> zoneIds) {
+            this.props.zoneIds(zoneIds);
             return this;
         }
 

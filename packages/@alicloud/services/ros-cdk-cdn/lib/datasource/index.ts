@@ -1,3 +1,4 @@
+export * from './domain';
 export * from './domains';
 
 // DATASOURCE::CDN Resources:

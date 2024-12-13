@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.appflow;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::AppFlow::UserAuthConfig</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:26.897Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:04.565Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.appflow.$Module.class, fqn = "@alicloud/ros-cdk-appflow.RosUserAuthConfig")
 public class RosUserAuthConfig extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -39,6 +39,12 @@ public class RosUserAuthConfig extends com.aliyun.ros.cdk.core.RosResource {
      * The resource type name for this resource class.
      */
     public final static java.lang.String ROS_RESOURCE_TYPE_NAME;
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAuthConfig() {
+        return software.amazon.jsii.Kernel.get(this, "attrAuthConfig", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
 
     /**
      */

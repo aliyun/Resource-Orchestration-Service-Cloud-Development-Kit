@@ -5,10 +5,19 @@ package com.aliyun.ros.cdk.kms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-key
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.356Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:09.101Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.KeyProps")
 @software.amazon.jsii.Jsii.Proxy(KeyProps.Jsii$Proxy.class)
 public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
+
+    /**
+     * Property deletionProtection: Specifies whether to enable the release protection feature for the key.
+     * <p>
+     * Default is false.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionProtection() {
+        return null;
+    }
 
     /**
      * Property description: The description of the CMK.
@@ -111,6 +120,7 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link KeyProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<KeyProps> {
+        java.lang.Object deletionProtection;
         java.lang.Object description;
         java.lang.Object dkmsInstanceId;
         java.lang.Object enable;
@@ -121,6 +131,28 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object policy;
         java.lang.Object protectionLevel;
         java.lang.Object rotationInterval;
+
+        /**
+         * Sets the value of {@link KeyProps#getDeletionProtection}
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable the release protection feature for the key.
+         *                           Default is false.
+         * @return {@code this}
+         */
+        public Builder deletionProtection(java.lang.Boolean deletionProtection) {
+            this.deletionProtection = deletionProtection;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link KeyProps#getDeletionProtection}
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable the release protection feature for the key.
+         *                           Default is false.
+         * @return {@code this}
+         */
+        public Builder deletionProtection(com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
+            this.deletionProtection = deletionProtection;
+            return this;
+        }
 
         /**
          * Sets the value of {@link KeyProps#getDescription}
@@ -364,6 +396,7 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements KeyProps {
+        private final java.lang.Object deletionProtection;
         private final java.lang.Object description;
         private final java.lang.Object dkmsInstanceId;
         private final java.lang.Object enable;
@@ -381,6 +414,7 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
+            this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dkmsInstanceId = software.amazon.jsii.Kernel.get(this, "dkmsInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enable = software.amazon.jsii.Kernel.get(this, "enable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -398,6 +432,7 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+            this.deletionProtection = builder.deletionProtection;
             this.description = builder.description;
             this.dkmsInstanceId = builder.dkmsInstanceId;
             this.enable = builder.enable;
@@ -408,6 +443,11 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
             this.policy = builder.policy;
             this.protectionLevel = builder.protectionLevel;
             this.rotationInterval = builder.rotationInterval;
+        }
+
+        @Override
+        public final java.lang.Object getDeletionProtection() {
+            return this.deletionProtection;
         }
 
         @Override
@@ -466,6 +506,9 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
+            if (this.getDeletionProtection() != null) {
+                data.set("deletionProtection", om.valueToTree(this.getDeletionProtection()));
+            }
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
@@ -514,6 +557,7 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
 
             KeyProps.Jsii$Proxy that = (KeyProps.Jsii$Proxy) o;
 
+            if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.dkmsInstanceId != null ? !this.dkmsInstanceId.equals(that.dkmsInstanceId) : that.dkmsInstanceId != null) return false;
             if (this.enable != null ? !this.enable.equals(that.enable) : that.enable != null) return false;
@@ -528,7 +572,8 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
 
         @Override
         public final int hashCode() {
-            int result = this.description != null ? this.description.hashCode() : 0;
+            int result = this.deletionProtection != null ? this.deletionProtection.hashCode() : 0;
+            result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.dkmsInstanceId != null ? this.dkmsInstanceId.hashCode() : 0);
             result = 31 * result + (this.enable != null ? this.enable.hashCode() : 0);
             result = 31 * result + (this.enableAutomaticRotation != null ? this.enableAutomaticRotation.hashCode() : 0);

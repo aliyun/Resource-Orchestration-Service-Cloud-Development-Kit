@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::RDS::AccountPrivilege</code>, which is used to authorize an account to access a database.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:32.690Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:10.938Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.AccountPrivilege")
 public class AccountPrivilege extends com.aliyun.ros.cdk.core.Resource {
 
@@ -130,6 +130,8 @@ public class AccountPrivilege extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property accountPrivilege: RDS account privilege.
          * <p>
+         * The specified number must be the same as the number of DbName
+         * <p>
          * @return {@code this}
          * @param accountPrivilege Property accountPrivilege: RDS account privilege. This parameter is required.
          */
@@ -139,6 +141,8 @@ public class AccountPrivilege extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * Property accountPrivilege: RDS account privilege.
+         * <p>
+         * The specified number must be the same as the number of DbName
          * <p>
          * @return {@code this}
          * @param accountPrivilege Property accountPrivilege: RDS account privilege. This parameter is required.
@@ -172,6 +176,8 @@ public class AccountPrivilege extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property dbName: RDS database name.
          * <p>
+         * Separate multiple database names with commas (,).
+         * <p>
          * @return {@code this}
          * @param dbName Property dbName: RDS database name. This parameter is required.
          */
@@ -181,6 +187,8 @@ public class AccountPrivilege extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * Property dbName: RDS database name.
+         * <p>
+         * Separate multiple database names with commas (,).
          * <p>
          * @return {@code this}
          * @param dbName Property dbName: RDS database name. This parameter is required.

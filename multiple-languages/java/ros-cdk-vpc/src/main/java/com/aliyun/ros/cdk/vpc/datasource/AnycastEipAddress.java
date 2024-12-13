@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::Eipanycast::AnycastEipAddress</code>.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::Eipanycast::AnycastEipAddress</code>, which is used to query the information about an Anycast elastic IP address (Anycast EIP).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:34.334Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:13.159Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.AnycastEipAddress")
 public class AnycastEipAddress extends com.aliyun.ros.cdk.core.Resource {
 

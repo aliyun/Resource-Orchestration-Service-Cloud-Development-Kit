@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.redis;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-instance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:32.961Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:11.245Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceProps.Jsii$Proxy.class)
 public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -37,6 +37,12 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionForce() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionProtection() {
         return null;
     }
 
@@ -181,6 +187,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object chargeType;
         java.lang.Object connections;
         java.lang.Object deletionForce;
+        java.lang.Object deletionProtection;
         java.lang.Object engineVersion;
         java.lang.Object evictionPolicy;
         java.lang.Object instanceClass;
@@ -300,6 +307,26 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
          */
         public Builder deletionForce(com.aliyun.ros.cdk.core.IResolvable deletionForce) {
             this.deletionForce = deletionForce;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getDeletionProtection}
+         * @param deletionProtection the value to be set.
+         * @return {@code this}
+         */
+        public Builder deletionProtection(java.lang.Boolean deletionProtection) {
+            this.deletionProtection = deletionProtection;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getDeletionProtection}
+         * @param deletionProtection the value to be set.
+         * @return {@code this}
+         */
+        public Builder deletionProtection(com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
+            this.deletionProtection = deletionProtection;
             return this;
         }
 
@@ -735,6 +762,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object chargeType;
         private final java.lang.Object connections;
         private final java.lang.Object deletionForce;
+        private final java.lang.Object deletionProtection;
         private final java.lang.Object engineVersion;
         private final java.lang.Object evictionPolicy;
         private final java.lang.Object instanceClass;
@@ -768,6 +796,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.chargeType = software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.connections = software.amazon.jsii.Kernel.get(this, "connections", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionForce = software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.engineVersion = software.amazon.jsii.Kernel.get(this, "engineVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.evictionPolicy = software.amazon.jsii.Kernel.get(this, "evictionPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceClass = software.amazon.jsii.Kernel.get(this, "instanceClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -802,6 +831,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.chargeType = builder.chargeType;
             this.connections = builder.connections;
             this.deletionForce = builder.deletionForce;
+            this.deletionProtection = builder.deletionProtection;
             this.engineVersion = builder.engineVersion;
             this.evictionPolicy = builder.evictionPolicy;
             this.instanceClass = builder.instanceClass;
@@ -848,6 +878,11 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final java.lang.Object getDeletionForce() {
             return this.deletionForce;
+        }
+
+        @Override
+        public final java.lang.Object getDeletionProtection() {
+            return this.deletionProtection;
         }
 
         @Override
@@ -976,6 +1011,9 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getDeletionForce() != null) {
                 data.set("deletionForce", om.valueToTree(this.getDeletionForce()));
             }
+            if (this.getDeletionProtection() != null) {
+                data.set("deletionProtection", om.valueToTree(this.getDeletionProtection()));
+            }
             if (this.getEngineVersion() != null) {
                 data.set("engineVersion", om.valueToTree(this.getEngineVersion()));
             }
@@ -1062,6 +1100,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (this.chargeType != null ? !this.chargeType.equals(that.chargeType) : that.chargeType != null) return false;
             if (this.connections != null ? !this.connections.equals(that.connections) : that.connections != null) return false;
             if (this.deletionForce != null ? !this.deletionForce.equals(that.deletionForce) : that.deletionForce != null) return false;
+            if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
             if (this.engineVersion != null ? !this.engineVersion.equals(that.engineVersion) : that.engineVersion != null) return false;
             if (this.evictionPolicy != null ? !this.evictionPolicy.equals(that.evictionPolicy) : that.evictionPolicy != null) return false;
             if (this.instanceClass != null ? !this.instanceClass.equals(that.instanceClass) : that.instanceClass != null) return false;
@@ -1092,6 +1131,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.chargeType != null ? this.chargeType.hashCode() : 0);
             result = 31 * result + (this.connections != null ? this.connections.hashCode() : 0);
             result = 31 * result + (this.deletionForce != null ? this.deletionForce.hashCode() : 0);
+            result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
             result = 31 * result + (this.engineVersion != null ? this.engineVersion.hashCode() : 0);
             result = 31 * result + (this.evictionPolicy != null ? this.evictionPolicy.hashCode() : 0);
             result = 31 * result + (this.instanceClass != null ? this.instanceClass.hashCode() : 0);

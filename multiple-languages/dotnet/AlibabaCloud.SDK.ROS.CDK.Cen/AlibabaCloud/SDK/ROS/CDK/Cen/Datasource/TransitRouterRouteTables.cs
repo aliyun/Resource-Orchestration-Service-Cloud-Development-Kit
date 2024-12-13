@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cen.Datasource
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::CEN::TransitRouterRouteTables`, which is used to query the route tables of an Enterprise Edition transit router.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::CEN::TransitRouterRouteTables`, which is used to query the information about route tables of an Enterprise Edition transit router.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouterRouteTables`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-transitrouterroutetables

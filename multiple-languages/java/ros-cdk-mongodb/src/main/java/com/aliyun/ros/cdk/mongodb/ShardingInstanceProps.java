@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.mongodb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mongodb-shardinginstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.622Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:09.389Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.ShardingInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(ShardingInstanceProps.Jsii$Proxy.class)
 public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -69,15 +69,6 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
      * The value of this parameter cannot be the same as that of ZoneId and SecondaryZoneId.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getHiddenZoneId() {
-        return null;
-    }
-
-    /**
-     * Property networkType: The instance network type.
-     * <p>
-     * Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkType() {
         return null;
     }
 
@@ -216,7 +207,6 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
         java.lang.Object dbInstanceDescription;
         java.lang.Object engineVersion;
         java.lang.Object hiddenZoneId;
-        java.lang.Object networkType;
         java.lang.Object period;
         java.lang.Object protocolType;
         java.lang.Object resourceGroupId;
@@ -415,28 +405,6 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
          */
         public Builder hiddenZoneId(com.aliyun.ros.cdk.core.IResolvable hiddenZoneId) {
             this.hiddenZoneId = hiddenZoneId;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ShardingInstanceProps#getNetworkType}
-         * @param networkType Property networkType: The instance network type.
-         *                    Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
-         * @return {@code this}
-         */
-        public Builder networkType(java.lang.String networkType) {
-            this.networkType = networkType;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ShardingInstanceProps#getNetworkType}
-         * @param networkType Property networkType: The instance network type.
-         *                    Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
-         * @return {@code this}
-         */
-        public Builder networkType(com.aliyun.ros.cdk.core.IResolvable networkType) {
-            this.networkType = networkType;
             return this;
         }
 
@@ -757,7 +725,6 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
         private final java.lang.Object dbInstanceDescription;
         private final java.lang.Object engineVersion;
         private final java.lang.Object hiddenZoneId;
-        private final java.lang.Object networkType;
         private final java.lang.Object period;
         private final java.lang.Object protocolType;
         private final java.lang.Object resourceGroupId;
@@ -788,7 +755,6 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
             this.dbInstanceDescription = software.amazon.jsii.Kernel.get(this, "dbInstanceDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.engineVersion = software.amazon.jsii.Kernel.get(this, "engineVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.hiddenZoneId = software.amazon.jsii.Kernel.get(this, "hiddenZoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.protocolType = software.amazon.jsii.Kernel.get(this, "protocolType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -820,7 +786,6 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
             this.dbInstanceDescription = builder.dbInstanceDescription;
             this.engineVersion = builder.engineVersion;
             this.hiddenZoneId = builder.hiddenZoneId;
-            this.networkType = builder.networkType;
             this.period = builder.period;
             this.protocolType = builder.protocolType;
             this.resourceGroupId = builder.resourceGroupId;
@@ -880,11 +845,6 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
         @Override
         public final java.lang.Object getHiddenZoneId() {
             return this.hiddenZoneId;
-        }
-
-        @Override
-        public final java.lang.Object getNetworkType() {
-            return this.networkType;
         }
 
         @Override
@@ -984,9 +944,6 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
             if (this.getHiddenZoneId() != null) {
                 data.set("hiddenZoneId", om.valueToTree(this.getHiddenZoneId()));
             }
-            if (this.getNetworkType() != null) {
-                data.set("networkType", om.valueToTree(this.getNetworkType()));
-            }
             if (this.getPeriod() != null) {
                 data.set("period", om.valueToTree(this.getPeriod()));
             }
@@ -1056,7 +1013,6 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
             if (this.dbInstanceDescription != null ? !this.dbInstanceDescription.equals(that.dbInstanceDescription) : that.dbInstanceDescription != null) return false;
             if (this.engineVersion != null ? !this.engineVersion.equals(that.engineVersion) : that.engineVersion != null) return false;
             if (this.hiddenZoneId != null ? !this.hiddenZoneId.equals(that.hiddenZoneId) : that.hiddenZoneId != null) return false;
-            if (this.networkType != null ? !this.networkType.equals(that.networkType) : that.networkType != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.protocolType != null ? !this.protocolType.equals(that.protocolType) : that.protocolType != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
@@ -1084,7 +1040,6 @@ public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializ
             result = 31 * result + (this.dbInstanceDescription != null ? this.dbInstanceDescription.hashCode() : 0);
             result = 31 * result + (this.engineVersion != null ? this.engineVersion.hashCode() : 0);
             result = 31 * result + (this.hiddenZoneId != null ? this.hiddenZoneId.hashCode() : 0);
-            result = 31 * result + (this.networkType != null ? this.networkType.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.protocolType != null ? this.protocolType.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);

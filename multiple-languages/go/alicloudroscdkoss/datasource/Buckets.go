@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::OSS::Buckets`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::OSS::Buckets`, which is used to query an Object Storage Service (OSS) bucket.
 type Buckets interface {
 	alicloudroscdkcore.Resource
 	// Attribute BucketNames: The list of bucket names.

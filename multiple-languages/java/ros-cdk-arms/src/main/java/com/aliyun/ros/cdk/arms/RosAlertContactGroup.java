@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ARMS::AlertContactGroup</code>, which is used to create an alert contact group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:26.957Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:04.739Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.RosAlertContactGroup")
 public class RosAlertContactGroup extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Command`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Command`, which is used to query an available command that is manually created.
 type Command interface {
 	alicloudroscdkcore.Resource
 	// Attribute CommandContent: Command content, encoded in Base64 and transmitted.

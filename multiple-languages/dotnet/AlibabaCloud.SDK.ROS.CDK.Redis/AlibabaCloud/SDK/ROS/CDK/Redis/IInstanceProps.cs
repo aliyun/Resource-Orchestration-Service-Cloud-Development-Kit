@@ -75,6 +75,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             }
         }
 
+        /// <summary>Property deletionProtection: Specifies whether to enable the release protection feature for the instance.</summary>
+        /// <remarks>
+        /// Default is false.
+        /// </remarks>
+        [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DeletionProtection
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property engineVersion: Engine version.</summary>
         /// <remarks>
         /// Supported values: 2.8, 4.0, 5.0, 6.0 and 7.0
@@ -417,6 +431,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             [JsiiOptional]
             [JsiiProperty(name: "deletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DeletionForce
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property deletionProtection: Specifies whether to enable the release protection feature for the instance.</summary>
+            /// <remarks>
+            /// Default is false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeletionProtection
             {
                 get => GetInstanceProperty<object?>();
             }

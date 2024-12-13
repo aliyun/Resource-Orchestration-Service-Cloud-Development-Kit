@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.amqp;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::AMQP::Exchange</code>, which is used to create an exchange.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:26.708Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:04.174Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.RosExchange")
 public class RosExchange extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -186,6 +186,24 @@ public class RosExchange extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getXDelayedType() {
+        return software.amazon.jsii.Kernel.get(this, "xDelayedType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setXDelayedType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "xDelayedType", value);
+    }
+
+    /**
+     */
+    public void setXDelayedType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "xDelayedType", value);
+    }
+
+    /**
      * A fluent builder for {@link com.aliyun.ros.cdk.amqp.RosExchange}.
      */
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.amqp.RosExchange> {
@@ -327,6 +345,23 @@ public class RosExchange extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder alternateExchange(final com.aliyun.ros.cdk.core.IResolvable alternateExchange) {
             this.props.alternateExchange(alternateExchange);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param xDelayedType This parameter is required.
+         */
+        public Builder xDelayedType(final java.lang.String xDelayedType) {
+            this.props.xDelayedType(xDelayedType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param xDelayedType This parameter is required.
+         */
+        public Builder xDelayedType(final com.aliyun.ros.cdk.core.IResolvable xDelayedType) {
+            this.props.xDelayedType(xDelayedType);
             return this;
         }
 

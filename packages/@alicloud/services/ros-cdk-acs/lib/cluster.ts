@@ -138,13 +138,13 @@ export interface ClusterProps {
     readonly vSwitchIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property zoneId: The zone ID.
+     * Property zoneIds: The zone IDs of the cluster.
      */
-    readonly zoneId?: string | ros.IResolvable;
+    readonly zoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ACS::Cluster`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ACS::Cluster`, which is used to create an Alibaba Cloud Container Compute Service (ACS) cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acs-cluster
  */
@@ -224,7 +224,6 @@ export class Cluster extends ros.Resource {
         const rosCluster = new RosCluster(this, id,  {
             kubernetesVersion: props.kubernetesVersion,
             endpointPublicAccess: props.endpointPublicAccess === undefined || props.endpointPublicAccess === null ? false : props.endpointPublicAccess,
-            zoneId: props.zoneId,
             resourceGroupId: props.resourceGroupId,
             vSwitchIds: props.vSwitchIds,
             addons: props.addons,
@@ -233,14 +232,15 @@ export class Cluster extends ros.Resource {
             clusterSpec: props.clusterSpec === undefined || props.clusterSpec === null ? 'ack.pro.small' : props.clusterSpec,
             loggingType: props.loggingType,
             ipStack: props.ipStack,
-            name: props.name,
             loadBalancerSpec: props.loadBalancerSpec,
+            name: props.name,
             timeZone: props.timeZone,
             serviceDiscoveryTypes: props.serviceDiscoveryTypes,
             vpcId: props.vpcId,
             slsProjectName: props.slsProjectName,
             serviceCidr: props.serviceCidr === undefined || props.serviceCidr === null ? '172.19.0.0/20' : props.serviceCidr,
             snatEntry: props.snatEntry === undefined || props.snatEntry === null ? true : props.snatEntry,
+            zoneIds: props.zoneIds,
             maintenanceWindow: props.maintenanceWindow,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

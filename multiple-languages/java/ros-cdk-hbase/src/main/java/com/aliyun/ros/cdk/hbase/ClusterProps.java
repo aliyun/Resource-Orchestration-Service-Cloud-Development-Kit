@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.hbase;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbase-cluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.106Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:08.829Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbase.$Module.class, fqn = "@alicloud/ros-cdk-hbase.ClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ClusterProps.Jsii$Proxy.class)
 public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -90,6 +90,15 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
      * The storage size ranges from 800 GB to 100,000 GB and the step size is 10 GB.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getColdStorageSize() {
+        return null;
+    }
+
+    /**
+     * Property deletionProtection: Specifies whether to enable the release protection feature for the cluster.
+     * <p>
+     * Default is false.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionProtection() {
         return null;
     }
 
@@ -231,6 +240,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object autoRenewPeriod;
         java.lang.Object clusterName;
         java.lang.Object coldStorageSize;
+        java.lang.Object deletionProtection;
         java.lang.Object diskSize;
         java.lang.Object diskType;
         java.lang.Object encryptionKey;
@@ -469,6 +479,28 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder coldStorageSize(com.aliyun.ros.cdk.core.IResolvable coldStorageSize) {
             this.coldStorageSize = coldStorageSize;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterProps#getDeletionProtection}
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable the release protection feature for the cluster.
+         *                           Default is false.
+         * @return {@code this}
+         */
+        public Builder deletionProtection(java.lang.Boolean deletionProtection) {
+            this.deletionProtection = deletionProtection;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterProps#getDeletionProtection}
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable the release protection feature for the cluster.
+         *                           Default is false.
+         * @return {@code this}
+         */
+        public Builder deletionProtection(com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
+            this.deletionProtection = deletionProtection;
             return this;
         }
 
@@ -777,6 +809,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object autoRenewPeriod;
         private final java.lang.Object clusterName;
         private final java.lang.Object coldStorageSize;
+        private final java.lang.Object deletionProtection;
         private final java.lang.Object diskSize;
         private final java.lang.Object diskType;
         private final java.lang.Object encryptionKey;
@@ -803,6 +836,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.autoRenewPeriod = software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.clusterName = software.amazon.jsii.Kernel.get(this, "clusterName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.coldStorageSize = software.amazon.jsii.Kernel.get(this, "coldStorageSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.diskSize = software.amazon.jsii.Kernel.get(this, "diskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.diskType = software.amazon.jsii.Kernel.get(this, "diskType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.encryptionKey = software.amazon.jsii.Kernel.get(this, "encryptionKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -829,6 +863,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.autoRenewPeriod = builder.autoRenewPeriod;
             this.clusterName = builder.clusterName;
             this.coldStorageSize = builder.coldStorageSize;
+            this.deletionProtection = builder.deletionProtection;
             this.diskSize = builder.diskSize;
             this.diskType = builder.diskType;
             this.encryptionKey = builder.encryptionKey;
@@ -884,6 +919,11 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getColdStorageSize() {
             return this.coldStorageSize;
+        }
+
+        @Override
+        public final java.lang.Object getDeletionProtection() {
+            return this.deletionProtection;
         }
 
         @Override
@@ -957,6 +997,9 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getColdStorageSize() != null) {
                 data.set("coldStorageSize", om.valueToTree(this.getColdStorageSize()));
             }
+            if (this.getDeletionProtection() != null) {
+                data.set("deletionProtection", om.valueToTree(this.getDeletionProtection()));
+            }
             if (this.getDiskSize() != null) {
                 data.set("diskSize", om.valueToTree(this.getDiskSize()));
             }
@@ -1014,6 +1057,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.autoRenewPeriod != null ? !this.autoRenewPeriod.equals(that.autoRenewPeriod) : that.autoRenewPeriod != null) return false;
             if (this.clusterName != null ? !this.clusterName.equals(that.clusterName) : that.clusterName != null) return false;
             if (this.coldStorageSize != null ? !this.coldStorageSize.equals(that.coldStorageSize) : that.coldStorageSize != null) return false;
+            if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
             if (this.diskSize != null ? !this.diskSize.equals(that.diskSize) : that.diskSize != null) return false;
             if (this.diskType != null ? !this.diskType.equals(that.diskType) : that.diskType != null) return false;
             if (this.encryptionKey != null ? !this.encryptionKey.equals(that.encryptionKey) : that.encryptionKey != null) return false;
@@ -1037,6 +1081,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.autoRenewPeriod != null ? this.autoRenewPeriod.hashCode() : 0);
             result = 31 * result + (this.clusterName != null ? this.clusterName.hashCode() : 0);
             result = 31 * result + (this.coldStorageSize != null ? this.coldStorageSize.hashCode() : 0);
+            result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
             result = 31 * result + (this.diskSize != null ? this.diskSize.hashCode() : 0);
             result = 31 * result + (this.diskType != null ? this.diskType.hashCode() : 0);
             result = 31 * result + (this.encryptionKey != null ? this.encryptionKey.hashCode() : 0);

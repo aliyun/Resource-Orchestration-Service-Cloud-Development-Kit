@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::PaiDswApi::Instance`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::PaiDswApi::Instance`, which is used to query the basic information about a Data Science Workshop (DSW) instance.
 type Instance interface {
 	alicloudroscdkcore.Resource
 	// Attribute Accessibility: Whether the workspace is visible to others.

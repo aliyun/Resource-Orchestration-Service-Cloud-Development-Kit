@@ -28,6 +28,12 @@ export interface RosInstanceProps {
     readonly antiRansomware?: number | ros.IResolvable;
 
     /**
+     * @Property antiRansomwareManageService: Provide you with security hosting services such as anti-ransomware configuration, monitoring, and anti-ransomware incident emergency response.
+     * Note:
+     */
+    readonly antiRansomwareManageService?: boolean | ros.IResolvable;
+
+    /**
      * @Property autoPay: Whether to auto pay the bill.Default: True
      */
     readonly autoPay?: boolean | ros.IResolvable;
@@ -158,6 +164,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('quotaForCloudHoneypot', ros.validateNumber)(properties.quotaForCloudHoneypot));
     errors.collect(ros.propertyValidator('quotaForWebTamperProofing', ros.validateNumber)(properties.quotaForWebTamperProofing));
     errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
+    errors.collect(ros.propertyValidator('antiRansomwareManageService', ros.validateBoolean)(properties.antiRansomwareManageService));
     if(properties.edition && (typeof properties.edition) !== 'object') {
         errors.collect(ros.propertyValidator('edition', ros.validateAllowedValues)({
           data: properties.edition,
@@ -201,6 +208,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       'Period': ros.numberToRosTemplate(properties.period),
       'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
       'AntiRansomware': ros.numberToRosTemplate(properties.antiRansomware),
+      'AntiRansomwareManageService': ros.booleanToRosTemplate(properties.antiRansomwareManageService),
       'AutoPay': ros.booleanToRosTemplate(properties.autoPay),
       'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
       'CloudHoneypot': ros.booleanToRosTemplate(properties.cloudHoneypot),
@@ -261,6 +269,12 @@ export class RosInstance extends ros.RosResource {
      * @Property antiRansomware: Security Center provides a comprehensive anti-ransomware solution to protect your business. We recommend that you configure a data protection capacity of 50GB for each server.
      */
     public antiRansomware: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property antiRansomwareManageService: Provide you with security hosting services such as anti-ransomware configuration, monitoring, and anti-ransomware incident emergency response.
+     * Note:
+     */
+    public antiRansomwareManageService: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property autoPay: Whether to auto pay the bill.Default: True
@@ -375,6 +389,7 @@ export class RosInstance extends ros.RosResource {
         this.period = props.period;
         this.periodUnit = props.periodUnit;
         this.antiRansomware = props.antiRansomware;
+        this.antiRansomwareManageService = props.antiRansomwareManageService;
         this.autoPay = props.autoPay;
         this.autoRenew = props.autoRenew;
         this.cloudHoneypot = props.cloudHoneypot;
@@ -403,6 +418,7 @@ export class RosInstance extends ros.RosResource {
             period: this.period,
             periodUnit: this.periodUnit,
             antiRansomware: this.antiRansomware,
+            antiRansomwareManageService: this.antiRansomwareManageService,
             autoPay: this.autoPay,
             autoRenew: this.autoRenew,
             cloudHoneypot: this.cloudHoneypot,

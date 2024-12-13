@@ -782,6 +782,10 @@ export namespace RosEventRule {
      */
     export interface EventPatternProperty {
         /**
+         * @Property sqlFilter: SQL event filtering When the event content meets the SQL conditions, an alarm is triggered automatically.
+         */
+        readonly sqlFilter?: string | ros.IResolvable;
+        /**
          * @Property nameList: The name of the event. Please refer to the configuration of CMS.
          */
         readonly nameList?: Array<any | ros.IResolvable> | ros.IResolvable;
@@ -802,6 +806,10 @@ export namespace RosEventRule {
          * @Property product: The name of the service. Please refer to the configuration of CMS.
          */
         readonly product?: string | ros.IResolvable;
+        /**
+         * @Property customFilters: Event filtering keywords. When the event content contains this keyword, an alarm is triggered automatically.
+         */
+        readonly customFilters?: string | ros.IResolvable;
     }
 }
 /**
@@ -814,11 +822,13 @@ export namespace RosEventRule {
 function RosEventRule_EventPatternPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('sqlFilter', ros.validateString)(properties.sqlFilter));
     errors.collect(ros.propertyValidator('nameList', ros.listValidator(ros.validateAny))(properties.nameList));
     errors.collect(ros.propertyValidator('levelList', ros.listValidator(ros.validateAny))(properties.levelList));
     errors.collect(ros.propertyValidator('statusList', ros.listValidator(ros.validateAny))(properties.statusList));
     errors.collect(ros.propertyValidator('eventTypeList', ros.listValidator(ros.validateAny))(properties.eventTypeList));
     errors.collect(ros.propertyValidator('product', ros.validateString)(properties.product));
+    errors.collect(ros.propertyValidator('customFilters', ros.validateString)(properties.customFilters));
     return errors.wrap('supplied properties not correct for "EventPatternProperty"');
 }
 
@@ -834,11 +844,13 @@ function rosEventRuleEventPatternPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosEventRule_EventPatternPropertyValidator(properties).assertSuccess();
     return {
+      'SQLFilter': ros.stringToRosTemplate(properties.sqlFilter),
       'NameList': ros.listMapper(ros.objectToRosTemplate)(properties.nameList),
       'LevelList': ros.listMapper(ros.objectToRosTemplate)(properties.levelList),
       'StatusList': ros.listMapper(ros.objectToRosTemplate)(properties.statusList),
       'EventTypeList': ros.listMapper(ros.objectToRosTemplate)(properties.eventTypeList),
       'Product': ros.stringToRosTemplate(properties.product),
+      'CustomFilters': ros.stringToRosTemplate(properties.customFilters),
     };
 }
 

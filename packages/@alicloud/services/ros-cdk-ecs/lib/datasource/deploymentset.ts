@@ -24,7 +24,7 @@ export interface DeploymentSetProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::DeploymentSet`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::DeploymentSet`, which is used to query the information about a deployment set.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDeploymentSet`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-deploymentset
  */

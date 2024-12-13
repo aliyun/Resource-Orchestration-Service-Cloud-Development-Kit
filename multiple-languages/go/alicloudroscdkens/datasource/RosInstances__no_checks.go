@@ -88,35 +88,11 @@ func (j *jsiiProxy_RosInstances) validateSetEnableResourcePropertyConstraintPara
 	return nil
 }
 
-func (j *jsiiProxy_RosInstances) validateSetEnsRegionIdsParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosInstances) validateSetEnsServiceIdParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosInstances) validateSetImageIdParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosInstances) validateSetInstanceIdsParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosInstances) validateSetInstanceNameParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosInstances) validateSetInstanceResourceTypeParameters(val interface{}) error {
+func (j *jsiiProxy_RosInstances) validateSetInstanceIdParameters(val interface{}) error {
 	return nil
 }
 
 func (j *jsiiProxy_RosInstances) validateSetRefreshOptionsParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosInstances) validateSetStatusParameters(val interface{}) error {
 	return nil
 }
 

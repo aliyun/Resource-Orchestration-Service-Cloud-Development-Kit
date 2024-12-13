@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::OTS::Tables`, which is used to query the names of all tables that are created in a Tablestore instance.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::OTS::Tables`, which is used to query the names of all tables that are created in an instance.
 type RosTables interface {
 	alicloudroscdkcore.RosResource
 	AttrTableNames() alicloudroscdkcore.IResolvable

@@ -4,8 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Serverlessdev
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ServerlessDev::Project`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ServerlessDev::Project`, which is used to create a project.</summary>
     /// <remarks>
+    /// If a template is specified for the project, the project is automatically deployed.
+    ///
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosProject`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-serverlessdev-project
     /// </remarks>

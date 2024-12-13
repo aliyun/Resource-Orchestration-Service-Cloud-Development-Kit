@@ -64,6 +64,11 @@ export interface MultiZoneInstanceProps {
     readonly coreSpec?: string | ros.IResolvable;
 
     /**
+     * Property deletionProtection: Specifies whether to enable the release protection feature for the instance. Default is false.
+     */
+    readonly deletionProtection?: boolean | ros.IResolvable;
+
+    /**
      * Property filestoreNum: The number of LindormDFS nodes in the instance. The valid values of this parameter depend on the value of the PayType parameter.
      * If the PayType parameter is set to PREPAY, set this parameter to an integer that ranges from 0 to 60.
      * If the PayType parameter is set to POSTPAY, set this parameter to an integer that ranges from 0 to 8.
@@ -300,6 +305,7 @@ export class MultiZoneInstance extends ros.Resource {
             logSpec: props.logSpec,
             diskCategory: props.diskCategory,
             period: props.period,
+            deletionProtection: props.deletionProtection,
             primaryVSwitchId: props.primaryVSwitchId,
             arbiterVSwitchId: props.arbiterVSwitchId,
             instanceName: props.instanceName,

@@ -10,6 +10,11 @@ export { RosKey as KeyProperty };
 export interface KeyProps {
 
     /**
+     * Property deletionProtection: Specifies whether to enable the release protection feature for the key. Default is false.
+     */
+    readonly deletionProtection?: boolean | ros.IResolvable;
+
+    /**
      * Property description: The description of the CMK. Length constraints: Minimum length of 0 characters. Maximum length of 8192 characters.
      */
     readonly description?: string | ros.IResolvable;
@@ -103,6 +108,7 @@ export class Key extends ros.Resource {
             keySpec: props.keySpec,
             enable: props.enable === undefined || props.enable === null ? true : props.enable,
             keyUsage: props.keyUsage,
+            deletionProtection: props.deletionProtection,
             dkmsInstanceId: props.dkmsInstanceId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosKey;

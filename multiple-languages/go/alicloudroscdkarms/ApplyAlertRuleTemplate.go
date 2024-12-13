@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::ApplyAlertRuleTemplate`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::ApplyAlertRuleTemplate`, which is used to create an alert rule of Alibaba Cloud Managed Service for Prometheus.
 type ApplyAlertRuleTemplate interface {
 	alicloudroscdkcore.Resource
 	EnableResourcePropertyConstraint() *bool

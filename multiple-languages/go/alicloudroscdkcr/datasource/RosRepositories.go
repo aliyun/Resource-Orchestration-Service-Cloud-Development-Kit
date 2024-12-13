@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::CR::Repositories`, which is used to query the details of repositories.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::CR::Repositories`, which is used to query the information about image repositories.
 type RosRepositories interface {
 	alicloudroscdkcore.RosResource
 	AttrRepoNames() alicloudroscdkcore.IResolvable

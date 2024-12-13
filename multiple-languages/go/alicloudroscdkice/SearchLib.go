@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ICE::SearchLib`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ICE::SearchLib`, which is used to create a search library.
 type SearchLib interface {
 	alicloudroscdkcore.Resource
 	// Attribute SearchLibName: The name of the Search Lib.

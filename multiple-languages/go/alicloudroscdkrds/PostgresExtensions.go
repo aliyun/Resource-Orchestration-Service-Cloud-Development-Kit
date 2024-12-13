@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::RDS::PostgresExtensions`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::RDS::PostgresExtensions`, which is used to install extensions on a database.
 type PostgresExtensions interface {
 	alicloudroscdkcore.Resource
 	// Attribute InstalledExtensionNames: Extension names installed via ROS.

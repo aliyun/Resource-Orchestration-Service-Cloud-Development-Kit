@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.lindorm;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-lindorm-multizoneinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.476Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:09.201Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.lindorm.$Module.class, fqn = "@alicloud/ros-cdk-lindorm.MultiZoneInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(MultiZoneInstanceProps.Jsii$Proxy.class)
 public interface MultiZoneInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -82,6 +82,15 @@ public interface MultiZoneInstanceProps extends software.amazon.jsii.JsiiSeriali
      * lindorm.d1.6xlarge: Each node has 24 dedicated CPU cores and 96 GB of dedicated memory.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCoreSpec() {
+        return null;
+    }
+
+    /**
+     * Property deletionProtection: Specifies whether to enable the release protection feature for the instance.
+     * <p>
+     * Default is false.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionProtection() {
         return null;
     }
 
@@ -368,6 +377,7 @@ public interface MultiZoneInstanceProps extends software.amazon.jsii.JsiiSeriali
         java.lang.Object coldStorage;
         java.lang.Object coreSingleStorage;
         java.lang.Object coreSpec;
+        java.lang.Object deletionProtection;
         java.lang.Object filestoreNum;
         java.lang.Object filestoreSpec;
         java.lang.Object instanceChargeType;
@@ -588,6 +598,28 @@ public interface MultiZoneInstanceProps extends software.amazon.jsii.JsiiSeriali
          */
         public Builder coreSpec(com.aliyun.ros.cdk.core.IResolvable coreSpec) {
             this.coreSpec = coreSpec;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link MultiZoneInstanceProps#getDeletionProtection}
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable the release protection feature for the instance.
+         *                           Default is false.
+         * @return {@code this}
+         */
+        public Builder deletionProtection(java.lang.Boolean deletionProtection) {
+            this.deletionProtection = deletionProtection;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link MultiZoneInstanceProps#getDeletionProtection}
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable the release protection feature for the instance.
+         *                           Default is false.
+         * @return {@code this}
+         */
+        public Builder deletionProtection(com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
+            this.deletionProtection = deletionProtection;
             return this;
         }
 
@@ -1249,6 +1281,7 @@ public interface MultiZoneInstanceProps extends software.amazon.jsii.JsiiSeriali
         private final java.lang.Object coldStorage;
         private final java.lang.Object coreSingleStorage;
         private final java.lang.Object coreSpec;
+        private final java.lang.Object deletionProtection;
         private final java.lang.Object filestoreNum;
         private final java.lang.Object filestoreSpec;
         private final java.lang.Object instanceChargeType;
@@ -1288,6 +1321,7 @@ public interface MultiZoneInstanceProps extends software.amazon.jsii.JsiiSeriali
             this.coldStorage = software.amazon.jsii.Kernel.get(this, "coldStorage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.coreSingleStorage = software.amazon.jsii.Kernel.get(this, "coreSingleStorage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.coreSpec = software.amazon.jsii.Kernel.get(this, "coreSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.filestoreNum = software.amazon.jsii.Kernel.get(this, "filestoreNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.filestoreSpec = software.amazon.jsii.Kernel.get(this, "filestoreSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1327,6 +1361,7 @@ public interface MultiZoneInstanceProps extends software.amazon.jsii.JsiiSeriali
             this.coldStorage = builder.coldStorage;
             this.coreSingleStorage = builder.coreSingleStorage;
             this.coreSpec = builder.coreSpec;
+            this.deletionProtection = builder.deletionProtection;
             this.filestoreNum = builder.filestoreNum;
             this.filestoreSpec = builder.filestoreSpec;
             this.instanceChargeType = builder.instanceChargeType;
@@ -1391,6 +1426,11 @@ public interface MultiZoneInstanceProps extends software.amazon.jsii.JsiiSeriali
         @Override
         public final java.lang.Object getCoreSpec() {
             return this.coreSpec;
+        }
+
+        @Override
+        public final java.lang.Object getDeletionProtection() {
+            return this.deletionProtection;
         }
 
         @Override
@@ -1537,6 +1577,9 @@ public interface MultiZoneInstanceProps extends software.amazon.jsii.JsiiSeriali
             if (this.getCoreSpec() != null) {
                 data.set("coreSpec", om.valueToTree(this.getCoreSpec()));
             }
+            if (this.getDeletionProtection() != null) {
+                data.set("deletionProtection", om.valueToTree(this.getDeletionProtection()));
+            }
             if (this.getFilestoreNum() != null) {
                 data.set("filestoreNum", om.valueToTree(this.getFilestoreNum()));
             }
@@ -1635,6 +1678,7 @@ public interface MultiZoneInstanceProps extends software.amazon.jsii.JsiiSeriali
             if (this.coldStorage != null ? !this.coldStorage.equals(that.coldStorage) : that.coldStorage != null) return false;
             if (this.coreSingleStorage != null ? !this.coreSingleStorage.equals(that.coreSingleStorage) : that.coreSingleStorage != null) return false;
             if (this.coreSpec != null ? !this.coreSpec.equals(that.coreSpec) : that.coreSpec != null) return false;
+            if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
             if (this.filestoreNum != null ? !this.filestoreNum.equals(that.filestoreNum) : that.filestoreNum != null) return false;
             if (this.filestoreSpec != null ? !this.filestoreSpec.equals(that.filestoreSpec) : that.filestoreSpec != null) return false;
             if (this.instanceChargeType != null ? !this.instanceChargeType.equals(that.instanceChargeType) : that.instanceChargeType != null) return false;
@@ -1671,6 +1715,7 @@ public interface MultiZoneInstanceProps extends software.amazon.jsii.JsiiSeriali
             result = 31 * result + (this.coldStorage != null ? this.coldStorage.hashCode() : 0);
             result = 31 * result + (this.coreSingleStorage != null ? this.coreSingleStorage.hashCode() : 0);
             result = 31 * result + (this.coreSpec != null ? this.coreSpec.hashCode() : 0);
+            result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
             result = 31 * result + (this.filestoreNum != null ? this.filestoreNum.hashCode() : 0);
             result = 31 * result + (this.filestoreSpec != null ? this.filestoreSpec.hashCode() : 0);
             result = 31 * result + (this.instanceChargeType != null ? this.instanceChargeType.hashCode() : 0);

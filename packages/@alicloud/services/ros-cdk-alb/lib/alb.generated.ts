@@ -103,7 +103,7 @@ function rosAScriptPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::AScript`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::AScript`, which is used to create an AScript rule.
  * @Note This class does not contain additional functions, so it is recommended to use the `AScript` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-ascript
  */
@@ -4701,7 +4701,7 @@ function rosSecurityGroupAttachmentPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::SecurityGroupAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::SecurityGroupAttachment`, which is used to associate created security groups with an Application Load Balancer (ALB) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroupAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-securitygroupattachment
  */

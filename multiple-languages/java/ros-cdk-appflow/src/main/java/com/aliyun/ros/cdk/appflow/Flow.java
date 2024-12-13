@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.appflow;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::AppFlow::Flow</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:26.892Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:04.547Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.appflow.$Module.class, fqn = "@alicloud/ros-cdk-appflow.Flow")
 public class Flow extends com.aliyun.ros.cdk.core.Resource {
 
@@ -180,6 +180,35 @@ public class Flow extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder flowId(final com.aliyun.ros.cdk.core.IResolvable flowId) {
             this.props.flowId(flowId);
+            return this;
+        }
+
+        /**
+         * Property flowStatus: The status of the flow.
+         * <p>
+         * Allowed values:
+         * Enable: enable flow
+         * Disable: disable flow
+         * <p>
+         * @return {@code this}
+         * @param flowStatus Property flowStatus: The status of the flow. This parameter is required.
+         */
+        public Builder flowStatus(final java.lang.String flowStatus) {
+            this.props.flowStatus(flowStatus);
+            return this;
+        }
+        /**
+         * Property flowStatus: The status of the flow.
+         * <p>
+         * Allowed values:
+         * Enable: enable flow
+         * Disable: disable flow
+         * <p>
+         * @return {@code this}
+         * @param flowStatus Property flowStatus: The status of the flow. This parameter is required.
+         */
+        public Builder flowStatus(final com.aliyun.ros.cdk.core.IResolvable flowStatus) {
+            this.props.flowStatus(flowStatus);
             return this;
         }
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dfs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::DFS::MountPoint</code>, which is used to create a mount target.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:28.368Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:06.358Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dfs.$Module.class, fqn = "@alicloud/ros-cdk-dfs.MountPoint")
 public class MountPoint extends com.aliyun.ros.cdk.core.Resource {
 

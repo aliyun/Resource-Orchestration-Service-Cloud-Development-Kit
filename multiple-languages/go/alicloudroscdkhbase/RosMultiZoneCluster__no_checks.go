@@ -120,6 +120,10 @@ func (j *jsiiProxy_RosMultiZoneCluster) validateSetCoreNodeCountParameters(val i
 	return nil
 }
 
+func (j *jsiiProxy_RosMultiZoneCluster) validateSetDeletionProtectionParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosMultiZoneCluster) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
 	return nil
 }

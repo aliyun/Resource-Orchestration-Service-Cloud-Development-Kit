@@ -722,7 +722,7 @@ function rosZonePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::Zone`, which is used to create a private zone.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::Zone`, which is used to create a built-in authoritative zone.
  * @Note This class does not contain additional functions, so it is recommended to use the `Zone` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zone
  */

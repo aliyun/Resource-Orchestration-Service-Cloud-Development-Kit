@@ -152,6 +152,10 @@ func (j *jsiiProxy_RosDBCluster) validateSetDefaultTimeZoneParameters(val interf
 	return nil
 }
 
+func (j *jsiiProxy_RosDBCluster) validateSetDeletionProtectionParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosDBCluster) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
 	return nil
 }

@@ -55,6 +55,10 @@ type ClusterProps struct {
 	// If this parameter is set to a value greater than 0, cold data storage is enabled.
 	// The storage size ranges from 800 GB to 100,000 GB and the step size is 10 GB.
 	ColdStorageSize interface{} `field:"optional" json:"coldStorageSize" yaml:"coldStorageSize"`
+	// Property deletionProtection: Specifies whether to enable the release protection feature for the cluster.
+	//
+	// Default is false.
+	DeletionProtection interface{} `field:"optional" json:"deletionProtection" yaml:"deletionProtection"`
 	// Property diskSize: The disk size of the node.
 	//
 	// Unit: GB.

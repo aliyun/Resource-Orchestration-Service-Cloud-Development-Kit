@@ -75,6 +75,11 @@ export interface RosClusterProps {
     readonly coldStorageSize?: number | ros.IResolvable;
 
     /**
+     * @Property deletionProtection: Specifies whether to enable the release protection feature for the cluster. Default is false.
+     */
+    readonly deletionProtection?: boolean | ros.IResolvable;
+
+    /**
      * @Property diskSize: The disk size of the node. Unit: GB.
      * For ApsaraDB for HBase in single-node mode, the disk size ranges from 20 GB to 500
      * GB and the step size is 1 GB.
@@ -186,6 +191,7 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('encryptionKey', ros.validateString)(properties.encryptionKey));
+    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     errors.collect(ros.propertyValidator('payType', ros.requiredValidator)(properties.payType));
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
@@ -255,6 +261,7 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
       'AutoRenewPeriod': ros.numberToRosTemplate(properties.autoRenewPeriod),
       'ClusterName': ros.stringToRosTemplate(properties.clusterName),
       'ColdStorageSize': ros.numberToRosTemplate(properties.coldStorageSize),
+      'DeletionProtection': ros.booleanToRosTemplate(properties.deletionProtection),
       'DiskSize': ros.numberToRosTemplate(properties.diskSize),
       'DiskType': ros.stringToRosTemplate(properties.diskType),
       'EncryptionKey': ros.stringToRosTemplate(properties.encryptionKey),
@@ -379,6 +386,11 @@ export class RosCluster extends ros.RosResource {
     public coldStorageSize: number | ros.IResolvable | undefined;
 
     /**
+     * @Property deletionProtection: Specifies whether to enable the release protection feature for the cluster. Default is false.
+     */
+    public deletionProtection: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property diskSize: The disk size of the node. Unit: GB.
      * For ApsaraDB for HBase in single-node mode, the disk size ranges from 20 GB to 500
      * GB and the step size is 1 GB.
@@ -485,6 +497,7 @@ export class RosCluster extends ros.RosResource {
         this.autoRenewPeriod = props.autoRenewPeriod;
         this.clusterName = props.clusterName;
         this.coldStorageSize = props.coldStorageSize;
+        this.deletionProtection = props.deletionProtection;
         this.diskSize = props.diskSize;
         this.diskType = props.diskType;
         this.encryptionKey = props.encryptionKey;
@@ -509,6 +522,7 @@ export class RosCluster extends ros.RosResource {
             autoRenewPeriod: this.autoRenewPeriod,
             clusterName: this.clusterName,
             coldStorageSize: this.coldStorageSize,
+            deletionProtection: this.deletionProtection,
             diskSize: this.diskSize,
             diskType: this.diskType,
             encryptionKey: this.encryptionKey,
@@ -655,6 +669,11 @@ export interface RosMultiZoneClusterProps {
     readonly clusterName?: string | ros.IResolvable;
 
     /**
+     * @Property deletionProtection: Specifies whether to enable the release protection feature for the cluster. Default is false.
+     */
+    readonly deletionProtection?: boolean | ros.IResolvable;
+
+    /**
      * @Property masterInstanceType: The instance type of the master node. You can call the DescribeAvailableResource operation to obtain the value of this parameter.
      */
     readonly masterInstanceType?: string | ros.IResolvable;
@@ -768,6 +787,7 @@ function RosMultiZoneClusterPropsValidator(properties: any): ros.ValidationResul
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
+    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     errors.collect(ros.propertyValidator('primaryVSwitchId', ros.requiredValidator)(properties.primaryVSwitchId));
     errors.collect(ros.propertyValidator('primaryVSwitchId', ros.validateString)(properties.primaryVSwitchId));
     errors.collect(ros.propertyValidator('arbiterVSwitchId', ros.requiredValidator)(properties.arbiterVSwitchId));
@@ -826,6 +846,7 @@ function rosMultiZoneClusterPropsToRosTemplate(properties: any, enableResourcePr
       'StandbyZoneId': ros.stringToRosTemplate(properties.standbyZoneId),
       'AutoRenewPeriod': ros.numberToRosTemplate(properties.autoRenewPeriod),
       'ClusterName': ros.stringToRosTemplate(properties.clusterName),
+      'DeletionProtection': ros.booleanToRosTemplate(properties.deletionProtection),
       'MasterInstanceType': ros.stringToRosTemplate(properties.masterInstanceType),
       'Period': ros.numberToRosTemplate(properties.period),
       'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
@@ -1002,6 +1023,11 @@ export class RosMultiZoneCluster extends ros.RosResource {
     public clusterName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property deletionProtection: Specifies whether to enable the release protection feature for the cluster. Default is false.
+     */
+    public deletionProtection: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property masterInstanceType: The instance type of the master node. You can call the DescribeAvailableResource operation to obtain the value of this parameter.
      */
     public masterInstanceType: string | ros.IResolvable | undefined;
@@ -1078,6 +1104,7 @@ export class RosMultiZoneCluster extends ros.RosResource {
         this.standbyZoneId = props.standbyZoneId;
         this.autoRenewPeriod = props.autoRenewPeriod;
         this.clusterName = props.clusterName;
+        this.deletionProtection = props.deletionProtection;
         this.masterInstanceType = props.masterInstanceType;
         this.period = props.period;
         this.periodUnit = props.periodUnit;
@@ -1110,6 +1137,7 @@ export class RosMultiZoneCluster extends ros.RosResource {
             standbyZoneId: this.standbyZoneId,
             autoRenewPeriod: this.autoRenewPeriod,
             clusterName: this.clusterName,
+            deletionProtection: this.deletionProtection,
             masterInstanceType: this.masterInstanceType,
             period: this.period,
             periodUnit: this.periodUnit,

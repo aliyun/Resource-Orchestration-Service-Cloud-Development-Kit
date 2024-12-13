@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hbase;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::HBase::MultiZoneCluster</code>, which is used to create an ApsaraDB for HBase cluster that resides in multiple zones.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.111Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:08.833Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbase.$Module.class, fqn = "@alicloud/ros-cdk-hbase.MultiZoneCluster")
 public class MultiZoneCluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -668,6 +668,31 @@ public class MultiZoneCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder clusterName(final com.aliyun.ros.cdk.core.IResolvable clusterName) {
             this.props.clusterName(clusterName);
+            return this;
+        }
+
+        /**
+         * Property deletionProtection: Specifies whether to enable the release protection feature for the cluster.
+         * <p>
+         * Default is false.
+         * <p>
+         * @return {@code this}
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable the release protection feature for the cluster. This parameter is required.
+         */
+        public Builder deletionProtection(final java.lang.Boolean deletionProtection) {
+            this.props.deletionProtection(deletionProtection);
+            return this;
+        }
+        /**
+         * Property deletionProtection: Specifies whether to enable the release protection feature for the cluster.
+         * <p>
+         * Default is false.
+         * <p>
+         * @return {@code this}
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable the release protection feature for the cluster. This parameter is required.
+         */
+        public Builder deletionProtection(final com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
+            this.props.deletionProtection(deletionProtection);
             return this;
         }
 

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NatGatewayZones`.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NatGatewayZones`, which is used to query the zones of a NAT gateway.
 type RosNatGatewayZones interface {
 	alicloudroscdkcore.RosResource
 	AttrZoneIds() alicloudroscdkcore.IResolvable

@@ -44,52 +44,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
         }
 
-        /// <summary>Property autoPay: Specifies whether to automatically pay for the subscription Internet-facing CLB instance.</summary>
-        /// <remarks>
-        /// Valid values:
-        ///
-        /// <list type="bullet">
-        /// <description><strong>true</strong>: automatically pays for the CLB instance. After you call this operation, the system automatically completes the payment and creates the CLB instance.- <strong>false</strong> (default): After you call the operation, the order is created but the payment is not completed. You can view the pending order in the console. The CLB instance will not be created until you complete the payment.<strong>Note</strong> This parameter is supported only by subscription instances created on the Alibaba Cloud China site.</description>
-        /// </list>
-        /// </remarks>
-        [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? AutoPay
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <summary>Property autoRenew: Indicates whether automatic renewal is enabled for the instance.</summary>
-        /// <remarks>
-        /// Valid values:- <strong>true</strong>: Automatic renewal is enabled.- <strong>false</strong> (default): Automatic renewal is not enabled. You must renew the instance manually.
-        /// </remarks>
-        [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? AutoRenew
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <summary>Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1 to 9 or 12, 24, 36.</summary>
-        /// <remarks>
-        /// When PeriodUnit = year, the value range is 1-3.
-        /// </remarks>
-        [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? AutoRenewPeriod
-        {
-            get
-            {
-                return null;
-            }
-        }
-
         /// <summary>Property bandwidth: The bandwidth for network, unit in Mbps(Mega bit per second).</summary>
         /// <remarks>
         /// Default is 1. If InternetChargeType is specified as "paybytraffic", this property will be ignore and please specify the "Bandwidth" in ALIYUN::SLB::Listener.
@@ -108,23 +62,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? DeletionProtection
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <summary>Property duration: Optional.</summary>
-        /// <remarks>
-        /// The subscription duration of a Subscription Internet instance.
-        /// Valid values:
-        /// If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36, 48, 60.
-        /// If PricingCycle is year, the value range is 1 to 5.
-        /// </remarks>
-        [JsiiProperty(name: "duration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? Duration
         {
             get
             {
@@ -247,36 +184,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
         }
 
-        /// <summary>Property payType: Optional.</summary>
-        /// <remarks>
-        /// The billing method of the instance to be created.
-        /// Valid value: PayOnDemand (Pay-As-You-Go) | PrePay (Subscription)
-        /// </remarks>
-        [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? PayType
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <summary>Property pricingCycle: Optional.</summary>
-        /// <remarks>
-        /// The duration of the Subscription-billed Internet instance to be created.
-        /// Valid values: month | year.
-        /// </remarks>
-        [JsiiProperty(name: "pricingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? PricingCycle
-        {
-            get
-            {
-                return null;
-            }
-        }
-
         /// <summary>Property resourceGroupId: Resource group id.</summary>
         [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -379,43 +286,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property autoPay: Specifies whether to automatically pay for the subscription Internet-facing CLB instance.</summary>
-            /// <remarks>
-            /// Valid values:
-            ///
-            /// <list type="bullet">
-            /// <description><strong>true</strong>: automatically pays for the CLB instance. After you call this operation, the system automatically completes the payment and creates the CLB instance.- <strong>false</strong> (default): After you call the operation, the order is created but the payment is not completed. You can view the pending order in the console. The CLB instance will not be created until you complete the payment.<strong>Note</strong> This parameter is supported only by subscription instances created on the Alibaba Cloud China site.</description>
-            /// </list>
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? AutoPay
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <summary>Property autoRenew: Indicates whether automatic renewal is enabled for the instance.</summary>
-            /// <remarks>
-            /// Valid values:- <strong>true</strong>: Automatic renewal is enabled.- <strong>false</strong> (default): Automatic renewal is not enabled. You must renew the instance manually.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? AutoRenew
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <summary>Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1 to 9 or 12, 24, 36.</summary>
-            /// <remarks>
-            /// When PeriodUnit = year, the value range is 1-3.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? AutoRenewPeriod
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
             /// <summary>Property bandwidth: The bandwidth for network, unit in Mbps(Mega bit per second).</summary>
             /// <remarks>
             /// Default is 1. If InternetChargeType is specified as "paybytraffic", this property will be ignore and please specify the "Bandwidth" in ALIYUN::SLB::Listener.
@@ -431,20 +301,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             [JsiiOptional]
             [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DeletionProtection
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <summary>Property duration: Optional.</summary>
-            /// <remarks>
-            /// The subscription duration of a Subscription Internet instance.
-            /// Valid values:
-            /// If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36, 48, 60.
-            /// If PricingCycle is year, the value range is 1 to 5.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "duration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? Duration
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -539,30 +395,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             [JsiiOptional]
             [JsiiProperty(name: "modificationProtectionStatus", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ModificationProtectionStatus
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <summary>Property payType: Optional.</summary>
-            /// <remarks>
-            /// The billing method of the instance to be created.
-            /// Valid value: PayOnDemand (Pay-As-You-Go) | PrePay (Subscription)
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? PayType
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <summary>Property pricingCycle: Optional.</summary>
-            /// <remarks>
-            /// The duration of the Subscription-billed Internet instance to be created.
-            /// Valid values: month | year.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "pricingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? PricingCycle
             {
                 get => GetInstanceProperty<object?>();
             }

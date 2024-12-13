@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::SLS::Projects`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::SLS::Projects`, which is used to query Log Service projects.
 type Projects interface {
 	alicloudroscdkcore.Resource
 	// Attribute ProjectNames: The list of project names.

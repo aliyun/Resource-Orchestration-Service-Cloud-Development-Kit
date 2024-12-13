@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::RDS::PrepayDBInstance</code>, which is used to create subscription ApsaraDB RDS instances.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:32.759Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:11.022Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.PrepayDBInstance")
 public class PrepayDBInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -987,6 +987,31 @@ public class PrepayDBInstance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder dedicatedHostGroupId(final com.aliyun.ros.cdk.core.IResolvable dedicatedHostGroupId) {
             this.props.dedicatedHostGroupId(dedicatedHostGroupId);
+            return this;
+        }
+
+        /**
+         * Property deletionProtection: Specifies whether to enable the release protection feature for the instance.
+         * <p>
+         * This feature is available only for pay-as-you-go instances. Default is false.
+         * <p>
+         * @return {@code this}
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable the release protection feature for the instance. This parameter is required.
+         */
+        public Builder deletionProtection(final java.lang.Boolean deletionProtection) {
+            this.props.deletionProtection(deletionProtection);
+            return this;
+        }
+        /**
+         * Property deletionProtection: Specifies whether to enable the release protection feature for the instance.
+         * <p>
+         * This feature is available only for pay-as-you-go instances. Default is false.
+         * <p>
+         * @return {@code this}
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable the release protection feature for the instance. This parameter is required.
+         */
+        public Builder deletionProtection(final com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
+            this.props.deletionProtection(deletionProtection);
             return this;
         }
 

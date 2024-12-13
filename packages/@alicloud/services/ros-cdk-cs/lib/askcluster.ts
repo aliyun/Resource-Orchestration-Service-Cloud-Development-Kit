@@ -123,7 +123,7 @@ export interface ASKClusterProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ASKCluster`, which is used to create a serverless Kubernetes (ASK) cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ASKCluster`, which is used to create an ACK Serverless cluster of Container Service for Kubernetes (ACK).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosASKCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-askcluster
  */

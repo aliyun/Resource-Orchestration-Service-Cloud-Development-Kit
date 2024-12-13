@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::MNS::Subscription`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::MNS::Subscription`, which is used to query the information about a subscription.
 type Subscription interface {
 	alicloudroscdkcore.Resource
 	// Attribute CreateTime: The time when the subscription was created.

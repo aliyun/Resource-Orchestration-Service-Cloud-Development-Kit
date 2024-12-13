@@ -9,12 +9,12 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::LaunchTemplate`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::LaunchTemplate`, which is used to query the information about a launch template.
 type LaunchTemplate interface {
 	alicloudroscdkcore.Resource
-	// Attribute AutoReleaseTime: Automatic release time.
+	// Attribute AutoReleaseTime: Automatic release time (UTC).
 	//
-	// According to the [ISO8601](~~ 25696 ~~) standard, and need to use UTC time. The format is: yyyy-MM-ddTHH:mm:ssZ.
+	// The format is: yyyy-MM-ddTHH:mm:ssZ.
 	AttrAutoReleaseTime() alicloudroscdkcore.IResolvable
 	// Attribute CreatedBy: The creator of the launch template.
 	AttrCreatedBy() alicloudroscdkcore.IResolvable
@@ -83,8 +83,6 @@ type LaunchTemplate interface {
 	// Attribute PrivateIpAddress: The private IP address of the instance.
 	AttrPrivateIpAddress() alicloudroscdkcore.IResolvable
 	// Attribute RamRoleName: The instance RAM role name.
-	//
-	// You can use the RAM API [ListRoles](~~ 28713 ~~) to query the created instance RAM roles.
 	AttrRamRoleName() alicloudroscdkcore.IResolvable
 	// Attribute ResourceGroupId: The ID of the resource group to which the instance, Elastic Block Storage (EBS) device, and ENI belong.
 	AttrResourceGroupId() alicloudroscdkcore.IResolvable

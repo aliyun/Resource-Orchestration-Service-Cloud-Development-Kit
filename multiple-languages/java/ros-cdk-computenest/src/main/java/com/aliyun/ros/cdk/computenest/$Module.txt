@@ -9,7 +9,11 @@
 @alicloud/ros-cdk-computenest.RosServiceInstanceProps=com.aliyun.ros.cdk.computenest.RosServiceInstanceProps
 @alicloud/ros-cdk-computenest.ServiceInstance=com.aliyun.ros.cdk.computenest.ServiceInstance
 @alicloud/ros-cdk-computenest.ServiceInstanceProps=com.aliyun.ros.cdk.computenest.ServiceInstanceProps
+@alicloud/ros-cdk-computenest.datasource.RosServiceInstance=com.aliyun.ros.cdk.computenest.datasource.RosServiceInstance
+@alicloud/ros-cdk-computenest.datasource.RosServiceInstanceProps=com.aliyun.ros.cdk.computenest.datasource.RosServiceInstanceProps
 @alicloud/ros-cdk-computenest.datasource.RosServiceInstances=com.aliyun.ros.cdk.computenest.datasource.RosServiceInstances
 @alicloud/ros-cdk-computenest.datasource.RosServiceInstancesProps=com.aliyun.ros.cdk.computenest.datasource.RosServiceInstancesProps
+@alicloud/ros-cdk-computenest.datasource.ServiceInstance=com.aliyun.ros.cdk.computenest.datasource.ServiceInstance
+@alicloud/ros-cdk-computenest.datasource.ServiceInstanceProps=com.aliyun.ros.cdk.computenest.datasource.ServiceInstanceProps
 @alicloud/ros-cdk-computenest.datasource.ServiceInstances=com.aliyun.ros.cdk.computenest.datasource.ServiceInstances
 @alicloud/ros-cdk-computenest.datasource.ServiceInstancesProps=com.aliyun.ros.cdk.computenest.datasource.ServiceInstancesProps

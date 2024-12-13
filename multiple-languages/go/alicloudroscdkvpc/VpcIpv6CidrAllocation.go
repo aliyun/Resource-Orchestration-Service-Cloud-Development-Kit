@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpcIpv6CidrAllocation`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpcIpv6CidrAllocation`, which is used to reserve an IPv6 CIDR block.
 type VpcIpv6CidrAllocation interface {
 	alicloudroscdkcore.Resource
 	// Attribute Ipv6CidrBlock: The IPv6 CIDR block that is reserved.

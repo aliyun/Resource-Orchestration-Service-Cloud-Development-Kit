@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::VPC::HaVip</code>.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::VPC::HaVip</code>, which is used to query a high-availability virtual IP address (HAVIP).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:34.375Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:13.200Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.HaVip")
 public class HaVip extends com.aliyun.ros.cdk.core.Resource {
 

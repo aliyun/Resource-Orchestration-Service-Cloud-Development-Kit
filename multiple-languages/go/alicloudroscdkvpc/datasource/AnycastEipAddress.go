@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::Eipanycast::AnycastEipAddress`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::Eipanycast::AnycastEipAddress`, which is used to query the information about an Anycast elastic IP address (Anycast EIP).
 type AnycastEipAddress interface {
 	alicloudroscdkcore.Resource
 	// Attribute AliUid: The ID of the account to which the Anycast EIP belongs.

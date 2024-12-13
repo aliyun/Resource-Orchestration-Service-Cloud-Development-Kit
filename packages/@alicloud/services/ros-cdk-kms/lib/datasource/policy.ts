@@ -24,7 +24,7 @@ export interface PolicyProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::KMS::Policy`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::KMS::Policy`, which is used to query the information about a permission policy.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kms-policy
  */

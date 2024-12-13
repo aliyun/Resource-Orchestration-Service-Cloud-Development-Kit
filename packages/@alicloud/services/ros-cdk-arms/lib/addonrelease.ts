@@ -36,7 +36,7 @@ export interface AddonReleaseProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::AddonRelease`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::AddonRelease`, which is used to install an add-on release.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAddonRelease`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-addonrelease
  */

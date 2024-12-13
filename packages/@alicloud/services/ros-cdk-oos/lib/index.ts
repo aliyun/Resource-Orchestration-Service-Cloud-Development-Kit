@@ -3,6 +3,7 @@ export * from './execution';
 export * from './parameter';
 export * from './patchbaseline';
 export * from './secretparameter';
+export * from './servicesettings';
 export * from './stateconfiguration';
 export * from './template';
 

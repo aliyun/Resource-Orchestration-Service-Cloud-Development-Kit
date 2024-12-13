@@ -15,7 +15,7 @@ export interface AccountPrivilegeProps {
     readonly accountName: string | ros.IResolvable;
 
     /**
-     * Property accountPrivilege: RDS account privilege
+     * Property accountPrivilege: RDS account privilege. The specified number must be the same as the number of DbName
      */
     readonly accountPrivilege: string | ros.IResolvable;
 
@@ -25,7 +25,7 @@ export interface AccountPrivilegeProps {
     readonly dbInstanceId: string | ros.IResolvable;
 
     /**
-     * Property dbName: RDS database name
+     * Property dbName: RDS database name. Separate multiple database names with commas (,).
      */
     readonly dbName: string | ros.IResolvable;
 }

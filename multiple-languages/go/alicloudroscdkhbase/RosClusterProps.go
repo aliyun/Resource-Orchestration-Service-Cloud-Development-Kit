@@ -14,6 +14,7 @@ type RosClusterProps struct {
 	AutoRenewPeriod interface{} `field:"optional" json:"autoRenewPeriod" yaml:"autoRenewPeriod"`
 	ClusterName interface{} `field:"optional" json:"clusterName" yaml:"clusterName"`
 	ColdStorageSize interface{} `field:"optional" json:"coldStorageSize" yaml:"coldStorageSize"`
+	DeletionProtection interface{} `field:"optional" json:"deletionProtection" yaml:"deletionProtection"`
 	DiskSize interface{} `field:"optional" json:"diskSize" yaml:"diskSize"`
 	DiskType interface{} `field:"optional" json:"diskType" yaml:"diskType"`
 	EncryptionKey interface{} `field:"optional" json:"encryptionKey" yaml:"encryptionKey"`

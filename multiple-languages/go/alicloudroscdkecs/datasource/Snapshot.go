@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Snapshot`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Snapshot`, which is used to query the information about a snapshot.
 type Snapshot interface {
 	alicloudroscdkcore.Resource
 	// Attribute CreateTime: The create time.

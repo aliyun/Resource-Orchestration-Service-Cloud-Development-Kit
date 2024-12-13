@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.rds;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-accountprivilege
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:32.691Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:10.939Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.AccountPrivilegeProps")
 @software.amazon.jsii.Jsii.Proxy(AccountPrivilegeProps.Jsii$Proxy.class)
 public interface AccountPrivilegeProps extends software.amazon.jsii.JsiiSerializable {
@@ -17,6 +17,8 @@ public interface AccountPrivilegeProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      * Property accountPrivilege: RDS account privilege.
+     * <p>
+     * The specified number must be the same as the number of DbName
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAccountPrivilege();
 
@@ -27,6 +29,8 @@ public interface AccountPrivilegeProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      * Property dbName: RDS database name.
+     * <p>
+     * Separate multiple database names with commas (,).
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDbName();
 
@@ -68,6 +72,7 @@ public interface AccountPrivilegeProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Sets the value of {@link AccountPrivilegeProps#getAccountPrivilege}
          * @param accountPrivilege Property accountPrivilege: RDS account privilege. This parameter is required.
+         *                         The specified number must be the same as the number of DbName
          * @return {@code this}
          */
         public Builder accountPrivilege(java.lang.String accountPrivilege) {
@@ -78,6 +83,7 @@ public interface AccountPrivilegeProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Sets the value of {@link AccountPrivilegeProps#getAccountPrivilege}
          * @param accountPrivilege Property accountPrivilege: RDS account privilege. This parameter is required.
+         *                         The specified number must be the same as the number of DbName
          * @return {@code this}
          */
         public Builder accountPrivilege(com.aliyun.ros.cdk.core.IResolvable accountPrivilege) {
@@ -108,6 +114,7 @@ public interface AccountPrivilegeProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Sets the value of {@link AccountPrivilegeProps#getDbName}
          * @param dbName Property dbName: RDS database name. This parameter is required.
+         *               Separate multiple database names with commas (,).
          * @return {@code this}
          */
         public Builder dbName(java.lang.String dbName) {
@@ -118,6 +125,7 @@ public interface AccountPrivilegeProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Sets the value of {@link AccountPrivilegeProps#getDbName}
          * @param dbName Property dbName: RDS database name. This parameter is required.
+         *               Separate multiple database names with commas (,).
          * @return {@code this}
          */
         public Builder dbName(com.aliyun.ros.cdk.core.IResolvable dbName) {

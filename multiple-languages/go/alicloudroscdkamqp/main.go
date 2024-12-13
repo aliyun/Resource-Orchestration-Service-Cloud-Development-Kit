@@ -268,6 +268,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
 			_jsii_.MemberMethod{JsiiMethod: "validateProperties", GoMethod: "ValidateProperties"},
 			_jsii_.MemberProperty{JsiiProperty: "virtualHost", GoGetter: "VirtualHost"},
+			_jsii_.MemberProperty{JsiiProperty: "xDelayedType", GoGetter: "XDelayedType"},
 		},
 		func() interface{} {
 			j := jsiiProxy_RosExchange{}

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.polardb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbcluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:32.296Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:10.564Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBClusterProps")
 @software.amazon.jsii.Jsii.Proxy(DBClusterProps.Jsii$Proxy.class)
 public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -196,6 +196,15 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
      * Note: This parameter takes effect only when DBType is MySQL.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDefaultTimeZone() {
+        return null;
+    }
+
+    /**
+     * Property deletionProtection: Specifies whether to enable the release protection feature for the cluster.
+     * <p>
+     * Default is false.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionProtection() {
         return null;
     }
 
@@ -566,6 +575,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object dbMinorVersion;
         java.lang.Object dbNodeNum;
         java.lang.Object defaultTimeZone;
+        java.lang.Object deletionProtection;
         java.lang.Object gdnId;
         java.lang.Object hotStandbyCluster;
         java.lang.Object loosePolarLogBin;
@@ -1072,6 +1082,28 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder defaultTimeZone(com.aliyun.ros.cdk.core.IResolvable defaultTimeZone) {
             this.defaultTimeZone = defaultTimeZone;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBClusterProps#getDeletionProtection}
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable the release protection feature for the cluster.
+         *                           Default is false.
+         * @return {@code this}
+         */
+        public Builder deletionProtection(java.lang.Boolean deletionProtection) {
+            this.deletionProtection = deletionProtection;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBClusterProps#getDeletionProtection}
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable the release protection feature for the cluster.
+         *                           Default is false.
+         * @return {@code this}
+         */
+        public Builder deletionProtection(com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
+            this.deletionProtection = deletionProtection;
             return this;
         }
 
@@ -1949,6 +1981,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object dbMinorVersion;
         private final java.lang.Object dbNodeNum;
         private final java.lang.Object defaultTimeZone;
+        private final java.lang.Object deletionProtection;
         private final java.lang.Object gdnId;
         private final java.lang.Object hotStandbyCluster;
         private final java.lang.Object loosePolarLogBin;
@@ -2010,6 +2043,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.dbMinorVersion = software.amazon.jsii.Kernel.get(this, "dbMinorVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbNodeNum = software.amazon.jsii.Kernel.get(this, "dbNodeNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.defaultTimeZone = software.amazon.jsii.Kernel.get(this, "defaultTimeZone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.gdnId = software.amazon.jsii.Kernel.get(this, "gdnId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.hotStandbyCluster = software.amazon.jsii.Kernel.get(this, "hotStandbyCluster", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loosePolarLogBin = software.amazon.jsii.Kernel.get(this, "loosePolarLogBin", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -2072,6 +2106,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.dbMinorVersion = builder.dbMinorVersion;
             this.dbNodeNum = builder.dbNodeNum;
             this.defaultTimeZone = builder.defaultTimeZone;
+            this.deletionProtection = builder.deletionProtection;
             this.gdnId = builder.gdnId;
             this.hotStandbyCluster = builder.hotStandbyCluster;
             this.loosePolarLogBin = builder.loosePolarLogBin;
@@ -2198,6 +2233,11 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getDefaultTimeZone() {
             return this.defaultTimeZone;
+        }
+
+        @Override
+        public final java.lang.Object getDeletionProtection() {
+            return this.deletionProtection;
         }
 
         @Override
@@ -2432,6 +2472,9 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getDefaultTimeZone() != null) {
                 data.set("defaultTimeZone", om.valueToTree(this.getDefaultTimeZone()));
             }
+            if (this.getDeletionProtection() != null) {
+                data.set("deletionProtection", om.valueToTree(this.getDeletionProtection()));
+            }
             if (this.getGdnId() != null) {
                 data.set("gdnId", om.valueToTree(this.getGdnId()));
             }
@@ -2576,6 +2619,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.dbMinorVersion != null ? !this.dbMinorVersion.equals(that.dbMinorVersion) : that.dbMinorVersion != null) return false;
             if (this.dbNodeNum != null ? !this.dbNodeNum.equals(that.dbNodeNum) : that.dbNodeNum != null) return false;
             if (this.defaultTimeZone != null ? !this.defaultTimeZone.equals(that.defaultTimeZone) : that.defaultTimeZone != null) return false;
+            if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
             if (this.gdnId != null ? !this.gdnId.equals(that.gdnId) : that.gdnId != null) return false;
             if (this.hotStandbyCluster != null ? !this.hotStandbyCluster.equals(that.hotStandbyCluster) : that.hotStandbyCluster != null) return false;
             if (this.loosePolarLogBin != null ? !this.loosePolarLogBin.equals(that.loosePolarLogBin) : that.loosePolarLogBin != null) return false;
@@ -2634,6 +2678,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.dbMinorVersion != null ? this.dbMinorVersion.hashCode() : 0);
             result = 31 * result + (this.dbNodeNum != null ? this.dbNodeNum.hashCode() : 0);
             result = 31 * result + (this.defaultTimeZone != null ? this.defaultTimeZone.hashCode() : 0);
+            result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
             result = 31 * result + (this.gdnId != null ? this.gdnId.hashCode() : 0);
             result = 31 * result + (this.hotStandbyCluster != null ? this.hotStandbyCluster.hashCode() : 0);
             result = 31 * result + (this.loosePolarLogBin != null ? this.loosePolarLogBin.hashCode() : 0);

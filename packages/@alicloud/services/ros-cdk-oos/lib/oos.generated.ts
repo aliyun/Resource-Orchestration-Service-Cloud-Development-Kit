@@ -195,8 +195,8 @@ export interface RosExecutionProps {
 
     /**
      * @Property safetyCheck: Security check mode. Allowed values:
-     * - Skip: This option means that customers understand the risks, you can do anything without confirmation Action, no matter what the level of risk. It takes effect only if Mode is Automatic.
-     * - ConfirmEveryHighRiskAction (default): This option would require customers to confirm each Action a high risk. NotifyExecution by calling customer interface to confirm or cancel.
+     * - Skip (default): This option means that customers understand the risks, you can do anything without confirmation Action, no matter what the level of risk. It takes effect only if Mode is Automatic.
+     * - ConfirmEveryHighRiskAction: This option would require customers to confirm each Action a high risk. NotifyExecution by calling customer interface to confirm or cancel.
      */
     readonly safetyCheck?: string | ros.IResolvable;
 
@@ -415,8 +415,8 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
 
     /**
      * @Property safetyCheck: Security check mode. Allowed values:
-     * - Skip: This option means that customers understand the risks, you can do anything without confirmation Action, no matter what the level of risk. It takes effect only if Mode is Automatic.
-     * - ConfirmEveryHighRiskAction (default): This option would require customers to confirm each Action a high risk. NotifyExecution by calling customer interface to confirm or cancel.
+     * - Skip (default): This option means that customers understand the risks, you can do anything without confirmation Action, no matter what the level of risk. It takes effect only if Mode is Automatic.
+     * - ConfirmEveryHighRiskAction: This option would require customers to confirm each Action a high risk. NotifyExecution by calling customer interface to confirm or cancel.
      */
     public safetyCheck: string | ros.IResolvable | undefined;
 
@@ -1471,6 +1471,162 @@ function rosSecretParameterTagsPropertyToRosTemplate(properties: any): any {
       'Value': ros.stringToRosTemplate(properties.value),
       'Key': ros.stringToRosTemplate(properties.key),
     };
+}
+
+/**
+ * Properties for defining a `RosServiceSettings`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-servicesettings
+ */
+export interface RosServiceSettingsProps {
+
+    /**
+     * @Property deliveryOssBucketName: OSS bucket name.
+     */
+    readonly deliveryOssBucketName?: string | ros.IResolvable;
+
+    /**
+     * @Property deliveryOssEnabled: Whether to enable the OSS delivery template execution logging feature. Defaults to false.
+     */
+    readonly deliveryOssEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * @Property deliveryOssKeyPrefix: OSS storage space directory, such as "oos\/execution", pass "" to indicate that no directory is needed, if set before set again do not need directory can be cleared by passing "".
+     */
+    readonly deliveryOssKeyPrefix?: string | ros.IResolvable;
+
+    /**
+     * @Property deliverySlsEnabled: Whether to enable the SLS delivery template execution logging feature. Defaults to false.
+     */
+    readonly deliverySlsEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * @Property deliverySlsProjectName: SLS project name.
+     */
+    readonly deliverySlsProjectName?: string | ros.IResolvable;
+
+    /**
+     * @Property rdcEnterpriseId: Enterprise ID.
+     */
+    readonly rdcEnterpriseId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosServiceSettingsProps`
+ *
+ * @param properties - the TypeScript properties of a `RosServiceSettingsProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosServiceSettingsPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('deliverySlsEnabled', ros.validateBoolean)(properties.deliverySlsEnabled));
+    errors.collect(ros.propertyValidator('deliveryOssKeyPrefix', ros.validateString)(properties.deliveryOssKeyPrefix));
+    errors.collect(ros.propertyValidator('deliveryOssBucketName', ros.validateString)(properties.deliveryOssBucketName));
+    errors.collect(ros.propertyValidator('deliveryOssEnabled', ros.validateBoolean)(properties.deliveryOssEnabled));
+    errors.collect(ros.propertyValidator('rdcEnterpriseId', ros.validateString)(properties.rdcEnterpriseId));
+    errors.collect(ros.propertyValidator('deliverySlsProjectName', ros.validateString)(properties.deliverySlsProjectName));
+    return errors.wrap('supplied properties not correct for "RosServiceSettingsProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OOS::ServiceSettings` resource
+ *
+ * @param properties - the TypeScript properties of a `RosServiceSettingsProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OOS::ServiceSettings` resource.
+ */
+// @ts-ignore TS6133
+function rosServiceSettingsPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosServiceSettingsPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'DeliveryOssBucketName': ros.stringToRosTemplate(properties.deliveryOssBucketName),
+      'DeliveryOssEnabled': ros.booleanToRosTemplate(properties.deliveryOssEnabled),
+      'DeliveryOssKeyPrefix': ros.stringToRosTemplate(properties.deliveryOssKeyPrefix),
+      'DeliverySlsEnabled': ros.booleanToRosTemplate(properties.deliverySlsEnabled),
+      'DeliverySlsProjectName': ros.stringToRosTemplate(properties.deliverySlsProjectName),
+      'RdcEnterpriseId': ros.stringToRosTemplate(properties.rdcEnterpriseId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::ServiceSettings`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ServiceSettings` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-servicesettings
+ */
+export class RosServiceSettings extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OOS::ServiceSettings";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property deliveryOssBucketName: OSS bucket name.
+     */
+    public deliveryOssBucketName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property deliveryOssEnabled: Whether to enable the OSS delivery template execution logging feature. Defaults to false.
+     */
+    public deliveryOssEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property deliveryOssKeyPrefix: OSS storage space directory, such as "oos\/execution", pass "" to indicate that no directory is needed, if set before set again do not need directory can be cleared by passing "".
+     */
+    public deliveryOssKeyPrefix: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property deliverySlsEnabled: Whether to enable the SLS delivery template execution logging feature. Defaults to false.
+     */
+    public deliverySlsEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property deliverySlsProjectName: SLS project name.
+     */
+    public deliverySlsProjectName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property rdcEnterpriseId: Enterprise ID.
+     */
+    public rdcEnterpriseId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosServiceSettingsProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosServiceSettings.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.deliveryOssBucketName = props.deliveryOssBucketName;
+        this.deliveryOssEnabled = props.deliveryOssEnabled;
+        this.deliveryOssKeyPrefix = props.deliveryOssKeyPrefix;
+        this.deliverySlsEnabled = props.deliverySlsEnabled;
+        this.deliverySlsProjectName = props.deliverySlsProjectName;
+        this.rdcEnterpriseId = props.rdcEnterpriseId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            deliveryOssBucketName: this.deliveryOssBucketName,
+            deliveryOssEnabled: this.deliveryOssEnabled,
+            deliveryOssKeyPrefix: this.deliveryOssKeyPrefix,
+            deliverySlsEnabled: this.deliverySlsEnabled,
+            deliverySlsProjectName: this.deliverySlsProjectName,
+            rdcEnterpriseId: this.rdcEnterpriseId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosServiceSettingsPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }
 
 /**

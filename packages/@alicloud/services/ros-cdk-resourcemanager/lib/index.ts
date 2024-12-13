@@ -11,3 +11,4 @@ export * from './resourceshareassociation';
 
 // ALIYUN::ResourceManager Resources:
 export * from './resourcemanager.generated';
+export * as datasource from './datasource';

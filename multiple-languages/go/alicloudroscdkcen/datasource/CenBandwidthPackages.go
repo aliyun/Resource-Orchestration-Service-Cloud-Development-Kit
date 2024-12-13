@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::CEN::CenBandwidthPackages`, which is used to query the details of Cloud Enterprise Network (CEN) bandwidth plans within the current Alibaba Cloud account.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::CEN::CenBandwidthPackages`, which is used to query the information about Cloud Enterprise Network (CEN) bandwidth plans within the logon account.
 type CenBandwidthPackages interface {
 	alicloudroscdkcore.Resource
 	// Attribute CenBandwidthPackageIds: The list of The Cen bandwidth ids.

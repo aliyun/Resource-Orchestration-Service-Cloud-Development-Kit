@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::MONGODB::Instances`, which is used to query the details of ApsaraDB for MongoDB instances.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::MONGODB::Instances`, which is used to query the information about ApsaraDB for MongoDB instances.
 type Instances interface {
 	alicloudroscdkcore.Resource
 	// Attribute InstanceIds: The list of The instance Ids.

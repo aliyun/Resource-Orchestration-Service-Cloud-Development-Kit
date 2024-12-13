@@ -100,6 +100,10 @@ func (j *jsiiProxy_RosCluster) validateSetCoreInstanceTypeParameters(val interfa
 	return nil
 }
 
+func (j *jsiiProxy_RosCluster) validateSetDeletionProtectionParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosCluster) validateSetDiskSizeParameters(val interface{}) error {
 	return nil
 }

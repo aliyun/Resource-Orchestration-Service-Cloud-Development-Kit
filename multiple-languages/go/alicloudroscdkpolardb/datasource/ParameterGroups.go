@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::POLARDB::ParameterGroups`, which is used to query parameter templates in a specific region.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::POLARDB::ParameterGroups`, which is used to query parameter templates in a region.
 type ParameterGroups interface {
 	alicloudroscdkcore.Resource
 	// Attribute ParameterGroupIds: The list of parameter group IDs.

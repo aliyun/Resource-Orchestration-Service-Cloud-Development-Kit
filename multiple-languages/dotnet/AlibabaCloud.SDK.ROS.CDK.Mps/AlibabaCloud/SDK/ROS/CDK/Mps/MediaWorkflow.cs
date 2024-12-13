@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Mps
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::MPS::MediaWorkflow`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::MPS::MediaWorkflow`, which is used to add a media workflow.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMediaWorkflow`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mps-mediaworkflow

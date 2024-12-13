@@ -4,6 +4,10 @@ export * from './controlpolicy';
 export * from './fwswitch';
 export * from './instance';
 export * from './natfirewallcontrolpolicy';
+export * from './trfirewall';
+export * from './trfirewallroutepolicy';
+export * from './vpcfirewallcen';
+export * from './vpcfirewallconfigure';
 export * from './vpcfirewallcontrolpolicy';
 
 // ALIYUN::CLOUDFW Resources:

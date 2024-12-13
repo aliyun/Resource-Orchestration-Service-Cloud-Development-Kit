@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ens;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ENS::VSwitch</code>, which is used to create a vSwitch.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:30.153Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:08.169Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.RosVSwitch")
 public class RosVSwitch extends com.aliyun.ros.cdk.core.RosResource {
 

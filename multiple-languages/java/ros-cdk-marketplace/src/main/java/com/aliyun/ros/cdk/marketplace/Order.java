@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.marketplace;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::MarketPlace::Order</code>, which is used to purchase resources from Alibaba Cloud Marketplace.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.508Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:09.237Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.marketplace.$Module.class, fqn = "@alicloud/ros-cdk-marketplace.Order")
 public class Order extends com.aliyun.ros.cdk.core.Resource {
 

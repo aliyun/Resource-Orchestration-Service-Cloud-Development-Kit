@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::RDS::Zones`, which is used to query the zones that are available to an ApsaraDB RDS instance.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::RDS::Zones`, which is used to query the zones of an ApsaraDB RDS instance.
 type Zones interface {
 	alicloudroscdkcore.Resource
 	// Attribute ZoneIds: The list of zone IDs.

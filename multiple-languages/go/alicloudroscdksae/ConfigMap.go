@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SAE::ConfigMap`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SAE::ConfigMap`, which is used to create a ConfigMap instance in a namespace.
 type ConfigMap interface {
 	alicloudroscdkcore.Resource
 	// Attribute ConfigMapId: The ID of the config map.

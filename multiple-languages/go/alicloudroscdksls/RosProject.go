@@ -17,6 +17,8 @@ type RosProject interface {
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
 	CreationStack() *[]*string
+	DataRedundancyType() interface{}
+	SetDataRedundancyType(val interface{})
 	Description() interface{}
 	SetDescription(val interface{})
 	EnableResourcePropertyConstraint() *bool
@@ -40,6 +42,8 @@ type RosProject interface {
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
 	// coerce it to an IResolvable through `Lazy.any({ produce: resource.ref })`.
 	Ref() *string
+	ResourceGroupId() interface{}
+	SetResourceGroupId(val interface{})
 	// Options for this resource, such as condition, update policy etc.
 	RosOptions() alicloudroscdkcore.IRosResourceOptions
 	RosProperties() *map[string]interface{}
@@ -192,6 +196,16 @@ func (j *jsiiProxy_RosProject) CreationStack() *[]*string {
 	return returns
 }
 
+func (j *jsiiProxy_RosProject) DataRedundancyType() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"dataRedundancyType",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosProject) Description() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -247,6 +261,16 @@ func (j *jsiiProxy_RosProject) Ref() *string {
 	_jsii_.Get(
 		j,
 		"ref",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosProject) ResourceGroupId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"resourceGroupId",
 		&returns,
 	)
 	return returns
@@ -340,6 +364,17 @@ func NewRosProject_Override(r RosProject, scope alicloudroscdkcore.Construct, id
 	)
 }
 
+func (j *jsiiProxy_RosProject)SetDataRedundancyType(val interface{}) {
+	if err := j.validateSetDataRedundancyTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"dataRedundancyType",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosProject)SetDescription(val interface{}) {
 	if err := j.validateSetDescriptionParameters(val); err != nil {
 		panic(err)
@@ -369,6 +404,17 @@ func (j *jsiiProxy_RosProject)SetName(val interface{}) {
 	_jsii_.Set(
 		j,
 		"name",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosProject)SetResourceGroupId(val interface{}) {
+	if err := j.validateSetResourceGroupIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"resourceGroupId",
 		val,
 	)
 }

@@ -1,5 +1,6 @@
 export * from './askcluster';
 export * from './anycluster';
+export * from './applicationdeployment';
 export * from './clusteraddons';
 export * from './clusterapplication';
 export * from './clusterhelmapplication';

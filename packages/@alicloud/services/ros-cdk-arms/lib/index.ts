@@ -8,6 +8,7 @@ export * from './environmentfeature';
 export * from './managedprometheus';
 export * from './prometheus';
 export * from './retcodeapp';
+export * from './xtraceapp';
 
 // ALIYUN::ARMS Resources:
 export * from './arms.generated';

@@ -37,6 +37,11 @@ export class UserAuthConfig extends ros.Resource {
     protected enableResourcePropertyConstraint: boolean;
 
     /**
+     * Attribute AuthConfig: AuthConfig
+     */
+    public readonly attrAuthConfig: ros.IResolvable;
+
+    /**
      * Attribute AuthConfigId: The id of the config.
      */
     public readonly attrAuthConfigId: ros.IResolvable;
@@ -59,6 +64,7 @@ export class UserAuthConfig extends ros.Resource {
             connectorId: props.connectorId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosUserAuthConfig;
+        this.attrAuthConfig = rosUserAuthConfig.attrAuthConfig;
         this.attrAuthConfigId = rosUserAuthConfig.attrAuthConfigId;
     }
 }

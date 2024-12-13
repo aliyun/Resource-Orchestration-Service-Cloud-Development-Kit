@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ga;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::GA::AclsListenerAssociation</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::GA::AclsListenerAssociation</code>, which is used to associate an access control list (ACL) with a listener.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:30.524Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:08.563Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.AclsListenerAssociation")
 public class AclsListenerAssociation extends com.aliyun.ros.cdk.core.Resource {
 

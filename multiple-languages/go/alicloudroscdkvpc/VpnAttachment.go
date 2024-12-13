@@ -9,7 +9,9 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpnAttachment`, which is used to create an IPsec-VPN connection and associate it with a transit router.
+// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpnAttachment`, which is used to create an IPsec-VPN connection.
+//
+// After you create the IPsec-VPN connection, you can associate the IPsec-VPN connection with a transit router.
 type VpnAttachment interface {
 	alicloudroscdkcore.Resource
 	// Attribute InternetIp: The gateway IP address of the IPsec connection.

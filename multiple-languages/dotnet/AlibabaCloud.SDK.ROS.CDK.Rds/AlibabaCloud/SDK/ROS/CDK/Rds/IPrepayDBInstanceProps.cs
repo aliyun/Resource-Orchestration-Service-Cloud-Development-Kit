@@ -432,6 +432,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             }
         }
 
+        /// <summary>Property deletionProtection: Specifies whether to enable the release protection feature for the instance.</summary>
+        /// <remarks>
+        /// This feature is available only for pay-as-you-go instances. Default is false.
+        /// </remarks>
+        [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DeletionProtection
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property enableBackupLog: Specifies whether to enable the log backup function.</summary>
         /// <remarks>
         /// Valid values:
@@ -1311,6 +1325,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             [JsiiOptional]
             [JsiiProperty(name: "dedicatedHostGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DedicatedHostGroupId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property deletionProtection: Specifies whether to enable the release protection feature for the instance.</summary>
+            /// <remarks>
+            /// This feature is available only for pay-as-you-go instances. Default is false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeletionProtection
             {
                 get => GetInstanceProperty<object?>();
             }

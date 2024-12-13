@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fnf;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::FNF::Flow</code>, which is used to create a flow.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:30.488Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:08.525Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fnf.$Module.class, fqn = "@alicloud/ros-cdk-fnf.RosFlow")
 public class RosFlow extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -133,6 +133,42 @@ public class RosFlow extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getExecutionMode() {
+        return software.amazon.jsii.Kernel.get(this, "executionMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setExecutionMode(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "executionMode", value);
+    }
+
+    /**
+     */
+    public void setExecutionMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "executionMode", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getExternalStorageLocation() {
+        return software.amazon.jsii.Kernel.get(this, "externalStorageLocation", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setExternalStorageLocation(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "externalStorageLocation", value);
+    }
+
+    /**
+     */
+    public void setExternalStorageLocation(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "externalStorageLocation", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getRequestId() {
         return software.amazon.jsii.Kernel.get(this, "requestId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -241,6 +277,40 @@ public class RosFlow extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param executionMode This parameter is required.
+         */
+        public Builder executionMode(final java.lang.String executionMode) {
+            this.props.executionMode(executionMode);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param executionMode This parameter is required.
+         */
+        public Builder executionMode(final com.aliyun.ros.cdk.core.IResolvable executionMode) {
+            this.props.executionMode(executionMode);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param externalStorageLocation This parameter is required.
+         */
+        public Builder externalStorageLocation(final java.lang.String externalStorageLocation) {
+            this.props.externalStorageLocation(externalStorageLocation);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param externalStorageLocation This parameter is required.
+         */
+        public Builder externalStorageLocation(final com.aliyun.ros.cdk.core.IResolvable externalStorageLocation) {
+            this.props.externalStorageLocation(externalStorageLocation);
             return this;
         }
 

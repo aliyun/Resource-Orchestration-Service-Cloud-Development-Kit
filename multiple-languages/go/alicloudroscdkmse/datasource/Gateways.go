@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::MSE::Gateways`, which is used to query gateways.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::MSE::Gateways`, which is used to query the information about gateways.
 type Gateways interface {
 	alicloudroscdkcore.Resource
 	// Attribute GatewayIds: The list of gateway IDs.

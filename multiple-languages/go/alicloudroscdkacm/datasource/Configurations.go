@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ACM::Configurations`, which is used to query the details of configurations.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ACM::Configurations`, which is used to query the information about configurations.
 type Configurations interface {
 	alicloudroscdkcore.Resource
 	// Attribute Configurations: The list of configurations.

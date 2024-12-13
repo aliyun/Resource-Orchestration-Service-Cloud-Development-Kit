@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::EDAS::UserDefineRegions`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::EDAS::UserDefineRegions`, which is used to query custom namespaces.
 type UserDefineRegions interface {
 	alicloudroscdkcore.Resource
 	// Attribute Ids: The list of user define region IDs.

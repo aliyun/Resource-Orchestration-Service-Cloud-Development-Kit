@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sls
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::OssExport`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::OssExport`, which is used to create an Object Storage Service (OSS) data shipping job to manage Simple Log Service (SLS) data and ship Logstore data to OSS for storage.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `OssExport` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-ossexport

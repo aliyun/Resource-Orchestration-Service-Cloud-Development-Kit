@@ -82,7 +82,15 @@
 @alicloud/ros-cdk-ess.datasource.RosScalingConfigurationsProps=com.aliyun.ros.cdk.ess.datasource.RosScalingConfigurationsProps
 @alicloud/ros-cdk-ess.datasource.RosScalingGroups=com.aliyun.ros.cdk.ess.datasource.RosScalingGroups
 @alicloud/ros-cdk-ess.datasource.RosScalingGroupsProps=com.aliyun.ros.cdk.ess.datasource.RosScalingGroupsProps
+@alicloud/ros-cdk-ess.datasource.RosScalingRule=com.aliyun.ros.cdk.ess.datasource.RosScalingRule
+@alicloud/ros-cdk-ess.datasource.RosScalingRuleProps=com.aliyun.ros.cdk.ess.datasource.RosScalingRuleProps
+@alicloud/ros-cdk-ess.datasource.RosScalingRules=com.aliyun.ros.cdk.ess.datasource.RosScalingRules
+@alicloud/ros-cdk-ess.datasource.RosScalingRulesProps=com.aliyun.ros.cdk.ess.datasource.RosScalingRulesProps
 @alicloud/ros-cdk-ess.datasource.ScalingConfigurations=com.aliyun.ros.cdk.ess.datasource.ScalingConfigurations
 @alicloud/ros-cdk-ess.datasource.ScalingConfigurationsProps=com.aliyun.ros.cdk.ess.datasource.ScalingConfigurationsProps
 @alicloud/ros-cdk-ess.datasource.ScalingGroups=com.aliyun.ros.cdk.ess.datasource.ScalingGroups
 @alicloud/ros-cdk-ess.datasource.ScalingGroupsProps=com.aliyun.ros.cdk.ess.datasource.ScalingGroupsProps
+@alicloud/ros-cdk-ess.datasource.ScalingRule=com.aliyun.ros.cdk.ess.datasource.ScalingRule
+@alicloud/ros-cdk-ess.datasource.ScalingRuleProps=com.aliyun.ros.cdk.ess.datasource.ScalingRuleProps
+@alicloud/ros-cdk-ess.datasource.ScalingRules=com.aliyun.ros.cdk.ess.datasource.ScalingRules
+@alicloud/ros-cdk-ess.datasource.ScalingRulesProps=com.aliyun.ros.cdk.ess.datasource.ScalingRulesProps

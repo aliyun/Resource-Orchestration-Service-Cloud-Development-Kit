@@ -26,6 +26,8 @@ type RosFlow interface {
 	SetFlowId(val interface{})
 	FlowName() interface{}
 	SetFlowName(val interface{})
+	FlowStatus() interface{}
+	SetFlowStatus(val interface{})
 	LaunchFlow() interface{}
 	SetLaunchFlow(val interface{})
 	// The logical ID for this stack element.
@@ -251,6 +253,16 @@ func (j *jsiiProxy_RosFlow) FlowName() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosFlow) FlowStatus() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"flowStatus",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosFlow) LaunchFlow() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -439,6 +451,17 @@ func (j *jsiiProxy_RosFlow)SetFlowName(val interface{}) {
 	_jsii_.Set(
 		j,
 		"flowName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosFlow)SetFlowStatus(val interface{}) {
+	if err := j.validateSetFlowStatusParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"flowStatus",
 		val,
 	)
 }

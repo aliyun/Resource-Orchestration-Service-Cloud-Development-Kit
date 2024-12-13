@@ -1,6 +1,6 @@
 package com.aliyun.ros.cdk.ossdeployment;
 
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:34.712Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:13.540Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ossdeployment.$Module.class, fqn = "@alicloud/ros-cdk-ossdeployment.BucketDeploymentProps")
 @software.amazon.jsii.Jsii.Proxy(BucketDeploymentProps.Jsii$Proxy.class)
 public interface BucketDeploymentProps extends software.amazon.jsii.JsiiSerializable {

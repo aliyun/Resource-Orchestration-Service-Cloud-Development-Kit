@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sae.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::SAE::Applications</code>, which is used to query applications.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:33.309Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:11.711Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.datasource.Applications")
 public class Applications extends com.aliyun.ros.cdk.core.Resource {
 

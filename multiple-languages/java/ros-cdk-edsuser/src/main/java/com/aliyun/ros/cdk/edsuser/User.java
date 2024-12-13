@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edsuser;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::EdsUser::User</code>, which is used to create a convenience user.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:29.888Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:07.891Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edsuser.$Module.class, fqn = "@alicloud/ros-cdk-edsuser.User")
 public class User extends com.aliyun.ros.cdk.core.Resource {
 

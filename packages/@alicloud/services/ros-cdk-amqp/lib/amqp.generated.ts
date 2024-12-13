@@ -237,6 +237,16 @@ export interface RosExchangeProps {
      * @Property alternateExchange: The alternate exchange. An alternate exchange is configured for an existing exchange. It is used to receive messages that fail to be routed to queues from the existing exchange.
      */
     readonly alternateExchange?: string | ros.IResolvable;
+
+    /**
+     * @Property xDelayedType: Exchanges of the x-delay-Message type allow you to customize the Header property of the message, and the x-delay specifies the amount of time in milliseconds for the message to be delivered. The routing rules for this class of exchanges depend on the Exchange type specified in the x-delay-type parameter, which specifies the actual Exchange type to which the delayed message will eventually be delivered. Valid values:
+     * - DIRECT: Delivers deferred messages to a specified queue bound to an Exchange of type DIRECT.
+     * - TOPIC: Delivers deferred messages to the queue bound to the Exchange type TOPIC.
+     *  - FANOUT: Delivers deferred messages to a queue bound to an Exchange of type FANOUT.
+     * - HEADERS: Deferred messages are delivered to the queue bound to the Exchange HEADERS type.
+     *  - X-JMS-TOPIC: Delivers deferred messages to the queue bound to X-JMS-TOPIC.
+     */
+    readonly xDelayedType?: string | ros.IResolvable;
 }
 
 /**
@@ -256,6 +266,13 @@ function RosExchangePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('internal', ros.validateBoolean)(properties.internal));
     errors.collect(ros.propertyValidator('virtualHost', ros.requiredValidator)(properties.virtualHost));
     errors.collect(ros.propertyValidator('virtualHost', ros.validateString)(properties.virtualHost));
+    if(properties.xDelayedType && (typeof properties.xDelayedType) !== 'object') {
+        errors.collect(ros.propertyValidator('xDelayedType', ros.validateAllowedValues)({
+          data: properties.xDelayedType,
+          allowedValues: ["DIRECT","TOPIC","FANOUT","HEADERS","X-JMS-TOPIC"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('xDelayedType', ros.validateString)(properties.xDelayedType));
     errors.collect(ros.propertyValidator('autoDeleteState', ros.requiredValidator)(properties.autoDeleteState));
     errors.collect(ros.propertyValidator('autoDeleteState', ros.validateBoolean)(properties.autoDeleteState));
     errors.collect(ros.propertyValidator('exchangeName', ros.requiredValidator)(properties.exchangeName));
@@ -299,6 +316,7 @@ function rosExchangePropsToRosTemplate(properties: any, enableResourcePropertyCo
       'Internal': ros.booleanToRosTemplate(properties.internal),
       'VirtualHost': ros.stringToRosTemplate(properties.virtualHost),
       'AlternateExchange': ros.stringToRosTemplate(properties.alternateExchange),
+      'XDelayedType': ros.stringToRosTemplate(properties.xDelayedType),
     };
 }
 
@@ -365,6 +383,16 @@ export class RosExchange extends ros.RosResource {
     public alternateExchange: string | ros.IResolvable | undefined;
 
     /**
+     * @Property xDelayedType: Exchanges of the x-delay-Message type allow you to customize the Header property of the message, and the x-delay specifies the amount of time in milliseconds for the message to be delivered. The routing rules for this class of exchanges depend on the Exchange type specified in the x-delay-type parameter, which specifies the actual Exchange type to which the delayed message will eventually be delivered. Valid values:
+     * - DIRECT: Delivers deferred messages to a specified queue bound to an Exchange of type DIRECT.
+     * - TOPIC: Delivers deferred messages to the queue bound to the Exchange type TOPIC.
+     *  - FANOUT: Delivers deferred messages to a queue bound to an Exchange of type FANOUT.
+     * - HEADERS: Deferred messages are delivered to the queue bound to the Exchange HEADERS type.
+     *  - X-JMS-TOPIC: Delivers deferred messages to the queue bound to X-JMS-TOPIC.
+     */
+    public xDelayedType: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -381,6 +409,7 @@ export class RosExchange extends ros.RosResource {
         this.internal = props.internal;
         this.virtualHost = props.virtualHost;
         this.alternateExchange = props.alternateExchange;
+        this.xDelayedType = props.xDelayedType;
     }
 
 
@@ -393,6 +422,7 @@ export class RosExchange extends ros.RosResource {
             internal: this.internal,
             virtualHost: this.virtualHost,
             alternateExchange: this.alternateExchange,
+            xDelayedType: this.xDelayedType,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

@@ -1988,6 +1988,1805 @@ function rosClusterPostInstallScriptPropertyToRosTemplate(properties: any): any 
 }
 
 /**
+ * Properties for defining a `RosClusterV2`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-clusterv2
+ */
+export interface RosClusterV2Props {
+
+    /**
+     * @Property clusterName: Cluster name. The length is from 2 to 128 characters, and it supports English, Chinese and numbers. You can include a dash (-) and an underscore (_).
+     */
+    readonly clusterName: string | ros.IResolvable;
+
+    /**
+     * @Property sharedStorages: The list of shared storage configurations.
+     */
+    readonly sharedStorages: Array<RosClusterV2.SharedStoragesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property vpcId: The ID of the VPC used by the cluster.
+     */
+    readonly vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchId: The ID of the VSwitch used by the cluster
+     */
+    readonly vSwitchId: string | ros.IResolvable;
+
+    /**
+     * @Property additionalPackages: A list of software to install on the cluster. Range from 0 to 10.
+     */
+    readonly additionalPackages?: Array<RosClusterV2.AdditionalPackagesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property addons: Cluster custom service component configuration to support only one component.
+     */
+    readonly addons?: Array<RosClusterV2.AddonsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property clientVersion: Cluster client version. By default, the latest version is used.
+     */
+    readonly clientVersion?: string | ros.IResolvable;
+
+    /**
+     * @Property clusterCategory: Cluster series. Valid values:
+     * - Standard: The standard version.
+     * - Serverless: Hosted version
+     */
+    readonly clusterCategory?: string | ros.IResolvable;
+
+    /**
+     * @Property clusterCredentials: Security credentials for the cluster.
+     */
+    readonly clusterCredentials?: RosClusterV2.ClusterCredentialsProperty | ros.IResolvable;
+
+    /**
+     * @Property clusterCustomConfiguration: Cluster post-processing scripts.
+     */
+    readonly clusterCustomConfiguration?: RosClusterV2.ClusterCustomConfigurationProperty | ros.IResolvable;
+
+    /**
+     * @Property clusterDescription: Cluster description. The length is from 2 to 128 characters, and it supports English, Chinese and numbers. You can include a dash (-) and an underscore (_).
+     */
+    readonly clusterDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property clusterMode: Cluster deployment type. Valid values:
+     * - Integrated: Public cloud clustering.
+     * - Hybrid: Hybrid cloud cluster.
+     * - Custom: The cluster is customized
+     */
+    readonly clusterMode?: string | ros.IResolvable;
+
+    /**
+     * @Property deletionProtection: The cluster deletion protection property, which specifies whether cluster deletion via the console or the DeleteCluster API is supported.
+     * - true: Cluster deletion protection is enabled.
+     * - false: This turns off cluster deletion protection.
+     * Default value: false
+     */
+    readonly deletionProtection?: boolean | ros.IResolvable;
+
+    /**
+     * @Property isEnterpriseSecurityGroup: Whether to create an enterprise security group. Valid values:
+     * - true: Enterprise security groups are automatically created and used.
+     * - false: Normal security groups are automatically created and used instead of enterprise security groups.
+     */
+    readonly isEnterpriseSecurityGroup?: boolean | ros.IResolvable;
+
+    /**
+     * @Property manager: The cluster manages node configuration.
+     */
+    readonly manager?: RosClusterV2.ManagerProperty | ros.IResolvable;
+
+    /**
+     * @Property maxCoreCount: Total number of cores that the cluster can manage on compute nodes, ranging from 0 to 100,000.
+     */
+    readonly maxCoreCount?: number | ros.IResolvable;
+
+    /**
+     * @Property maxCount: Number of compute nodes that can be managed by the cluster, ranging from 0 to 5,000.
+     */
+    readonly maxCount?: number | ros.IResolvable;
+
+    /**
+     * @Property queues: Cluster queue configuration. The number of queues is supported from 0 to 8.
+     */
+    readonly queues?: Array<RosClusterV2.QueuesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property securityGroupId: Specifies the security group ID to which the newly created cluster belongs.
+     */
+    readonly securityGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to cluster_v2. Max support 20 tags to add during create cluster_v2. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosClusterV2.TagsProperty[];
+}
+
+/**
+ * Determine whether the given properties match those of a `RosClusterV2Props`
+ *
+ * @param properties - the TypeScript properties of a `RosClusterV2Props`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterV2PropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('clusterCredentials', RosClusterV2_ClusterCredentialsPropertyValidator)(properties.clusterCredentials));
+    if(properties.additionalPackages && (Array.isArray(properties.additionalPackages) || (typeof properties.additionalPackages) === 'string')) {
+        errors.collect(ros.propertyValidator('additionalPackages', ros.validateLength)({
+            data: properties.additionalPackages.length,
+            min: 0,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('additionalPackages', ros.listValidator(RosClusterV2_AdditionalPackagesPropertyValidator))(properties.additionalPackages));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    if(properties.clusterMode && (typeof properties.clusterMode) !== 'object') {
+        errors.collect(ros.propertyValidator('clusterMode', ros.validateAllowedValues)({
+          data: properties.clusterMode,
+          allowedValues: ["Integrated","Hybrid","Custom"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('clusterMode', ros.validateString)(properties.clusterMode));
+    if(properties.clusterCategory && (typeof properties.clusterCategory) !== 'object') {
+        errors.collect(ros.propertyValidator('clusterCategory', ros.validateAllowedValues)({
+          data: properties.clusterCategory,
+          allowedValues: ["Standard","Serverless"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('clusterCategory', ros.validateString)(properties.clusterCategory));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    if(properties.addons && (Array.isArray(properties.addons) || (typeof properties.addons) === 'string')) {
+        errors.collect(ros.propertyValidator('addons', ros.validateLength)({
+            data: properties.addons.length,
+            min: 0,
+            max: 1,
+          }));
+    }
+    errors.collect(ros.propertyValidator('addons', ros.listValidator(RosClusterV2_AddonsPropertyValidator))(properties.addons));
+    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
+    if(properties.maxCount && (typeof properties.maxCount) !== 'object') {
+        errors.collect(ros.propertyValidator('maxCount', ros.validateRange)({
+            data: properties.maxCount,
+            min: 0,
+            max: 5000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('maxCount', ros.validateNumber)(properties.maxCount));
+    errors.collect(ros.propertyValidator('clientVersion', ros.validateString)(properties.clientVersion));
+    errors.collect(ros.propertyValidator('manager', RosClusterV2_ManagerPropertyValidator)(properties.manager));
+    errors.collect(ros.propertyValidator('sharedStorages', ros.requiredValidator)(properties.sharedStorages));
+    errors.collect(ros.propertyValidator('sharedStorages', ros.listValidator(RosClusterV2_SharedStoragesPropertyValidator))(properties.sharedStorages));
+    errors.collect(ros.propertyValidator('isEnterpriseSecurityGroup', ros.validateBoolean)(properties.isEnterpriseSecurityGroup));
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('clusterName', ros.requiredValidator)(properties.clusterName));
+    if(properties.clusterName && (Array.isArray(properties.clusterName) || (typeof properties.clusterName) === 'string')) {
+        errors.collect(ros.propertyValidator('clusterName', ros.validateLength)({
+            data: properties.clusterName.length,
+            min: 2,
+            max: 128,
+          }));
+    }
+    errors.collect(ros.propertyValidator('clusterName', ros.validateString)(properties.clusterName));
+    errors.collect(ros.propertyValidator('clusterCustomConfiguration', RosClusterV2_ClusterCustomConfigurationPropertyValidator)(properties.clusterCustomConfiguration));
+    if(properties.queues && (Array.isArray(properties.queues) || (typeof properties.queues) === 'string')) {
+        errors.collect(ros.propertyValidator('queues', ros.validateLength)({
+            data: properties.queues.length,
+            min: undefined,
+            max: 8,
+          }));
+    }
+    errors.collect(ros.propertyValidator('queues', ros.listValidator(RosClusterV2_QueuesPropertyValidator))(properties.queues));
+    if(properties.clusterDescription && (Array.isArray(properties.clusterDescription) || (typeof properties.clusterDescription) === 'string')) {
+        errors.collect(ros.propertyValidator('clusterDescription', ros.validateLength)({
+            data: properties.clusterDescription.length,
+            min: 2,
+            max: 128,
+          }));
+    }
+    errors.collect(ros.propertyValidator('clusterDescription', ros.validateString)(properties.clusterDescription));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosClusterV2_TagsPropertyValidator))(properties.tags));
+    if(properties.maxCoreCount && (typeof properties.maxCoreCount) !== 'object') {
+        errors.collect(ros.propertyValidator('maxCoreCount', ros.validateRange)({
+            data: properties.maxCoreCount,
+            min: 0,
+            max: 100000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('maxCoreCount', ros.validateNumber)(properties.maxCoreCount));
+    return errors.wrap('supplied properties not correct for "RosClusterV2Props"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2` resource
+ *
+ * @param properties - the TypeScript properties of a `RosClusterV2Props`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterV2PropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosClusterV2PropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ClusterName': ros.stringToRosTemplate(properties.clusterName),
+      'SharedStorages': ros.listMapper(rosClusterV2SharedStoragesPropertyToRosTemplate)(properties.sharedStorages),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'AdditionalPackages': ros.listMapper(rosClusterV2AdditionalPackagesPropertyToRosTemplate)(properties.additionalPackages),
+      'Addons': ros.listMapper(rosClusterV2AddonsPropertyToRosTemplate)(properties.addons),
+      'ClientVersion': ros.stringToRosTemplate(properties.clientVersion),
+      'ClusterCategory': ros.stringToRosTemplate(properties.clusterCategory),
+      'ClusterCredentials': rosClusterV2ClusterCredentialsPropertyToRosTemplate(properties.clusterCredentials),
+      'ClusterCustomConfiguration': rosClusterV2ClusterCustomConfigurationPropertyToRosTemplate(properties.clusterCustomConfiguration),
+      'ClusterDescription': ros.stringToRosTemplate(properties.clusterDescription),
+      'ClusterMode': ros.stringToRosTemplate(properties.clusterMode),
+      'DeletionProtection': ros.booleanToRosTemplate(properties.deletionProtection),
+      'IsEnterpriseSecurityGroup': ros.booleanToRosTemplate(properties.isEnterpriseSecurityGroup),
+      'Manager': rosClusterV2ManagerPropertyToRosTemplate(properties.manager),
+      'MaxCoreCount': ros.numberToRosTemplate(properties.maxCoreCount),
+      'MaxCount': ros.numberToRosTemplate(properties.maxCount),
+      'Queues': ros.listMapper(rosClusterV2QueuesPropertyToRosTemplate)(properties.queues),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'Tags': ros.listMapper(rosClusterV2TagsPropertyToRosTemplate)(properties.tags),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EHPC::ClusterV2`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ClusterV2` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-clusterv2
+ */
+export class RosClusterV2 extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EHPC::ClusterV2";
+
+    /**
+     * @Attribute ClusterId: Cluster Id.
+     */
+    public readonly attrClusterId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property clusterName: Cluster name. The length is from 2 to 128 characters, and it supports English, Chinese and numbers. You can include a dash (-) and an underscore (_).
+     */
+    public clusterName: string | ros.IResolvable;
+
+    /**
+     * @Property sharedStorages: The list of shared storage configurations.
+     */
+    public sharedStorages: Array<RosClusterV2.SharedStoragesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property vpcId: The ID of the VPC used by the cluster.
+     */
+    public vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchId: The ID of the VSwitch used by the cluster
+     */
+    public vSwitchId: string | ros.IResolvable;
+
+    /**
+     * @Property additionalPackages: A list of software to install on the cluster. Range from 0 to 10.
+     */
+    public additionalPackages: Array<RosClusterV2.AdditionalPackagesProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property addons: Cluster custom service component configuration to support only one component.
+     */
+    public addons: Array<RosClusterV2.AddonsProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property clientVersion: Cluster client version. By default, the latest version is used.
+     */
+    public clientVersion: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property clusterCategory: Cluster series. Valid values:
+     * - Standard: The standard version.
+     * - Serverless: Hosted version
+     */
+    public clusterCategory: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property clusterCredentials: Security credentials for the cluster.
+     */
+    public clusterCredentials: RosClusterV2.ClusterCredentialsProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property clusterCustomConfiguration: Cluster post-processing scripts.
+     */
+    public clusterCustomConfiguration: RosClusterV2.ClusterCustomConfigurationProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property clusterDescription: Cluster description. The length is from 2 to 128 characters, and it supports English, Chinese and numbers. You can include a dash (-) and an underscore (_).
+     */
+    public clusterDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property clusterMode: Cluster deployment type. Valid values:
+     * - Integrated: Public cloud clustering.
+     * - Hybrid: Hybrid cloud cluster.
+     * - Custom: The cluster is customized
+     */
+    public clusterMode: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property deletionProtection: The cluster deletion protection property, which specifies whether cluster deletion via the console or the DeleteCluster API is supported.
+     * - true: Cluster deletion protection is enabled.
+     * - false: This turns off cluster deletion protection.
+     * Default value: false
+     */
+    public deletionProtection: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property isEnterpriseSecurityGroup: Whether to create an enterprise security group. Valid values:
+     * - true: Enterprise security groups are automatically created and used.
+     * - false: Normal security groups are automatically created and used instead of enterprise security groups.
+     */
+    public isEnterpriseSecurityGroup: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property manager: The cluster manages node configuration.
+     */
+    public manager: RosClusterV2.ManagerProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property maxCoreCount: Total number of cores that the cluster can manage on compute nodes, ranging from 0 to 100,000.
+     */
+    public maxCoreCount: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property maxCount: Number of compute nodes that can be managed by the cluster, ranging from 0 to 5,000.
+     */
+    public maxCount: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property queues: Cluster queue configuration. The number of queues is supported from 0 to 8.
+     */
+    public queues: Array<RosClusterV2.QueuesProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property securityGroupId: Specifies the security group ID to which the newly created cluster belongs.
+     */
+    public securityGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to cluster_v2. Max support 20 tags to add during create cluster_v2. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosClusterV2.TagsProperty[] | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosClusterV2Props, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosClusterV2.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrClusterId = this.getAtt('ClusterId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.clusterName = props.clusterName;
+        this.sharedStorages = props.sharedStorages;
+        this.vpcId = props.vpcId;
+        this.vSwitchId = props.vSwitchId;
+        this.additionalPackages = props.additionalPackages;
+        this.addons = props.addons;
+        this.clientVersion = props.clientVersion;
+        this.clusterCategory = props.clusterCategory;
+        this.clusterCredentials = props.clusterCredentials;
+        this.clusterCustomConfiguration = props.clusterCustomConfiguration;
+        this.clusterDescription = props.clusterDescription;
+        this.clusterMode = props.clusterMode;
+        this.deletionProtection = props.deletionProtection;
+        this.isEnterpriseSecurityGroup = props.isEnterpriseSecurityGroup;
+        this.manager = props.manager;
+        this.maxCoreCount = props.maxCoreCount;
+        this.maxCount = props.maxCount;
+        this.queues = props.queues;
+        this.resourceGroupId = props.resourceGroupId;
+        this.securityGroupId = props.securityGroupId;
+        this.tags = props.tags;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            clusterName: this.clusterName,
+            sharedStorages: this.sharedStorages,
+            vpcId: this.vpcId,
+            vSwitchId: this.vSwitchId,
+            additionalPackages: this.additionalPackages,
+            addons: this.addons,
+            clientVersion: this.clientVersion,
+            clusterCategory: this.clusterCategory,
+            clusterCredentials: this.clusterCredentials,
+            clusterCustomConfiguration: this.clusterCustomConfiguration,
+            clusterDescription: this.clusterDescription,
+            clusterMode: this.clusterMode,
+            deletionProtection: this.deletionProtection,
+            isEnterpriseSecurityGroup: this.isEnterpriseSecurityGroup,
+            manager: this.manager,
+            maxCoreCount: this.maxCoreCount,
+            maxCount: this.maxCount,
+            queues: this.queues,
+            resourceGroupId: this.resourceGroupId,
+            securityGroupId: this.securityGroupId,
+            tags: this.tags,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosClusterV2PropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosClusterV2 {
+    /**
+     * @stability external
+     */
+    export interface AdditionalPackagesProperty {
+        /**
+         * @Property version: The version of the software package.
+         */
+        readonly version: string | ros.IResolvable;
+        /**
+         * @Property name: The name of the software package.
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AdditionalPackagesProperty`
+ *
+ * @param properties - the TypeScript properties of a `AdditionalPackagesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterV2_AdditionalPackagesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('version', ros.requiredValidator)(properties.version));
+    errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "AdditionalPackagesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.AdditionalPackages` resource
+ *
+ * @param properties - the TypeScript properties of a `AdditionalPackagesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.AdditionalPackages` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterV2AdditionalPackagesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterV2_AdditionalPackagesPropertyValidator(properties).assertSuccess();
+    return {
+      'Version': ros.stringToRosTemplate(properties.version),
+      'Name': ros.stringToRosTemplate(properties.name),
+    };
+}
+
+export namespace RosClusterV2 {
+    /**
+     * @stability external
+     */
+    export interface AddonsProperty {
+        /**
+         * @Property version: The version of the custom service component.
+         */
+        readonly version: string | ros.IResolvable;
+        /**
+         * @Property servicesSpec: The configuration of the custom service component.
+         */
+        readonly servicesSpec?: string | ros.IResolvable;
+        /**
+         * @Property resourcesSpec: The resource configuration of the custom service component.
+         */
+        readonly resourcesSpec?: string | ros.IResolvable;
+        /**
+         * @Property name: The name of the custom service component.
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AddonsProperty`
+ *
+ * @param properties - the TypeScript properties of a `AddonsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterV2_AddonsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('version', ros.requiredValidator)(properties.version));
+    errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
+    errors.collect(ros.propertyValidator('servicesSpec', ros.validateString)(properties.servicesSpec));
+    errors.collect(ros.propertyValidator('resourcesSpec', ros.validateString)(properties.resourcesSpec));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "AddonsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.Addons` resource
+ *
+ * @param properties - the TypeScript properties of a `AddonsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.Addons` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterV2AddonsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterV2_AddonsPropertyValidator(properties).assertSuccess();
+    return {
+      'Version': ros.stringToRosTemplate(properties.version),
+      'ServicesSpec': ros.stringToRosTemplate(properties.servicesSpec),
+      'ResourcesSpec': ros.stringToRosTemplate(properties.resourcesSpec),
+      'Name': ros.stringToRosTemplate(properties.name),
+    };
+}
+
+export namespace RosClusterV2 {
+    /**
+     * @stability external
+     */
+    export interface ClusterCredentialsProperty {
+        /**
+         * @Property keyPairName: Key pair name. The length is 2~128 English or Chinese characters. Must begin with a lowercase letter or Chinese, not http:\/\/ or https:\/\/. You can include a number, a semi-colon (:), an underscore (_), or a dash (-).
+         */
+        readonly keyPairName?: string | ros.IResolvable;
+        /**
+         * @Property password: The root password of the login node. The length is 8 to 20 characters and must contain all three types of characters: uppercase and lowercase letters, numbers and special symbols. Special symbols can be: () ~! @ # $% ^ & * - = + {} [] :; '< >,.? \/
+         */
+        readonly password?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ClusterCredentialsProperty`
+ *
+ * @param properties - the TypeScript properties of a `ClusterCredentialsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterV2_ClusterCredentialsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.keyPairName && (Array.isArray(properties.keyPairName) || (typeof properties.keyPairName) === 'string')) {
+        errors.collect(ros.propertyValidator('keyPairName', ros.validateLength)({
+            data: properties.keyPairName.length,
+            min: 2,
+            max: 128,
+          }));
+    }
+    errors.collect(ros.propertyValidator('keyPairName', ros.validateString)(properties.keyPairName));
+    if(properties.password && (Array.isArray(properties.password) || (typeof properties.password) === 'string')) {
+        errors.collect(ros.propertyValidator('password', ros.validateLength)({
+            data: properties.password.length,
+            min: 8,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
+    return errors.wrap('supplied properties not correct for "ClusterCredentialsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.ClusterCredentials` resource
+ *
+ * @param properties - the TypeScript properties of a `ClusterCredentialsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.ClusterCredentials` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterV2ClusterCredentialsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterV2_ClusterCredentialsPropertyValidator(properties).assertSuccess();
+    return {
+      'KeyPairName': ros.stringToRosTemplate(properties.keyPairName),
+      'Password': ros.stringToRosTemplate(properties.password),
+    };
+}
+
+export namespace RosClusterV2 {
+    /**
+     * @stability external
+     */
+    export interface ClusterCustomConfigurationProperty {
+        /**
+         * @Property script: Where to download the post-processing script.
+         */
+        readonly script?: string | ros.IResolvable;
+        /**
+         * @Property args: Execution parameters for the script after installation.
+         */
+        readonly args?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ClusterCustomConfigurationProperty`
+ *
+ * @param properties - the TypeScript properties of a `ClusterCustomConfigurationProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterV2_ClusterCustomConfigurationPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('script', ros.validateString)(properties.script));
+    errors.collect(ros.propertyValidator('args', ros.validateString)(properties.args));
+    return errors.wrap('supplied properties not correct for "ClusterCustomConfigurationProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.ClusterCustomConfiguration` resource
+ *
+ * @param properties - the TypeScript properties of a `ClusterCustomConfigurationProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.ClusterCustomConfiguration` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterV2ClusterCustomConfigurationPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterV2_ClusterCustomConfigurationPropertyValidator(properties).assertSuccess();
+    return {
+      'Script': ros.stringToRosTemplate(properties.script),
+      'Args': ros.stringToRosTemplate(properties.args),
+    };
+}
+
+export namespace RosClusterV2 {
+    /**
+     * @stability external
+     */
+    export interface ComputeNodesProperty {
+        /**
+         * @Property systemDisk: Node system disk configuration details.
+         */
+        readonly systemDisk: RosClusterV2.SystemDiskProperty | ros.IResolvable;
+        /**
+         * @Property enableHt: Whether to enable the hyper-threading feature. Valid values:
+     * - true: Enable the hyper-threading feature.
+     * - false: Disable the hyper-threading feature.
+         */
+        readonly enableHt?: boolean | ros.IResolvable;
+        /**
+         * @Property dataDisks: Data disk information collection list.
+         */
+        readonly dataDisks?: Array<RosClusterV2.DataDisksProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property imageId: ECS image ID.
+         */
+        readonly imageId: string | ros.IResolvable;
+        /**
+         * @Property spotPriceLimit: Sets the maximum hourly price for the instance. Up to three decimal places are supported, and the parameter SpotStrategy takes effect with a value of SpotWithPriceLimit.
+         */
+        readonly spotPriceLimit?: number | ros.IResolvable;
+        /**
+         * @Property duration: Retention time, in hours, for a preemptive instance. Default value: 1. Valid values:
+     * - 1: Aliyun will ensure that the instance will run for 1 hour after creation and will not be released automatically; After more than one hour, the system automatically compares the bid with the market price and checks the resource inventory to decide whether to hold or reclaim the instance.
+     * - 0: After the creation, Aliyun does not guarantee that the instance will run for 1 hour. The system will automatically compare the bid price with the market price and check the resource inventory to determine the holding and recycling of the instance.
+     * Aliyun will send you a notification through ECS system event 5 minutes before instance collection. Preemptive instances are charged per second, and it is recommended that you choose the appropriate retention time based on the specific task execution time.
+         */
+        readonly duration?: number | ros.IResolvable;
+        /**
+         * @Property instanceType: ECS instance type.
+         */
+        readonly instanceType: string | ros.IResolvable;
+        /**
+         * @Property spotStrategy: The bidding strategy for pay-as-you-go instances. Applies when the parameter InstanceChargeType is PostPaid. Valid values:
+     * - NoSpot: Normal pay-as-you-go instance
+     * - SpotWithPriceLimit: A preemptive instance of setting a cap price.
+     * - SpotAsPriceGo: The system automatically bids, following the current market actual price.
+     * Default value: NoSpot
+         */
+        readonly spotStrategy?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ComputeNodesProperty`
+ *
+ * @param properties - the TypeScript properties of a `ComputeNodesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterV2_ComputeNodesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('systemDisk', ros.requiredValidator)(properties.systemDisk));
+    errors.collect(ros.propertyValidator('systemDisk', RosClusterV2_SystemDiskPropertyValidator)(properties.systemDisk));
+    errors.collect(ros.propertyValidator('enableHt', ros.validateBoolean)(properties.enableHt));
+    if(properties.dataDisks && (Array.isArray(properties.dataDisks) || (typeof properties.dataDisks) === 'string')) {
+        errors.collect(ros.propertyValidator('dataDisks', ros.validateLength)({
+            data: properties.dataDisks.length,
+            min: undefined,
+            max: 16,
+          }));
+    }
+    errors.collect(ros.propertyValidator('dataDisks', ros.listValidator(RosClusterV2_DataDisksPropertyValidator))(properties.dataDisks));
+    errors.collect(ros.propertyValidator('imageId', ros.requiredValidator)(properties.imageId));
+    errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
+    errors.collect(ros.propertyValidator('spotPriceLimit', ros.validateNumber)(properties.spotPriceLimit));
+    if(properties.duration && (typeof properties.duration) !== 'object') {
+        errors.collect(ros.propertyValidator('duration', ros.validateAllowedValues)({
+          data: properties.duration,
+          allowedValues: [0,1],
+        }));
+    }
+    errors.collect(ros.propertyValidator('duration', ros.validateNumber)(properties.duration));
+    errors.collect(ros.propertyValidator('instanceType', ros.requiredValidator)(properties.instanceType));
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    if(properties.spotStrategy && (typeof properties.spotStrategy) !== 'object') {
+        errors.collect(ros.propertyValidator('spotStrategy', ros.validateAllowedValues)({
+          data: properties.spotStrategy,
+          allowedValues: ["NoSpot","SpotWithPriceLimit","SpotAsPriceGo"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('spotStrategy', ros.validateString)(properties.spotStrategy));
+    return errors.wrap('supplied properties not correct for "ComputeNodesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.ComputeNodes` resource
+ *
+ * @param properties - the TypeScript properties of a `ComputeNodesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.ComputeNodes` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterV2ComputeNodesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterV2_ComputeNodesPropertyValidator(properties).assertSuccess();
+    return {
+      'SystemDisk': rosClusterV2SystemDiskPropertyToRosTemplate(properties.systemDisk),
+      'EnableHT': ros.booleanToRosTemplate(properties.enableHt),
+      'DataDisks': ros.listMapper(rosClusterV2DataDisksPropertyToRosTemplate)(properties.dataDisks),
+      'ImageId': ros.stringToRosTemplate(properties.imageId),
+      'SpotPriceLimit': ros.numberToRosTemplate(properties.spotPriceLimit),
+      'Duration': ros.numberToRosTemplate(properties.duration),
+      'InstanceType': ros.stringToRosTemplate(properties.instanceType),
+      'SpotStrategy': ros.stringToRosTemplate(properties.spotStrategy),
+    };
+}
+
+export namespace RosClusterV2 {
+    /**
+     * @stability external
+     */
+    export interface DNSProperty {
+        /**
+         * @Property type: DNS type.
+         */
+        readonly type?: string | ros.IResolvable;
+        /**
+         * @Property version: DNS version.
+         */
+        readonly version?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DNSProperty`
+ *
+ * @param properties - the TypeScript properties of a `DNSProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterV2_DNSPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
+    return errors.wrap('supplied properties not correct for "DNSProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.DNS` resource
+ *
+ * @param properties - the TypeScript properties of a `DNSProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.DNS` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterV2DNSPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterV2_DNSPropertyValidator(properties).assertSuccess();
+    return {
+      'Type': ros.stringToRosTemplate(properties.type),
+      'Version': ros.stringToRosTemplate(properties.version),
+    };
+}
+
+export namespace RosClusterV2 {
+    /**
+     * @stability external
+     */
+    export interface DataDisksProperty {
+        /**
+         * @Property category: The type of data disk. Valid values:
+     * cloud_efficiency: ultra disk.
+     * cloud_ssd: standard SSD.
+     * cloud_essd: enhanced SSD.
+         */
+        readonly category: string | ros.IResolvable;
+        /**
+         * @Property size: The size of the data disk, in GiB. Valid values:
+     * - cloud_efficiency: 40 ~ 32768.
+     * - cloud_ssd: 40 ~ 32768.
+     * - cloud_essd: PL0: 40 ~ 65,536; PL1: 40 ~ 65,536; PL2: 461 ~ 65,536; PL3: 1261 ~ 65,536.
+         */
+        readonly size: number | ros.IResolvable;
+        /**
+         * @Property deleteWithInstance: Specifies whether to release the data disk when the instance is released. Valid values: 
+     * - true (default): The data disk is released when the instance is released. - false: The data disk is retained when the instance is released.
+         */
+        readonly deleteWithInstance?: boolean | ros.IResolvable;
+        /**
+         * @Property level: When creating ESSD cloud disk as data disk, set the performance level of cloud disk. Valid values:
+     * - PL0: The highest random read and write IOPS of a single disk is 10,000.
+     * - PL1 (default) : The maximum random read\/write IOPS of a single disk is 50,000.
+     * - PL2: The highest random read and write IOPS of a single disk is 100,000.
+     * - PL3: The highest random read\/write IOPS of a single disk is 1 million.
+         */
+        readonly level?: string | ros.IResolvable;
+        /**
+         * @Property mountDir: The mount directory of the data disk. The value must start with a forward slash (\/).
+         */
+        readonly mountDir?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DataDisksProperty`
+ *
+ * @param properties - the TypeScript properties of a `DataDisksProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterV2_DataDisksPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('category', ros.requiredValidator)(properties.category));
+    errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
+    errors.collect(ros.propertyValidator('size', ros.requiredValidator)(properties.size));
+    if(properties.size && (typeof properties.size) !== 'object') {
+        errors.collect(ros.propertyValidator('size', ros.validateRange)({
+            data: properties.size,
+            min: 40,
+            max: 65536,
+          }));
+    }
+    errors.collect(ros.propertyValidator('size', ros.validateNumber)(properties.size));
+    errors.collect(ros.propertyValidator('deleteWithInstance', ros.validateBoolean)(properties.deleteWithInstance));
+    errors.collect(ros.propertyValidator('level', ros.validateString)(properties.level));
+    errors.collect(ros.propertyValidator('mountDir', ros.validateString)(properties.mountDir));
+    return errors.wrap('supplied properties not correct for "DataDisksProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.DataDisks` resource
+ *
+ * @param properties - the TypeScript properties of a `DataDisksProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.DataDisks` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterV2DataDisksPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterV2_DataDisksPropertyValidator(properties).assertSuccess();
+    return {
+      'Category': ros.stringToRosTemplate(properties.category),
+      'Size': ros.numberToRosTemplate(properties.size),
+      'DeleteWithInstance': ros.booleanToRosTemplate(properties.deleteWithInstance),
+      'Level': ros.stringToRosTemplate(properties.level),
+      'MountDir': ros.stringToRosTemplate(properties.mountDir),
+    };
+}
+
+export namespace RosClusterV2 {
+    /**
+     * @stability external
+     */
+    export interface DirectoryServiceProperty {
+        /**
+         * @Property type: Domain account type.
+         */
+        readonly type?: string | ros.IResolvable;
+        /**
+         * @Property version: Domain account version.
+         */
+        readonly version?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DirectoryServiceProperty`
+ *
+ * @param properties - the TypeScript properties of a `DirectoryServiceProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterV2_DirectoryServicePropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
+    return errors.wrap('supplied properties not correct for "DirectoryServiceProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.DirectoryService` resource
+ *
+ * @param properties - the TypeScript properties of a `DirectoryServiceProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.DirectoryService` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterV2DirectoryServicePropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterV2_DirectoryServicePropertyValidator(properties).assertSuccess();
+    return {
+      'Type': ros.stringToRosTemplate(properties.type),
+      'Version': ros.stringToRosTemplate(properties.version),
+    };
+}
+
+export namespace RosClusterV2 {
+    /**
+     * @stability external
+     */
+    export interface ManagerProperty {
+        /**
+         * @Property managerNode: Public description of ECS resources with parameters such as payment type, instance specification, image, system disk, and data disk
+         */
+        readonly managerNode?: RosClusterV2.ManagerNodeProperty | ros.IResolvable;
+        /**
+         * @Property scheduler: Scheduler service configuration information.
+         */
+        readonly scheduler?: RosClusterV2.SchedulerProperty | ros.IResolvable;
+        /**
+         * @Property dns: DNS service configuration information.
+         */
+        readonly dns?: RosClusterV2.DNSProperty | ros.IResolvable;
+        /**
+         * @Property directoryService: Domain account service configuration information.
+         */
+        readonly directoryService?: RosClusterV2.DirectoryServiceProperty | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ManagerProperty`
+ *
+ * @param properties - the TypeScript properties of a `ManagerProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterV2_ManagerPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('managerNode', RosClusterV2_ManagerNodePropertyValidator)(properties.managerNode));
+    errors.collect(ros.propertyValidator('scheduler', RosClusterV2_SchedulerPropertyValidator)(properties.scheduler));
+    errors.collect(ros.propertyValidator('dns', RosClusterV2_DNSPropertyValidator)(properties.dns));
+    errors.collect(ros.propertyValidator('directoryService', RosClusterV2_DirectoryServicePropertyValidator)(properties.directoryService));
+    return errors.wrap('supplied properties not correct for "ManagerProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.Manager` resource
+ *
+ * @param properties - the TypeScript properties of a `ManagerProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.Manager` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterV2ManagerPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterV2_ManagerPropertyValidator(properties).assertSuccess();
+    return {
+      'ManagerNode': rosClusterV2ManagerNodePropertyToRosTemplate(properties.managerNode),
+      'Scheduler': rosClusterV2SchedulerPropertyToRosTemplate(properties.scheduler),
+      'DNS': rosClusterV2DNSPropertyToRosTemplate(properties.dns),
+      'DirectoryService': rosClusterV2DirectoryServicePropertyToRosTemplate(properties.directoryService),
+    };
+}
+
+export namespace RosClusterV2 {
+    /**
+     * @stability external
+     */
+    export interface ManagerNodeProperty {
+        /**
+         * @Property systemDisk: Node system disk configuration details.
+         */
+        readonly systemDisk: RosClusterV2.ManagerNodeSystemDiskProperty | ros.IResolvable;
+        /**
+         * @Property autoRenewPeriod: Length of renewal for a single automatic renewal. Valid values:
+     * - When PeriodUnit=Week: 1, 2, 3.
+     * - When PeriodUnit=Month: 1, 2, 3, 6, 12, 24, 36, 48, 60.
+     * Default value: 1
+         */
+        readonly autoRenewPeriod?: number | ros.IResolvable;
+        /**
+         * @Property enableHt: Whether to enable the hyper-threading feature. Valid values:
+     * - true: Enable the hyper-threading feature.
+     * - false: Disable the hyper-threading feature.
+         */
+        readonly enableHt?: boolean | ros.IResolvable;
+        /**
+         * @Property dataDisks: Data disk information collection list.
+         */
+        readonly dataDisks?: Array<RosClusterV2.ManagerNodeDataDisksProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property instanceChargeType: How the instance is paid. Valid values:
+     * - PrePaid: A year and a month.
+     * - PostPaid: pay-as-you-go
+     * Default value: PostPaid
+     * You must confirm that your account supports balance payment or credit payment, otherwise an error message with InvalidPayMethod will be returned.
+         */
+        readonly instanceChargeType?: string | ros.IResolvable;
+        /**
+         * @Property autoRenew: Whether to automatically renew. The InstanceChargeType parameter takes effect when it has a value of PrePaid. Valid values:
+     * - true: Automatic renewal.
+     * - false: No automatic renewal.
+     * Default value: false
+         */
+        readonly autoRenew?: boolean | ros.IResolvable;
+        /**
+         * @Property imageId: ECS image ID.
+         */
+        readonly imageId: string | ros.IResolvable;
+        /**
+         * @Property period: The duration of the purchase of the resource in units specified by PeriodUnit. It is required when InstanceChargeType is set to PrePaid. Once DedicatedHostId is specified, the value cannot exceed the subscription duration of the dedicated host. Valid values:
+     * - When PeriodUnit=Week, Period value: 1, 2, 3, 4.
+     * - When PeriodUnit=Month, Period value: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36, 48, 60.
+         */
+        readonly period?: number | ros.IResolvable;
+        /**
+         * @Property instanceType: ECS instance type.
+         */
+        readonly instanceType: string | ros.IResolvable;
+        /**
+         * @Property periodUnit: A unit of time for annual and monthly billing. Valid values: Week, Month (default).
+         */
+        readonly periodUnit?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ManagerNodeProperty`
+ *
+ * @param properties - the TypeScript properties of a `ManagerNodeProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterV2_ManagerNodePropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('systemDisk', ros.requiredValidator)(properties.systemDisk));
+    errors.collect(ros.propertyValidator('systemDisk', RosClusterV2_ManagerNodeSystemDiskPropertyValidator)(properties.systemDisk));
+    if(properties.autoRenewPeriod && (typeof properties.autoRenewPeriod) !== 'object') {
+        errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateAllowedValues)({
+          data: properties.autoRenewPeriod,
+          allowedValues: [1,2,3,6,12,24,36,48,60],
+        }));
+    }
+    errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
+    errors.collect(ros.propertyValidator('enableHt', ros.validateBoolean)(properties.enableHt));
+    if(properties.dataDisks && (Array.isArray(properties.dataDisks) || (typeof properties.dataDisks) === 'string')) {
+        errors.collect(ros.propertyValidator('dataDisks', ros.validateLength)({
+            data: properties.dataDisks.length,
+            min: undefined,
+            max: 16,
+          }));
+    }
+    errors.collect(ros.propertyValidator('dataDisks', ros.listValidator(RosClusterV2_ManagerNodeDataDisksPropertyValidator))(properties.dataDisks));
+    if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
+          data: properties.instanceChargeType,
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
+    errors.collect(ros.propertyValidator('imageId', ros.requiredValidator)(properties.imageId));
+    errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36,48,60],
+        }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('instanceType', ros.requiredValidator)(properties.instanceType));
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
+          data: properties.periodUnit,
+          allowedValues: ["Week","Month"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
+    return errors.wrap('supplied properties not correct for "ManagerNodeProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.ManagerNode` resource
+ *
+ * @param properties - the TypeScript properties of a `ManagerNodeProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.ManagerNode` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterV2ManagerNodePropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterV2_ManagerNodePropertyValidator(properties).assertSuccess();
+    return {
+      'SystemDisk': rosClusterV2ManagerNodeSystemDiskPropertyToRosTemplate(properties.systemDisk),
+      'AutoRenewPeriod': ros.numberToRosTemplate(properties.autoRenewPeriod),
+      'EnableHT': ros.booleanToRosTemplate(properties.enableHt),
+      'DataDisks': ros.listMapper(rosClusterV2ManagerNodeDataDisksPropertyToRosTemplate)(properties.dataDisks),
+      'InstanceChargeType': ros.stringToRosTemplate(properties.instanceChargeType),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'ImageId': ros.stringToRosTemplate(properties.imageId),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'InstanceType': ros.stringToRosTemplate(properties.instanceType),
+      'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
+    };
+}
+
+export namespace RosClusterV2 {
+    /**
+     * @stability external
+     */
+    export interface ManagerNodeDataDisksProperty {
+        /**
+         * @Property category: The type of data disk. Valid values:
+     * cloud_efficiency: ultra disk.
+     * cloud_ssd: standard SSD.
+     * cloud_essd: enhanced SSD.
+         */
+        readonly category: string | ros.IResolvable;
+        /**
+         * @Property size: The size of the data disk, in GiB. Valid values:
+     * - cloud_efficiency: 40 ~ 32768.
+     * - cloud_ssd: 40 ~ 32768.
+     * - cloud_essd: PL0: 40 ~ 65,536; PL1: 40 ~ 65,536; PL2: 461 ~ 65,536; PL3: 1261 ~ 65,536.
+         */
+        readonly size: number | ros.IResolvable;
+        /**
+         * @Property deleteWithInstance: Specifies whether to release the data disk when the instance is released. Valid values: 
+     * - true (default): The data disk is released when the instance is released. - false: The data disk is retained when the instance is released.
+         */
+        readonly deleteWithInstance?: boolean | ros.IResolvable;
+        /**
+         * @Property level: When creating ESSD cloud disk as data disk, set the performance level of cloud disk. Valid values:
+     * - PL0: The highest random read and write IOPS of a single disk is 10,000.
+     * - PL1 (default) : The maximum random read\/write IOPS of a single disk is 50,000.
+     * - PL2: The highest random read and write IOPS of a single disk is 100,000.
+     * - PL3: The highest random read\/write IOPS of a single disk is 1 million.
+         */
+        readonly level?: string | ros.IResolvable;
+        /**
+         * @Property mountDir: The mount directory of the data disk. The value must start with a forward slash (\/).
+         */
+        readonly mountDir?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ManagerNodeDataDisksProperty`
+ *
+ * @param properties - the TypeScript properties of a `ManagerNodeDataDisksProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterV2_ManagerNodeDataDisksPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('category', ros.requiredValidator)(properties.category));
+    errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
+    errors.collect(ros.propertyValidator('size', ros.requiredValidator)(properties.size));
+    if(properties.size && (typeof properties.size) !== 'object') {
+        errors.collect(ros.propertyValidator('size', ros.validateRange)({
+            data: properties.size,
+            min: 40,
+            max: 65536,
+          }));
+    }
+    errors.collect(ros.propertyValidator('size', ros.validateNumber)(properties.size));
+    errors.collect(ros.propertyValidator('deleteWithInstance', ros.validateBoolean)(properties.deleteWithInstance));
+    errors.collect(ros.propertyValidator('level', ros.validateString)(properties.level));
+    errors.collect(ros.propertyValidator('mountDir', ros.validateString)(properties.mountDir));
+    return errors.wrap('supplied properties not correct for "ManagerNodeDataDisksProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.ManagerNodeDataDisks` resource
+ *
+ * @param properties - the TypeScript properties of a `ManagerNodeDataDisksProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.ManagerNodeDataDisks` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterV2ManagerNodeDataDisksPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterV2_ManagerNodeDataDisksPropertyValidator(properties).assertSuccess();
+    return {
+      'Category': ros.stringToRosTemplate(properties.category),
+      'Size': ros.numberToRosTemplate(properties.size),
+      'DeleteWithInstance': ros.booleanToRosTemplate(properties.deleteWithInstance),
+      'Level': ros.stringToRosTemplate(properties.level),
+      'MountDir': ros.stringToRosTemplate(properties.mountDir),
+    };
+}
+
+export namespace RosClusterV2 {
+    /**
+     * @stability external
+     */
+    export interface ManagerNodeSystemDiskProperty {
+        /**
+         * @Property category: The type of data disk. Valid values:
+     * cloud: basic disk.
+     * cloud_efficiency: ultra disk.
+     * cloud_ssd: standard SSD.
+     * cloud_essd: enhanced SSD.
+         */
+        readonly category: string | ros.IResolvable;
+        /**
+         * @Property size: The size of the system disk, in GiB. Valid values:
+     * - cloud_efficiency: 40 ~ 32768.
+     * - cloud_ssd: 40 ~ 32768
+     * - cloud_essd: PL0: 40 ~ 65,536; PL1: 40 ~ 65,536; PL2: 461 ~ 65,536; PL3: 1261 ~ 65,536.
+     * - cloud: 40 ~ 500.
+         */
+        readonly size: number | ros.IResolvable;
+        /**
+         * @Property level: When creating ESSD cloud disk as system disk, set the performance level of cloud disk. Valid values:
+     * - PL0: The highest random read and write IOPS of a single disk is 10,000.
+     * - PL1 (default) : The maximum random read\/write IOPS of a single disk is 50,000.
+     * - PL2: The highest random read and write IOPS of a single disk is 100,000.
+     * - PL3: The highest random read\/write IOPS of a single disk is 1 million.
+         */
+        readonly level?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ManagerNodeSystemDiskProperty`
+ *
+ * @param properties - the TypeScript properties of a `ManagerNodeSystemDiskProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterV2_ManagerNodeSystemDiskPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('category', ros.requiredValidator)(properties.category));
+    errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
+    errors.collect(ros.propertyValidator('size', ros.requiredValidator)(properties.size));
+    if(properties.size && (typeof properties.size) !== 'object') {
+        errors.collect(ros.propertyValidator('size', ros.validateRange)({
+            data: properties.size,
+            min: 40,
+            max: 65536,
+          }));
+    }
+    errors.collect(ros.propertyValidator('size', ros.validateNumber)(properties.size));
+    if(properties.level && (typeof properties.level) !== 'object') {
+        errors.collect(ros.propertyValidator('level', ros.validateAllowedValues)({
+          data: properties.level,
+          allowedValues: ["PL0","PL1","PL2","PL3"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('level', ros.validateString)(properties.level));
+    return errors.wrap('supplied properties not correct for "ManagerNodeSystemDiskProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.ManagerNodeSystemDisk` resource
+ *
+ * @param properties - the TypeScript properties of a `ManagerNodeSystemDiskProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.ManagerNodeSystemDisk` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterV2ManagerNodeSystemDiskPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterV2_ManagerNodeSystemDiskPropertyValidator(properties).assertSuccess();
+    return {
+      'Category': ros.stringToRosTemplate(properties.category),
+      'Size': ros.numberToRosTemplate(properties.size),
+      'Level': ros.stringToRosTemplate(properties.level),
+    };
+}
+
+export namespace RosClusterV2 {
+    /**
+     * @stability external
+     */
+    export interface QueuesProperty {
+        /**
+         * @Property vSwitchIds: List of virtual switches available to compute nodes in the queue. Range from 1 to 5.
+         */
+        readonly vSwitchIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property computeNodes: List of compute nodes in the queue. Range from 0 to 10.
+         */
+        readonly computeNodes?: Array<RosClusterV2.ComputeNodesProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property interConnect: Type of network between nodes in the queue. Valid values: vpc, eRDMA.
+         */
+        readonly interConnect?: string | ros.IResolvable;
+        /**
+         * @Property maxCount: The maximum number of nodes in the queue.
+         */
+        readonly maxCount?: number | ros.IResolvable;
+        /**
+         * @Property keepAliveNodes: List of nodes in the queue with deletion protection enabled.
+         */
+        readonly keepAliveNodes?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property hostnamePrefix: The hostname prefix of the compute nodes in the queue.
+         */
+        readonly hostnamePrefix?: string | ros.IResolvable;
+        /**
+         * @Property allocationStrategy: The allocation strategy of the queue.
+         */
+        readonly allocationStrategy?: string | ros.IResolvable;
+        /**
+         * @Property enableScaleIn: Whether to enable automatic shrinkage. Valid values: 
+     * - true: enables automatic shrinkage. 
+     * - false: disables automatic shrinkage.
+         */
+        readonly enableScaleIn?: boolean | ros.IResolvable;
+        /**
+         * @Property maxCountPerCycle: The number of computing nodes that the queue can maximally expand in each scaling round.
+         */
+        readonly maxCountPerCycle?: number | ros.IResolvable;
+        /**
+         * @Property hostnameSuffix: The hostname suffix of the compute nodes in the queue.
+         */
+        readonly hostnameSuffix?: string | ros.IResolvable;
+        /**
+         * @Property ramRole: The RAM role name attached to the compute nodes of the queue.
+         */
+        readonly ramRole?: string | ros.IResolvable;
+        /**
+         * @Property enableScaleOut: Whether to enable automatic scaling. Valid values: 
+     * - true: enables automatic scaling. 
+     * - false: disables automatic scaling.
+         */
+        readonly enableScaleOut?: boolean | ros.IResolvable;
+        /**
+         * @Property queueName: Queue name. The length is from 1 to 15 characters. It supports characters in the Unicode letter class (including English and numbers), and can include half-angular periods (.).
+         */
+        readonly queueName: string | ros.IResolvable;
+        /**
+         * @Property initialCount: The initial number of nodes in the queue.
+         */
+        readonly initialCount?: number | ros.IResolvable;
+        /**
+         * @Property minCount: The minimum number of nodes in the queue.
+         */
+        readonly minCount?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `QueuesProperty`
+ *
+ * @param properties - the TypeScript properties of a `QueuesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterV2_QueuesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.vSwitchIds && (Array.isArray(properties.vSwitchIds) || (typeof properties.vSwitchIds) === 'string')) {
+        errors.collect(ros.propertyValidator('vSwitchIds', ros.validateLength)({
+            data: properties.vSwitchIds.length,
+            min: 1,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateString))(properties.vSwitchIds));
+    if(properties.computeNodes && (Array.isArray(properties.computeNodes) || (typeof properties.computeNodes) === 'string')) {
+        errors.collect(ros.propertyValidator('computeNodes', ros.validateLength)({
+            data: properties.computeNodes.length,
+            min: 0,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('computeNodes', ros.listValidator(RosClusterV2_ComputeNodesPropertyValidator))(properties.computeNodes));
+    if(properties.interConnect && (typeof properties.interConnect) !== 'object') {
+        errors.collect(ros.propertyValidator('interConnect', ros.validateAllowedValues)({
+          data: properties.interConnect,
+          allowedValues: ["vpc","eRDMA"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('interConnect', ros.validateString)(properties.interConnect));
+    if(properties.maxCount && (typeof properties.maxCount) !== 'object') {
+        errors.collect(ros.propertyValidator('maxCount', ros.validateRange)({
+            data: properties.maxCount,
+            min: 0,
+            max: 5000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('maxCount', ros.validateNumber)(properties.maxCount));
+    if(properties.keepAliveNodes && (Array.isArray(properties.keepAliveNodes) || (typeof properties.keepAliveNodes) === 'string')) {
+        errors.collect(ros.propertyValidator('keepAliveNodes', ros.validateLength)({
+            data: properties.keepAliveNodes.length,
+            min: 0,
+            max: 5000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('keepAliveNodes', ros.listValidator(ros.validateString))(properties.keepAliveNodes));
+    errors.collect(ros.propertyValidator('hostnamePrefix', ros.validateString)(properties.hostnamePrefix));
+    errors.collect(ros.propertyValidator('allocationStrategy', ros.validateString)(properties.allocationStrategy));
+    errors.collect(ros.propertyValidator('enableScaleIn', ros.validateBoolean)(properties.enableScaleIn));
+    if(properties.maxCountPerCycle && (typeof properties.maxCountPerCycle) !== 'object') {
+        errors.collect(ros.propertyValidator('maxCountPerCycle', ros.validateRange)({
+            data: properties.maxCountPerCycle,
+            min: 0,
+            max: 5000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('maxCountPerCycle', ros.validateNumber)(properties.maxCountPerCycle));
+    errors.collect(ros.propertyValidator('hostnameSuffix', ros.validateString)(properties.hostnameSuffix));
+    errors.collect(ros.propertyValidator('ramRole', ros.validateString)(properties.ramRole));
+    errors.collect(ros.propertyValidator('enableScaleOut', ros.validateBoolean)(properties.enableScaleOut));
+    errors.collect(ros.propertyValidator('queueName', ros.requiredValidator)(properties.queueName));
+    if(properties.queueName && (Array.isArray(properties.queueName) || (typeof properties.queueName) === 'string')) {
+        errors.collect(ros.propertyValidator('queueName', ros.validateLength)({
+            data: properties.queueName.length,
+            min: 1,
+            max: 15,
+          }));
+    }
+    errors.collect(ros.propertyValidator('queueName', ros.validateString)(properties.queueName));
+    if(properties.initialCount && (typeof properties.initialCount) !== 'object') {
+        errors.collect(ros.propertyValidator('initialCount', ros.validateRange)({
+            data: properties.initialCount,
+            min: 0,
+            max: 5000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('initialCount', ros.validateNumber)(properties.initialCount));
+    if(properties.minCount && (typeof properties.minCount) !== 'object') {
+        errors.collect(ros.propertyValidator('minCount', ros.validateRange)({
+            data: properties.minCount,
+            min: 0,
+            max: 5000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('minCount', ros.validateNumber)(properties.minCount));
+    return errors.wrap('supplied properties not correct for "QueuesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.Queues` resource
+ *
+ * @param properties - the TypeScript properties of a `QueuesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.Queues` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterV2QueuesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterV2_QueuesPropertyValidator(properties).assertSuccess();
+    return {
+      'VSwitchIds': ros.listMapper(ros.stringToRosTemplate)(properties.vSwitchIds),
+      'ComputeNodes': ros.listMapper(rosClusterV2ComputeNodesPropertyToRosTemplate)(properties.computeNodes),
+      'InterConnect': ros.stringToRosTemplate(properties.interConnect),
+      'MaxCount': ros.numberToRosTemplate(properties.maxCount),
+      'KeepAliveNodes': ros.listMapper(ros.stringToRosTemplate)(properties.keepAliveNodes),
+      'HostnamePrefix': ros.stringToRosTemplate(properties.hostnamePrefix),
+      'AllocationStrategy': ros.stringToRosTemplate(properties.allocationStrategy),
+      'EnableScaleIn': ros.booleanToRosTemplate(properties.enableScaleIn),
+      'MaxCountPerCycle': ros.numberToRosTemplate(properties.maxCountPerCycle),
+      'HostnameSuffix': ros.stringToRosTemplate(properties.hostnameSuffix),
+      'RamRole': ros.stringToRosTemplate(properties.ramRole),
+      'EnableScaleOut': ros.booleanToRosTemplate(properties.enableScaleOut),
+      'QueueName': ros.stringToRosTemplate(properties.queueName),
+      'InitialCount': ros.numberToRosTemplate(properties.initialCount),
+      'MinCount': ros.numberToRosTemplate(properties.minCount),
+    };
+}
+
+export namespace RosClusterV2 {
+    /**
+     * @stability external
+     */
+    export interface SchedulerProperty {
+        /**
+         * @Property type: Scheduler type. Valid values:
+     * - SLURM
+     * - PBS
+     * - OPENGRIDSCHEDULER
+     * - LSF_PLUGIN
+     * - PBS_PLUGIN
+         */
+        readonly type?: string | ros.IResolvable;
+        /**
+         * @Property version: Scheduler version.
+         */
+        readonly version?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `SchedulerProperty`
+ *
+ * @param properties - the TypeScript properties of a `SchedulerProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterV2_SchedulerPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["SLURM","PBS","OPENGRIDSCHEDULER","LSF_PLUGIN","PBS_PLUGIN"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
+    return errors.wrap('supplied properties not correct for "SchedulerProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.Scheduler` resource
+ *
+ * @param properties - the TypeScript properties of a `SchedulerProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.Scheduler` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterV2SchedulerPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterV2_SchedulerPropertyValidator(properties).assertSuccess();
+    return {
+      'Type': ros.stringToRosTemplate(properties.type),
+      'Version': ros.stringToRosTemplate(properties.version),
+    };
+}
+
+export namespace RosClusterV2 {
+    /**
+     * @stability external
+     */
+    export interface SharedStoragesProperty {
+        /**
+         * @Property mountDirectory: The local mount directory to mount the file system.
+         */
+        readonly mountDirectory?: string | ros.IResolvable;
+        /**
+         * @Property mountTargetDomain: The mount target domain of the file system.
+         */
+        readonly mountTargetDomain: string | ros.IResolvable;
+        /**
+         * @Property protocolType: The protocol type of the file system. Valid values: NFS, SMB.
+         */
+        readonly protocolType?: string | ros.IResolvable;
+        /**
+         * @Property fileSystemId: The ID of the file system.
+         */
+        readonly fileSystemId: string | ros.IResolvable;
+        /**
+         * @Property mountOptions: The mount options of the file system.
+         */
+        readonly mountOptions?: string | ros.IResolvable;
+        /**
+         * @Property nasDirectory: Mounted filesystems require mounted remote directories.
+         */
+        readonly nasDirectory?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `SharedStoragesProperty`
+ *
+ * @param properties - the TypeScript properties of a `SharedStoragesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterV2_SharedStoragesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('mountDirectory', ros.validateString)(properties.mountDirectory));
+    errors.collect(ros.propertyValidator('mountTargetDomain', ros.requiredValidator)(properties.mountTargetDomain));
+    errors.collect(ros.propertyValidator('mountTargetDomain', ros.validateString)(properties.mountTargetDomain));
+    if(properties.protocolType && (typeof properties.protocolType) !== 'object') {
+        errors.collect(ros.propertyValidator('protocolType', ros.validateAllowedValues)({
+          data: properties.protocolType,
+          allowedValues: ["NFS","SMB"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('protocolType', ros.validateString)(properties.protocolType));
+    errors.collect(ros.propertyValidator('fileSystemId', ros.requiredValidator)(properties.fileSystemId));
+    errors.collect(ros.propertyValidator('fileSystemId', ros.validateString)(properties.fileSystemId));
+    errors.collect(ros.propertyValidator('mountOptions', ros.validateString)(properties.mountOptions));
+    errors.collect(ros.propertyValidator('nasDirectory', ros.validateString)(properties.nasDirectory));
+    return errors.wrap('supplied properties not correct for "SharedStoragesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.SharedStorages` resource
+ *
+ * @param properties - the TypeScript properties of a `SharedStoragesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.SharedStorages` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterV2SharedStoragesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterV2_SharedStoragesPropertyValidator(properties).assertSuccess();
+    return {
+      'MountDirectory': ros.stringToRosTemplate(properties.mountDirectory),
+      'MountTargetDomain': ros.stringToRosTemplate(properties.mountTargetDomain),
+      'ProtocolType': ros.stringToRosTemplate(properties.protocolType),
+      'FileSystemId': ros.stringToRosTemplate(properties.fileSystemId),
+      'MountOptions': ros.stringToRosTemplate(properties.mountOptions),
+      'NASDirectory': ros.stringToRosTemplate(properties.nasDirectory),
+    };
+}
+
+export namespace RosClusterV2 {
+    /**
+     * @stability external
+     */
+    export interface SystemDiskProperty {
+        /**
+         * @Property category: The type of data disk. Valid values:
+     * cloud: basic disk.
+     * cloud_efficiency: ultra disk.
+     * cloud_ssd: standard SSD.
+     * cloud_essd: enhanced SSD.
+         */
+        readonly category: string | ros.IResolvable;
+        /**
+         * @Property size: The size of the system disk, in GiB. Valid values:
+     * - cloud_efficiency: 40 ~ 32768.
+     * - cloud_ssd: 40 ~ 32768
+     * - cloud_essd: PL0: 40 ~ 65,536; PL1: 40 ~ 65,536; PL2: 461 ~ 65,536; PL3: 1261 ~ 65,536.
+     * - cloud: 40 ~ 500.
+         */
+        readonly size: number | ros.IResolvable;
+        /**
+         * @Property level: When creating ESSD cloud disk as system disk, set the performance level of cloud disk. Valid values:
+     * - PL0: The highest random read and write IOPS of a single disk is 10,000.
+     * - PL1 (default) : The maximum random read\/write IOPS of a single disk is 50,000.
+     * - PL2: The highest random read and write IOPS of a single disk is 100,000.
+     * - PL3: The highest random read\/write IOPS of a single disk is 1 million.
+         */
+        readonly level?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `SystemDiskProperty`
+ *
+ * @param properties - the TypeScript properties of a `SystemDiskProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterV2_SystemDiskPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('category', ros.requiredValidator)(properties.category));
+    errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
+    errors.collect(ros.propertyValidator('size', ros.requiredValidator)(properties.size));
+    if(properties.size && (typeof properties.size) !== 'object') {
+        errors.collect(ros.propertyValidator('size', ros.validateRange)({
+            data: properties.size,
+            min: 40,
+            max: 65536,
+          }));
+    }
+    errors.collect(ros.propertyValidator('size', ros.validateNumber)(properties.size));
+    if(properties.level && (typeof properties.level) !== 'object') {
+        errors.collect(ros.propertyValidator('level', ros.validateAllowedValues)({
+          data: properties.level,
+          allowedValues: ["PL0","PL1","PL2","PL3"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('level', ros.validateString)(properties.level));
+    return errors.wrap('supplied properties not correct for "SystemDiskProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.SystemDisk` resource
+ *
+ * @param properties - the TypeScript properties of a `SystemDiskProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.SystemDisk` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterV2SystemDiskPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterV2_SystemDiskPropertyValidator(properties).assertSuccess();
+    return {
+      'Category': ros.stringToRosTemplate(properties.category),
+      'Size': ros.numberToRosTemplate(properties.size),
+      'Level': ros.stringToRosTemplate(properties.level),
+    };
+}
+
+export namespace RosClusterV2 {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterV2_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EHPC::ClusterV2.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterV2TagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterV2_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
  * Properties for defining a `RosUsers`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-users
  */

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::PAIPlugin::TrainingJob`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::PAIPlugin::TrainingJob`, which is used to create a training job.
 type TrainingJob interface {
 	alicloudroscdkcore.Resource
 	// Attribute TrainingJobId: The training job id.

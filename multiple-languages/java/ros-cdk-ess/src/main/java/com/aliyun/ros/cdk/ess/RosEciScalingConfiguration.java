@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ESS::EciScalingConfiguration</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:30.215Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:08.235Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosEciScalingConfiguration")
 public class RosEciScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource {
 

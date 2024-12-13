@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::GA::EndpointGroups`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::GA::EndpointGroups`, which is used to create multiple endpoint groups at a time.
 type EndpointGroups interface {
 	alicloudroscdkcore.Resource
 	// Attribute EndpointGroupIds: The IDs of the endpoint groups.

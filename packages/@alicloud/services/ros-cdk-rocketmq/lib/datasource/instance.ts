@@ -24,7 +24,7 @@ export interface InstanceProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ROCKETMQ::Instance`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ROCKETMQ::Instance`, which is used to query the details of an ApsaraMQ for RocketMQ instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq-instance
  */

@@ -8,6 +8,7 @@ type RosInstanceProps struct {
 	Period interface{} `field:"required" json:"period" yaml:"period"`
 	PeriodUnit interface{} `field:"required" json:"periodUnit" yaml:"periodUnit"`
 	AntiRansomware interface{} `field:"optional" json:"antiRansomware" yaml:"antiRansomware"`
+	AntiRansomwareManageService interface{} `field:"optional" json:"antiRansomwareManageService" yaml:"antiRansomwareManageService"`
 	AutoPay interface{} `field:"optional" json:"autoPay" yaml:"autoPay"`
 	AutoRenew interface{} `field:"optional" json:"autoRenew" yaml:"autoRenew"`
 	CloudHoneypot interface{} `field:"optional" json:"cloudHoneypot" yaml:"cloudHoneypot"`

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::CEN::TransitRouterRouteTables`, which is used to query the route tables of an Enterprise Edition transit router.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::CEN::TransitRouterRouteTables`, which is used to query the information about route tables of an Enterprise Edition transit router.
 type RosTransitRouterRouteTables interface {
 	alicloudroscdkcore.RosResource
 	AttrTransitRouterRouteTableIds() alicloudroscdkcore.IResolvable

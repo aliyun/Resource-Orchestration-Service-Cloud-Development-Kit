@@ -40,6 +40,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Appflow
             }
         }
 
+        /// <summary>Property flowStatus: The status of the flow.</summary>
+        /// <remarks>
+        /// Allowed values:
+        /// Enable: enable flow
+        /// Disable: disable flow
+        /// </remarks>
+        [JsiiProperty(name: "flowStatus", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? FlowStatus
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property launchFlow: Whether to launch the flow.</summary>
         [JsiiProperty(name: "launchFlow", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -114,6 +130,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Appflow
             [JsiiOptional]
             [JsiiProperty(name: "flowId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? FlowId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property flowStatus: The status of the flow.</summary>
+            /// <remarks>
+            /// Allowed values:
+            /// Enable: enable flow
+            /// Disable: disable flow
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "flowStatus", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? FlowStatus
             {
                 get => GetInstanceProperty<object?>();
             }

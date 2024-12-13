@@ -25,6 +25,16 @@ export interface FlowProps {
     readonly description?: string | ros.IResolvable;
 
     /**
+     * Property executionMode: The execution mode of the flow.
+     */
+    readonly executionMode?: string | ros.IResolvable;
+
+    /**
+     * Property externalStorageLocation: The external storage location for the flow.
+     */
+    readonly externalStorageLocation?: string | ros.IResolvable;
+
+    /**
      * Property requestId: The specified Request ID for this request. If not specified, our system will help you generate a random one.
      */
     readonly requestId?: string | ros.IResolvable;
@@ -82,6 +92,8 @@ export class Flow extends ros.Resource {
             description: props.description,
             requestId: props.requestId,
             definition: props.definition,
+            executionMode: props.executionMode,
+            externalStorageLocation: props.externalStorageLocation,
             roleArn: props.roleArn,
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

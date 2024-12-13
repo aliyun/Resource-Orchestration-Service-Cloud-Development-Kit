@@ -98,12 +98,8 @@ spec2ts() {
 generate_webs() {
     root=$PWD
 
-    TMPDIR="$PWD/temp"
     REFDIR="$PWD/references"
     DOCDIR="$REFDIR/docs"
-
-    rm -fr ${TMPDIR}
-    mkdir -p ${TMPDIR}
 
     rm -fr ${REFDIR}/site
     rm -fr ${DOCDIR}/python
@@ -136,12 +132,11 @@ generate_webs() {
       rm -rf docs/
     done
 
-    cd $root
-    rm -fr ${TMPDIR}
+    python3 $root/tools/generate_html_files.py --references_path=${REFDIR}
     cd $REFDIR
-    mkdocs build
 
     python3 ${root}/tools/remove_html_empty_lines.py --folder_path=${REFDIR}/site
+    zip -r site.zip site/*
     cd site
     zip -r assets.zip assets/*
     zip -r csharp.zip csharp/*
@@ -150,9 +145,14 @@ generate_webs() {
     zip -r typescript.zip typescript/*
     zip -r go.zip go/*
     zip -r search.zip search/*
-#    zip -r site.zip site/*
 }
 
+generate_htmls() {
+    root=$PWD
+    REFDIR="$PWD/references"
+
+    python3 $root/tools/generate_html_files.py --references_path=${REFDIR}
+}
 
 convert_maven_project() {
     root=$PWD
@@ -389,6 +389,9 @@ case "$ACTION" in
     ;;
     generate-webs)
         generate_webs
+    ;;
+    generate-htmls)
+        generate_htmls
     ;;
     jsii-pack)
         jsii_pack

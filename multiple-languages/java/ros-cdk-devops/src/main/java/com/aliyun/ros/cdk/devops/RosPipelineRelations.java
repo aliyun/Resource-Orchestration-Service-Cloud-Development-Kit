@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.devops;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DEVOPS::PipelineRelations</code>, which is used to associate resources with a pipeline.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:28.353Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:06.336Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.devops.$Module.class, fqn = "@alicloud/ros-cdk-devops.RosPipelineRelations")
 public class RosPipelineRelations extends com.aliyun.ros.cdk.core.RosResource {
 

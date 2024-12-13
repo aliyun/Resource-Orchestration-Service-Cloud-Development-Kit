@@ -44,54 +44,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
-        /// <summary>Property autoRenew: Whether the cluster automatically renews.</summary>
-        /// <remarks>
-        /// It takes effect when the value of ChargeType is PrePaid. The optional values are:
-        /// true: automatic renewal
-        /// false: do not renew automatically
-        /// Default to true.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-        /// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-        /// </remarks>
-        [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? AutoRenew
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <summary>Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.  For the configuration of the working node ECS instance, please specify it in the node pool list parameters.</summary>
-        [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? AutoRenewPeriod
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <summary>Property chargeType: cluster payment type.</summary>
-        /// <remarks>
-        /// The optional values are:
-        /// PrePaid: prepaid
-        /// PostPaid: Pay as you go
-        /// Default to PostPaid.
-        /// Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-        /// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-        /// </remarks>
-        [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? ChargeType
-        {
-            get
-            {
-                return null;
-            }
-        }
-
         /// <summary>Property cloudMonitorFlags: Whether to install the cloud monitoring plugin: true: indicates installation false: Do not install Default to false.</summary>
         [JsiiProperty(name: "cloudMonitorFlags", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -127,6 +79,48 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         [JsiiProperty(name: "containerCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ContainerCidr
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property controlPlaneLogComponents: List of target components for which logs need to be collected.</summary>
+        /// <remarks>
+        /// Supports apiserver, kcm, scheduler, ccm and controlplane-events.
+        /// </remarks>
+        [JsiiProperty(name: "controlPlaneLogComponents", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ControlPlaneLogComponents
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property controlPlaneLogProject: Control plane log project.</summary>
+        /// <remarks>
+        /// If this field is not set, a log service project named k8s-log-{ClusterID} will be automatically created.
+        /// </remarks>
+        [JsiiProperty(name: "controlPlaneLogProject", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ControlPlaneLogProject
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property controlPlaneLogTtl: Control plane log retention duration (unit: day).</summary>
+        /// <remarks>
+        /// Default 30.
+        /// </remarks>
+        [JsiiProperty(name: "controlPlaneLogTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ControlPlaneLogTtl
         {
             get
             {
@@ -357,44 +351,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         [JsiiProperty(name: "osType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? OsType
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <summary>Property period: The duration of the annual subscription and monthly subscription.</summary>
-        /// <remarks>
-        /// It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
-        /// When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
-        /// When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
-        /// When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
-        /// Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-        /// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-        /// </remarks>
-        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? Period
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <summary>Property periodUnit: When you specify PrePaid, you need to specify the period.</summary>
-        /// <remarks>
-        /// The options are:
-        /// Week: Time is measured in weeks
-        /// Month: time in months
-        /// Year: time in years
-        /// Default to MonthStarting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-        /// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-        /// </remarks>
-        [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? PeriodUnit
         {
             get
             {
@@ -662,45 +618,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property autoRenew: Whether the cluster automatically renews.</summary>
-            /// <remarks>
-            /// It takes effect when the value of ChargeType is PrePaid. The optional values are:
-            /// true: automatic renewal
-            /// false: do not renew automatically
-            /// Default to true.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-            /// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? AutoRenew
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <summary>Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.  For the configuration of the working node ECS instance, please specify it in the node pool list parameters.</summary>
-            [JsiiOptional]
-            [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? AutoRenewPeriod
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <summary>Property chargeType: cluster payment type.</summary>
-            /// <remarks>
-            /// The optional values are:
-            /// PrePaid: prepaid
-            /// PostPaid: Pay as you go
-            /// Default to PostPaid.
-            /// Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-            /// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? ChargeType
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
             /// <summary>Property cloudMonitorFlags: Whether to install the cloud monitoring plugin: true: indicates installation false: Do not install Default to false.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "cloudMonitorFlags", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -730,6 +647,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             [JsiiOptional]
             [JsiiProperty(name: "containerCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ContainerCidr
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property controlPlaneLogComponents: List of target components for which logs need to be collected.</summary>
+            /// <remarks>
+            /// Supports apiserver, kcm, scheduler, ccm and controlplane-events.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "controlPlaneLogComponents", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? ControlPlaneLogComponents
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property controlPlaneLogProject: Control plane log project.</summary>
+            /// <remarks>
+            /// If this field is not set, a log service project named k8s-log-{ClusterID} will be automatically created.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "controlPlaneLogProject", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ControlPlaneLogProject
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property controlPlaneLogTtl: Control plane log retention duration (unit: day).</summary>
+            /// <remarks>
+            /// Default 30.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "controlPlaneLogTtl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ControlPlaneLogTtl
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -915,38 +865,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             [JsiiOptional]
             [JsiiProperty(name: "osType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? OsType
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <summary>Property period: The duration of the annual subscription and monthly subscription.</summary>
-            /// <remarks>
-            /// It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
-            /// When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
-            /// When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
-            /// When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
-            /// Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-            /// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? Period
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <summary>Property periodUnit: When you specify PrePaid, you need to specify the period.</summary>
-            /// <remarks>
-            /// The options are:
-            /// Week: Time is measured in weeks
-            /// Month: time in months
-            /// Year: time in years
-            /// Default to MonthStarting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-            /// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? PeriodUnit
             {
                 get => GetInstanceProperty<object?>();
             }

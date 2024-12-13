@@ -8,12 +8,12 @@ type RosManagedKubernetesClusterProps struct {
 	Name interface{} `field:"required" json:"name" yaml:"name"`
 	VpcId interface{} `field:"required" json:"vpcId" yaml:"vpcId"`
 	Addons interface{} `field:"optional" json:"addons" yaml:"addons"`
-	AutoRenew interface{} `field:"optional" json:"autoRenew" yaml:"autoRenew"`
-	AutoRenewPeriod interface{} `field:"optional" json:"autoRenewPeriod" yaml:"autoRenewPeriod"`
-	ChargeType interface{} `field:"optional" json:"chargeType" yaml:"chargeType"`
 	CloudMonitorFlags interface{} `field:"optional" json:"cloudMonitorFlags" yaml:"cloudMonitorFlags"`
 	ClusterSpec interface{} `field:"optional" json:"clusterSpec" yaml:"clusterSpec"`
 	ContainerCidr interface{} `field:"optional" json:"containerCidr" yaml:"containerCidr"`
+	ControlPlaneLogComponents interface{} `field:"optional" json:"controlPlaneLogComponents" yaml:"controlPlaneLogComponents"`
+	ControlPlaneLogProject interface{} `field:"optional" json:"controlPlaneLogProject" yaml:"controlPlaneLogProject"`
+	ControlPlaneLogTtl interface{} `field:"optional" json:"controlPlaneLogTtl" yaml:"controlPlaneLogTtl"`
 	DeleteOptions interface{} `field:"optional" json:"deleteOptions" yaml:"deleteOptions"`
 	DeletionProtection interface{} `field:"optional" json:"deletionProtection" yaml:"deletionProtection"`
 	EncryptionProviderKey interface{} `field:"optional" json:"encryptionProviderKey" yaml:"encryptionProviderKey"`
@@ -29,8 +29,6 @@ type RosManagedKubernetesClusterProps struct {
 	NodeNameMode interface{} `field:"optional" json:"nodeNameMode" yaml:"nodeNameMode"`
 	NodePools interface{} `field:"optional" json:"nodePools" yaml:"nodePools"`
 	OsType interface{} `field:"optional" json:"osType" yaml:"osType"`
-	Period interface{} `field:"optional" json:"period" yaml:"period"`
-	PeriodUnit interface{} `field:"optional" json:"periodUnit" yaml:"periodUnit"`
 	Platform interface{} `field:"optional" json:"platform" yaml:"platform"`
 	PodVswitchIds interface{} `field:"optional" json:"podVswitchIds" yaml:"podVswitchIds"`
 	ProxyMode interface{} `field:"optional" json:"proxyMode" yaml:"proxyMode"`

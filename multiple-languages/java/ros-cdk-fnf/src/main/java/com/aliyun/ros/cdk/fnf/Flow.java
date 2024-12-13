@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fnf;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::FNF::Flow</code>, which is used to create a flow.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:30.486Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:08.522Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fnf.$Module.class, fqn = "@alicloud/ros-cdk-fnf.Flow")
 public class Flow extends com.aliyun.ros.cdk.core.Resource {
 
@@ -198,6 +198,48 @@ public class Flow extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
+            return this;
+        }
+
+        /**
+         * Property executionMode: The execution mode of the flow.
+         * <p>
+         * @return {@code this}
+         * @param executionMode Property executionMode: The execution mode of the flow. This parameter is required.
+         */
+        public Builder executionMode(final java.lang.String executionMode) {
+            this.props.executionMode(executionMode);
+            return this;
+        }
+        /**
+         * Property executionMode: The execution mode of the flow.
+         * <p>
+         * @return {@code this}
+         * @param executionMode Property executionMode: The execution mode of the flow. This parameter is required.
+         */
+        public Builder executionMode(final com.aliyun.ros.cdk.core.IResolvable executionMode) {
+            this.props.executionMode(executionMode);
+            return this;
+        }
+
+        /**
+         * Property externalStorageLocation: The external storage location for the flow.
+         * <p>
+         * @return {@code this}
+         * @param externalStorageLocation Property externalStorageLocation: The external storage location for the flow. This parameter is required.
+         */
+        public Builder externalStorageLocation(final java.lang.String externalStorageLocation) {
+            this.props.externalStorageLocation(externalStorageLocation);
+            return this;
+        }
+        /**
+         * Property externalStorageLocation: The external storage location for the flow.
+         * <p>
+         * @return {@code this}
+         * @param externalStorageLocation Property externalStorageLocation: The external storage location for the flow. This parameter is required.
+         */
+        public Builder externalStorageLocation(final com.aliyun.ros.cdk.core.IResolvable externalStorageLocation) {
+            this.props.externalStorageLocation(externalStorageLocation);
             return this;
         }
 

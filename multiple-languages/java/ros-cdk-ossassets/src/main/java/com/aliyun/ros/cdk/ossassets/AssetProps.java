@@ -1,6 +1,6 @@
 package com.aliyun.ros.cdk.ossassets;
 
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:32.025Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:10.109Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ossassets.$Module.class, fqn = "@alicloud/ros-cdk-ossassets.AssetProps")
 @software.amazon.jsii.Jsii.Proxy(AssetProps.Jsii$Proxy.class)
 public interface AssetProps extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.ossassets.AssetOptions {

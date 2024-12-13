@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::SAE::Namespaces`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::SAE::Namespaces`, which is used to query namespaces.
 type Namespaces interface {
 	alicloudroscdkcore.Resource
 	// Attribute NamespaceIds: The list of namespace names.

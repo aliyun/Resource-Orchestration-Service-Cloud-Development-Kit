@@ -33,7 +33,7 @@ export interface EnvironmentFeatureProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::EnvironmentFeature`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::EnvironmentFeature`, which is used to install a feature.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEnvironmentFeature`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-environmentfeature
  */

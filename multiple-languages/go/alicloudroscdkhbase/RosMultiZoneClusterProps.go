@@ -26,6 +26,7 @@ type RosMultiZoneClusterProps struct {
 	StandbyZoneId interface{} `field:"required" json:"standbyZoneId" yaml:"standbyZoneId"`
 	AutoRenewPeriod interface{} `field:"optional" json:"autoRenewPeriod" yaml:"autoRenewPeriod"`
 	ClusterName interface{} `field:"optional" json:"clusterName" yaml:"clusterName"`
+	DeletionProtection interface{} `field:"optional" json:"deletionProtection" yaml:"deletionProtection"`
 	MasterInstanceType interface{} `field:"optional" json:"masterInstanceType" yaml:"masterInstanceType"`
 	Period interface{} `field:"optional" json:"period" yaml:"period"`
 	PeriodUnit interface{} `field:"optional" json:"periodUnit" yaml:"periodUnit"`

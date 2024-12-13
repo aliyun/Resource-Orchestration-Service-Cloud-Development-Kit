@@ -88,6 +88,10 @@ func (j *jsiiProxy_RosInstance) validateSetAntiRansomwareParameters(val interfac
 	return nil
 }
 
+func (j *jsiiProxy_RosInstance) validateSetAntiRansomwareManageServiceParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosInstance) validateSetAutoPayParameters(val interface{}) error {
 	return nil
 }

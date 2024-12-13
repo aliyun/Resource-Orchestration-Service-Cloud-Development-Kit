@@ -40,3 +40,11 @@
 @alicloud/ros-cdk-resourcemanager.RosResourceShareAssociation.ResourcesProperty=com.aliyun.ros.cdk.resourcemanager.RosResourceShareAssociation$ResourcesProperty
 @alicloud/ros-cdk-resourcemanager.RosResourceShareAssociationProps=com.aliyun.ros.cdk.resourcemanager.RosResourceShareAssociationProps
 @alicloud/ros-cdk-resourcemanager.RosResourceShareProps=com.aliyun.ros.cdk.resourcemanager.RosResourceShareProps
+@alicloud/ros-cdk-resourcemanager.datasource.ResourceGroup=com.aliyun.ros.cdk.resourcemanager.datasource.ResourceGroup
+@alicloud/ros-cdk-resourcemanager.datasource.ResourceGroupProps=com.aliyun.ros.cdk.resourcemanager.datasource.ResourceGroupProps
+@alicloud/ros-cdk-resourcemanager.datasource.ResourceGroups=com.aliyun.ros.cdk.resourcemanager.datasource.ResourceGroups
+@alicloud/ros-cdk-resourcemanager.datasource.ResourceGroupsProps=com.aliyun.ros.cdk.resourcemanager.datasource.ResourceGroupsProps
+@alicloud/ros-cdk-resourcemanager.datasource.RosResourceGroup=com.aliyun.ros.cdk.resourcemanager.datasource.RosResourceGroup
+@alicloud/ros-cdk-resourcemanager.datasource.RosResourceGroupProps=com.aliyun.ros.cdk.resourcemanager.datasource.RosResourceGroupProps
+@alicloud/ros-cdk-resourcemanager.datasource.RosResourceGroups=com.aliyun.ros.cdk.resourcemanager.datasource.RosResourceGroups
+@alicloud/ros-cdk-resourcemanager.datasource.RosResourceGroupsProps=com.aliyun.ros.cdk.resourcemanager.datasource.RosResourceGroupsProps

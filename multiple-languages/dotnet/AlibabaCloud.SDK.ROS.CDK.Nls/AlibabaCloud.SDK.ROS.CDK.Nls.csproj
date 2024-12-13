@@ -28,7 +28,7 @@
 		
     
 		
-		<PackageVersion>1.4.0</PackageVersion>
+		<PackageVersion>1.5.0</PackageVersion>
 		
 		
     
@@ -127,7 +127,7 @@
 		
     
 		
-		<EmbeddedResource Include="alicloud-ros-cdk-nls-1.4.0.tgz"/>
+		<EmbeddedResource Include="alicloud-ros-cdk-nls-1.5.0.tgz"/>
 		
 		
   

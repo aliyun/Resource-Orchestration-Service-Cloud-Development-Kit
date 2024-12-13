@@ -31,12 +31,6 @@ type RosLoadBalancer interface {
 	AttrSlaveZoneId() alicloudroscdkcore.IResolvable
 	AttrVpcId() alicloudroscdkcore.IResolvable
 	AttrVSwitchId() alicloudroscdkcore.IResolvable
-	AutoPay() interface{}
-	SetAutoPay(val interface{})
-	AutoRenew() interface{}
-	SetAutoRenew(val interface{})
-	AutoRenewPeriod() interface{}
-	SetAutoRenewPeriod(val interface{})
 	Bandwidth() interface{}
 	SetBandwidth(val interface{})
 	// Returns: the stack trace of the point where this Resource was created from, sourced
@@ -45,8 +39,6 @@ type RosLoadBalancer interface {
 	CreationStack() *[]*string
 	DeletionProtection() interface{}
 	SetDeletionProtection(val interface{})
-	Duration() interface{}
-	SetDuration(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
 	InstanceChargeType() interface{}
@@ -75,10 +67,6 @@ type RosLoadBalancer interface {
 	SetModificationProtectionStatus(val interface{})
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
-	PayType() interface{}
-	SetPayType(val interface{})
-	PricingCycle() interface{}
-	SetPricingCycle(val interface{})
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
 	//
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
@@ -394,36 +382,6 @@ func (j *jsiiProxy_RosLoadBalancer) AttrVSwitchId() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_RosLoadBalancer) AutoPay() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"autoPay",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosLoadBalancer) AutoRenew() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"autoRenew",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosLoadBalancer) AutoRenewPeriod() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"autoRenewPeriod",
-		&returns,
-	)
-	return returns
-}
-
 func (j *jsiiProxy_RosLoadBalancer) Bandwidth() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -449,16 +407,6 @@ func (j *jsiiProxy_RosLoadBalancer) DeletionProtection() interface{} {
 	_jsii_.Get(
 		j,
 		"deletionProtection",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosLoadBalancer) Duration() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"duration",
 		&returns,
 	)
 	return returns
@@ -559,26 +507,6 @@ func (j *jsiiProxy_RosLoadBalancer) Node() alicloudroscdkcore.ConstructNode {
 	_jsii_.Get(
 		j,
 		"node",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosLoadBalancer) PayType() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"payType",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosLoadBalancer) PricingCycle() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"pricingCycle",
 		&returns,
 	)
 	return returns
@@ -744,39 +672,6 @@ func (j *jsiiProxy_RosLoadBalancer)SetAddressType(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_RosLoadBalancer)SetAutoPay(val interface{}) {
-	if err := j.validateSetAutoPayParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"autoPay",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosLoadBalancer)SetAutoRenew(val interface{}) {
-	if err := j.validateSetAutoRenewParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"autoRenew",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosLoadBalancer)SetAutoRenewPeriod(val interface{}) {
-	if err := j.validateSetAutoRenewPeriodParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"autoRenewPeriod",
-		val,
-	)
-}
-
 func (j *jsiiProxy_RosLoadBalancer)SetBandwidth(val interface{}) {
 	if err := j.validateSetBandwidthParameters(val); err != nil {
 		panic(err)
@@ -795,17 +690,6 @@ func (j *jsiiProxy_RosLoadBalancer)SetDeletionProtection(val interface{}) {
 	_jsii_.Set(
 		j,
 		"deletionProtection",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosLoadBalancer)SetDuration(val interface{}) {
-	if err := j.validateSetDurationParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"duration",
 		val,
 	)
 }
@@ -894,28 +778,6 @@ func (j *jsiiProxy_RosLoadBalancer)SetModificationProtectionStatus(val interface
 	_jsii_.Set(
 		j,
 		"modificationProtectionStatus",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosLoadBalancer)SetPayType(val interface{}) {
-	if err := j.validateSetPayTypeParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"payType",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosLoadBalancer)SetPricingCycle(val interface{}) {
-	if err := j.validateSetPricingCycleParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"pricingCycle",
 		val,
 	)
 }

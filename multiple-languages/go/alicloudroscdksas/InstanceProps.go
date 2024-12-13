@@ -17,6 +17,10 @@ type InstanceProps struct {
 	//
 	// We recommend that you configure a data protection capacity of 50GB for each server.
 	AntiRansomware interface{} `field:"optional" json:"antiRansomware" yaml:"antiRansomware"`
+	// Property antiRansomwareManageService: Provide you with security hosting services such as anti-ransomware configuration, monitoring, and anti-ransomware incident emergency response.
+	//
+	// Note:.
+	AntiRansomwareManageService interface{} `field:"optional" json:"antiRansomwareManageService" yaml:"antiRansomwareManageService"`
 	// Property autoPay: Whether to auto pay the bill.Default: True.
 	AutoPay interface{} `field:"optional" json:"autoPay" yaml:"autoPay"`
 	// Property autoRenew: Whether to auto renew the prepay instance.Default: False.

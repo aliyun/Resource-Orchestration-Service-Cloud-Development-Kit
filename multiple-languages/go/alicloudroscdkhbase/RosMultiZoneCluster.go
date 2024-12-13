@@ -40,6 +40,8 @@ type RosMultiZoneCluster interface {
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
 	CreationStack() *[]*string
+	DeletionProtection() interface{}
+	SetDeletionProtection(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
 	Engine() interface{}
@@ -380,6 +382,16 @@ func (j *jsiiProxy_RosMultiZoneCluster) CreationStack() *[]*string {
 	_jsii_.Get(
 		j,
 		"creationStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosMultiZoneCluster) DeletionProtection() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"deletionProtection",
 		&returns,
 	)
 	return returns
@@ -778,6 +790,17 @@ func (j *jsiiProxy_RosMultiZoneCluster)SetCoreNodeCount(val interface{}) {
 	_jsii_.Set(
 		j,
 		"coreNodeCount",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosMultiZoneCluster)SetDeletionProtection(val interface{}) {
+	if err := j.validateSetDeletionProtectionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"deletionProtection",
 		val,
 	)
 }

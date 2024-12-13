@@ -24,7 +24,7 @@ export interface LaunchTemplateProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::LaunchTemplate`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::LaunchTemplate`, which is used to query the information about a launch template.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLaunchTemplate`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-launchtemplate
  */
@@ -35,7 +35,7 @@ export class LaunchTemplate extends ros.Resource {
     protected enableResourcePropertyConstraint: boolean;
 
     /**
-     * Attribute AutoReleaseTime: Automatic release time. According to the [ISO8601](~~ 25696 ~~) standard, and need to use UTC time. The format is: yyyy-MM-ddTHH:mm:ssZ.
+     * Attribute AutoReleaseTime: Automatic release time (UTC). The format is: yyyy-MM-ddTHH:mm:ssZ.
      */
     public readonly attrAutoReleaseTime: ros.IResolvable;
 
@@ -180,7 +180,7 @@ export class LaunchTemplate extends ros.Resource {
     public readonly attrPrivateIpAddress: ros.IResolvable;
 
     /**
-     * Attribute RamRoleName: The instance RAM role name. You can use the RAM API [ListRoles](~~ 28713 ~~) to query the created instance RAM roles.
+     * Attribute RamRoleName: The instance RAM role name.
      */
     public readonly attrRamRoleName: ros.IResolvable;
 

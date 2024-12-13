@@ -1,3 +1,4 @@
+export * from './backupplan';
 export * from './backupplans';
 
 // DATASOURCE::DBS Resources:

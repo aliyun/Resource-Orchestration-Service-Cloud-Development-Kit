@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.sls.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::SLS::Projects</code>.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::SLS::Projects</code>, which is used to query Log Service projects.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:33.783Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:12.550Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.datasource.Projects")
 public class Projects extends com.aliyun.ros.cdk.core.Resource {
 

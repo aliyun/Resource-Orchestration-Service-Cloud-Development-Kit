@@ -17,7 +17,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pai.Datasource
 
         /// <summary>Property workspaceId: The ID of the workspace where the dataset is located.</summary>
         /// <remarks>
-        /// For details about how to obtain the workspace ID, see [ListWorkspaces](~~ 449124 ~~).
         /// If this parameter is not configured, the default workspace is used. If the default workspace does not exist, an error is reported.
         /// </remarks>
         [JsiiProperty(name: "workspaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]

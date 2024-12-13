@@ -4,6 +4,8 @@
 @alicloud/ros-cdk-sls.ApplyConfigToMachineGroupProps=com.aliyun.ros.cdk.sls.ApplyConfigToMachineGroupProps
 @alicloud/ros-cdk-sls.Audit=com.aliyun.ros.cdk.sls.Audit
 @alicloud/ros-cdk-sls.AuditProps=com.aliyun.ros.cdk.sls.AuditProps
+@alicloud/ros-cdk-sls.ConsumerGroup=com.aliyun.ros.cdk.sls.ConsumerGroup
+@alicloud/ros-cdk-sls.ConsumerGroupProps=com.aliyun.ros.cdk.sls.ConsumerGroupProps
 @alicloud/ros-cdk-sls.Dashboard=com.aliyun.ros.cdk.sls.Dashboard
 @alicloud/ros-cdk-sls.DashboardProps=com.aliyun.ros.cdk.sls.DashboardProps
 @alicloud/ros-cdk-sls.Etl=com.aliyun.ros.cdk.sls.Etl
@@ -20,8 +22,12 @@
 @alicloud/ros-cdk-sls.MetricStoreProps=com.aliyun.ros.cdk.sls.MetricStoreProps
 @alicloud/ros-cdk-sls.OssExport=com.aliyun.ros.cdk.sls.OssExport
 @alicloud/ros-cdk-sls.OssExportProps=com.aliyun.ros.cdk.sls.OssExportProps
+@alicloud/ros-cdk-sls.OssExternalStore=com.aliyun.ros.cdk.sls.OssExternalStore
+@alicloud/ros-cdk-sls.OssExternalStoreProps=com.aliyun.ros.cdk.sls.OssExternalStoreProps
 @alicloud/ros-cdk-sls.Project=com.aliyun.ros.cdk.sls.Project
 @alicloud/ros-cdk-sls.ProjectProps=com.aliyun.ros.cdk.sls.ProjectProps
+@alicloud/ros-cdk-sls.RdsExternalStore=com.aliyun.ros.cdk.sls.RdsExternalStore
+@alicloud/ros-cdk-sls.RdsExternalStoreProps=com.aliyun.ros.cdk.sls.RdsExternalStoreProps
 @alicloud/ros-cdk-sls.RosAlert=com.aliyun.ros.cdk.sls.RosAlert
 @alicloud/ros-cdk-sls.RosAlert.AnnotationsProperty=com.aliyun.ros.cdk.sls.RosAlert$AnnotationsProperty
 @alicloud/ros-cdk-sls.RosAlert.ConfigurationProperty=com.aliyun.ros.cdk.sls.RosAlert$ConfigurationProperty
@@ -41,6 +47,8 @@
 @alicloud/ros-cdk-sls.RosAudit=com.aliyun.ros.cdk.sls.RosAudit
 @alicloud/ros-cdk-sls.RosAudit.VariableMapProperty=com.aliyun.ros.cdk.sls.RosAudit$VariableMapProperty
 @alicloud/ros-cdk-sls.RosAuditProps=com.aliyun.ros.cdk.sls.RosAuditProps
+@alicloud/ros-cdk-sls.RosConsumerGroup=com.aliyun.ros.cdk.sls.RosConsumerGroup
+@alicloud/ros-cdk-sls.RosConsumerGroupProps=com.aliyun.ros.cdk.sls.RosConsumerGroupProps
 @alicloud/ros-cdk-sls.RosDashboard=com.aliyun.ros.cdk.sls.RosDashboard
 @alicloud/ros-cdk-sls.RosDashboardProps=com.aliyun.ros.cdk.sls.RosDashboardProps
 @alicloud/ros-cdk-sls.RosEtl=com.aliyun.ros.cdk.sls.RosEtl
@@ -68,9 +76,14 @@
 @alicloud/ros-cdk-sls.RosOssExport.ConfigurationProperty=com.aliyun.ros.cdk.sls.RosOssExport$ConfigurationProperty
 @alicloud/ros-cdk-sls.RosOssExport.SinkProperty=com.aliyun.ros.cdk.sls.RosOssExport$SinkProperty
 @alicloud/ros-cdk-sls.RosOssExportProps=com.aliyun.ros.cdk.sls.RosOssExportProps
+@alicloud/ros-cdk-sls.RosOssExternalStore=com.aliyun.ros.cdk.sls.RosOssExternalStore
+@alicloud/ros-cdk-sls.RosOssExternalStore.ColumnsProperty=com.aliyun.ros.cdk.sls.RosOssExternalStore$ColumnsProperty
+@alicloud/ros-cdk-sls.RosOssExternalStoreProps=com.aliyun.ros.cdk.sls.RosOssExternalStoreProps
 @alicloud/ros-cdk-sls.RosProject=com.aliyun.ros.cdk.sls.RosProject
 @alicloud/ros-cdk-sls.RosProject.TagsProperty=com.aliyun.ros.cdk.sls.RosProject$TagsProperty
 @alicloud/ros-cdk-sls.RosProjectProps=com.aliyun.ros.cdk.sls.RosProjectProps
+@alicloud/ros-cdk-sls.RosRdsExternalStore=com.aliyun.ros.cdk.sls.RosRdsExternalStore
+@alicloud/ros-cdk-sls.RosRdsExternalStoreProps=com.aliyun.ros.cdk.sls.RosRdsExternalStoreProps
 @alicloud/ros-cdk-sls.RosSavedsearch=com.aliyun.ros.cdk.sls.RosSavedsearch
 @alicloud/ros-cdk-sls.RosSavedsearch.DetailProperty=com.aliyun.ros.cdk.sls.RosSavedsearch$DetailProperty
 @alicloud/ros-cdk-sls.RosSavedsearchProps=com.aliyun.ros.cdk.sls.RosSavedsearchProps

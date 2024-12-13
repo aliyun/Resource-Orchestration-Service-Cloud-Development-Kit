@@ -1,0 +1,72 @@
+import * as ros from '@alicloud/ros-cdk-core';
+import { RosDomain } from './apig.generated';
+// Generated from the AliCloud ROS Resource Specification
+export { RosDomain as DomainProperty };
+
+/**
+ * Properties for defining a `Domain`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-domain
+ */
+export interface DomainProps {
+
+    /**
+     * Property domainName: The name of the Domain.
+     */
+    readonly domainName: string | ros.IResolvable;
+
+    /**
+     * Property protocol: The types of protocols supported by the domain are as follows:
+     * * HTTP: Supports only the HTTP protocol.
+     * * HTTPS: Supports only the HTTPS protocol.
+     */
+    readonly protocol: string | ros.IResolvable;
+}
+
+/**
+ * This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Domain`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomain`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-domain
+ */
+export class Domain extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: DomainProps;
+    protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute DomainId: The ID of the Domain.
+     */
+    public readonly attrDomainId: ros.IResolvable;
+
+    /**
+     * Attribute DomainName: The name of the Domain.
+     */
+    public readonly attrDomainName: ros.IResolvable;
+
+    /**
+     * Attribute Protocol: The types of protocols.
+     */
+    public readonly attrProtocol: ros.IResolvable;
+
+    /**
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: DomainProps, enableResourcePropertyConstraint:boolean = true) {
+        super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+
+        const rosDomain = new RosDomain(this, id,  {
+            domainName: props.domainName,
+            protocol: props.protocol,
+        }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
+        this.resource = rosDomain;
+        this.attrDomainId = rosDomain.attrDomainId;
+        this.attrDomainName = rosDomain.attrDomainName;
+        this.attrProtocol = rosDomain.attrProtocol;
+    }
+}

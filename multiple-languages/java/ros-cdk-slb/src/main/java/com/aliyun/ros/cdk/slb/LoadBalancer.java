@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SLB::LoadBalancer</code>, which is used to create a Server Load Balancer (SLB) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:33.474Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:11.985Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.LoadBalancer")
 public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource {
 
@@ -286,89 +286,6 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property autoPay: Specifies whether to automatically pay for the subscription Internet-facing CLB instance.
-         * <p>
-         * Valid values:
-         * <p>
-         * <ul>
-         * <li><strong>true</strong>: automatically pays for the CLB instance. After you call this operation, the system automatically completes the payment and creates the CLB instance.- <strong>false</strong> (default): After you call the operation, the order is created but the payment is not completed. You can view the pending order in the console. The CLB instance will not be created until you complete the payment.<strong>Note</strong> This parameter is supported only by subscription instances created on the Alibaba Cloud China site.</li>
-         * </ul>
-         * <p>
-         * @return {@code this}
-         * @param autoPay Property autoPay: Specifies whether to automatically pay for the subscription Internet-facing CLB instance. This parameter is required.
-         */
-        public Builder autoPay(final java.lang.Boolean autoPay) {
-            this.props().autoPay(autoPay);
-            return this;
-        }
-        /**
-         * Property autoPay: Specifies whether to automatically pay for the subscription Internet-facing CLB instance.
-         * <p>
-         * Valid values:
-         * <p>
-         * <ul>
-         * <li><strong>true</strong>: automatically pays for the CLB instance. After you call this operation, the system automatically completes the payment and creates the CLB instance.- <strong>false</strong> (default): After you call the operation, the order is created but the payment is not completed. You can view the pending order in the console. The CLB instance will not be created until you complete the payment.<strong>Note</strong> This parameter is supported only by subscription instances created on the Alibaba Cloud China site.</li>
-         * </ul>
-         * <p>
-         * @return {@code this}
-         * @param autoPay Property autoPay: Specifies whether to automatically pay for the subscription Internet-facing CLB instance. This parameter is required.
-         */
-        public Builder autoPay(final com.aliyun.ros.cdk.core.IResolvable autoPay) {
-            this.props().autoPay(autoPay);
-            return this;
-        }
-
-        /**
-         * Property autoRenew: Indicates whether automatic renewal is enabled for the instance.
-         * <p>
-         * Valid values:- <strong>true</strong>: Automatic renewal is enabled.- <strong>false</strong> (default): Automatic renewal is not enabled. You must renew the instance manually.
-         * <p>
-         * @return {@code this}
-         * @param autoRenew Property autoRenew: Indicates whether automatic renewal is enabled for the instance. This parameter is required.
-         */
-        public Builder autoRenew(final java.lang.Boolean autoRenew) {
-            this.props().autoRenew(autoRenew);
-            return this;
-        }
-        /**
-         * Property autoRenew: Indicates whether automatic renewal is enabled for the instance.
-         * <p>
-         * Valid values:- <strong>true</strong>: Automatic renewal is enabled.- <strong>false</strong> (default): Automatic renewal is not enabled. You must renew the instance manually.
-         * <p>
-         * @return {@code this}
-         * @param autoRenew Property autoRenew: Indicates whether automatic renewal is enabled for the instance. This parameter is required.
-         */
-        public Builder autoRenew(final com.aliyun.ros.cdk.core.IResolvable autoRenew) {
-            this.props().autoRenew(autoRenew);
-            return this;
-        }
-
-        /**
-         * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1 to 9 or 12, 24, 36.
-         * <p>
-         * When PeriodUnit = year, the value range is 1-3.
-         * <p>
-         * @return {@code this}
-         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1 to 9 or 12, 24, 36. This parameter is required.
-         */
-        public Builder autoRenewPeriod(final java.lang.Number autoRenewPeriod) {
-            this.props().autoRenewPeriod(autoRenewPeriod);
-            return this;
-        }
-        /**
-         * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1 to 9 or 12, 24, 36.
-         * <p>
-         * When PeriodUnit = year, the value range is 1-3.
-         * <p>
-         * @return {@code this}
-         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1 to 9 or 12, 24, 36. This parameter is required.
-         */
-        public Builder autoRenewPeriod(final com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
-            this.props().autoRenewPeriod(autoRenewPeriod);
-            return this;
-        }
-
-        /**
          * Property bandwidth: The bandwidth for network, unit in Mbps(Mega bit per second).
          * <p>
          * Default is 1. If InternetChargeType is specified as "paybytraffic", this property will be ignore and please specify the "Bandwidth" in ALIYUN::SLB::Listener.
@@ -411,37 +328,6 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder deletionProtection(final com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
             this.props().deletionProtection(deletionProtection);
-            return this;
-        }
-
-        /**
-         * Property duration: Optional.
-         * <p>
-         * The subscription duration of a Subscription Internet instance.
-         * Valid values:
-         * If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36, 48, 60.
-         * If PricingCycle is year, the value range is 1 to 5.
-         * <p>
-         * @return {@code this}
-         * @param duration Property duration: Optional. This parameter is required.
-         */
-        public Builder duration(final java.lang.Number duration) {
-            this.props().duration(duration);
-            return this;
-        }
-        /**
-         * Property duration: Optional.
-         * <p>
-         * The subscription duration of a Subscription Internet instance.
-         * Valid values:
-         * If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36, 48, 60.
-         * If PricingCycle is year, the value range is 1 to 5.
-         * <p>
-         * @return {@code this}
-         * @param duration Property duration: Optional. This parameter is required.
-         */
-        public Builder duration(final com.aliyun.ros.cdk.core.IResolvable duration) {
-            this.props().duration(duration);
             return this;
         }
 
@@ -655,60 +541,6 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder modificationProtectionStatus(final com.aliyun.ros.cdk.core.IResolvable modificationProtectionStatus) {
             this.props().modificationProtectionStatus(modificationProtectionStatus);
-            return this;
-        }
-
-        /**
-         * Property payType: Optional.
-         * <p>
-         * The billing method of the instance to be created.
-         * Valid value: PayOnDemand (Pay-As-You-Go) | PrePay (Subscription)
-         * <p>
-         * @return {@code this}
-         * @param payType Property payType: Optional. This parameter is required.
-         */
-        public Builder payType(final java.lang.String payType) {
-            this.props().payType(payType);
-            return this;
-        }
-        /**
-         * Property payType: Optional.
-         * <p>
-         * The billing method of the instance to be created.
-         * Valid value: PayOnDemand (Pay-As-You-Go) | PrePay (Subscription)
-         * <p>
-         * @return {@code this}
-         * @param payType Property payType: Optional. This parameter is required.
-         */
-        public Builder payType(final com.aliyun.ros.cdk.core.IResolvable payType) {
-            this.props().payType(payType);
-            return this;
-        }
-
-        /**
-         * Property pricingCycle: Optional.
-         * <p>
-         * The duration of the Subscription-billed Internet instance to be created.
-         * Valid values: month | year.
-         * <p>
-         * @return {@code this}
-         * @param pricingCycle Property pricingCycle: Optional. This parameter is required.
-         */
-        public Builder pricingCycle(final java.lang.String pricingCycle) {
-            this.props().pricingCycle(pricingCycle);
-            return this;
-        }
-        /**
-         * Property pricingCycle: Optional.
-         * <p>
-         * The duration of the Subscription-billed Internet instance to be created.
-         * Valid values: month | year.
-         * <p>
-         * @return {@code this}
-         * @param pricingCycle Property pricingCycle: Optional. This parameter is required.
-         */
-        public Builder pricingCycle(final com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
-            this.props().pricingCycle(pricingCycle);
             return this;
         }
 

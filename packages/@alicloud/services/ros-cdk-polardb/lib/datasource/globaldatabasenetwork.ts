@@ -24,7 +24,7 @@ export interface GlobalDatabaseNetworkProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::POLARDB::GlobalDatabaseNetwork`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::POLARDB::GlobalDatabaseNetwork`, which is used to query the details of a Global Database Network (GDN) within the current Alibaba Cloud account.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGlobalDatabaseNetwork`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-globaldatabasenetwork
  */

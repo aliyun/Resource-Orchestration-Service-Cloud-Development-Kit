@@ -38,7 +38,7 @@ export interface WorkspaceResourceMaxComputeProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::PAI::WorkspaceResourceMaxCompute`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PAI::WorkspaceResourceMaxCompute`, which is used to associate MaxCompute resources with a workspace.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWorkspaceResourceMaxCompute`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspaceresourcemaxcompute
  */
@@ -54,7 +54,7 @@ export class WorkspaceResourceMaxCompute extends ros.Resource {
     public readonly attrCreateTime: ros.IResolvable;
 
     /**
-     * Attribute GroupName: Resource group name. If you want to obtain a resource group name, see [ListResources](~~ 449143 ~~).
+     * Attribute GroupName: Resource group name.
      */
     public readonly attrGroupName: ros.IResolvable;
 

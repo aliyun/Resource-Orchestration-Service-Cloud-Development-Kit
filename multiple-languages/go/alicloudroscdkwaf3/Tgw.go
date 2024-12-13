@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::WAF3::TGW`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::WAF3::TGW`, which is used to add a resource to Web Application Firewall (WAF) in transparent proxy mode.
 type Tgw interface {
 	alicloudroscdkcore.Resource
 	// Attribute InstanceId: The ID of the WAF instance.

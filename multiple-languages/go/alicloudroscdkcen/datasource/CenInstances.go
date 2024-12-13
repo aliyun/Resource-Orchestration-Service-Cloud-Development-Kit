@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::CEN::CenInstances`, which is used to query the details of Cloud Enterprise Network (CEN) instances within the current Alibaba Cloud account.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::CEN::CenInstances`, which is used to query the information about Cloud Enterprise Network (CEN) instances within the current Alibaba Cloud account.
 type CenInstances interface {
 	alicloudroscdkcore.Resource
 	// Attribute CenIds: The list of The Cen instance ids.

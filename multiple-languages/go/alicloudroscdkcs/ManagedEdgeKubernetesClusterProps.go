@@ -11,25 +11,6 @@ type ManagedEdgeKubernetesClusterProps struct {
 	Name interface{} `field:"required" json:"name" yaml:"name"`
 	// Property addons: The add-ons to be installed for the cluster.
 	Addons interface{} `field:"optional" json:"addons" yaml:"addons"`
-	// Property autoRenew: Whether the cluster automatically renews.
-	//
-	// It takes effect when the value of ChargeType is PrePaid. The optional values are:
-	// true: automatic renewal
-	// false: do not renew automatically
-	// Default to true.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-	// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-	AutoRenew interface{} `field:"optional" json:"autoRenew" yaml:"autoRenew"`
-	// Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.  For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-	AutoRenewPeriod interface{} `field:"optional" json:"autoRenewPeriod" yaml:"autoRenewPeriod"`
-	// Property chargeType: cluster payment type.
-	//
-	// The optional values are:
-	// PrePaid: prepaid
-	// PostPaid: Pay as you go
-	// Default to PostPaid.
-	// Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-	// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-	ChargeType interface{} `field:"optional" json:"chargeType" yaml:"chargeType"`
 	// Property cloudMonitorFlags: Whether to install the cloud monitoring plugin: true: indicates installation false: Do not install Default to false.
 	CloudMonitorFlags interface{} `field:"optional" json:"cloudMonitorFlags" yaml:"cloudMonitorFlags"`
 	// Property clusterSpec: The edge managed cluster spec.
@@ -75,24 +56,6 @@ type ManagedEdgeKubernetesClusterProps struct {
 	// This number is determined by the specified pod CIDR block.
 	// This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
 	NodeCidrMask interface{} `field:"optional" json:"nodeCidrMask" yaml:"nodeCidrMask"`
-	// Property period: The duration of the annual subscription and monthly subscription.
-	//
-	// It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
-	// When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
-	// When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
-	// When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
-	// Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-	// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-	Period interface{} `field:"optional" json:"period" yaml:"period"`
-	// Property periodUnit: When you specify PrePaid, you need to specify the period.
-	//
-	// The options are:
-	// Week: Time is measured in weeks
-	// Month: time in months
-	// Year: time in years
-	// Default to MonthStarting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-	// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-	PeriodUnit interface{} `field:"optional" json:"periodUnit" yaml:"periodUnit"`
 	// Property profile: Edge cluster ID.
 	//
 	// The default value is Edge.

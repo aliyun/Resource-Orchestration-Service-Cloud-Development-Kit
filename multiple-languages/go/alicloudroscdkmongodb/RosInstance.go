@@ -57,12 +57,12 @@ type RosInstance interface {
 	// Returns: the logical ID as a stringified token. This value will only get
 	// resolved during synthesis.
 	LogicalId() *string
-	NetworkType() interface{}
-	SetNetworkType(val interface{})
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
 	Period() interface{}
 	SetPeriod(val interface{})
+	PrivateConnections() interface{}
+	SetPrivateConnections(val interface{})
 	ReadonlyReplicas() interface{}
 	SetReadonlyReplicas(val interface{})
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
@@ -430,16 +430,6 @@ func (j *jsiiProxy_RosInstance) LogicalId() *string {
 	return returns
 }
 
-func (j *jsiiProxy_RosInstance) NetworkType() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"networkType",
-		&returns,
-	)
-	return returns
-}
-
 func (j *jsiiProxy_RosInstance) Node() alicloudroscdkcore.ConstructNode {
 	var returns alicloudroscdkcore.ConstructNode
 	_jsii_.Get(
@@ -455,6 +445,16 @@ func (j *jsiiProxy_RosInstance) Period() interface{} {
 	_jsii_.Get(
 		j,
 		"period",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosInstance) PrivateConnections() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"privateConnections",
 		&returns,
 	)
 	return returns
@@ -851,17 +851,6 @@ func (j *jsiiProxy_RosInstance)SetHiddenZoneId(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_RosInstance)SetNetworkType(val interface{}) {
-	if err := j.validateSetNetworkTypeParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"networkType",
-		val,
-	)
-}
-
 func (j *jsiiProxy_RosInstance)SetPeriod(val interface{}) {
 	if err := j.validateSetPeriodParameters(val); err != nil {
 		panic(err)
@@ -869,6 +858,17 @@ func (j *jsiiProxy_RosInstance)SetPeriod(val interface{}) {
 	_jsii_.Set(
 		j,
 		"period",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosInstance)SetPrivateConnections(val interface{}) {
+	if err := j.validateSetPrivateConnectionsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"privateConnections",
 		val,
 	)
 }

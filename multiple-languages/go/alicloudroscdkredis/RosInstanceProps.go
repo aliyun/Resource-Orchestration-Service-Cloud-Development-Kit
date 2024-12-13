@@ -10,6 +10,7 @@ type RosInstanceProps struct {
 	ChargeType interface{} `field:"optional" json:"chargeType" yaml:"chargeType"`
 	Connections interface{} `field:"optional" json:"connections" yaml:"connections"`
 	DeletionForce interface{} `field:"optional" json:"deletionForce" yaml:"deletionForce"`
+	DeletionProtection interface{} `field:"optional" json:"deletionProtection" yaml:"deletionProtection"`
 	EngineVersion interface{} `field:"optional" json:"engineVersion" yaml:"engineVersion"`
 	EvictionPolicy interface{} `field:"optional" json:"evictionPolicy" yaml:"evictionPolicy"`
 	InstanceClass interface{} `field:"optional" json:"instanceClass" yaml:"instanceClass"`

@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ram.Datasource
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::RAM::Users`, which is used to query Resource Access Management (RAM) users.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::RAM::Users`, which is used to query the information about Resource Access Management (RAM) users.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUsers`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-users

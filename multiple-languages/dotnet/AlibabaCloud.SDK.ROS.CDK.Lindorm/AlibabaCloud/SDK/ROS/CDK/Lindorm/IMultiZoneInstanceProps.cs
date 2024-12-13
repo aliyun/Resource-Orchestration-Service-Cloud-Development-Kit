@@ -118,6 +118,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Lindorm
             }
         }
 
+        /// <summary>Property deletionProtection: Specifies whether to enable the release protection feature for the instance.</summary>
+        /// <remarks>
+        /// Default is false.
+        /// </remarks>
+        [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DeletionProtection
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property filestoreNum: The number of LindormDFS nodes in the instance.</summary>
         /// <remarks>
         /// The valid values of this parameter depend on the value of the PayType parameter.
@@ -598,6 +612,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Lindorm
             [JsiiOptional]
             [JsiiProperty(name: "coreSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? CoreSpec
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property deletionProtection: Specifies whether to enable the release protection feature for the instance.</summary>
+            /// <remarks>
+            /// Default is false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeletionProtection
             {
                 get => GetInstanceProperty<object?>();
             }

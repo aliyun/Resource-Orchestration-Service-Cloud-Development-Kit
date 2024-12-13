@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.nls;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::NLS::Project</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::NLS::Project</code>, which is used to create a project in Intelligent Speech Interaction.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.892Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:09.653Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nls.$Module.class, fqn = "@alicloud/ros-cdk-nls.Project")
 public class Project extends com.aliyun.ros.cdk.core.Resource {
 

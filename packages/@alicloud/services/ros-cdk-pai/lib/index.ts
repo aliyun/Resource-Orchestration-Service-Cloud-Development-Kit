@@ -1,4 +1,7 @@
+export * from './codesource';
 export * from './dataset';
+export * from './experiment';
+export * from './run';
 export * from './service';
 export * from './workspace';
 export * from './workspaceresourcedlc';

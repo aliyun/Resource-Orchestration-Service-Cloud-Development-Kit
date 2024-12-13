@@ -91,7 +91,7 @@ type ClusterProps struct {
 	// If you leave this property empty, the system automatically creates a VSwitch.
 	// Note You must specify both the VpcId and VSwitchIds or leave both of them empty.
 	VSwitchIds interface{} `field:"optional" json:"vSwitchIds" yaml:"vSwitchIds"`
-	// Property zoneId: The zone ID.
-	ZoneId interface{} `field:"optional" json:"zoneId" yaml:"zoneId"`
+	// Property zoneIds: The zone IDs of the cluster.
+	ZoneIds interface{} `field:"optional" json:"zoneIds" yaml:"zoneIds"`
 }
 

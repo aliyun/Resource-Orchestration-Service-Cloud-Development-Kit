@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::AutoSnapshotPolicy`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::AutoSnapshotPolicy`, which is used to query an automatic snapshot policy.
 type AutoSnapshotPolicy interface {
 	alicloudroscdkcore.Resource
 	// Attribute AutoSnapshotPolicyName: Name of the automatic snapshot policy.

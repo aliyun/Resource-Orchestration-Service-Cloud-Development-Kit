@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.kms.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::KMS::NetworkRule</code>.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::KMS::NetworkRule</code>, which is used to query the information about a network access rule.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.414Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:09.146Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.datasource.NetworkRule")
 public class NetworkRule extends com.aliyun.ros.cdk.core.Resource {
 

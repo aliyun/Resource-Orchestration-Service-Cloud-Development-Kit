@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Apigateway.Datasource
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::ApiGateway::Groups`, which is used to query the details of existing API groups.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::ApiGateway::Groups`, which is used to query the information about existing API groups.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGroups`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-groups

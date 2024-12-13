@@ -112,6 +112,10 @@ type DBClusterProps struct {
 	// Other pickable value range is from -12:00 to +13:00, for example, 00:00.
 	// Note: This parameter takes effect only when DBType is MySQL.
 	DefaultTimeZone interface{} `field:"optional" json:"defaultTimeZone" yaml:"defaultTimeZone"`
+	// Property deletionProtection: Specifies whether to enable the release protection feature for the cluster.
+	//
+	// Default is false.
+	DeletionProtection interface{} `field:"optional" json:"deletionProtection" yaml:"deletionProtection"`
 	// Property gdnId: The ID of the Global Database Network (GDN).
 	//
 	// Note: This parameter is required when the CreationOption is CreateGdnStandby.

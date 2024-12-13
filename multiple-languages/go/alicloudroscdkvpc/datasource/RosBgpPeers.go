@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::BgpPeers`.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::BgpPeers`, which is used to query Border Gateway Protocol (BGP) peers in a region.
 type RosBgpPeers interface {
 	alicloudroscdkcore.RosResource
 	AttrBgpPeerIds() alicloudroscdkcore.IResolvable

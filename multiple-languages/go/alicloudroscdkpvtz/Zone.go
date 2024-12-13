@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::PVTZ::Zone`, which is used to create a private zone.
+// This class encapsulates and extends the ROS resource type `ALIYUN::PVTZ::Zone`, which is used to create a built-in authoritative zone.
 type Zone interface {
 	alicloudroscdkcore.Resource
 	// Attribute ZoneId: Zone ID.

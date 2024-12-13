@@ -2391,6 +2391,188 @@ function rosAuditVariableMapPropertyToRosTemplate(properties: any): any {
 }
 
 /**
+ * Properties for defining a `RosConsumerGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-consumergroup
+ */
+export interface RosConsumerGroupProps {
+
+    /**
+     * @Property consumerGroup: The name of the consumer group. The name must be unique in a project.
+     */
+    readonly consumerGroup: string | ros.IResolvable;
+
+    /**
+     * @Property logstore: The name of the Logstore.
+     */
+    readonly logstore: string | ros.IResolvable;
+
+    /**
+     * @Property order: Specifies whether to consume data in sequence. Valid values:
+     * true
+     * In a shard, data is consumed in ascending order based on the value of the **__tag__:__receive_time__** field.
+     * If a shard is split, data in the original shard is consumed first. Then, data in the new shards is consumed at the same time.
+     * If shards are merged, data in the original shards is consumed first. Then, data in the new shard is consumed.
+     * false Data in all shards is consumed at the same time. If a new shard is generated after a shard is split or after shards are merged, data in the new shard is immediately consumed.
+     */
+    readonly order: boolean | ros.IResolvable;
+
+    /**
+     * @Property project: The name of the project.
+     */
+    readonly project: string | ros.IResolvable;
+
+    /**
+     * @Property timeout: The timeout period. If the server does not receive heartbeats from a consumer within the timeout period, the server deletes the consumer. Unit: seconds.
+     */
+    readonly timeout: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosConsumerGroupProps`
+ *
+ * @param properties - the TypeScript properties of a `RosConsumerGroupProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosConsumerGroupPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('order', ros.requiredValidator)(properties.order));
+    errors.collect(ros.propertyValidator('order', ros.validateBoolean)(properties.order));
+    errors.collect(ros.propertyValidator('project', ros.requiredValidator)(properties.project));
+    errors.collect(ros.propertyValidator('project', ros.validateString)(properties.project));
+    errors.collect(ros.propertyValidator('timeout', ros.requiredValidator)(properties.timeout));
+    if(properties.timeout && (typeof properties.timeout) !== 'object') {
+        errors.collect(ros.propertyValidator('timeout', ros.validateRange)({
+            data: properties.timeout,
+            min: 1,
+            max: 4294967295,
+          }));
+    }
+    errors.collect(ros.propertyValidator('timeout', ros.validateNumber)(properties.timeout));
+    errors.collect(ros.propertyValidator('logstore', ros.requiredValidator)(properties.logstore));
+    errors.collect(ros.propertyValidator('logstore', ros.validateString)(properties.logstore));
+    errors.collect(ros.propertyValidator('consumerGroup', ros.requiredValidator)(properties.consumerGroup));
+    errors.collect(ros.propertyValidator('consumerGroup', ros.validateString)(properties.consumerGroup));
+    return errors.wrap('supplied properties not correct for "RosConsumerGroupProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLS::ConsumerGroup` resource
+ *
+ * @param properties - the TypeScript properties of a `RosConsumerGroupProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLS::ConsumerGroup` resource.
+ */
+// @ts-ignore TS6133
+function rosConsumerGroupPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosConsumerGroupPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ConsumerGroup': ros.stringToRosTemplate(properties.consumerGroup),
+      'Logstore': ros.stringToRosTemplate(properties.logstore),
+      'Order': ros.booleanToRosTemplate(properties.order),
+      'Project': ros.stringToRosTemplate(properties.project),
+      'Timeout': ros.numberToRosTemplate(properties.timeout),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::ConsumerGroup`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ConsumerGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-consumergroup
+ */
+export class RosConsumerGroup extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLS::ConsumerGroup";
+
+    /**
+     * @Attribute ConsumerGroup: The name of the consumer group.
+     */
+    public readonly attrConsumerGroup: ros.IResolvable;
+
+    /**
+     * @Attribute Logstore: The name of the logstore to which this consumer group belongs.
+     */
+    public readonly attrLogstore: ros.IResolvable;
+
+    /**
+     * @Attribute Project: The name of the project to which the logstore belongs.
+     */
+    public readonly attrProject: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property consumerGroup: The name of the consumer group. The name must be unique in a project.
+     */
+    public consumerGroup: string | ros.IResolvable;
+
+    /**
+     * @Property logstore: The name of the Logstore.
+     */
+    public logstore: string | ros.IResolvable;
+
+    /**
+     * @Property order: Specifies whether to consume data in sequence. Valid values:
+     * true
+     * In a shard, data is consumed in ascending order based on the value of the **__tag__:__receive_time__** field.
+     * If a shard is split, data in the original shard is consumed first. Then, data in the new shards is consumed at the same time.
+     * If shards are merged, data in the original shards is consumed first. Then, data in the new shard is consumed.
+     * false Data in all shards is consumed at the same time. If a new shard is generated after a shard is split or after shards are merged, data in the new shard is immediately consumed.
+     */
+    public order: boolean | ros.IResolvable;
+
+    /**
+     * @Property project: The name of the project.
+     */
+    public project: string | ros.IResolvable;
+
+    /**
+     * @Property timeout: The timeout period. If the server does not receive heartbeats from a consumer within the timeout period, the server deletes the consumer. Unit: seconds.
+     */
+    public timeout: number | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosConsumerGroupProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosConsumerGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrConsumerGroup = this.getAtt('ConsumerGroup');
+        this.attrLogstore = this.getAtt('Logstore');
+        this.attrProject = this.getAtt('Project');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.consumerGroup = props.consumerGroup;
+        this.logstore = props.logstore;
+        this.order = props.order;
+        this.project = props.project;
+        this.timeout = props.timeout;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            consumerGroup: this.consumerGroup,
+            logstore: this.logstore,
+            order: this.order,
+            project: this.project,
+            timeout: this.timeout,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosConsumerGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosDashboard`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-dashboard
  */
@@ -2631,6 +2813,19 @@ function RosEtlPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('configuration', ros.requiredValidator)(properties.configuration));
     errors.collect(ros.propertyValidator('configuration', RosEtl_ConfigurationPropertyValidator)(properties.configuration));
     errors.collect(ros.propertyValidator('projectName', ros.requiredValidator)(properties.projectName));
+    if(properties.projectName && (Array.isArray(properties.projectName) || (typeof properties.projectName) === 'string')) {
+        errors.collect(ros.propertyValidator('projectName', ros.validateLength)({
+            data: properties.projectName.length,
+            min: 3,
+            max: 63,
+          }));
+    }
+    if(properties.projectName && (typeof properties.projectName) !== 'object') {
+        errors.collect(ros.propertyValidator('projectName', ros.validateAllowedPattern)({
+          data: properties.projectName,
+          reg: /^[a-zA-Z0-9_-]+$/
+        }));
+    }
     errors.collect(ros.propertyValidator('projectName', ros.validateString)(properties.projectName));
     errors.collect(ros.propertyValidator('schedule', ros.requiredValidator)(properties.schedule));
     errors.collect(ros.propertyValidator('schedule', RosEtl_SchedulePropertyValidator)(properties.schedule));
@@ -3008,6 +3203,12 @@ function RosIndexPropsValidator(properties: any): ros.ValidationResult {
             min: 3,
             max: 63,
           }));
+    }
+    if(properties.logstoreName && (typeof properties.logstoreName) !== 'object') {
+        errors.collect(ros.propertyValidator('logstoreName', ros.validateAllowedPattern)({
+          data: properties.logstoreName,
+          reg: /^[a-zA-Z0-9_-]+$/
+        }));
     }
     errors.collect(ros.propertyValidator('logstoreName', ros.validateString)(properties.logstoreName));
     errors.collect(ros.propertyValidator('projectName', ros.requiredValidator)(properties.projectName));
@@ -3446,6 +3647,12 @@ function RosLogstorePropsValidator(properties: any): ros.ValidationResult {
             max: 63,
           }));
     }
+    if(properties.logstoreName && (typeof properties.logstoreName) !== 'object') {
+        errors.collect(ros.propertyValidator('logstoreName', ros.validateAllowedPattern)({
+          data: properties.logstoreName,
+          reg: /^[a-zA-Z0-9_-]+$/
+        }));
+    }
     errors.collect(ros.propertyValidator('logstoreName', ros.validateString)(properties.logstoreName));
     errors.collect(ros.propertyValidator('preserveStorage', ros.validateBoolean)(properties.preserveStorage));
     errors.collect(ros.propertyValidator('projectName', ros.requiredValidator)(properties.projectName));
@@ -3530,7 +3737,7 @@ function rosLogstorePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Logstore`, which is used to create a Logstore in a Log Service project.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Logstore`, which is used to create a Logstore in a Simple Log Service (SLS) project.
  * @Note This class does not contain additional functions, so it is recommended to use the `Logstore` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logstore
  */
@@ -3920,6 +4127,12 @@ function RosLogtailConfigPropsValidator(properties: any): ros.ValidationResult {
             max: 63,
           }));
     }
+    if(properties.logstoreName && (typeof properties.logstoreName) !== 'object') {
+        errors.collect(ros.propertyValidator('logstoreName', ros.validateAllowedPattern)({
+          data: properties.logstoreName,
+          reg: /^[a-zA-Z0-9_-]+$/
+        }));
+    }
     errors.collect(ros.propertyValidator('logstoreName', ros.validateString)(properties.logstoreName));
     errors.collect(ros.propertyValidator('projectName', ros.requiredValidator)(properties.projectName));
     if(properties.projectName && (Array.isArray(properties.projectName) || (typeof properties.projectName) === 'string')) {
@@ -4174,6 +4387,12 @@ function RosLogtailConfig_CloneFromPropertyValidator(properties: any): ros.Valid
             min: 3,
             max: 63,
           }));
+    }
+    if(properties.projectName && (typeof properties.projectName) !== 'object') {
+        errors.collect(ros.propertyValidator('projectName', ros.validateAllowedPattern)({
+          data: properties.projectName,
+          reg: /^[a-zA-Z0-9_-]+$/
+        }));
     }
     errors.collect(ros.propertyValidator('projectName', ros.validateString)(properties.projectName));
     return errors.wrap('supplied properties not correct for "CloneFromProperty"');
@@ -4436,6 +4655,12 @@ function RosMetricStorePropsValidator(properties: any): ros.ValidationResult {
             max: 63,
           }));
     }
+    if(properties.logstoreName && (typeof properties.logstoreName) !== 'object') {
+        errors.collect(ros.propertyValidator('logstoreName', ros.validateAllowedPattern)({
+          data: properties.logstoreName,
+          reg: /^[a-zA-Z0-9_-]+$/
+        }));
+    }
     errors.collect(ros.propertyValidator('logstoreName', ros.validateString)(properties.logstoreName));
     errors.collect(ros.propertyValidator('preserveStorage', ros.validateBoolean)(properties.preserveStorage));
     errors.collect(ros.propertyValidator('projectName', ros.requiredValidator)(properties.projectName));
@@ -4697,7 +4922,7 @@ function rosOssExportPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::OssExport`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::OssExport`, which is used to create an Object Storage Service (OSS) data shipping job to manage Simple Log Service (SLS) data and ship Logstore data to OSS for storage.
  * @Note This class does not contain additional functions, so it is recommended to use the `OssExport` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-ossexport
  */
@@ -5011,6 +5236,293 @@ function rosOssExportSinkPropertyToRosTemplate(properties: any): any {
 }
 
 /**
+ * Properties for defining a `RosOssExternalStore`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-ossexternalstore
+ */
+export interface RosOssExternalStoreProps {
+
+    /**
+     * @Property accessId: The AccessKey ID.
+     */
+    readonly accessId: string | ros.IResolvable;
+
+    /**
+     * @Property accessKey: The AccessKey secret.
+     */
+    readonly accessKey: string | ros.IResolvable;
+
+    /**
+     * @Property bucket: The name of the OSS bucket.
+     */
+    readonly bucket: string | ros.IResolvable;
+
+    /**
+     * @Property columns: The associated fields.
+     */
+    readonly columns: Array<RosOssExternalStore.ColumnsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property endpoint: The OSS endpoint.
+     */
+    readonly endpoint: string | ros.IResolvable;
+
+    /**
+     * @Property externalStoreName: The name of the external store.
+     */
+    readonly externalStoreName: string | ros.IResolvable;
+
+    /**
+     * @Property objects: The associated OSS objects. Valid values of n: 1 to 100.
+     */
+    readonly objects: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property project: A short description of struct
+     */
+    readonly project: string | ros.IResolvable;
+
+    /**
+     * @Property storeType: The type of the external store. Set the value to oss.
+     */
+    readonly storeType: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosOssExternalStoreProps`
+ *
+ * @param properties - the TypeScript properties of a `RosOssExternalStoreProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosOssExternalStorePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('storeType', ros.requiredValidator)(properties.storeType));
+    if(properties.storeType && (typeof properties.storeType) !== 'object') {
+        errors.collect(ros.propertyValidator('storeType', ros.validateAllowedValues)({
+          data: properties.storeType,
+          allowedValues: ["oss"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('storeType', ros.validateString)(properties.storeType));
+    errors.collect(ros.propertyValidator('project', ros.requiredValidator)(properties.project));
+    errors.collect(ros.propertyValidator('project', ros.validateString)(properties.project));
+    errors.collect(ros.propertyValidator('endpoint', ros.requiredValidator)(properties.endpoint));
+    errors.collect(ros.propertyValidator('endpoint', ros.validateString)(properties.endpoint));
+    errors.collect(ros.propertyValidator('bucket', ros.requiredValidator)(properties.bucket));
+    errors.collect(ros.propertyValidator('bucket', ros.validateString)(properties.bucket));
+    errors.collect(ros.propertyValidator('accessId', ros.requiredValidator)(properties.accessId));
+    errors.collect(ros.propertyValidator('accessId', ros.validateString)(properties.accessId));
+    errors.collect(ros.propertyValidator('objects', ros.requiredValidator)(properties.objects));
+    if(properties.objects && (Array.isArray(properties.objects) || (typeof properties.objects) === 'string')) {
+        errors.collect(ros.propertyValidator('objects', ros.validateLength)({
+            data: properties.objects.length,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('objects', ros.listValidator(ros.validateString))(properties.objects));
+    errors.collect(ros.propertyValidator('columns', ros.requiredValidator)(properties.columns));
+    errors.collect(ros.propertyValidator('columns', ros.listValidator(RosOssExternalStore_ColumnsPropertyValidator))(properties.columns));
+    errors.collect(ros.propertyValidator('accessKey', ros.requiredValidator)(properties.accessKey));
+    errors.collect(ros.propertyValidator('accessKey', ros.validateString)(properties.accessKey));
+    errors.collect(ros.propertyValidator('externalStoreName', ros.requiredValidator)(properties.externalStoreName));
+    errors.collect(ros.propertyValidator('externalStoreName', ros.validateString)(properties.externalStoreName));
+    return errors.wrap('supplied properties not correct for "RosOssExternalStoreProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLS::OssExternalStore` resource
+ *
+ * @param properties - the TypeScript properties of a `RosOssExternalStoreProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLS::OssExternalStore` resource.
+ */
+// @ts-ignore TS6133
+function rosOssExternalStorePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosOssExternalStorePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AccessId': ros.stringToRosTemplate(properties.accessId),
+      'AccessKey': ros.stringToRosTemplate(properties.accessKey),
+      'Bucket': ros.stringToRosTemplate(properties.bucket),
+      'Columns': ros.listMapper(rosOssExternalStoreColumnsPropertyToRosTemplate)(properties.columns),
+      'Endpoint': ros.stringToRosTemplate(properties.endpoint),
+      'ExternalStoreName': ros.stringToRosTemplate(properties.externalStoreName),
+      'Objects': ros.listMapper(ros.stringToRosTemplate)(properties.objects),
+      'Project': ros.stringToRosTemplate(properties.project),
+      'StoreType': ros.stringToRosTemplate(properties.storeType),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::OssExternalStore`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `OssExternalStore` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-ossexternalstore
+ */
+export class RosOssExternalStore extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLS::OssExternalStore";
+
+    /**
+     * @Attribute ExternalStoreName: The name of the external store.
+     */
+    public readonly attrExternalStoreName: ros.IResolvable;
+
+    /**
+     * @Attribute Project: The name of the project to which the external store belongs.
+     */
+    public readonly attrProject: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property accessId: The AccessKey ID.
+     */
+    public accessId: string | ros.IResolvable;
+
+    /**
+     * @Property accessKey: The AccessKey secret.
+     */
+    public accessKey: string | ros.IResolvable;
+
+    /**
+     * @Property bucket: The name of the OSS bucket.
+     */
+    public bucket: string | ros.IResolvable;
+
+    /**
+     * @Property columns: The associated fields.
+     */
+    public columns: Array<RosOssExternalStore.ColumnsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property endpoint: The OSS endpoint.
+     */
+    public endpoint: string | ros.IResolvable;
+
+    /**
+     * @Property externalStoreName: The name of the external store.
+     */
+    public externalStoreName: string | ros.IResolvable;
+
+    /**
+     * @Property objects: The associated OSS objects. Valid values of n: 1 to 100.
+     */
+    public objects: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property project: A short description of struct
+     */
+    public project: string | ros.IResolvable;
+
+    /**
+     * @Property storeType: The type of the external store. Set the value to oss.
+     */
+    public storeType: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosOssExternalStoreProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosOssExternalStore.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrExternalStoreName = this.getAtt('ExternalStoreName');
+        this.attrProject = this.getAtt('Project');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.accessId = props.accessId;
+        this.accessKey = props.accessKey;
+        this.bucket = props.bucket;
+        this.columns = props.columns;
+        this.endpoint = props.endpoint;
+        this.externalStoreName = props.externalStoreName;
+        this.objects = props.objects;
+        this.project = props.project;
+        this.storeType = props.storeType;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            accessId: this.accessId,
+            accessKey: this.accessKey,
+            bucket: this.bucket,
+            columns: this.columns,
+            endpoint: this.endpoint,
+            externalStoreName: this.externalStoreName,
+            objects: this.objects,
+            project: this.project,
+            storeType: this.storeType,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosOssExternalStorePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosOssExternalStore {
+    /**
+     * @stability external
+     */
+    export interface ColumnsProperty {
+        /**
+         * @Property type: The data type of the field.
+         */
+        readonly type: string | ros.IResolvable;
+        /**
+         * @Property name: The name of the field.
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ColumnsProperty`
+ *
+ * @param properties - the TypeScript properties of a `ColumnsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosOssExternalStore_ColumnsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["varchar","bigint","double"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "ColumnsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLS::OssExternalStore.Columns` resource
+ *
+ * @param properties - the TypeScript properties of a `ColumnsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLS::OssExternalStore.Columns` resource.
+ */
+// @ts-ignore TS6133
+function rosOssExternalStoreColumnsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosOssExternalStore_ColumnsPropertyValidator(properties).assertSuccess();
+    return {
+      'Type': ros.stringToRosTemplate(properties.type),
+      'Name': ros.stringToRosTemplate(properties.name),
+    };
+}
+
+/**
  * Properties for defining a `RosProject`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-project
  */
@@ -5025,9 +5537,19 @@ export interface RosProjectProps {
     readonly name: string | ros.IResolvable;
 
     /**
+     * @Property dataRedundancyType: Disaster recovery type.LRS: Local redundant storage.ZRS: Local redundant storage.
+     */
+    readonly dataRedundancyType?: string | ros.IResolvable;
+
+    /**
      * @Property description: Project description: <>'"\ is not supported, up to 64 characters.
      */
     readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the sls project belongs. If not provided, the project belongs to the default resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * @Property tags: Tags to attach to project. Max support 20 tags to add during create project. Each tag with two properties Key and Value, and Key is required.
@@ -5053,6 +5575,14 @@ function RosProjectPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    if(properties.dataRedundancyType && (typeof properties.dataRedundancyType) !== 'object') {
+        errors.collect(ros.propertyValidator('dataRedundancyType', ros.validateAllowedValues)({
+          data: properties.dataRedundancyType,
+          allowedValues: ["LRS","ZRS"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('dataRedundancyType', ros.validateString)(properties.dataRedundancyType));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -5094,7 +5624,9 @@ function rosProjectPropsToRosTemplate(properties: any, enableResourcePropertyCon
     }
     return {
       'Name': ros.stringToRosTemplate(properties.name),
+      'DataRedundancyType': ros.stringToRosTemplate(properties.dataRedundancyType),
       'Description': ros.stringToRosTemplate(properties.description),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
       'Tags': ros.listMapper(rosProjectTagsPropertyToRosTemplate)(properties.tags),
     };
 }
@@ -5127,9 +5659,19 @@ export class RosProject extends ros.RosResource {
     public name: string | ros.IResolvable;
 
     /**
+     * @Property dataRedundancyType: Disaster recovery type.LRS: Local redundant storage.ZRS: Local redundant storage.
+     */
+    public dataRedundancyType: string | ros.IResolvable | undefined;
+
+    /**
      * @Property description: Project description: <>'"\ is not supported, up to 64 characters.
      */
     public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the sls project belongs. If not provided, the project belongs to the default resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property tags: Tags to attach to project. Max support 20 tags to add during create project. Each tag with two properties Key and Value, and Key is required.
@@ -5147,7 +5689,9 @@ export class RosProject extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.name = props.name;
+        this.dataRedundancyType = props.dataRedundancyType;
         this.description = props.description;
+        this.resourceGroupId = props.resourceGroupId;
         this.tags = props.tags;
     }
 
@@ -5155,7 +5699,9 @@ export class RosProject extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             name: this.name,
+            dataRedundancyType: this.dataRedundancyType,
             description: this.description,
+            resourceGroupId: this.resourceGroupId,
             tags: this.tags,
         };
     }
@@ -5210,6 +5756,281 @@ function rosProjectTagsPropertyToRosTemplate(properties: any): any {
       'Value': ros.stringToRosTemplate(properties.value),
       'Key': ros.stringToRosTemplate(properties.key),
     };
+}
+
+/**
+ * Properties for defining a `RosRdsExternalStore`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-rdsexternalstore
+ */
+export interface RosRdsExternalStoreProps {
+
+    /**
+     * @Property db: The name of the database in the ApsaraDB RDS for MySQL instance.
+     */
+    readonly db: string | ros.IResolvable;
+
+    /**
+     * @Property externalStoreName: The name of the external store. The name must be unique in a project and different from Logstore.
+     */
+    readonly externalStoreName: string | ros.IResolvable;
+
+    /**
+     * @Property host: The internal or public endpoint of the ApsaraDB RDS for MySQL instance.
+     */
+    readonly host: string | ros.IResolvable;
+
+    /**
+     * @Property password: The password that is used to log on to the ApsaraDB RDS for MySQL instance.
+     */
+    readonly password: string | ros.IResolvable;
+
+    /**
+     * @Property port: The internal or public port of the ApsaraDB RDS for MySQL instance.
+     */
+    readonly port: number | ros.IResolvable;
+
+    /**
+     * @Property project: The name of the project.
+     */
+    readonly project: string | ros.IResolvable;
+
+    /**
+     * @Property region: The region where the ApsaraDB RDS for MySQL instance resides. Valid values: cn-qingdao, cn-beijing, cn-hangzhou.
+     */
+    readonly region: string | ros.IResolvable;
+
+    /**
+     * @Property storeType: The storage type. Set the value to rds-vpc, which indicates an ApsaraDB RDS for MySQL database in a virtual private cloud (VPC).
+     */
+    readonly storeType: string | ros.IResolvable;
+
+    /**
+     * @Property table: The name of the database table in the ApsaraDB RDS for MySQL instance.
+     */
+    readonly table: string | ros.IResolvable;
+
+    /**
+     * @Property username: The username that is used to log on to the ApsaraDB RDS for MySQL instance.
+     */
+    readonly username: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: The ID of the VPC to which the ApsaraDB RDS for MySQL instance belongs.
+     */
+    readonly vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The id of the RDS instance
+     */
+    readonly instanceId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosRdsExternalStoreProps`
+ *
+ * @param properties - the TypeScript properties of a `RosRdsExternalStoreProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosRdsExternalStorePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('storeType', ros.requiredValidator)(properties.storeType));
+    if(properties.storeType && (typeof properties.storeType) !== 'object') {
+        errors.collect(ros.propertyValidator('storeType', ros.validateAllowedValues)({
+          data: properties.storeType,
+          allowedValues: ["rds-vpc"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('storeType', ros.validateString)(properties.storeType));
+    errors.collect(ros.propertyValidator('project', ros.requiredValidator)(properties.project));
+    errors.collect(ros.propertyValidator('project', ros.validateString)(properties.project));
+    errors.collect(ros.propertyValidator('table', ros.requiredValidator)(properties.table));
+    errors.collect(ros.propertyValidator('table', ros.validateString)(properties.table));
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('username', ros.requiredValidator)(properties.username));
+    errors.collect(ros.propertyValidator('username', ros.validateString)(properties.username));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('port', ros.requiredValidator)(properties.port));
+    errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
+    errors.collect(ros.propertyValidator('region', ros.requiredValidator)(properties.region));
+    if(properties.region && (typeof properties.region) !== 'object') {
+        errors.collect(ros.propertyValidator('region', ros.validateAllowedValues)({
+          data: properties.region,
+          allowedValues: ["cn-qingdao","cn-beijing","cn-hangzhou"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('region', ros.validateString)(properties.region));
+    errors.collect(ros.propertyValidator('host', ros.requiredValidator)(properties.host));
+    errors.collect(ros.propertyValidator('host', ros.validateString)(properties.host));
+    errors.collect(ros.propertyValidator('externalStoreName', ros.requiredValidator)(properties.externalStoreName));
+    errors.collect(ros.propertyValidator('externalStoreName', ros.validateString)(properties.externalStoreName));
+    errors.collect(ros.propertyValidator('db', ros.requiredValidator)(properties.db));
+    errors.collect(ros.propertyValidator('db', ros.validateString)(properties.db));
+    errors.collect(ros.propertyValidator('password', ros.requiredValidator)(properties.password));
+    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
+    return errors.wrap('supplied properties not correct for "RosRdsExternalStoreProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLS::RdsExternalStore` resource
+ *
+ * @param properties - the TypeScript properties of a `RosRdsExternalStoreProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLS::RdsExternalStore` resource.
+ */
+// @ts-ignore TS6133
+function rosRdsExternalStorePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosRdsExternalStorePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Db': ros.stringToRosTemplate(properties.db),
+      'ExternalStoreName': ros.stringToRosTemplate(properties.externalStoreName),
+      'Host': ros.stringToRosTemplate(properties.host),
+      'Password': ros.stringToRosTemplate(properties.password),
+      'Port': ros.numberToRosTemplate(properties.port),
+      'Project': ros.stringToRosTemplate(properties.project),
+      'Region': ros.stringToRosTemplate(properties.region),
+      'StoreType': ros.stringToRosTemplate(properties.storeType),
+      'Table': ros.stringToRosTemplate(properties.table),
+      'Username': ros.stringToRosTemplate(properties.username),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::RdsExternalStore`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `RdsExternalStore` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-rdsexternalstore
+ */
+export class RosRdsExternalStore extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLS::RdsExternalStore";
+
+    /**
+     * @Attribute ExternalStoreName: The name of the external store.
+     */
+    public readonly attrExternalStoreName: ros.IResolvable;
+
+    /**
+     * @Attribute Project: The name of the project to which the external store belongs.
+     */
+    public readonly attrProject: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property db: The name of the database in the ApsaraDB RDS for MySQL instance.
+     */
+    public db: string | ros.IResolvable;
+
+    /**
+     * @Property externalStoreName: The name of the external store. The name must be unique in a project and different from Logstore.
+     */
+    public externalStoreName: string | ros.IResolvable;
+
+    /**
+     * @Property host: The internal or public endpoint of the ApsaraDB RDS for MySQL instance.
+     */
+    public host: string | ros.IResolvable;
+
+    /**
+     * @Property password: The password that is used to log on to the ApsaraDB RDS for MySQL instance.
+     */
+    public password: string | ros.IResolvable;
+
+    /**
+     * @Property port: The internal or public port of the ApsaraDB RDS for MySQL instance.
+     */
+    public port: number | ros.IResolvable;
+
+    /**
+     * @Property project: The name of the project.
+     */
+    public project: string | ros.IResolvable;
+
+    /**
+     * @Property region: The region where the ApsaraDB RDS for MySQL instance resides. Valid values: cn-qingdao, cn-beijing, cn-hangzhou.
+     */
+    public region: string | ros.IResolvable;
+
+    /**
+     * @Property storeType: The storage type. Set the value to rds-vpc, which indicates an ApsaraDB RDS for MySQL database in a virtual private cloud (VPC).
+     */
+    public storeType: string | ros.IResolvable;
+
+    /**
+     * @Property table: The name of the database table in the ApsaraDB RDS for MySQL instance.
+     */
+    public table: string | ros.IResolvable;
+
+    /**
+     * @Property username: The username that is used to log on to the ApsaraDB RDS for MySQL instance.
+     */
+    public username: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: The ID of the VPC to which the ApsaraDB RDS for MySQL instance belongs.
+     */
+    public vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The id of the RDS instance
+     */
+    public instanceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosRdsExternalStoreProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosRdsExternalStore.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrExternalStoreName = this.getAtt('ExternalStoreName');
+        this.attrProject = this.getAtt('Project');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.db = props.db;
+        this.externalStoreName = props.externalStoreName;
+        this.host = props.host;
+        this.password = props.password;
+        this.port = props.port;
+        this.project = props.project;
+        this.region = props.region;
+        this.storeType = props.storeType;
+        this.table = props.table;
+        this.username = props.username;
+        this.vpcId = props.vpcId;
+        this.instanceId = props.instanceId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            db: this.db,
+            externalStoreName: this.externalStoreName,
+            host: this.host,
+            password: this.password,
+            port: this.port,
+            project: this.project,
+            region: this.region,
+            storeType: this.storeType,
+            table: this.table,
+            username: this.username,
+            vpcId: this.vpcId,
+            instanceId: this.instanceId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosRdsExternalStorePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }
 
 /**
@@ -5431,6 +6252,19 @@ function RosServiceLogPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('serviceLogTypes', ros.listValidator(ros.validateString))(properties.serviceLogTypes));
     errors.collect(ros.propertyValidator('projectName', ros.requiredValidator)(properties.projectName));
+    if(properties.projectName && (Array.isArray(properties.projectName) || (typeof properties.projectName) === 'string')) {
+        errors.collect(ros.propertyValidator('projectName', ros.validateLength)({
+            data: properties.projectName.length,
+            min: 3,
+            max: 63,
+          }));
+    }
+    if(properties.projectName && (typeof properties.projectName) !== 'object') {
+        errors.collect(ros.propertyValidator('projectName', ros.validateAllowedPattern)({
+          data: properties.projectName,
+          reg: /^[a-zA-Z0-9_-]+$/
+        }));
+    }
     errors.collect(ros.propertyValidator('projectName', ros.validateString)(properties.projectName));
     errors.collect(ros.propertyValidator('logStorageLocation', ros.requiredValidator)(properties.logStorageLocation));
     errors.collect(ros.propertyValidator('logStorageLocation', ros.validateString)(properties.logStorageLocation));

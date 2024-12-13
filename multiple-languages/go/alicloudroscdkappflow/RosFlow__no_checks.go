@@ -100,6 +100,10 @@ func (j *jsiiProxy_RosFlow) validateSetFlowNameParameters(val interface{}) error
 	return nil
 }
 
+func (j *jsiiProxy_RosFlow) validateSetFlowStatusParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosFlow) validateSetLaunchFlowParameters(val interface{}) error {
 	return nil
 }

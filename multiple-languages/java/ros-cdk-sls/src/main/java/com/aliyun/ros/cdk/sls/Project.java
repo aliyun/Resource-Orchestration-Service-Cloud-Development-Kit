@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SLS::Project</code>, which is used to create a Log Service project.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:33.704Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:12.357Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.Project")
 public class Project extends com.aliyun.ros.cdk.core.Resource {
 
@@ -143,6 +143,27 @@ public class Project extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property dataRedundancyType: Disaster recovery type.LRS: Local redundant storage.ZRS: Local redundant storage.
+         * <p>
+         * @return {@code this}
+         * @param dataRedundancyType Property dataRedundancyType: Disaster recovery type.LRS: Local redundant storage.ZRS: Local redundant storage. This parameter is required.
+         */
+        public Builder dataRedundancyType(final java.lang.String dataRedundancyType) {
+            this.props.dataRedundancyType(dataRedundancyType);
+            return this;
+        }
+        /**
+         * Property dataRedundancyType: Disaster recovery type.LRS: Local redundant storage.ZRS: Local redundant storage.
+         * <p>
+         * @return {@code this}
+         * @param dataRedundancyType Property dataRedundancyType: Disaster recovery type.LRS: Local redundant storage.ZRS: Local redundant storage. This parameter is required.
+         */
+        public Builder dataRedundancyType(final com.aliyun.ros.cdk.core.IResolvable dataRedundancyType) {
+            this.props.dataRedundancyType(dataRedundancyType);
+            return this;
+        }
+
+        /**
          * Property description: Project description: &lt;&gt;'"\ is not supported, up to 64 characters.
          * <p>
          * @return {@code this}
@@ -160,6 +181,31 @@ public class Project extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: The ID of the resource group to which the sls project belongs.
+         * <p>
+         * If not provided, the project belongs to the default resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which the sls project belongs. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: The ID of the resource group to which the sls project belongs.
+         * <p>
+         * If not provided, the project belongs to the default resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which the sls project belongs. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
             return this;
         }
 

@@ -86,7 +86,7 @@ function rosAssertPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::Assert`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::Assert`, which is used to create an assertion. Assertions are used to evaluate conditions and support a variety of operation types. An assertion determines whether to terminate creation and return an error message when the assertion result is false.
  * @Note This class does not contain additional functions, so it is recommended to use the `Assert` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-assert
  */
@@ -1693,7 +1693,7 @@ function RosStackPropsValidator(properties: any): ros.ValidationResult {
     if(properties.templateId && (typeof properties.templateId) !== 'object') {
         errors.collect(ros.propertyValidator('templateId', ros.validateAllowedPattern)({
           data: properties.templateId,
-          reg: /^([0-9a-f]{8}[-][0-9a-f]{4}[-a-z0-9][0-9a-f]{4}[-][0-9a-f]{4}[-][0-9a-f]{12})|(acs[:]ros[:][*][:]\d+[:]template\/[0-9a-f]{8}[-][0-9a-f]{4}[-a-z0-9][0-9a-f]{4}[-][0-9a-f]{4}[-][0-9a-f]{12})|(acs[:]ros[:]template[\/][-_a-zA-Z0-9]+[\/][-_a-zA-Z0-9]+)$/
+          reg: /^([0-9a-f]{8}[-][0-9a-f]{4}[-a-z0-9][0-9a-f]{4}[-][0-9a-f]{4}[-][0-9a-f]{12})|(acs[:]ros[:][*][:]\d+[:]template\/[0-9a-f]{8}[-][0-9a-f]{4}[-a-z0-9][0-9a-f]{4}[-][0-9a-f]{4}[-][0-9a-f]{12})|(acs[:]ros[:]template[\/][-_a-zA-Z0-9]+[\/][-_a-zA-Z0-9]+)$|(acs[:]ros[:]public_template[\/][-_a-zA-Z0-9]+)$/
         }));
     }
     errors.collect(ros.propertyValidator('templateId', ros.validateString)(properties.templateId));

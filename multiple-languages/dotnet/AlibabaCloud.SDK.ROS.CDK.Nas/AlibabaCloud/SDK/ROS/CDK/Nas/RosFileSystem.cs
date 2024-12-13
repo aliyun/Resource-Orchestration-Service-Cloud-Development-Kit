@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nas
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::FileSystem`, which is used to create a file system in Apsara File Storage NAS (NAS).</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::FileSystem`, which is used to create a file system of File Storage NAS (NAS).</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `FileSystem` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-filesystem

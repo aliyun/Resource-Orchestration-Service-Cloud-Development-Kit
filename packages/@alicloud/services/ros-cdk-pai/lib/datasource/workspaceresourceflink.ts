@@ -29,7 +29,7 @@ export interface WorkspaceResourceFlinkProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::WorkspaceResourceFlink`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::WorkspaceResourceFlink`, which is used to query the information about a Realtime Compute for Apache Flink resource that is associated with a workspace.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWorkspaceResourceFlink`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-workspaceresourceflink
  */

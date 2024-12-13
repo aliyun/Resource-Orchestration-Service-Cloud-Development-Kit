@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.mps;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::MPS::MediaWorkflow</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::MPS::MediaWorkflow</code>, which is used to add a media workflow.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.668Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:09.426Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mps.$Module.class, fqn = "@alicloud/ros-cdk-mps.RosMediaWorkflow")
 public class RosMediaWorkflow extends com.aliyun.ros.cdk.core.RosResource {
 

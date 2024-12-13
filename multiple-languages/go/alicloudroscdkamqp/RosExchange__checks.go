@@ -380,6 +380,23 @@ func (j *jsiiProxy_RosExchange) validateSetVirtualHostParameters(val interface{}
 	return nil
 }
 
+func (j *jsiiProxy_RosExchange) validateSetXDelayedTypeParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func validateNewRosExchangeParameters(scope alicloudroscdkcore.Construct, id *string, props *RosExchangeProps, enableResourcePropertyConstraint *bool) error {
 	if scope == nil {
 		return fmt.Errorf("parameter scope is required, but nil was provided")

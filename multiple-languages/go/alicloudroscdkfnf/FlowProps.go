@@ -13,6 +13,10 @@ type FlowProps struct {
 	Name interface{} `field:"required" json:"name" yaml:"name"`
 	// Property description: Create a description of the flow.
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
+	// Property executionMode: The execution mode of the flow.
+	ExecutionMode interface{} `field:"optional" json:"executionMode" yaml:"executionMode"`
+	// Property externalStorageLocation: The external storage location for the flow.
+	ExternalStorageLocation interface{} `field:"optional" json:"externalStorageLocation" yaml:"externalStorageLocation"`
 	// Property requestId: The specified Request ID for this request.
 	//
 	// If not specified, our system will help you generate a random one.

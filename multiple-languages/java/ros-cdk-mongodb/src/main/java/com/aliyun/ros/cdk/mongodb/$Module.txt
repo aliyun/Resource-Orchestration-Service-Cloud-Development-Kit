@@ -1,6 +1,8 @@
 @alicloud/ros-cdk-mongodb.Instance=com.aliyun.ros.cdk.mongodb.Instance
 @alicloud/ros-cdk-mongodb.InstanceProps=com.aliyun.ros.cdk.mongodb.InstanceProps
 @alicloud/ros-cdk-mongodb.RosInstance=com.aliyun.ros.cdk.mongodb.RosInstance
+@alicloud/ros-cdk-mongodb.RosInstance.PrivateConnectionsProperty=com.aliyun.ros.cdk.mongodb.RosInstance$PrivateConnectionsProperty
+@alicloud/ros-cdk-mongodb.RosInstance.ReplicaConnectionsProperty=com.aliyun.ros.cdk.mongodb.RosInstance$ReplicaConnectionsProperty
 @alicloud/ros-cdk-mongodb.RosInstance.TagsProperty=com.aliyun.ros.cdk.mongodb.RosInstance$TagsProperty
 @alicloud/ros-cdk-mongodb.RosInstanceProps=com.aliyun.ros.cdk.mongodb.RosInstanceProps
 @alicloud/ros-cdk-mongodb.RosShardingInstance=com.aliyun.ros.cdk.mongodb.RosShardingInstance

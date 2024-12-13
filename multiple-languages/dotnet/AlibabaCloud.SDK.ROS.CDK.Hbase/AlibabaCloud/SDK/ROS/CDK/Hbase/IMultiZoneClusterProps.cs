@@ -220,6 +220,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbase
             }
         }
 
+        /// <summary>Property deletionProtection: Specifies whether to enable the release protection feature for the cluster.</summary>
+        /// <remarks>
+        /// Default is false.
+        /// </remarks>
+        [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DeletionProtection
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property masterInstanceType: The instance type of the master node.</summary>
         /// <remarks>
         /// You can call the DescribeAvailableResource operation to obtain the value of this parameter.
@@ -524,6 +538,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbase
             [JsiiOptional]
             [JsiiProperty(name: "clusterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ClusterName
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property deletionProtection: Specifies whether to enable the release protection feature for the cluster.</summary>
+            /// <remarks>
+            /// Default is false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeletionProtection
             {
                 get => GetInstanceProperty<object?>();
             }

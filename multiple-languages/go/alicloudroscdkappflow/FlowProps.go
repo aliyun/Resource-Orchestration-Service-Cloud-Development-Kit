@@ -11,6 +11,12 @@ type FlowProps struct {
 	FlowDesc interface{} `field:"optional" json:"flowDesc" yaml:"flowDesc"`
 	// Property flowId: The ID of the flow.
 	FlowId interface{} `field:"optional" json:"flowId" yaml:"flowId"`
+	// Property flowStatus: The status of the flow.
+	//
+	// Allowed values:
+	// Enable: enable flow
+	// Disable: disable flow.
+	FlowStatus interface{} `field:"optional" json:"flowStatus" yaml:"flowStatus"`
 	// Property launchFlow: Whether to launch the flow.
 	LaunchFlow interface{} `field:"optional" json:"launchFlow" yaml:"launchFlow"`
 	// Property parameters: The parameters of the flow.

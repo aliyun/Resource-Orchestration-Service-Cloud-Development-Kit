@@ -41,6 +41,11 @@ export interface PrepayInstanceProps {
     readonly deletionForce?: boolean | ros.IResolvable;
 
     /**
+     * Property deletionProtection: Specifies whether to enable the release protection feature for the instance. Default is false.
+     */
+    readonly deletionProtection?: boolean | ros.IResolvable;
+
+    /**
      * Property engineVersion: Engine version. Supported values: 2.8, 4.0, 5.0, 6.0 and 7.0
      */
     readonly engineVersion?: string | ros.IResolvable;
@@ -361,6 +366,7 @@ export class PrepayInstance extends ros.Resource {
             instanceClass: props.instanceClass,
             vpcPasswordFree: props.vpcPasswordFree,
             autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
+            deletionProtection: props.deletionProtection,
             secondaryZoneId: props.secondaryZoneId,
             autoRenewDuration: props.autoRenewDuration,
             instanceName: props.instanceName,

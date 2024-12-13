@@ -209,7 +209,7 @@ function rosTablesPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::OTS::Tables`, which is used to query the names of all tables that are created in a Tablestore instance.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OTS::Tables`, which is used to query the names of all tables that are created in an instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Tables` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ots-tables
  */

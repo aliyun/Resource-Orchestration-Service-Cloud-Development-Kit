@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ens.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::ENS::Instances</code>, which is used to query the details of Edge Node Service (ENS) instances.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::ENS::Instances</code>, which is used to query the information about Edge Node Service (ENS) instances.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:30.167Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:08.204Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.datasource.RosInstances")
 public class RosInstances extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -67,120 +67,20 @@ public class RosInstances extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getEnsRegionIds() {
-        return software.amazon.jsii.Kernel.get(this, "ensRegionIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
-    public void setEnsRegionIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
-        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
-            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
-                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
-            }
-        }
-        software.amazon.jsii.Kernel.set(this, "ensRegionIds", value);
+    public void setInstanceId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "instanceId", value);
     }
 
     /**
      */
-    public void setEnsRegionIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "ensRegionIds", value);
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getEnsServiceId() {
-        return software.amazon.jsii.Kernel.get(this, "ensServiceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setEnsServiceId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "ensServiceId", value);
-    }
-
-    /**
-     */
-    public void setEnsServiceId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "ensServiceId", value);
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getImageId() {
-        return software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setImageId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "imageId", value);
-    }
-
-    /**
-     */
-    public void setImageId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "imageId", value);
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceIds() {
-        return software.amazon.jsii.Kernel.get(this, "instanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setInstanceIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
-        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
-            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
-                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
-            }
-        }
-        software.amazon.jsii.Kernel.set(this, "instanceIds", value);
-    }
-
-    /**
-     */
-    public void setInstanceIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "instanceIds", value);
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceName() {
-        return software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setInstanceName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "instanceName", value);
-    }
-
-    /**
-     */
-    public void setInstanceName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "instanceName", value);
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceResourceType() {
-        return software.amazon.jsii.Kernel.get(this, "instanceResourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setInstanceResourceType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "instanceResourceType", value);
-    }
-
-    /**
-     */
-    public void setInstanceResourceType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "instanceResourceType", value);
+    public void setInstanceId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "instanceId", value);
     }
 
     /**
@@ -199,24 +99,6 @@ public class RosInstances extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setRefreshOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "refreshOptions", value);
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getStatus() {
-        return software.amazon.jsii.Kernel.get(this, "status", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setStatus(final @org.jetbrains.annotations.Nullable java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "status", value);
-    }
-
-    /**
-     */
-    public void setStatus(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "status", value);
     }
 
     /**
@@ -247,103 +129,18 @@ public class RosInstances extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param ensRegionIds This parameter is required.
+         * @param instanceId This parameter is required.
          */
-        public Builder ensRegionIds(final java.util.List<? extends java.lang.Object> ensRegionIds) {
-            this.props.ensRegionIds(ensRegionIds);
+        public Builder instanceId(final java.lang.String instanceId) {
+            this.props.instanceId(instanceId);
             return this;
         }
         /**
          * @return {@code this}
-         * @param ensRegionIds This parameter is required.
+         * @param instanceId This parameter is required.
          */
-        public Builder ensRegionIds(final com.aliyun.ros.cdk.core.IResolvable ensRegionIds) {
-            this.props.ensRegionIds(ensRegionIds);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param ensServiceId This parameter is required.
-         */
-        public Builder ensServiceId(final java.lang.String ensServiceId) {
-            this.props.ensServiceId(ensServiceId);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param ensServiceId This parameter is required.
-         */
-        public Builder ensServiceId(final com.aliyun.ros.cdk.core.IResolvable ensServiceId) {
-            this.props.ensServiceId(ensServiceId);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param imageId This parameter is required.
-         */
-        public Builder imageId(final java.lang.String imageId) {
-            this.props.imageId(imageId);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param imageId This parameter is required.
-         */
-        public Builder imageId(final com.aliyun.ros.cdk.core.IResolvable imageId) {
-            this.props.imageId(imageId);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param instanceIds This parameter is required.
-         */
-        public Builder instanceIds(final java.util.List<? extends java.lang.Object> instanceIds) {
-            this.props.instanceIds(instanceIds);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param instanceIds This parameter is required.
-         */
-        public Builder instanceIds(final com.aliyun.ros.cdk.core.IResolvable instanceIds) {
-            this.props.instanceIds(instanceIds);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param instanceName This parameter is required.
-         */
-        public Builder instanceName(final java.lang.String instanceName) {
-            this.props.instanceName(instanceName);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param instanceName This parameter is required.
-         */
-        public Builder instanceName(final com.aliyun.ros.cdk.core.IResolvable instanceName) {
-            this.props.instanceName(instanceName);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param instanceResourceType This parameter is required.
-         */
-        public Builder instanceResourceType(final java.lang.String instanceResourceType) {
-            this.props.instanceResourceType(instanceResourceType);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param instanceResourceType This parameter is required.
-         */
-        public Builder instanceResourceType(final com.aliyun.ros.cdk.core.IResolvable instanceResourceType) {
-            this.props.instanceResourceType(instanceResourceType);
+        public Builder instanceId(final com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.props.instanceId(instanceId);
             return this;
         }
 
@@ -361,23 +158,6 @@ public class RosInstances extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder refreshOptions(final com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
             this.props.refreshOptions(refreshOptions);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param status This parameter is required.
-         */
-        public Builder status(final java.lang.String status) {
-            this.props.status(status);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param status This parameter is required.
-         */
-        public Builder status(final com.aliyun.ros.cdk.core.IResolvable status) {
-            this.props.status(status);
             return this;
         }
 

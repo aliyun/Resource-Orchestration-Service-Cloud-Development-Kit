@@ -64,6 +64,8 @@ type RosExchange interface {
 	UpdatedProperites() *map[string]interface{}
 	VirtualHost() interface{}
 	SetVirtualHost(val interface{})
+	XDelayedType() interface{}
+	SetXDelayedType(val interface{})
 	AddCondition(con alicloudroscdkcore.RosCondition)
 	AddCount(count interface{})
 	// Syntactic sugar for `addOverride(path, undefined)`.
@@ -360,6 +362,16 @@ func (j *jsiiProxy_RosExchange) VirtualHost() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosExchange) XDelayedType() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"xDelayedType",
+		&returns,
+	)
+	return returns
+}
+
 
 func NewRosExchange(scope alicloudroscdkcore.Construct, id *string, props *RosExchangeProps, enableResourcePropertyConstraint *bool) RosExchange {
 	_init_.Initialize()
@@ -472,6 +484,17 @@ func (j *jsiiProxy_RosExchange)SetVirtualHost(val interface{}) {
 	_jsii_.Set(
 		j,
 		"virtualHost",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosExchange)SetXDelayedType(val interface{}) {
+	if err := j.validateSetXDelayedTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"xDelayedType",
 		val,
 	)
 }

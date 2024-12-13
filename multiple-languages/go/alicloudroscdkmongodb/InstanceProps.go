@@ -40,12 +40,10 @@ type InstanceProps struct {
 	// When the value of the EngineVersion is 4.4 and later, this parameter is available and required.
 	// The value of this parameter cannot be the same as that of ZoneId and SecondaryZoneId.
 	HiddenZoneId interface{} `field:"optional" json:"hiddenZoneId" yaml:"hiddenZoneId"`
-	// Property networkType: The instance network type.
-	//
-	// Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
-	NetworkType interface{} `field:"optional" json:"networkType" yaml:"networkType"`
 	// Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
 	Period interface{} `field:"optional" json:"period" yaml:"period"`
+	// Property privateConnections: Connection configs of private connection.
+	PrivateConnections interface{} `field:"optional" json:"privateConnections" yaml:"privateConnections"`
 	// Property readonlyReplicas: Number of read-only nodes, in the range of 1-5.
 	ReadonlyReplicas interface{} `field:"optional" json:"readonlyReplicas" yaml:"readonlyReplicas"`
 	// Property replicationFactor: The number of nodes in the replica set.

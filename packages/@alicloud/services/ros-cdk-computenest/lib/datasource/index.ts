@@ -1,3 +1,4 @@
+export * from './serviceinstance';
 export * from './serviceinstances';
 
 // DATASOURCE::ComputeNest Resources:

@@ -88,18 +88,6 @@ func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetAddonsParameters(val 
 	return nil
 }
 
-func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetAutoRenewParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetAutoRenewPeriodParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetChargeTypeParameters(val interface{}) error {
-	return nil
-}
-
 func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetCloudMonitorFlagsParameters(val interface{}) error {
 	return nil
 }
@@ -109,6 +97,18 @@ func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetClusterSpecParameters
 }
 
 func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetContainerCidrParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetControlPlaneLogComponentsParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetControlPlaneLogProjectParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetControlPlaneLogTtlParameters(val interface{}) error {
 	return nil
 }
 
@@ -177,14 +177,6 @@ func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetNodePoolsParameters(v
 }
 
 func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetOsTypeParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetPeriodParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetPeriodUnitParameters(val interface{}) error {
 	return nil
 }
 

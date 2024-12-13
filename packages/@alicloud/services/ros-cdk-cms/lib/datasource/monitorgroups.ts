@@ -42,7 +42,7 @@ export interface MonitorGroupsProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::CMS::MonitorGroups`, which is used to query the basic information about application groups.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CMS::MonitorGroups`, which is used to query the information about application groups.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMonitorGroups`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-monitorgroups
  */

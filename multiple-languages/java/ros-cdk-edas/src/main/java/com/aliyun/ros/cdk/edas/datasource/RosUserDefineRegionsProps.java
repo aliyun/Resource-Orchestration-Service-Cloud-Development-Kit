@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.edas.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-edas-userdefineregions
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:29.883Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:07.886Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.datasource.RosUserDefineRegionsProps")
 @software.amazon.jsii.Jsii.Proxy(RosUserDefineRegionsProps.Jsii$Proxy.class)
 public interface RosUserDefineRegionsProps extends software.amazon.jsii.JsiiSerializable {

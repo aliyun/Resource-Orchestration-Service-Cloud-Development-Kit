@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.pai;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::PAI::WorkspaceResourceMaxCompute</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::PAI::WorkspaceResourceMaxCompute</code>, which is used to associate MaxCompute resources with a workspace.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:32.122Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:10.319Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.WorkspaceResourceMaxCompute")
 public class WorkspaceResourceMaxCompute extends com.aliyun.ros.cdk.core.Resource {
 
@@ -49,8 +49,6 @@ public class WorkspaceResourceMaxCompute extends com.aliyun.ros.cdk.core.Resourc
 
     /**
      * Attribute GroupName: Resource group name.
-     * <p>
-     * If you want to obtain a resource group name, see [ListResources](~~ 449143 ~~).
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrGroupName() {
         return software.amazon.jsii.Kernel.get(this, "attrGroupName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));

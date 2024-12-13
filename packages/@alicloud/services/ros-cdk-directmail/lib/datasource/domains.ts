@@ -19,7 +19,7 @@ export interface DomainsProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::DirectMail::Domains`, which is used to query domain names.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::DirectMail::Domains`, which is used to query the information about domain names.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomains`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-directmail-domains
  */

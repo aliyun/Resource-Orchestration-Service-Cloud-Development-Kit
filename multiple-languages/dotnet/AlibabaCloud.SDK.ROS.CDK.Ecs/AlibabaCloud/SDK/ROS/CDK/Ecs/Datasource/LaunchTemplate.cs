@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::LaunchTemplate`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::LaunchTemplate`, which is used to query the information about a launch template.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLaunchTemplate`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-launchtemplate
@@ -37,9 +37,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
         {
         }
 
-        /// <summary>Attribute AutoReleaseTime: Automatic release time.</summary>
+        /// <summary>Attribute AutoReleaseTime: Automatic release time (UTC).</summary>
         /// <remarks>
-        /// According to the [ISO8601](~~ 25696 ~~) standard, and need to use UTC time. The format is: yyyy-MM-ddTHH:mm:ssZ.
+        /// The format is: yyyy-MM-ddTHH:mm:ssZ.
         /// </remarks>
         [JsiiProperty(name: "attrAutoReleaseTime", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAutoReleaseTime
@@ -259,9 +259,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
         }
 
         /// <summary>Attribute RamRoleName: The instance RAM role name.</summary>
-        /// <remarks>
-        /// You can use the RAM API [ListRoles](~~ 28713 ~~) to query the created instance RAM roles.
-        /// </remarks>
         [JsiiProperty(name: "attrRamRoleName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrRamRoleName
         {

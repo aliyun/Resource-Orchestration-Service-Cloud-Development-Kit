@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.appflow.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::AppFlow::UserAuthConfigs</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:26.921Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:04.602Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.appflow.$Module.class, fqn = "@alicloud/ros-cdk-appflow.datasource.UserAuthConfigs")
 public class UserAuthConfigs extends com.aliyun.ros.cdk.core.Resource {
 

@@ -269,7 +269,7 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::EAIS::Instances`, which is used to query the basic information about created Elastic Accelerated Computing Instances (EAIS) instances.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::EAIS::Instances`, which is used to query the information about created Elastic Accelerated Computing Instances (EAIS) instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instances` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eais-instances
  */

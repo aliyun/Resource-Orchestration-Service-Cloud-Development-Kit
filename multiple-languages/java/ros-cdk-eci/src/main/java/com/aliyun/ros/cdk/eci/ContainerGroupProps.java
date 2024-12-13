@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.eci;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-containergroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:28.810Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:06.840Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.ContainerGroupProps")
 @software.amazon.jsii.Jsii.Proxy(ContainerGroupProps.Jsii$Proxy.class)
 public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializable {

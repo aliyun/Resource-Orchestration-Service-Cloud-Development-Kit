@@ -245,5 +245,43 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
                 _alternateExchange = value;
             }
         }
+
+        private object? _xDelayedType;
+
+        /// <remarks>
+        /// <strong>Property</strong>: xDelayedType: Exchanges of the x-delay-Message type allow you to customize the Header property of the message, and the x-delay specifies the amount of time in milliseconds for the message to be delivered. The routing rules for this class of exchanges depend on the Exchange type specified in the x-delay-type parameter, which specifies the actual Exchange type to which the delayed message will eventually be delivered. Valid values:
+        /// - DIRECT: Delivers deferred messages to a specified queue bound to an Exchange of type DIRECT.
+        /// - TOPIC: Delivers deferred messages to the queue bound to the Exchange type TOPIC.
+        /// - FANOUT: Delivers deferred messages to a queue bound to an Exchange of type FANOUT.
+        /// - HEADERS: Deferred messages are delivered to the queue bound to the Exchange HEADERS type.
+        /// - X-JMS-TOPIC: Delivers deferred messages to the queue bound to X-JMS-TOPIC.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "xDelayedType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? XDelayedType
+        {
+            get => _xDelayedType;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _xDelayedType = value;
+            }
+        }
     }
 }

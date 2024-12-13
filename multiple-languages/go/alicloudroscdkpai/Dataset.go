@@ -47,8 +47,6 @@ type Dataset interface {
 	// Attribute UserId: The ID of the user to which the dataset belongs.
 	AttrUserId() alicloudroscdkcore.IResolvable
 	// Attribute WorkspaceId: The ID of the workspace where the dataset is located.
-	//
-	// For details about how to obtain the workspace ID, see [ListWorkspaces](~~ 449124 ~~).
 	AttrWorkspaceId() alicloudroscdkcore.IResolvable
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)

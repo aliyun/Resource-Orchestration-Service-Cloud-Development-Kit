@@ -64,7 +64,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::MONGODB::Instance`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::MONGODB::Instance`, which is used to query the information about an ApsaraDB for MongoDB instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mongodb-instance
  */
@@ -560,7 +560,7 @@ function rosInstanceClassesPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::MONGODB::InstanceClasses`, which is used to query the instance types that are supported by ApsaraDB for MongoDB in the specified zone.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::MONGODB::InstanceClasses`, which is used to query the ApsaraDB for MongoDB instance types that you can create in a zone.
  * @Note This class does not contain additional functions, so it is recommended to use the `InstanceClasses` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mongodb-instanceclasses
  */
@@ -837,7 +837,7 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::MONGODB::Instances`, which is used to query the details of ApsaraDB for MongoDB instances.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::MONGODB::Instances`, which is used to query the information about ApsaraDB for MongoDB instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instances` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mongodb-instances
  */

@@ -181,7 +181,7 @@ export interface DisksProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Disks`, which is used to query the Elastic Block Storage (EBS) devices that you created. The following EBS devices are supported: cloud disks and local disks.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Disks`, which is used to query the Elastic Block Storage (EBS) devices that you created, including cloud disks and local disks.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDisks`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-disks
  */

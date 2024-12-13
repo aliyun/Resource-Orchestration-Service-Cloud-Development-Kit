@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.amqp;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-exchange
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:26.709Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:04.175Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.RosExchangeProps")
 @software.amazon.jsii.Jsii.Proxy(RosExchangeProps.Jsii$Proxy.class)
 public interface RosExchangeProps extends software.amazon.jsii.JsiiSerializable {
@@ -41,6 +41,12 @@ public interface RosExchangeProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getXDelayedType() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosExchangeProps}
      */
     static Builder builder() {
@@ -57,6 +63,7 @@ public interface RosExchangeProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object internal;
         java.lang.Object virtualHost;
         java.lang.Object alternateExchange;
+        java.lang.Object xDelayedType;
 
         /**
          * Sets the value of {@link RosExchangeProps#getAutoDeleteState}
@@ -199,6 +206,26 @@ public interface RosExchangeProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosExchangeProps#getXDelayedType}
+         * @param xDelayedType the value to be set.
+         * @return {@code this}
+         */
+        public Builder xDelayedType(java.lang.String xDelayedType) {
+            this.xDelayedType = xDelayedType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosExchangeProps#getXDelayedType}
+         * @param xDelayedType the value to be set.
+         * @return {@code this}
+         */
+        public Builder xDelayedType(com.aliyun.ros.cdk.core.IResolvable xDelayedType) {
+            this.xDelayedType = xDelayedType;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosExchangeProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -221,6 +248,7 @@ public interface RosExchangeProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object internal;
         private final java.lang.Object virtualHost;
         private final java.lang.Object alternateExchange;
+        private final java.lang.Object xDelayedType;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -235,6 +263,7 @@ public interface RosExchangeProps extends software.amazon.jsii.JsiiSerializable 
             this.internal = software.amazon.jsii.Kernel.get(this, "internal", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.virtualHost = software.amazon.jsii.Kernel.get(this, "virtualHost", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.alternateExchange = software.amazon.jsii.Kernel.get(this, "alternateExchange", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.xDelayedType = software.amazon.jsii.Kernel.get(this, "xDelayedType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -249,6 +278,7 @@ public interface RosExchangeProps extends software.amazon.jsii.JsiiSerializable 
             this.internal = java.util.Objects.requireNonNull(builder.internal, "internal is required");
             this.virtualHost = java.util.Objects.requireNonNull(builder.virtualHost, "virtualHost is required");
             this.alternateExchange = builder.alternateExchange;
+            this.xDelayedType = builder.xDelayedType;
         }
 
         @Override
@@ -287,6 +317,11 @@ public interface RosExchangeProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getXDelayedType() {
+            return this.xDelayedType;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -300,6 +335,9 @@ public interface RosExchangeProps extends software.amazon.jsii.JsiiSerializable 
             data.set("virtualHost", om.valueToTree(this.getVirtualHost()));
             if (this.getAlternateExchange() != null) {
                 data.set("alternateExchange", om.valueToTree(this.getAlternateExchange()));
+            }
+            if (this.getXDelayedType() != null) {
+                data.set("xDelayedType", om.valueToTree(this.getXDelayedType()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -325,7 +363,8 @@ public interface RosExchangeProps extends software.amazon.jsii.JsiiSerializable 
             if (!instanceId.equals(that.instanceId)) return false;
             if (!internal.equals(that.internal)) return false;
             if (!virtualHost.equals(that.virtualHost)) return false;
-            return this.alternateExchange != null ? this.alternateExchange.equals(that.alternateExchange) : that.alternateExchange == null;
+            if (this.alternateExchange != null ? !this.alternateExchange.equals(that.alternateExchange) : that.alternateExchange != null) return false;
+            return this.xDelayedType != null ? this.xDelayedType.equals(that.xDelayedType) : that.xDelayedType == null;
         }
 
         @Override
@@ -337,6 +376,7 @@ public interface RosExchangeProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.internal.hashCode());
             result = 31 * result + (this.virtualHost.hashCode());
             result = 31 * result + (this.alternateExchange != null ? this.alternateExchange.hashCode() : 0);
+            result = 31 * result + (this.xDelayedType != null ? this.xDelayedType.hashCode() : 0);
             return result;
         }
     }

@@ -1003,6 +1003,23 @@ func (j *jsiiProxy_RosPrepayDBInstance) validateSetDedicatedHostGroupIdParameter
 	return nil
 }
 
+func (j *jsiiProxy_RosPrepayDBInstance) validateSetDeletionProtectionParameters(val interface{}) error {
+	switch val.(type) {
+	case *bool:
+		// ok
+	case bool:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *bool, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosPrepayDBInstance) validateSetEnableBackupLogParameters(val interface{}) error {
 	switch val.(type) {
 	case *bool:

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.mse.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mse-gateways
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.727Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:09.485Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.datasource.RosGatewaysProps")
 @software.amazon.jsii.Jsii.Proxy(RosGatewaysProps.Jsii$Proxy.class)
 public interface RosGatewaysProps extends software.amazon.jsii.JsiiSerializable {

@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sae
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::ConfigMap`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::ConfigMap`, which is used to create a ConfigMap instance in a namespace.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `ConfigMap` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-configmap

@@ -333,7 +333,7 @@ function rosDrdsDBPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::DRDS::DrdsDB`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::DRDS::DrdsDB`, which is used to query the information about a single database on an instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `DrdsDB` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-drds-drdsdb
  */
@@ -486,7 +486,7 @@ function rosDrdsDBsPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::DRDS::DrdsDBs`, which is used to query the details of databases on an instance.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::DRDS::DrdsDBs`, which is used to query the information about databases on an instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `DrdsDBs` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-drds-drdsdbs
  */
@@ -611,7 +611,7 @@ function rosDrdsInstancePropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::DRDS::DrdsInstance`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::DRDS::DrdsInstance`, which is used to query the information about a PolarDB-X 1.0 instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `DrdsInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-drds-drdsinstance
  */

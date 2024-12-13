@@ -60,7 +60,7 @@ export interface DiskCategoriesProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::DiskCategories`, which is used to query the disk types and categories.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::DiskCategories`, which is used to query the information about disk categories.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDiskCategories`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-diskcategories
  */

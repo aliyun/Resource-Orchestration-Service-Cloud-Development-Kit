@@ -24,7 +24,7 @@ export interface InstanceProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::REDIS::Instance`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::REDIS::Instance`, which is used to query the information about a Tair (Redis OSS-compatible) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instance
  */
@@ -170,7 +170,7 @@ export class Instance extends ros.Resource {
     public readonly attrResourceGroupId: ros.IResolvable;
 
     /**
-     * Attribute SecondaryZoneId: The ID of the standby zone. You can call the [DescribeZones](~~ 94527 ~~) operation.
+     * Attribute SecondaryZoneId: The ID of the standby zone.
      */
     public readonly attrSecondaryZoneId: ros.IResolvable;
 

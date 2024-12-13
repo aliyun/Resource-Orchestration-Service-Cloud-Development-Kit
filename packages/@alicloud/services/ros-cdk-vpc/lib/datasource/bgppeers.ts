@@ -34,7 +34,7 @@ export interface BgpPeersProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::BgpPeers`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::BgpPeers`, which is used to query Border Gateway Protocol (BGP) peers in a region.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBgpPeers`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-bgppeers
  */

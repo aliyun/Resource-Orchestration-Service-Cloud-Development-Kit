@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::LaunchTemplate`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::LaunchTemplate`, which is used to query the information about a launch template.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `LaunchTemplate` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-launchtemplate
@@ -54,7 +54,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
         = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource.RosLaunchTemplate))!;
 
         /// <remarks>
-        /// <strong>Attribute</strong>: AutoReleaseTime: Automatic release time. According to the [ISO8601](~~ 25696 ~~) standard, and need to use UTC time. The format is: yyyy-MM-ddTHH:mm:ssZ.
+        /// <strong>Attribute</strong>: AutoReleaseTime: Automatic release time (UTC). The format is: yyyy-MM-ddTHH:mm:ssZ.
         /// </remarks>
         [JsiiProperty(name: "attrAutoReleaseTime", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAutoReleaseTime
@@ -315,7 +315,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: RamRoleName: The instance RAM role name. You can use the RAM API [ListRoles](~~ 28713 ~~) to query the created instance RAM roles.
+        /// <strong>Attribute</strong>: RamRoleName: The instance RAM role name.
         /// </remarks>
         [JsiiProperty(name: "attrRamRoleName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrRamRoleName

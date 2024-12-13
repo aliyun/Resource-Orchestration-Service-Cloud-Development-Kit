@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.nlb.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nlb-loadbalancers
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.866Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:09.638Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.datasource.RosLoadBalancersProps")
 @software.amazon.jsii.Jsii.Proxy(RosLoadBalancersProps.Jsii$Proxy.class)
 public interface RosLoadBalancersProps extends software.amazon.jsii.JsiiSerializable {

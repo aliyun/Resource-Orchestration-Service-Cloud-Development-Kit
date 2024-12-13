@@ -86,6 +86,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
             }
         }
 
+        /// <remarks>
+        /// <strong>Property</strong>: xDelayedType: Exchanges of the x-delay-Message type allow you to customize the Header property of the message, and the x-delay specifies the amount of time in milliseconds for the message to be delivered. The routing rules for this class of exchanges depend on the Exchange type specified in the x-delay-type parameter, which specifies the actual Exchange type to which the delayed message will eventually be delivered. Valid values:
+        /// - DIRECT: Delivers deferred messages to a specified queue bound to an Exchange of type DIRECT.
+        /// - TOPIC: Delivers deferred messages to the queue bound to the Exchange type TOPIC.
+        /// - FANOUT: Delivers deferred messages to a queue bound to an Exchange of type FANOUT.
+        /// - HEADERS: Deferred messages are delivered to the queue bound to the Exchange HEADERS type.
+        /// - X-JMS-TOPIC: Delivers deferred messages to the queue bound to X-JMS-TOPIC.
+        /// </remarks>
+        [JsiiProperty(name: "xDelayedType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? XDelayedType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `RosExchange`.</summary>
         /// <remarks>
         /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-exchange
@@ -165,6 +183,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
             [JsiiOptional]
             [JsiiProperty(name: "alternateExchange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AlternateExchange
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: xDelayedType: Exchanges of the x-delay-Message type allow you to customize the Header property of the message, and the x-delay specifies the amount of time in milliseconds for the message to be delivered. The routing rules for this class of exchanges depend on the Exchange type specified in the x-delay-type parameter, which specifies the actual Exchange type to which the delayed message will eventually be delivered. Valid values:
+            /// - DIRECT: Delivers deferred messages to a specified queue bound to an Exchange of type DIRECT.
+            /// - TOPIC: Delivers deferred messages to the queue bound to the Exchange type TOPIC.
+            /// - FANOUT: Delivers deferred messages to a queue bound to an Exchange of type FANOUT.
+            /// - HEADERS: Deferred messages are delivered to the queue bound to the Exchange HEADERS type.
+            /// - X-JMS-TOPIC: Delivers deferred messages to the queue bound to X-JMS-TOPIC.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "xDelayedType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? XDelayedType
             {
                 get => GetInstanceProperty<object?>();
             }

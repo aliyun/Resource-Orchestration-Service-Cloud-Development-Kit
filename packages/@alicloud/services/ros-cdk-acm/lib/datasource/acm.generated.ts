@@ -85,7 +85,7 @@ function rosConfigurationsPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ACM::Configurations`, which is used to query the details of configurations.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ACM::Configurations`, which is used to query the information about configurations.
  * @Note This class does not contain additional functions, so it is recommended to use the `Configurations` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-acm-configurations
  */

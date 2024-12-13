@@ -63,7 +63,7 @@ function rosClustersPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::MSE::Clusters`, which is used to query the clusters of Microservices Registry.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::MSE::Clusters`, which is used to query Microservices Registry clusters.
  * @Note This class does not contain additional functions, so it is recommended to use the `Clusters` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mse-clusters
  */
@@ -215,7 +215,7 @@ function rosGatewaysPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::MSE::Gateways`, which is used to query gateways.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::MSE::Gateways`, which is used to query the information about gateways.
  * @Note This class does not contain additional functions, so it is recommended to use the `Gateways` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mse-gateways
  */

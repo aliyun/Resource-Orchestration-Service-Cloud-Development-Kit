@@ -25,12 +25,6 @@ type RosManagedEdgeKubernetesCluster interface {
 	AttrScalingRuleId() alicloudroscdkcore.IResolvable
 	AttrTaskId() alicloudroscdkcore.IResolvable
 	AttrWorkerRamRoleName() alicloudroscdkcore.IResolvable
-	AutoRenew() interface{}
-	SetAutoRenew(val interface{})
-	AutoRenewPeriod() interface{}
-	SetAutoRenewPeriod(val interface{})
-	ChargeType() interface{}
-	SetChargeType(val interface{})
 	CloudMonitorFlags() interface{}
 	SetCloudMonitorFlags(val interface{})
 	ClusterSpec() interface{}
@@ -69,10 +63,6 @@ type RosManagedEdgeKubernetesCluster interface {
 	Node() alicloudroscdkcore.ConstructNode
 	NodeCidrMask() interface{}
 	SetNodeCidrMask(val interface{})
-	Period() interface{}
-	SetPeriod(val interface{})
-	PeriodUnit() interface{}
-	SetPeriodUnit(val interface{})
 	Profile() interface{}
 	SetProfile(val interface{})
 	ProxyMode() interface{}
@@ -346,36 +336,6 @@ func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) AttrWorkerRamRoleName() alic
 	return returns
 }
 
-func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) AutoRenew() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"autoRenew",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) AutoRenewPeriod() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"autoRenewPeriod",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) ChargeType() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"chargeType",
-		&returns,
-	)
-	return returns
-}
-
 func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) CloudMonitorFlags() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -511,26 +471,6 @@ func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) NodeCidrMask() interface{} {
 	_jsii_.Get(
 		j,
 		"nodeCidrMask",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) Period() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"period",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) PeriodUnit() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"periodUnit",
 		&returns,
 	)
 	return returns
@@ -725,39 +665,6 @@ func (j *jsiiProxy_RosManagedEdgeKubernetesCluster)SetAddons(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_RosManagedEdgeKubernetesCluster)SetAutoRenew(val interface{}) {
-	if err := j.validateSetAutoRenewParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"autoRenew",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosManagedEdgeKubernetesCluster)SetAutoRenewPeriod(val interface{}) {
-	if err := j.validateSetAutoRenewPeriodParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"autoRenewPeriod",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosManagedEdgeKubernetesCluster)SetChargeType(val interface{}) {
-	if err := j.validateSetChargeTypeParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"chargeType",
-		val,
-	)
-}
-
 func (j *jsiiProxy_RosManagedEdgeKubernetesCluster)SetCloudMonitorFlags(val interface{}) {
 	if err := j.validateSetCloudMonitorFlagsParameters(val); err != nil {
 		panic(err)
@@ -875,28 +782,6 @@ func (j *jsiiProxy_RosManagedEdgeKubernetesCluster)SetNodeCidrMask(val interface
 	_jsii_.Set(
 		j,
 		"nodeCidrMask",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosManagedEdgeKubernetesCluster)SetPeriod(val interface{}) {
-	if err := j.validateSetPeriodParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"period",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosManagedEdgeKubernetesCluster)SetPeriodUnit(val interface{}) {
-	if err := j.validateSetPeriodUnitParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"periodUnit",
 		val,
 	)
 }

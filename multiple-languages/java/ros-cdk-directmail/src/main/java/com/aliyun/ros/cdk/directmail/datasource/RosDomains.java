@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.directmail.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::DirectMail::Domains</code>, which is used to query domain names.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::DirectMail::Domains</code>, which is used to query the information about domain names.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:28.405Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:06.412Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.directmail.$Module.class, fqn = "@alicloud/ros-cdk-directmail.datasource.RosDomains")
 public class RosDomains extends com.aliyun.ros.cdk.core.RosResource {
 

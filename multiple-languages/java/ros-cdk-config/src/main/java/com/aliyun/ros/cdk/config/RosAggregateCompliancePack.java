@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.config;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::Config::AggregateCompliancePack</code>, which is used to create a compliance package for an account group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:27.888Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:05.853Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.RosAggregateCompliancePack")
 public class RosAggregateCompliancePack extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -89,40 +89,6 @@ public class RosAggregateCompliancePack extends com.aliyun.ros.cdk.core.RosResou
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getConfigRules() {
-        return software.amazon.jsii.Kernel.get(this, "configRules", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setConfigRules(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "configRules", java.util.Objects.requireNonNull(value, "configRules is required"));
-    }
-
-    /**
-     */
-    public void setConfigRules(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> value) {
-        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
-            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
-                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
-                if (
-                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
-                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.config.RosAggregateCompliancePack.ConfigRulesProperty)
-                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
-                ) {
-                    throw new IllegalArgumentException(
-                        new java.lang.StringBuilder("Expected ")
-                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
-                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.config.RosAggregateCompliancePack.ConfigRulesProperty; received ")
-                            .append(__val_ac66f0.getClass()).toString());
-                }
-            }
-        }
-        software.amazon.jsii.Kernel.set(this, "configRules", java.util.Objects.requireNonNull(value, "configRules is required"));
-    }
-
-    /**
-     */
     public @org.jetbrains.annotations.NotNull java.lang.Object getDescription() {
         return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -185,6 +151,40 @@ public class RosAggregateCompliancePack extends com.aliyun.ros.cdk.core.RosResou
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getConfigRules() {
+        return software.amazon.jsii.Kernel.get(this, "configRules", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setConfigRules(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "configRules", value);
+    }
+
+    /**
+     */
+    public void setConfigRules(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.config.RosAggregateCompliancePack.ConfigRulesProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.config.RosAggregateCompliancePack.ConfigRulesProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "configRules", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDefaultEnable() {
         return software.amazon.jsii.Kernel.get(this, "defaultEnable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -199,6 +199,42 @@ public class RosAggregateCompliancePack extends com.aliyun.ros.cdk.core.RosResou
      */
     public void setDefaultEnable(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "defaultEnable", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getExcludeRegionIdsScope() {
+        return software.amazon.jsii.Kernel.get(this, "excludeRegionIdsScope", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setExcludeRegionIdsScope(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "excludeRegionIdsScope", value);
+    }
+
+    /**
+     */
+    public void setExcludeRegionIdsScope(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "excludeRegionIdsScope", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getExcludeResourceGroupIdsScope() {
+        return software.amazon.jsii.Kernel.get(this, "excludeResourceGroupIdsScope", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setExcludeResourceGroupIdsScope(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "excludeResourceGroupIdsScope", value);
+    }
+
+    /**
+     */
+    public void setExcludeResourceGroupIdsScope(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "excludeResourceGroupIdsScope", value);
     }
 
     /**
@@ -305,6 +341,24 @@ public class RosAggregateCompliancePack extends com.aliyun.ros.cdk.core.RosResou
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getResourceIdsScope() {
+        return software.amazon.jsii.Kernel.get(this, "resourceIdsScope", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setResourceIdsScope(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "resourceIdsScope", value);
+    }
+
+    /**
+     */
+    public void setResourceIdsScope(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "resourceIdsScope", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getTagKeyScope() {
         return software.amazon.jsii.Kernel.get(this, "tagKeyScope", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -337,6 +391,24 @@ public class RosAggregateCompliancePack extends com.aliyun.ros.cdk.core.RosResou
      */
     public void setTagValueScope(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "tagValueScope", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTemplateContent() {
+        return software.amazon.jsii.Kernel.get(this, "templateContent", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setTemplateContent(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "templateContent", value);
+    }
+
+    /**
+     */
+    public void setTemplateContent(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "templateContent", value);
     }
     /**
      */
@@ -905,23 +977,6 @@ public class RosAggregateCompliancePack extends com.aliyun.ros.cdk.core.RosResou
 
         /**
          * @return {@code this}
-         * @param configRules This parameter is required.
-         */
-        public Builder configRules(final com.aliyun.ros.cdk.core.IResolvable configRules) {
-            this.props.configRules(configRules);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param configRules This parameter is required.
-         */
-        public Builder configRules(final java.util.List<? extends java.lang.Object> configRules) {
-            this.props.configRules(configRules);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param description This parameter is required.
          */
         public Builder description(final java.lang.String description) {
@@ -973,6 +1028,23 @@ public class RosAggregateCompliancePack extends com.aliyun.ros.cdk.core.RosResou
 
         /**
          * @return {@code this}
+         * @param configRules This parameter is required.
+         */
+        public Builder configRules(final com.aliyun.ros.cdk.core.IResolvable configRules) {
+            this.props.configRules(configRules);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param configRules This parameter is required.
+         */
+        public Builder configRules(final java.util.List<? extends java.lang.Object> configRules) {
+            this.props.configRules(configRules);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param defaultEnable This parameter is required.
          */
         public Builder defaultEnable(final java.lang.Boolean defaultEnable) {
@@ -985,6 +1057,40 @@ public class RosAggregateCompliancePack extends com.aliyun.ros.cdk.core.RosResou
          */
         public Builder defaultEnable(final com.aliyun.ros.cdk.core.IResolvable defaultEnable) {
             this.props.defaultEnable(defaultEnable);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param excludeRegionIdsScope This parameter is required.
+         */
+        public Builder excludeRegionIdsScope(final java.lang.String excludeRegionIdsScope) {
+            this.props.excludeRegionIdsScope(excludeRegionIdsScope);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param excludeRegionIdsScope This parameter is required.
+         */
+        public Builder excludeRegionIdsScope(final com.aliyun.ros.cdk.core.IResolvable excludeRegionIdsScope) {
+            this.props.excludeRegionIdsScope(excludeRegionIdsScope);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param excludeResourceGroupIdsScope This parameter is required.
+         */
+        public Builder excludeResourceGroupIdsScope(final java.lang.String excludeResourceGroupIdsScope) {
+            this.props.excludeResourceGroupIdsScope(excludeResourceGroupIdsScope);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param excludeResourceGroupIdsScope This parameter is required.
+         */
+        public Builder excludeResourceGroupIdsScope(final com.aliyun.ros.cdk.core.IResolvable excludeResourceGroupIdsScope) {
+            this.props.excludeResourceGroupIdsScope(excludeResourceGroupIdsScope);
             return this;
         }
 
@@ -1041,6 +1147,23 @@ public class RosAggregateCompliancePack extends com.aliyun.ros.cdk.core.RosResou
 
         /**
          * @return {@code this}
+         * @param resourceIdsScope This parameter is required.
+         */
+        public Builder resourceIdsScope(final java.lang.String resourceIdsScope) {
+            this.props.resourceIdsScope(resourceIdsScope);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param resourceIdsScope This parameter is required.
+         */
+        public Builder resourceIdsScope(final com.aliyun.ros.cdk.core.IResolvable resourceIdsScope) {
+            this.props.resourceIdsScope(resourceIdsScope);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param tagKeyScope This parameter is required.
          */
         public Builder tagKeyScope(final java.lang.String tagKeyScope) {
@@ -1070,6 +1193,23 @@ public class RosAggregateCompliancePack extends com.aliyun.ros.cdk.core.RosResou
          */
         public Builder tagValueScope(final com.aliyun.ros.cdk.core.IResolvable tagValueScope) {
             this.props.tagValueScope(tagValueScope);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param templateContent This parameter is required.
+         */
+        public Builder templateContent(final java.lang.String templateContent) {
+            this.props.templateContent(templateContent);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param templateContent This parameter is required.
+         */
+        public Builder templateContent(final com.aliyun.ros.cdk.core.IResolvable templateContent) {
+            this.props.templateContent(templateContent);
             return this;
         }
 

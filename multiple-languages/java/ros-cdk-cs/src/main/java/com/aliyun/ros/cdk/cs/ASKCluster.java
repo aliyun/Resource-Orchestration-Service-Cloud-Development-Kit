@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ASKCluster</code>, which is used to create a serverless Kubernetes (ASK) cluster.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ASKCluster</code>, which is used to create an ACK Serverless cluster of Container Service for Kubernetes (ACK).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:27.966Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:05.934Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ASKCluster")
 public class ASKCluster extends com.aliyun.ros.cdk.core.Resource {
 

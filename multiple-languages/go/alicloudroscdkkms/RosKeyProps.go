@@ -5,6 +5,7 @@ package alicloudroscdkkms
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-key
 type RosKeyProps struct {
+	DeletionProtection interface{} `field:"optional" json:"deletionProtection" yaml:"deletionProtection"`
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
 	DkmsInstanceId interface{} `field:"optional" json:"dkmsInstanceId" yaml:"dkmsInstanceId"`
 	Enable interface{} `field:"optional" json:"enable" yaml:"enable"`

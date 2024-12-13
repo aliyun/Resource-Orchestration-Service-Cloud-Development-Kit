@@ -20,34 +20,6 @@ export interface ManagedEdgeKubernetesClusterProps {
     readonly addons?: Array<RosManagedEdgeKubernetesCluster.AddonsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property autoRenew: Whether the cluster automatically renews. It takes effect when the value of ChargeType is PrePaid. The optional values are:
-     * true: automatic renewal
-     * false: do not renew automatically
-     * Default to true.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    readonly autoRenew?: boolean | ros.IResolvable;
-
-    /**
-     * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required:
-     * When PeriodUnit = Week, the values are: {"1", "2", "3"}
-     * When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
-     * Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    readonly autoRenewPeriod?: number | ros.IResolvable;
-
-    /**
-     * Property chargeType: cluster payment type. The optional values are:
-     * PrePaid: prepaid
-     * PostPaid: Pay as you go
-     * Default to PostPaid.
-     * Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    readonly chargeType?: string | ros.IResolvable;
-
-    /**
      * Property cloudMonitorFlags: Whether to install the cloud monitoring plugin:
      * true: indicates installation
      * false: Do not install
@@ -110,26 +82,6 @@ export interface ManagedEdgeKubernetesClusterProps {
      * This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
      */
     readonly nodeCidrMask?: string | ros.IResolvable;
-
-    /**
-     * Property period: The duration of the annual subscription and monthly subscription. It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
-     * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
-     * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
-     * When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
-     * Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    readonly period?: number | ros.IResolvable;
-
-    /**
-     * Property periodUnit: When you specify PrePaid, you need to specify the period. The options are:
-     * Week: Time is measured in weeks
-     * Month: time in months
-     * Year: time in years
-     * Default to MonthStarting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    readonly periodUnit?: string | ros.IResolvable;
 
     /**
      * Property profile: Edge cluster ID. The default value is Edge.
@@ -263,30 +215,25 @@ export class ManagedEdgeKubernetesCluster extends ros.Resource {
 
         const rosManagedEdgeKubernetesCluster = new RosManagedEdgeKubernetesCluster(this, id,  {
             endpointPublicAccess: props.endpointPublicAccess === undefined || props.endpointPublicAccess === null ? true : props.endpointPublicAccess,
+            containerCidr: props.containerCidr === undefined || props.containerCidr === null ? '172.16.0.0/16' : props.containerCidr,
+            keyPair: props.keyPair,
             resourceGroupId: props.resourceGroupId,
-            autoRenew: props.autoRenew,
+            nodeCidrMask: props.nodeCidrMask,
+            timeoutMins: props.timeoutMins === undefined || props.timeoutMins === null ? 60 : props.timeoutMins,
             addons: props.addons,
+            deletionProtection: props.deletionProtection,
+            clusterSpec: props.clusterSpec,
             profile: props.profile === undefined || props.profile === null ? 'Edge' : props.profile,
             name: props.name,
             isEnterpriseSecurityGroup: props.isEnterpriseSecurityGroup,
+            vpcId: props.vpcId,
             cloudMonitorFlags: props.cloudMonitorFlags === undefined || props.cloudMonitorFlags === null ? false : props.cloudMonitorFlags,
             serviceCidr: props.serviceCidr === undefined || props.serviceCidr === null ? '172.19.0.0/20' : props.serviceCidr,
-            zoneIds: props.zoneIds,
-            proxyMode: props.proxyMode === undefined || props.proxyMode === null ? 'iptables' : props.proxyMode,
-            tags: props.tags,
-            loginPassword: props.loginPassword,
-            autoRenewPeriod: props.autoRenewPeriod,
-            containerCidr: props.containerCidr === undefined || props.containerCidr === null ? '172.16.0.0/16' : props.containerCidr,
-            keyPair: props.keyPair,
-            nodeCidrMask: props.nodeCidrMask,
-            timeoutMins: props.timeoutMins === undefined || props.timeoutMins === null ? 60 : props.timeoutMins,
-            period: props.period,
-            clusterSpec: props.clusterSpec,
-            deletionProtection: props.deletionProtection,
-            vpcId: props.vpcId,
-            chargeType: props.chargeType,
             snatEntry: props.snatEntry === undefined || props.snatEntry === null ? true : props.snatEntry,
-            periodUnit: props.periodUnit,
+            zoneIds: props.zoneIds,
+            tags: props.tags,
+            proxyMode: props.proxyMode === undefined || props.proxyMode === null ? 'iptables' : props.proxyMode,
+            loginPassword: props.loginPassword,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosManagedEdgeKubernetesCluster;
         this.attrApiServerSlbId = rosManagedEdgeKubernetesCluster.attrApiServerSlbId;

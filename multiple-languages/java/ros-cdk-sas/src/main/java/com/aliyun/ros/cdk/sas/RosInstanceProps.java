@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.sas;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sas-instance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:33.422Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:11.892Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sas.$Module.class, fqn = "@alicloud/ros-cdk-sas.RosInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceProps.Jsii$Proxy.class)
 public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -21,6 +21,12 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAntiRansomware() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAntiRansomwareManageService() {
         return null;
     }
 
@@ -157,6 +163,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object period;
         java.lang.Object periodUnit;
         java.lang.Object antiRansomware;
+        java.lang.Object antiRansomwareManageService;
         java.lang.Object autoPay;
         java.lang.Object autoRenew;
         java.lang.Object cloudHoneypot;
@@ -235,6 +242,26 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
          */
         public Builder antiRansomware(com.aliyun.ros.cdk.core.IResolvable antiRansomware) {
             this.antiRansomware = antiRansomware;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getAntiRansomwareManageService}
+         * @param antiRansomwareManageService the value to be set.
+         * @return {@code this}
+         */
+        public Builder antiRansomwareManageService(java.lang.Boolean antiRansomwareManageService) {
+            this.antiRansomwareManageService = antiRansomwareManageService;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getAntiRansomwareManageService}
+         * @param antiRansomwareManageService the value to be set.
+         * @return {@code this}
+         */
+        public Builder antiRansomwareManageService(com.aliyun.ros.cdk.core.IResolvable antiRansomwareManageService) {
+            this.antiRansomwareManageService = antiRansomwareManageService;
             return this;
         }
 
@@ -657,6 +684,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object period;
         private final java.lang.Object periodUnit;
         private final java.lang.Object antiRansomware;
+        private final java.lang.Object antiRansomwareManageService;
         private final java.lang.Object autoPay;
         private final java.lang.Object autoRenew;
         private final java.lang.Object cloudHoneypot;
@@ -687,6 +715,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.antiRansomware = software.amazon.jsii.Kernel.get(this, "antiRansomware", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.antiRansomwareManageService = software.amazon.jsii.Kernel.get(this, "antiRansomwareManageService", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoPay = software.amazon.jsii.Kernel.get(this, "autoPay", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.cloudHoneypot = software.amazon.jsii.Kernel.get(this, "cloudHoneypot", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -717,6 +746,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.period = java.util.Objects.requireNonNull(builder.period, "period is required");
             this.periodUnit = java.util.Objects.requireNonNull(builder.periodUnit, "periodUnit is required");
             this.antiRansomware = builder.antiRansomware;
+            this.antiRansomwareManageService = builder.antiRansomwareManageService;
             this.autoPay = builder.autoPay;
             this.autoRenew = builder.autoRenew;
             this.cloudHoneypot = builder.cloudHoneypot;
@@ -752,6 +782,11 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final java.lang.Object getAntiRansomware() {
             return this.antiRansomware;
+        }
+
+        @Override
+        public final java.lang.Object getAntiRansomwareManageService() {
+            return this.antiRansomwareManageService;
         }
 
         @Override
@@ -865,6 +900,9 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getAntiRansomware() != null) {
                 data.set("antiRansomware", om.valueToTree(this.getAntiRansomware()));
             }
+            if (this.getAntiRansomwareManageService() != null) {
+                data.set("antiRansomwareManageService", om.valueToTree(this.getAntiRansomwareManageService()));
+            }
             if (this.getAutoPay() != null) {
                 data.set("autoPay", om.valueToTree(this.getAutoPay()));
             }
@@ -946,6 +984,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (!period.equals(that.period)) return false;
             if (!periodUnit.equals(that.periodUnit)) return false;
             if (this.antiRansomware != null ? !this.antiRansomware.equals(that.antiRansomware) : that.antiRansomware != null) return false;
+            if (this.antiRansomwareManageService != null ? !this.antiRansomwareManageService.equals(that.antiRansomwareManageService) : that.antiRansomwareManageService != null) return false;
             if (this.autoPay != null ? !this.autoPay.equals(that.autoPay) : that.autoPay != null) return false;
             if (this.autoRenew != null ? !this.autoRenew.equals(that.autoRenew) : that.autoRenew != null) return false;
             if (this.cloudHoneypot != null ? !this.cloudHoneypot.equals(that.cloudHoneypot) : that.cloudHoneypot != null) return false;
@@ -973,6 +1012,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             int result = this.period.hashCode();
             result = 31 * result + (this.periodUnit.hashCode());
             result = 31 * result + (this.antiRansomware != null ? this.antiRansomware.hashCode() : 0);
+            result = 31 * result + (this.antiRansomwareManageService != null ? this.antiRansomwareManageService.hashCode() : 0);
             result = 31 * result + (this.autoPay != null ? this.autoPay.hashCode() : 0);
             result = 31 * result + (this.autoRenew != null ? this.autoRenew.hashCode() : 0);
             result = 31 * result + (this.cloudHoneypot != null ? this.cloudHoneypot.hashCode() : 0);

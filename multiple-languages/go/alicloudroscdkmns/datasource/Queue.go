@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::MNS::Queue`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::MNS::Queue`, which is used to query the information about a created queue.
 type Queue interface {
 	alicloudroscdkcore.Resource
 	// Attribute ActiveMessages: The total number of active messages in the queue.

@@ -8,9 +8,13 @@
 @alicloud/ros-cdk-directmail.RosIpfilterProps=com.aliyun.ros.cdk.directmail.RosIpfilterProps
 @alicloud/ros-cdk-directmail.datasource.Domains=com.aliyun.ros.cdk.directmail.datasource.Domains
 @alicloud/ros-cdk-directmail.datasource.DomainsProps=com.aliyun.ros.cdk.directmail.datasource.DomainsProps
+@alicloud/ros-cdk-directmail.datasource.Ipfilter=com.aliyun.ros.cdk.directmail.datasource.Ipfilter
+@alicloud/ros-cdk-directmail.datasource.IpfilterProps=com.aliyun.ros.cdk.directmail.datasource.IpfilterProps
 @alicloud/ros-cdk-directmail.datasource.Ipfilters=com.aliyun.ros.cdk.directmail.datasource.Ipfilters
 @alicloud/ros-cdk-directmail.datasource.IpfiltersProps=com.aliyun.ros.cdk.directmail.datasource.IpfiltersProps
 @alicloud/ros-cdk-directmail.datasource.RosDomains=com.aliyun.ros.cdk.directmail.datasource.RosDomains
 @alicloud/ros-cdk-directmail.datasource.RosDomainsProps=com.aliyun.ros.cdk.directmail.datasource.RosDomainsProps
+@alicloud/ros-cdk-directmail.datasource.RosIpfilter=com.aliyun.ros.cdk.directmail.datasource.RosIpfilter
+@alicloud/ros-cdk-directmail.datasource.RosIpfilterProps=com.aliyun.ros.cdk.directmail.datasource.RosIpfilterProps
 @alicloud/ros-cdk-directmail.datasource.RosIpfilters=com.aliyun.ros.cdk.directmail.datasource.RosIpfilters
 @alicloud/ros-cdk-directmail.datasource.RosIpfiltersProps=com.aliyun.ros.cdk.directmail.datasource.RosIpfiltersProps

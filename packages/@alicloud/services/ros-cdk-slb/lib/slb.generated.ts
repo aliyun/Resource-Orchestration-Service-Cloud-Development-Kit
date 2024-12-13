@@ -2254,24 +2254,6 @@ export interface RosLoadBalancerProps {
     readonly addressType?: string | ros.IResolvable;
 
     /**
-     * @Property autoPay: Specifies whether to automatically pay for the subscription Internet-facing CLB instance. Valid values:
-     * - **true**: automatically pays for the CLB instance. After you call this operation, the system automatically completes the payment and creates the CLB instance.- **false** (default): After you call the operation, the order is created but the payment is not completed. You can view the pending order in the console. The CLB instance will not be created until you complete the payment.**Note** This parameter is supported only by subscription instances created on the Alibaba Cloud China site.
-     */
-    readonly autoPay?: boolean | ros.IResolvable;
-
-    /**
-     * @Property autoRenew: Indicates whether automatic renewal is enabled for the instance. Valid values:- **true**: Automatic renewal is enabled.- **false** (default): Automatic renewal is not enabled. You must renew the instance manually.
-     */
-    readonly autoRenew?: boolean | ros.IResolvable;
-
-    /**
-     * @Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required:
-     * When PricingCycle = month, the value range is 1 to 9 or 12, 24, 36.
-     * When PeriodUnit = year, the value range is 1-3.
-     */
-    readonly autoRenewPeriod?: number | ros.IResolvable;
-
-    /**
      * @Property bandwidth: The bandwidth for network, unit in Mbps(Mega bit per second). Default is 1. If InternetChargeType is specified as "paybytraffic", this property will be ignore and please specify the "Bandwidth" in ALIYUN::SLB::Listener.
      */
     readonly bandwidth?: number | ros.IResolvable;
@@ -2280,14 +2262,6 @@ export interface RosLoadBalancerProps {
      * @Property deletionProtection: Whether to enable deletion protection.
      */
     readonly deletionProtection?: boolean | ros.IResolvable;
-
-    /**
-     * @Property duration: Optional. The subscription duration of a Subscription Internet instance.
-     * Valid values:
-     * If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36, 48, 60.
-     * If PricingCycle is year, the value range is 1 to 5.
-     */
-    readonly duration?: number | ros.IResolvable;
 
     /**
      * @Property instanceChargeType: Instance billing method. Valid value:
@@ -2341,18 +2315,6 @@ export interface RosLoadBalancerProps {
     readonly modificationProtectionStatus?: string | ros.IResolvable;
 
     /**
-     * @Property payType: Optional. The billing method of the instance to be created.
-     * Valid value: PayOnDemand (Pay-As-You-Go) | PrePay (Subscription)
-     */
-    readonly payType?: string | ros.IResolvable;
-
-    /**
-     * @Property pricingCycle: Optional. The duration of the Subscription-billed Internet instance to be created.
-     * Valid values: month | year.
-     */
-    readonly pricingCycle?: string | ros.IResolvable;
-
-    /**
      * @Property resourceGroupId: Resource group id.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -2388,13 +2350,6 @@ export interface RosLoadBalancerProps {
 function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    if(properties.autoRenewPeriod && (typeof properties.autoRenewPeriod) !== 'object') {
-        errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateAllowedValues)({
-          data: properties.autoRenewPeriod,
-          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36],
-        }));
-    }
-    errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
@@ -2403,15 +2358,6 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
-    if(properties.pricingCycle && (typeof properties.pricingCycle) !== 'object') {
-        errors.collect(ros.propertyValidator('pricingCycle', ros.validateAllowedValues)({
-          data: properties.pricingCycle,
-          allowedValues: ["month","year","Month","Year"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('pricingCycle', ros.validateString)(properties.pricingCycle));
-    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     if(properties.addressIpVersion && (typeof properties.addressIpVersion) !== 'object') {
         errors.collect(ros.propertyValidator('addressIpVersion', ros.validateAllowedValues)({
           data: properties.addressIpVersion,
@@ -2419,22 +2365,8 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('addressIpVersion', ros.validateString)(properties.addressIpVersion));
-    if(properties.duration && (typeof properties.duration) !== 'object') {
-        errors.collect(ros.propertyValidator('duration', ros.validateAllowedValues)({
-          data: properties.duration,
-          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36,48,60],
-        }));
-    }
-    errors.collect(ros.propertyValidator('duration', ros.validateNumber)(properties.duration));
-    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
-    if(properties.payType && (typeof properties.payType) !== 'object') {
-        errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
-          data: properties.payType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
     errors.collect(ros.propertyValidator('slaveZoneId', ros.validateString)(properties.slaveZoneId));
     if(properties.modificationProtectionStatus && (typeof properties.modificationProtectionStatus) !== 'object') {
         errors.collect(ros.propertyValidator('modificationProtectionStatus', ros.validateAllowedValues)({
@@ -2504,12 +2436,8 @@ function rosLoadBalancerPropsToRosTemplate(properties: any, enableResourceProper
     return {
       'AddressIPVersion': ros.stringToRosTemplate(properties.addressIpVersion),
       'AddressType': ros.stringToRosTemplate(properties.addressType),
-      'AutoPay': ros.booleanToRosTemplate(properties.autoPay),
-      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
-      'AutoRenewPeriod': ros.numberToRosTemplate(properties.autoRenewPeriod),
       'Bandwidth': ros.numberToRosTemplate(properties.bandwidth),
       'DeletionProtection': ros.booleanToRosTemplate(properties.deletionProtection),
-      'Duration': ros.numberToRosTemplate(properties.duration),
       'InstanceChargeType': ros.stringToRosTemplate(properties.instanceChargeType),
       'InternetChargeType': ros.stringToRosTemplate(properties.internetChargeType),
       'LoadBalancerName': ros.stringToRosTemplate(properties.loadBalancerName),
@@ -2517,8 +2445,6 @@ function rosLoadBalancerPropsToRosTemplate(properties: any, enableResourceProper
       'MasterZoneId': ros.stringToRosTemplate(properties.masterZoneId),
       'ModificationProtectionReason': ros.stringToRosTemplate(properties.modificationProtectionReason),
       'ModificationProtectionStatus': ros.stringToRosTemplate(properties.modificationProtectionStatus),
-      'PayType': ros.stringToRosTemplate(properties.payType),
-      'PricingCycle': ros.stringToRosTemplate(properties.pricingCycle),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
       'SlaveZoneId': ros.stringToRosTemplate(properties.slaveZoneId),
       'Tags': ros.listMapper(rosLoadBalancerTagsPropertyToRosTemplate)(properties.tags),
@@ -2629,24 +2555,6 @@ export class RosLoadBalancer extends ros.RosResource {
     public addressType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property autoPay: Specifies whether to automatically pay for the subscription Internet-facing CLB instance. Valid values:
-     * - **true**: automatically pays for the CLB instance. After you call this operation, the system automatically completes the payment and creates the CLB instance.- **false** (default): After you call the operation, the order is created but the payment is not completed. You can view the pending order in the console. The CLB instance will not be created until you complete the payment.**Note** This parameter is supported only by subscription instances created on the Alibaba Cloud China site.
-     */
-    public autoPay: boolean | ros.IResolvable | undefined;
-
-    /**
-     * @Property autoRenew: Indicates whether automatic renewal is enabled for the instance. Valid values:- **true**: Automatic renewal is enabled.- **false** (default): Automatic renewal is not enabled. You must renew the instance manually.
-     */
-    public autoRenew: boolean | ros.IResolvable | undefined;
-
-    /**
-     * @Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required:
-     * When PricingCycle = month, the value range is 1 to 9 or 12, 24, 36.
-     * When PeriodUnit = year, the value range is 1-3.
-     */
-    public autoRenewPeriod: number | ros.IResolvable | undefined;
-
-    /**
      * @Property bandwidth: The bandwidth for network, unit in Mbps(Mega bit per second). Default is 1. If InternetChargeType is specified as "paybytraffic", this property will be ignore and please specify the "Bandwidth" in ALIYUN::SLB::Listener.
      */
     public bandwidth: number | ros.IResolvable | undefined;
@@ -2655,14 +2563,6 @@ export class RosLoadBalancer extends ros.RosResource {
      * @Property deletionProtection: Whether to enable deletion protection.
      */
     public deletionProtection: boolean | ros.IResolvable | undefined;
-
-    /**
-     * @Property duration: Optional. The subscription duration of a Subscription Internet instance.
-     * Valid values:
-     * If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36, 48, 60.
-     * If PricingCycle is year, the value range is 1 to 5.
-     */
-    public duration: number | ros.IResolvable | undefined;
 
     /**
      * @Property instanceChargeType: Instance billing method. Valid value:
@@ -2716,18 +2616,6 @@ export class RosLoadBalancer extends ros.RosResource {
     public modificationProtectionStatus: string | ros.IResolvable | undefined;
 
     /**
-     * @Property payType: Optional. The billing method of the instance to be created.
-     * Valid value: PayOnDemand (Pay-As-You-Go) | PrePay (Subscription)
-     */
-    public payType: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property pricingCycle: Optional. The duration of the Subscription-billed Internet instance to be created.
-     * Valid values: month | year.
-     */
-    public pricingCycle: string | ros.IResolvable | undefined;
-
-    /**
      * @Property resourceGroupId: Resource group id.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
@@ -2778,12 +2666,8 @@ export class RosLoadBalancer extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.addressIpVersion = props.addressIpVersion;
         this.addressType = props.addressType;
-        this.autoPay = props.autoPay;
-        this.autoRenew = props.autoRenew;
-        this.autoRenewPeriod = props.autoRenewPeriod;
         this.bandwidth = props.bandwidth;
         this.deletionProtection = props.deletionProtection;
-        this.duration = props.duration;
         this.instanceChargeType = props.instanceChargeType;
         this.internetChargeType = props.internetChargeType;
         this.loadBalancerName = props.loadBalancerName;
@@ -2791,8 +2675,6 @@ export class RosLoadBalancer extends ros.RosResource {
         this.masterZoneId = props.masterZoneId;
         this.modificationProtectionReason = props.modificationProtectionReason;
         this.modificationProtectionStatus = props.modificationProtectionStatus;
-        this.payType = props.payType;
-        this.pricingCycle = props.pricingCycle;
         this.resourceGroupId = props.resourceGroupId;
         this.slaveZoneId = props.slaveZoneId;
         this.tags = props.tags;
@@ -2805,12 +2687,8 @@ export class RosLoadBalancer extends ros.RosResource {
         return {
             addressIpVersion: this.addressIpVersion,
             addressType: this.addressType,
-            autoPay: this.autoPay,
-            autoRenew: this.autoRenew,
-            autoRenewPeriod: this.autoRenewPeriod,
             bandwidth: this.bandwidth,
             deletionProtection: this.deletionProtection,
-            duration: this.duration,
             instanceChargeType: this.instanceChargeType,
             internetChargeType: this.internetChargeType,
             loadBalancerName: this.loadBalancerName,
@@ -2818,8 +2696,6 @@ export class RosLoadBalancer extends ros.RosResource {
             masterZoneId: this.masterZoneId,
             modificationProtectionReason: this.modificationProtectionReason,
             modificationProtectionStatus: this.modificationProtectionStatus,
-            payType: this.payType,
-            pricingCycle: this.pricingCycle,
             resourceGroupId: this.resourceGroupId,
             slaveZoneId: this.slaveZoneId,
             tags: this.tags,
@@ -3973,7 +3849,7 @@ function rosTLSPolicyPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::TLSPolicy`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::TLSPolicy`, which is used to create a Transport Layer Security (TLS) policy.
  * @Note This class does not contain additional functions, so it is recommended to use the `TLSPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-tlspolicy
  */

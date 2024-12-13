@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * Artifact properties for the Construct Tree Artifact.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:25.978Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:03.559Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.TreeArtifactProperties")
 @software.amazon.jsii.Jsii.Proxy(TreeArtifactProperties.Jsii$Proxy.class)
 public interface TreeArtifactProperties extends software.amazon.jsii.JsiiSerializable {

@@ -7,3 +7,7 @@ theme:
     - navigation.tabs.sticky
   palette:
     primary: deep orange
+extra:
+  generator: false
+  search:
+    language: 'en, de, ru'

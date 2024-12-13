@@ -524,6 +524,11 @@ export interface RosInstanceProps {
     readonly deletionForce?: boolean | ros.IResolvable;
 
     /**
+     * @Property deletionProtection: Specifies whether to enable the release protection feature for the instance. Default is false.
+     */
+    readonly deletionProtection?: boolean | ros.IResolvable;
+
+    /**
      * @Property engineVersion: Engine version. Supported values: 2.8, 4.0, 5.0, 6.0 and 7.0
      */
     readonly engineVersion?: string | ros.IResolvable;
@@ -699,6 +704,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('instanceClass', ros.validateString)(properties.instanceClass));
     errors.collect(ros.propertyValidator('vpcPasswordFree', ros.validateBoolean)(properties.vpcPasswordFree));
+    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     errors.collect(ros.propertyValidator('secondaryZoneId', ros.validateString)(properties.secondaryZoneId));
     if(properties.autoRenewDuration && (typeof properties.autoRenewDuration) !== 'object') {
         errors.collect(ros.propertyValidator('autoRenewDuration', ros.validateRange)({
@@ -747,6 +753,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       'ChargeType': ros.stringToRosTemplate(properties.chargeType),
       'Connections': rosInstanceConnectionsPropertyToRosTemplate(properties.connections),
       'DeletionForce': ros.booleanToRosTemplate(properties.deletionForce),
+      'DeletionProtection': ros.booleanToRosTemplate(properties.deletionProtection),
       'EngineVersion': ros.stringToRosTemplate(properties.engineVersion),
       'EvictionPolicy': ros.stringToRosTemplate(properties.evictionPolicy),
       'InstanceClass': ros.stringToRosTemplate(properties.instanceClass),
@@ -969,6 +976,11 @@ export class RosInstance extends ros.RosResource {
     public deletionForce: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property deletionProtection: Specifies whether to enable the release protection feature for the instance. Default is false.
+     */
+    public deletionProtection: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property engineVersion: Engine version. Supported values: 2.8, 4.0, 5.0, 6.0 and 7.0
      */
     public engineVersion: string | ros.IResolvable | undefined;
@@ -1134,6 +1146,7 @@ export class RosInstance extends ros.RosResource {
         this.chargeType = props.chargeType;
         this.connections = props.connections;
         this.deletionForce = props.deletionForce;
+        this.deletionProtection = props.deletionProtection;
         this.engineVersion = props.engineVersion;
         this.evictionPolicy = props.evictionPolicy;
         this.instanceClass = props.instanceClass;
@@ -1165,6 +1178,7 @@ export class RosInstance extends ros.RosResource {
             chargeType: this.chargeType,
             connections: this.connections,
             deletionForce: this.deletionForce,
+            deletionProtection: this.deletionProtection,
             engineVersion: this.engineVersion,
             evictionPolicy: this.evictionPolicy,
             instanceClass: this.instanceClass,
@@ -1786,6 +1800,11 @@ export interface RosPrepayInstanceProps {
     readonly deletionForce?: boolean | ros.IResolvable;
 
     /**
+     * @Property deletionProtection: Specifies whether to enable the release protection feature for the instance. Default is false.
+     */
+    readonly deletionProtection?: boolean | ros.IResolvable;
+
+    /**
      * @Property engineVersion: Engine version. Supported values: 2.8, 4.0, 5.0, 6.0 and 7.0
      */
     readonly engineVersion?: string | ros.IResolvable;
@@ -1962,6 +1981,7 @@ function RosPrepayInstancePropsValidator(properties: any): ros.ValidationResult 
     errors.collect(ros.propertyValidator('instanceClass', ros.validateString)(properties.instanceClass));
     errors.collect(ros.propertyValidator('vpcPasswordFree', ros.validateBoolean)(properties.vpcPasswordFree));
     errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
+    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     errors.collect(ros.propertyValidator('secondaryZoneId', ros.validateString)(properties.secondaryZoneId));
     if(properties.autoRenewDuration && (typeof properties.autoRenewDuration) !== 'object') {
         errors.collect(ros.propertyValidator('autoRenewDuration', ros.validateRange)({
@@ -2003,6 +2023,7 @@ function rosPrepayInstancePropsToRosTemplate(properties: any, enableResourceProp
       'BackupPolicy': rosPrepayInstanceBackupPolicyPropertyToRosTemplate(properties.backupPolicy),
       'Connections': rosPrepayInstanceConnectionsPropertyToRosTemplate(properties.connections),
       'DeletionForce': ros.booleanToRosTemplate(properties.deletionForce),
+      'DeletionProtection': ros.booleanToRosTemplate(properties.deletionProtection),
       'EngineVersion': ros.stringToRosTemplate(properties.engineVersion),
       'EvictionPolicy': ros.stringToRosTemplate(properties.evictionPolicy),
       'InstanceClass': ros.stringToRosTemplate(properties.instanceClass),
@@ -2228,6 +2249,11 @@ export class RosPrepayInstance extends ros.RosResource {
     public deletionForce: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property deletionProtection: Specifies whether to enable the release protection feature for the instance. Default is false.
+     */
+    public deletionProtection: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property engineVersion: Engine version. Supported values: 2.8, 4.0, 5.0, 6.0 and 7.0
      */
     public engineVersion: string | ros.IResolvable | undefined;
@@ -2393,6 +2419,7 @@ export class RosPrepayInstance extends ros.RosResource {
         this.backupPolicy = props.backupPolicy;
         this.connections = props.connections;
         this.deletionForce = props.deletionForce;
+        this.deletionProtection = props.deletionProtection;
         this.engineVersion = props.engineVersion;
         this.evictionPolicy = props.evictionPolicy;
         this.instanceClass = props.instanceClass;
@@ -2424,6 +2451,7 @@ export class RosPrepayInstance extends ros.RosResource {
             backupPolicy: this.backupPolicy,
             connections: this.connections,
             deletionForce: this.deletionForce,
+            deletionProtection: this.deletionProtection,
             engineVersion: this.engineVersion,
             evictionPolicy: this.evictionPolicy,
             instanceClass: this.instanceClass,

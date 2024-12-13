@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sas;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SAS::Instance</code>, which is used to purchase Security Center.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:33.412Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:11.874Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sas.$Module.class, fqn = "@alicloud/ros-cdk-sas.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -185,6 +185,31 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder antiRansomware(final com.aliyun.ros.cdk.core.IResolvable antiRansomware) {
             this.props.antiRansomware(antiRansomware);
+            return this;
+        }
+
+        /**
+         * Property antiRansomwareManageService: Provide you with security hosting services such as anti-ransomware configuration, monitoring, and anti-ransomware incident emergency response.
+         * <p>
+         * Note:
+         * <p>
+         * @return {@code this}
+         * @param antiRansomwareManageService Property antiRansomwareManageService: Provide you with security hosting services such as anti-ransomware configuration, monitoring, and anti-ransomware incident emergency response. This parameter is required.
+         */
+        public Builder antiRansomwareManageService(final java.lang.Boolean antiRansomwareManageService) {
+            this.props.antiRansomwareManageService(antiRansomwareManageService);
+            return this;
+        }
+        /**
+         * Property antiRansomwareManageService: Provide you with security hosting services such as anti-ransomware configuration, monitoring, and anti-ransomware incident emergency response.
+         * <p>
+         * Note:
+         * <p>
+         * @return {@code this}
+         * @param antiRansomwareManageService Property antiRansomwareManageService: Provide you with security hosting services such as anti-ransomware configuration, monitoring, and anti-ransomware incident emergency response. This parameter is required.
+         */
+        public Builder antiRansomwareManageService(final com.aliyun.ros.cdk.core.IResolvable antiRansomwareManageService) {
+            this.props.antiRansomwareManageService(antiRansomwareManageService);
             return this;
         }
 

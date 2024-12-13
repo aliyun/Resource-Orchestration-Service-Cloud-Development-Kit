@@ -61,7 +61,7 @@ export interface BasicEndpointProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::GA::BasicEndpoint`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GA::BasicEndpoint`, which is used to create an endpoint for a basic Global Accelerator (GA) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBasicEndpoint`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicendpoint
  */

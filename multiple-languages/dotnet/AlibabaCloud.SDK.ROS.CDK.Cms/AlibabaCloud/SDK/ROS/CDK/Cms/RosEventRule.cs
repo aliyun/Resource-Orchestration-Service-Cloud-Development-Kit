@@ -285,6 +285,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         public interface IEventPatternProperty
         {
             /// <remarks>
+            /// <strong>Property</strong>: customFilters: Event filtering keywords. When the event content contains this keyword, an alarm is triggered automatically.
+            /// </remarks>
+            [JsiiProperty(name: "customFilters", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? CustomFilters
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: eventTypeList: The type of the event. A value of * indicates any type. Please refer to the configuration of CMS.
             /// </remarks>
             [JsiiProperty(name: "eventTypeList", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -338,6 +351,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: sqlFilter: SQL event filtering When the event content meets the SQL conditions, an alarm is triggered automatically.
+            /// </remarks>
+            [JsiiProperty(name: "sqlFilter", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? SqlFilter
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: statusList: The status of the event. Please refer to the configuration of CMS.
             /// </remarks>
             [JsiiProperty(name: "statusList", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -355,6 +381,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             {
                 private _Proxy(ByRefValue reference): base(reference)
                 {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: customFilters: Event filtering keywords. When the event content contains this keyword, an alarm is triggered automatically.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "customFilters", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? CustomFilters
+                {
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
@@ -399,6 +435,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: sqlFilter: SQL event filtering When the event content meets the SQL conditions, an alarm is triggered automatically.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "sqlFilter", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? SqlFilter
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: statusList: The status of the event. Please refer to the configuration of CMS.
                 /// </remarks>
                 [JsiiOptional]
@@ -412,6 +458,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         [JsiiByValue(fqn: "@alicloud/ros-cdk-cms.RosEventRule.EventPatternProperty")]
         public class EventPatternProperty : AlibabaCloud.SDK.ROS.CDK.Cms.RosEventRule.IEventPatternProperty
         {
+            private object? _customFilters;
+
+            /// <remarks>
+            /// <strong>Property</strong>: customFilters: Event filtering keywords. When the event content contains this keyword, an alarm is triggered automatically.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "customFilters", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CustomFilters
+            {
+                get => _customFilters;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _customFilters = value;
+                }
+            }
+
             private object? _eventTypeList;
 
             /// <remarks>
@@ -542,6 +621,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                         }
                     }
                     _product = value;
+                }
+            }
+
+            private object? _sqlFilter;
+
+            /// <remarks>
+            /// <strong>Property</strong>: sqlFilter: SQL event filtering When the event content meets the SQL conditions, an alarm is triggered automatically.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "sqlFilter", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SqlFilter
+            {
+                get => _sqlFilter;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _sqlFilter = value;
                 }
             }
 

@@ -34,7 +34,7 @@ export interface ScalingConfigurationsProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ESS::ScalingConfigurations`, which is used to query the details of scaling configurations.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ESS::ScalingConfigurations`, which is used to query the information about scaling configurations.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosScalingConfigurations`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ess-scalingconfigurations
  */
