@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dbs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-restoretask
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:28.253Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:06.194Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dbs.$Module.class, fqn = "@alicloud/ros-cdk-dbs.RosRestoreTaskProps")
 @software.amazon.jsii.Jsii.Proxy(RosRestoreTaskProps.Jsii$Proxy.class)
 public interface RosRestoreTaskProps extends software.amazon.jsii.JsiiSerializable {

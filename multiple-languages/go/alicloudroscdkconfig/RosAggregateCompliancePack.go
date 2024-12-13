@@ -31,6 +31,10 @@ type RosAggregateCompliancePack interface {
 	SetDescription(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	ExcludeRegionIdsScope() interface{}
+	SetExcludeRegionIdsScope(val interface{})
+	ExcludeResourceGroupIdsScope() interface{}
+	SetExcludeResourceGroupIdsScope(val interface{})
 	ExcludeResourceIdsScope() interface{}
 	SetExcludeResourceIdsScope(val interface{})
 	// The logical ID for this stack element.
@@ -54,6 +58,8 @@ type RosAggregateCompliancePack interface {
 	SetRegionIdsScope(val interface{})
 	ResourceGroupIdsScope() interface{}
 	SetResourceGroupIdsScope(val interface{})
+	ResourceIdsScope() interface{}
+	SetResourceIdsScope(val interface{})
 	RiskLevel() interface{}
 	SetRiskLevel(val interface{})
 	// Options for this resource, such as condition, update policy etc.
@@ -69,6 +75,8 @@ type RosAggregateCompliancePack interface {
 	SetTagKeyScope(val interface{})
 	TagValueScope() interface{}
 	SetTagValueScope(val interface{})
+	TemplateContent() interface{}
+	SetTemplateContent(val interface{})
 	// Return properties modified after initiation.
 	//
 	// Resources that expose mutable properties should override this function to
@@ -280,6 +288,26 @@ func (j *jsiiProxy_RosAggregateCompliancePack) EnableResourcePropertyConstraint(
 	return returns
 }
 
+func (j *jsiiProxy_RosAggregateCompliancePack) ExcludeRegionIdsScope() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"excludeRegionIdsScope",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosAggregateCompliancePack) ExcludeResourceGroupIdsScope() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"excludeResourceGroupIdsScope",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosAggregateCompliancePack) ExcludeResourceIdsScope() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -335,6 +363,16 @@ func (j *jsiiProxy_RosAggregateCompliancePack) ResourceGroupIdsScope() interface
 	_jsii_.Get(
 		j,
 		"resourceGroupIdsScope",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosAggregateCompliancePack) ResourceIdsScope() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"resourceIdsScope",
 		&returns,
 	)
 	return returns
@@ -405,6 +443,16 @@ func (j *jsiiProxy_RosAggregateCompliancePack) TagValueScope() interface{} {
 	_jsii_.Get(
 		j,
 		"tagValueScope",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosAggregateCompliancePack) TemplateContent() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"templateContent",
 		&returns,
 	)
 	return returns
@@ -525,6 +573,28 @@ func (j *jsiiProxy_RosAggregateCompliancePack)SetEnableResourcePropertyConstrain
 	)
 }
 
+func (j *jsiiProxy_RosAggregateCompliancePack)SetExcludeRegionIdsScope(val interface{}) {
+	if err := j.validateSetExcludeRegionIdsScopeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"excludeRegionIdsScope",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosAggregateCompliancePack)SetExcludeResourceGroupIdsScope(val interface{}) {
+	if err := j.validateSetExcludeResourceGroupIdsScopeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"excludeResourceGroupIdsScope",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosAggregateCompliancePack)SetExcludeResourceIdsScope(val interface{}) {
 	if err := j.validateSetExcludeResourceIdsScopeParameters(val); err != nil {
 		panic(err)
@@ -558,6 +628,17 @@ func (j *jsiiProxy_RosAggregateCompliancePack)SetResourceGroupIdsScope(val inter
 	)
 }
 
+func (j *jsiiProxy_RosAggregateCompliancePack)SetResourceIdsScope(val interface{}) {
+	if err := j.validateSetResourceIdsScopeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"resourceIdsScope",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosAggregateCompliancePack)SetRiskLevel(val interface{}) {
 	if err := j.validateSetRiskLevelParameters(val); err != nil {
 		panic(err)
@@ -587,6 +668,17 @@ func (j *jsiiProxy_RosAggregateCompliancePack)SetTagValueScope(val interface{}) 
 	_jsii_.Set(
 		j,
 		"tagValueScope",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosAggregateCompliancePack)SetTemplateContent(val interface{}) {
+	if err := j.validateSetTemplateContentParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"templateContent",
 		val,
 	)
 }

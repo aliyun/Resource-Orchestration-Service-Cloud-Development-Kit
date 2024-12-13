@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::POLARDB::DBCluster</code>, which is used to create a PolarDB cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:32.322Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:10.602Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosDBCluster")
 public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -453,6 +453,24 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setDefaultTimeZone(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "defaultTimeZone", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDeletionProtection() {
+        return software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDeletionProtection(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "deletionProtection", value);
+    }
+
+    /**
+     */
+    public void setDeletionProtection(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "deletionProtection", value);
     }
 
     /**
@@ -1954,6 +1972,23 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder defaultTimeZone(final com.aliyun.ros.cdk.core.IResolvable defaultTimeZone) {
             this.props.defaultTimeZone(defaultTimeZone);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param deletionProtection This parameter is required.
+         */
+        public Builder deletionProtection(final java.lang.Boolean deletionProtection) {
+            this.props.deletionProtection(deletionProtection);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param deletionProtection This parameter is required.
+         */
+        public Builder deletionProtection(final com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
+            this.props.deletionProtection(deletionProtection);
             return this;
         }
 

@@ -1,5 +1,9 @@
 # Aliyun ROS Cloud Development Toolkit Changelog
 
+## [ros-cdk-cli 1.5.0] (2024-12-13)
+### Features
+- Update ROS resource sdk packages (Added the ALIYUN::Aligreen::AuditCallback, ALIYUN::Aligreen::BizType, ALIYUN::Aligreen::Callback, ALIYUN::Aligreen::ImageLib, ALIYUN::Aligreen::KeywordLib, ALIYUN::Aligreen::OssStockTask, ALIYUN::MOBI::App, DATASOURCE::MOBI::Workspaces, ALIYUN::APIG::ApiAttachment, ALIYUN::APIG::Domain, ALIYUN::APIG::Environment, ALIYUN::APIG::Gateway, ALIYUN::APIG::HttpApi, ALIYUN::APIG::Operation, ALIYUN::APIG::Plugin, ALIYUN::APIG::PluginAttachment, ALIYUN::APIG::PluginClass, ALIYUN::APIG::Policy, ALIYUN::APIG::Route, ALIYUN::APIG::Service, ALIYUN::PAIDatasetAcc::Endpoint).
+
 ## [ros-cdk-cli 1.4.0] (2024-10-18)
 ### Features
 - Update ROS resource sdk packages (Added the ALIYUN::AppFlow::Flow, ALIYUN::AppFlow::UserAuthConfig, DATASOURCE::AppFlow::UserAuthConfigs, DATASOURCE::CDDC::DedicatedHostGroup, DATASOURCE::CMS::MonitorGroup, DATASOURCE::CMS::Namespace, DATASOURCE::KMS::Secret, DATASOURCE::PVTZ::SyncEcsHost, DATASOURCE::ROCKETMQ5::ConsumerGroup, DATASOURCE::ROCKETMQ5::Instance, DATASOURCE::ROCKETMQ5::Topic, DATASOURCE::SLB::AccessControl, DATASOURCE::SLB::DomainExtension, DATASOURCE::SLB::LoadBalancer,DATASOURCE::SLB::LoadBalancerTCPListener,DATASOURCE::SLB::LoadBalancerTCPListeners, DATASOURCE::SLB::Rule, DATASOURCE::SLB::TLSPolicy, DATASOURCE::SLB::VServerGroup, DATASOURCE::SLS::Project).

@@ -14,6 +14,8 @@ type RosInstance interface {
 	alicloudroscdkcore.RosResource
 	AntiRansomware() interface{}
 	SetAntiRansomware(val interface{})
+	AntiRansomwareManageService() interface{}
+	SetAntiRansomwareManageService(val interface{})
 	AttrInstanceId() alicloudroscdkcore.IResolvable
 	AutoPay() interface{}
 	SetAutoPay(val interface{})
@@ -217,6 +219,16 @@ func (j *jsiiProxy_RosInstance) AntiRansomware() interface{} {
 	_jsii_.Get(
 		j,
 		"antiRansomware",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosInstance) AntiRansomwareManageService() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"antiRansomwareManageService",
 		&returns,
 	)
 	return returns
@@ -587,6 +599,17 @@ func (j *jsiiProxy_RosInstance)SetAntiRansomware(val interface{}) {
 	_jsii_.Set(
 		j,
 		"antiRansomware",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosInstance)SetAntiRansomwareManageService(val interface{}) {
+	if err := j.validateSetAntiRansomwareManageServiceParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"antiRansomwareManageService",
 		val,
 	)
 }

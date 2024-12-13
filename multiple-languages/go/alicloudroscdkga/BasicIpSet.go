@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::GA::BasicIpSet`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::GA::BasicIpSet`, which is used to create an acceleration region for a basic Global Accelerator (GA) instance.
 type BasicIpSet interface {
 	alicloudroscdkcore.Resource
 	// Attribute IpSetId: The ID of the acceleration region.

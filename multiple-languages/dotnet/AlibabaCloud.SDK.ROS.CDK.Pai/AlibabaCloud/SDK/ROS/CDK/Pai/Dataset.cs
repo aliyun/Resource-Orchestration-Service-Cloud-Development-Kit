@@ -149,9 +149,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pai
         }
 
         /// <summary>Attribute WorkspaceId: The ID of the workspace where the dataset is located.</summary>
-        /// <remarks>
-        /// For details about how to obtain the workspace ID, see [ListWorkspaces](~~ 449124 ~~).
-        /// </remarks>
         [JsiiProperty(name: "attrWorkspaceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrWorkspaceId
         {

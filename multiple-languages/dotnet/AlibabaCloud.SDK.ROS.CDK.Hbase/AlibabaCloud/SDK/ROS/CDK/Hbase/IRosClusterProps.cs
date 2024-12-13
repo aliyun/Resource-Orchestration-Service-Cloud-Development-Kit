@@ -126,6 +126,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbase
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: deletionProtection: Specifies whether to enable the release protection feature for the cluster. Default is false.
+        /// </remarks>
+        [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DeletionProtection
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: diskSize: The disk size of the node. Unit: GB.
         /// For ApsaraDB for HBase in single-node mode, the disk size ranges from 20 GB to 500
         /// GB and the step size is 1 GB.
@@ -400,6 +413,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbase
             [JsiiOptional]
             [JsiiProperty(name: "coldStorageSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ColdStorageSize
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: deletionProtection: Specifies whether to enable the release protection feature for the cluster. Default is false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeletionProtection
             {
                 get => GetInstanceProperty<object?>();
             }

@@ -48,6 +48,11 @@ export interface RosInstanceProps {
     readonly coreSpec?: string | ros.IResolvable;
 
     /**
+     * @Property deletionProtection: Specifies whether to enable the release protection feature for the instance. Default is false.
+     */
+    readonly deletionProtection?: boolean | ros.IResolvable;
+
+    /**
      * @Property filestoreNum: The number of LindormDFS nodes in the instance. The valid values of this parameter depend on the value of the PayType parameter.
      * If the PayType parameter is set to PREPAY, set this parameter to an integer that ranges from 0 to 60.
      * If the PayType parameter is set to POSTPAY, set this parameter to an integer that ranges from 0 to 8.
@@ -231,6 +236,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     errors.collect(ros.propertyValidator('instanceName', ros.requiredValidator)(properties.instanceName));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
     if(properties.solrNum && (typeof properties.solrNum) !== 'object') {
@@ -302,6 +308,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       'VpcId': ros.stringToRosTemplate(properties.vpcId),
       'ColdStorage': ros.numberToRosTemplate(properties.coldStorage),
       'CoreSpec': ros.stringToRosTemplate(properties.coreSpec),
+      'DeletionProtection': ros.booleanToRosTemplate(properties.deletionProtection),
       'FilestoreNum': ros.numberToRosTemplate(properties.filestoreNum),
       'FilestoreSpec': ros.stringToRosTemplate(properties.filestoreSpec),
       'InstanceChargeType': ros.stringToRosTemplate(properties.instanceChargeType),
@@ -390,6 +397,11 @@ export class RosInstance extends ros.RosResource {
      * lindorm.d1.6xlarge: Each node has 24 dedicated CPU cores and 96 GB of dedicated memory.
      */
     public coreSpec: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property deletionProtection: Specifies whether to enable the release protection feature for the instance. Default is false.
+     */
+    public deletionProtection: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property filestoreNum: The number of LindormDFS nodes in the instance. The valid values of this parameter depend on the value of the PayType parameter.
@@ -538,6 +550,7 @@ export class RosInstance extends ros.RosResource {
         this.vpcId = props.vpcId;
         this.coldStorage = props.coldStorage;
         this.coreSpec = props.coreSpec;
+        this.deletionProtection = props.deletionProtection;
         this.filestoreNum = props.filestoreNum;
         this.filestoreSpec = props.filestoreSpec;
         this.instanceChargeType = props.instanceChargeType;
@@ -566,6 +579,7 @@ export class RosInstance extends ros.RosResource {
             vpcId: this.vpcId,
             coldStorage: this.coldStorage,
             coreSpec: this.coreSpec,
+            deletionProtection: this.deletionProtection,
             filestoreNum: this.filestoreNum,
             filestoreSpec: this.filestoreSpec,
             instanceChargeType: this.instanceChargeType,
@@ -650,6 +664,11 @@ export interface RosMultiZoneInstanceProps {
      * lindorm.d1.6xlarge: Each node has 24 dedicated CPU cores and 96 GB of dedicated memory.
      */
     readonly coreSpec?: string | ros.IResolvable;
+
+    /**
+     * @Property deletionProtection: Specifies whether to enable the release protection feature for the instance. Default is false.
+     */
+    readonly deletionProtection?: boolean | ros.IResolvable;
 
     /**
      * @Property filestoreNum: The number of LindormDFS nodes in the instance. The valid values of this parameter depend on the value of the PayType parameter.
@@ -919,6 +938,7 @@ function RosMultiZoneInstancePropsValidator(properties: any): ros.ValidationResu
         }));
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     errors.collect(ros.propertyValidator('primaryVSwitchId', ros.validateString)(properties.primaryVSwitchId));
     errors.collect(ros.propertyValidator('arbiterVSwitchId', ros.validateString)(properties.arbiterVSwitchId));
     errors.collect(ros.propertyValidator('instanceName', ros.requiredValidator)(properties.instanceName));
@@ -992,6 +1012,7 @@ function rosMultiZoneInstancePropsToRosTemplate(properties: any, enableResourceP
       'ColdStorage': ros.numberToRosTemplate(properties.coldStorage),
       'CoreSingleStorage': ros.numberToRosTemplate(properties.coreSingleStorage),
       'CoreSpec': ros.stringToRosTemplate(properties.coreSpec),
+      'DeletionProtection': ros.booleanToRosTemplate(properties.deletionProtection),
       'FilestoreNum': ros.numberToRosTemplate(properties.filestoreNum),
       'FilestoreSpec': ros.stringToRosTemplate(properties.filestoreSpec),
       'InstanceChargeType': ros.stringToRosTemplate(properties.instanceChargeType),
@@ -1101,6 +1122,11 @@ export class RosMultiZoneInstance extends ros.RosResource {
      * lindorm.d1.6xlarge: Each node has 24 dedicated CPU cores and 96 GB of dedicated memory.
      */
     public coreSpec: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property deletionProtection: Specifies whether to enable the release protection feature for the instance. Default is false.
+     */
+    public deletionProtection: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property filestoreNum: The number of LindormDFS nodes in the instance. The valid values of this parameter depend on the value of the PayType parameter.
@@ -1299,6 +1325,7 @@ export class RosMultiZoneInstance extends ros.RosResource {
         this.coldStorage = props.coldStorage;
         this.coreSingleStorage = props.coreSingleStorage;
         this.coreSpec = props.coreSpec;
+        this.deletionProtection = props.deletionProtection;
         this.filestoreNum = props.filestoreNum;
         this.filestoreSpec = props.filestoreSpec;
         this.instanceChargeType = props.instanceChargeType;
@@ -1336,6 +1363,7 @@ export class RosMultiZoneInstance extends ros.RosResource {
             coldStorage: this.coldStorage,
             coreSingleStorage: this.coreSingleStorage,
             coreSpec: this.coreSpec,
+            deletionProtection: this.deletionProtection,
             filestoreNum: this.filestoreNum,
             filestoreSpec: this.filestoreSpec,
             instanceChargeType: this.instanceChargeType,

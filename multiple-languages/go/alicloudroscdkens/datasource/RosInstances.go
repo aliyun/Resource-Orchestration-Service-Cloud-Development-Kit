@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::ENS::Instances`, which is used to query the details of Edge Node Service (ENS) instances.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::ENS::Instances`, which is used to query the information about Edge Node Service (ENS) instances.
 type RosInstances interface {
 	alicloudroscdkcore.RosResource
 	AttrInstanceIds() alicloudroscdkcore.IResolvable
@@ -20,18 +20,8 @@ type RosInstances interface {
 	CreationStack() *[]*string
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
-	EnsRegionIds() interface{}
-	SetEnsRegionIds(val interface{})
-	EnsServiceId() interface{}
-	SetEnsServiceId(val interface{})
-	ImageId() interface{}
-	SetImageId(val interface{})
-	InstanceIds() interface{}
-	SetInstanceIds(val interface{})
-	InstanceName() interface{}
-	SetInstanceName(val interface{})
-	InstanceResourceType() interface{}
-	SetInstanceResourceType(val interface{})
+	InstanceId() interface{}
+	SetInstanceId(val interface{})
 	// The logical ID for this stack element.
 	//
 	// The logical ID of the element
@@ -60,8 +50,6 @@ type RosInstances interface {
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
 	Stack() alicloudroscdkcore.Stack
-	Status() interface{}
-	SetStatus(val interface{})
 	// Return properties modified after initiation.
 	//
 	// Resources that expose mutable properties should override this function to
@@ -223,61 +211,11 @@ func (j *jsiiProxy_RosInstances) EnableResourcePropertyConstraint() *bool {
 	return returns
 }
 
-func (j *jsiiProxy_RosInstances) EnsRegionIds() interface{} {
+func (j *jsiiProxy_RosInstances) InstanceId() interface{} {
 	var returns interface{}
 	_jsii_.Get(
 		j,
-		"ensRegionIds",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosInstances) EnsServiceId() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"ensServiceId",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosInstances) ImageId() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"imageId",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosInstances) InstanceIds() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"instanceIds",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosInstances) InstanceName() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"instanceName",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosInstances) InstanceResourceType() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"instanceResourceType",
+		"instanceId",
 		&returns,
 	)
 	return returns
@@ -363,16 +301,6 @@ func (j *jsiiProxy_RosInstances) Stack() alicloudroscdkcore.Stack {
 	return returns
 }
 
-func (j *jsiiProxy_RosInstances) Status() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"status",
-		&returns,
-	)
-	return returns
-}
-
 func (j *jsiiProxy_RosInstances) UpdatedProperites() *map[string]interface{} {
 	var returns *map[string]interface{}
 	_jsii_.Get(
@@ -422,68 +350,13 @@ func (j *jsiiProxy_RosInstances)SetEnableResourcePropertyConstraint(val *bool) {
 	)
 }
 
-func (j *jsiiProxy_RosInstances)SetEnsRegionIds(val interface{}) {
-	if err := j.validateSetEnsRegionIdsParameters(val); err != nil {
+func (j *jsiiProxy_RosInstances)SetInstanceId(val interface{}) {
+	if err := j.validateSetInstanceIdParameters(val); err != nil {
 		panic(err)
 	}
 	_jsii_.Set(
 		j,
-		"ensRegionIds",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosInstances)SetEnsServiceId(val interface{}) {
-	if err := j.validateSetEnsServiceIdParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"ensServiceId",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosInstances)SetImageId(val interface{}) {
-	if err := j.validateSetImageIdParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"imageId",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosInstances)SetInstanceIds(val interface{}) {
-	if err := j.validateSetInstanceIdsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"instanceIds",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosInstances)SetInstanceName(val interface{}) {
-	if err := j.validateSetInstanceNameParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"instanceName",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosInstances)SetInstanceResourceType(val interface{}) {
-	if err := j.validateSetInstanceResourceTypeParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"instanceResourceType",
+		"instanceId",
 		val,
 	)
 }
@@ -495,17 +368,6 @@ func (j *jsiiProxy_RosInstances)SetRefreshOptions(val interface{}) {
 	_jsii_.Set(
 		j,
 		"refreshOptions",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosInstances)SetStatus(val interface{}) {
-	if err := j.validateSetStatusParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"status",
 		val,
 	)
 }

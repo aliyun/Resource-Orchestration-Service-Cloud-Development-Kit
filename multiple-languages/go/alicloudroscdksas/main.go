@@ -63,6 +63,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "addPropertyOverride", GoMethod: "AddPropertyOverride"},
 			_jsii_.MemberMethod{JsiiMethod: "addRosDependency", GoMethod: "AddRosDependency"},
 			_jsii_.MemberProperty{JsiiProperty: "antiRansomware", GoGetter: "AntiRansomware"},
+			_jsii_.MemberProperty{JsiiProperty: "antiRansomwareManageService", GoGetter: "AntiRansomwareManageService"},
 			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
 			_jsii_.MemberProperty{JsiiProperty: "attrInstanceId", GoGetter: "AttrInstanceId"},
 			_jsii_.MemberProperty{JsiiProperty: "autoPay", GoGetter: "AutoPay"},

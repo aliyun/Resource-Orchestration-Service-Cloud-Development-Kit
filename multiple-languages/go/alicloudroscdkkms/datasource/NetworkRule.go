@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::KMS::NetworkRule`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::KMS::NetworkRule`, which is used to query the information about a network access rule.
 type NetworkRule interface {
 	alicloudroscdkcore.Resource
 	// Attribute Description: The access control rule description.

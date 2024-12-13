@@ -24,6 +24,13 @@ export interface RosFlowProps {
     readonly flowId?: string | ros.IResolvable;
 
     /**
+     * @Property flowStatus: The status of the flow. Allowed values:
+     * Enable: enable flow
+     * Disable: disable flow
+     */
+    readonly flowStatus?: string | ros.IResolvable;
+
+    /**
      * @Property launchFlow: Whether to launch the flow.
      */
     readonly launchFlow?: boolean | ros.IResolvable;
@@ -60,6 +67,13 @@ function RosFlowPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('flowName', ros.requiredValidator)(properties.flowName));
     errors.collect(ros.propertyValidator('flowName', ros.validateString)(properties.flowName));
     errors.collect(ros.propertyValidator('launchFlow', ros.validateBoolean)(properties.launchFlow));
+    if(properties.flowStatus && (typeof properties.flowStatus) !== 'object') {
+        errors.collect(ros.propertyValidator('flowStatus', ros.validateAllowedValues)({
+          data: properties.flowStatus,
+          allowedValues: ["Enable","Disable"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('flowStatus', ros.validateString)(properties.flowStatus));
     errors.collect(ros.propertyValidator('templateId', ros.validateString)(properties.templateId));
     errors.collect(ros.propertyValidator('template', ros.hashValidator(ros.validateAny))(properties.template));
     return errors.wrap('supplied properties not correct for "RosFlowProps"');
@@ -82,6 +96,7 @@ function rosFlowPropsToRosTemplate(properties: any, enableResourcePropertyConstr
       'FlowName': ros.stringToRosTemplate(properties.flowName),
       'FlowDesc': ros.stringToRosTemplate(properties.flowDesc),
       'FlowId': ros.stringToRosTemplate(properties.flowId),
+      'FlowStatus': ros.stringToRosTemplate(properties.flowStatus),
       'LaunchFlow': ros.booleanToRosTemplate(properties.launchFlow),
       'Parameters': ros.hashMapper(ros.objectToRosTemplate)(properties.parameters),
       'Template': ros.hashMapper(ros.objectToRosTemplate)(properties.template),
@@ -129,6 +144,13 @@ export class RosFlow extends ros.RosResource {
     public flowId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property flowStatus: The status of the flow. Allowed values:
+     * Enable: enable flow
+     * Disable: disable flow
+     */
+    public flowStatus: string | ros.IResolvable | undefined;
+
+    /**
      * @Property launchFlow: Whether to launch the flow.
      */
     public launchFlow: boolean | ros.IResolvable | undefined;
@@ -162,6 +184,7 @@ export class RosFlow extends ros.RosResource {
         this.flowName = props.flowName;
         this.flowDesc = props.flowDesc;
         this.flowId = props.flowId;
+        this.flowStatus = props.flowStatus;
         this.launchFlow = props.launchFlow;
         this.parameters = props.parameters;
         this.template = props.template;
@@ -174,6 +197,7 @@ export class RosFlow extends ros.RosResource {
             flowName: this.flowName,
             flowDesc: this.flowDesc,
             flowId: this.flowId,
+            flowStatus: this.flowStatus,
             launchFlow: this.launchFlow,
             parameters: this.parameters,
             template: this.template,
@@ -258,6 +282,11 @@ export class RosUserAuthConfig extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::AppFlow::UserAuthConfig";
 
     /**
+     * @Attribute AuthConfig: AuthConfig
+     */
+    public readonly attrAuthConfig: ros.IResolvable;
+
+    /**
      * @Attribute AuthConfigId: The id of the config.
      */
     public readonly attrAuthConfigId: ros.IResolvable;
@@ -287,6 +316,7 @@ export class RosUserAuthConfig extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosUserAuthConfigProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosUserAuthConfig.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAuthConfig = this.getAtt('AuthConfig');
         this.attrAuthConfigId = this.getAtt('AuthConfigId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;

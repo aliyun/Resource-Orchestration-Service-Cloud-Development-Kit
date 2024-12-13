@@ -57,11 +57,6 @@ export interface ShardingInstanceProps {
     readonly hiddenZoneId?: string | ros.IResolvable;
 
     /**
-     * Property networkType: The instance network type. Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
-     */
-    readonly networkType?: string | ros.IResolvable;
-
-    /**
      * Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
      */
     readonly period?: number | ros.IResolvable;
@@ -178,7 +173,7 @@ export class ShardingInstance extends ros.Resource {
 
         const rosShardingInstance = new RosShardingInstance(this, id,  {
             tdeStatus: props.tdeStatus,
-            engineVersion: props.engineVersion === undefined || props.engineVersion === null ? '3.4' : props.engineVersion,
+            engineVersion: props.engineVersion === undefined || props.engineVersion === null ? '7.0' : props.engineVersion,
             storageType: props.storageType,
             resourceGroupId: props.resourceGroupId,
             zoneId: props.zoneId,
@@ -195,7 +190,6 @@ export class ShardingInstance extends ros.Resource {
             vpcId: props.vpcId,
             protocolType: props.protocolType,
             chargeType: props.chargeType === undefined || props.chargeType === null ? 'PostPaid' : props.chargeType,
-            networkType: props.networkType,
             configServer: props.configServer,
             srcDbInstanceId: props.srcDbInstanceId,
             replicaSet: props.replicaSet,

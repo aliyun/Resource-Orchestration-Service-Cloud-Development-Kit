@@ -100,7 +100,7 @@ function rosGitCodeRepoPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::GitCodeRepo`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::GitCodeRepo`, which is used to generate the URL of a user-specified GitHub or Gitee code repository.
  * @Note This class does not contain additional functions, so it is recommended to use the `GitCodeRepo` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-gitcoderepo
  */
@@ -561,6 +561,209 @@ export class RosPatchBaselines extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosPatchBaselinesPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosSecretParameter`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-secretparameter
+ */
+export interface RosSecretParameterProps {
+
+    /**
+     * @Property secretParameterName: The name of the parameter.
+     */
+    readonly secretParameterName: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSecretParameterProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSecretParameterProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSecretParameterPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('secretParameterName', ros.requiredValidator)(properties.secretParameterName));
+    errors.collect(ros.propertyValidator('secretParameterName', ros.validateString)(properties.secretParameterName));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
+    return errors.wrap('supplied properties not correct for "RosSecretParameterProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::OOS::SecretParameter` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSecretParameterProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::OOS::SecretParameter` resource.
+ */
+// @ts-ignore TS6133
+function rosSecretParameterPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSecretParameterPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'SecretParameterName': ros.stringToRosTemplate(properties.secretParameterName),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::SecretParameter`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SecretParameter` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-secretparameter
+ */
+export class RosSecretParameter extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::OOS::SecretParameter";
+
+    /**
+     * @Attribute Constraints: The constraints of the encryption parameter.
+     */
+    public readonly attrConstraints: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The time when the encryption parameter was created.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute CreatedBy: The user who created the encryption parameter.
+     */
+    public readonly attrCreatedBy: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description of the encryption parameter.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute KeyId: The ID of the key of Key Management Service (KMS) that is used for encryption.
+     */
+    public readonly attrKeyId: ros.IResolvable;
+
+    /**
+     * @Attribute ParameterVersion: The version number of the encryption parameter.
+     */
+    public readonly attrParameterVersion: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute SecretParameterId: The ID of the encryption parameter.
+     */
+    public readonly attrSecretParameterId: ros.IResolvable;
+
+    /**
+     * @Attribute SecretParameterName: The name of the parameter.
+     */
+    public readonly attrSecretParameterName: ros.IResolvable;
+
+    /**
+     * @Attribute ShareType: The share type of the encryption parameter.
+     */
+    public readonly attrShareType: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tags of the parameter.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    /**
+     * @Attribute Type: The type of the parameter.
+     */
+    public readonly attrType: ros.IResolvable;
+
+    /**
+     * @Attribute UpdatedBy: The user who updated the encryption parameter.
+     */
+    public readonly attrUpdatedBy: ros.IResolvable;
+
+    /**
+     * @Attribute UpdatedDate: The time when the encryption parameter was updated.
+     */
+    public readonly attrUpdatedDate: ros.IResolvable;
+
+    /**
+     * @Attribute Value: The value of the encryption parameter.
+     */
+    public readonly attrValue: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property secretParameterName: The name of the parameter.
+     */
+    public secretParameterName: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSecretParameterProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSecretParameter.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrConstraints = this.getAtt('Constraints');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrCreatedBy = this.getAtt('CreatedBy');
+        this.attrDescription = this.getAtt('Description');
+        this.attrKeyId = this.getAtt('KeyId');
+        this.attrParameterVersion = this.getAtt('ParameterVersion');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrSecretParameterId = this.getAtt('SecretParameterId');
+        this.attrSecretParameterName = this.getAtt('SecretParameterName');
+        this.attrShareType = this.getAtt('ShareType');
+        this.attrTags = this.getAtt('Tags');
+        this.attrType = this.getAtt('Type');
+        this.attrUpdatedBy = this.getAtt('UpdatedBy');
+        this.attrUpdatedDate = this.getAtt('UpdatedDate');
+        this.attrValue = this.getAtt('Value');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.secretParameterName = props.secretParameterName;
+        this.refreshOptions = props.refreshOptions;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            secretParameterName: this.secretParameterName,
+            refreshOptions: this.refreshOptions,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSecretParameterPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 

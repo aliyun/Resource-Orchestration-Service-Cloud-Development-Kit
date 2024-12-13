@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpcCidrBlockAssociation`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpcCidrBlockAssociation`, which is used to add a secondary CIDR block to a virtual private cloud (VPC).
 type VpcCidrBlockAssociation interface {
 	alicloudroscdkcore.Resource
 	// Attribute VpcId: The ID of the VPC to which you want to add a secondary CIDR block.

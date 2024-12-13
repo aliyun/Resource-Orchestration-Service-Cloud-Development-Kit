@@ -96,6 +96,14 @@ func (j *jsiiProxy_RosFlow) validateSetEnableResourcePropertyConstraintParameter
 	return nil
 }
 
+func (j *jsiiProxy_RosFlow) validateSetExecutionModeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosFlow) validateSetExternalStorageLocationParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosFlow) validateSetNameParameters(val interface{}) error {
 	return nil
 }

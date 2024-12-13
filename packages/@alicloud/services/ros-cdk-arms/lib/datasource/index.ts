@@ -1,6 +1,13 @@
+export * from './grafanaworkspace';
+export * from './grafanaworkspaces';
 export * from './prometheis';
+export * from './prometheus';
 export * from './prometheusauthtoken';
 export * from './prometheusurl';
+export * from './synthetictask';
+export * from './synthetictasks';
+export * from './xtraceapp';
+export * from './xtraceapps';
 
 // DATASOURCE::ARMS Resources:
 export * from './arms.generated';

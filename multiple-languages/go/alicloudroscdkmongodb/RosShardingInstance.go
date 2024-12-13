@@ -47,8 +47,6 @@ type RosShardingInstance interface {
 	LogicalId() *string
 	Mongos() interface{}
 	SetMongos(val interface{})
-	NetworkType() interface{}
-	SetNetworkType(val interface{})
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
 	Period() interface{}
@@ -351,16 +349,6 @@ func (j *jsiiProxy_RosShardingInstance) Mongos() interface{} {
 	_jsii_.Get(
 		j,
 		"mongos",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosShardingInstance) NetworkType() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"networkType",
 		&returns,
 	)
 	return returns
@@ -709,17 +697,6 @@ func (j *jsiiProxy_RosShardingInstance)SetMongos(val interface{}) {
 	_jsii_.Set(
 		j,
 		"mongos",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosShardingInstance)SetNetworkType(val interface{}) {
-	if err := j.validateSetNetworkTypeParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"networkType",
 		val,
 	)
 }

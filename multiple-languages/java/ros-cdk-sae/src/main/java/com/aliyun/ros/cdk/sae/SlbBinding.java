@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sae;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SAE::SlbBinding</code>, which is used to bind an SLB instance to an application.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:33.307Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:11.706Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.SlbBinding")
 public class SlbBinding extends com.aliyun.ros.cdk.core.Resource {
 

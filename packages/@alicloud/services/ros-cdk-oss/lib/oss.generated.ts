@@ -1967,7 +1967,7 @@ function rosObjectAclPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::ObjectAcl`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::ObjectAcl`, which is used to modify the access control list (ACL) of an Object Storage Service (OSS) object.
  * @Note This class does not contain additional functions, so it is recommended to use the `ObjectAcl` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-objectacl
  */
@@ -2075,7 +2075,7 @@ function rosWebsitePropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Website`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Website`, which is used to configure static website hosting and redirection rules for an Object Storage Service (OSS) bucket.
  * @Note This class does not contain additional functions, so it is recommended to use the `Website` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-website
  */

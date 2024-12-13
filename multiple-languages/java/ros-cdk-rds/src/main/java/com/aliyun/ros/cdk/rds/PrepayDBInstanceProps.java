@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.rds;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-prepaydbinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:32.780Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:11.034Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.PrepayDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(PrepayDBInstanceProps.Jsii$Proxy.class)
 public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -295,6 +295,15 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
      * Property dedicatedHostGroupId: The ID of the host group to which the instance belongs if you create an instance in a host group.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDedicatedHostGroupId() {
+        return null;
+    }
+
+    /**
+     * Property deletionProtection: Specifies whether to enable the release protection feature for the instance.
+     * <p>
+     * This feature is available only for pay-as-you-go instances. Default is false.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionProtection() {
         return null;
     }
 
@@ -691,6 +700,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
         java.lang.Object dbParamGroupId;
         java.lang.Object dbTimeZone;
         java.lang.Object dedicatedHostGroupId;
+        java.lang.Object deletionProtection;
         java.lang.Object enableBackupLog;
         java.lang.Object encryptionKey;
         java.lang.Object highSpaceUsageProtection;
@@ -1485,6 +1495,28 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
          */
         public Builder dedicatedHostGroupId(com.aliyun.ros.cdk.core.IResolvable dedicatedHostGroupId) {
             this.dedicatedHostGroupId = dedicatedHostGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link PrepayDBInstanceProps#getDeletionProtection}
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable the release protection feature for the instance.
+         *                           This feature is available only for pay-as-you-go instances. Default is false.
+         * @return {@code this}
+         */
+        public Builder deletionProtection(java.lang.Boolean deletionProtection) {
+            this.deletionProtection = deletionProtection;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link PrepayDBInstanceProps#getDeletionProtection}
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable the release protection feature for the instance.
+         *                           This feature is available only for pay-as-you-go instances. Default is false.
+         * @return {@code this}
+         */
+        public Builder deletionProtection(com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
+            this.deletionProtection = deletionProtection;
             return this;
         }
 
@@ -2399,6 +2431,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
         private final java.lang.Object dbParamGroupId;
         private final java.lang.Object dbTimeZone;
         private final java.lang.Object dedicatedHostGroupId;
+        private final java.lang.Object deletionProtection;
         private final java.lang.Object enableBackupLog;
         private final java.lang.Object encryptionKey;
         private final java.lang.Object highSpaceUsageProtection;
@@ -2476,6 +2509,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
             this.dbParamGroupId = software.amazon.jsii.Kernel.get(this, "dbParamGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbTimeZone = software.amazon.jsii.Kernel.get(this, "dbTimeZone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dedicatedHostGroupId = software.amazon.jsii.Kernel.get(this, "dedicatedHostGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableBackupLog = software.amazon.jsii.Kernel.get(this, "enableBackupLog", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.encryptionKey = software.amazon.jsii.Kernel.get(this, "encryptionKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.highSpaceUsageProtection = software.amazon.jsii.Kernel.get(this, "highSpaceUsageProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -2554,6 +2588,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
             this.dbParamGroupId = builder.dbParamGroupId;
             this.dbTimeZone = builder.dbTimeZone;
             this.dedicatedHostGroupId = builder.dedicatedHostGroupId;
+            this.deletionProtection = builder.deletionProtection;
             this.enableBackupLog = builder.enableBackupLog;
             this.encryptionKey = builder.encryptionKey;
             this.highSpaceUsageProtection = builder.highSpaceUsageProtection;
@@ -2752,6 +2787,11 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
         @Override
         public final java.lang.Object getDedicatedHostGroupId() {
             return this.dedicatedHostGroupId;
+        }
+
+        @Override
+        public final java.lang.Object getDeletionProtection() {
+            return this.deletionProtection;
         }
 
         @Override
@@ -3032,6 +3072,9 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
             if (this.getDedicatedHostGroupId() != null) {
                 data.set("dedicatedHostGroupId", om.valueToTree(this.getDedicatedHostGroupId()));
             }
+            if (this.getDeletionProtection() != null) {
+                data.set("deletionProtection", om.valueToTree(this.getDeletionProtection()));
+            }
             if (this.getEnableBackupLog() != null) {
                 data.set("enableBackupLog", om.valueToTree(this.getEnableBackupLog()));
             }
@@ -3196,6 +3239,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
             if (this.dbParamGroupId != null ? !this.dbParamGroupId.equals(that.dbParamGroupId) : that.dbParamGroupId != null) return false;
             if (this.dbTimeZone != null ? !this.dbTimeZone.equals(that.dbTimeZone) : that.dbTimeZone != null) return false;
             if (this.dedicatedHostGroupId != null ? !this.dedicatedHostGroupId.equals(that.dedicatedHostGroupId) : that.dedicatedHostGroupId != null) return false;
+            if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
             if (this.enableBackupLog != null ? !this.enableBackupLog.equals(that.enableBackupLog) : that.enableBackupLog != null) return false;
             if (this.encryptionKey != null ? !this.encryptionKey.equals(that.encryptionKey) : that.encryptionKey != null) return false;
             if (this.highSpaceUsageProtection != null ? !this.highSpaceUsageProtection.equals(that.highSpaceUsageProtection) : that.highSpaceUsageProtection != null) return false;
@@ -3270,6 +3314,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
             result = 31 * result + (this.dbParamGroupId != null ? this.dbParamGroupId.hashCode() : 0);
             result = 31 * result + (this.dbTimeZone != null ? this.dbTimeZone.hashCode() : 0);
             result = 31 * result + (this.dedicatedHostGroupId != null ? this.dedicatedHostGroupId.hashCode() : 0);
+            result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
             result = 31 * result + (this.enableBackupLog != null ? this.enableBackupLog.hashCode() : 0);
             result = 31 * result + (this.encryptionKey != null ? this.encryptionKey.hashCode() : 0);
             result = 31 * result + (this.highSpaceUsageProtection != null ? this.highSpaceUsageProtection.hashCode() : 0);

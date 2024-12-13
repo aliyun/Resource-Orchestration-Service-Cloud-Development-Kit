@@ -137,6 +137,10 @@ type DBInstanceProps struct {
 	DbTimeZone interface{} `field:"optional" json:"dbTimeZone" yaml:"dbTimeZone"`
 	// Property dedicatedHostGroupId: The ID of the host group to which the instance belongs if you create an instance in a host group.
 	DedicatedHostGroupId interface{} `field:"optional" json:"dedicatedHostGroupId" yaml:"dedicatedHostGroupId"`
+	// Property deletionProtection: Specifies whether to enable the release protection feature for the instance.
+	//
+	// This feature is available only for pay-as-you-go instances. Default is false.
+	DeletionProtection interface{} `field:"optional" json:"deletionProtection" yaml:"deletionProtection"`
 	// Property enableBackupLog: Specifies whether to enable the log backup function.
 	//
 	// Valid values:

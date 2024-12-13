@@ -298,7 +298,7 @@ function rosDomainRecordsPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::DNS::DomainRecords`, which is used to query domain name system (DNS) records.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::DNS::DomainRecords`, which is used to query Domain Name System (DNS) records.
  * @Note This class does not contain additional functions, so it is recommended to use the `DomainRecords` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dns-domainrecords
  */

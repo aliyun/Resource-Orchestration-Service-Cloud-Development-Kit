@@ -1,0 +1,9 @@
+@alicloud/ros-cdk-mobi.App=com.aliyun.ros.cdk.mobi.App
+@alicloud/ros-cdk-mobi.AppProps=com.aliyun.ros.cdk.mobi.AppProps
+@alicloud/ros-cdk-mobi.RosApp=com.aliyun.ros.cdk.mobi.RosApp
+@alicloud/ros-cdk-mobi.RosApp.TemplateProperty=com.aliyun.ros.cdk.mobi.RosApp$TemplateProperty
+@alicloud/ros-cdk-mobi.RosAppProps=com.aliyun.ros.cdk.mobi.RosAppProps
+@alicloud/ros-cdk-mobi.datasource.RosWorkspaces=com.aliyun.ros.cdk.mobi.datasource.RosWorkspaces
+@alicloud/ros-cdk-mobi.datasource.RosWorkspacesProps=com.aliyun.ros.cdk.mobi.datasource.RosWorkspacesProps
+@alicloud/ros-cdk-mobi.datasource.Workspaces=com.aliyun.ros.cdk.mobi.datasource.Workspaces
+@alicloud/ros-cdk-mobi.datasource.WorkspacesProps=com.aliyun.ros.cdk.mobi.datasource.WorkspacesProps

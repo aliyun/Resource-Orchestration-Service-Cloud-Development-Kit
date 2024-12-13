@@ -530,6 +530,11 @@ function rosInstanceConnectionPropertyToRosTemplate(properties: any): any {
 export interface RosKeyProps {
 
     /**
+     * @Property deletionProtection: Specifies whether to enable the release protection feature for the key. Default is false.
+     */
+    readonly deletionProtection?: boolean | ros.IResolvable;
+
+    /**
      * @Property description: The description of the CMK. Length constraints: Minimum length of 0 characters. Maximum length of 8192 characters.
      */
     readonly description?: string | ros.IResolvable;
@@ -618,6 +623,7 @@ function RosKeyPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('keySpec', ros.validateString)(properties.keySpec));
     errors.collect(ros.propertyValidator('enable', ros.validateBoolean)(properties.enable));
     errors.collect(ros.propertyValidator('keyUsage', ros.validateString)(properties.keyUsage));
+    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     errors.collect(ros.propertyValidator('dkmsInstanceId', ros.validateString)(properties.dkmsInstanceId));
     return errors.wrap('supplied properties not correct for "RosKeyProps"');
 }
@@ -636,6 +642,7 @@ function rosKeyPropsToRosTemplate(properties: any, enableResourcePropertyConstra
         RosKeyPropsValidator(properties).assertSuccess();
     }
     return {
+      'DeletionProtection': ros.booleanToRosTemplate(properties.deletionProtection),
       'Description': ros.stringToRosTemplate(properties.description),
       'DKMSInstanceId': ros.stringToRosTemplate(properties.dkmsInstanceId),
       'Enable': ros.booleanToRosTemplate(properties.enable),
@@ -667,6 +674,11 @@ export class RosKey extends ros.RosResource {
 
     public enableResourcePropertyConstraint: boolean;
 
+
+    /**
+     * @Property deletionProtection: Specifies whether to enable the release protection feature for the key. Default is false.
+     */
+    public deletionProtection: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property description: The description of the CMK. Length constraints: Minimum length of 0 characters. Maximum length of 8192 characters.
@@ -733,6 +745,7 @@ export class RosKey extends ros.RosResource {
         this.attrKeyId = this.getAtt('KeyId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.deletionProtection = props.deletionProtection;
         this.description = props.description;
         this.dkmsInstanceId = props.dkmsInstanceId;
         this.enable = props.enable;
@@ -748,6 +761,7 @@ export class RosKey extends ros.RosResource {
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
+            deletionProtection: this.deletionProtection,
             description: this.description,
             dkmsInstanceId: this.dkmsInstanceId,
             enable: this.enable,

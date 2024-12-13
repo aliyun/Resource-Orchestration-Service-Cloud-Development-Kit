@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::PAI::WorkspaceResourceDlc`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::PAI::WorkspaceResourceDlc`, which is used to associate Deep Learning Containers (DLC) resources with a workspace.
 type WorkspaceResourceDlc interface {
 	alicloudroscdkcore.Resource
 	// Attribute CreateTime: The creation time of the resource.

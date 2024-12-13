@@ -84,6 +84,10 @@ func validateRosKey_IsRosResourceParameters(construct alicloudroscdkcore.IConstr
 	return nil
 }
 
+func (j *jsiiProxy_RosKey) validateSetDeletionProtectionParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosKey) validateSetDescriptionParameters(val interface{}) error {
 	return nil
 }

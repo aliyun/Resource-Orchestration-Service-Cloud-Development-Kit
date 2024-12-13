@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::AddonRelease`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::AddonRelease`, which is used to install an add-on release.
 type AddonRelease interface {
 	alicloudroscdkcore.Resource
 	// Attribute Config: AddonRelease configuration information.

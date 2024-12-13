@@ -196,6 +196,10 @@ func (j *jsiiProxy_RosPrepayDBInstance) validateSetDedicatedHostGroupIdParameter
 	return nil
 }
 
+func (j *jsiiProxy_RosPrepayDBInstance) validateSetDeletionProtectionParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosPrepayDBInstance) validateSetEnableBackupLogParameters(val interface{}) error {
 	return nil
 }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::FC::Service</code>, which is used to create a service in Function Compute.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:34.664Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:13.500Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.Service")
 public class Service extends com.aliyun.ros.cdk.core.Resource {
 

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ens.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ENS::Instances</code>, which is used to query the details of Edge Node Service (ENS) instances.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ENS::Instances</code>, which is used to query the information about Edge Node Service (ENS) instances.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:30.163Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:08.198Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.datasource.Instances")
 public class Instances extends com.aliyun.ros.cdk.core.Resource {
 
@@ -131,138 +131,23 @@ public class Instances extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property ensRegionIds: The list of ENS region IDs.
+         * Property instanceId: The ID of the instance.
          * <p>
          * @return {@code this}
-         * @param ensRegionIds Property ensRegionIds: The list of ENS region IDs. This parameter is required.
+         * @param instanceId Property instanceId: The ID of the instance. This parameter is required.
          */
-        public Builder ensRegionIds(final java.util.List<? extends java.lang.Object> ensRegionIds) {
-            this.props().ensRegionIds(ensRegionIds);
+        public Builder instanceId(final java.lang.String instanceId) {
+            this.props().instanceId(instanceId);
             return this;
         }
         /**
-         * Property ensRegionIds: The list of ENS region IDs.
+         * Property instanceId: The ID of the instance.
          * <p>
          * @return {@code this}
-         * @param ensRegionIds Property ensRegionIds: The list of ENS region IDs. This parameter is required.
+         * @param instanceId Property instanceId: The ID of the instance. This parameter is required.
          */
-        public Builder ensRegionIds(final com.aliyun.ros.cdk.core.IResolvable ensRegionIds) {
-            this.props().ensRegionIds(ensRegionIds);
-            return this;
-        }
-
-        /**
-         * Property ensServiceId: The ID of ENS service.
-         * <p>
-         * @return {@code this}
-         * @param ensServiceId Property ensServiceId: The ID of ENS service. This parameter is required.
-         */
-        public Builder ensServiceId(final java.lang.String ensServiceId) {
-            this.props().ensServiceId(ensServiceId);
-            return this;
-        }
-        /**
-         * Property ensServiceId: The ID of ENS service.
-         * <p>
-         * @return {@code this}
-         * @param ensServiceId Property ensServiceId: The ID of ENS service. This parameter is required.
-         */
-        public Builder ensServiceId(final com.aliyun.ros.cdk.core.IResolvable ensServiceId) {
-            this.props().ensServiceId(ensServiceId);
-            return this;
-        }
-
-        /**
-         * Property imageId: The image ID of instance.
-         * <p>
-         * @return {@code this}
-         * @param imageId Property imageId: The image ID of instance. This parameter is required.
-         */
-        public Builder imageId(final java.lang.String imageId) {
-            this.props().imageId(imageId);
-            return this;
-        }
-        /**
-         * Property imageId: The image ID of instance.
-         * <p>
-         * @return {@code this}
-         * @param imageId Property imageId: The image ID of instance. This parameter is required.
-         */
-        public Builder imageId(final com.aliyun.ros.cdk.core.IResolvable imageId) {
-            this.props().imageId(imageId);
-            return this;
-        }
-
-        /**
-         * Property instanceIds: The list of instance IDs.
-         * <p>
-         * @return {@code this}
-         * @param instanceIds Property instanceIds: The list of instance IDs. This parameter is required.
-         */
-        public Builder instanceIds(final java.util.List<? extends java.lang.Object> instanceIds) {
-            this.props().instanceIds(instanceIds);
-            return this;
-        }
-        /**
-         * Property instanceIds: The list of instance IDs.
-         * <p>
-         * @return {@code this}
-         * @param instanceIds Property instanceIds: The list of instance IDs. This parameter is required.
-         */
-        public Builder instanceIds(final com.aliyun.ros.cdk.core.IResolvable instanceIds) {
-            this.props().instanceIds(instanceIds);
-            return this;
-        }
-
-        /**
-         * Property instanceName: The name of instance.
-         * <p>
-         * @return {@code this}
-         * @param instanceName Property instanceName: The name of instance. This parameter is required.
-         */
-        public Builder instanceName(final java.lang.String instanceName) {
-            this.props().instanceName(instanceName);
-            return this;
-        }
-        /**
-         * Property instanceName: The name of instance.
-         * <p>
-         * @return {@code this}
-         * @param instanceName Property instanceName: The name of instance. This parameter is required.
-         */
-        public Builder instanceName(final com.aliyun.ros.cdk.core.IResolvable instanceName) {
-            this.props().instanceName(instanceName);
-            return this;
-        }
-
-        /**
-         * Property instanceResourceType: The resource type of instance.
-         * <p>
-         * Valid values:
-         * EnsPostPaidInstance: PostPaid instance.
-         * EnsService: Edge service instance.
-         * BuildMachine: Image building machine.
-         * <p>
-         * @return {@code this}
-         * @param instanceResourceType Property instanceResourceType: The resource type of instance. This parameter is required.
-         */
-        public Builder instanceResourceType(final java.lang.String instanceResourceType) {
-            this.props().instanceResourceType(instanceResourceType);
-            return this;
-        }
-        /**
-         * Property instanceResourceType: The resource type of instance.
-         * <p>
-         * Valid values:
-         * EnsPostPaidInstance: PostPaid instance.
-         * EnsService: Edge service instance.
-         * BuildMachine: Image building machine.
-         * <p>
-         * @return {@code this}
-         * @param instanceResourceType Property instanceResourceType: The resource type of instance. This parameter is required.
-         */
-        public Builder instanceResourceType(final com.aliyun.ros.cdk.core.IResolvable instanceResourceType) {
-            this.props().instanceResourceType(instanceResourceType);
+        public Builder instanceId(final com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.props().instanceId(instanceId);
             return this;
         }
 
@@ -300,27 +185,6 @@ public class Instances extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder refreshOptions(final com.aliyun.ros.cdk.core.IResolvable refreshOptions) {
             this.props().refreshOptions(refreshOptions);
-            return this;
-        }
-
-        /**
-         * Property status: The status of instance.
-         * <p>
-         * @return {@code this}
-         * @param status Property status: The status of instance. This parameter is required.
-         */
-        public Builder status(final java.lang.String status) {
-            this.props().status(status);
-            return this;
-        }
-        /**
-         * Property status: The status of instance.
-         * <p>
-         * @return {@code this}
-         * @param status Property status: The status of instance. This parameter is required.
-         */
-        public Builder status(final com.aliyun.ros.cdk.core.IResolvable status) {
-            this.props().status(status);
             return this;
         }
 

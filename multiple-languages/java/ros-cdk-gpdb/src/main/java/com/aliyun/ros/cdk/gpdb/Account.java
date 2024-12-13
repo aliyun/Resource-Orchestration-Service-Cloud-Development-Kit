@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gpdb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::GPDB::Account</code>, which is used to create a database account for an AnalyticDB for PostgreSQL instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:30.917Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:08.729Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.Account")
 public class Account extends com.aliyun.ros.cdk.core.Resource {
 

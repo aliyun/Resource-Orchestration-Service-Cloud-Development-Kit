@@ -132,6 +132,11 @@ export interface MultiZoneClusterProps {
     readonly clusterName?: string | ros.IResolvable;
 
     /**
+     * Property deletionProtection: Specifies whether to enable the release protection feature for the cluster. Default is false.
+     */
+    readonly deletionProtection?: boolean | ros.IResolvable;
+
+    /**
      * Property masterInstanceType: The instance type of the master node. You can call the DescribeAvailableResource operation to obtain the value of this parameter.
      */
     readonly masterInstanceType?: string | ros.IResolvable;
@@ -246,6 +251,7 @@ export class MultiZoneCluster extends ros.Resource {
             period: props.period,
             logInstanceType: props.logInstanceType,
             payType: props.payType,
+            deletionProtection: props.deletionProtection,
             primaryVSwitchId: props.primaryVSwitchId,
             arbiterVSwitchId: props.arbiterVSwitchId,
             vpcId: props.vpcId,

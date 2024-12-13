@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mongodb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::MONGODB::ShardingInstance</code>, which is used to create or clone an ApsaraDB for MongoDB sharded cluster instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.619Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:09.377Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.ShardingInstance")
 public class ShardingInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -323,31 +323,6 @@ public class ShardingInstance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder hiddenZoneId(final com.aliyun.ros.cdk.core.IResolvable hiddenZoneId) {
             this.props.hiddenZoneId(hiddenZoneId);
-            return this;
-        }
-
-        /**
-         * Property networkType: The instance network type.
-         * <p>
-         * Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
-         * <p>
-         * @return {@code this}
-         * @param networkType Property networkType: The instance network type. This parameter is required.
-         */
-        public Builder networkType(final java.lang.String networkType) {
-            this.props.networkType(networkType);
-            return this;
-        }
-        /**
-         * Property networkType: The instance network type.
-         * <p>
-         * Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
-         * <p>
-         * @return {@code this}
-         * @param networkType Property networkType: The instance network type. This parameter is required.
-         */
-        public Builder networkType(final com.aliyun.ros.cdk.core.IResolvable networkType) {
-            this.props.networkType(networkType);
             return this;
         }
 

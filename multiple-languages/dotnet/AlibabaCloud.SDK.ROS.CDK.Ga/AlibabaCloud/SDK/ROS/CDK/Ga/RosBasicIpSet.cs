@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ga
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicIpSet`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicIpSet`, which is used to create an acceleration region for a basic Global Accelerator (GA) instance.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `BasicIpSet` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicipset

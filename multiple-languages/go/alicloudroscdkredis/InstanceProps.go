@@ -22,6 +22,10 @@ type InstanceProps struct {
 	//
 	// Default is false.
 	DeletionForce interface{} `field:"optional" json:"deletionForce" yaml:"deletionForce"`
+	// Property deletionProtection: Specifies whether to enable the release protection feature for the instance.
+	//
+	// Default is false.
+	DeletionProtection interface{} `field:"optional" json:"deletionProtection" yaml:"deletionProtection"`
 	// Property engineVersion: Engine version.
 	//
 	// Supported values: 2.8, 4.0, 5.0, 6.0 and 7.0

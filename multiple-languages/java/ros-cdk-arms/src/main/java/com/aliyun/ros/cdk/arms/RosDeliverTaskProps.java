@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.arms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-delivertask
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:26.965Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:04.779Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.RosDeliverTaskProps")
 @software.amazon.jsii.Jsii.Proxy(RosDeliverTaskProps.Jsii$Proxy.class)
 public interface RosDeliverTaskProps extends software.amazon.jsii.JsiiSerializable {

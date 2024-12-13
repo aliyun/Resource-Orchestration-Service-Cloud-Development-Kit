@@ -19,11 +19,6 @@ export interface RosAggregateCompliancePackProps {
     readonly compliancePackName: string | ros.IResolvable;
 
     /**
-     * @Property configRules: List of rules in the compliance package.
-     */
-    readonly configRules: Array<RosAggregateCompliancePack.ConfigRulesProperty | ros.IResolvable> | ros.IResolvable;
-
-    /**
      * @Property description: The description of compliance pack.
      */
     readonly description: string | ros.IResolvable;
@@ -42,11 +37,27 @@ export interface RosAggregateCompliancePackProps {
     readonly compliancePackTemplateId?: string | ros.IResolvable;
 
     /**
+     * @Property configRules: List of rules in the compliance package.
+     * Note: Either this parameter or TemplateContent must be set.
+     */
+    readonly configRules?: Array<RosAggregateCompliancePack.ConfigRulesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * @Property defaultEnable: Whether the rule supports quick activation. Value:
      * true: This rule will be enabled when the compliance package is quickly enabled.
      * false (default): disable
      */
     readonly defaultEnable?: boolean | ros.IResolvable;
+
+    /**
+     * @Property excludeRegionIdsScope: The compliance package is invalid for the specified region ID.
+     */
+    readonly excludeRegionIdsScope?: string | ros.IResolvable;
+
+    /**
+     * @Property excludeResourceGroupIdsScope: The compliance package is invalid for the specified resource group ID.
+     */
+    readonly excludeResourceGroupIdsScope?: string | ros.IResolvable;
 
     /**
      * @Property excludeResourceIdsScope: The compliance package is invalid for the specified resource ID, that is, no evaluation is performed on the resource.
@@ -64,6 +75,11 @@ export interface RosAggregateCompliancePackProps {
     readonly resourceGroupIdsScope?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property resourceIdsScope: The compliance package only takes effect on the specified resource ID.
+     */
+    readonly resourceIdsScope?: string | ros.IResolvable;
+
+    /**
      * @Property tagKeyScope: Compliance packages only take effect on resources bound to the specified tag key.
      */
     readonly tagKeyScope?: string | ros.IResolvable;
@@ -72,6 +88,12 @@ export interface RosAggregateCompliancePackProps {
      * @Property tagValueScope: Compliance packages only take effect on resources bound to specified tag key-value pairs.TagValueScope needs to be used in conjunction with TagKeyScope.
      */
     readonly tagValueScope?: string | ros.IResolvable;
+
+    /**
+     * @Property templateContent: Template information used to generate compliance packages.
+     * Note: Either this parameter or ConfigRules must be set.
+     */
+    readonly templateContent?: string | ros.IResolvable;
 }
 
 /**
@@ -86,14 +108,12 @@ function RosAggregateCompliancePackPropsValidator(properties: any): ros.Validati
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('tagKeyScope', ros.validateString)(properties.tagKeyScope));
     errors.collect(ros.propertyValidator('tagValueScope', ros.validateString)(properties.tagValueScope));
+    errors.collect(ros.propertyValidator('excludeResourceGroupIdsScope', ros.validateString)(properties.excludeResourceGroupIdsScope));
     errors.collect(ros.propertyValidator('description', ros.requiredValidator)(properties.description));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    errors.collect(ros.propertyValidator('compliancePackName', ros.requiredValidator)(properties.compliancePackName));
-    errors.collect(ros.propertyValidator('compliancePackName', ros.validateString)(properties.compliancePackName));
     errors.collect(ros.propertyValidator('excludeResourceIdsScope', ros.listValidator(ros.validateString))(properties.excludeResourceIdsScope));
-    errors.collect(ros.propertyValidator('regionIdsScope', ros.listValidator(ros.validateString))(properties.regionIdsScope));
-    errors.collect(ros.propertyValidator('resourceGroupIdsScope', ros.listValidator(ros.validateString))(properties.resourceGroupIdsScope));
-    errors.collect(ros.propertyValidator('configRules', ros.requiredValidator)(properties.configRules));
+    errors.collect(ros.propertyValidator('resourceIdsScope', ros.validateString)(properties.resourceIdsScope));
+    errors.collect(ros.propertyValidator('templateContent', ros.validateString)(properties.templateContent));
     if(properties.configRules && (Array.isArray(properties.configRules) || (typeof properties.configRules) === 'string')) {
         errors.collect(ros.propertyValidator('configRules', ros.validateLength)({
             data: properties.configRules.length,
@@ -102,6 +122,12 @@ function RosAggregateCompliancePackPropsValidator(properties: any): ros.Validati
           }));
     }
     errors.collect(ros.propertyValidator('configRules', ros.listValidator(RosAggregateCompliancePack_ConfigRulesPropertyValidator))(properties.configRules));
+    errors.collect(ros.propertyValidator('defaultEnable', ros.validateBoolean)(properties.defaultEnable));
+    errors.collect(ros.propertyValidator('compliancePackName', ros.requiredValidator)(properties.compliancePackName));
+    errors.collect(ros.propertyValidator('compliancePackName', ros.validateString)(properties.compliancePackName));
+    errors.collect(ros.propertyValidator('excludeRegionIdsScope', ros.validateString)(properties.excludeRegionIdsScope));
+    errors.collect(ros.propertyValidator('regionIdsScope', ros.listValidator(ros.validateString))(properties.regionIdsScope));
+    errors.collect(ros.propertyValidator('resourceGroupIdsScope', ros.listValidator(ros.validateString))(properties.resourceGroupIdsScope));
     errors.collect(ros.propertyValidator('compliancePackTemplateId', ros.validateString)(properties.compliancePackTemplateId));
     errors.collect(ros.propertyValidator('riskLevel', ros.requiredValidator)(properties.riskLevel));
     if(properties.riskLevel && (typeof properties.riskLevel) !== 'object') {
@@ -111,7 +137,6 @@ function RosAggregateCompliancePackPropsValidator(properties: any): ros.Validati
         }));
     }
     errors.collect(ros.propertyValidator('riskLevel', ros.validateNumber)(properties.riskLevel));
-    errors.collect(ros.propertyValidator('defaultEnable', ros.validateBoolean)(properties.defaultEnable));
     errors.collect(ros.propertyValidator('aggregatorId', ros.requiredValidator)(properties.aggregatorId));
     errors.collect(ros.propertyValidator('aggregatorId', ros.validateString)(properties.aggregatorId));
     return errors.wrap('supplied properties not correct for "RosAggregateCompliancePackProps"');
@@ -133,16 +158,20 @@ function rosAggregateCompliancePackPropsToRosTemplate(properties: any, enableRes
     return {
       'AggregatorId': ros.stringToRosTemplate(properties.aggregatorId),
       'CompliancePackName': ros.stringToRosTemplate(properties.compliancePackName),
-      'ConfigRules': ros.listMapper(rosAggregateCompliancePackConfigRulesPropertyToRosTemplate)(properties.configRules),
       'Description': ros.stringToRosTemplate(properties.description),
       'RiskLevel': ros.numberToRosTemplate(properties.riskLevel),
       'CompliancePackTemplateId': ros.stringToRosTemplate(properties.compliancePackTemplateId),
+      'ConfigRules': ros.listMapper(rosAggregateCompliancePackConfigRulesPropertyToRosTemplate)(properties.configRules),
       'DefaultEnable': ros.booleanToRosTemplate(properties.defaultEnable),
+      'ExcludeRegionIdsScope': ros.stringToRosTemplate(properties.excludeRegionIdsScope),
+      'ExcludeResourceGroupIdsScope': ros.stringToRosTemplate(properties.excludeResourceGroupIdsScope),
       'ExcludeResourceIdsScope': ros.listMapper(ros.stringToRosTemplate)(properties.excludeResourceIdsScope),
       'RegionIdsScope': ros.listMapper(ros.stringToRosTemplate)(properties.regionIdsScope),
       'ResourceGroupIdsScope': ros.listMapper(ros.stringToRosTemplate)(properties.resourceGroupIdsScope),
+      'ResourceIdsScope': ros.stringToRosTemplate(properties.resourceIdsScope),
       'TagKeyScope': ros.stringToRosTemplate(properties.tagKeyScope),
       'TagValueScope': ros.stringToRosTemplate(properties.tagValueScope),
+      'TemplateContent': ros.stringToRosTemplate(properties.templateContent),
     };
 }
 
@@ -176,11 +205,6 @@ export class RosAggregateCompliancePack extends ros.RosResource {
     public compliancePackName: string | ros.IResolvable;
 
     /**
-     * @Property configRules: List of rules in the compliance package.
-     */
-    public configRules: Array<RosAggregateCompliancePack.ConfigRulesProperty | ros.IResolvable> | ros.IResolvable;
-
-    /**
      * @Property description: The description of compliance pack.
      */
     public description: string | ros.IResolvable;
@@ -199,11 +223,27 @@ export class RosAggregateCompliancePack extends ros.RosResource {
     public compliancePackTemplateId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property configRules: List of rules in the compliance package.
+     * Note: Either this parameter or TemplateContent must be set.
+     */
+    public configRules: Array<RosAggregateCompliancePack.ConfigRulesProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @Property defaultEnable: Whether the rule supports quick activation. Value:
      * true: This rule will be enabled when the compliance package is quickly enabled.
      * false (default): disable
      */
     public defaultEnable: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property excludeRegionIdsScope: The compliance package is invalid for the specified region ID.
+     */
+    public excludeRegionIdsScope: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property excludeResourceGroupIdsScope: The compliance package is invalid for the specified resource group ID.
+     */
+    public excludeResourceGroupIdsScope: string | ros.IResolvable | undefined;
 
     /**
      * @Property excludeResourceIdsScope: The compliance package is invalid for the specified resource ID, that is, no evaluation is performed on the resource.
@@ -221,6 +261,11 @@ export class RosAggregateCompliancePack extends ros.RosResource {
     public resourceGroupIdsScope: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
+     * @Property resourceIdsScope: The compliance package only takes effect on the specified resource ID.
+     */
+    public resourceIdsScope: string | ros.IResolvable | undefined;
+
+    /**
      * @Property tagKeyScope: Compliance packages only take effect on resources bound to the specified tag key.
      */
     public tagKeyScope: string | ros.IResolvable | undefined;
@@ -229,6 +274,12 @@ export class RosAggregateCompliancePack extends ros.RosResource {
      * @Property tagValueScope: Compliance packages only take effect on resources bound to specified tag key-value pairs.TagValueScope needs to be used in conjunction with TagKeyScope.
      */
     public tagValueScope: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property templateContent: Template information used to generate compliance packages.
+     * Note: Either this parameter or ConfigRules must be set.
+     */
+    public templateContent: string | ros.IResolvable | undefined;
 
     /**
      * @param scope - scope in which this resource is defined
@@ -242,16 +293,20 @@ export class RosAggregateCompliancePack extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.aggregatorId = props.aggregatorId;
         this.compliancePackName = props.compliancePackName;
-        this.configRules = props.configRules;
         this.description = props.description;
         this.riskLevel = props.riskLevel;
         this.compliancePackTemplateId = props.compliancePackTemplateId;
+        this.configRules = props.configRules;
         this.defaultEnable = props.defaultEnable;
+        this.excludeRegionIdsScope = props.excludeRegionIdsScope;
+        this.excludeResourceGroupIdsScope = props.excludeResourceGroupIdsScope;
         this.excludeResourceIdsScope = props.excludeResourceIdsScope;
         this.regionIdsScope = props.regionIdsScope;
         this.resourceGroupIdsScope = props.resourceGroupIdsScope;
+        this.resourceIdsScope = props.resourceIdsScope;
         this.tagKeyScope = props.tagKeyScope;
         this.tagValueScope = props.tagValueScope;
+        this.templateContent = props.templateContent;
     }
 
 
@@ -259,16 +314,20 @@ export class RosAggregateCompliancePack extends ros.RosResource {
         return {
             aggregatorId: this.aggregatorId,
             compliancePackName: this.compliancePackName,
-            configRules: this.configRules,
             description: this.description,
             riskLevel: this.riskLevel,
             compliancePackTemplateId: this.compliancePackTemplateId,
+            configRules: this.configRules,
             defaultEnable: this.defaultEnable,
+            excludeRegionIdsScope: this.excludeRegionIdsScope,
+            excludeResourceGroupIdsScope: this.excludeResourceGroupIdsScope,
             excludeResourceIdsScope: this.excludeResourceIdsScope,
             regionIdsScope: this.regionIdsScope,
             resourceGroupIdsScope: this.resourceGroupIdsScope,
+            resourceIdsScope: this.resourceIdsScope,
             tagKeyScope: this.tagKeyScope,
             tagValueScope: this.tagValueScope,
+            templateContent: this.templateContent,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

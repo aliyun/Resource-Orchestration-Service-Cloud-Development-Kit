@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.rds.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::RDS::Databases</code>, which is used to query the details of databases in an ApsaraDB RDS instance.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::RDS::Databases</code>, which is used to query the information about databases on an ApsaraDB RDS instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:32.907Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:11.180Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.datasource.RosDatabases")
 public class RosDatabases extends com.aliyun.ros.cdk.core.RosResource {
 

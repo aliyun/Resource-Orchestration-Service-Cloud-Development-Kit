@@ -51,6 +51,16 @@ export interface ExchangeProps {
      * Property alternateExchange: The alternate exchange. An alternate exchange is configured for an existing exchange. It is used to receive messages that fail to be routed to queues from the existing exchange.
      */
     readonly alternateExchange?: string | ros.IResolvable;
+
+    /**
+     * Property xDelayedType: Exchanges of the x-delay-Message type allow you to customize the Header property of the message, and the x-delay specifies the amount of time in milliseconds for the message to be delivered. The routing rules for this class of exchanges depend on the Exchange type specified in the x-delay-type parameter, which specifies the actual Exchange type to which the delayed message will eventually be delivered. Valid values:
+     * - DIRECT: Delivers deferred messages to a specified queue bound to an Exchange of type DIRECT.
+     * - TOPIC: Delivers deferred messages to the queue bound to the Exchange type TOPIC.
+     *  - FANOUT: Delivers deferred messages to a queue bound to an Exchange of type FANOUT.
+     * - HEADERS: Deferred messages are delivered to the queue bound to the Exchange HEADERS type.
+     *  - X-JMS-TOPIC: Delivers deferred messages to the queue bound to X-JMS-TOPIC.
+     */
+    readonly xDelayedType?: string | ros.IResolvable;
 }
 
 /**
@@ -86,6 +96,7 @@ export class Exchange extends ros.Resource {
             alternateExchange: props.alternateExchange,
             internal: props.internal,
             virtualHost: props.virtualHost,
+            xDelayedType: props.xDelayedType,
             autoDeleteState: props.autoDeleteState,
             exchangeName: props.exchangeName,
             exchangeType: props.exchangeType,

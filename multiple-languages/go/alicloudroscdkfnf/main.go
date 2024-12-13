@@ -74,6 +74,8 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "definition", GoGetter: "Definition"},
 			_jsii_.MemberProperty{JsiiProperty: "description", GoGetter: "Description"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberProperty{JsiiProperty: "executionMode", GoGetter: "ExecutionMode"},
+			_jsii_.MemberProperty{JsiiProperty: "externalStorageLocation", GoGetter: "ExternalStorageLocation"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "logicalId", GoGetter: "LogicalId"},
 			_jsii_.MemberProperty{JsiiProperty: "name", GoGetter: "Name"},

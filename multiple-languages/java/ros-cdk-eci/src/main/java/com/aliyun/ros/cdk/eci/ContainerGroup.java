@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.eci;
  * <p>
  * A container group is an elastic container instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:28.805Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:06.834Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.ContainerGroup")
 public class ContainerGroup extends com.aliyun.ros.cdk.core.Resource {
 

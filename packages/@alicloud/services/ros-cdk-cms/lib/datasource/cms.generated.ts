@@ -260,7 +260,7 @@ function rosAlarmContactsPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::AlarmContacts`, which is used to query the basic information about alert contacts.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::AlarmContacts`, which is used to query the information about alert contacts.
  * @Note This class does not contain additional functions, so it is recommended to use the `AlarmContacts` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-alarmcontacts
  */
@@ -587,7 +587,7 @@ function rosMonitorGroupsPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::MonitorGroups`, which is used to query the basic information about application groups.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::MonitorGroups`, which is used to query the information about application groups.
  * @Note This class does not contain additional functions, so it is recommended to use the `MonitorGroups` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-monitorgroups
  */
@@ -878,7 +878,7 @@ function rosNamespacesPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::Namespaces`, which is used to query the basic information about namespaces.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::Namespaces`, which is used to query the information about namespaces.
  * @Note This class does not contain additional functions, so it is recommended to use the `Namespaces` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-namespaces
  */
@@ -996,7 +996,7 @@ function rosSlsGroupsPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::SlsGroups`, which is used to query the basic information about Logstore groups.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::SlsGroups`, which is used to query the information about Logstore groups.
  * @Note This class does not contain additional functions, so it is recommended to use the `SlsGroups` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-slsgroups
  */

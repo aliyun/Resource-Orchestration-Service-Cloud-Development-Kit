@@ -30,6 +30,8 @@ type RosCluster interface {
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
 	CreationStack() *[]*string
+	DeletionProtection() interface{}
+	SetDeletionProtection(val interface{})
 	DiskSize() interface{}
 	SetDiskSize(val interface{})
 	DiskType() interface{}
@@ -314,6 +316,16 @@ func (j *jsiiProxy_RosCluster) CreationStack() *[]*string {
 	_jsii_.Get(
 		j,
 		"creationStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosCluster) DeletionProtection() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"deletionProtection",
 		&returns,
 	)
 	return returns
@@ -627,6 +639,17 @@ func (j *jsiiProxy_RosCluster)SetCoreInstanceType(val interface{}) {
 	_jsii_.Set(
 		j,
 		"coreInstanceType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosCluster)SetDeletionProtection(val interface{}) {
+	if err := j.validateSetDeletionProtectionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"deletionProtection",
 		val,
 	)
 }

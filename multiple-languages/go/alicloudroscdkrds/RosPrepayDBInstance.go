@@ -80,6 +80,8 @@ type RosPrepayDBInstance interface {
 	SetDbTimeZone(val interface{})
 	DedicatedHostGroupId() interface{}
 	SetDedicatedHostGroupId(val interface{})
+	DeletionProtection() interface{}
+	SetDeletionProtection(val interface{})
 	EnableBackupLog() interface{}
 	SetEnableBackupLog(val interface{})
 	EnableResourcePropertyConstraint() *bool
@@ -678,6 +680,16 @@ func (j *jsiiProxy_RosPrepayDBInstance) DedicatedHostGroupId() interface{} {
 	_jsii_.Get(
 		j,
 		"dedicatedHostGroupId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosPrepayDBInstance) DeletionProtection() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"deletionProtection",
 		&returns,
 	)
 	return returns
@@ -1525,6 +1537,17 @@ func (j *jsiiProxy_RosPrepayDBInstance)SetDedicatedHostGroupId(val interface{}) 
 	_jsii_.Set(
 		j,
 		"dedicatedHostGroupId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosPrepayDBInstance)SetDeletionProtection(val interface{}) {
+	if err := j.validateSetDeletionProtectionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"deletionProtection",
 		val,
 	)
 }

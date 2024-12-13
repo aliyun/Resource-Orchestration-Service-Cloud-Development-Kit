@@ -26,6 +26,10 @@ type RosFlow interface {
 	SetDescription(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	ExecutionMode() interface{}
+	SetExecutionMode(val interface{})
+	ExternalStorageLocation() interface{}
+	SetExternalStorageLocation(val interface{})
 	// The logical ID for this stack element.
 	//
 	// The logical ID of the element
@@ -259,6 +263,26 @@ func (j *jsiiProxy_RosFlow) EnableResourcePropertyConstraint() *bool {
 	return returns
 }
 
+func (j *jsiiProxy_RosFlow) ExecutionMode() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"executionMode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosFlow) ExternalStorageLocation() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"externalStorageLocation",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosFlow) LogicalId() *string {
 	var returns *string
 	_jsii_.Get(
@@ -426,6 +450,28 @@ func (j *jsiiProxy_RosFlow)SetEnableResourcePropertyConstraint(val *bool) {
 	_jsii_.Set(
 		j,
 		"enableResourcePropertyConstraint",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosFlow)SetExecutionMode(val interface{}) {
+	if err := j.validateSetExecutionModeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"executionMode",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosFlow)SetExternalStorageLocation(val interface{}) {
+	if err := j.validateSetExternalStorageLocationParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"externalStorageLocation",
 		val,
 	)
 }

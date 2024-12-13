@@ -18,6 +18,8 @@ export * from './fullnatentry';
 export * from './grantinstancetocen';
 export * from './havip';
 export * from './havipassociation';
+export * from './ipam';
+export * from './ipamscope';
 export * from './ipsecserver';
 export * from './ipv4gateway';
 export * from './ipv6gateway';

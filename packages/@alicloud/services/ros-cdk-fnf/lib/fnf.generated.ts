@@ -24,6 +24,16 @@ export interface RosFlowProps {
     readonly description?: string | ros.IResolvable;
 
     /**
+     * @Property executionMode: The execution mode of the flow.
+     */
+    readonly executionMode?: string | ros.IResolvable;
+
+    /**
+     * @Property externalStorageLocation: The external storage location for the flow.
+     */
+    readonly externalStorageLocation?: string | ros.IResolvable;
+
+    /**
      * @Property requestId: The specified Request ID for this request. If not specified, our system will help you generate a random one.
      */
     readonly requestId?: string | ros.IResolvable;
@@ -48,6 +58,14 @@ function RosFlowPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('requestId', ros.validateString)(properties.requestId));
     errors.collect(ros.propertyValidator('definition', ros.requiredValidator)(properties.definition));
     errors.collect(ros.propertyValidator('definition', ros.validateString)(properties.definition));
+    if(properties.executionMode && (typeof properties.executionMode) !== 'object') {
+        errors.collect(ros.propertyValidator('executionMode', ros.validateAllowedValues)({
+          data: properties.executionMode,
+          allowedValues: ["Express","Standard"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('executionMode', ros.validateString)(properties.executionMode));
+    errors.collect(ros.propertyValidator('externalStorageLocation', ros.validateString)(properties.externalStorageLocation));
     errors.collect(ros.propertyValidator('roleArn', ros.validateString)(properties.roleArn));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
@@ -71,6 +89,8 @@ function rosFlowPropsToRosTemplate(properties: any, enableResourcePropertyConstr
       'Definition': ros.stringToRosTemplate(properties.definition),
       'Name': ros.stringToRosTemplate(properties.name),
       'Description': ros.stringToRosTemplate(properties.description),
+      'ExecutionMode': ros.stringToRosTemplate(properties.executionMode),
+      'ExternalStorageLocation': ros.stringToRosTemplate(properties.externalStorageLocation),
       'RequestId': ros.stringToRosTemplate(properties.requestId),
       'RoleArn': ros.stringToRosTemplate(properties.roleArn),
     };
@@ -126,6 +146,16 @@ export class RosFlow extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
+     * @Property executionMode: The execution mode of the flow.
+     */
+    public executionMode: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property externalStorageLocation: The external storage location for the flow.
+     */
+    public externalStorageLocation: string | ros.IResolvable | undefined;
+
+    /**
      * @Property requestId: The specified Request ID for this request. If not specified, our system will help you generate a random one.
      */
     public requestId: string | ros.IResolvable | undefined;
@@ -151,6 +181,8 @@ export class RosFlow extends ros.RosResource {
         this.definition = props.definition;
         this.name = props.name;
         this.description = props.description;
+        this.executionMode = props.executionMode;
+        this.externalStorageLocation = props.externalStorageLocation;
         this.requestId = props.requestId;
         this.roleArn = props.roleArn;
     }
@@ -161,6 +193,8 @@ export class RosFlow extends ros.RosResource {
             definition: this.definition,
             name: this.name,
             description: this.description,
+            executionMode: this.executionMode,
+            externalStorageLocation: this.externalStorageLocation,
             requestId: this.requestId,
             roleArn: this.roleArn,
         };

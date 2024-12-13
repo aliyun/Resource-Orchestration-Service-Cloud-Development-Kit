@@ -39,7 +39,7 @@ export interface ConfigurationsProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ACM::Configurations`, which is used to query the details of configurations.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ACM::Configurations`, which is used to query the information about configurations.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosConfigurations`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-acm-configurations
  */

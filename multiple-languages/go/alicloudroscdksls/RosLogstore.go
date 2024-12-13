@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Logstore`, which is used to create a Logstore in a Log Service project.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Logstore`, which is used to create a Logstore in a Simple Log Service (SLS) project.
 type RosLogstore interface {
 	alicloudroscdkcore.RosResource
 	AppendMeta() interface{}

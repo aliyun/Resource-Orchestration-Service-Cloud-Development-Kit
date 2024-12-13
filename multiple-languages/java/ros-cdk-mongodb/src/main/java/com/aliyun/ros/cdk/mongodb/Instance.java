@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mongodb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::MONGODB::Instance</code>, which is used to create or clone an ApsaraDB for MongoDB replica set instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.588Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:09.355Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -416,31 +416,6 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property networkType: The instance network type.
-         * <p>
-         * Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
-         * <p>
-         * @return {@code this}
-         * @param networkType Property networkType: The instance network type. This parameter is required.
-         */
-        public Builder networkType(final java.lang.String networkType) {
-            this.props.networkType(networkType);
-            return this;
-        }
-        /**
-         * Property networkType: The instance network type.
-         * <p>
-         * Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
-         * <p>
-         * @return {@code this}
-         * @param networkType Property networkType: The instance network type. This parameter is required.
-         */
-        public Builder networkType(final com.aliyun.ros.cdk.core.IResolvable networkType) {
-            this.props.networkType(networkType);
-            return this;
-        }
-
-        /**
          * Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
          * <p>
          * @return {@code this}
@@ -458,6 +433,27 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
             this.props.period(period);
+            return this;
+        }
+
+        /**
+         * Property privateConnections: Connection configs of private connection.
+         * <p>
+         * @return {@code this}
+         * @param privateConnections Property privateConnections: Connection configs of private connection. This parameter is required.
+         */
+        public Builder privateConnections(final com.aliyun.ros.cdk.core.IResolvable privateConnections) {
+            this.props.privateConnections(privateConnections);
+            return this;
+        }
+        /**
+         * Property privateConnections: Connection configs of private connection.
+         * <p>
+         * @return {@code this}
+         * @param privateConnections Property privateConnections: Connection configs of private connection. This parameter is required.
+         */
+        public Builder privateConnections(final com.aliyun.ros.cdk.mongodb.RosInstance.PrivateConnectionsProperty privateConnections) {
+            this.props.privateConnections(privateConnections);
             return this;
         }
 

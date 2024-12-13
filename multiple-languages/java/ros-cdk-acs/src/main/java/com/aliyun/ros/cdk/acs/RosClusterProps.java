@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.acs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acs-cluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:26.251Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:03.806Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acs.$Module.class, fqn = "@alicloud/ros-cdk-acs.RosClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosClusterProps.Jsii$Proxy.class)
 public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -130,7 +130,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZoneIds() {
         return null;
     }
 
@@ -164,7 +164,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object timeZone;
         java.lang.Object vpcId;
         java.lang.Object vSwitchIds;
-        java.lang.Object zoneId;
+        java.lang.Object zoneIds;
 
         /**
          * Sets the value of {@link RosClusterProps#getName}
@@ -558,22 +558,22 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
-         * Sets the value of {@link RosClusterProps#getZoneId}
-         * @param zoneId the value to be set.
+         * Sets the value of {@link RosClusterProps#getZoneIds}
+         * @param zoneIds the value to be set.
          * @return {@code this}
          */
-        public Builder zoneId(java.lang.String zoneId) {
-            this.zoneId = zoneId;
+        public Builder zoneIds(com.aliyun.ros.cdk.core.IResolvable zoneIds) {
+            this.zoneIds = zoneIds;
             return this;
         }
 
         /**
-         * Sets the value of {@link RosClusterProps#getZoneId}
-         * @param zoneId the value to be set.
+         * Sets the value of {@link RosClusterProps#getZoneIds}
+         * @param zoneIds the value to be set.
          * @return {@code this}
          */
-        public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
-            this.zoneId = zoneId;
+        public Builder zoneIds(java.util.List<? extends java.lang.Object> zoneIds) {
+            this.zoneIds = zoneIds;
             return this;
         }
 
@@ -613,7 +613,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object timeZone;
         private final java.lang.Object vpcId;
         private final java.lang.Object vSwitchIds;
-        private final java.lang.Object zoneId;
+        private final java.lang.Object zoneIds;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -641,7 +641,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.timeZone = software.amazon.jsii.Kernel.get(this, "timeZone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchIds = software.amazon.jsii.Kernel.get(this, "vSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.zoneIds = software.amazon.jsii.Kernel.get(this, "zoneIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -670,7 +670,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.timeZone = builder.timeZone;
             this.vpcId = builder.vpcId;
             this.vSwitchIds = builder.vSwitchIds;
-            this.zoneId = builder.zoneId;
+            this.zoneIds = builder.zoneIds;
         }
 
         @Override
@@ -774,8 +774,8 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Object getZoneId() {
-            return this.zoneId;
+        public final java.lang.Object getZoneIds() {
+            return this.zoneIds;
         }
 
         @Override
@@ -842,8 +842,8 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getVSwitchIds() != null) {
                 data.set("vSwitchIds", om.valueToTree(this.getVSwitchIds()));
             }
-            if (this.getZoneId() != null) {
-                data.set("zoneId", om.valueToTree(this.getZoneId()));
+            if (this.getZoneIds() != null) {
+                data.set("zoneIds", om.valueToTree(this.getZoneIds()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -883,7 +883,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.timeZone != null ? !this.timeZone.equals(that.timeZone) : that.timeZone != null) return false;
             if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
             if (this.vSwitchIds != null ? !this.vSwitchIds.equals(that.vSwitchIds) : that.vSwitchIds != null) return false;
-            return this.zoneId != null ? this.zoneId.equals(that.zoneId) : that.zoneId == null;
+            return this.zoneIds != null ? this.zoneIds.equals(that.zoneIds) : that.zoneIds == null;
         }
 
         @Override
@@ -908,7 +908,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.timeZone != null ? this.timeZone.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             result = 31 * result + (this.vSwitchIds != null ? this.vSwitchIds.hashCode() : 0);
-            result = 31 * result + (this.zoneId != null ? this.zoneId.hashCode() : 0);
+            result = 31 * result + (this.zoneIds != null ? this.zoneIds.hashCode() : 0);
             return result;
         }
     }

@@ -92,27 +92,11 @@ func (j *jsiiProxy_RosLoadBalancer) validateSetAddressTypeParameters(val interfa
 	return nil
 }
 
-func (j *jsiiProxy_RosLoadBalancer) validateSetAutoPayParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosLoadBalancer) validateSetAutoRenewParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosLoadBalancer) validateSetAutoRenewPeriodParameters(val interface{}) error {
-	return nil
-}
-
 func (j *jsiiProxy_RosLoadBalancer) validateSetBandwidthParameters(val interface{}) error {
 	return nil
 }
 
 func (j *jsiiProxy_RosLoadBalancer) validateSetDeletionProtectionParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosLoadBalancer) validateSetDurationParameters(val interface{}) error {
 	return nil
 }
 
@@ -145,14 +129,6 @@ func (j *jsiiProxy_RosLoadBalancer) validateSetModificationProtectionReasonParam
 }
 
 func (j *jsiiProxy_RosLoadBalancer) validateSetModificationProtectionStatusParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosLoadBalancer) validateSetPayTypeParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosLoadBalancer) validateSetPricingCycleParameters(val interface{}) error {
 	return nil
 }
 

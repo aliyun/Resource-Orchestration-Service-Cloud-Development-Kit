@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::CMS::MonitorGroups`, which is used to query the basic information about application groups.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::CMS::MonitorGroups`, which is used to query the information about application groups.
 type MonitorGroups interface {
 	alicloudroscdkcore.Resource
 	// Attribute GroupIds: The list of group IDs.

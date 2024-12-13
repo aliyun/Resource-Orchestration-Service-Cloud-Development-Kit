@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::SLB::DomainExtensions</code>, which is used to query the domain name extensions that are added to a listener of a Server Load Balancer (SLB) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:33.602Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:12.173Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.datasource.RosDomainExtensions")
 public class RosDomainExtensions extends com.aliyun.ros.cdk.core.RosResource {
 

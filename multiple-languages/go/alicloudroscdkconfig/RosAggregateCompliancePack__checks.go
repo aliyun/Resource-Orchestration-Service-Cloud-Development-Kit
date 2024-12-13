@@ -293,9 +293,6 @@ func (j *jsiiProxy_RosAggregateCompliancePack) validateSetCompliancePackTemplate
 }
 
 func (j *jsiiProxy_RosAggregateCompliancePack) validateSetConfigRulesParameters(val interface{}) error {
-	if val == nil {
-		return fmt.Errorf("parameter val is required, but nil was provided")
-	}
 	switch val.(type) {
 	case alicloudroscdkcore.IResolvable:
 		// ok
@@ -395,6 +392,40 @@ func (j *jsiiProxy_RosAggregateCompliancePack) validateSetDescriptionParameters(
 func (j *jsiiProxy_RosAggregateCompliancePack) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosAggregateCompliancePack) validateSetExcludeRegionIdsScopeParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosAggregateCompliancePack) validateSetExcludeResourceGroupIdsScopeParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
 	}
 
 	return nil
@@ -538,6 +569,23 @@ func (j *jsiiProxy_RosAggregateCompliancePack) validateSetResourceGroupIdsScopeP
 	return nil
 }
 
+func (j *jsiiProxy_RosAggregateCompliancePack) validateSetResourceIdsScopeParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosAggregateCompliancePack) validateSetRiskLevelParameters(val interface{}) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
@@ -616,6 +664,23 @@ func (j *jsiiProxy_RosAggregateCompliancePack) validateSetTagKeyScopeParameters(
 }
 
 func (j *jsiiProxy_RosAggregateCompliancePack) validateSetTagValueScopeParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosAggregateCompliancePack) validateSetTemplateContentParameters(val interface{}) error {
 	switch val.(type) {
 	case *string:
 		// ok

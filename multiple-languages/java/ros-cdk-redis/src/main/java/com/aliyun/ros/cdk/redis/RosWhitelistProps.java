@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.redis;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-whitelist
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:32.982Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:11.268Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosWhitelistProps")
 @software.amazon.jsii.Jsii.Proxy(RosWhitelistProps.Jsii$Proxy.class)
 public interface RosWhitelistProps extends software.amazon.jsii.JsiiSerializable {

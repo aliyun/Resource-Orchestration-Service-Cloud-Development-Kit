@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.graphdatabase.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-graphdatabase-dbinstances
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.086Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:08.823Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.graphdatabase.$Module.class, fqn = "@alicloud/ros-cdk-graphdatabase.datasource.RosDbInstancesProps")
 @software.amazon.jsii.Jsii.Proxy(RosDbInstancesProps.Jsii$Proxy.class)
 public interface RosDbInstancesProps extends software.amazon.jsii.JsiiSerializable {

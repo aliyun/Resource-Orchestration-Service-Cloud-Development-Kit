@@ -12,6 +12,8 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::AppFlow::UserAuthConfig`.
 type UserAuthConfig interface {
 	alicloudroscdkcore.Resource
+	// Attribute AuthConfig: AuthConfig.
+	AttrAuthConfig() alicloudroscdkcore.IResolvable
 	// Attribute AuthConfigId: The id of the config.
 	AttrAuthConfigId() alicloudroscdkcore.IResolvable
 	EnableResourcePropertyConstraint() *bool
@@ -95,6 +97,16 @@ type UserAuthConfig interface {
 // The jsii proxy struct for UserAuthConfig
 type jsiiProxy_UserAuthConfig struct {
 	internal.Type__alicloudroscdkcoreResource
+}
+
+func (j *jsiiProxy_UserAuthConfig) AttrAuthConfig() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrAuthConfig",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_UserAuthConfig) AttrAuthConfigId() alicloudroscdkcore.IResolvable {

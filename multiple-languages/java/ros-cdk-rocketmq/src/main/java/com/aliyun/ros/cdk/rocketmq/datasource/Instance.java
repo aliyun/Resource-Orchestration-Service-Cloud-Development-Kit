@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.rocketmq.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ROCKETMQ::Instance</code>.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ROCKETMQ::Instance</code>, which is used to query the details of an ApsaraMQ for RocketMQ instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:33.094Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:11.391Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq.datasource.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 

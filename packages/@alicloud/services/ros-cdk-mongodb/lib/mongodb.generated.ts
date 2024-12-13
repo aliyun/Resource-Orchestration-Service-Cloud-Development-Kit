@@ -71,14 +71,14 @@ export interface RosInstanceProps {
     readonly hiddenZoneId?: string | ros.IResolvable;
 
     /**
-     * @Property networkType: The instance network type. Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
-     */
-    readonly networkType?: string | ros.IResolvable;
-
-    /**
      * @Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
      */
     readonly period?: number | ros.IResolvable;
+
+    /**
+     * @Property privateConnections: Connection configs of private connection.
+     */
+    readonly privateConnections?: RosInstance.PrivateConnectionsProperty | ros.IResolvable;
 
     /**
      * @Property readonlyReplicas: Number of read-only nodes, in the range of 1-5.
@@ -195,13 +195,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('storageEngine', ros.validateString)(properties.storageEngine));
     errors.collect(ros.propertyValidator('restoreTime', ros.validateString)(properties.restoreTime));
-    if(properties.networkType && (typeof properties.networkType) !== 'object') {
-        errors.collect(ros.propertyValidator('networkType', ros.validateAllowedValues)({
-          data: properties.networkType,
-          allowedValues: ["CLASSIC","VPC"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('networkType', ros.validateString)(properties.networkType));
+    errors.collect(ros.propertyValidator('privateConnections', RosInstance_PrivateConnectionsPropertyValidator)(properties.privateConnections));
     errors.collect(ros.propertyValidator('dbInstanceStorage', ros.requiredValidator)(properties.dbInstanceStorage));
     errors.collect(ros.propertyValidator('dbInstanceStorage', ros.validateNumber)(properties.dbInstanceStorage));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
@@ -285,8 +279,8 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       'DBInstanceDescription': ros.stringToRosTemplate(properties.dbInstanceDescription),
       'EngineVersion': ros.stringToRosTemplate(properties.engineVersion),
       'HiddenZoneId': ros.stringToRosTemplate(properties.hiddenZoneId),
-      'NetworkType': ros.stringToRosTemplate(properties.networkType),
       'Period': ros.numberToRosTemplate(properties.period),
+      'PrivateConnections': rosInstancePrivateConnectionsPropertyToRosTemplate(properties.privateConnections),
       'ReadonlyReplicas': ros.numberToRosTemplate(properties.readonlyReplicas),
       'ReplicationFactor': ros.numberToRosTemplate(properties.replicationFactor),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
@@ -408,14 +402,14 @@ export class RosInstance extends ros.RosResource {
     public hiddenZoneId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property networkType: The instance network type. Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
-     */
-    public networkType: string | ros.IResolvable | undefined;
-
-    /**
      * @Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
      */
     public period: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property privateConnections: Connection configs of private connection.
+     */
+    public privateConnections: RosInstance.PrivateConnectionsProperty | ros.IResolvable | undefined;
 
     /**
      * @Property readonlyReplicas: Number of read-only nodes, in the range of 1-5.
@@ -533,8 +527,8 @@ export class RosInstance extends ros.RosResource {
         this.dbInstanceDescription = props.dbInstanceDescription;
         this.engineVersion = props.engineVersion;
         this.hiddenZoneId = props.hiddenZoneId;
-        this.networkType = props.networkType;
         this.period = props.period;
+        this.privateConnections = props.privateConnections;
         this.readonlyReplicas = props.readonlyReplicas;
         this.replicationFactor = props.replicationFactor;
         this.resourceGroupId = props.resourceGroupId;
@@ -568,8 +562,8 @@ export class RosInstance extends ros.RosResource {
             dbInstanceDescription: this.dbInstanceDescription,
             engineVersion: this.engineVersion,
             hiddenZoneId: this.hiddenZoneId,
-            networkType: this.networkType,
             period: this.period,
+            privateConnections: this.privateConnections,
             readonlyReplicas: this.readonlyReplicas,
             replicationFactor: this.replicationFactor,
             resourceGroupId: this.resourceGroupId,
@@ -591,6 +585,120 @@ export class RosInstance extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosInstance {
+    /**
+     * @stability external
+     */
+    export interface PrivateConnectionsProperty {
+        /**
+         * @Property replicaConnections: Replica private connections
+         */
+        readonly replicaConnections: Array<RosInstance.ReplicaConnectionsProperty | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `PrivateConnectionsProperty`
+ *
+ * @param properties - the TypeScript properties of a `PrivateConnectionsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstance_PrivateConnectionsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('replicaConnections', ros.requiredValidator)(properties.replicaConnections));
+    if(properties.replicaConnections && (Array.isArray(properties.replicaConnections) || (typeof properties.replicaConnections) === 'string')) {
+        errors.collect(ros.propertyValidator('replicaConnections', ros.validateLength)({
+            data: properties.replicaConnections.length,
+            min: 1,
+            max: 6,
+          }));
+    }
+    errors.collect(ros.propertyValidator('replicaConnections', ros.listValidator(RosInstance_ReplicaConnectionsPropertyValidator))(properties.replicaConnections));
+    return errors.wrap('supplied properties not correct for "PrivateConnectionsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MONGODB::Instance.PrivateConnections` resource
+ *
+ * @param properties - the TypeScript properties of a `PrivateConnectionsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MONGODB::Instance.PrivateConnections` resource.
+ */
+// @ts-ignore TS6133
+function rosInstancePrivateConnectionsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosInstance_PrivateConnectionsPropertyValidator(properties).assertSuccess();
+    return {
+      'ReplicaConnections': ros.listMapper(rosInstanceReplicaConnectionsPropertyToRosTemplate)(properties.replicaConnections),
+    };
+}
+
+export namespace RosInstance {
+    /**
+     * @stability external
+     */
+    export interface ReplicaConnectionsProperty {
+        /**
+         * @Property connectionPort: The service port number of the ApsaraDB for MongoDB instance. Valid values: 1000 to 65535.
+         */
+        readonly connectionPort: number | ros.IResolvable;
+        /**
+         * @Property connectionString: The prefix of the connection string. 
+     * The prefix must be 8 to 64 characters in length, 
+     * and can contain lowercase letters and digits. 
+     * It must start with a lowercase letter.
+         */
+        readonly connectionString: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ReplicaConnectionsProperty`
+ *
+ * @param properties - the TypeScript properties of a `ReplicaConnectionsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstance_ReplicaConnectionsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('connectionPort', ros.requiredValidator)(properties.connectionPort));
+    if(properties.connectionPort && (typeof properties.connectionPort) !== 'object') {
+        errors.collect(ros.propertyValidator('connectionPort', ros.validateRange)({
+            data: properties.connectionPort,
+            min: 1000,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('connectionPort', ros.validateNumber)(properties.connectionPort));
+    errors.collect(ros.propertyValidator('connectionString', ros.requiredValidator)(properties.connectionString));
+    if(properties.connectionString && (typeof properties.connectionString) !== 'object') {
+        errors.collect(ros.propertyValidator('connectionString', ros.validateAllowedPattern)({
+          data: properties.connectionString,
+          reg: /^[a-z][a-z0-9-]{7,63}/
+        }));
+    }
+    errors.collect(ros.propertyValidator('connectionString', ros.validateString)(properties.connectionString));
+    return errors.wrap('supplied properties not correct for "ReplicaConnectionsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MONGODB::Instance.ReplicaConnections` resource
+ *
+ * @param properties - the TypeScript properties of a `ReplicaConnectionsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MONGODB::Instance.ReplicaConnections` resource.
+ */
+// @ts-ignore TS6133
+function rosInstanceReplicaConnectionsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosInstance_ReplicaConnectionsPropertyValidator(properties).assertSuccess();
+    return {
+      'ConnectionPort': ros.numberToRosTemplate(properties.connectionPort),
+      'ConnectionString': ros.stringToRosTemplate(properties.connectionString),
+    };
 }
 
 export namespace RosInstance {
@@ -693,11 +801,6 @@ export interface RosShardingInstanceProps {
      * The value of this parameter cannot be the same as that of ZoneId and SecondaryZoneId.
      */
     readonly hiddenZoneId?: string | ros.IResolvable;
-
-    /**
-     * @Property networkType: The instance network type. Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
-     */
-    readonly networkType?: string | ros.IResolvable;
 
     /**
      * @Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
@@ -836,13 +939,6 @@ function RosShardingInstancePropsValidator(properties: any): ros.ValidationResul
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
-    if(properties.networkType && (typeof properties.networkType) !== 'object') {
-        errors.collect(ros.propertyValidator('networkType', ros.validateAllowedValues)({
-          data: properties.networkType,
-          allowedValues: ["CLASSIC","VPC"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('networkType', ros.validateString)(properties.networkType));
     errors.collect(ros.propertyValidator('configServer', ros.requiredValidator)(properties.configServer));
     if(properties.configServer && (Array.isArray(properties.configServer) || (typeof properties.configServer) === 'string')) {
         errors.collect(ros.propertyValidator('configServer', ros.validateLength)({
@@ -897,7 +993,6 @@ function rosShardingInstancePropsToRosTemplate(properties: any, enableResourcePr
       'DBInstanceDescription': ros.stringToRosTemplate(properties.dbInstanceDescription),
       'EngineVersion': ros.stringToRosTemplate(properties.engineVersion),
       'HiddenZoneId': ros.stringToRosTemplate(properties.hiddenZoneId),
-      'NetworkType': ros.stringToRosTemplate(properties.networkType),
       'Period': ros.numberToRosTemplate(properties.period),
       'ProtocolType': ros.stringToRosTemplate(properties.protocolType),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
@@ -990,11 +1085,6 @@ export class RosShardingInstance extends ros.RosResource {
      * The value of this parameter cannot be the same as that of ZoneId and SecondaryZoneId.
      */
     public hiddenZoneId: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property networkType: The instance network type. Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
-     */
-    public networkType: string | ros.IResolvable | undefined;
 
     /**
      * @Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
@@ -1093,7 +1183,6 @@ export class RosShardingInstance extends ros.RosResource {
         this.dbInstanceDescription = props.dbInstanceDescription;
         this.engineVersion = props.engineVersion;
         this.hiddenZoneId = props.hiddenZoneId;
-        this.networkType = props.networkType;
         this.period = props.period;
         this.protocolType = props.protocolType;
         this.resourceGroupId = props.resourceGroupId;
@@ -1122,7 +1211,6 @@ export class RosShardingInstance extends ros.RosResource {
             dbInstanceDescription: this.dbInstanceDescription,
             engineVersion: this.engineVersion,
             hiddenZoneId: this.hiddenZoneId,
-            networkType: this.networkType,
             period: this.period,
             protocolType: this.protocolType,
             resourceGroupId: this.resourceGroupId,

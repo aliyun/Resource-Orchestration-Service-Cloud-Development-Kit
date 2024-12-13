@@ -96,7 +96,7 @@ export interface FileSystemProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::FileSystem`, which is used to create a file system in Apsara File Storage NAS (NAS).
+ * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::FileSystem`, which is used to create a file system of File Storage NAS (NAS).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFileSystem`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-filesystem
  */

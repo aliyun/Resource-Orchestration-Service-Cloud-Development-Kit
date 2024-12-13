@@ -17,8 +17,8 @@ type RosInstanceProps struct {
 	DbInstanceDescription interface{} `field:"optional" json:"dbInstanceDescription" yaml:"dbInstanceDescription"`
 	EngineVersion interface{} `field:"optional" json:"engineVersion" yaml:"engineVersion"`
 	HiddenZoneId interface{} `field:"optional" json:"hiddenZoneId" yaml:"hiddenZoneId"`
-	NetworkType interface{} `field:"optional" json:"networkType" yaml:"networkType"`
 	Period interface{} `field:"optional" json:"period" yaml:"period"`
+	PrivateConnections interface{} `field:"optional" json:"privateConnections" yaml:"privateConnections"`
 	ReadonlyReplicas interface{} `field:"optional" json:"readonlyReplicas" yaml:"readonlyReplicas"`
 	ReplicationFactor interface{} `field:"optional" json:"replicationFactor" yaml:"replicationFactor"`
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`

@@ -1,3 +1,4 @@
+export * from './addressbook';
 export * from './addressbooks';
 
 // DATASOURCE::CLOUDFW Resources:

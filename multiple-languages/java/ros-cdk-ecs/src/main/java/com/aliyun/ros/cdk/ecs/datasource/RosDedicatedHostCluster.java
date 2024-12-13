@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::ECS::DedicatedHostCluster</code>.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::ECS::DedicatedHostCluster</code>, which is used to query the information about a dedicated host cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:29.635Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:07.659Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.RosDedicatedHostCluster")
 public class RosDedicatedHostCluster extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.acs;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ACS::Cluster</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ACS::Cluster</code>, which is used to create an Alibaba Cloud Container Compute Service (ACS) cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:26.244Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:03.799Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acs.$Module.class, fqn = "@alicloud/ros-cdk-acs.RosCluster")
 public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -539,20 +539,36 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
-        return software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getZoneIds() {
+        return software.amazon.jsii.Kernel.get(this, "zoneIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
-    public void setZoneId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "zoneId", value);
+    public void setZoneIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "zoneIds", value);
     }
 
     /**
      */
-    public void setZoneId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "zoneId", value);
+    public void setZoneIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "zoneIds", value);
     }
     /**
      */
@@ -1552,18 +1568,18 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param zoneId This parameter is required.
+         * @param zoneIds This parameter is required.
          */
-        public Builder zoneId(final java.lang.String zoneId) {
-            this.props.zoneId(zoneId);
+        public Builder zoneIds(final com.aliyun.ros.cdk.core.IResolvable zoneIds) {
+            this.props.zoneIds(zoneIds);
             return this;
         }
         /**
          * @return {@code this}
-         * @param zoneId This parameter is required.
+         * @param zoneIds This parameter is required.
          */
-        public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
-            this.props.zoneId(zoneId);
+        public Builder zoneIds(final java.util.List<? extends java.lang.Object> zoneIds) {
+            this.props.zoneIds(zoneIds);
             return this;
         }
 

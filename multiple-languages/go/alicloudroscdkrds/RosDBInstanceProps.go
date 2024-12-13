@@ -33,6 +33,7 @@ type RosDBInstanceProps struct {
 	DbParamGroupId interface{} `field:"optional" json:"dbParamGroupId" yaml:"dbParamGroupId"`
 	DbTimeZone interface{} `field:"optional" json:"dbTimeZone" yaml:"dbTimeZone"`
 	DedicatedHostGroupId interface{} `field:"optional" json:"dedicatedHostGroupId" yaml:"dedicatedHostGroupId"`
+	DeletionProtection interface{} `field:"optional" json:"deletionProtection" yaml:"deletionProtection"`
 	EnableBackupLog interface{} `field:"optional" json:"enableBackupLog" yaml:"enableBackupLog"`
 	EncryptionKey interface{} `field:"optional" json:"encryptionKey" yaml:"encryptionKey"`
 	HighSpaceUsageProtection interface{} `field:"optional" json:"highSpaceUsageProtection" yaml:"highSpaceUsageProtection"`

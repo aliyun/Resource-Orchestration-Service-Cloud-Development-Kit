@@ -46,6 +46,10 @@ type MultiZoneInstanceProps struct {
 	// lindorm.d1.4xlarge: Each node has 16 dedicated CPU cores and 64 GB of dedicated memory.
 	// lindorm.d1.6xlarge: Each node has 24 dedicated CPU cores and 96 GB of dedicated memory.
 	CoreSpec interface{} `field:"optional" json:"coreSpec" yaml:"coreSpec"`
+	// Property deletionProtection: Specifies whether to enable the release protection feature for the instance.
+	//
+	// Default is false.
+	DeletionProtection interface{} `field:"optional" json:"deletionProtection" yaml:"deletionProtection"`
 	// Property filestoreNum: The number of LindormDFS nodes in the instance.
 	//
 	// The valid values of this parameter depend on the value of the PayType parameter.

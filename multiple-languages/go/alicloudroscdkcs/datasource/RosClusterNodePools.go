@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::CS::ClusterNodePools`, which is used to query the details of all node pools in a cluster.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::CS::ClusterNodePools`, which is used to query the information about all node pools in a Container Service for Kubernetes (ACK) cluster.
 type RosClusterNodePools interface {
 	alicloudroscdkcore.RosResource
 	AttrNodePoolIds() alicloudroscdkcore.IResolvable

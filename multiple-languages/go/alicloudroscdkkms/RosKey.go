@@ -17,6 +17,8 @@ type RosKey interface {
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
 	CreationStack() *[]*string
+	DeletionProtection() interface{}
+	SetDeletionProtection(val interface{})
 	Description() interface{}
 	SetDescription(val interface{})
 	DkmsInstanceId() interface{}
@@ -201,6 +203,16 @@ func (j *jsiiProxy_RosKey) CreationStack() *[]*string {
 	_jsii_.Get(
 		j,
 		"creationStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosKey) DeletionProtection() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"deletionProtection",
 		&returns,
 	)
 	return returns
@@ -421,6 +433,17 @@ func NewRosKey_Override(r RosKey, scope alicloudroscdkcore.Construct, id *string
 		"@alicloud/ros-cdk-kms.RosKey",
 		[]interface{}{scope, id, props, enableResourcePropertyConstraint},
 		r,
+	)
+}
+
+func (j *jsiiProxy_RosKey)SetDeletionProtection(val interface{}) {
+	if err := j.validateSetDeletionProtectionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"deletionProtection",
+		val,
 	)
 }
 

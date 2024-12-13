@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.fnf;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fnf-flow
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:30.487Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:08.524Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fnf.$Module.class, fqn = "@alicloud/ros-cdk-fnf.FlowProps")
 @software.amazon.jsii.Jsii.Proxy(FlowProps.Jsii$Proxy.class)
 public interface FlowProps extends software.amazon.jsii.JsiiSerializable {
@@ -26,6 +26,20 @@ public interface FlowProps extends software.amazon.jsii.JsiiSerializable {
      * Property description: Create a description of the flow.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return null;
+    }
+
+    /**
+     * Property executionMode: The execution mode of the flow.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getExecutionMode() {
+        return null;
+    }
+
+    /**
+     * Property externalStorageLocation: The external storage location for the flow.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getExternalStorageLocation() {
         return null;
     }
 
@@ -58,6 +72,8 @@ public interface FlowProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object definition;
         java.lang.Object name;
         java.lang.Object description;
+        java.lang.Object executionMode;
+        java.lang.Object externalStorageLocation;
         java.lang.Object requestId;
         java.lang.Object roleArn;
 
@@ -124,6 +140,46 @@ public interface FlowProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link FlowProps#getExecutionMode}
+         * @param executionMode Property executionMode: The execution mode of the flow.
+         * @return {@code this}
+         */
+        public Builder executionMode(java.lang.String executionMode) {
+            this.executionMode = executionMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link FlowProps#getExecutionMode}
+         * @param executionMode Property executionMode: The execution mode of the flow.
+         * @return {@code this}
+         */
+        public Builder executionMode(com.aliyun.ros.cdk.core.IResolvable executionMode) {
+            this.executionMode = executionMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link FlowProps#getExternalStorageLocation}
+         * @param externalStorageLocation Property externalStorageLocation: The external storage location for the flow.
+         * @return {@code this}
+         */
+        public Builder externalStorageLocation(java.lang.String externalStorageLocation) {
+            this.externalStorageLocation = externalStorageLocation;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link FlowProps#getExternalStorageLocation}
+         * @param externalStorageLocation Property externalStorageLocation: The external storage location for the flow.
+         * @return {@code this}
+         */
+        public Builder externalStorageLocation(com.aliyun.ros.cdk.core.IResolvable externalStorageLocation) {
+            this.externalStorageLocation = externalStorageLocation;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link FlowProps#getRequestId}
          * @param requestId Property requestId: The specified Request ID for this request.
          *                  If not specified, our system will help you generate a random one.
@@ -184,6 +240,8 @@ public interface FlowProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object definition;
         private final java.lang.Object name;
         private final java.lang.Object description;
+        private final java.lang.Object executionMode;
+        private final java.lang.Object externalStorageLocation;
         private final java.lang.Object requestId;
         private final java.lang.Object roleArn;
 
@@ -196,6 +254,8 @@ public interface FlowProps extends software.amazon.jsii.JsiiSerializable {
             this.definition = software.amazon.jsii.Kernel.get(this, "definition", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.executionMode = software.amazon.jsii.Kernel.get(this, "executionMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.externalStorageLocation = software.amazon.jsii.Kernel.get(this, "externalStorageLocation", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.requestId = software.amazon.jsii.Kernel.get(this, "requestId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.roleArn = software.amazon.jsii.Kernel.get(this, "roleArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -208,6 +268,8 @@ public interface FlowProps extends software.amazon.jsii.JsiiSerializable {
             this.definition = java.util.Objects.requireNonNull(builder.definition, "definition is required");
             this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
             this.description = builder.description;
+            this.executionMode = builder.executionMode;
+            this.externalStorageLocation = builder.externalStorageLocation;
             this.requestId = builder.requestId;
             this.roleArn = builder.roleArn;
         }
@@ -225,6 +287,16 @@ public interface FlowProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getDescription() {
             return this.description;
+        }
+
+        @Override
+        public final java.lang.Object getExecutionMode() {
+            return this.executionMode;
+        }
+
+        @Override
+        public final java.lang.Object getExternalStorageLocation() {
+            return this.externalStorageLocation;
         }
 
         @Override
@@ -247,6 +319,12 @@ public interface FlowProps extends software.amazon.jsii.JsiiSerializable {
             data.set("name", om.valueToTree(this.getName()));
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
+            }
+            if (this.getExecutionMode() != null) {
+                data.set("executionMode", om.valueToTree(this.getExecutionMode()));
+            }
+            if (this.getExternalStorageLocation() != null) {
+                data.set("externalStorageLocation", om.valueToTree(this.getExternalStorageLocation()));
             }
             if (this.getRequestId() != null) {
                 data.set("requestId", om.valueToTree(this.getRequestId()));
@@ -275,6 +353,8 @@ public interface FlowProps extends software.amazon.jsii.JsiiSerializable {
             if (!definition.equals(that.definition)) return false;
             if (!name.equals(that.name)) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+            if (this.executionMode != null ? !this.executionMode.equals(that.executionMode) : that.executionMode != null) return false;
+            if (this.externalStorageLocation != null ? !this.externalStorageLocation.equals(that.externalStorageLocation) : that.externalStorageLocation != null) return false;
             if (this.requestId != null ? !this.requestId.equals(that.requestId) : that.requestId != null) return false;
             return this.roleArn != null ? this.roleArn.equals(that.roleArn) : that.roleArn == null;
         }
@@ -284,6 +364,8 @@ public interface FlowProps extends software.amazon.jsii.JsiiSerializable {
             int result = this.definition.hashCode();
             result = 31 * result + (this.name.hashCode());
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.executionMode != null ? this.executionMode.hashCode() : 0);
+            result = 31 * result + (this.externalStorageLocation != null ? this.externalStorageLocation.hashCode() : 0);
             result = 31 * result + (this.requestId != null ? this.requestId.hashCode() : 0);
             result = 31 * result + (this.roleArn != null ? this.roleArn.hashCode() : 0);
             return result;

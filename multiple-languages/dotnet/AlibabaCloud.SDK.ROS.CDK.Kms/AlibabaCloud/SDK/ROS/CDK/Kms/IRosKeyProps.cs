@@ -12,6 +12,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
     public interface IRosKeyProps
     {
         /// <remarks>
+        /// <strong>Property</strong>: deletionProtection: Specifies whether to enable the release protection feature for the key. Default is false.
+        /// </remarks>
+        [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DeletionProtection
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: description: The description of the CMK. Length constraints: Minimum length of 0 characters. Maximum length of 8192 characters.
         /// </remarks>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -155,6 +168,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
         {
             private _Proxy(ByRefValue reference): base(reference)
             {
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: deletionProtection: Specifies whether to enable the release protection feature for the key. Default is false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeletionProtection
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>

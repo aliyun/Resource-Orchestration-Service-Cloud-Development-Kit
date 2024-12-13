@@ -369,7 +369,7 @@ export interface RosAccountPrivilegeProps {
     readonly accountName: string | ros.IResolvable;
 
     /**
-     * @Property accountPrivilege: RDS account privilege
+     * @Property accountPrivilege: RDS account privilege. The specified number must be the same as the number of DbName
      */
     readonly accountPrivilege: string | ros.IResolvable;
 
@@ -379,7 +379,7 @@ export interface RosAccountPrivilegeProps {
     readonly dbInstanceId: string | ros.IResolvable;
 
     /**
-     * @Property dbName: RDS database name
+     * @Property dbName: RDS database name. Separate multiple database names with commas (,).
      */
     readonly dbName: string | ros.IResolvable;
 }
@@ -395,12 +395,6 @@ function RosAccountPrivilegePropsValidator(properties: any): ros.ValidationResul
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('accountPrivilege', ros.requiredValidator)(properties.accountPrivilege));
-    if(properties.accountPrivilege && (typeof properties.accountPrivilege) !== 'object') {
-        errors.collect(ros.propertyValidator('accountPrivilege', ros.validateAllowedValues)({
-          data: properties.accountPrivilege,
-          allowedValues: ["ReadOnly","ReadWrite","DDLOnly","DMLOnly","DBOwner"],
-        }));
-    }
     errors.collect(ros.propertyValidator('accountPrivilege', ros.validateString)(properties.accountPrivilege));
     errors.collect(ros.propertyValidator('dbInstanceId', ros.requiredValidator)(properties.dbInstanceId));
     errors.collect(ros.propertyValidator('dbInstanceId', ros.validateString)(properties.dbInstanceId));
@@ -452,7 +446,7 @@ export class RosAccountPrivilege extends ros.RosResource {
     public accountName: string | ros.IResolvable;
 
     /**
-     * @Property accountPrivilege: RDS account privilege
+     * @Property accountPrivilege: RDS account privilege. The specified number must be the same as the number of DbName
      */
     public accountPrivilege: string | ros.IResolvable;
 
@@ -462,7 +456,7 @@ export class RosAccountPrivilege extends ros.RosResource {
     public dbInstanceId: string | ros.IResolvable;
 
     /**
-     * @Property dbName: RDS database name
+     * @Property dbName: RDS database name. Separate multiple database names with commas (,).
      */
     public dbName: string | ros.IResolvable;
 
@@ -881,6 +875,11 @@ export interface RosDBInstanceProps {
     readonly dedicatedHostGroupId?: string | ros.IResolvable;
 
     /**
+     * @Property deletionProtection: Specifies whether to enable the release protection feature for the instance. This feature is available only for pay-as-you-go instances. Default is false.
+     */
+    readonly deletionProtection?: boolean | ros.IResolvable;
+
+    /**
      * @Property enableBackupLog: Specifies whether to enable the log backup function. Valid values: 
      * True: specifies to enable the log backup function. 
      * False: specifies to disable the log backup function. 
@@ -1268,6 +1267,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('localLogRetentionHours', ros.validateNumber)(properties.localLogRetentionHours));
+    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
@@ -1444,6 +1444,7 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
       'DBParamGroupId': ros.stringToRosTemplate(properties.dbParamGroupId),
       'DBTimeZone': ros.stringToRosTemplate(properties.dbTimeZone),
       'DedicatedHostGroupId': ros.stringToRosTemplate(properties.dedicatedHostGroupId),
+      'DeletionProtection': ros.booleanToRosTemplate(properties.deletionProtection),
       'EnableBackupLog': ros.booleanToRosTemplate(properties.enableBackupLog),
       'EncryptionKey': ros.stringToRosTemplate(properties.encryptionKey),
       'HighSpaceUsageProtection': ros.stringToRosTemplate(properties.highSpaceUsageProtection),
@@ -1721,6 +1722,11 @@ export class RosDBInstance extends ros.RosResource {
      * @Property dedicatedHostGroupId: The ID of the host group to which the instance belongs if you create an instance in a host group.
      */
     public dedicatedHostGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property deletionProtection: Specifies whether to enable the release protection feature for the instance. This feature is available only for pay-as-you-go instances. Default is false.
+     */
+    public deletionProtection: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property enableBackupLog: Specifies whether to enable the log backup function. Valid values: 
@@ -2016,6 +2022,7 @@ export class RosDBInstance extends ros.RosResource {
         this.dbParamGroupId = props.dbParamGroupId;
         this.dbTimeZone = props.dbTimeZone;
         this.dedicatedHostGroupId = props.dedicatedHostGroupId;
+        this.deletionProtection = props.deletionProtection;
         this.enableBackupLog = props.enableBackupLog;
         this.encryptionKey = props.encryptionKey;
         this.highSpaceUsageProtection = props.highSpaceUsageProtection;
@@ -2089,6 +2096,7 @@ export class RosDBInstance extends ros.RosResource {
             dbParamGroupId: this.dbParamGroupId,
             dbTimeZone: this.dbTimeZone,
             dedicatedHostGroupId: this.dedicatedHostGroupId,
+            deletionProtection: this.deletionProtection,
             enableBackupLog: this.enableBackupLog,
             encryptionKey: this.encryptionKey,
             highSpaceUsageProtection: this.highSpaceUsageProtection,
@@ -4135,7 +4143,7 @@ function rosPostgresExtensionsPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::PostgresExtensions`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::PostgresExtensions`, which is used to install extensions on a database.
  * @Note This class does not contain additional functions, so it is recommended to use the `PostgresExtensions` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-postgresextensions
  */
@@ -4436,6 +4444,11 @@ export interface RosPrepayDBInstanceProps {
      * @Property dedicatedHostGroupId: The ID of the host group to which the instance belongs if you create an instance in a host group.
      */
     readonly dedicatedHostGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property deletionProtection: Specifies whether to enable the release protection feature for the instance. This feature is available only for pay-as-you-go instances. Default is false.
+     */
+    readonly deletionProtection?: boolean | ros.IResolvable;
 
     /**
      * @Property enableBackupLog: Specifies whether to enable the log backup function. Valid values: 
@@ -4816,6 +4829,7 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
           }));
     }
     errors.collect(ros.propertyValidator('localLogRetentionHours', ros.validateNumber)(properties.localLogRetentionHours));
+    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     if(properties.highSpaceUsageProtection && (typeof properties.highSpaceUsageProtection) !== 'object') {
         errors.collect(ros.propertyValidator('highSpaceUsageProtection', ros.validateAllowedValues)({
           data: properties.highSpaceUsageProtection,
@@ -5005,6 +5019,7 @@ function rosPrepayDBInstancePropsToRosTemplate(properties: any, enableResourcePr
       'DBParamGroupId': ros.stringToRosTemplate(properties.dbParamGroupId),
       'DBTimeZone': ros.stringToRosTemplate(properties.dbTimeZone),
       'DedicatedHostGroupId': ros.stringToRosTemplate(properties.dedicatedHostGroupId),
+      'DeletionProtection': ros.booleanToRosTemplate(properties.deletionProtection),
       'EnableBackupLog': ros.booleanToRosTemplate(properties.enableBackupLog),
       'EncryptionKey': ros.stringToRosTemplate(properties.encryptionKey),
       'HighSpaceUsageProtection': ros.stringToRosTemplate(properties.highSpaceUsageProtection),
@@ -5305,6 +5320,11 @@ export class RosPrepayDBInstance extends ros.RosResource {
     public dedicatedHostGroupId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property deletionProtection: Specifies whether to enable the release protection feature for the instance. This feature is available only for pay-as-you-go instances. Default is false.
+     */
+    public deletionProtection: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property enableBackupLog: Specifies whether to enable the log backup function. Valid values: 
      * True: specifies to enable the log backup function. 
      * False: specifies to disable the log backup function. 
@@ -5591,6 +5611,7 @@ export class RosPrepayDBInstance extends ros.RosResource {
         this.dbParamGroupId = props.dbParamGroupId;
         this.dbTimeZone = props.dbTimeZone;
         this.dedicatedHostGroupId = props.dedicatedHostGroupId;
+        this.deletionProtection = props.deletionProtection;
         this.enableBackupLog = props.enableBackupLog;
         this.encryptionKey = props.encryptionKey;
         this.highSpaceUsageProtection = props.highSpaceUsageProtection;
@@ -5666,6 +5687,7 @@ export class RosPrepayDBInstance extends ros.RosResource {
             dbParamGroupId: this.dbParamGroupId,
             dbTimeZone: this.dbTimeZone,
             dedicatedHostGroupId: this.dedicatedHostGroupId,
+            deletionProtection: this.deletionProtection,
             enableBackupLog: this.enableBackupLog,
             encryptionKey: this.encryptionKey,
             highSpaceUsageProtection: this.highSpaceUsageProtection,

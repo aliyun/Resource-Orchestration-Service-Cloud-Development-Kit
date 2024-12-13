@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.edas.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::EDAS::UserDefineRegions</code>.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::EDAS::UserDefineRegions</code>, which is used to query custom namespaces.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:29.882Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:07.885Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.datasource.RosUserDefineRegions")
 public class RosUserDefineRegions extends com.aliyun.ros.cdk.core.RosResource {
 

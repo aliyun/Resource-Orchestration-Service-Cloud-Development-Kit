@@ -214,6 +214,11 @@ export interface PrepayDBInstanceProps {
     readonly dedicatedHostGroupId?: string | ros.IResolvable;
 
     /**
+     * Property deletionProtection: Specifies whether to enable the release protection feature for the instance. This feature is available only for pay-as-you-go instances. Default is false.
+     */
+    readonly deletionProtection?: boolean | ros.IResolvable;
+
+    /**
      * Property enableBackupLog: Specifies whether to enable the log backup function. Valid values: 
      * True: specifies to enable the log backup function. 
      * False: specifies to disable the log backup function. 
@@ -542,6 +547,7 @@ export class PrepayDBInstance extends ros.Resource {
             backupPolicyMode: props.backupPolicyMode,
             period: props.period === undefined || props.period === null ? 1 : props.period,
             localLogRetentionHours: props.localLogRetentionHours,
+            deletionProtection: props.deletionProtection,
             highSpaceUsageProtection: props.highSpaceUsageProtection,
             roleArn: props.roleArn,
             masterUserPassword: props.masterUserPassword,

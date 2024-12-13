@@ -10,7 +10,7 @@ export { RosDatasets as DatasetsProperty };
 export interface DatasetsProps {
 
     /**
-     * Property workspaceId: The ID of the workspace where the dataset is located. For details about how to obtain the workspace ID, see [ListWorkspaces](~~ 449124 ~~).
+     * Property workspaceId: The ID of the workspace where the dataset is located.
      * If this parameter is not configured, the default workspace is used. If the default workspace does not exist, an error is reported.
      */
     readonly workspaceId: string | ros.IResolvable;

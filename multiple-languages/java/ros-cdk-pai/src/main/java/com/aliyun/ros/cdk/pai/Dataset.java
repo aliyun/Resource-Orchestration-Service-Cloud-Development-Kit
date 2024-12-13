@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pai;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::PAI::Dataset</code>, which is used to create a dataset.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:32.071Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:10.249Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.Dataset")
 public class Dataset extends com.aliyun.ros.cdk.core.Resource {
 
@@ -151,8 +151,6 @@ public class Dataset extends com.aliyun.ros.cdk.core.Resource {
 
     /**
      * Attribute WorkspaceId: The ID of the workspace where the dataset is located.
-     * <p>
-     * For details about how to obtain the workspace ID, see [ListWorkspaces](~~ 449124 ~~).
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrWorkspaceId() {
         return software.amazon.jsii.Kernel.get(this, "attrWorkspaceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
@@ -355,7 +353,6 @@ public class Dataset extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property workspaceId: The ID of the workspace where the dataset is located.
          * <p>
-         * For details about how to obtain the workspace ID, see [ListWorkspaces](~~ 449124 ~~).
          * If this parameter is not configured, the default workspace is used. If the default workspace does not exist, an error is reported.
          * <p>
          * @return {@code this}
@@ -368,7 +365,6 @@ public class Dataset extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property workspaceId: The ID of the workspace where the dataset is located.
          * <p>
-         * For details about how to obtain the workspace ID, see [ListWorkspaces](~~ 449124 ~~).
          * If this parameter is not configured, the default workspace is used. If the default workspace does not exist, an error is reported.
          * <p>
          * @return {@code this}

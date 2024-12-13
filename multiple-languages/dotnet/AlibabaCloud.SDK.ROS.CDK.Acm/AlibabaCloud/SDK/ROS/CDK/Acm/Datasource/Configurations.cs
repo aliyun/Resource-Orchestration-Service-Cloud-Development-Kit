@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Acm.Datasource
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::ACM::Configurations`, which is used to query the details of configurations.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::ACM::Configurations`, which is used to query the information about configurations.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosConfigurations`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-acm-configurations

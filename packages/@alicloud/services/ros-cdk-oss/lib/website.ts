@@ -21,7 +21,7 @@ export interface WebsiteProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::OSS::Website`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OSS::Website`, which is used to configure static website hosting and redirection rules for an Object Storage Service (OSS) bucket.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWebsite`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-website
  */

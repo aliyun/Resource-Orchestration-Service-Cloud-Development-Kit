@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.graphdatabase.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::GraphDatabase::Account</code>.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::GraphDatabase::Account</code>, which is used to query the information about an account of a Graph Database (GDB) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.074Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:08.804Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.graphdatabase.$Module.class, fqn = "@alicloud/ros-cdk-graphdatabase.datasource.RosAccount")
 public class RosAccount extends com.aliyun.ros.cdk.core.RosResource {
 

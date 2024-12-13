@@ -40,7 +40,7 @@ export interface BasicIpSetProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::GA::BasicIpSet`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GA::BasicIpSet`, which is used to create an acceleration region for a basic Global Accelerator (GA) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBasicIpSet`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicipset
  */

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Initialization properties for <code>AssetStaging</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:26.022Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:03.596Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.AssetStagingProps")
 @software.amazon.jsii.Jsii.Proxy(AssetStagingProps.Jsii$Proxy.class)
 public interface AssetStagingProps extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.FingerprintOptions, com.aliyun.ros.cdk.core.AssetOptions {

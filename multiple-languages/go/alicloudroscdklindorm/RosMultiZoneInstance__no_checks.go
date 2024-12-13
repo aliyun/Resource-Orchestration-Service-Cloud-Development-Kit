@@ -104,6 +104,10 @@ func (j *jsiiProxy_RosMultiZoneInstance) validateSetCoreSpecParameters(val inter
 	return nil
 }
 
+func (j *jsiiProxy_RosMultiZoneInstance) validateSetDeletionProtectionParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosMultiZoneInstance) validateSetDiskCategoryParameters(val interface{}) error {
 	return nil
 }

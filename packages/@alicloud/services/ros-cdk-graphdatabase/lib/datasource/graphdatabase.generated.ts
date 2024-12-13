@@ -72,7 +72,7 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::GraphDatabase::Account`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::GraphDatabase::Account`, which is used to query the information about an account of a Graph Database (GDB) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-graphdatabase-account
  */
@@ -349,7 +349,7 @@ function rosDbInstancePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::GraphDatabase::DbInstance`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::GraphDatabase::DbInstance`, which is used to query the information about an instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `DbInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-graphdatabase-dbinstance
  */

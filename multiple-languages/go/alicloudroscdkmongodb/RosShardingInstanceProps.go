@@ -14,7 +14,6 @@ type RosShardingInstanceProps struct {
 	DbInstanceDescription interface{} `field:"optional" json:"dbInstanceDescription" yaml:"dbInstanceDescription"`
 	EngineVersion interface{} `field:"optional" json:"engineVersion" yaml:"engineVersion"`
 	HiddenZoneId interface{} `field:"optional" json:"hiddenZoneId" yaml:"hiddenZoneId"`
-	NetworkType interface{} `field:"optional" json:"networkType" yaml:"networkType"`
 	Period interface{} `field:"optional" json:"period" yaml:"period"`
 	ProtocolType interface{} `field:"optional" json:"protocolType" yaml:"protocolType"`
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`

@@ -48,6 +48,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
         }
 
+        private object? _dataRedundancyType;
+
+        /// <summary>Property dataRedundancyType: Disaster recovery type.LRS: Local redundant storage.ZRS: Local redundant storage.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "dataRedundancyType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? DataRedundancyType
+        {
+            get => _dataRedundancyType;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _dataRedundancyType = value;
+            }
+        }
+
         private object? _description;
 
         /// <summary>Property description: Project description: &lt;&gt;'"\ is not supported, up to 64 characters.</summary>
@@ -76,6 +107,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                     }
                 }
                 _description = value;
+            }
+        }
+
+        private object? _resourceGroupId;
+
+        /// <summary>Property resourceGroupId: The ID of the resource group to which the sls project belongs.</summary>
+        /// <remarks>
+        /// If not provided, the project belongs to the default resource group.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ResourceGroupId
+        {
+            get => _resourceGroupId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _resourceGroupId = value;
             }
         }
 

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.sae;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::SAE::ConfigMap</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::SAE::ConfigMap</code>, which is used to create a ConfigMap instance in a namespace.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:33.270Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:11.638Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.ConfigMap")
 public class ConfigMap extends com.aliyun.ros.cdk.core.Resource {
 

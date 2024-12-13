@@ -18,9 +18,19 @@ export interface ProjectProps {
     readonly name: string | ros.IResolvable;
 
     /**
+     * Property dataRedundancyType: Disaster recovery type.LRS: Local redundant storage.ZRS: Local redundant storage.
+     */
+    readonly dataRedundancyType?: string | ros.IResolvable;
+
+    /**
      * Property description: Project description: <>'"\ is not supported, up to 64 characters.
      */
     readonly description?: string | ros.IResolvable;
+
+    /**
+     * Property resourceGroupId: The ID of the resource group to which the sls project belongs. If not provided, the project belongs to the default resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * Property tags: Tags to attach to project. Max support 20 tags to add during create project. Each tag with two properties Key and Value, and Key is required.
@@ -58,6 +68,8 @@ export class Project extends ros.Resource {
 
         const rosProject = new RosProject(this, id,  {
             description: props.description,
+            resourceGroupId: props.resourceGroupId,
+            dataRedundancyType: props.dataRedundancyType,
             tags: props.tags,
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

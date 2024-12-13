@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::REDIS::Account`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::REDIS::Account`, which is used to query an account in an ApsaraDB for Redis instance.
 type Account interface {
 	alicloudroscdkcore.Resource
 	// Attribute AccountName: The name of the account.

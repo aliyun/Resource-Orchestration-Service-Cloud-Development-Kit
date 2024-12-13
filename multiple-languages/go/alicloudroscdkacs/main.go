@@ -125,7 +125,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "validateProperties", GoMethod: "ValidateProperties"},
 			_jsii_.MemberProperty{JsiiProperty: "vpcId", GoGetter: "VpcId"},
 			_jsii_.MemberProperty{JsiiProperty: "vSwitchIds", GoGetter: "VSwitchIds"},
-			_jsii_.MemberProperty{JsiiProperty: "zoneId", GoGetter: "ZoneId"},
+			_jsii_.MemberProperty{JsiiProperty: "zoneIds", GoGetter: "ZoneIds"},
 		},
 		func() interface{} {
 			j := jsiiProxy_RosCluster{}

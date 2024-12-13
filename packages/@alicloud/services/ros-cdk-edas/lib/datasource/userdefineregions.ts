@@ -19,7 +19,7 @@ export interface UserDefineRegionsProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::EDAS::UserDefineRegions`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::EDAS::UserDefineRegions`, which is used to query custom namespaces.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUserDefineRegions`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-edas-userdefineregions
  */

@@ -72,7 +72,7 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::REDIS::Account`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::REDIS::Account`, which is used to query an account in an ApsaraDB for Redis instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-account
  */
@@ -365,7 +365,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::REDIS::Instance`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::REDIS::Instance`, which is used to query the information about a Tair (Redis OSS-compatible) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instance
  */
@@ -511,7 +511,7 @@ export class RosInstance extends ros.RosResource {
     public readonly attrResourceGroupId: ros.IResolvable;
 
     /**
-     * @Attribute SecondaryZoneId: The ID of the standby zone. You can call the [DescribeZones](~~ 94527 ~~) operation.
+     * @Attribute SecondaryZoneId: The ID of the standby zone.
      */
     public readonly attrSecondaryZoneId: ros.IResolvable;
 

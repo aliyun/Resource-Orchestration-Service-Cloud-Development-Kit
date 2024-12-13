@@ -84,6 +84,10 @@ func validateRosProject_IsRosResourceParameters(construct alicloudroscdkcore.ICo
 	return nil
 }
 
+func (j *jsiiProxy_RosProject) validateSetDataRedundancyTypeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosProject) validateSetDescriptionParameters(val interface{}) error {
 	return nil
 }
@@ -93,6 +97,10 @@ func (j *jsiiProxy_RosProject) validateSetEnableResourcePropertyConstraintParame
 }
 
 func (j *jsiiProxy_RosProject) validateSetNameParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosProject) validateSetResourceGroupIdParameters(val interface{}) error {
 	return nil
 }
 

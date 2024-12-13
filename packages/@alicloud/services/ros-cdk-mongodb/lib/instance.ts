@@ -72,14 +72,14 @@ export interface InstanceProps {
     readonly hiddenZoneId?: string | ros.IResolvable;
 
     /**
-     * Property networkType: The instance network type. Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
-     */
-    readonly networkType?: string | ros.IResolvable;
-
-    /**
      * Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
      */
     readonly period?: number | ros.IResolvable;
+
+    /**
+     * Property privateConnections: Connection configs of private connection.
+     */
+    readonly privateConnections?: RosInstance.PrivateConnectionsProperty | ros.IResolvable;
 
     /**
      * Property readonlyReplicas: Number of read-only nodes, in the range of 1-5.
@@ -229,13 +229,13 @@ export class Instance extends ros.Resource {
             backupId: props.backupId,
             storageEngine: props.storageEngine === undefined || props.storageEngine === null ? 'WiredTiger' : props.storageEngine,
             restoreTime: props.restoreTime,
-            networkType: props.networkType,
+            privateConnections: props.privateConnections,
             dbInstanceStorage: props.dbInstanceStorage,
             tags: props.tags,
             dbInstanceDescription: props.dbInstanceDescription,
             couponNo: props.couponNo,
             tdeStatus: props.tdeStatus,
-            engineVersion: props.engineVersion === undefined || props.engineVersion === null ? '3.4' : props.engineVersion,
+            engineVersion: props.engineVersion === undefined || props.engineVersion === null ? '7.0' : props.engineVersion,
             storageType: props.storageType,
             readonlyReplicas: props.readonlyReplicas,
             replicationFactor: props.replicationFactor,

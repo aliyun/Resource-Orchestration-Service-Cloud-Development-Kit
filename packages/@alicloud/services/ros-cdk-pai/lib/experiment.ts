@@ -1,0 +1,130 @@
+import * as ros from '@alicloud/ros-cdk-core';
+import { RosExperiment } from './pai.generated';
+// Generated from the AliCloud ROS Resource Specification
+export { RosExperiment as ExperimentProperty };
+
+/**
+ * Properties for defining a `Experiment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-experiment
+ */
+export interface ExperimentProps {
+
+    /**
+     * Property artifactUri: ArtifactUri is default OSS storage path of the output of trials in the experiment.
+     */
+    readonly artifactUri: string | ros.IResolvable;
+
+    /**
+     * Property experimentName: Name is the name of the experiment, unique in a namespace.
+     */
+    readonly experimentName: string | ros.IResolvable;
+
+    /**
+     * Property workspaceId: WorkspaceId is the workspace id which contains the experiment.
+     */
+    readonly workspaceId: string | ros.IResolvable;
+
+    /**
+     * Property accessibility: Experimental Visibility.
+     */
+    readonly accessibility?: string | ros.IResolvable;
+}
+
+/**
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PAI::Experiment`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosExperiment`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-experiment
+ */
+export class Experiment extends ros.Resource {
+    protected scope: ros.Construct;
+    protected id: string;
+    protected props: ExperimentProps;
+    protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Accessibility: Experimental Visibility.
+     */
+    public readonly attrAccessibility: ros.IResolvable;
+
+    /**
+     * Attribute ArtifactUri: ArtifactUri is default OSS storage path of the output of trials in the experiment.
+     */
+    public readonly attrArtifactUri: ros.IResolvable;
+
+    /**
+     * Attribute CreateTime: GmtCreateTime is time when this entity is created.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * Attribute ExperimentId: ExperimentId is globally unique identifier of the experiment.
+     */
+    public readonly attrExperimentId: ros.IResolvable;
+
+    /**
+     * Attribute ExperimentName: Name is the name of the experiment, unique in a namespace.
+     */
+    public readonly attrExperimentName: ros.IResolvable;
+
+    /**
+     * Attribute GmtModifiedTime: GmtModifiedTime is time when this entity is modified.
+     */
+    public readonly attrGmtModifiedTime: ros.IResolvable;
+
+    /**
+     * Attribute Labels: Labels are tags of the experiment.
+     */
+    public readonly attrLabels: ros.IResolvable;
+
+    /**
+     * Attribute OwnerId: OwnerId is the user account id which this entity belongs to.
+     */
+    public readonly attrOwnerId: ros.IResolvable;
+
+    /**
+     * Attribute TensorboardLogUri: TensorboardLogUri is the default OSS storage path of tensorboard log of trials in the experiment.
+     */
+    public readonly attrTensorboardLogUri: ros.IResolvable;
+
+    /**
+     * Attribute UserId: UserId is the user account id which created this entity.
+     */
+    public readonly attrUserId: ros.IResolvable;
+
+    /**
+     * Attribute WorkspaceId: WorkspaceId is the workspace id which contains the experiment.
+     */
+    public readonly attrWorkspaceId: ros.IResolvable;
+
+    /**
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: ExperimentProps, enableResourcePropertyConstraint:boolean = true) {
+        super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+
+        const rosExperiment = new RosExperiment(this, id,  {
+            accessibility: props.accessibility,
+            artifactUri: props.artifactUri,
+            experimentName: props.experimentName,
+            workspaceId: props.workspaceId,
+        }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
+        this.resource = rosExperiment;
+        this.attrAccessibility = rosExperiment.attrAccessibility;
+        this.attrArtifactUri = rosExperiment.attrArtifactUri;
+        this.attrCreateTime = rosExperiment.attrCreateTime;
+        this.attrExperimentId = rosExperiment.attrExperimentId;
+        this.attrExperimentName = rosExperiment.attrExperimentName;
+        this.attrGmtModifiedTime = rosExperiment.attrGmtModifiedTime;
+        this.attrLabels = rosExperiment.attrLabels;
+        this.attrOwnerId = rosExperiment.attrOwnerId;
+        this.attrTensorboardLogUri = rosExperiment.attrTensorboardLogUri;
+        this.attrUserId = rosExperiment.attrUserId;
+        this.attrWorkspaceId = rosExperiment.attrWorkspaceId;
+    }
+}

@@ -8532,6 +8532,11 @@ export class RosInstanceGroup extends ros.RosResource {
     public readonly attrPublicIps: ros.IResolvable;
 
     /**
+     * @Attribute RelatedOrderIds: The related order id list of created ecs instances
+     */
+    public readonly attrRelatedOrderIds: ros.IResolvable;
+
+    /**
      * @Attribute ZoneIds: Zone id of created instances.
      */
     public readonly attrZoneIds: ros.IResolvable;
@@ -9021,6 +9026,7 @@ export class RosInstanceGroup extends ros.RosResource {
         this.attrOrderId = this.getAtt('OrderId');
         this.attrPrivateIps = this.getAtt('PrivateIps');
         this.attrPublicIps = this.getAtt('PublicIps');
+        this.attrRelatedOrderIds = this.getAtt('RelatedOrderIds');
         this.attrZoneIds = this.getAtt('ZoneIds');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -17823,7 +17829,7 @@ function rosSnapshotGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SnapshotGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SnapshotGroup`, which is used to create a snapshot-consistent group for cloud disks that are attached to an Elastic Compute Service (ECS) instance. A snapshot-consistent group contains snapshots of one or more cloud disks.
  * @Note This class does not contain additional functions, so it is recommended to use the `SnapshotGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snapshotgroup
  */

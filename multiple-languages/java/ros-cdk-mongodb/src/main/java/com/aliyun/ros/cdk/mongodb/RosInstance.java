@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mongodb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::MONGODB::Instance</code>, which is used to create or clone an ApsaraDB for MongoDB replica set instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.606Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:09.365Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -301,24 +301,6 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getNetworkType() {
-        return software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setNetworkType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "networkType", value);
-    }
-
-    /**
-     */
-    public void setNetworkType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "networkType", value);
-    }
-
-    /**
-     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -333,6 +315,24 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setPeriod(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "period", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPrivateConnections() {
+        return software.amazon.jsii.Kernel.get(this, "privateConnections", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPrivateConnections(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "privateConnections", value);
+    }
+
+    /**
+     */
+    public void setPrivateConnections(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.mongodb.RosInstance.PrivateConnectionsProperty value) {
+        software.amazon.jsii.Kernel.set(this, "privateConnections", value);
     }
 
     /**
@@ -615,6 +615,295 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setZoneId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "zoneId", value);
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.RosInstance.PrivateConnectionsProperty")
+    @software.amazon.jsii.Jsii.Proxy(PrivateConnectionsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface PrivateConnectionsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getReplicaConnections();
+
+        /**
+         * @return a {@link Builder} of {@link PrivateConnectionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link PrivateConnectionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<PrivateConnectionsProperty> {
+            java.lang.Object replicaConnections;
+
+            /**
+             * Sets the value of {@link PrivateConnectionsProperty#getReplicaConnections}
+             * @param replicaConnections the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder replicaConnections(com.aliyun.ros.cdk.core.IResolvable replicaConnections) {
+                this.replicaConnections = replicaConnections;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PrivateConnectionsProperty#getReplicaConnections}
+             * @param replicaConnections the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder replicaConnections(java.util.List<? extends java.lang.Object> replicaConnections) {
+                this.replicaConnections = replicaConnections;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link PrivateConnectionsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public PrivateConnectionsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link PrivateConnectionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements PrivateConnectionsProperty {
+            private final java.lang.Object replicaConnections;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.replicaConnections = software.amazon.jsii.Kernel.get(this, "replicaConnections", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.replicaConnections = java.util.Objects.requireNonNull(builder.replicaConnections, "replicaConnections is required");
+            }
+
+            @Override
+            public final java.lang.Object getReplicaConnections() {
+                return this.replicaConnections;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("replicaConnections", om.valueToTree(this.getReplicaConnections()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-mongodb.RosInstance.PrivateConnectionsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                PrivateConnectionsProperty.Jsii$Proxy that = (PrivateConnectionsProperty.Jsii$Proxy) o;
+
+                return this.replicaConnections.equals(that.replicaConnections);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.replicaConnections.hashCode();
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.RosInstance.ReplicaConnectionsProperty")
+    @software.amazon.jsii.Jsii.Proxy(ReplicaConnectionsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface ReplicaConnectionsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getConnectionPort();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getConnectionString();
+
+        /**
+         * @return a {@link Builder} of {@link ReplicaConnectionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link ReplicaConnectionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<ReplicaConnectionsProperty> {
+            java.lang.Object connectionPort;
+            java.lang.Object connectionString;
+
+            /**
+             * Sets the value of {@link ReplicaConnectionsProperty#getConnectionPort}
+             * @param connectionPort the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder connectionPort(java.lang.Number connectionPort) {
+                this.connectionPort = connectionPort;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ReplicaConnectionsProperty#getConnectionPort}
+             * @param connectionPort the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder connectionPort(com.aliyun.ros.cdk.core.IResolvable connectionPort) {
+                this.connectionPort = connectionPort;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ReplicaConnectionsProperty#getConnectionString}
+             * @param connectionString the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder connectionString(java.lang.String connectionString) {
+                this.connectionString = connectionString;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ReplicaConnectionsProperty#getConnectionString}
+             * @param connectionString the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder connectionString(com.aliyun.ros.cdk.core.IResolvable connectionString) {
+                this.connectionString = connectionString;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link ReplicaConnectionsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public ReplicaConnectionsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link ReplicaConnectionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ReplicaConnectionsProperty {
+            private final java.lang.Object connectionPort;
+            private final java.lang.Object connectionString;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.connectionPort = software.amazon.jsii.Kernel.get(this, "connectionPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.connectionString = software.amazon.jsii.Kernel.get(this, "connectionString", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.connectionPort = java.util.Objects.requireNonNull(builder.connectionPort, "connectionPort is required");
+                this.connectionString = java.util.Objects.requireNonNull(builder.connectionString, "connectionString is required");
+            }
+
+            @Override
+            public final java.lang.Object getConnectionPort() {
+                return this.connectionPort;
+            }
+
+            @Override
+            public final java.lang.Object getConnectionString() {
+                return this.connectionString;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("connectionPort", om.valueToTree(this.getConnectionPort()));
+                data.set("connectionString", om.valueToTree(this.getConnectionString()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-mongodb.RosInstance.ReplicaConnectionsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                ReplicaConnectionsProperty.Jsii$Proxy that = (ReplicaConnectionsProperty.Jsii$Proxy) o;
+
+                if (!connectionPort.equals(that.connectionPort)) return false;
+                return this.connectionString.equals(that.connectionString);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.connectionPort.hashCode();
+                result = 31 * result + (this.connectionString.hashCode());
+                return result;
+            }
+        }
     }
     /**
      */
@@ -1017,23 +1306,6 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param networkType This parameter is required.
-         */
-        public Builder networkType(final java.lang.String networkType) {
-            this.props.networkType(networkType);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param networkType This parameter is required.
-         */
-        public Builder networkType(final com.aliyun.ros.cdk.core.IResolvable networkType) {
-            this.props.networkType(networkType);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param period This parameter is required.
          */
         public Builder period(final java.lang.Number period) {
@@ -1046,6 +1318,23 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
             this.props.period(period);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param privateConnections This parameter is required.
+         */
+        public Builder privateConnections(final com.aliyun.ros.cdk.core.IResolvable privateConnections) {
+            this.props.privateConnections(privateConnections);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param privateConnections This parameter is required.
+         */
+        public Builder privateConnections(final com.aliyun.ros.cdk.mongodb.RosInstance.PrivateConnectionsProperty privateConnections) {
+            this.props.privateConnections(privateConnections);
             return this;
         }
 

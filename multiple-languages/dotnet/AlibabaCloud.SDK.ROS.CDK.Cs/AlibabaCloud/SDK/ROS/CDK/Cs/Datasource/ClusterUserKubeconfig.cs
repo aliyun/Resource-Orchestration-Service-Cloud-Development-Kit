@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cs.Datasource
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::CS::ClusterUserKubeconfig`, which is used to query the kubeconfig configurations of a Container Service for Kubernetes (ACK) cluster by cluster ID.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::CS::ClusterUserKubeconfig`, which is used to query the kubeconfig file of a Container Service for Kubernetes (ACK) cluster by cluster ID.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusterUserKubeconfig`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-clusteruserkubeconfig

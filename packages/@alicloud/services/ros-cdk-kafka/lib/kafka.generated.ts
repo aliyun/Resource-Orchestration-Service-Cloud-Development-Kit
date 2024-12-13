@@ -164,7 +164,7 @@ function rosAclPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::Acl`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::Acl`, which is used to create an access control list (ACL).
  * @Note This class does not contain additional functions, so it is recommended to use the `Acl` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-acl
  */
@@ -1332,7 +1332,7 @@ function rosSaslUserPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::SaslUser`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::SaslUser`, which is used to create a Simple Authentication and Security Layer (SASL) user.
  * @Note This class does not contain additional functions, so it is recommended to use the `SaslUser` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-sasluser
  */

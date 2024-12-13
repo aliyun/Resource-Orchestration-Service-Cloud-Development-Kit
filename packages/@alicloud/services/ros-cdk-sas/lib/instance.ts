@@ -29,6 +29,12 @@ export interface InstanceProps {
     readonly antiRansomware?: number | ros.IResolvable;
 
     /**
+     * Property antiRansomwareManageService: Provide you with security hosting services such as anti-ransomware configuration, monitoring, and anti-ransomware incident emergency response.
+     * Note:
+     */
+    readonly antiRansomwareManageService?: boolean | ros.IResolvable;
+
+    /**
      * Property autoPay: Whether to auto pay the bill.Default: True
      */
     readonly autoPay?: boolean | ros.IResolvable;
@@ -171,6 +177,7 @@ export class Instance extends ros.Resource {
             quotaForCloudHoneypot: props.quotaForCloudHoneypot,
             quotaForWebTamperProofing: props.quotaForWebTamperProofing,
             autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
+            antiRansomwareManageService: props.antiRansomwareManageService,
             edition: props.edition,
             configurationAssessment: props.configurationAssessment,
             logAnalysis: props.logAnalysis,

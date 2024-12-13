@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::VPC::HaVipAssociation`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::VPC::HaVipAssociation`, which is used to associate high-availability virtual IP addresses (HAVIPs) with an Elastic Compute Service (ECS) instance or an elastic network interface (ENI).</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosHaVipAssociation`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-havipassociation

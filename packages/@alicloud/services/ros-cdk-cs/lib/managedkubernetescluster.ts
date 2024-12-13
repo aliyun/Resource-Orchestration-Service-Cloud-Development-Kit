@@ -28,34 +28,6 @@ export interface ManagedKubernetesClusterProps {
     readonly addons?: Array<RosManagedKubernetesCluster.AddonsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property autoRenew: Whether the cluster automatically renews. It takes effect when the value of ChargeType is PrePaid. The optional values are:
-     * true: automatic renewal
-     * false: do not renew automatically
-     * Default to true.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    readonly autoRenew?: boolean | ros.IResolvable;
-
-    /**
-     * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required:
-     * When PeriodUnit = Week, the values are: {"1", "2", "3"}
-     * When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
-     * Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    readonly autoRenewPeriod?: number | ros.IResolvable;
-
-    /**
-     * Property chargeType: cluster payment type. The optional values are:
-     * PrePaid: prepaid
-     * PostPaid: Pay as you go
-     * Default to PostPaid.
-     * Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    readonly chargeType?: string | ros.IResolvable;
-
-    /**
      * Property cloudMonitorFlags: Whether to install the cloud monitoring plugin:
      * true: indicates installation
      * false: Do not install
@@ -75,6 +47,21 @@ export interface ManagedKubernetesClusterProps {
      * Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0\/16 is used by default.
      */
     readonly containerCidr?: string | ros.IResolvable;
+
+    /**
+     * Property controlPlaneLogComponents: List of target components for which logs need to be collected. Supports apiserver, kcm, scheduler, ccm and controlplane-events.
+     */
+    readonly controlPlaneLogComponents?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property controlPlaneLogProject: Control plane log project. If this field is not set, a log service project named k8s-log-{ClusterID} will be automatically created.
+     */
+    readonly controlPlaneLogProject?: string | ros.IResolvable;
+
+    /**
+     * Property controlPlaneLogTtl: Control plane log retention duration (unit: day). Default 30.
+     */
+    readonly controlPlaneLogTtl?: number | ros.IResolvable;
 
     /**
      * Property deleteOptions: Delete options, only work for deleting resource.
@@ -183,26 +170,6 @@ export interface ManagedKubernetesClusterProps {
      * Default value: Linux.
      */
     readonly osType?: string | ros.IResolvable;
-
-    /**
-     * Property period: The duration of the annual subscription and monthly subscription. It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
-     * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
-     * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
-     * When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
-     * Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    readonly period?: number | ros.IResolvable;
-
-    /**
-     * Property periodUnit: When you specify PrePaid, you need to specify the period. The options are:
-     * Week: Time is measured in weeks
-     * Month: time in months
-     * Year: time in years
-     * Default to MonthStarting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    readonly periodUnit?: string | ros.IResolvable;
 
     /**
      * Property platform: The release version of the operating system. Valid values:
@@ -389,13 +356,13 @@ export class ManagedKubernetesCluster extends ros.Resource {
             platform: props.platform,
             resourceGroupId: props.resourceGroupId,
             userData: props.userData,
-            autoRenew: props.autoRenew,
             addons: props.addons,
             loadBalancerSpec: props.loadBalancerSpec,
             name: props.name,
             taint: props.taint,
             isEnterpriseSecurityGroup: props.isEnterpriseSecurityGroup,
             runtime: props.runtime,
+            controlPlaneLogComponents: props.controlPlaneLogComponents,
             cloudMonitorFlags: props.cloudMonitorFlags === undefined || props.cloudMonitorFlags === null ? false : props.cloudMonitorFlags,
             osType: props.osType,
             nodeNameMode: props.nodeNameMode,
@@ -405,8 +372,8 @@ export class ManagedKubernetesCluster extends ros.Resource {
             zoneIds: props.zoneIds,
             proxyMode: props.proxyMode === undefined || props.proxyMode === null ? 'iptables' : props.proxyMode,
             tags: props.tags,
+            controlPlaneLogProject: props.controlPlaneLogProject,
             loginPassword: props.loginPassword,
-            autoRenewPeriod: props.autoRenewPeriod,
             kubernetesVersion: props.kubernetesVersion,
             containerCidr: props.containerCidr === undefined || props.containerCidr === null ? '172.16.0.0/16' : props.containerCidr,
             deleteOptions: props.deleteOptions,
@@ -414,16 +381,14 @@ export class ManagedKubernetesCluster extends ros.Resource {
             nodeCidrMask: props.nodeCidrMask,
             securityGroupId: props.securityGroupId,
             timeoutMins: props.timeoutMins === undefined || props.timeoutMins === null ? 60 : props.timeoutMins,
-            period: props.period,
             clusterSpec: props.clusterSpec,
             deletionProtection: props.deletionProtection,
+            controlPlaneLogTtl: props.controlPlaneLogTtl,
             vpcId: props.vpcId,
             keepInstanceName: props.keepInstanceName,
             nodePools: props.nodePools,
-            chargeType: props.chargeType,
             encryptionProviderKey: props.encryptionProviderKey,
             snatEntry: props.snatEntry === undefined || props.snatEntry === null ? true : props.snatEntry,
-            periodUnit: props.periodUnit,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosManagedKubernetesCluster;
         this.attrApiServerSlbId = rosManagedKubernetesCluster.attrApiServerSlbId;

@@ -107,7 +107,7 @@ function rosClusterApplicationResourcesPropsToRosTemplate(properties: any, enabl
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CS::ClusterApplicationResources`, which is used to query the details of specified types of resources in a Container Service for Kubernetes (ACK) cluster.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CS::ClusterApplicationResources`, which is used to query the information about resources of a specified type in a Container Service for Kubernetes (ACK) cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `ClusterApplicationResources` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-clusterapplicationresources
  */
@@ -268,7 +268,7 @@ function rosClusterNodePoolsPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CS::ClusterNodePools`, which is used to query the details of all node pools in a cluster.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CS::ClusterNodePools`, which is used to query the information about all node pools in a Container Service for Kubernetes (ACK) cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `ClusterNodePools` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-clusternodepools
  */
@@ -418,7 +418,7 @@ function rosClusterUserKubeconfigPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CS::ClusterUserKubeconfig`, which is used to query the kubeconfig configurations of a Container Service for Kubernetes (ACK) cluster by cluster ID.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CS::ClusterUserKubeconfig`, which is used to query the kubeconfig file of a Container Service for Kubernetes (ACK) cluster by cluster ID.
  * @Note This class does not contain additional functions, so it is recommended to use the `ClusterUserKubeconfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-clusteruserkubeconfig
  */

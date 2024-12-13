@@ -98,7 +98,7 @@ function rosAppPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ElasticSearchServerless::App`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ElasticSearchServerless::App`, which is used to create an Elasticsearch serverless application.
  * @Note This class does not contain additional functions, so it is recommended to use the `App` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-elasticsearchserverless-app
  */

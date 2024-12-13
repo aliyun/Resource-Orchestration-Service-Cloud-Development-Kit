@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::RAM::Users`, which is used to query Resource Access Management (RAM) users.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::RAM::Users`, which is used to query the information about Resource Access Management (RAM) users.
 type Users interface {
 	alicloudroscdkcore.Resource
 	// Attribute UserNames: The list of user names.

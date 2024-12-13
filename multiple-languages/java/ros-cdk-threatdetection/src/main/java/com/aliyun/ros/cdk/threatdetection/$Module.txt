@@ -6,10 +6,14 @@
 @alicloud/ros-cdk-threatdetection.RosAntiBruteForceRuleProps=com.aliyun.ros.cdk.threatdetection.RosAntiBruteForceRuleProps
 @alicloud/ros-cdk-threatdetection.RosInstance=com.aliyun.ros.cdk.threatdetection.RosInstance
 @alicloud/ros-cdk-threatdetection.RosInstanceProps=com.aliyun.ros.cdk.threatdetection.RosInstanceProps
+@alicloud/ros-cdk-threatdetection.datasource.AntiBruteForceRule=com.aliyun.ros.cdk.threatdetection.datasource.AntiBruteForceRule
+@alicloud/ros-cdk-threatdetection.datasource.AntiBruteForceRuleProps=com.aliyun.ros.cdk.threatdetection.datasource.AntiBruteForceRuleProps
 @alicloud/ros-cdk-threatdetection.datasource.AntiBruteForceRules=com.aliyun.ros.cdk.threatdetection.datasource.AntiBruteForceRules
 @alicloud/ros-cdk-threatdetection.datasource.AntiBruteForceRulesProps=com.aliyun.ros.cdk.threatdetection.datasource.AntiBruteForceRulesProps
 @alicloud/ros-cdk-threatdetection.datasource.Instances=com.aliyun.ros.cdk.threatdetection.datasource.Instances
 @alicloud/ros-cdk-threatdetection.datasource.InstancesProps=com.aliyun.ros.cdk.threatdetection.datasource.InstancesProps
+@alicloud/ros-cdk-threatdetection.datasource.RosAntiBruteForceRule=com.aliyun.ros.cdk.threatdetection.datasource.RosAntiBruteForceRule
+@alicloud/ros-cdk-threatdetection.datasource.RosAntiBruteForceRuleProps=com.aliyun.ros.cdk.threatdetection.datasource.RosAntiBruteForceRuleProps
 @alicloud/ros-cdk-threatdetection.datasource.RosAntiBruteForceRules=com.aliyun.ros.cdk.threatdetection.datasource.RosAntiBruteForceRules
 @alicloud/ros-cdk-threatdetection.datasource.RosAntiBruteForceRulesProps=com.aliyun.ros.cdk.threatdetection.datasource.RosAntiBruteForceRulesProps
 @alicloud/ros-cdk-threatdetection.datasource.RosInstances=com.aliyun.ros.cdk.threatdetection.datasource.RosInstances

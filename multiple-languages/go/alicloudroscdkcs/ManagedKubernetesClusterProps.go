@@ -17,25 +17,6 @@ type ManagedKubernetesClusterProps struct {
 	// Log service: Optional. If the log service is not enabled, the cluster audit function cannot be used.
 	// Ingress: The installation of the Ingress component is enabled by default.
 	Addons interface{} `field:"optional" json:"addons" yaml:"addons"`
-	// Property autoRenew: Whether the cluster automatically renews.
-	//
-	// It takes effect when the value of ChargeType is PrePaid. The optional values are:
-	// true: automatic renewal
-	// false: do not renew automatically
-	// Default to true.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-	// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-	AutoRenew interface{} `field:"optional" json:"autoRenew" yaml:"autoRenew"`
-	// Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.  For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-	AutoRenewPeriod interface{} `field:"optional" json:"autoRenewPeriod" yaml:"autoRenewPeriod"`
-	// Property chargeType: cluster payment type.
-	//
-	// The optional values are:
-	// PrePaid: prepaid
-	// PostPaid: Pay as you go
-	// Default to PostPaid.
-	// Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-	// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-	ChargeType interface{} `field:"optional" json:"chargeType" yaml:"chargeType"`
 	// Property cloudMonitorFlags: Whether to install the cloud monitoring plugin: true: indicates installation false: Do not install Default to false.
 	CloudMonitorFlags interface{} `field:"optional" json:"cloudMonitorFlags" yaml:"cloudMonitorFlags"`
 	// Property clusterSpec: The managed cluster spec.
@@ -49,6 +30,18 @@ type ManagedKubernetesClusterProps struct {
 	//
 	// When the system is selected to automatically create a VPC, the network segment 172.16.0.0\/16 is used by default.
 	ContainerCidr interface{} `field:"optional" json:"containerCidr" yaml:"containerCidr"`
+	// Property controlPlaneLogComponents: List of target components for which logs need to be collected.
+	//
+	// Supports apiserver, kcm, scheduler, ccm and controlplane-events.
+	ControlPlaneLogComponents interface{} `field:"optional" json:"controlPlaneLogComponents" yaml:"controlPlaneLogComponents"`
+	// Property controlPlaneLogProject: Control plane log project.
+	//
+	// If this field is not set, a log service project named k8s-log-{ClusterID} will be automatically created.
+	ControlPlaneLogProject interface{} `field:"optional" json:"controlPlaneLogProject" yaml:"controlPlaneLogProject"`
+	// Property controlPlaneLogTtl: Control plane log retention duration (unit: day).
+	//
+	// Default 30.
+	ControlPlaneLogTtl interface{} `field:"optional" json:"controlPlaneLogTtl" yaml:"controlPlaneLogTtl"`
 	// Property deleteOptions: Delete options, only work for deleting resource.
 	DeleteOptions interface{} `field:"optional" json:"deleteOptions" yaml:"deleteOptions"`
 	// Property deletionProtection: Specifies whether to enable deletion protection for the cluster.
@@ -129,24 +122,6 @@ type ManagedKubernetesClusterProps struct {
 	// Linux
 	// Default value: Linux.
 	OsType interface{} `field:"optional" json:"osType" yaml:"osType"`
-	// Property period: The duration of the annual subscription and monthly subscription.
-	//
-	// It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
-	// When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
-	// When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
-	// When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
-	// Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-	// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-	Period interface{} `field:"optional" json:"period" yaml:"period"`
-	// Property periodUnit: When you specify PrePaid, you need to specify the period.
-	//
-	// The options are:
-	// Week: Time is measured in weeks
-	// Month: time in months
-	// Year: time in years
-	// Default to MonthStarting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-	// For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-	PeriodUnit interface{} `field:"optional" json:"periodUnit" yaml:"periodUnit"`
 	// Property platform: The release version of the operating system.
 	//
 	// Valid values:

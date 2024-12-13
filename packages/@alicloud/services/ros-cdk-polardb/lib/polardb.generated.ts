@@ -817,6 +817,11 @@ export interface RosDBClusterProps {
     readonly defaultTimeZone?: string | ros.IResolvable;
 
     /**
+     * @Property deletionProtection: Specifies whether to enable the release protection feature for the cluster. Default is false.
+     */
+    readonly deletionProtection?: boolean | ros.IResolvable;
+
+    /**
      * @Property gdnId: The ID of the Global Database Network (GDN).
      * Note: This parameter is required when the CreationOption is CreateGdnStandby.
      */
@@ -1139,6 +1144,7 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
+    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     if(properties.provisionedIops && (typeof properties.provisionedIops) !== 'object') {
         errors.collect(ros.propertyValidator('provisionedIops', ros.validateRange)({
             data: properties.provisionedIops,
@@ -1279,6 +1285,7 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
       'DBMinorVersion': ros.stringToRosTemplate(properties.dbMinorVersion),
       'DBNodeNum': ros.numberToRosTemplate(properties.dbNodeNum),
       'DefaultTimeZone': ros.stringToRosTemplate(properties.defaultTimeZone),
+      'DeletionProtection': ros.booleanToRosTemplate(properties.deletionProtection),
       'GDNId': ros.stringToRosTemplate(properties.gdnId),
       'HotStandbyCluster': ros.stringToRosTemplate(properties.hotStandbyCluster),
       'LoosePolarLogBin': ros.stringToRosTemplate(properties.loosePolarLogBin),
@@ -1533,6 +1540,11 @@ export class RosDBCluster extends ros.RosResource {
      * Note: This parameter takes effect only when DBType is MySQL.
      */
     public defaultTimeZone: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property deletionProtection: Specifies whether to enable the release protection feature for the cluster. Default is false.
+     */
+    public deletionProtection: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property gdnId: The ID of the Global Database Network (GDN).
@@ -1818,6 +1830,7 @@ export class RosDBCluster extends ros.RosResource {
         this.dbMinorVersion = props.dbMinorVersion;
         this.dbNodeNum = props.dbNodeNum;
         this.defaultTimeZone = props.defaultTimeZone;
+        this.deletionProtection = props.deletionProtection;
         this.gdnId = props.gdnId;
         this.hotStandbyCluster = props.hotStandbyCluster;
         this.loosePolarLogBin = props.loosePolarLogBin;
@@ -1877,6 +1890,7 @@ export class RosDBCluster extends ros.RosResource {
             dbMinorVersion: this.dbMinorVersion,
             dbNodeNum: this.dbNodeNum,
             defaultTimeZone: this.defaultTimeZone,
+            deletionProtection: this.deletionProtection,
             gdnId: this.gdnId,
             hotStandbyCluster: this.hotStandbyCluster,
             loosePolarLogBin: this.loosePolarLogBin,
@@ -3086,7 +3100,7 @@ function rosDatabasePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::Database`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::Database`, which is used to create a database in a PolarDB cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `Database` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-database
  */

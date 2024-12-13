@@ -25,18 +25,18 @@ type RosManagedKubernetesCluster interface {
 	AttrScalingRuleId() alicloudroscdkcore.IResolvable
 	AttrTaskId() alicloudroscdkcore.IResolvable
 	AttrWorkerRamRoleName() alicloudroscdkcore.IResolvable
-	AutoRenew() interface{}
-	SetAutoRenew(val interface{})
-	AutoRenewPeriod() interface{}
-	SetAutoRenewPeriod(val interface{})
-	ChargeType() interface{}
-	SetChargeType(val interface{})
 	CloudMonitorFlags() interface{}
 	SetCloudMonitorFlags(val interface{})
 	ClusterSpec() interface{}
 	SetClusterSpec(val interface{})
 	ContainerCidr() interface{}
 	SetContainerCidr(val interface{})
+	ControlPlaneLogComponents() interface{}
+	SetControlPlaneLogComponents(val interface{})
+	ControlPlaneLogProject() interface{}
+	SetControlPlaneLogProject(val interface{})
+	ControlPlaneLogTtl() interface{}
+	SetControlPlaneLogTtl(val interface{})
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
@@ -87,10 +87,6 @@ type RosManagedKubernetesCluster interface {
 	SetNodePools(val interface{})
 	OsType() interface{}
 	SetOsType(val interface{})
-	Period() interface{}
-	SetPeriod(val interface{})
-	PeriodUnit() interface{}
-	SetPeriodUnit(val interface{})
 	Platform() interface{}
 	SetPlatform(val interface{})
 	PodVswitchIds() interface{}
@@ -378,36 +374,6 @@ func (j *jsiiProxy_RosManagedKubernetesCluster) AttrWorkerRamRoleName() alicloud
 	return returns
 }
 
-func (j *jsiiProxy_RosManagedKubernetesCluster) AutoRenew() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"autoRenew",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster) AutoRenewPeriod() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"autoRenewPeriod",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster) ChargeType() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"chargeType",
-		&returns,
-	)
-	return returns
-}
-
 func (j *jsiiProxy_RosManagedKubernetesCluster) CloudMonitorFlags() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -433,6 +399,36 @@ func (j *jsiiProxy_RosManagedKubernetesCluster) ContainerCidr() interface{} {
 	_jsii_.Get(
 		j,
 		"containerCidr",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosManagedKubernetesCluster) ControlPlaneLogComponents() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"controlPlaneLogComponents",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosManagedKubernetesCluster) ControlPlaneLogProject() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"controlPlaneLogProject",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosManagedKubernetesCluster) ControlPlaneLogTtl() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"controlPlaneLogTtl",
 		&returns,
 	)
 	return returns
@@ -633,26 +629,6 @@ func (j *jsiiProxy_RosManagedKubernetesCluster) OsType() interface{} {
 	_jsii_.Get(
 		j,
 		"osType",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster) Period() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"period",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster) PeriodUnit() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"periodUnit",
 		&returns,
 	)
 	return returns
@@ -917,39 +893,6 @@ func (j *jsiiProxy_RosManagedKubernetesCluster)SetAddons(val interface{}) {
 	)
 }
 
-func (j *jsiiProxy_RosManagedKubernetesCluster)SetAutoRenew(val interface{}) {
-	if err := j.validateSetAutoRenewParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"autoRenew",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster)SetAutoRenewPeriod(val interface{}) {
-	if err := j.validateSetAutoRenewPeriodParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"autoRenewPeriod",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster)SetChargeType(val interface{}) {
-	if err := j.validateSetChargeTypeParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"chargeType",
-		val,
-	)
-}
-
 func (j *jsiiProxy_RosManagedKubernetesCluster)SetCloudMonitorFlags(val interface{}) {
 	if err := j.validateSetCloudMonitorFlagsParameters(val); err != nil {
 		panic(err)
@@ -979,6 +922,39 @@ func (j *jsiiProxy_RosManagedKubernetesCluster)SetContainerCidr(val interface{})
 	_jsii_.Set(
 		j,
 		"containerCidr",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosManagedKubernetesCluster)SetControlPlaneLogComponents(val interface{}) {
+	if err := j.validateSetControlPlaneLogComponentsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"controlPlaneLogComponents",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosManagedKubernetesCluster)SetControlPlaneLogProject(val interface{}) {
+	if err := j.validateSetControlPlaneLogProjectParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"controlPlaneLogProject",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosManagedKubernetesCluster)SetControlPlaneLogTtl(val interface{}) {
+	if err := j.validateSetControlPlaneLogTtlParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"controlPlaneLogTtl",
 		val,
 	)
 }
@@ -1166,28 +1142,6 @@ func (j *jsiiProxy_RosManagedKubernetesCluster)SetOsType(val interface{}) {
 	_jsii_.Set(
 		j,
 		"osType",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster)SetPeriod(val interface{}) {
-	if err := j.validateSetPeriodParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"period",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosManagedKubernetesCluster)SetPeriodUnit(val interface{}) {
-	if err := j.validateSetPeriodUnitParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"periodUnit",
 		val,
 	)
 }

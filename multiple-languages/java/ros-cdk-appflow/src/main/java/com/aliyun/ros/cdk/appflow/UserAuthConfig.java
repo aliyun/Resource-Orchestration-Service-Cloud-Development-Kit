@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.appflow;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::AppFlow::UserAuthConfig</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:26.899Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:04.569Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.appflow.$Module.class, fqn = "@alicloud/ros-cdk-appflow.UserAuthConfig")
 public class UserAuthConfig extends com.aliyun.ros.cdk.core.Resource {
 
@@ -38,6 +38,13 @@ public class UserAuthConfig extends com.aliyun.ros.cdk.core.Resource {
     public UserAuthConfig(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.appflow.UserAuthConfigProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
         software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), java.util.Objects.requireNonNull(props, "props is required") });
+    }
+
+    /**
+     * Attribute AuthConfig: AuthConfig.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAuthConfig() {
+        return software.amazon.jsii.Kernel.get(this, "attrAuthConfig", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**

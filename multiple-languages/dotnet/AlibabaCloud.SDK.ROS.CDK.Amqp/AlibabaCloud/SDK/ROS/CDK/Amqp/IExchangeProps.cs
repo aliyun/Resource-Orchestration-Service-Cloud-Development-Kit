@@ -84,6 +84,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
             }
         }
 
+        /// <summary>Property xDelayedType: Exchanges of the x-delay-Message type allow you to customize the Header property of the message, and the x-delay specifies the amount of time in milliseconds for the message to be delivered.</summary>
+        /// <remarks>
+        /// The routing rules for this class of exchanges depend on the Exchange type specified in the x-delay-type parameter, which specifies the actual Exchange type to which the delayed message will eventually be delivered. Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>DIRECT: Delivers deferred messages to a specified queue bound to an Exchange of type DIRECT.</description>
+        /// <description>TOPIC: Delivers deferred messages to the queue bound to the Exchange type TOPIC.
+        ///
+        /// <list type="bullet">
+        /// <description>FANOUT: Delivers deferred messages to a queue bound to an Exchange of type FANOUT.</description>
+        /// </list></description>
+        /// <description>HEADERS: Deferred messages are delivered to the queue bound to the Exchange HEADERS type.
+        ///
+        /// <list type="bullet">
+        /// <description>X-JMS-TOPIC: Delivers deferred messages to the queue bound to X-JMS-TOPIC.</description>
+        /// </list></description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "xDelayedType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? XDelayedType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `Exchange`.</summary>
         /// <remarks>
         /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-exchange
@@ -161,6 +189,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
             [JsiiOptional]
             [JsiiProperty(name: "alternateExchange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AlternateExchange
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property xDelayedType: Exchanges of the x-delay-Message type allow you to customize the Header property of the message, and the x-delay specifies the amount of time in milliseconds for the message to be delivered.</summary>
+            /// <remarks>
+            /// The routing rules for this class of exchanges depend on the Exchange type specified in the x-delay-type parameter, which specifies the actual Exchange type to which the delayed message will eventually be delivered. Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>DIRECT: Delivers deferred messages to a specified queue bound to an Exchange of type DIRECT.</description>
+            /// <description>TOPIC: Delivers deferred messages to the queue bound to the Exchange type TOPIC.
+            ///
+            /// <list type="bullet">
+            /// <description>FANOUT: Delivers deferred messages to a queue bound to an Exchange of type FANOUT.</description>
+            /// </list></description>
+            /// <description>HEADERS: Deferred messages are delivered to the queue bound to the Exchange HEADERS type.
+            ///
+            /// <list type="bullet">
+            /// <description>X-JMS-TOPIC: Delivers deferred messages to the queue bound to X-JMS-TOPIC.</description>
+            /// </list></description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "xDelayedType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? XDelayedType
             {
                 get => GetInstanceProperty<object?>();
             }

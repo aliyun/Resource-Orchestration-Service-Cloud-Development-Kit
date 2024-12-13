@@ -21,7 +21,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: accountPrivilege: RDS account privilege
+        /// <strong>Property</strong>: accountPrivilege: RDS account privilege. The specified number must be the same as the number of DbName
         /// </remarks>
         [JsiiProperty(name: "accountPrivilege", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AccountPrivilege
@@ -39,7 +39,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: dbName: RDS database name
+        /// <strong>Property</strong>: dbName: RDS database name. Separate multiple database names with commas (,).
         /// </remarks>
         [JsiiProperty(name: "dbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object DbName
@@ -68,7 +68,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: accountPrivilege: RDS account privilege
+            /// <strong>Property</strong>: accountPrivilege: RDS account privilege. The specified number must be the same as the number of DbName
             /// </remarks>
             [JsiiProperty(name: "accountPrivilege", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AccountPrivilege
@@ -86,7 +86,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: dbName: RDS database name
+            /// <strong>Property</strong>: dbName: RDS database name. Separate multiple database names with commas (,).
             /// </remarks>
             [JsiiProperty(name: "dbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object DbName

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::KMS::Secret</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.439Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:09.163Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.datasource.Secret")
 public class Secret extends com.aliyun.ros.cdk.core.Resource {
 

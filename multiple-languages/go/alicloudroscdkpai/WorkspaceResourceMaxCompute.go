@@ -9,14 +9,12 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::PAI::WorkspaceResourceMaxCompute`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::PAI::WorkspaceResourceMaxCompute`, which is used to associate MaxCompute resources with a workspace.
 type WorkspaceResourceMaxCompute interface {
 	alicloudroscdkcore.Resource
 	// Attribute CreateTime: The creation time of the resource.
 	AttrCreateTime() alicloudroscdkcore.IResolvable
 	// Attribute GroupName: Resource group name.
-	//
-	// If you want to obtain a resource group name, see [ListResources](~~ 449143 ~~).
 	AttrGroupName() alicloudroscdkcore.IResolvable
 	// Attribute IsDefault: Indicates whether it is the default resource.
 	//

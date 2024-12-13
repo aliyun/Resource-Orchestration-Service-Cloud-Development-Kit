@@ -125,6 +125,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbase
             }
         }
 
+        /// <summary>Property deletionProtection: Specifies whether to enable the release protection feature for the cluster.</summary>
+        /// <remarks>
+        /// Default is false.
+        /// </remarks>
+        [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DeletionProtection
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property diskSize: The disk size of the node.</summary>
         /// <remarks>
         /// Unit: GB.
@@ -405,6 +419,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbase
             [JsiiOptional]
             [JsiiProperty(name: "coldStorageSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ColdStorageSize
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property deletionProtection: Specifies whether to enable the release protection feature for the cluster.</summary>
+            /// <remarks>
+            /// Default is false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeletionProtection
             {
                 get => GetInstanceProperty<object?>();
             }

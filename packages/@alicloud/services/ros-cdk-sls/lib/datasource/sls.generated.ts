@@ -38,7 +38,33 @@ function RosLogstoresPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('project', ros.requiredValidator)(properties.project));
+    if(properties.project && (Array.isArray(properties.project) || (typeof properties.project) === 'string')) {
+        errors.collect(ros.propertyValidator('project', ros.validateLength)({
+            data: properties.project.length,
+            min: 3,
+            max: 63,
+          }));
+    }
+    if(properties.project && (typeof properties.project) !== 'object') {
+        errors.collect(ros.propertyValidator('project', ros.validateAllowedPattern)({
+          data: properties.project,
+          reg: /^[a-zA-Z0-9_-]+$/
+        }));
+    }
     errors.collect(ros.propertyValidator('project', ros.validateString)(properties.project));
+    if(properties.logstoreName && (Array.isArray(properties.logstoreName) || (typeof properties.logstoreName) === 'string')) {
+        errors.collect(ros.propertyValidator('logstoreName', ros.validateLength)({
+            data: properties.logstoreName.length,
+            min: 3,
+            max: 63,
+          }));
+    }
+    if(properties.logstoreName && (typeof properties.logstoreName) !== 'object') {
+        errors.collect(ros.propertyValidator('logstoreName', ros.validateAllowedPattern)({
+          data: properties.logstoreName,
+          reg: /^[a-zA-Z0-9_-]+$/
+        }));
+    }
     errors.collect(ros.propertyValidator('logstoreName', ros.validateString)(properties.logstoreName));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
         errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
@@ -362,7 +388,7 @@ function rosProjectsPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLS::Projects`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLS::Projects`, which is used to query Log Service projects.
  * @Note This class does not contain additional functions, so it is recommended to use the `Projects` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sls-projects
  */

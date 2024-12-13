@@ -168,7 +168,7 @@ func (j *jsiiProxy_RosCluster) validateSetVSwitchIdsParameters(val interface{}) 
 	return nil
 }
 
-func (j *jsiiProxy_RosCluster) validateSetZoneIdParameters(val interface{}) error {
+func (j *jsiiProxy_RosCluster) validateSetZoneIdsParameters(val interface{}) error {
 	return nil
 }
 

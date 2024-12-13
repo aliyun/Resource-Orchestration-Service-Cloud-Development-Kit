@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kafka;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::KAFKA::ConsumerGroup</code>, which is used to create a consumer group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.285Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:09.034Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.ConsumerGroup")
 public class ConsumerGroup extends com.aliyun.ros.cdk.core.Resource {
 

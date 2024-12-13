@@ -63,6 +63,8 @@ type RosDBCluster interface {
 	SetDbVersion(val interface{})
 	DefaultTimeZone() interface{}
 	SetDefaultTimeZone(val interface{})
+	DeletionProtection() interface{}
+	SetDeletionProtection(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
 	GdnId() interface{}
@@ -591,6 +593,16 @@ func (j *jsiiProxy_RosDBCluster) DefaultTimeZone() interface{} {
 	_jsii_.Get(
 		j,
 		"defaultTimeZone",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDBCluster) DeletionProtection() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"deletionProtection",
 		&returns,
 	)
 	return returns
@@ -1267,6 +1279,17 @@ func (j *jsiiProxy_RosDBCluster)SetDefaultTimeZone(val interface{}) {
 	_jsii_.Set(
 		j,
 		"defaultTimeZone",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDBCluster)SetDeletionProtection(val interface{}) {
+	if err := j.validateSetDeletionProtectionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"deletionProtection",
 		val,
 	)
 }

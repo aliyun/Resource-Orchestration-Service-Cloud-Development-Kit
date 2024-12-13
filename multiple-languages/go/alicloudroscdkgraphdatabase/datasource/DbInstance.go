@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::GraphDatabase::DbInstance`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::GraphDatabase::DbInstance`, which is used to query the information about an instance.
 type DbInstance interface {
 	alicloudroscdkcore.Resource
 	// Attribute ConnectionString: Virtual Private Cloud (vpc connection such as a VPN connection or leased line domain name.

@@ -51,7 +51,7 @@ export interface DeliverTaskProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::DeliverTask`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::DeliverTask`, which is used to create a delivery task.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDeliverTask`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-delivertask
  */

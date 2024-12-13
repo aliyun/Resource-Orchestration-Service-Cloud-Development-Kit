@@ -57,6 +57,8 @@ type RosInstance interface {
 	CreationStack() *[]*string
 	DeletionForce() interface{}
 	SetDeletionForce(val interface{})
+	DeletionProtection() interface{}
+	SetDeletionProtection(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
 	EngineVersion() interface{}
@@ -618,6 +620,16 @@ func (j *jsiiProxy_RosInstance) DeletionForce() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosInstance) DeletionProtection() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"deletionProtection",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosInstance) EnableResourcePropertyConstraint() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -997,6 +1009,17 @@ func (j *jsiiProxy_RosInstance)SetDeletionForce(val interface{}) {
 	_jsii_.Set(
 		j,
 		"deletionForce",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosInstance)SetDeletionProtection(val interface{}) {
+	if err := j.validateSetDeletionProtectionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"deletionProtection",
 		val,
 	)
 }

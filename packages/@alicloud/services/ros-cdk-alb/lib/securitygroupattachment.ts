@@ -21,7 +21,7 @@ export interface SecurityGroupAttachmentProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::SecurityGroupAttachment`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::SecurityGroupAttachment`, which is used to associate created security groups with an Application Load Balancer (ALB) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecurityGroupAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-securitygroupattachment
  */

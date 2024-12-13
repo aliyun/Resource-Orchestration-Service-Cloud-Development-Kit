@@ -203,7 +203,7 @@ function rosASKClusterPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ASKCluster`, which is used to create a serverless Kubernetes (ASK) cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ASKCluster`, which is used to create an ACK Serverless cluster of Container Service for Kubernetes (ACK).
  * @Note This class does not contain additional functions, so it is recommended to use the `ASKCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-askcluster
  */
@@ -770,6 +770,193 @@ export class RosAnyCluster extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosAnyClusterPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosApplicationDeployment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-applicationdeployment
+ */
+export interface RosApplicationDeploymentProps {
+
+    /**
+     * @Property chartUrl: Helm chart package URL, must be a valid URL.
+     */
+    readonly chartUrl: string | ros.IResolvable;
+
+    /**
+     * @Property clusterId: The cluster id of the deployed application.
+     */
+    readonly clusterId: string | ros.IResolvable;
+
+    /**
+     * @Property name: Name of the deployed application.
+     */
+    readonly name: string | ros.IResolvable;
+
+    /**
+     * @Property namespace: Deployment namespace.
+     */
+    readonly namespace: string | ros.IResolvable;
+
+    /**
+     * @Property type: Type of the deployed application, currently can only be helm.
+     */
+    readonly type: string | ros.IResolvable;
+
+    /**
+     * @Property values: Helm deployment parameters, a map that will be converted to YAML text.
+     */
+    readonly values?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosApplicationDeploymentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosApplicationDeploymentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosApplicationDeploymentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["helm"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('clusterId', ros.requiredValidator)(properties.clusterId));
+    errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
+    errors.collect(ros.propertyValidator('values', ros.hashValidator(ros.validateAny))(properties.values));
+    errors.collect(ros.propertyValidator('chartUrl', ros.requiredValidator)(properties.chartUrl));
+    errors.collect(ros.propertyValidator('chartUrl', ros.validateString)(properties.chartUrl));
+    errors.collect(ros.propertyValidator('namespace', ros.requiredValidator)(properties.namespace));
+    if(properties.namespace && (Array.isArray(properties.namespace) || (typeof properties.namespace) === 'string')) {
+        errors.collect(ros.propertyValidator('namespace', ros.validateLength)({
+            data: properties.namespace.length,
+            min: 3,
+            max: 64,
+          }));
+    }
+    errors.collect(ros.propertyValidator('namespace', ros.validateString)(properties.namespace));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    if(properties.name && (Array.isArray(properties.name) || (typeof properties.name) === 'string')) {
+        errors.collect(ros.propertyValidator('name', ros.validateLength)({
+            data: properties.name.length,
+            min: 3,
+            max: 64,
+          }));
+    }
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "RosApplicationDeploymentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ApplicationDeployment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosApplicationDeploymentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ApplicationDeployment` resource.
+ */
+// @ts-ignore TS6133
+function rosApplicationDeploymentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosApplicationDeploymentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ChartUrl': ros.stringToRosTemplate(properties.chartUrl),
+      'ClusterId': ros.stringToRosTemplate(properties.clusterId),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'Namespace': ros.stringToRosTemplate(properties.namespace),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'Values': ros.hashMapper(ros.objectToRosTemplate)(properties.values),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ApplicationDeployment`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ApplicationDeployment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-applicationdeployment
+ */
+export class RosApplicationDeployment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CS::ApplicationDeployment";
+
+    /**
+     * @Attribute TaskId: The task ID of the application deployment.
+     */
+    public readonly attrTaskId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property chartUrl: Helm chart package URL, must be a valid URL.
+     */
+    public chartUrl: string | ros.IResolvable;
+
+    /**
+     * @Property clusterId: The cluster id of the deployed application.
+     */
+    public clusterId: string | ros.IResolvable;
+
+    /**
+     * @Property name: Name of the deployed application.
+     */
+    public name: string | ros.IResolvable;
+
+    /**
+     * @Property namespace: Deployment namespace.
+     */
+    public namespace: string | ros.IResolvable;
+
+    /**
+     * @Property type: Type of the deployed application, currently can only be helm.
+     */
+    public type: string | ros.IResolvable;
+
+    /**
+     * @Property values: Helm deployment parameters, a map that will be converted to YAML text.
+     */
+    public values: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosApplicationDeploymentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosApplicationDeployment.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrTaskId = this.getAtt('TaskId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.chartUrl = props.chartUrl;
+        this.clusterId = props.clusterId;
+        this.name = props.name;
+        this.namespace = props.namespace;
+        this.type = props.type;
+        this.values = props.values;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            chartUrl: this.chartUrl,
+            clusterId: this.clusterId,
+            name: this.name,
+            namespace: this.namespace,
+            type: this.type,
+            values: this.values,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosApplicationDeploymentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 
@@ -3269,7 +3456,7 @@ function rosGrantPermissionsPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::GrantPermissions`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::GrantPermissions`, which is used to grant role-based access control (RBAC) permissions to a Resource Access Management (RAM) user or RAM role.
  * @Note This class does not contain additional functions, so it is recommended to use the `GrantPermissions` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-grantpermissions
  */
@@ -3422,34 +3609,6 @@ export interface RosManagedEdgeKubernetesClusterProps {
     readonly addons?: Array<RosManagedEdgeKubernetesCluster.AddonsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property autoRenew: Whether the cluster automatically renews. It takes effect when the value of ChargeType is PrePaid. The optional values are:
-     * true: automatic renewal
-     * false: do not renew automatically
-     * Default to true.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    readonly autoRenew?: boolean | ros.IResolvable;
-
-    /**
-     * @Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required:
-     * When PeriodUnit = Week, the values are: {"1", "2", "3"}
-     * When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
-     * Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    readonly autoRenewPeriod?: number | ros.IResolvable;
-
-    /**
-     * @Property chargeType: cluster payment type. The optional values are:
-     * PrePaid: prepaid
-     * PostPaid: Pay as you go
-     * Default to PostPaid.
-     * Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    readonly chargeType?: string | ros.IResolvable;
-
-    /**
      * @Property cloudMonitorFlags: Whether to install the cloud monitoring plugin:
      * true: indicates installation
      * false: Do not install
@@ -3514,26 +3673,6 @@ export interface RosManagedEdgeKubernetesClusterProps {
     readonly nodeCidrMask?: string | ros.IResolvable;
 
     /**
-     * @Property period: The duration of the annual subscription and monthly subscription. It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
-     * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
-     * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
-     * When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
-     * Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    readonly period?: number | ros.IResolvable;
-
-    /**
-     * @Property periodUnit: When you specify PrePaid, you need to specify the period. The options are:
-     * Week: Time is measured in weeks
-     * Month: time in months
-     * Year: time in years
-     * Default to MonthStarting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    readonly periodUnit?: string | ros.IResolvable;
-
-    /**
      * @Property profile: Edge cluster ID. The default value is Edge.
      */
     readonly profile?: string | ros.IResolvable;
@@ -3596,55 +3735,26 @@ function RosManagedEdgeKubernetesClusterPropsValidator(properties: any): ros.Val
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('endpointPublicAccess', ros.validateBoolean)(properties.endpointPublicAccess));
+    errors.collect(ros.propertyValidator('containerCidr', ros.validateString)(properties.containerCidr));
+    errors.collect(ros.propertyValidator('keyPair', ros.validateString)(properties.keyPair));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
-    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
+    errors.collect(ros.propertyValidator('nodeCidrMask', ros.validateString)(properties.nodeCidrMask));
+    errors.collect(ros.propertyValidator('timeoutMins', ros.validateNumber)(properties.timeoutMins));
     errors.collect(ros.propertyValidator('addons', ros.listValidator(RosManagedEdgeKubernetesCluster_AddonsPropertyValidator))(properties.addons));
+    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
+    errors.collect(ros.propertyValidator('clusterSpec', ros.validateString)(properties.clusterSpec));
     errors.collect(ros.propertyValidator('profile', ros.validateString)(properties.profile));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     errors.collect(ros.propertyValidator('isEnterpriseSecurityGroup', ros.validateBoolean)(properties.isEnterpriseSecurityGroup));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('cloudMonitorFlags', ros.validateBoolean)(properties.cloudMonitorFlags));
     errors.collect(ros.propertyValidator('serviceCidr', ros.validateString)(properties.serviceCidr));
-    errors.collect(ros.propertyValidator('zoneIds', ros.listValidator(ros.validateString))(properties.zoneIds));
-    errors.collect(ros.propertyValidator('proxyMode', ros.validateString)(properties.proxyMode));
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosManagedEdgeKubernetesCluster_TagsPropertyValidator))(properties.tags));
-    errors.collect(ros.propertyValidator('loginPassword', ros.validateString)(properties.loginPassword));
-    if(properties.autoRenewPeriod && (typeof properties.autoRenewPeriod) !== 'object') {
-        errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateAllowedValues)({
-          data: properties.autoRenewPeriod,
-          allowedValues: [1,2,3,6,12],
-        }));
-    }
-    errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
-    errors.collect(ros.propertyValidator('containerCidr', ros.validateString)(properties.containerCidr));
-    errors.collect(ros.propertyValidator('keyPair', ros.validateString)(properties.keyPair));
-    errors.collect(ros.propertyValidator('nodeCidrMask', ros.validateString)(properties.nodeCidrMask));
-    errors.collect(ros.propertyValidator('timeoutMins', ros.validateNumber)(properties.timeoutMins));
-    if(properties.period && (typeof properties.period) !== 'object') {
-        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
-          data: properties.period,
-          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36,48,60],
-        }));
-    }
-    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
-    errors.collect(ros.propertyValidator('clusterSpec', ros.validateString)(properties.clusterSpec));
-    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
-    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
-    if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
-        errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
-          data: properties.chargeType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
     errors.collect(ros.propertyValidator('snatEntry', ros.validateBoolean)(properties.snatEntry));
-    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
-        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
-          data: properties.periodUnit,
-          allowedValues: ["Week","Month","Year"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
+    errors.collect(ros.propertyValidator('zoneIds', ros.listValidator(ros.validateString))(properties.zoneIds));
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosManagedEdgeKubernetesCluster_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('proxyMode', ros.validateString)(properties.proxyMode));
+    errors.collect(ros.propertyValidator('loginPassword', ros.validateString)(properties.loginPassword));
     return errors.wrap('supplied properties not correct for "RosManagedEdgeKubernetesClusterProps"');
 }
 
@@ -3664,9 +3774,6 @@ function rosManagedEdgeKubernetesClusterPropsToRosTemplate(properties: any, enab
     return {
       'Name': ros.stringToRosTemplate(properties.name),
       'Addons': ros.listMapper(rosManagedEdgeKubernetesClusterAddonsPropertyToRosTemplate)(properties.addons),
-      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
-      'AutoRenewPeriod': ros.numberToRosTemplate(properties.autoRenewPeriod),
-      'ChargeType': ros.stringToRosTemplate(properties.chargeType),
       'CloudMonitorFlags': ros.booleanToRosTemplate(properties.cloudMonitorFlags),
       'ClusterSpec': ros.stringToRosTemplate(properties.clusterSpec),
       'ContainerCidr': ros.stringToRosTemplate(properties.containerCidr),
@@ -3676,8 +3783,6 @@ function rosManagedEdgeKubernetesClusterPropsToRosTemplate(properties: any, enab
       'KeyPair': ros.stringToRosTemplate(properties.keyPair),
       'LoginPassword': ros.stringToRosTemplate(properties.loginPassword),
       'NodeCidrMask': ros.stringToRosTemplate(properties.nodeCidrMask),
-      'Period': ros.numberToRosTemplate(properties.period),
-      'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
       'Profile': ros.stringToRosTemplate(properties.profile),
       'ProxyMode': ros.stringToRosTemplate(properties.proxyMode),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
@@ -3770,34 +3875,6 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
     public addons: Array<RosManagedEdgeKubernetesCluster.AddonsProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property autoRenew: Whether the cluster automatically renews. It takes effect when the value of ChargeType is PrePaid. The optional values are:
-     * true: automatic renewal
-     * false: do not renew automatically
-     * Default to true.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    public autoRenew: boolean | ros.IResolvable | undefined;
-
-    /**
-     * @Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required:
-     * When PeriodUnit = Week, the values are: {"1", "2", "3"}
-     * When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
-     * Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    public autoRenewPeriod: number | ros.IResolvable | undefined;
-
-    /**
-     * @Property chargeType: cluster payment type. The optional values are:
-     * PrePaid: prepaid
-     * PostPaid: Pay as you go
-     * Default to PostPaid.
-     * Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    public chargeType: string | ros.IResolvable | undefined;
-
-    /**
      * @Property cloudMonitorFlags: Whether to install the cloud monitoring plugin:
      * true: indicates installation
      * false: Do not install
@@ -3860,26 +3937,6 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
      * This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
      */
     public nodeCidrMask: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property period: The duration of the annual subscription and monthly subscription. It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
-     * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
-     * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
-     * When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
-     * Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    public period: number | ros.IResolvable | undefined;
-
-    /**
-     * @Property periodUnit: When you specify PrePaid, you need to specify the period. The options are:
-     * Week: Time is measured in weeks
-     * Month: time in months
-     * Year: time in years
-     * Default to MonthStarting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    public periodUnit: string | ros.IResolvable | undefined;
 
     /**
      * @Property profile: Edge cluster ID. The default value is Edge.
@@ -3954,9 +4011,6 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.name = props.name;
         this.addons = props.addons;
-        this.autoRenew = props.autoRenew;
-        this.autoRenewPeriod = props.autoRenewPeriod;
-        this.chargeType = props.chargeType;
         this.cloudMonitorFlags = props.cloudMonitorFlags;
         this.clusterSpec = props.clusterSpec;
         this.containerCidr = props.containerCidr;
@@ -3966,8 +4020,6 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
         this.keyPair = props.keyPair;
         this.loginPassword = props.loginPassword;
         this.nodeCidrMask = props.nodeCidrMask;
-        this.period = props.period;
-        this.periodUnit = props.periodUnit;
         this.profile = props.profile;
         this.proxyMode = props.proxyMode;
         this.resourceGroupId = props.resourceGroupId;
@@ -3984,9 +4036,6 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
         return {
             name: this.name,
             addons: this.addons,
-            autoRenew: this.autoRenew,
-            autoRenewPeriod: this.autoRenewPeriod,
-            chargeType: this.chargeType,
             cloudMonitorFlags: this.cloudMonitorFlags,
             clusterSpec: this.clusterSpec,
             containerCidr: this.containerCidr,
@@ -3996,8 +4045,6 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
             keyPair: this.keyPair,
             loginPassword: this.loginPassword,
             nodeCidrMask: this.nodeCidrMask,
-            period: this.period,
-            periodUnit: this.periodUnit,
             profile: this.profile,
             proxyMode: this.proxyMode,
             resourceGroupId: this.resourceGroupId,
@@ -4141,34 +4188,6 @@ export interface RosManagedKubernetesClusterProps {
     readonly addons?: Array<RosManagedKubernetesCluster.AddonsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property autoRenew: Whether the cluster automatically renews. It takes effect when the value of ChargeType is PrePaid. The optional values are:
-     * true: automatic renewal
-     * false: do not renew automatically
-     * Default to true.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    readonly autoRenew?: boolean | ros.IResolvable;
-
-    /**
-     * @Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required:
-     * When PeriodUnit = Week, the values are: {"1", "2", "3"}
-     * When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
-     * Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    readonly autoRenewPeriod?: number | ros.IResolvable;
-
-    /**
-     * @Property chargeType: cluster payment type. The optional values are:
-     * PrePaid: prepaid
-     * PostPaid: Pay as you go
-     * Default to PostPaid.
-     * Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    readonly chargeType?: string | ros.IResolvable;
-
-    /**
      * @Property cloudMonitorFlags: Whether to install the cloud monitoring plugin:
      * true: indicates installation
      * false: Do not install
@@ -4188,6 +4207,21 @@ export interface RosManagedKubernetesClusterProps {
      * @Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0\/16 is used by default.
      */
     readonly containerCidr?: string | ros.IResolvable;
+
+    /**
+     * @Property controlPlaneLogComponents: List of target components for which logs need to be collected. Supports apiserver, kcm, scheduler, ccm and controlplane-events.
+     */
+    readonly controlPlaneLogComponents?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property controlPlaneLogProject: Control plane log project. If this field is not set, a log service project named k8s-log-{ClusterID} will be automatically created.
+     */
+    readonly controlPlaneLogProject?: string | ros.IResolvable;
+
+    /**
+     * @Property controlPlaneLogTtl: Control plane log retention duration (unit: day). Default 30.
+     */
+    readonly controlPlaneLogTtl?: number | ros.IResolvable;
 
     /**
      * @Property deleteOptions: Delete options, only work for deleting resource.
@@ -4296,26 +4330,6 @@ export interface RosManagedKubernetesClusterProps {
      * Default value: Linux.
      */
     readonly osType?: string | ros.IResolvable;
-
-    /**
-     * @Property period: The duration of the annual subscription and monthly subscription. It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
-     * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
-     * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
-     * When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
-     * Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    readonly period?: number | ros.IResolvable;
-
-    /**
-     * @Property periodUnit: When you specify PrePaid, you need to specify the period. The options are:
-     * Week: Time is measured in weeks
-     * Month: time in months
-     * Year: time in years
-     * Default to MonthStarting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    readonly periodUnit?: string | ros.IResolvable;
 
     /**
      * @Property platform: The release version of the operating system. Valid values:
@@ -4433,7 +4447,6 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     errors.collect(ros.propertyValidator('platform', ros.validateString)(properties.platform));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('userData', ros.validateString)(properties.userData));
-    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     errors.collect(ros.propertyValidator('addons', ros.listValidator(RosManagedKubernetesCluster_AddonsPropertyValidator))(properties.addons));
     errors.collect(ros.propertyValidator('loadBalancerSpec', ros.validateString)(properties.loadBalancerSpec));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
@@ -4441,6 +4454,14 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     errors.collect(ros.propertyValidator('taint', ros.listValidator(ros.validateAnyDict))(properties.taint));
     errors.collect(ros.propertyValidator('isEnterpriseSecurityGroup', ros.validateBoolean)(properties.isEnterpriseSecurityGroup));
     errors.collect(ros.propertyValidator('runtime', RosManagedKubernetesCluster_RuntimePropertyValidator)(properties.runtime));
+    if(properties.controlPlaneLogComponents && (Array.isArray(properties.controlPlaneLogComponents) || (typeof properties.controlPlaneLogComponents) === 'string')) {
+        errors.collect(ros.propertyValidator('controlPlaneLogComponents', ros.validateLength)({
+            data: properties.controlPlaneLogComponents.length,
+            min: 1,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('controlPlaneLogComponents', ros.listValidator(ros.validateString))(properties.controlPlaneLogComponents));
     errors.collect(ros.propertyValidator('cloudMonitorFlags', ros.validateBoolean)(properties.cloudMonitorFlags));
     if(properties.osType && (typeof properties.osType) !== 'object') {
         errors.collect(ros.propertyValidator('osType', ros.validateAllowedValues)({
@@ -4456,14 +4477,21 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     errors.collect(ros.propertyValidator('zoneIds', ros.listValidator(ros.validateString))(properties.zoneIds));
     errors.collect(ros.propertyValidator('proxyMode', ros.validateString)(properties.proxyMode));
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosManagedKubernetesCluster_TagsPropertyValidator))(properties.tags));
-    errors.collect(ros.propertyValidator('loginPassword', ros.validateString)(properties.loginPassword));
-    if(properties.autoRenewPeriod && (typeof properties.autoRenewPeriod) !== 'object') {
-        errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateAllowedValues)({
-          data: properties.autoRenewPeriod,
-          allowedValues: [1,2,3,6,12],
+    if(properties.controlPlaneLogProject && (Array.isArray(properties.controlPlaneLogProject) || (typeof properties.controlPlaneLogProject) === 'string')) {
+        errors.collect(ros.propertyValidator('controlPlaneLogProject', ros.validateLength)({
+            data: properties.controlPlaneLogProject.length,
+            min: 3,
+            max: 63,
+          }));
+    }
+    if(properties.controlPlaneLogProject && (typeof properties.controlPlaneLogProject) !== 'object') {
+        errors.collect(ros.propertyValidator('controlPlaneLogProject', ros.validateAllowedPattern)({
+          data: properties.controlPlaneLogProject,
+          reg: /^[a-zA-Z0-9_-]+$/
         }));
     }
-    errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
+    errors.collect(ros.propertyValidator('controlPlaneLogProject', ros.validateString)(properties.controlPlaneLogProject));
+    errors.collect(ros.propertyValidator('loginPassword', ros.validateString)(properties.loginPassword));
     errors.collect(ros.propertyValidator('kubernetesVersion', ros.validateString)(properties.kubernetesVersion));
     errors.collect(ros.propertyValidator('containerCidr', ros.validateString)(properties.containerCidr));
     errors.collect(ros.propertyValidator('deleteOptions', ros.listValidator(RosManagedKubernetesCluster_DeleteOptionsPropertyValidator))(properties.deleteOptions));
@@ -4471,15 +4499,16 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     errors.collect(ros.propertyValidator('nodeCidrMask', ros.validateString)(properties.nodeCidrMask));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('timeoutMins', ros.validateNumber)(properties.timeoutMins));
-    if(properties.period && (typeof properties.period) !== 'object') {
-        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
-          data: properties.period,
-          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36,48,60],
-        }));
-    }
-    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('clusterSpec', ros.validateString)(properties.clusterSpec));
     errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
+    if(properties.controlPlaneLogTtl && (typeof properties.controlPlaneLogTtl) !== 'object') {
+        errors.collect(ros.propertyValidator('controlPlaneLogTtl', ros.validateRange)({
+            data: properties.controlPlaneLogTtl,
+            min: 1,
+            max: 3650,
+          }));
+    }
+    errors.collect(ros.propertyValidator('controlPlaneLogTtl', ros.validateNumber)(properties.controlPlaneLogTtl));
     errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('keepInstanceName', ros.validateBoolean)(properties.keepInstanceName));
@@ -4491,22 +4520,8 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
           }));
     }
     errors.collect(ros.propertyValidator('nodePools', ros.listValidator(RosManagedKubernetesCluster_NodePoolsPropertyValidator))(properties.nodePools));
-    if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
-        errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
-          data: properties.chargeType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
     errors.collect(ros.propertyValidator('encryptionProviderKey', ros.validateString)(properties.encryptionProviderKey));
     errors.collect(ros.propertyValidator('snatEntry', ros.validateBoolean)(properties.snatEntry));
-    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
-        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
-          data: properties.periodUnit,
-          allowedValues: ["Week","Month","Year"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
     return errors.wrap('supplied properties not correct for "RosManagedKubernetesClusterProps"');
 }
 
@@ -4527,12 +4542,12 @@ function rosManagedKubernetesClusterPropsToRosTemplate(properties: any, enableRe
       'Name': ros.stringToRosTemplate(properties.name),
       'VpcId': ros.stringToRosTemplate(properties.vpcId),
       'Addons': ros.listMapper(rosManagedKubernetesClusterAddonsPropertyToRosTemplate)(properties.addons),
-      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
-      'AutoRenewPeriod': ros.numberToRosTemplate(properties.autoRenewPeriod),
-      'ChargeType': ros.stringToRosTemplate(properties.chargeType),
       'CloudMonitorFlags': ros.booleanToRosTemplate(properties.cloudMonitorFlags),
       'ClusterSpec': ros.stringToRosTemplate(properties.clusterSpec),
       'ContainerCidr': ros.stringToRosTemplate(properties.containerCidr),
+      'ControlPlaneLogComponents': ros.listMapper(ros.stringToRosTemplate)(properties.controlPlaneLogComponents),
+      'ControlPlaneLogProject': ros.stringToRosTemplate(properties.controlPlaneLogProject),
+      'ControlPlaneLogTtl': ros.numberToRosTemplate(properties.controlPlaneLogTtl),
       'DeleteOptions': ros.listMapper(rosManagedKubernetesClusterDeleteOptionsPropertyToRosTemplate)(properties.deleteOptions),
       'DeletionProtection': ros.booleanToRosTemplate(properties.deletionProtection),
       'EncryptionProviderKey': ros.stringToRosTemplate(properties.encryptionProviderKey),
@@ -4548,8 +4563,6 @@ function rosManagedKubernetesClusterPropsToRosTemplate(properties: any, enableRe
       'NodeNameMode': ros.stringToRosTemplate(properties.nodeNameMode),
       'NodePools': ros.listMapper(rosManagedKubernetesClusterNodePoolsPropertyToRosTemplate)(properties.nodePools),
       'OsType': ros.stringToRosTemplate(properties.osType),
-      'Period': ros.numberToRosTemplate(properties.period),
-      'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
       'Platform': ros.stringToRosTemplate(properties.platform),
       'PodVswitchIds': ros.listMapper(ros.stringToRosTemplate)(properties.podVswitchIds),
       'ProxyMode': ros.stringToRosTemplate(properties.proxyMode),
@@ -4656,34 +4669,6 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
     public addons: Array<RosManagedKubernetesCluster.AddonsProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property autoRenew: Whether the cluster automatically renews. It takes effect when the value of ChargeType is PrePaid. The optional values are:
-     * true: automatic renewal
-     * false: do not renew automatically
-     * Default to true.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    public autoRenew: boolean | ros.IResolvable | undefined;
-
-    /**
-     * @Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required:
-     * When PeriodUnit = Week, the values are: {"1", "2", "3"}
-     * When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
-     * Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    public autoRenewPeriod: number | ros.IResolvable | undefined;
-
-    /**
-     * @Property chargeType: cluster payment type. The optional values are:
-     * PrePaid: prepaid
-     * PostPaid: Pay as you go
-     * Default to PostPaid.
-     * Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    public chargeType: string | ros.IResolvable | undefined;
-
-    /**
      * @Property cloudMonitorFlags: Whether to install the cloud monitoring plugin:
      * true: indicates installation
      * false: Do not install
@@ -4703,6 +4688,21 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
      * @Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0\/16 is used by default.
      */
     public containerCidr: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property controlPlaneLogComponents: List of target components for which logs need to be collected. Supports apiserver, kcm, scheduler, ccm and controlplane-events.
+     */
+    public controlPlaneLogComponents: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property controlPlaneLogProject: Control plane log project. If this field is not set, a log service project named k8s-log-{ClusterID} will be automatically created.
+     */
+    public controlPlaneLogProject: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property controlPlaneLogTtl: Control plane log retention duration (unit: day). Default 30.
+     */
+    public controlPlaneLogTtl: number | ros.IResolvable | undefined;
 
     /**
      * @Property deleteOptions: Delete options, only work for deleting resource.
@@ -4811,26 +4811,6 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
      * Default value: Linux.
      */
     public osType: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property period: The duration of the annual subscription and monthly subscription. It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
-     * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
-     * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
-     * When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
-     * Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    public period: number | ros.IResolvable | undefined;
-
-    /**
-     * @Property periodUnit: When you specify PrePaid, you need to specify the period. The options are:
-     * Week: Time is measured in weeks
-     * Month: time in months
-     * Year: time in years
-     * Default to MonthStarting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs. 
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    public periodUnit: string | ros.IResolvable | undefined;
 
     /**
      * @Property platform: The release version of the operating system. Valid values:
@@ -4954,12 +4934,12 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
         this.name = props.name;
         this.vpcId = props.vpcId;
         this.addons = props.addons;
-        this.autoRenew = props.autoRenew;
-        this.autoRenewPeriod = props.autoRenewPeriod;
-        this.chargeType = props.chargeType;
         this.cloudMonitorFlags = props.cloudMonitorFlags;
         this.clusterSpec = props.clusterSpec;
         this.containerCidr = props.containerCidr;
+        this.controlPlaneLogComponents = props.controlPlaneLogComponents;
+        this.controlPlaneLogProject = props.controlPlaneLogProject;
+        this.controlPlaneLogTtl = props.controlPlaneLogTtl;
         this.deleteOptions = props.deleteOptions;
         this.deletionProtection = props.deletionProtection;
         this.encryptionProviderKey = props.encryptionProviderKey;
@@ -4975,8 +4955,6 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
         this.nodeNameMode = props.nodeNameMode;
         this.nodePools = props.nodePools;
         this.osType = props.osType;
-        this.period = props.period;
-        this.periodUnit = props.periodUnit;
         this.platform = props.platform;
         this.podVswitchIds = props.podVswitchIds;
         this.proxyMode = props.proxyMode;
@@ -5000,12 +4978,12 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
             name: this.name,
             vpcId: this.vpcId,
             addons: this.addons,
-            autoRenew: this.autoRenew,
-            autoRenewPeriod: this.autoRenewPeriod,
-            chargeType: this.chargeType,
             cloudMonitorFlags: this.cloudMonitorFlags,
             clusterSpec: this.clusterSpec,
             containerCidr: this.containerCidr,
+            controlPlaneLogComponents: this.controlPlaneLogComponents,
+            controlPlaneLogProject: this.controlPlaneLogProject,
+            controlPlaneLogTtl: this.controlPlaneLogTtl,
             deleteOptions: this.deleteOptions,
             deletionProtection: this.deletionProtection,
             encryptionProviderKey: this.encryptionProviderKey,
@@ -5021,8 +4999,6 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
             nodeNameMode: this.nodeNameMode,
             nodePools: this.nodePools,
             osType: this.osType,
-            period: this.period,
-            periodUnit: this.periodUnit,
             platform: this.platform,
             podVswitchIds: this.podVswitchIds,
             proxyMode: this.proxyMode,

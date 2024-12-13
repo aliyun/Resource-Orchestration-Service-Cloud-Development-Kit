@@ -9,7 +9,9 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ServerlessDev::Project`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ServerlessDev::Project`, which is used to create a project.
+//
+// If a template is specified for the project, the project is automatically deployed.
 type RosProject interface {
 	alicloudroscdkcore.RosResource
 	AttrName() alicloudroscdkcore.IResolvable

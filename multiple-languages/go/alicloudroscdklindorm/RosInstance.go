@@ -23,6 +23,8 @@ type RosInstance interface {
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
 	CreationStack() *[]*string
+	DeletionProtection() interface{}
+	SetDeletionProtection(val interface{})
 	DiskCategory() interface{}
 	SetDiskCategory(val interface{})
 	EnableResourcePropertyConstraint() *bool
@@ -269,6 +271,16 @@ func (j *jsiiProxy_RosInstance) CreationStack() *[]*string {
 	_jsii_.Get(
 		j,
 		"creationStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosInstance) DeletionProtection() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"deletionProtection",
 		&returns,
 	)
 	return returns
@@ -620,6 +632,17 @@ func (j *jsiiProxy_RosInstance)SetCoreSpec(val interface{}) {
 	_jsii_.Set(
 		j,
 		"coreSpec",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosInstance)SetDeletionProtection(val interface{}) {
+	if err := j.validateSetDeletionProtectionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"deletionProtection",
 		val,
 	)
 }

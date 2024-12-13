@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::VPC::BgpPeers</code>.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::VPC::BgpPeers</code>, which is used to query Border Gateway Protocol (BGP) peers in a region.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:34.358Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:13.166Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.BgpPeers")
 public class BgpPeers extends com.aliyun.ros.cdk.core.Resource {
 

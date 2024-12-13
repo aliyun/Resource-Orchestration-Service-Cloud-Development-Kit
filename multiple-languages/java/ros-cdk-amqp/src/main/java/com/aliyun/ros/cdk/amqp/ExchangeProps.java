@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.amqp;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-exchange
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:26.666Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:04.157Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.ExchangeProps")
 @software.amazon.jsii.Jsii.Proxy(ExchangeProps.Jsii$Proxy.class)
 public interface ExchangeProps extends software.amazon.jsii.JsiiSerializable {
@@ -64,6 +64,29 @@ public interface ExchangeProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property xDelayedType: Exchanges of the x-delay-Message type allow you to customize the Header property of the message, and the x-delay specifies the amount of time in milliseconds for the message to be delivered.
+     * <p>
+     * The routing rules for this class of exchanges depend on the Exchange type specified in the x-delay-type parameter, which specifies the actual Exchange type to which the delayed message will eventually be delivered. Valid values:
+     * <p>
+     * <ul>
+     * <li>DIRECT: Delivers deferred messages to a specified queue bound to an Exchange of type DIRECT.</li>
+     * <li>TOPIC: Delivers deferred messages to the queue bound to the Exchange type TOPIC.
+     * <p>
+     * <ul>
+     * <li>FANOUT: Delivers deferred messages to a queue bound to an Exchange of type FANOUT.</li>
+     * </ul></li>
+     * <li>HEADERS: Deferred messages are delivered to the queue bound to the Exchange HEADERS type.
+     * <p>
+     * <ul>
+     * <li>X-JMS-TOPIC: Delivers deferred messages to the queue bound to X-JMS-TOPIC.</li>
+     * </ul></li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getXDelayedType() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link ExchangeProps}
      */
     static Builder builder() {
@@ -80,6 +103,7 @@ public interface ExchangeProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object internal;
         java.lang.Object virtualHost;
         java.lang.Object alternateExchange;
+        java.lang.Object xDelayedType;
 
         /**
          * Sets the value of {@link ExchangeProps#getAutoDeleteState}
@@ -246,6 +270,56 @@ public interface ExchangeProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ExchangeProps#getXDelayedType}
+         * @param xDelayedType Property xDelayedType: Exchanges of the x-delay-Message type allow you to customize the Header property of the message, and the x-delay specifies the amount of time in milliseconds for the message to be delivered.
+         *                     The routing rules for this class of exchanges depend on the Exchange type specified in the x-delay-type parameter, which specifies the actual Exchange type to which the delayed message will eventually be delivered. Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li>DIRECT: Delivers deferred messages to a specified queue bound to an Exchange of type DIRECT.</li>
+         *                     <li>TOPIC: Delivers deferred messages to the queue bound to the Exchange type TOPIC.
+         *                     <p>
+         *                     <ul>
+         *                     <li>FANOUT: Delivers deferred messages to a queue bound to an Exchange of type FANOUT.</li>
+         *                     </ul></li>
+         *                     <li>HEADERS: Deferred messages are delivered to the queue bound to the Exchange HEADERS type.
+         *                     <p>
+         *                     <ul>
+         *                     <li>X-JMS-TOPIC: Delivers deferred messages to the queue bound to X-JMS-TOPIC.</li>
+         *                     </ul></li>
+         *                     </ul>
+         * @return {@code this}
+         */
+        public Builder xDelayedType(java.lang.String xDelayedType) {
+            this.xDelayedType = xDelayedType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ExchangeProps#getXDelayedType}
+         * @param xDelayedType Property xDelayedType: Exchanges of the x-delay-Message type allow you to customize the Header property of the message, and the x-delay specifies the amount of time in milliseconds for the message to be delivered.
+         *                     The routing rules for this class of exchanges depend on the Exchange type specified in the x-delay-type parameter, which specifies the actual Exchange type to which the delayed message will eventually be delivered. Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li>DIRECT: Delivers deferred messages to a specified queue bound to an Exchange of type DIRECT.</li>
+         *                     <li>TOPIC: Delivers deferred messages to the queue bound to the Exchange type TOPIC.
+         *                     <p>
+         *                     <ul>
+         *                     <li>FANOUT: Delivers deferred messages to a queue bound to an Exchange of type FANOUT.</li>
+         *                     </ul></li>
+         *                     <li>HEADERS: Deferred messages are delivered to the queue bound to the Exchange HEADERS type.
+         *                     <p>
+         *                     <ul>
+         *                     <li>X-JMS-TOPIC: Delivers deferred messages to the queue bound to X-JMS-TOPIC.</li>
+         *                     </ul></li>
+         *                     </ul>
+         * @return {@code this}
+         */
+        public Builder xDelayedType(com.aliyun.ros.cdk.core.IResolvable xDelayedType) {
+            this.xDelayedType = xDelayedType;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link ExchangeProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -268,6 +342,7 @@ public interface ExchangeProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object internal;
         private final java.lang.Object virtualHost;
         private final java.lang.Object alternateExchange;
+        private final java.lang.Object xDelayedType;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -282,6 +357,7 @@ public interface ExchangeProps extends software.amazon.jsii.JsiiSerializable {
             this.internal = software.amazon.jsii.Kernel.get(this, "internal", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.virtualHost = software.amazon.jsii.Kernel.get(this, "virtualHost", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.alternateExchange = software.amazon.jsii.Kernel.get(this, "alternateExchange", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.xDelayedType = software.amazon.jsii.Kernel.get(this, "xDelayedType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -296,6 +372,7 @@ public interface ExchangeProps extends software.amazon.jsii.JsiiSerializable {
             this.internal = java.util.Objects.requireNonNull(builder.internal, "internal is required");
             this.virtualHost = java.util.Objects.requireNonNull(builder.virtualHost, "virtualHost is required");
             this.alternateExchange = builder.alternateExchange;
+            this.xDelayedType = builder.xDelayedType;
         }
 
         @Override
@@ -334,6 +411,11 @@ public interface ExchangeProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getXDelayedType() {
+            return this.xDelayedType;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -347,6 +429,9 @@ public interface ExchangeProps extends software.amazon.jsii.JsiiSerializable {
             data.set("virtualHost", om.valueToTree(this.getVirtualHost()));
             if (this.getAlternateExchange() != null) {
                 data.set("alternateExchange", om.valueToTree(this.getAlternateExchange()));
+            }
+            if (this.getXDelayedType() != null) {
+                data.set("xDelayedType", om.valueToTree(this.getXDelayedType()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -372,7 +457,8 @@ public interface ExchangeProps extends software.amazon.jsii.JsiiSerializable {
             if (!instanceId.equals(that.instanceId)) return false;
             if (!internal.equals(that.internal)) return false;
             if (!virtualHost.equals(that.virtualHost)) return false;
-            return this.alternateExchange != null ? this.alternateExchange.equals(that.alternateExchange) : that.alternateExchange == null;
+            if (this.alternateExchange != null ? !this.alternateExchange.equals(that.alternateExchange) : that.alternateExchange != null) return false;
+            return this.xDelayedType != null ? this.xDelayedType.equals(that.xDelayedType) : that.xDelayedType == null;
         }
 
         @Override
@@ -384,6 +470,7 @@ public interface ExchangeProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.internal.hashCode());
             result = 31 * result + (this.virtualHost.hashCode());
             result = 31 * result + (this.alternateExchange != null ? this.alternateExchange.hashCode() : 0);
+            result = 31 * result + (this.xDelayedType != null ? this.xDelayedType.hashCode() : 0);
             return result;
         }
     }

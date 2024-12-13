@@ -309,6 +309,23 @@ func (j *jsiiProxy_RosInstance) validateSetCoreSpecParameters(val interface{}) e
 	return nil
 }
 
+func (j *jsiiProxy_RosInstance) validateSetDeletionProtectionParameters(val interface{}) error {
+	switch val.(type) {
+	case *bool:
+		// ok
+	case bool:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *bool, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosInstance) validateSetDiskCategoryParameters(val interface{}) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")

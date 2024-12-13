@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::KeyPairs`, which is used to query one or more key pairs.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::KeyPairs`, which is used to query key pairs.
 type KeyPairs interface {
 	alicloudroscdkcore.Resource
 	// Attribute KeyPairNames: The list of key pair names.

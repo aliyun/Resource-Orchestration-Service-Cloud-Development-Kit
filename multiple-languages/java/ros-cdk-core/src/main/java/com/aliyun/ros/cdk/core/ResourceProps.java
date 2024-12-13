@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Construction properties for {@link Resource}.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:26.133Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:03.700Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.ResourceProps")
 @software.amazon.jsii.Jsii.Proxy(ResourceProps.Jsii$Proxy.class)
 public interface ResourceProps extends software.amazon.jsii.JsiiSerializable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nas;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::NAS::AccessGroup</code>, which is used to create a permission group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.768Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:09.523Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.RosAccessGroup")
 public class RosAccessGroup extends com.aliyun.ros.cdk.core.RosResource {
 

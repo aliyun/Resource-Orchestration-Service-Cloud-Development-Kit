@@ -189,7 +189,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pai
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: WorkspaceId: The ID of the workspace where the dataset is located. For details about how to obtain the workspace ID, see [ListWorkspaces](~~ 449124 ~~).
+        /// <strong>Attribute</strong>: WorkspaceId: The ID of the workspace where the dataset is located.
         /// </remarks>
         [JsiiProperty(name: "attrWorkspaceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrWorkspaceId
@@ -344,7 +344,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pai
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: workspaceId: The ID of the workspace where the dataset is located. For details about how to obtain the workspace ID, see [ListWorkspaces](~~ 449124 ~~).
+        /// <strong>Property</strong>: workspaceId: The ID of the workspace where the dataset is located.
         /// If this parameter is not configured, the default workspace is used. If the default workspace does not exist, an error is reported.
         /// </remarks>
         [JsiiProperty(name: "workspaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]

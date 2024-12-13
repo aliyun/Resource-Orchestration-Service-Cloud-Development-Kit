@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::DashVector::Cluster`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::DashVector::Cluster`, which is used to create a DashVector cluster.
 type Cluster interface {
 	alicloudroscdkcore.Resource
 	// Attribute ClusterName: The name of the cluster.

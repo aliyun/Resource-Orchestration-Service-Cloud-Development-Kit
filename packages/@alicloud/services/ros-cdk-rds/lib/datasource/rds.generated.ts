@@ -71,7 +71,7 @@ function rosAccountsPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::RDS::Accounts`, which is used to query the database accounts of an ApsaraDB RDS instance.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::RDS::Accounts`, which is used to query the information about database accounts of an ApsaraDB RDS instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Accounts` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-accounts
  */
@@ -1219,7 +1219,7 @@ function rosDatabasesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::RDS::Databases`, which is used to query the details of databases in an ApsaraDB RDS instance.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::RDS::Databases`, which is used to query the information about databases on an ApsaraDB RDS instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Databases` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-databases
  */
@@ -1425,7 +1425,7 @@ function rosZonesPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::RDS::Zones`, which is used to query the zones that are available to an ApsaraDB RDS instance.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::RDS::Zones`, which is used to query the zones of an ApsaraDB RDS instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Zones` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-zones
  */

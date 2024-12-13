@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CS::ManagedKubernetesCluster</code>, which is used to create a Container Service for Kubernetes (ACK) managed cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:28.116Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:06.074Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesCluster")
 public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -191,60 +191,6 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenew() {
-        return software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setAutoRenew(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
-        software.amazon.jsii.Kernel.set(this, "autoRenew", value);
-    }
-
-    /**
-     */
-    public void setAutoRenew(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "autoRenew", value);
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenewPeriod() {
-        return software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setAutoRenewPeriod(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
-        software.amazon.jsii.Kernel.set(this, "autoRenewPeriod", value);
-    }
-
-    /**
-     */
-    public void setAutoRenewPeriod(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "autoRenewPeriod", value);
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getChargeType() {
-        return software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setChargeType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "chargeType", value);
-    }
-
-    /**
-     */
-    public void setChargeType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "chargeType", value);
-    }
-
-    /**
-     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getCloudMonitorFlags() {
         return software.amazon.jsii.Kernel.get(this, "cloudMonitorFlags", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -295,6 +241,76 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
      */
     public void setContainerCidr(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "containerCidr", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getControlPlaneLogComponents() {
+        return software.amazon.jsii.Kernel.get(this, "controlPlaneLogComponents", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setControlPlaneLogComponents(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "controlPlaneLogComponents", value);
+    }
+
+    /**
+     */
+    public void setControlPlaneLogComponents(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "controlPlaneLogComponents", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getControlPlaneLogProject() {
+        return software.amazon.jsii.Kernel.get(this, "controlPlaneLogProject", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setControlPlaneLogProject(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "controlPlaneLogProject", value);
+    }
+
+    /**
+     */
+    public void setControlPlaneLogProject(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "controlPlaneLogProject", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getControlPlaneLogTtl() {
+        return software.amazon.jsii.Kernel.get(this, "controlPlaneLogTtl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setControlPlaneLogTtl(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "controlPlaneLogTtl", value);
+    }
+
+    /**
+     */
+    public void setControlPlaneLogTtl(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "controlPlaneLogTtl", value);
     }
 
     /**
@@ -597,42 +613,6 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
      */
     public void setOsType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "osType", value);
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
-        return software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setPeriod(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
-        software.amazon.jsii.Kernel.set(this, "period", value);
-    }
-
-    /**
-     */
-    public void setPeriod(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "period", value);
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getPeriodUnit() {
-        return software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setPeriodUnit(final @org.jetbrains.annotations.Nullable java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "periodUnit", value);
-    }
-
-    /**
-     */
-    public void setPeriodUnit(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "periodUnit", value);
     }
 
     /**
@@ -4263,57 +4243,6 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
 
         /**
          * @return {@code this}
-         * @param autoRenew This parameter is required.
-         */
-        public Builder autoRenew(final java.lang.Boolean autoRenew) {
-            this.props.autoRenew(autoRenew);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param autoRenew This parameter is required.
-         */
-        public Builder autoRenew(final com.aliyun.ros.cdk.core.IResolvable autoRenew) {
-            this.props.autoRenew(autoRenew);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param autoRenewPeriod This parameter is required.
-         */
-        public Builder autoRenewPeriod(final java.lang.Number autoRenewPeriod) {
-            this.props.autoRenewPeriod(autoRenewPeriod);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param autoRenewPeriod This parameter is required.
-         */
-        public Builder autoRenewPeriod(final com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
-            this.props.autoRenewPeriod(autoRenewPeriod);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param chargeType This parameter is required.
-         */
-        public Builder chargeType(final java.lang.String chargeType) {
-            this.props.chargeType(chargeType);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param chargeType This parameter is required.
-         */
-        public Builder chargeType(final com.aliyun.ros.cdk.core.IResolvable chargeType) {
-            this.props.chargeType(chargeType);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param cloudMonitorFlags This parameter is required.
          */
         public Builder cloudMonitorFlags(final java.lang.Boolean cloudMonitorFlags) {
@@ -4360,6 +4289,57 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
          */
         public Builder containerCidr(final com.aliyun.ros.cdk.core.IResolvable containerCidr) {
             this.props.containerCidr(containerCidr);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param controlPlaneLogComponents This parameter is required.
+         */
+        public Builder controlPlaneLogComponents(final com.aliyun.ros.cdk.core.IResolvable controlPlaneLogComponents) {
+            this.props.controlPlaneLogComponents(controlPlaneLogComponents);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param controlPlaneLogComponents This parameter is required.
+         */
+        public Builder controlPlaneLogComponents(final java.util.List<? extends java.lang.Object> controlPlaneLogComponents) {
+            this.props.controlPlaneLogComponents(controlPlaneLogComponents);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param controlPlaneLogProject This parameter is required.
+         */
+        public Builder controlPlaneLogProject(final java.lang.String controlPlaneLogProject) {
+            this.props.controlPlaneLogProject(controlPlaneLogProject);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param controlPlaneLogProject This parameter is required.
+         */
+        public Builder controlPlaneLogProject(final com.aliyun.ros.cdk.core.IResolvable controlPlaneLogProject) {
+            this.props.controlPlaneLogProject(controlPlaneLogProject);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param controlPlaneLogTtl This parameter is required.
+         */
+        public Builder controlPlaneLogTtl(final java.lang.Number controlPlaneLogTtl) {
+            this.props.controlPlaneLogTtl(controlPlaneLogTtl);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param controlPlaneLogTtl This parameter is required.
+         */
+        public Builder controlPlaneLogTtl(final com.aliyun.ros.cdk.core.IResolvable controlPlaneLogTtl) {
+            this.props.controlPlaneLogTtl(controlPlaneLogTtl);
             return this;
         }
 
@@ -4615,40 +4595,6 @@ public class RosManagedKubernetesCluster extends com.aliyun.ros.cdk.core.RosReso
          */
         public Builder osType(final com.aliyun.ros.cdk.core.IResolvable osType) {
             this.props.osType(osType);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param period This parameter is required.
-         */
-        public Builder period(final java.lang.Number period) {
-            this.props.period(period);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param period This parameter is required.
-         */
-        public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
-            this.props.period(period);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param periodUnit This parameter is required.
-         */
-        public Builder periodUnit(final java.lang.String periodUnit) {
-            this.props.periodUnit(periodUnit);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param periodUnit This parameter is required.
-         */
-        public Builder periodUnit(final com.aliyun.ros.cdk.core.IResolvable periodUnit) {
-            this.props.periodUnit(periodUnit);
             return this;
         }
 

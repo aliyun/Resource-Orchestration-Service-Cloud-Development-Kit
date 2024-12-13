@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::GA::BasicAccelerator`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::GA::BasicAccelerator`, which is used to create a basic Global Accelerator (GA) instance.
 type BasicAccelerator interface {
 	alicloudroscdkcore.Resource
 	// Attribute AcceleratorId: The ID of the accelerated IP address.

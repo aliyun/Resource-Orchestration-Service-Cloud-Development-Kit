@@ -56,7 +56,7 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     if(properties.clusterName && (typeof properties.clusterName) !== 'object') {
         errors.collect(ros.propertyValidator('clusterName', ros.validateAllowedPattern)({
           data: properties.clusterName,
-          reg: /[-a-z0-9_]{3,32}/
+          reg: /[-a-zA-Z0-9_]{3,32}/
         }));
     }
     errors.collect(ros.propertyValidator('clusterName', ros.validateString)(properties.clusterName));
@@ -93,7 +93,7 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DashVector::Cluster`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DashVector::Cluster`, which is used to create a DashVector cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `Cluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dashvector-cluster
  */

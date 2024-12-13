@@ -3,6 +3,331 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosPackage`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-package
+ */
+export interface RosPackageProps {
+
+    /**
+     * @Property packageName: The name of the project package.
+     */
+    readonly packageName: string | ros.IResolvable;
+
+    /**
+     * @Property projectName: The name of the MaxCompute project.
+     */
+    readonly projectName: string | ros.IResolvable;
+
+    /**
+     * @Property acl: The access-control list (ACL).
+     */
+    readonly acl?: RosPackage.AclProperty | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosPackageProps`
+ *
+ * @param properties - the TypeScript properties of a `RosPackageProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosPackagePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('projectName', ros.requiredValidator)(properties.projectName));
+    errors.collect(ros.propertyValidator('projectName', ros.validateString)(properties.projectName));
+    errors.collect(ros.propertyValidator('packageName', ros.requiredValidator)(properties.packageName));
+    errors.collect(ros.propertyValidator('packageName', ros.validateString)(properties.packageName));
+    errors.collect(ros.propertyValidator('acl', RosPackage_AclPropertyValidator)(properties.acl));
+    return errors.wrap('supplied properties not correct for "RosPackageProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MaxCompute::Package` resource
+ *
+ * @param properties - the TypeScript properties of a `RosPackageProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MaxCompute::Package` resource.
+ */
+// @ts-ignore TS6133
+function rosPackagePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosPackagePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'PackageName': ros.stringToRosTemplate(properties.packageName),
+      'ProjectName': ros.stringToRosTemplate(properties.projectName),
+      'Acl': rosPackageAclPropertyToRosTemplate(properties.acl),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MaxCompute::Package`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Package` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-package
+ */
+export class RosPackage extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::MaxCompute::Package";
+
+    /**
+     * @Attribute PackageName: The name of the project package.
+     */
+    public readonly attrPackageName: ros.IResolvable;
+
+    /**
+     * @Attribute ProjectName: The name of the MaxCompute project.
+     */
+    public readonly attrProjectName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property packageName: The name of the project package.
+     */
+    public packageName: string | ros.IResolvable;
+
+    /**
+     * @Property projectName: The name of the MaxCompute project.
+     */
+    public projectName: string | ros.IResolvable;
+
+    /**
+     * @Property acl: The access-control list (ACL).
+     */
+    public acl: RosPackage.AclProperty | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosPackageProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosPackage.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrPackageName = this.getAtt('PackageName');
+        this.attrProjectName = this.getAtt('ProjectName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.packageName = props.packageName;
+        this.projectName = props.projectName;
+        this.acl = props.acl;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            packageName: this.packageName,
+            projectName: this.projectName,
+            acl: this.acl,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosPackagePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosPackage {
+    /**
+     * @stability external
+     */
+    export interface AclProperty {
+        /**
+         * @Property function: undefined
+         */
+        readonly function?: Array<RosPackage.FunctionProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property table: undefined
+         */
+        readonly table?: Array<RosPackage.TableProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property resource: undefined
+         */
+        readonly resource?: Array<RosPackage.ResourceProperty | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AclProperty`
+ *
+ * @param properties - the TypeScript properties of a `AclProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosPackage_AclPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('function', ros.listValidator(RosPackage_FunctionPropertyValidator))(properties.function));
+    errors.collect(ros.propertyValidator('table', ros.listValidator(RosPackage_TablePropertyValidator))(properties.table));
+    errors.collect(ros.propertyValidator('resource', ros.listValidator(RosPackage_ResourcePropertyValidator))(properties.resource));
+    return errors.wrap('supplied properties not correct for "AclProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MaxCompute::Package.Acl` resource
+ *
+ * @param properties - the TypeScript properties of a `AclProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MaxCompute::Package.Acl` resource.
+ */
+// @ts-ignore TS6133
+function rosPackageAclPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosPackage_AclPropertyValidator(properties).assertSuccess();
+    return {
+      'Function': ros.listMapper(rosPackageFunctionPropertyToRosTemplate)(properties.function),
+      'Table': ros.listMapper(rosPackageTablePropertyToRosTemplate)(properties.table),
+      'Resource': ros.listMapper(rosPackageResourcePropertyToRosTemplate)(properties.resource),
+    };
+}
+
+export namespace RosPackage {
+    /**
+     * @stability external
+     */
+    export interface FunctionProperty {
+        /**
+         * @Property actions: undefined
+         */
+        readonly actions?: Array<any | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property name: undefined
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `FunctionProperty`
+ *
+ * @param properties - the TypeScript properties of a `FunctionProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosPackage_FunctionPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('actions', ros.listValidator(ros.validateAny))(properties.actions));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "FunctionProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MaxCompute::Package.Function` resource
+ *
+ * @param properties - the TypeScript properties of a `FunctionProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MaxCompute::Package.Function` resource.
+ */
+// @ts-ignore TS6133
+function rosPackageFunctionPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosPackage_FunctionPropertyValidator(properties).assertSuccess();
+    return {
+      'Actions': ros.listMapper(ros.objectToRosTemplate)(properties.actions),
+      'Name': ros.stringToRosTemplate(properties.name),
+    };
+}
+
+export namespace RosPackage {
+    /**
+     * @stability external
+     */
+    export interface ResourceProperty {
+        /**
+         * @Property actions: undefined
+         */
+        readonly actions?: Array<any | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property name: undefined
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ResourceProperty`
+ *
+ * @param properties - the TypeScript properties of a `ResourceProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosPackage_ResourcePropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('actions', ros.listValidator(ros.validateAny))(properties.actions));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "ResourceProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MaxCompute::Package.Resource` resource
+ *
+ * @param properties - the TypeScript properties of a `ResourceProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MaxCompute::Package.Resource` resource.
+ */
+// @ts-ignore TS6133
+function rosPackageResourcePropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosPackage_ResourcePropertyValidator(properties).assertSuccess();
+    return {
+      'Actions': ros.listMapper(ros.objectToRosTemplate)(properties.actions),
+      'Name': ros.stringToRosTemplate(properties.name),
+    };
+}
+
+export namespace RosPackage {
+    /**
+     * @stability external
+     */
+    export interface TableProperty {
+        /**
+         * @Property actions: undefined
+         */
+        readonly actions?: Array<any | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property name: undefined
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TableProperty`
+ *
+ * @param properties - the TypeScript properties of a `TableProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosPackage_TablePropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('actions', ros.listValidator(ros.validateAny))(properties.actions));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "TableProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MaxCompute::Package.Table` resource
+ *
+ * @param properties - the TypeScript properties of a `TableProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MaxCompute::Package.Table` resource.
+ */
+// @ts-ignore TS6133
+function rosPackageTablePropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosPackage_TablePropertyValidator(properties).assertSuccess();
+    return {
+      'Actions': ros.listMapper(ros.objectToRosTemplate)(properties.actions),
+      'Name': ros.stringToRosTemplate(properties.name),
+    };
+}
+
+/**
  * Properties for defining a `RosProject`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-project
  */
@@ -353,6 +678,532 @@ function rosProjectPropertiesPropertyToRosTemplate(properties: any): any {
       'Encryption': rosProjectEncryptionPropertyToRosTemplate(properties.encryption),
       'AllowFullScan': ros.booleanToRosTemplate(properties.allowFullScan),
       'EnableDecimal2': ros.booleanToRosTemplate(properties.enableDecimal2),
+    };
+}
+
+/**
+ * Properties for defining a `RosRole`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-role
+ */
+export interface RosRoleProps {
+
+    /**
+     * @Property projectName: The name of the MaxCompute project.
+     */
+    readonly projectName: string | ros.IResolvable;
+
+    /**
+     * @Property roleName: The name of the project role
+     */
+    readonly roleName: string | ros.IResolvable;
+
+    /**
+     * @Property type: Role types, MaxCompute provides administrator roles and resource roles. Valid values:
+     * Admin: You can grant management-related permissions to administrator roles by using policies instead of access control lists (ACLs). You cannot grant resource-related permissions to administrator roles.
+     * Resource: You can grant resource-related permissions but not management-related permissions to resource roles.
+     */
+    readonly type: string | ros.IResolvable;
+
+    /**
+     * @Property acl: The access-control list (ACL), This parameter is not required if a policy is used.
+     */
+    readonly acl?: RosRole.AclProperty | ros.IResolvable;
+
+    /**
+     * @Property policy: The document of the policy. This parameter is not required if an access-control list (ACL) is used.
+     */
+    readonly policy?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosRoleProps`
+ *
+ * @param properties - the TypeScript properties of a `RosRoleProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosRolePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('policy', ros.hashValidator(ros.validateAny))(properties.policy));
+    errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["Admin","Resource"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('roleName', ros.requiredValidator)(properties.roleName));
+    errors.collect(ros.propertyValidator('roleName', ros.validateString)(properties.roleName));
+    errors.collect(ros.propertyValidator('projectName', ros.requiredValidator)(properties.projectName));
+    errors.collect(ros.propertyValidator('projectName', ros.validateString)(properties.projectName));
+    errors.collect(ros.propertyValidator('acl', RosRole_AclPropertyValidator)(properties.acl));
+    return errors.wrap('supplied properties not correct for "RosRoleProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MaxCompute::Role` resource
+ *
+ * @param properties - the TypeScript properties of a `RosRoleProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MaxCompute::Role` resource.
+ */
+// @ts-ignore TS6133
+function rosRolePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosRolePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ProjectName': ros.stringToRosTemplate(properties.projectName),
+      'RoleName': ros.stringToRosTemplate(properties.roleName),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'Acl': rosRoleAclPropertyToRosTemplate(properties.acl),
+      'Policy': ros.hashMapper(ros.objectToRosTemplate)(properties.policy),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MaxCompute::Role`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Role` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-role
+ */
+export class RosRole extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::MaxCompute::Role";
+
+    /**
+     * @Attribute ProjectName: The name of the MaxCompute project.
+     */
+    public readonly attrProjectName: ros.IResolvable;
+
+    /**
+     * @Attribute RoleName: The name of the project role.
+     */
+    public readonly attrRoleName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property projectName: The name of the MaxCompute project.
+     */
+    public projectName: string | ros.IResolvable;
+
+    /**
+     * @Property roleName: The name of the project role
+     */
+    public roleName: string | ros.IResolvable;
+
+    /**
+     * @Property type: Role types, MaxCompute provides administrator roles and resource roles. Valid values:
+     * Admin: You can grant management-related permissions to administrator roles by using policies instead of access control lists (ACLs). You cannot grant resource-related permissions to administrator roles.
+     * Resource: You can grant resource-related permissions but not management-related permissions to resource roles.
+     */
+    public type: string | ros.IResolvable;
+
+    /**
+     * @Property acl: The access-control list (ACL), This parameter is not required if a policy is used.
+     */
+    public acl: RosRole.AclProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property policy: The document of the policy. This parameter is not required if an access-control list (ACL) is used.
+     */
+    public policy: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosRoleProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosRole.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrProjectName = this.getAtt('ProjectName');
+        this.attrRoleName = this.getAtt('RoleName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.projectName = props.projectName;
+        this.roleName = props.roleName;
+        this.type = props.type;
+        this.acl = props.acl;
+        this.policy = props.policy;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            projectName: this.projectName,
+            roleName: this.roleName,
+            type: this.type,
+            acl: this.acl,
+            policy: this.policy,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosRolePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosRole {
+    /**
+     * @stability external
+     */
+    export interface AclProperty {
+        /**
+         * @Property function: undefined
+         */
+        readonly function?: Array<RosRole.FunctionProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property project: undefined
+         */
+        readonly project?: Array<RosRole.ProjectProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property table: undefined
+         */
+        readonly table?: Array<RosRole.TableProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property instance: undefined
+         */
+        readonly instance?: Array<RosRole.InstanceProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property resource: undefined
+         */
+        readonly resource?: Array<RosRole.ResourceProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property package: undefined
+         */
+        readonly package?: Array<RosRole.PackageProperty | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AclProperty`
+ *
+ * @param properties - the TypeScript properties of a `AclProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosRole_AclPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('function', ros.listValidator(RosRole_FunctionPropertyValidator))(properties.function));
+    errors.collect(ros.propertyValidator('project', ros.listValidator(RosRole_ProjectPropertyValidator))(properties.project));
+    errors.collect(ros.propertyValidator('table', ros.listValidator(RosRole_TablePropertyValidator))(properties.table));
+    errors.collect(ros.propertyValidator('instance', ros.listValidator(RosRole_InstancePropertyValidator))(properties.instance));
+    errors.collect(ros.propertyValidator('resource', ros.listValidator(RosRole_ResourcePropertyValidator))(properties.resource));
+    errors.collect(ros.propertyValidator('package', ros.listValidator(RosRole_PackagePropertyValidator))(properties.package));
+    return errors.wrap('supplied properties not correct for "AclProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MaxCompute::Role.Acl` resource
+ *
+ * @param properties - the TypeScript properties of a `AclProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MaxCompute::Role.Acl` resource.
+ */
+// @ts-ignore TS6133
+function rosRoleAclPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosRole_AclPropertyValidator(properties).assertSuccess();
+    return {
+      'Function': ros.listMapper(rosRoleFunctionPropertyToRosTemplate)(properties.function),
+      'Project': ros.listMapper(rosRoleProjectPropertyToRosTemplate)(properties.project),
+      'Table': ros.listMapper(rosRoleTablePropertyToRosTemplate)(properties.table),
+      'Instance': ros.listMapper(rosRoleInstancePropertyToRosTemplate)(properties.instance),
+      'Resource': ros.listMapper(rosRoleResourcePropertyToRosTemplate)(properties.resource),
+      'Package': ros.listMapper(rosRolePackagePropertyToRosTemplate)(properties.package),
+    };
+}
+
+export namespace RosRole {
+    /**
+     * @stability external
+     */
+    export interface FunctionProperty {
+        /**
+         * @Property actions: undefined
+         */
+        readonly actions?: Array<any | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property name: undefined
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `FunctionProperty`
+ *
+ * @param properties - the TypeScript properties of a `FunctionProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosRole_FunctionPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('actions', ros.listValidator(ros.validateAny))(properties.actions));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "FunctionProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MaxCompute::Role.Function` resource
+ *
+ * @param properties - the TypeScript properties of a `FunctionProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MaxCompute::Role.Function` resource.
+ */
+// @ts-ignore TS6133
+function rosRoleFunctionPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosRole_FunctionPropertyValidator(properties).assertSuccess();
+    return {
+      'Actions': ros.listMapper(ros.objectToRosTemplate)(properties.actions),
+      'Name': ros.stringToRosTemplate(properties.name),
+    };
+}
+
+export namespace RosRole {
+    /**
+     * @stability external
+     */
+    export interface InstanceProperty {
+        /**
+         * @Property actions: undefined
+         */
+        readonly actions?: Array<any | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property name: undefined
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `InstanceProperty`
+ *
+ * @param properties - the TypeScript properties of a `InstanceProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosRole_InstancePropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('actions', ros.listValidator(ros.validateAny))(properties.actions));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "InstanceProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MaxCompute::Role.Instance` resource
+ *
+ * @param properties - the TypeScript properties of a `InstanceProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MaxCompute::Role.Instance` resource.
+ */
+// @ts-ignore TS6133
+function rosRoleInstancePropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosRole_InstancePropertyValidator(properties).assertSuccess();
+    return {
+      'Actions': ros.listMapper(ros.objectToRosTemplate)(properties.actions),
+      'Name': ros.stringToRosTemplate(properties.name),
+    };
+}
+
+export namespace RosRole {
+    /**
+     * @stability external
+     */
+    export interface PackageProperty {
+        /**
+         * @Property actions: undefined
+         */
+        readonly actions?: Array<any | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property name: undefined
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `PackageProperty`
+ *
+ * @param properties - the TypeScript properties of a `PackageProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosRole_PackagePropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('actions', ros.listValidator(ros.validateAny))(properties.actions));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "PackageProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MaxCompute::Role.Package` resource
+ *
+ * @param properties - the TypeScript properties of a `PackageProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MaxCompute::Role.Package` resource.
+ */
+// @ts-ignore TS6133
+function rosRolePackagePropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosRole_PackagePropertyValidator(properties).assertSuccess();
+    return {
+      'Actions': ros.listMapper(ros.objectToRosTemplate)(properties.actions),
+      'Name': ros.stringToRosTemplate(properties.name),
+    };
+}
+
+export namespace RosRole {
+    /**
+     * @stability external
+     */
+    export interface ProjectProperty {
+        /**
+         * @Property actions: undefined
+         */
+        readonly actions?: Array<any | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property name: undefined
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ProjectProperty`
+ *
+ * @param properties - the TypeScript properties of a `ProjectProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosRole_ProjectPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('actions', ros.listValidator(ros.validateAny))(properties.actions));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "ProjectProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MaxCompute::Role.Project` resource
+ *
+ * @param properties - the TypeScript properties of a `ProjectProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MaxCompute::Role.Project` resource.
+ */
+// @ts-ignore TS6133
+function rosRoleProjectPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosRole_ProjectPropertyValidator(properties).assertSuccess();
+    return {
+      'Actions': ros.listMapper(ros.objectToRosTemplate)(properties.actions),
+      'Name': ros.stringToRosTemplate(properties.name),
+    };
+}
+
+export namespace RosRole {
+    /**
+     * @stability external
+     */
+    export interface ResourceProperty {
+        /**
+         * @Property actions: undefined
+         */
+        readonly actions?: Array<any | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property name: undefined
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ResourceProperty`
+ *
+ * @param properties - the TypeScript properties of a `ResourceProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosRole_ResourcePropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('actions', ros.listValidator(ros.validateAny))(properties.actions));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "ResourceProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MaxCompute::Role.Resource` resource
+ *
+ * @param properties - the TypeScript properties of a `ResourceProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MaxCompute::Role.Resource` resource.
+ */
+// @ts-ignore TS6133
+function rosRoleResourcePropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosRole_ResourcePropertyValidator(properties).assertSuccess();
+    return {
+      'Actions': ros.listMapper(ros.objectToRosTemplate)(properties.actions),
+      'Name': ros.stringToRosTemplate(properties.name),
+    };
+}
+
+export namespace RosRole {
+    /**
+     * @stability external
+     */
+    export interface TableProperty {
+        /**
+         * @Property actions: undefined
+         */
+        readonly actions?: Array<any | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property name: undefined
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TableProperty`
+ *
+ * @param properties - the TypeScript properties of a `TableProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosRole_TablePropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('actions', ros.listValidator(ros.validateAny))(properties.actions));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "TableProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MaxCompute::Role.Table` resource
+ *
+ * @param properties - the TypeScript properties of a `TableProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MaxCompute::Role.Table` resource.
+ */
+// @ts-ignore TS6133
+function rosRoleTablePropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosRole_TablePropertyValidator(properties).assertSuccess();
+    return {
+      'Actions': ros.listMapper(ros.objectToRosTemplate)(properties.actions),
+      'Name': ros.stringToRosTemplate(properties.name),
     };
 }
 

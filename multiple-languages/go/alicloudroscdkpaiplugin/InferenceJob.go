@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::PAIPlugin::InferenceJob`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::PAIPlugin::InferenceJob`, which is used to create a prediction job.
 type InferenceJob interface {
 	alicloudroscdkcore.Resource
 	// Attribute GroupId: The related group id of infernce job result.

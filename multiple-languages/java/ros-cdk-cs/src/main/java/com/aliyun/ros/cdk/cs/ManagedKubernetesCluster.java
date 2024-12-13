@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ManagedKubernetesCluster</code>, which is used to create a Container Service for Kubernetes (ACK) managed cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:28.014Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:05.990Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedKubernetesCluster")
 public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -261,95 +261,6 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property autoRenew: Whether the cluster automatically renews.
-         * <p>
-         * It takes effect when the value of ChargeType is PrePaid. The optional values are:
-         * true: automatic renewal
-         * false: do not renew automatically
-         * Default to true.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-         * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-         * <p>
-         * @return {@code this}
-         * @param autoRenew Property autoRenew: Whether the cluster automatically renews. This parameter is required.
-         */
-        public Builder autoRenew(final java.lang.Boolean autoRenew) {
-            this.props.autoRenew(autoRenew);
-            return this;
-        }
-        /**
-         * Property autoRenew: Whether the cluster automatically renews.
-         * <p>
-         * It takes effect when the value of ChargeType is PrePaid. The optional values are:
-         * true: automatic renewal
-         * false: do not renew automatically
-         * Default to true.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-         * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-         * <p>
-         * @return {@code this}
-         * @param autoRenew Property autoRenew: Whether the cluster automatically renews. This parameter is required.
-         */
-        public Builder autoRenew(final com.aliyun.ros.cdk.core.IResolvable autoRenew) {
-            this.props.autoRenew(autoRenew);
-            return this;
-        }
-
-        /**
-         * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.  For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-         * <p>
-         * @return {@code this}
-         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.  For the configuration of the working node ECS instance, please specify it in the node pool list parameters. This parameter is required.
-         */
-        public Builder autoRenewPeriod(final java.lang.Number autoRenewPeriod) {
-            this.props.autoRenewPeriod(autoRenewPeriod);
-            return this;
-        }
-        /**
-         * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.  For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-         * <p>
-         * @return {@code this}
-         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.  For the configuration of the working node ECS instance, please specify it in the node pool list parameters. This parameter is required.
-         */
-        public Builder autoRenewPeriod(final com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
-            this.props.autoRenewPeriod(autoRenewPeriod);
-            return this;
-        }
-
-        /**
-         * Property chargeType: cluster payment type.
-         * <p>
-         * The optional values are:
-         * PrePaid: prepaid
-         * PostPaid: Pay as you go
-         * Default to PostPaid.
-         * Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-         * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-         * <p>
-         * @return {@code this}
-         * @param chargeType Property chargeType: cluster payment type. This parameter is required.
-         */
-        public Builder chargeType(final java.lang.String chargeType) {
-            this.props.chargeType(chargeType);
-            return this;
-        }
-        /**
-         * Property chargeType: cluster payment type.
-         * <p>
-         * The optional values are:
-         * PrePaid: prepaid
-         * PostPaid: Pay as you go
-         * Default to PostPaid.
-         * Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-         * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-         * <p>
-         * @return {@code this}
-         * @param chargeType Property chargeType: cluster payment type. This parameter is required.
-         */
-        public Builder chargeType(final com.aliyun.ros.cdk.core.IResolvable chargeType) {
-            this.props.chargeType(chargeType);
-            return this;
-        }
-
-        /**
          * Property cloudMonitorFlags: Whether to install the cloud monitoring plugin: true: indicates installation false: Do not install Default to false.
          * <p>
          * @return {@code this}
@@ -423,6 +334,81 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder containerCidr(final com.aliyun.ros.cdk.core.IResolvable containerCidr) {
             this.props.containerCidr(containerCidr);
+            return this;
+        }
+
+        /**
+         * Property controlPlaneLogComponents: List of target components for which logs need to be collected.
+         * <p>
+         * Supports apiserver, kcm, scheduler, ccm and controlplane-events.
+         * <p>
+         * @return {@code this}
+         * @param controlPlaneLogComponents Property controlPlaneLogComponents: List of target components for which logs need to be collected. This parameter is required.
+         */
+        public Builder controlPlaneLogComponents(final com.aliyun.ros.cdk.core.IResolvable controlPlaneLogComponents) {
+            this.props.controlPlaneLogComponents(controlPlaneLogComponents);
+            return this;
+        }
+        /**
+         * Property controlPlaneLogComponents: List of target components for which logs need to be collected.
+         * <p>
+         * Supports apiserver, kcm, scheduler, ccm and controlplane-events.
+         * <p>
+         * @return {@code this}
+         * @param controlPlaneLogComponents Property controlPlaneLogComponents: List of target components for which logs need to be collected. This parameter is required.
+         */
+        public Builder controlPlaneLogComponents(final java.util.List<? extends java.lang.Object> controlPlaneLogComponents) {
+            this.props.controlPlaneLogComponents(controlPlaneLogComponents);
+            return this;
+        }
+
+        /**
+         * Property controlPlaneLogProject: Control plane log project.
+         * <p>
+         * If this field is not set, a log service project named k8s-log-{ClusterID} will be automatically created.
+         * <p>
+         * @return {@code this}
+         * @param controlPlaneLogProject Property controlPlaneLogProject: Control plane log project. This parameter is required.
+         */
+        public Builder controlPlaneLogProject(final java.lang.String controlPlaneLogProject) {
+            this.props.controlPlaneLogProject(controlPlaneLogProject);
+            return this;
+        }
+        /**
+         * Property controlPlaneLogProject: Control plane log project.
+         * <p>
+         * If this field is not set, a log service project named k8s-log-{ClusterID} will be automatically created.
+         * <p>
+         * @return {@code this}
+         * @param controlPlaneLogProject Property controlPlaneLogProject: Control plane log project. This parameter is required.
+         */
+        public Builder controlPlaneLogProject(final com.aliyun.ros.cdk.core.IResolvable controlPlaneLogProject) {
+            this.props.controlPlaneLogProject(controlPlaneLogProject);
+            return this;
+        }
+
+        /**
+         * Property controlPlaneLogTtl: Control plane log retention duration (unit: day).
+         * <p>
+         * Default 30.
+         * <p>
+         * @return {@code this}
+         * @param controlPlaneLogTtl Property controlPlaneLogTtl: Control plane log retention duration (unit: day). This parameter is required.
+         */
+        public Builder controlPlaneLogTtl(final java.lang.Number controlPlaneLogTtl) {
+            this.props.controlPlaneLogTtl(controlPlaneLogTtl);
+            return this;
+        }
+        /**
+         * Property controlPlaneLogTtl: Control plane log retention duration (unit: day).
+         * <p>
+         * Default 30.
+         * <p>
+         * @return {@code this}
+         * @param controlPlaneLogTtl Property controlPlaneLogTtl: Control plane log retention duration (unit: day). This parameter is required.
+         */
+        public Builder controlPlaneLogTtl(final com.aliyun.ros.cdk.core.IResolvable controlPlaneLogTtl) {
+            this.props.controlPlaneLogTtl(controlPlaneLogTtl);
             return this;
         }
 
@@ -844,76 +830,6 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder osType(final com.aliyun.ros.cdk.core.IResolvable osType) {
             this.props.osType(osType);
-            return this;
-        }
-
-        /**
-         * Property period: The duration of the annual subscription and monthly subscription.
-         * <p>
-         * It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
-         * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
-         * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
-         * When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
-         * Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-         * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-         * <p>
-         * @return {@code this}
-         * @param period Property period: The duration of the annual subscription and monthly subscription. This parameter is required.
-         */
-        public Builder period(final java.lang.Number period) {
-            this.props.period(period);
-            return this;
-        }
-        /**
-         * Property period: The duration of the annual subscription and monthly subscription.
-         * <p>
-         * It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
-         * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
-         * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
-         * When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
-         * Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-         * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-         * <p>
-         * @return {@code this}
-         * @param period Property period: The duration of the annual subscription and monthly subscription. This parameter is required.
-         */
-        public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
-            this.props.period(period);
-            return this;
-        }
-
-        /**
-         * Property periodUnit: When you specify PrePaid, you need to specify the period.
-         * <p>
-         * The options are:
-         * Week: Time is measured in weeks
-         * Month: time in months
-         * Year: time in years
-         * Default to MonthStarting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-         * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-         * <p>
-         * @return {@code this}
-         * @param periodUnit Property periodUnit: When you specify PrePaid, you need to specify the period. This parameter is required.
-         */
-        public Builder periodUnit(final java.lang.String periodUnit) {
-            this.props.periodUnit(periodUnit);
-            return this;
-        }
-        /**
-         * Property periodUnit: When you specify PrePaid, you need to specify the period.
-         * <p>
-         * The options are:
-         * Week: Time is measured in weeks
-         * Month: time in months
-         * Year: time in years
-         * Default to MonthStarting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-         * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-         * <p>
-         * @return {@code this}
-         * @param periodUnit Property periodUnit: When you specify PrePaid, you need to specify the period. This parameter is required.
-         */
-        public Builder periodUnit(final com.aliyun.ros.cdk.core.IResolvable periodUnit) {
-            this.props.periodUnit(periodUnit);
             return this;
         }
 

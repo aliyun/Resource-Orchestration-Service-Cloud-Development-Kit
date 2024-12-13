@@ -1909,7 +1909,7 @@ function rosNatFirewallControlPolicyPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::NatFirewallControlPolicy`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::NatFirewallControlPolicy`, which is used to add an access control policy for a NAT firewall.
  * @Note This class does not contain additional functions, so it is recommended to use the `NatFirewallControlPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-natfirewallcontrolpolicy
  */
@@ -2163,6 +2163,1265 @@ export class RosNatFirewallControlPolicy extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosNatFirewallControlPolicyPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+/**
+ * Properties for defining a `RosTrFirewall`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-trfirewall
+ */
+export interface RosTrFirewallProps {
+
+    /**
+     * @Property cenId: The ID of the Cloud Enterprise Network (CEN) instance.
+     */
+    readonly cenId: string | ros.IResolvable;
+
+    /**
+     * @Property firewallName: The name of the firewall.
+     */
+    readonly firewallName: string | ros.IResolvable;
+
+    /**
+     * @Property regionNo: The region ID of the route router.
+     */
+    readonly regionNo: string | ros.IResolvable;
+
+    /**
+     * @Property routeMode: The routing mode of the VPC firewall. Valid values:
+     * managed: automatic mode
+     * manual: manual mode
+     */
+    readonly routeMode: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterId: The ID of the transit router.
+     */
+    readonly transitRouterId: string | ros.IResolvable;
+
+    /**
+     * @Property firewallDescription: The description of the firewall.
+     */
+    readonly firewallDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property firewallSubnetCidr: The subnet CIDR block of the VPC in which the ENI of the firewall is stored in automatic mode.
+     */
+    readonly firewallSubnetCidr?: string | ros.IResolvable;
+
+    /**
+     * @Property firewallVpcCidr: The CIDR block that is allocated to the VPC created for the VPC firewall in automatic mode.
+     */
+    readonly firewallVpcCidr?: string | ros.IResolvable;
+
+    /**
+     * @Property firewallVpcId: The ID of the VPC in which the ENI associated with the VPC firewall is created in manual mode.
+     */
+    readonly firewallVpcId?: string | ros.IResolvable;
+
+    /**
+     * @Property firewallVswitchId: The ID of the vSwitch that is used to create the ENI in manual mode.
+     */
+    readonly firewallVswitchId?: string | ros.IResolvable;
+
+    /**
+     * @Property trAttachmentMasterCidr: The primary subnet CIDR block that the VPC uses to connect to the transit router in automatic mode.
+     */
+    readonly trAttachmentMasterCidr?: string | ros.IResolvable;
+
+    /**
+     * @Property trAttachmentMasterZone: The primary zone for the vSwitch.
+     */
+    readonly trAttachmentMasterZone?: string | ros.IResolvable;
+
+    /**
+     * @Property trAttachmentSlaveCidr: The secondary subnet CIDR block that the VPC uses to connect to the transit router in automatic mode.
+     */
+    readonly trAttachmentSlaveCidr?: string | ros.IResolvable;
+
+    /**
+     * @Property trAttachmentSlaveZone: The secondary zone for the vSwitch.
+     */
+    readonly trAttachmentSlaveZone?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosTrFirewallProps`
+ *
+ * @param properties - the TypeScript properties of a `RosTrFirewallProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosTrFirewallPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('routeMode', ros.requiredValidator)(properties.routeMode));
+    if(properties.routeMode && (typeof properties.routeMode) !== 'object') {
+        errors.collect(ros.propertyValidator('routeMode', ros.validateAllowedValues)({
+          data: properties.routeMode,
+          allowedValues: ["managed","manual"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('routeMode', ros.validateString)(properties.routeMode));
+    errors.collect(ros.propertyValidator('regionNo', ros.requiredValidator)(properties.regionNo));
+    errors.collect(ros.propertyValidator('regionNo', ros.validateString)(properties.regionNo));
+    errors.collect(ros.propertyValidator('firewallDescription', ros.validateString)(properties.firewallDescription));
+    errors.collect(ros.propertyValidator('trAttachmentMasterZone', ros.validateString)(properties.trAttachmentMasterZone));
+    errors.collect(ros.propertyValidator('firewallVpcId', ros.validateString)(properties.firewallVpcId));
+    errors.collect(ros.propertyValidator('firewallSubnetCidr', ros.validateString)(properties.firewallSubnetCidr));
+    errors.collect(ros.propertyValidator('firewallVpcCidr', ros.validateString)(properties.firewallVpcCidr));
+    errors.collect(ros.propertyValidator('firewallName', ros.requiredValidator)(properties.firewallName));
+    errors.collect(ros.propertyValidator('firewallName', ros.validateString)(properties.firewallName));
+    errors.collect(ros.propertyValidator('trAttachmentMasterCidr', ros.validateString)(properties.trAttachmentMasterCidr));
+    errors.collect(ros.propertyValidator('firewallVswitchId', ros.validateString)(properties.firewallVswitchId));
+    errors.collect(ros.propertyValidator('cenId', ros.requiredValidator)(properties.cenId));
+    errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
+    errors.collect(ros.propertyValidator('trAttachmentSlaveCidr', ros.validateString)(properties.trAttachmentSlaveCidr));
+    errors.collect(ros.propertyValidator('trAttachmentSlaveZone', ros.validateString)(properties.trAttachmentSlaveZone));
+    errors.collect(ros.propertyValidator('transitRouterId', ros.requiredValidator)(properties.transitRouterId));
+    errors.collect(ros.propertyValidator('transitRouterId', ros.validateString)(properties.transitRouterId));
+    return errors.wrap('supplied properties not correct for "RosTrFirewallProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::TrFirewall` resource
+ *
+ * @param properties - the TypeScript properties of a `RosTrFirewallProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::TrFirewall` resource.
+ */
+// @ts-ignore TS6133
+function rosTrFirewallPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosTrFirewallPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'CenId': ros.stringToRosTemplate(properties.cenId),
+      'FirewallName': ros.stringToRosTemplate(properties.firewallName),
+      'RegionNo': ros.stringToRosTemplate(properties.regionNo),
+      'RouteMode': ros.stringToRosTemplate(properties.routeMode),
+      'TransitRouterId': ros.stringToRosTemplate(properties.transitRouterId),
+      'FirewallDescription': ros.stringToRosTemplate(properties.firewallDescription),
+      'FirewallSubnetCidr': ros.stringToRosTemplate(properties.firewallSubnetCidr),
+      'FirewallVpcCidr': ros.stringToRosTemplate(properties.firewallVpcCidr),
+      'FirewallVpcId': ros.stringToRosTemplate(properties.firewallVpcId),
+      'FirewallVswitchId': ros.stringToRosTemplate(properties.firewallVswitchId),
+      'TrAttachmentMasterCidr': ros.stringToRosTemplate(properties.trAttachmentMasterCidr),
+      'TrAttachmentMasterZone': ros.stringToRosTemplate(properties.trAttachmentMasterZone),
+      'TrAttachmentSlaveCidr': ros.stringToRosTemplate(properties.trAttachmentSlaveCidr),
+      'TrAttachmentSlaveZone': ros.stringToRosTemplate(properties.trAttachmentSlaveZone),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::TrFirewall`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TrFirewall` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-trfirewall
+ */
+export class RosTrFirewall extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CLOUDFW::TrFirewall";
+
+    /**
+     * @Attribute FirewallId: The instance ID of the VPC firewall.
+     */
+    public readonly attrFirewallId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property cenId: The ID of the Cloud Enterprise Network (CEN) instance.
+     */
+    public cenId: string | ros.IResolvable;
+
+    /**
+     * @Property firewallName: The name of the firewall.
+     */
+    public firewallName: string | ros.IResolvable;
+
+    /**
+     * @Property regionNo: The region ID of the route router.
+     */
+    public regionNo: string | ros.IResolvable;
+
+    /**
+     * @Property routeMode: The routing mode of the VPC firewall. Valid values:
+     * managed: automatic mode
+     * manual: manual mode
+     */
+    public routeMode: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterId: The ID of the transit router.
+     */
+    public transitRouterId: string | ros.IResolvable;
+
+    /**
+     * @Property firewallDescription: The description of the firewall.
+     */
+    public firewallDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property firewallSubnetCidr: The subnet CIDR block of the VPC in which the ENI of the firewall is stored in automatic mode.
+     */
+    public firewallSubnetCidr: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property firewallVpcCidr: The CIDR block that is allocated to the VPC created for the VPC firewall in automatic mode.
+     */
+    public firewallVpcCidr: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property firewallVpcId: The ID of the VPC in which the ENI associated with the VPC firewall is created in manual mode.
+     */
+    public firewallVpcId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property firewallVswitchId: The ID of the vSwitch that is used to create the ENI in manual mode.
+     */
+    public firewallVswitchId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property trAttachmentMasterCidr: The primary subnet CIDR block that the VPC uses to connect to the transit router in automatic mode.
+     */
+    public trAttachmentMasterCidr: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property trAttachmentMasterZone: The primary zone for the vSwitch.
+     */
+    public trAttachmentMasterZone: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property trAttachmentSlaveCidr: The secondary subnet CIDR block that the VPC uses to connect to the transit router in automatic mode.
+     */
+    public trAttachmentSlaveCidr: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property trAttachmentSlaveZone: The secondary zone for the vSwitch.
+     */
+    public trAttachmentSlaveZone: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosTrFirewallProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosTrFirewall.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrFirewallId = this.getAtt('FirewallId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.cenId = props.cenId;
+        this.firewallName = props.firewallName;
+        this.regionNo = props.regionNo;
+        this.routeMode = props.routeMode;
+        this.transitRouterId = props.transitRouterId;
+        this.firewallDescription = props.firewallDescription;
+        this.firewallSubnetCidr = props.firewallSubnetCidr;
+        this.firewallVpcCidr = props.firewallVpcCidr;
+        this.firewallVpcId = props.firewallVpcId;
+        this.firewallVswitchId = props.firewallVswitchId;
+        this.trAttachmentMasterCidr = props.trAttachmentMasterCidr;
+        this.trAttachmentMasterZone = props.trAttachmentMasterZone;
+        this.trAttachmentSlaveCidr = props.trAttachmentSlaveCidr;
+        this.trAttachmentSlaveZone = props.trAttachmentSlaveZone;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            cenId: this.cenId,
+            firewallName: this.firewallName,
+            regionNo: this.regionNo,
+            routeMode: this.routeMode,
+            transitRouterId: this.transitRouterId,
+            firewallDescription: this.firewallDescription,
+            firewallSubnetCidr: this.firewallSubnetCidr,
+            firewallVpcCidr: this.firewallVpcCidr,
+            firewallVpcId: this.firewallVpcId,
+            firewallVswitchId: this.firewallVswitchId,
+            trAttachmentMasterCidr: this.trAttachmentMasterCidr,
+            trAttachmentMasterZone: this.trAttachmentMasterZone,
+            trAttachmentSlaveCidr: this.trAttachmentSlaveCidr,
+            trAttachmentSlaveZone: this.trAttachmentSlaveZone,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosTrFirewallPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosTrFirewallRoutePolicy`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-trfirewallroutepolicy
+ */
+export interface RosTrFirewallRoutePolicyProps {
+
+    /**
+     * @Property firewallId: The instance ID of the VPC firewall.
+     */
+    readonly firewallId: string | ros.IResolvable;
+
+    /**
+     * @Property policyDescription: The description of the traffic redirection instance.
+     */
+    readonly policyDescription: string | ros.IResolvable;
+
+    /**
+     * @Property policyName: The name of the traffic redirection instance.
+     */
+    readonly policyName: string | ros.IResolvable;
+
+    /**
+     * @Property policyType: The type of the traffic redirection scenario of the VPC firewall. Valid values:
+     * fullmesh: interconnected instances
+     * one_to_one: instance to instance
+     * end_to_end: instance to instances
+     */
+    readonly policyType: string | ros.IResolvable;
+
+    /**
+     * @Property destCandidateList: The secondary traffic redirection instances.
+     */
+    readonly destCandidateList?: Array<RosTrFirewallRoutePolicy.DestCandidateListProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property srcCandidateList: The primary traffic redirection instances.
+     */
+    readonly srcCandidateList?: Array<RosTrFirewallRoutePolicy.SrcCandidateListProperty | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosTrFirewallRoutePolicyProps`
+ *
+ * @param properties - the TypeScript properties of a `RosTrFirewallRoutePolicyProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosTrFirewallRoutePolicyPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.srcCandidateList && (Array.isArray(properties.srcCandidateList) || (typeof properties.srcCandidateList) === 'string')) {
+        errors.collect(ros.propertyValidator('srcCandidateList', ros.validateLength)({
+            data: properties.srcCandidateList.length,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('srcCandidateList', ros.listValidator(RosTrFirewallRoutePolicy_SrcCandidateListPropertyValidator))(properties.srcCandidateList));
+    errors.collect(ros.propertyValidator('policyType', ros.requiredValidator)(properties.policyType));
+    if(properties.policyType && (typeof properties.policyType) !== 'object') {
+        errors.collect(ros.propertyValidator('policyType', ros.validateAllowedValues)({
+          data: properties.policyType,
+          allowedValues: ["fullmesh","one_to_one","end_to_end"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('policyType', ros.validateString)(properties.policyType));
+    errors.collect(ros.propertyValidator('policyDescription', ros.requiredValidator)(properties.policyDescription));
+    errors.collect(ros.propertyValidator('policyDescription', ros.validateString)(properties.policyDescription));
+    errors.collect(ros.propertyValidator('policyName', ros.requiredValidator)(properties.policyName));
+    errors.collect(ros.propertyValidator('policyName', ros.validateString)(properties.policyName));
+    errors.collect(ros.propertyValidator('firewallId', ros.requiredValidator)(properties.firewallId));
+    errors.collect(ros.propertyValidator('firewallId', ros.validateString)(properties.firewallId));
+    if(properties.destCandidateList && (Array.isArray(properties.destCandidateList) || (typeof properties.destCandidateList) === 'string')) {
+        errors.collect(ros.propertyValidator('destCandidateList', ros.validateLength)({
+            data: properties.destCandidateList.length,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('destCandidateList', ros.listValidator(RosTrFirewallRoutePolicy_DestCandidateListPropertyValidator))(properties.destCandidateList));
+    return errors.wrap('supplied properties not correct for "RosTrFirewallRoutePolicyProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::TrFirewallRoutePolicy` resource
+ *
+ * @param properties - the TypeScript properties of a `RosTrFirewallRoutePolicyProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::TrFirewallRoutePolicy` resource.
+ */
+// @ts-ignore TS6133
+function rosTrFirewallRoutePolicyPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosTrFirewallRoutePolicyPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'FirewallId': ros.stringToRosTemplate(properties.firewallId),
+      'PolicyDescription': ros.stringToRosTemplate(properties.policyDescription),
+      'PolicyName': ros.stringToRosTemplate(properties.policyName),
+      'PolicyType': ros.stringToRosTemplate(properties.policyType),
+      'DestCandidateList': ros.listMapper(rosTrFirewallRoutePolicyDestCandidateListPropertyToRosTemplate)(properties.destCandidateList),
+      'SrcCandidateList': ros.listMapper(rosTrFirewallRoutePolicySrcCandidateListPropertyToRosTemplate)(properties.srcCandidateList),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::TrFirewallRoutePolicy`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TrFirewallRoutePolicy` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-trfirewallroutepolicy
+ */
+export class RosTrFirewallRoutePolicy extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CLOUDFW::TrFirewallRoutePolicy";
+
+    /**
+     * @Attribute FirewallId: The instance ID of the VPC firewall.
+     */
+    public readonly attrFirewallId: ros.IResolvable;
+
+    /**
+     * @Attribute TrFirewallRoutePolicyId: The ID of the routing policy.
+     */
+    public readonly attrTrFirewallRoutePolicyId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property firewallId: The instance ID of the VPC firewall.
+     */
+    public firewallId: string | ros.IResolvable;
+
+    /**
+     * @Property policyDescription: The description of the traffic redirection instance.
+     */
+    public policyDescription: string | ros.IResolvable;
+
+    /**
+     * @Property policyName: The name of the traffic redirection instance.
+     */
+    public policyName: string | ros.IResolvable;
+
+    /**
+     * @Property policyType: The type of the traffic redirection scenario of the VPC firewall. Valid values:
+     * fullmesh: interconnected instances
+     * one_to_one: instance to instance
+     * end_to_end: instance to instances
+     */
+    public policyType: string | ros.IResolvable;
+
+    /**
+     * @Property destCandidateList: The secondary traffic redirection instances.
+     */
+    public destCandidateList: Array<RosTrFirewallRoutePolicy.DestCandidateListProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property srcCandidateList: The primary traffic redirection instances.
+     */
+    public srcCandidateList: Array<RosTrFirewallRoutePolicy.SrcCandidateListProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosTrFirewallRoutePolicyProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosTrFirewallRoutePolicy.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrFirewallId = this.getAtt('FirewallId');
+        this.attrTrFirewallRoutePolicyId = this.getAtt('TrFirewallRoutePolicyId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.firewallId = props.firewallId;
+        this.policyDescription = props.policyDescription;
+        this.policyName = props.policyName;
+        this.policyType = props.policyType;
+        this.destCandidateList = props.destCandidateList;
+        this.srcCandidateList = props.srcCandidateList;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            firewallId: this.firewallId,
+            policyDescription: this.policyDescription,
+            policyName: this.policyName,
+            policyType: this.policyType,
+            destCandidateList: this.destCandidateList,
+            srcCandidateList: this.srcCandidateList,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosTrFirewallRoutePolicyPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosTrFirewallRoutePolicy {
+    /**
+     * @stability external
+     */
+    export interface DestCandidateListProperty {
+        /**
+         * @Property candidateType: The type of the traffic redirection instance.
+         */
+        readonly candidateType?: string | ros.IResolvable;
+        /**
+         * @Property candidateId: The ID of the traffic redirection instance.
+         */
+        readonly candidateId: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DestCandidateListProperty`
+ *
+ * @param properties - the TypeScript properties of a `DestCandidateListProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosTrFirewallRoutePolicy_DestCandidateListPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('candidateType', ros.validateString)(properties.candidateType));
+    errors.collect(ros.propertyValidator('candidateId', ros.requiredValidator)(properties.candidateId));
+    errors.collect(ros.propertyValidator('candidateId', ros.validateString)(properties.candidateId));
+    return errors.wrap('supplied properties not correct for "DestCandidateListProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::TrFirewallRoutePolicy.DestCandidateList` resource
+ *
+ * @param properties - the TypeScript properties of a `DestCandidateListProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::TrFirewallRoutePolicy.DestCandidateList` resource.
+ */
+// @ts-ignore TS6133
+function rosTrFirewallRoutePolicyDestCandidateListPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosTrFirewallRoutePolicy_DestCandidateListPropertyValidator(properties).assertSuccess();
+    return {
+      'CandidateType': ros.stringToRosTemplate(properties.candidateType),
+      'CandidateId': ros.stringToRosTemplate(properties.candidateId),
+    };
+}
+
+export namespace RosTrFirewallRoutePolicy {
+    /**
+     * @stability external
+     */
+    export interface SrcCandidateListProperty {
+        /**
+         * @Property candidateType: The type of the traffic redirection instance.
+         */
+        readonly candidateType?: string | ros.IResolvable;
+        /**
+         * @Property candidateId: The ID of the traffic redirection instance.
+         */
+        readonly candidateId: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `SrcCandidateListProperty`
+ *
+ * @param properties - the TypeScript properties of a `SrcCandidateListProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosTrFirewallRoutePolicy_SrcCandidateListPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('candidateType', ros.validateString)(properties.candidateType));
+    errors.collect(ros.propertyValidator('candidateId', ros.requiredValidator)(properties.candidateId));
+    errors.collect(ros.propertyValidator('candidateId', ros.validateString)(properties.candidateId));
+    return errors.wrap('supplied properties not correct for "SrcCandidateListProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::TrFirewallRoutePolicy.SrcCandidateList` resource
+ *
+ * @param properties - the TypeScript properties of a `SrcCandidateListProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::TrFirewallRoutePolicy.SrcCandidateList` resource.
+ */
+// @ts-ignore TS6133
+function rosTrFirewallRoutePolicySrcCandidateListPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosTrFirewallRoutePolicy_SrcCandidateListPropertyValidator(properties).assertSuccess();
+    return {
+      'CandidateType': ros.stringToRosTemplate(properties.candidateType),
+      'CandidateId': ros.stringToRosTemplate(properties.candidateId),
+    };
+}
+
+/**
+ * Properties for defining a `RosVpcFirewallCen`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallcen
+ */
+export interface RosVpcFirewallCenProps {
+
+    /**
+     * @Property cenId: The ID of the CEN instance.
+     */
+    readonly cenId: string | ros.IResolvable;
+
+    /**
+     * @Property firewallSwitch: Specifies whether to enable the VPC firewall. Valid values:
+     * open: After you create the VPC firewall, the VPC firewall is automatically enabled. This is the default value.
+     * close: After you create the VPC firewall, the VPC firewall is disabled. You can call the ModifyVpcFirewallCenSwitchStatus operation to manually enable the VPC firewall.
+     */
+    readonly firewallSwitch: string | ros.IResolvable;
+
+    /**
+     * @Property firewallVpcZoneId: The ID of the zone to which the vSwitch belongs. If your service is latency-sensitive, you can specify the same zone for the vSwitch of the firewall and the vSwitch of your business VPC to minimize latency.If you do not specify a value, a zone is automatically assigned for the vSwitch.
+     */
+    readonly firewallVpcZoneId: string | ros.IResolvable;
+
+    /**
+     * @Property networkInstanceId: The ID of the VPC for which you want to create the VPC firewall.
+     */
+    readonly networkInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property vpcFirewallName: The instance name of the VPC firewall.
+     */
+    readonly vpcFirewallName: string | ros.IResolvable;
+
+    /**
+     * @Property vpcRegion: The ID of the region to which the VPC belongs.
+     */
+    readonly vpcRegion: string | ros.IResolvable;
+
+    /**
+     * @Property firewallVpcCidrBlock: The CIDR block of the VPC that is automatically created for the VPC firewall. You must specify a CIDR block for the Cloud_Firewall_VPC VPC that is automatically created for the VPC firewall for traffic redirection. The subnet mask of the CIDR block must be less than or equal to 28 bits in length.If you do not specify a value, the CIDR block 10.0.0.0\/8 is automatically allocated.
+     */
+    readonly firewallVpcCidrBlock?: string | ros.IResolvable;
+
+    /**
+     * @Property firewallVSwitchCidrBlock: The CIDR block of the vSwitch that is automatically created for the VPC firewall.You must specify a CIDR block for the Cloud_Firewall_VSWITCH VPC that is automatically created for the VPC firewall for traffic redirection. The CIDR block does not conflict with your network plan. The subnet mask of the CIDR block must be less than or equal to 29 bits in length. The CIDR block of the vSwitch must be within the network segment of the VPC.If you do not specify a value, the CIDR block 10.219.219.216\/29 is automatically allocated.
+     */
+    readonly firewallVSwitchCidrBlock?: string | ros.IResolvable;
+
+    /**
+     * @Property memberUid: The UID of the member that is managed by your Alibaba Cloud account.
+     */
+    readonly memberUid?: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchId: The ID of the vSwitch that is used to associate with the elastic network interface (ENI) required by the VPC firewall.
+     */
+    readonly vSwitchId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosVpcFirewallCenProps`
+ *
+ * @param properties - the TypeScript properties of a `RosVpcFirewallCenProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosVpcFirewallCenPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('memberUid', ros.validateString)(properties.memberUid));
+    errors.collect(ros.propertyValidator('networkInstanceId', ros.requiredValidator)(properties.networkInstanceId));
+    errors.collect(ros.propertyValidator('networkInstanceId', ros.validateString)(properties.networkInstanceId));
+    errors.collect(ros.propertyValidator('firewallVSwitchCidrBlock', ros.validateString)(properties.firewallVSwitchCidrBlock));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('cenId', ros.requiredValidator)(properties.cenId));
+    errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
+    errors.collect(ros.propertyValidator('firewallVpcZoneId', ros.requiredValidator)(properties.firewallVpcZoneId));
+    errors.collect(ros.propertyValidator('firewallVpcZoneId', ros.validateString)(properties.firewallVpcZoneId));
+    errors.collect(ros.propertyValidator('firewallVpcCidrBlock', ros.validateString)(properties.firewallVpcCidrBlock));
+    errors.collect(ros.propertyValidator('vpcRegion', ros.requiredValidator)(properties.vpcRegion));
+    errors.collect(ros.propertyValidator('vpcRegion', ros.validateString)(properties.vpcRegion));
+    errors.collect(ros.propertyValidator('vpcFirewallName', ros.requiredValidator)(properties.vpcFirewallName));
+    errors.collect(ros.propertyValidator('vpcFirewallName', ros.validateString)(properties.vpcFirewallName));
+    errors.collect(ros.propertyValidator('firewallSwitch', ros.requiredValidator)(properties.firewallSwitch));
+    if(properties.firewallSwitch && (typeof properties.firewallSwitch) !== 'object') {
+        errors.collect(ros.propertyValidator('firewallSwitch', ros.validateAllowedValues)({
+          data: properties.firewallSwitch,
+          allowedValues: ["open","close"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('firewallSwitch', ros.validateString)(properties.firewallSwitch));
+    return errors.wrap('supplied properties not correct for "RosVpcFirewallCenProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::VpcFirewallCen` resource
+ *
+ * @param properties - the TypeScript properties of a `RosVpcFirewallCenProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::VpcFirewallCen` resource.
+ */
+// @ts-ignore TS6133
+function rosVpcFirewallCenPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosVpcFirewallCenPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'CenId': ros.stringToRosTemplate(properties.cenId),
+      'FirewallSwitch': ros.stringToRosTemplate(properties.firewallSwitch),
+      'FirewallVpcZoneId': ros.stringToRosTemplate(properties.firewallVpcZoneId),
+      'NetworkInstanceId': ros.stringToRosTemplate(properties.networkInstanceId),
+      'VpcFirewallName': ros.stringToRosTemplate(properties.vpcFirewallName),
+      'VpcRegion': ros.stringToRosTemplate(properties.vpcRegion),
+      'FirewallVpcCidrBlock': ros.stringToRosTemplate(properties.firewallVpcCidrBlock),
+      'FirewallVSwitchCidrBlock': ros.stringToRosTemplate(properties.firewallVSwitchCidrBlock),
+      'MemberUid': ros.stringToRosTemplate(properties.memberUid),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallCen`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `VpcFirewallCen` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallcen
+ */
+export class RosVpcFirewallCen extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CLOUDFW::VpcFirewallCen";
+
+    /**
+     * @Attribute VpcFirewallId: The instance ID of the VPC firewall.
+     */
+    public readonly attrVpcFirewallId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property cenId: The ID of the CEN instance.
+     */
+    public cenId: string | ros.IResolvable;
+
+    /**
+     * @Property firewallSwitch: Specifies whether to enable the VPC firewall. Valid values:
+     * open: After you create the VPC firewall, the VPC firewall is automatically enabled. This is the default value.
+     * close: After you create the VPC firewall, the VPC firewall is disabled. You can call the ModifyVpcFirewallCenSwitchStatus operation to manually enable the VPC firewall.
+     */
+    public firewallSwitch: string | ros.IResolvable;
+
+    /**
+     * @Property firewallVpcZoneId: The ID of the zone to which the vSwitch belongs. If your service is latency-sensitive, you can specify the same zone for the vSwitch of the firewall and the vSwitch of your business VPC to minimize latency.If you do not specify a value, a zone is automatically assigned for the vSwitch.
+     */
+    public firewallVpcZoneId: string | ros.IResolvable;
+
+    /**
+     * @Property networkInstanceId: The ID of the VPC for which you want to create the VPC firewall.
+     */
+    public networkInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property vpcFirewallName: The instance name of the VPC firewall.
+     */
+    public vpcFirewallName: string | ros.IResolvable;
+
+    /**
+     * @Property vpcRegion: The ID of the region to which the VPC belongs.
+     */
+    public vpcRegion: string | ros.IResolvable;
+
+    /**
+     * @Property firewallVpcCidrBlock: The CIDR block of the VPC that is automatically created for the VPC firewall. You must specify a CIDR block for the Cloud_Firewall_VPC VPC that is automatically created for the VPC firewall for traffic redirection. The subnet mask of the CIDR block must be less than or equal to 28 bits in length.If you do not specify a value, the CIDR block 10.0.0.0\/8 is automatically allocated.
+     */
+    public firewallVpcCidrBlock: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property firewallVSwitchCidrBlock: The CIDR block of the vSwitch that is automatically created for the VPC firewall.You must specify a CIDR block for the Cloud_Firewall_VSWITCH VPC that is automatically created for the VPC firewall for traffic redirection. The CIDR block does not conflict with your network plan. The subnet mask of the CIDR block must be less than or equal to 29 bits in length. The CIDR block of the vSwitch must be within the network segment of the VPC.If you do not specify a value, the CIDR block 10.219.219.216\/29 is automatically allocated.
+     */
+    public firewallVSwitchCidrBlock: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property memberUid: The UID of the member that is managed by your Alibaba Cloud account.
+     */
+    public memberUid: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property vSwitchId: The ID of the vSwitch that is used to associate with the elastic network interface (ENI) required by the VPC firewall.
+     */
+    public vSwitchId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosVpcFirewallCenProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosVpcFirewallCen.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrVpcFirewallId = this.getAtt('VpcFirewallId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.cenId = props.cenId;
+        this.firewallSwitch = props.firewallSwitch;
+        this.firewallVpcZoneId = props.firewallVpcZoneId;
+        this.networkInstanceId = props.networkInstanceId;
+        this.vpcFirewallName = props.vpcFirewallName;
+        this.vpcRegion = props.vpcRegion;
+        this.firewallVpcCidrBlock = props.firewallVpcCidrBlock;
+        this.firewallVSwitchCidrBlock = props.firewallVSwitchCidrBlock;
+        this.memberUid = props.memberUid;
+        this.vSwitchId = props.vSwitchId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            cenId: this.cenId,
+            firewallSwitch: this.firewallSwitch,
+            firewallVpcZoneId: this.firewallVpcZoneId,
+            networkInstanceId: this.networkInstanceId,
+            vpcFirewallName: this.vpcFirewallName,
+            vpcRegion: this.vpcRegion,
+            firewallVpcCidrBlock: this.firewallVpcCidrBlock,
+            firewallVSwitchCidrBlock: this.firewallVSwitchCidrBlock,
+            memberUid: this.memberUid,
+            vSwitchId: this.vSwitchId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosVpcFirewallCenPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosVpcFirewallConfigure`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallconfigure
+ */
+export interface RosVpcFirewallConfigureProps {
+
+    /**
+     * @Property firewallSwitch: The status of the VPC firewall after you create the firewall. Valid values:
+     * open: After you create the VPC firewall, the VPC firewall is automatically enabled. This is the default value.
+     * close: After you create the VPC firewall, the VPC firewall is disabled. To enable the firewall, you can call the ModifyVpcFirewallSwitchStatus operation.
+     */
+    readonly firewallSwitch: string | ros.IResolvable;
+
+    /**
+     * @Property localVpcCidrTableList: The CIDR blocks of the local VPC.
+     */
+    readonly localVpcCidrTableList: Array<RosVpcFirewallConfigure.LocalVpcCidrTableListProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property localVpcId: The ID of the local VPC.
+     */
+    readonly localVpcId: string | ros.IResolvable;
+
+    /**
+     * @Property localVpcRegion: The region ID of the local VPC.
+     */
+    readonly localVpcRegion: string | ros.IResolvable;
+
+    /**
+     * @Property peerVpcCidrTableList: The CIDR blocks of the peer VPC.
+     */
+    readonly peerVpcCidrTableList: Array<RosVpcFirewallConfigure.PeerVpcCidrTableListProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property peerVpcId: The ID of the peer VPC.
+     */
+    readonly peerVpcId: string | ros.IResolvable;
+
+    /**
+     * @Property peerVpcRegion: The region ID of the peer VPC.
+     */
+    readonly peerVpcRegion: string | ros.IResolvable;
+
+    /**
+     * @Property vpcFirewallName: The instance name of the VPC firewall.
+     */
+    readonly vpcFirewallName: string | ros.IResolvable;
+
+    /**
+     * @Property memberUid: The UID of the member that is managed by your Alibaba Cloud account.
+     */
+    readonly memberUid?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosVpcFirewallConfigureProps`
+ *
+ * @param properties - the TypeScript properties of a `RosVpcFirewallConfigureProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosVpcFirewallConfigurePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('memberUid', ros.validateString)(properties.memberUid));
+    errors.collect(ros.propertyValidator('peerVpcId', ros.requiredValidator)(properties.peerVpcId));
+    errors.collect(ros.propertyValidator('peerVpcId', ros.validateString)(properties.peerVpcId));
+    errors.collect(ros.propertyValidator('peerVpcRegion', ros.requiredValidator)(properties.peerVpcRegion));
+    errors.collect(ros.propertyValidator('peerVpcRegion', ros.validateString)(properties.peerVpcRegion));
+    errors.collect(ros.propertyValidator('localVpcRegion', ros.requiredValidator)(properties.localVpcRegion));
+    errors.collect(ros.propertyValidator('localVpcRegion', ros.validateString)(properties.localVpcRegion));
+    errors.collect(ros.propertyValidator('localVpcCidrTableList', ros.requiredValidator)(properties.localVpcCidrTableList));
+    if(properties.localVpcCidrTableList && (Array.isArray(properties.localVpcCidrTableList) || (typeof properties.localVpcCidrTableList) === 'string')) {
+        errors.collect(ros.propertyValidator('localVpcCidrTableList', ros.validateLength)({
+            data: properties.localVpcCidrTableList.length,
+            min: 1,
+            max: 1,
+          }));
+    }
+    errors.collect(ros.propertyValidator('localVpcCidrTableList', ros.listValidator(RosVpcFirewallConfigure_LocalVpcCidrTableListPropertyValidator))(properties.localVpcCidrTableList));
+    errors.collect(ros.propertyValidator('vpcFirewallName', ros.requiredValidator)(properties.vpcFirewallName));
+    errors.collect(ros.propertyValidator('vpcFirewallName', ros.validateString)(properties.vpcFirewallName));
+    errors.collect(ros.propertyValidator('peerVpcCidrTableList', ros.requiredValidator)(properties.peerVpcCidrTableList));
+    if(properties.peerVpcCidrTableList && (Array.isArray(properties.peerVpcCidrTableList) || (typeof properties.peerVpcCidrTableList) === 'string')) {
+        errors.collect(ros.propertyValidator('peerVpcCidrTableList', ros.validateLength)({
+            data: properties.peerVpcCidrTableList.length,
+            min: 1,
+            max: 1,
+          }));
+    }
+    errors.collect(ros.propertyValidator('peerVpcCidrTableList', ros.listValidator(RosVpcFirewallConfigure_PeerVpcCidrTableListPropertyValidator))(properties.peerVpcCidrTableList));
+    errors.collect(ros.propertyValidator('localVpcId', ros.requiredValidator)(properties.localVpcId));
+    errors.collect(ros.propertyValidator('localVpcId', ros.validateString)(properties.localVpcId));
+    errors.collect(ros.propertyValidator('firewallSwitch', ros.requiredValidator)(properties.firewallSwitch));
+    if(properties.firewallSwitch && (typeof properties.firewallSwitch) !== 'object') {
+        errors.collect(ros.propertyValidator('firewallSwitch', ros.validateAllowedValues)({
+          data: properties.firewallSwitch,
+          allowedValues: ["open","close"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('firewallSwitch', ros.validateString)(properties.firewallSwitch));
+    return errors.wrap('supplied properties not correct for "RosVpcFirewallConfigureProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::VpcFirewallConfigure` resource
+ *
+ * @param properties - the TypeScript properties of a `RosVpcFirewallConfigureProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::VpcFirewallConfigure` resource.
+ */
+// @ts-ignore TS6133
+function rosVpcFirewallConfigurePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosVpcFirewallConfigurePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'FirewallSwitch': ros.stringToRosTemplate(properties.firewallSwitch),
+      'LocalVpcCidrTableList': ros.listMapper(rosVpcFirewallConfigureLocalVpcCidrTableListPropertyToRosTemplate)(properties.localVpcCidrTableList),
+      'LocalVpcId': ros.stringToRosTemplate(properties.localVpcId),
+      'LocalVpcRegion': ros.stringToRosTemplate(properties.localVpcRegion),
+      'PeerVpcCidrTableList': ros.listMapper(rosVpcFirewallConfigurePeerVpcCidrTableListPropertyToRosTemplate)(properties.peerVpcCidrTableList),
+      'PeerVpcId': ros.stringToRosTemplate(properties.peerVpcId),
+      'PeerVpcRegion': ros.stringToRosTemplate(properties.peerVpcRegion),
+      'VpcFirewallName': ros.stringToRosTemplate(properties.vpcFirewallName),
+      'MemberUid': ros.stringToRosTemplate(properties.memberUid),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallConfigure`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `VpcFirewallConfigure` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallconfigure
+ */
+export class RosVpcFirewallConfigure extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CLOUDFW::VpcFirewallConfigure";
+
+    /**
+     * @Attribute VpcFirewallId: The instance ID of the VPC firewall.
+     */
+    public readonly attrVpcFirewallId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property firewallSwitch: The status of the VPC firewall after you create the firewall. Valid values:
+     * open: After you create the VPC firewall, the VPC firewall is automatically enabled. This is the default value.
+     * close: After you create the VPC firewall, the VPC firewall is disabled. To enable the firewall, you can call the ModifyVpcFirewallSwitchStatus operation.
+     */
+    public firewallSwitch: string | ros.IResolvable;
+
+    /**
+     * @Property localVpcCidrTableList: The CIDR blocks of the local VPC.
+     */
+    public localVpcCidrTableList: Array<RosVpcFirewallConfigure.LocalVpcCidrTableListProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property localVpcId: The ID of the local VPC.
+     */
+    public localVpcId: string | ros.IResolvable;
+
+    /**
+     * @Property localVpcRegion: The region ID of the local VPC.
+     */
+    public localVpcRegion: string | ros.IResolvable;
+
+    /**
+     * @Property peerVpcCidrTableList: The CIDR blocks of the peer VPC.
+     */
+    public peerVpcCidrTableList: Array<RosVpcFirewallConfigure.PeerVpcCidrTableListProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property peerVpcId: The ID of the peer VPC.
+     */
+    public peerVpcId: string | ros.IResolvable;
+
+    /**
+     * @Property peerVpcRegion: The region ID of the peer VPC.
+     */
+    public peerVpcRegion: string | ros.IResolvable;
+
+    /**
+     * @Property vpcFirewallName: The instance name of the VPC firewall.
+     */
+    public vpcFirewallName: string | ros.IResolvable;
+
+    /**
+     * @Property memberUid: The UID of the member that is managed by your Alibaba Cloud account.
+     */
+    public memberUid: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosVpcFirewallConfigureProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosVpcFirewallConfigure.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrVpcFirewallId = this.getAtt('VpcFirewallId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.firewallSwitch = props.firewallSwitch;
+        this.localVpcCidrTableList = props.localVpcCidrTableList;
+        this.localVpcId = props.localVpcId;
+        this.localVpcRegion = props.localVpcRegion;
+        this.peerVpcCidrTableList = props.peerVpcCidrTableList;
+        this.peerVpcId = props.peerVpcId;
+        this.peerVpcRegion = props.peerVpcRegion;
+        this.vpcFirewallName = props.vpcFirewallName;
+        this.memberUid = props.memberUid;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            firewallSwitch: this.firewallSwitch,
+            localVpcCidrTableList: this.localVpcCidrTableList,
+            localVpcId: this.localVpcId,
+            localVpcRegion: this.localVpcRegion,
+            peerVpcCidrTableList: this.peerVpcCidrTableList,
+            peerVpcId: this.peerVpcId,
+            peerVpcRegion: this.peerVpcRegion,
+            vpcFirewallName: this.vpcFirewallName,
+            memberUid: this.memberUid,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosVpcFirewallConfigurePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosVpcFirewallConfigure {
+    /**
+     * @stability external
+     */
+    export interface LocalVpcCidrTableListProperty {
+        /**
+         * @Property routeTableId: The ID of the route table for the local VPC.
+         */
+        readonly routeTableId: string | ros.IResolvable;
+        /**
+         * @Property routeEntryList: The value is a JSON string that contains the DestinationCidr and NextHopInstanceId parameters.
+         */
+        readonly routeEntryList?: Array<RosVpcFirewallConfigure.RouteEntryListProperty | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `LocalVpcCidrTableListProperty`
+ *
+ * @param properties - the TypeScript properties of a `LocalVpcCidrTableListProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosVpcFirewallConfigure_LocalVpcCidrTableListPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('routeTableId', ros.requiredValidator)(properties.routeTableId));
+    errors.collect(ros.propertyValidator('routeTableId', ros.validateString)(properties.routeTableId));
+    if(properties.routeEntryList && (Array.isArray(properties.routeEntryList) || (typeof properties.routeEntryList) === 'string')) {
+        errors.collect(ros.propertyValidator('routeEntryList', ros.validateLength)({
+            data: properties.routeEntryList.length,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('routeEntryList', ros.listValidator(RosVpcFirewallConfigure_RouteEntryListPropertyValidator))(properties.routeEntryList));
+    return errors.wrap('supplied properties not correct for "LocalVpcCidrTableListProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::VpcFirewallConfigure.LocalVpcCidrTableList` resource
+ *
+ * @param properties - the TypeScript properties of a `LocalVpcCidrTableListProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::VpcFirewallConfigure.LocalVpcCidrTableList` resource.
+ */
+// @ts-ignore TS6133
+function rosVpcFirewallConfigureLocalVpcCidrTableListPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosVpcFirewallConfigure_LocalVpcCidrTableListPropertyValidator(properties).assertSuccess();
+    return {
+      'RouteTableId': ros.stringToRosTemplate(properties.routeTableId),
+      'RouteEntryList': ros.listMapper(rosVpcFirewallConfigureRouteEntryListPropertyToRosTemplate)(properties.routeEntryList),
+    };
+}
+
+export namespace RosVpcFirewallConfigure {
+    /**
+     * @stability external
+     */
+    export interface PeerVpcCidrTableListProperty {
+        /**
+         * @Property routeTableId: The ID of the route table for the peer VPC.
+         */
+        readonly routeTableId: string | ros.IResolvable;
+        /**
+         * @Property routeEntryList: The value is a JSON string that contains the DestinationCidr and NextHopInstanceId parameters.
+         */
+        readonly routeEntryList?: Array<RosVpcFirewallConfigure.PeerVpcCidrTableListRouteEntryListProperty | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `PeerVpcCidrTableListProperty`
+ *
+ * @param properties - the TypeScript properties of a `PeerVpcCidrTableListProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosVpcFirewallConfigure_PeerVpcCidrTableListPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('routeTableId', ros.requiredValidator)(properties.routeTableId));
+    errors.collect(ros.propertyValidator('routeTableId', ros.validateString)(properties.routeTableId));
+    if(properties.routeEntryList && (Array.isArray(properties.routeEntryList) || (typeof properties.routeEntryList) === 'string')) {
+        errors.collect(ros.propertyValidator('routeEntryList', ros.validateLength)({
+            data: properties.routeEntryList.length,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('routeEntryList', ros.listValidator(RosVpcFirewallConfigure_PeerVpcCidrTableListRouteEntryListPropertyValidator))(properties.routeEntryList));
+    return errors.wrap('supplied properties not correct for "PeerVpcCidrTableListProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::VpcFirewallConfigure.PeerVpcCidrTableList` resource
+ *
+ * @param properties - the TypeScript properties of a `PeerVpcCidrTableListProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::VpcFirewallConfigure.PeerVpcCidrTableList` resource.
+ */
+// @ts-ignore TS6133
+function rosVpcFirewallConfigurePeerVpcCidrTableListPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosVpcFirewallConfigure_PeerVpcCidrTableListPropertyValidator(properties).assertSuccess();
+    return {
+      'RouteTableId': ros.stringToRosTemplate(properties.routeTableId),
+      'RouteEntryList': ros.listMapper(rosVpcFirewallConfigurePeerVpcCidrTableListRouteEntryListPropertyToRosTemplate)(properties.routeEntryList),
+    };
+}
+
+export namespace RosVpcFirewallConfigure {
+    /**
+     * @stability external
+     */
+    export interface PeerVpcCidrTableListRouteEntryListProperty {
+        /**
+         * @Property nextHopInstanceId: The NextHopInstanceId parameter indicates the instance ID of the next hop for the peer VPC.
+         */
+        readonly nextHopInstanceId?: string | ros.IResolvable;
+        /**
+         * @Property destinationCidr: The DestinationCidr parameter indicates the destination CIDR block of the peer VPC.
+         */
+        readonly destinationCidr: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `PeerVpcCidrTableListRouteEntryListProperty`
+ *
+ * @param properties - the TypeScript properties of a `PeerVpcCidrTableListRouteEntryListProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosVpcFirewallConfigure_PeerVpcCidrTableListRouteEntryListPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('nextHopInstanceId', ros.validateString)(properties.nextHopInstanceId));
+    errors.collect(ros.propertyValidator('destinationCidr', ros.requiredValidator)(properties.destinationCidr));
+    errors.collect(ros.propertyValidator('destinationCidr', ros.validateString)(properties.destinationCidr));
+    return errors.wrap('supplied properties not correct for "PeerVpcCidrTableListRouteEntryListProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::VpcFirewallConfigure.PeerVpcCidrTableListRouteEntryList` resource
+ *
+ * @param properties - the TypeScript properties of a `PeerVpcCidrTableListRouteEntryListProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::VpcFirewallConfigure.PeerVpcCidrTableListRouteEntryList` resource.
+ */
+// @ts-ignore TS6133
+function rosVpcFirewallConfigurePeerVpcCidrTableListRouteEntryListPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosVpcFirewallConfigure_PeerVpcCidrTableListRouteEntryListPropertyValidator(properties).assertSuccess();
+    return {
+      'NextHopInstanceId': ros.stringToRosTemplate(properties.nextHopInstanceId),
+      'DestinationCidr': ros.stringToRosTemplate(properties.destinationCidr),
+    };
+}
+
+export namespace RosVpcFirewallConfigure {
+    /**
+     * @stability external
+     */
+    export interface RouteEntryListProperty {
+        /**
+         * @Property nextHopInstanceId: The NextHopInstanceId parameter indicates the instance ID of the next hop for the local VPC.
+         */
+        readonly nextHopInstanceId?: Array<any | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property destinationCidr: The DestinationCidr parameter indicates the destination CIDR block of the local VPC.
+         */
+        readonly destinationCidr: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `RouteEntryListProperty`
+ *
+ * @param properties - the TypeScript properties of a `RouteEntryListProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosVpcFirewallConfigure_RouteEntryListPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('nextHopInstanceId', ros.listValidator(ros.validateAny))(properties.nextHopInstanceId));
+    errors.collect(ros.propertyValidator('destinationCidr', ros.requiredValidator)(properties.destinationCidr));
+    errors.collect(ros.propertyValidator('destinationCidr', ros.validateString)(properties.destinationCidr));
+    return errors.wrap('supplied properties not correct for "RouteEntryListProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::VpcFirewallConfigure.RouteEntryList` resource
+ *
+ * @param properties - the TypeScript properties of a `RouteEntryListProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::VpcFirewallConfigure.RouteEntryList` resource.
+ */
+// @ts-ignore TS6133
+function rosVpcFirewallConfigureRouteEntryListPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosVpcFirewallConfigure_RouteEntryListPropertyValidator(properties).assertSuccess();
+    return {
+      'NextHopInstanceId': ros.listMapper(ros.objectToRosTemplate)(properties.nextHopInstanceId),
+      'DestinationCidr': ros.stringToRosTemplate(properties.destinationCidr),
+    };
 }
 
 /**

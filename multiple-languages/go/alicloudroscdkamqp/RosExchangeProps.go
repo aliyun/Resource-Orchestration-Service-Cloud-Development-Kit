@@ -12,5 +12,6 @@ type RosExchangeProps struct {
 	Internal interface{} `field:"required" json:"internal" yaml:"internal"`
 	VirtualHost interface{} `field:"required" json:"virtualHost" yaml:"virtualHost"`
 	AlternateExchange interface{} `field:"optional" json:"alternateExchange" yaml:"alternateExchange"`
+	XDelayedType interface{} `field:"optional" json:"xDelayedType" yaml:"xDelayedType"`
 }
 

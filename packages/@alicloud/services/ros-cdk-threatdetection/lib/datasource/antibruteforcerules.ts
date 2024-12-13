@@ -19,7 +19,7 @@ export interface AntiBruteForceRulesProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ThreatDetection::AntiBruteForceRules`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ThreatDetection::AntiBruteForceRules`, which is used to query the basic information about defense rules against brute-force attacks.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAntiBruteForceRules`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-threatdetection-antibruteforcerules
  */

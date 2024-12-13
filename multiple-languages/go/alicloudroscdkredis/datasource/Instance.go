@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::REDIS::Instance`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::REDIS::Instance`, which is used to query the information about a Tair (Redis OSS-compatible) instance.
 type Instance interface {
 	alicloudroscdkcore.Resource
 	// Attribute ArchitectureType: Architecture type.
@@ -69,8 +69,6 @@ type Instance interface {
 	// Attribute ResourceGroupId: Resource group id.
 	AttrResourceGroupId() alicloudroscdkcore.IResolvable
 	// Attribute SecondaryZoneId: The ID of the standby zone.
-	//
-	// You can call the [DescribeZones](~~ 94527 ~~) operation.
 	AttrSecondaryZoneId() alicloudroscdkcore.IResolvable
 	// Attribute SecurityGroupId: Security group id.
 	AttrSecurityGroupId() alicloudroscdkcore.IResolvable

@@ -105,20 +105,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             }
         }
 
-        /// <summary>Property networkType: The instance network type.</summary>
-        /// <remarks>
-        /// Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
-        /// </remarks>
-        [JsiiProperty(name: "networkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? NetworkType
-        {
-            get
-            {
-                return null;
-            }
-        }
-
         /// <summary>Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.</summary>
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -381,17 +367,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             [JsiiOptional]
             [JsiiProperty(name: "hiddenZoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? HiddenZoneId
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <summary>Property networkType: The instance network type.</summary>
-            /// <remarks>
-            /// Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "networkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? NetworkType
             {
                 get => GetInstanceProperty<object?>();
             }

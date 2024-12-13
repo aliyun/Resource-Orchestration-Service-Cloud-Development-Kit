@@ -933,6 +933,12 @@ function RosLoadBalancer_DeletionProtectionConfigPropertyValidator(properties: a
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('enabled', ros.requiredValidator)(properties.enabled));
+    if(properties.enabled && (typeof properties.enabled) !== 'object') {
+        errors.collect(ros.propertyValidator('enabled', ros.validateAllowedValues)({
+          data: properties.enabled,
+          allowedValues: ["true","false","False","True"],
+        }));
+    }
     errors.collect(ros.propertyValidator('enabled', ros.validateString)(properties.enabled));
     errors.collect(ros.propertyValidator('reason', ros.validateString)(properties.reason));
     return errors.wrap('supplied properties not correct for "DeletionProtectionConfigProperty"');

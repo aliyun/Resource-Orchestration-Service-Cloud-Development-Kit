@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::CommonBandwidthPackage`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::CommonBandwidthPackage`, which is used to query the information about an Internet Shared Bandwidth instance in a region.
 type CommonBandwidthPackage interface {
 	alicloudroscdkcore.Resource
 	// Attribute Bandwidth: The maximum bandwidth of the Internet Shared Bandwidth instance.

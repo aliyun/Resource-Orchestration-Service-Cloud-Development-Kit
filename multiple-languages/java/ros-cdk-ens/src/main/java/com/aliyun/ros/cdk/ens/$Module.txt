@@ -49,7 +49,15 @@
 @alicloud/ros-cdk-ens.SnapshotProps=com.aliyun.ros.cdk.ens.SnapshotProps
 @alicloud/ros-cdk-ens.VSwitch=com.aliyun.ros.cdk.ens.VSwitch
 @alicloud/ros-cdk-ens.VSwitchProps=com.aliyun.ros.cdk.ens.VSwitchProps
+@alicloud/ros-cdk-ens.datasource.Image=com.aliyun.ros.cdk.ens.datasource.Image
+@alicloud/ros-cdk-ens.datasource.ImageProps=com.aliyun.ros.cdk.ens.datasource.ImageProps
+@alicloud/ros-cdk-ens.datasource.Instance=com.aliyun.ros.cdk.ens.datasource.Instance
+@alicloud/ros-cdk-ens.datasource.InstanceProps=com.aliyun.ros.cdk.ens.datasource.InstanceProps
 @alicloud/ros-cdk-ens.datasource.Instances=com.aliyun.ros.cdk.ens.datasource.Instances
 @alicloud/ros-cdk-ens.datasource.InstancesProps=com.aliyun.ros.cdk.ens.datasource.InstancesProps
+@alicloud/ros-cdk-ens.datasource.RosImage=com.aliyun.ros.cdk.ens.datasource.RosImage
+@alicloud/ros-cdk-ens.datasource.RosImageProps=com.aliyun.ros.cdk.ens.datasource.RosImageProps
+@alicloud/ros-cdk-ens.datasource.RosInstance=com.aliyun.ros.cdk.ens.datasource.RosInstance
+@alicloud/ros-cdk-ens.datasource.RosInstanceProps=com.aliyun.ros.cdk.ens.datasource.RosInstanceProps
 @alicloud/ros-cdk-ens.datasource.RosInstances=com.aliyun.ros.cdk.ens.datasource.RosInstances
 @alicloud/ros-cdk-ens.datasource.RosInstancesProps=com.aliyun.ros.cdk.ens.datasource.RosInstancesProps

@@ -76,6 +76,11 @@ export interface ClusterProps {
     readonly coldStorageSize?: number | ros.IResolvable;
 
     /**
+     * Property deletionProtection: Specifies whether to enable the release protection feature for the cluster. Default is false.
+     */
+    readonly deletionProtection?: boolean | ros.IResolvable;
+
+    /**
      * Property diskSize: The disk size of the node. Unit: GB.
      * For ApsaraDB for HBase in single-node mode, the disk size ranges from 20 GB to 500
      * GB and the step size is 1 GB.
@@ -222,6 +227,7 @@ export class Cluster extends ros.Resource {
             vSwitchId: props.vSwitchId,
             period: props.period,
             encryptionKey: props.encryptionKey,
+            deletionProtection: props.deletionProtection,
             payType: props.payType,
             masterInstanceType: props.masterInstanceType,
             diskType: props.diskType,

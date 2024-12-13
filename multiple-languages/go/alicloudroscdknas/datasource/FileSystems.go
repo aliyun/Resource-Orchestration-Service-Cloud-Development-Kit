@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::NAS::FileSystems`, which is used to query the details of file systems.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::NAS::FileSystems`, which is used to query the information about file systems.
 type FileSystems interface {
 	alicloudroscdkcore.Resource
 	// Attribute FileSystemIds: The list of file system IDs.

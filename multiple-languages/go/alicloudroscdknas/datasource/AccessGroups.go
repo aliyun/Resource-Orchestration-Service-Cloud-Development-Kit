@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::NAS::AccessGroups`, which is used to query the details of permission groups.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::NAS::AccessGroups`, which is used to query the information about permission groups.
 type AccessGroups interface {
 	alicloudroscdkcore.Resource
 	// Attribute AccessGroupNames: The list of access group names.

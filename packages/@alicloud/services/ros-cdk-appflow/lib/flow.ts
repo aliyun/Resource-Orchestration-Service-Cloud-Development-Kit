@@ -25,6 +25,13 @@ export interface FlowProps {
     readonly flowId?: string | ros.IResolvable;
 
     /**
+     * Property flowStatus: The status of the flow. Allowed values:
+     * Enable: enable flow
+     * Disable: disable flow
+     */
+    readonly flowStatus?: string | ros.IResolvable;
+
+    /**
      * Property launchFlow: Whether to launch the flow.
      */
     readonly launchFlow?: boolean | ros.IResolvable;
@@ -83,7 +90,8 @@ export class Flow extends ros.Resource {
             parameters: props.parameters,
             flowDesc: props.flowDesc,
             flowName: props.flowName,
-            launchFlow: props.launchFlow,
+            launchFlow: props.launchFlow === undefined || props.launchFlow === null ? true : props.launchFlow,
+            flowStatus: props.flowStatus === undefined || props.flowStatus === null ? 'Enable' : props.flowStatus,
             templateId: props.templateId,
             template: props.template,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

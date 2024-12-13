@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::VPC::CommonBandwidthPackage</code>.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::VPC::CommonBandwidthPackage</code>, which is used to query the information about an Internet Shared Bandwidth instance in a region.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:34.360Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:13.169Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.CommonBandwidthPackage")
 public class CommonBandwidthPackage extends com.aliyun.ros.cdk.core.Resource {
 

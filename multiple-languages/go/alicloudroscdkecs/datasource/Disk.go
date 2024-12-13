@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Disk`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Disk`, which is used to query the information about a cloud disk.
 type Disk interface {
 	alicloudroscdkcore.Resource
 	// Attribute AttachedTime: The attached time.

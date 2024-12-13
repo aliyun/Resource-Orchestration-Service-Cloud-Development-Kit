@@ -1,7 +1,17 @@
+@alicloud/ros-cdk-pai.CodeSource=com.aliyun.ros.cdk.pai.CodeSource
+@alicloud/ros-cdk-pai.CodeSourceProps=com.aliyun.ros.cdk.pai.CodeSourceProps
 @alicloud/ros-cdk-pai.Dataset=com.aliyun.ros.cdk.pai.Dataset
 @alicloud/ros-cdk-pai.DatasetProps=com.aliyun.ros.cdk.pai.DatasetProps
+@alicloud/ros-cdk-pai.Experiment=com.aliyun.ros.cdk.pai.Experiment
+@alicloud/ros-cdk-pai.ExperimentProps=com.aliyun.ros.cdk.pai.ExperimentProps
+@alicloud/ros-cdk-pai.RosCodeSource=com.aliyun.ros.cdk.pai.RosCodeSource
+@alicloud/ros-cdk-pai.RosCodeSourceProps=com.aliyun.ros.cdk.pai.RosCodeSourceProps
 @alicloud/ros-cdk-pai.RosDataset=com.aliyun.ros.cdk.pai.RosDataset
 @alicloud/ros-cdk-pai.RosDatasetProps=com.aliyun.ros.cdk.pai.RosDatasetProps
+@alicloud/ros-cdk-pai.RosExperiment=com.aliyun.ros.cdk.pai.RosExperiment
+@alicloud/ros-cdk-pai.RosExperimentProps=com.aliyun.ros.cdk.pai.RosExperimentProps
+@alicloud/ros-cdk-pai.RosRun=com.aliyun.ros.cdk.pai.RosRun
+@alicloud/ros-cdk-pai.RosRunProps=com.aliyun.ros.cdk.pai.RosRunProps
 @alicloud/ros-cdk-pai.RosService=com.aliyun.ros.cdk.pai.RosService
 @alicloud/ros-cdk-pai.RosServiceProps=com.aliyun.ros.cdk.pai.RosServiceProps
 @alicloud/ros-cdk-pai.RosWorkspace=com.aliyun.ros.cdk.pai.RosWorkspace
@@ -16,6 +26,8 @@
 @alicloud/ros-cdk-pai.RosWorkspaceResourceMaxCompute.QuotasProperty=com.aliyun.ros.cdk.pai.RosWorkspaceResourceMaxCompute$QuotasProperty
 @alicloud/ros-cdk-pai.RosWorkspaceResourceMaxCompute.ResourcesProperty=com.aliyun.ros.cdk.pai.RosWorkspaceResourceMaxCompute$ResourcesProperty
 @alicloud/ros-cdk-pai.RosWorkspaceResourceMaxComputeProps=com.aliyun.ros.cdk.pai.RosWorkspaceResourceMaxComputeProps
+@alicloud/ros-cdk-pai.Run=com.aliyun.ros.cdk.pai.Run
+@alicloud/ros-cdk-pai.RunProps=com.aliyun.ros.cdk.pai.RunProps
 @alicloud/ros-cdk-pai.Service=com.aliyun.ros.cdk.pai.Service
 @alicloud/ros-cdk-pai.ServiceProps=com.aliyun.ros.cdk.pai.ServiceProps
 @alicloud/ros-cdk-pai.Workspace=com.aliyun.ros.cdk.pai.Workspace

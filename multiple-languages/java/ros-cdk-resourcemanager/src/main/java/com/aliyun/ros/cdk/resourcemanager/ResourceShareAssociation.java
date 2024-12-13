@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.resourcemanager;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ResourceManager::ResourceShareAssociation</code>, which is used to associate a shared resource or a resource user.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:33.045Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:11.326Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.ResourceShareAssociation")
 public class ResourceShareAssociation extends com.aliyun.ros.cdk.core.Resource {
 

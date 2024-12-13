@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::SLS::Logstores</code>, which is used to query Logstores.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:33.779Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:12.542Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.datasource.Logstores")
 public class Logstores extends com.aliyun.ros.cdk.core.Resource {
 

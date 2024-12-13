@@ -22,24 +22,6 @@ export interface LoadBalancerProps {
     readonly addressType?: string | ros.IResolvable;
 
     /**
-     * Property autoPay: Specifies whether to automatically pay for the subscription Internet-facing CLB instance. Valid values:
-     * - **true**: automatically pays for the CLB instance. After you call this operation, the system automatically completes the payment and creates the CLB instance.- **false** (default): After you call the operation, the order is created but the payment is not completed. You can view the pending order in the console. The CLB instance will not be created until you complete the payment.**Note** This parameter is supported only by subscription instances created on the Alibaba Cloud China site.
-     */
-    readonly autoPay?: boolean | ros.IResolvable;
-
-    /**
-     * Property autoRenew: Indicates whether automatic renewal is enabled for the instance. Valid values:- **true**: Automatic renewal is enabled.- **false** (default): Automatic renewal is not enabled. You must renew the instance manually.
-     */
-    readonly autoRenew?: boolean | ros.IResolvable;
-
-    /**
-     * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required:
-     * When PricingCycle = month, the value range is 1 to 9 or 12, 24, 36.
-     * When PeriodUnit = year, the value range is 1-3.
-     */
-    readonly autoRenewPeriod?: number | ros.IResolvable;
-
-    /**
      * Property bandwidth: The bandwidth for network, unit in Mbps(Mega bit per second). Default is 1. If InternetChargeType is specified as "paybytraffic", this property will be ignore and please specify the "Bandwidth" in ALIYUN::SLB::Listener.
      */
     readonly bandwidth?: number | ros.IResolvable;
@@ -48,14 +30,6 @@ export interface LoadBalancerProps {
      * Property deletionProtection: Whether to enable deletion protection.
      */
     readonly deletionProtection?: boolean | ros.IResolvable;
-
-    /**
-     * Property duration: Optional. The subscription duration of a Subscription Internet instance.
-     * Valid values:
-     * If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36, 48, 60.
-     * If PricingCycle is year, the value range is 1 to 5.
-     */
-    readonly duration?: number | ros.IResolvable;
 
     /**
      * Property instanceChargeType: Instance billing method. Valid value:
@@ -107,18 +81,6 @@ export interface LoadBalancerProps {
      * Default value is empty.
      */
     readonly modificationProtectionStatus?: string | ros.IResolvable;
-
-    /**
-     * Property payType: Optional. The billing method of the instance to be created.
-     * Valid value: PayOnDemand (Pay-As-You-Go) | PrePay (Subscription)
-     */
-    readonly payType?: string | ros.IResolvable;
-
-    /**
-     * Property pricingCycle: Optional. The duration of the Subscription-billed Internet instance to be created.
-     * Valid values: month | year.
-     */
-    readonly pricingCycle?: string | ros.IResolvable;
 
     /**
      * Property resourceGroupId: Resource group id.
@@ -245,17 +207,11 @@ export class LoadBalancer extends ros.Resource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosLoadBalancer = new RosLoadBalancer(this, id,  {
-            autoRenewPeriod: props.autoRenewPeriod,
             resourceGroupId: props.resourceGroupId,
             instanceChargeType: props.instanceChargeType,
-            pricingCycle: props.pricingCycle === undefined || props.pricingCycle === null ? 'month' : props.pricingCycle,
-            autoRenew: props.autoRenew,
-            vSwitchId: props.vSwitchId,
             addressIpVersion: props.addressIpVersion,
-            duration: props.duration === undefined || props.duration === null ? 1 : props.duration,
-            autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
+            vSwitchId: props.vSwitchId,
             deletionProtection: props.deletionProtection === undefined || props.deletionProtection === null ? false : props.deletionProtection,
-            payType: props.payType,
             slaveZoneId: props.slaveZoneId,
             modificationProtectionStatus: props.modificationProtectionStatus,
             internetChargeType: props.internetChargeType === undefined || props.internetChargeType === null ? 'paybytraffic' : props.internetChargeType,

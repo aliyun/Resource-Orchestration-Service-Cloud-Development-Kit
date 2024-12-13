@@ -49,7 +49,7 @@ export interface PostgresExtensionsProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::PostgresExtensions`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::PostgresExtensions`, which is used to install extensions on a database.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPostgresExtensions`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-postgresextensions
  */

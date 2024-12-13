@@ -104,6 +104,10 @@ func (j *jsiiProxy_RosInstance) validateSetDeletionForceParameters(val interface
 	return nil
 }
 
+func (j *jsiiProxy_RosInstance) validateSetDeletionProtectionParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosInstance) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
 	return nil
 }

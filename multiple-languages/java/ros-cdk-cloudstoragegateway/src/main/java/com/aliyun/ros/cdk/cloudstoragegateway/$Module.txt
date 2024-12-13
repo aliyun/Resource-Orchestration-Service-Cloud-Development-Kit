@@ -2,3 +2,11 @@
 @alicloud/ros-cdk-cloudstoragegateway.RosStorageBundleProps=com.aliyun.ros.cdk.cloudstoragegateway.RosStorageBundleProps
 @alicloud/ros-cdk-cloudstoragegateway.StorageBundle=com.aliyun.ros.cdk.cloudstoragegateway.StorageBundle
 @alicloud/ros-cdk-cloudstoragegateway.StorageBundleProps=com.aliyun.ros.cdk.cloudstoragegateway.StorageBundleProps
+@alicloud/ros-cdk-cloudstoragegateway.datasource.RosStorageBundle=com.aliyun.ros.cdk.cloudstoragegateway.datasource.RosStorageBundle
+@alicloud/ros-cdk-cloudstoragegateway.datasource.RosStorageBundleProps=com.aliyun.ros.cdk.cloudstoragegateway.datasource.RosStorageBundleProps
+@alicloud/ros-cdk-cloudstoragegateway.datasource.RosStorageBundles=com.aliyun.ros.cdk.cloudstoragegateway.datasource.RosStorageBundles
+@alicloud/ros-cdk-cloudstoragegateway.datasource.RosStorageBundlesProps=com.aliyun.ros.cdk.cloudstoragegateway.datasource.RosStorageBundlesProps
+@alicloud/ros-cdk-cloudstoragegateway.datasource.StorageBundle=com.aliyun.ros.cdk.cloudstoragegateway.datasource.StorageBundle
+@alicloud/ros-cdk-cloudstoragegateway.datasource.StorageBundleProps=com.aliyun.ros.cdk.cloudstoragegateway.datasource.StorageBundleProps
+@alicloud/ros-cdk-cloudstoragegateway.datasource.StorageBundles=com.aliyun.ros.cdk.cloudstoragegateway.datasource.StorageBundles
+@alicloud/ros-cdk-cloudstoragegateway.datasource.StorageBundlesProps=com.aliyun.ros.cdk.cloudstoragegateway.datasource.StorageBundlesProps

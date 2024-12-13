@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sls
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Logstore`, which is used to create a Logstore in a Log Service project.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Logstore`, which is used to create a Logstore in a Simple Log Service (SLS) project.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLogstore`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logstore

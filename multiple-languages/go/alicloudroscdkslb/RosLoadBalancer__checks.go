@@ -269,97 +269,6 @@ func (j *jsiiProxy_RosLoadBalancer) validateSetAddressTypeParameters(val interfa
 	return nil
 }
 
-func (j *jsiiProxy_RosLoadBalancer) validateSetAutoPayParameters(val interface{}) error {
-	switch val.(type) {
-	case *bool:
-		// ok
-	case bool:
-		// ok
-	case alicloudroscdkcore.IResolvable:
-		// ok
-	default:
-		if !_jsii_.IsAnonymousProxy(val) {
-			return fmt.Errorf("parameter val must be one of the allowed types: *bool, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
-		}
-	}
-
-	return nil
-}
-
-func (j *jsiiProxy_RosLoadBalancer) validateSetAutoRenewParameters(val interface{}) error {
-	switch val.(type) {
-	case *bool:
-		// ok
-	case bool:
-		// ok
-	case alicloudroscdkcore.IResolvable:
-		// ok
-	default:
-		if !_jsii_.IsAnonymousProxy(val) {
-			return fmt.Errorf("parameter val must be one of the allowed types: *bool, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
-		}
-	}
-
-	return nil
-}
-
-func (j *jsiiProxy_RosLoadBalancer) validateSetAutoRenewPeriodParameters(val interface{}) error {
-	switch val.(type) {
-	case *float64:
-		// ok
-	case float64:
-		// ok
-	case *int:
-		// ok
-	case int:
-		// ok
-	case *uint:
-		// ok
-	case uint:
-		// ok
-	case *int8:
-		// ok
-	case int8:
-		// ok
-	case *int16:
-		// ok
-	case int16:
-		// ok
-	case *int32:
-		// ok
-	case int32:
-		// ok
-	case *int64:
-		// ok
-	case int64:
-		// ok
-	case *uint8:
-		// ok
-	case uint8:
-		// ok
-	case *uint16:
-		// ok
-	case uint16:
-		// ok
-	case *uint32:
-		// ok
-	case uint32:
-		// ok
-	case *uint64:
-		// ok
-	case uint64:
-		// ok
-	case alicloudroscdkcore.IResolvable:
-		// ok
-	default:
-		if !_jsii_.IsAnonymousProxy(val) {
-			return fmt.Errorf("parameter val must be one of the allowed types: *float64, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
-		}
-	}
-
-	return nil
-}
-
 func (j *jsiiProxy_RosLoadBalancer) validateSetBandwidthParameters(val interface{}) error {
 	switch val.(type) {
 	case *float64:
@@ -428,63 +337,6 @@ func (j *jsiiProxy_RosLoadBalancer) validateSetDeletionProtectionParameters(val 
 	default:
 		if !_jsii_.IsAnonymousProxy(val) {
 			return fmt.Errorf("parameter val must be one of the allowed types: *bool, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
-		}
-	}
-
-	return nil
-}
-
-func (j *jsiiProxy_RosLoadBalancer) validateSetDurationParameters(val interface{}) error {
-	switch val.(type) {
-	case *float64:
-		// ok
-	case float64:
-		// ok
-	case *int:
-		// ok
-	case int:
-		// ok
-	case *uint:
-		// ok
-	case uint:
-		// ok
-	case *int8:
-		// ok
-	case int8:
-		// ok
-	case *int16:
-		// ok
-	case int16:
-		// ok
-	case *int32:
-		// ok
-	case int32:
-		// ok
-	case *int64:
-		// ok
-	case int64:
-		// ok
-	case *uint8:
-		// ok
-	case uint8:
-		// ok
-	case *uint16:
-		// ok
-	case uint16:
-		// ok
-	case *uint32:
-		// ok
-	case uint32:
-		// ok
-	case *uint64:
-		// ok
-	case uint64:
-		// ok
-	case alicloudroscdkcore.IResolvable:
-		// ok
-	default:
-		if !_jsii_.IsAnonymousProxy(val) {
-			return fmt.Errorf("parameter val must be one of the allowed types: *float64, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
 		}
 	}
 
@@ -602,40 +454,6 @@ func (j *jsiiProxy_RosLoadBalancer) validateSetModificationProtectionReasonParam
 }
 
 func (j *jsiiProxy_RosLoadBalancer) validateSetModificationProtectionStatusParameters(val interface{}) error {
-	switch val.(type) {
-	case *string:
-		// ok
-	case string:
-		// ok
-	case alicloudroscdkcore.IResolvable:
-		// ok
-	default:
-		if !_jsii_.IsAnonymousProxy(val) {
-			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
-		}
-	}
-
-	return nil
-}
-
-func (j *jsiiProxy_RosLoadBalancer) validateSetPayTypeParameters(val interface{}) error {
-	switch val.(type) {
-	case *string:
-		// ok
-	case string:
-		// ok
-	case alicloudroscdkcore.IResolvable:
-		// ok
-	default:
-		if !_jsii_.IsAnonymousProxy(val) {
-			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
-		}
-	}
-
-	return nil
-}
-
-func (j *jsiiProxy_RosLoadBalancer) validateSetPricingCycleParameters(val interface{}) error {
 	switch val.(type) {
 	case *string:
 		// ok

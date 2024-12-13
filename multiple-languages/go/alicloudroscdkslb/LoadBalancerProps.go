@@ -15,32 +15,12 @@ type LoadBalancerProps struct {
 	// - **internet** (default): After an internet-facing CLB instance is created, the system assigns a public IP address to the CLB instance. Then, the CLB instance can forward requests over the Internet.
 	// - **intranet**: After an internal-facing CLB instance is created, the system assigns a private IP address to the CLB instance. Then, the CLB instance can forward requests only over the internal networks.
 	AddressType interface{} `field:"optional" json:"addressType" yaml:"addressType"`
-	// Property autoPay: Specifies whether to automatically pay for the subscription Internet-facing CLB instance.
-	//
-	// Valid values:
-	// - **true**: automatically pays for the CLB instance. After you call this operation, the system automatically completes the payment and creates the CLB instance.- **false** (default): After you call the operation, the order is created but the payment is not completed. You can view the pending order in the console. The CLB instance will not be created until you complete the payment.**Note** This parameter is supported only by subscription instances created on the Alibaba Cloud China site.
-	AutoPay interface{} `field:"optional" json:"autoPay" yaml:"autoPay"`
-	// Property autoRenew: Indicates whether automatic renewal is enabled for the instance.
-	//
-	// Valid values:- **true**: Automatic renewal is enabled.- **false** (default): Automatic renewal is not enabled. You must renew the instance manually.
-	AutoRenew interface{} `field:"optional" json:"autoRenew" yaml:"autoRenew"`
-	// Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1 to 9 or 12, 24, 36.
-	//
-	// When PeriodUnit = year, the value range is 1-3.
-	AutoRenewPeriod interface{} `field:"optional" json:"autoRenewPeriod" yaml:"autoRenewPeriod"`
 	// Property bandwidth: The bandwidth for network, unit in Mbps(Mega bit per second).
 	//
 	// Default is 1. If InternetChargeType is specified as "paybytraffic", this property will be ignore and please specify the "Bandwidth" in ALIYUN::SLB::Listener.
 	Bandwidth interface{} `field:"optional" json:"bandwidth" yaml:"bandwidth"`
 	// Property deletionProtection: Whether to enable deletion protection.
 	DeletionProtection interface{} `field:"optional" json:"deletionProtection" yaml:"deletionProtection"`
-	// Property duration: Optional.
-	//
-	// The subscription duration of a Subscription Internet instance.
-	// Valid values:
-	// If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36, 48, 60.
-	// If PricingCycle is year, the value range is 1 to 5.
-	Duration interface{} `field:"optional" json:"duration" yaml:"duration"`
 	// Property instanceChargeType: Instance billing method.
 	//
 	// Valid value:
@@ -79,16 +59,6 @@ type LoadBalancerProps struct {
 	ModificationProtectionReason interface{} `field:"optional" json:"modificationProtectionReason" yaml:"modificationProtectionReason"`
 	// Property modificationProtectionStatus: NonProtection or empty: means no restriction on modification protection ConsoleProtection: Modify instance protection status by console Default value is empty.
 	ModificationProtectionStatus interface{} `field:"optional" json:"modificationProtectionStatus" yaml:"modificationProtectionStatus"`
-	// Property payType: Optional.
-	//
-	// The billing method of the instance to be created.
-	// Valid value: PayOnDemand (Pay-As-You-Go) | PrePay (Subscription).
-	PayType interface{} `field:"optional" json:"payType" yaml:"payType"`
-	// Property pricingCycle: Optional.
-	//
-	// The duration of the Subscription-billed Internet instance to be created.
-	// Valid values: month | year.
-	PricingCycle interface{} `field:"optional" json:"pricingCycle" yaml:"pricingCycle"`
 	// Property resourceGroupId: Resource group id.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 	// Property slaveZoneId: The slave zone id to create load balancer instance.

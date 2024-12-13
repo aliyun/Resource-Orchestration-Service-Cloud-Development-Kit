@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cen.Datasource
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::CEN::CenBandwidthPackages`, which is used to query the details of Cloud Enterprise Network (CEN) bandwidth plans within the current Alibaba Cloud account.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::CEN::CenBandwidthPackages`, which is used to query the information about Cloud Enterprise Network (CEN) bandwidth plans within the logon account.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `CenBandwidthPackages` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-cenbandwidthpackages

@@ -25,13 +25,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
             get;
         }
 
-        /// <summary>Property configRules: List of rules in the compliance package.</summary>
-        [JsiiProperty(name: "configRules", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-config.RosAggregateCompliancePack.ConfigRulesProperty\"}]}},\"kind\":\"array\"}}]}}")]
-        object ConfigRules
-        {
-            get;
-        }
-
         /// <summary>Property description: The description of compliance pack.</summary>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object Description
@@ -63,6 +56,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
             }
         }
 
+        /// <summary>Property configRules: List of rules in the compliance package.</summary>
+        /// <remarks>
+        /// Note: Either this parameter or TemplateContent must be set.
+        /// </remarks>
+        [JsiiProperty(name: "configRules", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-config.RosAggregateCompliancePack.ConfigRulesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ConfigRules
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property defaultEnable: Whether the rule supports quick activation.</summary>
         /// <remarks>
         /// Value:
@@ -72,6 +79,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
         [JsiiProperty(name: "defaultEnable", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? DefaultEnable
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property excludeRegionIdsScope: The compliance package is invalid for the specified region ID.</summary>
+        [JsiiProperty(name: "excludeRegionIdsScope", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ExcludeRegionIdsScope
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property excludeResourceGroupIdsScope: The compliance package is invalid for the specified resource group ID.</summary>
+        [JsiiProperty(name: "excludeResourceGroupIdsScope", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ExcludeResourceGroupIdsScope
         {
             get
             {
@@ -112,6 +141,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
             }
         }
 
+        /// <summary>Property resourceIdsScope: The compliance package only takes effect on the specified resource ID.</summary>
+        [JsiiProperty(name: "resourceIdsScope", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ResourceIdsScope
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property tagKeyScope: Compliance packages only take effect on resources bound to the specified tag key.</summary>
         [JsiiProperty(name: "tagKeyScope", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -127,6 +167,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
         [JsiiProperty(name: "tagValueScope", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? TagValueScope
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property templateContent: Template information used to generate compliance packages.</summary>
+        /// <remarks>
+        /// Note: Either this parameter or ConfigRules must be set.
+        /// </remarks>
+        [JsiiProperty(name: "templateContent", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? TemplateContent
         {
             get
             {
@@ -159,13 +213,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property configRules: List of rules in the compliance package.</summary>
-            [JsiiProperty(name: "configRules", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-config.RosAggregateCompliancePack.ConfigRulesProperty\"}]}},\"kind\":\"array\"}}]}}")]
-            public object ConfigRules
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
             /// <summary>Property description: The description of compliance pack.</summary>
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Description
@@ -194,6 +241,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property configRules: List of rules in the compliance package.</summary>
+            /// <remarks>
+            /// Note: Either this parameter or TemplateContent must be set.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "configRules", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-config.RosAggregateCompliancePack.ConfigRulesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? ConfigRules
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property defaultEnable: Whether the rule supports quick activation.</summary>
             /// <remarks>
             /// Value:
@@ -203,6 +261,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
             [JsiiOptional]
             [JsiiProperty(name: "defaultEnable", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DefaultEnable
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property excludeRegionIdsScope: The compliance package is invalid for the specified region ID.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "excludeRegionIdsScope", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ExcludeRegionIdsScope
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property excludeResourceGroupIdsScope: The compliance package is invalid for the specified resource group ID.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "excludeResourceGroupIdsScope", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ExcludeResourceGroupIdsScope
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -231,6 +305,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property resourceIdsScope: The compliance package only takes effect on the specified resource ID.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "resourceIdsScope", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResourceIdsScope
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property tagKeyScope: Compliance packages only take effect on resources bound to the specified tag key.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "tagKeyScope", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -243,6 +325,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
             [JsiiOptional]
             [JsiiProperty(name: "tagValueScope", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? TagValueScope
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property templateContent: Template information used to generate compliance packages.</summary>
+            /// <remarks>
+            /// Note: Either this parameter or ConfigRules must be set.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "templateContent", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? TemplateContent
             {
                 get => GetInstanceProperty<object?>();
             }

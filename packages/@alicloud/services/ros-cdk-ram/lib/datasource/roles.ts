@@ -24,7 +24,7 @@ export interface RolesProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::RAM::Roles`, which is used to query the details of RAM roles.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::RAM::Roles`, which is used to query the information about Resource Access Management (RAM) roles.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRoles`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-roles
  */

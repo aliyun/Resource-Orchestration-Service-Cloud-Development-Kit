@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.oss;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::OSS::ObjectAcl</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::OSS::ObjectAcl</code>, which is used to modify the access control list (ACL) of an Object Storage Service (OSS) object.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.977Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:09.982Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.ObjectAcl")
 public class ObjectAcl extends com.aliyun.ros.cdk.core.Resource {
 

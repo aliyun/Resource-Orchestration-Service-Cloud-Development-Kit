@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::Dataset`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::Dataset`, which is used to query a dataset.
 type Dataset interface {
 	alicloudroscdkcore.Resource
 	// Attribute Accessibility: Workspace visibility.

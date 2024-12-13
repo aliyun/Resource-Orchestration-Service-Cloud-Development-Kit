@@ -493,23 +493,6 @@ func (j *jsiiProxy_RosInstance) validateSetHiddenZoneIdParameters(val interface{
 	return nil
 }
 
-func (j *jsiiProxy_RosInstance) validateSetNetworkTypeParameters(val interface{}) error {
-	switch val.(type) {
-	case *string:
-		// ok
-	case string:
-		// ok
-	case alicloudroscdkcore.IResolvable:
-		// ok
-	default:
-		if !_jsii_.IsAnonymousProxy(val) {
-			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
-		}
-	}
-
-	return nil
-}
-
 func (j *jsiiProxy_RosInstance) validateSetPeriodParameters(val interface{}) error {
 	switch val.(type) {
 	case *float64:
@@ -561,6 +544,30 @@ func (j *jsiiProxy_RosInstance) validateSetPeriodParameters(val interface{}) err
 	default:
 		if !_jsii_.IsAnonymousProxy(val) {
 			return fmt.Errorf("parameter val must be one of the allowed types: *float64, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosInstance) validateSetPrivateConnectionsParameters(val interface{}) error {
+	switch val.(type) {
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	case *RosInstance_PrivateConnectionsProperty:
+		val := val.(*RosInstance_PrivateConnectionsProperty)
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	case RosInstance_PrivateConnectionsProperty:
+		val_ := val.(RosInstance_PrivateConnectionsProperty)
+		val := &val_
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosInstance_PrivateConnectionsProperty; received %#v (a %T)", val, val)
 		}
 	}
 

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.sag;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-grantccntocen
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:33.369Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:11.811Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.RosGrantCcnToCenProps")
 @software.amazon.jsii.Jsii.Proxy(RosGrantCcnToCenProps.Jsii$Proxy.class)
 public interface RosGrantCcnToCenProps extends software.amazon.jsii.JsiiSerializable {

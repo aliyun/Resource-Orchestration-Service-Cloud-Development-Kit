@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.hbase;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbase-multizonecluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.116Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:08.837Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbase.$Module.class, fqn = "@alicloud/ros-cdk-hbase.MultiZoneClusterProps")
 @software.amazon.jsii.Jsii.Proxy(MultiZoneClusterProps.Jsii$Proxy.class)
 public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -161,6 +161,15 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
     }
 
     /**
+     * Property deletionProtection: Specifies whether to enable the release protection feature for the cluster.
+     * <p>
+     * Default is false.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionProtection() {
+        return null;
+    }
+
+    /**
      * Property masterInstanceType: The instance type of the master node.
      * <p>
      * You can call the DescribeAvailableResource operation to obtain the value of this parameter.
@@ -255,6 +264,7 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
         java.lang.Object standbyZoneId;
         java.lang.Object autoRenewPeriod;
         java.lang.Object clusterName;
+        java.lang.Object deletionProtection;
         java.lang.Object masterInstanceType;
         java.lang.Object period;
         java.lang.Object periodUnit;
@@ -739,6 +749,28 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link MultiZoneClusterProps#getDeletionProtection}
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable the release protection feature for the cluster.
+         *                           Default is false.
+         * @return {@code this}
+         */
+        public Builder deletionProtection(java.lang.Boolean deletionProtection) {
+            this.deletionProtection = deletionProtection;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link MultiZoneClusterProps#getDeletionProtection}
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable the release protection feature for the cluster.
+         *                           Default is false.
+         * @return {@code this}
+         */
+        public Builder deletionProtection(com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
+            this.deletionProtection = deletionProtection;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link MultiZoneClusterProps#getMasterInstanceType}
          * @param masterInstanceType Property masterInstanceType: The instance type of the master node.
          *                           You can call the DescribeAvailableResource operation to obtain the value of this parameter.
@@ -927,6 +959,7 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
         private final java.lang.Object standbyZoneId;
         private final java.lang.Object autoRenewPeriod;
         private final java.lang.Object clusterName;
+        private final java.lang.Object deletionProtection;
         private final java.lang.Object masterInstanceType;
         private final java.lang.Object period;
         private final java.lang.Object periodUnit;
@@ -961,6 +994,7 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
             this.standbyZoneId = software.amazon.jsii.Kernel.get(this, "standbyZoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoRenewPeriod = software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.clusterName = software.amazon.jsii.Kernel.get(this, "clusterName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.masterInstanceType = software.amazon.jsii.Kernel.get(this, "masterInstanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -995,6 +1029,7 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
             this.standbyZoneId = java.util.Objects.requireNonNull(builder.standbyZoneId, "standbyZoneId is required");
             this.autoRenewPeriod = builder.autoRenewPeriod;
             this.clusterName = builder.clusterName;
+            this.deletionProtection = builder.deletionProtection;
             this.masterInstanceType = builder.masterInstanceType;
             this.period = builder.period;
             this.periodUnit = builder.periodUnit;
@@ -1109,6 +1144,11 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
+        public final java.lang.Object getDeletionProtection() {
+            return this.deletionProtection;
+        }
+
+        @Override
         public final java.lang.Object getMasterInstanceType() {
             return this.masterInstanceType;
         }
@@ -1169,6 +1209,9 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
             if (this.getClusterName() != null) {
                 data.set("clusterName", om.valueToTree(this.getClusterName()));
             }
+            if (this.getDeletionProtection() != null) {
+                data.set("deletionProtection", om.valueToTree(this.getDeletionProtection()));
+            }
             if (this.getMasterInstanceType() != null) {
                 data.set("masterInstanceType", om.valueToTree(this.getMasterInstanceType()));
             }
@@ -1226,6 +1269,7 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
             if (!standbyZoneId.equals(that.standbyZoneId)) return false;
             if (this.autoRenewPeriod != null ? !this.autoRenewPeriod.equals(that.autoRenewPeriod) : that.autoRenewPeriod != null) return false;
             if (this.clusterName != null ? !this.clusterName.equals(that.clusterName) : that.clusterName != null) return false;
+            if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
             if (this.masterInstanceType != null ? !this.masterInstanceType.equals(that.masterInstanceType) : that.masterInstanceType != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
@@ -1257,6 +1301,7 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
             result = 31 * result + (this.standbyZoneId.hashCode());
             result = 31 * result + (this.autoRenewPeriod != null ? this.autoRenewPeriod.hashCode() : 0);
             result = 31 * result + (this.clusterName != null ? this.clusterName.hashCode() : 0);
+            result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
             result = 31 * result + (this.masterInstanceType != null ? this.masterInstanceType.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.periodUnit != null ? this.periodUnit.hashCode() : 0);

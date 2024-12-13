@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::DeploymentSets`, which is used to query one or more deployment sets.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::DeploymentSets`, which is used to query the information about deployment sets.
 type DeploymentSets interface {
 	alicloudroscdkcore.Resource
 	// Attribute DeploymentSetIds: the list of deployment set ids.

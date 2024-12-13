@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::POLARDB::DBNodeClasses`, which is used to query the available resources of a PolarDB cluster.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::POLARDB::DBNodeClasses`, which is used to query available PolarDB cluster resources.
 type RosDBNodeClasses interface {
 	alicloudroscdkcore.RosResource
 	AttrDbNodeClasses() alicloudroscdkcore.IResolvable

@@ -7,9 +7,6 @@ package alicloudroscdkcs
 type RosManagedEdgeKubernetesClusterProps struct {
 	Name interface{} `field:"required" json:"name" yaml:"name"`
 	Addons interface{} `field:"optional" json:"addons" yaml:"addons"`
-	AutoRenew interface{} `field:"optional" json:"autoRenew" yaml:"autoRenew"`
-	AutoRenewPeriod interface{} `field:"optional" json:"autoRenewPeriod" yaml:"autoRenewPeriod"`
-	ChargeType interface{} `field:"optional" json:"chargeType" yaml:"chargeType"`
 	CloudMonitorFlags interface{} `field:"optional" json:"cloudMonitorFlags" yaml:"cloudMonitorFlags"`
 	ClusterSpec interface{} `field:"optional" json:"clusterSpec" yaml:"clusterSpec"`
 	ContainerCidr interface{} `field:"optional" json:"containerCidr" yaml:"containerCidr"`
@@ -19,8 +16,6 @@ type RosManagedEdgeKubernetesClusterProps struct {
 	KeyPair interface{} `field:"optional" json:"keyPair" yaml:"keyPair"`
 	LoginPassword interface{} `field:"optional" json:"loginPassword" yaml:"loginPassword"`
 	NodeCidrMask interface{} `field:"optional" json:"nodeCidrMask" yaml:"nodeCidrMask"`
-	Period interface{} `field:"optional" json:"period" yaml:"period"`
-	PeriodUnit interface{} `field:"optional" json:"periodUnit" yaml:"periodUnit"`
 	Profile interface{} `field:"optional" json:"profile" yaml:"profile"`
 	ProxyMode interface{} `field:"optional" json:"proxyMode" yaml:"proxyMode"`
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`

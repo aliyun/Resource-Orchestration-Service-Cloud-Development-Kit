@@ -222,7 +222,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ROCKETMQ::Instance`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ROCKETMQ::Instance`, which is used to query the details of an ApsaraMQ for RocketMQ instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq-instance
  */
@@ -471,7 +471,7 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ROCKETMQ::Instances`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ROCKETMQ::Instances`, which is used to query Message Queue for Apache RocketMQ instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instances` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq-instances
  */
@@ -597,7 +597,7 @@ function rosTopicPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ROCKETMQ::Topic`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ROCKETMQ::Topic`, which is used to query the information about a topic.
  * @Note This class does not contain additional functions, so it is recommended to use the `Topic` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq-topic
  */

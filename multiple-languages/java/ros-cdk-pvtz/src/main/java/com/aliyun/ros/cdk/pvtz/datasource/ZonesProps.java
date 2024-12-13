@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.pvtz.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pvtz-zones
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:32.490Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:10.783Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.datasource.ZonesProps")
 @software.amazon.jsii.Jsii.Proxy(ZonesProps.Jsii$Proxy.class)
 public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {

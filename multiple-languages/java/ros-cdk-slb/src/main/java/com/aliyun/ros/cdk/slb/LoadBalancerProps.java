@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.slb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-loadbalancer
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:33.483Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:12.002Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.LoadBalancerProps")
 @software.amazon.jsii.Jsii.Proxy(LoadBalancerProps.Jsii$Proxy.class)
 public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable {
@@ -34,37 +34,6 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
-     * Property autoPay: Specifies whether to automatically pay for the subscription Internet-facing CLB instance.
-     * <p>
-     * Valid values:
-     * <p>
-     * <ul>
-     * <li><strong>true</strong>: automatically pays for the CLB instance. After you call this operation, the system automatically completes the payment and creates the CLB instance.- <strong>false</strong> (default): After you call the operation, the order is created but the payment is not completed. You can view the pending order in the console. The CLB instance will not be created until you complete the payment.<strong>Note</strong> This parameter is supported only by subscription instances created on the Alibaba Cloud China site.</li>
-     * </ul>
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoPay() {
-        return null;
-    }
-
-    /**
-     * Property autoRenew: Indicates whether automatic renewal is enabled for the instance.
-     * <p>
-     * Valid values:- <strong>true</strong>: Automatic renewal is enabled.- <strong>false</strong> (default): Automatic renewal is not enabled. You must renew the instance manually.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenew() {
-        return null;
-    }
-
-    /**
-     * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1 to 9 or 12, 24, 36.
-     * <p>
-     * When PeriodUnit = year, the value range is 1-3.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenewPeriod() {
-        return null;
-    }
-
-    /**
      * Property bandwidth: The bandwidth for network, unit in Mbps(Mega bit per second).
      * <p>
      * Default is 1. If InternetChargeType is specified as "paybytraffic", this property will be ignore and please specify the "Bandwidth" in ALIYUN::SLB::Listener.
@@ -77,18 +46,6 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
      * Property deletionProtection: Whether to enable deletion protection.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionProtection() {
-        return null;
-    }
-
-    /**
-     * Property duration: Optional.
-     * <p>
-     * The subscription duration of a Subscription Internet instance.
-     * Valid values:
-     * If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36, 48, 60.
-     * If PricingCycle is year, the value range is 1 to 5.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getDuration() {
         return null;
     }
 
@@ -175,26 +132,6 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
-     * Property payType: Optional.
-     * <p>
-     * The billing method of the instance to be created.
-     * Valid value: PayOnDemand (Pay-As-You-Go) | PrePay (Subscription)
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getPayType() {
-        return null;
-    }
-
-    /**
-     * Property pricingCycle: Optional.
-     * <p>
-     * The duration of the Subscription-billed Internet instance to be created.
-     * Valid values: month | year.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getPricingCycle() {
-        return null;
-    }
-
-    /**
      * Property resourceGroupId: Resource group id.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
@@ -247,12 +184,8 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
     public static final class Builder implements software.amazon.jsii.Builder<LoadBalancerProps> {
         java.lang.Object addressIpVersion;
         java.lang.Object addressType;
-        java.lang.Object autoPay;
-        java.lang.Object autoRenew;
-        java.lang.Object autoRenewPeriod;
         java.lang.Object bandwidth;
         java.lang.Object deletionProtection;
-        java.lang.Object duration;
         java.lang.Object instanceChargeType;
         java.lang.Object internetChargeType;
         java.lang.Object loadBalancerName;
@@ -260,8 +193,6 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Object masterZoneId;
         java.lang.Object modificationProtectionReason;
         java.lang.Object modificationProtectionStatus;
-        java.lang.Object payType;
-        java.lang.Object pricingCycle;
         java.lang.Object resourceGroupId;
         java.lang.Object slaveZoneId;
         java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancer.TagsProperty> tags;
@@ -323,80 +254,6 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
-         * Sets the value of {@link LoadBalancerProps#getAutoPay}
-         * @param autoPay Property autoPay: Specifies whether to automatically pay for the subscription Internet-facing CLB instance.
-         *                Valid values:
-         *                <p>
-         *                <ul>
-         *                <li><strong>true</strong>: automatically pays for the CLB instance. After you call this operation, the system automatically completes the payment and creates the CLB instance.- <strong>false</strong> (default): After you call the operation, the order is created but the payment is not completed. You can view the pending order in the console. The CLB instance will not be created until you complete the payment.<strong>Note</strong> This parameter is supported only by subscription instances created on the Alibaba Cloud China site.</li>
-         *                </ul>
-         * @return {@code this}
-         */
-        public Builder autoPay(java.lang.Boolean autoPay) {
-            this.autoPay = autoPay;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link LoadBalancerProps#getAutoPay}
-         * @param autoPay Property autoPay: Specifies whether to automatically pay for the subscription Internet-facing CLB instance.
-         *                Valid values:
-         *                <p>
-         *                <ul>
-         *                <li><strong>true</strong>: automatically pays for the CLB instance. After you call this operation, the system automatically completes the payment and creates the CLB instance.- <strong>false</strong> (default): After you call the operation, the order is created but the payment is not completed. You can view the pending order in the console. The CLB instance will not be created until you complete the payment.<strong>Note</strong> This parameter is supported only by subscription instances created on the Alibaba Cloud China site.</li>
-         *                </ul>
-         * @return {@code this}
-         */
-        public Builder autoPay(com.aliyun.ros.cdk.core.IResolvable autoPay) {
-            this.autoPay = autoPay;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link LoadBalancerProps#getAutoRenew}
-         * @param autoRenew Property autoRenew: Indicates whether automatic renewal is enabled for the instance.
-         *                  Valid values:- <strong>true</strong>: Automatic renewal is enabled.- <strong>false</strong> (default): Automatic renewal is not enabled. You must renew the instance manually.
-         * @return {@code this}
-         */
-        public Builder autoRenew(java.lang.Boolean autoRenew) {
-            this.autoRenew = autoRenew;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link LoadBalancerProps#getAutoRenew}
-         * @param autoRenew Property autoRenew: Indicates whether automatic renewal is enabled for the instance.
-         *                  Valid values:- <strong>true</strong>: Automatic renewal is enabled.- <strong>false</strong> (default): Automatic renewal is not enabled. You must renew the instance manually.
-         * @return {@code this}
-         */
-        public Builder autoRenew(com.aliyun.ros.cdk.core.IResolvable autoRenew) {
-            this.autoRenew = autoRenew;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link LoadBalancerProps#getAutoRenewPeriod}
-         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1 to 9 or 12, 24, 36.
-         *                        When PeriodUnit = year, the value range is 1-3.
-         * @return {@code this}
-         */
-        public Builder autoRenewPeriod(java.lang.Number autoRenewPeriod) {
-            this.autoRenewPeriod = autoRenewPeriod;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link LoadBalancerProps#getAutoRenewPeriod}
-         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when AutoRenew is true, and is required: When PricingCycle = month, the value range is 1 to 9 or 12, 24, 36.
-         *                        When PeriodUnit = year, the value range is 1-3.
-         * @return {@code this}
-         */
-        public Builder autoRenewPeriod(com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
-            this.autoRenewPeriod = autoRenewPeriod;
-            return this;
-        }
-
-        /**
          * Sets the value of {@link LoadBalancerProps#getBandwidth}
          * @param bandwidth Property bandwidth: The bandwidth for network, unit in Mbps(Mega bit per second).
          *                  Default is 1. If InternetChargeType is specified as "paybytraffic", this property will be ignore and please specify the "Bandwidth" in ALIYUN::SLB::Listener.
@@ -435,34 +292,6 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
          */
         public Builder deletionProtection(com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
             this.deletionProtection = deletionProtection;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link LoadBalancerProps#getDuration}
-         * @param duration Property duration: Optional.
-         *                 The subscription duration of a Subscription Internet instance.
-         *                 Valid values:
-         *                 If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36, 48, 60.
-         *                 If PricingCycle is year, the value range is 1 to 5.
-         * @return {@code this}
-         */
-        public Builder duration(java.lang.Number duration) {
-            this.duration = duration;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link LoadBalancerProps#getDuration}
-         * @param duration Property duration: Optional.
-         *                 The subscription duration of a Subscription Internet instance.
-         *                 Valid values:
-         *                 If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36, 48, 60.
-         *                 If PricingCycle is year, the value range is 1 to 5.
-         * @return {@code this}
-         */
-        public Builder duration(com.aliyun.ros.cdk.core.IResolvable duration) {
-            this.duration = duration;
             return this;
         }
 
@@ -663,54 +492,6 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
-         * Sets the value of {@link LoadBalancerProps#getPayType}
-         * @param payType Property payType: Optional.
-         *                The billing method of the instance to be created.
-         *                Valid value: PayOnDemand (Pay-As-You-Go) | PrePay (Subscription)
-         * @return {@code this}
-         */
-        public Builder payType(java.lang.String payType) {
-            this.payType = payType;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link LoadBalancerProps#getPayType}
-         * @param payType Property payType: Optional.
-         *                The billing method of the instance to be created.
-         *                Valid value: PayOnDemand (Pay-As-You-Go) | PrePay (Subscription)
-         * @return {@code this}
-         */
-        public Builder payType(com.aliyun.ros.cdk.core.IResolvable payType) {
-            this.payType = payType;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link LoadBalancerProps#getPricingCycle}
-         * @param pricingCycle Property pricingCycle: Optional.
-         *                     The duration of the Subscription-billed Internet instance to be created.
-         *                     Valid values: month | year.
-         * @return {@code this}
-         */
-        public Builder pricingCycle(java.lang.String pricingCycle) {
-            this.pricingCycle = pricingCycle;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link LoadBalancerProps#getPricingCycle}
-         * @param pricingCycle Property pricingCycle: Optional.
-         *                     The duration of the Subscription-billed Internet instance to be created.
-         *                     Valid values: month | year.
-         * @return {@code this}
-         */
-        public Builder pricingCycle(com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
-            this.pricingCycle = pricingCycle;
-            return this;
-        }
-
-        /**
          * Sets the value of {@link LoadBalancerProps#getResourceGroupId}
          * @param resourceGroupId Property resourceGroupId: Resource group id.
          * @return {@code this}
@@ -824,12 +605,8 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements LoadBalancerProps {
         private final java.lang.Object addressIpVersion;
         private final java.lang.Object addressType;
-        private final java.lang.Object autoPay;
-        private final java.lang.Object autoRenew;
-        private final java.lang.Object autoRenewPeriod;
         private final java.lang.Object bandwidth;
         private final java.lang.Object deletionProtection;
-        private final java.lang.Object duration;
         private final java.lang.Object instanceChargeType;
         private final java.lang.Object internetChargeType;
         private final java.lang.Object loadBalancerName;
@@ -837,8 +614,6 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object masterZoneId;
         private final java.lang.Object modificationProtectionReason;
         private final java.lang.Object modificationProtectionStatus;
-        private final java.lang.Object payType;
-        private final java.lang.Object pricingCycle;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object slaveZoneId;
         private final java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancer.TagsProperty> tags;
@@ -853,12 +628,8 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             super(objRef);
             this.addressIpVersion = software.amazon.jsii.Kernel.get(this, "addressIpVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.addressType = software.amazon.jsii.Kernel.get(this, "addressType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.autoPay = software.amazon.jsii.Kernel.get(this, "autoPay", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.autoRenewPeriod = software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.duration = software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loadBalancerName = software.amazon.jsii.Kernel.get(this, "loadBalancerName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -866,8 +637,6 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             this.masterZoneId = software.amazon.jsii.Kernel.get(this, "masterZoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.modificationProtectionReason = software.amazon.jsii.Kernel.get(this, "modificationProtectionReason", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.modificationProtectionStatus = software.amazon.jsii.Kernel.get(this, "modificationProtectionStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.payType = software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.slaveZoneId = software.amazon.jsii.Kernel.get(this, "slaveZoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.slb.RosLoadBalancer.TagsProperty.class)));
@@ -883,12 +652,8 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.addressIpVersion = builder.addressIpVersion;
             this.addressType = builder.addressType;
-            this.autoPay = builder.autoPay;
-            this.autoRenew = builder.autoRenew;
-            this.autoRenewPeriod = builder.autoRenewPeriod;
             this.bandwidth = builder.bandwidth;
             this.deletionProtection = builder.deletionProtection;
-            this.duration = builder.duration;
             this.instanceChargeType = builder.instanceChargeType;
             this.internetChargeType = builder.internetChargeType;
             this.loadBalancerName = builder.loadBalancerName;
@@ -896,8 +661,6 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             this.masterZoneId = builder.masterZoneId;
             this.modificationProtectionReason = builder.modificationProtectionReason;
             this.modificationProtectionStatus = builder.modificationProtectionStatus;
-            this.payType = builder.payType;
-            this.pricingCycle = builder.pricingCycle;
             this.resourceGroupId = builder.resourceGroupId;
             this.slaveZoneId = builder.slaveZoneId;
             this.tags = (java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancer.TagsProperty>)builder.tags;
@@ -916,21 +679,6 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
-        public final java.lang.Object getAutoPay() {
-            return this.autoPay;
-        }
-
-        @Override
-        public final java.lang.Object getAutoRenew() {
-            return this.autoRenew;
-        }
-
-        @Override
-        public final java.lang.Object getAutoRenewPeriod() {
-            return this.autoRenewPeriod;
-        }
-
-        @Override
         public final java.lang.Object getBandwidth() {
             return this.bandwidth;
         }
@@ -938,11 +686,6 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         @Override
         public final java.lang.Object getDeletionProtection() {
             return this.deletionProtection;
-        }
-
-        @Override
-        public final java.lang.Object getDuration() {
-            return this.duration;
         }
 
         @Override
@@ -978,16 +721,6 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         @Override
         public final java.lang.Object getModificationProtectionStatus() {
             return this.modificationProtectionStatus;
-        }
-
-        @Override
-        public final java.lang.Object getPayType() {
-            return this.payType;
-        }
-
-        @Override
-        public final java.lang.Object getPricingCycle() {
-            return this.pricingCycle;
         }
 
         @Override
@@ -1027,23 +760,11 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             if (this.getAddressType() != null) {
                 data.set("addressType", om.valueToTree(this.getAddressType()));
             }
-            if (this.getAutoPay() != null) {
-                data.set("autoPay", om.valueToTree(this.getAutoPay()));
-            }
-            if (this.getAutoRenew() != null) {
-                data.set("autoRenew", om.valueToTree(this.getAutoRenew()));
-            }
-            if (this.getAutoRenewPeriod() != null) {
-                data.set("autoRenewPeriod", om.valueToTree(this.getAutoRenewPeriod()));
-            }
             if (this.getBandwidth() != null) {
                 data.set("bandwidth", om.valueToTree(this.getBandwidth()));
             }
             if (this.getDeletionProtection() != null) {
                 data.set("deletionProtection", om.valueToTree(this.getDeletionProtection()));
-            }
-            if (this.getDuration() != null) {
-                data.set("duration", om.valueToTree(this.getDuration()));
             }
             if (this.getInstanceChargeType() != null) {
                 data.set("instanceChargeType", om.valueToTree(this.getInstanceChargeType()));
@@ -1065,12 +786,6 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             }
             if (this.getModificationProtectionStatus() != null) {
                 data.set("modificationProtectionStatus", om.valueToTree(this.getModificationProtectionStatus()));
-            }
-            if (this.getPayType() != null) {
-                data.set("payType", om.valueToTree(this.getPayType()));
-            }
-            if (this.getPricingCycle() != null) {
-                data.set("pricingCycle", om.valueToTree(this.getPricingCycle()));
             }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
@@ -1107,12 +822,8 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
             if (this.addressIpVersion != null ? !this.addressIpVersion.equals(that.addressIpVersion) : that.addressIpVersion != null) return false;
             if (this.addressType != null ? !this.addressType.equals(that.addressType) : that.addressType != null) return false;
-            if (this.autoPay != null ? !this.autoPay.equals(that.autoPay) : that.autoPay != null) return false;
-            if (this.autoRenew != null ? !this.autoRenew.equals(that.autoRenew) : that.autoRenew != null) return false;
-            if (this.autoRenewPeriod != null ? !this.autoRenewPeriod.equals(that.autoRenewPeriod) : that.autoRenewPeriod != null) return false;
             if (this.bandwidth != null ? !this.bandwidth.equals(that.bandwidth) : that.bandwidth != null) return false;
             if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
-            if (this.duration != null ? !this.duration.equals(that.duration) : that.duration != null) return false;
             if (this.instanceChargeType != null ? !this.instanceChargeType.equals(that.instanceChargeType) : that.instanceChargeType != null) return false;
             if (this.internetChargeType != null ? !this.internetChargeType.equals(that.internetChargeType) : that.internetChargeType != null) return false;
             if (this.loadBalancerName != null ? !this.loadBalancerName.equals(that.loadBalancerName) : that.loadBalancerName != null) return false;
@@ -1120,8 +831,6 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             if (this.masterZoneId != null ? !this.masterZoneId.equals(that.masterZoneId) : that.masterZoneId != null) return false;
             if (this.modificationProtectionReason != null ? !this.modificationProtectionReason.equals(that.modificationProtectionReason) : that.modificationProtectionReason != null) return false;
             if (this.modificationProtectionStatus != null ? !this.modificationProtectionStatus.equals(that.modificationProtectionStatus) : that.modificationProtectionStatus != null) return false;
-            if (this.payType != null ? !this.payType.equals(that.payType) : that.payType != null) return false;
-            if (this.pricingCycle != null ? !this.pricingCycle.equals(that.pricingCycle) : that.pricingCycle != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.slaveZoneId != null ? !this.slaveZoneId.equals(that.slaveZoneId) : that.slaveZoneId != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
@@ -1133,12 +842,8 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         public final int hashCode() {
             int result = this.addressIpVersion != null ? this.addressIpVersion.hashCode() : 0;
             result = 31 * result + (this.addressType != null ? this.addressType.hashCode() : 0);
-            result = 31 * result + (this.autoPay != null ? this.autoPay.hashCode() : 0);
-            result = 31 * result + (this.autoRenew != null ? this.autoRenew.hashCode() : 0);
-            result = 31 * result + (this.autoRenewPeriod != null ? this.autoRenewPeriod.hashCode() : 0);
             result = 31 * result + (this.bandwidth != null ? this.bandwidth.hashCode() : 0);
             result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
-            result = 31 * result + (this.duration != null ? this.duration.hashCode() : 0);
             result = 31 * result + (this.instanceChargeType != null ? this.instanceChargeType.hashCode() : 0);
             result = 31 * result + (this.internetChargeType != null ? this.internetChargeType.hashCode() : 0);
             result = 31 * result + (this.loadBalancerName != null ? this.loadBalancerName.hashCode() : 0);
@@ -1146,8 +851,6 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             result = 31 * result + (this.masterZoneId != null ? this.masterZoneId.hashCode() : 0);
             result = 31 * result + (this.modificationProtectionReason != null ? this.modificationProtectionReason.hashCode() : 0);
             result = 31 * result + (this.modificationProtectionStatus != null ? this.modificationProtectionStatus.hashCode() : 0);
-            result = 31 * result + (this.payType != null ? this.payType.hashCode() : 0);
-            result = 31 * result + (this.pricingCycle != null ? this.pricingCycle.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.slaveZoneId != null ? this.slaveZoneId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);

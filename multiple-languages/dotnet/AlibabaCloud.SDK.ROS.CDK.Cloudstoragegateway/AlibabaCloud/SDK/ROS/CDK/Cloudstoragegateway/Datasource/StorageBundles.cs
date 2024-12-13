@@ -1,0 +1,82 @@
+using Amazon.JSII.Runtime.Deputy;
+
+#pragma warning disable CS0672,CS0809,CS1591
+
+namespace AlibabaCloud.SDK.ROS.CDK.Cloudstoragegateway.Datasource
+{
+    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::CloudStorageGateway::StorageBundles`.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosStorageBundles`for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudstoragegateway-storagebundles
+    /// </remarks>
+    [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Cloudstoragegateway.Datasource.StorageBundles), fullyQualifiedName: "@alicloud/ros-cdk-cloudstoragegateway.datasource.StorageBundles", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"optional\":true,\"type\":{\"fqn\":\"@alicloud/ros-cdk-cloudstoragegateway.datasource.StorageBundlesProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"optional\":true,\"type\":{\"primitive\":\"boolean\"}}]")]
+    public class StorageBundles : AlibabaCloud.SDK.ROS.CDK.Core.Resource_
+    {
+        /// <summary>Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.</summary>
+        public StorageBundles(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Cloudstoragegateway.Datasource.IStorageBundlesProps? props = null, bool? enableResourcePropertyConstraint = null): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
+        {
+        }
+
+        [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining)]
+        private static DeputyProps _MakeDeputyProps(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Cloudstoragegateway.Datasource.IStorageBundlesProps? props = null, bool? enableResourcePropertyConstraint = null)
+        {
+            return new DeputyProps(new object?[]{scope, id, props, enableResourcePropertyConstraint});
+        }
+
+        /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>
+        /// <param name="reference">The Javascript-owned object reference</param>
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+        protected StorageBundles(ByRefValue reference): base(reference)
+        {
+        }
+
+        /// <summary>Used by jsii to construct an instance of this class from DeputyProps</summary>
+        /// <param name="props">The deputy props</param>
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+        protected StorageBundles(DeputyProps props): base(props)
+        {
+        }
+
+        /// <summary>Attribute StorageBundleIds: The list of storage bundle IDs.</summary>
+        [JsiiProperty(name: "attrStorageBundleIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrStorageBundleIds
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <summary>Attribute StorageBundles: The list of storage bundles.</summary>
+        [JsiiProperty(name: "attrStorageBundles", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrStorageBundles
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
+        protected virtual bool EnableResourcePropertyConstraint
+        {
+            get => GetInstanceProperty<bool>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        [JsiiProperty(name: "id", typeJson: "{\"primitive\":\"string\"}")]
+        protected virtual string Id
+        {
+            get => GetInstanceProperty<string>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-cloudstoragegateway.datasource.StorageBundlesProps\"}")]
+        protected virtual AlibabaCloud.SDK.ROS.CDK.Cloudstoragegateway.Datasource.IStorageBundlesProps Props
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Cloudstoragegateway.Datasource.IStorageBundlesProps>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        [JsiiProperty(name: "scope", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}")]
+        protected virtual AlibabaCloud.SDK.ROS.CDK.Core.Construct Scope
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.Construct>()!;
+            set => SetInstanceProperty(value);
+        }
+    }
+}

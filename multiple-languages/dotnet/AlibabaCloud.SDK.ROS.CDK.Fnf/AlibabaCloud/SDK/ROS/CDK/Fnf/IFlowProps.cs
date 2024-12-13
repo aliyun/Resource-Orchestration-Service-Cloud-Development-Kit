@@ -39,6 +39,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
             }
         }
 
+        /// <summary>Property executionMode: The execution mode of the flow.</summary>
+        [JsiiProperty(name: "executionMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ExecutionMode
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property externalStorageLocation: The external storage location for the flow.</summary>
+        [JsiiProperty(name: "externalStorageLocation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ExternalStorageLocation
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property requestId: The specified Request ID for this request.</summary>
         /// <remarks>
         /// If not specified, our system will help you generate a random one.
@@ -96,6 +118,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Description
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property executionMode: The execution mode of the flow.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "executionMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ExecutionMode
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property externalStorageLocation: The external storage location for the flow.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "externalStorageLocation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ExternalStorageLocation
             {
                 get => GetInstanceProperty<object?>();
             }

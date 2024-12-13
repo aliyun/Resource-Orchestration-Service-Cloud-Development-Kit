@@ -44,6 +44,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sas
             }
         }
 
+        /// <summary>Property antiRansomwareManageService: Provide you with security hosting services such as anti-ransomware configuration, monitoring, and anti-ransomware incident emergency response.</summary>
+        /// <remarks>
+        /// Note:
+        /// </remarks>
+        [JsiiProperty(name: "antiRansomwareManageService", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AntiRansomwareManageService
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property autoPay: Whether to auto pay the bill.Default: True.</summary>
         [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -325,6 +339,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sas
             [JsiiOptional]
             [JsiiProperty(name: "antiRansomware", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AntiRansomware
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property antiRansomwareManageService: Provide you with security hosting services such as anti-ransomware configuration, monitoring, and anti-ransomware incident emergency response.</summary>
+            /// <remarks>
+            /// Note:
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "antiRansomwareManageService", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AntiRansomwareManageService
             {
                 get => GetInstanceProperty<object?>();
             }

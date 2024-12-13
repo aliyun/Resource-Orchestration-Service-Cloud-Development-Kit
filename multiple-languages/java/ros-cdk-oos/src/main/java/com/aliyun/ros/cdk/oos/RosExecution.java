@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::OOS::Execution</code>, which is used to start an execution.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.912Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:09.713Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.RosExecution")
 public class RosExecution extends com.aliyun.ros.cdk.core.RosResource {
 

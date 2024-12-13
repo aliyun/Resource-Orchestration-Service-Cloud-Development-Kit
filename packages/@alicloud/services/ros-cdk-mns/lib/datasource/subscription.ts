@@ -29,7 +29,7 @@ export interface SubscriptionProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::MNS::Subscription`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::MNS::Subscription`, which is used to query the information about a subscription.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSubscription`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-subscription
  */

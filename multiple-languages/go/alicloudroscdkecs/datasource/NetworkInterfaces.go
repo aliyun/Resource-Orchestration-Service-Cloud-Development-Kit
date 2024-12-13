@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::NetworkInterfaces`, which is used to query the details of elastic network interfaces (ENIs).
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::NetworkInterfaces`, which is used to query the information about elastic network interfaces (ENIs).
 type NetworkInterfaces interface {
 	alicloudroscdkcore.Resource
 	// Attribute NetworkInterfaceIds: The list of NetworkInterfaceIds.

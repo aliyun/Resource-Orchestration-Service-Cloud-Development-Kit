@@ -88,6 +88,10 @@ type MultiZoneClusterProps struct {
 	// The name must be 2 to 128 characters in length, and can contain letters, digits, periods
 	// (.), underscores (_), and hyphens (-). It must start with a letter.
 	ClusterName interface{} `field:"optional" json:"clusterName" yaml:"clusterName"`
+	// Property deletionProtection: Specifies whether to enable the release protection feature for the cluster.
+	//
+	// Default is false.
+	DeletionProtection interface{} `field:"optional" json:"deletionProtection" yaml:"deletionProtection"`
 	// Property masterInstanceType: The instance type of the master node.
 	//
 	// You can call the DescribeAvailableResource operation to obtain the value of this parameter.

@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpcIpv6CidrAllocation`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpcIpv6CidrAllocation`, which is used to reserve an IPv6 CIDR block.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `VpcIpv6CidrAllocation` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpcipv6cidrallocation

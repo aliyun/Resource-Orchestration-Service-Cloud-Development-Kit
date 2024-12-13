@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::PAI::Services`, which is used to query the information about Elastic Algorithm Service (EAS) services of Machine Learning Platform for AI (PAI).
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::PAI::Services`, which is used to query the information about Elastic Algorithm Service (EAS) services.
 type RosServices interface {
 	alicloudroscdkcore.RosResource
 	AttrServiceNames() alicloudroscdkcore.IResolvable

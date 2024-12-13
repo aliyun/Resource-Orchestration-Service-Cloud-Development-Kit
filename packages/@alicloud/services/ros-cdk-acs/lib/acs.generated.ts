@@ -137,9 +137,9 @@ export interface RosClusterProps {
     readonly vSwitchIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property zoneId: The zone ID.
+     * @Property zoneIds: The zone IDs of the cluster.
      */
-    readonly zoneId?: string | ros.IResolvable;
+    readonly zoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -154,7 +154,6 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('kubernetesVersion', ros.validateString)(properties.kubernetesVersion));
     errors.collect(ros.propertyValidator('endpointPublicAccess', ros.validateBoolean)(properties.endpointPublicAccess));
-    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.vSwitchIds && (Array.isArray(properties.vSwitchIds) || (typeof properties.vSwitchIds) === 'string')) {
         errors.collect(ros.propertyValidator('vSwitchIds', ros.validateLength)({
@@ -170,9 +169,9 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('clusterSpec', ros.validateString)(properties.clusterSpec));
     errors.collect(ros.propertyValidator('loggingType', ros.validateString)(properties.loggingType));
     errors.collect(ros.propertyValidator('ipStack', ros.validateString)(properties.ipStack));
+    errors.collect(ros.propertyValidator('loadBalancerSpec', ros.validateString)(properties.loadBalancerSpec));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
-    errors.collect(ros.propertyValidator('loadBalancerSpec', ros.validateString)(properties.loadBalancerSpec));
     errors.collect(ros.propertyValidator('timeZone', ros.validateString)(properties.timeZone));
     if(properties.serviceDiscoveryTypes && (Array.isArray(properties.serviceDiscoveryTypes) || (typeof properties.serviceDiscoveryTypes) === 'string')) {
         errors.collect(ros.propertyValidator('serviceDiscoveryTypes', ros.validateLength)({
@@ -186,6 +185,14 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('slsProjectName', ros.validateString)(properties.slsProjectName));
     errors.collect(ros.propertyValidator('serviceCidr', ros.validateString)(properties.serviceCidr));
     errors.collect(ros.propertyValidator('snatEntry', ros.validateBoolean)(properties.snatEntry));
+    if(properties.zoneIds && (Array.isArray(properties.zoneIds) || (typeof properties.zoneIds) === 'string')) {
+        errors.collect(ros.propertyValidator('zoneIds', ros.validateLength)({
+            data: properties.zoneIds.length,
+            min: 1,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('zoneIds', ros.listValidator(ros.validateString))(properties.zoneIds));
     errors.collect(ros.propertyValidator('maintenanceWindow', RosCluster_MaintenanceWindowPropertyValidator)(properties.maintenanceWindow));
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosCluster_TagsPropertyValidator))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosClusterProps"');
@@ -225,12 +232,12 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
       'TimeZone': ros.stringToRosTemplate(properties.timeZone),
       'VpcId': ros.stringToRosTemplate(properties.vpcId),
       'VSwitchIds': ros.listMapper(ros.stringToRosTemplate)(properties.vSwitchIds),
-      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'ZoneIds': ros.listMapper(ros.stringToRosTemplate)(properties.zoneIds),
     };
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ACS::Cluster`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ACS::Cluster`, which is used to create an Alibaba Cloud Container Compute Service (ACS) cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `Cluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acs-cluster
  */
@@ -427,9 +434,9 @@ export class RosCluster extends ros.RosResource {
     public vSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property zoneId: The zone ID.
+     * @Property zoneIds: The zone IDs of the cluster.
      */
-    public zoneId: string | ros.IResolvable | undefined;
+    public zoneIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @param scope - scope in which this resource is defined
@@ -471,7 +478,7 @@ export class RosCluster extends ros.RosResource {
         this.timeZone = props.timeZone;
         this.vpcId = props.vpcId;
         this.vSwitchIds = props.vSwitchIds;
-        this.zoneId = props.zoneId;
+        this.zoneIds = props.zoneIds;
     }
 
 
@@ -497,7 +504,7 @@ export class RosCluster extends ros.RosResource {
             timeZone: this.timeZone,
             vpcId: this.vpcId,
             vSwitchIds: this.vSwitchIds,
-            zoneId: this.zoneId,
+            zoneIds: this.zoneIds,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

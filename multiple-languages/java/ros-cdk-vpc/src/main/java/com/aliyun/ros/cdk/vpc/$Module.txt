@@ -38,6 +38,10 @@
 @alicloud/ros-cdk-vpc.HaVipAssociation=com.aliyun.ros.cdk.vpc.HaVipAssociation
 @alicloud/ros-cdk-vpc.HaVipAssociationProps=com.aliyun.ros.cdk.vpc.HaVipAssociationProps
 @alicloud/ros-cdk-vpc.HaVipProps=com.aliyun.ros.cdk.vpc.HaVipProps
+@alicloud/ros-cdk-vpc.Ipam=com.aliyun.ros.cdk.vpc.Ipam
+@alicloud/ros-cdk-vpc.IpamProps=com.aliyun.ros.cdk.vpc.IpamProps
+@alicloud/ros-cdk-vpc.IpamScope=com.aliyun.ros.cdk.vpc.IpamScope
+@alicloud/ros-cdk-vpc.IpamScopeProps=com.aliyun.ros.cdk.vpc.IpamScopeProps
 @alicloud/ros-cdk-vpc.IpsecServer=com.aliyun.ros.cdk.vpc.IpsecServer
 @alicloud/ros-cdk-vpc.IpsecServerProps=com.aliyun.ros.cdk.vpc.IpsecServerProps
 @alicloud/ros-cdk-vpc.Ipv4Gateway=com.aliyun.ros.cdk.vpc.Ipv4Gateway
@@ -107,6 +111,12 @@
 @alicloud/ros-cdk-vpc.RosHaVipAssociation=com.aliyun.ros.cdk.vpc.RosHaVipAssociation
 @alicloud/ros-cdk-vpc.RosHaVipAssociationProps=com.aliyun.ros.cdk.vpc.RosHaVipAssociationProps
 @alicloud/ros-cdk-vpc.RosHaVipProps=com.aliyun.ros.cdk.vpc.RosHaVipProps
+@alicloud/ros-cdk-vpc.RosIpam=com.aliyun.ros.cdk.vpc.RosIpam
+@alicloud/ros-cdk-vpc.RosIpam.TagsProperty=com.aliyun.ros.cdk.vpc.RosIpam$TagsProperty
+@alicloud/ros-cdk-vpc.RosIpamProps=com.aliyun.ros.cdk.vpc.RosIpamProps
+@alicloud/ros-cdk-vpc.RosIpamScope=com.aliyun.ros.cdk.vpc.RosIpamScope
+@alicloud/ros-cdk-vpc.RosIpamScope.TagsProperty=com.aliyun.ros.cdk.vpc.RosIpamScope$TagsProperty
+@alicloud/ros-cdk-vpc.RosIpamScopeProps=com.aliyun.ros.cdk.vpc.RosIpamScopeProps
 @alicloud/ros-cdk-vpc.RosIpsecServer=com.aliyun.ros.cdk.vpc.RosIpsecServer
 @alicloud/ros-cdk-vpc.RosIpsecServer.IkeConfigProperty=com.aliyun.ros.cdk.vpc.RosIpsecServer$IkeConfigProperty
 @alicloud/ros-cdk-vpc.RosIpsecServer.IpsecConfigProperty=com.aliyun.ros.cdk.vpc.RosIpsecServer$IpsecConfigProperty

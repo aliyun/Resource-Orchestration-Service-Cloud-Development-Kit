@@ -29,7 +29,7 @@ export interface WorkspaceResourceDlcsProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::WorkspaceResourceDlcs`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::WorkspaceResourceDlcs`, which is used to query a list of Deep Learning Containers (DLC) resources that are associated with a Platform for AI (PAI) workspace.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWorkspaceResourceDlcs`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-workspaceresourcedlcs
  */

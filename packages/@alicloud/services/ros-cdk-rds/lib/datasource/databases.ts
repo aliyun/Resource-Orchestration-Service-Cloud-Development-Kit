@@ -34,7 +34,7 @@ export interface DatabasesProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::RDS::Databases`, which is used to query the details of databases in an ApsaraDB RDS instance.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::RDS::Databases`, which is used to query the information about databases on an ApsaraDB RDS instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDatabases`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-databases
  */

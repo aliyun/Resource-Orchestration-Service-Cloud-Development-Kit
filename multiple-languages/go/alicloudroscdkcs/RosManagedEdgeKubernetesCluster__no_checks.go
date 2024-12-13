@@ -88,18 +88,6 @@ func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetAddonsParameters(
 	return nil
 }
 
-func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetAutoRenewParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetAutoRenewPeriodParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetChargeTypeParameters(val interface{}) error {
-	return nil
-}
-
 func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetCloudMonitorFlagsParameters(val interface{}) error {
 	return nil
 }
@@ -141,14 +129,6 @@ func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetNameParameters(va
 }
 
 func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetNodeCidrMaskParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetPeriodParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetPeriodUnitParameters(val interface{}) error {
 	return nil
 }
 

@@ -11,6 +11,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
     [JsiiByValue(fqn: "@alicloud/ros-cdk-kms.KeyProps")]
     public class KeyProps : AlibabaCloud.SDK.ROS.CDK.Kms.IKeyProps
     {
+        private object? _deletionProtection;
+
+        /// <summary>Property deletionProtection: Specifies whether to enable the release protection feature for the key.</summary>
+        /// <remarks>
+        /// Default is false.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? DeletionProtection
+        {
+            get => _deletionProtection;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _deletionProtection = value;
+            }
+        }
+
         private object? _description;
 
         /// <summary>Property description: The description of the CMK.</summary>

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.amqp;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::AMQP::Exchange</code>, which is used to create an exchange.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:26.661Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:04.155Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.Exchange")
 public class Exchange extends com.aliyun.ros.cdk.core.Resource {
 
@@ -289,6 +289,59 @@ public class Exchange extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder alternateExchange(final com.aliyun.ros.cdk.core.IResolvable alternateExchange) {
             this.props.alternateExchange(alternateExchange);
+            return this;
+        }
+
+        /**
+         * Property xDelayedType: Exchanges of the x-delay-Message type allow you to customize the Header property of the message, and the x-delay specifies the amount of time in milliseconds for the message to be delivered.
+         * <p>
+         * The routing rules for this class of exchanges depend on the Exchange type specified in the x-delay-type parameter, which specifies the actual Exchange type to which the delayed message will eventually be delivered. Valid values:
+         * <p>
+         * <ul>
+         * <li>DIRECT: Delivers deferred messages to a specified queue bound to an Exchange of type DIRECT.</li>
+         * <li>TOPIC: Delivers deferred messages to the queue bound to the Exchange type TOPIC.
+         * <p>
+         * <ul>
+         * <li>FANOUT: Delivers deferred messages to a queue bound to an Exchange of type FANOUT.</li>
+         * </ul></li>
+         * <li>HEADERS: Deferred messages are delivered to the queue bound to the Exchange HEADERS type.
+         * <p>
+         * <ul>
+         * <li>X-JMS-TOPIC: Delivers deferred messages to the queue bound to X-JMS-TOPIC.</li>
+         * </ul></li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param xDelayedType Property xDelayedType: Exchanges of the x-delay-Message type allow you to customize the Header property of the message, and the x-delay specifies the amount of time in milliseconds for the message to be delivered. This parameter is required.
+         */
+        public Builder xDelayedType(final java.lang.String xDelayedType) {
+            this.props.xDelayedType(xDelayedType);
+            return this;
+        }
+        /**
+         * Property xDelayedType: Exchanges of the x-delay-Message type allow you to customize the Header property of the message, and the x-delay specifies the amount of time in milliseconds for the message to be delivered.
+         * <p>
+         * The routing rules for this class of exchanges depend on the Exchange type specified in the x-delay-type parameter, which specifies the actual Exchange type to which the delayed message will eventually be delivered. Valid values:
+         * <p>
+         * <ul>
+         * <li>DIRECT: Delivers deferred messages to a specified queue bound to an Exchange of type DIRECT.</li>
+         * <li>TOPIC: Delivers deferred messages to the queue bound to the Exchange type TOPIC.
+         * <p>
+         * <ul>
+         * <li>FANOUT: Delivers deferred messages to a queue bound to an Exchange of type FANOUT.</li>
+         * </ul></li>
+         * <li>HEADERS: Deferred messages are delivered to the queue bound to the Exchange HEADERS type.
+         * <p>
+         * <ul>
+         * <li>X-JMS-TOPIC: Delivers deferred messages to the queue bound to X-JMS-TOPIC.</li>
+         * </ul></li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param xDelayedType Property xDelayedType: Exchanges of the x-delay-Message type allow you to customize the Header property of the message, and the x-delay specifies the amount of time in milliseconds for the message to be delivered. This parameter is required.
+         */
+        public Builder xDelayedType(final com.aliyun.ros.cdk.core.IResolvable xDelayedType) {
+            this.props.xDelayedType(xDelayedType);
             return this;
         }
 

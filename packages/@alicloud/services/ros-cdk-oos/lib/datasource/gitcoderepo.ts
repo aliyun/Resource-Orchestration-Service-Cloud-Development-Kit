@@ -44,7 +44,7 @@ export interface GitCodeRepoProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::OOS::GitCodeRepo`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::OOS::GitCodeRepo`, which is used to generate the URL of a user-specified GitHub or Gitee code repository.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGitCodeRepo`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-gitcoderepo
  */

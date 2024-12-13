@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ram;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::RAM::LoginProfile</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::RAM::LoginProfile</code>, which is used to create logon configurations for a Resource Access Management (RAM) user.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:32.525Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:10.798Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.LoginProfile")
 public class LoginProfile extends com.aliyun.ros.cdk.core.Resource {
 

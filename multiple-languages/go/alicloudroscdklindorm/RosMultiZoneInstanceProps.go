@@ -13,6 +13,7 @@ type RosMultiZoneInstanceProps struct {
 	ColdStorage interface{} `field:"optional" json:"coldStorage" yaml:"coldStorage"`
 	CoreSingleStorage interface{} `field:"optional" json:"coreSingleStorage" yaml:"coreSingleStorage"`
 	CoreSpec interface{} `field:"optional" json:"coreSpec" yaml:"coreSpec"`
+	DeletionProtection interface{} `field:"optional" json:"deletionProtection" yaml:"deletionProtection"`
 	FilestoreNum interface{} `field:"optional" json:"filestoreNum" yaml:"filestoreNum"`
 	FilestoreSpec interface{} `field:"optional" json:"filestoreSpec" yaml:"filestoreSpec"`
 	InstanceChargeType interface{} `field:"optional" json:"instanceChargeType" yaml:"instanceChargeType"`

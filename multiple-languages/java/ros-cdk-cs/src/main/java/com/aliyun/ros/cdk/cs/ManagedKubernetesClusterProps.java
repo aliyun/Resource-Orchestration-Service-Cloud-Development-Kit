@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managedkubernetescluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:28.022Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:06.010Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ManagedKubernetesClusterProps.Jsii$Proxy.class)
 public interface ManagedKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -34,40 +34,6 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
     }
 
     /**
-     * Property autoRenew: Whether the cluster automatically renews.
-     * <p>
-     * It takes effect when the value of ChargeType is PrePaid. The optional values are:
-     * true: automatic renewal
-     * false: do not renew automatically
-     * Default to true.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenew() {
-        return null;
-    }
-
-    /**
-     * Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.  For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenewPeriod() {
-        return null;
-    }
-
-    /**
-     * Property chargeType: cluster payment type.
-     * <p>
-     * The optional values are:
-     * PrePaid: prepaid
-     * PostPaid: Pay as you go
-     * Default to PostPaid.
-     * Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getChargeType() {
-        return null;
-    }
-
-    /**
      * Property cloudMonitorFlags: Whether to install the cloud monitoring plugin: true: indicates installation false: Do not install Default to false.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCloudMonitorFlags() {
@@ -92,6 +58,33 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
      * When the system is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getContainerCidr() {
+        return null;
+    }
+
+    /**
+     * Property controlPlaneLogComponents: List of target components for which logs need to be collected.
+     * <p>
+     * Supports apiserver, kcm, scheduler, ccm and controlplane-events.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getControlPlaneLogComponents() {
+        return null;
+    }
+
+    /**
+     * Property controlPlaneLogProject: Control plane log project.
+     * <p>
+     * If this field is not set, a log service project named k8s-log-{ClusterID} will be automatically created.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getControlPlaneLogProject() {
+        return null;
+    }
+
+    /**
+     * Property controlPlaneLogTtl: Control plane log retention duration (unit: day).
+     * <p>
+     * Default 30.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getControlPlaneLogTtl() {
         return null;
     }
 
@@ -250,34 +243,6 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
      * Default value: Linux.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getOsType() {
-        return null;
-    }
-
-    /**
-     * Property period: The duration of the annual subscription and monthly subscription.
-     * <p>
-     * It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
-     * When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
-     * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
-     * When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
-     * Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
-        return null;
-    }
-
-    /**
-     * Property periodUnit: When you specify PrePaid, you need to specify the period.
-     * <p>
-     * The options are:
-     * Week: Time is measured in weeks
-     * Month: time in months
-     * Year: time in years
-     * Default to MonthStarting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-     * For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriodUnit() {
         return null;
     }
 
@@ -442,12 +407,12 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         java.lang.Object name;
         java.lang.Object vpcId;
         java.lang.Object addons;
-        java.lang.Object autoRenew;
-        java.lang.Object autoRenewPeriod;
-        java.lang.Object chargeType;
         java.lang.Object cloudMonitorFlags;
         java.lang.Object clusterSpec;
         java.lang.Object containerCidr;
+        java.lang.Object controlPlaneLogComponents;
+        java.lang.Object controlPlaneLogProject;
+        java.lang.Object controlPlaneLogTtl;
         java.lang.Object deleteOptions;
         java.lang.Object deletionProtection;
         java.lang.Object encryptionProviderKey;
@@ -463,8 +428,6 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         java.lang.Object nodeNameMode;
         java.lang.Object nodePools;
         java.lang.Object osType;
-        java.lang.Object period;
-        java.lang.Object periodUnit;
         java.lang.Object platform;
         java.lang.Object podVswitchIds;
         java.lang.Object proxyMode;
@@ -550,88 +513,6 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         }
 
         /**
-         * Sets the value of {@link ManagedKubernetesClusterProps#getAutoRenew}
-         * @param autoRenew Property autoRenew: Whether the cluster automatically renews.
-         *                  It takes effect when the value of ChargeType is PrePaid. The optional values are:
-         *                  true: automatic renewal
-         *                  false: do not renew automatically
-         *                  Default to true.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-         *                  For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-         * @return {@code this}
-         */
-        public Builder autoRenew(java.lang.Boolean autoRenew) {
-            this.autoRenew = autoRenew;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedKubernetesClusterProps#getAutoRenew}
-         * @param autoRenew Property autoRenew: Whether the cluster automatically renews.
-         *                  It takes effect when the value of ChargeType is PrePaid. The optional values are:
-         *                  true: automatic renewal
-         *                  false: do not renew automatically
-         *                  Default to true.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-         *                  For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-         * @return {@code this}
-         */
-        public Builder autoRenew(com.aliyun.ros.cdk.core.IResolvable autoRenew) {
-            this.autoRenew = autoRenew;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedKubernetesClusterProps#getAutoRenewPeriod}
-         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.  For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-         * @return {@code this}
-         */
-        public Builder autoRenewPeriod(java.lang.Number autoRenewPeriod) {
-            this.autoRenewPeriod = autoRenewPeriod;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedKubernetesClusterProps#getAutoRenewPeriod}
-         * @param autoRenewPeriod Property autoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.  For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-         * @return {@code this}
-         */
-        public Builder autoRenewPeriod(com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
-            this.autoRenewPeriod = autoRenewPeriod;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedKubernetesClusterProps#getChargeType}
-         * @param chargeType Property chargeType: cluster payment type.
-         *                   The optional values are:
-         *                   PrePaid: prepaid
-         *                   PostPaid: Pay as you go
-         *                   Default to PostPaid.
-         *                   Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-         *                   For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-         * @return {@code this}
-         */
-        public Builder chargeType(java.lang.String chargeType) {
-            this.chargeType = chargeType;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedKubernetesClusterProps#getChargeType}
-         * @param chargeType Property chargeType: cluster payment type.
-         *                   The optional values are:
-         *                   PrePaid: prepaid
-         *                   PostPaid: Pay as you go
-         *                   Default to PostPaid.
-         *                   Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-         *                   For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-         * @return {@code this}
-         */
-        public Builder chargeType(com.aliyun.ros.cdk.core.IResolvable chargeType) {
-            this.chargeType = chargeType;
-            return this;
-        }
-
-        /**
          * Sets the value of {@link ManagedKubernetesClusterProps#getCloudMonitorFlags}
          * @param cloudMonitorFlags Property cloudMonitorFlags: Whether to install the cloud monitoring plugin: true: indicates installation false: Do not install Default to false.
          * @return {@code this}
@@ -698,6 +579,72 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
          */
         public Builder containerCidr(com.aliyun.ros.cdk.core.IResolvable containerCidr) {
             this.containerCidr = containerCidr;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getControlPlaneLogComponents}
+         * @param controlPlaneLogComponents Property controlPlaneLogComponents: List of target components for which logs need to be collected.
+         *                                  Supports apiserver, kcm, scheduler, ccm and controlplane-events.
+         * @return {@code this}
+         */
+        public Builder controlPlaneLogComponents(com.aliyun.ros.cdk.core.IResolvable controlPlaneLogComponents) {
+            this.controlPlaneLogComponents = controlPlaneLogComponents;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getControlPlaneLogComponents}
+         * @param controlPlaneLogComponents Property controlPlaneLogComponents: List of target components for which logs need to be collected.
+         *                                  Supports apiserver, kcm, scheduler, ccm and controlplane-events.
+         * @return {@code this}
+         */
+        public Builder controlPlaneLogComponents(java.util.List<? extends java.lang.Object> controlPlaneLogComponents) {
+            this.controlPlaneLogComponents = controlPlaneLogComponents;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getControlPlaneLogProject}
+         * @param controlPlaneLogProject Property controlPlaneLogProject: Control plane log project.
+         *                               If this field is not set, a log service project named k8s-log-{ClusterID} will be automatically created.
+         * @return {@code this}
+         */
+        public Builder controlPlaneLogProject(java.lang.String controlPlaneLogProject) {
+            this.controlPlaneLogProject = controlPlaneLogProject;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getControlPlaneLogProject}
+         * @param controlPlaneLogProject Property controlPlaneLogProject: Control plane log project.
+         *                               If this field is not set, a log service project named k8s-log-{ClusterID} will be automatically created.
+         * @return {@code this}
+         */
+        public Builder controlPlaneLogProject(com.aliyun.ros.cdk.core.IResolvable controlPlaneLogProject) {
+            this.controlPlaneLogProject = controlPlaneLogProject;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getControlPlaneLogTtl}
+         * @param controlPlaneLogTtl Property controlPlaneLogTtl: Control plane log retention duration (unit: day).
+         *                           Default 30.
+         * @return {@code this}
+         */
+        public Builder controlPlaneLogTtl(java.lang.Number controlPlaneLogTtl) {
+            this.controlPlaneLogTtl = controlPlaneLogTtl;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedKubernetesClusterProps#getControlPlaneLogTtl}
+         * @param controlPlaneLogTtl Property controlPlaneLogTtl: Control plane log retention duration (unit: day).
+         *                           Default 30.
+         * @return {@code this}
+         */
+        public Builder controlPlaneLogTtl(com.aliyun.ros.cdk.core.IResolvable controlPlaneLogTtl) {
+            this.controlPlaneLogTtl = controlPlaneLogTtl;
             return this;
         }
 
@@ -1084,70 +1031,6 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         }
 
         /**
-         * Sets the value of {@link ManagedKubernetesClusterProps#getPeriod}
-         * @param period Property period: The duration of the annual subscription and monthly subscription.
-         *               It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
-         *               When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
-         *               When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
-         *               When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
-         *               Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-         *               For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-         * @return {@code this}
-         */
-        public Builder period(java.lang.Number period) {
-            this.period = period;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedKubernetesClusterProps#getPeriod}
-         * @param period Property period: The duration of the annual subscription and monthly subscription.
-         *               It takes effect when the ChargeType value is PrePaid and is a required value. The value range is:
-         *               When PeriodUnit = Week, Period values are: {"1", "2", "3", "4"}
-         *               When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
-         *               When PeriodUnit = Year, Period values are: {"1", "2", "3", "4", "5"}
-         *               Default to 1.Starting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-         *               For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-         * @return {@code this}
-         */
-        public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
-            this.period = period;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedKubernetesClusterProps#getPeriodUnit}
-         * @param periodUnit Property periodUnit: When you specify PrePaid, you need to specify the period.
-         *                   The options are:
-         *                   Week: Time is measured in weeks
-         *                   Month: time in months
-         *                   Year: time in years
-         *                   Default to MonthStarting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-         *                   For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-         * @return {@code this}
-         */
-        public Builder periodUnit(java.lang.String periodUnit) {
-            this.periodUnit = periodUnit;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ManagedKubernetesClusterProps#getPeriodUnit}
-         * @param periodUnit Property periodUnit: When you specify PrePaid, you need to specify the period.
-         *                   The options are:
-         *                   Week: Time is measured in weeks
-         *                   Month: time in months
-         *                   Year: time in years
-         *                   Default to MonthStarting October 15, 2024, this field will only be effective for the load balancing CLB instance to which the API Server belongs.
-         *                   For the configuration of the working node ECS instance, please specify it in the node pool list parameters.
-         * @return {@code this}
-         */
-        public Builder periodUnit(com.aliyun.ros.cdk.core.IResolvable periodUnit) {
-            this.periodUnit = periodUnit;
-            return this;
-        }
-
-        /**
          * Sets the value of {@link ManagedKubernetesClusterProps#getPlatform}
          * @param platform Property platform: The release version of the operating system.
          *                 Valid values:
@@ -1521,12 +1404,12 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         private final java.lang.Object name;
         private final java.lang.Object vpcId;
         private final java.lang.Object addons;
-        private final java.lang.Object autoRenew;
-        private final java.lang.Object autoRenewPeriod;
-        private final java.lang.Object chargeType;
         private final java.lang.Object cloudMonitorFlags;
         private final java.lang.Object clusterSpec;
         private final java.lang.Object containerCidr;
+        private final java.lang.Object controlPlaneLogComponents;
+        private final java.lang.Object controlPlaneLogProject;
+        private final java.lang.Object controlPlaneLogTtl;
         private final java.lang.Object deleteOptions;
         private final java.lang.Object deletionProtection;
         private final java.lang.Object encryptionProviderKey;
@@ -1542,8 +1425,6 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         private final java.lang.Object nodeNameMode;
         private final java.lang.Object nodePools;
         private final java.lang.Object osType;
-        private final java.lang.Object period;
-        private final java.lang.Object periodUnit;
         private final java.lang.Object platform;
         private final java.lang.Object podVswitchIds;
         private final java.lang.Object proxyMode;
@@ -1569,12 +1450,12 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.addons = software.amazon.jsii.Kernel.get(this, "addons", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.autoRenewPeriod = software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.chargeType = software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.cloudMonitorFlags = software.amazon.jsii.Kernel.get(this, "cloudMonitorFlags", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.clusterSpec = software.amazon.jsii.Kernel.get(this, "clusterSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.containerCidr = software.amazon.jsii.Kernel.get(this, "containerCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.controlPlaneLogComponents = software.amazon.jsii.Kernel.get(this, "controlPlaneLogComponents", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.controlPlaneLogProject = software.amazon.jsii.Kernel.get(this, "controlPlaneLogProject", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.controlPlaneLogTtl = software.amazon.jsii.Kernel.get(this, "controlPlaneLogTtl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deleteOptions = software.amazon.jsii.Kernel.get(this, "deleteOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.encryptionProviderKey = software.amazon.jsii.Kernel.get(this, "encryptionProviderKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1590,8 +1471,6 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             this.nodeNameMode = software.amazon.jsii.Kernel.get(this, "nodeNameMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nodePools = software.amazon.jsii.Kernel.get(this, "nodePools", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.osType = software.amazon.jsii.Kernel.get(this, "osType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.platform = software.amazon.jsii.Kernel.get(this, "platform", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.podVswitchIds = software.amazon.jsii.Kernel.get(this, "podVswitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.proxyMode = software.amazon.jsii.Kernel.get(this, "proxyMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1618,12 +1497,12 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
             this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
             this.addons = builder.addons;
-            this.autoRenew = builder.autoRenew;
-            this.autoRenewPeriod = builder.autoRenewPeriod;
-            this.chargeType = builder.chargeType;
             this.cloudMonitorFlags = builder.cloudMonitorFlags;
             this.clusterSpec = builder.clusterSpec;
             this.containerCidr = builder.containerCidr;
+            this.controlPlaneLogComponents = builder.controlPlaneLogComponents;
+            this.controlPlaneLogProject = builder.controlPlaneLogProject;
+            this.controlPlaneLogTtl = builder.controlPlaneLogTtl;
             this.deleteOptions = builder.deleteOptions;
             this.deletionProtection = builder.deletionProtection;
             this.encryptionProviderKey = builder.encryptionProviderKey;
@@ -1639,8 +1518,6 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             this.nodeNameMode = builder.nodeNameMode;
             this.nodePools = builder.nodePools;
             this.osType = builder.osType;
-            this.period = builder.period;
-            this.periodUnit = builder.periodUnit;
             this.platform = builder.platform;
             this.podVswitchIds = builder.podVswitchIds;
             this.proxyMode = builder.proxyMode;
@@ -1674,21 +1551,6 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         }
 
         @Override
-        public final java.lang.Object getAutoRenew() {
-            return this.autoRenew;
-        }
-
-        @Override
-        public final java.lang.Object getAutoRenewPeriod() {
-            return this.autoRenewPeriod;
-        }
-
-        @Override
-        public final java.lang.Object getChargeType() {
-            return this.chargeType;
-        }
-
-        @Override
         public final java.lang.Object getCloudMonitorFlags() {
             return this.cloudMonitorFlags;
         }
@@ -1701,6 +1563,21 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         @Override
         public final java.lang.Object getContainerCidr() {
             return this.containerCidr;
+        }
+
+        @Override
+        public final java.lang.Object getControlPlaneLogComponents() {
+            return this.controlPlaneLogComponents;
+        }
+
+        @Override
+        public final java.lang.Object getControlPlaneLogProject() {
+            return this.controlPlaneLogProject;
+        }
+
+        @Override
+        public final java.lang.Object getControlPlaneLogTtl() {
+            return this.controlPlaneLogTtl;
         }
 
         @Override
@@ -1776,16 +1653,6 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
         @Override
         public final java.lang.Object getOsType() {
             return this.osType;
-        }
-
-        @Override
-        public final java.lang.Object getPeriod() {
-            return this.period;
-        }
-
-        @Override
-        public final java.lang.Object getPeriodUnit() {
-            return this.periodUnit;
         }
 
         @Override
@@ -1874,15 +1741,6 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             if (this.getAddons() != null) {
                 data.set("addons", om.valueToTree(this.getAddons()));
             }
-            if (this.getAutoRenew() != null) {
-                data.set("autoRenew", om.valueToTree(this.getAutoRenew()));
-            }
-            if (this.getAutoRenewPeriod() != null) {
-                data.set("autoRenewPeriod", om.valueToTree(this.getAutoRenewPeriod()));
-            }
-            if (this.getChargeType() != null) {
-                data.set("chargeType", om.valueToTree(this.getChargeType()));
-            }
             if (this.getCloudMonitorFlags() != null) {
                 data.set("cloudMonitorFlags", om.valueToTree(this.getCloudMonitorFlags()));
             }
@@ -1891,6 +1749,15 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             }
             if (this.getContainerCidr() != null) {
                 data.set("containerCidr", om.valueToTree(this.getContainerCidr()));
+            }
+            if (this.getControlPlaneLogComponents() != null) {
+                data.set("controlPlaneLogComponents", om.valueToTree(this.getControlPlaneLogComponents()));
+            }
+            if (this.getControlPlaneLogProject() != null) {
+                data.set("controlPlaneLogProject", om.valueToTree(this.getControlPlaneLogProject()));
+            }
+            if (this.getControlPlaneLogTtl() != null) {
+                data.set("controlPlaneLogTtl", om.valueToTree(this.getControlPlaneLogTtl()));
             }
             if (this.getDeleteOptions() != null) {
                 data.set("deleteOptions", om.valueToTree(this.getDeleteOptions()));
@@ -1936,12 +1803,6 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             }
             if (this.getOsType() != null) {
                 data.set("osType", om.valueToTree(this.getOsType()));
-            }
-            if (this.getPeriod() != null) {
-                data.set("period", om.valueToTree(this.getPeriod()));
-            }
-            if (this.getPeriodUnit() != null) {
-                data.set("periodUnit", om.valueToTree(this.getPeriodUnit()));
             }
             if (this.getPlatform() != null) {
                 data.set("platform", om.valueToTree(this.getPlatform()));
@@ -2009,12 +1870,12 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             if (!name.equals(that.name)) return false;
             if (!vpcId.equals(that.vpcId)) return false;
             if (this.addons != null ? !this.addons.equals(that.addons) : that.addons != null) return false;
-            if (this.autoRenew != null ? !this.autoRenew.equals(that.autoRenew) : that.autoRenew != null) return false;
-            if (this.autoRenewPeriod != null ? !this.autoRenewPeriod.equals(that.autoRenewPeriod) : that.autoRenewPeriod != null) return false;
-            if (this.chargeType != null ? !this.chargeType.equals(that.chargeType) : that.chargeType != null) return false;
             if (this.cloudMonitorFlags != null ? !this.cloudMonitorFlags.equals(that.cloudMonitorFlags) : that.cloudMonitorFlags != null) return false;
             if (this.clusterSpec != null ? !this.clusterSpec.equals(that.clusterSpec) : that.clusterSpec != null) return false;
             if (this.containerCidr != null ? !this.containerCidr.equals(that.containerCidr) : that.containerCidr != null) return false;
+            if (this.controlPlaneLogComponents != null ? !this.controlPlaneLogComponents.equals(that.controlPlaneLogComponents) : that.controlPlaneLogComponents != null) return false;
+            if (this.controlPlaneLogProject != null ? !this.controlPlaneLogProject.equals(that.controlPlaneLogProject) : that.controlPlaneLogProject != null) return false;
+            if (this.controlPlaneLogTtl != null ? !this.controlPlaneLogTtl.equals(that.controlPlaneLogTtl) : that.controlPlaneLogTtl != null) return false;
             if (this.deleteOptions != null ? !this.deleteOptions.equals(that.deleteOptions) : that.deleteOptions != null) return false;
             if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
             if (this.encryptionProviderKey != null ? !this.encryptionProviderKey.equals(that.encryptionProviderKey) : that.encryptionProviderKey != null) return false;
@@ -2030,8 +1891,6 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             if (this.nodeNameMode != null ? !this.nodeNameMode.equals(that.nodeNameMode) : that.nodeNameMode != null) return false;
             if (this.nodePools != null ? !this.nodePools.equals(that.nodePools) : that.nodePools != null) return false;
             if (this.osType != null ? !this.osType.equals(that.osType) : that.osType != null) return false;
-            if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
-            if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
             if (this.platform != null ? !this.platform.equals(that.platform) : that.platform != null) return false;
             if (this.podVswitchIds != null ? !this.podVswitchIds.equals(that.podVswitchIds) : that.podVswitchIds != null) return false;
             if (this.proxyMode != null ? !this.proxyMode.equals(that.proxyMode) : that.proxyMode != null) return false;
@@ -2054,12 +1913,12 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             int result = this.name.hashCode();
             result = 31 * result + (this.vpcId.hashCode());
             result = 31 * result + (this.addons != null ? this.addons.hashCode() : 0);
-            result = 31 * result + (this.autoRenew != null ? this.autoRenew.hashCode() : 0);
-            result = 31 * result + (this.autoRenewPeriod != null ? this.autoRenewPeriod.hashCode() : 0);
-            result = 31 * result + (this.chargeType != null ? this.chargeType.hashCode() : 0);
             result = 31 * result + (this.cloudMonitorFlags != null ? this.cloudMonitorFlags.hashCode() : 0);
             result = 31 * result + (this.clusterSpec != null ? this.clusterSpec.hashCode() : 0);
             result = 31 * result + (this.containerCidr != null ? this.containerCidr.hashCode() : 0);
+            result = 31 * result + (this.controlPlaneLogComponents != null ? this.controlPlaneLogComponents.hashCode() : 0);
+            result = 31 * result + (this.controlPlaneLogProject != null ? this.controlPlaneLogProject.hashCode() : 0);
+            result = 31 * result + (this.controlPlaneLogTtl != null ? this.controlPlaneLogTtl.hashCode() : 0);
             result = 31 * result + (this.deleteOptions != null ? this.deleteOptions.hashCode() : 0);
             result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
             result = 31 * result + (this.encryptionProviderKey != null ? this.encryptionProviderKey.hashCode() : 0);
@@ -2075,8 +1934,6 @@ public interface ManagedKubernetesClusterProps extends software.amazon.jsii.Jsii
             result = 31 * result + (this.nodeNameMode != null ? this.nodeNameMode.hashCode() : 0);
             result = 31 * result + (this.nodePools != null ? this.nodePools.hashCode() : 0);
             result = 31 * result + (this.osType != null ? this.osType.hashCode() : 0);
-            result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
-            result = 31 * result + (this.periodUnit != null ? this.periodUnit.hashCode() : 0);
             result = 31 * result + (this.platform != null ? this.platform.hashCode() : 0);
             result = 31 * result + (this.podVswitchIds != null ? this.podVswitchIds.hashCode() : 0);
             result = 31 * result + (this.proxyMode != null ? this.proxyMode.hashCode() : 0);

@@ -5,6 +5,10 @@ package alicloudroscdkkms
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-key
 type KeyProps struct {
+	// Property deletionProtection: Specifies whether to enable the release protection feature for the key.
+	//
+	// Default is false.
+	DeletionProtection interface{} `field:"optional" json:"deletionProtection" yaml:"deletionProtection"`
 	// Property description: The description of the CMK.
 	//
 	// Length constraints: Minimum length of 0 characters. Maximum length of 8192 characters.

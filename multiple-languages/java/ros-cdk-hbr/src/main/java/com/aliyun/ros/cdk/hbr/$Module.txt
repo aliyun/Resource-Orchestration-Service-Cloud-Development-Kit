@@ -27,7 +27,11 @@
 @alicloud/ros-cdk-hbr.RosVaultProps=com.aliyun.ros.cdk.hbr.RosVaultProps
 @alicloud/ros-cdk-hbr.Vault=com.aliyun.ros.cdk.hbr.Vault
 @alicloud/ros-cdk-hbr.VaultProps=com.aliyun.ros.cdk.hbr.VaultProps
+@alicloud/ros-cdk-hbr.datasource.RosVault=com.aliyun.ros.cdk.hbr.datasource.RosVault
+@alicloud/ros-cdk-hbr.datasource.RosVaultProps=com.aliyun.ros.cdk.hbr.datasource.RosVaultProps
 @alicloud/ros-cdk-hbr.datasource.RosVaults=com.aliyun.ros.cdk.hbr.datasource.RosVaults
 @alicloud/ros-cdk-hbr.datasource.RosVaultsProps=com.aliyun.ros.cdk.hbr.datasource.RosVaultsProps
+@alicloud/ros-cdk-hbr.datasource.Vault=com.aliyun.ros.cdk.hbr.datasource.Vault
+@alicloud/ros-cdk-hbr.datasource.VaultProps=com.aliyun.ros.cdk.hbr.datasource.VaultProps
 @alicloud/ros-cdk-hbr.datasource.Vaults=com.aliyun.ros.cdk.hbr.datasource.Vaults
 @alicloud/ros-cdk-hbr.datasource.VaultsProps=com.aliyun.ros.cdk.hbr.datasource.VaultsProps

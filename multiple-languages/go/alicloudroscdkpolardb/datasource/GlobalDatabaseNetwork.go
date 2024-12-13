@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::POLARDB::GlobalDatabaseNetwork`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::POLARDB::GlobalDatabaseNetwork`, which is used to query the details of a Global Database Network (GDN) within the current Alibaba Cloud account.
 type GlobalDatabaseNetwork interface {
 	alicloudroscdkcore.Resource
 	// Attribute Connections: The information about the connection to the cluster.

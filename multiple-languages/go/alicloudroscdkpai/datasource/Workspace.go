@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::Workspace`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::Workspace`, which is used to query the information about a Platform for AI (PAI) workspace.
 type Workspace interface {
 	alicloudroscdkcore.Resource
 	// Attribute AdminNames: List of administrator account names.

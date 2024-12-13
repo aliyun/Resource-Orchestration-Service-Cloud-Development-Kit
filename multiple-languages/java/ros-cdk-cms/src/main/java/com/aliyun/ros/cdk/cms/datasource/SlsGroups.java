@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cms.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::CMS::SlsGroups</code>, which is used to query the basic information about Logstore groups.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::CMS::SlsGroups</code>, which is used to query the information about Logstore groups.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:27.837Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:05.796Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.datasource.SlsGroups")
 public class SlsGroups extends com.aliyun.ros.cdk.core.Resource {
 

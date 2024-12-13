@@ -72,7 +72,7 @@ function rosDiskReplicaGroupsPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::EBS::DiskReplicaGroups`, which is used to query the information about one or more replication pair-consistent groups.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::EBS::DiskReplicaGroups`, which is used to query the information about replication pair-consistent groups.
  * @Note This class does not contain additional functions, so it is recommended to use the `DiskReplicaGroups` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ebs-diskreplicagroups
  */
@@ -205,7 +205,7 @@ function rosDiskReplicaPairsPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::EBS::DiskReplicaPairs`, which is used to query the information about one or more replication pairs.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::EBS::DiskReplicaPairs`, which is used to query the information about replication pairs.
  * @Note This class does not contain additional functions, so it is recommended to use the `DiskReplicaPairs` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ebs-diskreplicapairs
  */

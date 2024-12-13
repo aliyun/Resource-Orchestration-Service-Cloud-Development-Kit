@@ -120,10 +120,6 @@ func (j *jsiiProxy_RosShardingInstance) validateSetMongosParameters(val interfac
 	return nil
 }
 
-func (j *jsiiProxy_RosShardingInstance) validateSetNetworkTypeParameters(val interface{}) error {
-	return nil
-}
-
 func (j *jsiiProxy_RosShardingInstance) validateSetPeriodParameters(val interface{}) error {
 	return nil
 }

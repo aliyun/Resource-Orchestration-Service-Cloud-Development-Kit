@@ -1,5 +1,7 @@
 @alicloud/ros-cdk-sae.Application=com.aliyun.ros.cdk.sae.Application
 @alicloud/ros-cdk-sae.ApplicationProps=com.aliyun.ros.cdk.sae.ApplicationProps
+@alicloud/ros-cdk-sae.ApplicationScalingRule=com.aliyun.ros.cdk.sae.ApplicationScalingRule
+@alicloud/ros-cdk-sae.ApplicationScalingRuleProps=com.aliyun.ros.cdk.sae.ApplicationScalingRuleProps
 @alicloud/ros-cdk-sae.ConfigMap=com.aliyun.ros.cdk.sae.ConfigMap
 @alicloud/ros-cdk-sae.ConfigMapProps=com.aliyun.ros.cdk.sae.ConfigMapProps
 @alicloud/ros-cdk-sae.Ingress=com.aliyun.ros.cdk.sae.Ingress
@@ -9,6 +11,14 @@
 @alicloud/ros-cdk-sae.RosApplication=com.aliyun.ros.cdk.sae.RosApplication
 @alicloud/ros-cdk-sae.RosApplication.TagsProperty=com.aliyun.ros.cdk.sae.RosApplication$TagsProperty
 @alicloud/ros-cdk-sae.RosApplicationProps=com.aliyun.ros.cdk.sae.RosApplicationProps
+@alicloud/ros-cdk-sae.RosApplicationScalingRule=com.aliyun.ros.cdk.sae.RosApplicationScalingRule
+@alicloud/ros-cdk-sae.RosApplicationScalingRule.MetricsProperty=com.aliyun.ros.cdk.sae.RosApplicationScalingRule$MetricsProperty
+@alicloud/ros-cdk-sae.RosApplicationScalingRule.ScaleDownRulesProperty=com.aliyun.ros.cdk.sae.RosApplicationScalingRule$ScaleDownRulesProperty
+@alicloud/ros-cdk-sae.RosApplicationScalingRule.ScaleUpRulesProperty=com.aliyun.ros.cdk.sae.RosApplicationScalingRule$ScaleUpRulesProperty
+@alicloud/ros-cdk-sae.RosApplicationScalingRule.ScalingRuleMetricProperty=com.aliyun.ros.cdk.sae.RosApplicationScalingRule$ScalingRuleMetricProperty
+@alicloud/ros-cdk-sae.RosApplicationScalingRule.ScalingRuleTimerProperty=com.aliyun.ros.cdk.sae.RosApplicationScalingRule$ScalingRuleTimerProperty
+@alicloud/ros-cdk-sae.RosApplicationScalingRule.SchedulesProperty=com.aliyun.ros.cdk.sae.RosApplicationScalingRule$SchedulesProperty
+@alicloud/ros-cdk-sae.RosApplicationScalingRuleProps=com.aliyun.ros.cdk.sae.RosApplicationScalingRuleProps
 @alicloud/ros-cdk-sae.RosConfigMap=com.aliyun.ros.cdk.sae.RosConfigMap
 @alicloud/ros-cdk-sae.RosConfigMapProps=com.aliyun.ros.cdk.sae.RosConfigMapProps
 @alicloud/ros-cdk-sae.RosIngress=com.aliyun.ros.cdk.sae.RosIngress

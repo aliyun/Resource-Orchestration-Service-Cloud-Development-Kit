@@ -78,7 +78,7 @@ function rosAddonReleasePropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::AddonRelease`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::AddonRelease`, which is used to install an add-on release.
  * @Note This class does not contain additional functions, so it is recommended to use the `AddonRelease` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-addonrelease
  */
@@ -569,7 +569,7 @@ function rosApplyAlertRuleTemplatePropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::ApplyAlertRuleTemplate`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::ApplyAlertRuleTemplate`, which is used to create an alert rule of Alibaba Cloud Managed Service for Prometheus.
  * @Note This class does not contain additional functions, so it is recommended to use the `ApplyAlertRuleTemplate` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-applyalertruletemplate
  */
@@ -726,7 +726,7 @@ function rosDeliverTaskPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::DeliverTask`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::DeliverTask`, which is used to create a delivery task.
  * @Note This class does not contain additional functions, so it is recommended to use the `DeliverTask` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-delivertask
  */
@@ -1060,7 +1060,7 @@ function rosEnvironmentPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::Environment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::Environment`, which is used to create an environment.
  * @Note This class does not contain additional functions, so it is recommended to use the `Environment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-environment
  */
@@ -1356,7 +1356,7 @@ function rosEnvironmentFeaturePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::EnvironmentFeature`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::EnvironmentFeature`, which is used to install a feature.
  * @Note This class does not contain additional functions, so it is recommended to use the `EnvironmentFeature` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-environmentfeature
  */
@@ -2117,4 +2117,204 @@ export class RosRetcodeApp extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosRetcodeAppPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+/**
+ * Properties for defining a `RosXTraceApp`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-xtraceapp
+ */
+export interface RosXTraceAppProps {
+
+    /**
+     * @Property xTraceAppName: The name of the resource.
+     */
+    readonly xTraceAppName: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags of The tags of the resource..
+     */
+    readonly tags?: RosXTraceApp.TagsProperty[];
+}
+
+/**
+ * Determine whether the given properties match those of a `RosXTraceAppProps`
+ *
+ * @param properties - the TypeScript properties of a `RosXTraceAppProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosXTraceAppPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosXTraceApp_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('xTraceAppName', ros.requiredValidator)(properties.xTraceAppName));
+    errors.collect(ros.propertyValidator('xTraceAppName', ros.validateString)(properties.xTraceAppName));
+    return errors.wrap('supplied properties not correct for "RosXTraceAppProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ARMS::XTraceApp` resource
+ *
+ * @param properties - the TypeScript properties of a `RosXTraceAppProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ARMS::XTraceApp` resource.
+ */
+// @ts-ignore TS6133
+function rosXTraceAppPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosXTraceAppPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'XTraceAppName': ros.stringToRosTemplate(properties.xTraceAppName),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosXTraceAppTagsPropertyToRosTemplate)(properties.tags),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::XTraceApp`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `XTraceApp` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-xtraceapp
+ */
+export class RosXTraceApp extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ARMS::XTraceApp";
+
+    /**
+     * @Attribute CreateTime: The creation time of the resource.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute Pid: the identify of application.
+     */
+    public readonly attrPid: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tags of the resource.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    /**
+     * @Attribute XTraceAppName: The name of the resource.
+     */
+    public readonly attrXTraceAppName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property xTraceAppName: The name of the resource.
+     */
+    public xTraceAppName: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags of The tags of the resource..
+     */
+    public tags: RosXTraceApp.TagsProperty[] | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosXTraceAppProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosXTraceApp.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrPid = this.getAtt('Pid');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrTags = this.getAtt('Tags');
+        this.attrXTraceAppName = this.getAtt('XTraceAppName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.xTraceAppName = props.xTraceAppName;
+        this.resourceGroupId = props.resourceGroupId;
+        this.tags = props.tags;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            xTraceAppName: this.xTraceAppName,
+            resourceGroupId: this.resourceGroupId,
+            tags: this.tags,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosXTraceAppPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosXTraceApp {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosXTraceApp_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ARMS::XTraceApp.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ARMS::XTraceApp.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosXTraceAppTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosXTraceApp_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
 }

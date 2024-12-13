@@ -116,6 +116,10 @@ func (j *jsiiProxy_RosExchange) validateSetVirtualHostParameters(val interface{}
 	return nil
 }
 
+func (j *jsiiProxy_RosExchange) validateSetXDelayedTypeParameters(val interface{}) error {
+	return nil
+}
+
 func validateNewRosExchangeParameters(scope alicloudroscdkcore.Construct, id *string, props *RosExchangeProps, enableResourcePropertyConstraint *bool) error {
 	return nil
 }

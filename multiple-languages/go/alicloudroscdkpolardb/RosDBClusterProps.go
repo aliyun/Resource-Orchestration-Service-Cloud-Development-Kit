@@ -23,6 +23,7 @@ type RosDBClusterProps struct {
 	DbMinorVersion interface{} `field:"optional" json:"dbMinorVersion" yaml:"dbMinorVersion"`
 	DbNodeNum interface{} `field:"optional" json:"dbNodeNum" yaml:"dbNodeNum"`
 	DefaultTimeZone interface{} `field:"optional" json:"defaultTimeZone" yaml:"defaultTimeZone"`
+	DeletionProtection interface{} `field:"optional" json:"deletionProtection" yaml:"deletionProtection"`
 	GdnId interface{} `field:"optional" json:"gdnId" yaml:"gdnId"`
 	HotStandbyCluster interface{} `field:"optional" json:"hotStandbyCluster" yaml:"hotStandbyCluster"`
 	LoosePolarLogBin interface{} `field:"optional" json:"loosePolarLogBin" yaml:"loosePolarLogBin"`

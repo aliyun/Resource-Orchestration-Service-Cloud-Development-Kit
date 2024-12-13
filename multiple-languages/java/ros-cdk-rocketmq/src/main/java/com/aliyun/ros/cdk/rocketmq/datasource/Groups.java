@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rocketmq.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ROCKETMQ::Groups</code>, which is used to query the groups in Message Queue for Apache RocketMQ.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:33.091Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:11.389Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq.datasource.Groups")
 public class Groups extends com.aliyun.ros.cdk.core.Resource {
 

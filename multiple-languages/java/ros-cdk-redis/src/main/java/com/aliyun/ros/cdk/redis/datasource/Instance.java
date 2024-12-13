@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.redis.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::REDIS::Instance</code>.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::REDIS::Instance</code>, which is used to query the information about a Tair (Redis OSS-compatible) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:32.988Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:11.274Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.datasource.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -233,8 +233,6 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
     /**
      * Attribute SecondaryZoneId: The ID of the standby zone.
-     * <p>
-     * You can call the [DescribeZones](~~ 94527 ~~) operation.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSecondaryZoneId() {
         return software.amazon.jsii.Kernel.get(this, "attrSecondaryZoneId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));

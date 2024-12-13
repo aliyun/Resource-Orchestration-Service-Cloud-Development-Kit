@@ -24,7 +24,7 @@ export interface CenInstancesProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::CEN::CenInstances`, which is used to query the details of Cloud Enterprise Network (CEN) instances within the current Alibaba Cloud account.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CEN::CenInstances`, which is used to query the information about Cloud Enterprise Network (CEN) instances within the current Alibaba Cloud account.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenInstances`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-ceninstances
  */

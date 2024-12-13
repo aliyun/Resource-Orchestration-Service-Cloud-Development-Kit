@@ -136,11 +136,11 @@ func (j *jsiiProxy_RosInstance) validateSetHiddenZoneIdParameters(val interface{
 	return nil
 }
 
-func (j *jsiiProxy_RosInstance) validateSetNetworkTypeParameters(val interface{}) error {
+func (j *jsiiProxy_RosInstance) validateSetPeriodParameters(val interface{}) error {
 	return nil
 }
 
-func (j *jsiiProxy_RosInstance) validateSetPeriodParameters(val interface{}) error {
+func (j *jsiiProxy_RosInstance) validateSetPrivateConnectionsParameters(val interface{}) error {
 	return nil
 }
 

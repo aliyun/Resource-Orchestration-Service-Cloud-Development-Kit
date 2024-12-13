@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::HaVip`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::HaVip`, which is used to create a high-availability virtual IP address (HAVIP).</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `HaVip` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-havip

@@ -244,8 +244,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         /// Allowed values:
         ///
         /// <list type="bullet">
-        /// <description>Skip: This option means that customers understand the risks, you can do anything without confirmation Action, no matter what the level of risk. It takes effect only if Mode is Automatic.</description>
-        /// <description>ConfirmEveryHighRiskAction (default): This option would require customers to confirm each Action a high risk. NotifyExecution by calling customer interface to confirm or cancel.</description>
+        /// <description>Skip (default): This option means that customers understand the risks, you can do anything without confirmation Action, no matter what the level of risk. It takes effect only if Mode is Automatic.</description>
+        /// <description>ConfirmEveryHighRiskAction: This option would require customers to confirm each Action a high risk. NotifyExecution by calling customer interface to confirm or cancel.</description>
         /// </list>
         /// </remarks>
         [JsiiOptional]

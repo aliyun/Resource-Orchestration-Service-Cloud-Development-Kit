@@ -92,6 +92,10 @@ func (j *jsiiProxy_RosInstance) validateSetCoreSpecParameters(val interface{}) e
 	return nil
 }
 
+func (j *jsiiProxy_RosInstance) validateSetDeletionProtectionParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosInstance) validateSetDiskCategoryParameters(val interface{}) error {
 	return nil
 }

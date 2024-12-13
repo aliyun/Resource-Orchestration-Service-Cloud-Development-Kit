@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cms;
  * <p>
  * If the specified rule name does not exist, an event-triggered alert rule is created. If the specified rule name exists, the specified event-triggered alert rule is modified.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:27.726Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:05.704Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosEventRule")
 public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -194,6 +194,13 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCustomFilters() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getEventTypeList() {
             return null;
         }
@@ -222,6 +229,13 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSqlFilter() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getStatusList() {
             return null;
         }
@@ -238,11 +252,35 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<EventPatternProperty> {
+            java.lang.Object customFilters;
             java.lang.Object eventTypeList;
             java.lang.Object levelList;
             java.lang.Object nameList;
             java.lang.Object product;
+            java.lang.Object sqlFilter;
             java.lang.Object statusList;
+
+            /**
+             * Sets the value of {@link EventPatternProperty#getCustomFilters}
+             * @param customFilters the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder customFilters(java.lang.String customFilters) {
+                this.customFilters = customFilters;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EventPatternProperty#getCustomFilters}
+             * @param customFilters the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder customFilters(com.aliyun.ros.cdk.core.IResolvable customFilters) {
+                this.customFilters = customFilters;
+                return this;
+            }
 
             /**
              * Sets the value of {@link EventPatternProperty#getEventTypeList}
@@ -333,6 +371,28 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link EventPatternProperty#getSqlFilter}
+             * @param sqlFilter the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder sqlFilter(java.lang.String sqlFilter) {
+                this.sqlFilter = sqlFilter;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EventPatternProperty#getSqlFilter}
+             * @param sqlFilter the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder sqlFilter(com.aliyun.ros.cdk.core.IResolvable sqlFilter) {
+                this.sqlFilter = sqlFilter;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link EventPatternProperty#getStatusList}
              * @param statusList the value to be set.
              * @return {@code this}
@@ -372,10 +432,12 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements EventPatternProperty {
+            private final java.lang.Object customFilters;
             private final java.lang.Object eventTypeList;
             private final java.lang.Object levelList;
             private final java.lang.Object nameList;
             private final java.lang.Object product;
+            private final java.lang.Object sqlFilter;
             private final java.lang.Object statusList;
 
             /**
@@ -384,10 +446,12 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
+                this.customFilters = software.amazon.jsii.Kernel.get(this, "customFilters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.eventTypeList = software.amazon.jsii.Kernel.get(this, "eventTypeList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.levelList = software.amazon.jsii.Kernel.get(this, "levelList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.nameList = software.amazon.jsii.Kernel.get(this, "nameList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.product = software.amazon.jsii.Kernel.get(this, "product", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.sqlFilter = software.amazon.jsii.Kernel.get(this, "sqlFilter", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.statusList = software.amazon.jsii.Kernel.get(this, "statusList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
@@ -396,11 +460,18 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.customFilters = builder.customFilters;
                 this.eventTypeList = builder.eventTypeList;
                 this.levelList = builder.levelList;
                 this.nameList = builder.nameList;
                 this.product = builder.product;
+                this.sqlFilter = builder.sqlFilter;
                 this.statusList = builder.statusList;
+            }
+
+            @Override
+            public final java.lang.Object getCustomFilters() {
+                return this.customFilters;
             }
 
             @Override
@@ -424,6 +495,11 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getSqlFilter() {
+                return this.sqlFilter;
+            }
+
+            @Override
             public final java.lang.Object getStatusList() {
                 return this.statusList;
             }
@@ -434,6 +510,9 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
+                if (this.getCustomFilters() != null) {
+                    data.set("customFilters", om.valueToTree(this.getCustomFilters()));
+                }
                 if (this.getEventTypeList() != null) {
                     data.set("eventTypeList", om.valueToTree(this.getEventTypeList()));
                 }
@@ -445,6 +524,9 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
                 }
                 if (this.getProduct() != null) {
                     data.set("product", om.valueToTree(this.getProduct()));
+                }
+                if (this.getSqlFilter() != null) {
+                    data.set("sqlFilter", om.valueToTree(this.getSqlFilter()));
                 }
                 if (this.getStatusList() != null) {
                     data.set("statusList", om.valueToTree(this.getStatusList()));
@@ -467,19 +549,23 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
 
                 EventPatternProperty.Jsii$Proxy that = (EventPatternProperty.Jsii$Proxy) o;
 
+                if (this.customFilters != null ? !this.customFilters.equals(that.customFilters) : that.customFilters != null) return false;
                 if (this.eventTypeList != null ? !this.eventTypeList.equals(that.eventTypeList) : that.eventTypeList != null) return false;
                 if (this.levelList != null ? !this.levelList.equals(that.levelList) : that.levelList != null) return false;
                 if (this.nameList != null ? !this.nameList.equals(that.nameList) : that.nameList != null) return false;
                 if (this.product != null ? !this.product.equals(that.product) : that.product != null) return false;
+                if (this.sqlFilter != null ? !this.sqlFilter.equals(that.sqlFilter) : that.sqlFilter != null) return false;
                 return this.statusList != null ? this.statusList.equals(that.statusList) : that.statusList == null;
             }
 
             @Override
             public final int hashCode() {
-                int result = this.eventTypeList != null ? this.eventTypeList.hashCode() : 0;
+                int result = this.customFilters != null ? this.customFilters.hashCode() : 0;
+                result = 31 * result + (this.eventTypeList != null ? this.eventTypeList.hashCode() : 0);
                 result = 31 * result + (this.levelList != null ? this.levelList.hashCode() : 0);
                 result = 31 * result + (this.nameList != null ? this.nameList.hashCode() : 0);
                 result = 31 * result + (this.product != null ? this.product.hashCode() : 0);
+                result = 31 * result + (this.sqlFilter != null ? this.sqlFilter.hashCode() : 0);
                 result = 31 * result + (this.statusList != null ? this.statusList.hashCode() : 0);
                 return result;
             }

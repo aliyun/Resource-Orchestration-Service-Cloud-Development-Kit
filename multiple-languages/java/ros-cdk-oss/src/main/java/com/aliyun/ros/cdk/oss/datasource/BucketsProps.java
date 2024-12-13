@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.oss.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oss-buckets
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:32.018Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:10.091Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.datasource.BucketsProps")
 @software.amazon.jsii.Jsii.Proxy(BucketsProps.Jsii$Proxy.class)
 public interface BucketsProps extends software.amazon.jsii.JsiiSerializable {

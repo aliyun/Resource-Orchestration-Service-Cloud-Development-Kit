@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::WorkspaceResourceDlcs`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::WorkspaceResourceDlcs`, which is used to query a list of Deep Learning Containers (DLC) resources that are associated with a Platform for AI (PAI) workspace.
 type WorkspaceResourceDlcs interface {
 	alicloudroscdkcore.Resource
 	// Attribute GroupNames: The list of group names.

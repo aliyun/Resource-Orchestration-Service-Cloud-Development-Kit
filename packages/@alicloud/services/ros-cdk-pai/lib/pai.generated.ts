@@ -3,6 +3,317 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosCodeSource`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-codesource
+ */
+export interface RosCodeSourceProps {
+
+    /**
+     * @Property accessibility: Visibility of the code configuration, possible values:
+     * - PRIVATE: In this workspace, it is only visible to you and the administrator.
+     * - PUBLIC: In this workspace, it is visible to everyone.
+     */
+    readonly accessibility: string | ros.IResolvable;
+
+    /**
+     * @Property codeRepo: Code repository address.
+     */
+    readonly codeRepo: string | ros.IResolvable;
+
+    /**
+     * @Property displayName: Code source configuration name.
+     */
+    readonly displayName: string | ros.IResolvable;
+
+    /**
+     * @Property mountPath: The local Mount Directory of the code.
+     */
+    readonly mountPath: string | ros.IResolvable;
+
+    /**
+     * @Property workspaceId: The ID of the workspace.
+     */
+    readonly workspaceId: string | ros.IResolvable;
+
+    /**
+     * @Property codeBranch: Code repository branch.
+     */
+    readonly codeBranch?: string | ros.IResolvable;
+
+    /**
+     * @Property codeCommit: The code CommitId.
+     */
+    readonly codeCommit?: string | ros.IResolvable;
+
+    /**
+     * @Property codeRepoAccessToken: The Token used to access the code repository.
+     */
+    readonly codeRepoAccessToken?: string | ros.IResolvable;
+
+    /**
+     * @Property codeRepoUserName: The user name of the code repository.
+     */
+    readonly codeRepoUserName?: string | ros.IResolvable;
+
+    /**
+     * @Property description: A detailed description of the code configuration.
+     */
+    readonly description?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosCodeSourceProps`
+ *
+ * @param properties - the TypeScript properties of a `RosCodeSourceProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosCodeSourcePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('mountPath', ros.requiredValidator)(properties.mountPath));
+    errors.collect(ros.propertyValidator('mountPath', ros.validateString)(properties.mountPath));
+    errors.collect(ros.propertyValidator('codeRepo', ros.requiredValidator)(properties.codeRepo));
+    errors.collect(ros.propertyValidator('codeRepo', ros.validateString)(properties.codeRepo));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('codeRepoAccessToken', ros.validateString)(properties.codeRepoAccessToken));
+    errors.collect(ros.propertyValidator('accessibility', ros.requiredValidator)(properties.accessibility));
+    if(properties.accessibility && (typeof properties.accessibility) !== 'object') {
+        errors.collect(ros.propertyValidator('accessibility', ros.validateAllowedValues)({
+          data: properties.accessibility,
+          allowedValues: ["PRIVATE","PUBLIC"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('accessibility', ros.validateString)(properties.accessibility));
+    errors.collect(ros.propertyValidator('codeCommit', ros.validateString)(properties.codeCommit));
+    errors.collect(ros.propertyValidator('displayName', ros.requiredValidator)(properties.displayName));
+    errors.collect(ros.propertyValidator('displayName', ros.validateString)(properties.displayName));
+    errors.collect(ros.propertyValidator('workspaceId', ros.requiredValidator)(properties.workspaceId));
+    errors.collect(ros.propertyValidator('workspaceId', ros.validateString)(properties.workspaceId));
+    errors.collect(ros.propertyValidator('codeBranch', ros.validateString)(properties.codeBranch));
+    errors.collect(ros.propertyValidator('codeRepoUserName', ros.validateString)(properties.codeRepoUserName));
+    return errors.wrap('supplied properties not correct for "RosCodeSourceProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PAI::CodeSource` resource
+ *
+ * @param properties - the TypeScript properties of a `RosCodeSourceProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PAI::CodeSource` resource.
+ */
+// @ts-ignore TS6133
+function rosCodeSourcePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosCodeSourcePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Accessibility': ros.stringToRosTemplate(properties.accessibility),
+      'CodeRepo': ros.stringToRosTemplate(properties.codeRepo),
+      'DisplayName': ros.stringToRosTemplate(properties.displayName),
+      'MountPath': ros.stringToRosTemplate(properties.mountPath),
+      'WorkspaceId': ros.stringToRosTemplate(properties.workspaceId),
+      'CodeBranch': ros.stringToRosTemplate(properties.codeBranch),
+      'CodeCommit': ros.stringToRosTemplate(properties.codeCommit),
+      'CodeRepoAccessToken': ros.stringToRosTemplate(properties.codeRepoAccessToken),
+      'CodeRepoUserName': ros.stringToRosTemplate(properties.codeRepoUserName),
+      'Description': ros.stringToRosTemplate(properties.description),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::CodeSource`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CodeSource` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-codesource
+ */
+export class RosCodeSource extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PAI::CodeSource";
+
+    /**
+     * @Attribute Accessibility: Visibility of the code configuration.
+     */
+    public readonly attrAccessibility: ros.IResolvable;
+
+    /**
+     * @Attribute CodeBranch: Code repository branch.
+     */
+    public readonly attrCodeBranch: ros.IResolvable;
+
+    /**
+     * @Attribute CodeCommit: The code CommitId.
+     */
+    public readonly attrCodeCommit: ros.IResolvable;
+
+    /**
+     * @Attribute CodeRepo: Code repository address.
+     */
+    public readonly attrCodeRepo: ros.IResolvable;
+
+    /**
+     * @Attribute CodeRepoAccessToken: The Token used to access the code repository.
+     */
+    public readonly attrCodeRepoAccessToken: ros.IResolvable;
+
+    /**
+     * @Attribute CodeRepoUserName: The user name of the code repository.
+     */
+    public readonly attrCodeRepoUserName: ros.IResolvable;
+
+    /**
+     * @Attribute CodeSourcesId: The ID of the created code configuration.
+     */
+    public readonly attrCodeSourcesId: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The creation time of the code.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute Description: A detailed description of the code configuration.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute DisplayName: Code source configuration name.
+     */
+    public readonly attrDisplayName: ros.IResolvable;
+
+    /**
+     * @Attribute GmtModifyTime: Code configuration modification time. The time format is iso8601.
+     */
+    public readonly attrGmtModifyTime: ros.IResolvable;
+
+    /**
+     * @Attribute MountPath: The local Mount Directory of the code.
+     */
+    public readonly attrMountPath: ros.IResolvable;
+
+    /**
+     * @Attribute UserId: The ID of the creator of the code configuration source.
+     */
+    public readonly attrUserId: ros.IResolvable;
+
+    /**
+     * @Attribute WorkspaceId: The ID of the workspace.
+     */
+    public readonly attrWorkspaceId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property accessibility: Visibility of the code configuration, possible values:
+     * - PRIVATE: In this workspace, it is only visible to you and the administrator.
+     * - PUBLIC: In this workspace, it is visible to everyone.
+     */
+    public accessibility: string | ros.IResolvable;
+
+    /**
+     * @Property codeRepo: Code repository address.
+     */
+    public codeRepo: string | ros.IResolvable;
+
+    /**
+     * @Property displayName: Code source configuration name.
+     */
+    public displayName: string | ros.IResolvable;
+
+    /**
+     * @Property mountPath: The local Mount Directory of the code.
+     */
+    public mountPath: string | ros.IResolvable;
+
+    /**
+     * @Property workspaceId: The ID of the workspace.
+     */
+    public workspaceId: string | ros.IResolvable;
+
+    /**
+     * @Property codeBranch: Code repository branch.
+     */
+    public codeBranch: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property codeCommit: The code CommitId.
+     */
+    public codeCommit: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property codeRepoAccessToken: The Token used to access the code repository.
+     */
+    public codeRepoAccessToken: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property codeRepoUserName: The user name of the code repository.
+     */
+    public codeRepoUserName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property description: A detailed description of the code configuration.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosCodeSourceProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosCodeSource.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAccessibility = this.getAtt('Accessibility');
+        this.attrCodeBranch = this.getAtt('CodeBranch');
+        this.attrCodeCommit = this.getAtt('CodeCommit');
+        this.attrCodeRepo = this.getAtt('CodeRepo');
+        this.attrCodeRepoAccessToken = this.getAtt('CodeRepoAccessToken');
+        this.attrCodeRepoUserName = this.getAtt('CodeRepoUserName');
+        this.attrCodeSourcesId = this.getAtt('CodeSourcesId');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDescription = this.getAtt('Description');
+        this.attrDisplayName = this.getAtt('DisplayName');
+        this.attrGmtModifyTime = this.getAtt('GmtModifyTime');
+        this.attrMountPath = this.getAtt('MountPath');
+        this.attrUserId = this.getAtt('UserId');
+        this.attrWorkspaceId = this.getAtt('WorkspaceId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.accessibility = props.accessibility;
+        this.codeRepo = props.codeRepo;
+        this.displayName = props.displayName;
+        this.mountPath = props.mountPath;
+        this.workspaceId = props.workspaceId;
+        this.codeBranch = props.codeBranch;
+        this.codeCommit = props.codeCommit;
+        this.codeRepoAccessToken = props.codeRepoAccessToken;
+        this.codeRepoUserName = props.codeRepoUserName;
+        this.description = props.description;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            accessibility: this.accessibility,
+            codeRepo: this.codeRepo,
+            displayName: this.displayName,
+            mountPath: this.mountPath,
+            workspaceId: this.workspaceId,
+            codeBranch: this.codeBranch,
+            codeCommit: this.codeCommit,
+            codeRepoAccessToken: this.codeRepoAccessToken,
+            codeRepoUserName: this.codeRepoUserName,
+            description: this.description,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosCodeSourcePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosDataset`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-dataset
  */
@@ -42,7 +353,7 @@ export interface RosDatasetProps {
     readonly uri: string | ros.IResolvable;
 
     /**
-     * @Property workspaceId: The ID of the workspace where the dataset is located. For details about how to obtain the workspace ID, see [ListWorkspaces](~~ 449124 ~~).
+     * @Property workspaceId: The ID of the workspace where the dataset is located.
      * If this parameter is not configured, the default workspace is used. If the default workspace does not exist, an error is reported.
      */
     readonly workspaceId: string | ros.IResolvable;
@@ -266,7 +577,7 @@ export class RosDataset extends ros.RosResource {
     public readonly attrUserId: ros.IResolvable;
 
     /**
-     * @Attribute WorkspaceId: The ID of the workspace where the dataset is located. For details about how to obtain the workspace ID, see [ListWorkspaces](~~ 449124 ~~).
+     * @Attribute WorkspaceId: The ID of the workspace where the dataset is located.
      */
     public readonly attrWorkspaceId: ros.IResolvable;
 
@@ -307,7 +618,7 @@ export class RosDataset extends ros.RosResource {
     public uri: string | ros.IResolvable;
 
     /**
-     * @Property workspaceId: The ID of the workspace where the dataset is located. For details about how to obtain the workspace ID, see [ListWorkspaces](~~ 449124 ~~).
+     * @Property workspaceId: The ID of the workspace where the dataset is located.
      * If this parameter is not configured, the default workspace is used. If the default workspace does not exist, an error is reported.
      */
     public workspaceId: string | ros.IResolvable;
@@ -412,6 +723,422 @@ export class RosDataset extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosDatasetPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosExperiment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-experiment
+ */
+export interface RosExperimentProps {
+
+    /**
+     * @Property artifactUri: ArtifactUri is default OSS storage path of the output of trials in the experiment.
+     */
+    readonly artifactUri: string | ros.IResolvable;
+
+    /**
+     * @Property experimentName: Name is the name of the experiment, unique in a namespace.
+     */
+    readonly experimentName: string | ros.IResolvable;
+
+    /**
+     * @Property workspaceId: WorkspaceId is the workspace id which contains the experiment.
+     */
+    readonly workspaceId: string | ros.IResolvable;
+
+    /**
+     * @Property accessibility: Experimental Visibility.
+     */
+    readonly accessibility?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosExperimentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosExperimentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosExperimentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.accessibility && (typeof properties.accessibility) !== 'object') {
+        errors.collect(ros.propertyValidator('accessibility', ros.validateAllowedValues)({
+          data: properties.accessibility,
+          allowedValues: ["PRIVATE","PUBLIC"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('accessibility', ros.validateString)(properties.accessibility));
+    errors.collect(ros.propertyValidator('artifactUri', ros.requiredValidator)(properties.artifactUri));
+    errors.collect(ros.propertyValidator('artifactUri', ros.validateString)(properties.artifactUri));
+    errors.collect(ros.propertyValidator('experimentName', ros.requiredValidator)(properties.experimentName));
+    errors.collect(ros.propertyValidator('experimentName', ros.validateString)(properties.experimentName));
+    errors.collect(ros.propertyValidator('workspaceId', ros.requiredValidator)(properties.workspaceId));
+    errors.collect(ros.propertyValidator('workspaceId', ros.validateString)(properties.workspaceId));
+    return errors.wrap('supplied properties not correct for "RosExperimentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PAI::Experiment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosExperimentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PAI::Experiment` resource.
+ */
+// @ts-ignore TS6133
+function rosExperimentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosExperimentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ArtifactUri': ros.stringToRosTemplate(properties.artifactUri),
+      'ExperimentName': ros.stringToRosTemplate(properties.experimentName),
+      'WorkspaceId': ros.stringToRosTemplate(properties.workspaceId),
+      'Accessibility': ros.stringToRosTemplate(properties.accessibility),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Experiment`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Experiment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-experiment
+ */
+export class RosExperiment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PAI::Experiment";
+
+    /**
+     * @Attribute Accessibility: Experimental Visibility.
+     */
+    public readonly attrAccessibility: ros.IResolvable;
+
+    /**
+     * @Attribute ArtifactUri: ArtifactUri is default OSS storage path of the output of trials in the experiment.
+     */
+    public readonly attrArtifactUri: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: GmtCreateTime is time when this entity is created.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute ExperimentId: ExperimentId is globally unique identifier of the experiment.
+     */
+    public readonly attrExperimentId: ros.IResolvable;
+
+    /**
+     * @Attribute ExperimentName: Name is the name of the experiment, unique in a namespace.
+     */
+    public readonly attrExperimentName: ros.IResolvable;
+
+    /**
+     * @Attribute GmtModifiedTime: GmtModifiedTime is time when this entity is modified.
+     */
+    public readonly attrGmtModifiedTime: ros.IResolvable;
+
+    /**
+     * @Attribute Labels: Labels are tags of the experiment.
+     */
+    public readonly attrLabels: ros.IResolvable;
+
+    /**
+     * @Attribute OwnerId: OwnerId is the user account id which this entity belongs to.
+     */
+    public readonly attrOwnerId: ros.IResolvable;
+
+    /**
+     * @Attribute TensorboardLogUri: TensorboardLogUri is the default OSS storage path of tensorboard log of trials in the experiment.
+     */
+    public readonly attrTensorboardLogUri: ros.IResolvable;
+
+    /**
+     * @Attribute UserId: UserId is the user account id which created this entity.
+     */
+    public readonly attrUserId: ros.IResolvable;
+
+    /**
+     * @Attribute WorkspaceId: WorkspaceId is the workspace id which contains the experiment.
+     */
+    public readonly attrWorkspaceId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property artifactUri: ArtifactUri is default OSS storage path of the output of trials in the experiment.
+     */
+    public artifactUri: string | ros.IResolvable;
+
+    /**
+     * @Property experimentName: Name is the name of the experiment, unique in a namespace.
+     */
+    public experimentName: string | ros.IResolvable;
+
+    /**
+     * @Property workspaceId: WorkspaceId is the workspace id which contains the experiment.
+     */
+    public workspaceId: string | ros.IResolvable;
+
+    /**
+     * @Property accessibility: Experimental Visibility.
+     */
+    public accessibility: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosExperimentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosExperiment.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAccessibility = this.getAtt('Accessibility');
+        this.attrArtifactUri = this.getAtt('ArtifactUri');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrExperimentId = this.getAtt('ExperimentId');
+        this.attrExperimentName = this.getAtt('ExperimentName');
+        this.attrGmtModifiedTime = this.getAtt('GmtModifiedTime');
+        this.attrLabels = this.getAtt('Labels');
+        this.attrOwnerId = this.getAtt('OwnerId');
+        this.attrTensorboardLogUri = this.getAtt('TensorboardLogUri');
+        this.attrUserId = this.getAtt('UserId');
+        this.attrWorkspaceId = this.getAtt('WorkspaceId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.artifactUri = props.artifactUri;
+        this.experimentName = props.experimentName;
+        this.workspaceId = props.workspaceId;
+        this.accessibility = props.accessibility;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            artifactUri: this.artifactUri,
+            experimentName: this.experimentName,
+            workspaceId: this.workspaceId,
+            accessibility: this.accessibility,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosExperimentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosRun`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-run
+ */
+export interface RosRunProps {
+
+    /**
+     * @Property experimentId: Resource attribute field of the experiment ID to which Run belongs.
+     */
+    readonly experimentId: string | ros.IResolvable;
+
+    /**
+     * @Property runName: The name of the Run.
+     */
+    readonly runName?: string | ros.IResolvable;
+
+    /**
+     * @Property sourceId: Attribute Resource field representing the source task ID.
+     */
+    readonly sourceId?: string | ros.IResolvable;
+
+    /**
+     * @Property sourceType: Resource attribute fields representing the source type.
+     */
+    readonly sourceType?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosRunProps`
+ *
+ * @param properties - the TypeScript properties of a `RosRunProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosRunPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('experimentId', ros.requiredValidator)(properties.experimentId));
+    errors.collect(ros.propertyValidator('experimentId', ros.validateString)(properties.experimentId));
+    errors.collect(ros.propertyValidator('sourceId', ros.validateString)(properties.sourceId));
+    errors.collect(ros.propertyValidator('sourceType', ros.validateString)(properties.sourceType));
+    errors.collect(ros.propertyValidator('runName', ros.validateString)(properties.runName));
+    return errors.wrap('supplied properties not correct for "RosRunProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PAI::Run` resource
+ *
+ * @param properties - the TypeScript properties of a `RosRunProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PAI::Run` resource.
+ */
+// @ts-ignore TS6133
+function rosRunPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosRunPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ExperimentId': ros.stringToRosTemplate(properties.experimentId),
+      'RunName': ros.stringToRosTemplate(properties.runName),
+      'SourceId': ros.stringToRosTemplate(properties.sourceId),
+      'SourceType': ros.stringToRosTemplate(properties.sourceType),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Run`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Run` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-run
+ */
+export class RosRun extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PAI::Run";
+
+    /**
+     * @Attribute Accessibility: Resource attribute fields representing visibility.
+     */
+    public readonly attrAccessibility: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The creation time of the Run.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute ExperimentId: Resource attribute field of the experiment ID to which Run belongs.
+     */
+    public readonly attrExperimentId: ros.IResolvable;
+
+    /**
+     * @Attribute GmtModifiedTime: Resource attribute fields representing edit time.
+     */
+    public readonly attrGmtModifiedTime: ros.IResolvable;
+
+    /**
+     * @Attribute Labels: Run attribute field representing the run tag.
+     */
+    public readonly attrLabels: ros.IResolvable;
+
+    /**
+     * @Attribute Metrics: Resource attribute field representing the run metric.
+     */
+    public readonly attrMetrics: ros.IResolvable;
+
+    /**
+     * @Attribute OwnerId: Resource attribute field representing owner.
+     */
+    public readonly attrOwnerId: ros.IResolvable;
+
+    /**
+     * @Attribute Params: Resource attribute field representing the run parameter.
+     */
+    public readonly attrParams: ros.IResolvable;
+
+    /**
+     * @Attribute RunId: The ID of the Run.
+     */
+    public readonly attrRunId: ros.IResolvable;
+
+    /**
+     * @Attribute RunName: The name of the Run.
+     */
+    public readonly attrRunName: ros.IResolvable;
+
+    /**
+     * @Attribute SourceId: Attribute Resource field representing the source task ID.
+     */
+    public readonly attrSourceId: ros.IResolvable;
+
+    /**
+     * @Attribute SourceType: Run attribute fields representing the source type.
+     */
+    public readonly attrSourceType: ros.IResolvable;
+
+    /**
+     * @Attribute UserId: Run attribute field representing creator ID.
+     */
+    public readonly attrUserId: ros.IResolvable;
+
+    /**
+     * @Attribute WorkspaceId: Resource attribute field of the workspace ID to which Run belongs.
+     */
+    public readonly attrWorkspaceId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property experimentId: Resource attribute field of the experiment ID to which Run belongs.
+     */
+    public experimentId: string | ros.IResolvable;
+
+    /**
+     * @Property runName: The name of the Run.
+     */
+    public runName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property sourceId: Attribute Resource field representing the source task ID.
+     */
+    public sourceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property sourceType: Resource attribute fields representing the source type.
+     */
+    public sourceType: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosRunProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosRun.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAccessibility = this.getAtt('Accessibility');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrExperimentId = this.getAtt('ExperimentId');
+        this.attrGmtModifiedTime = this.getAtt('GmtModifiedTime');
+        this.attrLabels = this.getAtt('Labels');
+        this.attrMetrics = this.getAtt('Metrics');
+        this.attrOwnerId = this.getAtt('OwnerId');
+        this.attrParams = this.getAtt('Params');
+        this.attrRunId = this.getAtt('RunId');
+        this.attrRunName = this.getAtt('RunName');
+        this.attrSourceId = this.getAtt('SourceId');
+        this.attrSourceType = this.getAtt('SourceType');
+        this.attrUserId = this.getAtt('UserId');
+        this.attrWorkspaceId = this.getAtt('WorkspaceId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.experimentId = props.experimentId;
+        this.runName = props.runName;
+        this.sourceId = props.sourceId;
+        this.sourceType = props.sourceType;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            experimentId: this.experimentId,
+            runName: this.runName,
+            sourceId: this.sourceId,
+            sourceType: this.sourceType,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosRunPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 
@@ -1026,7 +1753,7 @@ function rosWorkspaceResourceDlcPropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::WorkspaceResourceDlc`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::WorkspaceResourceDlc`, which is used to associate Deep Learning Containers (DLC) resources with a workspace.
  * @Note This class does not contain additional functions, so it is recommended to use the `WorkspaceResourceDlc` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspaceresourcedlc
  */
@@ -1282,7 +2009,7 @@ function rosWorkspaceResourceFlinkPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::WorkspaceResourceFlink`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::WorkspaceResourceFlink`, which is used to associate Realtime Compute for Apache Flink resources with a workspace.
  * @Note This class does not contain additional functions, so it is recommended to use the `WorkspaceResourceFlink` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspaceresourceflink
  */
@@ -1538,7 +2265,7 @@ function rosWorkspaceResourceMaxComputePropsToRosTemplate(properties: any, enabl
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::WorkspaceResourceMaxCompute`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::WorkspaceResourceMaxCompute`, which is used to associate MaxCompute resources with a workspace.
  * @Note This class does not contain additional functions, so it is recommended to use the `WorkspaceResourceMaxCompute` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspaceresourcemaxcompute
  */
@@ -1554,7 +2281,7 @@ export class RosWorkspaceResourceMaxCompute extends ros.RosResource {
     public readonly attrCreateTime: ros.IResolvable;
 
     /**
-     * @Attribute GroupName: Resource group name. If you want to obtain a resource group name, see [ListResources](~~ 449143 ~~).
+     * @Attribute GroupName: Resource group name.
      */
     public readonly attrGroupName: ros.IResolvable;
 

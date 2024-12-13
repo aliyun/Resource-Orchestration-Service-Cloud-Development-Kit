@@ -28,11 +28,13 @@ tmp_specification_origin.json
 
 stack.info.json
 
+references/tmp
 references/docs/csharp
 references/docs/java
 references/docs/python
 references/docs/typescript
+references/docs/go
 references/site
-references/site.zip
+references/*.zip
 
 **/.DS_Store

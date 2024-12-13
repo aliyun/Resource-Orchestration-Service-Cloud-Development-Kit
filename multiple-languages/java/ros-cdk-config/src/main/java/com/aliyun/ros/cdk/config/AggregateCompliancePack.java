@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.config;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::Config::AggregateCompliancePack</code>, which is used to create a compliance package for an account group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:27.865Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:05.840Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.AggregateCompliancePack")
 public class AggregateCompliancePack extends com.aliyun.ros.cdk.core.Resource {
 
@@ -156,27 +156,6 @@ public class AggregateCompliancePack extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property configRules: List of rules in the compliance package.
-         * <p>
-         * @return {@code this}
-         * @param configRules Property configRules: List of rules in the compliance package. This parameter is required.
-         */
-        public Builder configRules(final com.aliyun.ros.cdk.core.IResolvable configRules) {
-            this.props.configRules(configRules);
-            return this;
-        }
-        /**
-         * Property configRules: List of rules in the compliance package.
-         * <p>
-         * @return {@code this}
-         * @param configRules Property configRules: List of rules in the compliance package. This parameter is required.
-         */
-        public Builder configRules(final java.util.List<? extends java.lang.Object> configRules) {
-            this.props.configRules(configRules);
-            return this;
-        }
-
-        /**
          * Property description: The description of compliance pack.
          * <p>
          * @return {@code this}
@@ -250,6 +229,31 @@ public class AggregateCompliancePack extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property configRules: List of rules in the compliance package.
+         * <p>
+         * Note: Either this parameter or TemplateContent must be set.
+         * <p>
+         * @return {@code this}
+         * @param configRules Property configRules: List of rules in the compliance package. This parameter is required.
+         */
+        public Builder configRules(final com.aliyun.ros.cdk.core.IResolvable configRules) {
+            this.props.configRules(configRules);
+            return this;
+        }
+        /**
+         * Property configRules: List of rules in the compliance package.
+         * <p>
+         * Note: Either this parameter or TemplateContent must be set.
+         * <p>
+         * @return {@code this}
+         * @param configRules Property configRules: List of rules in the compliance package. This parameter is required.
+         */
+        public Builder configRules(final java.util.List<? extends java.lang.Object> configRules) {
+            this.props.configRules(configRules);
+            return this;
+        }
+
+        /**
          * Property defaultEnable: Whether the rule supports quick activation.
          * <p>
          * Value:
@@ -275,6 +279,48 @@ public class AggregateCompliancePack extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder defaultEnable(final com.aliyun.ros.cdk.core.IResolvable defaultEnable) {
             this.props.defaultEnable(defaultEnable);
+            return this;
+        }
+
+        /**
+         * Property excludeRegionIdsScope: The compliance package is invalid for the specified region ID.
+         * <p>
+         * @return {@code this}
+         * @param excludeRegionIdsScope Property excludeRegionIdsScope: The compliance package is invalid for the specified region ID. This parameter is required.
+         */
+        public Builder excludeRegionIdsScope(final java.lang.String excludeRegionIdsScope) {
+            this.props.excludeRegionIdsScope(excludeRegionIdsScope);
+            return this;
+        }
+        /**
+         * Property excludeRegionIdsScope: The compliance package is invalid for the specified region ID.
+         * <p>
+         * @return {@code this}
+         * @param excludeRegionIdsScope Property excludeRegionIdsScope: The compliance package is invalid for the specified region ID. This parameter is required.
+         */
+        public Builder excludeRegionIdsScope(final com.aliyun.ros.cdk.core.IResolvable excludeRegionIdsScope) {
+            this.props.excludeRegionIdsScope(excludeRegionIdsScope);
+            return this;
+        }
+
+        /**
+         * Property excludeResourceGroupIdsScope: The compliance package is invalid for the specified resource group ID.
+         * <p>
+         * @return {@code this}
+         * @param excludeResourceGroupIdsScope Property excludeResourceGroupIdsScope: The compliance package is invalid for the specified resource group ID. This parameter is required.
+         */
+        public Builder excludeResourceGroupIdsScope(final java.lang.String excludeResourceGroupIdsScope) {
+            this.props.excludeResourceGroupIdsScope(excludeResourceGroupIdsScope);
+            return this;
+        }
+        /**
+         * Property excludeResourceGroupIdsScope: The compliance package is invalid for the specified resource group ID.
+         * <p>
+         * @return {@code this}
+         * @param excludeResourceGroupIdsScope Property excludeResourceGroupIdsScope: The compliance package is invalid for the specified resource group ID. This parameter is required.
+         */
+        public Builder excludeResourceGroupIdsScope(final com.aliyun.ros.cdk.core.IResolvable excludeResourceGroupIdsScope) {
+            this.props.excludeResourceGroupIdsScope(excludeResourceGroupIdsScope);
             return this;
         }
 
@@ -342,6 +388,27 @@ public class AggregateCompliancePack extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property resourceIdsScope: The compliance package only takes effect on the specified resource ID.
+         * <p>
+         * @return {@code this}
+         * @param resourceIdsScope Property resourceIdsScope: The compliance package only takes effect on the specified resource ID. This parameter is required.
+         */
+        public Builder resourceIdsScope(final java.lang.String resourceIdsScope) {
+            this.props.resourceIdsScope(resourceIdsScope);
+            return this;
+        }
+        /**
+         * Property resourceIdsScope: The compliance package only takes effect on the specified resource ID.
+         * <p>
+         * @return {@code this}
+         * @param resourceIdsScope Property resourceIdsScope: The compliance package only takes effect on the specified resource ID. This parameter is required.
+         */
+        public Builder resourceIdsScope(final com.aliyun.ros.cdk.core.IResolvable resourceIdsScope) {
+            this.props.resourceIdsScope(resourceIdsScope);
+            return this;
+        }
+
+        /**
          * Property tagKeyScope: Compliance packages only take effect on resources bound to the specified tag key.
          * <p>
          * @return {@code this}
@@ -380,6 +447,31 @@ public class AggregateCompliancePack extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder tagValueScope(final com.aliyun.ros.cdk.core.IResolvable tagValueScope) {
             this.props.tagValueScope(tagValueScope);
+            return this;
+        }
+
+        /**
+         * Property templateContent: Template information used to generate compliance packages.
+         * <p>
+         * Note: Either this parameter or ConfigRules must be set.
+         * <p>
+         * @return {@code this}
+         * @param templateContent Property templateContent: Template information used to generate compliance packages. This parameter is required.
+         */
+        public Builder templateContent(final java.lang.String templateContent) {
+            this.props.templateContent(templateContent);
+            return this;
+        }
+        /**
+         * Property templateContent: Template information used to generate compliance packages.
+         * <p>
+         * Note: Either this parameter or ConfigRules must be set.
+         * <p>
+         * @return {@code this}
+         * @param templateContent Property templateContent: Template information used to generate compliance packages. This parameter is required.
+         */
+        public Builder templateContent(final com.aliyun.ros.cdk.core.IResolvable templateContent) {
+            this.props.templateContent(templateContent);
             return this;
         }
 

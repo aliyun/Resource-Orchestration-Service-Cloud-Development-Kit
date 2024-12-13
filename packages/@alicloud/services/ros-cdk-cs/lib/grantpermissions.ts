@@ -21,7 +21,7 @@ export interface GrantPermissionsProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CS::GrantPermissions`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CS::GrantPermissions`, which is used to grant role-based access control (RBAC) permissions to a Resource Access Management (RAM) user or RAM role.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGrantPermissions`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-grantpermissions
  */

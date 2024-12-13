@@ -45,7 +45,7 @@ export interface LoginProfileProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::LoginProfile`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::LoginProfile`, which is used to create logon configurations for a Resource Access Management (RAM) user.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLoginProfile`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-loginprofile
  */

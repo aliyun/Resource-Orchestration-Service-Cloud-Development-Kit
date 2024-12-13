@@ -1,5 +1,16 @@
 @alicloud/ros-cdk-ddos.OriginInstance=com.aliyun.ros.cdk.ddos.OriginInstance
 @alicloud/ros-cdk-ddos.OriginInstanceProps=com.aliyun.ros.cdk.ddos.OriginInstanceProps
+@alicloud/ros-cdk-ddos.Policy=com.aliyun.ros.cdk.ddos.Policy
+@alicloud/ros-cdk-ddos.PolicyProps=com.aliyun.ros.cdk.ddos.PolicyProps
 @alicloud/ros-cdk-ddos.RosOriginInstance=com.aliyun.ros.cdk.ddos.RosOriginInstance
 @alicloud/ros-cdk-ddos.RosOriginInstance.TagsProperty=com.aliyun.ros.cdk.ddos.RosOriginInstance$TagsProperty
 @alicloud/ros-cdk-ddos.RosOriginInstanceProps=com.aliyun.ros.cdk.ddos.RosOriginInstanceProps
+@alicloud/ros-cdk-ddos.RosPolicy=com.aliyun.ros.cdk.ddos.RosPolicy
+@alicloud/ros-cdk-ddos.RosPolicy.ConditionListProperty=com.aliyun.ros.cdk.ddos.RosPolicy$ConditionListProperty
+@alicloud/ros-cdk-ddos.RosPolicy.ContentProperty=com.aliyun.ros.cdk.ddos.RosPolicy$ContentProperty
+@alicloud/ros-cdk-ddos.RosPolicy.FingerPrintRuleListProperty=com.aliyun.ros.cdk.ddos.RosPolicy$FingerPrintRuleListProperty
+@alicloud/ros-cdk-ddos.RosPolicy.Layer4RuleListProperty=com.aliyun.ros.cdk.ddos.RosPolicy$Layer4RuleListProperty
+@alicloud/ros-cdk-ddos.RosPolicy.PortRuleListProperty=com.aliyun.ros.cdk.ddos.RosPolicy$PortRuleListProperty
+@alicloud/ros-cdk-ddos.RosPolicy.SourceBlockListProperty=com.aliyun.ros.cdk.ddos.RosPolicy$SourceBlockListProperty
+@alicloud/ros-cdk-ddos.RosPolicy.SourceLimitProperty=com.aliyun.ros.cdk.ddos.RosPolicy$SourceLimitProperty
+@alicloud/ros-cdk-ddos.RosPolicyProps=com.aliyun.ros.cdk.ddos.RosPolicyProps

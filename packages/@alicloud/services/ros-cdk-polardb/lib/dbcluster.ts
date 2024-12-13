@@ -147,6 +147,11 @@ export interface DBClusterProps {
     readonly defaultTimeZone?: string | ros.IResolvable;
 
     /**
+     * Property deletionProtection: Specifies whether to enable the release protection feature for the cluster. Default is false.
+     */
+    readonly deletionProtection?: boolean | ros.IResolvable;
+
+    /**
      * Property gdnId: The ID of the Global Database Network (GDN).
      * Note: This parameter is required when the CreationOption is CreateGdnStandby.
      */
@@ -501,6 +506,7 @@ export class DBCluster extends ros.Resource {
             dbClusterDescription: props.dbClusterDescription,
             period: props.period,
             payType: props.payType,
+            deletionProtection: props.deletionProtection,
             provisionedIops: props.provisionedIops,
             securityGroupIds: props.securityGroupIds,
             allowShutDown: props.allowShutDown,

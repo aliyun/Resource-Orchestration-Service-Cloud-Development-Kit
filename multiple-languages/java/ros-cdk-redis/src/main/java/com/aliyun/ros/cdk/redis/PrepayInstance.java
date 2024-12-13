@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::REDIS::PrepayInstance</code>, which is used to create a subscription ApsaraDB for Redis instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:32.942Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:11.224Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.PrepayInstance")
 public class PrepayInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -463,6 +463,31 @@ public class PrepayInstance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder deletionForce(final com.aliyun.ros.cdk.core.IResolvable deletionForce) {
             this.props().deletionForce(deletionForce);
+            return this;
+        }
+
+        /**
+         * Property deletionProtection: Specifies whether to enable the release protection feature for the instance.
+         * <p>
+         * Default is false.
+         * <p>
+         * @return {@code this}
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable the release protection feature for the instance. This parameter is required.
+         */
+        public Builder deletionProtection(final java.lang.Boolean deletionProtection) {
+            this.props().deletionProtection(deletionProtection);
+            return this;
+        }
+        /**
+         * Property deletionProtection: Specifies whether to enable the release protection feature for the instance.
+         * <p>
+         * Default is false.
+         * <p>
+         * @return {@code this}
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable the release protection feature for the instance. This parameter is required.
+         */
+        public Builder deletionProtection(final com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
+            this.props().deletionProtection(deletionProtection);
             return this;
         }
 

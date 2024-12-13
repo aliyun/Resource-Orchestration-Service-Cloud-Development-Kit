@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Pai
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::WorkspaceResourceMaxCompute`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::WorkspaceResourceMaxCompute`, which is used to associate MaxCompute resources with a workspace.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `WorkspaceResourceMaxCompute` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspaceresourcemaxcompute
@@ -63,7 +63,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pai
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: GroupName: Resource group name. If you want to obtain a resource group name, see [ListResources](~~ 449143 ~~).
+        /// <strong>Attribute</strong>: GroupName: Resource group name.
         /// </remarks>
         [JsiiProperty(name: "attrGroupName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrGroupName

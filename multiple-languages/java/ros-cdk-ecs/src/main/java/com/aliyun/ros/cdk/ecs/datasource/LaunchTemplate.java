@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ECS::LaunchTemplate</code>.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ECS::LaunchTemplate</code>, which is used to query the information about a launch template.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:29.587Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:07.620Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.LaunchTemplate")
 public class LaunchTemplate extends com.aliyun.ros.cdk.core.Resource {
 
@@ -41,9 +41,9 @@ public class LaunchTemplate extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Attribute AutoReleaseTime: Automatic release time.
+     * Attribute AutoReleaseTime: Automatic release time (UTC).
      * <p>
-     * According to the [ISO8601](~~ 25696 ~~) standard, and need to use UTC time. The format is: yyyy-MM-ddTHH:mm:ssZ.
+     * The format is: yyyy-MM-ddTHH:mm:ssZ.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAutoReleaseTime() {
         return software.amazon.jsii.Kernel.get(this, "attrAutoReleaseTime", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
@@ -257,8 +257,6 @@ public class LaunchTemplate extends com.aliyun.ros.cdk.core.Resource {
 
     /**
      * Attribute RamRoleName: The instance RAM role name.
-     * <p>
-     * You can use the RAM API [ListRoles](~~ 28713 ~~) to query the created instance RAM roles.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRamRoleName() {
         return software.amazon.jsii.Kernel.get(this, "attrRamRoleName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));

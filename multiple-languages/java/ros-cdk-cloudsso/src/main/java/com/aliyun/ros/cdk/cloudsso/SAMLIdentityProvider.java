@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudsso;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CloudSSO::SAMLIdentityProvider</code>, which is used to configure the information about a Security Assertion Markup Language (SAML) identity provider (IdP).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:27.638Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:05.605Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudsso.$Module.class, fqn = "@alicloud/ros-cdk-cloudsso.SAMLIdentityProvider")
 public class SAMLIdentityProvider extends com.aliyun.ros.cdk.core.Resource {
 

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::CS::ClusterUserKubeconfig`, which is used to query the kubeconfig configurations of a Container Service for Kubernetes (ACK) cluster by cluster ID.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::CS::ClusterUserKubeconfig`, which is used to query the kubeconfig file of a Container Service for Kubernetes (ACK) cluster by cluster ID.
 type ClusterUserKubeconfig interface {
 	alicloudroscdkcore.Resource
 	// Attribute ClusterId: The ID of the ACK cluster.

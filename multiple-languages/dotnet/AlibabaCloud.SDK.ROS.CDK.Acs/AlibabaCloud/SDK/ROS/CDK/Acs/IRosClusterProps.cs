@@ -296,11 +296,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: zoneId: The zone ID.
+        /// <strong>Property</strong>: zoneIds: The zone IDs of the cluster.
         /// </remarks>
-        [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [JsiiProperty(name: "zoneIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? ZoneId
+        object? ZoneIds
         {
             get
             {
@@ -547,11 +547,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: zoneId: The zone ID.
+            /// <strong>Property</strong>: zoneIds: The zone IDs of the cluster.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? ZoneId
+            [JsiiProperty(name: "zoneIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? ZoneIds
             {
                 get => GetInstanceProperty<object?>();
             }

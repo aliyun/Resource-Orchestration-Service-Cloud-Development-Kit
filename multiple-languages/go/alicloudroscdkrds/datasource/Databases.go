@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::RDS::Databases`, which is used to query the details of databases in an ApsaraDB RDS instance.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::RDS::Databases`, which is used to query the information about databases on an ApsaraDB RDS instance.
 type Databases interface {
 	alicloudroscdkcore.Resource
 	// Attribute Databases: The list of The RDS databases.

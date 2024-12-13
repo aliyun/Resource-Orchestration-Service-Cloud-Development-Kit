@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::NatFirewallControlPolicy`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::NatFirewallControlPolicy`, which is used to add an access control policy for a NAT firewall.
 type NatFirewallControlPolicy interface {
 	alicloudroscdkcore.Resource
 	// Attribute AclUuid: The unique ID of the access control policy.

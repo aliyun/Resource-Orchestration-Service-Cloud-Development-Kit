@@ -419,40 +419,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             }
         }
 
-        private object? _networkType;
-
-        /// <summary>Property networkType: The instance network type.</summary>
-        /// <remarks>
-        /// Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "networkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        public object? NetworkType
-        {
-            get => _networkType;
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case string cast_cd4240:
-                            break;
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            break;
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                _networkType = value;
-            }
-        }
-
         private object? _period;
 
         /// <summary>Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.</summary>
@@ -501,6 +467,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
                     }
                 }
                 _period = value;
+            }
+        }
+
+        private object? _privateConnections;
+
+        /// <summary>Property privateConnections: Connection configs of private connection.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "privateConnections", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-mongodb.RosInstance.PrivateConnectionsProperty\"}]}}", isOptional: true)]
+        public object? PrivateConnections
+        {
+            get => _privateConnections;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Mongodb.RosInstance.IPrivateConnectionsProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Mongodb.RosInstance.IPrivateConnectionsProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _privateConnections = value;
             }
         }
 

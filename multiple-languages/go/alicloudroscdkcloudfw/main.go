@@ -618,6 +618,262 @@ func init() {
 		reflect.TypeOf((*RosNatFirewallControlPolicyProps)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
+		"@alicloud/ros-cdk-cloudfw.RosTrFirewall",
+		reflect.TypeOf((*RosTrFirewall)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addCondition", GoMethod: "AddCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "addCount", GoMethod: "AddCount"},
+			_jsii_.MemberMethod{JsiiMethod: "addDeletionOverride", GoMethod: "AddDeletionOverride"},
+			_jsii_.MemberMethod{JsiiMethod: "addDependsOn", GoMethod: "AddDependsOn"},
+			_jsii_.MemberMethod{JsiiMethod: "addDesc", GoMethod: "AddDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "addMetaData", GoMethod: "AddMetaData"},
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberMethod{JsiiMethod: "addPropertyDeletionOverride", GoMethod: "AddPropertyDeletionOverride"},
+			_jsii_.MemberMethod{JsiiMethod: "addPropertyOverride", GoMethod: "AddPropertyOverride"},
+			_jsii_.MemberMethod{JsiiMethod: "addRosDependency", GoMethod: "AddRosDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
+			_jsii_.MemberProperty{JsiiProperty: "attrFirewallId", GoGetter: "AttrFirewallId"},
+			_jsii_.MemberProperty{JsiiProperty: "cenId", GoGetter: "CenId"},
+			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
+			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberProperty{JsiiProperty: "firewallDescription", GoGetter: "FirewallDescription"},
+			_jsii_.MemberProperty{JsiiProperty: "firewallName", GoGetter: "FirewallName"},
+			_jsii_.MemberProperty{JsiiProperty: "firewallSubnetCidr", GoGetter: "FirewallSubnetCidr"},
+			_jsii_.MemberProperty{JsiiProperty: "firewallVpcCidr", GoGetter: "FirewallVpcCidr"},
+			_jsii_.MemberProperty{JsiiProperty: "firewallVpcId", GoGetter: "FirewallVpcId"},
+			_jsii_.MemberProperty{JsiiProperty: "firewallVswitchId", GoGetter: "FirewallVswitchId"},
+			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
+			_jsii_.MemberProperty{JsiiProperty: "logicalId", GoGetter: "LogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "onPrepare", GoMethod: "OnPrepare"},
+			_jsii_.MemberMethod{JsiiMethod: "onSynthesize", GoMethod: "OnSynthesize"},
+			_jsii_.MemberMethod{JsiiMethod: "onValidate", GoMethod: "OnValidate"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberMethod{JsiiMethod: "prepare", GoMethod: "Prepare"},
+			_jsii_.MemberProperty{JsiiProperty: "ref", GoGetter: "Ref"},
+			_jsii_.MemberProperty{JsiiProperty: "regionNo", GoGetter: "RegionNo"},
+			_jsii_.MemberMethod{JsiiMethod: "renderProperties", GoMethod: "RenderProperties"},
+			_jsii_.MemberProperty{JsiiProperty: "rosOptions", GoGetter: "RosOptions"},
+			_jsii_.MemberProperty{JsiiProperty: "rosProperties", GoGetter: "RosProperties"},
+			_jsii_.MemberProperty{JsiiProperty: "rosResourceType", GoGetter: "RosResourceType"},
+			_jsii_.MemberProperty{JsiiProperty: "routeMode", GoGetter: "RouteMode"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesize", GoMethod: "Synthesize"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberProperty{JsiiProperty: "transitRouterId", GoGetter: "TransitRouterId"},
+			_jsii_.MemberProperty{JsiiProperty: "trAttachmentMasterCidr", GoGetter: "TrAttachmentMasterCidr"},
+			_jsii_.MemberProperty{JsiiProperty: "trAttachmentMasterZone", GoGetter: "TrAttachmentMasterZone"},
+			_jsii_.MemberProperty{JsiiProperty: "trAttachmentSlaveCidr", GoGetter: "TrAttachmentSlaveCidr"},
+			_jsii_.MemberProperty{JsiiProperty: "trAttachmentSlaveZone", GoGetter: "TrAttachmentSlaveZone"},
+			_jsii_.MemberProperty{JsiiProperty: "updatedProperites", GoGetter: "UpdatedProperites"},
+			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
+			_jsii_.MemberMethod{JsiiMethod: "validateProperties", GoMethod: "ValidateProperties"},
+		},
+		func() interface{} {
+			j := jsiiProxy_RosTrFirewall{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreRosResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-cloudfw.RosTrFirewallProps",
+		reflect.TypeOf((*RosTrFirewallProps)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"@alicloud/ros-cdk-cloudfw.RosTrFirewallRoutePolicy",
+		reflect.TypeOf((*RosTrFirewallRoutePolicy)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addCondition", GoMethod: "AddCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "addCount", GoMethod: "AddCount"},
+			_jsii_.MemberMethod{JsiiMethod: "addDeletionOverride", GoMethod: "AddDeletionOverride"},
+			_jsii_.MemberMethod{JsiiMethod: "addDependsOn", GoMethod: "AddDependsOn"},
+			_jsii_.MemberMethod{JsiiMethod: "addDesc", GoMethod: "AddDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "addMetaData", GoMethod: "AddMetaData"},
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberMethod{JsiiMethod: "addPropertyDeletionOverride", GoMethod: "AddPropertyDeletionOverride"},
+			_jsii_.MemberMethod{JsiiMethod: "addPropertyOverride", GoMethod: "AddPropertyOverride"},
+			_jsii_.MemberMethod{JsiiMethod: "addRosDependency", GoMethod: "AddRosDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
+			_jsii_.MemberProperty{JsiiProperty: "attrFirewallId", GoGetter: "AttrFirewallId"},
+			_jsii_.MemberProperty{JsiiProperty: "attrTrFirewallRoutePolicyId", GoGetter: "AttrTrFirewallRoutePolicyId"},
+			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
+			_jsii_.MemberProperty{JsiiProperty: "destCandidateList", GoGetter: "DestCandidateList"},
+			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberProperty{JsiiProperty: "firewallId", GoGetter: "FirewallId"},
+			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
+			_jsii_.MemberProperty{JsiiProperty: "logicalId", GoGetter: "LogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "onPrepare", GoMethod: "OnPrepare"},
+			_jsii_.MemberMethod{JsiiMethod: "onSynthesize", GoMethod: "OnSynthesize"},
+			_jsii_.MemberMethod{JsiiMethod: "onValidate", GoMethod: "OnValidate"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "policyDescription", GoGetter: "PolicyDescription"},
+			_jsii_.MemberProperty{JsiiProperty: "policyName", GoGetter: "PolicyName"},
+			_jsii_.MemberProperty{JsiiProperty: "policyType", GoGetter: "PolicyType"},
+			_jsii_.MemberMethod{JsiiMethod: "prepare", GoMethod: "Prepare"},
+			_jsii_.MemberProperty{JsiiProperty: "ref", GoGetter: "Ref"},
+			_jsii_.MemberMethod{JsiiMethod: "renderProperties", GoMethod: "RenderProperties"},
+			_jsii_.MemberProperty{JsiiProperty: "rosOptions", GoGetter: "RosOptions"},
+			_jsii_.MemberProperty{JsiiProperty: "rosProperties", GoGetter: "RosProperties"},
+			_jsii_.MemberProperty{JsiiProperty: "rosResourceType", GoGetter: "RosResourceType"},
+			_jsii_.MemberProperty{JsiiProperty: "srcCandidateList", GoGetter: "SrcCandidateList"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesize", GoMethod: "Synthesize"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberProperty{JsiiProperty: "updatedProperites", GoGetter: "UpdatedProperites"},
+			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
+			_jsii_.MemberMethod{JsiiMethod: "validateProperties", GoMethod: "ValidateProperties"},
+		},
+		func() interface{} {
+			j := jsiiProxy_RosTrFirewallRoutePolicy{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreRosResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-cloudfw.RosTrFirewallRoutePolicy.DestCandidateListProperty",
+		reflect.TypeOf((*RosTrFirewallRoutePolicy_DestCandidateListProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-cloudfw.RosTrFirewallRoutePolicy.SrcCandidateListProperty",
+		reflect.TypeOf((*RosTrFirewallRoutePolicy_SrcCandidateListProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-cloudfw.RosTrFirewallRoutePolicyProps",
+		reflect.TypeOf((*RosTrFirewallRoutePolicyProps)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"@alicloud/ros-cdk-cloudfw.RosVpcFirewallCen",
+		reflect.TypeOf((*RosVpcFirewallCen)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addCondition", GoMethod: "AddCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "addCount", GoMethod: "AddCount"},
+			_jsii_.MemberMethod{JsiiMethod: "addDeletionOverride", GoMethod: "AddDeletionOverride"},
+			_jsii_.MemberMethod{JsiiMethod: "addDependsOn", GoMethod: "AddDependsOn"},
+			_jsii_.MemberMethod{JsiiMethod: "addDesc", GoMethod: "AddDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "addMetaData", GoMethod: "AddMetaData"},
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberMethod{JsiiMethod: "addPropertyDeletionOverride", GoMethod: "AddPropertyDeletionOverride"},
+			_jsii_.MemberMethod{JsiiMethod: "addPropertyOverride", GoMethod: "AddPropertyOverride"},
+			_jsii_.MemberMethod{JsiiMethod: "addRosDependency", GoMethod: "AddRosDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
+			_jsii_.MemberProperty{JsiiProperty: "attrVpcFirewallId", GoGetter: "AttrVpcFirewallId"},
+			_jsii_.MemberProperty{JsiiProperty: "cenId", GoGetter: "CenId"},
+			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
+			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberProperty{JsiiProperty: "firewallSwitch", GoGetter: "FirewallSwitch"},
+			_jsii_.MemberProperty{JsiiProperty: "firewallVpcCidrBlock", GoGetter: "FirewallVpcCidrBlock"},
+			_jsii_.MemberProperty{JsiiProperty: "firewallVpcZoneId", GoGetter: "FirewallVpcZoneId"},
+			_jsii_.MemberProperty{JsiiProperty: "firewallVSwitchCidrBlock", GoGetter: "FirewallVSwitchCidrBlock"},
+			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
+			_jsii_.MemberProperty{JsiiProperty: "logicalId", GoGetter: "LogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "memberUid", GoGetter: "MemberUid"},
+			_jsii_.MemberProperty{JsiiProperty: "networkInstanceId", GoGetter: "NetworkInstanceId"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "onPrepare", GoMethod: "OnPrepare"},
+			_jsii_.MemberMethod{JsiiMethod: "onSynthesize", GoMethod: "OnSynthesize"},
+			_jsii_.MemberMethod{JsiiMethod: "onValidate", GoMethod: "OnValidate"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberMethod{JsiiMethod: "prepare", GoMethod: "Prepare"},
+			_jsii_.MemberProperty{JsiiProperty: "ref", GoGetter: "Ref"},
+			_jsii_.MemberMethod{JsiiMethod: "renderProperties", GoMethod: "RenderProperties"},
+			_jsii_.MemberProperty{JsiiProperty: "rosOptions", GoGetter: "RosOptions"},
+			_jsii_.MemberProperty{JsiiProperty: "rosProperties", GoGetter: "RosProperties"},
+			_jsii_.MemberProperty{JsiiProperty: "rosResourceType", GoGetter: "RosResourceType"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesize", GoMethod: "Synthesize"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberProperty{JsiiProperty: "updatedProperites", GoGetter: "UpdatedProperites"},
+			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
+			_jsii_.MemberMethod{JsiiMethod: "validateProperties", GoMethod: "ValidateProperties"},
+			_jsii_.MemberProperty{JsiiProperty: "vpcFirewallName", GoGetter: "VpcFirewallName"},
+			_jsii_.MemberProperty{JsiiProperty: "vpcRegion", GoGetter: "VpcRegion"},
+			_jsii_.MemberProperty{JsiiProperty: "vSwitchId", GoGetter: "VSwitchId"},
+		},
+		func() interface{} {
+			j := jsiiProxy_RosVpcFirewallCen{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreRosResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-cloudfw.RosVpcFirewallCenProps",
+		reflect.TypeOf((*RosVpcFirewallCenProps)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"@alicloud/ros-cdk-cloudfw.RosVpcFirewallConfigure",
+		reflect.TypeOf((*RosVpcFirewallConfigure)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addCondition", GoMethod: "AddCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "addCount", GoMethod: "AddCount"},
+			_jsii_.MemberMethod{JsiiMethod: "addDeletionOverride", GoMethod: "AddDeletionOverride"},
+			_jsii_.MemberMethod{JsiiMethod: "addDependsOn", GoMethod: "AddDependsOn"},
+			_jsii_.MemberMethod{JsiiMethod: "addDesc", GoMethod: "AddDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "addMetaData", GoMethod: "AddMetaData"},
+			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberMethod{JsiiMethod: "addPropertyDeletionOverride", GoMethod: "AddPropertyDeletionOverride"},
+			_jsii_.MemberMethod{JsiiMethod: "addPropertyOverride", GoMethod: "AddPropertyOverride"},
+			_jsii_.MemberMethod{JsiiMethod: "addRosDependency", GoMethod: "AddRosDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
+			_jsii_.MemberProperty{JsiiProperty: "attrVpcFirewallId", GoGetter: "AttrVpcFirewallId"},
+			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
+			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberProperty{JsiiProperty: "firewallSwitch", GoGetter: "FirewallSwitch"},
+			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
+			_jsii_.MemberProperty{JsiiProperty: "localVpcCidrTableList", GoGetter: "LocalVpcCidrTableList"},
+			_jsii_.MemberProperty{JsiiProperty: "localVpcId", GoGetter: "LocalVpcId"},
+			_jsii_.MemberProperty{JsiiProperty: "localVpcRegion", GoGetter: "LocalVpcRegion"},
+			_jsii_.MemberProperty{JsiiProperty: "logicalId", GoGetter: "LogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "memberUid", GoGetter: "MemberUid"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "onPrepare", GoMethod: "OnPrepare"},
+			_jsii_.MemberMethod{JsiiMethod: "onSynthesize", GoMethod: "OnSynthesize"},
+			_jsii_.MemberMethod{JsiiMethod: "onValidate", GoMethod: "OnValidate"},
+			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "peerVpcCidrTableList", GoGetter: "PeerVpcCidrTableList"},
+			_jsii_.MemberProperty{JsiiProperty: "peerVpcId", GoGetter: "PeerVpcId"},
+			_jsii_.MemberProperty{JsiiProperty: "peerVpcRegion", GoGetter: "PeerVpcRegion"},
+			_jsii_.MemberMethod{JsiiMethod: "prepare", GoMethod: "Prepare"},
+			_jsii_.MemberProperty{JsiiProperty: "ref", GoGetter: "Ref"},
+			_jsii_.MemberMethod{JsiiMethod: "renderProperties", GoMethod: "RenderProperties"},
+			_jsii_.MemberProperty{JsiiProperty: "rosOptions", GoGetter: "RosOptions"},
+			_jsii_.MemberProperty{JsiiProperty: "rosProperties", GoGetter: "RosProperties"},
+			_jsii_.MemberProperty{JsiiProperty: "rosResourceType", GoGetter: "RosResourceType"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesize", GoMethod: "Synthesize"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberProperty{JsiiProperty: "updatedProperites", GoGetter: "UpdatedProperites"},
+			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
+			_jsii_.MemberMethod{JsiiMethod: "validateProperties", GoMethod: "ValidateProperties"},
+			_jsii_.MemberProperty{JsiiProperty: "vpcFirewallName", GoGetter: "VpcFirewallName"},
+		},
+		func() interface{} {
+			j := jsiiProxy_RosVpcFirewallConfigure{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreRosResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-cloudfw.RosVpcFirewallConfigure.LocalVpcCidrTableListProperty",
+		reflect.TypeOf((*RosVpcFirewallConfigure_LocalVpcCidrTableListProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-cloudfw.RosVpcFirewallConfigure.PeerVpcCidrTableListProperty",
+		reflect.TypeOf((*RosVpcFirewallConfigure_PeerVpcCidrTableListProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-cloudfw.RosVpcFirewallConfigure.PeerVpcCidrTableListRouteEntryListProperty",
+		reflect.TypeOf((*RosVpcFirewallConfigure_PeerVpcCidrTableListRouteEntryListProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-cloudfw.RosVpcFirewallConfigure.RouteEntryListProperty",
+		reflect.TypeOf((*RosVpcFirewallConfigure_RouteEntryListProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-cloudfw.RosVpcFirewallConfigureProps",
+		reflect.TypeOf((*RosVpcFirewallConfigureProps)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
 		"@alicloud/ros-cdk-cloudfw.RosVpcFirewallControlPolicy",
 		reflect.TypeOf((*RosVpcFirewallControlPolicy)(nil)).Elem(),
 		[]_jsii_.Member{
@@ -688,6 +944,167 @@ func init() {
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-cloudfw.RosVpcFirewallControlPolicyProps",
 		reflect.TypeOf((*RosVpcFirewallControlPolicyProps)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"@alicloud/ros-cdk-cloudfw.TrFirewall",
+		reflect.TypeOf((*TrFirewall)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addCondition", GoMethod: "AddCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "addCount", GoMethod: "AddCount"},
+			_jsii_.MemberMethod{JsiiMethod: "addDependency", GoMethod: "AddDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "addResourceDesc", GoMethod: "AddResourceDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
+			_jsii_.MemberProperty{JsiiProperty: "attrFirewallId", GoGetter: "AttrFirewallId"},
+			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberMethod{JsiiMethod: "generatePhysicalName", GoMethod: "GeneratePhysicalName"},
+			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "onPrepare", GoMethod: "OnPrepare"},
+			_jsii_.MemberMethod{JsiiMethod: "onSynthesize", GoMethod: "OnSynthesize"},
+			_jsii_.MemberMethod{JsiiMethod: "onValidate", GoMethod: "OnValidate"},
+			_jsii_.MemberProperty{JsiiProperty: "physicalName", GoGetter: "PhysicalName"},
+			_jsii_.MemberMethod{JsiiMethod: "prepare", GoMethod: "Prepare"},
+			_jsii_.MemberProperty{JsiiProperty: "props", GoGetter: "Props"},
+			_jsii_.MemberProperty{JsiiProperty: "ref", GoGetter: "Ref"},
+			_jsii_.MemberProperty{JsiiProperty: "resource", GoGetter: "Resource"},
+			_jsii_.MemberProperty{JsiiProperty: "scope", GoGetter: "Scope"},
+			_jsii_.MemberMethod{JsiiMethod: "setMetadata", GoMethod: "SetMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesize", GoMethod: "Synthesize"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
+		},
+		func() interface{} {
+			j := jsiiProxy_TrFirewall{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-cloudfw.TrFirewallProps",
+		reflect.TypeOf((*TrFirewallProps)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"@alicloud/ros-cdk-cloudfw.TrFirewallRoutePolicy",
+		reflect.TypeOf((*TrFirewallRoutePolicy)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addCondition", GoMethod: "AddCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "addCount", GoMethod: "AddCount"},
+			_jsii_.MemberMethod{JsiiMethod: "addDependency", GoMethod: "AddDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "addResourceDesc", GoMethod: "AddResourceDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
+			_jsii_.MemberProperty{JsiiProperty: "attrFirewallId", GoGetter: "AttrFirewallId"},
+			_jsii_.MemberProperty{JsiiProperty: "attrTrFirewallRoutePolicyId", GoGetter: "AttrTrFirewallRoutePolicyId"},
+			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberMethod{JsiiMethod: "generatePhysicalName", GoMethod: "GeneratePhysicalName"},
+			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "onPrepare", GoMethod: "OnPrepare"},
+			_jsii_.MemberMethod{JsiiMethod: "onSynthesize", GoMethod: "OnSynthesize"},
+			_jsii_.MemberMethod{JsiiMethod: "onValidate", GoMethod: "OnValidate"},
+			_jsii_.MemberProperty{JsiiProperty: "physicalName", GoGetter: "PhysicalName"},
+			_jsii_.MemberMethod{JsiiMethod: "prepare", GoMethod: "Prepare"},
+			_jsii_.MemberProperty{JsiiProperty: "props", GoGetter: "Props"},
+			_jsii_.MemberProperty{JsiiProperty: "ref", GoGetter: "Ref"},
+			_jsii_.MemberProperty{JsiiProperty: "resource", GoGetter: "Resource"},
+			_jsii_.MemberProperty{JsiiProperty: "scope", GoGetter: "Scope"},
+			_jsii_.MemberMethod{JsiiMethod: "setMetadata", GoMethod: "SetMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesize", GoMethod: "Synthesize"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
+		},
+		func() interface{} {
+			j := jsiiProxy_TrFirewallRoutePolicy{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-cloudfw.TrFirewallRoutePolicyProps",
+		reflect.TypeOf((*TrFirewallRoutePolicyProps)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"@alicloud/ros-cdk-cloudfw.VpcFirewallCen",
+		reflect.TypeOf((*VpcFirewallCen)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addCondition", GoMethod: "AddCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "addCount", GoMethod: "AddCount"},
+			_jsii_.MemberMethod{JsiiMethod: "addDependency", GoMethod: "AddDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "addResourceDesc", GoMethod: "AddResourceDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
+			_jsii_.MemberProperty{JsiiProperty: "attrVpcFirewallId", GoGetter: "AttrVpcFirewallId"},
+			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberMethod{JsiiMethod: "generatePhysicalName", GoMethod: "GeneratePhysicalName"},
+			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "onPrepare", GoMethod: "OnPrepare"},
+			_jsii_.MemberMethod{JsiiMethod: "onSynthesize", GoMethod: "OnSynthesize"},
+			_jsii_.MemberMethod{JsiiMethod: "onValidate", GoMethod: "OnValidate"},
+			_jsii_.MemberProperty{JsiiProperty: "physicalName", GoGetter: "PhysicalName"},
+			_jsii_.MemberMethod{JsiiMethod: "prepare", GoMethod: "Prepare"},
+			_jsii_.MemberProperty{JsiiProperty: "props", GoGetter: "Props"},
+			_jsii_.MemberProperty{JsiiProperty: "ref", GoGetter: "Ref"},
+			_jsii_.MemberProperty{JsiiProperty: "resource", GoGetter: "Resource"},
+			_jsii_.MemberProperty{JsiiProperty: "scope", GoGetter: "Scope"},
+			_jsii_.MemberMethod{JsiiMethod: "setMetadata", GoMethod: "SetMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesize", GoMethod: "Synthesize"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
+		},
+		func() interface{} {
+			j := jsiiProxy_VpcFirewallCen{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-cloudfw.VpcFirewallCenProps",
+		reflect.TypeOf((*VpcFirewallCenProps)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"@alicloud/ros-cdk-cloudfw.VpcFirewallConfigure",
+		reflect.TypeOf((*VpcFirewallConfigure)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "addCondition", GoMethod: "AddCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "addCount", GoMethod: "AddCount"},
+			_jsii_.MemberMethod{JsiiMethod: "addDependency", GoMethod: "AddDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "addResourceDesc", GoMethod: "AddResourceDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
+			_jsii_.MemberProperty{JsiiProperty: "attrVpcFirewallId", GoGetter: "AttrVpcFirewallId"},
+			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberMethod{JsiiMethod: "generatePhysicalName", GoMethod: "GeneratePhysicalName"},
+			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
+			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberMethod{JsiiMethod: "onPrepare", GoMethod: "OnPrepare"},
+			_jsii_.MemberMethod{JsiiMethod: "onSynthesize", GoMethod: "OnSynthesize"},
+			_jsii_.MemberMethod{JsiiMethod: "onValidate", GoMethod: "OnValidate"},
+			_jsii_.MemberProperty{JsiiProperty: "physicalName", GoGetter: "PhysicalName"},
+			_jsii_.MemberMethod{JsiiMethod: "prepare", GoMethod: "Prepare"},
+			_jsii_.MemberProperty{JsiiProperty: "props", GoGetter: "Props"},
+			_jsii_.MemberProperty{JsiiProperty: "ref", GoGetter: "Ref"},
+			_jsii_.MemberProperty{JsiiProperty: "resource", GoGetter: "Resource"},
+			_jsii_.MemberProperty{JsiiProperty: "scope", GoGetter: "Scope"},
+			_jsii_.MemberMethod{JsiiMethod: "setMetadata", GoMethod: "SetMetadata"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+			_jsii_.MemberMethod{JsiiMethod: "synthesize", GoMethod: "Synthesize"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
+		},
+		func() interface{} {
+			j := jsiiProxy_VpcFirewallConfigure{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-cloudfw.VpcFirewallConfigureProps",
+		reflect.TypeOf((*VpcFirewallConfigureProps)(nil)).Elem(),
 	)
 	_jsii_.RegisterClass(
 		"@alicloud/ros-cdk-cloudfw.VpcFirewallControlPolicy",

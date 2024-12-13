@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::GA::Acl`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::GA::Acl`, which is used to query the information about an access control list (ACL).
 type Acl interface {
 	alicloudroscdkcore.Resource
 	// Attribute AclEntries: The entries of the ACL.

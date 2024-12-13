@@ -693,7 +693,7 @@ function rosAclsListenerAssociationPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::AclsListenerAssociation`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::AclsListenerAssociation`, which is used to associate an access control list (ACL) with a listener.
  * @Note This class does not contain additional functions, so it is recommended to use the `AclsListenerAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-aclslistenerassociation
  */
@@ -894,7 +894,7 @@ function rosApplicationMonitorPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::ApplicationMonitor`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::ApplicationMonitor`, which is used to create an origin probing task.
  * @Note This class does not contain additional functions, so it is recommended to use the `ApplicationMonitor` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-applicationmonitor
  */
@@ -1487,7 +1487,7 @@ function rosBasicAccelerateIpPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicAccelerateIp`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicAccelerateIp`, which is used to create an accelerated IP address for a basic Global Accelerator (GA) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `BasicAccelerateIp` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicaccelerateip
  */
@@ -1709,7 +1709,7 @@ function rosBasicAcceleratorPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicAccelerator`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicAccelerator`, which is used to create a basic Global Accelerator (GA) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `BasicAccelerator` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicaccelerator
  */
@@ -1949,7 +1949,7 @@ function rosBasicAcceleratorIpEndpointRelationPropsToRosTemplate(properties: any
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicAcceleratorIpEndpointRelation`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicAcceleratorIpEndpointRelation`, which is used to create a mapping between an accelerated IP address and an endpoint for a basic Global Accelerator (GA) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `BasicAcceleratorIpEndpointRelation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicacceleratoripendpointrelation
  */
@@ -2141,7 +2141,7 @@ function rosBasicEndpointPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicEndpoint`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicEndpoint`, which is used to create an endpoint for a basic Global Accelerator (GA) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `BasicEndpoint` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicendpoint
  */
@@ -2361,7 +2361,7 @@ function rosBasicEndpointGroupPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicEndpointGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicEndpointGroup`, which is used to create an endpoint group for a basic Global Accelerator (GA) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `BasicEndpointGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicendpointgroup
  */
@@ -2544,7 +2544,7 @@ function rosBasicIpSetPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicIpSet`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicIpSet`, which is used to create an acceleration region for a basic Global Accelerator (GA) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `BasicIpSet` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicipset
  */
@@ -3220,7 +3220,7 @@ function rosEndpointGroupsPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::EndpointGroups`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::EndpointGroups`, which is used to create multiple endpoint groups at a time.
  * @Note This class does not contain additional functions, so it is recommended to use the `EndpointGroups` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-endpointgroups
  */

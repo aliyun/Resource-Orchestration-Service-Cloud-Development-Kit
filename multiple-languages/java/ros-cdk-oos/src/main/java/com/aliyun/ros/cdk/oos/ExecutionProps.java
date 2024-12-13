@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.oos;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-execution
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.901Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:09.662Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.ExecutionProps")
 @software.amazon.jsii.Jsii.Proxy(ExecutionProps.Jsii$Proxy.class)
 public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
@@ -73,8 +73,8 @@ public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
      * Allowed values:
      * <p>
      * <ul>
-     * <li>Skip: This option means that customers understand the risks, you can do anything without confirmation Action, no matter what the level of risk. It takes effect only if Mode is Automatic.</li>
-     * <li>ConfirmEveryHighRiskAction (default): This option would require customers to confirm each Action a high risk. NotifyExecution by calling customer interface to confirm or cancel.</li>
+     * <li>Skip (default): This option means that customers understand the risks, you can do anything without confirmation Action, no matter what the level of risk. It takes effect only if Mode is Automatic.</li>
+     * <li>ConfirmEveryHighRiskAction: This option would require customers to confirm each Action a high risk. NotifyExecution by calling customer interface to confirm or cancel.</li>
      * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSafetyCheck() {
@@ -308,8 +308,8 @@ public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
          *                    Allowed values:
          *                    <p>
          *                    <ul>
-         *                    <li>Skip: This option means that customers understand the risks, you can do anything without confirmation Action, no matter what the level of risk. It takes effect only if Mode is Automatic.</li>
-         *                    <li>ConfirmEveryHighRiskAction (default): This option would require customers to confirm each Action a high risk. NotifyExecution by calling customer interface to confirm or cancel.</li>
+         *                    <li>Skip (default): This option means that customers understand the risks, you can do anything without confirmation Action, no matter what the level of risk. It takes effect only if Mode is Automatic.</li>
+         *                    <li>ConfirmEveryHighRiskAction: This option would require customers to confirm each Action a high risk. NotifyExecution by calling customer interface to confirm or cancel.</li>
          *                    </ul>
          * @return {@code this}
          */
@@ -324,8 +324,8 @@ public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
          *                    Allowed values:
          *                    <p>
          *                    <ul>
-         *                    <li>Skip: This option means that customers understand the risks, you can do anything without confirmation Action, no matter what the level of risk. It takes effect only if Mode is Automatic.</li>
-         *                    <li>ConfirmEveryHighRiskAction (default): This option would require customers to confirm each Action a high risk. NotifyExecution by calling customer interface to confirm or cancel.</li>
+         *                    <li>Skip (default): This option means that customers understand the risks, you can do anything without confirmation Action, no matter what the level of risk. It takes effect only if Mode is Automatic.</li>
+         *                    <li>ConfirmEveryHighRiskAction: This option would require customers to confirm each Action a high risk. NotifyExecution by calling customer interface to confirm or cancel.</li>
          *                    </ul>
          * @return {@code this}
          */

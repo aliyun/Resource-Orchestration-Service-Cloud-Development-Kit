@@ -27,8 +27,8 @@ type ExecutionProps struct {
 	// Property safetyCheck: Security check mode.
 	//
 	// Allowed values:
-	// - Skip: This option means that customers understand the risks, you can do anything without confirmation Action, no matter what the level of risk. It takes effect only if Mode is Automatic.
-	// - ConfirmEveryHighRiskAction (default): This option would require customers to confirm each Action a high risk. NotifyExecution by calling customer interface to confirm or cancel.
+	// - Skip (default): This option means that customers understand the risks, you can do anything without confirmation Action, no matter what the level of risk. It takes effect only if Mode is Automatic.
+	// - ConfirmEveryHighRiskAction: This option would require customers to confirm each Action a high risk. NotifyExecution by calling customer interface to confirm or cancel.
 	SafetyCheck interface{} `field:"optional" json:"safetyCheck" yaml:"safetyCheck"`
 	// Property tags: Tag value and the key mapping, the label of the key number can be up to 20.
 	Tags *map[string]interface{} `field:"optional" json:"tags" yaml:"tags"`

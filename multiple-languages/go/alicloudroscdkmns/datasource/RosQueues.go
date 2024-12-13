@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::MNS::Queues`, which is used to query all Message Service (MNS) queues within a specified Alibaba Cloud account.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::MNS::Queues`, which is used to query all queues within an Alibaba Cloud account.
 type RosQueues interface {
 	alicloudroscdkcore.RosResource
 	AttrQueueNames() alicloudroscdkcore.IResolvable

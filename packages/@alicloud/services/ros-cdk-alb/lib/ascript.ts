@@ -46,7 +46,7 @@ export interface AScriptProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::AScript`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::AScript`, which is used to create an AScript rule.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAScript`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-ascript
  */

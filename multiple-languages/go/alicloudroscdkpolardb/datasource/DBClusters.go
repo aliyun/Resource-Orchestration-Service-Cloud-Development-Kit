@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::POLARDB::DBClusters`, which is used to query the details of PolarDB clusters.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::POLARDB::DBClusters`, which is used to query the information about PolarDB clusters.
 type DBClusters interface {
 	alicloudroscdkcore.Resource
 	// Attribute DbClusterIds: The ID of the cluster.

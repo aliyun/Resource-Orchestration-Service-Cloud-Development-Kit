@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ram.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::RAM::Users</code>, which is used to query Resource Access Management (RAM) users.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::RAM::Users</code>, which is used to query the information about Resource Access Management (RAM) users.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:32.659Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:10.927Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.datasource.RosUsers")
 public class RosUsers extends com.aliyun.ros.cdk.core.RosResource {
 

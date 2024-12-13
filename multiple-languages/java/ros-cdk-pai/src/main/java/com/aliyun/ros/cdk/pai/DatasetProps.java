@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.pai;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-dataset
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:32.075Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:10.253Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.DatasetProps")
 @software.amazon.jsii.Jsii.Proxy(DatasetProps.Jsii$Proxy.class)
 public interface DatasetProps extends software.amazon.jsii.JsiiSerializable {
@@ -55,7 +55,6 @@ public interface DatasetProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property workspaceId: The ID of the workspace where the dataset is located.
      * <p>
-     * For details about how to obtain the workspace ID, see [ListWorkspaces](~~ 449124 ~~).
      * If this parameter is not configured, the default workspace is used. If the default workspace does not exist, an error is reported.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getWorkspaceId();
@@ -278,7 +277,6 @@ public interface DatasetProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link DatasetProps#getWorkspaceId}
          * @param workspaceId Property workspaceId: The ID of the workspace where the dataset is located. This parameter is required.
-         *                    For details about how to obtain the workspace ID, see [ListWorkspaces](~~ 449124 ~~).
          *                    If this parameter is not configured, the default workspace is used. If the default workspace does not exist, an error is reported.
          * @return {@code this}
          */
@@ -290,7 +288,6 @@ public interface DatasetProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link DatasetProps#getWorkspaceId}
          * @param workspaceId Property workspaceId: The ID of the workspace where the dataset is located. This parameter is required.
-         *                    For details about how to obtain the workspace ID, see [ListWorkspaces](~~ 449124 ~~).
          *                    If this parameter is not configured, the default workspace is used. If the default workspace does not exist, an error is reported.
          * @return {@code this}
          */

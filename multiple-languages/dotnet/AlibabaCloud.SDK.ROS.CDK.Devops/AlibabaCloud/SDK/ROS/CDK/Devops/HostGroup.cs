@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Devops
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::DEVOPS::HostGroup`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::DEVOPS::HostGroup`, which is used to create a host group.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosHostGroup`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-hostgroup

@@ -152,6 +152,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sas
             }
         }
 
+        private object? _antiRansomwareManageService;
+
+        /// <summary>Property antiRansomwareManageService: Provide you with security hosting services such as anti-ransomware configuration, monitoring, and anti-ransomware incident emergency response.</summary>
+        /// <remarks>
+        /// Note:
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "antiRansomwareManageService", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? AntiRansomwareManageService
+        {
+            get => _antiRansomwareManageService;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _antiRansomwareManageService = value;
+            }
+        }
+
         private object? _autoPay;
 
         /// <summary>Property autoPay: Whether to auto pay the bill.Default: True.</summary>

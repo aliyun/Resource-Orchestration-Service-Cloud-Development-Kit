@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::REDIS::Accounts</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:32.986Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:11.272Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.datasource.Accounts")
 public class Accounts extends com.aliyun.ros.cdk.core.Resource {
 

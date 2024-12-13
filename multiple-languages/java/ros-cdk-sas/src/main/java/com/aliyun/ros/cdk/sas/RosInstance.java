@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sas;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SAS::Instance</code>, which is used to purchase Security Center.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:33.419Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:11.887Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sas.$Module.class, fqn = "@alicloud/ros-cdk-sas.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -111,6 +111,24 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setAntiRansomware(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "antiRansomware", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAntiRansomwareManageService() {
+        return software.amazon.jsii.Kernel.get(this, "antiRansomwareManageService", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAntiRansomwareManageService(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "antiRansomwareManageService", value);
+    }
+
+    /**
+     */
+    public void setAntiRansomwareManageService(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "antiRansomwareManageService", value);
     }
 
     /**
@@ -547,6 +565,23 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder antiRansomware(final com.aliyun.ros.cdk.core.IResolvable antiRansomware) {
             this.props.antiRansomware(antiRansomware);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param antiRansomwareManageService This parameter is required.
+         */
+        public Builder antiRansomwareManageService(final java.lang.Boolean antiRansomwareManageService) {
+            this.props.antiRansomwareManageService(antiRansomwareManageService);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param antiRansomwareManageService This parameter is required.
+         */
+        public Builder antiRansomwareManageService(final com.aliyun.ros.cdk.core.IResolvable antiRansomwareManageService) {
+            this.props.antiRansomwareManageService(antiRansomwareManageService);
             return this;
         }
 

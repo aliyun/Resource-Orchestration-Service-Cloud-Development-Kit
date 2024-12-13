@@ -24,7 +24,7 @@ export interface ClusterNodePoolsProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::CS::ClusterNodePools`, which is used to query the details of all node pools in a cluster.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CS::ClusterNodePools`, which is used to query the information about all node pools in a Container Service for Kubernetes (ACK) cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusterNodePools`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-clusternodepools
  */

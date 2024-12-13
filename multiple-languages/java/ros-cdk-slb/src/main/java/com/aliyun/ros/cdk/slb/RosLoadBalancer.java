@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SLB::LoadBalancer</code>, which is used to create a Server Load Balancer (SLB) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:33.530Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:12.060Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosLoadBalancer")
 public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -181,60 +181,6 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getAutoPay() {
-        return software.amazon.jsii.Kernel.get(this, "autoPay", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setAutoPay(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
-        software.amazon.jsii.Kernel.set(this, "autoPay", value);
-    }
-
-    /**
-     */
-    public void setAutoPay(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "autoPay", value);
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenew() {
-        return software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setAutoRenew(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
-        software.amazon.jsii.Kernel.set(this, "autoRenew", value);
-    }
-
-    /**
-     */
-    public void setAutoRenew(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "autoRenew", value);
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenewPeriod() {
-        return software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setAutoRenewPeriod(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
-        software.amazon.jsii.Kernel.set(this, "autoRenewPeriod", value);
-    }
-
-    /**
-     */
-    public void setAutoRenewPeriod(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "autoRenewPeriod", value);
-    }
-
-    /**
-     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getBandwidth() {
         return software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -267,24 +213,6 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setDeletionProtection(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "deletionProtection", value);
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getDuration() {
-        return software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setDuration(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
-        software.amazon.jsii.Kernel.set(this, "duration", value);
-    }
-
-    /**
-     */
-    public void setDuration(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "duration", value);
     }
 
     /**
@@ -411,42 +339,6 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setModificationProtectionStatus(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "modificationProtectionStatus", value);
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getPayType() {
-        return software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setPayType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "payType", value);
-    }
-
-    /**
-     */
-    public void setPayType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "payType", value);
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getPricingCycle() {
-        return software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setPricingCycle(final @org.jetbrains.annotations.Nullable java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "pricingCycle", value);
-    }
-
-    /**
-     */
-    public void setPricingCycle(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "pricingCycle", value);
     }
 
     /**
@@ -763,57 +655,6 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param autoPay This parameter is required.
-         */
-        public Builder autoPay(final java.lang.Boolean autoPay) {
-            this.props.autoPay(autoPay);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param autoPay This parameter is required.
-         */
-        public Builder autoPay(final com.aliyun.ros.cdk.core.IResolvable autoPay) {
-            this.props.autoPay(autoPay);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param autoRenew This parameter is required.
-         */
-        public Builder autoRenew(final java.lang.Boolean autoRenew) {
-            this.props.autoRenew(autoRenew);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param autoRenew This parameter is required.
-         */
-        public Builder autoRenew(final com.aliyun.ros.cdk.core.IResolvable autoRenew) {
-            this.props.autoRenew(autoRenew);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param autoRenewPeriod This parameter is required.
-         */
-        public Builder autoRenewPeriod(final java.lang.Number autoRenewPeriod) {
-            this.props.autoRenewPeriod(autoRenewPeriod);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param autoRenewPeriod This parameter is required.
-         */
-        public Builder autoRenewPeriod(final com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
-            this.props.autoRenewPeriod(autoRenewPeriod);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param bandwidth This parameter is required.
          */
         public Builder bandwidth(final java.lang.Number bandwidth) {
@@ -843,23 +684,6 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder deletionProtection(final com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
             this.props.deletionProtection(deletionProtection);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param duration This parameter is required.
-         */
-        public Builder duration(final java.lang.Number duration) {
-            this.props.duration(duration);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param duration This parameter is required.
-         */
-        public Builder duration(final com.aliyun.ros.cdk.core.IResolvable duration) {
-            this.props.duration(duration);
             return this;
         }
 
@@ -979,40 +803,6 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder modificationProtectionStatus(final com.aliyun.ros.cdk.core.IResolvable modificationProtectionStatus) {
             this.props.modificationProtectionStatus(modificationProtectionStatus);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param payType This parameter is required.
-         */
-        public Builder payType(final java.lang.String payType) {
-            this.props.payType(payType);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param payType This parameter is required.
-         */
-        public Builder payType(final com.aliyun.ros.cdk.core.IResolvable payType) {
-            this.props.payType(payType);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param pricingCycle This parameter is required.
-         */
-        public Builder pricingCycle(final java.lang.String pricingCycle) {
-            this.props.pricingCycle(pricingCycle);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param pricingCycle This parameter is required.
-         */
-        public Builder pricingCycle(final com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
-            this.props.pricingCycle(pricingCycle);
             return this;
         }
 

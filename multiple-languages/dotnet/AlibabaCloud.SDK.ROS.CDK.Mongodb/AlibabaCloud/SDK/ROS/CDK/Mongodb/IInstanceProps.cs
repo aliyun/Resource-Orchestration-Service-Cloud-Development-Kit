@@ -151,13 +151,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             }
         }
 
-        /// <summary>Property networkType: The instance network type.</summary>
-        /// <remarks>
-        /// Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
-        /// </remarks>
-        [JsiiProperty(name: "networkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        /// <summary>Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.</summary>
+        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? NetworkType
+        object? Period
         {
             get
             {
@@ -165,10 +162,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             }
         }
 
-        /// <summary>Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.</summary>
-        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        /// <summary>Property privateConnections: Connection configs of private connection.</summary>
+        [JsiiProperty(name: "privateConnections", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-mongodb.RosInstance.PrivateConnectionsProperty\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? Period
+        object? PrivateConnections
         {
             get
             {
@@ -510,21 +507,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property networkType: The instance network type.</summary>
-            /// <remarks>
-            /// Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "networkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? NetworkType
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
             /// <summary>Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Period
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property privateConnections: Connection configs of private connection.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "privateConnections", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-mongodb.RosInstance.PrivateConnectionsProperty\"}]}}", isOptional: true)]
+            public object? PrivateConnections
             {
                 get => GetInstanceProperty<object?>();
             }

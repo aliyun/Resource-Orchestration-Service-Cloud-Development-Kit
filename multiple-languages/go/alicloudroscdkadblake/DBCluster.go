@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ADBLake::DBCluster`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ADBLake::DBCluster`, which is used to create an AnalyticDB for MySQL Data Lakehouse Edition (V3.0) cluster.
 type DBCluster interface {
 	alicloudroscdkcore.Resource
 	// Attribute ConnectionString: The public endpoint that is used to connect to the cluster.

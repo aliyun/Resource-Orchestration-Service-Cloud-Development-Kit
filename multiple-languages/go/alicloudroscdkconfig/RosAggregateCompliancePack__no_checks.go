@@ -112,6 +112,14 @@ func (j *jsiiProxy_RosAggregateCompliancePack) validateSetEnableResourceProperty
 	return nil
 }
 
+func (j *jsiiProxy_RosAggregateCompliancePack) validateSetExcludeRegionIdsScopeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosAggregateCompliancePack) validateSetExcludeResourceGroupIdsScopeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosAggregateCompliancePack) validateSetExcludeResourceIdsScopeParameters(val interface{}) error {
 	return nil
 }
@@ -124,6 +132,10 @@ func (j *jsiiProxy_RosAggregateCompliancePack) validateSetResourceGroupIdsScopeP
 	return nil
 }
 
+func (j *jsiiProxy_RosAggregateCompliancePack) validateSetResourceIdsScopeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosAggregateCompliancePack) validateSetRiskLevelParameters(val interface{}) error {
 	return nil
 }
@@ -133,6 +145,10 @@ func (j *jsiiProxy_RosAggregateCompliancePack) validateSetTagKeyScopeParameters(
 }
 
 func (j *jsiiProxy_RosAggregateCompliancePack) validateSetTagValueScopeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosAggregateCompliancePack) validateSetTemplateContentParameters(val interface{}) error {
 	return nil
 }
 

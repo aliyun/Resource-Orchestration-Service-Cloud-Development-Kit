@@ -44,7 +44,7 @@ export interface CenRouteMapsProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::CEN::CenRouteMaps`, which is used to query the details of routing policies.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CEN::CenRouteMaps`, which is used to query the information about routing policies.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenRouteMaps`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-cenroutemaps
  */

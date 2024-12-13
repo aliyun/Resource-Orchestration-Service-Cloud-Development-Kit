@@ -37,6 +37,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Appflow
         {
         }
 
+        /// <summary>Attribute AuthConfig: AuthConfig.</summary>
+        [JsiiProperty(name: "attrAuthConfig", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAuthConfig
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
         /// <summary>Attribute AuthConfigId: The id of the config.</summary>
         [JsiiProperty(name: "attrAuthConfigId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAuthConfigId

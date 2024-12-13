@@ -20,11 +20,6 @@ export interface AggregateCompliancePackProps {
     readonly compliancePackName: string | ros.IResolvable;
 
     /**
-     * Property configRules: List of rules in the compliance package.
-     */
-    readonly configRules: Array<RosAggregateCompliancePack.ConfigRulesProperty | ros.IResolvable> | ros.IResolvable;
-
-    /**
      * Property description: The description of compliance pack.
      */
     readonly description: string | ros.IResolvable;
@@ -43,11 +38,27 @@ export interface AggregateCompliancePackProps {
     readonly compliancePackTemplateId?: string | ros.IResolvable;
 
     /**
+     * Property configRules: List of rules in the compliance package.
+     * Note: Either this parameter or TemplateContent must be set.
+     */
+    readonly configRules?: Array<RosAggregateCompliancePack.ConfigRulesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * Property defaultEnable: Whether the rule supports quick activation. Value:
      * true: This rule will be enabled when the compliance package is quickly enabled.
      * false (default): disable
      */
     readonly defaultEnable?: boolean | ros.IResolvable;
+
+    /**
+     * Property excludeRegionIdsScope: The compliance package is invalid for the specified region ID.
+     */
+    readonly excludeRegionIdsScope?: string | ros.IResolvable;
+
+    /**
+     * Property excludeResourceGroupIdsScope: The compliance package is invalid for the specified resource group ID.
+     */
+    readonly excludeResourceGroupIdsScope?: string | ros.IResolvable;
 
     /**
      * Property excludeResourceIdsScope: The compliance package is invalid for the specified resource ID, that is, no evaluation is performed on the resource.
@@ -65,6 +76,11 @@ export interface AggregateCompliancePackProps {
     readonly resourceGroupIdsScope?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * Property resourceIdsScope: The compliance package only takes effect on the specified resource ID.
+     */
+    readonly resourceIdsScope?: string | ros.IResolvable;
+
+    /**
      * Property tagKeyScope: Compliance packages only take effect on resources bound to the specified tag key.
      */
     readonly tagKeyScope?: string | ros.IResolvable;
@@ -73,6 +89,12 @@ export interface AggregateCompliancePackProps {
      * Property tagValueScope: Compliance packages only take effect on resources bound to specified tag key-value pairs.TagValueScope needs to be used in conjunction with TagKeyScope.
      */
     readonly tagValueScope?: string | ros.IResolvable;
+
+    /**
+     * Property templateContent: Template information used to generate compliance packages.
+     * Note: Either this parameter or ConfigRules must be set.
+     */
+    readonly templateContent?: string | ros.IResolvable;
 }
 
 /**
@@ -106,15 +128,19 @@ export class AggregateCompliancePack extends ros.Resource {
         const rosAggregateCompliancePack = new RosAggregateCompliancePack(this, id,  {
             tagKeyScope: props.tagKeyScope,
             tagValueScope: props.tagValueScope,
+            excludeResourceGroupIdsScope: props.excludeResourceGroupIdsScope,
             description: props.description,
-            compliancePackName: props.compliancePackName,
             excludeResourceIdsScope: props.excludeResourceIdsScope,
+            resourceIdsScope: props.resourceIdsScope,
+            templateContent: props.templateContent,
+            configRules: props.configRules,
+            defaultEnable: props.defaultEnable,
+            compliancePackName: props.compliancePackName,
+            excludeRegionIdsScope: props.excludeRegionIdsScope,
             regionIdsScope: props.regionIdsScope,
             resourceGroupIdsScope: props.resourceGroupIdsScope,
-            configRules: props.configRules,
             compliancePackTemplateId: props.compliancePackTemplateId,
             riskLevel: props.riskLevel,
-            defaultEnable: props.defaultEnable,
             aggregatorId: props.aggregatorId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAggregateCompliancePack;

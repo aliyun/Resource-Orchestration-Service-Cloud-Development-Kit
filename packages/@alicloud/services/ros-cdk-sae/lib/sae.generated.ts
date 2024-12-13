@@ -1140,6 +1140,611 @@ function rosApplicationTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
+ * Properties for defining a `RosApplicationScalingRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-applicationscalingrule
+ */
+export interface RosApplicationScalingRuleProps {
+
+    /**
+     * @Property appId: The ID of the application.
+     */
+    readonly appId: string | ros.IResolvable;
+
+    /**
+     * @Property scalingRuleName: The name of the auto scaling policy. The name must start with a lowercase letter, and can contain lowercase letters, digits, and hyphens (-).The name must be 1 to 32 characters in length.
+     */
+    readonly scalingRuleName: string | ros.IResolvable;
+
+    /**
+     * @Property scalingRuleType: The type of the auto scaling policy. Valid values: timer: Timed scaling. metric: Custom metric scaling.mix: mix scaling
+     */
+    readonly scalingRuleType: string | ros.IResolvable;
+
+    /**
+     * @Property minReadyInstanceRatio: The minimum percentage of surviving instances. The value description is as follows:-1: Initialization value, indicating that the percentage is not used.0~100: The unit is a percentage, rounded up. For example, if it is set to 50%, if there are currently 5 instances, the minimum number of surviving instances is 3.
+     */
+    readonly minReadyInstanceRatio?: number | ros.IResolvable;
+
+    /**
+     * @Property minReadyInstances: Minimum number of surviving instances. The value is as follows:If set to 0, the application will be interrupted during the upgrade process.If set to **-1**, the minimum number of surviving instances will use the system recommended value, which is 25% of the existing number of instances. If there are currently 5 instances, 5×25%=1.25, after rounding up, the minimum number of surviving instances is 2.
+     */
+    readonly minReadyInstances?: number | ros.IResolvable;
+
+    /**
+     * @Property scalingRuleEnable: Whether to enable the scaling rule.
+     */
+    readonly scalingRuleEnable?: boolean | ros.IResolvable;
+
+    /**
+     * @Property scalingRuleMetric: Configuration of monitoring indicator elasticity policy. This parameter is required when you select monitoring indicator elasticity policy setting.
+     */
+    readonly scalingRuleMetric?: RosApplicationScalingRule.ScalingRuleMetricProperty | ros.IResolvable;
+
+    /**
+     * @Property scalingRuleTimer: The configuration of the timer scaling policy.
+     */
+    readonly scalingRuleTimer?: RosApplicationScalingRule.ScalingRuleTimerProperty | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosApplicationScalingRuleProps`
+ *
+ * @param properties - the TypeScript properties of a `RosApplicationScalingRuleProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosApplicationScalingRulePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('scalingRuleMetric', RosApplicationScalingRule_ScalingRuleMetricPropertyValidator)(properties.scalingRuleMetric));
+    errors.collect(ros.propertyValidator('scalingRuleTimer', RosApplicationScalingRule_ScalingRuleTimerPropertyValidator)(properties.scalingRuleTimer));
+    errors.collect(ros.propertyValidator('scalingRuleName', ros.requiredValidator)(properties.scalingRuleName));
+    if(properties.scalingRuleName && (typeof properties.scalingRuleName) !== 'object') {
+        errors.collect(ros.propertyValidator('scalingRuleName', ros.validateAllowedPattern)({
+          data: properties.scalingRuleName,
+          reg: /^[a-z][a-z0-9-]{0,31}$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('scalingRuleName', ros.validateString)(properties.scalingRuleName));
+    errors.collect(ros.propertyValidator('scalingRuleEnable', ros.validateBoolean)(properties.scalingRuleEnable));
+    errors.collect(ros.propertyValidator('appId', ros.requiredValidator)(properties.appId));
+    errors.collect(ros.propertyValidator('appId', ros.validateString)(properties.appId));
+    if(properties.minReadyInstances && (typeof properties.minReadyInstances) !== 'object') {
+        errors.collect(ros.propertyValidator('minReadyInstances', ros.validateRange)({
+            data: properties.minReadyInstances,
+            min: -1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('minReadyInstances', ros.validateNumber)(properties.minReadyInstances));
+    if(properties.minReadyInstanceRatio && (typeof properties.minReadyInstanceRatio) !== 'object') {
+        errors.collect(ros.propertyValidator('minReadyInstanceRatio', ros.validateRange)({
+            data: properties.minReadyInstanceRatio,
+            min: -1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('minReadyInstanceRatio', ros.validateNumber)(properties.minReadyInstanceRatio));
+    errors.collect(ros.propertyValidator('scalingRuleType', ros.requiredValidator)(properties.scalingRuleType));
+    if(properties.scalingRuleType && (typeof properties.scalingRuleType) !== 'object') {
+        errors.collect(ros.propertyValidator('scalingRuleType', ros.validateAllowedValues)({
+          data: properties.scalingRuleType,
+          allowedValues: ["timing","metric","mix"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('scalingRuleType', ros.validateString)(properties.scalingRuleType));
+    return errors.wrap('supplied properties not correct for "RosApplicationScalingRuleProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAE::ApplicationScalingRule` resource
+ *
+ * @param properties - the TypeScript properties of a `RosApplicationScalingRuleProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAE::ApplicationScalingRule` resource.
+ */
+// @ts-ignore TS6133
+function rosApplicationScalingRulePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosApplicationScalingRulePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AppId': ros.stringToRosTemplate(properties.appId),
+      'ScalingRuleName': ros.stringToRosTemplate(properties.scalingRuleName),
+      'ScalingRuleType': ros.stringToRosTemplate(properties.scalingRuleType),
+      'MinReadyInstanceRatio': ros.numberToRosTemplate(properties.minReadyInstanceRatio),
+      'MinReadyInstances': ros.numberToRosTemplate(properties.minReadyInstances),
+      'ScalingRuleEnable': ros.booleanToRosTemplate(properties.scalingRuleEnable),
+      'ScalingRuleMetric': rosApplicationScalingRuleScalingRuleMetricPropertyToRosTemplate(properties.scalingRuleMetric),
+      'ScalingRuleTimer': rosApplicationScalingRuleScalingRuleTimerPropertyToRosTemplate(properties.scalingRuleTimer),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::ApplicationScalingRule`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ApplicationScalingRule` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-applicationscalingrule
+ */
+export class RosApplicationScalingRule extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SAE::ApplicationScalingRule";
+
+    /**
+     * @Attribute ScalingRuleName: The name of the scaling rule.
+     */
+    public readonly attrScalingRuleName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property appId: The ID of the application.
+     */
+    public appId: string | ros.IResolvable;
+
+    /**
+     * @Property scalingRuleName: The name of the auto scaling policy. The name must start with a lowercase letter, and can contain lowercase letters, digits, and hyphens (-).The name must be 1 to 32 characters in length.
+     */
+    public scalingRuleName: string | ros.IResolvable;
+
+    /**
+     * @Property scalingRuleType: The type of the auto scaling policy. Valid values: timer: Timed scaling. metric: Custom metric scaling.mix: mix scaling
+     */
+    public scalingRuleType: string | ros.IResolvable;
+
+    /**
+     * @Property minReadyInstanceRatio: The minimum percentage of surviving instances. The value description is as follows:-1: Initialization value, indicating that the percentage is not used.0~100: The unit is a percentage, rounded up. For example, if it is set to 50%, if there are currently 5 instances, the minimum number of surviving instances is 3.
+     */
+    public minReadyInstanceRatio: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property minReadyInstances: Minimum number of surviving instances. The value is as follows:If set to 0, the application will be interrupted during the upgrade process.If set to **-1**, the minimum number of surviving instances will use the system recommended value, which is 25% of the existing number of instances. If there are currently 5 instances, 5×25%=1.25, after rounding up, the minimum number of surviving instances is 2.
+     */
+    public minReadyInstances: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property scalingRuleEnable: Whether to enable the scaling rule.
+     */
+    public scalingRuleEnable: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property scalingRuleMetric: Configuration of monitoring indicator elasticity policy. This parameter is required when you select monitoring indicator elasticity policy setting.
+     */
+    public scalingRuleMetric: RosApplicationScalingRule.ScalingRuleMetricProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property scalingRuleTimer: The configuration of the timer scaling policy.
+     */
+    public scalingRuleTimer: RosApplicationScalingRule.ScalingRuleTimerProperty | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosApplicationScalingRuleProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosApplicationScalingRule.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrScalingRuleName = this.getAtt('ScalingRuleName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.appId = props.appId;
+        this.scalingRuleName = props.scalingRuleName;
+        this.scalingRuleType = props.scalingRuleType;
+        this.minReadyInstanceRatio = props.minReadyInstanceRatio;
+        this.minReadyInstances = props.minReadyInstances;
+        this.scalingRuleEnable = props.scalingRuleEnable;
+        this.scalingRuleMetric = props.scalingRuleMetric;
+        this.scalingRuleTimer = props.scalingRuleTimer;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            appId: this.appId,
+            scalingRuleName: this.scalingRuleName,
+            scalingRuleType: this.scalingRuleType,
+            minReadyInstanceRatio: this.minReadyInstanceRatio,
+            minReadyInstances: this.minReadyInstances,
+            scalingRuleEnable: this.scalingRuleEnable,
+            scalingRuleMetric: this.scalingRuleMetric,
+            scalingRuleTimer: this.scalingRuleTimer,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosApplicationScalingRulePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosApplicationScalingRule {
+    /**
+     * @stability external
+     */
+    export interface MetricsProperty {
+        /**
+         * @Property slbId: The ID of the SLB instance.
+         */
+        readonly slbId?: string | ros.IResolvable;
+        /**
+         * @Property metricType: CPU: CPU usage.MEMORY: Memory usage.QPS: Average QPS of a single instance of a JAVA application within 1 minute.RT: Average RT value of all service of a JAVA application within 1 minute.tcpActiveConn: Average number of active TCP connections of a single instance within 30 seconds.SLB_QPS: Average public network SLB QPS of a single instance within 15 seconds.SLB_RT: Average response time of public network SLB within 15 seconds.INTRANET_SLB_QPS: Average private network SLB QPS of a single instance within 15 seconds.INTRANET_SLB_RT: Average response time of private network SLB within 15 seconds.
+         */
+        readonly metricType: string | ros.IResolvable;
+        /**
+         * @Property vport: The port of the SLB instance.
+         */
+        readonly vport?: string | ros.IResolvable;
+        /**
+         * @Property slbLogstore: The name of the log store of the SLS project for SLB instance.
+         */
+        readonly slbLogstore?: string | ros.IResolvable;
+        /**
+         * @Property slbProject: The project ID of the  SLS project for SLB instance.
+         */
+        readonly slbProject?: string | ros.IResolvable;
+        /**
+         * @Property metricTargetAverageUtilization: According to different metricTypes, set the target value of the corresponding monitoring indicator.CPU usage target value, in percentage.Memory usage target value, in percentage.QPS, in seconds.Response time, in milliseconds.Average number of active TCP connections, in pieces\/second.Public network SLB QPS, in seconds.Public network SLB response time, in milliseconds.Private network SLB QPS, in seconds.Private network SLB response time, in milliseconds.
+         */
+        readonly metricTargetAverageUtilization: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `MetricsProperty`
+ *
+ * @param properties - the TypeScript properties of a `MetricsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosApplicationScalingRule_MetricsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('slbId', ros.validateString)(properties.slbId));
+    errors.collect(ros.propertyValidator('metricType', ros.requiredValidator)(properties.metricType));
+    if(properties.metricType && (typeof properties.metricType) !== 'object') {
+        errors.collect(ros.propertyValidator('metricType', ros.validateAllowedValues)({
+          data: properties.metricType,
+          allowedValues: ["CPU","MEMORY","QPS","RT","tcpActiveConn","SLB_QPS","SLB_RT","INTRANET_SLB_QPS","INTRANET_SLB_RT"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('metricType', ros.validateString)(properties.metricType));
+    errors.collect(ros.propertyValidator('vport', ros.validateString)(properties.vport));
+    errors.collect(ros.propertyValidator('slbLogstore', ros.validateString)(properties.slbLogstore));
+    errors.collect(ros.propertyValidator('slbProject', ros.validateString)(properties.slbProject));
+    errors.collect(ros.propertyValidator('metricTargetAverageUtilization', ros.requiredValidator)(properties.metricTargetAverageUtilization));
+    errors.collect(ros.propertyValidator('metricTargetAverageUtilization', ros.validateNumber)(properties.metricTargetAverageUtilization));
+    return errors.wrap('supplied properties not correct for "MetricsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAE::ApplicationScalingRule.Metrics` resource
+ *
+ * @param properties - the TypeScript properties of a `MetricsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAE::ApplicationScalingRule.Metrics` resource.
+ */
+// @ts-ignore TS6133
+function rosApplicationScalingRuleMetricsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosApplicationScalingRule_MetricsPropertyValidator(properties).assertSuccess();
+    return {
+      'SlbId': ros.stringToRosTemplate(properties.slbId),
+      'MetricType': ros.stringToRosTemplate(properties.metricType),
+      'Vport': ros.stringToRosTemplate(properties.vport),
+      'SlbLogstore': ros.stringToRosTemplate(properties.slbLogstore),
+      'SlbProject': ros.stringToRosTemplate(properties.slbProject),
+      'MetricTargetAverageUtilization': ros.numberToRosTemplate(properties.metricTargetAverageUtilization),
+    };
+}
+
+export namespace RosApplicationScalingRule {
+    /**
+     * @stability external
+     */
+    export interface ScaleDownRulesProperty {
+        /**
+         * @Property step: The elastic expansion or reduction step size. The maximum number of instances that can be expanded or reduced in a unit of time.
+         */
+        readonly step: string | ros.IResolvable;
+        /**
+         * @Property stabilizationWindowSeconds: The number of seconds that the scaling rule waits before it can be executed again.
+         */
+        readonly stabilizationWindowSeconds?: number | ros.IResolvable;
+        /**
+         * @Property disabled: Whether to disable the scaling rule. Default value: false
+         */
+        readonly disabled?: boolean | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ScaleDownRulesProperty`
+ *
+ * @param properties - the TypeScript properties of a `ScaleDownRulesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosApplicationScalingRule_ScaleDownRulesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('step', ros.requiredValidator)(properties.step));
+    errors.collect(ros.propertyValidator('step', ros.validateString)(properties.step));
+    errors.collect(ros.propertyValidator('stabilizationWindowSeconds', ros.validateNumber)(properties.stabilizationWindowSeconds));
+    errors.collect(ros.propertyValidator('disabled', ros.validateBoolean)(properties.disabled));
+    return errors.wrap('supplied properties not correct for "ScaleDownRulesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAE::ApplicationScalingRule.ScaleDownRules` resource
+ *
+ * @param properties - the TypeScript properties of a `ScaleDownRulesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAE::ApplicationScalingRule.ScaleDownRules` resource.
+ */
+// @ts-ignore TS6133
+function rosApplicationScalingRuleScaleDownRulesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosApplicationScalingRule_ScaleDownRulesPropertyValidator(properties).assertSuccess();
+    return {
+      'Step': ros.stringToRosTemplate(properties.step),
+      'StabilizationWindowSeconds': ros.numberToRosTemplate(properties.stabilizationWindowSeconds),
+      'Disabled': ros.booleanToRosTemplate(properties.disabled),
+    };
+}
+
+export namespace RosApplicationScalingRule {
+    /**
+     * @stability external
+     */
+    export interface ScaleUpRulesProperty {
+        /**
+         * @Property step: The elastic expansion or reduction step size. The maximum number of instances that can be expanded or reduced in a unit of time.
+         */
+        readonly step: string | ros.IResolvable;
+        /**
+         * @Property stabilizationWindowSeconds: The number of seconds that the scaling rule waits before it can be executed again.
+         */
+        readonly stabilizationWindowSeconds?: number | ros.IResolvable;
+        /**
+         * @Property disabled: Whether to disable the scaling rule. Default value: false
+         */
+        readonly disabled?: boolean | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ScaleUpRulesProperty`
+ *
+ * @param properties - the TypeScript properties of a `ScaleUpRulesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosApplicationScalingRule_ScaleUpRulesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('step', ros.requiredValidator)(properties.step));
+    errors.collect(ros.propertyValidator('step', ros.validateString)(properties.step));
+    errors.collect(ros.propertyValidator('stabilizationWindowSeconds', ros.validateNumber)(properties.stabilizationWindowSeconds));
+    errors.collect(ros.propertyValidator('disabled', ros.validateBoolean)(properties.disabled));
+    return errors.wrap('supplied properties not correct for "ScaleUpRulesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAE::ApplicationScalingRule.ScaleUpRules` resource
+ *
+ * @param properties - the TypeScript properties of a `ScaleUpRulesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAE::ApplicationScalingRule.ScaleUpRules` resource.
+ */
+// @ts-ignore TS6133
+function rosApplicationScalingRuleScaleUpRulesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosApplicationScalingRule_ScaleUpRulesPropertyValidator(properties).assertSuccess();
+    return {
+      'Step': ros.stringToRosTemplate(properties.step),
+      'StabilizationWindowSeconds': ros.numberToRosTemplate(properties.stabilizationWindowSeconds),
+      'Disabled': ros.booleanToRosTemplate(properties.disabled),
+    };
+}
+
+export namespace RosApplicationScalingRule {
+    /**
+     * @stability external
+     */
+    export interface ScalingRuleMetricProperty {
+        /**
+         * @Property metrics: The configuration of the monitoring indicator.
+         */
+        readonly metrics: Array<RosApplicationScalingRule.MetricsProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property minReplicas: The minimum number of application instances that can be automatically scaled down.
+         */
+        readonly minReplicas: number | ros.IResolvable;
+        /**
+         * @Property maxReplicas: The maximum number of application instances that can be automatically scaled up.
+         */
+        readonly maxReplicas: number | ros.IResolvable;
+        /**
+         * @Property scaleDownRules: Application scale down rules
+         */
+        readonly scaleDownRules?: RosApplicationScalingRule.ScaleDownRulesProperty | ros.IResolvable;
+        /**
+         * @Property scaleUpRules: Application scale up rules
+         */
+        readonly scaleUpRules?: RosApplicationScalingRule.ScaleUpRulesProperty | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ScalingRuleMetricProperty`
+ *
+ * @param properties - the TypeScript properties of a `ScalingRuleMetricProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosApplicationScalingRule_ScalingRuleMetricPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('metrics', ros.requiredValidator)(properties.metrics));
+    if(properties.metrics && (Array.isArray(properties.metrics) || (typeof properties.metrics) === 'string')) {
+        errors.collect(ros.propertyValidator('metrics', ros.validateLength)({
+            data: properties.metrics.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('metrics', ros.listValidator(RosApplicationScalingRule_MetricsPropertyValidator))(properties.metrics));
+    errors.collect(ros.propertyValidator('minReplicas', ros.requiredValidator)(properties.minReplicas));
+    errors.collect(ros.propertyValidator('minReplicas', ros.validateNumber)(properties.minReplicas));
+    errors.collect(ros.propertyValidator('maxReplicas', ros.requiredValidator)(properties.maxReplicas));
+    errors.collect(ros.propertyValidator('maxReplicas', ros.validateNumber)(properties.maxReplicas));
+    errors.collect(ros.propertyValidator('scaleDownRules', RosApplicationScalingRule_ScaleDownRulesPropertyValidator)(properties.scaleDownRules));
+    errors.collect(ros.propertyValidator('scaleUpRules', RosApplicationScalingRule_ScaleUpRulesPropertyValidator)(properties.scaleUpRules));
+    return errors.wrap('supplied properties not correct for "ScalingRuleMetricProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAE::ApplicationScalingRule.ScalingRuleMetric` resource
+ *
+ * @param properties - the TypeScript properties of a `ScalingRuleMetricProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAE::ApplicationScalingRule.ScalingRuleMetric` resource.
+ */
+// @ts-ignore TS6133
+function rosApplicationScalingRuleScalingRuleMetricPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosApplicationScalingRule_ScalingRuleMetricPropertyValidator(properties).assertSuccess();
+    return {
+      'Metrics': ros.listMapper(rosApplicationScalingRuleMetricsPropertyToRosTemplate)(properties.metrics),
+      'MinReplicas': ros.numberToRosTemplate(properties.minReplicas),
+      'MaxReplicas': ros.numberToRosTemplate(properties.maxReplicas),
+      'ScaleDownRules': rosApplicationScalingRuleScaleDownRulesPropertyToRosTemplate(properties.scaleDownRules),
+      'ScaleUpRules': rosApplicationScalingRuleScaleUpRulesPropertyToRosTemplate(properties.scaleUpRules),
+    };
+}
+
+export namespace RosApplicationScalingRule {
+    /**
+     * @stability external
+     */
+    export interface ScalingRuleTimerProperty {
+        /**
+         * @Property schedules: The time when the elastic scaling policy is triggered, and the number of application instances that need to be maintained during this time period. A maximum of 20 time points are supported.
+         */
+        readonly schedules: Array<RosApplicationScalingRule.SchedulesProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property period: The period for executing the scheduled elastic scaling policy. The value description is as follows:* * *: Execute the scheduled policy at a specified time every day.* * Fri,Mon: Execute the scheduled policy at a specified time on a specified day of the week. Multiple selections are supported. GMT+8 time zone. The value description is as follows:Sun: SundayMon: MondayTue: TuesdayWed: WednesdayThu: ThursdayFri: FridaySat: Saturday1,2,3,28,31 * *: Execute the scheduled policy at a specified time on a specified date of each month. Multiple selections are supported. The value range is [1,31]. If there is no 31st day in the month, skip that day and execute the scheduled policy.
+         */
+        readonly period: string | ros.IResolvable;
+        /**
+         * @Property endDate: The end time of the scaling policy. The end time must be in the future. The end time must be in the format of YYYY-MM-DD.When all values are null, it indicates long-term execution, which is the default value.
+         */
+        readonly endDate?: string | ros.IResolvable;
+        /**
+         * @Property beginDate: The start time of the scaling policy. The start time must be in the future. The start time must be in the format of YYYY-MM-DD.When all values are null, it indicates long-term execution, which is the default value.
+         */
+        readonly beginDate?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ScalingRuleTimerProperty`
+ *
+ * @param properties - the TypeScript properties of a `ScalingRuleTimerProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosApplicationScalingRule_ScalingRuleTimerPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('schedules', ros.requiredValidator)(properties.schedules));
+    if(properties.schedules && (Array.isArray(properties.schedules) || (typeof properties.schedules) === 'string')) {
+        errors.collect(ros.propertyValidator('schedules', ros.validateLength)({
+            data: properties.schedules.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('schedules', ros.listValidator(RosApplicationScalingRule_SchedulesPropertyValidator))(properties.schedules));
+    errors.collect(ros.propertyValidator('period', ros.requiredValidator)(properties.period));
+    errors.collect(ros.propertyValidator('period', ros.validateString)(properties.period));
+    errors.collect(ros.propertyValidator('endDate', ros.validateString)(properties.endDate));
+    errors.collect(ros.propertyValidator('beginDate', ros.validateString)(properties.beginDate));
+    return errors.wrap('supplied properties not correct for "ScalingRuleTimerProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAE::ApplicationScalingRule.ScalingRuleTimer` resource
+ *
+ * @param properties - the TypeScript properties of a `ScalingRuleTimerProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAE::ApplicationScalingRule.ScalingRuleTimer` resource.
+ */
+// @ts-ignore TS6133
+function rosApplicationScalingRuleScalingRuleTimerPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosApplicationScalingRule_ScalingRuleTimerPropertyValidator(properties).assertSuccess();
+    return {
+      'Schedules': ros.listMapper(rosApplicationScalingRuleSchedulesPropertyToRosTemplate)(properties.schedules),
+      'Period': ros.stringToRosTemplate(properties.period),
+      'EndDate': ros.stringToRosTemplate(properties.endDate),
+      'BeginDate': ros.stringToRosTemplate(properties.beginDate),
+    };
+}
+
+export namespace RosApplicationScalingRule {
+    /**
+     * @stability external
+     */
+    export interface SchedulesProperty {
+        /**
+         * @Property targetReplicas: The number of application instances that need to be maintained during this time period.
+         */
+        readonly targetReplicas: number | ros.IResolvable;
+        /**
+         * @Property atTime: The time when the scheduled scaling policy is executed. The time must be in the format of HH:mm. The time must be in the range of 00:00 to 23:59.
+         */
+        readonly atTime: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `SchedulesProperty`
+ *
+ * @param properties - the TypeScript properties of a `SchedulesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosApplicationScalingRule_SchedulesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('targetReplicas', ros.requiredValidator)(properties.targetReplicas));
+    if(properties.targetReplicas && (typeof properties.targetReplicas) !== 'object') {
+        errors.collect(ros.propertyValidator('targetReplicas', ros.validateRange)({
+            data: properties.targetReplicas,
+            min: 1,
+            max: 50,
+          }));
+    }
+    errors.collect(ros.propertyValidator('targetReplicas', ros.validateNumber)(properties.targetReplicas));
+    errors.collect(ros.propertyValidator('atTime', ros.requiredValidator)(properties.atTime));
+    errors.collect(ros.propertyValidator('atTime', ros.validateString)(properties.atTime));
+    return errors.wrap('supplied properties not correct for "SchedulesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAE::ApplicationScalingRule.Schedules` resource
+ *
+ * @param properties - the TypeScript properties of a `SchedulesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAE::ApplicationScalingRule.Schedules` resource.
+ */
+// @ts-ignore TS6133
+function rosApplicationScalingRuleSchedulesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosApplicationScalingRule_SchedulesPropertyValidator(properties).assertSuccess();
+    return {
+      'TargetReplicas': ros.numberToRosTemplate(properties.targetReplicas),
+      'AtTime': ros.stringToRosTemplate(properties.atTime),
+    };
+}
+
+/**
  * Properties for defining a `RosConfigMap`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-configmap
  */
@@ -1210,7 +1815,7 @@ function rosConfigMapPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::ConfigMap`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::ConfigMap`, which is used to create a ConfigMap instance in a namespace.
  * @Note This class does not contain additional functions, so it is recommended to use the `ConfigMap` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-configmap
  */
@@ -1434,7 +2039,7 @@ function rosIngressPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Ingress`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Ingress`, which is used to create a routing rule.
  * @Note This class does not contain additional functions, so it is recommended to use the `Ingress` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-ingress
  */

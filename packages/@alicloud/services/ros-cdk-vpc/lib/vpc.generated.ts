@@ -477,7 +477,7 @@ function rosBgpGroupPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::BgpGroup`, which is used to create a Border Gateway Protocol (BGP) (Multi-ISP) group for a specified virtual border router (VBR).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::BgpGroup`, which is used to create a Border Gateway Protocol (BGP) (Multi-ISP) group for a virtual border router (VBR).
  * @Note This class does not contain additional functions, so it is recommended to use the `BgpGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgpgroup
  */
@@ -3868,7 +3868,7 @@ function rosHaVipPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::HaVip`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::HaVip`, which is used to create a high-availability virtual IP address (HAVIP).
  * @Note This class does not contain additional functions, so it is recommended to use the `HaVip` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-havip
  */
@@ -4069,7 +4069,7 @@ function rosHaVipAssociationPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::HaVipAssociation`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::HaVipAssociation`, which is used to associate high-availability virtual IP addresses (HAVIPs) with an Elastic Compute Service (ECS) instance or an elastic network interface (ENI).
  * @Note This class does not contain additional functions, so it is recommended to use the `HaVipAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-havipassociation
  */
@@ -4124,6 +4124,533 @@ export class RosHaVipAssociation extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosHaVipAssociationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+/**
+ * Properties for defining a `RosIpam`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipam
+ */
+export interface RosIpamProps {
+
+    /**
+     * @Property operatingRegionList: List of IPAM effective regions.
+     */
+    readonly operatingRegionList: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property ipamDescription: The description of IPAM.
+     * It must be 2 to 256 characters in length and must start with an uppercase letter or a Chinese character, but cannot start with 'http:\/\/ 'or 'https. If the description is not filled in, it is blank. The default value is blank.
+     */
+    readonly ipamDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property ipamName: The name of the IPAM.
+     */
+    readonly ipamName?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags of ipam.
+     */
+    readonly tags?: RosIpam.TagsProperty[];
+}
+
+/**
+ * Determine whether the given properties match those of a `RosIpamProps`
+ *
+ * @param properties - the TypeScript properties of a `RosIpamProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosIpamPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('operatingRegionList', ros.requiredValidator)(properties.operatingRegionList));
+    if(properties.operatingRegionList && (Array.isArray(properties.operatingRegionList) || (typeof properties.operatingRegionList) === 'string')) {
+        errors.collect(ros.propertyValidator('operatingRegionList', ros.validateLength)({
+            data: properties.operatingRegionList.length,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('operatingRegionList', ros.listValidator(ros.validateString))(properties.operatingRegionList));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('ipamName', ros.validateString)(properties.ipamName));
+    errors.collect(ros.propertyValidator('ipamDescription', ros.validateString)(properties.ipamDescription));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosIpam_TagsPropertyValidator))(properties.tags));
+    return errors.wrap('supplied properties not correct for "RosIpamProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::Ipam` resource
+ *
+ * @param properties - the TypeScript properties of a `RosIpamProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::Ipam` resource.
+ */
+// @ts-ignore TS6133
+function rosIpamPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosIpamPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'OperatingRegionList': ros.listMapper(ros.stringToRosTemplate)(properties.operatingRegionList),
+      'IpamDescription': ros.stringToRosTemplate(properties.ipamDescription),
+      'IpamName': ros.stringToRosTemplate(properties.ipamName),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'Tags': ros.listMapper(rosIpamTagsPropertyToRosTemplate)(properties.tags),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::Ipam`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Ipam` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipam
+ */
+export class RosIpam extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::Ipam";
+
+    /**
+     * @Attribute CreateTime: The creation time of the IPAM.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute DefaultResourceDiscoveryAssociationId: After an IPAM is created, the association between the resource discovery created by the system by default and the IPAM.
+     */
+    public readonly attrDefaultResourceDiscoveryAssociationId: ros.IResolvable;
+
+    /**
+     * @Attribute DefaultResourceDiscoveryId: After IPAM is created, the system creates resource discovery by default.
+     */
+    public readonly attrDefaultResourceDiscoveryId: ros.IResolvable;
+
+    /**
+     * @Attribute IpamDescription: The description of IPAM.
+     */
+    public readonly attrIpamDescription: ros.IResolvable;
+
+    /**
+     * @Attribute IpamId: The first ID of the resource.
+     */
+    public readonly attrIpamId: ros.IResolvable;
+
+    /**
+     * @Attribute IpamName: The name of the IPAM.
+     */
+    public readonly attrIpamName: ros.IResolvable;
+
+    /**
+     * @Attribute OperatingRegionList: List of IPAM effective regions.
+     */
+    public readonly attrOperatingRegionList: ros.IResolvable;
+
+    /**
+     * @Attribute PrivateDefaultScopeId: After an IPAM is created, the scope of the private network IPAM created by the system by default.
+     */
+    public readonly attrPrivateDefaultScopeId: ros.IResolvable;
+
+    /**
+     * @Attribute PublicDefaultScopeId: After an IPAM is created, the public network IPAM is created by default.
+     */
+    public readonly attrPublicDefaultScopeId: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceDiscoveryAssociationCount: The number of resource discovery objects associated with IPAM.
+     */
+    public readonly attrResourceDiscoveryAssociationCount: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tag of the IPAM.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property operatingRegionList: List of IPAM effective regions.
+     */
+    public operatingRegionList: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property ipamDescription: The description of IPAM.
+     * It must be 2 to 256 characters in length and must start with an uppercase letter or a Chinese character, but cannot start with 'http:\/\/ 'or 'https. If the description is not filled in, it is blank. The default value is blank.
+     */
+    public ipamDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipamName: The name of the IPAM.
+     */
+    public ipamName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags of ipam.
+     */
+    public tags: RosIpam.TagsProperty[] | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosIpamProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosIpam.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDefaultResourceDiscoveryAssociationId = this.getAtt('DefaultResourceDiscoveryAssociationId');
+        this.attrDefaultResourceDiscoveryId = this.getAtt('DefaultResourceDiscoveryId');
+        this.attrIpamDescription = this.getAtt('IpamDescription');
+        this.attrIpamId = this.getAtt('IpamId');
+        this.attrIpamName = this.getAtt('IpamName');
+        this.attrOperatingRegionList = this.getAtt('OperatingRegionList');
+        this.attrPrivateDefaultScopeId = this.getAtt('PrivateDefaultScopeId');
+        this.attrPublicDefaultScopeId = this.getAtt('PublicDefaultScopeId');
+        this.attrResourceDiscoveryAssociationCount = this.getAtt('ResourceDiscoveryAssociationCount');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrTags = this.getAtt('Tags');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.operatingRegionList = props.operatingRegionList;
+        this.ipamDescription = props.ipamDescription;
+        this.ipamName = props.ipamName;
+        this.resourceGroupId = props.resourceGroupId;
+        this.tags = props.tags;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            operatingRegionList: this.operatingRegionList,
+            ipamDescription: this.ipamDescription,
+            ipamName: this.ipamName,
+            resourceGroupId: this.resourceGroupId,
+            tags: this.tags,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosIpamPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosIpam {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosIpam_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::Ipam.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::Ipam.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosIpamTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosIpam_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
+ * Properties for defining a `RosIpamScope`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipamscope
+ */
+export interface RosIpamScopeProps {
+
+    /**
+     * @Property ipamId: The id of the Ipam instance.
+     */
+    readonly ipamId: string | ros.IResolvable;
+
+    /**
+     * @Property ipamScopeDescription: The description of the IPAM's scope of action.
+     * It must be 2 to 256 characters in length and must start with a lowercase letter, but cannot start with 'http:\/\/ 'or 'https. If it is not filled in, it is empty. The default value is empty.
+     */
+    readonly ipamScopeDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property ipamScopeName: The name of the IPAM scope.
+     */
+    readonly ipamScopeName?: string | ros.IResolvable;
+
+    /**
+     * @Property ipamScopeType: IPAM scope of action type:
+     * **private**.
+     * 
+     * > Currently, only the role scope of the private network is supported.
+     */
+    readonly ipamScopeType?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags of ipam scope.
+     */
+    readonly tags?: RosIpamScope.TagsProperty[];
+}
+
+/**
+ * Determine whether the given properties match those of a `RosIpamScopeProps`
+ *
+ * @param properties - the TypeScript properties of a `RosIpamScopeProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosIpamScopePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('ipamScopeName', ros.validateString)(properties.ipamScopeName));
+    errors.collect(ros.propertyValidator('ipamId', ros.requiredValidator)(properties.ipamId));
+    errors.collect(ros.propertyValidator('ipamId', ros.validateString)(properties.ipamId));
+    errors.collect(ros.propertyValidator('ipamScopeDescription', ros.validateString)(properties.ipamScopeDescription));
+    errors.collect(ros.propertyValidator('ipamScopeType', ros.validateString)(properties.ipamScopeType));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosIpamScope_TagsPropertyValidator))(properties.tags));
+    return errors.wrap('supplied properties not correct for "RosIpamScopeProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::IpamScope` resource
+ *
+ * @param properties - the TypeScript properties of a `RosIpamScopeProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::IpamScope` resource.
+ */
+// @ts-ignore TS6133
+function rosIpamScopePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosIpamScopePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'IpamId': ros.stringToRosTemplate(properties.ipamId),
+      'IpamScopeDescription': ros.stringToRosTemplate(properties.ipamScopeDescription),
+      'IpamScopeName': ros.stringToRosTemplate(properties.ipamScopeName),
+      'IpamScopeType': ros.stringToRosTemplate(properties.ipamScopeType),
+      'Tags': ros.listMapper(rosIpamScopeTagsPropertyToRosTemplate)(properties.tags),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::IpamScope`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `IpamScope` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipamscope
+ */
+export class RosIpamScope extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::IpamScope";
+
+    /**
+     * @Attribute CreateTime: The creation time of the IPAM scope.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute IpamId: The id of the Ipam instance.
+     */
+    public readonly attrIpamId: ros.IResolvable;
+
+    /**
+     * @Attribute IpamScopeDescription: The description of the IPAM's scope of action.
+     */
+    public readonly attrIpamScopeDescription: ros.IResolvable;
+
+    /**
+     * @Attribute IpamScopeId: The ID of the IPAM scope.
+     */
+    public readonly attrIpamScopeId: ros.IResolvable;
+
+    /**
+     * @Attribute IpamScopeName: The name of the IPAM scope.
+     */
+    public readonly attrIpamScopeName: ros.IResolvable;
+
+    /**
+     * @Attribute IpamScopeType: IPAM scope of action type.
+     */
+    public readonly attrIpamScopeType: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tag of the IPAM scope.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property ipamId: The id of the Ipam instance.
+     */
+    public ipamId: string | ros.IResolvable;
+
+    /**
+     * @Property ipamScopeDescription: The description of the IPAM's scope of action.
+     * It must be 2 to 256 characters in length and must start with a lowercase letter, but cannot start with 'http:\/\/ 'or 'https. If it is not filled in, it is empty. The default value is empty.
+     */
+    public ipamScopeDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipamScopeName: The name of the IPAM scope.
+     */
+    public ipamScopeName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipamScopeType: IPAM scope of action type:
+     * **private**.
+     * 
+     * > Currently, only the role scope of the private network is supported.
+     */
+    public ipamScopeType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags of ipam scope.
+     */
+    public tags: RosIpamScope.TagsProperty[] | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosIpamScopeProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosIpamScope.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrIpamId = this.getAtt('IpamId');
+        this.attrIpamScopeDescription = this.getAtt('IpamScopeDescription');
+        this.attrIpamScopeId = this.getAtt('IpamScopeId');
+        this.attrIpamScopeName = this.getAtt('IpamScopeName');
+        this.attrIpamScopeType = this.getAtt('IpamScopeType');
+        this.attrTags = this.getAtt('Tags');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.ipamId = props.ipamId;
+        this.ipamScopeDescription = props.ipamScopeDescription;
+        this.ipamScopeName = props.ipamScopeName;
+        this.ipamScopeType = props.ipamScopeType;
+        this.tags = props.tags;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            ipamId: this.ipamId,
+            ipamScopeDescription: this.ipamScopeDescription,
+            ipamScopeName: this.ipamScopeName,
+            ipamScopeType: this.ipamScopeType,
+            tags: this.tags,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosIpamScopePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosIpamScope {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosIpamScope_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::IpamScope.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::IpamScope.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosIpamScopeTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosIpamScope_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -9723,7 +10250,7 @@ function rosVpcCidrBlockAssociationPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpcCidrBlockAssociation`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpcCidrBlockAssociation`, which is used to add a secondary CIDR block to a virtual private cloud (VPC).
  * @Note This class does not contain additional functions, so it is recommended to use the `VpcCidrBlockAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpccidrblockassociation
  */
@@ -9904,7 +10431,7 @@ function rosVpcIpv6CidrAllocationPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpcIpv6CidrAllocation`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpcIpv6CidrAllocation`, which is used to reserve an IPv6 CIDR block.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpcIpv6CidrAllocation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpcipv6cidrallocation
  */
@@ -10356,7 +10883,7 @@ function rosVpnAttachmentPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpnAttachment`, which is used to create an IPsec-VPN connection and associate it with a transit router.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpnAttachment`, which is used to create an IPsec-VPN connection. After you create the IPsec-VPN connection, you can associate the IPsec-VPN connection with a transit router.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpnAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnattachment
  */

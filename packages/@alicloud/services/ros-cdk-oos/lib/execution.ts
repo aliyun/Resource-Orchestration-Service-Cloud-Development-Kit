@@ -49,8 +49,8 @@ export interface ExecutionProps {
 
     /**
      * Property safetyCheck: Security check mode. Allowed values:
-     * - Skip: This option means that customers understand the risks, you can do anything without confirmation Action, no matter what the level of risk. It takes effect only if Mode is Automatic.
-     * - ConfirmEveryHighRiskAction (default): This option would require customers to confirm each Action a high risk. NotifyExecution by calling customer interface to confirm or cancel.
+     * - Skip (default): This option means that customers understand the risks, you can do anything without confirmation Action, no matter what the level of risk. It takes effect only if Mode is Automatic.
+     * - ConfirmEveryHighRiskAction: This option would require customers to confirm each Action a high risk. NotifyExecution by calling customer interface to confirm or cancel.
      */
     readonly safetyCheck?: string | ros.IResolvable;
 
@@ -161,7 +161,7 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
             mode: props.mode === undefined || props.mode === null ? 'Automatic' : props.mode,
             templateVersion: props.templateVersion,
             templateUrl: props.templateUrl,
-            safetyCheck: props.safetyCheck === undefined || props.safetyCheck === null ? 'ConfirmEveryHighRiskAction' : props.safetyCheck,
+            safetyCheck: props.safetyCheck === undefined || props.safetyCheck === null ? 'Skip' : props.safetyCheck,
             templateName: props.templateName,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::OOS::DefaultPatchBaseline</code>, which is used to register a default patch baseline.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-10-18T08:56:31.897Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:09.658Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.DefaultPatchBaseline")
 public class DefaultPatchBaseline extends com.aliyun.ros.cdk.core.Resource {
 

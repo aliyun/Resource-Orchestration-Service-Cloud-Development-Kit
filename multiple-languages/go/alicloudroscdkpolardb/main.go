@@ -771,6 +771,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "dbType", GoGetter: "DbType"},
 			_jsii_.MemberProperty{JsiiProperty: "dbVersion", GoGetter: "DbVersion"},
 			_jsii_.MemberProperty{JsiiProperty: "defaultTimeZone", GoGetter: "DefaultTimeZone"},
+			_jsii_.MemberProperty{JsiiProperty: "deletionProtection", GoGetter: "DeletionProtection"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
 			_jsii_.MemberProperty{JsiiProperty: "gdnId", GoGetter: "GdnId"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},

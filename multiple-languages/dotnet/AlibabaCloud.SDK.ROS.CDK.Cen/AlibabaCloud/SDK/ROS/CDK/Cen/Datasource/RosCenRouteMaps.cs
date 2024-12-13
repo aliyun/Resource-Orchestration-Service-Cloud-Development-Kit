@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cen.Datasource
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::CEN::CenRouteMaps`, which is used to query the details of routing policies.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::CEN::CenRouteMaps`, which is used to query the information about routing policies.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `CenRouteMaps` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-cenroutemaps

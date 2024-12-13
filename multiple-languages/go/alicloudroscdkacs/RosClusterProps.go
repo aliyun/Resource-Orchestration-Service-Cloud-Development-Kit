@@ -25,6 +25,6 @@ type RosClusterProps struct {
 	TimeZone interface{} `field:"optional" json:"timeZone" yaml:"timeZone"`
 	VpcId interface{} `field:"optional" json:"vpcId" yaml:"vpcId"`
 	VSwitchIds interface{} `field:"optional" json:"vSwitchIds" yaml:"vSwitchIds"`
-	ZoneId interface{} `field:"optional" json:"zoneId" yaml:"zoneId"`
+	ZoneIds interface{} `field:"optional" json:"zoneIds" yaml:"zoneIds"`
 }
 

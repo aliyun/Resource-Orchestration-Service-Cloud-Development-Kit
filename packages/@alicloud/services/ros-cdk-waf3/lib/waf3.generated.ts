@@ -545,7 +545,7 @@ function rosTGWPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::WAF3::TGW`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::WAF3::TGW`, which is used to add a resource to Web Application Firewall (WAF) in transparent proxy mode.
  * @Note This class does not contain additional functions, so it is recommended to use the `TGW` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf3-tgw
  */
