@@ -12,44 +12,54 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::Vpc`, which is used to query the information about a virtual private cloud (VPC).
 type Vpc interface {
 	alicloudroscdkcore.Resource
+	IVpc
 	// Attribute CidrBlock: The IPv4 CIDR block of the VPC.
-	AttrCidrBlock() alicloudroscdkcore.IResolvable
+	AttrCidrBlock() interface{}
 	// Attribute ClassicLinkEnabled: status of vpc  ClassicLink..
-	AttrClassicLinkEnabled() alicloudroscdkcore.IResolvable
+	AttrClassicLinkEnabled() interface{}
 	// Attribute CreateTime: The time at which the VPC was created.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute Description: The description of the VPC.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute DhcpOptionsSetId: The ID of the DHCP option set.
-	AttrDhcpOptionsSetId() alicloudroscdkcore.IResolvable
+	AttrDhcpOptionsSetId() interface{}
 	// Attribute Ipv6CidrBlock: The ipv6 cidr block of vpc.
-	AttrIpv6CidrBlock() alicloudroscdkcore.IResolvable
+	AttrIpv6CidrBlock() interface{}
 	// Attribute Ipv6CidrBlocks: The IPv6 network segment of the VPC.
-	AttrIpv6CidrBlocks() alicloudroscdkcore.IResolvable
+	AttrIpv6CidrBlocks() interface{}
 	// Attribute IsDefault: Indicates whether to query the default VPC in the specified region.
 	//
 	// Valid values:
 	// - true (default): All VPCs in the specified region are queried.
 	// - false: The default VPC is not queried.
-	AttrIsDefault() alicloudroscdkcore.IResolvable
+	AttrIsDefault() interface{}
 	// Attribute ResourceGroupId: The ID of the resource group to which the VPC belongs.
-	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() interface{}
 	// Attribute RouterId: The ID of the VRouter.
-	AttrRouterId() alicloudroscdkcore.IResolvable
+	AttrRouterId() interface{}
 	// Attribute SecondaryCidrBlocks: Additional network segment information.
-	AttrSecondaryCidrBlocks() alicloudroscdkcore.IResolvable
+	AttrSecondaryCidrBlocks() interface{}
 	// Attribute Tags: The tags of Vpc.
-	AttrTags() alicloudroscdkcore.IResolvable
+	AttrTags() interface{}
 	// Attribute UserCidrs: A list of user CIDRs.
-	AttrUserCidrs() alicloudroscdkcore.IResolvable
+	AttrUserCidrs() interface{}
 	// Attribute VpcId: The ID of the VPC.
-	AttrVpcId() alicloudroscdkcore.IResolvable
+	AttrVpcId() interface{}
 	// Attribute VpcName: The name of the VPC.
-	AttrVpcName() alicloudroscdkcore.IResolvable
+	AttrVpcName() interface{}
 	// Attribute VSwitchIds: A list of VSwitches in the VPC.
-	AttrVSwitchIds() alicloudroscdkcore.IResolvable
+	AttrVSwitchIds() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -64,7 +74,6 @@ type Vpc interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *VpcProps
-	SetProps(val *VpcProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -77,6 +86,9 @@ type Vpc interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -129,10 +141,11 @@ type Vpc interface {
 // The jsii proxy struct for Vpc
 type jsiiProxy_Vpc struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IVpc
 }
 
-func (j *jsiiProxy_Vpc) AttrCidrBlock() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vpc) AttrCidrBlock() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCidrBlock",
@@ -141,8 +154,8 @@ func (j *jsiiProxy_Vpc) AttrCidrBlock() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vpc) AttrClassicLinkEnabled() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vpc) AttrClassicLinkEnabled() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrClassicLinkEnabled",
@@ -151,8 +164,8 @@ func (j *jsiiProxy_Vpc) AttrClassicLinkEnabled() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_Vpc) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vpc) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -161,8 +174,8 @@ func (j *jsiiProxy_Vpc) AttrCreateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vpc) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vpc) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -171,8 +184,8 @@ func (j *jsiiProxy_Vpc) AttrDescription() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vpc) AttrDhcpOptionsSetId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vpc) AttrDhcpOptionsSetId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDhcpOptionsSetId",
@@ -181,8 +194,8 @@ func (j *jsiiProxy_Vpc) AttrDhcpOptionsSetId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vpc) AttrIpv6CidrBlock() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vpc) AttrIpv6CidrBlock() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIpv6CidrBlock",
@@ -191,8 +204,8 @@ func (j *jsiiProxy_Vpc) AttrIpv6CidrBlock() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vpc) AttrIpv6CidrBlocks() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vpc) AttrIpv6CidrBlocks() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIpv6CidrBlocks",
@@ -201,8 +214,8 @@ func (j *jsiiProxy_Vpc) AttrIpv6CidrBlocks() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vpc) AttrIsDefault() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vpc) AttrIsDefault() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIsDefault",
@@ -211,8 +224,8 @@ func (j *jsiiProxy_Vpc) AttrIsDefault() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vpc) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vpc) AttrResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupId",
@@ -221,8 +234,8 @@ func (j *jsiiProxy_Vpc) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vpc) AttrRouterId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vpc) AttrRouterId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRouterId",
@@ -231,8 +244,8 @@ func (j *jsiiProxy_Vpc) AttrRouterId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vpc) AttrSecondaryCidrBlocks() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vpc) AttrSecondaryCidrBlocks() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSecondaryCidrBlocks",
@@ -241,8 +254,8 @@ func (j *jsiiProxy_Vpc) AttrSecondaryCidrBlocks() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Vpc) AttrTags() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vpc) AttrTags() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTags",
@@ -251,8 +264,8 @@ func (j *jsiiProxy_Vpc) AttrTags() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vpc) AttrUserCidrs() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vpc) AttrUserCidrs() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUserCidrs",
@@ -261,8 +274,8 @@ func (j *jsiiProxy_Vpc) AttrUserCidrs() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vpc) AttrVpcId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vpc) AttrVpcId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVpcId",
@@ -271,8 +284,8 @@ func (j *jsiiProxy_Vpc) AttrVpcId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vpc) AttrVpcName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vpc) AttrVpcName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVpcName",
@@ -281,8 +294,8 @@ func (j *jsiiProxy_Vpc) AttrVpcName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vpc) AttrVSwitchIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vpc) AttrVSwitchIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVSwitchIds",
@@ -296,6 +309,16 @@ func (j *jsiiProxy_Vpc) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Vpc) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -433,17 +456,6 @@ func (j *jsiiProxy_Vpc)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Vpc)SetProps(val *VpcProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Vpc)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -535,6 +547,45 @@ func (v *jsiiProxy_Vpc) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPoli
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (v *jsiiProxy_Vpc) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		v,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (v *jsiiProxy_Vpc) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		v,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (v *jsiiProxy_Vpc) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		v,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (v *jsiiProxy_Vpc) GeneratePhysicalName() *string {

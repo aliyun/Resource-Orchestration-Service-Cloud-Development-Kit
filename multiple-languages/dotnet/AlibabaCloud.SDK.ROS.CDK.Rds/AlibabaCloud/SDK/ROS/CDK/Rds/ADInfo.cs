@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-adinfo
     /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Rds.ADInfo), fullyQualifiedName: "@alicloud/ros-cdk-rds.ADInfo", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-rds.ADInfoProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"optional\":true,\"type\":{\"primitive\":\"boolean\"}}]")]
-    public class ADInfo : AlibabaCloud.SDK.ROS.CDK.Core.Resource_
+    public class ADInfo : AlibabaCloud.SDK.ROS.CDK.Core.Resource_, AlibabaCloud.SDK.ROS.CDK.Rds.IADInfo
     {
         /// <summary>Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.</summary>
         public ADInfo(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Rds.IADInfoProps props, bool? enableResourcePropertyConstraint = null): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
@@ -38,17 +38,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         }
 
         /// <summary>Attribute ADDNS: Active directory domain name.</summary>
-        [JsiiProperty(name: "attrAddns", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAddns
+        [JsiiProperty(name: "attrAddns", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrAddns
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute DBInstanceId: The ID of the instance.</summary>
-        [JsiiProperty(name: "attrDbInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDbInstanceId
+        [JsiiProperty(name: "attrDbInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrDbInstanceId
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
+        }
+
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-rds.ADInfoProps\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Rds.IADInfoProps Props
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Rds.IADInfoProps>()!;
         }
 
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
@@ -62,13 +68,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         protected virtual string Id
         {
             get => GetInstanceProperty<string>()!;
-            set => SetInstanceProperty(value);
-        }
-
-        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-rds.ADInfoProps\"}")]
-        protected virtual AlibabaCloud.SDK.ROS.CDK.Rds.IADInfoProps Props
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Rds.IADInfoProps>()!;
             set => SetInstanceProperty(value);
         }
 

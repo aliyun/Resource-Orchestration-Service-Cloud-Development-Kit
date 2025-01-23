@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-publicipaddresspools
     /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource.PublicIpAddressPools), fullyQualifiedName: "@alicloud/ros-cdk-vpc.datasource.PublicIpAddressPools", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"optional\":true,\"type\":{\"fqn\":\"@alicloud/ros-cdk-vpc.datasource.PublicIpAddressPoolsProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"optional\":true,\"type\":{\"primitive\":\"boolean\"}}]")]
-    public class PublicIpAddressPools : AlibabaCloud.SDK.ROS.CDK.Core.Resource_
+    public class PublicIpAddressPools : AlibabaCloud.SDK.ROS.CDK.Core.Resource_, AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource.IPublicIpAddressPools
     {
         /// <summary>Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.</summary>
         public PublicIpAddressPools(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource.IPublicIpAddressPoolsProps? props = null, bool? enableResourcePropertyConstraint = null): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
@@ -38,17 +38,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
         }
 
         /// <summary>Attribute PublicIpAddressPoolIds: The list of public ip address pool IDs.</summary>
-        [JsiiProperty(name: "attrPublicIpAddressPoolIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPublicIpAddressPoolIds
+        [JsiiProperty(name: "attrPublicIpAddressPoolIds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrPublicIpAddressPoolIds
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute PublicIpAddressPools: The list of public ip address pools.</summary>
-        [JsiiProperty(name: "attrPublicIpAddressPools", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPublicIpAddressPools
+        [JsiiProperty(name: "attrPublicIpAddressPools", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrPublicIpAddressPools
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
+        }
+
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-vpc.datasource.PublicIpAddressPoolsProps\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource.IPublicIpAddressPoolsProps Props
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource.IPublicIpAddressPoolsProps>()!;
         }
 
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
@@ -62,13 +68,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
         protected virtual string Id
         {
             get => GetInstanceProperty<string>()!;
-            set => SetInstanceProperty(value);
-        }
-
-        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-vpc.datasource.PublicIpAddressPoolsProps\"}")]
-        protected virtual AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource.IPublicIpAddressPoolsProps Props
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource.IPublicIpAddressPoolsProps>()!;
             set => SetInstanceProperty(value);
         }
 

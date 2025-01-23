@@ -34,25 +34,41 @@ export interface TriggersProps {
 }
 
 /**
+ * Represents a `Triggers`.
+ */
+export interface ITriggers extends ros.IResource {
+    readonly props: TriggersProps;
+
+    /**
+     * Attribute TriggerNames: The list of trigger names.
+     */
+    readonly attrTriggerNames: ros.IResolvable | string;
+
+    /**
+     * Attribute Triggers: The list of triggers.
+     */
+    readonly attrTriggers: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::FC::Triggers`, which is used to query triggers.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTriggers`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-triggers
  */
-export class Triggers extends ros.Resource {
+export class Triggers extends ros.Resource implements ITriggers {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: TriggersProps;
+    public readonly props: TriggersProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute TriggerNames: The list of trigger names.
      */
-    public readonly attrTriggerNames: ros.IResolvable;
+    public readonly attrTriggerNames: ros.IResolvable | string;
 
     /**
      * Attribute Triggers: The list of triggers.
      */
-    public readonly attrTriggers: ros.IResolvable;
+    public readonly attrTriggers: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

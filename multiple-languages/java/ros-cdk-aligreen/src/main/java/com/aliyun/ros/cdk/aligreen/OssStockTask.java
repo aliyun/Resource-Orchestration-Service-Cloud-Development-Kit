@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.aligreen;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::Aligreen::OssStockTask</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:04.081Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:34.407Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.aligreen.$Module.class, fqn = "@alicloud/ros-cdk-aligreen.OssStockTask")
-public class OssStockTask extends com.aliyun.ros.cdk.core.Resource {
+public class OssStockTask extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.aligreen.IOssStockTask {
 
     protected OssStockTask(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -43,8 +43,9 @@ public class OssStockTask extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute AudioAntispamFreezeConfig: Voice auto freeze configuration.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAudioAntispamFreezeConfig() {
-        return software.amazon.jsii.Kernel.get(this, "attrAudioAntispamFreezeConfig", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAudioAntispamFreezeConfig() {
+        return software.amazon.jsii.Kernel.get(this, "attrAudioAntispamFreezeConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -52,22 +53,25 @@ public class OssStockTask extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * Value: true: automatically freeze, false: not automatically freeze.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAudioAutoFreezeOpened() {
-        return software.amazon.jsii.Kernel.get(this, "attrAudioAutoFreezeOpened", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAudioAutoFreezeOpened() {
+        return software.amazon.jsii.Kernel.get(this, "attrAudioAutoFreezeOpened", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute AudioMaxSize: Resource property field representing the maximum size of a single audio.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAudioMaxSize() {
-        return software.amazon.jsii.Kernel.get(this, "attrAudioMaxSize", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAudioMaxSize() {
+        return software.amazon.jsii.Kernel.get(this, "attrAudioMaxSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute AudioOpened: oss stock scan task detect audio.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAudioOpened() {
-        return software.amazon.jsii.Kernel.get(this, "attrAudioOpened", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAudioOpened() {
+        return software.amazon.jsii.Kernel.get(this, "attrAudioOpened", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -75,8 +79,9 @@ public class OssStockTask extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * The default value is 1000/Bucket.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAudioScanLimit() {
-        return software.amazon.jsii.Kernel.get(this, "attrAudioScanLimit", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAudioScanLimit() {
+        return software.amazon.jsii.Kernel.get(this, "attrAudioScanLimit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -84,50 +89,57 @@ public class OssStockTask extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * Set the value to antispam.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAudioScenes() {
-        return software.amazon.jsii.Kernel.get(this, "attrAudioScenes", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAudioScenes() {
+        return software.amazon.jsii.Kernel.get(this, "attrAudioScenes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute AutoFreezeType: Automatic freeze type.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAutoFreezeType() {
-        return software.amazon.jsii.Kernel.get(this, "attrAutoFreezeType", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAutoFreezeType() {
+        return software.amazon.jsii.Kernel.get(this, "attrAutoFreezeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute BizType: Business scenarios used by the oss stock scan task.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrBizType() {
-        return software.amazon.jsii.Kernel.get(this, "attrBizType", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrBizType() {
+        return software.amazon.jsii.Kernel.get(this, "attrBizType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute Buckets: The bucket configuration list of the oss stock scan task.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrBuckets() {
-        return software.amazon.jsii.Kernel.get(this, "attrBuckets", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrBuckets() {
+        return software.amazon.jsii.Kernel.get(this, "attrBuckets", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute CallbackId: The ID of the primary key of the notification message bound to the oss stock scan task.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCallbackId() {
-        return software.amazon.jsii.Kernel.get(this, "attrCallbackId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCallbackId() {
+        return software.amazon.jsii.Kernel.get(this, "attrCallbackId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute EndDate: The end time of the file upload time range indicates the scanning of files uploaded before this time point.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrEndDate() {
-        return software.amazon.jsii.Kernel.get(this, "attrEndDate", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrEndDate() {
+        return software.amazon.jsii.Kernel.get(this, "attrEndDate", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute ImageAdFreezeConfig: Picture automatically freezes the configuration of ad scenes.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrImageAdFreezeConfig() {
-        return software.amazon.jsii.Kernel.get(this, "attrImageAdFreezeConfig", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrImageAdFreezeConfig() {
+        return software.amazon.jsii.Kernel.get(this, "attrImageAdFreezeConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -135,71 +147,81 @@ public class OssStockTask extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * Value: true: auto freeze, false: not auto freeze.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrImageAutoFreezeOpened() {
-        return software.amazon.jsii.Kernel.get(this, "attrImageAutoFreezeOpened", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrImageAutoFreezeOpened() {
+        return software.amazon.jsii.Kernel.get(this, "attrImageAutoFreezeOpened", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute ImageLiveFreezeConfig: Picture automatic freezing live scene configuration.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrImageLiveFreezeConfig() {
-        return software.amazon.jsii.Kernel.get(this, "attrImageLiveFreezeConfig", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrImageLiveFreezeConfig() {
+        return software.amazon.jsii.Kernel.get(this, "attrImageLiveFreezeConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute ImageOpened: oss stock scan task detect images.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrImageOpened() {
-        return software.amazon.jsii.Kernel.get(this, "attrImageOpened", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrImageOpened() {
+        return software.amazon.jsii.Kernel.get(this, "attrImageOpened", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute ImagePornFreezeConfig: Picture automatic freezing porn scene configuration.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrImagePornFreezeConfig() {
-        return software.amazon.jsii.Kernel.get(this, "attrImagePornFreezeConfig", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrImagePornFreezeConfig() {
+        return software.amazon.jsii.Kernel.get(this, "attrImagePornFreezeConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute ImageScanLimit: The upper limit for scanning images in the oss stock scan task.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrImageScanLimit() {
-        return software.amazon.jsii.Kernel.get(this, "attrImageScanLimit", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrImageScanLimit() {
+        return software.amazon.jsii.Kernel.get(this, "attrImageScanLimit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute ImageScenes: The image moderation scenario included in the oss stock scan task.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrImageScenes() {
-        return software.amazon.jsii.Kernel.get(this, "attrImageScenes", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrImageScenes() {
+        return software.amazon.jsii.Kernel.get(this, "attrImageScenes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute ImageTerrorismFreezeConfig: The picture automatically freezes the configuration of terrorism scenes.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrImageTerrorismFreezeConfig() {
-        return software.amazon.jsii.Kernel.get(this, "attrImageTerrorismFreezeConfig", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrImageTerrorismFreezeConfig() {
+        return software.amazon.jsii.Kernel.get(this, "attrImageTerrorismFreezeConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute ScanImageNoFileType: Whether the oss stock scan task detects images with file names without suffixes.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrScanImageNoFileType() {
-        return software.amazon.jsii.Kernel.get(this, "attrScanImageNoFileType", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrScanImageNoFileType() {
+        return software.amazon.jsii.Kernel.get(this, "attrScanImageNoFileType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute StartDate: The start time of the file upload time range represents the files uploaded after scanning this time point.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrStartDate() {
-        return software.amazon.jsii.Kernel.get(this, "attrStartDate", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrStartDate() {
+        return software.amazon.jsii.Kernel.get(this, "attrStartDate", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute VideoAdFreezeConfig: The video automatically freezes the configuration of ad scenarios.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVideoAdFreezeConfig() {
-        return software.amazon.jsii.Kernel.get(this, "attrVideoAdFreezeConfig", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVideoAdFreezeConfig() {
+        return software.amazon.jsii.Kernel.get(this, "attrVideoAdFreezeConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -207,50 +229,57 @@ public class OssStockTask extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * Value: true: automatically freeze, false: not automatically freeze.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVideoAutoFreezeOpened() {
-        return software.amazon.jsii.Kernel.get(this, "attrVideoAutoFreezeOpened", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVideoAutoFreezeOpened() {
+        return software.amazon.jsii.Kernel.get(this, "attrVideoAutoFreezeOpened", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute VideoFrameInterval: Resource attribute field representing the framing frequency.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVideoFrameInterval() {
-        return software.amazon.jsii.Kernel.get(this, "attrVideoFrameInterval", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVideoFrameInterval() {
+        return software.amazon.jsii.Kernel.get(this, "attrVideoFrameInterval", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute VideoLiveFreezeConfig: Video automatic freeze live scene configuration.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVideoLiveFreezeConfig() {
-        return software.amazon.jsii.Kernel.get(this, "attrVideoLiveFreezeConfig", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVideoLiveFreezeConfig() {
+        return software.amazon.jsii.Kernel.get(this, "attrVideoLiveFreezeConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute VideoMaxFrames: A resource attribute field that represents the upper limit of a single video frame cut.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVideoMaxFrames() {
-        return software.amazon.jsii.Kernel.get(this, "attrVideoMaxFrames", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVideoMaxFrames() {
+        return software.amazon.jsii.Kernel.get(this, "attrVideoMaxFrames", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute VideoMaxSize: Resource property field representing the maximum size of a single video.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVideoMaxSize() {
-        return software.amazon.jsii.Kernel.get(this, "attrVideoMaxSize", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVideoMaxSize() {
+        return software.amazon.jsii.Kernel.get(this, "attrVideoMaxSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute VideoOpened: oss stock scan task detect video.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVideoOpened() {
-        return software.amazon.jsii.Kernel.get(this, "attrVideoOpened", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVideoOpened() {
+        return software.amazon.jsii.Kernel.get(this, "attrVideoOpened", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute VideoPornFreezeConfig: Video automatic freezing porn scene configuration.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVideoPornFreezeConfig() {
-        return software.amazon.jsii.Kernel.get(this, "attrVideoPornFreezeConfig", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVideoPornFreezeConfig() {
+        return software.amazon.jsii.Kernel.get(this, "attrVideoPornFreezeConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -258,29 +287,38 @@ public class OssStockTask extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * The default value is 1000/Bucket.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVideoScanLimit() {
-        return software.amazon.jsii.Kernel.get(this, "attrVideoScanLimit", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVideoScanLimit() {
+        return software.amazon.jsii.Kernel.get(this, "attrVideoScanLimit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute VideoScenes: The video detection scenarios included in the oss stock scan task.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVideoScenes() {
-        return software.amazon.jsii.Kernel.get(this, "attrVideoScenes", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVideoScenes() {
+        return software.amazon.jsii.Kernel.get(this, "attrVideoScenes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute VideoTerrorismFreezeConfig: The video automatically freezes the configuration of terrorism scenes.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVideoTerrorismFreezeConfig() {
-        return software.amazon.jsii.Kernel.get(this, "attrVideoTerrorismFreezeConfig", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVideoTerrorismFreezeConfig() {
+        return software.amazon.jsii.Kernel.get(this, "attrVideoTerrorismFreezeConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute VideoVoiceAntispamFreezeConfig: Voice auto freeze configuration in video.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVideoVoiceAntispamFreezeConfig() {
-        return software.amazon.jsii.Kernel.get(this, "attrVideoVoiceAntispamFreezeConfig", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVideoVoiceAntispamFreezeConfig() {
+        return software.amazon.jsii.Kernel.get(this, "attrVideoVoiceAntispamFreezeConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.aligreen.OssStockTaskProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.aligreen.OssStockTaskProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -297,14 +335,6 @@ public class OssStockTask extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.aligreen.OssStockTaskProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.aligreen.OssStockTaskProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.aligreen.OssStockTaskProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {

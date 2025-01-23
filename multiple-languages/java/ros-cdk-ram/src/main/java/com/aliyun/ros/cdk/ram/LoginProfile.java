@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.ram;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::RAM::LoginProfile</code>, which is used to create logon configurations for a Resource Access Management (RAM) user.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:10.798Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:42.909Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.LoginProfile")
-public class LoginProfile extends com.aliyun.ros.cdk.core.Resource {
+public class LoginProfile extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ram.ILoginProfile {
 
     protected LoginProfile(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -43,8 +43,14 @@ public class LoginProfile extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute Password: The password of the RAM user.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPassword() {
-        return software.amazon.jsii.Kernel.get(this, "attrPassword", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPassword() {
+        return software.amazon.jsii.Kernel.get(this, "attrPassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.LoginProfileProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ram.LoginProfileProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -61,14 +67,6 @@ public class LoginProfile extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.LoginProfileProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ram.LoginProfileProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.LoginProfileProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {

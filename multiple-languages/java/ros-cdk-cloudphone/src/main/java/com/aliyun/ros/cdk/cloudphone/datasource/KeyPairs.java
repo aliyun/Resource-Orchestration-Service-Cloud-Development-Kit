@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.cloudphone.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::CloudPhone::KeyPairs</code>, which is used to query the information about key pairs.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:05.541Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:35.882Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudphone.$Module.class, fqn = "@alicloud/ros-cdk-cloudphone.datasource.KeyPairs")
-public class KeyPairs extends com.aliyun.ros.cdk.core.Resource {
+public class KeyPairs extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cloudphone.datasource.IKeyPairs {
 
     protected KeyPairs(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -54,15 +54,22 @@ public class KeyPairs extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute KeyPairNames: The list of key pair names.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrKeyPairNames() {
-        return software.amazon.jsii.Kernel.get(this, "attrKeyPairNames", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrKeyPairNames() {
+        return software.amazon.jsii.Kernel.get(this, "attrKeyPairNames", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute KeyPairs: The list of key pairs.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrKeyPairs() {
-        return software.amazon.jsii.Kernel.get(this, "attrKeyPairs", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrKeyPairs() {
+        return software.amazon.jsii.Kernel.get(this, "attrKeyPairs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cloudphone.datasource.KeyPairsProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cloudphone.datasource.KeyPairsProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -79,14 +86,6 @@ public class KeyPairs extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cloudphone.datasource.KeyPairsProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cloudphone.datasource.KeyPairsProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cloudphone.datasource.KeyPairsProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {

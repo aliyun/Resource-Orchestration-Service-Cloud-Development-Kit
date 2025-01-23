@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb.Datasource
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-parametergroups
     /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Polardb.Datasource.ParameterGroups), fullyQualifiedName: "@alicloud/ros-cdk-polardb.datasource.ParameterGroups", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"optional\":true,\"type\":{\"fqn\":\"@alicloud/ros-cdk-polardb.datasource.ParameterGroupsProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"optional\":true,\"type\":{\"primitive\":\"boolean\"}}]")]
-    public class ParameterGroups : AlibabaCloud.SDK.ROS.CDK.Core.Resource_
+    public class ParameterGroups : AlibabaCloud.SDK.ROS.CDK.Core.Resource_, AlibabaCloud.SDK.ROS.CDK.Polardb.Datasource.IParameterGroups
     {
         /// <summary>Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.</summary>
         public ParameterGroups(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Polardb.Datasource.IParameterGroupsProps? props = null, bool? enableResourcePropertyConstraint = null): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
@@ -38,17 +38,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb.Datasource
         }
 
         /// <summary>Attribute ParameterGroupIds: The list of parameter group IDs.</summary>
-        [JsiiProperty(name: "attrParameterGroupIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrParameterGroupIds
+        [JsiiProperty(name: "attrParameterGroupIds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrParameterGroupIds
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute ParameterGroups: The list of parameter groups.</summary>
-        [JsiiProperty(name: "attrParameterGroups", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrParameterGroups
+        [JsiiProperty(name: "attrParameterGroups", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrParameterGroups
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
+        }
+
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-polardb.datasource.ParameterGroupsProps\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Polardb.Datasource.IParameterGroupsProps Props
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Polardb.Datasource.IParameterGroupsProps>()!;
         }
 
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
@@ -62,13 +68,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb.Datasource
         protected virtual string Id
         {
             get => GetInstanceProperty<string>()!;
-            set => SetInstanceProperty(value);
-        }
-
-        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-polardb.datasource.ParameterGroupsProps\"}")]
-        protected virtual AlibabaCloud.SDK.ROS.CDK.Polardb.Datasource.IParameterGroupsProps Props
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Polardb.Datasource.IParameterGroupsProps>()!;
             set => SetInstanceProperty(value);
         }
 

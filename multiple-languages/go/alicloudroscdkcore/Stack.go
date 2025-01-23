@@ -189,6 +189,13 @@ type Stack interface {
 	RenameLogicalId(oldId *string, newId *string)
 	// Resolve a tokenized value in the context of the current stack.
 	Resolve(obj interface{}) interface{}
+	// Splits the provided ARN into its components.
+	//
+	// Works both if 'arn' is a string like 'acs:ram::123456789012****:role/RoleName',
+	// and a Token representing a dynamic ROS expression
+	// (in which case the returned components will also be dynamic ROS expressions,
+	// encoded as Tokens).
+	SplitArn(arn interface{}, arnFormat ArnFormat) *ArnComponents
 	// Allows this construct to emit artifacts into the cloud assembly during synthesis.
 	//
 	// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
@@ -615,6 +622,22 @@ func (s *jsiiProxy_Stack) Resolve(obj interface{}) interface{} {
 		s,
 		"resolve",
 		[]interface{}{obj},
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_Stack) SplitArn(arn interface{}, arnFormat ArnFormat) *ArnComponents {
+	if err := s.validateSplitArnParameters(arn, arnFormat); err != nil {
+		panic(err)
+	}
+	var returns *ArnComponents
+
+	_jsii_.Invoke(
+		s,
+		"splitArn",
+		[]interface{}{arn, arnFormat},
 		&returns,
 	)
 

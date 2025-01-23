@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::DiskCategories`, which is used to query the information about disk categories.
 type DiskCategories interface {
 	alicloudroscdkcore.Resource
+	IDiskCategories
 	// Attribute DiskCategories: The list of disk categories.
-	AttrDiskCategories() alicloudroscdkcore.IResolvable
+	AttrDiskCategories() interface{}
 	// Attribute DiskCategoryIds: The list of disk category IDs.
-	AttrDiskCategoryIds() alicloudroscdkcore.IResolvable
+	AttrDiskCategoryIds() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type DiskCategories interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DiskCategoriesProps
-	SetProps(val *DiskCategoriesProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type DiskCategories interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type DiskCategories interface {
 // The jsii proxy struct for DiskCategories
 type jsiiProxy_DiskCategories struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDiskCategories
 }
 
-func (j *jsiiProxy_DiskCategories) AttrDiskCategories() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DiskCategories) AttrDiskCategories() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDiskCategories",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_DiskCategories) AttrDiskCategories() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_DiskCategories) AttrDiskCategoryIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DiskCategories) AttrDiskCategoryIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDiskCategoryIds",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_DiskCategories) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DiskCategories) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_DiskCategories)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DiskCategories)SetProps(val *DiskCategoriesProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_DiskCategories)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (d *jsiiProxy_DiskCategories) ApplyRemovalPolicy(policy alicloudroscdkcore.
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_DiskCategories) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DiskCategories) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DiskCategories) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_DiskCategories) GeneratePhysicalName() *string {

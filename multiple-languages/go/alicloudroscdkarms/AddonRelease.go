@@ -12,16 +12,26 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::AddonRelease`, which is used to install an add-on release.
 type AddonRelease interface {
 	alicloudroscdkcore.Resource
+	IAddonRelease
 	// Attribute Config: AddonRelease configuration information.
-	AttrConfig() alicloudroscdkcore.IResolvable
+	AttrConfig() interface{}
 	// Attribute EnvironmentId: The environment ID.
-	AttrEnvironmentId() alicloudroscdkcore.IResolvable
+	AttrEnvironmentId() interface{}
 	// Attribute Release: Release information.
-	AttrRelease() alicloudroscdkcore.IResolvable
+	AttrRelease() interface{}
 	// Attribute ReleaseName: The name of the add-on.
-	AttrReleaseName() alicloudroscdkcore.IResolvable
+	AttrReleaseName() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -36,7 +46,6 @@ type AddonRelease interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *AddonReleaseProps
-	SetProps(val *AddonReleaseProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -49,6 +58,9 @@ type AddonRelease interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -101,10 +113,11 @@ type AddonRelease interface {
 // The jsii proxy struct for AddonRelease
 type jsiiProxy_AddonRelease struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IAddonRelease
 }
 
-func (j *jsiiProxy_AddonRelease) AttrConfig() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AddonRelease) AttrConfig() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrConfig",
@@ -113,8 +126,8 @@ func (j *jsiiProxy_AddonRelease) AttrConfig() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_AddonRelease) AttrEnvironmentId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AddonRelease) AttrEnvironmentId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEnvironmentId",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_AddonRelease) AttrEnvironmentId() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_AddonRelease) AttrRelease() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AddonRelease) AttrRelease() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRelease",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_AddonRelease) AttrRelease() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_AddonRelease) AttrReleaseName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AddonRelease) AttrReleaseName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrReleaseName",
@@ -148,6 +161,16 @@ func (j *jsiiProxy_AddonRelease) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AddonRelease) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -285,17 +308,6 @@ func (j *jsiiProxy_AddonRelease)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AddonRelease)SetProps(val *AddonReleaseProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_AddonRelease)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -387,6 +399,45 @@ func (a *jsiiProxy_AddonRelease) ApplyRemovalPolicy(policy alicloudroscdkcore.Re
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (a *jsiiProxy_AddonRelease) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		a,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AddonRelease) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AddonRelease) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (a *jsiiProxy_AddonRelease) GeneratePhysicalName() *string {

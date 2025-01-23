@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.vpc.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::VPC::HaVip</code>, which is used to query a high-availability virtual IP address (HAVIP).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:13.200Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:45.344Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.HaVip")
-public class HaVip extends com.aliyun.ros.cdk.core.Resource {
+public class HaVip extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.datasource.IHaVip {
 
     protected HaVip(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -43,78 +43,94 @@ public class HaVip extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute AssociatedEipAddresses: EIP bound to HaVip.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAssociatedEipAddresses() {
-        return software.amazon.jsii.Kernel.get(this, "attrAssociatedEipAddresses", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAssociatedEipAddresses() {
+        return software.amazon.jsii.Kernel.get(this, "attrAssociatedEipAddresses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute AssociatedInstances: An ECS instance that is bound to HaVip.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAssociatedInstances() {
-        return software.amazon.jsii.Kernel.get(this, "attrAssociatedInstances", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAssociatedInstances() {
+        return software.amazon.jsii.Kernel.get(this, "attrAssociatedInstances", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute AssociatedInstanceType: The type of the instance that is bound to the VIIP.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAssociatedInstanceType() {
-        return software.amazon.jsii.Kernel.get(this, "attrAssociatedInstanceType", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAssociatedInstanceType() {
+        return software.amazon.jsii.Kernel.get(this, "attrAssociatedInstanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute CreateTime: The creation time of the  resource.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCreateTime() {
-        return software.amazon.jsii.Kernel.get(this, "attrCreateTime", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCreateTime() {
+        return software.amazon.jsii.Kernel.get(this, "attrCreateTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute Description: Dependence of a HaVip instance.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDescription() {
-        return software.amazon.jsii.Kernel.get(this, "attrDescription", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDescription() {
+        return software.amazon.jsii.Kernel.get(this, "attrDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute HaVipId: The  ID of the resource.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrHaVipId() {
-        return software.amazon.jsii.Kernel.get(this, "attrHaVipId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrHaVipId() {
+        return software.amazon.jsii.Kernel.get(this, "attrHaVipId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute HaVipName: The name of the HaVip instance.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrHaVipName() {
-        return software.amazon.jsii.Kernel.get(this, "attrHaVipName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrHaVipName() {
+        return software.amazon.jsii.Kernel.get(this, "attrHaVipName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute IpAddress: IP address of private network.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrIpAddress() {
-        return software.amazon.jsii.Kernel.get(this, "attrIpAddress", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrIpAddress() {
+        return software.amazon.jsii.Kernel.get(this, "attrIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute MasterInstanceId: The primary instance ID bound to HaVip.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrMasterInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrMasterInstanceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrMasterInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrMasterInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute VpcId: The VPC ID to which the HaVip instance belongs.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVpcId() {
-        return software.amazon.jsii.Kernel.get(this, "attrVpcId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVpcId() {
+        return software.amazon.jsii.Kernel.get(this, "attrVpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute VSwitchId: The switch ID to which the HaVip instance belongs.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVSwitchId() {
-        return software.amazon.jsii.Kernel.get(this, "attrVSwitchId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVSwitchId() {
+        return software.amazon.jsii.Kernel.get(this, "attrVSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.vpc.datasource.HaVipProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.vpc.datasource.HaVipProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -131,14 +147,6 @@ public class HaVip extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.vpc.datasource.HaVipProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.vpc.datasource.HaVipProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.vpc.datasource.HaVipProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {

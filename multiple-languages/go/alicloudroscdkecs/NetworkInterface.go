@@ -12,16 +12,26 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ECS::NetworkInterface`, which is used to create an elastic network interface (ENI).
 type NetworkInterface interface {
 	alicloudroscdkcore.Resource
+	INetworkInterface
 	// Attribute MacAddress: The MAC address of your Network Interface.
-	AttrMacAddress() alicloudroscdkcore.IResolvable
+	AttrMacAddress() interface{}
 	// Attribute NetworkInterfaceId: ID of your Network Interface.
-	AttrNetworkInterfaceId() alicloudroscdkcore.IResolvable
+	AttrNetworkInterfaceId() interface{}
 	// Attribute PrivateIpAddress: The primary private ip address of your Network Interface.
-	AttrPrivateIpAddress() alicloudroscdkcore.IResolvable
+	AttrPrivateIpAddress() interface{}
 	// Attribute SecondaryPrivateIpAddresses: The secondary private IP addresses of your Network Interface.
-	AttrSecondaryPrivateIpAddresses() alicloudroscdkcore.IResolvable
+	AttrSecondaryPrivateIpAddresses() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -36,7 +46,6 @@ type NetworkInterface interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *NetworkInterfaceProps
-	SetProps(val *NetworkInterfaceProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -49,6 +58,9 @@ type NetworkInterface interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -101,10 +113,11 @@ type NetworkInterface interface {
 // The jsii proxy struct for NetworkInterface
 type jsiiProxy_NetworkInterface struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_INetworkInterface
 }
 
-func (j *jsiiProxy_NetworkInterface) AttrMacAddress() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NetworkInterface) AttrMacAddress() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMacAddress",
@@ -113,8 +126,8 @@ func (j *jsiiProxy_NetworkInterface) AttrMacAddress() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_NetworkInterface) AttrNetworkInterfaceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NetworkInterface) AttrNetworkInterfaceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNetworkInterfaceId",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_NetworkInterface) AttrNetworkInterfaceId() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_NetworkInterface) AttrPrivateIpAddress() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NetworkInterface) AttrPrivateIpAddress() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPrivateIpAddress",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_NetworkInterface) AttrPrivateIpAddress() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_NetworkInterface) AttrSecondaryPrivateIpAddresses() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NetworkInterface) AttrSecondaryPrivateIpAddresses() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSecondaryPrivateIpAddresses",
@@ -148,6 +161,16 @@ func (j *jsiiProxy_NetworkInterface) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_NetworkInterface) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -285,17 +308,6 @@ func (j *jsiiProxy_NetworkInterface)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_NetworkInterface)SetProps(val *NetworkInterfaceProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_NetworkInterface)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -387,6 +399,45 @@ func (n *jsiiProxy_NetworkInterface) ApplyRemovalPolicy(policy alicloudroscdkcor
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (n *jsiiProxy_NetworkInterface) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		n,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (n *jsiiProxy_NetworkInterface) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		n,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (n *jsiiProxy_NetworkInterface) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		n,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (n *jsiiProxy_NetworkInterface) GeneratePhysicalName() *string {

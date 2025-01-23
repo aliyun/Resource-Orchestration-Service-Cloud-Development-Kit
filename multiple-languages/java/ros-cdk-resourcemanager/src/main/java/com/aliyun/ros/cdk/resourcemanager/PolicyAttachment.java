@@ -5,9 +5,9 @@ package com.aliyun.ros.cdk.resourcemanager;
  * <p>
  * After you attach a policy to an object, the object has the permissions to manage the resources in the current resource group or within the current Alibaba Cloud account.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:11.320Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:43.638Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.PolicyAttachment")
-public class PolicyAttachment extends com.aliyun.ros.cdk.core.Resource {
+public class PolicyAttachment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.resourcemanager.IPolicyAttachment {
 
     protected PolicyAttachment(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -45,36 +45,41 @@ public class PolicyAttachment extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute AttachDate: Authorization time.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAttachDate() {
-        return software.amazon.jsii.Kernel.get(this, "attrAttachDate", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAttachDate() {
+        return software.amazon.jsii.Kernel.get(this, "attrAttachDate", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute Description: Policy description.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDescription() {
-        return software.amazon.jsii.Kernel.get(this, "attrDescription", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDescription() {
+        return software.amazon.jsii.Kernel.get(this, "attrDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute PolicyName: The name of the policy.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPolicyName() {
-        return software.amazon.jsii.Kernel.get(this, "attrPolicyName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPolicyName() {
+        return software.amazon.jsii.Kernel.get(this, "attrPolicyName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute PolicyType: The type of the policy.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPolicyType() {
-        return software.amazon.jsii.Kernel.get(this, "attrPolicyType", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPolicyType() {
+        return software.amazon.jsii.Kernel.get(this, "attrPolicyType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute PrincipalName: The name of the object to which you want to attach the policy.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPrincipalName() {
-        return software.amazon.jsii.Kernel.get(this, "attrPrincipalName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPrincipalName() {
+        return software.amazon.jsii.Kernel.get(this, "attrPrincipalName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -82,15 +87,22 @@ public class PolicyAttachment extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * Valid values: IMSUser: RAM user, IMSGroup: RAM user group, ServiceRole: RAM role
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPrincipalType() {
-        return software.amazon.jsii.Kernel.get(this, "attrPrincipalType", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPrincipalType() {
+        return software.amazon.jsii.Kernel.get(this, "attrPrincipalType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute ResourceGroupId: The ID of the resource group or the ID of the Alibaba Cloud account to which the resource group belongs.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrResourceGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "attrResourceGroupId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "attrResourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.resourcemanager.PolicyAttachmentProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.resourcemanager.PolicyAttachmentProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -107,14 +119,6 @@ public class PolicyAttachment extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.resourcemanager.PolicyAttachmentProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.resourcemanager.PolicyAttachmentProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.resourcemanager.PolicyAttachmentProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {

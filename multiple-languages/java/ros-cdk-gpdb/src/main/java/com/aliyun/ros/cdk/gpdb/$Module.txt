@@ -4,6 +4,10 @@
 @alicloud/ros-cdk-gpdb.DBInstanceProps=com.aliyun.ros.cdk.gpdb.DBInstanceProps
 @alicloud/ros-cdk-gpdb.ElasticDBInstance=com.aliyun.ros.cdk.gpdb.ElasticDBInstance
 @alicloud/ros-cdk-gpdb.ElasticDBInstanceProps=com.aliyun.ros.cdk.gpdb.ElasticDBInstanceProps
+@alicloud/ros-cdk-gpdb.IAccount=com.aliyun.ros.cdk.gpdb.IAccount
+@alicloud/ros-cdk-gpdb.IDBInstance=com.aliyun.ros.cdk.gpdb.IDBInstance
+@alicloud/ros-cdk-gpdb.IElasticDBInstance=com.aliyun.ros.cdk.gpdb.IElasticDBInstance
+@alicloud/ros-cdk-gpdb.IInstancePublicConnection=com.aliyun.ros.cdk.gpdb.IInstancePublicConnection
 @alicloud/ros-cdk-gpdb.InstancePublicConnection=com.aliyun.ros.cdk.gpdb.InstancePublicConnection
 @alicloud/ros-cdk-gpdb.InstancePublicConnectionProps=com.aliyun.ros.cdk.gpdb.InstancePublicConnectionProps
 @alicloud/ros-cdk-gpdb.RosAccount=com.aliyun.ros.cdk.gpdb.RosAccount

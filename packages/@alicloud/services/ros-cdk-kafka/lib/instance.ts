@@ -85,8 +85,9 @@ export interface InstanceProps {
 
     /**
      * Property specType: The edition of the Message Queue for Apache Kafka instance. Valid values: 
-     * professional: Professional Edition 
      * normal: Normal version
+     * professional: Professional Edition (high writing edition)
+     * professionalForHighRead: Professional Edition (high reading edition)
      */
     readonly specType?: string | ros.IResolvable;
 
@@ -109,55 +110,101 @@ export interface InstanceProps {
 }
 
 /**
+ * Represents a `Instance`.
+ */
+export interface IInstance extends ros.IResource {
+    readonly props: InstanceProps;
+
+    /**
+     * Attribute DomainEndpoint: The default endpoints of the instance in domain name mode.
+     */
+    readonly attrDomainEndpoint: ros.IResolvable | string;
+
+    /**
+     * Attribute Endpoint: The SSL endpoints of the instance in IP address mode.
+     */
+    readonly attrEndpoint: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: Id of the instance.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute Name: Name of the instance.
+     */
+    readonly attrName: ros.IResolvable | string;
+
+    /**
+     * Attribute OrderId: Id of the order.
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+
+    /**
+     * Attribute SaslDomainEndpoint: The Simple Authentication and Security Layer (SASL) endpoints of the instance in domain name mode.
+     */
+    readonly attrSaslDomainEndpoint: ros.IResolvable | string;
+
+    /**
+     * Attribute SslDomainEndpoint: The SSL endpoints of the instance in domain name mode.
+     */
+    readonly attrSslDomainEndpoint: ros.IResolvable | string;
+
+    /**
+     * Attribute SslEndpoint: The SSL endpoints of the instance in IP address mode.
+     */
+    readonly attrSslEndpoint: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::KAFKA::Instance`, which is used to create an ApsaraMQ for Kafka instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-instance
  */
-export class Instance extends ros.Resource {
+export class Instance extends ros.Resource implements IInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InstanceProps;
+    public readonly props: InstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DomainEndpoint: The default endpoints of the instance in domain name mode.
      */
-    public readonly attrDomainEndpoint: ros.IResolvable;
+    public readonly attrDomainEndpoint: ros.IResolvable | string;
 
     /**
      * Attribute Endpoint: The SSL endpoints of the instance in IP address mode.
      */
-    public readonly attrEndpoint: ros.IResolvable;
+    public readonly attrEndpoint: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: Id of the instance.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute Name: Name of the instance.
      */
-    public readonly attrName: ros.IResolvable;
+    public readonly attrName: ros.IResolvable | string;
 
     /**
      * Attribute OrderId: Id of the order.
      */
-    public readonly attrOrderId: ros.IResolvable;
+    public readonly attrOrderId: ros.IResolvable | string;
 
     /**
      * Attribute SaslDomainEndpoint: The Simple Authentication and Security Layer (SASL) endpoints of the instance in domain name mode.
      */
-    public readonly attrSaslDomainEndpoint: ros.IResolvable;
+    public readonly attrSaslDomainEndpoint: ros.IResolvable | string;
 
     /**
      * Attribute SslDomainEndpoint: The SSL endpoints of the instance in domain name mode.
      */
-    public readonly attrSslDomainEndpoint: ros.IResolvable;
+    public readonly attrSslDomainEndpoint: ros.IResolvable | string;
 
     /**
      * Attribute SslEndpoint: The SSL endpoints of the instance in IP address mode.
      */
-    public readonly attrSslEndpoint: ros.IResolvable;
+    public readonly attrSslEndpoint: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

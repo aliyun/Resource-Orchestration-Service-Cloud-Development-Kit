@@ -52,10 +52,6 @@ func (j *jsiiProxy_StorageBundles) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_StorageBundles) validateSetPropsParameters(val *StorageBundlesProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_StorageBundles) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

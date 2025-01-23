@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pai
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-experiment
     /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Pai.Experiment), fullyQualifiedName: "@alicloud/ros-cdk-pai.Experiment", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-pai.ExperimentProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"optional\":true,\"type\":{\"primitive\":\"boolean\"}}]")]
-    public class Experiment : AlibabaCloud.SDK.ROS.CDK.Core.Resource_
+    public class Experiment : AlibabaCloud.SDK.ROS.CDK.Core.Resource_, AlibabaCloud.SDK.ROS.CDK.Pai.IExperiment
     {
         /// <summary>Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.</summary>
         public Experiment(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Pai.IExperimentProps props, bool? enableResourcePropertyConstraint = null): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
@@ -38,80 +38,86 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pai
         }
 
         /// <summary>Attribute Accessibility: Experimental Visibility.</summary>
-        [JsiiProperty(name: "attrAccessibility", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAccessibility
+        [JsiiProperty(name: "attrAccessibility", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrAccessibility
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute ArtifactUri: ArtifactUri is default OSS storage path of the output of trials in the experiment.</summary>
-        [JsiiProperty(name: "attrArtifactUri", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrArtifactUri
+        [JsiiProperty(name: "attrArtifactUri", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrArtifactUri
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute CreateTime: GmtCreateTime is time when this entity is created.</summary>
-        [JsiiProperty(name: "attrCreateTime", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCreateTime
+        [JsiiProperty(name: "attrCreateTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrCreateTime
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute ExperimentId: ExperimentId is globally unique identifier of the experiment.</summary>
-        [JsiiProperty(name: "attrExperimentId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrExperimentId
+        [JsiiProperty(name: "attrExperimentId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrExperimentId
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute ExperimentName: Name is the name of the experiment, unique in a namespace.</summary>
-        [JsiiProperty(name: "attrExperimentName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrExperimentName
+        [JsiiProperty(name: "attrExperimentName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrExperimentName
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute GmtModifiedTime: GmtModifiedTime is time when this entity is modified.</summary>
-        [JsiiProperty(name: "attrGmtModifiedTime", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrGmtModifiedTime
+        [JsiiProperty(name: "attrGmtModifiedTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrGmtModifiedTime
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute Labels: Labels are tags of the experiment.</summary>
-        [JsiiProperty(name: "attrLabels", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrLabels
+        [JsiiProperty(name: "attrLabels", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrLabels
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute OwnerId: OwnerId is the user account id which this entity belongs to.</summary>
-        [JsiiProperty(name: "attrOwnerId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrOwnerId
+        [JsiiProperty(name: "attrOwnerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrOwnerId
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute TensorboardLogUri: TensorboardLogUri is the default OSS storage path of tensorboard log of trials in the experiment.</summary>
-        [JsiiProperty(name: "attrTensorboardLogUri", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTensorboardLogUri
+        [JsiiProperty(name: "attrTensorboardLogUri", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrTensorboardLogUri
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute UserId: UserId is the user account id which created this entity.</summary>
-        [JsiiProperty(name: "attrUserId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrUserId
+        [JsiiProperty(name: "attrUserId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrUserId
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute WorkspaceId: WorkspaceId is the workspace id which contains the experiment.</summary>
-        [JsiiProperty(name: "attrWorkspaceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrWorkspaceId
+        [JsiiProperty(name: "attrWorkspaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrWorkspaceId
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
+        }
+
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-pai.ExperimentProps\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Pai.IExperimentProps Props
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Pai.IExperimentProps>()!;
         }
 
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
@@ -125,13 +131,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pai
         protected virtual string Id
         {
             get => GetInstanceProperty<string>()!;
-            set => SetInstanceProperty(value);
-        }
-
-        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-pai.ExperimentProps\"}")]
-        protected virtual AlibabaCloud.SDK.ROS.CDK.Pai.IExperimentProps Props
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Pai.IExperimentProps>()!;
             set => SetInstanceProperty(value);
         }
 

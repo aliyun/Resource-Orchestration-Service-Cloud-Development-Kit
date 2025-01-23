@@ -52,10 +52,6 @@ func (j *jsiiProxy_CapacityReservation) validateSetIdParameters(val *string) err
 	return nil
 }
 
-func (j *jsiiProxy_CapacityReservation) validateSetPropsParameters(val *CapacityReservationProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_CapacityReservation) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

@@ -59,20 +59,31 @@ export interface FullNatEntryProps {
 }
 
 /**
+ * Represents a `FullNatEntry`.
+ */
+export interface IFullNatEntry extends ros.IResource {
+    readonly props: FullNatEntryProps;
+
+    /**
+     * Attribute FullNatEntryId: The FULLNAT entry ID.
+     */
+    readonly attrFullNatEntryId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::FullNatEntry`, which is used to add a FULLNAT entry to a FULLNAT table.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFullNatEntry`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-fullnatentry
  */
-export class FullNatEntry extends ros.Resource {
+export class FullNatEntry extends ros.Resource implements IFullNatEntry {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: FullNatEntryProps;
+    public readonly props: FullNatEntryProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute FullNatEntryId: The FULLNAT entry ID.
      */
-    public readonly attrFullNatEntryId: ros.IResolvable;
+    public readonly attrFullNatEntryId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

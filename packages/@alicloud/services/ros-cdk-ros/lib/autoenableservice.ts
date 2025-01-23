@@ -58,19 +58,26 @@ export interface AutoEnableServiceProps {
      * TrustedService\/ROS: Trusted Service for ROS
      * CloudSSO: Cloud SSO
      * ControlPolicy: Control Policy
+     * DSC: Data Security Center Free Edition Service
      */
     readonly serviceName: string | ros.IResolvable;
 }
 
 /**
+ * Represents a `AutoEnableService`.
+ */
+export interface IAutoEnableService extends ros.IResource {
+    readonly props: AutoEnableServiceProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::AutoEnableService`, which is used to automatically activate an Alibaba Cloud service or feature.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAutoEnableService`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-autoenableservice
  */
-export class AutoEnableService extends ros.Resource {
+export class AutoEnableService extends ros.Resource implements IAutoEnableService {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AutoEnableServiceProps;
+    public readonly props: AutoEnableServiceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

@@ -12,10 +12,20 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::AMQP::Exchange`, which is used to create an exchange.
 type Exchange interface {
 	alicloudroscdkcore.Resource
+	IExchange
 	// Attribute ExchangeName: The name of the exchange.
-	AttrExchangeName() alicloudroscdkcore.IResolvable
+	AttrExchangeName() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -30,7 +40,6 @@ type Exchange interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ExchangeProps
-	SetProps(val *ExchangeProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -43,6 +52,9 @@ type Exchange interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -95,10 +107,11 @@ type Exchange interface {
 // The jsii proxy struct for Exchange
 type jsiiProxy_Exchange struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IExchange
 }
 
-func (j *jsiiProxy_Exchange) AttrExchangeName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Exchange) AttrExchangeName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrExchangeName",
@@ -112,6 +125,16 @@ func (j *jsiiProxy_Exchange) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Exchange) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -249,17 +272,6 @@ func (j *jsiiProxy_Exchange)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Exchange)SetProps(val *ExchangeProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Exchange)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -351,6 +363,45 @@ func (e *jsiiProxy_Exchange) ApplyRemovalPolicy(policy alicloudroscdkcore.Remova
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (e *jsiiProxy_Exchange) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		e,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (e *jsiiProxy_Exchange) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		e,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (e *jsiiProxy_Exchange) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		e,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (e *jsiiProxy_Exchange) GeneratePhysicalName() *string {

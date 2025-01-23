@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Aligreen
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-imagelib
     /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Aligreen.ImageLib), fullyQualifiedName: "@alicloud/ros-cdk-aligreen.ImageLib", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-aligreen.ImageLibProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"optional\":true,\"type\":{\"primitive\":\"boolean\"}}]")]
-    public class ImageLib : AlibabaCloud.SDK.ROS.CDK.Core.Resource_
+    public class ImageLib : AlibabaCloud.SDK.ROS.CDK.Core.Resource_, AlibabaCloud.SDK.ROS.CDK.Aligreen.IImageLib
     {
         /// <summary>Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.</summary>
         public ImageLib(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Aligreen.IImageLibProps props, bool? enableResourcePropertyConstraint = null): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
@@ -38,45 +38,51 @@ namespace AlibabaCloud.SDK.ROS.CDK.Aligreen
         }
 
         /// <summary>Attribute BizTypes: List of business scenarios.</summary>
-        [JsiiProperty(name: "attrBizTypes", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrBizTypes
+        [JsiiProperty(name: "attrBizTypes", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrBizTypes
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute Category: The category of the image library.</summary>
-        [JsiiProperty(name: "attrCategory", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCategory
+        [JsiiProperty(name: "attrCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrCategory
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute Enable: Specifies whether to enable the image library.</summary>
-        [JsiiProperty(name: "attrEnable", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrEnable
+        [JsiiProperty(name: "attrEnable", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrEnable
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute ImageLibId: The ID of the primary key of the image library.</summary>
-        [JsiiProperty(name: "attrImageLibId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrImageLibId
+        [JsiiProperty(name: "attrImageLibId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrImageLibId
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute ImageLibName: The name of the image library defined by the customer.</summary>
-        [JsiiProperty(name: "attrImageLibName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrImageLibName
+        [JsiiProperty(name: "attrImageLibName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrImageLibName
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute Scene: The moderation scenario to which the custom image library applies.</summary>
-        [JsiiProperty(name: "attrScene", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrScene
+        [JsiiProperty(name: "attrScene", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrScene
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
+        }
+
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-aligreen.ImageLibProps\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Aligreen.IImageLibProps Props
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Aligreen.IImageLibProps>()!;
         }
 
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
@@ -90,13 +96,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Aligreen
         protected virtual string Id
         {
             get => GetInstanceProperty<string>()!;
-            set => SetInstanceProperty(value);
-        }
-
-        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-aligreen.ImageLibProps\"}")]
-        protected virtual AlibabaCloud.SDK.ROS.CDK.Aligreen.IImageLibProps Props
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Aligreen.IImageLibProps>()!;
             set => SetInstanceProperty(value);
         }
 

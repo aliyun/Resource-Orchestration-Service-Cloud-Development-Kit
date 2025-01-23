@@ -12,38 +12,48 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::ECI::ImageCache`, which is used to query the information about an image cache.
 type ImageCache interface {
 	alicloudroscdkcore.Resource
+	IImageCache
 	// Attribute ContainerGroupId: ContainerGroupId.
-	AttrContainerGroupId() alicloudroscdkcore.IResolvable
+	AttrContainerGroupId() interface{}
 	// Attribute CreateTime: CreateTime.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute EliminationStrategy: The elimination strategy of the mirror cache.
 	//
 	// The default is empty, indicating that it has been kept.
-	AttrEliminationStrategy() alicloudroscdkcore.IResolvable
+	AttrEliminationStrategy() interface{}
 	// Attribute Events: Events.
-	AttrEvents() alicloudroscdkcore.IResolvable
+	AttrEvents() interface{}
 	// Attribute ExpireDateTime: ExpireDateTime.
-	AttrExpireDateTime() alicloudroscdkcore.IResolvable
+	AttrExpireDateTime() interface{}
 	// Attribute FlashSnapshotId: FlashSnapshotId.
-	AttrFlashSnapshotId() alicloudroscdkcore.IResolvable
+	AttrFlashSnapshotId() interface{}
 	// Attribute ImageCacheId: ImageCacheId.
-	AttrImageCacheId() alicloudroscdkcore.IResolvable
+	AttrImageCacheId() interface{}
 	// Attribute ImageCacheName: ImageCacheName.
-	AttrImageCacheName() alicloudroscdkcore.IResolvable
+	AttrImageCacheName() interface{}
 	// Attribute ImageCacheSize: ImageCacheSize.
-	AttrImageCacheSize() alicloudroscdkcore.IResolvable
+	AttrImageCacheSize() interface{}
 	// Attribute ImageCacheTags: Tags.
-	AttrImageCacheTags() alicloudroscdkcore.IResolvable
+	AttrImageCacheTags() interface{}
 	// Attribute Images: Images.
-	AttrImages() alicloudroscdkcore.IResolvable
+	AttrImages() interface{}
 	// Attribute Progress: Progress.
-	AttrProgress() alicloudroscdkcore.IResolvable
+	AttrProgress() interface{}
 	// Attribute ResourceGroupId: ResourceGroupId.
-	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() interface{}
 	// Attribute SnapshotId: SnapshotId.
-	AttrSnapshotId() alicloudroscdkcore.IResolvable
+	AttrSnapshotId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -58,7 +68,6 @@ type ImageCache interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ImageCacheProps
-	SetProps(val *ImageCacheProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -71,6 +80,9 @@ type ImageCache interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -123,10 +135,11 @@ type ImageCache interface {
 // The jsii proxy struct for ImageCache
 type jsiiProxy_ImageCache struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IImageCache
 }
 
-func (j *jsiiProxy_ImageCache) AttrContainerGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ImageCache) AttrContainerGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrContainerGroupId",
@@ -135,8 +148,8 @@ func (j *jsiiProxy_ImageCache) AttrContainerGroupId() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_ImageCache) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ImageCache) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -145,8 +158,8 @@ func (j *jsiiProxy_ImageCache) AttrCreateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_ImageCache) AttrEliminationStrategy() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ImageCache) AttrEliminationStrategy() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEliminationStrategy",
@@ -155,8 +168,8 @@ func (j *jsiiProxy_ImageCache) AttrEliminationStrategy() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_ImageCache) AttrEvents() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ImageCache) AttrEvents() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEvents",
@@ -165,8 +178,8 @@ func (j *jsiiProxy_ImageCache) AttrEvents() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_ImageCache) AttrExpireDateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ImageCache) AttrExpireDateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrExpireDateTime",
@@ -175,8 +188,8 @@ func (j *jsiiProxy_ImageCache) AttrExpireDateTime() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_ImageCache) AttrFlashSnapshotId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ImageCache) AttrFlashSnapshotId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrFlashSnapshotId",
@@ -185,8 +198,8 @@ func (j *jsiiProxy_ImageCache) AttrFlashSnapshotId() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_ImageCache) AttrImageCacheId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ImageCache) AttrImageCacheId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrImageCacheId",
@@ -195,8 +208,8 @@ func (j *jsiiProxy_ImageCache) AttrImageCacheId() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_ImageCache) AttrImageCacheName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ImageCache) AttrImageCacheName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrImageCacheName",
@@ -205,8 +218,8 @@ func (j *jsiiProxy_ImageCache) AttrImageCacheName() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_ImageCache) AttrImageCacheSize() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ImageCache) AttrImageCacheSize() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrImageCacheSize",
@@ -215,8 +228,8 @@ func (j *jsiiProxy_ImageCache) AttrImageCacheSize() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_ImageCache) AttrImageCacheTags() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ImageCache) AttrImageCacheTags() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrImageCacheTags",
@@ -225,8 +238,8 @@ func (j *jsiiProxy_ImageCache) AttrImageCacheTags() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_ImageCache) AttrImages() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ImageCache) AttrImages() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrImages",
@@ -235,8 +248,8 @@ func (j *jsiiProxy_ImageCache) AttrImages() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_ImageCache) AttrProgress() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ImageCache) AttrProgress() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrProgress",
@@ -245,8 +258,8 @@ func (j *jsiiProxy_ImageCache) AttrProgress() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_ImageCache) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ImageCache) AttrResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupId",
@@ -255,8 +268,8 @@ func (j *jsiiProxy_ImageCache) AttrResourceGroupId() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_ImageCache) AttrSnapshotId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ImageCache) AttrSnapshotId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSnapshotId",
@@ -270,6 +283,16 @@ func (j *jsiiProxy_ImageCache) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ImageCache) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -407,17 +430,6 @@ func (j *jsiiProxy_ImageCache)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ImageCache)SetProps(val *ImageCacheProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_ImageCache)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -509,6 +521,45 @@ func (i *jsiiProxy_ImageCache) ApplyRemovalPolicy(policy alicloudroscdkcore.Remo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (i *jsiiProxy_ImageCache) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		i,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_ImageCache) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		i,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_ImageCache) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		i,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (i *jsiiProxy_ImageCache) GeneratePhysicalName() *string {

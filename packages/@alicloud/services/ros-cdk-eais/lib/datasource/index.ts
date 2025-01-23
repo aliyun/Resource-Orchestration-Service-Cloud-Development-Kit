@@ -1,3 +1,4 @@
+export * from './clientinstanceattachment';
 export * from './instance';
 export * from './instances';
 

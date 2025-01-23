@@ -1,0 +1,111 @@
+import * as ros from '@alicloud/ros-cdk-core';
+import { RosConsumerGroup } from './rocketmq5.generated';
+export { RosConsumerGroup as ConsumerGroupProperty };
+/**
+ * Properties for defining a `ConsumerGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq5-consumergroup
+ */
+export interface ConsumerGroupProps {
+    /**
+     * Property consumerGroupId: The ID of the consumer group.
+     */
+    readonly consumerGroupId: string | ros.IResolvable;
+    /**
+     * Property instanceId: The ID of the instance to which the consumer group belongs.
+     */
+    readonly instanceId: string | ros.IResolvable;
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+}
+/**
+ * Represents a `ConsumerGroup`.
+ */
+export interface IConsumerGroup extends ros.IResource {
+    readonly props: ConsumerGroupProps;
+    /**
+     * Attribute ConsumeRetryPolicy: The consumption retry policy that you want to configure for the consumer group.
+     */
+    readonly attrConsumeRetryPolicy: ros.IResolvable | string;
+    /**
+     * Attribute ConsumerGroupId: The ID of the consumer group.
+     */
+    readonly attrConsumerGroupId: ros.IResolvable | string;
+    /**
+     * Attribute CreateTime: The time when the consumer group was created.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+    /**
+     * Attribute DeliveryOrderType: The message delivery order of the consumer group.
+     */
+    readonly attrDeliveryOrderType: ros.IResolvable | string;
+    /**
+     * Attribute InstanceId: The ID of the RocketMQ instance.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+    /**
+     * Attribute Remark: The remarks on the consumer group.
+     */
+    readonly attrRemark: ros.IResolvable | string;
+    /**
+     * Attribute Status: The state of the consumer group.
+     */
+    readonly attrStatus: ros.IResolvable | string;
+    /**
+     * Attribute UpdateTime: The time when the consumer group was last updated.
+     */
+    readonly attrUpdateTime: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ROCKETMQ5::ConsumerGroup`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosConsumerGroup`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq5-consumergroup
+ */
+export declare class ConsumerGroup extends ros.Resource implements IConsumerGroup {
+    protected scope: ros.Construct;
+    protected id: string;
+    readonly props: ConsumerGroupProps;
+    protected enableResourcePropertyConstraint: boolean;
+    /**
+     * Attribute ConsumeRetryPolicy: The consumption retry policy that you want to configure for the consumer group.
+     */
+    readonly attrConsumeRetryPolicy: ros.IResolvable | string;
+    /**
+     * Attribute ConsumerGroupId: The ID of the consumer group.
+     */
+    readonly attrConsumerGroupId: ros.IResolvable | string;
+    /**
+     * Attribute CreateTime: The time when the consumer group was created.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+    /**
+     * Attribute DeliveryOrderType: The message delivery order of the consumer group.
+     */
+    readonly attrDeliveryOrderType: ros.IResolvable | string;
+    /**
+     * Attribute InstanceId: The ID of the RocketMQ instance.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+    /**
+     * Attribute Remark: The remarks on the consumer group.
+     */
+    readonly attrRemark: ros.IResolvable | string;
+    /**
+     * Attribute Status: The state of the consumer group.
+     */
+    readonly attrStatus: ros.IResolvable | string;
+    /**
+     * Attribute UpdateTime: The time when the consumer group was last updated.
+     */
+    readonly attrUpdateTime: ros.IResolvable | string;
+    /**
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: ConsumerGroupProps, enableResourcePropertyConstraint?: boolean);
+}

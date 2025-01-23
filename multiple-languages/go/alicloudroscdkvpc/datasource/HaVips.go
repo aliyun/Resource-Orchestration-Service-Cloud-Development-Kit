@@ -9,15 +9,25 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::HaVips`, which is used to query the high-availability virtual IP addresses (HAVIPs) in a specified region.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::HaVips`, which is used to query the high-availability virtual IP addresses (HAVIPs) in a specific region.
 type HaVips interface {
 	alicloudroscdkcore.Resource
+	IHaVips
 	// Attribute HaVipIds: The list of ha vip IDs.
-	AttrHaVipIds() alicloudroscdkcore.IResolvable
+	AttrHaVipIds() interface{}
 	// Attribute HaVips: The list of ha vips.
-	AttrHaVips() alicloudroscdkcore.IResolvable
+	AttrHaVips() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type HaVips interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *HaVipsProps
-	SetProps(val *HaVipsProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type HaVips interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type HaVips interface {
 // The jsii proxy struct for HaVips
 type jsiiProxy_HaVips struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IHaVips
 }
 
-func (j *jsiiProxy_HaVips) AttrHaVipIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HaVips) AttrHaVipIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHaVipIds",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_HaVips) AttrHaVipIds() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_HaVips) AttrHaVips() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HaVips) AttrHaVips() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHaVips",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_HaVips) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HaVips) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_HaVips)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_HaVips)SetProps(val *HaVipsProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_HaVips)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (h *jsiiProxy_HaVips) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalP
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (h *jsiiProxy_HaVips) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		h,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (h *jsiiProxy_HaVips) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		h,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (h *jsiiProxy_HaVips) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		h,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (h *jsiiProxy_HaVips) GeneratePhysicalName() *string {

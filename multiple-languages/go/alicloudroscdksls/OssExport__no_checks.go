@@ -52,10 +52,6 @@ func (j *jsiiProxy_OssExport) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_OssExport) validateSetPropsParameters(val *OssExportProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_OssExport) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

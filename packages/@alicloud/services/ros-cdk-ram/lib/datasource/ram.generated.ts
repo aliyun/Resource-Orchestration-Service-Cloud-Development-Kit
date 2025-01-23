@@ -56,7 +56,7 @@ function rosAccountAliasPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::RAM::AccountAlias`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::RAM::AccountAlias`, which is used to query the alias of a cloud account.
  * @Note This class does not contain additional functions, so it is recommended to use the `AccountAlias` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-accountalias
  */

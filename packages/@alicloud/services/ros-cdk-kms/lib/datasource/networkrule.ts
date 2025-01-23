@@ -24,25 +24,41 @@ export interface NetworkRuleProps {
 }
 
 /**
+ * Represents a `NetworkRule`.
+ */
+export interface INetworkRule extends ros.IResource {
+    readonly props: NetworkRuleProps;
+
+    /**
+     * Attribute Description: The access control rule description.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute SourcePrivateIp: The private IP address or private CIDR block.
+     */
+    readonly attrSourcePrivateIp: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::KMS::NetworkRule`, which is used to query the information about a network access rule.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNetworkRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kms-networkrule
  */
-export class NetworkRule extends ros.Resource {
+export class NetworkRule extends ros.Resource implements INetworkRule {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: NetworkRuleProps;
+    public readonly props: NetworkRuleProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Description: The access control rule description.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute SourcePrivateIp: The private IP address or private CIDR block.
      */
-    public readonly attrSourcePrivateIp: ros.IResolvable;
+    public readonly attrSourcePrivateIp: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

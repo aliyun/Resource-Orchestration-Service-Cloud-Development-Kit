@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::EBS::DiskReplicaPairAddition`, which is used to add a replication pair to a replication pair-consistent group.
 type DiskReplicaPairAddition interface {
 	alicloudroscdkcore.Resource
+	IDiskReplicaPairAddition
 	// Attribute ReplicaGroupId: The ID of the replication pair-consistent group.
-	AttrReplicaGroupId() alicloudroscdkcore.IResolvable
+	AttrReplicaGroupId() interface{}
 	// Attribute ReplicaPairId: The ID of the replication pair.
-	AttrReplicaPairId() alicloudroscdkcore.IResolvable
+	AttrReplicaPairId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type DiskReplicaPairAddition interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DiskReplicaPairAdditionProps
-	SetProps(val *DiskReplicaPairAdditionProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type DiskReplicaPairAddition interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type DiskReplicaPairAddition interface {
 // The jsii proxy struct for DiskReplicaPairAddition
 type jsiiProxy_DiskReplicaPairAddition struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDiskReplicaPairAddition
 }
 
-func (j *jsiiProxy_DiskReplicaPairAddition) AttrReplicaGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DiskReplicaPairAddition) AttrReplicaGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrReplicaGroupId",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_DiskReplicaPairAddition) AttrReplicaGroupId() alicloudroscdkc
 	return returns
 }
 
-func (j *jsiiProxy_DiskReplicaPairAddition) AttrReplicaPairId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DiskReplicaPairAddition) AttrReplicaPairId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrReplicaPairId",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_DiskReplicaPairAddition) EnableResourcePropertyConstraint() *
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DiskReplicaPairAddition) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_DiskReplicaPairAddition)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DiskReplicaPairAddition)SetProps(val *DiskReplicaPairAdditionProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_DiskReplicaPairAddition)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (d *jsiiProxy_DiskReplicaPairAddition) ApplyRemovalPolicy(policy alicloudro
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_DiskReplicaPairAddition) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DiskReplicaPairAddition) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DiskReplicaPairAddition) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_DiskReplicaPairAddition) GeneratePhysicalName() *string {

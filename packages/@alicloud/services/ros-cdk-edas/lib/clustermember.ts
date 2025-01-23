@@ -26,35 +26,61 @@ export interface ClusterMemberProps {
 }
 
 /**
+ * Represents a `ClusterMember`.
+ */
+export interface IClusterMember extends ros.IResource {
+    readonly props: ClusterMemberProps;
+
+    /**
+     * Attribute ClusterId: Cluster ID.
+     */
+    readonly attrClusterId: ros.IResolvable | string;
+
+    /**
+     * Attribute ClusterMemberIds: Cluster member IDs corresponding to the ECS instance IDs.
+     */
+    readonly attrClusterMemberIds: ros.IResolvable | string;
+
+    /**
+     * Attribute EcuIds: ECU IDs corresponding to the ECS instance IDs.
+     */
+    readonly attrEcuIds: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceIds: ECS instance IDs.
+     */
+    readonly attrInstanceIds: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::ClusterMember`, which is used to add Elastic Compute Service (ECS) instances to a cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusterMember`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-clustermember
  */
-export class ClusterMember extends ros.Resource {
+export class ClusterMember extends ros.Resource implements IClusterMember {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ClusterMemberProps;
+    public readonly props: ClusterMemberProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterId: Cluster ID.
      */
-    public readonly attrClusterId: ros.IResolvable;
+    public readonly attrClusterId: ros.IResolvable | string;
 
     /**
      * Attribute ClusterMemberIds: Cluster member IDs corresponding to the ECS instance IDs.
      */
-    public readonly attrClusterMemberIds: ros.IResolvable;
+    public readonly attrClusterMemberIds: ros.IResolvable | string;
 
     /**
      * Attribute EcuIds: ECU IDs corresponding to the ECS instance IDs.
      */
-    public readonly attrEcuIds: ros.IResolvable;
+    public readonly attrEcuIds: ros.IResolvable | string;
 
     /**
      * Attribute InstanceIds: ECS instance IDs.
      */
-    public readonly attrInstanceIds: ros.IResolvable;
+    public readonly attrInstanceIds: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

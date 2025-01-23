@@ -6,6 +6,12 @@
 @alicloud/ros-cdk-hbr.DbPlanProps=com.aliyun.ros.cdk.hbr.DbPlanProps
 @alicloud/ros-cdk-hbr.DbVault=com.aliyun.ros.cdk.hbr.DbVault
 @alicloud/ros-cdk-hbr.DbVaultProps=com.aliyun.ros.cdk.hbr.DbVaultProps
+@alicloud/ros-cdk-hbr.IBackupClients=com.aliyun.ros.cdk.hbr.IBackupClients
+@alicloud/ros-cdk-hbr.IDbAgent=com.aliyun.ros.cdk.hbr.IDbAgent
+@alicloud/ros-cdk-hbr.IDbPlan=com.aliyun.ros.cdk.hbr.IDbPlan
+@alicloud/ros-cdk-hbr.IDbVault=com.aliyun.ros.cdk.hbr.IDbVault
+@alicloud/ros-cdk-hbr.IRestoreJob=com.aliyun.ros.cdk.hbr.IRestoreJob
+@alicloud/ros-cdk-hbr.IVault=com.aliyun.ros.cdk.hbr.IVault
 @alicloud/ros-cdk-hbr.RestoreJob=com.aliyun.ros.cdk.hbr.RestoreJob
 @alicloud/ros-cdk-hbr.RestoreJobProps=com.aliyun.ros.cdk.hbr.RestoreJobProps
 @alicloud/ros-cdk-hbr.RosBackupClients=com.aliyun.ros.cdk.hbr.RosBackupClients
@@ -27,6 +33,8 @@
 @alicloud/ros-cdk-hbr.RosVaultProps=com.aliyun.ros.cdk.hbr.RosVaultProps
 @alicloud/ros-cdk-hbr.Vault=com.aliyun.ros.cdk.hbr.Vault
 @alicloud/ros-cdk-hbr.VaultProps=com.aliyun.ros.cdk.hbr.VaultProps
+@alicloud/ros-cdk-hbr.datasource.IVault=com.aliyun.ros.cdk.hbr.datasource.IVault
+@alicloud/ros-cdk-hbr.datasource.IVaults=com.aliyun.ros.cdk.hbr.datasource.IVaults
 @alicloud/ros-cdk-hbr.datasource.RosVault=com.aliyun.ros.cdk.hbr.datasource.RosVault
 @alicloud/ros-cdk-hbr.datasource.RosVaultProps=com.aliyun.ros.cdk.hbr.datasource.RosVaultProps
 @alicloud/ros-cdk-hbr.datasource.RosVaults=com.aliyun.ros.cdk.hbr.datasource.RosVaults

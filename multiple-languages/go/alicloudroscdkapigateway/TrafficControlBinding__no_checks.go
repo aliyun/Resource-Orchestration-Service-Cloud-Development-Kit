@@ -52,10 +52,6 @@ func (j *jsiiProxy_TrafficControlBinding) validateSetIdParameters(val *string) e
 	return nil
 }
 
-func (j *jsiiProxy_TrafficControlBinding) validateSetPropsParameters(val *TrafficControlBindingProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_TrafficControlBinding) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

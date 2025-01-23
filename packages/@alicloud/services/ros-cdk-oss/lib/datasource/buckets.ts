@@ -19,25 +19,41 @@ export interface BucketsProps {
 }
 
 /**
+ * Represents a `Buckets`.
+ */
+export interface IBuckets extends ros.IResource {
+    readonly props: BucketsProps;
+
+    /**
+     * Attribute BucketNames: The list of bucket names.
+     */
+    readonly attrBucketNames: ros.IResolvable | string;
+
+    /**
+     * Attribute Buckets: The list of buckets.
+     */
+    readonly attrBuckets: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::OSS::Buckets`, which is used to query an Object Storage Service (OSS) bucket.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBuckets`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oss-buckets
  */
-export class Buckets extends ros.Resource {
+export class Buckets extends ros.Resource implements IBuckets {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: BucketsProps;
+    public readonly props: BucketsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute BucketNames: The list of bucket names.
      */
-    public readonly attrBucketNames: ros.IResolvable;
+    public readonly attrBucketNames: ros.IResolvable | string;
 
     /**
      * Attribute Buckets: The list of buckets.
      */
-    public readonly attrBuckets: ros.IResolvable;
+    public readonly attrBuckets: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

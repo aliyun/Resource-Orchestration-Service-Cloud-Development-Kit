@@ -21,30 +21,51 @@ export interface FolderProps {
 }
 
 /**
+ * Represents a `Folder`.
+ */
+export interface IFolder extends ros.IResource {
+    readonly props: FolderProps;
+
+    /**
+     * Attribute FolderId: The ID of the folder
+     */
+    readonly attrFolderId: ros.IResolvable | string;
+
+    /**
+     * Attribute FolderName: The name of the folder
+     */
+    readonly attrFolderName: ros.IResolvable | string;
+
+    /**
+     * Attribute ParentFolderId: The ID of the parent folder. If not set, the system default value will be used
+     */
+    readonly attrParentFolderId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::Folder`, which is used to create a folder.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFolder`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-folder
  */
-export class Folder extends ros.Resource {
+export class Folder extends ros.Resource implements IFolder {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: FolderProps;
+    public readonly props: FolderProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute FolderId: The ID of the folder
      */
-    public readonly attrFolderId: ros.IResolvable;
+    public readonly attrFolderId: ros.IResolvable | string;
 
     /**
      * Attribute FolderName: The name of the folder
      */
-    public readonly attrFolderName: ros.IResolvable;
+    public readonly attrFolderName: ros.IResolvable | string;
 
     /**
      * Attribute ParentFolderId: The ID of the parent folder. If not set, the system default value will be used
      */
-    public readonly attrParentFolderId: ros.IResolvable;
+    public readonly attrParentFolderId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

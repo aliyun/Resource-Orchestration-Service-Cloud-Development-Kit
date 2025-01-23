@@ -24,25 +24,41 @@ export interface PrometheisProps {
 }
 
 /**
+ * Represents a `Prometheis`.
+ */
+export interface IPrometheis extends ros.IResource {
+    readonly props: PrometheisProps;
+
+    /**
+     * Attribute ClusterIds: The list of cluster IDs.
+     */
+    readonly attrClusterIds: ros.IResolvable | string;
+
+    /**
+     * Attribute Prometheis: The list of Prometheis.
+     */
+    readonly attrPrometheis: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::Prometheis`, which is used to query Prometheus instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPrometheis`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-prometheis
  */
-export class Prometheis extends ros.Resource {
+export class Prometheis extends ros.Resource implements IPrometheis {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: PrometheisProps;
+    public readonly props: PrometheisProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterIds: The list of cluster IDs.
      */
-    public readonly attrClusterIds: ros.IResolvable;
+    public readonly attrClusterIds: ros.IResolvable | string;
 
     /**
      * Attribute Prometheis: The list of Prometheis.
      */
-    public readonly attrPrometheis: ros.IResolvable;
+    public readonly attrPrometheis: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

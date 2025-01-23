@@ -52,10 +52,6 @@ func (j *jsiiProxy_ResourceCleaner) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_ResourceCleaner) validateSetPropsParameters(val *ResourceCleanerProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_ResourceCleaner) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

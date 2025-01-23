@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas.Datasource
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-edas-applications
     /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Edas.Datasource.Applications), fullyQualifiedName: "@alicloud/ros-cdk-edas.datasource.Applications", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"optional\":true,\"type\":{\"fqn\":\"@alicloud/ros-cdk-edas.datasource.ApplicationsProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"optional\":true,\"type\":{\"primitive\":\"boolean\"}}]")]
-    public class Applications : AlibabaCloud.SDK.ROS.CDK.Core.Resource_
+    public class Applications : AlibabaCloud.SDK.ROS.CDK.Core.Resource_, AlibabaCloud.SDK.ROS.CDK.Edas.Datasource.IApplications
     {
         /// <summary>Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.</summary>
         public Applications(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Edas.Datasource.IApplicationsProps? props = null, bool? enableResourcePropertyConstraint = null): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
@@ -38,17 +38,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas.Datasource
         }
 
         /// <summary>Attribute AppIds: The list of application IDs.</summary>
-        [JsiiProperty(name: "attrAppIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAppIds
+        [JsiiProperty(name: "attrAppIds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrAppIds
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute Applications: The list of applications.</summary>
-        [JsiiProperty(name: "attrApplications", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrApplications
+        [JsiiProperty(name: "attrApplications", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrApplications
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
+        }
+
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-edas.datasource.ApplicationsProps\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Edas.Datasource.IApplicationsProps Props
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Edas.Datasource.IApplicationsProps>()!;
         }
 
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
@@ -62,13 +68,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas.Datasource
         protected virtual string Id
         {
             get => GetInstanceProperty<string>()!;
-            set => SetInstanceProperty(value);
-        }
-
-        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-edas.datasource.ApplicationsProps\"}")]
-        protected virtual AlibabaCloud.SDK.ROS.CDK.Edas.Datasource.IApplicationsProps Props
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Edas.Datasource.IApplicationsProps>()!;
             set => SetInstanceProperty(value);
         }
 

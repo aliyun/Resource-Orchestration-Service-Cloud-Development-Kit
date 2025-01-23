@@ -34,25 +34,41 @@ export interface AutoSnapshotPoliciesProps {
 }
 
 /**
+ * Represents a `AutoSnapshotPolicies`.
+ */
+export interface IAutoSnapshotPolicies extends ros.IResource {
+    readonly props: AutoSnapshotPoliciesProps;
+
+    /**
+     * Attribute AutoSnapshotPolicies: The list of auto snapshot policies.
+     */
+    readonly attrAutoSnapshotPolicies: ros.IResolvable | string;
+
+    /**
+     * Attribute AutoSnapshotPolicyIds: The list of auto snapshot policy ids.
+     */
+    readonly attrAutoSnapshotPolicyIds: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::AutoSnapshotPolicies`, which is used to query automatic snapshot policies.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAutoSnapshotPolicies`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-autosnapshotpolicies
  */
-export class AutoSnapshotPolicies extends ros.Resource {
+export class AutoSnapshotPolicies extends ros.Resource implements IAutoSnapshotPolicies {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AutoSnapshotPoliciesProps;
+    public readonly props: AutoSnapshotPoliciesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AutoSnapshotPolicies: The list of auto snapshot policies.
      */
-    public readonly attrAutoSnapshotPolicies: ros.IResolvable;
+    public readonly attrAutoSnapshotPolicies: ros.IResolvable | string;
 
     /**
      * Attribute AutoSnapshotPolicyIds: The list of auto snapshot policy ids.
      */
-    public readonly attrAutoSnapshotPolicyIds: ros.IResolvable;
+    public readonly attrAutoSnapshotPolicyIds: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

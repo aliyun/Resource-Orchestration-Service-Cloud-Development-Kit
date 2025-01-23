@@ -52,10 +52,6 @@ func (j *jsiiProxy_PeeringRouterInterfaceBinding) validateSetIdParameters(val *s
 	return nil
 }
 
-func (j *jsiiProxy_PeeringRouterInterfaceBinding) validateSetPropsParameters(val *PeeringRouterInterfaceBindingProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_PeeringRouterInterfaceBinding) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

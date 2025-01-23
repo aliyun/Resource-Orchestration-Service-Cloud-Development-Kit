@@ -55,25 +55,41 @@ export interface DynamicTagGroupProps {
 }
 
 /**
+ * Represents a `DynamicTagGroup`.
+ */
+export interface IDynamicTagGroup extends ros.IResource {
+    readonly props: DynamicTagGroupProps;
+
+    /**
+     * Attribute DynamicTagRuleId: Dynamic tag rule ID.
+     */
+    readonly attrDynamicTagRuleId: ros.IResolvable | string;
+
+    /**
+     * Attribute TagKey: Tag key.
+     */
+    readonly attrTagKey: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::DynamicTagGroup`, which is used to create a tag rule based on which cloud resources are automatically added to an application group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDynamicTagGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-dynamictaggroup
  */
-export class DynamicTagGroup extends ros.Resource {
+export class DynamicTagGroup extends ros.Resource implements IDynamicTagGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DynamicTagGroupProps;
+    public readonly props: DynamicTagGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DynamicTagRuleId: Dynamic tag rule ID.
      */
-    public readonly attrDynamicTagRuleId: ros.IResolvable;
+    public readonly attrDynamicTagRuleId: ros.IResolvable | string;
 
     /**
      * Attribute TagKey: Tag key.
      */
-    public readonly attrTagKey: ros.IResolvable;
+    public readonly attrTagKey: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

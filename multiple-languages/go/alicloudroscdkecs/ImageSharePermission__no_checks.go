@@ -52,10 +52,6 @@ func (j *jsiiProxy_ImageSharePermission) validateSetIdParameters(val *string) er
 	return nil
 }
 
-func (j *jsiiProxy_ImageSharePermission) validateSetPropsParameters(val *ImageSharePermissionProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_ImageSharePermission) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

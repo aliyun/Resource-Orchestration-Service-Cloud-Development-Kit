@@ -4,6 +4,12 @@
 @alicloud/ros-cdk-redis.AuditLogConfigProps=com.aliyun.ros.cdk.redis.AuditLogConfigProps
 @alicloud/ros-cdk-redis.Connection=com.aliyun.ros.cdk.redis.Connection
 @alicloud/ros-cdk-redis.ConnectionProps=com.aliyun.ros.cdk.redis.ConnectionProps
+@alicloud/ros-cdk-redis.IAccount=com.aliyun.ros.cdk.redis.IAccount
+@alicloud/ros-cdk-redis.IAuditLogConfig=com.aliyun.ros.cdk.redis.IAuditLogConfig
+@alicloud/ros-cdk-redis.IConnection=com.aliyun.ros.cdk.redis.IConnection
+@alicloud/ros-cdk-redis.IInstance=com.aliyun.ros.cdk.redis.IInstance
+@alicloud/ros-cdk-redis.IPrepayInstance=com.aliyun.ros.cdk.redis.IPrepayInstance
+@alicloud/ros-cdk-redis.IWhitelist=com.aliyun.ros.cdk.redis.IWhitelist
 @alicloud/ros-cdk-redis.Instance=com.aliyun.ros.cdk.redis.Instance
 @alicloud/ros-cdk-redis.InstanceProps=com.aliyun.ros.cdk.redis.InstanceProps
 @alicloud/ros-cdk-redis.PrepayInstance=com.aliyun.ros.cdk.redis.PrepayInstance
@@ -44,6 +50,11 @@
 @alicloud/ros-cdk-redis.datasource.AccountProps=com.aliyun.ros.cdk.redis.datasource.AccountProps
 @alicloud/ros-cdk-redis.datasource.Accounts=com.aliyun.ros.cdk.redis.datasource.Accounts
 @alicloud/ros-cdk-redis.datasource.AccountsProps=com.aliyun.ros.cdk.redis.datasource.AccountsProps
+@alicloud/ros-cdk-redis.datasource.IAccount=com.aliyun.ros.cdk.redis.datasource.IAccount
+@alicloud/ros-cdk-redis.datasource.IAccounts=com.aliyun.ros.cdk.redis.datasource.IAccounts
+@alicloud/ros-cdk-redis.datasource.IInstance=com.aliyun.ros.cdk.redis.datasource.IInstance
+@alicloud/ros-cdk-redis.datasource.IInstanceClasses=com.aliyun.ros.cdk.redis.datasource.IInstanceClasses
+@alicloud/ros-cdk-redis.datasource.IInstances=com.aliyun.ros.cdk.redis.datasource.IInstances
 @alicloud/ros-cdk-redis.datasource.Instance=com.aliyun.ros.cdk.redis.datasource.Instance
 @alicloud/ros-cdk-redis.datasource.InstanceClasses=com.aliyun.ros.cdk.redis.datasource.InstanceClasses
 @alicloud/ros-cdk-redis.datasource.InstanceClassesProps=com.aliyun.ros.cdk.redis.datasource.InstanceClassesProps

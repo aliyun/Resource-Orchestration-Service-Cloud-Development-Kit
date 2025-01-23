@@ -52,25 +52,41 @@ export interface TransitRouterRouteTablesProps {
 }
 
 /**
+ * Represents a `TransitRouterRouteTables`.
+ */
+export interface ITransitRouterRouteTables extends ros.IResource {
+    readonly props: TransitRouterRouteTablesProps;
+
+    /**
+     * Attribute TransitRouterRouteTableIds: The list of TransitRouterRouteTable IDs.
+     */
+    readonly attrTransitRouterRouteTableIds: ros.IResolvable | string;
+
+    /**
+     * Attribute TransitRouterRouteTables: The list of TransitRouterRouteTables.
+     */
+    readonly attrTransitRouterRouteTables: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::CEN::TransitRouterRouteTables`, which is used to query the information about route tables of an Enterprise Edition transit router.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouterRouteTables`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-transitrouterroutetables
  */
-export class TransitRouterRouteTables extends ros.Resource {
+export class TransitRouterRouteTables extends ros.Resource implements ITransitRouterRouteTables {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: TransitRouterRouteTablesProps;
+    public readonly props: TransitRouterRouteTablesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute TransitRouterRouteTableIds: The list of TransitRouterRouteTable IDs.
      */
-    public readonly attrTransitRouterRouteTableIds: ros.IResolvable;
+    public readonly attrTransitRouterRouteTableIds: ros.IResolvable | string;
 
     /**
      * Attribute TransitRouterRouteTables: The list of TransitRouterRouteTables.
      */
-    public readonly attrTransitRouterRouteTables: ros.IResolvable;
+    public readonly attrTransitRouterRouteTables: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

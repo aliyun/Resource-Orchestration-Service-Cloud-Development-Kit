@@ -24,100 +24,191 @@ export interface BandwidthPackageProps {
 }
 
 /**
+ * Represents a `BandwidthPackage`.
+ */
+export interface IBandwidthPackage extends ros.IResource {
+    readonly props: BandwidthPackageProps;
+
+    /**
+     * Attribute AutoRenew: Whether to enable automatic renewal.
+     */
+    readonly attrAutoRenew: ros.IResolvable | string;
+
+    /**
+     * Attribute AutoRenewDuration: The duration of automatic renewal. Unit: Month.
+     */
+    readonly attrAutoRenewDuration: ros.IResolvable | string;
+
+    /**
+     * Attribute Bandwidth: The bandwidth value of the bandwidth package. Unit: Mbps. Value range: 2~2000.
+     */
+    readonly attrBandwidth: ros.IResolvable | string;
+
+    /**
+     * Attribute BandwidthPackageId: The Resource ID of the bandwidth.
+     */
+    readonly attrBandwidthPackageId: ros.IResolvable | string;
+
+    /**
+     * Attribute BandwidthPackageName: The Resource name of the bandwidth.
+     */
+    readonly attrBandwidthPackageName: ros.IResolvable | string;
+
+    /**
+     * Attribute BandwidthType: Bandwidth type.
+     */
+    readonly attrBandwidthType: ros.IResolvable | string;
+
+    /**
+     * Attribute BillingType: Post-payment billing method.
+     */
+    readonly attrBillingType: ros.IResolvable | string;
+
+    /**
+     * Attribute CbnGeographicRegionIdA: The interworking region A of cross-region acceleration packages. The value is China-mainland only.
+     */
+    readonly attrCbnGeographicRegionIdA: ros.IResolvable | string;
+
+    /**
+     * Attribute CbnGeographicRegionIdB: The interworking Region B of cross-region acceleration packages. The value is Global only.
+     */
+    readonly attrCbnGeographicRegionIdB: ros.IResolvable | string;
+
+    /**
+     * Attribute CreateTime: Bandwidth package creation time.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: the description of bandwidth package.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute ExpiredTime: Bandwidth package expiration time.
+     */
+    readonly attrExpiredTime: ros.IResolvable | string;
+
+    /**
+     * Attribute PaymentType: Type of payment.
+     */
+    readonly attrPaymentType: ros.IResolvable | string;
+
+    /**
+     * Attribute Ratio: 95 Billing guaranteed percentage. Value range: 30~100.
+     */
+    readonly attrRatio: ros.IResolvable | string;
+
+    /**
+     * Attribute RenewalStatus: Renewal status.
+     */
+    readonly attrRenewalStatus: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: The ID of the resource group.
+     */
+    readonly attrResourceGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute Type: The type of the bandwidth package.
+     */
+    readonly attrType: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::GA::BandwidthPackage`, which is used to query the information about a bandwidth plan.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBandwidthPackage`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ga-bandwidthpackage
  */
-export class BandwidthPackage extends ros.Resource {
+export class BandwidthPackage extends ros.Resource implements IBandwidthPackage {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: BandwidthPackageProps;
+    public readonly props: BandwidthPackageProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AutoRenew: Whether to enable automatic renewal.
      */
-    public readonly attrAutoRenew: ros.IResolvable;
+    public readonly attrAutoRenew: ros.IResolvable | string;
 
     /**
      * Attribute AutoRenewDuration: The duration of automatic renewal. Unit: Month.
      */
-    public readonly attrAutoRenewDuration: ros.IResolvable;
+    public readonly attrAutoRenewDuration: ros.IResolvable | string;
 
     /**
      * Attribute Bandwidth: The bandwidth value of the bandwidth package. Unit: Mbps. Value range: 2~2000.
      */
-    public readonly attrBandwidth: ros.IResolvable;
+    public readonly attrBandwidth: ros.IResolvable | string;
 
     /**
      * Attribute BandwidthPackageId: The Resource ID of the bandwidth.
      */
-    public readonly attrBandwidthPackageId: ros.IResolvable;
+    public readonly attrBandwidthPackageId: ros.IResolvable | string;
 
     /**
      * Attribute BandwidthPackageName: The Resource name of the bandwidth.
      */
-    public readonly attrBandwidthPackageName: ros.IResolvable;
+    public readonly attrBandwidthPackageName: ros.IResolvable | string;
 
     /**
      * Attribute BandwidthType: Bandwidth type.
      */
-    public readonly attrBandwidthType: ros.IResolvable;
+    public readonly attrBandwidthType: ros.IResolvable | string;
 
     /**
      * Attribute BillingType: Post-payment billing method.
      */
-    public readonly attrBillingType: ros.IResolvable;
+    public readonly attrBillingType: ros.IResolvable | string;
 
     /**
      * Attribute CbnGeographicRegionIdA: The interworking region A of cross-region acceleration packages. The value is China-mainland only.
      */
-    public readonly attrCbnGeographicRegionIdA: ros.IResolvable;
+    public readonly attrCbnGeographicRegionIdA: ros.IResolvable | string;
 
     /**
      * Attribute CbnGeographicRegionIdB: The interworking Region B of cross-region acceleration packages. The value is Global only.
      */
-    public readonly attrCbnGeographicRegionIdB: ros.IResolvable;
+    public readonly attrCbnGeographicRegionIdB: ros.IResolvable | string;
 
     /**
      * Attribute CreateTime: Bandwidth package creation time.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute Description: the description of bandwidth package.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute ExpiredTime: Bandwidth package expiration time.
      */
-    public readonly attrExpiredTime: ros.IResolvable;
+    public readonly attrExpiredTime: ros.IResolvable | string;
 
     /**
      * Attribute PaymentType: Type of payment.
      */
-    public readonly attrPaymentType: ros.IResolvable;
+    public readonly attrPaymentType: ros.IResolvable | string;
 
     /**
      * Attribute Ratio: 95 Billing guaranteed percentage. Value range: 30~100.
      */
-    public readonly attrRatio: ros.IResolvable;
+    public readonly attrRatio: ros.IResolvable | string;
 
     /**
      * Attribute RenewalStatus: Renewal status.
      */
-    public readonly attrRenewalStatus: ros.IResolvable;
+    public readonly attrRenewalStatus: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroupId: The ID of the resource group.
      */
-    public readonly attrResourceGroupId: ros.IResolvable;
+    public readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Attribute Type: The type of the bandwidth package.
      */
-    public readonly attrType: ros.IResolvable;
+    public readonly attrType: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

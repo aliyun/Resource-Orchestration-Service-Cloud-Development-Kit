@@ -76,35 +76,61 @@ export interface GroupProps {
 }
 
 /**
+ * Represents a `Group`.
+ */
+export interface IGroup extends ros.IResource {
+    readonly props: GroupProps;
+
+    /**
+     * Attribute Amount: The number of the user group.
+     */
+    readonly attrAmount: ros.IResolvable | string;
+
+    /**
+     * Attribute CreatedTime: The creation time of the user group.
+     */
+    readonly attrCreatedTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Id: The ID of the user group.
+     */
+    readonly attrId: ros.IResolvable | string;
+
+    /**
+     * Attribute Name: The name of the user group.
+     */
+    readonly attrName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::PAIPlugin::Group`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paiplugin-group
  */
-export class Group extends ros.Resource {
+export class Group extends ros.Resource implements IGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: GroupProps;
+    public readonly props: GroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Amount: The number of the user group.
      */
-    public readonly attrAmount: ros.IResolvable;
+    public readonly attrAmount: ros.IResolvable | string;
 
     /**
      * Attribute CreatedTime: The creation time of the user group.
      */
-    public readonly attrCreatedTime: ros.IResolvable;
+    public readonly attrCreatedTime: ros.IResolvable | string;
 
     /**
      * Attribute Id: The ID of the user group.
      */
-    public readonly attrId: ros.IResolvable;
+    public readonly attrId: ros.IResolvable | string;
 
     /**
      * Attribute Name: The name of the user group.
      */
-    public readonly attrName: ros.IResolvable;
+    public readonly attrName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -52,10 +52,6 @@ func (j *jsiiProxy_HaVipAssociation) validateSetIdParameters(val *string) error 
 	return nil
 }
 
-func (j *jsiiProxy_HaVipAssociation) validateSetPropsParameters(val *HaVipAssociationProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_HaVipAssociation) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

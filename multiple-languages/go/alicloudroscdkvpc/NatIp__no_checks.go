@@ -52,10 +52,6 @@ func (j *jsiiProxy_NatIp) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_NatIp) validateSetPropsParameters(val *NatIpProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_NatIp) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

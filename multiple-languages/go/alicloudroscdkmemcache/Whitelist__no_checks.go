@@ -52,10 +52,6 @@ func (j *jsiiProxy_Whitelist) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_Whitelist) validateSetPropsParameters(val *WhitelistProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_Whitelist) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

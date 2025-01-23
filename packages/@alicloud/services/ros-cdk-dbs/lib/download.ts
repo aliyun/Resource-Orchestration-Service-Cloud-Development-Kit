@@ -88,35 +88,61 @@ export interface DownloadProps {
 }
 
 /**
+ * Represents a `Download`.
+ */
+export interface IDownload extends ros.IResource {
+    readonly props: DownloadProps;
+
+    /**
+     * Attribute BakSetId: The ID of the backup set.
+     */
+    readonly attrBakSetId: ros.IResolvable | string;
+
+    /**
+     * Attribute DownloadAddressInfo: The download address information.
+     */
+    readonly attrDownloadAddressInfo: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceName: The ID of the instance.
+     */
+    readonly attrInstanceName: ros.IResolvable | string;
+
+    /**
+     * Attribute TaskId: The ID of the download task.
+     */
+    readonly attrTaskId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::DBS::Download`, which is used to create an advanced download task.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDownload`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-download
  */
-export class Download extends ros.Resource {
+export class Download extends ros.Resource implements IDownload {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DownloadProps;
+    public readonly props: DownloadProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute BakSetId: The ID of the backup set.
      */
-    public readonly attrBakSetId: ros.IResolvable;
+    public readonly attrBakSetId: ros.IResolvable | string;
 
     /**
      * Attribute DownloadAddressInfo: The download address information.
      */
-    public readonly attrDownloadAddressInfo: ros.IResolvable;
+    public readonly attrDownloadAddressInfo: ros.IResolvable | string;
 
     /**
      * Attribute InstanceName: The ID of the instance.
      */
-    public readonly attrInstanceName: ros.IResolvable;
+    public readonly attrInstanceName: ros.IResolvable | string;
 
     /**
      * Attribute TaskId: The ID of the download task.
      */
-    public readonly attrTaskId: ros.IResolvable;
+    public readonly attrTaskId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.config;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::Config::Aggregator</code>, which is used to create an account group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:05.859Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:36.325Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.RosAggregator")
 public class RosAggregator extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -145,6 +145,24 @@ public class RosAggregator extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setAggregatorType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "aggregatorType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getFolderId() {
+        return software.amazon.jsii.Kernel.get(this, "folderId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setFolderId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "folderId", value);
+    }
+
+    /**
+     */
+    public void setFolderId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "folderId", value);
     }
     /**
      */
@@ -445,6 +463,23 @@ public class RosAggregator extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder aggregatorType(final com.aliyun.ros.cdk.core.IResolvable aggregatorType) {
             this.props.aggregatorType(aggregatorType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param folderId This parameter is required.
+         */
+        public Builder folderId(final java.lang.String folderId) {
+            this.props.folderId(folderId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param folderId This parameter is required.
+         */
+        public Builder folderId(final com.aliyun.ros.cdk.core.IResolvable folderId) {
+            this.props.folderId(folderId);
             return this;
         }
 

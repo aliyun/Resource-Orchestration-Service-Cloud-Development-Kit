@@ -181,25 +181,41 @@ export interface DisksProps {
 }
 
 /**
+ * Represents a `Disks`.
+ */
+export interface IDisks extends ros.IResource {
+    readonly props: DisksProps;
+
+    /**
+     * Attribute DiskIds: The list of disk IDs.
+     */
+    readonly attrDiskIds: ros.IResolvable | string;
+
+    /**
+     * Attribute Disks: The list of disks.
+     */
+    readonly attrDisks: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Disks`, which is used to query the Elastic Block Storage (EBS) devices that you created, including cloud disks and local disks.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDisks`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-disks
  */
-export class Disks extends ros.Resource {
+export class Disks extends ros.Resource implements IDisks {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DisksProps;
+    public readonly props: DisksProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DiskIds: The list of disk IDs.
      */
-    public readonly attrDiskIds: ros.IResolvable;
+    public readonly attrDiskIds: ros.IResolvable | string;
 
     /**
      * Attribute Disks: The list of disks.
      */
-    public readonly attrDisks: ros.IResolvable;
+    public readonly attrDisks: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

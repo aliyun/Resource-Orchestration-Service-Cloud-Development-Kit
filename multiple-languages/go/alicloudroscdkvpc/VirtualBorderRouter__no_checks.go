@@ -52,10 +52,6 @@ func (j *jsiiProxy_VirtualBorderRouter) validateSetIdParameters(val *string) err
 	return nil
 }
 
-func (j *jsiiProxy_VirtualBorderRouter) validateSetPropsParameters(val *VirtualBorderRouterProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_VirtualBorderRouter) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

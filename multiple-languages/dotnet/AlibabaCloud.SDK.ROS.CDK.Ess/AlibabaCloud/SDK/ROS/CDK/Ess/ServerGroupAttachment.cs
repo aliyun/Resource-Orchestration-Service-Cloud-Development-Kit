@@ -12,7 +12,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-servergroupattachment
     /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Ess.ServerGroupAttachment), fullyQualifiedName: "@alicloud/ros-cdk-ess.ServerGroupAttachment", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-ess.ServerGroupAttachmentProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"optional\":true,\"type\":{\"primitive\":\"boolean\"}}]")]
-    public class ServerGroupAttachment : AlibabaCloud.SDK.ROS.CDK.Core.Resource_
+    public class ServerGroupAttachment : AlibabaCloud.SDK.ROS.CDK.Core.Resource_, AlibabaCloud.SDK.ROS.CDK.Ess.IServerGroupAttachment
     {
         /// <summary>Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.</summary>
         public ServerGroupAttachment(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Ess.IServerGroupAttachmentProps props, bool? enableResourcePropertyConstraint = null): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
@@ -43,10 +43,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <remarks>
         /// Note This parameter is returned only after you set the ForceAttach parameter to true.
         /// </remarks>
-        [JsiiProperty(name: "attrScalingActivityId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrScalingActivityId
+        [JsiiProperty(name: "attrScalingActivityId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrScalingActivityId
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
+        }
+
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-ess.ServerGroupAttachmentProps\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Ess.IServerGroupAttachmentProps Props
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Ess.IServerGroupAttachmentProps>()!;
         }
 
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
@@ -60,13 +66,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         protected virtual string Id
         {
             get => GetInstanceProperty<string>()!;
-            set => SetInstanceProperty(value);
-        }
-
-        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-ess.ServerGroupAttachmentProps\"}")]
-        protected virtual AlibabaCloud.SDK.ROS.CDK.Ess.IServerGroupAttachmentProps Props
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Ess.IServerGroupAttachmentProps>()!;
             set => SetInstanceProperty(value);
         }
 

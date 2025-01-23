@@ -56,20 +56,31 @@ export interface TableProps {
 }
 
 /**
+ * Represents a `Table`.
+ */
+export interface ITable extends ros.IResource {
+    readonly props: TableProps;
+
+    /**
+     * Attribute TableName: Table name
+     */
+    readonly attrTableName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::OTS::Table`, which is used to create a table based on a specified schema.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTable`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-table
  */
-export class Table extends ros.Resource {
+export class Table extends ros.Resource implements ITable {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: TableProps;
+    public readonly props: TableProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute TableName: Table name
      */
-    public readonly attrTableName: ros.IResolvable;
+    public readonly attrTableName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -29,25 +29,41 @@ export interface ActivationsProps {
 }
 
 /**
+ * Represents a `Activations`.
+ */
+export interface IActivations extends ros.IResource {
+    readonly props: ActivationsProps;
+
+    /**
+     * Attribute ActivationIds: The list of activation IDs.
+     */
+    readonly attrActivationIds: ros.IResolvable | string;
+
+    /**
+     * Attribute Activations: The list of activations.
+     */
+    readonly attrActivations: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Activations`, which is used to query activation codes.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosActivations`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-activations
  */
-export class Activations extends ros.Resource {
+export class Activations extends ros.Resource implements IActivations {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ActivationsProps;
+    public readonly props: ActivationsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ActivationIds: The list of activation IDs.
      */
-    public readonly attrActivationIds: ros.IResolvable;
+    public readonly attrActivationIds: ros.IResolvable | string;
 
     /**
      * Attribute Activations: The list of activations.
      */
-    public readonly attrActivations: ros.IResolvable;
+    public readonly attrActivations: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

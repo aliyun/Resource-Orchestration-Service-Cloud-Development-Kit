@@ -51,20 +51,31 @@ export interface SnapshotGroupProps {
 }
 
 /**
+ * Represents a `SnapshotGroup`.
+ */
+export interface ISnapshotGroup extends ros.IResource {
+    readonly props: SnapshotGroupProps;
+
+    /**
+     * Attribute SnapshotGroupId: The ID of the snapshot-consistent group.
+     */
+    readonly attrSnapshotGroupId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SnapshotGroup`, which is used to create a snapshot-consistent group for cloud disks that are attached to an Elastic Compute Service (ECS) instance. A snapshot-consistent group contains snapshots of one or more cloud disks.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSnapshotGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snapshotgroup
  */
-export class SnapshotGroup extends ros.Resource {
+export class SnapshotGroup extends ros.Resource implements ISnapshotGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SnapshotGroupProps;
+    public readonly props: SnapshotGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SnapshotGroupId: The ID of the snapshot-consistent group.
      */
-    public readonly attrSnapshotGroupId: ros.IResolvable;
+    public readonly attrSnapshotGroupId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

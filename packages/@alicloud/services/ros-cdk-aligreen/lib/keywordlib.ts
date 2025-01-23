@@ -52,60 +52,111 @@ export interface KeywordLibProps {
 }
 
 /**
+ * Represents a `KeywordLib`.
+ */
+export interface IKeywordLib extends ros.IResource {
+    readonly props: KeywordLibProps;
+
+    /**
+     * Attribute BizTypes: The business scenario.
+     */
+    readonly attrBizTypes: ros.IResolvable | string;
+
+    /**
+     * Attribute Category: The category of the text library.
+     */
+    readonly attrCategory: ros.IResolvable | string;
+
+    /**
+     * Attribute Enable: Specifies whether to enable text library.
+     */
+    readonly attrEnable: ros.IResolvable | string;
+
+    /**
+     * Attribute KeywordLibId: The ID of the primary key of the keyword library.
+     */
+    readonly attrKeywordLibId: ros.IResolvable | string;
+
+    /**
+     * Attribute KeywordLibName: The name of the keyword library defined by the customer.
+     */
+    readonly attrKeywordLibName: ros.IResolvable | string;
+
+    /**
+     * Attribute Language: Language used by the text Library.
+     */
+    readonly attrLanguage: ros.IResolvable | string;
+
+    /**
+     * Attribute LibType: The category of the text library in each moderation scenario.
+     */
+    readonly attrLibType: ros.IResolvable | string;
+
+    /**
+     * Attribute MatchMode: The matching method.
+     */
+    readonly attrMatchMode: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceType: The moderation scenario to which the text library applies.
+     */
+    readonly attrResourceType: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::Aligreen::KeywordLib`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosKeywordLib`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-keywordlib
  */
-export class KeywordLib extends ros.Resource {
+export class KeywordLib extends ros.Resource implements IKeywordLib {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: KeywordLibProps;
+    public readonly props: KeywordLibProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute BizTypes: The business scenario.
      */
-    public readonly attrBizTypes: ros.IResolvable;
+    public readonly attrBizTypes: ros.IResolvable | string;
 
     /**
      * Attribute Category: The category of the text library.
      */
-    public readonly attrCategory: ros.IResolvable;
+    public readonly attrCategory: ros.IResolvable | string;
 
     /**
      * Attribute Enable: Specifies whether to enable text library.
      */
-    public readonly attrEnable: ros.IResolvable;
+    public readonly attrEnable: ros.IResolvable | string;
 
     /**
      * Attribute KeywordLibId: The ID of the primary key of the keyword library.
      */
-    public readonly attrKeywordLibId: ros.IResolvable;
+    public readonly attrKeywordLibId: ros.IResolvable | string;
 
     /**
      * Attribute KeywordLibName: The name of the keyword library defined by the customer.
      */
-    public readonly attrKeywordLibName: ros.IResolvable;
+    public readonly attrKeywordLibName: ros.IResolvable | string;
 
     /**
      * Attribute Language: Language used by the text Library.
      */
-    public readonly attrLanguage: ros.IResolvable;
+    public readonly attrLanguage: ros.IResolvable | string;
 
     /**
      * Attribute LibType: The category of the text library in each moderation scenario.
      */
-    public readonly attrLibType: ros.IResolvable;
+    public readonly attrLibType: ros.IResolvable | string;
 
     /**
      * Attribute MatchMode: The matching method.
      */
-    public readonly attrMatchMode: ros.IResolvable;
+    public readonly attrMatchMode: ros.IResolvable | string;
 
     /**
      * Attribute ResourceType: The moderation scenario to which the text library applies.
      */
-    public readonly attrResourceType: ros.IResolvable;
+    public readonly attrResourceType: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

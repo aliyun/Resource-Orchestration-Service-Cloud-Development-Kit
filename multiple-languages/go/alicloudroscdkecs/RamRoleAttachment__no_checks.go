@@ -52,10 +52,6 @@ func (j *jsiiProxy_RamRoleAttachment) validateSetIdParameters(val *string) error
 	return nil
 }
 
-func (j *jsiiProxy_RamRoleAttachment) validateSetPropsParameters(val *RamRoleAttachmentProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_RamRoleAttachment) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

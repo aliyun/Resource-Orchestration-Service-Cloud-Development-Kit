@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::Datasets`, which is used to query the basic information about datasets.
 type Datasets interface {
 	alicloudroscdkcore.Resource
+	IDatasets
 	// Attribute DatasetIds: The list of dataset IDs.
-	AttrDatasetIds() alicloudroscdkcore.IResolvable
+	AttrDatasetIds() interface{}
 	// Attribute Datasets: The list of datasets.
-	AttrDatasets() alicloudroscdkcore.IResolvable
+	AttrDatasets() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type Datasets interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DatasetsProps
-	SetProps(val *DatasetsProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type Datasets interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type Datasets interface {
 // The jsii proxy struct for Datasets
 type jsiiProxy_Datasets struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDatasets
 }
 
-func (j *jsiiProxy_Datasets) AttrDatasetIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Datasets) AttrDatasetIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDatasetIds",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_Datasets) AttrDatasetIds() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Datasets) AttrDatasets() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Datasets) AttrDatasets() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDatasets",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_Datasets) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Datasets) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_Datasets)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Datasets)SetProps(val *DatasetsProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Datasets)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (d *jsiiProxy_Datasets) ApplyRemovalPolicy(policy alicloudroscdkcore.Remova
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_Datasets) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_Datasets) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_Datasets) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_Datasets) GeneratePhysicalName() *string {

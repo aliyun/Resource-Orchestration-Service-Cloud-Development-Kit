@@ -52,10 +52,6 @@ func (j *jsiiProxy_SSHKeyPairAttachment) validateSetIdParameters(val *string) er
 	return nil
 }
 
-func (j *jsiiProxy_SSHKeyPairAttachment) validateSetPropsParameters(val *SSHKeyPairAttachmentProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_SSHKeyPairAttachment) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

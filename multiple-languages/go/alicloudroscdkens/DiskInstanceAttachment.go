@@ -12,14 +12,24 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ENS::DiskInstanceAttachment`, which is used to attach a data disk to an Edge Node Service (ENS) instance.
 type DiskInstanceAttachment interface {
 	alicloudroscdkcore.Resource
+	IDiskInstanceAttachment
 	// Attribute DiskId: The ID of the cloud disk to be mounted.
 	//
 	// The Cloud Disk (DiskId) and the instance (InstanceId) must be on the same node.
-	AttrDiskId() alicloudroscdkcore.IResolvable
+	AttrDiskId() interface{}
 	// Attribute InstanceId: Instance ID.
-	AttrInstanceId() alicloudroscdkcore.IResolvable
+	AttrInstanceId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -34,7 +44,6 @@ type DiskInstanceAttachment interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DiskInstanceAttachmentProps
-	SetProps(val *DiskInstanceAttachmentProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -47,6 +56,9 @@ type DiskInstanceAttachment interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -99,10 +111,11 @@ type DiskInstanceAttachment interface {
 // The jsii proxy struct for DiskInstanceAttachment
 type jsiiProxy_DiskInstanceAttachment struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDiskInstanceAttachment
 }
 
-func (j *jsiiProxy_DiskInstanceAttachment) AttrDiskId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DiskInstanceAttachment) AttrDiskId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDiskId",
@@ -111,8 +124,8 @@ func (j *jsiiProxy_DiskInstanceAttachment) AttrDiskId() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_DiskInstanceAttachment) AttrInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DiskInstanceAttachment) AttrInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceId",
@@ -126,6 +139,16 @@ func (j *jsiiProxy_DiskInstanceAttachment) EnableResourcePropertyConstraint() *b
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DiskInstanceAttachment) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -263,17 +286,6 @@ func (j *jsiiProxy_DiskInstanceAttachment)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DiskInstanceAttachment)SetProps(val *DiskInstanceAttachmentProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_DiskInstanceAttachment)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -365,6 +377,45 @@ func (d *jsiiProxy_DiskInstanceAttachment) ApplyRemovalPolicy(policy alicloudros
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_DiskInstanceAttachment) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DiskInstanceAttachment) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DiskInstanceAttachment) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_DiskInstanceAttachment) GeneratePhysicalName() *string {

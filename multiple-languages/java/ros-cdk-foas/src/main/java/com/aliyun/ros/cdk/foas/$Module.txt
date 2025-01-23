@@ -1,5 +1,7 @@
 @alicloud/ros-cdk-foas.Cluster=com.aliyun.ros.cdk.foas.Cluster
 @alicloud/ros-cdk-foas.ClusterProps=com.aliyun.ros.cdk.foas.ClusterProps
+@alicloud/ros-cdk-foas.ICluster=com.aliyun.ros.cdk.foas.ICluster
+@alicloud/ros-cdk-foas.IProject=com.aliyun.ros.cdk.foas.IProject
 @alicloud/ros-cdk-foas.Project=com.aliyun.ros.cdk.foas.Project
 @alicloud/ros-cdk-foas.ProjectProps=com.aliyun.ros.cdk.foas.ProjectProps
 @alicloud/ros-cdk-foas.RosCluster=com.aliyun.ros.cdk.foas.RosCluster

@@ -29,25 +29,41 @@ export interface SecretParametersProps {
 }
 
 /**
+ * Represents a `SecretParameters`.
+ */
+export interface ISecretParameters extends ros.IResource {
+    readonly props: SecretParametersProps;
+
+    /**
+     * Attribute SecretParameterNames: The list of secret parameter names.
+     */
+    readonly attrSecretParameterNames: ros.IResolvable | string;
+
+    /**
+     * Attribute SecretParameters: The list of secret parameters.
+     */
+    readonly attrSecretParameters: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::OOS::SecretParameters`, which is used to query encryption parameters.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecretParameters`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-secretparameters
  */
-export class SecretParameters extends ros.Resource {
+export class SecretParameters extends ros.Resource implements ISecretParameters {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SecretParametersProps;
+    public readonly props: SecretParametersProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SecretParameterNames: The list of secret parameter names.
      */
-    public readonly attrSecretParameterNames: ros.IResolvable;
+    public readonly attrSecretParameterNames: ros.IResolvable | string;
 
     /**
      * Attribute SecretParameters: The list of secret parameters.
      */
-    public readonly attrSecretParameters: ros.IResolvable;
+    public readonly attrSecretParameters: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

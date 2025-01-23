@@ -36,20 +36,31 @@ export interface RouteProps {
 }
 
 /**
+ * Represents a `Route`.
+ */
+export interface IRoute extends ros.IResource {
+    readonly props: RouteProps;
+
+    /**
+     * Attribute RouteEntryId: The ID of the route entry.
+     */
+    readonly attrRouteEntryId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Route`, which is used to create a custom route entry.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRoute`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-route
  */
-export class Route extends ros.Resource {
+export class Route extends ros.Resource implements IRoute {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: RouteProps;
+    public readonly props: RouteProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RouteEntryId: The ID of the route entry.
      */
-    public readonly attrRouteEntryId: ros.IResolvable;
+    public readonly attrRouteEntryId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

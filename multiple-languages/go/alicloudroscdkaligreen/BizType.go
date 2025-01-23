@@ -12,18 +12,28 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::Aligreen::BizType`.
 type BizType interface {
 	alicloudroscdkcore.Resource
+	IBizType
 	// Attribute BizTypeName: The name of the business scenario defined by the customer.
-	AttrBizTypeName() alicloudroscdkcore.IResolvable
+	AttrBizTypeName() interface{}
 	// Attribute CiteTemplate: Specifies whether to import the configuration of an industry template.
 	//
 	// Default value: false.
-	AttrCiteTemplate() alicloudroscdkcore.IResolvable
+	AttrCiteTemplate() interface{}
 	// Attribute Description: The description of the business scenario defined by the customer.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute IndustryInfo: The industry classification.
-	AttrIndustryInfo() alicloudroscdkcore.IResolvable
+	AttrIndustryInfo() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -38,7 +48,6 @@ type BizType interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *BizTypeProps
-	SetProps(val *BizTypeProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -51,6 +60,9 @@ type BizType interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -103,10 +115,11 @@ type BizType interface {
 // The jsii proxy struct for BizType
 type jsiiProxy_BizType struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IBizType
 }
 
-func (j *jsiiProxy_BizType) AttrBizTypeName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BizType) AttrBizTypeName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBizTypeName",
@@ -115,8 +128,8 @@ func (j *jsiiProxy_BizType) AttrBizTypeName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_BizType) AttrCiteTemplate() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BizType) AttrCiteTemplate() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCiteTemplate",
@@ -125,8 +138,8 @@ func (j *jsiiProxy_BizType) AttrCiteTemplate() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_BizType) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BizType) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -135,8 +148,8 @@ func (j *jsiiProxy_BizType) AttrDescription() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_BizType) AttrIndustryInfo() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BizType) AttrIndustryInfo() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIndustryInfo",
@@ -150,6 +163,16 @@ func (j *jsiiProxy_BizType) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BizType) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -287,17 +310,6 @@ func (j *jsiiProxy_BizType)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_BizType)SetProps(val *BizTypeProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_BizType)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -389,6 +401,45 @@ func (b *jsiiProxy_BizType) ApplyRemovalPolicy(policy alicloudroscdkcore.Removal
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (b *jsiiProxy_BizType) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		b,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (b *jsiiProxy_BizType) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		b,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (b *jsiiProxy_BizType) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		b,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (b *jsiiProxy_BizType) GeneratePhysicalName() *string {

@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ECS::AutoProvisioningGroup`, which is used to create an auto provisioning group.
 type AutoProvisioningGroup interface {
 	alicloudroscdkcore.Resource
+	IAutoProvisioningGroup
 	// Attribute AutoProvisioningGroupId: The ID of the auto provisioning group.
-	AttrAutoProvisioningGroupId() alicloudroscdkcore.IResolvable
+	AttrAutoProvisioningGroupId() interface{}
 	// Attribute AutoProvisioningGroupName: The name of the auto provisioning group.
-	AttrAutoProvisioningGroupName() alicloudroscdkcore.IResolvable
+	AttrAutoProvisioningGroupName() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type AutoProvisioningGroup interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *AutoProvisioningGroupProps
-	SetProps(val *AutoProvisioningGroupProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type AutoProvisioningGroup interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type AutoProvisioningGroup interface {
 // The jsii proxy struct for AutoProvisioningGroup
 type jsiiProxy_AutoProvisioningGroup struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IAutoProvisioningGroup
 }
 
-func (j *jsiiProxy_AutoProvisioningGroup) AttrAutoProvisioningGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AutoProvisioningGroup) AttrAutoProvisioningGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAutoProvisioningGroupId",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_AutoProvisioningGroup) AttrAutoProvisioningGroupId() alicloud
 	return returns
 }
 
-func (j *jsiiProxy_AutoProvisioningGroup) AttrAutoProvisioningGroupName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AutoProvisioningGroup) AttrAutoProvisioningGroupName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAutoProvisioningGroupName",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_AutoProvisioningGroup) EnableResourcePropertyConstraint() *bo
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AutoProvisioningGroup) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_AutoProvisioningGroup)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AutoProvisioningGroup)SetProps(val *AutoProvisioningGroupProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_AutoProvisioningGroup)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (a *jsiiProxy_AutoProvisioningGroup) ApplyRemovalPolicy(policy alicloudrosc
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (a *jsiiProxy_AutoProvisioningGroup) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		a,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AutoProvisioningGroup) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AutoProvisioningGroup) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (a *jsiiProxy_AutoProvisioningGroup) GeneratePhysicalName() *string {

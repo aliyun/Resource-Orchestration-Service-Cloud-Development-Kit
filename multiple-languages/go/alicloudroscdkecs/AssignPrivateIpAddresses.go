@@ -14,12 +14,22 @@ import (
 // You can specify private IP addresses within the CIDR block of the vSwitch that hosts the ENI. You can also specify the number of private IP addresses for ECS to assign them automatically.
 type AssignPrivateIpAddresses interface {
 	alicloudroscdkcore.Resource
+	IAssignPrivateIpAddresses
 	// Attribute NetworkInterfaceId: The ID of the ENI.
-	AttrNetworkInterfaceId() alicloudroscdkcore.IResolvable
+	AttrNetworkInterfaceId() interface{}
 	// Attribute PrivateIpAddresses: Assigned private ip addresses.
-	AttrPrivateIpAddresses() alicloudroscdkcore.IResolvable
+	AttrPrivateIpAddresses() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -34,7 +44,6 @@ type AssignPrivateIpAddresses interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *AssignPrivateIpAddressesProps
-	SetProps(val *AssignPrivateIpAddressesProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -47,6 +56,9 @@ type AssignPrivateIpAddresses interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -99,10 +111,11 @@ type AssignPrivateIpAddresses interface {
 // The jsii proxy struct for AssignPrivateIpAddresses
 type jsiiProxy_AssignPrivateIpAddresses struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IAssignPrivateIpAddresses
 }
 
-func (j *jsiiProxy_AssignPrivateIpAddresses) AttrNetworkInterfaceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AssignPrivateIpAddresses) AttrNetworkInterfaceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNetworkInterfaceId",
@@ -111,8 +124,8 @@ func (j *jsiiProxy_AssignPrivateIpAddresses) AttrNetworkInterfaceId() alicloudro
 	return returns
 }
 
-func (j *jsiiProxy_AssignPrivateIpAddresses) AttrPrivateIpAddresses() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AssignPrivateIpAddresses) AttrPrivateIpAddresses() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPrivateIpAddresses",
@@ -126,6 +139,16 @@ func (j *jsiiProxy_AssignPrivateIpAddresses) EnableResourcePropertyConstraint() 
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AssignPrivateIpAddresses) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -263,17 +286,6 @@ func (j *jsiiProxy_AssignPrivateIpAddresses)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AssignPrivateIpAddresses)SetProps(val *AssignPrivateIpAddressesProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_AssignPrivateIpAddresses)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -365,6 +377,45 @@ func (a *jsiiProxy_AssignPrivateIpAddresses) ApplyRemovalPolicy(policy alicloudr
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (a *jsiiProxy_AssignPrivateIpAddresses) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		a,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AssignPrivateIpAddresses) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AssignPrivateIpAddresses) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (a *jsiiProxy_AssignPrivateIpAddresses) GeneratePhysicalName() *string {

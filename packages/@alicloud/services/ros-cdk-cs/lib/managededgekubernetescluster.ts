@@ -77,6 +77,11 @@ export interface ManagedEdgeKubernetesClusterProps {
     readonly loginPassword?: string | ros.IResolvable;
 
     /**
+     * Property maintenanceWindow: Cluster maintenance window.
+     */
+    readonly maintenanceWindow?: RosManagedEdgeKubernetesCluster.MaintenanceWindowProperty | ros.IResolvable;
+
+    /**
      * Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes. 
      * This number is determined by the specified pod CIDR block. 
      * This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
@@ -136,70 +141,131 @@ export interface ManagedEdgeKubernetesClusterProps {
 }
 
 /**
+ * Represents a `ManagedEdgeKubernetesCluster`.
+ */
+export interface IManagedEdgeKubernetesCluster extends ros.IResource {
+    readonly props: ManagedEdgeKubernetesClusterProps;
+
+    /**
+     * Attribute APIServerSLBId: The id of API server SLB
+     */
+    readonly attrApiServerSlbId: ros.IResolvable | string;
+
+    /**
+     * Attribute ClusterId: Cluster instance ID.
+     */
+    readonly attrClusterId: ros.IResolvable | string;
+
+    /**
+     * Attribute DefaultUserKubeConfig: Default user kubernetes config which is used for configuring cluster credentials.
+     */
+    readonly attrDefaultUserKubeConfig: ros.IResolvable | string;
+
+    /**
+     * Attribute IngressSLBId: The id of ingress SLB
+     */
+    readonly attrIngressSlbId: ros.IResolvable | string;
+
+    /**
+     * Attribute Nodes: The list of cluster nodes.
+     */
+    readonly attrNodes: ros.IResolvable | string;
+
+    /**
+     * Attribute PrivateUserKubConfig: Private user kubernetes config which is used for configuring cluster credentials.
+     */
+    readonly attrPrivateUserKubConfig: ros.IResolvable | string;
+
+    /**
+     * Attribute ScalingConfigurationId: Scaling configuration id
+     */
+    readonly attrScalingConfigurationId: ros.IResolvable | string;
+
+    /**
+     * Attribute ScalingGroupId: Scaling group id
+     */
+    readonly attrScalingGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute ScalingRuleId: Scaling rule id
+     */
+    readonly attrScalingRuleId: ros.IResolvable | string;
+
+    /**
+     * Attribute TaskId: Task ID. Automatically assigned by the system, the user queries the task status.
+     */
+    readonly attrTaskId: ros.IResolvable | string;
+
+    /**
+     * Attribute WorkerRamRoleName: Worker ram role name.
+     */
+    readonly attrWorkerRamRoleName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ManagedEdgeKubernetesCluster`, which is used to create a Container Service for Kubernetes (ACK) edge cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosManagedEdgeKubernetesCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managededgekubernetescluster
  */
-export class ManagedEdgeKubernetesCluster extends ros.Resource {
+export class ManagedEdgeKubernetesCluster extends ros.Resource implements IManagedEdgeKubernetesCluster {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ManagedEdgeKubernetesClusterProps;
+    public readonly props: ManagedEdgeKubernetesClusterProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute APIServerSLBId: The id of API server SLB
      */
-    public readonly attrApiServerSlbId: ros.IResolvable;
+    public readonly attrApiServerSlbId: ros.IResolvable | string;
 
     /**
      * Attribute ClusterId: Cluster instance ID.
      */
-    public readonly attrClusterId: ros.IResolvable;
+    public readonly attrClusterId: ros.IResolvable | string;
 
     /**
      * Attribute DefaultUserKubeConfig: Default user kubernetes config which is used for configuring cluster credentials.
      */
-    public readonly attrDefaultUserKubeConfig: ros.IResolvable;
+    public readonly attrDefaultUserKubeConfig: ros.IResolvable | string;
 
     /**
      * Attribute IngressSLBId: The id of ingress SLB
      */
-    public readonly attrIngressSlbId: ros.IResolvable;
+    public readonly attrIngressSlbId: ros.IResolvable | string;
 
     /**
      * Attribute Nodes: The list of cluster nodes.
      */
-    public readonly attrNodes: ros.IResolvable;
+    public readonly attrNodes: ros.IResolvable | string;
 
     /**
      * Attribute PrivateUserKubConfig: Private user kubernetes config which is used for configuring cluster credentials.
      */
-    public readonly attrPrivateUserKubConfig: ros.IResolvable;
+    public readonly attrPrivateUserKubConfig: ros.IResolvable | string;
 
     /**
      * Attribute ScalingConfigurationId: Scaling configuration id
      */
-    public readonly attrScalingConfigurationId: ros.IResolvable;
+    public readonly attrScalingConfigurationId: ros.IResolvable | string;
 
     /**
      * Attribute ScalingGroupId: Scaling group id
      */
-    public readonly attrScalingGroupId: ros.IResolvable;
+    public readonly attrScalingGroupId: ros.IResolvable | string;
 
     /**
      * Attribute ScalingRuleId: Scaling rule id
      */
-    public readonly attrScalingRuleId: ros.IResolvable;
+    public readonly attrScalingRuleId: ros.IResolvable | string;
 
     /**
      * Attribute TaskId: Task ID. Automatically assigned by the system, the user queries the task status.
      */
-    public readonly attrTaskId: ros.IResolvable;
+    public readonly attrTaskId: ros.IResolvable | string;
 
     /**
      * Attribute WorkerRamRoleName: Worker ram role name.
      */
-    public readonly attrWorkerRamRoleName: ros.IResolvable;
+    public readonly attrWorkerRamRoleName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -231,6 +297,7 @@ export class ManagedEdgeKubernetesCluster extends ros.Resource {
             serviceCidr: props.serviceCidr === undefined || props.serviceCidr === null ? '172.19.0.0/20' : props.serviceCidr,
             snatEntry: props.snatEntry === undefined || props.snatEntry === null ? true : props.snatEntry,
             zoneIds: props.zoneIds,
+            maintenanceWindow: props.maintenanceWindow,
             tags: props.tags,
             proxyMode: props.proxyMode === undefined || props.proxyMode === null ? 'iptables' : props.proxyMode,
             loginPassword: props.loginPassword,

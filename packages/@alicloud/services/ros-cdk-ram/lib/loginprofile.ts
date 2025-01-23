@@ -45,20 +45,31 @@ export interface LoginProfileProps {
 }
 
 /**
+ * Represents a `LoginProfile`.
+ */
+export interface ILoginProfile extends ros.IResource {
+    readonly props: LoginProfileProps;
+
+    /**
+     * Attribute Password: The password of the RAM user.
+     */
+    readonly attrPassword: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::LoginProfile`, which is used to create logon configurations for a Resource Access Management (RAM) user.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLoginProfile`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-loginprofile
  */
-export class LoginProfile extends ros.Resource {
+export class LoginProfile extends ros.Resource implements ILoginProfile {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: LoginProfileProps;
+    public readonly props: LoginProfileProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Password: The password of the RAM user.
      */
-    public readonly attrPassword: ros.IResolvable;
+    public readonly attrPassword: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

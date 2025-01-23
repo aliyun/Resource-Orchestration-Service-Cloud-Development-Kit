@@ -65,20 +65,31 @@ export interface CommandProps {
 }
 
 /**
+ * Represents a `Command`.
+ */
+export interface ICommand extends ros.IResource {
+    readonly props: CommandProps;
+
+    /**
+     * Attribute CommandId: The id of command created.
+     */
+    readonly attrCommandId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Command`, which is used to create a Cloud Assistant command.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCommand`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-command
  */
-export class Command extends ros.Resource {
+export class Command extends ros.Resource implements ICommand {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: CommandProps;
+    public readonly props: CommandProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CommandId: The id of command created.
      */
-    public readonly attrCommandId: ros.IResolvable;
+    public readonly attrCommandId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

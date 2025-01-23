@@ -12,20 +12,30 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::Aligreen::ImageLib`.
 type ImageLib interface {
 	alicloudroscdkcore.Resource
+	IImageLib
 	// Attribute BizTypes: List of business scenarios.
-	AttrBizTypes() alicloudroscdkcore.IResolvable
+	AttrBizTypes() interface{}
 	// Attribute Category: The category of the image library.
-	AttrCategory() alicloudroscdkcore.IResolvable
+	AttrCategory() interface{}
 	// Attribute Enable: Specifies whether to enable the image library.
-	AttrEnable() alicloudroscdkcore.IResolvable
+	AttrEnable() interface{}
 	// Attribute ImageLibId: The ID of the primary key of the image library.
-	AttrImageLibId() alicloudroscdkcore.IResolvable
+	AttrImageLibId() interface{}
 	// Attribute ImageLibName: The name of the image library defined by the customer.
-	AttrImageLibName() alicloudroscdkcore.IResolvable
+	AttrImageLibName() interface{}
 	// Attribute Scene: The moderation scenario to which the custom image library applies.
-	AttrScene() alicloudroscdkcore.IResolvable
+	AttrScene() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -40,7 +50,6 @@ type ImageLib interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ImageLibProps
-	SetProps(val *ImageLibProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -53,6 +62,9 @@ type ImageLib interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -105,10 +117,11 @@ type ImageLib interface {
 // The jsii proxy struct for ImageLib
 type jsiiProxy_ImageLib struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IImageLib
 }
 
-func (j *jsiiProxy_ImageLib) AttrBizTypes() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ImageLib) AttrBizTypes() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBizTypes",
@@ -117,8 +130,8 @@ func (j *jsiiProxy_ImageLib) AttrBizTypes() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_ImageLib) AttrCategory() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ImageLib) AttrCategory() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCategory",
@@ -127,8 +140,8 @@ func (j *jsiiProxy_ImageLib) AttrCategory() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_ImageLib) AttrEnable() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ImageLib) AttrEnable() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEnable",
@@ -137,8 +150,8 @@ func (j *jsiiProxy_ImageLib) AttrEnable() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_ImageLib) AttrImageLibId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ImageLib) AttrImageLibId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrImageLibId",
@@ -147,8 +160,8 @@ func (j *jsiiProxy_ImageLib) AttrImageLibId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_ImageLib) AttrImageLibName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ImageLib) AttrImageLibName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrImageLibName",
@@ -157,8 +170,8 @@ func (j *jsiiProxy_ImageLib) AttrImageLibName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_ImageLib) AttrScene() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ImageLib) AttrScene() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrScene",
@@ -172,6 +185,16 @@ func (j *jsiiProxy_ImageLib) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ImageLib) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -309,17 +332,6 @@ func (j *jsiiProxy_ImageLib)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ImageLib)SetProps(val *ImageLibProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_ImageLib)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -411,6 +423,45 @@ func (i *jsiiProxy_ImageLib) ApplyRemovalPolicy(policy alicloudroscdkcore.Remova
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (i *jsiiProxy_ImageLib) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		i,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_ImageLib) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		i,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_ImageLib) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		i,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (i *jsiiProxy_ImageLib) GeneratePhysicalName() *string {

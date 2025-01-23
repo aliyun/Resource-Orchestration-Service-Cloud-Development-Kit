@@ -29,20 +29,15 @@ export interface CommonBandwidthPackageProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::CommonBandwidthPackage`, which is used to query the information about an Internet Shared Bandwidth instance in a region.
- * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCommonBandwidthPackage`for a more convenient development experience.
- * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-commonbandwidthpackage
+ * Represents a `CommonBandwidthPackage`.
  */
-export class CommonBandwidthPackage extends ros.Resource {
-    protected scope: ros.Construct;
-    protected id: string;
-    protected props: CommonBandwidthPackageProps;
-    protected enableResourcePropertyConstraint: boolean;
+export interface ICommonBandwidthPackage extends ros.IResource {
+    readonly props: CommonBandwidthPackageProps;
 
     /**
      * Attribute Bandwidth: The maximum bandwidth of the Internet Shared Bandwidth instance. Unit: Mbit/s.
      */
-    public readonly attrBandwidth: ros.IResolvable;
+    readonly attrBandwidth: ros.IResolvable | string;
 
     /**
      * Attribute BusinessStatus: The service status of the Internet Shared Bandwidth instance. Valid values:
@@ -50,53 +45,53 @@ export class CommonBandwidthPackage extends ros.Resource {
 * FinancialLocked: An overdue payment occurs in the Internet Shared Bandwidth instance
 * Unactivated: The Internet Shared Bandwidth instance is not activated.
      */
-    public readonly attrBusinessStatus: ros.IResolvable;
+    readonly attrBusinessStatus: ros.IResolvable | string;
 
     /**
      * Attribute CommonBandwidthPackageId: The ID of the Internet shared bandwidth.
      */
-    public readonly attrCommonBandwidthPackageId: ros.IResolvable;
+    readonly attrCommonBandwidthPackageId: ros.IResolvable | string;
 
     /**
      * Attribute CommonBandwidthPackageName: The name of the Internet Shared Bandwidth instance.
      */
-    public readonly attrCommonBandwidthPackageName: ros.IResolvable;
+    readonly attrCommonBandwidthPackageName: ros.IResolvable | string;
 
     /**
      * Attribute CreationTime: The time when the Internet Shared Bandwidth instance was created. The time is displayed in the YYYY-MM-DDThh:mm:ssZ format.
      */
-    public readonly attrCreationTime: ros.IResolvable;
+    readonly attrCreationTime: ros.IResolvable | string;
 
     /**
      * Attribute DeletionProtection: Indicates whether deletion protection is enabled. Valid values:
 * false
 * true
      */
-    public readonly attrDeletionProtection: ros.IResolvable;
+    readonly attrDeletionProtection: ros.IResolvable | string;
 
     /**
      * Attribute Description: The description of the Internet Shared Bandwidth instance.
      */
-    public readonly attrDescription: ros.IResolvable;
+    readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute ExpiredTime: The time when the Internet Shared Bandwidth instance expired. The time is displayed in the YYYY-MM-DDThh:mm:ssZ format.
      */
-    public readonly attrExpiredTime: ros.IResolvable;
+    readonly attrExpiredTime: ros.IResolvable | string;
 
     /**
      * Attribute HasReservationData: Indicates whether the information about pending orders is returned. Valid values:
 * false
 * true
      */
-    public readonly attrHasReservationData: ros.IResolvable;
+    readonly attrHasReservationData: ros.IResolvable | string;
 
     /**
      * Attribute InstanceChargeType: The billing method of the Internet Shared Bandwidth instance. Valid value:
 * PostPaid: pay-as-you-go
 * PrePaid: subscription
      */
-    public readonly attrInstanceChargeType: ros.IResolvable;
+    readonly attrInstanceChargeType: ros.IResolvable | string;
 
     /**
      * Attribute InternetChargeType: The metering method of the Internet Shared Bandwidth instance. Valid value:
@@ -104,7 +99,7 @@ export class CommonBandwidthPackage extends ros.Resource {
 * PayByBandwidth: Charged by Bandwidth.
 * PayByDominantTraffic: Charged by Dominant Traffic.
      */
-    public readonly attrInternetChargeType: ros.IResolvable;
+    readonly attrInternetChargeType: ros.IResolvable | string;
 
     /**
      * Attribute Isp: The line type. Valid values:
@@ -118,27 +113,27 @@ ChinaTelecom_L2
 ChinaUnicom_L2
 ChinaMobile_L2
      */
-    public readonly attrIsp: ros.IResolvable;
+    readonly attrIsp: ros.IResolvable | string;
 
     /**
      * Attribute PublicIpAddresses: The elastic IP addresses (EIPs) that are associated with the Internet Shared Bandwidth instance.
      */
-    public readonly attrPublicIpAddresses: ros.IResolvable;
+    readonly attrPublicIpAddresses: ros.IResolvable | string;
 
     /**
      * Attribute Ratio: The percentage of the minimum bandwidth commitment. Only 20 is returned.
      */
-    public readonly attrRatio: ros.IResolvable;
+    readonly attrRatio: ros.IResolvable | string;
 
     /**
      * Attribute ReservationActiveTime: The time when the renewal took effect. The time is displayed in the YYYY-MM-DDThh:mm:ssZ format.
      */
-    public readonly attrReservationActiveTime: ros.IResolvable;
+    readonly attrReservationActiveTime: ros.IResolvable | string;
 
     /**
      * Attribute ReservationBandwidth: The new maximum bandwidth after the configurations are changed. Unit: Mbit/s.
      */
-    public readonly attrReservationBandwidth: ros.IResolvable;
+    readonly attrReservationBandwidth: ros.IResolvable | string;
 
     /**
      * Attribute ReservationInternetChargeType: The metering method after the configurations are changed. Valid value:
@@ -146,7 +141,7 @@ ChinaMobile_L2
 * PayByBandwidth: Charged by Bandwidth.
 * PayByDominantTraffic: Charged by Dominant Traffic.
      */
-    public readonly attrReservationInternetChargeType: ros.IResolvable;
+    readonly attrReservationInternetChargeType: ros.IResolvable | string;
 
     /**
      * Attribute ReservationOrderType: The renewal method. Valid values:
@@ -154,26 +149,173 @@ ChinaMobile_L2
 * TEMP_UPGRADE: renewal with a temporary upgrade
 * UPGRADE: renewal with an upgrade
      */
-    public readonly attrReservationOrderType: ros.IResolvable;
+    readonly attrReservationOrderType: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroupId: The ID of the resource group.
      */
-    public readonly attrResourceGroupId: ros.IResolvable;
+    readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Attribute ServiceManaged: Indicates whether the resource is created by the service account. Valid values:
 * 0: The resource is not created by the service account.
 * 1: The resource is created by the service account.
      */
-    public readonly attrServiceManaged: ros.IResolvable;
+    readonly attrServiceManaged: ros.IResolvable | string;
 
     /**
      * Attribute Status: The status of the Internet Shared Bandwidth instance. Valid values:
 * Available: The Internet Shared Bandwidth instance is available.
 * Modifying: The Internet Shared Bandwidth instance is being modified.
      */
-    public readonly attrStatus: ros.IResolvable;
+    readonly attrStatus: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::CommonBandwidthPackage`, which is used to query the information about an Internet Shared Bandwidth instance in a region.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCommonBandwidthPackage`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-commonbandwidthpackage
+ */
+export class CommonBandwidthPackage extends ros.Resource implements ICommonBandwidthPackage {
+    protected scope: ros.Construct;
+    protected id: string;
+    public readonly props: CommonBandwidthPackageProps;
+    protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Bandwidth: The maximum bandwidth of the Internet Shared Bandwidth instance. Unit: Mbit/s.
+     */
+    public readonly attrBandwidth: ros.IResolvable | string;
+
+    /**
+     * Attribute BusinessStatus: The service status of the Internet Shared Bandwidth instance. Valid values:
+* Normal: The Internet Shared Bandwidth instance runs as expected.
+* FinancialLocked: An overdue payment occurs in the Internet Shared Bandwidth instance
+* Unactivated: The Internet Shared Bandwidth instance is not activated.
+     */
+    public readonly attrBusinessStatus: ros.IResolvable | string;
+
+    /**
+     * Attribute CommonBandwidthPackageId: The ID of the Internet shared bandwidth.
+     */
+    public readonly attrCommonBandwidthPackageId: ros.IResolvable | string;
+
+    /**
+     * Attribute CommonBandwidthPackageName: The name of the Internet Shared Bandwidth instance.
+     */
+    public readonly attrCommonBandwidthPackageName: ros.IResolvable | string;
+
+    /**
+     * Attribute CreationTime: The time when the Internet Shared Bandwidth instance was created. The time is displayed in the YYYY-MM-DDThh:mm:ssZ format.
+     */
+    public readonly attrCreationTime: ros.IResolvable | string;
+
+    /**
+     * Attribute DeletionProtection: Indicates whether deletion protection is enabled. Valid values:
+* false
+* true
+     */
+    public readonly attrDeletionProtection: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: The description of the Internet Shared Bandwidth instance.
+     */
+    public readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute ExpiredTime: The time when the Internet Shared Bandwidth instance expired. The time is displayed in the YYYY-MM-DDThh:mm:ssZ format.
+     */
+    public readonly attrExpiredTime: ros.IResolvable | string;
+
+    /**
+     * Attribute HasReservationData: Indicates whether the information about pending orders is returned. Valid values:
+* false
+* true
+     */
+    public readonly attrHasReservationData: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceChargeType: The billing method of the Internet Shared Bandwidth instance. Valid value:
+* PostPaid: pay-as-you-go
+* PrePaid: subscription
+     */
+    public readonly attrInstanceChargeType: ros.IResolvable | string;
+
+    /**
+     * Attribute InternetChargeType: The metering method of the Internet Shared Bandwidth instance. Valid value:
+* PayBy95: Charged by Enhanced 95th Percentile.
+* PayByBandwidth: Charged by Bandwidth.
+* PayByDominantTraffic: Charged by Dominant Traffic.
+     */
+    public readonly attrInternetChargeType: ros.IResolvable | string;
+
+    /**
+     * Attribute Isp: The line type. Valid values:
+BGP (default): BGP (Multi-ISP) lines.
+BGP_PRO: BGP (Multi-ISP) Pro lines.
+Valid values if you are allowed to use single-ISP bandwidth:
+ChinaTelecom
+ChinaUnicom
+ChinaMobile
+ChinaTelecom_L2
+ChinaUnicom_L2
+ChinaMobile_L2
+     */
+    public readonly attrIsp: ros.IResolvable | string;
+
+    /**
+     * Attribute PublicIpAddresses: The elastic IP addresses (EIPs) that are associated with the Internet Shared Bandwidth instance.
+     */
+    public readonly attrPublicIpAddresses: ros.IResolvable | string;
+
+    /**
+     * Attribute Ratio: The percentage of the minimum bandwidth commitment. Only 20 is returned.
+     */
+    public readonly attrRatio: ros.IResolvable | string;
+
+    /**
+     * Attribute ReservationActiveTime: The time when the renewal took effect. The time is displayed in the YYYY-MM-DDThh:mm:ssZ format.
+     */
+    public readonly attrReservationActiveTime: ros.IResolvable | string;
+
+    /**
+     * Attribute ReservationBandwidth: The new maximum bandwidth after the configurations are changed. Unit: Mbit/s.
+     */
+    public readonly attrReservationBandwidth: ros.IResolvable | string;
+
+    /**
+     * Attribute ReservationInternetChargeType: The metering method after the configurations are changed. Valid value:
+* PayBy95: Charged by Enhanced 95th Percentile.
+* PayByBandwidth: Charged by Bandwidth.
+* PayByDominantTraffic: Charged by Dominant Traffic.
+     */
+    public readonly attrReservationInternetChargeType: ros.IResolvable | string;
+
+    /**
+     * Attribute ReservationOrderType: The renewal method. Valid values:
+* RENEWCHANGE: renewal with a specification change
+* TEMP_UPGRADE: renewal with a temporary upgrade
+* UPGRADE: renewal with an upgrade
+     */
+    public readonly attrReservationOrderType: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: The ID of the resource group.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute ServiceManaged: Indicates whether the resource is created by the service account. Valid values:
+* 0: The resource is not created by the service account.
+* 1: The resource is created by the service account.
+     */
+    public readonly attrServiceManaged: ros.IResolvable | string;
+
+    /**
+     * Attribute Status: The status of the Internet Shared Bandwidth instance. Valid values:
+* Available: The Internet Shared Bandwidth instance is available.
+* Modifying: The Internet Shared Bandwidth instance is being modified.
+     */
+    public readonly attrStatus: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

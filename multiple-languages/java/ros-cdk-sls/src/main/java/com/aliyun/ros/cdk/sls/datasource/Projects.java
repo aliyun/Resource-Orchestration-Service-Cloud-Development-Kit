@@ -1,11 +1,11 @@
 package com.aliyun.ros.cdk.sls.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::SLS::Projects</code>, which is used to query Log Service projects.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::SLS::Projects</code>, which is used to query the information about Simple Log Service (SLS) projects.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:12.550Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:44.661Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.datasource.Projects")
-public class Projects extends com.aliyun.ros.cdk.core.Resource {
+public class Projects extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.sls.datasource.IProjects {
 
     protected Projects(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -54,15 +54,22 @@ public class Projects extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute ProjectNames: The list of project names.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrProjectNames() {
-        return software.amazon.jsii.Kernel.get(this, "attrProjectNames", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrProjectNames() {
+        return software.amazon.jsii.Kernel.get(this, "attrProjectNames", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute Projects: The list of projects.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrProjects() {
-        return software.amazon.jsii.Kernel.get(this, "attrProjects", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrProjects() {
+        return software.amazon.jsii.Kernel.get(this, "attrProjects", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.sls.datasource.ProjectsProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.sls.datasource.ProjectsProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -79,14 +86,6 @@ public class Projects extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.sls.datasource.ProjectsProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.sls.datasource.ProjectsProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.sls.datasource.ProjectsProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {

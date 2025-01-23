@@ -52,10 +52,6 @@ func (j *jsiiProxy_NetworkInterfaceAttachment) validateSetIdParameters(val *stri
 	return nil
 }
 
-func (j *jsiiProxy_NetworkInterfaceAttachment) validateSetPropsParameters(val *NetworkInterfaceAttachmentProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_NetworkInterfaceAttachment) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

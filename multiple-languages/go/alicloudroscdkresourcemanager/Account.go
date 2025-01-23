@@ -12,24 +12,34 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::Account`, which is used to create a member of the resource account type.
 type Account interface {
 	alicloudroscdkcore.Resource
+	IAccount
 	// Attribute AccountId: This ID of Resource Manager Account.
-	AttrAccountId() alicloudroscdkcore.IResolvable
+	AttrAccountId() interface{}
 	// Attribute DisplayName: Member name.
-	AttrDisplayName() alicloudroscdkcore.IResolvable
+	AttrDisplayName() interface{}
 	// Attribute FolderId: The ID of the parent folder.
-	AttrFolderId() alicloudroscdkcore.IResolvable
+	AttrFolderId() interface{}
 	// Attribute JoinMethod: Ways for members to join the resource directory.
 	//
 	// Valid values: invited, created.
-	AttrJoinMethod() alicloudroscdkcore.IResolvable
+	AttrJoinMethod() interface{}
 	// Attribute ResourceDirectoryId: Resource directory ID.
-	AttrResourceDirectoryId() alicloudroscdkcore.IResolvable
+	AttrResourceDirectoryId() interface{}
 	// Attribute Type: Member type.
 	//
 	// The value of ResourceAccount indicates the resource account.
-	AttrType() alicloudroscdkcore.IResolvable
+	AttrType() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -44,7 +54,6 @@ type Account interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *AccountProps
-	SetProps(val *AccountProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -57,6 +66,9 @@ type Account interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -109,10 +121,11 @@ type Account interface {
 // The jsii proxy struct for Account
 type jsiiProxy_Account struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IAccount
 }
 
-func (j *jsiiProxy_Account) AttrAccountId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Account) AttrAccountId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAccountId",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_Account) AttrAccountId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Account) AttrDisplayName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Account) AttrDisplayName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDisplayName",
@@ -131,8 +144,8 @@ func (j *jsiiProxy_Account) AttrDisplayName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Account) AttrFolderId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Account) AttrFolderId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrFolderId",
@@ -141,8 +154,8 @@ func (j *jsiiProxy_Account) AttrFolderId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Account) AttrJoinMethod() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Account) AttrJoinMethod() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrJoinMethod",
@@ -151,8 +164,8 @@ func (j *jsiiProxy_Account) AttrJoinMethod() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Account) AttrResourceDirectoryId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Account) AttrResourceDirectoryId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceDirectoryId",
@@ -161,8 +174,8 @@ func (j *jsiiProxy_Account) AttrResourceDirectoryId() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_Account) AttrType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Account) AttrType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrType",
@@ -176,6 +189,16 @@ func (j *jsiiProxy_Account) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Account) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -313,17 +336,6 @@ func (j *jsiiProxy_Account)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Account)SetProps(val *AccountProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Account)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -415,6 +427,45 @@ func (a *jsiiProxy_Account) ApplyRemovalPolicy(policy alicloudroscdkcore.Removal
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (a *jsiiProxy_Account) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		a,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_Account) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_Account) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (a *jsiiProxy_Account) GeneratePhysicalName() *string {

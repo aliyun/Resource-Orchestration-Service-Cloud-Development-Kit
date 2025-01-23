@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.serverlessdev;
  * <p>
  * If a template is specified for the project, the project is automatically deployed.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:11.935Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:44.208Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.serverlessdev.$Module.class, fqn = "@alicloud/ros-cdk-serverlessdev.RosProject")
 public class RosProject extends com.aliyun.ros.cdk.core.RosResource {
 

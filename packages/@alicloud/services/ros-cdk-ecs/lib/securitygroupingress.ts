@@ -79,14 +79,20 @@ export interface SecurityGroupIngressProps {
 }
 
 /**
+ * Represents a `SecurityGroupIngress`.
+ */
+export interface ISecurityGroupIngress extends ros.IResource {
+    readonly props: SecurityGroupIngressProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SecurityGroupIngress`, which is used to create an inbound rule for a security group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecurityGroupIngress`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupingress
  */
-export class SecurityGroupIngress extends ros.Resource {
+export class SecurityGroupIngress extends ros.Resource implements ISecurityGroupIngress {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SecurityGroupIngressProps;
+    public readonly props: SecurityGroupIngressProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

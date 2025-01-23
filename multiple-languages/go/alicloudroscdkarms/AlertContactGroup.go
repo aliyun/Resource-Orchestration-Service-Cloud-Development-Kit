@@ -12,10 +12,20 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::AlertContactGroup`, which is used to create an alert contact group.
 type AlertContactGroup interface {
 	alicloudroscdkcore.Resource
+	IAlertContactGroup
 	// Attribute ContactGroupId: The ID of the alert contact group that you created.
-	AttrContactGroupId() alicloudroscdkcore.IResolvable
+	AttrContactGroupId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -30,7 +40,6 @@ type AlertContactGroup interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *AlertContactGroupProps
-	SetProps(val *AlertContactGroupProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -43,6 +52,9 @@ type AlertContactGroup interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -95,10 +107,11 @@ type AlertContactGroup interface {
 // The jsii proxy struct for AlertContactGroup
 type jsiiProxy_AlertContactGroup struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IAlertContactGroup
 }
 
-func (j *jsiiProxy_AlertContactGroup) AttrContactGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AlertContactGroup) AttrContactGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrContactGroupId",
@@ -112,6 +125,16 @@ func (j *jsiiProxy_AlertContactGroup) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AlertContactGroup) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -249,17 +272,6 @@ func (j *jsiiProxy_AlertContactGroup)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AlertContactGroup)SetProps(val *AlertContactGroupProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_AlertContactGroup)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -351,6 +363,45 @@ func (a *jsiiProxy_AlertContactGroup) ApplyRemovalPolicy(policy alicloudroscdkco
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (a *jsiiProxy_AlertContactGroup) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		a,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AlertContactGroup) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AlertContactGroup) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (a *jsiiProxy_AlertContactGroup) GeneratePhysicalName() *string {

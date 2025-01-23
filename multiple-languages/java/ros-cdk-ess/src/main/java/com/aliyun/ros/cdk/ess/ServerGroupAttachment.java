@@ -5,9 +5,9 @@ package com.aliyun.ros.cdk.ess;
  * <p>
  * Supported SLB server groups include Application Load Balancer (ALB) server groups and Network Load Balancer (NLB) server groups.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:08.427Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:39.988Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ServerGroupAttachment")
-public class ServerGroupAttachment extends com.aliyun.ros.cdk.core.Resource {
+public class ServerGroupAttachment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ess.IServerGroupAttachment {
 
     protected ServerGroupAttachment(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -47,8 +47,14 @@ public class ServerGroupAttachment extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * Note This parameter is returned only after you set the ForceAttach parameter to true.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrScalingActivityId() {
-        return software.amazon.jsii.Kernel.get(this, "attrScalingActivityId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrScalingActivityId() {
+        return software.amazon.jsii.Kernel.get(this, "attrScalingActivityId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ess.ServerGroupAttachmentProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ess.ServerGroupAttachmentProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -65,14 +71,6 @@ public class ServerGroupAttachment extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ess.ServerGroupAttachmentProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ess.ServerGroupAttachmentProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ess.ServerGroupAttachmentProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {

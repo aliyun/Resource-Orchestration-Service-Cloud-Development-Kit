@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.cen;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::TransitRouterRouteEntry</code>, which is used to add routes to a route table of an Enterprise Edition transit router.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:05.163Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:35.531Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.TransitRouterRouteEntry")
-public class TransitRouterRouteEntry extends com.aliyun.ros.cdk.core.Resource {
+public class TransitRouterRouteEntry extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cen.ITransitRouterRouteEntry {
 
     protected TransitRouterRouteEntry(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -43,57 +43,70 @@ public class TransitRouterRouteEntry extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute TransitRouterRouteEntryDescription: TransitRouterRouteEntryDescription.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTransitRouterRouteEntryDescription() {
-        return software.amazon.jsii.Kernel.get(this, "attrTransitRouterRouteEntryDescription", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterRouteEntryDescription() {
+        return software.amazon.jsii.Kernel.get(this, "attrTransitRouterRouteEntryDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute TransitRouterRouteEntryDestinationCidrBlock: TransitRouterRouteEntryDestinationCidrBlock.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTransitRouterRouteEntryDestinationCidrBlock() {
-        return software.amazon.jsii.Kernel.get(this, "attrTransitRouterRouteEntryDestinationCidrBlock", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterRouteEntryDestinationCidrBlock() {
+        return software.amazon.jsii.Kernel.get(this, "attrTransitRouterRouteEntryDestinationCidrBlock", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute TransitRouterRouteEntryId: The first ID of the resource.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTransitRouterRouteEntryId() {
-        return software.amazon.jsii.Kernel.get(this, "attrTransitRouterRouteEntryId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterRouteEntryId() {
+        return software.amazon.jsii.Kernel.get(this, "attrTransitRouterRouteEntryId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute TransitRouterRouteEntryName: TransitRouterRouteEntryName.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTransitRouterRouteEntryName() {
-        return software.amazon.jsii.Kernel.get(this, "attrTransitRouterRouteEntryName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterRouteEntryName() {
+        return software.amazon.jsii.Kernel.get(this, "attrTransitRouterRouteEntryName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute TransitRouterRouteEntryNextHopId: TransitRouterRouteEntryNextHopId.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTransitRouterRouteEntryNextHopId() {
-        return software.amazon.jsii.Kernel.get(this, "attrTransitRouterRouteEntryNextHopId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterRouteEntryNextHopId() {
+        return software.amazon.jsii.Kernel.get(this, "attrTransitRouterRouteEntryNextHopId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute TransitRouterRouteEntryNextHopType: TransitRouterRouteEntryNextHopType.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTransitRouterRouteEntryNextHopType() {
-        return software.amazon.jsii.Kernel.get(this, "attrTransitRouterRouteEntryNextHopType", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterRouteEntryNextHopType() {
+        return software.amazon.jsii.Kernel.get(this, "attrTransitRouterRouteEntryNextHopType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute TransitRouterRouteEntryType: TransitRouterRouteEntryType.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTransitRouterRouteEntryType() {
-        return software.amazon.jsii.Kernel.get(this, "attrTransitRouterRouteEntryType", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterRouteEntryType() {
+        return software.amazon.jsii.Kernel.get(this, "attrTransitRouterRouteEntryType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute TransitRouterRouteTableId: TransitRouterRouteTableId.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTransitRouterRouteTableId() {
-        return software.amazon.jsii.Kernel.get(this, "attrTransitRouterRouteTableId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterRouteTableId() {
+        return software.amazon.jsii.Kernel.get(this, "attrTransitRouterRouteTableId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cen.TransitRouterRouteEntryProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cen.TransitRouterRouteEntryProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -110,14 +123,6 @@ public class TransitRouterRouteEntry extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cen.TransitRouterRouteEntryProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cen.TransitRouterRouteEntryProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cen.TransitRouterRouteEntryProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {

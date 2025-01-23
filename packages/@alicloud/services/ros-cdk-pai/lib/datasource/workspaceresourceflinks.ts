@@ -29,25 +29,41 @@ export interface WorkspaceResourceFlinksProps {
 }
 
 /**
+ * Represents a `WorkspaceResourceFlinks`.
+ */
+export interface IWorkspaceResourceFlinks extends ros.IResource {
+    readonly props: WorkspaceResourceFlinksProps;
+
+    /**
+     * Attribute GroupNames: The list of group names.
+     */
+    readonly attrGroupNames: ros.IResolvable | string;
+
+    /**
+     * Attribute WorkspaceResourceFlinks: The list of workspace resource flinks.
+     */
+    readonly attrWorkspaceResourceFlinks: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::WorkspaceResourceFlinks`, which is used to query the Realtime Compute for Apache Flink resources that are associated with a workspace.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWorkspaceResourceFlinks`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-workspaceresourceflinks
  */
-export class WorkspaceResourceFlinks extends ros.Resource {
+export class WorkspaceResourceFlinks extends ros.Resource implements IWorkspaceResourceFlinks {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: WorkspaceResourceFlinksProps;
+    public readonly props: WorkspaceResourceFlinksProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute GroupNames: The list of group names.
      */
-    public readonly attrGroupNames: ros.IResolvable;
+    public readonly attrGroupNames: ros.IResolvable | string;
 
     /**
      * Attribute WorkspaceResourceFlinks: The list of workspace resource flinks.
      */
-    public readonly attrWorkspaceResourceFlinks: ros.IResolvable;
+    public readonly attrWorkspaceResourceFlinks: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

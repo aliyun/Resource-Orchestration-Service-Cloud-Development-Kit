@@ -12,14 +12,24 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::PVTZ::ZoneRecord`, which is used to add a Domain Name Service (DNS) record to a private zone.
 type ZoneRecord interface {
 	alicloudroscdkcore.Resource
+	IZoneRecord
 	// Attribute Record: Record data.
-	AttrRecord() alicloudroscdkcore.IResolvable
+	AttrRecord() interface{}
 	// Attribute RecordId: Parsing record Id.
-	AttrRecordId() alicloudroscdkcore.IResolvable
+	AttrRecordId() interface{}
 	// Attribute ZoneId: Zone ID.
-	AttrZoneId() alicloudroscdkcore.IResolvable
+	AttrZoneId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -34,7 +44,6 @@ type ZoneRecord interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ZoneRecordProps
-	SetProps(val *ZoneRecordProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -47,6 +56,9 @@ type ZoneRecord interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -99,10 +111,11 @@ type ZoneRecord interface {
 // The jsii proxy struct for ZoneRecord
 type jsiiProxy_ZoneRecord struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IZoneRecord
 }
 
-func (j *jsiiProxy_ZoneRecord) AttrRecord() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ZoneRecord) AttrRecord() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRecord",
@@ -111,8 +124,8 @@ func (j *jsiiProxy_ZoneRecord) AttrRecord() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_ZoneRecord) AttrRecordId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ZoneRecord) AttrRecordId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRecordId",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_ZoneRecord) AttrRecordId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_ZoneRecord) AttrZoneId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ZoneRecord) AttrZoneId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrZoneId",
@@ -136,6 +149,16 @@ func (j *jsiiProxy_ZoneRecord) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ZoneRecord) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -273,17 +296,6 @@ func (j *jsiiProxy_ZoneRecord)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ZoneRecord)SetProps(val *ZoneRecordProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_ZoneRecord)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -375,6 +387,45 @@ func (z *jsiiProxy_ZoneRecord) ApplyRemovalPolicy(policy alicloudroscdkcore.Remo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (z *jsiiProxy_ZoneRecord) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		z,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (z *jsiiProxy_ZoneRecord) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		z,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (z *jsiiProxy_ZoneRecord) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		z,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (z *jsiiProxy_ZoneRecord) GeneratePhysicalName() *string {

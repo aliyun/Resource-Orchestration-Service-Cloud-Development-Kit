@@ -24,25 +24,41 @@ export interface SyntheticTasksProps {
 }
 
 /**
+ * Represents a `SyntheticTasks`.
+ */
+export interface ISyntheticTasks extends ros.IResource {
+    readonly props: SyntheticTasksProps;
+
+    /**
+     * Attribute SyntheticTasks: The list of synthetic tasks.
+     */
+    readonly attrSyntheticTasks: ros.IResolvable | string;
+
+    /**
+     * Attribute TaskIds: The list of task IDs.
+     */
+    readonly attrTaskIds: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::SyntheticTasks`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSyntheticTasks`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-synthetictasks
  */
-export class SyntheticTasks extends ros.Resource {
+export class SyntheticTasks extends ros.Resource implements ISyntheticTasks {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SyntheticTasksProps;
+    public readonly props: SyntheticTasksProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SyntheticTasks: The list of synthetic tasks.
      */
-    public readonly attrSyntheticTasks: ros.IResolvable;
+    public readonly attrSyntheticTasks: ros.IResolvable | string;
 
     /**
      * Attribute TaskIds: The list of task IDs.
      */
-    public readonly attrTaskIds: ros.IResolvable;
+    public readonly attrTaskIds: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

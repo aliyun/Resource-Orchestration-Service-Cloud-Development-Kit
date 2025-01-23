@@ -698,6 +698,11 @@ Default value: vpc.
     public readonly attrSecurityGroupId: ros.IResolvable;
 
     /**
+     * @Attribute ServiceCidr: The cluster service cidr.
+     */
+    public readonly attrServiceCidr: ros.IResolvable;
+
+    /**
      * @Attribute Size: The number of nodes in the cluster. Master nodes and worker nodes are included.
      */
     public readonly attrSize: ros.IResolvable;
@@ -742,6 +747,11 @@ The pod CIDR block cannot overlap with that of the VPC or those of the ACK clust
      * @Attribute VSwitchId: The IDs of the vSwitches. You can select one to three vSwitches when you create an ACK cluster. vSwitches in different zones are recommended to ensure high availability.
      */
     public readonly attrVSwitchId: ros.IResolvable;
+
+    /**
+     * @Attribute VSwitchIds: The list of cluster control plane VSwitch ID.
+     */
+    public readonly attrVSwitchIds: ros.IResolvable;
 
     /**
      * @Attribute VpcId: The ID of the VPC where the cluster is deployed. This parameter is required when you create an ACK cluster.
@@ -803,12 +813,14 @@ The RAM role is assigned to the worker nodes of the cluster and allows the worke
         this.attrRegionId = this.getAtt('RegionId');
         this.attrResourceGroupId = this.getAtt('ResourceGroupId');
         this.attrSecurityGroupId = this.getAtt('SecurityGroupId');
+        this.attrServiceCidr = this.getAtt('ServiceCidr');
         this.attrSize = this.getAtt('Size');
         this.attrState = this.getAtt('State');
         this.attrSubnetCidr = this.getAtt('SubnetCidr');
         this.attrTags = this.getAtt('Tags');
         this.attrUpdated = this.getAtt('Updated');
         this.attrVSwitchId = this.getAtt('VSwitchId');
+        this.attrVSwitchIds = this.getAtt('VSwitchIds');
         this.attrVpcId = this.getAtt('VpcId');
         this.attrWorkerRamRoleName = this.getAtt('WorkerRamRoleName');
         this.attrZoneId = this.getAtt('ZoneId');

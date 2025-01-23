@@ -34,25 +34,41 @@ export interface ScalingConfigurationsProps {
 }
 
 /**
+ * Represents a `ScalingConfigurations`.
+ */
+export interface IScalingConfigurations extends ros.IResource {
+    readonly props: ScalingConfigurationsProps;
+
+    /**
+     * Attribute ScalingConfigurationIds: The list of scaling configuration IDs.
+     */
+    readonly attrScalingConfigurationIds: ros.IResolvable | string;
+
+    /**
+     * Attribute ScalingConfigurations: The list of scaling configurations.
+     */
+    readonly attrScalingConfigurations: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ESS::ScalingConfigurations`, which is used to query the information about scaling configurations.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosScalingConfigurations`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ess-scalingconfigurations
  */
-export class ScalingConfigurations extends ros.Resource {
+export class ScalingConfigurations extends ros.Resource implements IScalingConfigurations {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ScalingConfigurationsProps;
+    public readonly props: ScalingConfigurationsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ScalingConfigurationIds: The list of scaling configuration IDs.
      */
-    public readonly attrScalingConfigurationIds: ros.IResolvable;
+    public readonly attrScalingConfigurationIds: ros.IResolvable | string;
 
     /**
      * Attribute ScalingConfigurations: The list of scaling configurations.
      */
-    public readonly attrScalingConfigurations: ros.IResolvable;
+    public readonly attrScalingConfigurations: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

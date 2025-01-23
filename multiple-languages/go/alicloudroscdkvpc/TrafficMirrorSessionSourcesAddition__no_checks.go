@@ -52,10 +52,6 @@ func (j *jsiiProxy_TrafficMirrorSessionSourcesAddition) validateSetIdParameters(
 	return nil
 }
 
-func (j *jsiiProxy_TrafficMirrorSessionSourcesAddition) validateSetPropsParameters(val *TrafficMirrorSessionSourcesAdditionProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_TrafficMirrorSessionSourcesAddition) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

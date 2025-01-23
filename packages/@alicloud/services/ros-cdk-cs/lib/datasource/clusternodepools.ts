@@ -24,25 +24,41 @@ export interface ClusterNodePoolsProps {
 }
 
 /**
+ * Represents a `ClusterNodePools`.
+ */
+export interface IClusterNodePools extends ros.IResource {
+    readonly props: ClusterNodePoolsProps;
+
+    /**
+     * Attribute NodePoolIds: The list of node_pool IDs.
+     */
+    readonly attrNodePoolIds: ros.IResolvable | string;
+
+    /**
+     * Attribute NodePools: The list of node_pools.
+     */
+    readonly attrNodePools: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::CS::ClusterNodePools`, which is used to query the information about all node pools in a Container Service for Kubernetes (ACK) cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusterNodePools`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-clusternodepools
  */
-export class ClusterNodePools extends ros.Resource {
+export class ClusterNodePools extends ros.Resource implements IClusterNodePools {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ClusterNodePoolsProps;
+    public readonly props: ClusterNodePoolsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute NodePoolIds: The list of node_pool IDs.
      */
-    public readonly attrNodePoolIds: ros.IResolvable;
+    public readonly attrNodePoolIds: ros.IResolvable | string;
 
     /**
      * Attribute NodePools: The list of node_pools.
      */
-    public readonly attrNodePools: ros.IResolvable;
+    public readonly attrNodePools: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

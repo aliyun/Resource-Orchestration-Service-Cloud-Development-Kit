@@ -65,25 +65,41 @@ export interface FlowLogsProps {
 }
 
 /**
+ * Represents a `FlowLogs`.
+ */
+export interface IFlowLogs extends ros.IResource {
+    readonly props: FlowLogsProps;
+
+    /**
+     * Attribute FlowLogIds: The list of flow log IDs.
+     */
+    readonly attrFlowLogIds: ros.IResolvable | string;
+
+    /**
+     * Attribute FlowLogs: The list of flow logs.
+     */
+    readonly attrFlowLogs: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::FlowLogs`, which is used to query flow logs.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFlowLogs`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-flowlogs
  */
-export class FlowLogs extends ros.Resource {
+export class FlowLogs extends ros.Resource implements IFlowLogs {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: FlowLogsProps;
+    public readonly props: FlowLogsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute FlowLogIds: The list of flow log IDs.
      */
-    public readonly attrFlowLogIds: ros.IResolvable;
+    public readonly attrFlowLogIds: ros.IResolvable | string;
 
     /**
      * Attribute FlowLogs: The list of flow logs.
      */
-    public readonly attrFlowLogs: ros.IResolvable;
+    public readonly attrFlowLogs: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

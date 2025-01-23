@@ -77,20 +77,31 @@ export interface SslVpnServerProps {
 }
 
 /**
+ * Represents a `SslVpnServer`.
+ */
+export interface ISslVpnServer extends ros.IResource {
+    readonly props: SslVpnServerProps;
+
+    /**
+     * Attribute SslVpnServerId: ID of the SSL-VPN server.
+     */
+    readonly attrSslVpnServerId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::SslVpnServer`, which is used to create an SSL-VPN server.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSslVpnServer`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-sslvpnserver
  */
-export class SslVpnServer extends ros.Resource {
+export class SslVpnServer extends ros.Resource implements ISslVpnServer {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SslVpnServerProps;
+    public readonly props: SslVpnServerProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SslVpnServerId: ID of the SSL-VPN server.
      */
-    public readonly attrSslVpnServerId: ros.IResolvable;
+    public readonly attrSslVpnServerId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

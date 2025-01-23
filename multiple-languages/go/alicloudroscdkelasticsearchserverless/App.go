@@ -12,18 +12,28 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ElasticSearchServerless::App`, which is used to create an Elasticsearch serverless application.
 type App interface {
 	alicloudroscdkcore.Resource
+	IApp
 	// Attribute InstanceId: The Id of the ElasticSearch serverless instance.
-	AttrInstanceId() alicloudroscdkcore.IResolvable
+	AttrInstanceId() interface{}
 	// Attribute PrivateESDomain: The private network domain of the app.
-	AttrPrivateEsDomain() alicloudroscdkcore.IResolvable
+	AttrPrivateEsDomain() interface{}
 	// Attribute PrivateKibanaDomain: The private network kibana domain of the app.
-	AttrPrivateKibanaDomain() alicloudroscdkcore.IResolvable
+	AttrPrivateKibanaDomain() interface{}
 	// Attribute PublicESDomain: The public network domain of the app.
-	AttrPublicEsDomain() alicloudroscdkcore.IResolvable
+	AttrPublicEsDomain() interface{}
 	// Attribute PublicKibanaDomain: The public network kibana domain of the app.
-	AttrPublicKibanaDomain() alicloudroscdkcore.IResolvable
+	AttrPublicKibanaDomain() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -38,7 +48,6 @@ type App interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *AppProps
-	SetProps(val *AppProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -51,6 +60,9 @@ type App interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -103,10 +115,11 @@ type App interface {
 // The jsii proxy struct for App
 type jsiiProxy_App struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IApp
 }
 
-func (j *jsiiProxy_App) AttrInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_App) AttrInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceId",
@@ -115,8 +128,8 @@ func (j *jsiiProxy_App) AttrInstanceId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_App) AttrPrivateEsDomain() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_App) AttrPrivateEsDomain() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPrivateEsDomain",
@@ -125,8 +138,8 @@ func (j *jsiiProxy_App) AttrPrivateEsDomain() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_App) AttrPrivateKibanaDomain() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_App) AttrPrivateKibanaDomain() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPrivateKibanaDomain",
@@ -135,8 +148,8 @@ func (j *jsiiProxy_App) AttrPrivateKibanaDomain() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_App) AttrPublicEsDomain() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_App) AttrPublicEsDomain() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPublicEsDomain",
@@ -145,8 +158,8 @@ func (j *jsiiProxy_App) AttrPublicEsDomain() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_App) AttrPublicKibanaDomain() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_App) AttrPublicKibanaDomain() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPublicKibanaDomain",
@@ -160,6 +173,16 @@ func (j *jsiiProxy_App) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_App) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -297,17 +320,6 @@ func (j *jsiiProxy_App)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_App)SetProps(val *AppProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_App)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -399,6 +411,45 @@ func (a *jsiiProxy_App) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPoli
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (a *jsiiProxy_App) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		a,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_App) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_App) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (a *jsiiProxy_App) GeneratePhysicalName() *string {

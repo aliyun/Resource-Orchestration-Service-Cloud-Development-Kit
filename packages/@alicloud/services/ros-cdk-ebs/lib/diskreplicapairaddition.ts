@@ -21,25 +21,41 @@ export interface DiskReplicaPairAdditionProps {
 }
 
 /**
+ * Represents a `DiskReplicaPairAddition`.
+ */
+export interface IDiskReplicaPairAddition extends ros.IResource {
+    readonly props: DiskReplicaPairAdditionProps;
+
+    /**
+     * Attribute ReplicaGroupId: The ID of the replication pair-consistent group.
+     */
+    readonly attrReplicaGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute ReplicaPairId: The ID of the replication pair.
+     */
+    readonly attrReplicaPairId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::EBS::DiskReplicaPairAddition`, which is used to add a replication pair to a replication pair-consistent group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDiskReplicaPairAddition`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ebs-diskreplicapairaddition
  */
-export class DiskReplicaPairAddition extends ros.Resource {
+export class DiskReplicaPairAddition extends ros.Resource implements IDiskReplicaPairAddition {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DiskReplicaPairAdditionProps;
+    public readonly props: DiskReplicaPairAdditionProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ReplicaGroupId: The ID of the replication pair-consistent group.
      */
-    public readonly attrReplicaGroupId: ros.IResolvable;
+    public readonly attrReplicaGroupId: ros.IResolvable | string;
 
     /**
      * Attribute ReplicaPairId: The ID of the replication pair.
      */
-    public readonly attrReplicaPairId: ros.IResolvable;
+    public readonly attrReplicaPairId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

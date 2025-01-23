@@ -41,30 +41,51 @@ export interface AliasProps {
 }
 
 /**
+ * Represents a `Alias`.
+ */
+export interface IAlias extends ros.IResource {
+    readonly props: AliasProps;
+
+    /**
+     * Attribute AliasName: The alias name
+     */
+    readonly attrAliasName: ros.IResolvable | string;
+
+    /**
+     * Attribute ServiceName: The service name
+     */
+    readonly attrServiceName: ros.IResolvable | string;
+
+    /**
+     * Attribute VersionId: The version ID
+     */
+    readonly attrVersionId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::FC::Alias`, which is used to create an Alias.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAlias`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-alias
  */
-export class Alias extends ros.Resource {
+export class Alias extends ros.Resource implements IAlias {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AliasProps;
+    public readonly props: AliasProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AliasName: The alias name
      */
-    public readonly attrAliasName: ros.IResolvable;
+    public readonly attrAliasName: ros.IResolvable | string;
 
     /**
      * Attribute ServiceName: The service name
      */
-    public readonly attrServiceName: ros.IResolvable;
+    public readonly attrServiceName: ros.IResolvable | string;
 
     /**
      * Attribute VersionId: The version ID
      */
-    public readonly attrVersionId: ros.IResolvable;
+    public readonly attrVersionId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

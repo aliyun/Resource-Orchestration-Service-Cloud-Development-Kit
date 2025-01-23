@@ -26,14 +26,20 @@ export interface ApplyAlertRuleTemplateProps {
 }
 
 /**
+ * Represents a `ApplyAlertRuleTemplate`.
+ */
+export interface IApplyAlertRuleTemplate extends ros.IResource {
+    readonly props: ApplyAlertRuleTemplateProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::ApplyAlertRuleTemplate`, which is used to create an alert rule of Alibaba Cloud Managed Service for Prometheus.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApplyAlertRuleTemplate`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-applyalertruletemplate
  */
-export class ApplyAlertRuleTemplate extends ros.Resource {
+export class ApplyAlertRuleTemplate extends ros.Resource implements IApplyAlertRuleTemplate {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ApplyAlertRuleTemplateProps;
+    public readonly props: ApplyAlertRuleTemplateProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

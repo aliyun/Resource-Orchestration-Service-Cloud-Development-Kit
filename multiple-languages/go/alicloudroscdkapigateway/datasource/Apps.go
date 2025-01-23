@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::ApiGateway::Apps`, which is used to query applications.
 type Apps interface {
 	alicloudroscdkcore.Resource
+	IApps
 	// Attribute AppIds: The list of The ApiGateway app ids.
-	AttrAppIds() alicloudroscdkcore.IResolvable
+	AttrAppIds() interface{}
 	// Attribute Apps: The information about ApiGateway apps.
-	AttrApps() alicloudroscdkcore.IResolvable
+	AttrApps() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type Apps interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *AppsProps
-	SetProps(val *AppsProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type Apps interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type Apps interface {
 // The jsii proxy struct for Apps
 type jsiiProxy_Apps struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IApps
 }
 
-func (j *jsiiProxy_Apps) AttrAppIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Apps) AttrAppIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAppIds",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_Apps) AttrAppIds() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Apps) AttrApps() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Apps) AttrApps() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrApps",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_Apps) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Apps) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_Apps)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Apps)SetProps(val *AppsProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Apps)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (a *jsiiProxy_Apps) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPol
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (a *jsiiProxy_Apps) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		a,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_Apps) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_Apps) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (a *jsiiProxy_Apps) GeneratePhysicalName() *string {

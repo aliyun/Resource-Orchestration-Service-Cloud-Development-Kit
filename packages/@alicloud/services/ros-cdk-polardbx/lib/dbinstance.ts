@@ -91,35 +91,61 @@ export interface DBInstanceProps {
 }
 
 /**
+ * Represents a `DBInstance`.
+ */
+export interface IDBInstance extends ros.IResource {
+    readonly props: DBInstanceProps;
+
+    /**
+     * Attribute ConnectionString: Intranet connection string.
+     */
+    readonly attrConnectionString: ros.IResolvable | string;
+
+    /**
+     * Attribute DBInstanceName: The name of the instance that you create.
+     */
+    readonly attrDbInstanceName: ros.IResolvable | string;
+
+    /**
+     * Attribute OrderId: The ID of the order.
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+
+    /**
+     * Attribute Port: Intranet connection port.
+     */
+    readonly attrPort: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::PolarDBX::DBInstance`, which is used to create a PolarDB for Xscale (PolarDB-X) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardbx-dbinstance
  */
-export class DBInstance extends ros.Resource {
+export class DBInstance extends ros.Resource implements IDBInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DBInstanceProps;
+    public readonly props: DBInstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ConnectionString: Intranet connection string.
      */
-    public readonly attrConnectionString: ros.IResolvable;
+    public readonly attrConnectionString: ros.IResolvable | string;
 
     /**
      * Attribute DBInstanceName: The name of the instance that you create.
      */
-    public readonly attrDbInstanceName: ros.IResolvable;
+    public readonly attrDbInstanceName: ros.IResolvable | string;
 
     /**
      * Attribute OrderId: The ID of the order.
      */
-    public readonly attrOrderId: ros.IResolvable;
+    public readonly attrOrderId: ros.IResolvable | string;
 
     /**
      * Attribute Port: Intranet connection port.
      */
-    public readonly attrPort: ros.IResolvable;
+    public readonly attrPort: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

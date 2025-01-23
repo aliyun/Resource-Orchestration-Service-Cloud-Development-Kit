@@ -19,7 +19,7 @@ export interface RamRoles {
   /**
    * The RAM role ARN that grants FC function the required permissions.
    */
-  readonly fcRole: IResolvable;
+  readonly fcRole: IResolvable | string;
 }
 
 export interface StackProps {
@@ -749,6 +749,20 @@ export class Stack extends Construct implements ITaggable {
         pattern,
     ));
   }
+
+  /**
+   * Splits the provided ARN into its components.
+   * Works both if 'arn' is a string like 'acs:ram::123456789012****:role/RoleName',
+   * and a Token representing a dynamic ROS expression
+   * (in which case the returned components will also be dynamic ROS expressions,
+   * encoded as Tokens).
+   *
+   * @param arn the ARN to split into its components
+   * @param arnFormat the expected format of 'arn' - depends on what format the service 'arn' represents uses
+   */
+  public splitArn(arn: string | IResolvable, arnFormat: ArnFormat): ArnComponents {
+    return Arn.split(arn, arnFormat);
+  }
 }
 
 function merge(template: any, fragment: any): void {
@@ -935,6 +949,7 @@ import {
 import { Stage } from "./stage";
 import { ITaggable, TagManager } from "./tag-manager";
 import {Environment} from "./environment";
+import {Arn, ArnFormat, ArnComponents} from "./arn";
 
 interface StackDependency {
   stack: Stack;

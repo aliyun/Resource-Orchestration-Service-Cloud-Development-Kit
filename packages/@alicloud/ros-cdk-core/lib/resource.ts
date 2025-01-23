@@ -9,7 +9,29 @@ import { RosCondition } from "./ros-condition";
 import { Token } from "./token";
 import { Lazy } from "./lazy";
 import { Stack } from "./stack";
-import {IResolvable} from "./resolvable";
+import { IResolvable } from "./resolvable";
+import { Arn, ArnFormat } from "./arn";
+
+export interface ResourceEnvironment {
+  /**
+   * The Alibaba Cloud account ID that this resource belongs to.
+   * Since this can be a Token
+   * (for example, when the account is ROS's ALIYUN::AccountId intrinsic),
+   * make sure to use Token.compareStrings()
+   * instead of just comparing the values for equality.
+   */
+  readonly account: string;
+
+  /**
+   * The Alibaba Cloud region that this resource belongs to.
+   * Since this can be a Token
+   * (for example, when the region is ROS's ALIYUN::Region intrinsic),
+   * make sure to use Token.compareStrings()
+   * instead of just comparing the values for equality.
+   */
+  readonly region: string;
+}
+
 /**
  * Interface for the Resource construct.
  */
@@ -18,6 +40,17 @@ export interface IResource extends IConstruct {
    * The stack in which this resource is defined.
    */
   readonly stack: Stack;
+
+  /**
+   * The environment this resource belongs to.
+   * For resources that are created and managed by the CDK
+   * (generally, those created by creating new class instances like Role, Bucket, etc.),
+   * this is always the same as the environment of the stack they belong to;
+   * however, for imported resources
+   * (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+   * that might be different than the stack they were imported into.
+   */
+  readonly env: ResourceEnvironment;
 }
 
 /**
@@ -35,6 +68,32 @@ export interface ResourceProps {
    * @default - The physical name will be allocated at deployment time
    */
   readonly physicalName?: string;
+
+  /**
+   * The Alibaba Cloud account ID this resource belongs to.
+   *
+   * @default - the resource is in the same account as the stack it belongs to
+   */
+  readonly account?: string;
+
+  /**
+   * The Alibaba Cloud region this resource belongs to.
+   *
+   * @default - the resource is in the same region as the stack it belongs to
+   */
+  readonly region?: string;
+
+  /**
+   * ARN to deduce region and account from
+   *
+   * The ARN is parsed and the account and region are taken from the ARN.
+   * This should be used for imported resources.
+   *
+   * Cannot be supplied together with either `account` or `region`.
+   *
+   * @default - take environment from `account`, `region` parameters, or use Stack environment.
+   */
+  readonly environmentFromArn?: string | IResolvable;
 }
 
 /**
@@ -42,6 +101,8 @@ export interface ResourceProps {
  */
 export abstract class Resource extends Construct implements IResource {
   public readonly stack: Stack;
+  public readonly env: ResourceEnvironment;
+
   public resource: RosResource | undefined;
   /**
    * Returns a string-encoded token that resolves to the physical name that
@@ -63,6 +124,14 @@ export abstract class Resource extends Construct implements IResource {
   constructor(scope: Construct, id: string, props: ResourceProps = {}) {
     super(scope, id);
     this.stack = Stack.of(this);
+    const parsedArn = props.environmentFromArn ?
+        // Since we only want the region and account, NO_RESOURCE_NAME is good enough
+        Arn.split(props.environmentFromArn, ArnFormat.NO_RESOURCE_NAME)
+        : undefined;
+    this.env = {
+      account: props.account ?? parsedArn?.account ?? this.stack.account,
+      region: props.region ?? parsedArn?.region ?? this.stack.region,
+    };
 
     let physicalName = props.physicalName;
 
@@ -91,6 +160,11 @@ export abstract class Resource extends Construct implements IResource {
   public addDependency(resource: Resource): void {
     this.resource?.addRosDependency(resource.node.id);
   }
+
+  public fetchDependency(): string[] | undefined {
+    return this.resource?.fetchRosDependency();
+  }
+
   public applyRemovalPolicy(policy: RemovalPolicy) {
     this.resource?.applyRemovalPolicy(policy);
   }
@@ -99,8 +173,16 @@ export abstract class Resource extends Construct implements IResource {
     this.resource?.addCondition(condition);
   }
 
+  public fetchCondition(): RosCondition | undefined {
+    return this.resource?.fetchCondition();
+  }
+
   public addResourceDesc(desc: string) {
     this.resource?.addDesc(desc);
+  }
+
+  public fetchResourceDesc(): string | undefined {
+    return this.resource?.fetchDesc();
   }
 
   public setMetadata(key: string, value: any) {

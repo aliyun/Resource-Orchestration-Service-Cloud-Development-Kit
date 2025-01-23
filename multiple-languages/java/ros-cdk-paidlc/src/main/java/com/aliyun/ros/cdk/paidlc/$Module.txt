@@ -1,3 +1,5 @@
+@alicloud/ros-cdk-paidlc.IJob=com.aliyun.ros.cdk.paidlc.IJob
+@alicloud/ros-cdk-paidlc.ITensorboard=com.aliyun.ros.cdk.paidlc.ITensorboard
 @alicloud/ros-cdk-paidlc.Job=com.aliyun.ros.cdk.paidlc.Job
 @alicloud/ros-cdk-paidlc.JobProps=com.aliyun.ros.cdk.paidlc.JobProps
 @alicloud/ros-cdk-paidlc.RosJob=com.aliyun.ros.cdk.paidlc.RosJob

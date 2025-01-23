@@ -49,25 +49,41 @@ export interface ApisProps {
 }
 
 /**
+ * Represents a `Apis`.
+ */
+export interface IApis extends ros.IResource {
+    readonly props: ApisProps;
+
+    /**
+     * Attribute ApiIds: The list of The ApiGateway api ids.
+     */
+    readonly attrApiIds: ros.IResolvable | string;
+
+    /**
+     * Attribute Apis: The information about ApiGateway apis.
+     */
+    readonly attrApis: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ApiGateway::Apis`, which is used to query APIs in API Gateway.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApis`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-apis
  */
-export class Apis extends ros.Resource {
+export class Apis extends ros.Resource implements IApis {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ApisProps;
+    public readonly props: ApisProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ApiIds: The list of The ApiGateway api ids.
      */
-    public readonly attrApiIds: ros.IResolvable;
+    public readonly attrApiIds: ros.IResolvable | string;
 
     /**
      * Attribute Apis: The information about ApiGateway apis.
      */
-    public readonly attrApis: ros.IResolvable;
+    public readonly attrApis: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.oos.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::OOS::GitCodeRepo</code>, which is used to generate the URL of a user-specified GitHub or Gitee code repository.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:09.867Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:41.795Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.datasource.GitCodeRepo")
-public class GitCodeRepo extends com.aliyun.ros.cdk.core.Resource {
+public class GitCodeRepo extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.oos.datasource.IGitCodeRepo {
 
     protected GitCodeRepo(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -43,8 +43,14 @@ public class GitCodeRepo extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute AuthorizedUrl: Authorized url.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAuthorizedUrl() {
-        return software.amazon.jsii.Kernel.get(this, "attrAuthorizedUrl", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAuthorizedUrl() {
+        return software.amazon.jsii.Kernel.get(this, "attrAuthorizedUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.oos.datasource.GitCodeRepoProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.oos.datasource.GitCodeRepoProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -61,14 +67,6 @@ public class GitCodeRepo extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.oos.datasource.GitCodeRepoProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.oos.datasource.GitCodeRepoProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.oos.datasource.GitCodeRepoProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {

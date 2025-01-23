@@ -3,6 +3,143 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosClientInstanceAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eais-clientinstanceattachment
+ */
+export interface RosClientInstanceAttachmentProps {
+
+    /**
+     * @Property clientInstanceAttachmentId: The ID of the ECS or ECI instance bound to the EAIS instance.
+     */
+    readonly clientInstanceAttachmentId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosClientInstanceAttachmentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosClientInstanceAttachmentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosClientInstanceAttachmentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('clientInstanceAttachmentId', ros.requiredValidator)(properties.clientInstanceAttachmentId));
+    errors.collect(ros.propertyValidator('clientInstanceAttachmentId', ros.validateString)(properties.clientInstanceAttachmentId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
+    return errors.wrap('supplied properties not correct for "RosClientInstanceAttachmentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::EAIS::ClientInstanceAttachment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosClientInstanceAttachmentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::EAIS::ClientInstanceAttachment` resource.
+ */
+// @ts-ignore TS6133
+function rosClientInstanceAttachmentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosClientInstanceAttachmentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ClientInstanceAttachmentId': ros.stringToRosTemplate(properties.clientInstanceAttachmentId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::EAIS::ClientInstanceAttachment`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ClientInstanceAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eais-clientinstanceattachment
+ */
+export class RosClientInstanceAttachment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::EAIS::ClientInstanceAttachment";
+
+    /**
+     * @Attribute ClientInstanceId: The ID of the ECS or ECI instance bound to the EAIS instance.
+     */
+    public readonly attrClientInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceId: The EAIS instance ID.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute SecurityGroupId: The ID of the security group.
+     */
+    public readonly attrSecurityGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute VSwitchId: The vSwitch ID.
+     */
+    public readonly attrVSwitchId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property clientInstanceAttachmentId: The ID of the ECS or ECI instance bound to the EAIS instance.
+     */
+    public clientInstanceAttachmentId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosClientInstanceAttachmentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosClientInstanceAttachment.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrClientInstanceId = this.getAtt('ClientInstanceId');
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrSecurityGroupId = this.getAtt('SecurityGroupId');
+        this.attrVSwitchId = this.getAtt('VSwitchId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.clientInstanceAttachmentId = props.clientInstanceAttachmentId;
+        this.refreshOptions = props.refreshOptions;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            clientInstanceAttachmentId: this.clientInstanceAttachmentId,
+            refreshOptions: this.refreshOptions,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosClientInstanceAttachmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosInstance`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eais-instance
  */

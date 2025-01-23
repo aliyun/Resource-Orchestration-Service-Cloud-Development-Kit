@@ -52,10 +52,6 @@ func (j *jsiiProxy_Contact) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_Contact) validateSetPropsParameters(val *ContactProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_Contact) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

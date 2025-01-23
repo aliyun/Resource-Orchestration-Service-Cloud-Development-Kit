@@ -12,22 +12,32 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::RDS::DBInstance`, which is used to create an ApsaraDB RDS instance.
 type DBInstance interface {
 	alicloudroscdkcore.Resource
+	IDBInstance
 	// Attribute DBInstanceId: The instance id of created database instance.
-	AttrDbInstanceId() alicloudroscdkcore.IResolvable
+	AttrDbInstanceId() interface{}
 	// Attribute InnerConnectionString: DB instance connection url by Intranet.
-	AttrInnerConnectionString() alicloudroscdkcore.IResolvable
+	AttrInnerConnectionString() interface{}
 	// Attribute InnerIPAddress: IP Address for created DB instance of Intranet.
-	AttrInnerIpAddress() alicloudroscdkcore.IResolvable
+	AttrInnerIpAddress() interface{}
 	// Attribute InnerPort: Intranet port of created DB instance.
-	AttrInnerPort() alicloudroscdkcore.IResolvable
+	AttrInnerPort() interface{}
 	// Attribute PublicConnectionString: DB instance connection url by Internet.
-	AttrPublicConnectionString() alicloudroscdkcore.IResolvable
+	AttrPublicConnectionString() interface{}
 	// Attribute PublicIPAddress: IP Address for created DB instance of Internet.
-	AttrPublicIpAddress() alicloudroscdkcore.IResolvable
+	AttrPublicIpAddress() interface{}
 	// Attribute PublicPort: Internet port of created DB instance.
-	AttrPublicPort() alicloudroscdkcore.IResolvable
+	AttrPublicPort() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -42,7 +52,6 @@ type DBInstance interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DBInstanceProps
-	SetProps(val *DBInstanceProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -55,6 +64,9 @@ type DBInstance interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -107,10 +119,11 @@ type DBInstance interface {
 // The jsii proxy struct for DBInstance
 type jsiiProxy_DBInstance struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDBInstance
 }
 
-func (j *jsiiProxy_DBInstance) AttrDbInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBInstance) AttrDbInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbInstanceId",
@@ -119,8 +132,8 @@ func (j *jsiiProxy_DBInstance) AttrDbInstanceId() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_DBInstance) AttrInnerConnectionString() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBInstance) AttrInnerConnectionString() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInnerConnectionString",
@@ -129,8 +142,8 @@ func (j *jsiiProxy_DBInstance) AttrInnerConnectionString() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_DBInstance) AttrInnerIpAddress() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBInstance) AttrInnerIpAddress() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInnerIpAddress",
@@ -139,8 +152,8 @@ func (j *jsiiProxy_DBInstance) AttrInnerIpAddress() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_DBInstance) AttrInnerPort() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBInstance) AttrInnerPort() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInnerPort",
@@ -149,8 +162,8 @@ func (j *jsiiProxy_DBInstance) AttrInnerPort() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DBInstance) AttrPublicConnectionString() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBInstance) AttrPublicConnectionString() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPublicConnectionString",
@@ -159,8 +172,8 @@ func (j *jsiiProxy_DBInstance) AttrPublicConnectionString() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_DBInstance) AttrPublicIpAddress() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBInstance) AttrPublicIpAddress() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPublicIpAddress",
@@ -169,8 +182,8 @@ func (j *jsiiProxy_DBInstance) AttrPublicIpAddress() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_DBInstance) AttrPublicPort() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBInstance) AttrPublicPort() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPublicPort",
@@ -184,6 +197,16 @@ func (j *jsiiProxy_DBInstance) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DBInstance) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -321,17 +344,6 @@ func (j *jsiiProxy_DBInstance)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DBInstance)SetProps(val *DBInstanceProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_DBInstance)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -423,6 +435,45 @@ func (d *jsiiProxy_DBInstance) ApplyRemovalPolicy(policy alicloudroscdkcore.Remo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_DBInstance) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DBInstance) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DBInstance) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_DBInstance) GeneratePhysicalName() *string {

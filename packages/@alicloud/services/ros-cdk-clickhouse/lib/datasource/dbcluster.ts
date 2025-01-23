@@ -24,220 +24,431 @@ export interface DBClusterProps {
 }
 
 /**
+ * Represents a `DBCluster`.
+ */
+export interface IDBCluster extends ros.IResource {
+    readonly props: DBClusterProps;
+
+    /**
+     * Attribute AliUid: Alibaba Cloud account.
+     */
+    readonly attrAliUid: ros.IResolvable | string;
+
+    /**
+     * Attribute Bid: The ID of the business process flow.
+     */
+    readonly attrBid: ros.IResolvable | string;
+
+    /**
+     * Attribute Category: Copy configuration, value description:.
+     */
+    readonly attrCategory: ros.IResolvable | string;
+
+    /**
+     * Attribute CommodityCode: Buy Product Code.
+     */
+    readonly attrCommodityCode: ros.IResolvable | string;
+
+    /**
+     * Attribute ConnectionString: Connection string.
+     */
+    readonly attrConnectionString: ros.IResolvable | string;
+
+    /**
+     * Attribute CreateTime: The creation time of the resource.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute DBClusterIPArrayName: The name of the whitelist group to be modified.
+     */
+    readonly attrDbClusterIpArrayName: ros.IResolvable | string;
+
+    /**
+     * Attribute DBClusterId: Instance ID.
+     */
+    readonly attrDbClusterId: ros.IResolvable | string;
+
+    /**
+     * Attribute DBClusterName: The cluster description information.
+     */
+    readonly attrDbClusterName: ros.IResolvable | string;
+
+    /**
+     * Attribute DBClusterType: Instance type.
+     */
+    readonly attrDbClusterType: ros.IResolvable | string;
+
+    /**
+     * Attribute DbClusterNetworkType: Network type. Currently, only VPC is supported.
+     */
+    readonly attrDbClusterNetworkType: ros.IResolvable | string;
+
+    /**
+     * Attribute DbNodeClass: Set the node type.
+     */
+    readonly attrDbNodeClass: ros.IResolvable | string;
+
+    /**
+     * Attribute DbNodeCount: Value range: S-Series: 1 to 48 C Series: 1-24 units:.
+     */
+    readonly attrDbNodeCount: ros.IResolvable | string;
+
+    /**
+     * Attribute DbNodeStorage: Single-node storage space. Value range: 100 GB to 32000GB.
+     */
+    readonly attrDbNodeStorage: ros.IResolvable | string;
+
+    /**
+     * Attribute EncryptionKey: Key management service KMS key ID.
+     */
+    readonly attrEncryptionKey: ros.IResolvable | string;
+
+    /**
+     * Attribute EncryptionType: Currently only supports ECS disk encryption, with a value of CloudDisk, not encrypted when empty.
+     */
+    readonly attrEncryptionType: ros.IResolvable | string;
+
+    /**
+     * Attribute Engine: Engine.
+     */
+    readonly attrEngine: ros.IResolvable | string;
+
+    /**
+     * Attribute EngineVersion: The engine version.
+     */
+    readonly attrEngineVersion: ros.IResolvable | string;
+
+    /**
+     * Attribute ExpireTime: The expiration time.
+     */
+    readonly attrExpireTime: ros.IResolvable | string;
+
+    /**
+     * Attribute IsExpired: If the instance has expired.
+     */
+    readonly attrIsExpired: ros.IResolvable | string;
+
+    /**
+     * Attribute LockMode: The lock mode.
+     */
+    readonly attrLockMode: ros.IResolvable | string;
+
+    /**
+     * Attribute LockReason: Lock reason.
+     */
+    readonly attrLockReason: ros.IResolvable | string;
+
+    /**
+     * Attribute MaintainTime: Examples of the maintenance window, in the format of hh:mmZ-hh:mm Z.
+     */
+    readonly attrMaintainTime: ros.IResolvable | string;
+
+    /**
+     * Attribute PaymentType: The paymen type of the resource.
+     */
+    readonly attrPaymentType: ros.IResolvable | string;
+
+    /**
+     * Attribute Port: Connection port.
+     */
+    readonly attrPort: ros.IResolvable | string;
+
+    /**
+     * Attribute PublicConnectionString: A public IP address for the connection.
+     */
+    readonly attrPublicConnectionString: ros.IResolvable | string;
+
+    /**
+     * Attribute PublicIpAddr: Public IP address.
+     */
+    readonly attrPublicIpAddr: ros.IResolvable | string;
+
+    /**
+     * Attribute PublicPort: Public network port.
+     */
+    readonly attrPublicPort: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: The ID of the resource group.
+     */
+    readonly attrResourceGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute ScaleOutStatus: Scale state.
+     */
+    readonly attrScaleOutStatus: ros.IResolvable | string;
+
+    /**
+     * Attribute SecurityIps: The whitelist supports the following two formats:.
+     */
+    readonly attrSecurityIps: ros.IResolvable | string;
+
+    /**
+     * Attribute StorageType: Storage type CloudSSD:SSD cloud disk CloudEfficiency: Ultra cloud disk.
+     */
+    readonly attrStorageType: ros.IResolvable | string;
+
+    /**
+     * Attribute SupportBackup: Support fallback scheme.
+     */
+    readonly attrSupportBackup: ros.IResolvable | string;
+
+    /**
+     * Attribute SupportHttpsPort: The system supports http port number.
+     */
+    readonly attrSupportHttpsPort: ros.IResolvable | string;
+
+    /**
+     * Attribute SupportMysqlPort: Supports Mysql, and those of the ports.
+     */
+    readonly attrSupportMysqlPort: ros.IResolvable | string;
+
+    /**
+     * Attribute SupportOss: Whether hot and cold stratification is supported, 0 means not, and 1st generation table supports it.
+     */
+    readonly attrSupportOss: ros.IResolvable | string;
+
+    /**
+     * Attribute VSwitchId: Switch ID.
+     */
+    readonly attrVSwitchId: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcCloudInstanceId: Virtual Private Cloud (VPC cloud instance ID.
+     */
+    readonly attrVpcCloudInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcId: VPC ID.
+     */
+    readonly attrVpcId: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcIpAddr: VPC IP address.
+     */
+    readonly attrVpcIpAddr: ros.IResolvable | string;
+
+    /**
+     * Attribute ZoneId: On behalf of the zone resource attribute field.
+     */
+    readonly attrZoneId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ClickHouse::DBCluster`, which is used to query the information about an ApsaraDB for ClickHouse cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-clickhouse-dbcluster
  */
-export class DBCluster extends ros.Resource {
+export class DBCluster extends ros.Resource implements IDBCluster {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DBClusterProps;
+    public readonly props: DBClusterProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AliUid: Alibaba Cloud account.
      */
-    public readonly attrAliUid: ros.IResolvable;
+    public readonly attrAliUid: ros.IResolvable | string;
 
     /**
      * Attribute Bid: The ID of the business process flow.
      */
-    public readonly attrBid: ros.IResolvable;
+    public readonly attrBid: ros.IResolvable | string;
 
     /**
      * Attribute Category: Copy configuration, value description:.
      */
-    public readonly attrCategory: ros.IResolvable;
+    public readonly attrCategory: ros.IResolvable | string;
 
     /**
      * Attribute CommodityCode: Buy Product Code.
      */
-    public readonly attrCommodityCode: ros.IResolvable;
+    public readonly attrCommodityCode: ros.IResolvable | string;
 
     /**
      * Attribute ConnectionString: Connection string.
      */
-    public readonly attrConnectionString: ros.IResolvable;
+    public readonly attrConnectionString: ros.IResolvable | string;
 
     /**
      * Attribute CreateTime: The creation time of the resource.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute DBClusterIPArrayName: The name of the whitelist group to be modified.
      */
-    public readonly attrDbClusterIpArrayName: ros.IResolvable;
+    public readonly attrDbClusterIpArrayName: ros.IResolvable | string;
 
     /**
      * Attribute DBClusterId: Instance ID.
      */
-    public readonly attrDbClusterId: ros.IResolvable;
+    public readonly attrDbClusterId: ros.IResolvable | string;
 
     /**
      * Attribute DBClusterName: The cluster description information.
      */
-    public readonly attrDbClusterName: ros.IResolvable;
+    public readonly attrDbClusterName: ros.IResolvable | string;
 
     /**
      * Attribute DBClusterType: Instance type.
      */
-    public readonly attrDbClusterType: ros.IResolvable;
+    public readonly attrDbClusterType: ros.IResolvable | string;
 
     /**
      * Attribute DbClusterNetworkType: Network type. Currently, only VPC is supported.
      */
-    public readonly attrDbClusterNetworkType: ros.IResolvable;
+    public readonly attrDbClusterNetworkType: ros.IResolvable | string;
 
     /**
      * Attribute DbNodeClass: Set the node type.
      */
-    public readonly attrDbNodeClass: ros.IResolvable;
+    public readonly attrDbNodeClass: ros.IResolvable | string;
 
     /**
      * Attribute DbNodeCount: Value range: S-Series: 1 to 48 C Series: 1-24 units:.
      */
-    public readonly attrDbNodeCount: ros.IResolvable;
+    public readonly attrDbNodeCount: ros.IResolvable | string;
 
     /**
      * Attribute DbNodeStorage: Single-node storage space. Value range: 100 GB to 32000GB.
      */
-    public readonly attrDbNodeStorage: ros.IResolvable;
+    public readonly attrDbNodeStorage: ros.IResolvable | string;
 
     /**
      * Attribute EncryptionKey: Key management service KMS key ID.
      */
-    public readonly attrEncryptionKey: ros.IResolvable;
+    public readonly attrEncryptionKey: ros.IResolvable | string;
 
     /**
      * Attribute EncryptionType: Currently only supports ECS disk encryption, with a value of CloudDisk, not encrypted when empty.
      */
-    public readonly attrEncryptionType: ros.IResolvable;
+    public readonly attrEncryptionType: ros.IResolvable | string;
 
     /**
      * Attribute Engine: Engine.
      */
-    public readonly attrEngine: ros.IResolvable;
+    public readonly attrEngine: ros.IResolvable | string;
 
     /**
      * Attribute EngineVersion: The engine version.
      */
-    public readonly attrEngineVersion: ros.IResolvable;
+    public readonly attrEngineVersion: ros.IResolvable | string;
 
     /**
      * Attribute ExpireTime: The expiration time.
      */
-    public readonly attrExpireTime: ros.IResolvable;
+    public readonly attrExpireTime: ros.IResolvable | string;
 
     /**
      * Attribute IsExpired: If the instance has expired.
      */
-    public readonly attrIsExpired: ros.IResolvable;
+    public readonly attrIsExpired: ros.IResolvable | string;
 
     /**
      * Attribute LockMode: The lock mode.
      */
-    public readonly attrLockMode: ros.IResolvable;
+    public readonly attrLockMode: ros.IResolvable | string;
 
     /**
      * Attribute LockReason: Lock reason.
      */
-    public readonly attrLockReason: ros.IResolvable;
+    public readonly attrLockReason: ros.IResolvable | string;
 
     /**
      * Attribute MaintainTime: Examples of the maintenance window, in the format of hh:mmZ-hh:mm Z.
      */
-    public readonly attrMaintainTime: ros.IResolvable;
+    public readonly attrMaintainTime: ros.IResolvable | string;
 
     /**
      * Attribute PaymentType: The paymen type of the resource.
      */
-    public readonly attrPaymentType: ros.IResolvable;
+    public readonly attrPaymentType: ros.IResolvable | string;
 
     /**
      * Attribute Port: Connection port.
      */
-    public readonly attrPort: ros.IResolvable;
+    public readonly attrPort: ros.IResolvable | string;
 
     /**
      * Attribute PublicConnectionString: A public IP address for the connection.
      */
-    public readonly attrPublicConnectionString: ros.IResolvable;
+    public readonly attrPublicConnectionString: ros.IResolvable | string;
 
     /**
      * Attribute PublicIpAddr: Public IP address.
      */
-    public readonly attrPublicIpAddr: ros.IResolvable;
+    public readonly attrPublicIpAddr: ros.IResolvable | string;
 
     /**
      * Attribute PublicPort: Public network port.
      */
-    public readonly attrPublicPort: ros.IResolvable;
+    public readonly attrPublicPort: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroupId: The ID of the resource group.
      */
-    public readonly attrResourceGroupId: ros.IResolvable;
+    public readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Attribute ScaleOutStatus: Scale state.
      */
-    public readonly attrScaleOutStatus: ros.IResolvable;
+    public readonly attrScaleOutStatus: ros.IResolvable | string;
 
     /**
      * Attribute SecurityIps: The whitelist supports the following two formats:.
      */
-    public readonly attrSecurityIps: ros.IResolvable;
+    public readonly attrSecurityIps: ros.IResolvable | string;
 
     /**
      * Attribute StorageType: Storage type CloudSSD:SSD cloud disk CloudEfficiency: Ultra cloud disk.
      */
-    public readonly attrStorageType: ros.IResolvable;
+    public readonly attrStorageType: ros.IResolvable | string;
 
     /**
      * Attribute SupportBackup: Support fallback scheme.
      */
-    public readonly attrSupportBackup: ros.IResolvable;
+    public readonly attrSupportBackup: ros.IResolvable | string;
 
     /**
      * Attribute SupportHttpsPort: The system supports http port number.
      */
-    public readonly attrSupportHttpsPort: ros.IResolvable;
+    public readonly attrSupportHttpsPort: ros.IResolvable | string;
 
     /**
      * Attribute SupportMysqlPort: Supports Mysql, and those of the ports.
      */
-    public readonly attrSupportMysqlPort: ros.IResolvable;
+    public readonly attrSupportMysqlPort: ros.IResolvable | string;
 
     /**
      * Attribute SupportOss: Whether hot and cold stratification is supported, 0 means not, and 1st generation table supports it.
      */
-    public readonly attrSupportOss: ros.IResolvable;
+    public readonly attrSupportOss: ros.IResolvable | string;
 
     /**
      * Attribute VSwitchId: Switch ID.
      */
-    public readonly attrVSwitchId: ros.IResolvable;
+    public readonly attrVSwitchId: ros.IResolvable | string;
 
     /**
      * Attribute VpcCloudInstanceId: Virtual Private Cloud (VPC cloud instance ID.
      */
-    public readonly attrVpcCloudInstanceId: ros.IResolvable;
+    public readonly attrVpcCloudInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute VpcId: VPC ID.
      */
-    public readonly attrVpcId: ros.IResolvable;
+    public readonly attrVpcId: ros.IResolvable | string;
 
     /**
      * Attribute VpcIpAddr: VPC IP address.
      */
-    public readonly attrVpcIpAddr: ros.IResolvable;
+    public readonly attrVpcIpAddr: ros.IResolvable | string;
 
     /**
      * Attribute ZoneId: On behalf of the zone resource attribute field.
      */
-    public readonly attrZoneId: ros.IResolvable;
+    public readonly attrZoneId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

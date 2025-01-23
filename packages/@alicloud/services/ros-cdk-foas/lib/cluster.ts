@@ -45,55 +45,101 @@ export interface ClusterProps {
 }
 
 /**
+ * Represents a `Cluster`.
+ */
+export interface ICluster extends ros.IResource {
+    readonly props: ClusterProps;
+
+    /**
+     * Attribute ClusterId: Cluster ID.
+     */
+    readonly attrClusterId: ros.IResolvable | string;
+
+    /**
+     * Attribute EngineVersions: Engine Versions.
+     */
+    readonly attrEngineVersions: ros.IResolvable | string;
+
+    /**
+     * Attribute MasterInstanceInfos: Master instance infos.
+     */
+    readonly attrMasterInstanceInfos: ros.IResolvable | string;
+
+    /**
+     * Attribute OrderId: Order ID.
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+
+    /**
+     * Attribute SecurityGroupId: Security group Id.
+     */
+    readonly attrSecurityGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute SlaveInstanceInfos: Slave instance infos.
+     */
+    readonly attrSlaveInstanceInfos: ros.IResolvable | string;
+
+    /**
+     * Attribute State: Cluster status.
+     */
+    readonly attrState: ros.IResolvable | string;
+
+    /**
+     * Attribute VSwitchIds: VSwitch Ids.
+     */
+    readonly attrVSwitchIds: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::FOAS::Cluster`, which is used to create a cluster for an order in exclusive mode.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-foas-cluster
  */
-export class Cluster extends ros.Resource {
+export class Cluster extends ros.Resource implements ICluster {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ClusterProps;
+    public readonly props: ClusterProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterId: Cluster ID.
      */
-    public readonly attrClusterId: ros.IResolvable;
+    public readonly attrClusterId: ros.IResolvable | string;
 
     /**
      * Attribute EngineVersions: Engine Versions.
      */
-    public readonly attrEngineVersions: ros.IResolvable;
+    public readonly attrEngineVersions: ros.IResolvable | string;
 
     /**
      * Attribute MasterInstanceInfos: Master instance infos.
      */
-    public readonly attrMasterInstanceInfos: ros.IResolvable;
+    public readonly attrMasterInstanceInfos: ros.IResolvable | string;
 
     /**
      * Attribute OrderId: Order ID.
      */
-    public readonly attrOrderId: ros.IResolvable;
+    public readonly attrOrderId: ros.IResolvable | string;
 
     /**
      * Attribute SecurityGroupId: Security group Id.
      */
-    public readonly attrSecurityGroupId: ros.IResolvable;
+    public readonly attrSecurityGroupId: ros.IResolvable | string;
 
     /**
      * Attribute SlaveInstanceInfos: Slave instance infos.
      */
-    public readonly attrSlaveInstanceInfos: ros.IResolvable;
+    public readonly attrSlaveInstanceInfos: ros.IResolvable | string;
 
     /**
      * Attribute State: Cluster status.
      */
-    public readonly attrState: ros.IResolvable;
+    public readonly attrState: ros.IResolvable | string;
 
     /**
      * Attribute VSwitchIds: VSwitch Ids.
      */
-    public readonly attrVSwitchIds: ros.IResolvable;
+    public readonly attrVSwitchIds: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

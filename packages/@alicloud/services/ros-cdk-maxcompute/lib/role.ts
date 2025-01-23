@@ -38,25 +38,41 @@ export interface RoleProps {
 }
 
 /**
+ * Represents a `Role`.
+ */
+export interface IRole extends ros.IResource {
+    readonly props: RoleProps;
+
+    /**
+     * Attribute ProjectName: The name of the MaxCompute project.
+     */
+    readonly attrProjectName: ros.IResolvable | string;
+
+    /**
+     * Attribute RoleName: The name of the project role.
+     */
+    readonly attrRoleName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::MaxCompute::Role`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRole`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-role
  */
-export class Role extends ros.Resource {
+export class Role extends ros.Resource implements IRole {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: RoleProps;
+    public readonly props: RoleProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ProjectName: The name of the MaxCompute project.
      */
-    public readonly attrProjectName: ros.IResolvable;
+    public readonly attrProjectName: ros.IResolvable | string;
 
     /**
      * Attribute RoleName: The name of the project role.
      */
-    public readonly attrRoleName: ros.IResolvable;
+    public readonly attrRoleName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

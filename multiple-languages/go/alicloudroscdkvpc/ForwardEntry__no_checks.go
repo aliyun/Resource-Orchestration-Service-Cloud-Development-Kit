@@ -52,10 +52,6 @@ func (j *jsiiProxy_ForwardEntry) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_ForwardEntry) validateSetPropsParameters(val *ForwardEntryProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_ForwardEntry) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

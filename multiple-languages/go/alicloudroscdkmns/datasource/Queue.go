@@ -12,38 +12,48 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::MNS::Queue`, which is used to query the information about a created queue.
 type Queue interface {
 	alicloudroscdkcore.Resource
+	IQueue
 	// Attribute ActiveMessages: The total number of active messages in the queue.
-	AttrActiveMessages() alicloudroscdkcore.IResolvable
+	AttrActiveMessages() interface{}
 	// Attribute CreateTime: The time when the queue was created.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute DelayMessages: The total number of delayed messages in the queue.
-	AttrDelayMessages() alicloudroscdkcore.IResolvable
+	AttrDelayMessages() interface{}
 	// Attribute DelaySeconds: The delay time after which all messages that are sent to the queue can be consumed.
-	AttrDelaySeconds() alicloudroscdkcore.IResolvable
+	AttrDelaySeconds() interface{}
 	// Attribute InactiveMessages: The total number of inactive messages in the queue.
-	AttrInactiveMessages() alicloudroscdkcore.IResolvable
+	AttrInactiveMessages() interface{}
 	// Attribute LastModifyTime: The most recent time when the queue was modified.
-	AttrLastModifyTime() alicloudroscdkcore.IResolvable
+	AttrLastModifyTime() interface{}
 	// Attribute LoggingEnabled: Specifies whether to enable the log management feature.
-	AttrLoggingEnabled() alicloudroscdkcore.IResolvable
+	AttrLoggingEnabled() interface{}
 	// Attribute MaximumMessageSize: The maximum size of a message that can be sent to the queue.
-	AttrMaximumMessageSize() alicloudroscdkcore.IResolvable
+	AttrMaximumMessageSize() interface{}
 	// Attribute MessageRetentionPeriod: The maximum lifetime of a message in the queue.
 	//
 	// After the time that is specified by this parameter expires, the message is deleted, regardless of whether the message has been consumed.
-	AttrMessageRetentionPeriod() alicloudroscdkcore.IResolvable
+	AttrMessageRetentionPeriod() interface{}
 	// Attribute PollingWaitSeconds: The maximum time period that a ReceiveMessage request can wait till a message is in the queue.
-	AttrPollingWaitSeconds() alicloudroscdkcore.IResolvable
+	AttrPollingWaitSeconds() interface{}
 	// Attribute QueueInternalUrl: The internal URL of the queue.
-	AttrQueueInternalUrl() alicloudroscdkcore.IResolvable
+	AttrQueueInternalUrl() interface{}
 	// Attribute QueueName: The name of the MNS queue.
-	AttrQueueName() alicloudroscdkcore.IResolvable
+	AttrQueueName() interface{}
 	// Attribute QueueUrl: The URL of the queue.
-	AttrQueueUrl() alicloudroscdkcore.IResolvable
+	AttrQueueUrl() interface{}
 	// Attribute VisibilityTimeout: The duration for which a message stays in the Inactive state after it is consumed from the queue.
-	AttrVisibilityTimeout() alicloudroscdkcore.IResolvable
+	AttrVisibilityTimeout() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -58,7 +68,6 @@ type Queue interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *QueueProps
-	SetProps(val *QueueProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -71,6 +80,9 @@ type Queue interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -123,10 +135,11 @@ type Queue interface {
 // The jsii proxy struct for Queue
 type jsiiProxy_Queue struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IQueue
 }
 
-func (j *jsiiProxy_Queue) AttrActiveMessages() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Queue) AttrActiveMessages() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrActiveMessages",
@@ -135,8 +148,8 @@ func (j *jsiiProxy_Queue) AttrActiveMessages() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Queue) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Queue) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -145,8 +158,8 @@ func (j *jsiiProxy_Queue) AttrCreateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Queue) AttrDelayMessages() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Queue) AttrDelayMessages() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDelayMessages",
@@ -155,8 +168,8 @@ func (j *jsiiProxy_Queue) AttrDelayMessages() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Queue) AttrDelaySeconds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Queue) AttrDelaySeconds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDelaySeconds",
@@ -165,8 +178,8 @@ func (j *jsiiProxy_Queue) AttrDelaySeconds() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Queue) AttrInactiveMessages() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Queue) AttrInactiveMessages() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInactiveMessages",
@@ -175,8 +188,8 @@ func (j *jsiiProxy_Queue) AttrInactiveMessages() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_Queue) AttrLastModifyTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Queue) AttrLastModifyTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLastModifyTime",
@@ -185,8 +198,8 @@ func (j *jsiiProxy_Queue) AttrLastModifyTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Queue) AttrLoggingEnabled() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Queue) AttrLoggingEnabled() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLoggingEnabled",
@@ -195,8 +208,8 @@ func (j *jsiiProxy_Queue) AttrLoggingEnabled() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Queue) AttrMaximumMessageSize() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Queue) AttrMaximumMessageSize() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMaximumMessageSize",
@@ -205,8 +218,8 @@ func (j *jsiiProxy_Queue) AttrMaximumMessageSize() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_Queue) AttrMessageRetentionPeriod() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Queue) AttrMessageRetentionPeriod() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMessageRetentionPeriod",
@@ -215,8 +228,8 @@ func (j *jsiiProxy_Queue) AttrMessageRetentionPeriod() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_Queue) AttrPollingWaitSeconds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Queue) AttrPollingWaitSeconds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPollingWaitSeconds",
@@ -225,8 +238,8 @@ func (j *jsiiProxy_Queue) AttrPollingWaitSeconds() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_Queue) AttrQueueInternalUrl() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Queue) AttrQueueInternalUrl() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrQueueInternalUrl",
@@ -235,8 +248,8 @@ func (j *jsiiProxy_Queue) AttrQueueInternalUrl() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_Queue) AttrQueueName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Queue) AttrQueueName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrQueueName",
@@ -245,8 +258,8 @@ func (j *jsiiProxy_Queue) AttrQueueName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Queue) AttrQueueUrl() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Queue) AttrQueueUrl() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrQueueUrl",
@@ -255,8 +268,8 @@ func (j *jsiiProxy_Queue) AttrQueueUrl() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Queue) AttrVisibilityTimeout() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Queue) AttrVisibilityTimeout() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVisibilityTimeout",
@@ -270,6 +283,16 @@ func (j *jsiiProxy_Queue) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Queue) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -407,17 +430,6 @@ func (j *jsiiProxy_Queue)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Queue)SetProps(val *QueueProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Queue)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -509,6 +521,45 @@ func (q *jsiiProxy_Queue) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (q *jsiiProxy_Queue) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		q,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (q *jsiiProxy_Queue) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		q,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (q *jsiiProxy_Queue) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		q,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (q *jsiiProxy_Queue) GeneratePhysicalName() *string {

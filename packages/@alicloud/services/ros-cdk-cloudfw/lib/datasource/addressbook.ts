@@ -24,65 +24,121 @@ export interface AddressBookProps {
 }
 
 /**
+ * Represents a `AddressBook`.
+ */
+export interface IAddressBook extends ros.IResource {
+    readonly props: AddressBookProps;
+
+    /**
+     * Attribute AddressList: The addresses in the address book.
+     */
+    readonly attrAddressList: ros.IResolvable | string;
+
+    /**
+     * Attribute AddressListCount: The number of addresses in the address book.
+     */
+    readonly attrAddressListCount: ros.IResolvable | string;
+
+    /**
+     * Attribute AutoAddTagEcs: Indicates whether the public IP addresses of ECS instances are automatically added to the address book if the instances match the specified tags.
+     */
+    readonly attrAutoAddTagEcs: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: The description of the address book.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute GroupName: The name of the address book.
+     */
+    readonly attrGroupName: ros.IResolvable | string;
+
+    /**
+     * Attribute GroupType: The type of the address book.
+     */
+    readonly attrGroupType: ros.IResolvable | string;
+
+    /**
+     * Attribute GroupUuid: The UUID of the address book.
+     */
+    readonly attrGroupUuid: ros.IResolvable | string;
+
+    /**
+     * Attribute ReferenceCount: The number of times that the address book is referenced.
+     */
+    readonly attrReferenceCount: ros.IResolvable | string;
+
+    /**
+     * Attribute TagRelation: The logical relationship among ECS tags.
+     */
+    readonly attrTagRelation: ros.IResolvable | string;
+
+    /**
+     * Attribute Tags: The details about the ECS tags that can be automatically added to the address book.
+     */
+    readonly attrTags: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::CLOUDFW::AddressBook`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAddressBook`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudfw-addressbook
  */
-export class AddressBook extends ros.Resource {
+export class AddressBook extends ros.Resource implements IAddressBook {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AddressBookProps;
+    public readonly props: AddressBookProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AddressList: The addresses in the address book.
      */
-    public readonly attrAddressList: ros.IResolvable;
+    public readonly attrAddressList: ros.IResolvable | string;
 
     /**
      * Attribute AddressListCount: The number of addresses in the address book.
      */
-    public readonly attrAddressListCount: ros.IResolvable;
+    public readonly attrAddressListCount: ros.IResolvable | string;
 
     /**
      * Attribute AutoAddTagEcs: Indicates whether the public IP addresses of ECS instances are automatically added to the address book if the instances match the specified tags.
      */
-    public readonly attrAutoAddTagEcs: ros.IResolvable;
+    public readonly attrAutoAddTagEcs: ros.IResolvable | string;
 
     /**
      * Attribute Description: The description of the address book.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute GroupName: The name of the address book.
      */
-    public readonly attrGroupName: ros.IResolvable;
+    public readonly attrGroupName: ros.IResolvable | string;
 
     /**
      * Attribute GroupType: The type of the address book.
      */
-    public readonly attrGroupType: ros.IResolvable;
+    public readonly attrGroupType: ros.IResolvable | string;
 
     /**
      * Attribute GroupUuid: The UUID of the address book.
      */
-    public readonly attrGroupUuid: ros.IResolvable;
+    public readonly attrGroupUuid: ros.IResolvable | string;
 
     /**
      * Attribute ReferenceCount: The number of times that the address book is referenced.
      */
-    public readonly attrReferenceCount: ros.IResolvable;
+    public readonly attrReferenceCount: ros.IResolvable | string;
 
     /**
      * Attribute TagRelation: The logical relationship among ECS tags.
      */
-    public readonly attrTagRelation: ros.IResolvable;
+    public readonly attrTagRelation: ros.IResolvable | string;
 
     /**
      * Attribute Tags: The details about the ECS tags that can be automatically added to the address book.
      */
-    public readonly attrTags: ros.IResolvable;
+    public readonly attrTags: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

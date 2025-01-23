@@ -9,17 +9,27 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::FC::Layer`, which is used to publish layer versions.
+// This class encapsulates and extends the ROS resource type `ALIYUN::FC::Layer`, which is used to release a layer version.
 type Layer interface {
 	alicloudroscdkcore.Resource
+	ILayer
 	// Attribute Arn: The name of the layer resource.
-	AttrArn() alicloudroscdkcore.IResolvable
+	AttrArn() interface{}
 	// Attribute LayerName: The name of layer.
-	AttrLayerName() alicloudroscdkcore.IResolvable
+	AttrLayerName() interface{}
 	// Attribute Version: The version of the layer resource.
-	AttrVersion() alicloudroscdkcore.IResolvable
+	AttrVersion() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -34,7 +44,6 @@ type Layer interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *LayerProps
-	SetProps(val *LayerProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -47,6 +56,9 @@ type Layer interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -99,10 +111,11 @@ type Layer interface {
 // The jsii proxy struct for Layer
 type jsiiProxy_Layer struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ILayer
 }
 
-func (j *jsiiProxy_Layer) AttrArn() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Layer) AttrArn() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrArn",
@@ -111,8 +124,8 @@ func (j *jsiiProxy_Layer) AttrArn() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Layer) AttrLayerName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Layer) AttrLayerName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLayerName",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_Layer) AttrLayerName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Layer) AttrVersion() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Layer) AttrVersion() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVersion",
@@ -136,6 +149,16 @@ func (j *jsiiProxy_Layer) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Layer) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -273,17 +296,6 @@ func (j *jsiiProxy_Layer)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Layer)SetProps(val *LayerProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Layer)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -375,6 +387,45 @@ func (l *jsiiProxy_Layer) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (l *jsiiProxy_Layer) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		l,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (l *jsiiProxy_Layer) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		l,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (l *jsiiProxy_Layer) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		l,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (l *jsiiProxy_Layer) GeneratePhysicalName() *string {

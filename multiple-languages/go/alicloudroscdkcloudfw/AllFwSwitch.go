@@ -12,8 +12,18 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::AllFwSwitch`, which is used to enable all firewalls.
 type AllFwSwitch interface {
 	alicloudroscdkcore.Resource
+	IAllFwSwitch
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -28,7 +38,6 @@ type AllFwSwitch interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *AllFwSwitchProps
-	SetProps(val *AllFwSwitchProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -41,6 +50,9 @@ type AllFwSwitch interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -93,6 +105,7 @@ type AllFwSwitch interface {
 // The jsii proxy struct for AllFwSwitch
 type jsiiProxy_AllFwSwitch struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IAllFwSwitch
 }
 
 func (j *jsiiProxy_AllFwSwitch) EnableResourcePropertyConstraint() *bool {
@@ -100,6 +113,16 @@ func (j *jsiiProxy_AllFwSwitch) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AllFwSwitch) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -237,17 +260,6 @@ func (j *jsiiProxy_AllFwSwitch)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AllFwSwitch)SetProps(val *AllFwSwitchProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_AllFwSwitch)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -339,6 +351,45 @@ func (a *jsiiProxy_AllFwSwitch) ApplyRemovalPolicy(policy alicloudroscdkcore.Rem
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (a *jsiiProxy_AllFwSwitch) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		a,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AllFwSwitch) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AllFwSwitch) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (a *jsiiProxy_AllFwSwitch) GeneratePhysicalName() *string {

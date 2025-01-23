@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::GA::Acls`, which is used to query access control lists (ACLs).
 type Acls interface {
 	alicloudroscdkcore.Resource
+	IAcls
 	// Attribute AclIds: The list of acl IDs.
-	AttrAclIds() alicloudroscdkcore.IResolvable
+	AttrAclIds() interface{}
 	// Attribute Acls: The list of acls.
-	AttrAcls() alicloudroscdkcore.IResolvable
+	AttrAcls() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type Acls interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *AclsProps
-	SetProps(val *AclsProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type Acls interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type Acls interface {
 // The jsii proxy struct for Acls
 type jsiiProxy_Acls struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IAcls
 }
 
-func (j *jsiiProxy_Acls) AttrAclIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Acls) AttrAclIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAclIds",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_Acls) AttrAclIds() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Acls) AttrAcls() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Acls) AttrAcls() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAcls",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_Acls) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Acls) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_Acls)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Acls)SetProps(val *AclsProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Acls)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (a *jsiiProxy_Acls) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPol
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (a *jsiiProxy_Acls) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		a,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_Acls) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_Acls) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (a *jsiiProxy_Acls) GeneratePhysicalName() *string {

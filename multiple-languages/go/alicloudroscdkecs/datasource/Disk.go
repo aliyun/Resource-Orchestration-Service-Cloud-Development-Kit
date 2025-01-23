@@ -12,92 +12,102 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Disk`, which is used to query the information about a cloud disk.
 type Disk interface {
 	alicloudroscdkcore.Resource
+	IDisk
 	// Attribute AttachedTime: The attached time.
-	AttrAttachedTime() alicloudroscdkcore.IResolvable
+	AttrAttachedTime() interface{}
 	// Attribute AutoSnapshotPolicyId: Automatic snapshot policy ID.
-	AttrAutoSnapshotPolicyId() alicloudroscdkcore.IResolvable
+	AttrAutoSnapshotPolicyId() interface{}
 	// Attribute BurstingEnabled: Does the data disk turn on Burst (performance Burst).
-	AttrBurstingEnabled() alicloudroscdkcore.IResolvable
+	AttrBurstingEnabled() interface{}
 	// Attribute Category: Disk type.
-	AttrCategory() alicloudroscdkcore.IResolvable
+	AttrCategory() interface{}
 	// Attribute CreateTime: The creation time.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute DeleteAutoSnapshot: Whether to delete automatic snapshots at the same time.
-	AttrDeleteAutoSnapshot() alicloudroscdkcore.IResolvable
+	AttrDeleteAutoSnapshot() interface{}
 	// Attribute DeleteWithInstance: Whether to release with the instance.
-	AttrDeleteWithInstance() alicloudroscdkcore.IResolvable
+	AttrDeleteWithInstance() interface{}
 	// Attribute Description: The description.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute DetachedTime: Unloading time.
-	AttrDetachedTime() alicloudroscdkcore.IResolvable
+	AttrDetachedTime() interface{}
 	// Attribute Device: Cloud disk or the device name of the mounted instance on the site.
-	AttrDevice() alicloudroscdkcore.IResolvable
+	AttrDevice() interface{}
 	// Attribute DiskId: The disk id.
-	AttrDiskId() alicloudroscdkcore.IResolvable
+	AttrDiskId() interface{}
 	// Attribute DiskName: The disk name.
-	AttrDiskName() alicloudroscdkcore.IResolvable
+	AttrDiskName() interface{}
 	// Attribute EnableAutomatedSnapshotPolicy: Whether the disk implements an automatic snapshot policy.
-	AttrEnableAutomatedSnapshotPolicy() alicloudroscdkcore.IResolvable
+	AttrEnableAutomatedSnapshotPolicy() interface{}
 	// Attribute EnableAutoSnapshot: Whether the disk implements an automatic snapshot policy.
-	AttrEnableAutoSnapshot() alicloudroscdkcore.IResolvable
+	AttrEnableAutoSnapshot() interface{}
 	// Attribute Encrypted: Whether the disk is encrypted.
-	AttrEncrypted() alicloudroscdkcore.IResolvable
+	AttrEncrypted() interface{}
 	// Attribute ExpiredTime: The expiration time of a monthly disk.
-	AttrExpiredTime() alicloudroscdkcore.IResolvable
+	AttrExpiredTime() interface{}
 	// Attribute ImageId: The image id.
-	AttrImageId() alicloudroscdkcore.IResolvable
+	AttrImageId() interface{}
 	// Attribute InstanceId: The instance id.
-	AttrInstanceId() alicloudroscdkcore.IResolvable
+	AttrInstanceId() interface{}
 	// Attribute Iops: Number of read/write (I/O) operations per second.
-	AttrIops() alicloudroscdkcore.IResolvable
+	AttrIops() interface{}
 	// Attribute IopsRead: Number of reads per second.
-	AttrIopsRead() alicloudroscdkcore.IResolvable
+	AttrIopsRead() interface{}
 	// Attribute IopsWrite: Number of writes per second.
-	AttrIopsWrite() alicloudroscdkcore.IResolvable
+	AttrIopsWrite() interface{}
 	// Attribute KmsKeyId: The KMS keyId.
-	AttrKmsKeyId() alicloudroscdkcore.IResolvable
+	AttrKmsKeyId() interface{}
 	// Attribute MountInstanceNum: Number of instances mounted on shared storage.
-	AttrMountInstanceNum() alicloudroscdkcore.IResolvable
+	AttrMountInstanceNum() interface{}
 	// Attribute MountInstances: Disk mount instances.
-	AttrMountInstances() alicloudroscdkcore.IResolvable
+	AttrMountInstances() interface{}
 	// Attribute MultiAttach: Whether to enable the multi-Mount feature.
-	AttrMultiAttach() alicloudroscdkcore.IResolvable
+	AttrMultiAttach() interface{}
 	// Attribute OperationLocks: Resource locking information.
-	AttrOperationLocks() alicloudroscdkcore.IResolvable
+	AttrOperationLocks() interface{}
 	// Attribute PaymentType: Payment method for disk.
-	AttrPaymentType() alicloudroscdkcore.IResolvable
+	AttrPaymentType() interface{}
 	// Attribute PerformanceLevel: Performance levels of ESSD cloud disk.
-	AttrPerformanceLevel() alicloudroscdkcore.IResolvable
+	AttrPerformanceLevel() interface{}
 	// Attribute Portable: Whether the disk is unmountable.
-	AttrPortable() alicloudroscdkcore.IResolvable
+	AttrPortable() interface{}
 	// Attribute ProductCode: The product logo of the cloud market.
-	AttrProductCode() alicloudroscdkcore.IResolvable
+	AttrProductCode() interface{}
 	// Attribute ProvisionedIops: The preconfigured read and write IOPS of the ESSD AutoPL cloud disk.
 	//
 	// Possible values: 0 ~ min{50,000, 1000 * capacity-baseline performance}.
-	AttrProvisionedIops() alicloudroscdkcore.IResolvable
+	AttrProvisionedIops() interface{}
 	// Attribute ResourceGroupId: The resource group id.
-	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() interface{}
 	// Attribute Size: Disk size.
-	AttrSize() alicloudroscdkcore.IResolvable
+	AttrSize() interface{}
 	// Attribute SnapshotId: The source snapshot id.
-	AttrSnapshotId() alicloudroscdkcore.IResolvable
+	AttrSnapshotId() interface{}
 	// Attribute StorageClusterId: The ID of the dedicated block storage cluster.
 	//
 	// If you need to create a cloud disk in the specified dedicated block storage cluster, specify this parameter.
-	AttrStorageClusterId() alicloudroscdkcore.IResolvable
+	AttrStorageClusterId() interface{}
 	// Attribute StorageSetId: The ID of the Save set.
-	AttrStorageSetId() alicloudroscdkcore.IResolvable
+	AttrStorageSetId() interface{}
 	// Attribute StorageSetPartitionNumber: Number of Save set partitions.
 	//
 	// Value range: greater than or equal to 2. The maximum value cannot exceed the equity quota limit displayed after calling.
-	AttrStorageSetPartitionNumber() alicloudroscdkcore.IResolvable
+	AttrStorageSetPartitionNumber() interface{}
 	// Attribute Tags: The tags.
-	AttrTags() alicloudroscdkcore.IResolvable
+	AttrTags() interface{}
 	// Attribute ZoneId: ID of the free zone to which the disk belongs.
-	AttrZoneId() alicloudroscdkcore.IResolvable
+	AttrZoneId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -112,7 +122,6 @@ type Disk interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DiskProps
-	SetProps(val *DiskProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -125,6 +134,9 @@ type Disk interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -177,10 +189,11 @@ type Disk interface {
 // The jsii proxy struct for Disk
 type jsiiProxy_Disk struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDisk
 }
 
-func (j *jsiiProxy_Disk) AttrAttachedTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrAttachedTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAttachedTime",
@@ -189,8 +202,8 @@ func (j *jsiiProxy_Disk) AttrAttachedTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrAutoSnapshotPolicyId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrAutoSnapshotPolicyId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAutoSnapshotPolicyId",
@@ -199,8 +212,8 @@ func (j *jsiiProxy_Disk) AttrAutoSnapshotPolicyId() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrBurstingEnabled() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrBurstingEnabled() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBurstingEnabled",
@@ -209,8 +222,8 @@ func (j *jsiiProxy_Disk) AttrBurstingEnabled() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrCategory() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrCategory() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCategory",
@@ -219,8 +232,8 @@ func (j *jsiiProxy_Disk) AttrCategory() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -229,8 +242,8 @@ func (j *jsiiProxy_Disk) AttrCreateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrDeleteAutoSnapshot() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrDeleteAutoSnapshot() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDeleteAutoSnapshot",
@@ -239,8 +252,8 @@ func (j *jsiiProxy_Disk) AttrDeleteAutoSnapshot() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrDeleteWithInstance() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrDeleteWithInstance() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDeleteWithInstance",
@@ -249,8 +262,8 @@ func (j *jsiiProxy_Disk) AttrDeleteWithInstance() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -259,8 +272,8 @@ func (j *jsiiProxy_Disk) AttrDescription() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrDetachedTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrDetachedTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDetachedTime",
@@ -269,8 +282,8 @@ func (j *jsiiProxy_Disk) AttrDetachedTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrDevice() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrDevice() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDevice",
@@ -279,8 +292,8 @@ func (j *jsiiProxy_Disk) AttrDevice() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrDiskId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrDiskId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDiskId",
@@ -289,8 +302,8 @@ func (j *jsiiProxy_Disk) AttrDiskId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrDiskName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrDiskName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDiskName",
@@ -299,8 +312,8 @@ func (j *jsiiProxy_Disk) AttrDiskName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrEnableAutomatedSnapshotPolicy() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrEnableAutomatedSnapshotPolicy() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEnableAutomatedSnapshotPolicy",
@@ -309,8 +322,8 @@ func (j *jsiiProxy_Disk) AttrEnableAutomatedSnapshotPolicy() alicloudroscdkcore.
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrEnableAutoSnapshot() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrEnableAutoSnapshot() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEnableAutoSnapshot",
@@ -319,8 +332,8 @@ func (j *jsiiProxy_Disk) AttrEnableAutoSnapshot() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrEncrypted() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrEncrypted() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEncrypted",
@@ -329,8 +342,8 @@ func (j *jsiiProxy_Disk) AttrEncrypted() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrExpiredTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrExpiredTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrExpiredTime",
@@ -339,8 +352,8 @@ func (j *jsiiProxy_Disk) AttrExpiredTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrImageId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrImageId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrImageId",
@@ -349,8 +362,8 @@ func (j *jsiiProxy_Disk) AttrImageId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceId",
@@ -359,8 +372,8 @@ func (j *jsiiProxy_Disk) AttrInstanceId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrIops() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrIops() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIops",
@@ -369,8 +382,8 @@ func (j *jsiiProxy_Disk) AttrIops() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrIopsRead() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrIopsRead() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIopsRead",
@@ -379,8 +392,8 @@ func (j *jsiiProxy_Disk) AttrIopsRead() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrIopsWrite() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrIopsWrite() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIopsWrite",
@@ -389,8 +402,8 @@ func (j *jsiiProxy_Disk) AttrIopsWrite() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrKmsKeyId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrKmsKeyId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrKmsKeyId",
@@ -399,8 +412,8 @@ func (j *jsiiProxy_Disk) AttrKmsKeyId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrMountInstanceNum() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrMountInstanceNum() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMountInstanceNum",
@@ -409,8 +422,8 @@ func (j *jsiiProxy_Disk) AttrMountInstanceNum() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrMountInstances() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrMountInstances() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMountInstances",
@@ -419,8 +432,8 @@ func (j *jsiiProxy_Disk) AttrMountInstances() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrMultiAttach() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrMultiAttach() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMultiAttach",
@@ -429,8 +442,8 @@ func (j *jsiiProxy_Disk) AttrMultiAttach() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrOperationLocks() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrOperationLocks() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOperationLocks",
@@ -439,8 +452,8 @@ func (j *jsiiProxy_Disk) AttrOperationLocks() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrPaymentType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrPaymentType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPaymentType",
@@ -449,8 +462,8 @@ func (j *jsiiProxy_Disk) AttrPaymentType() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrPerformanceLevel() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrPerformanceLevel() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPerformanceLevel",
@@ -459,8 +472,8 @@ func (j *jsiiProxy_Disk) AttrPerformanceLevel() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrPortable() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrPortable() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPortable",
@@ -469,8 +482,8 @@ func (j *jsiiProxy_Disk) AttrPortable() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrProductCode() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrProductCode() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrProductCode",
@@ -479,8 +492,8 @@ func (j *jsiiProxy_Disk) AttrProductCode() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrProvisionedIops() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrProvisionedIops() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrProvisionedIops",
@@ -489,8 +502,8 @@ func (j *jsiiProxy_Disk) AttrProvisionedIops() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupId",
@@ -499,8 +512,8 @@ func (j *jsiiProxy_Disk) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrSize() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrSize() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSize",
@@ -509,8 +522,8 @@ func (j *jsiiProxy_Disk) AttrSize() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrSnapshotId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrSnapshotId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSnapshotId",
@@ -519,8 +532,8 @@ func (j *jsiiProxy_Disk) AttrSnapshotId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrStorageClusterId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrStorageClusterId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStorageClusterId",
@@ -529,8 +542,8 @@ func (j *jsiiProxy_Disk) AttrStorageClusterId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrStorageSetId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrStorageSetId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStorageSetId",
@@ -539,8 +552,8 @@ func (j *jsiiProxy_Disk) AttrStorageSetId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrStorageSetPartitionNumber() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrStorageSetPartitionNumber() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStorageSetPartitionNumber",
@@ -549,8 +562,8 @@ func (j *jsiiProxy_Disk) AttrStorageSetPartitionNumber() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrTags() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrTags() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTags",
@@ -559,8 +572,8 @@ func (j *jsiiProxy_Disk) AttrTags() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Disk) AttrZoneId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Disk) AttrZoneId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrZoneId",
@@ -574,6 +587,16 @@ func (j *jsiiProxy_Disk) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Disk) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -711,17 +734,6 @@ func (j *jsiiProxy_Disk)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Disk)SetProps(val *DiskProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Disk)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -813,6 +825,45 @@ func (d *jsiiProxy_Disk) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPol
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_Disk) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_Disk) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_Disk) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_Disk) GeneratePhysicalName() *string {

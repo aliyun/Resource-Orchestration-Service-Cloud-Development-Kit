@@ -12,16 +12,26 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::PVTZ::Zone`, which is used to create a built-in authoritative zone.
 type Zone interface {
 	alicloudroscdkcore.Resource
+	IZone
 	// Attribute ZoneId: Zone ID.
-	AttrZoneId() alicloudroscdkcore.IResolvable
+	AttrZoneId() interface{}
 	// Attribute ZoneName: Zone name.
-	AttrZoneName() alicloudroscdkcore.IResolvable
+	AttrZoneName() interface{}
 	// Attribute ZoneTag: Zone label.
-	AttrZoneTag() alicloudroscdkcore.IResolvable
+	AttrZoneTag() interface{}
 	// Attribute ZoneType: Zone type.
-	AttrZoneType() alicloudroscdkcore.IResolvable
+	AttrZoneType() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -36,7 +46,6 @@ type Zone interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ZoneProps
-	SetProps(val *ZoneProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -49,6 +58,9 @@ type Zone interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -101,10 +113,11 @@ type Zone interface {
 // The jsii proxy struct for Zone
 type jsiiProxy_Zone struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IZone
 }
 
-func (j *jsiiProxy_Zone) AttrZoneId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Zone) AttrZoneId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrZoneId",
@@ -113,8 +126,8 @@ func (j *jsiiProxy_Zone) AttrZoneId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Zone) AttrZoneName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Zone) AttrZoneName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrZoneName",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_Zone) AttrZoneName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Zone) AttrZoneTag() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Zone) AttrZoneTag() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrZoneTag",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_Zone) AttrZoneTag() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Zone) AttrZoneType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Zone) AttrZoneType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrZoneType",
@@ -148,6 +161,16 @@ func (j *jsiiProxy_Zone) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Zone) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -285,17 +308,6 @@ func (j *jsiiProxy_Zone)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Zone)SetProps(val *ZoneProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Zone)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -387,6 +399,45 @@ func (z *jsiiProxy_Zone) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPol
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (z *jsiiProxy_Zone) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		z,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (z *jsiiProxy_Zone) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		z,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (z *jsiiProxy_Zone) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		z,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (z *jsiiProxy_Zone) GeneratePhysicalName() *string {

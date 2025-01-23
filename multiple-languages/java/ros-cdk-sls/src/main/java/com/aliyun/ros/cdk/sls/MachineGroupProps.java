@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.sls;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-machinegroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:12.339Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:44.528Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.MachineGroupProps")
 @software.amazon.jsii.Jsii.Proxy(MachineGroupProps.Jsii$Proxy.class)
 public interface MachineGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -13,7 +13,7 @@ public interface MachineGroupProps extends software.amazon.jsii.JsiiSerializable
     /**
      * Property groupAttribute: Group attribute, default is null.
      * <p>
-     * The object value is groupToic and externalName
+     * The object value is groupTopic and externalName
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getGroupAttribute() {
         return null;
@@ -76,7 +76,7 @@ public interface MachineGroupProps extends software.amazon.jsii.JsiiSerializable
         /**
          * Sets the value of {@link MachineGroupProps#getGroupAttribute}
          * @param groupAttribute Property groupAttribute: Group attribute, default is null.
-         *                       The object value is groupToic and externalName
+         *                       The object value is groupTopic and externalName
          * @return {@code this}
          */
         public Builder groupAttribute(java.lang.String groupAttribute) {
@@ -87,7 +87,7 @@ public interface MachineGroupProps extends software.amazon.jsii.JsiiSerializable
         /**
          * Sets the value of {@link MachineGroupProps#getGroupAttribute}
          * @param groupAttribute Property groupAttribute: Group attribute, default is null.
-         *                       The object value is groupToic and externalName
+         *                       The object value is groupTopic and externalName
          * @return {@code this}
          */
         public Builder groupAttribute(com.aliyun.ros.cdk.core.IResolvable groupAttribute) {

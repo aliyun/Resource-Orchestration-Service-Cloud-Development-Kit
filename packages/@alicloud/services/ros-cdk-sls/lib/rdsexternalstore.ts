@@ -71,25 +71,41 @@ export interface RdsExternalStoreProps {
 }
 
 /**
+ * Represents a `RdsExternalStore`.
+ */
+export interface IRdsExternalStore extends ros.IResource {
+    readonly props: RdsExternalStoreProps;
+
+    /**
+     * Attribute ExternalStoreName: The name of the external store.
+     */
+    readonly attrExternalStoreName: ros.IResolvable | string;
+
+    /**
+     * Attribute Project: The name of the project to which the external store belongs.
+     */
+    readonly attrProject: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::RdsExternalStore`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRdsExternalStore`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-rdsexternalstore
  */
-export class RdsExternalStore extends ros.Resource {
+export class RdsExternalStore extends ros.Resource implements IRdsExternalStore {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: RdsExternalStoreProps;
+    public readonly props: RdsExternalStoreProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ExternalStoreName: The name of the external store.
      */
-    public readonly attrExternalStoreName: ros.IResolvable;
+    public readonly attrExternalStoreName: ros.IResolvable | string;
 
     /**
      * Attribute Project: The name of the project to which the external store belongs.
      */
-    public readonly attrProject: ros.IResolvable;
+    public readonly attrProject: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

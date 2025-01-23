@@ -1,7 +1,10 @@
+@alicloud/ros-cdk-cloudstoragegateway.IStorageBundle=com.aliyun.ros.cdk.cloudstoragegateway.IStorageBundle
 @alicloud/ros-cdk-cloudstoragegateway.RosStorageBundle=com.aliyun.ros.cdk.cloudstoragegateway.RosStorageBundle
 @alicloud/ros-cdk-cloudstoragegateway.RosStorageBundleProps=com.aliyun.ros.cdk.cloudstoragegateway.RosStorageBundleProps
 @alicloud/ros-cdk-cloudstoragegateway.StorageBundle=com.aliyun.ros.cdk.cloudstoragegateway.StorageBundle
 @alicloud/ros-cdk-cloudstoragegateway.StorageBundleProps=com.aliyun.ros.cdk.cloudstoragegateway.StorageBundleProps
+@alicloud/ros-cdk-cloudstoragegateway.datasource.IStorageBundle=com.aliyun.ros.cdk.cloudstoragegateway.datasource.IStorageBundle
+@alicloud/ros-cdk-cloudstoragegateway.datasource.IStorageBundles=com.aliyun.ros.cdk.cloudstoragegateway.datasource.IStorageBundles
 @alicloud/ros-cdk-cloudstoragegateway.datasource.RosStorageBundle=com.aliyun.ros.cdk.cloudstoragegateway.datasource.RosStorageBundle
 @alicloud/ros-cdk-cloudstoragegateway.datasource.RosStorageBundleProps=com.aliyun.ros.cdk.cloudstoragegateway.datasource.RosStorageBundleProps
 @alicloud/ros-cdk-cloudstoragegateway.datasource.RosStorageBundles=com.aliyun.ros.cdk.cloudstoragegateway.datasource.RosStorageBundles

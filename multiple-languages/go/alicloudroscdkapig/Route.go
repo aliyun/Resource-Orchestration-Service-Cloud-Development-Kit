@@ -12,22 +12,32 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Route`.
 type Route interface {
 	alicloudroscdkcore.Resource
+	IRoute
 	// Attribute Backend: Backend services.
-	AttrBackend() alicloudroscdkcore.IResolvable
+	AttrBackend() interface{}
 	// Attribute Description: The description of route resource.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute DomainInfos: Domain items.
-	AttrDomainInfos() alicloudroscdkcore.IResolvable
+	AttrDomainInfos() interface{}
 	// Attribute EnvironmentInfo: Environment information.
-	AttrEnvironmentInfo() alicloudroscdkcore.IResolvable
+	AttrEnvironmentInfo() interface{}
 	// Attribute Match: The match rule of route resource.
-	AttrMatch() alicloudroscdkcore.IResolvable
+	AttrMatch() interface{}
 	// Attribute RouteId: The ID of route resource.
-	AttrRouteId() alicloudroscdkcore.IResolvable
+	AttrRouteId() interface{}
 	// Attribute RouteName: The name of the route.
-	AttrRouteName() alicloudroscdkcore.IResolvable
+	AttrRouteName() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -42,7 +52,6 @@ type Route interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *RouteProps
-	SetProps(val *RouteProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -55,6 +64,9 @@ type Route interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -107,10 +119,11 @@ type Route interface {
 // The jsii proxy struct for Route
 type jsiiProxy_Route struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IRoute
 }
 
-func (j *jsiiProxy_Route) AttrBackend() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Route) AttrBackend() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBackend",
@@ -119,8 +132,8 @@ func (j *jsiiProxy_Route) AttrBackend() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Route) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Route) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -129,8 +142,8 @@ func (j *jsiiProxy_Route) AttrDescription() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Route) AttrDomainInfos() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Route) AttrDomainInfos() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDomainInfos",
@@ -139,8 +152,8 @@ func (j *jsiiProxy_Route) AttrDomainInfos() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Route) AttrEnvironmentInfo() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Route) AttrEnvironmentInfo() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEnvironmentInfo",
@@ -149,8 +162,8 @@ func (j *jsiiProxy_Route) AttrEnvironmentInfo() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Route) AttrMatch() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Route) AttrMatch() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMatch",
@@ -159,8 +172,8 @@ func (j *jsiiProxy_Route) AttrMatch() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Route) AttrRouteId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Route) AttrRouteId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRouteId",
@@ -169,8 +182,8 @@ func (j *jsiiProxy_Route) AttrRouteId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Route) AttrRouteName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Route) AttrRouteName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRouteName",
@@ -184,6 +197,16 @@ func (j *jsiiProxy_Route) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Route) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -321,17 +344,6 @@ func (j *jsiiProxy_Route)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Route)SetProps(val *RouteProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Route)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -423,6 +435,45 @@ func (r *jsiiProxy_Route) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (r *jsiiProxy_Route) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		r,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_Route) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		r,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_Route) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		r,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (r *jsiiProxy_Route) GeneratePhysicalName() *string {

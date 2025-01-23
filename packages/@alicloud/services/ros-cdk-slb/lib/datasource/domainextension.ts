@@ -24,40 +24,71 @@ export interface DomainExtensionProps {
 }
 
 /**
+ * Represents a `DomainExtension`.
+ */
+export interface IDomainExtension extends ros.IResource {
+    readonly props: DomainExtensionProps;
+
+    /**
+     * Attribute Domain: The domain name.
+     */
+    readonly attrDomain: ros.IResolvable | string;
+
+    /**
+     * Attribute DomainExtensionId: The ID of the additional certificate.
+     */
+    readonly attrDomainExtensionId: ros.IResolvable | string;
+
+    /**
+     * Attribute ListenerPort: The frontend port of the HTTPS listener that is configured for the SLB instance. Valid values: 1 to 65535.
+     */
+    readonly attrListenerPort: ros.IResolvable | string;
+
+    /**
+     * Attribute LoadBalancerId: The ID of the SLB instance.
+     */
+    readonly attrLoadBalancerId: ros.IResolvable | string;
+
+    /**
+     * Attribute ServerCertificateId: The ID of the server certificate that is used by the domain name.
+     */
+    readonly attrServerCertificateId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::DomainExtension`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomainExtension`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-domainextension
  */
-export class DomainExtension extends ros.Resource {
+export class DomainExtension extends ros.Resource implements IDomainExtension {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DomainExtensionProps;
+    public readonly props: DomainExtensionProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Domain: The domain name.
      */
-    public readonly attrDomain: ros.IResolvable;
+    public readonly attrDomain: ros.IResolvable | string;
 
     /**
      * Attribute DomainExtensionId: The ID of the additional certificate.
      */
-    public readonly attrDomainExtensionId: ros.IResolvable;
+    public readonly attrDomainExtensionId: ros.IResolvable | string;
 
     /**
      * Attribute ListenerPort: The frontend port of the HTTPS listener that is configured for the SLB instance. Valid values: 1 to 65535.
      */
-    public readonly attrListenerPort: ros.IResolvable;
+    public readonly attrListenerPort: ros.IResolvable | string;
 
     /**
      * Attribute LoadBalancerId: The ID of the SLB instance.
      */
-    public readonly attrLoadBalancerId: ros.IResolvable;
+    public readonly attrLoadBalancerId: ros.IResolvable | string;
 
     /**
      * Attribute ServerCertificateId: The ID of the server certificate that is used by the domain name.
      */
-    public readonly attrServerCertificateId: ros.IResolvable;
+    public readonly attrServerCertificateId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

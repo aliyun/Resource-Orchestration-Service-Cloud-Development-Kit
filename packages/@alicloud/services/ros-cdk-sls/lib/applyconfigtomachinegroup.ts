@@ -26,14 +26,20 @@ export interface ApplyConfigToMachineGroupProps {
 }
 
 /**
+ * Represents a `ApplyConfigToMachineGroup`.
+ */
+export interface IApplyConfigToMachineGroup extends ros.IResource {
+    readonly props: ApplyConfigToMachineGroupProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::ApplyConfigToMachineGroup`, which is used to apply Log Service configurations to machine groups.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApplyConfigToMachineGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-applyconfigtomachinegroup
  */
-export class ApplyConfigToMachineGroup extends ros.Resource {
+export class ApplyConfigToMachineGroup extends ros.Resource implements IApplyConfigToMachineGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ApplyConfigToMachineGroupProps;
+    public readonly props: ApplyConfigToMachineGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

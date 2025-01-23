@@ -59,35 +59,61 @@ export interface VpnPbrRouteEntryProps {
 }
 
 /**
+ * Represents a `VpnPbrRouteEntry`.
+ */
+export interface IVpnPbrRouteEntry extends ros.IResource {
+    readonly props: VpnPbrRouteEntryProps;
+
+    /**
+     * Attribute NextHop: The next hop of the destination route entry.
+     */
+    readonly attrNextHop: ros.IResolvable | string;
+
+    /**
+     * Attribute RouteDest: The destination CIDR block of the destination route.
+     */
+    readonly attrRouteDest: ros.IResolvable | string;
+
+    /**
+     * Attribute RouteSource: The destination CIDR block of the policy-based route.
+     */
+    readonly attrRouteSource: ros.IResolvable | string;
+
+    /**
+     * Attribute VpnGatewayId: The ID of the VPN Gateway.
+     */
+    readonly attrVpnGatewayId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpnPbrRouteEntry`, which is used to create a policy-based route for a VPN gateway.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpnPbrRouteEntry`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnpbrrouteentry
  */
-export class VpnPbrRouteEntry extends ros.Resource {
+export class VpnPbrRouteEntry extends ros.Resource implements IVpnPbrRouteEntry {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: VpnPbrRouteEntryProps;
+    public readonly props: VpnPbrRouteEntryProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute NextHop: The next hop of the destination route entry.
      */
-    public readonly attrNextHop: ros.IResolvable;
+    public readonly attrNextHop: ros.IResolvable | string;
 
     /**
      * Attribute RouteDest: The destination CIDR block of the destination route.
      */
-    public readonly attrRouteDest: ros.IResolvable;
+    public readonly attrRouteDest: ros.IResolvable | string;
 
     /**
      * Attribute RouteSource: The destination CIDR block of the policy-based route.
      */
-    public readonly attrRouteSource: ros.IResolvable;
+    public readonly attrRouteSource: ros.IResolvable | string;
 
     /**
      * Attribute VpnGatewayId: The ID of the VPN Gateway.
      */
-    public readonly attrVpnGatewayId: ros.IResolvable;
+    public readonly attrVpnGatewayId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

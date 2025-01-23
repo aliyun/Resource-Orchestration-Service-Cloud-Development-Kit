@@ -38,20 +38,31 @@ export interface Ipv6InternetBandwidthProps {
 }
 
 /**
+ * Represents a `Ipv6InternetBandwidth`.
+ */
+export interface IIpv6InternetBandwidth extends ros.IResource {
+    readonly props: Ipv6InternetBandwidthProps;
+
+    /**
+     * Attribute InternetBandwidthId: Purchase of public network bandwidth.
+     */
+    readonly attrInternetBandwidthId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::Ipv6InternetBandwidth`, which is used to purchase Internet bandwidth for an IPv6 address.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosIpv6InternetBandwidth`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipv6internetbandwidth
  */
-export class Ipv6InternetBandwidth extends ros.Resource {
+export class Ipv6InternetBandwidth extends ros.Resource implements IIpv6InternetBandwidth {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: Ipv6InternetBandwidthProps;
+    public readonly props: Ipv6InternetBandwidthProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InternetBandwidthId: Purchase of public network bandwidth.
      */
-    public readonly attrInternetBandwidthId: ros.IResolvable;
+    public readonly attrInternetBandwidthId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

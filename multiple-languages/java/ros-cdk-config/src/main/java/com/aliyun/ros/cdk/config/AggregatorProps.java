@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.config;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-aggregator
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:05.846Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:36.293Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.AggregatorProps")
 @software.amazon.jsii.Jsii.Proxy(AggregatorProps.Jsii$Proxy.class)
 public interface AggregatorProps extends software.amazon.jsii.JsiiSerializable {
@@ -21,7 +21,7 @@ public interface AggregatorProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getDescription();
 
     /**
-     * Property aggregatorAccounts: The member account in aggregator.When the AggregatorType is RD, this parameter can be empty, which means that all accounts in the resource directory will be added to the global account group.
+     * Property aggregatorAccounts: The member account in aggregator.When the AggregatorType is RD, this parameter can be empty, which means that all accounts in the resource directory will be added to the global account group.When the AggregatorType is FOLDER, this parameter can be empty,which means that all accounts in the resource folder will be added to the global account group.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAggregatorAccounts() {
         return null;
@@ -31,9 +31,18 @@ public interface AggregatorProps extends software.amazon.jsii.JsiiSerializable {
      * Property aggregatorType: Account group type.
      * <p>
      * Value:
-     * RD: Global account group.CUSTOM: Custom account group (default value).
+     * RD: Global account group.
+     * CUSTOM: Custom account group (default value).
+     * FOLDER: Folder account group. Must set FolderId if the AggregatorType is FOLDER. Please refer to ListAccounts for accessing FolderId.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAggregatorType() {
+        return null;
+    }
+
+    /**
+     * Property folderId: The folder ID.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getFolderId() {
         return null;
     }
 
@@ -51,6 +60,7 @@ public interface AggregatorProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object description;
         java.lang.Object aggregatorAccounts;
         java.lang.Object aggregatorType;
+        java.lang.Object folderId;
 
         /**
          * Sets the value of {@link AggregatorProps#getAggregatorName}
@@ -94,7 +104,7 @@ public interface AggregatorProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AggregatorProps#getAggregatorAccounts}
-         * @param aggregatorAccounts Property aggregatorAccounts: The member account in aggregator.When the AggregatorType is RD, this parameter can be empty, which means that all accounts in the resource directory will be added to the global account group.
+         * @param aggregatorAccounts Property aggregatorAccounts: The member account in aggregator.When the AggregatorType is RD, this parameter can be empty, which means that all accounts in the resource directory will be added to the global account group.When the AggregatorType is FOLDER, this parameter can be empty,which means that all accounts in the resource folder will be added to the global account group.
          * @return {@code this}
          */
         public Builder aggregatorAccounts(com.aliyun.ros.cdk.core.IResolvable aggregatorAccounts) {
@@ -104,7 +114,7 @@ public interface AggregatorProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AggregatorProps#getAggregatorAccounts}
-         * @param aggregatorAccounts Property aggregatorAccounts: The member account in aggregator.When the AggregatorType is RD, this parameter can be empty, which means that all accounts in the resource directory will be added to the global account group.
+         * @param aggregatorAccounts Property aggregatorAccounts: The member account in aggregator.When the AggregatorType is RD, this parameter can be empty, which means that all accounts in the resource directory will be added to the global account group.When the AggregatorType is FOLDER, this parameter can be empty,which means that all accounts in the resource folder will be added to the global account group.
          * @return {@code this}
          */
         public Builder aggregatorAccounts(java.util.List<? extends java.lang.Object> aggregatorAccounts) {
@@ -116,7 +126,9 @@ public interface AggregatorProps extends software.amazon.jsii.JsiiSerializable {
          * Sets the value of {@link AggregatorProps#getAggregatorType}
          * @param aggregatorType Property aggregatorType: Account group type.
          *                       Value:
-         *                       RD: Global account group.CUSTOM: Custom account group (default value).
+         *                       RD: Global account group.
+         *                       CUSTOM: Custom account group (default value).
+         *                       FOLDER: Folder account group. Must set FolderId if the AggregatorType is FOLDER. Please refer to ListAccounts for accessing FolderId.
          * @return {@code this}
          */
         public Builder aggregatorType(java.lang.String aggregatorType) {
@@ -128,11 +140,33 @@ public interface AggregatorProps extends software.amazon.jsii.JsiiSerializable {
          * Sets the value of {@link AggregatorProps#getAggregatorType}
          * @param aggregatorType Property aggregatorType: Account group type.
          *                       Value:
-         *                       RD: Global account group.CUSTOM: Custom account group (default value).
+         *                       RD: Global account group.
+         *                       CUSTOM: Custom account group (default value).
+         *                       FOLDER: Folder account group. Must set FolderId if the AggregatorType is FOLDER. Please refer to ListAccounts for accessing FolderId.
          * @return {@code this}
          */
         public Builder aggregatorType(com.aliyun.ros.cdk.core.IResolvable aggregatorType) {
             this.aggregatorType = aggregatorType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AggregatorProps#getFolderId}
+         * @param folderId Property folderId: The folder ID.
+         * @return {@code this}
+         */
+        public Builder folderId(java.lang.String folderId) {
+            this.folderId = folderId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AggregatorProps#getFolderId}
+         * @param folderId Property folderId: The folder ID.
+         * @return {@code this}
+         */
+        public Builder folderId(com.aliyun.ros.cdk.core.IResolvable folderId) {
+            this.folderId = folderId;
             return this;
         }
 
@@ -156,6 +190,7 @@ public interface AggregatorProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object description;
         private final java.lang.Object aggregatorAccounts;
         private final java.lang.Object aggregatorType;
+        private final java.lang.Object folderId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -167,6 +202,7 @@ public interface AggregatorProps extends software.amazon.jsii.JsiiSerializable {
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.aggregatorAccounts = software.amazon.jsii.Kernel.get(this, "aggregatorAccounts", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.aggregatorType = software.amazon.jsii.Kernel.get(this, "aggregatorType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.folderId = software.amazon.jsii.Kernel.get(this, "folderId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -178,6 +214,7 @@ public interface AggregatorProps extends software.amazon.jsii.JsiiSerializable {
             this.description = java.util.Objects.requireNonNull(builder.description, "description is required");
             this.aggregatorAccounts = builder.aggregatorAccounts;
             this.aggregatorType = builder.aggregatorType;
+            this.folderId = builder.folderId;
         }
 
         @Override
@@ -201,6 +238,11 @@ public interface AggregatorProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getFolderId() {
+            return this.folderId;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -213,6 +255,9 @@ public interface AggregatorProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getAggregatorType() != null) {
                 data.set("aggregatorType", om.valueToTree(this.getAggregatorType()));
+            }
+            if (this.getFolderId() != null) {
+                data.set("folderId", om.valueToTree(this.getFolderId()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -235,7 +280,8 @@ public interface AggregatorProps extends software.amazon.jsii.JsiiSerializable {
             if (!aggregatorName.equals(that.aggregatorName)) return false;
             if (!description.equals(that.description)) return false;
             if (this.aggregatorAccounts != null ? !this.aggregatorAccounts.equals(that.aggregatorAccounts) : that.aggregatorAccounts != null) return false;
-            return this.aggregatorType != null ? this.aggregatorType.equals(that.aggregatorType) : that.aggregatorType == null;
+            if (this.aggregatorType != null ? !this.aggregatorType.equals(that.aggregatorType) : that.aggregatorType != null) return false;
+            return this.folderId != null ? this.folderId.equals(that.folderId) : that.folderId == null;
         }
 
         @Override
@@ -244,6 +290,7 @@ public interface AggregatorProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.description.hashCode());
             result = 31 * result + (this.aggregatorAccounts != null ? this.aggregatorAccounts.hashCode() : 0);
             result = 31 * result + (this.aggregatorType != null ? this.aggregatorType.hashCode() : 0);
+            result = 31 * result + (this.folderId != null ? this.folderId.hashCode() : 0);
             return result;
         }
     }

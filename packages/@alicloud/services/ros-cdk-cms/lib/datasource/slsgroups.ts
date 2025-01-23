@@ -24,25 +24,41 @@ export interface SlsGroupsProps {
 }
 
 /**
+ * Represents a `SlsGroups`.
+ */
+export interface ISlsGroups extends ros.IResource {
+    readonly props: SlsGroupsProps;
+
+    /**
+     * Attribute SlsGroupNames: The list of sls group names.
+     */
+    readonly attrSlsGroupNames: ros.IResolvable | string;
+
+    /**
+     * Attribute SlsGroups: The list of sls groups.
+     */
+    readonly attrSlsGroups: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::CMS::SlsGroups`, which is used to query the information about Logstore groups.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSlsGroups`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-slsgroups
  */
-export class SlsGroups extends ros.Resource {
+export class SlsGroups extends ros.Resource implements ISlsGroups {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SlsGroupsProps;
+    public readonly props: SlsGroupsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SlsGroupNames: The list of sls group names.
      */
-    public readonly attrSlsGroupNames: ros.IResolvable;
+    public readonly attrSlsGroupNames: ros.IResolvable | string;
 
     /**
      * Attribute SlsGroups: The list of sls groups.
      */
-    public readonly attrSlsGroups: ros.IResolvable;
+    public readonly attrSlsGroups: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

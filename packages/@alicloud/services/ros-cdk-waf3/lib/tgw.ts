@@ -31,35 +31,61 @@ export interface TGWProps {
 }
 
 /**
+ * Represents a `TGW`.
+ */
+export interface ITgw extends ros.IResource {
+    readonly props: TGWProps;
+
+    /**
+     * Attribute InstanceId: The ID of the WAF instance.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute Port: Access the cloud product port of WAF.
+     */
+    readonly attrPort: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceProduct: Access to WAF cloud products.
+     */
+    readonly attrResourceProduct: ros.IResolvable | string;
+
+    /**
+     * Attribute TgwId: The protection object ID of the transparent access resource.
+     */
+    readonly attrTgwId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::WAF3::TGW`, which is used to add a resource to Web Application Firewall (WAF) in transparent proxy mode.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTGW`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf3-tgw
  */
-export class Tgw extends ros.Resource {
+export class Tgw extends ros.Resource implements ITgw {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: TGWProps;
+    public readonly props: TGWProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceId: The ID of the WAF instance.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute Port: Access the cloud product port of WAF.
      */
-    public readonly attrPort: ros.IResolvable;
+    public readonly attrPort: ros.IResolvable | string;
 
     /**
      * Attribute ResourceProduct: Access to WAF cloud products.
      */
-    public readonly attrResourceProduct: ros.IResolvable;
+    public readonly attrResourceProduct: ros.IResolvable | string;
 
     /**
      * Attribute TgwId: The protection object ID of the transparent access resource.
      */
-    public readonly attrTgwId: ros.IResolvable;
+    public readonly attrTgwId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

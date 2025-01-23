@@ -14,18 +14,28 @@ import (
 // Before you call a third-party API, you must create an application and use the application as an identity to call the API.
 type App interface {
 	alicloudroscdkcore.Resource
+	IApp
 	// Attribute AppCode: The code of the APP.
-	AttrAppCode() alicloudroscdkcore.IResolvable
+	AttrAppCode() interface{}
 	// Attribute AppId: The id of the created APP.
-	AttrAppId() alicloudroscdkcore.IResolvable
+	AttrAppId() interface{}
 	// Attribute AppKey: The key of the APP.
-	AttrAppKey() alicloudroscdkcore.IResolvable
+	AttrAppKey() interface{}
 	// Attribute AppSecret: The secret of the APP.
-	AttrAppSecret() alicloudroscdkcore.IResolvable
+	AttrAppSecret() interface{}
 	// Attribute Tags: Tags of app.
-	AttrTags() alicloudroscdkcore.IResolvable
+	AttrTags() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -40,7 +50,6 @@ type App interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *AppProps
-	SetProps(val *AppProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -53,6 +62,9 @@ type App interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -105,10 +117,11 @@ type App interface {
 // The jsii proxy struct for App
 type jsiiProxy_App struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IApp
 }
 
-func (j *jsiiProxy_App) AttrAppCode() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_App) AttrAppCode() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAppCode",
@@ -117,8 +130,8 @@ func (j *jsiiProxy_App) AttrAppCode() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_App) AttrAppId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_App) AttrAppId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAppId",
@@ -127,8 +140,8 @@ func (j *jsiiProxy_App) AttrAppId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_App) AttrAppKey() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_App) AttrAppKey() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAppKey",
@@ -137,8 +150,8 @@ func (j *jsiiProxy_App) AttrAppKey() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_App) AttrAppSecret() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_App) AttrAppSecret() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAppSecret",
@@ -147,8 +160,8 @@ func (j *jsiiProxy_App) AttrAppSecret() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_App) AttrTags() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_App) AttrTags() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTags",
@@ -162,6 +175,16 @@ func (j *jsiiProxy_App) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_App) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -299,17 +322,6 @@ func (j *jsiiProxy_App)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_App)SetProps(val *AppProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_App)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -401,6 +413,45 @@ func (a *jsiiProxy_App) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPoli
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (a *jsiiProxy_App) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		a,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_App) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_App) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (a *jsiiProxy_App) GeneratePhysicalName() *string {

@@ -30,30 +30,51 @@ export interface CategoryProps {
 }
 
 /**
+ * Represents a `Category`.
+ */
+export interface ICategory extends ros.IResource {
+    readonly props: CategoryProps;
+
+    /**
+     * Attribute CateId: The ID of the category.
+     */
+    readonly attrCateId: ros.IResolvable | string;
+
+    /**
+     * Attribute Level: The level of the category. The primary classification level is 0, the secondary classification level is 1, and the tertiary classification level is 2.
+     */
+    readonly attrLevel: ros.IResolvable | string;
+
+    /**
+     * Attribute ParentId: The ID of the parent category.
+     */
+    readonly attrParentId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ICE::Category`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCategory`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ice-category
  */
-export class Category extends ros.Resource {
+export class Category extends ros.Resource implements ICategory {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: CategoryProps;
+    public readonly props: CategoryProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CateId: The ID of the category.
      */
-    public readonly attrCateId: ros.IResolvable;
+    public readonly attrCateId: ros.IResolvable | string;
 
     /**
      * Attribute Level: The level of the category. The primary classification level is 0, the secondary classification level is 1, and the tertiary classification level is 2.
      */
-    public readonly attrLevel: ros.IResolvable;
+    public readonly attrLevel: ros.IResolvable | string;
 
     /**
      * Attribute ParentId: The ID of the parent category.
      */
-    public readonly attrParentId: ros.IResolvable;
+    public readonly attrParentId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

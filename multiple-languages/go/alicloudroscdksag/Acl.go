@@ -12,10 +12,20 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::SAG::ACL`, which is used to create an access control list (ACL).
 type Acl interface {
 	alicloudroscdkcore.Resource
+	IAcl
 	// Attribute AclId: Access control set ID.
-	AttrAclId() alicloudroscdkcore.IResolvable
+	AttrAclId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -30,7 +40,6 @@ type Acl interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ACLProps
-	SetProps(val *ACLProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -43,6 +52,9 @@ type Acl interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -95,10 +107,11 @@ type Acl interface {
 // The jsii proxy struct for Acl
 type jsiiProxy_Acl struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IAcl
 }
 
-func (j *jsiiProxy_Acl) AttrAclId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Acl) AttrAclId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAclId",
@@ -112,6 +125,16 @@ func (j *jsiiProxy_Acl) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Acl) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -249,17 +272,6 @@ func (j *jsiiProxy_Acl)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Acl)SetProps(val *ACLProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Acl)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -351,6 +363,45 @@ func (a *jsiiProxy_Acl) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPoli
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (a *jsiiProxy_Acl) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		a,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_Acl) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_Acl) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (a *jsiiProxy_Acl) GeneratePhysicalName() *string {

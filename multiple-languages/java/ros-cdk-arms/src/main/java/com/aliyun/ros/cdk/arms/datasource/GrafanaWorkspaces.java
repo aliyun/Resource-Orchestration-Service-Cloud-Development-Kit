@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.arms.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ARMS::GrafanaWorkspaces</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:04.815Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:35.016Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.datasource.GrafanaWorkspaces")
-public class GrafanaWorkspaces extends com.aliyun.ros.cdk.core.Resource {
+public class GrafanaWorkspaces extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.arms.datasource.IGrafanaWorkspaces {
 
     protected GrafanaWorkspaces(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -54,15 +54,22 @@ public class GrafanaWorkspaces extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute GrafanaWorkspaceIds: The list of grafana workspace IDs.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrGrafanaWorkspaceIds() {
-        return software.amazon.jsii.Kernel.get(this, "attrGrafanaWorkspaceIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrGrafanaWorkspaceIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrGrafanaWorkspaceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute GrafanaWorkspaces: The list of grafana workspaces.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrGrafanaWorkspaces() {
-        return software.amazon.jsii.Kernel.get(this, "attrGrafanaWorkspaces", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrGrafanaWorkspaces() {
+        return software.amazon.jsii.Kernel.get(this, "attrGrafanaWorkspaces", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.arms.datasource.GrafanaWorkspacesProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.arms.datasource.GrafanaWorkspacesProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -79,14 +86,6 @@ public class GrafanaWorkspaces extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.arms.datasource.GrafanaWorkspacesProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.arms.datasource.GrafanaWorkspacesProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.arms.datasource.GrafanaWorkspacesProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {

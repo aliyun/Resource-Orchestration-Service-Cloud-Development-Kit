@@ -12,58 +12,68 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::ESS::ScalingRule`.
 type ScalingRule interface {
 	alicloudroscdkcore.Resource
+	IScalingRule
 	// Attribute AdjustmentType: The adjustment method of the scaling rule.
-	AttrAdjustmentType() alicloudroscdkcore.IResolvable
+	AttrAdjustmentType() interface{}
 	// Attribute AdjustmentValue: The number of instances that must be scaled based on the scaling rule.
-	AttrAdjustmentValue() alicloudroscdkcore.IResolvable
+	AttrAdjustmentValue() interface{}
 	// Attribute Alarms: The event-triggered tasks that are associated with the scaling rule.
 	//
 	// The value of this parameter is returned only if you set ShowAlarmRules to true. Otherwise, null is returned.
-	AttrAlarms() alicloudroscdkcore.IResolvable
+	AttrAlarms() interface{}
 	// Attribute Cooldown: The cooldown period of the scaling rule.
-	AttrCooldown() alicloudroscdkcore.IResolvable
+	AttrCooldown() interface{}
 	// Attribute DisableScaleIn: Indicates whether scale-in is disabled.
-	AttrDisableScaleIn() alicloudroscdkcore.IResolvable
+	AttrDisableScaleIn() interface{}
 	// Attribute EstimatedInstanceWarmup: The warm-up period of instances.
-	AttrEstimatedInstanceWarmup() alicloudroscdkcore.IResolvable
+	AttrEstimatedInstanceWarmup() interface{}
 	// Attribute InitialMaxSize: The maximum number of ECS instances that can be contained in the scaling group.
-	AttrInitialMaxSize() alicloudroscdkcore.IResolvable
+	AttrInitialMaxSize() interface{}
 	// Attribute MaxSize: The maximum number of ECS instances that can be contained in the scaling group.
-	AttrMaxSize() alicloudroscdkcore.IResolvable
+	AttrMaxSize() interface{}
 	// Attribute MetricName: The name of the metric of the event-triggered task that is associated with the scaling rule.
-	AttrMetricName() alicloudroscdkcore.IResolvable
+	AttrMetricName() interface{}
 	// Attribute MinAdjustmentMagnitude: The minimum number of instances that must be scaled.
-	AttrMinAdjustmentMagnitude() alicloudroscdkcore.IResolvable
+	AttrMinAdjustmentMagnitude() interface{}
 	// Attribute MinSize: The minimum number of ECS instances that must be contained in the scaling group.
-	AttrMinSize() alicloudroscdkcore.IResolvable
+	AttrMinSize() interface{}
 	// Attribute PredictiveScalingMode: The mode of the predictive scaling rule.
-	AttrPredictiveScalingMode() alicloudroscdkcore.IResolvable
+	AttrPredictiveScalingMode() interface{}
 	// Attribute PredictiveTaskBufferTime: The amount of buffer time before prediction tasks are executed.
-	AttrPredictiveTaskBufferTime() alicloudroscdkcore.IResolvable
+	AttrPredictiveTaskBufferTime() interface{}
 	// Attribute PredictiveValueBehavior: The action on the predicted maximum value.
-	AttrPredictiveValueBehavior() alicloudroscdkcore.IResolvable
+	AttrPredictiveValueBehavior() interface{}
 	// Attribute PredictiveValueBuffer: The ratio based on which the predicted value is increased when PredictiveValueBehavior is set to PredictiveValueOverrideMaxWithBuffer.
-	AttrPredictiveValueBuffer() alicloudroscdkcore.IResolvable
+	AttrPredictiveValueBuffer() interface{}
 	// Attribute ScaleInEvaluationCount: The number of consecutive times that the event-triggered task for scale-in purposes must meet the threshold conditions before an alert is triggered.
-	AttrScaleInEvaluationCount() alicloudroscdkcore.IResolvable
+	AttrScaleInEvaluationCount() interface{}
 	// Attribute ScaleOutEvaluationCount: The number of consecutive times that the event-triggered task created for scale-out purposes must meet the threshold conditions before an alert is triggered.
-	AttrScaleOutEvaluationCount() alicloudroscdkcore.IResolvable
+	AttrScaleOutEvaluationCount() interface{}
 	// Attribute ScalingGroupId: The ID of the scaling group.
-	AttrScalingGroupId() alicloudroscdkcore.IResolvable
+	AttrScalingGroupId() interface{}
 	// Attribute ScalingRuleAri: The unique identifier of the scaling rule.
-	AttrScalingRuleAri() alicloudroscdkcore.IResolvable
+	AttrScalingRuleAri() interface{}
 	// Attribute ScalingRuleId: The ID of the scaling rule.
-	AttrScalingRuleId() alicloudroscdkcore.IResolvable
+	AttrScalingRuleId() interface{}
 	// Attribute ScalingRuleName: The name of the scaling rule.
-	AttrScalingRuleName() alicloudroscdkcore.IResolvable
+	AttrScalingRuleName() interface{}
 	// Attribute ScalingRuleType: The type of the scaling rule.
-	AttrScalingRuleType() alicloudroscdkcore.IResolvable
+	AttrScalingRuleType() interface{}
 	// Attribute StepAdjustments: The step adjustments of the step scaling rule.
-	AttrStepAdjustments() alicloudroscdkcore.IResolvable
+	AttrStepAdjustments() interface{}
 	// Attribute TargetValue: The target value of the metric.
-	AttrTargetValue() alicloudroscdkcore.IResolvable
+	AttrTargetValue() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -78,7 +88,6 @@ type ScalingRule interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ScalingRuleProps
-	SetProps(val *ScalingRuleProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -91,6 +100,9 @@ type ScalingRule interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -143,10 +155,11 @@ type ScalingRule interface {
 // The jsii proxy struct for ScalingRule
 type jsiiProxy_ScalingRule struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IScalingRule
 }
 
-func (j *jsiiProxy_ScalingRule) AttrAdjustmentType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingRule) AttrAdjustmentType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAdjustmentType",
@@ -155,8 +168,8 @@ func (j *jsiiProxy_ScalingRule) AttrAdjustmentType() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_ScalingRule) AttrAdjustmentValue() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingRule) AttrAdjustmentValue() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAdjustmentValue",
@@ -165,8 +178,8 @@ func (j *jsiiProxy_ScalingRule) AttrAdjustmentValue() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_ScalingRule) AttrAlarms() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingRule) AttrAlarms() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAlarms",
@@ -175,8 +188,8 @@ func (j *jsiiProxy_ScalingRule) AttrAlarms() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_ScalingRule) AttrCooldown() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingRule) AttrCooldown() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCooldown",
@@ -185,8 +198,8 @@ func (j *jsiiProxy_ScalingRule) AttrCooldown() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_ScalingRule) AttrDisableScaleIn() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingRule) AttrDisableScaleIn() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDisableScaleIn",
@@ -195,8 +208,8 @@ func (j *jsiiProxy_ScalingRule) AttrDisableScaleIn() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_ScalingRule) AttrEstimatedInstanceWarmup() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingRule) AttrEstimatedInstanceWarmup() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEstimatedInstanceWarmup",
@@ -205,8 +218,8 @@ func (j *jsiiProxy_ScalingRule) AttrEstimatedInstanceWarmup() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_ScalingRule) AttrInitialMaxSize() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingRule) AttrInitialMaxSize() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInitialMaxSize",
@@ -215,8 +228,8 @@ func (j *jsiiProxy_ScalingRule) AttrInitialMaxSize() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_ScalingRule) AttrMaxSize() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingRule) AttrMaxSize() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMaxSize",
@@ -225,8 +238,8 @@ func (j *jsiiProxy_ScalingRule) AttrMaxSize() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_ScalingRule) AttrMetricName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingRule) AttrMetricName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMetricName",
@@ -235,8 +248,8 @@ func (j *jsiiProxy_ScalingRule) AttrMetricName() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_ScalingRule) AttrMinAdjustmentMagnitude() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingRule) AttrMinAdjustmentMagnitude() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMinAdjustmentMagnitude",
@@ -245,8 +258,8 @@ func (j *jsiiProxy_ScalingRule) AttrMinAdjustmentMagnitude() alicloudroscdkcore.
 	return returns
 }
 
-func (j *jsiiProxy_ScalingRule) AttrMinSize() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingRule) AttrMinSize() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMinSize",
@@ -255,8 +268,8 @@ func (j *jsiiProxy_ScalingRule) AttrMinSize() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_ScalingRule) AttrPredictiveScalingMode() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingRule) AttrPredictiveScalingMode() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPredictiveScalingMode",
@@ -265,8 +278,8 @@ func (j *jsiiProxy_ScalingRule) AttrPredictiveScalingMode() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_ScalingRule) AttrPredictiveTaskBufferTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingRule) AttrPredictiveTaskBufferTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPredictiveTaskBufferTime",
@@ -275,8 +288,8 @@ func (j *jsiiProxy_ScalingRule) AttrPredictiveTaskBufferTime() alicloudroscdkcor
 	return returns
 }
 
-func (j *jsiiProxy_ScalingRule) AttrPredictiveValueBehavior() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingRule) AttrPredictiveValueBehavior() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPredictiveValueBehavior",
@@ -285,8 +298,8 @@ func (j *jsiiProxy_ScalingRule) AttrPredictiveValueBehavior() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_ScalingRule) AttrPredictiveValueBuffer() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingRule) AttrPredictiveValueBuffer() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPredictiveValueBuffer",
@@ -295,8 +308,8 @@ func (j *jsiiProxy_ScalingRule) AttrPredictiveValueBuffer() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_ScalingRule) AttrScaleInEvaluationCount() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingRule) AttrScaleInEvaluationCount() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrScaleInEvaluationCount",
@@ -305,8 +318,8 @@ func (j *jsiiProxy_ScalingRule) AttrScaleInEvaluationCount() alicloudroscdkcore.
 	return returns
 }
 
-func (j *jsiiProxy_ScalingRule) AttrScaleOutEvaluationCount() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingRule) AttrScaleOutEvaluationCount() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrScaleOutEvaluationCount",
@@ -315,8 +328,8 @@ func (j *jsiiProxy_ScalingRule) AttrScaleOutEvaluationCount() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_ScalingRule) AttrScalingGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingRule) AttrScalingGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrScalingGroupId",
@@ -325,8 +338,8 @@ func (j *jsiiProxy_ScalingRule) AttrScalingGroupId() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_ScalingRule) AttrScalingRuleAri() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingRule) AttrScalingRuleAri() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrScalingRuleAri",
@@ -335,8 +348,8 @@ func (j *jsiiProxy_ScalingRule) AttrScalingRuleAri() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_ScalingRule) AttrScalingRuleId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingRule) AttrScalingRuleId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrScalingRuleId",
@@ -345,8 +358,8 @@ func (j *jsiiProxy_ScalingRule) AttrScalingRuleId() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_ScalingRule) AttrScalingRuleName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingRule) AttrScalingRuleName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrScalingRuleName",
@@ -355,8 +368,8 @@ func (j *jsiiProxy_ScalingRule) AttrScalingRuleName() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_ScalingRule) AttrScalingRuleType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingRule) AttrScalingRuleType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrScalingRuleType",
@@ -365,8 +378,8 @@ func (j *jsiiProxy_ScalingRule) AttrScalingRuleType() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_ScalingRule) AttrStepAdjustments() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingRule) AttrStepAdjustments() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStepAdjustments",
@@ -375,8 +388,8 @@ func (j *jsiiProxy_ScalingRule) AttrStepAdjustments() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_ScalingRule) AttrTargetValue() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingRule) AttrTargetValue() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTargetValue",
@@ -390,6 +403,16 @@ func (j *jsiiProxy_ScalingRule) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ScalingRule) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -527,17 +550,6 @@ func (j *jsiiProxy_ScalingRule)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ScalingRule)SetProps(val *ScalingRuleProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_ScalingRule)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -629,6 +641,45 @@ func (s *jsiiProxy_ScalingRule) ApplyRemovalPolicy(policy alicloudroscdkcore.Rem
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (s *jsiiProxy_ScalingRule) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		s,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_ScalingRule) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_ScalingRule) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (s *jsiiProxy_ScalingRule) GeneratePhysicalName() *string {

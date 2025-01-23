@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms.Datasource
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-grafanaworkspaces
     /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Arms.Datasource.GrafanaWorkspaces), fullyQualifiedName: "@alicloud/ros-cdk-arms.datasource.GrafanaWorkspaces", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"optional\":true,\"type\":{\"fqn\":\"@alicloud/ros-cdk-arms.datasource.GrafanaWorkspacesProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"optional\":true,\"type\":{\"primitive\":\"boolean\"}}]")]
-    public class GrafanaWorkspaces : AlibabaCloud.SDK.ROS.CDK.Core.Resource_
+    public class GrafanaWorkspaces : AlibabaCloud.SDK.ROS.CDK.Core.Resource_, AlibabaCloud.SDK.ROS.CDK.Arms.Datasource.IGrafanaWorkspaces
     {
         /// <summary>Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.</summary>
         public GrafanaWorkspaces(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Arms.Datasource.IGrafanaWorkspacesProps? props = null, bool? enableResourcePropertyConstraint = null): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
@@ -38,17 +38,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms.Datasource
         }
 
         /// <summary>Attribute GrafanaWorkspaceIds: The list of grafana workspace IDs.</summary>
-        [JsiiProperty(name: "attrGrafanaWorkspaceIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrGrafanaWorkspaceIds
+        [JsiiProperty(name: "attrGrafanaWorkspaceIds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrGrafanaWorkspaceIds
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute GrafanaWorkspaces: The list of grafana workspaces.</summary>
-        [JsiiProperty(name: "attrGrafanaWorkspaces", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrGrafanaWorkspaces
+        [JsiiProperty(name: "attrGrafanaWorkspaces", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrGrafanaWorkspaces
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
+        }
+
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-arms.datasource.GrafanaWorkspacesProps\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Arms.Datasource.IGrafanaWorkspacesProps Props
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Arms.Datasource.IGrafanaWorkspacesProps>()!;
         }
 
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
@@ -62,13 +68,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms.Datasource
         protected virtual string Id
         {
             get => GetInstanceProperty<string>()!;
-            set => SetInstanceProperty(value);
-        }
-
-        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-arms.datasource.GrafanaWorkspacesProps\"}")]
-        protected virtual AlibabaCloud.SDK.ROS.CDK.Arms.Datasource.IGrafanaWorkspacesProps Props
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Arms.Datasource.IGrafanaWorkspacesProps>()!;
             set => SetInstanceProperty(value);
         }
 

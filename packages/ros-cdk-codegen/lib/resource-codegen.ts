@@ -89,8 +89,9 @@ export default class ResourceCodeGenerator {
     return await this.code.save(dir);
   }
 
-  private openClass(name: genspec.CodeName, superClasses?: string): string {
+  private openClass(name: genspec.CodeName, superClasses?: string, superInterfaces?: string): string {
     const extendsPostfix = superClasses ? ` extends ${superClasses}` : '';
+    const implementsPostfix = superInterfaces ? ` implements ${superInterfaces}` : '';
 
     // handle special case whose letters are all capital, like VPC
     // in jsii type name must be CamelCased.
@@ -99,7 +100,7 @@ export default class ResourceCodeGenerator {
       let lowClassName: string = className.toLowerCase();
       className = lowClassName.charAt(0).toUpperCase() + lowClassName.substring(1);
     }
-    this.code.openBlock(`export class ${className}${extendsPostfix}${''}`);
+    this.code.openBlock(`export class ${className}${extendsPostfix}${implementsPostfix}`);
     return name.className;
   }
 
@@ -171,6 +172,43 @@ export default class ResourceCodeGenerator {
     }
   }
 
+  private emitResourceInterface(
+      resourceContext: genspec.CodeName,
+      propsType: genspec.CodeName | undefined,
+      spec: schema.ResourceType,
+  ): genspec.CodeName {
+    const name = genspec.CodeName.forResourceInterface(resourceContext);
+
+    this.docLink(undefined, `Represents a \`${resourceContext.className}\`. `);
+    this.code.openBlock(`export interface ${name.className} extends ros.IResource`);
+
+    if (propsType) {
+      this.code.line(`readonly props: ${propsType.className};`);
+    }
+
+    if (spec.Attributes) {
+      for (const attributeName of Object.keys(spec.Attributes).sort()) {
+        if (
+            !(attributeName[0] >= 'a' && attributeName[0] <= 'z') &&
+            !(attributeName[0] >= 'A' && attributeName[0] <= 'Z')
+        )
+          continue;
+        const attributeSpec = spec.Attributes![attributeName];
+
+        this.code.line();
+
+        this.docLink(undefined, `Attribute ${attributeName}: ${(attributeSpec as schema.Description).Description}`);
+        const attr = genspec.attributeDefinition(attributeName);
+
+        this.code.line(`readonly ${attr.propertyName}: ${CORE}.IResolvable | string;`);
+      }
+    }
+
+    this.code.closeBlock();
+
+    return name;
+  }
+
   private emitResourceType(
     resourceName: genspec.CodeName,
     rosResourceName: genspec.CodeName,
@@ -187,6 +225,12 @@ export default class ResourceCodeGenerator {
     if (propsType) {
       this.code.line();
     }
+
+    //
+    // Interface for this Resource
+    //
+    const interfaceName = this.emitResourceInterface(resourceName, propsType, spec);
+
     //
     // The class declaration representing this Resource
     //
@@ -197,11 +241,11 @@ export default class ResourceCodeGenerator {
     }
     const note = `@Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of \`Ros${resourceName.className}\`for a more convenient development experience.`;
     this.docLink(spec.Documentation, specificDescription, note);
-    this.openClass(resourceName, RESOURCE_BASE_CLASS);
+    this.openClass(resourceName, RESOURCE_BASE_CLASS, interfaceName.className);
     this.code.line(`protected scope: ros.Construct;`);
     this.code.line(`protected id: string;`);
     if (propsType) {
-      this.code.line(`protected props: ${propsType.className};`);
+      this.code.line(`public readonly props: ${propsType.className};`);
     }
     this.code.line(`protected enableResourcePropertyConstraint: boolean;`);
 
@@ -225,7 +269,7 @@ export default class ResourceCodeGenerator {
         this.docLink(undefined, `Attribute ${attributeName}: ${(attributeSpec as schema.Description).Description}`);
         const attr = genspec.attributeDefinition(attributeName);
 
-        this.code.line(`public readonly ${attr.propertyName}: ${CORE}.IResolvable;`);
+        this.code.line(`public readonly ${attr.propertyName}: ${CORE}.IResolvable | string;`);
         attributes.push(attr);
       }
     }
@@ -506,6 +550,14 @@ export class ExtensionCodeGenerator {
         } else {
           throw new Error(`Extension class name is not correct: ${extensionFilePath}`);
         }
+
+        const matchingImports = [
+          resourceName,
+          `${resourceName}Props`,
+          `Ros${resourceName}`,
+          `I${resourceName}`
+        ];
+
         const extensionCodes = data.split('\n');
         // console.log(data);
         // console.log('-----------------------------------------------------------------');
@@ -522,9 +574,7 @@ export class ExtensionCodeGenerator {
             if (matches && matches[1]) {
               const importResourceNames = matches[1].split(',').map((element) => element.trim());
               for (const importResourceName of importResourceNames) {
-                if (importResourceName === resourceName
-                    || importResourceName === `${resourceName}Props`
-                    || importResourceName === `Ros${resourceName}`) {
+                if (matchingImports.includes(importResourceName)) {
                   continue;
                 }
                 resourceCodes.splice(resourceCodeIndex, 0,

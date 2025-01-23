@@ -12,16 +12,26 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Activation`, which is used to create an activation code.
 type Activation interface {
 	alicloudroscdkcore.Resource
+	IActivation
 	// Attribute ActivationCode: Activation code.
-	AttrActivationCode() alicloudroscdkcore.IResolvable
+	AttrActivationCode() interface{}
 	// Attribute ActivationId: Activation code ID.
-	AttrActivationId() alicloudroscdkcore.IResolvable
+	AttrActivationId() interface{}
 	// Attribute DeregisteredCount: The number of instances that have been logged out.
-	AttrDeregisteredCount() alicloudroscdkcore.IResolvable
+	AttrDeregisteredCount() interface{}
 	// Attribute RegisteredCount: The number of registered instances.
-	AttrRegisteredCount() alicloudroscdkcore.IResolvable
+	AttrRegisteredCount() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -36,7 +46,6 @@ type Activation interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ActivationProps
-	SetProps(val *ActivationProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -49,6 +58,9 @@ type Activation interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -101,10 +113,11 @@ type Activation interface {
 // The jsii proxy struct for Activation
 type jsiiProxy_Activation struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IActivation
 }
 
-func (j *jsiiProxy_Activation) AttrActivationCode() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Activation) AttrActivationCode() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrActivationCode",
@@ -113,8 +126,8 @@ func (j *jsiiProxy_Activation) AttrActivationCode() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_Activation) AttrActivationId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Activation) AttrActivationId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrActivationId",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_Activation) AttrActivationId() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Activation) AttrDeregisteredCount() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Activation) AttrDeregisteredCount() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDeregisteredCount",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_Activation) AttrDeregisteredCount() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_Activation) AttrRegisteredCount() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Activation) AttrRegisteredCount() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRegisteredCount",
@@ -148,6 +161,16 @@ func (j *jsiiProxy_Activation) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Activation) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -285,17 +308,6 @@ func (j *jsiiProxy_Activation)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Activation)SetProps(val *ActivationProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Activation)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -387,6 +399,45 @@ func (a *jsiiProxy_Activation) ApplyRemovalPolicy(policy alicloudroscdkcore.Remo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (a *jsiiProxy_Activation) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		a,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_Activation) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_Activation) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (a *jsiiProxy_Activation) GeneratePhysicalName() *string {

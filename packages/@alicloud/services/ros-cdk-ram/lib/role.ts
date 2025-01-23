@@ -56,30 +56,51 @@ export interface RoleProps {
 }
 
 /**
+ * Represents a `Role`.
+ */
+export interface IRole extends ros.IResource {
+    readonly props: RoleProps;
+
+    /**
+     * Attribute Arn: Name of alicloud resource.
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
+     * Attribute RoleId: Id of ram role.
+     */
+    readonly attrRoleId: ros.IResolvable | string;
+
+    /**
+     * Attribute RoleName: Name of ram role.
+     */
+    readonly attrRoleName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::Role`, which is used to create a Resource Access Management (RAM) role.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRole`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-role
  */
-export class Role extends ros.Resource {
+export class Role extends ros.Resource implements IRole {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: RoleProps;
+    public readonly props: RoleProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Arn: Name of alicloud resource.
      */
-    public readonly attrArn: ros.IResolvable;
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute RoleId: Id of ram role.
      */
-    public readonly attrRoleId: ros.IResolvable;
+    public readonly attrRoleId: ros.IResolvable | string;
 
     /**
      * Attribute RoleName: Name of ram role.
      */
-    public readonly attrRoleName: ros.IResolvable;
+    public readonly attrRoleName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -88,6 +88,10 @@ func (j *jsiiProxy_RosDBCluster) validateSetBackupSetIdParameters(val interface{
 	return nil
 }
 
+func (j *jsiiProxy_RosDBCluster) validateSetCloneSourceRegionIdParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosDBCluster) validateSetComputeResourceParameters(val interface{}) error {
 	return nil
 }
@@ -96,7 +100,15 @@ func (j *jsiiProxy_RosDBCluster) validateSetDbClusterDescriptionParameters(val i
 	return nil
 }
 
+func (j *jsiiProxy_RosDBCluster) validateSetDbClusterNetworkTypeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosDBCluster) validateSetDbClusterVersionParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDBCluster) validateSetDiskEncryptionParameters(val interface{}) error {
 	return nil
 }
 
@@ -105,6 +117,10 @@ func (j *jsiiProxy_RosDBCluster) validateSetEnableDefaultResourcePoolParameters(
 }
 
 func (j *jsiiProxy_RosDBCluster) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDBCluster) validateSetKmsIdParameters(val interface{}) error {
 	return nil
 }
 
@@ -117,6 +133,18 @@ func (j *jsiiProxy_RosDBCluster) validateSetPeriodParameters(val interface{}) er
 }
 
 func (j *jsiiProxy_RosDBCluster) validateSetPeriodTypeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDBCluster) validateSetProductFormParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDBCluster) validateSetReservedNodeCountParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDBCluster) validateSetReservedNodeSizeParameters(val interface{}) error {
 	return nil
 }
 

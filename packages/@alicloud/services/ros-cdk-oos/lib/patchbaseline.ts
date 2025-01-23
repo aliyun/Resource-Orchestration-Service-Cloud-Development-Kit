@@ -66,105 +66,201 @@ export interface PatchBaselineProps {
 }
 
 /**
+ * Represents a `PatchBaseline`.
+ */
+export interface IPatchBaseline extends ros.IResource {
+    readonly props: PatchBaselineProps;
+
+    /**
+     * Attribute ApprovalRules: The rules of scanning and installing patches for the specified operating system.
+     */
+    readonly attrApprovalRules: ros.IResolvable | string;
+
+    /**
+     * Attribute ApprovedPatches: Approved patch list.
+     */
+    readonly attrApprovedPatches: ros.IResolvable | string;
+
+    /**
+     * Attribute ApprovedPatchesEnableNonSecurity: Approve whether the patch includes updates other than security.
+     */
+    readonly attrApprovedPatchesEnableNonSecurity: ros.IResolvable | string;
+
+    /**
+     * Attribute CreateTime: The time when the patch baseline was created.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute CreatedBy: The creator of the patch baseline.
+     */
+    readonly attrCreatedBy: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: The description of the patch baseline.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute IsDefault: Indicates whether the patch baseline is set as the default patch baseline.
+     */
+    readonly attrIsDefault: ros.IResolvable | string;
+
+    /**
+     * Attribute OperationSystem: The type of the operating system.
+     */
+    readonly attrOperationSystem: ros.IResolvable | string;
+
+    /**
+     * Attribute PatchBaselineId: The ID of the patch baseline.
+     */
+    readonly attrPatchBaselineId: ros.IResolvable | string;
+
+    /**
+     * Attribute PatchBaselineName: The name of the patch baseline.
+     */
+    readonly attrPatchBaselineName: ros.IResolvable | string;
+
+    /**
+     * Attribute RejectedPatches: Reject the name of the patch.
+     */
+    readonly attrRejectedPatches: ros.IResolvable | string;
+
+    /**
+     * Attribute RejectedPatchesAction: The ID of the resource group.
+     */
+    readonly attrRejectedPatchesAction: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: Approve whether the patch includes updates other than security
+     */
+    readonly attrResourceGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute ShareType: The share type of the patch baseline.
+     */
+    readonly attrShareType: ros.IResolvable | string;
+
+    /**
+     * Attribute Sources: Patch source configuration list.
+     */
+    readonly attrSources: ros.IResolvable | string;
+
+    /**
+     * Attribute Tags: Tags of patch baseline.
+     */
+    readonly attrTags: ros.IResolvable | string;
+
+    /**
+     * Attribute UpdatedBy: The user who last modified the patch baseline.
+     */
+    readonly attrUpdatedBy: ros.IResolvable | string;
+
+    /**
+     * Attribute UpdatedDate: The time when the patch baseline was last modified.
+     */
+    readonly attrUpdatedDate: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::PatchBaseline`, which is used to create a patch baseline.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPatchBaseline`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-patchbaseline
  */
-export class PatchBaseline extends ros.Resource {
+export class PatchBaseline extends ros.Resource implements IPatchBaseline {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: PatchBaselineProps;
+    public readonly props: PatchBaselineProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ApprovalRules: The rules of scanning and installing patches for the specified operating system.
      */
-    public readonly attrApprovalRules: ros.IResolvable;
+    public readonly attrApprovalRules: ros.IResolvable | string;
 
     /**
      * Attribute ApprovedPatches: Approved patch list.
      */
-    public readonly attrApprovedPatches: ros.IResolvable;
+    public readonly attrApprovedPatches: ros.IResolvable | string;
 
     /**
      * Attribute ApprovedPatchesEnableNonSecurity: Approve whether the patch includes updates other than security.
      */
-    public readonly attrApprovedPatchesEnableNonSecurity: ros.IResolvable;
+    public readonly attrApprovedPatchesEnableNonSecurity: ros.IResolvable | string;
 
     /**
      * Attribute CreateTime: The time when the patch baseline was created.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute CreatedBy: The creator of the patch baseline.
      */
-    public readonly attrCreatedBy: ros.IResolvable;
+    public readonly attrCreatedBy: ros.IResolvable | string;
 
     /**
      * Attribute Description: The description of the patch baseline.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute IsDefault: Indicates whether the patch baseline is set as the default patch baseline.
      */
-    public readonly attrIsDefault: ros.IResolvable;
+    public readonly attrIsDefault: ros.IResolvable | string;
 
     /**
      * Attribute OperationSystem: The type of the operating system.
      */
-    public readonly attrOperationSystem: ros.IResolvable;
+    public readonly attrOperationSystem: ros.IResolvable | string;
 
     /**
      * Attribute PatchBaselineId: The ID of the patch baseline.
      */
-    public readonly attrPatchBaselineId: ros.IResolvable;
+    public readonly attrPatchBaselineId: ros.IResolvable | string;
 
     /**
      * Attribute PatchBaselineName: The name of the patch baseline.
      */
-    public readonly attrPatchBaselineName: ros.IResolvable;
+    public readonly attrPatchBaselineName: ros.IResolvable | string;
 
     /**
      * Attribute RejectedPatches: Reject the name of the patch.
      */
-    public readonly attrRejectedPatches: ros.IResolvable;
+    public readonly attrRejectedPatches: ros.IResolvable | string;
 
     /**
      * Attribute RejectedPatchesAction: The ID of the resource group.
      */
-    public readonly attrRejectedPatchesAction: ros.IResolvable;
+    public readonly attrRejectedPatchesAction: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroupId: Approve whether the patch includes updates other than security
      */
-    public readonly attrResourceGroupId: ros.IResolvable;
+    public readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Attribute ShareType: The share type of the patch baseline.
      */
-    public readonly attrShareType: ros.IResolvable;
+    public readonly attrShareType: ros.IResolvable | string;
 
     /**
      * Attribute Sources: Patch source configuration list.
      */
-    public readonly attrSources: ros.IResolvable;
+    public readonly attrSources: ros.IResolvable | string;
 
     /**
      * Attribute Tags: Tags of patch baseline.
      */
-    public readonly attrTags: ros.IResolvable;
+    public readonly attrTags: ros.IResolvable | string;
 
     /**
      * Attribute UpdatedBy: The user who last modified the patch baseline.
      */
-    public readonly attrUpdatedBy: ros.IResolvable;
+    public readonly attrUpdatedBy: ros.IResolvable | string;
 
     /**
      * Attribute UpdatedDate: The time when the patch baseline was last modified.
      */
-    public readonly attrUpdatedDate: ros.IResolvable;
+    public readonly attrUpdatedDate: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

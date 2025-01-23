@@ -24,6 +24,10 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "attrUiProxyConnAddrInfo", GoGetter: "AttrUiProxyConnAddrInfo"},
 			_jsii_.MemberProperty{JsiiProperty: "attrZkConnAddrs", GoGetter: "AttrZkConnAddrs"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDependency", GoMethod: "FetchDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchResourceDesc", GoMethod: "FetchResourceDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "generatePhysicalName", GoMethod: "GeneratePhysicalName"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
@@ -46,12 +50,55 @@ func init() {
 		func() interface{} {
 			j := jsiiProxy_Cluster{}
 			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreResource)
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_ICluster)
 			return &j
 		},
 	)
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-hbase.ClusterProps",
 		reflect.TypeOf((*ClusterProps)(nil)).Elem(),
+	)
+	_jsii_.RegisterInterface(
+		"@alicloud/ros-cdk-hbase.ICluster",
+		reflect.TypeOf((*ICluster)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "attrClusterId", GoGetter: "AttrClusterId"},
+			_jsii_.MemberProperty{JsiiProperty: "attrServiceConnAddrs", GoGetter: "AttrServiceConnAddrs"},
+			_jsii_.MemberProperty{JsiiProperty: "attrSlbConnAddrs", GoGetter: "AttrSlbConnAddrs"},
+			_jsii_.MemberProperty{JsiiProperty: "attrThriftConn", GoGetter: "AttrThriftConn"},
+			_jsii_.MemberProperty{JsiiProperty: "attrUiProxyConnAddrInfo", GoGetter: "AttrUiProxyConnAddrInfo"},
+			_jsii_.MemberProperty{JsiiProperty: "attrZkConnAddrs", GoGetter: "AttrZkConnAddrs"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberProperty{JsiiProperty: "props", GoGetter: "Props"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+		},
+		func() interface{} {
+			j := jsiiProxy_ICluster{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreIResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterInterface(
+		"@alicloud/ros-cdk-hbase.IMultiZoneCluster",
+		reflect.TypeOf((*IMultiZoneCluster)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "attrClusterId", GoGetter: "AttrClusterId"},
+			_jsii_.MemberProperty{JsiiProperty: "attrServiceConnAddrs", GoGetter: "AttrServiceConnAddrs"},
+			_jsii_.MemberProperty{JsiiProperty: "attrSlbConnAddrs", GoGetter: "AttrSlbConnAddrs"},
+			_jsii_.MemberProperty{JsiiProperty: "attrThriftConn", GoGetter: "AttrThriftConn"},
+			_jsii_.MemberProperty{JsiiProperty: "attrUiProxyConnAddrInfo", GoGetter: "AttrUiProxyConnAddrInfo"},
+			_jsii_.MemberProperty{JsiiProperty: "attrZkConnAddrs", GoGetter: "AttrZkConnAddrs"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberProperty{JsiiProperty: "props", GoGetter: "Props"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+		},
+		func() interface{} {
+			j := jsiiProxy_IMultiZoneCluster{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreIResource)
+			return &j
+		},
 	)
 	_jsii_.RegisterClass(
 		"@alicloud/ros-cdk-hbase.MultiZoneCluster",
@@ -69,6 +116,10 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "attrUiProxyConnAddrInfo", GoGetter: "AttrUiProxyConnAddrInfo"},
 			_jsii_.MemberProperty{JsiiProperty: "attrZkConnAddrs", GoGetter: "AttrZkConnAddrs"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDependency", GoMethod: "FetchDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchResourceDesc", GoMethod: "FetchResourceDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "generatePhysicalName", GoMethod: "GeneratePhysicalName"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
@@ -91,6 +142,7 @@ func init() {
 		func() interface{} {
 			j := jsiiProxy_MultiZoneCluster{}
 			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreResource)
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IMultiZoneCluster)
 			return &j
 		},
 	)
@@ -131,6 +183,9 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "encryptionKey", GoGetter: "EncryptionKey"},
 			_jsii_.MemberProperty{JsiiProperty: "engine", GoGetter: "Engine"},
 			_jsii_.MemberProperty{JsiiProperty: "engineVersion", GoGetter: "EngineVersion"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDesc", GoMethod: "FetchDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchRosDependency", GoMethod: "FetchRosDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "logicalId", GoGetter: "LogicalId"},
 			_jsii_.MemberProperty{JsiiProperty: "masterInstanceType", GoGetter: "MasterInstanceType"},
@@ -206,6 +261,9 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
 			_jsii_.MemberProperty{JsiiProperty: "engine", GoGetter: "Engine"},
 			_jsii_.MemberProperty{JsiiProperty: "engineVersion", GoGetter: "EngineVersion"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDesc", GoMethod: "FetchDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchRosDependency", GoMethod: "FetchRosDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "logDiskSize", GoGetter: "LogDiskSize"},
 			_jsii_.MemberProperty{JsiiProperty: "logDiskType", GoGetter: "LogDiskType"},

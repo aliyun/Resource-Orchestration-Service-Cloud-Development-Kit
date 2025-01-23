@@ -12,10 +12,20 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::SAG::QosPolicy`, which is used to create a traffic classification rule for a quality of service (QoS) policy.
 type QosPolicy interface {
 	alicloudroscdkcore.Resource
+	IQosPolicy
 	// Attribute QosPolicyId: The ID of the traffic classification rule.
-	AttrQosPolicyId() alicloudroscdkcore.IResolvable
+	AttrQosPolicyId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -30,7 +40,6 @@ type QosPolicy interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *QosPolicyProps
-	SetProps(val *QosPolicyProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -43,6 +52,9 @@ type QosPolicy interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -95,10 +107,11 @@ type QosPolicy interface {
 // The jsii proxy struct for QosPolicy
 type jsiiProxy_QosPolicy struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IQosPolicy
 }
 
-func (j *jsiiProxy_QosPolicy) AttrQosPolicyId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_QosPolicy) AttrQosPolicyId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrQosPolicyId",
@@ -112,6 +125,16 @@ func (j *jsiiProxy_QosPolicy) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_QosPolicy) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -249,17 +272,6 @@ func (j *jsiiProxy_QosPolicy)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_QosPolicy)SetProps(val *QosPolicyProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_QosPolicy)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -351,6 +363,45 @@ func (q *jsiiProxy_QosPolicy) ApplyRemovalPolicy(policy alicloudroscdkcore.Remov
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (q *jsiiProxy_QosPolicy) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		q,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (q *jsiiProxy_QosPolicy) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		q,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (q *jsiiProxy_QosPolicy) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		q,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (q *jsiiProxy_QosPolicy) GeneratePhysicalName() *string {

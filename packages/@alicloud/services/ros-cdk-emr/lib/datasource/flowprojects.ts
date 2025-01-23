@@ -29,25 +29,41 @@ export interface FlowProjectsProps {
 }
 
 /**
+ * Represents a `FlowProjects`.
+ */
+export interface IFlowProjects extends ros.IResource {
+    readonly props: FlowProjectsProps;
+
+    /**
+     * Attribute FlowProjectIds: The list of flow project IDs.
+     */
+    readonly attrFlowProjectIds: ros.IResolvable | string;
+
+    /**
+     * Attribute FlowProjects: The list of flow projects.
+     */
+    readonly attrFlowProjects: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::EMR::FlowProjects`, which is used to query projects.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFlowProjects`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-emr-flowprojects
  */
-export class FlowProjects extends ros.Resource {
+export class FlowProjects extends ros.Resource implements IFlowProjects {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: FlowProjectsProps;
+    public readonly props: FlowProjectsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute FlowProjectIds: The list of flow project IDs.
      */
-    public readonly attrFlowProjectIds: ros.IResolvable;
+    public readonly attrFlowProjectIds: ros.IResolvable | string;
 
     /**
      * Attribute FlowProjects: The list of flow projects.
      */
-    public readonly attrFlowProjects: ros.IResolvable;
+    public readonly attrFlowProjects: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

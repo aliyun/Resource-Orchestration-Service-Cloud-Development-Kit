@@ -12,16 +12,17 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::BgpPeer`, which is used to query the information about a Border Gateway Protocol (BGP) peer in a region.
 type BgpPeer interface {
 	alicloudroscdkcore.Resource
+	IBgpPeer
 	// Attribute AdvertisedRouteCount: The number of advertised routes.
-	AttrAdvertisedRouteCount() alicloudroscdkcore.IResolvable
+	AttrAdvertisedRouteCount() interface{}
 	// Attribute AuthKey: The authentication key of the BGP group.
-	AttrAuthKey() alicloudroscdkcore.IResolvable
+	AttrAuthKey() interface{}
 	// Attribute BfdMultiHop: The Bidirectional Forwarding Detection (BFD) hop count.
-	AttrBfdMultiHop() alicloudroscdkcore.IResolvable
+	AttrBfdMultiHop() interface{}
 	// Attribute BgpGroupId: The ID of the BGP group.
-	AttrBgpGroupId() alicloudroscdkcore.IResolvable
+	AttrBgpGroupId() interface{}
 	// Attribute BgpPeerId: The ID of the BGP peer.
-	AttrBgpPeerId() alicloudroscdkcore.IResolvable
+	AttrBgpPeerId() interface{}
 	// Attribute BgpStatus: The status of the BGP connection.
 	//
 	// Valid values:
@@ -30,43 +31,43 @@ type BgpPeer interface {
 	// Active: The BGP connection is available.
 	// Established: The BGP connection is established.
 	// Down: The BGP connection is unavailable.
-	AttrBgpStatus() alicloudroscdkcore.IResolvable
+	AttrBgpStatus() interface{}
 	// Attribute Description: The description of the BGP group.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute EnableBfd: Indicates whether BFD is enabled.
 	//
 	// Valid values:
 	// false
 	// true.
-	AttrEnableBfd() alicloudroscdkcore.IResolvable
+	AttrEnableBfd() interface{}
 	// Attribute GmtModified: The time when the BGP peer is modified.
-	AttrGmtModified() alicloudroscdkcore.IResolvable
+	AttrGmtModified() interface{}
 	// Attribute Hold: The hold time.
-	AttrHold() alicloudroscdkcore.IResolvable
+	AttrHold() interface{}
 	// Attribute IpVersion: The version of the IP address.
-	AttrIpVersion() alicloudroscdkcore.IResolvable
+	AttrIpVersion() interface{}
 	// Attribute IsFake: Indicates whether a fake autonomous system number (ASN) is used.
 	//
 	// Valid values:
 	// false
 	// true.
-	AttrIsFake() alicloudroscdkcore.IResolvable
+	AttrIsFake() interface{}
 	// Attribute Keepalive: The Keepalive interval.
-	AttrKeepalive() alicloudroscdkcore.IResolvable
+	AttrKeepalive() interface{}
 	// Attribute LocalAsn: The ASN of the device on the Alibaba Cloud side.
-	AttrLocalAsn() alicloudroscdkcore.IResolvable
+	AttrLocalAsn() interface{}
 	// Attribute Name: The name of the BGP peer.
-	AttrName() alicloudroscdkcore.IResolvable
+	AttrName() interface{}
 	// Attribute PeerAsn: The autonomous system number (ASN)of the BGP peer.
-	AttrPeerAsn() alicloudroscdkcore.IResolvable
+	AttrPeerAsn() interface{}
 	// Attribute PeerIpAddress: The IP address of the BGP peer.
-	AttrPeerIpAddress() alicloudroscdkcore.IResolvable
+	AttrPeerIpAddress() interface{}
 	// Attribute ReceivedRouteCount: The number of received routes.
-	AttrReceivedRouteCount() alicloudroscdkcore.IResolvable
+	AttrReceivedRouteCount() interface{}
 	// Attribute RouteLimit: The maximum number of routes.
-	AttrRouteLimit() alicloudroscdkcore.IResolvable
+	AttrRouteLimit() interface{}
 	// Attribute RouterId: The Router ID.
-	AttrRouterId() alicloudroscdkcore.IResolvable
+	AttrRouterId() interface{}
 	// Attribute Status: The status of the BGP peer.
 	//
 	// Valid values:
@@ -75,9 +76,18 @@ type BgpPeer interface {
 	// Modifying
 	// Deleting
 	// Deleted.
-	AttrStatus() alicloudroscdkcore.IResolvable
+	AttrStatus() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -92,7 +102,6 @@ type BgpPeer interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *BgpPeerProps
-	SetProps(val *BgpPeerProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -105,6 +114,9 @@ type BgpPeer interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -157,10 +169,11 @@ type BgpPeer interface {
 // The jsii proxy struct for BgpPeer
 type jsiiProxy_BgpPeer struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IBgpPeer
 }
 
-func (j *jsiiProxy_BgpPeer) AttrAdvertisedRouteCount() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BgpPeer) AttrAdvertisedRouteCount() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAdvertisedRouteCount",
@@ -169,8 +182,8 @@ func (j *jsiiProxy_BgpPeer) AttrAdvertisedRouteCount() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_BgpPeer) AttrAuthKey() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BgpPeer) AttrAuthKey() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAuthKey",
@@ -179,8 +192,8 @@ func (j *jsiiProxy_BgpPeer) AttrAuthKey() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_BgpPeer) AttrBfdMultiHop() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BgpPeer) AttrBfdMultiHop() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBfdMultiHop",
@@ -189,8 +202,8 @@ func (j *jsiiProxy_BgpPeer) AttrBfdMultiHop() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_BgpPeer) AttrBgpGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BgpPeer) AttrBgpGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBgpGroupId",
@@ -199,8 +212,8 @@ func (j *jsiiProxy_BgpPeer) AttrBgpGroupId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_BgpPeer) AttrBgpPeerId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BgpPeer) AttrBgpPeerId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBgpPeerId",
@@ -209,8 +222,8 @@ func (j *jsiiProxy_BgpPeer) AttrBgpPeerId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_BgpPeer) AttrBgpStatus() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BgpPeer) AttrBgpStatus() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBgpStatus",
@@ -219,8 +232,8 @@ func (j *jsiiProxy_BgpPeer) AttrBgpStatus() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_BgpPeer) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BgpPeer) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -229,8 +242,8 @@ func (j *jsiiProxy_BgpPeer) AttrDescription() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_BgpPeer) AttrEnableBfd() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BgpPeer) AttrEnableBfd() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEnableBfd",
@@ -239,8 +252,8 @@ func (j *jsiiProxy_BgpPeer) AttrEnableBfd() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_BgpPeer) AttrGmtModified() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BgpPeer) AttrGmtModified() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGmtModified",
@@ -249,8 +262,8 @@ func (j *jsiiProxy_BgpPeer) AttrGmtModified() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_BgpPeer) AttrHold() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BgpPeer) AttrHold() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHold",
@@ -259,8 +272,8 @@ func (j *jsiiProxy_BgpPeer) AttrHold() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_BgpPeer) AttrIpVersion() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BgpPeer) AttrIpVersion() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIpVersion",
@@ -269,8 +282,8 @@ func (j *jsiiProxy_BgpPeer) AttrIpVersion() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_BgpPeer) AttrIsFake() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BgpPeer) AttrIsFake() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIsFake",
@@ -279,8 +292,8 @@ func (j *jsiiProxy_BgpPeer) AttrIsFake() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_BgpPeer) AttrKeepalive() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BgpPeer) AttrKeepalive() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrKeepalive",
@@ -289,8 +302,8 @@ func (j *jsiiProxy_BgpPeer) AttrKeepalive() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_BgpPeer) AttrLocalAsn() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BgpPeer) AttrLocalAsn() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLocalAsn",
@@ -299,8 +312,8 @@ func (j *jsiiProxy_BgpPeer) AttrLocalAsn() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_BgpPeer) AttrName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BgpPeer) AttrName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrName",
@@ -309,8 +322,8 @@ func (j *jsiiProxy_BgpPeer) AttrName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_BgpPeer) AttrPeerAsn() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BgpPeer) AttrPeerAsn() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPeerAsn",
@@ -319,8 +332,8 @@ func (j *jsiiProxy_BgpPeer) AttrPeerAsn() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_BgpPeer) AttrPeerIpAddress() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BgpPeer) AttrPeerIpAddress() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPeerIpAddress",
@@ -329,8 +342,8 @@ func (j *jsiiProxy_BgpPeer) AttrPeerIpAddress() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_BgpPeer) AttrReceivedRouteCount() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BgpPeer) AttrReceivedRouteCount() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrReceivedRouteCount",
@@ -339,8 +352,8 @@ func (j *jsiiProxy_BgpPeer) AttrReceivedRouteCount() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_BgpPeer) AttrRouteLimit() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BgpPeer) AttrRouteLimit() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRouteLimit",
@@ -349,8 +362,8 @@ func (j *jsiiProxy_BgpPeer) AttrRouteLimit() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_BgpPeer) AttrRouterId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BgpPeer) AttrRouterId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRouterId",
@@ -359,8 +372,8 @@ func (j *jsiiProxy_BgpPeer) AttrRouterId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_BgpPeer) AttrStatus() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BgpPeer) AttrStatus() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStatus",
@@ -374,6 +387,16 @@ func (j *jsiiProxy_BgpPeer) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BgpPeer) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -511,17 +534,6 @@ func (j *jsiiProxy_BgpPeer)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_BgpPeer)SetProps(val *BgpPeerProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_BgpPeer)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -613,6 +625,45 @@ func (b *jsiiProxy_BgpPeer) ApplyRemovalPolicy(policy alicloudroscdkcore.Removal
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (b *jsiiProxy_BgpPeer) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		b,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (b *jsiiProxy_BgpPeer) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		b,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (b *jsiiProxy_BgpPeer) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		b,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (b *jsiiProxy_BgpPeer) GeneratePhysicalName() *string {

@@ -12,14 +12,24 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::RAM::AccessKey`, which is used to obtain the AccessKey pair (AccessKey ID and AccessKey secret) of a specified user and its status.
 type AccessKey interface {
 	alicloudroscdkcore.Resource
+	IAccessKey
 	// Attribute AccessKeyId: Id of access key.
-	AttrAccessKeyId() alicloudroscdkcore.IResolvable
+	AttrAccessKeyId() interface{}
 	// Attribute AccessKeySecret: Secret of access key.
-	AttrAccessKeySecret() alicloudroscdkcore.IResolvable
+	AttrAccessKeySecret() interface{}
 	// Attribute Status: Status of access key.
-	AttrStatus() alicloudroscdkcore.IResolvable
+	AttrStatus() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -34,7 +44,6 @@ type AccessKey interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *AccessKeyProps
-	SetProps(val *AccessKeyProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -47,6 +56,9 @@ type AccessKey interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -99,10 +111,11 @@ type AccessKey interface {
 // The jsii proxy struct for AccessKey
 type jsiiProxy_AccessKey struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IAccessKey
 }
 
-func (j *jsiiProxy_AccessKey) AttrAccessKeyId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AccessKey) AttrAccessKeyId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAccessKeyId",
@@ -111,8 +124,8 @@ func (j *jsiiProxy_AccessKey) AttrAccessKeyId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_AccessKey) AttrAccessKeySecret() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AccessKey) AttrAccessKeySecret() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAccessKeySecret",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_AccessKey) AttrAccessKeySecret() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_AccessKey) AttrStatus() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AccessKey) AttrStatus() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStatus",
@@ -136,6 +149,16 @@ func (j *jsiiProxy_AccessKey) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AccessKey) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -273,17 +296,6 @@ func (j *jsiiProxy_AccessKey)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AccessKey)SetProps(val *AccessKeyProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_AccessKey)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -375,6 +387,45 @@ func (a *jsiiProxy_AccessKey) ApplyRemovalPolicy(policy alicloudroscdkcore.Remov
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (a *jsiiProxy_AccessKey) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		a,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AccessKey) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AccessKey) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (a *jsiiProxy_AccessKey) GeneratePhysicalName() *string {

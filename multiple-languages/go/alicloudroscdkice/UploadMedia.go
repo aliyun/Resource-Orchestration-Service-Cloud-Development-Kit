@@ -12,26 +12,36 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ICE::UploadMedia`.
 type UploadMedia interface {
 	alicloudroscdkcore.Resource
+	IUploadMedia
 	// Attribute FileURL: The OSS URL of the file.
 	//
 	// The URL does not contain the information used for authentication.
-	AttrFileUrl() alicloudroscdkcore.IResolvable
+	AttrFileUrl() interface{}
 	// Attribute MediaId: The ID of the media asset.
-	AttrMediaId() alicloudroscdkcore.IResolvable
+	AttrMediaId() interface{}
 	// Attribute MediaURL: The URL of the media asset.
 	//
 	// Note If a domain name for Alibaba Cloud CDN (CDN) is specified, a CDN URL is returned. Otherwise, an OSS URL is returned. If the HTTP status code 403 is returned when you access the URL from your browser, the URL authentication feature of ApsaraVideo VOD is enabled. To resolve this issue, disable URL authentication or generate an authentication signature.
-	AttrMediaUrl() alicloudroscdkcore.IResolvable
+	AttrMediaUrl() interface{}
 	// Attribute UploadAddress: The upload URL.
 	//
 	// Note The returned upload URL is a Base64-encoded URL. You must decode the Base64-encoded upload URL before you use an SDK or call an API operation to upload media files. You need to parse UploadAddress only if you use OSS SDK or call an OSS API operation to upload media files.
-	AttrUploadAddress() alicloudroscdkcore.IResolvable
+	AttrUploadAddress() interface{}
 	// Attribute UploadAuth: The upload credential.
 	//
 	// Note The returned upload credential is a Base64-encoded value. You must decode the Base64-encoded upload URL before you use an SDK or call an API operation to upload media files. You need to parse UploadAuth only if you use OSS SDK or call an OSS API operation to upload media files.
-	AttrUploadAuth() alicloudroscdkcore.IResolvable
+	AttrUploadAuth() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -46,7 +56,6 @@ type UploadMedia interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *UploadMediaProps
-	SetProps(val *UploadMediaProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -59,6 +68,9 @@ type UploadMedia interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -111,10 +123,11 @@ type UploadMedia interface {
 // The jsii proxy struct for UploadMedia
 type jsiiProxy_UploadMedia struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IUploadMedia
 }
 
-func (j *jsiiProxy_UploadMedia) AttrFileUrl() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_UploadMedia) AttrFileUrl() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrFileUrl",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_UploadMedia) AttrFileUrl() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_UploadMedia) AttrMediaId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_UploadMedia) AttrMediaId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMediaId",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_UploadMedia) AttrMediaId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_UploadMedia) AttrMediaUrl() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_UploadMedia) AttrMediaUrl() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMediaUrl",
@@ -143,8 +156,8 @@ func (j *jsiiProxy_UploadMedia) AttrMediaUrl() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_UploadMedia) AttrUploadAddress() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_UploadMedia) AttrUploadAddress() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUploadAddress",
@@ -153,8 +166,8 @@ func (j *jsiiProxy_UploadMedia) AttrUploadAddress() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_UploadMedia) AttrUploadAuth() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_UploadMedia) AttrUploadAuth() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUploadAuth",
@@ -168,6 +181,16 @@ func (j *jsiiProxy_UploadMedia) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_UploadMedia) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -305,17 +328,6 @@ func (j *jsiiProxy_UploadMedia)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_UploadMedia)SetProps(val *UploadMediaProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_UploadMedia)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -407,6 +419,45 @@ func (u *jsiiProxy_UploadMedia) ApplyRemovalPolicy(policy alicloudroscdkcore.Rem
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (u *jsiiProxy_UploadMedia) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		u,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (u *jsiiProxy_UploadMedia) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		u,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (u *jsiiProxy_UploadMedia) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		u,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (u *jsiiProxy_UploadMedia) GeneratePhysicalName() *string {

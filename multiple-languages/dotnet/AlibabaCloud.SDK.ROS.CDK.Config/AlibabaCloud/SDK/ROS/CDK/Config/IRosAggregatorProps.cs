@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: aggregatorAccounts: The member account in aggregator.When the AggregatorType is RD, this parameter can be empty, which means that all accounts in the resource directory will be added to the global account group.
+        /// <strong>Property</strong>: aggregatorAccounts: The member account in aggregator.When the AggregatorType is RD, this parameter can be empty, which means that all accounts in the resource directory will be added to the global account group.When the AggregatorType is FOLDER, this parameter can be empty,which means that all accounts in the resource folder will be added to the global account group.
         /// </remarks>
         [JsiiProperty(name: "aggregatorAccounts", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-config.RosAggregator.AggregatorAccountsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -44,11 +44,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
 
         /// <remarks>
         /// <strong>Property</strong>: aggregatorType: Account group type. Value:
-        /// RD: Global account group.CUSTOM: Custom account group (default value).
+        /// RD: Global account group.
+        /// CUSTOM: Custom account group (default value).
+        /// FOLDER: Folder account group. Must set FolderId if the AggregatorType is FOLDER. Please refer to ListAccounts for accessing FolderId.
         /// </remarks>
         [JsiiProperty(name: "aggregatorType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? AggregatorType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: folderId: The folder ID.
+        /// </remarks>
+        [JsiiProperty(name: "folderId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? FolderId
         {
             get
             {
@@ -86,7 +101,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: aggregatorAccounts: The member account in aggregator.When the AggregatorType is RD, this parameter can be empty, which means that all accounts in the resource directory will be added to the global account group.
+            /// <strong>Property</strong>: aggregatorAccounts: The member account in aggregator.When the AggregatorType is RD, this parameter can be empty, which means that all accounts in the resource directory will be added to the global account group.When the AggregatorType is FOLDER, this parameter can be empty,which means that all accounts in the resource folder will be added to the global account group.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "aggregatorAccounts", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-config.RosAggregator.AggregatorAccountsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -97,11 +112,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
 
             /// <remarks>
             /// <strong>Property</strong>: aggregatorType: Account group type. Value:
-            /// RD: Global account group.CUSTOM: Custom account group (default value).
+            /// RD: Global account group.
+            /// CUSTOM: Custom account group (default value).
+            /// FOLDER: Folder account group. Must set FolderId if the AggregatorType is FOLDER. Please refer to ListAccounts for accessing FolderId.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "aggregatorType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AggregatorType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: folderId: The folder ID.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "folderId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? FolderId
             {
                 get => GetInstanceProperty<object?>();
             }

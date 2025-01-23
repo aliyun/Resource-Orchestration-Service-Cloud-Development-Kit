@@ -74,20 +74,31 @@ export interface QosCarProps {
 }
 
 /**
+ * Represents a `QosCar`.
+ */
+export interface IQosCar extends ros.IResource {
+    readonly props: QosCarProps;
+
+    /**
+     * Attribute QosCarId: The ID of the traffic throttling policy.
+     */
+    readonly attrQosCarId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::QosCar`, which is used to create a traffic throttling rule for a quality of service (QoS) policy.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosQosCar`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qoscar
  */
-export class QosCar extends ros.Resource {
+export class QosCar extends ros.Resource implements IQosCar {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: QosCarProps;
+    public readonly props: QosCarProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute QosCarId: The ID of the traffic throttling policy.
      */
-    public readonly attrQosCarId: ros.IResolvable;
+    public readonly attrQosCarId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

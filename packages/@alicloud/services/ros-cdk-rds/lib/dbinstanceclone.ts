@@ -264,50 +264,91 @@ export interface DBInstanceCloneProps {
 }
 
 /**
+ * Represents a `DBInstanceClone`.
+ */
+export interface IDBInstanceClone extends ros.IResource {
+    readonly props: DBInstanceCloneProps;
+
+    /**
+     * Attribute DBInstanceId: The instance id of created database instance.
+     */
+    readonly attrDbInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute InnerConnectionString: DB instance connection url by Intranet.
+     */
+    readonly attrInnerConnectionString: ros.IResolvable | string;
+
+    /**
+     * Attribute InnerIPAddress: IP Address for created DB instance of Intranet.
+     */
+    readonly attrInnerIpAddress: ros.IResolvable | string;
+
+    /**
+     * Attribute InnerPort: Intranet port of created DB instance.
+     */
+    readonly attrInnerPort: ros.IResolvable | string;
+
+    /**
+     * Attribute PublicConnectionString: DB instance connection url by Internet.
+     */
+    readonly attrPublicConnectionString: ros.IResolvable | string;
+
+    /**
+     * Attribute PublicIPAddress: IP Address for created DB instance of Internet.
+     */
+    readonly attrPublicIpAddress: ros.IResolvable | string;
+
+    /**
+     * Attribute PublicPort: Internet port of created DB instance.
+     */
+    readonly attrPublicPort: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::DBInstanceClone`, which is used to restore historical data of an instance to a new instance. The new instance is the clone of the instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBInstanceClone`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstanceclone
  */
-export class DBInstanceClone extends ros.Resource {
+export class DBInstanceClone extends ros.Resource implements IDBInstanceClone {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DBInstanceCloneProps;
+    public readonly props: DBInstanceCloneProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DBInstanceId: The instance id of created database instance.
      */
-    public readonly attrDbInstanceId: ros.IResolvable;
+    public readonly attrDbInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute InnerConnectionString: DB instance connection url by Intranet.
      */
-    public readonly attrInnerConnectionString: ros.IResolvable;
+    public readonly attrInnerConnectionString: ros.IResolvable | string;
 
     /**
      * Attribute InnerIPAddress: IP Address for created DB instance of Intranet.
      */
-    public readonly attrInnerIpAddress: ros.IResolvable;
+    public readonly attrInnerIpAddress: ros.IResolvable | string;
 
     /**
      * Attribute InnerPort: Intranet port of created DB instance.
      */
-    public readonly attrInnerPort: ros.IResolvable;
+    public readonly attrInnerPort: ros.IResolvable | string;
 
     /**
      * Attribute PublicConnectionString: DB instance connection url by Internet.
      */
-    public readonly attrPublicConnectionString: ros.IResolvable;
+    public readonly attrPublicConnectionString: ros.IResolvable | string;
 
     /**
      * Attribute PublicIPAddress: IP Address for created DB instance of Internet.
      */
-    public readonly attrPublicIpAddress: ros.IResolvable;
+    public readonly attrPublicIpAddress: ros.IResolvable | string;
 
     /**
      * Attribute PublicPort: Internet port of created DB instance.
      */
-    public readonly attrPublicPort: ros.IResolvable;
+    public readonly attrPublicPort: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::AppFlow::Flow`.
 type Flow interface {
 	alicloudroscdkcore.Resource
+	IFlow
 	// Attribute FlowId: The ID of the flow.
-	AttrFlowId() alicloudroscdkcore.IResolvable
+	AttrFlowId() interface{}
 	// Attribute WebhookAddress: The webhook address of the flow.
-	AttrWebhookAddress() alicloudroscdkcore.IResolvable
+	AttrWebhookAddress() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type Flow interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *FlowProps
-	SetProps(val *FlowProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type Flow interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type Flow interface {
 // The jsii proxy struct for Flow
 type jsiiProxy_Flow struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IFlow
 }
 
-func (j *jsiiProxy_Flow) AttrFlowId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Flow) AttrFlowId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrFlowId",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_Flow) AttrFlowId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Flow) AttrWebhookAddress() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Flow) AttrWebhookAddress() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrWebhookAddress",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_Flow) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Flow) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_Flow)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Flow)SetProps(val *FlowProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Flow)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (f *jsiiProxy_Flow) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPol
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (f *jsiiProxy_Flow) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		f,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (f *jsiiProxy_Flow) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (f *jsiiProxy_Flow) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (f *jsiiProxy_Flow) GeneratePhysicalName() *string {

@@ -1,3 +1,7 @@
+@alicloud/ros-cdk-maxcompute.IPackage=com.aliyun.ros.cdk.maxcompute.IPackage
+@alicloud/ros-cdk-maxcompute.IProject=com.aliyun.ros.cdk.maxcompute.IProject
+@alicloud/ros-cdk-maxcompute.IRole=com.aliyun.ros.cdk.maxcompute.IRole
+@alicloud/ros-cdk-maxcompute.ITable=com.aliyun.ros.cdk.maxcompute.ITable
 @alicloud/ros-cdk-maxcompute.Package=com.aliyun.ros.cdk.maxcompute.Package
 @alicloud/ros-cdk-maxcompute.PackageProps=com.aliyun.ros.cdk.maxcompute.PackageProps
 @alicloud/ros-cdk-maxcompute.Project=com.aliyun.ros.cdk.maxcompute.Project

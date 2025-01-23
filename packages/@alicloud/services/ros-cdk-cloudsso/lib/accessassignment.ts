@@ -43,14 +43,20 @@ export interface AccessAssignmentProps {
 }
 
 /**
+ * Represents a `AccessAssignment`.
+ */
+export interface IAccessAssignment extends ros.IResource {
+    readonly props: AccessAssignmentProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::AccessAssignment`, which is used to assign access permissions on an account in your resource directory to a user or group by using an access configuration.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccessAssignment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-accessassignment
  */
-export class AccessAssignment extends ros.Resource {
+export class AccessAssignment extends ros.Resource implements IAccessAssignment {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AccessAssignmentProps;
+    public readonly props: AccessAssignmentProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

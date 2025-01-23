@@ -151,6 +151,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
+        /// <summary>Property maintenanceWindow: Cluster maintenance window.</summary>
+        [JsiiProperty(name: "maintenanceWindow", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster.MaintenanceWindowProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? MaintenanceWindow
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes.</summary>
         /// <remarks>
         /// This number is determined by the specified pod CIDR block.
@@ -408,6 +419,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             [JsiiOptional]
             [JsiiProperty(name: "loginPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? LoginPassword
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property maintenanceWindow: Cluster maintenance window.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "maintenanceWindow", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster.MaintenanceWindowProperty\"}]}}", isOptional: true)]
+            public object? MaintenanceWindow
             {
                 get => GetInstanceProperty<object?>();
             }

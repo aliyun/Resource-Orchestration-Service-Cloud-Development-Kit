@@ -5,6 +5,7 @@ type RosClusterAddons_WaitUntilProperty struct {
 	Kind interface{} `field:"required" json:"kind" yaml:"kind"`
 	Name interface{} `field:"required" json:"name" yaml:"name"`
 	Operator interface{} `field:"required" json:"operator" yaml:"operator"`
+	ApiVersion interface{} `field:"optional" json:"apiVersion" yaml:"apiVersion"`
 	FirstMatch interface{} `field:"optional" json:"firstMatch" yaml:"firstMatch"`
 	JsonPath interface{} `field:"optional" json:"jsonPath" yaml:"jsonPath"`
 	Namespace interface{} `field:"optional" json:"namespace" yaml:"namespace"`

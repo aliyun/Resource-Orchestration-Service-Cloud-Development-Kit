@@ -8,6 +8,45 @@ import (
 )
 
 func init() {
+	_jsii_.RegisterInterface(
+		"@alicloud/ros-cdk-hologram.IInstance",
+		reflect.TypeOf((*IInstance)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "attrAutoRenewal", GoGetter: "AttrAutoRenewal"},
+			_jsii_.MemberProperty{JsiiProperty: "attrColdStorageSize", GoGetter: "AttrColdStorageSize"},
+			_jsii_.MemberProperty{JsiiProperty: "attrCommodityCode", GoGetter: "AttrCommodityCode"},
+			_jsii_.MemberProperty{JsiiProperty: "attrComputeNodeCount", GoGetter: "AttrComputeNodeCount"},
+			_jsii_.MemberProperty{JsiiProperty: "attrCpu", GoGetter: "AttrCpu"},
+			_jsii_.MemberProperty{JsiiProperty: "attrCreateTime", GoGetter: "AttrCreateTime"},
+			_jsii_.MemberProperty{JsiiProperty: "attrEnableHiveAccess", GoGetter: "AttrEnableHiveAccess"},
+			_jsii_.MemberProperty{JsiiProperty: "attrEndpoints", GoGetter: "AttrEndpoints"},
+			_jsii_.MemberProperty{JsiiProperty: "attrExpirationTime", GoGetter: "AttrExpirationTime"},
+			_jsii_.MemberProperty{JsiiProperty: "attrGatewayCount", GoGetter: "AttrGatewayCount"},
+			_jsii_.MemberProperty{JsiiProperty: "attrGatewayCpu", GoGetter: "AttrGatewayCpu"},
+			_jsii_.MemberProperty{JsiiProperty: "attrGatewayMemory", GoGetter: "AttrGatewayMemory"},
+			_jsii_.MemberProperty{JsiiProperty: "attrInstanceId", GoGetter: "AttrInstanceId"},
+			_jsii_.MemberProperty{JsiiProperty: "attrInstanceName", GoGetter: "AttrInstanceName"},
+			_jsii_.MemberProperty{JsiiProperty: "attrInstanceOwner", GoGetter: "AttrInstanceOwner"},
+			_jsii_.MemberProperty{JsiiProperty: "attrInstanceType", GoGetter: "AttrInstanceType"},
+			_jsii_.MemberProperty{JsiiProperty: "attrMemory", GoGetter: "AttrMemory"},
+			_jsii_.MemberProperty{JsiiProperty: "attrPaymentType", GoGetter: "AttrPaymentType"},
+			_jsii_.MemberProperty{JsiiProperty: "attrResourceGroupId", GoGetter: "AttrResourceGroupId"},
+			_jsii_.MemberProperty{JsiiProperty: "attrStorageSize", GoGetter: "AttrStorageSize"},
+			_jsii_.MemberProperty{JsiiProperty: "attrSuspendReason", GoGetter: "AttrSuspendReason"},
+			_jsii_.MemberProperty{JsiiProperty: "attrTags", GoGetter: "AttrTags"},
+			_jsii_.MemberProperty{JsiiProperty: "attrVersion", GoGetter: "AttrVersion"},
+			_jsii_.MemberProperty{JsiiProperty: "attrZoneId", GoGetter: "AttrZoneId"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberProperty{JsiiProperty: "props", GoGetter: "Props"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+		},
+		func() interface{} {
+			j := jsiiProxy_IInstance{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreIResource)
+			return &j
+		},
+	)
 	_jsii_.RegisterClass(
 		"@alicloud/ros-cdk-hologram.Instance",
 		reflect.TypeOf((*Instance)(nil)).Elem(),
@@ -42,6 +81,10 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "attrVersion", GoGetter: "AttrVersion"},
 			_jsii_.MemberProperty{JsiiProperty: "attrZoneId", GoGetter: "AttrZoneId"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDependency", GoMethod: "FetchDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchResourceDesc", GoMethod: "FetchResourceDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "generatePhysicalName", GoMethod: "GeneratePhysicalName"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
@@ -64,6 +107,7 @@ func init() {
 		func() interface{} {
 			j := jsiiProxy_Instance{}
 			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreResource)
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IInstance)
 			return &j
 		},
 	)
@@ -117,6 +161,9 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "duration", GoGetter: "Duration"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
 			_jsii_.MemberProperty{JsiiProperty: "endpoints", GoGetter: "Endpoints"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDesc", GoMethod: "FetchDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchRosDependency", GoMethod: "FetchRosDependency"},
 			_jsii_.MemberProperty{JsiiProperty: "gatewayCount", GoGetter: "GatewayCount"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "initialDatabases", GoGetter: "InitialDatabases"},

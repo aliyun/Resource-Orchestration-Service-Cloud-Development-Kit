@@ -33,25 +33,41 @@ export interface FileSystemsProps {
 }
 
 /**
+ * Represents a `FileSystems`.
+ */
+export interface IFileSystems extends ros.IResource {
+    readonly props: FileSystemsProps;
+
+    /**
+     * Attribute FileSystemIds: The list of file system IDs.
+     */
+    readonly attrFileSystemIds: ros.IResolvable | string;
+
+    /**
+     * Attribute FileSystems: The list of file systems.
+     */
+    readonly attrFileSystems: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::NAS::FileSystems`, which is used to query the information about file systems.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFileSystems`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-filesystems
  */
-export class FileSystems extends ros.Resource {
+export class FileSystems extends ros.Resource implements IFileSystems {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: FileSystemsProps;
+    public readonly props: FileSystemsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute FileSystemIds: The list of file system IDs.
      */
-    public readonly attrFileSystemIds: ros.IResolvable;
+    public readonly attrFileSystemIds: ros.IResolvable | string;
 
     /**
      * Attribute FileSystems: The list of file systems.
      */
-    public readonly attrFileSystems: ros.IResolvable;
+    public readonly attrFileSystems: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

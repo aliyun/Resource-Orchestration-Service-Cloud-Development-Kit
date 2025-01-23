@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-securitygroupattachment
     /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Alb.SecurityGroupAttachment), fullyQualifiedName: "@alicloud/ros-cdk-alb.SecurityGroupAttachment", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-alb.SecurityGroupAttachmentProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"optional\":true,\"type\":{\"primitive\":\"boolean\"}}]")]
-    public class SecurityGroupAttachment : AlibabaCloud.SDK.ROS.CDK.Core.Resource_
+    public class SecurityGroupAttachment : AlibabaCloud.SDK.ROS.CDK.Core.Resource_, AlibabaCloud.SDK.ROS.CDK.Alb.ISecurityGroupAttachment
     {
         /// <summary>Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.</summary>
         public SecurityGroupAttachment(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Alb.ISecurityGroupAttachmentProps props, bool? enableResourcePropertyConstraint = null): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
@@ -37,6 +37,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         {
         }
 
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-alb.SecurityGroupAttachmentProps\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Alb.ISecurityGroupAttachmentProps Props
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Alb.ISecurityGroupAttachmentProps>()!;
+        }
+
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
         protected virtual bool EnableResourcePropertyConstraint
         {
@@ -48,13 +54,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         protected virtual string Id
         {
             get => GetInstanceProperty<string>()!;
-            set => SetInstanceProperty(value);
-        }
-
-        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-alb.SecurityGroupAttachmentProps\"}")]
-        protected virtual AlibabaCloud.SDK.ROS.CDK.Alb.ISecurityGroupAttachmentProps Props
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Alb.ISecurityGroupAttachmentProps>()!;
             set => SetInstanceProperty(value);
         }
 

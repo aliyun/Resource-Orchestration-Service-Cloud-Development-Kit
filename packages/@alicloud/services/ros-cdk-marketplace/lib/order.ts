@@ -46,20 +46,31 @@ export interface OrderProps {
 }
 
 /**
+ * Represents a `Order`.
+ */
+export interface IOrder extends ros.IResource {
+    readonly props: OrderProps;
+
+    /**
+     * Attribute OrderId: Order ID of created instance.
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::MarketPlace::Order`, which is used to purchase resources from Alibaba Cloud Marketplace.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosOrder`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-marketplace-order
  */
-export class Order extends ros.Resource {
+export class Order extends ros.Resource implements IOrder {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: OrderProps;
+    public readonly props: OrderProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute OrderId: Order ID of created instance.
      */
-    public readonly attrOrderId: ros.IResolvable;
+    public readonly attrOrderId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

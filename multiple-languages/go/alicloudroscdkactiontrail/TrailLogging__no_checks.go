@@ -52,10 +52,6 @@ func (j *jsiiProxy_TrailLogging) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_TrailLogging) validateSetPropsParameters(val *TrailLoggingProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_TrailLogging) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

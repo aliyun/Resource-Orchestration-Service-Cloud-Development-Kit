@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::VPC::BgpNetwork`, which is used to advertise a Border Gateway Protocol (BGP) network.
 type BgpNetwork interface {
 	alicloudroscdkcore.Resource
+	IBgpNetwork
 	// Attribute DstCidrBlock: The CIDR block of the virtual private cloud (VPC) or vSwitch that you want to connect to a data center.
-	AttrDstCidrBlock() alicloudroscdkcore.IResolvable
+	AttrDstCidrBlock() interface{}
 	// Attribute RouterId: The ID of the vRouter associated with the router interface.
-	AttrRouterId() alicloudroscdkcore.IResolvable
+	AttrRouterId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type BgpNetwork interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *BgpNetworkProps
-	SetProps(val *BgpNetworkProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type BgpNetwork interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type BgpNetwork interface {
 // The jsii proxy struct for BgpNetwork
 type jsiiProxy_BgpNetwork struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IBgpNetwork
 }
 
-func (j *jsiiProxy_BgpNetwork) AttrDstCidrBlock() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BgpNetwork) AttrDstCidrBlock() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDstCidrBlock",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_BgpNetwork) AttrDstCidrBlock() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_BgpNetwork) AttrRouterId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BgpNetwork) AttrRouterId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRouterId",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_BgpNetwork) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BgpNetwork) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_BgpNetwork)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_BgpNetwork)SetProps(val *BgpNetworkProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_BgpNetwork)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (b *jsiiProxy_BgpNetwork) ApplyRemovalPolicy(policy alicloudroscdkcore.Remo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (b *jsiiProxy_BgpNetwork) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		b,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (b *jsiiProxy_BgpNetwork) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		b,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (b *jsiiProxy_BgpNetwork) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		b,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (b *jsiiProxy_BgpNetwork) GeneratePhysicalName() *string {

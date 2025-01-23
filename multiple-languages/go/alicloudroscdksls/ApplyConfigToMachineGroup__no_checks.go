@@ -52,10 +52,6 @@ func (j *jsiiProxy_ApplyConfigToMachineGroup) validateSetIdParameters(val *strin
 	return nil
 }
 
-func (j *jsiiProxy_ApplyConfigToMachineGroup) validateSetPropsParameters(val *ApplyConfigToMachineGroupProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_ApplyConfigToMachineGroup) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

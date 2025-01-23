@@ -38,20 +38,31 @@ export interface VpcIpv6CidrAllocationProps {
 }
 
 /**
+ * Represents a `VpcIpv6CidrAllocation`.
+ */
+export interface IVpcIpv6CidrAllocation extends ros.IResource {
+    readonly props: VpcIpv6CidrAllocationProps;
+
+    /**
+     * Attribute Ipv6CidrBlock: The IPv6 CIDR block that is reserved.
+     */
+    readonly attrIpv6CidrBlock: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpcIpv6CidrAllocation`, which is used to reserve an IPv6 CIDR block.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpcIpv6CidrAllocation`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpcipv6cidrallocation
  */
-export class VpcIpv6CidrAllocation extends ros.Resource {
+export class VpcIpv6CidrAllocation extends ros.Resource implements IVpcIpv6CidrAllocation {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: VpcIpv6CidrAllocationProps;
+    public readonly props: VpcIpv6CidrAllocationProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Ipv6CidrBlock: The IPv6 CIDR block that is reserved.
      */
-    public readonly attrIpv6CidrBlock: ros.IResolvable;
+    public readonly attrIpv6CidrBlock: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -96,6 +96,10 @@ func (j *jsiiProxy_RosAutoProvisioningGroup) validateSetCheckExecutionStatusPara
 	return nil
 }
 
+func (j *jsiiProxy_RosAutoProvisioningGroup) validateSetDataDiskConfigParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosAutoProvisioningGroup) validateSetDefaultTargetCapacityTypeParameters(val interface{}) error {
 	return nil
 }
@@ -132,11 +136,23 @@ func (j *jsiiProxy_RosAutoProvisioningGroup) validateSetMaxSpotPriceParameters(v
 	return nil
 }
 
+func (j *jsiiProxy_RosAutoProvisioningGroup) validateSetMinTargetCapacityParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosAutoProvisioningGroup) validateSetPayAsYouGoAllocationStrategyParameters(val interface{}) error {
 	return nil
 }
 
 func (j *jsiiProxy_RosAutoProvisioningGroup) validateSetPayAsYouGoTargetCapacityParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosAutoProvisioningGroup) validateSetResourceGroupIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosAutoProvisioningGroup) validateSetResourcePoolOptionsParameters(val interface{}) error {
 	return nil
 }
 
@@ -153,6 +169,10 @@ func (j *jsiiProxy_RosAutoProvisioningGroup) validateSetSpotInstancePoolsToUseCo
 }
 
 func (j *jsiiProxy_RosAutoProvisioningGroup) validateSetSpotTargetCapacityParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosAutoProvisioningGroup) validateSetSystemDiskConfigParameters(val interface{}) error {
 	return nil
 }
 

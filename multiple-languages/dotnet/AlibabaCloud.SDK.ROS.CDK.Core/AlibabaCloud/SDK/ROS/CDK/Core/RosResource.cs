@@ -198,6 +198,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             InvokeInstanceVoidMethod(new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Core.RemovalPolicy), typeof(AlibabaCloud.SDK.ROS.CDK.Core.IRemovalPolicyOptions)}, new object?[]{policy, options});
         }
 
+        [JsiiMethod(name: "fetchCondition", returnsJson: "{\"optional\":true,\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.RosCondition\"}}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.RosCondition? FetchCondition()
+        {
+            return InvokeInstanceMethod<AlibabaCloud.SDK.ROS.CDK.Core.RosCondition?>(new System.Type[]{}, new object[]{});
+        }
+
+        [JsiiMethod(name: "fetchDesc", returnsJson: "{\"optional\":true,\"type\":{\"primitive\":\"string\"}}")]
+        public virtual string? FetchDesc()
+        {
+            return InvokeInstanceMethod<string?>(new System.Type[]{}, new object[]{});
+        }
+
+        [JsiiMethod(name: "fetchRosDependency", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}}")]
+        public virtual string[] FetchRosDependency()
+        {
+            return InvokeInstanceMethod<string[]>(new System.Type[]{}, new object[]{})!;
+        }
+
         /// <summary>Returns a token for an runtime attribute of this resource.</summary>
         /// <param name="attributeName">The name of the attribute.</param>
         /// <remarks>

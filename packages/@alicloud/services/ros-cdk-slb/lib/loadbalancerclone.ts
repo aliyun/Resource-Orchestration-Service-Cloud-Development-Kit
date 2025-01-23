@@ -65,20 +65,31 @@ export interface LoadBalancerCloneProps {
 }
 
 /**
+ * Represents a `LoadBalancerClone`.
+ */
+export interface ILoadBalancerClone extends ros.IResource {
+    readonly props: LoadBalancerCloneProps;
+
+    /**
+     * Attribute LoadBalancerId: The id of load balance generated
+     */
+    readonly attrLoadBalancerId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::LoadBalancerClone`, which is used to clone a Server Load Balancer (SLB) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLoadBalancerClone`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-loadbalancerclone
  */
-export class LoadBalancerClone extends ros.Resource {
+export class LoadBalancerClone extends ros.Resource implements ILoadBalancerClone {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: LoadBalancerCloneProps;
+    public readonly props: LoadBalancerCloneProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute LoadBalancerId: The id of load balance generated
      */
-    public readonly attrLoadBalancerId: ros.IResolvable;
+    public readonly attrLoadBalancerId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

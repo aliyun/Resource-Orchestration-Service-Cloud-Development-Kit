@@ -134,40 +134,71 @@ export interface FunctionProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::FC::Function`, which is used to create a function. Functions must be associated with services. All functions of a service share the same attributes as the service, such as service authorization and log configurations.
+ * Represents a `Function`.
+ */
+export interface IFunction extends ros.IResource {
+    readonly props: FunctionProps;
+
+    /**
+     * Attribute ARN: The ARN for ALIYUN::ROS::CustomResource
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
+     * Attribute FunctionId: The function ID
+     */
+    readonly attrFunctionId: ros.IResolvable | string;
+
+    /**
+     * Attribute FunctionName: The function name
+     */
+    readonly attrFunctionName: ros.IResolvable | string;
+
+    /**
+     * Attribute ServiceId: The service ID
+     */
+    readonly attrServiceId: ros.IResolvable | string;
+
+    /**
+     * Attribute ServiceName: The service name
+     */
+    readonly attrServiceName: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `ALIYUN::FC::Function`, which is used to create a function. A function must belong to a service. All functions of a service share the same attributes as the service, such as the service authorization and log configurations.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFunction`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-function
  */
-export class Function extends ros.Resource {
+export class Function extends ros.Resource implements IFunction {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: FunctionProps;
+    public readonly props: FunctionProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ARN: The ARN for ALIYUN::ROS::CustomResource
      */
-    public readonly attrArn: ros.IResolvable;
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute FunctionId: The function ID
      */
-    public readonly attrFunctionId: ros.IResolvable;
+    public readonly attrFunctionId: ros.IResolvable | string;
 
     /**
      * Attribute FunctionName: The function name
      */
-    public readonly attrFunctionName: ros.IResolvable;
+    public readonly attrFunctionName: ros.IResolvable | string;
 
     /**
      * Attribute ServiceId: The service ID
      */
-    public readonly attrServiceId: ros.IResolvable;
+    public readonly attrServiceId: ros.IResolvable | string;
 
     /**
      * Attribute ServiceName: The service name
      */
-    public readonly attrServiceName: ros.IResolvable;
+    public readonly attrServiceName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

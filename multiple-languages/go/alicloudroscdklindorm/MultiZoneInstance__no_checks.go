@@ -52,10 +52,6 @@ func (j *jsiiProxy_MultiZoneInstance) validateSetIdParameters(val *string) error
 	return nil
 }
 
-func (j *jsiiProxy_MultiZoneInstance) validateSetPropsParameters(val *MultiZoneInstanceProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_MultiZoneInstance) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

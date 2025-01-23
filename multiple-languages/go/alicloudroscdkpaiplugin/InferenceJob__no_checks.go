@@ -52,10 +52,6 @@ func (j *jsiiProxy_InferenceJob) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_InferenceJob) validateSetPropsParameters(val *InferenceJobProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_InferenceJob) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

@@ -29,25 +29,41 @@ export interface SchedulesProps {
 }
 
 /**
+ * Represents a `Schedules`.
+ */
+export interface ISchedules extends ros.IResource {
+    readonly props: SchedulesProps;
+
+    /**
+     * Attribute ScheduleNames: The list of schedule names.
+     */
+    readonly attrScheduleNames: ros.IResolvable | string;
+
+    /**
+     * Attribute Schedules: The queried time-based schedules.
+     */
+    readonly attrSchedules: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::FNF::Schedules`, which is used to query time-based schedules.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSchedules`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fnf-schedules
  */
-export class Schedules extends ros.Resource {
+export class Schedules extends ros.Resource implements ISchedules {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SchedulesProps;
+    public readonly props: SchedulesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ScheduleNames: The list of schedule names.
      */
-    public readonly attrScheduleNames: ros.IResolvable;
+    public readonly attrScheduleNames: ros.IResolvable | string;
 
     /**
      * Attribute Schedules: The queried time-based schedules.
      */
-    public readonly attrSchedules: ros.IResolvable;
+    public readonly attrSchedules: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

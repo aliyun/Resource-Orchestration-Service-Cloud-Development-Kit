@@ -52,10 +52,6 @@ func (j *jsiiProxy_DhcpOptionsSetAttachment) validateSetIdParameters(val *string
 	return nil
 }
 
-func (j *jsiiProxy_DhcpOptionsSetAttachment) validateSetPropsParameters(val *DhcpOptionsSetAttachmentProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_DhcpOptionsSetAttachment) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

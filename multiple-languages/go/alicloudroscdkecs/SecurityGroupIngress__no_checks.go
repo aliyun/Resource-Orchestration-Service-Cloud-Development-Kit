@@ -52,10 +52,6 @@ func (j *jsiiProxy_SecurityGroupIngress) validateSetIdParameters(val *string) er
 	return nil
 }
 
-func (j *jsiiProxy_SecurityGroupIngress) validateSetPropsParameters(val *SecurityGroupIngressProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_SecurityGroupIngress) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

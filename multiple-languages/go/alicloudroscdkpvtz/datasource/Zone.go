@@ -12,48 +12,58 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::PVTZ::Zone`.
 type Zone interface {
 	alicloudroscdkcore.Resource
+	IZone
 	// Attribute BindVpcs: The VPCs associated with the zone.
-	AttrBindVpcs() alicloudroscdkcore.IResolvable
+	AttrBindVpcs() interface{}
 	// Attribute CreateTime: The time when the zone was created.
 	//
 	// The time follows the ISO 8601 standard in the YYYY-MM-DDThh:mm:ssZ format. The time is displayed in UTC.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute CreateTimestamp: The time when the zone was created.
 	//
 	// This value is a UNIX timestamp representing the number of milliseconds that have elapsed since January 1, 1970, 00:00:00 UTC.
-	AttrCreateTimestamp() alicloudroscdkcore.IResolvable
+	AttrCreateTimestamp() interface{}
 	// Attribute IsPtr: Indicates whether the zone is a reverse lookup zone.
-	AttrIsPtr() alicloudroscdkcore.IResolvable
+	AttrIsPtr() interface{}
 	// Attribute ProxyPattern: Indicates whether the recursive resolution proxy for subdomain names is enabled.
-	AttrProxyPattern() alicloudroscdkcore.IResolvable
+	AttrProxyPattern() interface{}
 	// Attribute RecordCount: The total number of DNS records added in the zone.
-	AttrRecordCount() alicloudroscdkcore.IResolvable
+	AttrRecordCount() interface{}
 	// Attribute Remark: The description of the zone.
-	AttrRemark() alicloudroscdkcore.IResolvable
+	AttrRemark() interface{}
 	// Attribute ResourceGroupId: The ID of the resource group to which the zone belongs.
-	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() interface{}
 	// Attribute SlaveDns: Indicates whether the secondary Domain Name System (DNS) feature is enabled for the zone.
-	AttrSlaveDns() alicloudroscdkcore.IResolvable
+	AttrSlaveDns() interface{}
 	// Attribute Tags: The tags of the zone.
-	AttrTags() alicloudroscdkcore.IResolvable
+	AttrTags() interface{}
 	// Attribute UpdateTime: The time when the zone was last updated.
 	//
 	// The time follows the ISO 8601 standard in the YYYY-MM-DDThh:mm:ssZ format. The time is displayed in UTC.
-	AttrUpdateTime() alicloudroscdkcore.IResolvable
+	AttrUpdateTime() interface{}
 	// Attribute UpdateTimestamp: The time when the zone was last updated.
 	//
 	// This value is a UNIX timestamp representing the number of milliseconds that have elapsed since January 1, 1970, 00:00:00 UTC.
-	AttrUpdateTimestamp() alicloudroscdkcore.IResolvable
+	AttrUpdateTimestamp() interface{}
 	// Attribute ZoneId: The zone ID.
-	AttrZoneId() alicloudroscdkcore.IResolvable
+	AttrZoneId() interface{}
 	// Attribute ZoneName: The zone name.
-	AttrZoneName() alicloudroscdkcore.IResolvable
+	AttrZoneName() interface{}
 	// Attribute ZoneTag: Not open to users for the time being, no value transfer is required.
-	AttrZoneTag() alicloudroscdkcore.IResolvable
+	AttrZoneTag() interface{}
 	// Attribute ZoneType: The zone type, temporarily closed to users, no need to pass values.
-	AttrZoneType() alicloudroscdkcore.IResolvable
+	AttrZoneType() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -68,7 +78,6 @@ type Zone interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ZoneProps
-	SetProps(val *ZoneProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -81,6 +90,9 @@ type Zone interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -133,10 +145,11 @@ type Zone interface {
 // The jsii proxy struct for Zone
 type jsiiProxy_Zone struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IZone
 }
 
-func (j *jsiiProxy_Zone) AttrBindVpcs() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Zone) AttrBindVpcs() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBindVpcs",
@@ -145,8 +158,8 @@ func (j *jsiiProxy_Zone) AttrBindVpcs() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Zone) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Zone) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -155,8 +168,8 @@ func (j *jsiiProxy_Zone) AttrCreateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Zone) AttrCreateTimestamp() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Zone) AttrCreateTimestamp() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTimestamp",
@@ -165,8 +178,8 @@ func (j *jsiiProxy_Zone) AttrCreateTimestamp() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Zone) AttrIsPtr() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Zone) AttrIsPtr() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIsPtr",
@@ -175,8 +188,8 @@ func (j *jsiiProxy_Zone) AttrIsPtr() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Zone) AttrProxyPattern() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Zone) AttrProxyPattern() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrProxyPattern",
@@ -185,8 +198,8 @@ func (j *jsiiProxy_Zone) AttrProxyPattern() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Zone) AttrRecordCount() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Zone) AttrRecordCount() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRecordCount",
@@ -195,8 +208,8 @@ func (j *jsiiProxy_Zone) AttrRecordCount() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Zone) AttrRemark() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Zone) AttrRemark() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRemark",
@@ -205,8 +218,8 @@ func (j *jsiiProxy_Zone) AttrRemark() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Zone) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Zone) AttrResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupId",
@@ -215,8 +228,8 @@ func (j *jsiiProxy_Zone) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Zone) AttrSlaveDns() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Zone) AttrSlaveDns() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSlaveDns",
@@ -225,8 +238,8 @@ func (j *jsiiProxy_Zone) AttrSlaveDns() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Zone) AttrTags() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Zone) AttrTags() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTags",
@@ -235,8 +248,8 @@ func (j *jsiiProxy_Zone) AttrTags() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Zone) AttrUpdateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Zone) AttrUpdateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUpdateTime",
@@ -245,8 +258,8 @@ func (j *jsiiProxy_Zone) AttrUpdateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Zone) AttrUpdateTimestamp() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Zone) AttrUpdateTimestamp() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUpdateTimestamp",
@@ -255,8 +268,8 @@ func (j *jsiiProxy_Zone) AttrUpdateTimestamp() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Zone) AttrZoneId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Zone) AttrZoneId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrZoneId",
@@ -265,8 +278,8 @@ func (j *jsiiProxy_Zone) AttrZoneId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Zone) AttrZoneName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Zone) AttrZoneName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrZoneName",
@@ -275,8 +288,8 @@ func (j *jsiiProxy_Zone) AttrZoneName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Zone) AttrZoneTag() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Zone) AttrZoneTag() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrZoneTag",
@@ -285,8 +298,8 @@ func (j *jsiiProxy_Zone) AttrZoneTag() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Zone) AttrZoneType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Zone) AttrZoneType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrZoneType",
@@ -300,6 +313,16 @@ func (j *jsiiProxy_Zone) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Zone) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -437,17 +460,6 @@ func (j *jsiiProxy_Zone)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Zone)SetProps(val *ZoneProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Zone)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -539,6 +551,45 @@ func (z *jsiiProxy_Zone) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPol
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (z *jsiiProxy_Zone) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		z,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (z *jsiiProxy_Zone) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		z,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (z *jsiiProxy_Zone) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		z,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (z *jsiiProxy_Zone) GeneratePhysicalName() *string {

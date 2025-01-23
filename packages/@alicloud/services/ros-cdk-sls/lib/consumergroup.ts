@@ -41,30 +41,51 @@ export interface ConsumerGroupProps {
 }
 
 /**
+ * Represents a `ConsumerGroup`.
+ */
+export interface IConsumerGroup extends ros.IResource {
+    readonly props: ConsumerGroupProps;
+
+    /**
+     * Attribute ConsumerGroup: The name of the consumer group.
+     */
+    readonly attrConsumerGroup: ros.IResolvable | string;
+
+    /**
+     * Attribute Logstore: The name of the logstore to which this consumer group belongs.
+     */
+    readonly attrLogstore: ros.IResolvable | string;
+
+    /**
+     * Attribute Project: The name of the project to which the logstore belongs.
+     */
+    readonly attrProject: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::ConsumerGroup`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosConsumerGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-consumergroup
  */
-export class ConsumerGroup extends ros.Resource {
+export class ConsumerGroup extends ros.Resource implements IConsumerGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ConsumerGroupProps;
+    public readonly props: ConsumerGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ConsumerGroup: The name of the consumer group.
      */
-    public readonly attrConsumerGroup: ros.IResolvable;
+    public readonly attrConsumerGroup: ros.IResolvable | string;
 
     /**
      * Attribute Logstore: The name of the logstore to which this consumer group belongs.
      */
-    public readonly attrLogstore: ros.IResolvable;
+    public readonly attrLogstore: ros.IResolvable | string;
 
     /**
      * Attribute Project: The name of the project to which the logstore belongs.
      */
-    public readonly attrProject: ros.IResolvable;
+    public readonly attrProject: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

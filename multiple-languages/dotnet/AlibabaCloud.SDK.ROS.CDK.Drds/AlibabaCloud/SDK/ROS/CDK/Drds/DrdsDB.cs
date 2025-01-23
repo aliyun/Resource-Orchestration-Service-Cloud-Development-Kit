@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-drds-drdsdb
     /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Drds.DrdsDB), fullyQualifiedName: "@alicloud/ros-cdk-drds.DrdsDB", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-drds.DrdsDBProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"optional\":true,\"type\":{\"primitive\":\"boolean\"}}]")]
-    public class DrdsDB : AlibabaCloud.SDK.ROS.CDK.Core.Resource_
+    public class DrdsDB : AlibabaCloud.SDK.ROS.CDK.Core.Resource_, AlibabaCloud.SDK.ROS.CDK.Drds.IDrdsDB
     {
         /// <summary>Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.</summary>
         public DrdsDB(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Drds.IDrdsDBProps props, bool? enableResourcePropertyConstraint = null): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
@@ -37,6 +37,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         {
         }
 
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-drds.DrdsDBProps\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Drds.IDrdsDBProps Props
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Drds.IDrdsDBProps>()!;
+        }
+
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
         protected virtual bool EnableResourcePropertyConstraint
         {
@@ -48,13 +54,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         protected virtual string Id
         {
             get => GetInstanceProperty<string>()!;
-            set => SetInstanceProperty(value);
-        }
-
-        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-drds.DrdsDBProps\"}")]
-        protected virtual AlibabaCloud.SDK.ROS.CDK.Drds.IDrdsDBProps Props
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Drds.IDrdsDBProps>()!;
             set => SetInstanceProperty(value);
         }
 

@@ -52,10 +52,6 @@ func (j *jsiiProxy_AutoScaleConfig) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_AutoScaleConfig) validateSetPropsParameters(val *AutoScaleConfigProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_AutoScaleConfig) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

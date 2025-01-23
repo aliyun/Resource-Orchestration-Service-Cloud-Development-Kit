@@ -12,28 +12,38 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::SLS::Project`.
 type Project interface {
 	alicloudroscdkcore.Resource
+	IProject
 	// Attribute CreateTime: The time at which the project was created.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute DataRedundancyType: Data redundancy type.
-	AttrDataRedundancyType() alicloudroscdkcore.IResolvable
+	AttrDataRedundancyType() interface{}
 	// Attribute Description: The description of the project.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute LastModifyTime: The time at which the project was last modified.
-	AttrLastModifyTime() alicloudroscdkcore.IResolvable
+	AttrLastModifyTime() interface{}
 	// Attribute Owner: The ID of the Alibaba Cloud account that is used to create the project.
-	AttrOwner() alicloudroscdkcore.IResolvable
+	AttrOwner() interface{}
 	// Attribute ProjectName: The name of the project.
-	AttrProjectName() alicloudroscdkcore.IResolvable
+	AttrProjectName() interface{}
 	// Attribute Quota: Project quota.
-	AttrQuota() alicloudroscdkcore.IResolvable
+	AttrQuota() interface{}
 	// Attribute Region: The region to which the project belongs.
-	AttrRegion() alicloudroscdkcore.IResolvable
+	AttrRegion() interface{}
 	// Attribute ResourceGroupId: The ID of the resource group to which the project belongs.
-	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() interface{}
 	// Attribute Status: The status of the project.
-	AttrStatus() alicloudroscdkcore.IResolvable
+	AttrStatus() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -48,7 +58,6 @@ type Project interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ProjectProps
-	SetProps(val *ProjectProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -61,6 +70,9 @@ type Project interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -113,10 +125,11 @@ type Project interface {
 // The jsii proxy struct for Project
 type jsiiProxy_Project struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IProject
 }
 
-func (j *jsiiProxy_Project) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Project) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -125,8 +138,8 @@ func (j *jsiiProxy_Project) AttrCreateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Project) AttrDataRedundancyType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Project) AttrDataRedundancyType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDataRedundancyType",
@@ -135,8 +148,8 @@ func (j *jsiiProxy_Project) AttrDataRedundancyType() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_Project) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Project) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -145,8 +158,8 @@ func (j *jsiiProxy_Project) AttrDescription() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Project) AttrLastModifyTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Project) AttrLastModifyTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLastModifyTime",
@@ -155,8 +168,8 @@ func (j *jsiiProxy_Project) AttrLastModifyTime() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_Project) AttrOwner() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Project) AttrOwner() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOwner",
@@ -165,8 +178,8 @@ func (j *jsiiProxy_Project) AttrOwner() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Project) AttrProjectName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Project) AttrProjectName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrProjectName",
@@ -175,8 +188,8 @@ func (j *jsiiProxy_Project) AttrProjectName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Project) AttrQuota() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Project) AttrQuota() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrQuota",
@@ -185,8 +198,8 @@ func (j *jsiiProxy_Project) AttrQuota() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Project) AttrRegion() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Project) AttrRegion() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRegion",
@@ -195,8 +208,8 @@ func (j *jsiiProxy_Project) AttrRegion() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Project) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Project) AttrResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupId",
@@ -205,8 +218,8 @@ func (j *jsiiProxy_Project) AttrResourceGroupId() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Project) AttrStatus() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Project) AttrStatus() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStatus",
@@ -220,6 +233,16 @@ func (j *jsiiProxy_Project) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Project) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -357,17 +380,6 @@ func (j *jsiiProxy_Project)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Project)SetProps(val *ProjectProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Project)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -459,6 +471,45 @@ func (p *jsiiProxy_Project) ApplyRemovalPolicy(policy alicloudroscdkcore.Removal
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (p *jsiiProxy_Project) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		p,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_Project) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		p,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_Project) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		p,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (p *jsiiProxy_Project) GeneratePhysicalName() *string {

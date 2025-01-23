@@ -26,64 +26,119 @@ export interface K8sClusterProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::K8sCluster`, which is used to create a cluster of Container Service for Kubernetes (ACK).
- * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosK8sCluster`for a more convenient development experience.
- * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8scluster
+ * Represents a `K8sCluster`.
  */
-export class K8sCluster extends ros.Resource {
-    protected scope: ros.Construct;
-    protected id: string;
-    protected props: K8sClusterProps;
-    protected enableResourcePropertyConstraint: boolean;
+export interface IK8sCluster extends ros.IResource {
+    readonly props: K8sClusterProps;
 
     /**
      * Attribute ClusterId: The ID of the cluster.
      */
-    public readonly attrClusterId: ros.IResolvable;
+    readonly attrClusterId: ros.IResolvable | string;
 
     /**
      * Attribute ClusterName: The name of the cluster.
      */
-    public readonly attrClusterName: ros.IResolvable;
+    readonly attrClusterName: ros.IResolvable | string;
 
     /**
      * Attribute ClusterType: The type of the cluster:
 2: ECS cluster
 5: Container Service K8s cluster or Serverless K8s cluster
      */
-    public readonly attrClusterType: ros.IResolvable;
+    readonly attrClusterType: ros.IResolvable | string;
 
     /**
      * Attribute CsClusterId: The ID of the K8s cluster.
      */
-    public readonly attrCsClusterId: ros.IResolvable;
+    readonly attrCsClusterId: ros.IResolvable | string;
 
     /**
      * Attribute NetworkMode: Network node:
 1: Classic network
 2: VPC
      */
-    public readonly attrNetworkMode: ros.IResolvable;
+    readonly attrNetworkMode: ros.IResolvable | string;
 
     /**
      * Attribute NodeNum: Number of nodes.
      */
-    public readonly attrNodeNum: ros.IResolvable;
+    readonly attrNodeNum: ros.IResolvable | string;
 
     /**
      * Attribute SubNetCidr: Sub net CIDR.
      */
-    public readonly attrSubNetCidr: ros.IResolvable;
+    readonly attrSubNetCidr: ros.IResolvable | string;
 
     /**
      * Attribute VpcId: The ID of the cluster.
      */
-    public readonly attrVpcId: ros.IResolvable;
+    readonly attrVpcId: ros.IResolvable | string;
 
     /**
      * Attribute VswitchId: The ID of the cluster.
      */
-    public readonly attrVswitchId: ros.IResolvable;
+    readonly attrVswitchId: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::K8sCluster`, which is used to create a cluster of Container Service for Kubernetes (ACK).
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosK8sCluster`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8scluster
+ */
+export class K8sCluster extends ros.Resource implements IK8sCluster {
+    protected scope: ros.Construct;
+    protected id: string;
+    public readonly props: K8sClusterProps;
+    protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute ClusterId: The ID of the cluster.
+     */
+    public readonly attrClusterId: ros.IResolvable | string;
+
+    /**
+     * Attribute ClusterName: The name of the cluster.
+     */
+    public readonly attrClusterName: ros.IResolvable | string;
+
+    /**
+     * Attribute ClusterType: The type of the cluster:
+2: ECS cluster
+5: Container Service K8s cluster or Serverless K8s cluster
+     */
+    public readonly attrClusterType: ros.IResolvable | string;
+
+    /**
+     * Attribute CsClusterId: The ID of the K8s cluster.
+     */
+    public readonly attrCsClusterId: ros.IResolvable | string;
+
+    /**
+     * Attribute NetworkMode: Network node:
+1: Classic network
+2: VPC
+     */
+    public readonly attrNetworkMode: ros.IResolvable | string;
+
+    /**
+     * Attribute NodeNum: Number of nodes.
+     */
+    public readonly attrNodeNum: ros.IResolvable | string;
+
+    /**
+     * Attribute SubNetCidr: Sub net CIDR.
+     */
+    public readonly attrSubNetCidr: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcId: The ID of the cluster.
+     */
+    public readonly attrVpcId: ros.IResolvable | string;
+
+    /**
+     * Attribute VswitchId: The ID of the cluster.
+     */
+    public readonly attrVswitchId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

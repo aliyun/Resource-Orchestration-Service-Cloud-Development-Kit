@@ -38,25 +38,41 @@ export interface UserVpcAuthorizationProps {
 }
 
 /**
+ * Represents a `UserVpcAuthorization`.
+ */
+export interface IUserVpcAuthorization extends ros.IResource {
+    readonly props: UserVpcAuthorizationProps;
+
+    /**
+     * Attribute AuthType: Authorization type.
+     */
+    readonly attrAuthType: ros.IResolvable | string;
+
+    /**
+     * Attribute AuthorizedUserId: The account ID of the user who authorizes the resource.
+     */
+    readonly attrAuthorizedUserId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::PVTZ::UserVpcAuthorization`, which is used to associate virtual private clouds (VPCs) across accounts.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUserVpcAuthorization`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-uservpcauthorization
  */
-export class UserVpcAuthorization extends ros.Resource {
+export class UserVpcAuthorization extends ros.Resource implements IUserVpcAuthorization {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: UserVpcAuthorizationProps;
+    public readonly props: UserVpcAuthorizationProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AuthType: Authorization type.
      */
-    public readonly attrAuthType: ros.IResolvable;
+    public readonly attrAuthType: ros.IResolvable | string;
 
     /**
      * Attribute AuthorizedUserId: The account ID of the user who authorizes the resource.
      */
-    public readonly attrAuthorizedUserId: ros.IResolvable;
+    public readonly attrAuthorizedUserId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

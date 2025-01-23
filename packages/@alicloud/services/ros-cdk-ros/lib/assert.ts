@@ -35,25 +35,41 @@ export interface AssertProps {
 }
 
 /**
+ * Represents a `Assert`.
+ */
+export interface IAssert extends ros.IResource {
+    readonly props: AssertProps;
+
+    /**
+     * Attribute FailureCause: The reason the assertion failed
+     */
+    readonly attrFailureCause: ros.IResolvable | string;
+
+    /**
+     * Attribute Result: The result of the assert.
+     */
+    readonly attrResult: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::Assert`, which is used to create an assertion. Assertions are used to evaluate conditions and support a variety of operation types. An assertion determines whether to terminate creation and return an error message when the assertion result is false.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAssert`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-assert
  */
-export class Assert extends ros.Resource {
+export class Assert extends ros.Resource implements IAssert {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AssertProps;
+    public readonly props: AssertProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute FailureCause: The reason the assertion failed
      */
-    public readonly attrFailureCause: ros.IResolvable;
+    public readonly attrFailureCause: ros.IResolvable | string;
 
     /**
      * Attribute Result: The result of the assert.
      */
-    public readonly attrResult: ros.IResolvable;
+    public readonly attrResult: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::IOT::DeviceGroup`, which is used to create a group.
 type DeviceGroup interface {
 	alicloudroscdkcore.Resource
+	IDeviceGroup
 	// Attribute GroupId: Packet, ID, System for the globally unique identifier generated packet.
-	AttrGroupId() alicloudroscdkcore.IResolvable
+	AttrGroupId() interface{}
 	// Attribute IotInstanceId: IOT instance ID.
-	AttrIotInstanceId() alicloudroscdkcore.IResolvable
+	AttrIotInstanceId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type DeviceGroup interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DeviceGroupProps
-	SetProps(val *DeviceGroupProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type DeviceGroup interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type DeviceGroup interface {
 // The jsii proxy struct for DeviceGroup
 type jsiiProxy_DeviceGroup struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDeviceGroup
 }
 
-func (j *jsiiProxy_DeviceGroup) AttrGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DeviceGroup) AttrGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGroupId",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_DeviceGroup) AttrGroupId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DeviceGroup) AttrIotInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DeviceGroup) AttrIotInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIotInstanceId",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_DeviceGroup) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DeviceGroup) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_DeviceGroup)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DeviceGroup)SetProps(val *DeviceGroupProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_DeviceGroup)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (d *jsiiProxy_DeviceGroup) ApplyRemovalPolicy(policy alicloudroscdkcore.Rem
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_DeviceGroup) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DeviceGroup) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DeviceGroup) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_DeviceGroup) GeneratePhysicalName() *string {

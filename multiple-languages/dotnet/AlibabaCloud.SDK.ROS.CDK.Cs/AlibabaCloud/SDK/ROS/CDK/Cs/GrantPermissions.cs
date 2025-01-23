@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-grantpermissions
     /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Cs.GrantPermissions), fullyQualifiedName: "@alicloud/ros-cdk-cs.GrantPermissions", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-cs.GrantPermissionsProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"optional\":true,\"type\":{\"primitive\":\"boolean\"}}]")]
-    public class GrantPermissions : AlibabaCloud.SDK.ROS.CDK.Core.Resource_
+    public class GrantPermissions : AlibabaCloud.SDK.ROS.CDK.Core.Resource_, AlibabaCloud.SDK.ROS.CDK.Cs.IGrantPermissions
     {
         /// <summary>Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.</summary>
         public GrantPermissions(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Cs.IGrantPermissionsProps props, bool? enableResourcePropertyConstraint = null): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
@@ -37,6 +37,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         {
         }
 
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-cs.GrantPermissionsProps\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Cs.IGrantPermissionsProps Props
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Cs.IGrantPermissionsProps>()!;
+        }
+
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
         protected virtual bool EnableResourcePropertyConstraint
         {
@@ -48,13 +54,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         protected virtual string Id
         {
             get => GetInstanceProperty<string>()!;
-            set => SetInstanceProperty(value);
-        }
-
-        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-cs.GrantPermissionsProps\"}")]
-        protected virtual AlibabaCloud.SDK.ROS.CDK.Cs.IGrantPermissionsProps Props
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Cs.IGrantPermissionsProps>()!;
             set => SetInstanceProperty(value);
         }
 

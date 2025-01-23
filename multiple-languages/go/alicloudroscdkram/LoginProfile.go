@@ -12,10 +12,20 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::RAM::LoginProfile`, which is used to create logon configurations for a Resource Access Management (RAM) user.
 type LoginProfile interface {
 	alicloudroscdkcore.Resource
+	ILoginProfile
 	// Attribute Password: The password of the RAM user.
-	AttrPassword() alicloudroscdkcore.IResolvable
+	AttrPassword() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -30,7 +40,6 @@ type LoginProfile interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *LoginProfileProps
-	SetProps(val *LoginProfileProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -43,6 +52,9 @@ type LoginProfile interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -95,10 +107,11 @@ type LoginProfile interface {
 // The jsii proxy struct for LoginProfile
 type jsiiProxy_LoginProfile struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ILoginProfile
 }
 
-func (j *jsiiProxy_LoginProfile) AttrPassword() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoginProfile) AttrPassword() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPassword",
@@ -112,6 +125,16 @@ func (j *jsiiProxy_LoginProfile) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LoginProfile) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -249,17 +272,6 @@ func (j *jsiiProxy_LoginProfile)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_LoginProfile)SetProps(val *LoginProfileProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_LoginProfile)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -351,6 +363,45 @@ func (l *jsiiProxy_LoginProfile) ApplyRemovalPolicy(policy alicloudroscdkcore.Re
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (l *jsiiProxy_LoginProfile) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		l,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (l *jsiiProxy_LoginProfile) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		l,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (l *jsiiProxy_LoginProfile) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		l,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (l *jsiiProxy_LoginProfile) GeneratePhysicalName() *string {

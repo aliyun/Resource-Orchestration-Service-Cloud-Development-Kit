@@ -126,25 +126,41 @@ export interface ResourceMetricRuleProps {
 }
 
 /**
+ * Represents a `ResourceMetricRule`.
+ */
+export interface IResourceMetricRule extends ros.IResource {
+    readonly props: ResourceMetricRuleProps;
+
+    /**
+     * Attribute RuleId: The ID of the alert rule.
+     */
+    readonly attrRuleId: ros.IResolvable | string;
+
+    /**
+     * Attribute RuleName: The name of the alert rule.
+     */
+    readonly attrRuleName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::ResourceMetricRule`, which is used to create a threshold-triggered alert rule for a metric of a resource.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosResourceMetricRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-resourcemetricrule
  */
-export class ResourceMetricRule extends ros.Resource {
+export class ResourceMetricRule extends ros.Resource implements IResourceMetricRule {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ResourceMetricRuleProps;
+    public readonly props: ResourceMetricRuleProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RuleId: The ID of the alert rule.
      */
-    public readonly attrRuleId: ros.IResolvable;
+    public readonly attrRuleId: ros.IResolvable | string;
 
     /**
      * Attribute RuleName: The name of the alert rule.
      */
-    public readonly attrRuleName: ros.IResolvable;
+    public readonly attrRuleName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.devops;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::DEVOPS::HostGroup</code>, which is used to create a host group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:06.307Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:36.896Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.devops.$Module.class, fqn = "@alicloud/ros-cdk-devops.HostGroup")
-public class HostGroup extends com.aliyun.ros.cdk.core.Resource {
+public class HostGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.devops.IHostGroup {
 
     protected HostGroup(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -43,8 +43,14 @@ public class HostGroup extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute HostGroupId: The id of the host group.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrHostGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "attrHostGroupId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrHostGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "attrHostGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.devops.HostGroupProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.devops.HostGroupProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -61,14 +67,6 @@ public class HostGroup extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.devops.HostGroupProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.devops.HostGroupProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.devops.HostGroupProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {

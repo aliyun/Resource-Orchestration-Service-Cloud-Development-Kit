@@ -52,10 +52,6 @@ func (j *jsiiProxy_VSwitch) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_VSwitch) validateSetPropsParameters(val *VSwitchProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_VSwitch) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

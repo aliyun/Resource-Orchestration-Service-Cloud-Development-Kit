@@ -27,14 +27,20 @@ export interface SSHKeyPairAttachmentProps {
 }
 
 /**
+ * Represents a `SSHKeyPairAttachment`.
+ */
+export interface ISSHKeyPairAttachment extends ros.IResource {
+    readonly props: SSHKeyPairAttachmentProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SSHKeyPairAttachment`, which is used to attach an SSH key pair to Elastic Compute Service (ECS) instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSSHKeyPairAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-sshkeypairattachment
  */
-export class SSHKeyPairAttachment extends ros.Resource {
+export class SSHKeyPairAttachment extends ros.Resource implements ISSHKeyPairAttachment {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SSHKeyPairAttachmentProps;
+    public readonly props: SSHKeyPairAttachmentProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

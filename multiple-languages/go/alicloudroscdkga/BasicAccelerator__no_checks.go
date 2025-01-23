@@ -52,10 +52,6 @@ func (j *jsiiProxy_BasicAccelerator) validateSetIdParameters(val *string) error 
 	return nil
 }
 
-func (j *jsiiProxy_BasicAccelerator) validateSetPropsParameters(val *BasicAcceleratorProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_BasicAccelerator) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

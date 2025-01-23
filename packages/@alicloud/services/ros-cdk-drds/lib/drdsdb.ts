@@ -65,14 +65,20 @@ export interface DrdsDBProps {
 }
 
 /**
+ * Represents a `DrdsDB`.
+ */
+export interface IDrdsDB extends ros.IResource {
+    readonly props: DrdsDBProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::DRDS::DrdsDB`, which is used to create a Distributed Relational Database Service (DRDS) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDrdsDB`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-drds-drdsdb
  */
-export class DrdsDB extends ros.Resource {
+export class DrdsDB extends ros.Resource implements IDrdsDB {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DrdsDBProps;
+    public readonly props: DrdsDBProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

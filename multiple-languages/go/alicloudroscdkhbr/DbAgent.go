@@ -12,16 +12,26 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::HBR::DbAgent`, which is used to install a Cloud Backup backup client for a database.
 type DbAgent interface {
 	alicloudroscdkcore.Resource
+	IDbAgent
 	// Attribute InstanceIds: Uni backup agent instance ids.
-	AttrInstanceIds() alicloudroscdkcore.IResolvable
+	AttrInstanceIds() interface{}
 	// Attribute TaskId: Uni backup agent install task id.
-	AttrTaskId() alicloudroscdkcore.IResolvable
+	AttrTaskId() interface{}
 	// Attribute UniBackupInstanceDetails: Uni backup agent instance info details.
-	AttrUniBackupInstanceDetails() alicloudroscdkcore.IResolvable
+	AttrUniBackupInstanceDetails() interface{}
 	// Attribute UniBackupInstances: Uni backup agent instance info.
-	AttrUniBackupInstances() alicloudroscdkcore.IResolvable
+	AttrUniBackupInstances() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -36,7 +46,6 @@ type DbAgent interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DbAgentProps
-	SetProps(val *DbAgentProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -49,6 +58,9 @@ type DbAgent interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -101,10 +113,11 @@ type DbAgent interface {
 // The jsii proxy struct for DbAgent
 type jsiiProxy_DbAgent struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDbAgent
 }
 
-func (j *jsiiProxy_DbAgent) AttrInstanceIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbAgent) AttrInstanceIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceIds",
@@ -113,8 +126,8 @@ func (j *jsiiProxy_DbAgent) AttrInstanceIds() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbAgent) AttrTaskId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbAgent) AttrTaskId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTaskId",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_DbAgent) AttrTaskId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbAgent) AttrUniBackupInstanceDetails() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbAgent) AttrUniBackupInstanceDetails() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUniBackupInstanceDetails",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_DbAgent) AttrUniBackupInstanceDetails() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_DbAgent) AttrUniBackupInstances() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbAgent) AttrUniBackupInstances() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUniBackupInstances",
@@ -148,6 +161,16 @@ func (j *jsiiProxy_DbAgent) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DbAgent) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -285,17 +308,6 @@ func (j *jsiiProxy_DbAgent)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DbAgent)SetProps(val *DbAgentProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_DbAgent)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -387,6 +399,45 @@ func (d *jsiiProxy_DbAgent) ApplyRemovalPolicy(policy alicloudroscdkcore.Removal
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_DbAgent) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DbAgent) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DbAgent) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_DbAgent) GeneratePhysicalName() *string {

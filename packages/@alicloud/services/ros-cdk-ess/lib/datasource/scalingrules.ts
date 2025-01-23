@@ -57,25 +57,41 @@ export interface ScalingRulesProps {
 }
 
 /**
+ * Represents a `ScalingRules`.
+ */
+export interface IScalingRules extends ros.IResource {
+    readonly props: ScalingRulesProps;
+
+    /**
+     * Attribute ScalingRuleIds: The list of scaling rule IDs.
+     */
+    readonly attrScalingRuleIds: ros.IResolvable | string;
+
+    /**
+     * Attribute ScalingRules: The list of scaling rules.
+     */
+    readonly attrScalingRules: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ESS::ScalingRules`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosScalingRules`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ess-scalingrules
  */
-export class ScalingRules extends ros.Resource {
+export class ScalingRules extends ros.Resource implements IScalingRules {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ScalingRulesProps;
+    public readonly props: ScalingRulesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ScalingRuleIds: The list of scaling rule IDs.
      */
-    public readonly attrScalingRuleIds: ros.IResolvable;
+    public readonly attrScalingRuleIds: ros.IResolvable | string;
 
     /**
      * Attribute ScalingRules: The list of scaling rules.
      */
-    public readonly attrScalingRules: ros.IResolvable;
+    public readonly attrScalingRules: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -74,20 +74,31 @@ export interface OriginInstanceProps {
 }
 
 /**
+ * Represents a `OriginInstance`.
+ */
+export interface IOriginInstance extends ros.IResource {
+    readonly props: OriginInstanceProps;
+
+    /**
+     * Attribute InstanceId: The ID of the instance.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::DDoS::OriginInstance`, which is used to create an Anti-DDoS Origin instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosOriginInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddos-origininstance
  */
-export class OriginInstance extends ros.Resource {
+export class OriginInstance extends ros.Resource implements IOriginInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: OriginInstanceProps;
+    public readonly props: OriginInstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceId: The ID of the instance.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

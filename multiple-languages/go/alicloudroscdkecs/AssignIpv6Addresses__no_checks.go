@@ -52,10 +52,6 @@ func (j *jsiiProxy_AssignIpv6Addresses) validateSetIdParameters(val *string) err
 	return nil
 }
 
-func (j *jsiiProxy_AssignIpv6Addresses) validateSetPropsParameters(val *AssignIpv6AddressesProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_AssignIpv6Addresses) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

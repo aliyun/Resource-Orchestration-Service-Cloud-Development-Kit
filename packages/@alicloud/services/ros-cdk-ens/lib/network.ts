@@ -38,20 +38,31 @@ export interface NetworkProps {
 }
 
 /**
+ * Represents a `Network`.
+ */
+export interface INetwork extends ros.IResource {
+    readonly props: NetworkProps;
+
+    /**
+     * Attribute NetworkId: The ID of the network.
+     */
+    readonly attrNetworkId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ENS::Network`, which is used to create a virtual private cloud (VPC).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNetwork`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-network
  */
-export class Network extends ros.Resource {
+export class Network extends ros.Resource implements INetwork {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: NetworkProps;
+    public readonly props: NetworkProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute NetworkId: The ID of the network.
      */
-    public readonly attrNetworkId: ros.IResolvable;
+    public readonly attrNetworkId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

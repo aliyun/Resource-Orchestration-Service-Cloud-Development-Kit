@@ -52,10 +52,6 @@ func (j *jsiiProxy_SynDb) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_SynDb) validateSetPropsParameters(val *SynDbProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_SynDb) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.appflow.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::AppFlow::UserAuthConfigs</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:04.602Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:34.918Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.appflow.$Module.class, fqn = "@alicloud/ros-cdk-appflow.datasource.UserAuthConfigs")
-public class UserAuthConfigs extends com.aliyun.ros.cdk.core.Resource {
+public class UserAuthConfigs extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.appflow.datasource.IUserAuthConfigs {
 
     protected UserAuthConfigs(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -43,15 +43,22 @@ public class UserAuthConfigs extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute AuthConfigIds: The list of auth config ids.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAuthConfigIds() {
-        return software.amazon.jsii.Kernel.get(this, "attrAuthConfigIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAuthConfigIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrAuthConfigIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute AuthConfigs: The list of auth configs.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAuthConfigs() {
-        return software.amazon.jsii.Kernel.get(this, "attrAuthConfigs", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAuthConfigs() {
+        return software.amazon.jsii.Kernel.get(this, "attrAuthConfigs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.appflow.datasource.UserAuthConfigsProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.appflow.datasource.UserAuthConfigsProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -68,14 +75,6 @@ public class UserAuthConfigs extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.appflow.datasource.UserAuthConfigsProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.appflow.datasource.UserAuthConfigsProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.appflow.datasource.UserAuthConfigsProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {

@@ -12,24 +12,34 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScalingGroupEnable`, which is used to enable a scaling group.
 type ScalingGroupEnable interface {
 	alicloudroscdkcore.Resource
+	IScalingGroupEnable
 	// Attribute LifecycleState: The scaling group status.
-	AttrLifecycleState() alicloudroscdkcore.IResolvable
+	AttrLifecycleState() interface{}
 	// Attribute ScalingGroupId: The scaling group id.
-	AttrScalingGroupId() alicloudroscdkcore.IResolvable
+	AttrScalingGroupId() interface{}
 	// Attribute ScalingInstanceDetails: Detail information of auto created scaling instances.
-	AttrScalingInstanceDetails() alicloudroscdkcore.IResolvable
+	AttrScalingInstanceDetails() interface{}
 	// Attribute ScalingInstances: The auto created scaling instances.
-	AttrScalingInstances() alicloudroscdkcore.IResolvable
+	AttrScalingInstances() interface{}
 	// Attribute ScalingRuleArisExecuteErrorInfo: The error info of the execution of scaling rule aris.
-	AttrScalingRuleArisExecuteErrorInfo() alicloudroscdkcore.IResolvable
+	AttrScalingRuleArisExecuteErrorInfo() interface{}
 	// Attribute ScalingRuleArisExecuteResultInstancesAdded: Instances added via the execution of scaling rule aris.
-	AttrScalingRuleArisExecuteResultInstancesAdded() alicloudroscdkcore.IResolvable
+	AttrScalingRuleArisExecuteResultInstancesAdded() interface{}
 	// Attribute ScalingRuleArisExecuteResultInstancesRemoved: Instances removed via the execution of scaling rule aris.
-	AttrScalingRuleArisExecuteResultInstancesRemoved() alicloudroscdkcore.IResolvable
+	AttrScalingRuleArisExecuteResultInstancesRemoved() interface{}
 	// Attribute ScalingRuleArisExecuteResultNumberOfAddedInstances: The number of added vm via the execution of scaling rule aris.
-	AttrScalingRuleArisExecuteResultNumberOfAddedInstances() alicloudroscdkcore.IResolvable
+	AttrScalingRuleArisExecuteResultNumberOfAddedInstances() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -44,7 +54,6 @@ type ScalingGroupEnable interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ScalingGroupEnableProps
-	SetProps(val *ScalingGroupEnableProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -57,6 +66,9 @@ type ScalingGroupEnable interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -109,10 +121,11 @@ type ScalingGroupEnable interface {
 // The jsii proxy struct for ScalingGroupEnable
 type jsiiProxy_ScalingGroupEnable struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IScalingGroupEnable
 }
 
-func (j *jsiiProxy_ScalingGroupEnable) AttrLifecycleState() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingGroupEnable) AttrLifecycleState() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLifecycleState",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_ScalingGroupEnable) AttrLifecycleState() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_ScalingGroupEnable) AttrScalingGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingGroupEnable) AttrScalingGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrScalingGroupId",
@@ -131,8 +144,8 @@ func (j *jsiiProxy_ScalingGroupEnable) AttrScalingGroupId() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_ScalingGroupEnable) AttrScalingInstanceDetails() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingGroupEnable) AttrScalingInstanceDetails() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrScalingInstanceDetails",
@@ -141,8 +154,8 @@ func (j *jsiiProxy_ScalingGroupEnable) AttrScalingInstanceDetails() alicloudrosc
 	return returns
 }
 
-func (j *jsiiProxy_ScalingGroupEnable) AttrScalingInstances() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingGroupEnable) AttrScalingInstances() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrScalingInstances",
@@ -151,8 +164,8 @@ func (j *jsiiProxy_ScalingGroupEnable) AttrScalingInstances() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_ScalingGroupEnable) AttrScalingRuleArisExecuteErrorInfo() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingGroupEnable) AttrScalingRuleArisExecuteErrorInfo() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrScalingRuleArisExecuteErrorInfo",
@@ -161,8 +174,8 @@ func (j *jsiiProxy_ScalingGroupEnable) AttrScalingRuleArisExecuteErrorInfo() ali
 	return returns
 }
 
-func (j *jsiiProxy_ScalingGroupEnable) AttrScalingRuleArisExecuteResultInstancesAdded() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingGroupEnable) AttrScalingRuleArisExecuteResultInstancesAdded() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrScalingRuleArisExecuteResultInstancesAdded",
@@ -171,8 +184,8 @@ func (j *jsiiProxy_ScalingGroupEnable) AttrScalingRuleArisExecuteResultInstances
 	return returns
 }
 
-func (j *jsiiProxy_ScalingGroupEnable) AttrScalingRuleArisExecuteResultInstancesRemoved() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingGroupEnable) AttrScalingRuleArisExecuteResultInstancesRemoved() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrScalingRuleArisExecuteResultInstancesRemoved",
@@ -181,8 +194,8 @@ func (j *jsiiProxy_ScalingGroupEnable) AttrScalingRuleArisExecuteResultInstances
 	return returns
 }
 
-func (j *jsiiProxy_ScalingGroupEnable) AttrScalingRuleArisExecuteResultNumberOfAddedInstances() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingGroupEnable) AttrScalingRuleArisExecuteResultNumberOfAddedInstances() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrScalingRuleArisExecuteResultNumberOfAddedInstances",
@@ -196,6 +209,16 @@ func (j *jsiiProxy_ScalingGroupEnable) EnableResourcePropertyConstraint() *bool 
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ScalingGroupEnable) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -333,17 +356,6 @@ func (j *jsiiProxy_ScalingGroupEnable)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ScalingGroupEnable)SetProps(val *ScalingGroupEnableProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_ScalingGroupEnable)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -435,6 +447,45 @@ func (s *jsiiProxy_ScalingGroupEnable) ApplyRemovalPolicy(policy alicloudroscdkc
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (s *jsiiProxy_ScalingGroupEnable) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		s,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_ScalingGroupEnable) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_ScalingGroupEnable) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (s *jsiiProxy_ScalingGroupEnable) GeneratePhysicalName() *string {

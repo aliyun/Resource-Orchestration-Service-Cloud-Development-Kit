@@ -52,10 +52,6 @@ func (j *jsiiProxy_ElasticityAssurance) validateSetIdParameters(val *string) err
 	return nil
 }
 
-func (j *jsiiProxy_ElasticityAssurance) validateSetPropsParameters(val *ElasticityAssuranceProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_ElasticityAssurance) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

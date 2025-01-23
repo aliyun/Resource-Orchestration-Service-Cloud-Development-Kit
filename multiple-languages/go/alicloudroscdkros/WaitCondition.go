@@ -14,14 +14,24 @@ import (
 // You can use ALIYUN::ROS::WaitCondition together with ALIYUN::ROS::WaitConditionHandle to manage the execution process of a stack. When you create an Elastic Compute Service (ECS) instance, a signal is sent during the execution of the user data.
 type WaitCondition interface {
 	alicloudroscdkcore.Resource
+	IWaitCondition
 	// Attribute Data: JSON serialized dict containing data associated with wait condition signals sent to the handle.
-	AttrData() alicloudroscdkcore.IResolvable
+	AttrData() interface{}
 	// Attribute ErrorData: JSON serialized dict containing data associated with wait condition error signals sent to the handle.
-	AttrErrorData() alicloudroscdkcore.IResolvable
+	AttrErrorData() interface{}
 	// Attribute JoinedErrorData: String containing data associated with wait condition error signals sent to the handle.
-	AttrJoinedErrorData() alicloudroscdkcore.IResolvable
+	AttrJoinedErrorData() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -36,7 +46,6 @@ type WaitCondition interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *WaitConditionProps
-	SetProps(val *WaitConditionProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -49,6 +58,9 @@ type WaitCondition interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -101,10 +113,11 @@ type WaitCondition interface {
 // The jsii proxy struct for WaitCondition
 type jsiiProxy_WaitCondition struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IWaitCondition
 }
 
-func (j *jsiiProxy_WaitCondition) AttrData() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_WaitCondition) AttrData() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrData",
@@ -113,8 +126,8 @@ func (j *jsiiProxy_WaitCondition) AttrData() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_WaitCondition) AttrErrorData() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_WaitCondition) AttrErrorData() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrErrorData",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_WaitCondition) AttrErrorData() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_WaitCondition) AttrJoinedErrorData() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_WaitCondition) AttrJoinedErrorData() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrJoinedErrorData",
@@ -138,6 +151,16 @@ func (j *jsiiProxy_WaitCondition) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WaitCondition) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -275,17 +298,6 @@ func (j *jsiiProxy_WaitCondition)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_WaitCondition)SetProps(val *WaitConditionProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_WaitCondition)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -377,6 +389,45 @@ func (w *jsiiProxy_WaitCondition) ApplyRemovalPolicy(policy alicloudroscdkcore.R
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (w *jsiiProxy_WaitCondition) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		w,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (w *jsiiProxy_WaitCondition) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		w,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (w *jsiiProxy_WaitCondition) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		w,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (w *jsiiProxy_WaitCondition) GeneratePhysicalName() *string {

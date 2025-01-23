@@ -52,10 +52,6 @@ func (j *jsiiProxy_SimpleOfficeSite) validateSetIdParameters(val *string) error 
 	return nil
 }
 
-func (j *jsiiProxy_SimpleOfficeSite) validateSetPropsParameters(val *SimpleOfficeSiteProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_SimpleOfficeSite) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

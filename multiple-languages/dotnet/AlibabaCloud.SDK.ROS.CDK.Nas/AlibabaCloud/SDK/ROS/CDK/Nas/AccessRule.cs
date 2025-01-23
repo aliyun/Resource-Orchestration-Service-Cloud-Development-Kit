@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-accessrule
     /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Nas.AccessRule), fullyQualifiedName: "@alicloud/ros-cdk-nas.AccessRule", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-nas.AccessRuleProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"optional\":true,\"type\":{\"primitive\":\"boolean\"}}]")]
-    public class AccessRule : AlibabaCloud.SDK.ROS.CDK.Core.Resource_
+    public class AccessRule : AlibabaCloud.SDK.ROS.CDK.Core.Resource_, AlibabaCloud.SDK.ROS.CDK.Nas.IAccessRule
     {
         /// <summary>Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.</summary>
         public AccessRule(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Nas.IAccessRuleProps props, bool? enableResourcePropertyConstraint = null): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
@@ -38,10 +38,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         }
 
         /// <summary>Attribute AccessRuleId: Rule serial number.</summary>
-        [JsiiProperty(name: "attrAccessRuleId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAccessRuleId
+        [JsiiProperty(name: "attrAccessRuleId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrAccessRuleId
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
+        }
+
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-nas.AccessRuleProps\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Nas.IAccessRuleProps Props
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Nas.IAccessRuleProps>()!;
         }
 
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
@@ -55,13 +61,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         protected virtual string Id
         {
             get => GetInstanceProperty<string>()!;
-            set => SetInstanceProperty(value);
-        }
-
-        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-nas.AccessRuleProps\"}")]
-        protected virtual AlibabaCloud.SDK.ROS.CDK.Nas.IAccessRuleProps Props
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Nas.IAccessRuleProps>()!;
             set => SetInstanceProperty(value);
         }
 

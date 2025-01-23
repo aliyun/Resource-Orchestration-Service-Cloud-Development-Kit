@@ -52,25 +52,41 @@ export interface NodesProps {
 }
 
 /**
+ * Represents a `Nodes`.
+ */
+export interface INodes extends ros.IResource {
+    readonly props: NodesProps;
+
+    /**
+     * Attribute NodeIds: The list of node IDs.
+     */
+    readonly attrNodeIds: ros.IResolvable | string;
+
+    /**
+     * Attribute Nodes: The list of nodes.
+     */
+    readonly attrNodes: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::EHPC::Nodes`, which is used to query nodes in an Elastic High Performance Computing (E-HPC) cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNodes`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ehpc-nodes
  */
-export class Nodes extends ros.Resource {
+export class Nodes extends ros.Resource implements INodes {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: NodesProps;
+    public readonly props: NodesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute NodeIds: The list of node IDs.
      */
-    public readonly attrNodeIds: ros.IResolvable;
+    public readonly attrNodeIds: ros.IResolvable | string;
 
     /**
      * Attribute Nodes: The list of nodes.
      */
-    public readonly attrNodes: ros.IResolvable;
+    public readonly attrNodes: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

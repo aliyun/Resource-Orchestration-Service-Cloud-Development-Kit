@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-stageconfig
     /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Apigateway.StageConfig), fullyQualifiedName: "@alicloud/ros-cdk-apigateway.StageConfig", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-apigateway.StageConfigProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"optional\":true,\"type\":{\"primitive\":\"boolean\"}}]")]
-    public class StageConfig : AlibabaCloud.SDK.ROS.CDK.Core.Resource_
+    public class StageConfig : AlibabaCloud.SDK.ROS.CDK.Core.Resource_, AlibabaCloud.SDK.ROS.CDK.Apigateway.IStageConfig
     {
         /// <summary>Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.</summary>
         public StageConfig(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Apigateway.IStageConfigProps props, bool? enableResourcePropertyConstraint = null): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
@@ -37,6 +37,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         {
         }
 
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-apigateway.StageConfigProps\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Apigateway.IStageConfigProps Props
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Apigateway.IStageConfigProps>()!;
+        }
+
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
         protected virtual bool EnableResourcePropertyConstraint
         {
@@ -48,13 +54,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         protected virtual string Id
         {
             get => GetInstanceProperty<string>()!;
-            set => SetInstanceProperty(value);
-        }
-
-        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-apigateway.StageConfigProps\"}")]
-        protected virtual AlibabaCloud.SDK.ROS.CDK.Apigateway.IStageConfigProps Props
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Apigateway.IStageConfigProps>()!;
             set => SetInstanceProperty(value);
         }
 

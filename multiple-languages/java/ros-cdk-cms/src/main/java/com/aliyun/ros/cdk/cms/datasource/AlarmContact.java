@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.cms.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::CMS::AlarmContact</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:05.772Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:36.185Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.datasource.AlarmContact")
-public class AlarmContact extends com.aliyun.ros.cdk.core.Resource {
+public class AlarmContact extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cms.datasource.IAlarmContact {
 
     protected AlarmContact(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -43,99 +43,118 @@ public class AlarmContact extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute AlarmContactName: AlarmContactName.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAlarmContactName() {
-        return software.amazon.jsii.Kernel.get(this, "attrAlarmContactName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAlarmContactName() {
+        return software.amazon.jsii.Kernel.get(this, "attrAlarmContactName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute ChannelsAliIm: ChannelsAliIM.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrChannelsAliIm() {
-        return software.amazon.jsii.Kernel.get(this, "attrChannelsAliIm", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrChannelsAliIm() {
+        return software.amazon.jsii.Kernel.get(this, "attrChannelsAliIm", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute ChannelsDingWebHook: ChannelsDingWebHook.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrChannelsDingWebHook() {
-        return software.amazon.jsii.Kernel.get(this, "attrChannelsDingWebHook", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrChannelsDingWebHook() {
+        return software.amazon.jsii.Kernel.get(this, "attrChannelsDingWebHook", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute ChannelsMail: ChannelsMail.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrChannelsMail() {
-        return software.amazon.jsii.Kernel.get(this, "attrChannelsMail", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrChannelsMail() {
+        return software.amazon.jsii.Kernel.get(this, "attrChannelsMail", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute ChannelsSms: ChannelsSMS.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrChannelsSms() {
-        return software.amazon.jsii.Kernel.get(this, "attrChannelsSms", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrChannelsSms() {
+        return software.amazon.jsii.Kernel.get(this, "attrChannelsSms", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute ChannelsStateAliIm: ChannelsStateAliIM.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrChannelsStateAliIm() {
-        return software.amazon.jsii.Kernel.get(this, "attrChannelsStateAliIm", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrChannelsStateAliIm() {
+        return software.amazon.jsii.Kernel.get(this, "attrChannelsStateAliIm", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute ChannelsStateDingWebHook: ChannelsStateDingWebHook.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrChannelsStateDingWebHook() {
-        return software.amazon.jsii.Kernel.get(this, "attrChannelsStateDingWebHook", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrChannelsStateDingWebHook() {
+        return software.amazon.jsii.Kernel.get(this, "attrChannelsStateDingWebHook", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute ChannelsStateMail: ChannelsStateMail.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrChannelsStateMail() {
-        return software.amazon.jsii.Kernel.get(this, "attrChannelsStateMail", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrChannelsStateMail() {
+        return software.amazon.jsii.Kernel.get(this, "attrChannelsStateMail", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute ChannelsStateSms: ChannelsStateSMS.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrChannelsStateSms() {
-        return software.amazon.jsii.Kernel.get(this, "attrChannelsStateSms", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrChannelsStateSms() {
+        return software.amazon.jsii.Kernel.get(this, "attrChannelsStateSms", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute ContactGroups: ContactGroups.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrContactGroups() {
-        return software.amazon.jsii.Kernel.get(this, "attrContactGroups", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrContactGroups() {
+        return software.amazon.jsii.Kernel.get(this, "attrContactGroups", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute CreateTime: CreateTime.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCreateTime() {
-        return software.amazon.jsii.Kernel.get(this, "attrCreateTime", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCreateTime() {
+        return software.amazon.jsii.Kernel.get(this, "attrCreateTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute Describe: Describe.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDescribe() {
-        return software.amazon.jsii.Kernel.get(this, "attrDescribe", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDescribe() {
+        return software.amazon.jsii.Kernel.get(this, "attrDescribe", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute Lang: The language type of the alarm.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrLang() {
-        return software.amazon.jsii.Kernel.get(this, "attrLang", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrLang() {
+        return software.amazon.jsii.Kernel.get(this, "attrLang", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute UpdateTime: UpdateTime.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrUpdateTime() {
-        return software.amazon.jsii.Kernel.get(this, "attrUpdateTime", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrUpdateTime() {
+        return software.amazon.jsii.Kernel.get(this, "attrUpdateTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cms.datasource.AlarmContactProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cms.datasource.AlarmContactProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -152,14 +171,6 @@ public class AlarmContact extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cms.datasource.AlarmContactProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cms.datasource.AlarmContactProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cms.datasource.AlarmContactProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {

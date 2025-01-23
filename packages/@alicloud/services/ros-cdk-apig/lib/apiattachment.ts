@@ -46,30 +46,51 @@ export interface ApiAttachmentProps {
 }
 
 /**
+ * Represents a `ApiAttachment`.
+ */
+export interface IApiAttachment extends ros.IResource {
+    readonly props: ApiAttachmentProps;
+
+    /**
+     * Attribute EnvironmentId: The ID of the environment to which the API is to deploy.
+     */
+    readonly attrEnvironmentId: ros.IResolvable | string;
+
+    /**
+     * Attribute HttpApiId: The ID of the HTTP API.
+     */
+    readonly attrHttpApiId: ros.IResolvable | string;
+
+    /**
+     * Attribute RouteId: The route ID. When publishing an HTTP API route, it must be passed in.
+     */
+    readonly attrRouteId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::APIG::ApiAttachment`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApiAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-apiattachment
  */
-export class ApiAttachment extends ros.Resource {
+export class ApiAttachment extends ros.Resource implements IApiAttachment {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ApiAttachmentProps;
+    public readonly props: ApiAttachmentProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute EnvironmentId: The ID of the environment to which the API is to deploy.
      */
-    public readonly attrEnvironmentId: ros.IResolvable;
+    public readonly attrEnvironmentId: ros.IResolvable | string;
 
     /**
      * Attribute HttpApiId: The ID of the HTTP API.
      */
-    public readonly attrHttpApiId: ros.IResolvable;
+    public readonly attrHttpApiId: ros.IResolvable | string;
 
     /**
      * Attribute RouteId: The route ID. When publishing an HTTP API route, it must be passed in.
      */
-    public readonly attrRouteId: ros.IResolvable;
+    public readonly attrRouteId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

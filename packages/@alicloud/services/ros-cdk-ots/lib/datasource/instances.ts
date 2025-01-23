@@ -29,25 +29,41 @@ export interface InstancesProps {
 }
 
 /**
+ * Represents a `Instances`.
+ */
+export interface IInstances extends ros.IResource {
+    readonly props: InstancesProps;
+
+    /**
+     * Attribute InstanceNames: The list of instance names.
+     */
+    readonly attrInstanceNames: ros.IResolvable | string;
+
+    /**
+     * Attribute Instances: The list of instances.
+     */
+    readonly attrInstances: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::OTS::Instances`, which is used to query Tablestore instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstances`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ots-instances
  */
-export class Instances extends ros.Resource {
+export class Instances extends ros.Resource implements IInstances {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InstancesProps;
+    public readonly props: InstancesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceNames: The list of instance names.
      */
-    public readonly attrInstanceNames: ros.IResolvable;
+    public readonly attrInstanceNames: ros.IResolvable | string;
 
     /**
      * Attribute Instances: The list of instances.
      */
-    public readonly attrInstances: ros.IResolvable;
+    public readonly attrInstances: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

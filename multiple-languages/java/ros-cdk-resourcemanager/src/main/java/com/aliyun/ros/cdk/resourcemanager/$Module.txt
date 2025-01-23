@@ -8,6 +8,16 @@
 @alicloud/ros-cdk-resourcemanager.FolderProps=com.aliyun.ros.cdk.resourcemanager.FolderProps
 @alicloud/ros-cdk-resourcemanager.Handshake=com.aliyun.ros.cdk.resourcemanager.Handshake
 @alicloud/ros-cdk-resourcemanager.HandshakeProps=com.aliyun.ros.cdk.resourcemanager.HandshakeProps
+@alicloud/ros-cdk-resourcemanager.IAccount=com.aliyun.ros.cdk.resourcemanager.IAccount
+@alicloud/ros-cdk-resourcemanager.IControlPolicy=com.aliyun.ros.cdk.resourcemanager.IControlPolicy
+@alicloud/ros-cdk-resourcemanager.IControlPolicyAttachment=com.aliyun.ros.cdk.resourcemanager.IControlPolicyAttachment
+@alicloud/ros-cdk-resourcemanager.IFolder=com.aliyun.ros.cdk.resourcemanager.IFolder
+@alicloud/ros-cdk-resourcemanager.IHandshake=com.aliyun.ros.cdk.resourcemanager.IHandshake
+@alicloud/ros-cdk-resourcemanager.IPolicyAttachment=com.aliyun.ros.cdk.resourcemanager.IPolicyAttachment
+@alicloud/ros-cdk-resourcemanager.IResourceDirectory=com.aliyun.ros.cdk.resourcemanager.IResourceDirectory
+@alicloud/ros-cdk-resourcemanager.IResourceGroup=com.aliyun.ros.cdk.resourcemanager.IResourceGroup
+@alicloud/ros-cdk-resourcemanager.IResourceShare=com.aliyun.ros.cdk.resourcemanager.IResourceShare
+@alicloud/ros-cdk-resourcemanager.IResourceShareAssociation=com.aliyun.ros.cdk.resourcemanager.IResourceShareAssociation
 @alicloud/ros-cdk-resourcemanager.PolicyAttachment=com.aliyun.ros.cdk.resourcemanager.PolicyAttachment
 @alicloud/ros-cdk-resourcemanager.PolicyAttachmentProps=com.aliyun.ros.cdk.resourcemanager.PolicyAttachmentProps
 @alicloud/ros-cdk-resourcemanager.ResourceDirectory=com.aliyun.ros.cdk.resourcemanager.ResourceDirectory
@@ -40,6 +50,8 @@
 @alicloud/ros-cdk-resourcemanager.RosResourceShareAssociation.ResourcesProperty=com.aliyun.ros.cdk.resourcemanager.RosResourceShareAssociation$ResourcesProperty
 @alicloud/ros-cdk-resourcemanager.RosResourceShareAssociationProps=com.aliyun.ros.cdk.resourcemanager.RosResourceShareAssociationProps
 @alicloud/ros-cdk-resourcemanager.RosResourceShareProps=com.aliyun.ros.cdk.resourcemanager.RosResourceShareProps
+@alicloud/ros-cdk-resourcemanager.datasource.IResourceGroup=com.aliyun.ros.cdk.resourcemanager.datasource.IResourceGroup
+@alicloud/ros-cdk-resourcemanager.datasource.IResourceGroups=com.aliyun.ros.cdk.resourcemanager.datasource.IResourceGroups
 @alicloud/ros-cdk-resourcemanager.datasource.ResourceGroup=com.aliyun.ros.cdk.resourcemanager.datasource.ResourceGroup
 @alicloud/ros-cdk-resourcemanager.datasource.ResourceGroupProps=com.aliyun.ros.cdk.resourcemanager.datasource.ResourceGroupProps
 @alicloud/ros-cdk-resourcemanager.datasource.ResourceGroups=com.aliyun.ros.cdk.resourcemanager.datasource.ResourceGroups

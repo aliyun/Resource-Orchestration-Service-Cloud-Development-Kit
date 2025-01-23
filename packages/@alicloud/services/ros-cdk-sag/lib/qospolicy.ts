@@ -103,20 +103,31 @@ export interface QosPolicyProps {
 }
 
 /**
+ * Represents a `QosPolicy`.
+ */
+export interface IQosPolicy extends ros.IResource {
+    readonly props: QosPolicyProps;
+
+    /**
+     * Attribute QosPolicyId: The ID of the traffic classification rule.
+     */
+    readonly attrQosPolicyId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::QosPolicy`, which is used to create a traffic classification rule for a quality of service (QoS) policy.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosQosPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qospolicy
  */
-export class QosPolicy extends ros.Resource {
+export class QosPolicy extends ros.Resource implements IQosPolicy {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: QosPolicyProps;
+    public readonly props: QosPolicyProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute QosPolicyId: The ID of the traffic classification rule.
      */
-    public readonly attrQosPolicyId: ros.IResolvable;
+    public readonly attrQosPolicyId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

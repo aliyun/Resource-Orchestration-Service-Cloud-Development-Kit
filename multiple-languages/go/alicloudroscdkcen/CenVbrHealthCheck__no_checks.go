@@ -52,10 +52,6 @@ func (j *jsiiProxy_CenVbrHealthCheck) validateSetIdParameters(val *string) error
 	return nil
 }
 
-func (j *jsiiProxy_CenVbrHealthCheck) validateSetPropsParameters(val *CenVbrHealthCheckProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_CenVbrHealthCheck) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

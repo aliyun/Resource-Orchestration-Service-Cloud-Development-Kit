@@ -36,20 +36,31 @@ export interface CertificateProps {
 }
 
 /**
+ * Represents a `Certificate`.
+ */
+export interface ICertificate extends ros.IResource {
+    readonly props: CertificateProps;
+
+    /**
+     * Attribute CertId: Certificate ID.
+     */
+    readonly attrCertId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CAS::Certificate`, which is used to add a certificate.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCertificate`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cas-certificate
  */
-export class Certificate extends ros.Resource {
+export class Certificate extends ros.Resource implements ICertificate {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: CertificateProps;
+    public readonly props: CertificateProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CertId: Certificate ID.
      */
-    public readonly attrCertId: ros.IResolvable;
+    public readonly attrCertId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

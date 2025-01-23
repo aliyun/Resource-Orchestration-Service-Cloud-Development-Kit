@@ -180,20 +180,31 @@ export interface ControlPolicyProps {
 }
 
 /**
+ * Represents a `ControlPolicy`.
+ */
+export interface IControlPolicy extends ros.IResource {
+    readonly props: ControlPolicyProps;
+
+    /**
+     * Attribute AclUuid: Security access control ID that uniquely identifies the policy.
+     */
+    readonly attrAclUuid: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::ControlPolicy`, which is used to add an access control policy.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosControlPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-controlpolicy
  */
-export class ControlPolicy extends ros.Resource {
+export class ControlPolicy extends ros.Resource implements IControlPolicy {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ControlPolicyProps;
+    public readonly props: ControlPolicyProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AclUuid: Security access control ID that uniquely identifies the policy.
      */
-    public readonly attrAclUuid: ros.IResolvable;
+    public readonly attrAclUuid: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

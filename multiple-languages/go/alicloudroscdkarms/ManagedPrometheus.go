@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::ManagedPrometheus`, which is used to install a Prometheus instance to monitor a serverless Kubernetes (ASK) cluster or an Elastic Compute Service (ECS) instance.
 type ManagedPrometheus interface {
 	alicloudroscdkcore.Resource
+	IManagedPrometheus
 	// Attribute ClusterType: The type of the cluster.
-	AttrClusterType() alicloudroscdkcore.IResolvable
+	AttrClusterType() interface{}
 	// Attribute VpcId: The vpc ID of the cluster.
-	AttrVpcId() alicloudroscdkcore.IResolvable
+	AttrVpcId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type ManagedPrometheus interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ManagedPrometheusProps
-	SetProps(val *ManagedPrometheusProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type ManagedPrometheus interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type ManagedPrometheus interface {
 // The jsii proxy struct for ManagedPrometheus
 type jsiiProxy_ManagedPrometheus struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IManagedPrometheus
 }
 
-func (j *jsiiProxy_ManagedPrometheus) AttrClusterType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ManagedPrometheus) AttrClusterType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrClusterType",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_ManagedPrometheus) AttrClusterType() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_ManagedPrometheus) AttrVpcId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ManagedPrometheus) AttrVpcId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVpcId",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_ManagedPrometheus) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ManagedPrometheus) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_ManagedPrometheus)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ManagedPrometheus)SetProps(val *ManagedPrometheusProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_ManagedPrometheus)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (m *jsiiProxy_ManagedPrometheus) ApplyRemovalPolicy(policy alicloudroscdkco
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (m *jsiiProxy_ManagedPrometheus) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		m,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (m *jsiiProxy_ManagedPrometheus) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		m,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (m *jsiiProxy_ManagedPrometheus) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		m,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (m *jsiiProxy_ManagedPrometheus) GeneratePhysicalName() *string {

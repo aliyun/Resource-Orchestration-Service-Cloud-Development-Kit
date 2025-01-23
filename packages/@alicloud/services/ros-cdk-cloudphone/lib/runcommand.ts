@@ -28,14 +28,20 @@ export interface RunCommandProps {
 }
 
 /**
+ * Represents a `RunCommand`.
+ */
+export interface IRunCommand extends ros.IResource {
+    readonly props: RunCommandProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CloudPhone::RunCommand`, which is used to run a command on cloud phones.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRunCommand`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-runcommand
  */
-export class RunCommand extends ros.Resource {
+export class RunCommand extends ros.Resource implements IRunCommand {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: RunCommandProps;
+    public readonly props: RunCommandProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

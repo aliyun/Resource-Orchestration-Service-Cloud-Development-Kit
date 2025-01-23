@@ -52,10 +52,6 @@ func (j *jsiiProxy_SmartAccessGateway) validateSetIdParameters(val *string) erro
 	return nil
 }
 
-func (j *jsiiProxy_SmartAccessGateway) validateSetPropsParameters(val *SmartAccessGatewayProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_SmartAccessGateway) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

@@ -26,20 +26,31 @@ export interface ForwardingRulesProps {
 }
 
 /**
+ * Represents a `ForwardingRules`.
+ */
+export interface IForwardingRules extends ros.IResource {
+    readonly props: ForwardingRulesProps;
+
+    /**
+     * Attribute ForwardingRuleIds: The IDs of the endpoint groups.
+     */
+    readonly attrForwardingRuleIds: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::GA::ForwardingRules`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosForwardingRules`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-forwardingrules
  */
-export class ForwardingRules extends ros.Resource {
+export class ForwardingRules extends ros.Resource implements IForwardingRules {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ForwardingRulesProps;
+    public readonly props: ForwardingRulesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ForwardingRuleIds: The IDs of the endpoint groups.
      */
-    public readonly attrForwardingRuleIds: ros.IResolvable;
+    public readonly attrForwardingRuleIds: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

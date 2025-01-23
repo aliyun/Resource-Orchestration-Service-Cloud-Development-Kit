@@ -29,25 +29,41 @@ export interface NatIpCidrsProps {
 }
 
 /**
+ * Represents a `NatIpCidrs`.
+ */
+export interface INatIpCidrs extends ros.IResource {
+    readonly props: NatIpCidrsProps;
+
+    /**
+     * Attribute NatIpCidrIds: The list of nat ip cidr IDs.
+     */
+    readonly attrNatIpCidrIds: ros.IResolvable | string;
+
+    /**
+     * Attribute NatIpCidrs: The list of nat ip cidrs.
+     */
+    readonly attrNatIpCidrs: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::NatIpCidrs`, which is used to query the CIDR blocks of a NAT gateway.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNatIpCidrs`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natipcidrs
  */
-export class NatIpCidrs extends ros.Resource {
+export class NatIpCidrs extends ros.Resource implements INatIpCidrs {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: NatIpCidrsProps;
+    public readonly props: NatIpCidrsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute NatIpCidrIds: The list of nat ip cidr IDs.
      */
-    public readonly attrNatIpCidrIds: ros.IResolvable;
+    public readonly attrNatIpCidrIds: ros.IResolvable | string;
 
     /**
      * Attribute NatIpCidrs: The list of nat ip cidrs.
      */
-    public readonly attrNatIpCidrs: ros.IResolvable;
+    public readonly attrNatIpCidrs: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

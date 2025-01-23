@@ -162,35 +162,61 @@ export interface RunCommandProps {
 }
 
 /**
+ * Represents a `RunCommand`.
+ */
+export interface IRunCommand extends ros.IResource {
+    readonly props: RunCommandProps;
+
+    /**
+     * Attribute CommandId: The id of command created.
+     */
+    readonly attrCommandId: ros.IResolvable | string;
+
+    /**
+     * Attribute InvokeId: The invoke id of command.
+     */
+    readonly attrInvokeId: ros.IResolvable | string;
+
+    /**
+     * Attribute InvokeInstances: The InvokeInstances of command.
+     */
+    readonly attrInvokeInstances: ros.IResolvable | string;
+
+    /**
+     * Attribute InvokeResults: The results of invoke command.
+     */
+    readonly attrInvokeResults: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::RunCommand`, which is used to run a shell, PowerShell, or batch command on Elastic Compute Service (ECS) instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRunCommand`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-runcommand
  */
-export class RunCommand extends ros.Resource {
+export class RunCommand extends ros.Resource implements IRunCommand {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: RunCommandProps;
+    public readonly props: RunCommandProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CommandId: The id of command created.
      */
-    public readonly attrCommandId: ros.IResolvable;
+    public readonly attrCommandId: ros.IResolvable | string;
 
     /**
      * Attribute InvokeId: The invoke id of command.
      */
-    public readonly attrInvokeId: ros.IResolvable;
+    public readonly attrInvokeId: ros.IResolvable | string;
 
     /**
      * Attribute InvokeInstances: The InvokeInstances of command.
      */
-    public readonly attrInvokeInstances: ros.IResolvable;
+    public readonly attrInvokeInstances: ros.IResolvable | string;
 
     /**
      * Attribute InvokeResults: The results of invoke command.
      */
-    public readonly attrInvokeResults: ros.IResolvable;
+    public readonly attrInvokeResults: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -76,20 +76,31 @@ export interface StackGroupProps {
 }
 
 /**
+ * Represents a `StackGroup`.
+ */
+export interface IStackGroup extends ros.IResource {
+    readonly props: StackGroupProps;
+
+    /**
+     * Attribute StackGroupId: undefined
+     */
+    readonly attrStackGroupId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::StackGroup`, which is used to create a stack group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosStackGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stackgroup
  */
-export class StackGroup extends ros.Resource {
+export class StackGroup extends ros.Resource implements IStackGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: StackGroupProps;
+    public readonly props: StackGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute StackGroupId: undefined
      */
-    public readonly attrStackGroupId: ros.IResolvable;
+    public readonly attrStackGroupId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

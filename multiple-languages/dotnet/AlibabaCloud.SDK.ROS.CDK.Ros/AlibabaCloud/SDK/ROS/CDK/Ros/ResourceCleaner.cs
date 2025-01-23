@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-resourcecleaner
     /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Ros.ResourceCleaner), fullyQualifiedName: "@alicloud/ros-cdk-ros.ResourceCleaner", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-ros.ResourceCleanerProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"optional\":true,\"type\":{\"primitive\":\"boolean\"}}]")]
-    public class ResourceCleaner : AlibabaCloud.SDK.ROS.CDK.Core.Resource_
+    public class ResourceCleaner : AlibabaCloud.SDK.ROS.CDK.Core.Resource_, AlibabaCloud.SDK.ROS.CDK.Ros.IResourceCleaner
     {
         /// <summary>Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.</summary>
         public ResourceCleaner(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Ros.IResourceCleanerProps props, bool? enableResourcePropertyConstraint = null): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
@@ -51,10 +51,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// <description>None: Cleanup is not triggered.</description>
         /// </list>
         /// </remarks>
-        [JsiiProperty(name: "attrCleanResult", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCleanResult
+        [JsiiProperty(name: "attrCleanResult", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrCleanResult
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute NoCleanupResourceDetails: The details of the resources that are scanned but filtered.</summary>
@@ -62,10 +62,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// Only resources with the resource types ResourceCleaner supports and the regions not filtered are scanned.
         /// The format is the same as ResourceDetails.
         /// </remarks>
-        [JsiiProperty(name: "attrNoCleanupResourceDetails", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrNoCleanupResourceDetails
+        [JsiiProperty(name: "attrNoCleanupResourceDetails", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrNoCleanupResourceDetails
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute NoCleanupResourcePartialDetails: The partial details of the resources that are scanned but filtered.</summary>
@@ -73,10 +73,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// Only resources with the resource types ResourceCleaner supports and the regions not filtered are scanned.
         /// The format is the same as ResourcePartialDetails.
         /// </remarks>
-        [JsiiProperty(name: "attrNoCleanupResourcePartialDetails", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrNoCleanupResourcePartialDetails
+        [JsiiProperty(name: "attrNoCleanupResourcePartialDetails", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrNoCleanupResourcePartialDetails
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute ResourceDetails: The details of resources to be cleaned up.</summary>
@@ -106,10 +106,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// <description>ResourceId: ID of the dependency resource.</description>
         /// </list>
         /// </remarks>
-        [JsiiProperty(name: "attrResourceDetails", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrResourceDetails
+        [JsiiProperty(name: "attrResourceDetails", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrResourceDetails
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute ResourcePartialDetails: The partial details of resources to be cleaned up.</summary>
@@ -130,10 +130,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// <description>ResourceStatusReason: The information of the related ResourceStatus.</description>
         /// </list>
         /// </remarks>
-        [JsiiProperty(name: "attrResourcePartialDetails", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrResourcePartialDetails
+        [JsiiProperty(name: "attrResourcePartialDetails", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrResourcePartialDetails
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute ResourceSummary: The details of resources to be cleaned up.</summary>
@@ -151,10 +151,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// <description>TotalCount: Number of total resources of the resource type.</description>
         /// </list>
         /// </remarks>
-        [JsiiProperty(name: "attrResourceSummary", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrResourceSummary
+        [JsiiProperty(name: "attrResourceSummary", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrResourceSummary
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute ScanErrors: The scan errors.</summary>
@@ -168,10 +168,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// <description>ErrorMessage: Error message of scanning with specified resource type and region ID.</description>
         /// </list>
         /// </remarks>
-        [JsiiProperty(name: "attrScanErrors", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrScanErrors
+        [JsiiProperty(name: "attrScanErrors", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrScanErrors
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
+        }
+
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-ros.ResourceCleanerProps\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Ros.IResourceCleanerProps Props
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Ros.IResourceCleanerProps>()!;
         }
 
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
@@ -185,13 +191,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         protected virtual string Id
         {
             get => GetInstanceProperty<string>()!;
-            set => SetInstanceProperty(value);
-        }
-
-        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-ros.ResourceCleanerProps\"}")]
-        protected virtual AlibabaCloud.SDK.ROS.CDK.Ros.IResourceCleanerProps Props
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Ros.IResourceCleanerProps>()!;
             set => SetInstanceProperty(value);
         }
 

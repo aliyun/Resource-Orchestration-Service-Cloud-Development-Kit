@@ -52,10 +52,6 @@ func (j *jsiiProxy_InfluxDBDatabase) validateSetIdParameters(val *string) error 
 	return nil
 }
 
-func (j *jsiiProxy_InfluxDBDatabase) validateSetPropsParameters(val *InfluxDBDatabaseProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_InfluxDBDatabase) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

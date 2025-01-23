@@ -24,20 +24,31 @@ export interface AlertProps {
 }
 
 /**
+ * Represents a `Alert`.
+ */
+export interface IAlert extends ros.IResource {
+    readonly props: AlertProps;
+
+    /**
+     * Attribute Name: Alert name.
+     */
+    readonly attrName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Alert`, which is used to create an alert rule.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAlert`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-alert
  */
-export class Alert extends ros.Resource {
+export class Alert extends ros.Resource implements IAlert {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AlertProps;
+    public readonly props: AlertProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Name: Alert name.
      */
-    public readonly attrName: ros.IResolvable;
+    public readonly attrName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

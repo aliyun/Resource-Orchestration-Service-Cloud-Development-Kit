@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.cen.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::CEN::TransitRouters</code>, which is used to query the information about transit routers of a Cloud Enterprise Network (CEN) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:05.276Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:35.602Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.datasource.TransitRouters")
-public class TransitRouters extends com.aliyun.ros.cdk.core.Resource {
+public class TransitRouters extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cen.datasource.ITransitRouters {
 
     protected TransitRouters(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -43,15 +43,22 @@ public class TransitRouters extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute TransitRouterIds: The list of TransitRouter IDs.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTransitRouterIds() {
-        return software.amazon.jsii.Kernel.get(this, "attrTransitRouterIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrTransitRouterIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute TransitRouters: The list of TransitRouters.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTransitRouters() {
-        return software.amazon.jsii.Kernel.get(this, "attrTransitRouters", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouters() {
+        return software.amazon.jsii.Kernel.get(this, "attrTransitRouters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cen.datasource.TransitRoutersProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cen.datasource.TransitRoutersProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -68,14 +75,6 @@ public class TransitRouters extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cen.datasource.TransitRoutersProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cen.datasource.TransitRoutersProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cen.datasource.TransitRoutersProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {

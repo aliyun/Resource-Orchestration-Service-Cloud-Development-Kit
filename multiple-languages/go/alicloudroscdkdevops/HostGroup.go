@@ -12,10 +12,20 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::DEVOPS::HostGroup`, which is used to create a host group.
 type HostGroup interface {
 	alicloudroscdkcore.Resource
+	IHostGroup
 	// Attribute HostGroupId: The id of the host group.
-	AttrHostGroupId() alicloudroscdkcore.IResolvable
+	AttrHostGroupId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -30,7 +40,6 @@ type HostGroup interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *HostGroupProps
-	SetProps(val *HostGroupProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -43,6 +52,9 @@ type HostGroup interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -95,10 +107,11 @@ type HostGroup interface {
 // The jsii proxy struct for HostGroup
 type jsiiProxy_HostGroup struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IHostGroup
 }
 
-func (j *jsiiProxy_HostGroup) AttrHostGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HostGroup) AttrHostGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHostGroupId",
@@ -112,6 +125,16 @@ func (j *jsiiProxy_HostGroup) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HostGroup) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -249,17 +272,6 @@ func (j *jsiiProxy_HostGroup)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_HostGroup)SetProps(val *HostGroupProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_HostGroup)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -351,6 +363,45 @@ func (h *jsiiProxy_HostGroup) ApplyRemovalPolicy(policy alicloudroscdkcore.Remov
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (h *jsiiProxy_HostGroup) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		h,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (h *jsiiProxy_HostGroup) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		h,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (h *jsiiProxy_HostGroup) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		h,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (h *jsiiProxy_HostGroup) GeneratePhysicalName() *string {

@@ -33,25 +33,41 @@ export interface DatasetsProps {
 }
 
 /**
+ * Represents a `Datasets`.
+ */
+export interface IDatasets extends ros.IResource {
+    readonly props: DatasetsProps;
+
+    /**
+     * Attribute DatasetIds: The list of dataset IDs.
+     */
+    readonly attrDatasetIds: ros.IResolvable | string;
+
+    /**
+     * Attribute Datasets: The list of datasets.
+     */
+    readonly attrDatasets: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::Datasets`, which is used to query the basic information about datasets.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDatasets`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-datasets
  */
-export class Datasets extends ros.Resource {
+export class Datasets extends ros.Resource implements IDatasets {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DatasetsProps;
+    public readonly props: DatasetsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DatasetIds: The list of dataset IDs.
      */
-    public readonly attrDatasetIds: ros.IResolvable;
+    public readonly attrDatasetIds: ros.IResolvable | string;
 
     /**
      * Attribute Datasets: The list of datasets.
      */
-    public readonly attrDatasets: ros.IResolvable;
+    public readonly attrDatasets: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -52,10 +52,6 @@ func (j *jsiiProxy_DBInstanceClone) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_DBInstanceClone) validateSetPropsParameters(val *DBInstanceCloneProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_DBInstanceClone) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

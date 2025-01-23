@@ -12,36 +12,46 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::CMS::AlarmContact`.
 type AlarmContact interface {
 	alicloudroscdkcore.Resource
+	IAlarmContact
 	// Attribute AlarmContactName: AlarmContactName.
-	AttrAlarmContactName() alicloudroscdkcore.IResolvable
+	AttrAlarmContactName() interface{}
 	// Attribute ChannelsAliIm: ChannelsAliIM.
-	AttrChannelsAliIm() alicloudroscdkcore.IResolvable
+	AttrChannelsAliIm() interface{}
 	// Attribute ChannelsDingWebHook: ChannelsDingWebHook.
-	AttrChannelsDingWebHook() alicloudroscdkcore.IResolvable
+	AttrChannelsDingWebHook() interface{}
 	// Attribute ChannelsMail: ChannelsMail.
-	AttrChannelsMail() alicloudroscdkcore.IResolvable
+	AttrChannelsMail() interface{}
 	// Attribute ChannelsSms: ChannelsSMS.
-	AttrChannelsSms() alicloudroscdkcore.IResolvable
+	AttrChannelsSms() interface{}
 	// Attribute ChannelsStateAliIm: ChannelsStateAliIM.
-	AttrChannelsStateAliIm() alicloudroscdkcore.IResolvable
+	AttrChannelsStateAliIm() interface{}
 	// Attribute ChannelsStateDingWebHook: ChannelsStateDingWebHook.
-	AttrChannelsStateDingWebHook() alicloudroscdkcore.IResolvable
+	AttrChannelsStateDingWebHook() interface{}
 	// Attribute ChannelsStateMail: ChannelsStateMail.
-	AttrChannelsStateMail() alicloudroscdkcore.IResolvable
+	AttrChannelsStateMail() interface{}
 	// Attribute ChannelsStateSms: ChannelsStateSMS.
-	AttrChannelsStateSms() alicloudroscdkcore.IResolvable
+	AttrChannelsStateSms() interface{}
 	// Attribute ContactGroups: ContactGroups.
-	AttrContactGroups() alicloudroscdkcore.IResolvable
+	AttrContactGroups() interface{}
 	// Attribute CreateTime: CreateTime.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute Describe: Describe.
-	AttrDescribe() alicloudroscdkcore.IResolvable
+	AttrDescribe() interface{}
 	// Attribute Lang: The language type of the alarm.
-	AttrLang() alicloudroscdkcore.IResolvable
+	AttrLang() interface{}
 	// Attribute UpdateTime: UpdateTime.
-	AttrUpdateTime() alicloudroscdkcore.IResolvable
+	AttrUpdateTime() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -56,7 +66,6 @@ type AlarmContact interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *AlarmContactProps
-	SetProps(val *AlarmContactProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -69,6 +78,9 @@ type AlarmContact interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -121,10 +133,11 @@ type AlarmContact interface {
 // The jsii proxy struct for AlarmContact
 type jsiiProxy_AlarmContact struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IAlarmContact
 }
 
-func (j *jsiiProxy_AlarmContact) AttrAlarmContactName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AlarmContact) AttrAlarmContactName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAlarmContactName",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_AlarmContact) AttrAlarmContactName() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_AlarmContact) AttrChannelsAliIm() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AlarmContact) AttrChannelsAliIm() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrChannelsAliIm",
@@ -143,8 +156,8 @@ func (j *jsiiProxy_AlarmContact) AttrChannelsAliIm() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_AlarmContact) AttrChannelsDingWebHook() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AlarmContact) AttrChannelsDingWebHook() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrChannelsDingWebHook",
@@ -153,8 +166,8 @@ func (j *jsiiProxy_AlarmContact) AttrChannelsDingWebHook() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_AlarmContact) AttrChannelsMail() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AlarmContact) AttrChannelsMail() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrChannelsMail",
@@ -163,8 +176,8 @@ func (j *jsiiProxy_AlarmContact) AttrChannelsMail() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_AlarmContact) AttrChannelsSms() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AlarmContact) AttrChannelsSms() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrChannelsSms",
@@ -173,8 +186,8 @@ func (j *jsiiProxy_AlarmContact) AttrChannelsSms() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_AlarmContact) AttrChannelsStateAliIm() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AlarmContact) AttrChannelsStateAliIm() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrChannelsStateAliIm",
@@ -183,8 +196,8 @@ func (j *jsiiProxy_AlarmContact) AttrChannelsStateAliIm() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_AlarmContact) AttrChannelsStateDingWebHook() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AlarmContact) AttrChannelsStateDingWebHook() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrChannelsStateDingWebHook",
@@ -193,8 +206,8 @@ func (j *jsiiProxy_AlarmContact) AttrChannelsStateDingWebHook() alicloudroscdkco
 	return returns
 }
 
-func (j *jsiiProxy_AlarmContact) AttrChannelsStateMail() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AlarmContact) AttrChannelsStateMail() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrChannelsStateMail",
@@ -203,8 +216,8 @@ func (j *jsiiProxy_AlarmContact) AttrChannelsStateMail() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_AlarmContact) AttrChannelsStateSms() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AlarmContact) AttrChannelsStateSms() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrChannelsStateSms",
@@ -213,8 +226,8 @@ func (j *jsiiProxy_AlarmContact) AttrChannelsStateSms() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_AlarmContact) AttrContactGroups() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AlarmContact) AttrContactGroups() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrContactGroups",
@@ -223,8 +236,8 @@ func (j *jsiiProxy_AlarmContact) AttrContactGroups() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_AlarmContact) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AlarmContact) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -233,8 +246,8 @@ func (j *jsiiProxy_AlarmContact) AttrCreateTime() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_AlarmContact) AttrDescribe() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AlarmContact) AttrDescribe() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescribe",
@@ -243,8 +256,8 @@ func (j *jsiiProxy_AlarmContact) AttrDescribe() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_AlarmContact) AttrLang() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AlarmContact) AttrLang() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLang",
@@ -253,8 +266,8 @@ func (j *jsiiProxy_AlarmContact) AttrLang() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_AlarmContact) AttrUpdateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AlarmContact) AttrUpdateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUpdateTime",
@@ -268,6 +281,16 @@ func (j *jsiiProxy_AlarmContact) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AlarmContact) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -405,17 +428,6 @@ func (j *jsiiProxy_AlarmContact)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AlarmContact)SetProps(val *AlarmContactProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_AlarmContact)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -507,6 +519,45 @@ func (a *jsiiProxy_AlarmContact) ApplyRemovalPolicy(policy alicloudroscdkcore.Re
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (a *jsiiProxy_AlarmContact) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		a,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AlarmContact) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AlarmContact) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (a *jsiiProxy_AlarmContact) GeneratePhysicalName() *string {

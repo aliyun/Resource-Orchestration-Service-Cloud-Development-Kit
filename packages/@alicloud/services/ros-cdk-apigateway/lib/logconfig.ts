@@ -21,25 +21,41 @@ export interface LogConfigProps {
 }
 
 /**
+ * Represents a `LogConfig`.
+ */
+export interface ILogConfig extends ros.IResource {
+    readonly props: LogConfigProps;
+
+    /**
+     * Attribute SlsLogStore: Logstore name of SLS
+     */
+    readonly attrSlsLogStore: ros.IResolvable | string;
+
+    /**
+     * Attribute SlsProject: Project name of SLS
+     */
+    readonly attrSlsProject: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::LogConfig`, which is used to create a log configuration.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLogConfig`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-logconfig
  */
-export class LogConfig extends ros.Resource {
+export class LogConfig extends ros.Resource implements ILogConfig {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: LogConfigProps;
+    public readonly props: LogConfigProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SlsLogStore: Logstore name of SLS
      */
-    public readonly attrSlsLogStore: ros.IResolvable;
+    public readonly attrSlsLogStore: ros.IResolvable | string;
 
     /**
      * Attribute SlsProject: Project name of SLS
      */
-    public readonly attrSlsProject: ros.IResolvable;
+    public readonly attrSlsProject: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

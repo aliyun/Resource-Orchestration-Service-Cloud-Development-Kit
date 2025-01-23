@@ -46,20 +46,31 @@ export interface AScriptProps {
 }
 
 /**
+ * Represents a `AScript`.
+ */
+export interface IAScript extends ros.IResource {
+    readonly props: AScriptProps;
+
+    /**
+     * Attribute AScriptId: The AScript rule ID.
+     */
+    readonly attrAScriptId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::AScript`, which is used to create an AScript rule.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAScript`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-ascript
  */
-export class AScript extends ros.Resource {
+export class AScript extends ros.Resource implements IAScript {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AScriptProps;
+    public readonly props: AScriptProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AScriptId: The AScript rule ID.
      */
-    public readonly attrAScriptId: ros.IResolvable;
+    public readonly attrAScriptId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -12,24 +12,34 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Plugin`, which is used to create an API Gateway plug-in.
 type Plugin interface {
 	alicloudroscdkcore.Resource
+	IPlugin
 	// Attribute Description: The description of the plug-in, which cannot exceed 200 characters.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute PluginData: The definition statement of the plug-in.
 	//
 	// Plug-in definition statements in the JSON and YAML formats are supported.
-	AttrPluginData() alicloudroscdkcore.IResolvable
+	AttrPluginData() interface{}
 	// Attribute PluginId: The generated plugin ID.
-	AttrPluginId() alicloudroscdkcore.IResolvable
+	AttrPluginId() interface{}
 	// Attribute PluginName: The name of the plug-in that you want to create.
 	//
 	// It can contain uppercase English letters, lowercase English letters, Chinese characters, numbers, and underscores (). It must be 4 to 50 characters in length and cannot start with an underscore ().
-	AttrPluginName() alicloudroscdkcore.IResolvable
+	AttrPluginName() interface{}
 	// Attribute PluginType: The type of the plug-in.
 	//
 	// Valid values: ipControl: indicates IP address-based access control. trafficControl: indicates throttling. backendSignature: indicates backend signature. jwtAuth: indicates JWT (OpenId Connect). cors: indicates cross-origin resource access (CORS). caching: indicates caching.
-	AttrPluginType() alicloudroscdkcore.IResolvable
+	AttrPluginType() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -44,7 +54,6 @@ type Plugin interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *PluginProps
-	SetProps(val *PluginProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -57,6 +66,9 @@ type Plugin interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -109,10 +121,11 @@ type Plugin interface {
 // The jsii proxy struct for Plugin
 type jsiiProxy_Plugin struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IPlugin
 }
 
-func (j *jsiiProxy_Plugin) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Plugin) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_Plugin) AttrDescription() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Plugin) AttrPluginData() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Plugin) AttrPluginData() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPluginData",
@@ -131,8 +144,8 @@ func (j *jsiiProxy_Plugin) AttrPluginData() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Plugin) AttrPluginId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Plugin) AttrPluginId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPluginId",
@@ -141,8 +154,8 @@ func (j *jsiiProxy_Plugin) AttrPluginId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Plugin) AttrPluginName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Plugin) AttrPluginName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPluginName",
@@ -151,8 +164,8 @@ func (j *jsiiProxy_Plugin) AttrPluginName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Plugin) AttrPluginType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Plugin) AttrPluginType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPluginType",
@@ -166,6 +179,16 @@ func (j *jsiiProxy_Plugin) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Plugin) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -303,17 +326,6 @@ func (j *jsiiProxy_Plugin)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Plugin)SetProps(val *PluginProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Plugin)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -405,6 +417,45 @@ func (p *jsiiProxy_Plugin) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalP
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (p *jsiiProxy_Plugin) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		p,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_Plugin) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		p,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_Plugin) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		p,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (p *jsiiProxy_Plugin) GeneratePhysicalName() *string {

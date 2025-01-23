@@ -52,10 +52,6 @@ func (j *jsiiProxy_ManagedEdgeKubernetesCluster) validateSetIdParameters(val *st
 	return nil
 }
 
-func (j *jsiiProxy_ManagedEdgeKubernetesCluster) validateSetPropsParameters(val *ManagedEdgeKubernetesClusterProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_ManagedEdgeKubernetesCluster) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

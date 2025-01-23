@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-aclrule
     /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Waf.AclRule), fullyQualifiedName: "@alicloud/ros-cdk-waf.AclRule", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-waf.AclRuleProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"optional\":true,\"type\":{\"primitive\":\"boolean\"}}]")]
-    public class AclRule : AlibabaCloud.SDK.ROS.CDK.Core.Resource_
+    public class AclRule : AlibabaCloud.SDK.ROS.CDK.Core.Resource_, AlibabaCloud.SDK.ROS.CDK.Waf.IAclRule
     {
         /// <summary>Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.</summary>
         public AclRule(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Waf.IAclRuleProps props, bool? enableResourcePropertyConstraint = null): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
@@ -37,6 +37,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         {
         }
 
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-waf.AclRuleProps\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Waf.IAclRuleProps Props
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Waf.IAclRuleProps>()!;
+        }
+
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
         protected virtual bool EnableResourcePropertyConstraint
         {
@@ -48,13 +54,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         protected virtual string Id
         {
             get => GetInstanceProperty<string>()!;
-            set => SetInstanceProperty(value);
-        }
-
-        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-waf.AclRuleProps\"}")]
-        protected virtual AlibabaCloud.SDK.ROS.CDK.Waf.IAclRuleProps Props
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Waf.IAclRuleProps>()!;
             set => SetInstanceProperty(value);
         }
 

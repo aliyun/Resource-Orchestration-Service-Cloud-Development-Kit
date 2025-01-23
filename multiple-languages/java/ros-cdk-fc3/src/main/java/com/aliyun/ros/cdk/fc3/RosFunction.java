@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc3;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::FC3::Function</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:08.470Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:40.173Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc3.$Module.class, fqn = "@alicloud/ros-cdk-fc3.RosFunction")
 public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -661,6 +661,338 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc3.$Module.class, fqn = "@alicloud/ros-cdk-fc3.RosFunction.AuthConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(AuthConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface AuthConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getPassword();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getUserName();
+
+        /**
+         * @return a {@link Builder} of {@link AuthConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link AuthConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<AuthConfigProperty> {
+            java.lang.Object password;
+            java.lang.Object userName;
+
+            /**
+             * Sets the value of {@link AuthConfigProperty#getPassword}
+             * @param password the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder password(java.lang.String password) {
+                this.password = password;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AuthConfigProperty#getPassword}
+             * @param password the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder password(com.aliyun.ros.cdk.core.IResolvable password) {
+                this.password = password;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AuthConfigProperty#getUserName}
+             * @param userName the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder userName(java.lang.String userName) {
+                this.userName = userName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AuthConfigProperty#getUserName}
+             * @param userName the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder userName(com.aliyun.ros.cdk.core.IResolvable userName) {
+                this.userName = userName;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link AuthConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public AuthConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link AuthConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AuthConfigProperty {
+            private final java.lang.Object password;
+            private final java.lang.Object userName;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.userName = software.amazon.jsii.Kernel.get(this, "userName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.password = java.util.Objects.requireNonNull(builder.password, "password is required");
+                this.userName = java.util.Objects.requireNonNull(builder.userName, "userName is required");
+            }
+
+            @Override
+            public final java.lang.Object getPassword() {
+                return this.password;
+            }
+
+            @Override
+            public final java.lang.Object getUserName() {
+                return this.userName;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("password", om.valueToTree(this.getPassword()));
+                data.set("userName", om.valueToTree(this.getUserName()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-fc3.RosFunction.AuthConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                AuthConfigProperty.Jsii$Proxy that = (AuthConfigProperty.Jsii$Proxy) o;
+
+                if (!password.equals(that.password)) return false;
+                return this.userName.equals(that.userName);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.password.hashCode();
+                result = 31 * result + (this.userName.hashCode());
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc3.$Module.class, fqn = "@alicloud/ros-cdk-fc3.RosFunction.CertConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(CertConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface CertConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getInsecure();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getRootCaCertBase64() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link CertConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link CertConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<CertConfigProperty> {
+            java.lang.Object insecure;
+            java.lang.Object rootCaCertBase64;
+
+            /**
+             * Sets the value of {@link CertConfigProperty#getInsecure}
+             * @param insecure the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder insecure(java.lang.Boolean insecure) {
+                this.insecure = insecure;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CertConfigProperty#getInsecure}
+             * @param insecure the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder insecure(com.aliyun.ros.cdk.core.IResolvable insecure) {
+                this.insecure = insecure;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CertConfigProperty#getRootCaCertBase64}
+             * @param rootCaCertBase64 the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder rootCaCertBase64(java.lang.String rootCaCertBase64) {
+                this.rootCaCertBase64 = rootCaCertBase64;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CertConfigProperty#getRootCaCertBase64}
+             * @param rootCaCertBase64 the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder rootCaCertBase64(com.aliyun.ros.cdk.core.IResolvable rootCaCertBase64) {
+                this.rootCaCertBase64 = rootCaCertBase64;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link CertConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public CertConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link CertConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements CertConfigProperty {
+            private final java.lang.Object insecure;
+            private final java.lang.Object rootCaCertBase64;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.insecure = software.amazon.jsii.Kernel.get(this, "insecure", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.rootCaCertBase64 = software.amazon.jsii.Kernel.get(this, "rootCaCertBase64", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.insecure = java.util.Objects.requireNonNull(builder.insecure, "insecure is required");
+                this.rootCaCertBase64 = builder.rootCaCertBase64;
+            }
+
+            @Override
+            public final java.lang.Object getInsecure() {
+                return this.insecure;
+            }
+
+            @Override
+            public final java.lang.Object getRootCaCertBase64() {
+                return this.rootCaCertBase64;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("insecure", om.valueToTree(this.getInsecure()));
+                if (this.getRootCaCertBase64() != null) {
+                    data.set("rootCaCertBase64", om.valueToTree(this.getRootCaCertBase64()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-fc3.RosFunction.CertConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                CertConfigProperty.Jsii$Proxy that = (CertConfigProperty.Jsii$Proxy) o;
+
+                if (!insecure.equals(that.insecure)) return false;
+                return this.rootCaCertBase64 != null ? this.rootCaCertBase64.equals(that.rootCaCertBase64) : that.rootCaCertBase64 == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.insecure.hashCode();
+                result = 31 * result + (this.rootCaCertBase64 != null ? this.rootCaCertBase64.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc3.$Module.class, fqn = "@alicloud/ros-cdk-fc3.RosFunction.CodeProperty")
     @software.amazon.jsii.Jsii.Proxy(CodeProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1026,6 +1358,13 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getRegistryConfig() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getResolvedImageUri() {
             return null;
         }
@@ -1050,6 +1389,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object healthCheckConfig;
             java.lang.Object image;
             java.lang.Object port;
+            java.lang.Object registryConfig;
             java.lang.Object resolvedImageUri;
 
             /**
@@ -1229,6 +1569,28 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link CustomContainerConfigProperty#getRegistryConfig}
+             * @param registryConfig the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder registryConfig(com.aliyun.ros.cdk.core.IResolvable registryConfig) {
+                this.registryConfig = registryConfig;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CustomContainerConfigProperty#getRegistryConfig}
+             * @param registryConfig the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder registryConfig(com.aliyun.ros.cdk.fc3.RosFunction.RegistryConfigProperty registryConfig) {
+                this.registryConfig = registryConfig;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link CustomContainerConfigProperty#getResolvedImageUri}
              * @param resolvedImageUri the value to be set.
              * @return {@code this}
@@ -1276,6 +1638,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object healthCheckConfig;
             private final java.lang.Object image;
             private final java.lang.Object port;
+            private final java.lang.Object registryConfig;
             private final java.lang.Object resolvedImageUri;
 
             /**
@@ -1292,6 +1655,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
                 this.healthCheckConfig = software.amazon.jsii.Kernel.get(this, "healthCheckConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.image = software.amazon.jsii.Kernel.get(this, "image", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.port = software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.registryConfig = software.amazon.jsii.Kernel.get(this, "registryConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.resolvedImageUri = software.amazon.jsii.Kernel.get(this, "resolvedImageUri", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
@@ -1308,6 +1672,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
                 this.healthCheckConfig = builder.healthCheckConfig;
                 this.image = builder.image;
                 this.port = builder.port;
+                this.registryConfig = builder.registryConfig;
                 this.resolvedImageUri = builder.resolvedImageUri;
             }
 
@@ -1352,6 +1717,11 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getRegistryConfig() {
+                return this.registryConfig;
+            }
+
+            @Override
             public final java.lang.Object getResolvedImageUri() {
                 return this.resolvedImageUri;
             }
@@ -1386,6 +1756,9 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getPort() != null) {
                     data.set("port", om.valueToTree(this.getPort()));
                 }
+                if (this.getRegistryConfig() != null) {
+                    data.set("registryConfig", om.valueToTree(this.getRegistryConfig()));
+                }
                 if (this.getResolvedImageUri() != null) {
                     data.set("resolvedImageUri", om.valueToTree(this.getResolvedImageUri()));
                 }
@@ -1415,6 +1788,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.healthCheckConfig != null ? !this.healthCheckConfig.equals(that.healthCheckConfig) : that.healthCheckConfig != null) return false;
                 if (this.image != null ? !this.image.equals(that.image) : that.image != null) return false;
                 if (this.port != null ? !this.port.equals(that.port) : that.port != null) return false;
+                if (this.registryConfig != null ? !this.registryConfig.equals(that.registryConfig) : that.registryConfig != null) return false;
                 return this.resolvedImageUri != null ? this.resolvedImageUri.equals(that.resolvedImageUri) : that.resolvedImageUri == null;
             }
 
@@ -1428,6 +1802,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.healthCheckConfig != null ? this.healthCheckConfig.hashCode() : 0);
                 result = 31 * result + (this.image != null ? this.image.hashCode() : 0);
                 result = 31 * result + (this.port != null ? this.port.hashCode() : 0);
+                result = 31 * result + (this.registryConfig != null ? this.registryConfig.hashCode() : 0);
                 result = 31 * result + (this.resolvedImageUri != null ? this.resolvedImageUri.hashCode() : 0);
                 return result;
             }
@@ -4015,6 +4390,209 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc3.$Module.class, fqn = "@alicloud/ros-cdk-fc3.RosFunction.NetworkConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(NetworkConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface NetworkConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getSecurityGroupId();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getVpcId();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchId();
+
+        /**
+         * @return a {@link Builder} of {@link NetworkConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link NetworkConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<NetworkConfigProperty> {
+            java.lang.Object securityGroupId;
+            java.lang.Object vpcId;
+            java.lang.Object vSwitchId;
+
+            /**
+             * Sets the value of {@link NetworkConfigProperty#getSecurityGroupId}
+             * @param securityGroupId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder securityGroupId(java.lang.String securityGroupId) {
+                this.securityGroupId = securityGroupId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link NetworkConfigProperty#getSecurityGroupId}
+             * @param securityGroupId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
+                this.securityGroupId = securityGroupId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link NetworkConfigProperty#getVpcId}
+             * @param vpcId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vpcId(java.lang.String vpcId) {
+                this.vpcId = vpcId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link NetworkConfigProperty#getVpcId}
+             * @param vpcId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
+                this.vpcId = vpcId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link NetworkConfigProperty#getVSwitchId}
+             * @param vSwitchId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vSwitchId(java.lang.String vSwitchId) {
+                this.vSwitchId = vSwitchId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link NetworkConfigProperty#getVSwitchId}
+             * @param vSwitchId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
+                this.vSwitchId = vSwitchId;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link NetworkConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public NetworkConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link NetworkConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements NetworkConfigProperty {
+            private final java.lang.Object securityGroupId;
+            private final java.lang.Object vpcId;
+            private final java.lang.Object vSwitchId;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.securityGroupId = java.util.Objects.requireNonNull(builder.securityGroupId, "securityGroupId is required");
+                this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
+                this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
+            }
+
+            @Override
+            public final java.lang.Object getSecurityGroupId() {
+                return this.securityGroupId;
+            }
+
+            @Override
+            public final java.lang.Object getVpcId() {
+                return this.vpcId;
+            }
+
+            @Override
+            public final java.lang.Object getVSwitchId() {
+                return this.vSwitchId;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("securityGroupId", om.valueToTree(this.getSecurityGroupId()));
+                data.set("vpcId", om.valueToTree(this.getVpcId()));
+                data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-fc3.RosFunction.NetworkConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                NetworkConfigProperty.Jsii$Proxy that = (NetworkConfigProperty.Jsii$Proxy) o;
+
+                if (!securityGroupId.equals(that.securityGroupId)) return false;
+                if (!vpcId.equals(that.vpcId)) return false;
+                return this.vSwitchId.equals(that.vSwitchId);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.securityGroupId.hashCode();
+                result = 31 * result + (this.vpcId.hashCode());
+                result = 31 * result + (this.vSwitchId.hashCode());
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc3.$Module.class, fqn = "@alicloud/ros-cdk-fc3.RosFunction.OssMountConfigMountPointsProperty")
     @software.amazon.jsii.Jsii.Proxy(OssMountConfigMountPointsProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -4611,6 +5189,217 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             public final int hashCode() {
                 int result = this.handler != null ? this.handler.hashCode() : 0;
                 result = 31 * result + (this.timeout != null ? this.timeout.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc3.$Module.class, fqn = "@alicloud/ros-cdk-fc3.RosFunction.RegistryConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(RegistryConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface RegistryConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getCertConfig();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAuthConfig() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkConfig() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link RegistryConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link RegistryConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<RegistryConfigProperty> {
+            java.lang.Object certConfig;
+            java.lang.Object authConfig;
+            java.lang.Object networkConfig;
+
+            /**
+             * Sets the value of {@link RegistryConfigProperty#getCertConfig}
+             * @param certConfig the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder certConfig(com.aliyun.ros.cdk.core.IResolvable certConfig) {
+                this.certConfig = certConfig;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RegistryConfigProperty#getCertConfig}
+             * @param certConfig the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder certConfig(com.aliyun.ros.cdk.fc3.RosFunction.CertConfigProperty certConfig) {
+                this.certConfig = certConfig;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RegistryConfigProperty#getAuthConfig}
+             * @param authConfig the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder authConfig(com.aliyun.ros.cdk.core.IResolvable authConfig) {
+                this.authConfig = authConfig;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RegistryConfigProperty#getAuthConfig}
+             * @param authConfig the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder authConfig(com.aliyun.ros.cdk.fc3.RosFunction.AuthConfigProperty authConfig) {
+                this.authConfig = authConfig;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RegistryConfigProperty#getNetworkConfig}
+             * @param networkConfig the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder networkConfig(com.aliyun.ros.cdk.core.IResolvable networkConfig) {
+                this.networkConfig = networkConfig;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RegistryConfigProperty#getNetworkConfig}
+             * @param networkConfig the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder networkConfig(com.aliyun.ros.cdk.fc3.RosFunction.NetworkConfigProperty networkConfig) {
+                this.networkConfig = networkConfig;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link RegistryConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public RegistryConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link RegistryConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RegistryConfigProperty {
+            private final java.lang.Object certConfig;
+            private final java.lang.Object authConfig;
+            private final java.lang.Object networkConfig;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.certConfig = software.amazon.jsii.Kernel.get(this, "certConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.authConfig = software.amazon.jsii.Kernel.get(this, "authConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.networkConfig = software.amazon.jsii.Kernel.get(this, "networkConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.certConfig = java.util.Objects.requireNonNull(builder.certConfig, "certConfig is required");
+                this.authConfig = builder.authConfig;
+                this.networkConfig = builder.networkConfig;
+            }
+
+            @Override
+            public final java.lang.Object getCertConfig() {
+                return this.certConfig;
+            }
+
+            @Override
+            public final java.lang.Object getAuthConfig() {
+                return this.authConfig;
+            }
+
+            @Override
+            public final java.lang.Object getNetworkConfig() {
+                return this.networkConfig;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("certConfig", om.valueToTree(this.getCertConfig()));
+                if (this.getAuthConfig() != null) {
+                    data.set("authConfig", om.valueToTree(this.getAuthConfig()));
+                }
+                if (this.getNetworkConfig() != null) {
+                    data.set("networkConfig", om.valueToTree(this.getNetworkConfig()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-fc3.RosFunction.RegistryConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                RegistryConfigProperty.Jsii$Proxy that = (RegistryConfigProperty.Jsii$Proxy) o;
+
+                if (!certConfig.equals(that.certConfig)) return false;
+                if (this.authConfig != null ? !this.authConfig.equals(that.authConfig) : that.authConfig != null) return false;
+                return this.networkConfig != null ? this.networkConfig.equals(that.networkConfig) : that.networkConfig == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.certConfig.hashCode();
+                result = 31 * result + (this.authConfig != null ? this.authConfig.hashCode() : 0);
+                result = 31 * result + (this.networkConfig != null ? this.networkConfig.hashCode() : 0);
                 return result;
             }
         }

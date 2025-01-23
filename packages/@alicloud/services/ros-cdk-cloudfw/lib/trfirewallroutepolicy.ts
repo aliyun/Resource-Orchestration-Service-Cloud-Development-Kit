@@ -44,25 +44,41 @@ export interface TrFirewallRoutePolicyProps {
 }
 
 /**
+ * Represents a `TrFirewallRoutePolicy`.
+ */
+export interface ITrFirewallRoutePolicy extends ros.IResource {
+    readonly props: TrFirewallRoutePolicyProps;
+
+    /**
+     * Attribute FirewallId: The instance ID of the VPC firewall.
+     */
+    readonly attrFirewallId: ros.IResolvable | string;
+
+    /**
+     * Attribute TrFirewallRoutePolicyId: The ID of the routing policy.
+     */
+    readonly attrTrFirewallRoutePolicyId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::TrFirewallRoutePolicy`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTrFirewallRoutePolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-trfirewallroutepolicy
  */
-export class TrFirewallRoutePolicy extends ros.Resource {
+export class TrFirewallRoutePolicy extends ros.Resource implements ITrFirewallRoutePolicy {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: TrFirewallRoutePolicyProps;
+    public readonly props: TrFirewallRoutePolicyProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute FirewallId: The instance ID of the VPC firewall.
      */
-    public readonly attrFirewallId: ros.IResolvable;
+    public readonly attrFirewallId: ros.IResolvable | string;
 
     /**
      * Attribute TrFirewallRoutePolicyId: The ID of the routing policy.
      */
-    public readonly attrTrFirewallRoutePolicyId: ros.IResolvable;
+    public readonly attrTrFirewallRoutePolicyId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

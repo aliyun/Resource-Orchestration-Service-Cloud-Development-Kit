@@ -24,57 +24,52 @@ export interface ParameterGroupProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::POLARDB::ParameterGroup`, which is used to query the information about a parameter template in a region.
- * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosParameterGroup`for a more convenient development experience.
- * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-parametergroup
+ * Represents a `ParameterGroup`.
  */
-export class ParameterGroup extends ros.Resource {
-    protected scope: ros.Construct;
-    protected id: string;
-    protected props: ParameterGroupProps;
-    protected enableResourcePropertyConstraint: boolean;
+export interface IParameterGroup extends ros.IResource {
+    readonly props: ParameterGroupProps;
 
     /**
      * Attribute CreateTime: The time when the parameter template was created. The time is in the yyyy-MM-ddTHH:mm:ssZ format. The time is displayed in UTC.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute DbType: The type of the database engine.
      */
-    public readonly attrDbType: ros.IResolvable;
+    readonly attrDbType: ros.IResolvable | string;
 
     /**
      * Attribute DbVersion: The version of the database engine.
      */
-    public readonly attrDbVersion: ros.IResolvable;
+    readonly attrDbVersion: ros.IResolvable | string;
 
     /**
      * Attribute ForceRestart: Indicates whether to restart the cluster when this parameter template is applied. Valid values:
 * 0: A restart is not required.
 * 1: A restart is required.
      */
-    public readonly attrForceRestart: ros.IResolvable;
+    readonly attrForceRestart: ros.IResolvable | string;
 
     /**
      * Attribute ParameterCounts: The number of parameters in the parameter template.
      */
-    public readonly attrParameterCounts: ros.IResolvable;
+    readonly attrParameterCounts: ros.IResolvable | string;
 
     /**
      * Attribute ParameterGroupDesc: The description of the parameter template.
      */
-    public readonly attrParameterGroupDesc: ros.IResolvable;
+    readonly attrParameterGroupDesc: ros.IResolvable | string;
 
     /**
      * Attribute ParameterGroupId: The ID of the parameter template.
      */
-    public readonly attrParameterGroupId: ros.IResolvable;
+    readonly attrParameterGroupId: ros.IResolvable | string;
 
     /**
      * Attribute ParameterGroupName: The name of the parameter template.
      */
-    public readonly attrParameterGroupName: ros.IResolvable;
+    readonly attrParameterGroupName: ros.IResolvable | string;
 
     /**
      * Attribute ParameterGroupType: The type of the parameter template. Valid values:
@@ -82,12 +77,78 @@ export class ParameterGroup extends ros.Resource {
 1: a custom parameter template.
 2: an automatic backup parameter template. After you apply this type of template, the system automatically backs up the original parameter settings and saves the backup as a template.
      */
-    public readonly attrParameterGroupType: ros.IResolvable;
+    readonly attrParameterGroupType: ros.IResolvable | string;
 
     /**
      * Attribute Parameters: Details about the parameter templates.
      */
-    public readonly attrParameters: ros.IResolvable;
+    readonly attrParameters: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::POLARDB::ParameterGroup`, which is used to query the information about a parameter template in a region.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosParameterGroup`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-parametergroup
+ */
+export class ParameterGroup extends ros.Resource implements IParameterGroup {
+    protected scope: ros.Construct;
+    protected id: string;
+    public readonly props: ParameterGroupProps;
+    protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute CreateTime: The time when the parameter template was created. The time is in the yyyy-MM-ddTHH:mm:ssZ format. The time is displayed in UTC.
+     */
+    public readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute DbType: The type of the database engine.
+     */
+    public readonly attrDbType: ros.IResolvable | string;
+
+    /**
+     * Attribute DbVersion: The version of the database engine.
+     */
+    public readonly attrDbVersion: ros.IResolvable | string;
+
+    /**
+     * Attribute ForceRestart: Indicates whether to restart the cluster when this parameter template is applied. Valid values:
+* 0: A restart is not required.
+* 1: A restart is required.
+     */
+    public readonly attrForceRestart: ros.IResolvable | string;
+
+    /**
+     * Attribute ParameterCounts: The number of parameters in the parameter template.
+     */
+    public readonly attrParameterCounts: ros.IResolvable | string;
+
+    /**
+     * Attribute ParameterGroupDesc: The description of the parameter template.
+     */
+    public readonly attrParameterGroupDesc: ros.IResolvable | string;
+
+    /**
+     * Attribute ParameterGroupId: The ID of the parameter template.
+     */
+    public readonly attrParameterGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute ParameterGroupName: The name of the parameter template.
+     */
+    public readonly attrParameterGroupName: ros.IResolvable | string;
+
+    /**
+     * Attribute ParameterGroupType: The type of the parameter template. Valid values:
+0: the default parameter template.
+1: a custom parameter template.
+2: an automatic backup parameter template. After you apply this type of template, the system automatically backs up the original parameter settings and saves the backup as a template.
+     */
+    public readonly attrParameterGroupType: ros.IResolvable | string;
+
+    /**
+     * Attribute Parameters: Details about the parameter templates.
+     */
+    public readonly attrParameters: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

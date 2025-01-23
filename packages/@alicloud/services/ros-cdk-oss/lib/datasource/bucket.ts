@@ -27,50 +27,91 @@ export interface BucketProps {
 }
 
 /**
+ * Represents a `Bucket`.
+ */
+export interface IBucket extends ros.IResource {
+    readonly props: BucketProps;
+
+    /**
+     * Attribute CreateTime: The creation time of the Bucket.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute ExtranetEndpoint: The domain name of the Bucket.
+     */
+    readonly attrExtranetEndpoint: ros.IResolvable | string;
+
+    /**
+     * Attribute IntranetEndpoint: The intranet domain name of the ECS instance that accesses the Bucket in the same region.
+     */
+    readonly attrIntranetEndpoint: ros.IResolvable | string;
+
+    /**
+     * Attribute Location: The region where the Bucket is located.
+     */
+    readonly attrLocation: ros.IResolvable | string;
+
+    /**
+     * Attribute Name: Bucket name.
+     */
+    readonly attrName: ros.IResolvable | string;
+
+    /**
+     * Attribute Owner: Container for storing Bucket owner information.
+     */
+    readonly attrOwner: ros.IResolvable | string;
+
+    /**
+     * Attribute StorageClass: The storage type of the Bucket.
+     */
+    readonly attrStorageClass: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::OSS::Bucket`, which is used to query the information about an Object Storage Service (OSS) bucket.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBucket`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oss-bucket
  */
-export class Bucket extends ros.Resource {
+export class Bucket extends ros.Resource implements IBucket {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: BucketProps;
+    public readonly props: BucketProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateTime: The creation time of the Bucket.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute ExtranetEndpoint: The domain name of the Bucket.
      */
-    public readonly attrExtranetEndpoint: ros.IResolvable;
+    public readonly attrExtranetEndpoint: ros.IResolvable | string;
 
     /**
      * Attribute IntranetEndpoint: The intranet domain name of the ECS instance that accesses the Bucket in the same region.
      */
-    public readonly attrIntranetEndpoint: ros.IResolvable;
+    public readonly attrIntranetEndpoint: ros.IResolvable | string;
 
     /**
      * Attribute Location: The region where the Bucket is located.
      */
-    public readonly attrLocation: ros.IResolvable;
+    public readonly attrLocation: ros.IResolvable | string;
 
     /**
      * Attribute Name: Bucket name.
      */
-    public readonly attrName: ros.IResolvable;
+    public readonly attrName: ros.IResolvable | string;
 
     /**
      * Attribute Owner: Container for storing Bucket owner information.
      */
-    public readonly attrOwner: ros.IResolvable;
+    public readonly attrOwner: ros.IResolvable | string;
 
     /**
      * Attribute StorageClass: The storage type of the Bucket.
      */
-    public readonly attrStorageClass: ros.IResolvable;
+    public readonly attrStorageClass: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

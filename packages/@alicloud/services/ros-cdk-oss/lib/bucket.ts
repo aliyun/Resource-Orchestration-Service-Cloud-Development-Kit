@@ -147,30 +147,51 @@ export interface BucketProps {
 }
 
 /**
+ * Represents a `Bucket`.
+ */
+export interface IBucket extends ros.IResource {
+    readonly props: BucketProps;
+
+    /**
+     * Attribute DomainName: The public DNS name of the specified bucket.
+     */
+    readonly attrDomainName: ros.IResolvable | string;
+
+    /**
+     * Attribute InternalDomainName: The internal DNS name of the specified bucket.
+     */
+    readonly attrInternalDomainName: ros.IResolvable | string;
+
+    /**
+     * Attribute Name: The name of Bucket
+     */
+    readonly attrName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::OSS::Bucket`, which is used to create a bucket in Object Storage Service (OSS).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBucket`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucket
  */
-export class Bucket extends ros.Resource {
+export class Bucket extends ros.Resource implements IBucket {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: BucketProps;
+    public readonly props: BucketProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DomainName: The public DNS name of the specified bucket.
      */
-    public readonly attrDomainName: ros.IResolvable;
+    public readonly attrDomainName: ros.IResolvable | string;
 
     /**
      * Attribute InternalDomainName: The internal DNS name of the specified bucket.
      */
-    public readonly attrInternalDomainName: ros.IResolvable;
+    public readonly attrInternalDomainName: ros.IResolvable | string;
 
     /**
      * Attribute Name: The name of Bucket
      */
-    public readonly attrName: ros.IResolvable;
+    public readonly attrName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

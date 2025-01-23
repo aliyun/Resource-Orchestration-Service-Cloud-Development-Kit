@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::CEN::CenInstances`, which is used to query the information about Cloud Enterprise Network (CEN) instances within the current Alibaba Cloud account.
 type CenInstances interface {
 	alicloudroscdkcore.Resource
+	ICenInstances
 	// Attribute CenIds: The list of The Cen instance ids.
-	AttrCenIds() alicloudroscdkcore.IResolvable
+	AttrCenIds() interface{}
 	// Attribute Cens: The information about Cens.
-	AttrCens() alicloudroscdkcore.IResolvable
+	AttrCens() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type CenInstances interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *CenInstancesProps
-	SetProps(val *CenInstancesProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type CenInstances interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type CenInstances interface {
 // The jsii proxy struct for CenInstances
 type jsiiProxy_CenInstances struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ICenInstances
 }
 
-func (j *jsiiProxy_CenInstances) AttrCenIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CenInstances) AttrCenIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCenIds",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_CenInstances) AttrCenIds() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_CenInstances) AttrCens() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CenInstances) AttrCens() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCens",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_CenInstances) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CenInstances) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_CenInstances)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CenInstances)SetProps(val *CenInstancesProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_CenInstances)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (c *jsiiProxy_CenInstances) ApplyRemovalPolicy(policy alicloudroscdkcore.Re
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (c *jsiiProxy_CenInstances) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		c,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (c *jsiiProxy_CenInstances) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		c,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (c *jsiiProxy_CenInstances) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (c *jsiiProxy_CenInstances) GeneratePhysicalName() *string {

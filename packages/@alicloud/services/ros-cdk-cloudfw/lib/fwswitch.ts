@@ -40,14 +40,20 @@ export interface FwSwitchProps {
 }
 
 /**
+ * Represents a `FwSwitch`.
+ */
+export interface IFwSwitch extends ros.IResource {
+    readonly props: FwSwitchProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::FwSwitch`, which is used to enable a firewall.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFwSwitch`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-fwswitch
  */
-export class FwSwitch extends ros.Resource {
+export class FwSwitch extends ros.Resource implements IFwSwitch {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: FwSwitchProps;
+    public readonly props: FwSwitchProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

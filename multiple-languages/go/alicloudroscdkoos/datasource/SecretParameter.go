@@ -12,38 +12,48 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::OOS::SecretParameter`.
 type SecretParameter interface {
 	alicloudroscdkcore.Resource
+	ISecretParameter
 	// Attribute Constraints: The constraints of the encryption parameter.
-	AttrConstraints() alicloudroscdkcore.IResolvable
+	AttrConstraints() interface{}
 	// Attribute CreatedBy: The user who created the encryption parameter.
-	AttrCreatedBy() alicloudroscdkcore.IResolvable
+	AttrCreatedBy() interface{}
 	// Attribute CreateTime: The time when the encryption parameter was created.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute Description: The description of the encryption parameter.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute KeyId: The ID of the key of Key Management Service (KMS) that is used for encryption.
-	AttrKeyId() alicloudroscdkcore.IResolvable
+	AttrKeyId() interface{}
 	// Attribute ParameterVersion: The version number of the encryption parameter.
-	AttrParameterVersion() alicloudroscdkcore.IResolvable
+	AttrParameterVersion() interface{}
 	// Attribute ResourceGroupId: The ID of the resource group.
-	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() interface{}
 	// Attribute SecretParameterId: The ID of the encryption parameter.
-	AttrSecretParameterId() alicloudroscdkcore.IResolvable
+	AttrSecretParameterId() interface{}
 	// Attribute SecretParameterName: The name of the parameter.
-	AttrSecretParameterName() alicloudroscdkcore.IResolvable
+	AttrSecretParameterName() interface{}
 	// Attribute ShareType: The share type of the encryption parameter.
-	AttrShareType() alicloudroscdkcore.IResolvable
+	AttrShareType() interface{}
 	// Attribute Tags: The tags of the parameter.
-	AttrTags() alicloudroscdkcore.IResolvable
+	AttrTags() interface{}
 	// Attribute Type: The type of the parameter.
-	AttrType() alicloudroscdkcore.IResolvable
+	AttrType() interface{}
 	// Attribute UpdatedBy: The user who updated the encryption parameter.
-	AttrUpdatedBy() alicloudroscdkcore.IResolvable
+	AttrUpdatedBy() interface{}
 	// Attribute UpdatedDate: The time when the encryption parameter was updated.
-	AttrUpdatedDate() alicloudroscdkcore.IResolvable
+	AttrUpdatedDate() interface{}
 	// Attribute Value: The value of the encryption parameter.
-	AttrValue() alicloudroscdkcore.IResolvable
+	AttrValue() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -58,7 +68,6 @@ type SecretParameter interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *SecretParameterProps
-	SetProps(val *SecretParameterProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -71,6 +80,9 @@ type SecretParameter interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -123,10 +135,11 @@ type SecretParameter interface {
 // The jsii proxy struct for SecretParameter
 type jsiiProxy_SecretParameter struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ISecretParameter
 }
 
-func (j *jsiiProxy_SecretParameter) AttrConstraints() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecretParameter) AttrConstraints() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrConstraints",
@@ -135,8 +148,8 @@ func (j *jsiiProxy_SecretParameter) AttrConstraints() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_SecretParameter) AttrCreatedBy() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecretParameter) AttrCreatedBy() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreatedBy",
@@ -145,8 +158,8 @@ func (j *jsiiProxy_SecretParameter) AttrCreatedBy() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_SecretParameter) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecretParameter) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -155,8 +168,8 @@ func (j *jsiiProxy_SecretParameter) AttrCreateTime() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_SecretParameter) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecretParameter) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -165,8 +178,8 @@ func (j *jsiiProxy_SecretParameter) AttrDescription() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_SecretParameter) AttrKeyId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecretParameter) AttrKeyId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrKeyId",
@@ -175,8 +188,8 @@ func (j *jsiiProxy_SecretParameter) AttrKeyId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_SecretParameter) AttrParameterVersion() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecretParameter) AttrParameterVersion() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrParameterVersion",
@@ -185,8 +198,8 @@ func (j *jsiiProxy_SecretParameter) AttrParameterVersion() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_SecretParameter) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecretParameter) AttrResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupId",
@@ -195,8 +208,8 @@ func (j *jsiiProxy_SecretParameter) AttrResourceGroupId() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_SecretParameter) AttrSecretParameterId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecretParameter) AttrSecretParameterId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSecretParameterId",
@@ -205,8 +218,8 @@ func (j *jsiiProxy_SecretParameter) AttrSecretParameterId() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_SecretParameter) AttrSecretParameterName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecretParameter) AttrSecretParameterName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSecretParameterName",
@@ -215,8 +228,8 @@ func (j *jsiiProxy_SecretParameter) AttrSecretParameterName() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_SecretParameter) AttrShareType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecretParameter) AttrShareType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrShareType",
@@ -225,8 +238,8 @@ func (j *jsiiProxy_SecretParameter) AttrShareType() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_SecretParameter) AttrTags() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecretParameter) AttrTags() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTags",
@@ -235,8 +248,8 @@ func (j *jsiiProxy_SecretParameter) AttrTags() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_SecretParameter) AttrType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecretParameter) AttrType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrType",
@@ -245,8 +258,8 @@ func (j *jsiiProxy_SecretParameter) AttrType() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_SecretParameter) AttrUpdatedBy() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecretParameter) AttrUpdatedBy() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUpdatedBy",
@@ -255,8 +268,8 @@ func (j *jsiiProxy_SecretParameter) AttrUpdatedBy() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_SecretParameter) AttrUpdatedDate() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecretParameter) AttrUpdatedDate() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUpdatedDate",
@@ -265,8 +278,8 @@ func (j *jsiiProxy_SecretParameter) AttrUpdatedDate() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_SecretParameter) AttrValue() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecretParameter) AttrValue() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrValue",
@@ -280,6 +293,16 @@ func (j *jsiiProxy_SecretParameter) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SecretParameter) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -417,17 +440,6 @@ func (j *jsiiProxy_SecretParameter)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SecretParameter)SetProps(val *SecretParameterProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_SecretParameter)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -519,6 +531,45 @@ func (s *jsiiProxy_SecretParameter) ApplyRemovalPolicy(policy alicloudroscdkcore
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (s *jsiiProxy_SecretParameter) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		s,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_SecretParameter) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_SecretParameter) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (s *jsiiProxy_SecretParameter) GeneratePhysicalName() *string {

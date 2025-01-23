@@ -4,6 +4,12 @@
 @alicloud/ros-cdk-aligreen.BizTypeProps=com.aliyun.ros.cdk.aligreen.BizTypeProps
 @alicloud/ros-cdk-aligreen.Callback=com.aliyun.ros.cdk.aligreen.Callback
 @alicloud/ros-cdk-aligreen.CallbackProps=com.aliyun.ros.cdk.aligreen.CallbackProps
+@alicloud/ros-cdk-aligreen.IAuditCallback=com.aliyun.ros.cdk.aligreen.IAuditCallback
+@alicloud/ros-cdk-aligreen.IBizType=com.aliyun.ros.cdk.aligreen.IBizType
+@alicloud/ros-cdk-aligreen.ICallback=com.aliyun.ros.cdk.aligreen.ICallback
+@alicloud/ros-cdk-aligreen.IImageLib=com.aliyun.ros.cdk.aligreen.IImageLib
+@alicloud/ros-cdk-aligreen.IKeywordLib=com.aliyun.ros.cdk.aligreen.IKeywordLib
+@alicloud/ros-cdk-aligreen.IOssStockTask=com.aliyun.ros.cdk.aligreen.IOssStockTask
 @alicloud/ros-cdk-aligreen.ImageLib=com.aliyun.ros.cdk.aligreen.ImageLib
 @alicloud/ros-cdk-aligreen.ImageLibProps=com.aliyun.ros.cdk.aligreen.ImageLibProps
 @alicloud/ros-cdk-aligreen.KeywordLib=com.aliyun.ros.cdk.aligreen.KeywordLib

@@ -12,18 +12,28 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::VPC::RouteTable`, which is used to create a custom route table.
 type RouteTable interface {
 	alicloudroscdkcore.Resource
+	IRouteTable
 	// Attribute RouteTableId: The ID of the route table.
-	AttrRouteTableId() alicloudroscdkcore.IResolvable
+	AttrRouteTableId() interface{}
 	// Attribute RouteTableName: The name of the route table.
-	AttrRouteTableName() alicloudroscdkcore.IResolvable
+	AttrRouteTableName() interface{}
 	// Attribute RouteTableType: The type of the route table.
-	AttrRouteTableType() alicloudroscdkcore.IResolvable
+	AttrRouteTableType() interface{}
 	// Attribute VpcId: The ID of the VRouter to which the route table belongs.
-	AttrVpcId() alicloudroscdkcore.IResolvable
+	AttrVpcId() interface{}
 	// Attribute VSwitchIds: A list of VSwitches under the VPC.
-	AttrVSwitchIds() alicloudroscdkcore.IResolvable
+	AttrVSwitchIds() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -38,7 +48,6 @@ type RouteTable interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *RouteTableProps
-	SetProps(val *RouteTableProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -51,6 +60,9 @@ type RouteTable interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -103,10 +115,11 @@ type RouteTable interface {
 // The jsii proxy struct for RouteTable
 type jsiiProxy_RouteTable struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IRouteTable
 }
 
-func (j *jsiiProxy_RouteTable) AttrRouteTableId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_RouteTable) AttrRouteTableId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRouteTableId",
@@ -115,8 +128,8 @@ func (j *jsiiProxy_RouteTable) AttrRouteTableId() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_RouteTable) AttrRouteTableName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_RouteTable) AttrRouteTableName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRouteTableName",
@@ -125,8 +138,8 @@ func (j *jsiiProxy_RouteTable) AttrRouteTableName() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_RouteTable) AttrRouteTableType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_RouteTable) AttrRouteTableType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRouteTableType",
@@ -135,8 +148,8 @@ func (j *jsiiProxy_RouteTable) AttrRouteTableType() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_RouteTable) AttrVpcId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_RouteTable) AttrVpcId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVpcId",
@@ -145,8 +158,8 @@ func (j *jsiiProxy_RouteTable) AttrVpcId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_RouteTable) AttrVSwitchIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_RouteTable) AttrVSwitchIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVSwitchIds",
@@ -160,6 +173,16 @@ func (j *jsiiProxy_RouteTable) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RouteTable) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -297,17 +320,6 @@ func (j *jsiiProxy_RouteTable)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_RouteTable)SetProps(val *RouteTableProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_RouteTable)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -399,6 +411,45 @@ func (r *jsiiProxy_RouteTable) ApplyRemovalPolicy(policy alicloudroscdkcore.Remo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (r *jsiiProxy_RouteTable) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		r,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_RouteTable) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		r,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_RouteTable) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		r,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (r *jsiiProxy_RouteTable) GeneratePhysicalName() *string {

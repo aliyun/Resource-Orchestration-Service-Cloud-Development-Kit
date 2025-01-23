@@ -37,75 +37,141 @@ export interface IpamProps {
 }
 
 /**
+ * Represents a `Ipam`.
+ */
+export interface IIpam extends ros.IResource {
+    readonly props: IpamProps;
+
+    /**
+     * Attribute CreateTime: The creation time of the IPAM.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute DefaultResourceDiscoveryAssociationId: After an IPAM is created, the association between the resource discovery created by the system by default and the IPAM.
+     */
+    readonly attrDefaultResourceDiscoveryAssociationId: ros.IResolvable | string;
+
+    /**
+     * Attribute DefaultResourceDiscoveryId: After IPAM is created, the system creates resource discovery by default.
+     */
+    readonly attrDefaultResourceDiscoveryId: ros.IResolvable | string;
+
+    /**
+     * Attribute IpamDescription: The description of IPAM.
+     */
+    readonly attrIpamDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute IpamId: The first ID of the resource.
+     */
+    readonly attrIpamId: ros.IResolvable | string;
+
+    /**
+     * Attribute IpamName: The name of the IPAM.
+     */
+    readonly attrIpamName: ros.IResolvable | string;
+
+    /**
+     * Attribute OperatingRegionList: List of IPAM effective regions.
+     */
+    readonly attrOperatingRegionList: ros.IResolvable | string;
+
+    /**
+     * Attribute PrivateDefaultScopeId: After an IPAM is created, the scope of the private network IPAM created by the system by default.
+     */
+    readonly attrPrivateDefaultScopeId: ros.IResolvable | string;
+
+    /**
+     * Attribute PublicDefaultScopeId: After an IPAM is created, the public network IPAM is created by default.
+     */
+    readonly attrPublicDefaultScopeId: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceDiscoveryAssociationCount: The number of resource discovery objects associated with IPAM.
+     */
+    readonly attrResourceDiscoveryAssociationCount: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: The ID of the resource group.
+     */
+    readonly attrResourceGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute Tags: The tag of the IPAM.
+     */
+    readonly attrTags: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::Ipam`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosIpam`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipam
  */
-export class Ipam extends ros.Resource {
+export class Ipam extends ros.Resource implements IIpam {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: IpamProps;
+    public readonly props: IpamProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateTime: The creation time of the IPAM.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute DefaultResourceDiscoveryAssociationId: After an IPAM is created, the association between the resource discovery created by the system by default and the IPAM.
      */
-    public readonly attrDefaultResourceDiscoveryAssociationId: ros.IResolvable;
+    public readonly attrDefaultResourceDiscoveryAssociationId: ros.IResolvable | string;
 
     /**
      * Attribute DefaultResourceDiscoveryId: After IPAM is created, the system creates resource discovery by default.
      */
-    public readonly attrDefaultResourceDiscoveryId: ros.IResolvable;
+    public readonly attrDefaultResourceDiscoveryId: ros.IResolvable | string;
 
     /**
      * Attribute IpamDescription: The description of IPAM.
      */
-    public readonly attrIpamDescription: ros.IResolvable;
+    public readonly attrIpamDescription: ros.IResolvable | string;
 
     /**
      * Attribute IpamId: The first ID of the resource.
      */
-    public readonly attrIpamId: ros.IResolvable;
+    public readonly attrIpamId: ros.IResolvable | string;
 
     /**
      * Attribute IpamName: The name of the IPAM.
      */
-    public readonly attrIpamName: ros.IResolvable;
+    public readonly attrIpamName: ros.IResolvable | string;
 
     /**
      * Attribute OperatingRegionList: List of IPAM effective regions.
      */
-    public readonly attrOperatingRegionList: ros.IResolvable;
+    public readonly attrOperatingRegionList: ros.IResolvable | string;
 
     /**
      * Attribute PrivateDefaultScopeId: After an IPAM is created, the scope of the private network IPAM created by the system by default.
      */
-    public readonly attrPrivateDefaultScopeId: ros.IResolvable;
+    public readonly attrPrivateDefaultScopeId: ros.IResolvable | string;
 
     /**
      * Attribute PublicDefaultScopeId: After an IPAM is created, the public network IPAM is created by default.
      */
-    public readonly attrPublicDefaultScopeId: ros.IResolvable;
+    public readonly attrPublicDefaultScopeId: ros.IResolvable | string;
 
     /**
      * Attribute ResourceDiscoveryAssociationCount: The number of resource discovery objects associated with IPAM.
      */
-    public readonly attrResourceDiscoveryAssociationCount: ros.IResolvable;
+    public readonly attrResourceDiscoveryAssociationCount: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroupId: The ID of the resource group.
      */
-    public readonly attrResourceGroupId: ros.IResolvable;
+    public readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Attribute Tags: The tag of the IPAM.
      */
-    public readonly attrTags: ros.IResolvable;
+    public readonly attrTags: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -16,20 +16,31 @@ export interface DomainGroupProps {
 }
 
 /**
+ * Represents a `DomainGroup`.
+ */
+export interface IDomainGroup extends ros.IResource {
+    readonly props: DomainGroupProps;
+
+    /**
+     * Attribute GroupId: Domain name group ID
+     */
+    readonly attrGroupId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::DNS::DomainGroup`, which is used to add a domain name group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomainGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-domaingroup
  */
-export class DomainGroup extends ros.Resource {
+export class DomainGroup extends ros.Resource implements IDomainGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DomainGroupProps;
+    public readonly props: DomainGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute GroupId: Domain name group ID
      */
-    public readonly attrGroupId: ros.IResolvable;
+    public readonly attrGroupId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

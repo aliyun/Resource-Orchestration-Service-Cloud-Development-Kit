@@ -52,10 +52,6 @@ func (j *jsiiProxy_AntiBruteForceRule) validateSetIdParameters(val *string) erro
 	return nil
 }
 
-func (j *jsiiProxy_AntiBruteForceRule) validateSetPropsParameters(val *AntiBruteForceRuleProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_AntiBruteForceRule) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

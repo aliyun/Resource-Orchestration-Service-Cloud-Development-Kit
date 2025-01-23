@@ -30,7 +30,7 @@ export interface InstanceProps {
     readonly vSwitchId: string | ros.IResolvable;
 
     /**
-     * Property description: The description of instance. It a string of 0 to 30 characters. It can contain numbers, letters, underscores, (_) and hyphens (-). It must start with a letter, a number or Chinese character.
+     * Property description: The description of instance. It a string of 0 to 128 characters. It can contain numbers, letters, underscores, (_) and hyphens (-). It must start with a letter, a number or Chinese character.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -125,65 +125,121 @@ export interface InstanceProps {
 }
 
 /**
+ * Represents a `Instance`.
+ */
+export interface IInstance extends ros.IResource {
+    readonly props: InstanceProps;
+
+    /**
+     * Attribute Domain: Instance connection domain (only VPC network access supported).
+     */
+    readonly attrDomain: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceChargeType: Instance charge type.
+     */
+    readonly attrInstanceChargeType: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: The ID of the Elasticsearch instance.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute KibanaDomain: Kibana console domain (Internet access supported).
+     */
+    readonly attrKibanaDomain: ros.IResolvable | string;
+
+    /**
+     * Attribute KibanaPort: Kibana console port.
+     */
+    readonly attrKibanaPort: ros.IResolvable | string;
+
+    /**
+     * Attribute Port:  Instance connection port.
+     */
+    readonly attrPort: ros.IResolvable | string;
+
+    /**
+     * Attribute PublicDomain: Instance public connection domain.
+     */
+    readonly attrPublicDomain: ros.IResolvable | string;
+
+    /**
+     * Attribute Status: The Elasticsearch instance status. Includes active, activating, inactive. Some operations are denied when status is not active.
+     */
+    readonly attrStatus: ros.IResolvable | string;
+
+    /**
+     * Attribute VSwitchId: The ID of VSwitch.
+     */
+    readonly attrVSwitchId: ros.IResolvable | string;
+
+    /**
+     * Attribute Version: Elasticsearch version.
+     */
+    readonly attrVersion: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ElasticSearch::Instance`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-elasticsearch-instance
  */
-export class Instance extends ros.Resource {
+export class Instance extends ros.Resource implements IInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InstanceProps;
+    public readonly props: InstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Domain: Instance connection domain (only VPC network access supported).
      */
-    public readonly attrDomain: ros.IResolvable;
+    public readonly attrDomain: ros.IResolvable | string;
 
     /**
      * Attribute InstanceChargeType: Instance charge type.
      */
-    public readonly attrInstanceChargeType: ros.IResolvable;
+    public readonly attrInstanceChargeType: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: The ID of the Elasticsearch instance.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute KibanaDomain: Kibana console domain (Internet access supported).
      */
-    public readonly attrKibanaDomain: ros.IResolvable;
+    public readonly attrKibanaDomain: ros.IResolvable | string;
 
     /**
      * Attribute KibanaPort: Kibana console port.
      */
-    public readonly attrKibanaPort: ros.IResolvable;
+    public readonly attrKibanaPort: ros.IResolvable | string;
 
     /**
      * Attribute Port:  Instance connection port.
      */
-    public readonly attrPort: ros.IResolvable;
+    public readonly attrPort: ros.IResolvable | string;
 
     /**
      * Attribute PublicDomain: Instance public connection domain.
      */
-    public readonly attrPublicDomain: ros.IResolvable;
+    public readonly attrPublicDomain: ros.IResolvable | string;
 
     /**
      * Attribute Status: The Elasticsearch instance status. Includes active, activating, inactive. Some operations are denied when status is not active.
      */
-    public readonly attrStatus: ros.IResolvable;
+    public readonly attrStatus: ros.IResolvable | string;
 
     /**
      * Attribute VSwitchId: The ID of VSwitch.
      */
-    public readonly attrVSwitchId: ros.IResolvable;
+    public readonly attrVSwitchId: ros.IResolvable | string;
 
     /**
      * Attribute Version: Elasticsearch version.
      */
-    public readonly attrVersion: ros.IResolvable;
+    public readonly attrVersion: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

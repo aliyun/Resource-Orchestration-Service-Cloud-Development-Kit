@@ -12,16 +12,26 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::RDS::Connection`, which is used to apply for a public endpoint.
 type Connection interface {
 	alicloudroscdkcore.Resource
+	IConnection
 	// Attribute BabelfishPort: The name of the dedicated cluster to which the instance belongs.
-	AttrBabelfishPort() alicloudroscdkcore.IResolvable
+	AttrBabelfishPort() interface{}
 	// Attribute ConnectionString: Connection string.
-	AttrConnectionString() alicloudroscdkcore.IResolvable
+	AttrConnectionString() interface{}
 	// Attribute DBInstanceId: RDS instance ID.
-	AttrDbInstanceId() alicloudroscdkcore.IResolvable
+	AttrDbInstanceId() interface{}
 	// Attribute Port: The port of the database service.
-	AttrPort() alicloudroscdkcore.IResolvable
+	AttrPort() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -36,7 +46,6 @@ type Connection interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ConnectionProps
-	SetProps(val *ConnectionProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -49,6 +58,9 @@ type Connection interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -101,10 +113,11 @@ type Connection interface {
 // The jsii proxy struct for Connection
 type jsiiProxy_Connection struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IConnection
 }
 
-func (j *jsiiProxy_Connection) AttrBabelfishPort() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Connection) AttrBabelfishPort() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBabelfishPort",
@@ -113,8 +126,8 @@ func (j *jsiiProxy_Connection) AttrBabelfishPort() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_Connection) AttrConnectionString() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Connection) AttrConnectionString() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrConnectionString",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_Connection) AttrConnectionString() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_Connection) AttrDbInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Connection) AttrDbInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbInstanceId",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_Connection) AttrDbInstanceId() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Connection) AttrPort() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Connection) AttrPort() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPort",
@@ -148,6 +161,16 @@ func (j *jsiiProxy_Connection) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Connection) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -285,17 +308,6 @@ func (j *jsiiProxy_Connection)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Connection)SetProps(val *ConnectionProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Connection)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -387,6 +399,45 @@ func (c *jsiiProxy_Connection) ApplyRemovalPolicy(policy alicloudroscdkcore.Remo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (c *jsiiProxy_Connection) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		c,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (c *jsiiProxy_Connection) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		c,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (c *jsiiProxy_Connection) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (c *jsiiProxy_Connection) GeneratePhysicalName() *string {

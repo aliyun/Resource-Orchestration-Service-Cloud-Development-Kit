@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.acm.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-acm-namespaces
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:03.784Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:33.812Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acm.$Module.class, fqn = "@alicloud/ros-cdk-acm.datasource.RosNamespacesProps")
 @software.amazon.jsii.Jsii.Proxy(RosNamespacesProps.Jsii$Proxy.class)
 public interface RosNamespacesProps extends software.amazon.jsii.JsiiSerializable {

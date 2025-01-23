@@ -52,10 +52,6 @@ func (j *jsiiProxy_Desktops) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_Desktops) validateSetPropsParameters(val *DesktopsProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_Desktops) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

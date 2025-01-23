@@ -12,22 +12,32 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::RAM::Role`, which is used to query the information about a role.
 type Role interface {
 	alicloudroscdkcore.Resource
+	IRole
 	// Attribute Arn: The ARN of the RAM role.
-	AttrArn() alicloudroscdkcore.IResolvable
+	AttrArn() interface{}
 	// Attribute CreateDate: The time when the RAM role was created.
-	AttrCreateDate() alicloudroscdkcore.IResolvable
+	AttrCreateDate() interface{}
 	// Attribute Description: The description of the RAM role.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute MaxSessionDuration: The maximum session duration of the RAM role.
-	AttrMaxSessionDuration() alicloudroscdkcore.IResolvable
+	AttrMaxSessionDuration() interface{}
 	// Attribute RoleId: The ID of the RAM role.
-	AttrRoleId() alicloudroscdkcore.IResolvable
+	AttrRoleId() interface{}
 	// Attribute RoleName: The name of the RAM role.
-	AttrRoleName() alicloudroscdkcore.IResolvable
+	AttrRoleName() interface{}
 	// Attribute UpdateDate: The time when the RAM role was last updated.
-	AttrUpdateDate() alicloudroscdkcore.IResolvable
+	AttrUpdateDate() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -42,7 +52,6 @@ type Role interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *RoleProps
-	SetProps(val *RoleProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -55,6 +64,9 @@ type Role interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -107,10 +119,11 @@ type Role interface {
 // The jsii proxy struct for Role
 type jsiiProxy_Role struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IRole
 }
 
-func (j *jsiiProxy_Role) AttrArn() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Role) AttrArn() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrArn",
@@ -119,8 +132,8 @@ func (j *jsiiProxy_Role) AttrArn() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Role) AttrCreateDate() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Role) AttrCreateDate() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateDate",
@@ -129,8 +142,8 @@ func (j *jsiiProxy_Role) AttrCreateDate() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Role) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Role) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -139,8 +152,8 @@ func (j *jsiiProxy_Role) AttrDescription() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Role) AttrMaxSessionDuration() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Role) AttrMaxSessionDuration() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMaxSessionDuration",
@@ -149,8 +162,8 @@ func (j *jsiiProxy_Role) AttrMaxSessionDuration() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Role) AttrRoleId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Role) AttrRoleId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRoleId",
@@ -159,8 +172,8 @@ func (j *jsiiProxy_Role) AttrRoleId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Role) AttrRoleName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Role) AttrRoleName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRoleName",
@@ -169,8 +182,8 @@ func (j *jsiiProxy_Role) AttrRoleName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Role) AttrUpdateDate() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Role) AttrUpdateDate() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUpdateDate",
@@ -184,6 +197,16 @@ func (j *jsiiProxy_Role) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Role) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -321,17 +344,6 @@ func (j *jsiiProxy_Role)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Role)SetProps(val *RoleProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Role)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -423,6 +435,45 @@ func (r *jsiiProxy_Role) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPol
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (r *jsiiProxy_Role) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		r,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_Role) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		r,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_Role) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		r,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (r *jsiiProxy_Role) GeneratePhysicalName() *string {

@@ -11,6 +11,15 @@ import (
 type Resource interface {
 	Construct
 	IResource
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *ResourceEnvironment
 	// The construct tree node associated with this construct.
 	Node() ConstructNode
 	// Returns a string-encoded token that resolves to the physical name that should be passed to the ROS resource.
@@ -32,6 +41,9 @@ type Resource interface {
 	AddDependency(resource Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy RemovalPolicy)
+	FetchCondition() RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) IResolvable
 	// Perform final modifications before synthesis.
@@ -85,6 +97,16 @@ type Resource interface {
 type jsiiProxy_Resource struct {
 	jsiiProxy_Construct
 	jsiiProxy_IResource
+}
+
+func (j *jsiiProxy_Resource) Env() *ResourceEnvironment {
+	var returns *ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Resource) Node() ConstructNode {
@@ -228,6 +250,45 @@ func (r *jsiiProxy_Resource) ApplyRemovalPolicy(policy RemovalPolicy) {
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (r *jsiiProxy_Resource) FetchCondition() RosCondition {
+	var returns RosCondition
+
+	_jsii_.Invoke(
+		r,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_Resource) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		r,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_Resource) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		r,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (r *jsiiProxy_Resource) GeneratePhysicalName() *string {

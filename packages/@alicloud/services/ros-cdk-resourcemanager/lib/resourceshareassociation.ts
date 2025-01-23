@@ -34,20 +34,31 @@ export interface ResourceShareAssociationProps {
 }
 
 /**
+ * Represents a `ResourceShareAssociation`.
+ */
+export interface IResourceShareAssociation extends ros.IResource {
+    readonly props: ResourceShareAssociationProps;
+
+    /**
+     * Attribute ResourceShareId: The ID of the resource share.
+     */
+    readonly attrResourceShareId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ResourceShareAssociation`, which is used to associate a shared resource or a resource user.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosResourceShareAssociation`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourceshareassociation
  */
-export class ResourceShareAssociation extends ros.Resource {
+export class ResourceShareAssociation extends ros.Resource implements IResourceShareAssociation {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ResourceShareAssociationProps;
+    public readonly props: ResourceShareAssociationProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ResourceShareId: The ID of the resource share.
      */
-    public readonly attrResourceShareId: ros.IResolvable;
+    public readonly attrResourceShareId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -34,25 +34,41 @@ export interface DbInstancesProps {
 }
 
 /**
+ * Represents a `DbInstances`.
+ */
+export interface IDbInstances extends ros.IResource {
+    readonly props: DbInstancesProps;
+
+    /**
+     * Attribute DbInstanceIds: The list of db instance IDs.
+     */
+    readonly attrDbInstanceIds: ros.IResolvable | string;
+
+    /**
+     * Attribute DbInstances: The list of db instances.
+     */
+    readonly attrDbInstances: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::GraphDatabase::DbInstances`, which is used to query the information about Graph Database (GDB) instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDbInstances`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-graphdatabase-dbinstances
  */
-export class DbInstances extends ros.Resource {
+export class DbInstances extends ros.Resource implements IDbInstances {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DbInstancesProps;
+    public readonly props: DbInstancesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DbInstanceIds: The list of db instance IDs.
      */
-    public readonly attrDbInstanceIds: ros.IResolvable;
+    public readonly attrDbInstanceIds: ros.IResolvable | string;
 
     /**
      * Attribute DbInstances: The list of db instances.
      */
-    public readonly attrDbInstances: ros.IResolvable;
+    public readonly attrDbInstances: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

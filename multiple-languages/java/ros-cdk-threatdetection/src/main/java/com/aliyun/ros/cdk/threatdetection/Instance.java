@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.threatdetection;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ThreatDetection::Instance</code>, which is used to purchase Security Center (SAS).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:12.575Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:44.712Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.threatdetection.$Module.class, fqn = "@alicloud/ros-cdk-threatdetection.Instance")
-public class Instance extends com.aliyun.ros.cdk.core.Resource {
+public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.threatdetection.IInstance {
 
     protected Instance(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -43,8 +43,9 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute BuyNumber: Number of servers.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrBuyNumber() {
-        return software.amazon.jsii.Kernel.get(this, "attrBuyNumber", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrBuyNumber() {
+        return software.amazon.jsii.Kernel.get(this, "attrBuyNumber", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -52,8 +53,9 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * Interval type, value interval:[0,200000].
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrContainerImageScan() {
-        return software.amazon.jsii.Kernel.get(this, "attrContainerImageScan", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrContainerImageScan() {
+        return software.amazon.jsii.Kernel.get(this, "attrContainerImageScan", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -61,15 +63,17 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * Interval type, value interval:[0,200000].
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrContainerImageScanNew() {
-        return software.amazon.jsii.Kernel.get(this, "attrContainerImageScanNew", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrContainerImageScanNew() {
+        return software.amazon.jsii.Kernel.get(this, "attrContainerImageScanNew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute CreateTime: The creation time of the resource.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCreateTime() {
-        return software.amazon.jsii.Kernel.get(this, "attrCreateTime", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCreateTime() {
+        return software.amazon.jsii.Kernel.get(this, "attrCreateTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -77,29 +81,33 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * Interval type, value interval:[20,500].
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrHoneypot() {
-        return software.amazon.jsii.Kernel.get(this, "attrHoneypot", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrHoneypot() {
+        return software.amazon.jsii.Kernel.get(this, "attrHoneypot", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute HoneypotSwitch: Cloud honeypot.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrHoneypotSwitch() {
-        return software.amazon.jsii.Kernel.get(this, "attrHoneypotSwitch", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrHoneypotSwitch() {
+        return software.amazon.jsii.Kernel.get(this, "attrHoneypotSwitch", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute InstanceId: The first ID of the resource.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrInstanceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute PaymentType: The payment type of the resource.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPaymentType() {
-        return software.amazon.jsii.Kernel.get(this, "attrPaymentType", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPaymentType() {
+        return software.amazon.jsii.Kernel.get(this, "attrPaymentType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -107,29 +115,33 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * Interval type, value interval:[1,100000000].
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRaspCount() {
-        return software.amazon.jsii.Kernel.get(this, "attrRaspCount", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrRaspCount() {
+        return software.amazon.jsii.Kernel.get(this, "attrRaspCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute RenewalPeriodUnit: Automatic renewal period unit, value:.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRenewalPeriodUnit() {
-        return software.amazon.jsii.Kernel.get(this, "attrRenewalPeriodUnit", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrRenewalPeriodUnit() {
+        return software.amazon.jsii.Kernel.get(this, "attrRenewalPeriodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute RenewalStatus: Automatic renewal status, value:.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRenewalStatus() {
-        return software.amazon.jsii.Kernel.get(this, "attrRenewalStatus", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrRenewalStatus() {
+        return software.amazon.jsii.Kernel.get(this, "attrRenewalStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute RenewPeriod: Automatic renewal cycle, in months.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRenewPeriod() {
-        return software.amazon.jsii.Kernel.get(this, "attrRenewPeriod", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrRenewPeriod() {
+        return software.amazon.jsii.Kernel.get(this, "attrRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -137,29 +149,33 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * Unit: GB. Interval type, value interval:[0,9999999999].
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSasAntiRansomware() {
-        return software.amazon.jsii.Kernel.get(this, "attrSasAntiRansomware", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSasAntiRansomware() {
+        return software.amazon.jsii.Kernel.get(this, "attrSasAntiRansomware", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute SasCspm: Cloud platform configuration check scan times, interval type, value range:[1000,9999999999].
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSasCspm() {
-        return software.amazon.jsii.Kernel.get(this, "attrSasCspm", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSasCspm() {
+        return software.amazon.jsii.Kernel.get(this, "attrSasCspm", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute SasCspmSwitch: Cloud platform configuration check switch.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSasCspmSwitch() {
-        return software.amazon.jsii.Kernel.get(this, "attrSasCspmSwitch", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSasCspmSwitch() {
+        return software.amazon.jsii.Kernel.get(this, "attrSasCspmSwitch", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute SasSc: Security screen.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSasSc() {
-        return software.amazon.jsii.Kernel.get(this, "attrSasSc", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSasSc() {
+        return software.amazon.jsii.Kernel.get(this, "attrSasSc", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -167,15 +183,17 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * Unit: 10,000 times. Interval type, value interval:[10,9999999999].
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSasSdk() {
-        return software.amazon.jsii.Kernel.get(this, "attrSasSdk", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSasSdk() {
+        return software.amazon.jsii.Kernel.get(this, "attrSasSdk", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute SasSdkSwitch: Malicious file detection SDK.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSasSdkSwitch() {
-        return software.amazon.jsii.Kernel.get(this, "attrSasSdkSwitch", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSasSdkSwitch() {
+        return software.amazon.jsii.Kernel.get(this, "attrSasSdkSwitch", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -183,22 +201,25 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * Unit: GB. Interval type, value interval:[0,600000].
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSasSlsStorage() {
-        return software.amazon.jsii.Kernel.get(this, "attrSasSlsStorage", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSasSlsStorage() {
+        return software.amazon.jsii.Kernel.get(this, "attrSasSlsStorage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute SasWebguardBoolean: Web tamper-proof switch.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSasWebguardBoolean() {
-        return software.amazon.jsii.Kernel.get(this, "attrSasWebguardBoolean", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSasWebguardBoolean() {
+        return software.amazon.jsii.Kernel.get(this, "attrSasWebguardBoolean", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute SasWebguardOrderNum: Tamper-proof authorization number.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSasWebguardOrderNum() {
-        return software.amazon.jsii.Kernel.get(this, "attrSasWebguardOrderNum", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSasWebguardOrderNum() {
+        return software.amazon.jsii.Kernel.get(this, "attrSasWebguardOrderNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -206,43 +227,54 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * Interval type, value interval:[0,9999999999].
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrThreatAnalysis() {
-        return software.amazon.jsii.Kernel.get(this, "attrThreatAnalysis", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrThreatAnalysis() {
+        return software.amazon.jsii.Kernel.get(this, "attrThreatAnalysis", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute ThreatAnalysisSwitch: Threat analysis.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrThreatAnalysisSwitch() {
-        return software.amazon.jsii.Kernel.get(this, "attrThreatAnalysisSwitch", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrThreatAnalysisSwitch() {
+        return software.amazon.jsii.Kernel.get(this, "attrThreatAnalysisSwitch", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute VCore: Number of cores.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVCore() {
-        return software.amazon.jsii.Kernel.get(this, "attrVCore", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVCore() {
+        return software.amazon.jsii.Kernel.get(this, "attrVCore", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute VersionCode: Select the security center version.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVersionCode() {
-        return software.amazon.jsii.Kernel.get(this, "attrVersionCode", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVersionCode() {
+        return software.amazon.jsii.Kernel.get(this, "attrVersionCode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute VulCount: Vulnerability repair times, interval type, value range:[20,100000000].
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVulCount() {
-        return software.amazon.jsii.Kernel.get(this, "attrVulCount", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVulCount() {
+        return software.amazon.jsii.Kernel.get(this, "attrVulCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute VulSwitch: Vulnerability fix switch.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVulSwitch() {
-        return software.amazon.jsii.Kernel.get(this, "attrVulSwitch", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVulSwitch() {
+        return software.amazon.jsii.Kernel.get(this, "attrVulSwitch", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.threatdetection.InstanceProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.threatdetection.InstanceProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -259,14 +291,6 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.threatdetection.InstanceProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.threatdetection.InstanceProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.threatdetection.InstanceProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {

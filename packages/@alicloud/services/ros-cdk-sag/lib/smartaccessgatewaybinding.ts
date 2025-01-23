@@ -21,20 +21,31 @@ export interface SmartAccessGatewayBindingProps {
 }
 
 /**
+ * Represents a `SmartAccessGatewayBinding`.
+ */
+export interface ISmartAccessGatewayBinding extends ros.IResource {
+    readonly props: SmartAccessGatewayBindingProps;
+
+    /**
+     * Attribute SmartAGId: The ID of the Smart Access Gateway instance.
+     */
+    readonly attrSmartAgId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::SmartAccessGatewayBinding`, which is used to bind a Smart Access Gateway (SAG) instance to a specified Cloud Connect Network (CCN) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSmartAccessGatewayBinding`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-smartaccessgatewaybinding
  */
-export class SmartAccessGatewayBinding extends ros.Resource {
+export class SmartAccessGatewayBinding extends ros.Resource implements ISmartAccessGatewayBinding {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SmartAccessGatewayBindingProps;
+    public readonly props: SmartAccessGatewayBindingProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SmartAGId: The ID of the Smart Access Gateway instance.
      */
-    public readonly attrSmartAgId: ros.IResolvable;
+    public readonly attrSmartAgId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

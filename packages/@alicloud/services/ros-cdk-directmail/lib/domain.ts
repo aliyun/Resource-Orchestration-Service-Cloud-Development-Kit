@@ -16,105 +16,201 @@ export interface DomainProps {
 }
 
 /**
+ * Represents a `Domain`.
+ */
+export interface IDomain extends ros.IResource {
+    readonly props: DomainProps;
+
+    /**
+     * Attribute CnameAuthStatus: Cname auth status.
+     */
+    readonly attrCnameAuthStatus: ros.IResolvable | string;
+
+    /**
+     * Attribute CnameConfirmStatus: Cname confirm status.
+     */
+    readonly attrCnameConfirmStatus: ros.IResolvable | string;
+
+    /**
+     * Attribute CnameRecord: Cname record.
+     */
+    readonly attrCnameRecord: ros.IResolvable | string;
+
+    /**
+     * Attribute CreateTime: The creation time of the domain.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute DefaultDomain: Default domain.
+     */
+    readonly attrDefaultDomain: ros.IResolvable | string;
+
+    /**
+     * Attribute DnsMx: DNS MX.
+     */
+    readonly attrDnsMx: ros.IResolvable | string;
+
+    /**
+     * Attribute DnsSpf: DNS SPF.
+     */
+    readonly attrDnsSpf: ros.IResolvable | string;
+
+    /**
+     * Attribute DnsTxt: DNS txt.
+     */
+    readonly attrDnsTxt: ros.IResolvable | string;
+
+    /**
+     * Attribute DomainId: The ID of the domain.
+     */
+    readonly attrDomainId: ros.IResolvable | string;
+
+    /**
+     * Attribute DomainName: The name of the domain.
+     */
+    readonly attrDomainName: ros.IResolvable | string;
+
+    /**
+     * Attribute DomainType: The type of the domain.
+     */
+    readonly attrDomainType: ros.IResolvable | string;
+
+    /**
+     * Attribute IcpStatus: ICP status.
+     */
+    readonly attrIcpStatus: ros.IResolvable | string;
+
+    /**
+     * Attribute MxAuthStatus: MX auth status.
+     */
+    readonly attrMxAuthStatus: ros.IResolvable | string;
+
+    /**
+     * Attribute MxRecord: MX Record.
+     */
+    readonly attrMxRecord: ros.IResolvable | string;
+
+    /**
+     * Attribute SpfAuthStatus: SPF auth status.
+     */
+    readonly attrSpfAuthStatus: ros.IResolvable | string;
+
+    /**
+     * Attribute SpfRecord: SPF record.
+     */
+    readonly attrSpfRecord: ros.IResolvable | string;
+
+    /**
+     * Attribute TlDomainName: TL domain name.
+     */
+    readonly attrTlDomainName: ros.IResolvable | string;
+
+    /**
+     * Attribute TracefRecord: Tracef Record.
+     */
+    readonly attrTracefRecord: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::DirectMail::Domain`, which is used to create a domain name in Direct Mail.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomain`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-directmail-domain
  */
-export class Domain extends ros.Resource {
+export class Domain extends ros.Resource implements IDomain {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DomainProps;
+    public readonly props: DomainProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CnameAuthStatus: Cname auth status.
      */
-    public readonly attrCnameAuthStatus: ros.IResolvable;
+    public readonly attrCnameAuthStatus: ros.IResolvable | string;
 
     /**
      * Attribute CnameConfirmStatus: Cname confirm status.
      */
-    public readonly attrCnameConfirmStatus: ros.IResolvable;
+    public readonly attrCnameConfirmStatus: ros.IResolvable | string;
 
     /**
      * Attribute CnameRecord: Cname record.
      */
-    public readonly attrCnameRecord: ros.IResolvable;
+    public readonly attrCnameRecord: ros.IResolvable | string;
 
     /**
      * Attribute CreateTime: The creation time of the domain.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute DefaultDomain: Default domain.
      */
-    public readonly attrDefaultDomain: ros.IResolvable;
+    public readonly attrDefaultDomain: ros.IResolvable | string;
 
     /**
      * Attribute DnsMx: DNS MX.
      */
-    public readonly attrDnsMx: ros.IResolvable;
+    public readonly attrDnsMx: ros.IResolvable | string;
 
     /**
      * Attribute DnsSpf: DNS SPF.
      */
-    public readonly attrDnsSpf: ros.IResolvable;
+    public readonly attrDnsSpf: ros.IResolvable | string;
 
     /**
      * Attribute DnsTxt: DNS txt.
      */
-    public readonly attrDnsTxt: ros.IResolvable;
+    public readonly attrDnsTxt: ros.IResolvable | string;
 
     /**
      * Attribute DomainId: The ID of the domain.
      */
-    public readonly attrDomainId: ros.IResolvable;
+    public readonly attrDomainId: ros.IResolvable | string;
 
     /**
      * Attribute DomainName: The name of the domain.
      */
-    public readonly attrDomainName: ros.IResolvable;
+    public readonly attrDomainName: ros.IResolvable | string;
 
     /**
      * Attribute DomainType: The type of the domain.
      */
-    public readonly attrDomainType: ros.IResolvable;
+    public readonly attrDomainType: ros.IResolvable | string;
 
     /**
      * Attribute IcpStatus: ICP status.
      */
-    public readonly attrIcpStatus: ros.IResolvable;
+    public readonly attrIcpStatus: ros.IResolvable | string;
 
     /**
      * Attribute MxAuthStatus: MX auth status.
      */
-    public readonly attrMxAuthStatus: ros.IResolvable;
+    public readonly attrMxAuthStatus: ros.IResolvable | string;
 
     /**
      * Attribute MxRecord: MX Record.
      */
-    public readonly attrMxRecord: ros.IResolvable;
+    public readonly attrMxRecord: ros.IResolvable | string;
 
     /**
      * Attribute SpfAuthStatus: SPF auth status.
      */
-    public readonly attrSpfAuthStatus: ros.IResolvable;
+    public readonly attrSpfAuthStatus: ros.IResolvable | string;
 
     /**
      * Attribute SpfRecord: SPF record.
      */
-    public readonly attrSpfRecord: ros.IResolvable;
+    public readonly attrSpfRecord: ros.IResolvable | string;
 
     /**
      * Attribute TlDomainName: TL domain name.
      */
-    public readonly attrTlDomainName: ros.IResolvable;
+    public readonly attrTlDomainName: ros.IResolvable | string;
 
     /**
      * Attribute TracefRecord: Tracef Record.
      */
-    public readonly attrTracefRecord: ros.IResolvable;
+    public readonly attrTracefRecord: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -52,10 +52,6 @@ func (j *jsiiProxy_BackendServerAttachment) validateSetIdParameters(val *string)
 	return nil
 }
 
-func (j *jsiiProxy_BackendServerAttachment) validateSetPropsParameters(val *BackendServerAttachmentProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_BackendServerAttachment) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

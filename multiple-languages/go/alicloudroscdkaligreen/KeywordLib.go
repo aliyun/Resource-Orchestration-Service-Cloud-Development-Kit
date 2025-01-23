@@ -12,26 +12,36 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::Aligreen::KeywordLib`.
 type KeywordLib interface {
 	alicloudroscdkcore.Resource
+	IKeywordLib
 	// Attribute BizTypes: The business scenario.
-	AttrBizTypes() alicloudroscdkcore.IResolvable
+	AttrBizTypes() interface{}
 	// Attribute Category: The category of the text library.
-	AttrCategory() alicloudroscdkcore.IResolvable
+	AttrCategory() interface{}
 	// Attribute Enable: Specifies whether to enable text library.
-	AttrEnable() alicloudroscdkcore.IResolvable
+	AttrEnable() interface{}
 	// Attribute KeywordLibId: The ID of the primary key of the keyword library.
-	AttrKeywordLibId() alicloudroscdkcore.IResolvable
+	AttrKeywordLibId() interface{}
 	// Attribute KeywordLibName: The name of the keyword library defined by the customer.
-	AttrKeywordLibName() alicloudroscdkcore.IResolvable
+	AttrKeywordLibName() interface{}
 	// Attribute Language: Language used by the text Library.
-	AttrLanguage() alicloudroscdkcore.IResolvable
+	AttrLanguage() interface{}
 	// Attribute LibType: The category of the text library in each moderation scenario.
-	AttrLibType() alicloudroscdkcore.IResolvable
+	AttrLibType() interface{}
 	// Attribute MatchMode: The matching method.
-	AttrMatchMode() alicloudroscdkcore.IResolvable
+	AttrMatchMode() interface{}
 	// Attribute ResourceType: The moderation scenario to which the text library applies.
-	AttrResourceType() alicloudroscdkcore.IResolvable
+	AttrResourceType() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -46,7 +56,6 @@ type KeywordLib interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *KeywordLibProps
-	SetProps(val *KeywordLibProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -59,6 +68,9 @@ type KeywordLib interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -111,10 +123,11 @@ type KeywordLib interface {
 // The jsii proxy struct for KeywordLib
 type jsiiProxy_KeywordLib struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IKeywordLib
 }
 
-func (j *jsiiProxy_KeywordLib) AttrBizTypes() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KeywordLib) AttrBizTypes() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBizTypes",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_KeywordLib) AttrBizTypes() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_KeywordLib) AttrCategory() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KeywordLib) AttrCategory() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCategory",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_KeywordLib) AttrCategory() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_KeywordLib) AttrEnable() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KeywordLib) AttrEnable() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEnable",
@@ -143,8 +156,8 @@ func (j *jsiiProxy_KeywordLib) AttrEnable() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_KeywordLib) AttrKeywordLibId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KeywordLib) AttrKeywordLibId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrKeywordLibId",
@@ -153,8 +166,8 @@ func (j *jsiiProxy_KeywordLib) AttrKeywordLibId() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_KeywordLib) AttrKeywordLibName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KeywordLib) AttrKeywordLibName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrKeywordLibName",
@@ -163,8 +176,8 @@ func (j *jsiiProxy_KeywordLib) AttrKeywordLibName() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_KeywordLib) AttrLanguage() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KeywordLib) AttrLanguage() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLanguage",
@@ -173,8 +186,8 @@ func (j *jsiiProxy_KeywordLib) AttrLanguage() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_KeywordLib) AttrLibType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KeywordLib) AttrLibType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLibType",
@@ -183,8 +196,8 @@ func (j *jsiiProxy_KeywordLib) AttrLibType() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_KeywordLib) AttrMatchMode() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KeywordLib) AttrMatchMode() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMatchMode",
@@ -193,8 +206,8 @@ func (j *jsiiProxy_KeywordLib) AttrMatchMode() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_KeywordLib) AttrResourceType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KeywordLib) AttrResourceType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceType",
@@ -208,6 +221,16 @@ func (j *jsiiProxy_KeywordLib) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KeywordLib) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -345,17 +368,6 @@ func (j *jsiiProxy_KeywordLib)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_KeywordLib)SetProps(val *KeywordLibProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_KeywordLib)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -447,6 +459,45 @@ func (k *jsiiProxy_KeywordLib) ApplyRemovalPolicy(policy alicloudroscdkcore.Remo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (k *jsiiProxy_KeywordLib) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		k,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (k *jsiiProxy_KeywordLib) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		k,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (k *jsiiProxy_KeywordLib) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		k,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (k *jsiiProxy_KeywordLib) GeneratePhysicalName() *string {

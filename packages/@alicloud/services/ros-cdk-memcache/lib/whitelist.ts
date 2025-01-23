@@ -31,30 +31,51 @@ export interface WhitelistProps {
 }
 
 /**
+ * Represents a `Whitelist`.
+ */
+export interface IWhitelist extends ros.IResource {
+    readonly props: WhitelistProps;
+
+    /**
+     * Attribute SecurityIpGroupAttribute: The default is empty. For distinguishing between different attribute values, the console will not display the value of hidden whitelist packet.
+     */
+    readonly attrSecurityIpGroupAttribute: ros.IResolvable | string;
+
+    /**
+     * Attribute SecurityIpGroupName: Whitelist group
+     */
+    readonly attrSecurityIpGroupName: ros.IResolvable | string;
+
+    /**
+     * Attribute SecurityIps: IP address whitelist to be modified
+     */
+    readonly attrSecurityIps: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::Memcache::Whitelist`, which is used to create a Whitelist.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWhitelist`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-memcache-whitelist
  */
-export class Whitelist extends ros.Resource {
+export class Whitelist extends ros.Resource implements IWhitelist {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: WhitelistProps;
+    public readonly props: WhitelistProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SecurityIpGroupAttribute: The default is empty. For distinguishing between different attribute values, the console will not display the value of hidden whitelist packet.
      */
-    public readonly attrSecurityIpGroupAttribute: ros.IResolvable;
+    public readonly attrSecurityIpGroupAttribute: ros.IResolvable | string;
 
     /**
      * Attribute SecurityIpGroupName: Whitelist group
      */
-    public readonly attrSecurityIpGroupName: ros.IResolvable;
+    public readonly attrSecurityIpGroupName: ros.IResolvable | string;
 
     /**
      * Attribute SecurityIps: IP address whitelist to be modified
      */
-    public readonly attrSecurityIps: ros.IResolvable;
+    public readonly attrSecurityIps: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

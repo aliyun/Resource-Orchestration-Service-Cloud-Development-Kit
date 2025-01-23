@@ -4,5 +4,5 @@ go 1.18
 
 require (
 	github.com/aws/jsii-runtime-go v1.85.0
-	github.com/alibabacloud-go/ros-cdk/alicloudroscdkassemblyschema v1.5.0
+	github.com/alibabacloud-go/ros-cdk/alicloudroscdkassemblyschema v1.6.0
 )

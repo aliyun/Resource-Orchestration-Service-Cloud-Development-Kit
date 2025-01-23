@@ -29,35 +29,61 @@ export interface WorkspaceResourceMaxComputeProps {
 }
 
 /**
+ * Represents a `WorkspaceResourceMaxCompute`.
+ */
+export interface IWorkspaceResourceMaxCompute extends ros.IResource {
+    readonly props: WorkspaceResourceMaxComputeProps;
+
+    /**
+     * Attribute CreateTime: The creation time of the resource.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute GroupName: Resource group name. If you want to obtain a resource group name.
+     */
+    readonly attrGroupName: ros.IResolvable | string;
+
+    /**
+     * Attribute IsDefault: Indicates whether it is the default resource. Currently, this parameter only supports the input of true and does not support false.
+     */
+    readonly attrIsDefault: ros.IResolvable | string;
+
+    /**
+     * Attribute Resources: Resource List.
+     */
+    readonly attrResources: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::WorkspaceResourceMaxCompute`, which is used to query the information about a MaxCompute resource that is associated with a workspace.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWorkspaceResourceMaxCompute`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-workspaceresourcemaxcompute
  */
-export class WorkspaceResourceMaxCompute extends ros.Resource {
+export class WorkspaceResourceMaxCompute extends ros.Resource implements IWorkspaceResourceMaxCompute {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: WorkspaceResourceMaxComputeProps;
+    public readonly props: WorkspaceResourceMaxComputeProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateTime: The creation time of the resource.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute GroupName: Resource group name. If you want to obtain a resource group name.
      */
-    public readonly attrGroupName: ros.IResolvable;
+    public readonly attrGroupName: ros.IResolvable | string;
 
     /**
      * Attribute IsDefault: Indicates whether it is the default resource. Currently, this parameter only supports the input of true and does not support false.
      */
-    public readonly attrIsDefault: ros.IResolvable;
+    public readonly attrIsDefault: ros.IResolvable | string;
 
     /**
      * Attribute Resources: Resource List.
      */
-    public readonly attrResources: ros.IResolvable;
+    public readonly attrResources: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -45,40 +45,71 @@ export interface AppProps {
 }
 
 /**
+ * Represents a `App`.
+ */
+export interface IApp extends ros.IResource {
+    readonly props: AppProps;
+
+    /**
+     * Attribute AppCode: The code of the APP.
+     */
+    readonly attrAppCode: ros.IResolvable | string;
+
+    /**
+     * Attribute AppId: The id of the created APP
+     */
+    readonly attrAppId: ros.IResolvable | string;
+
+    /**
+     * Attribute AppKey: The key of the APP
+     */
+    readonly attrAppKey: ros.IResolvable | string;
+
+    /**
+     * Attribute AppSecret: The secret of the APP
+     */
+    readonly attrAppSecret: ros.IResolvable | string;
+
+    /**
+     * Attribute Tags: Tags of app
+     */
+    readonly attrTags: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::App`, which is used to create an application. Before you call a third-party API, you must create an application and use the application as an identity to call the API.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApp`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-app
  */
-export class App extends ros.Resource {
+export class App extends ros.Resource implements IApp {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AppProps;
+    public readonly props: AppProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AppCode: The code of the APP.
      */
-    public readonly attrAppCode: ros.IResolvable;
+    public readonly attrAppCode: ros.IResolvable | string;
 
     /**
      * Attribute AppId: The id of the created APP
      */
-    public readonly attrAppId: ros.IResolvable;
+    public readonly attrAppId: ros.IResolvable | string;
 
     /**
      * Attribute AppKey: The key of the APP
      */
-    public readonly attrAppKey: ros.IResolvable;
+    public readonly attrAppKey: ros.IResolvable | string;
 
     /**
      * Attribute AppSecret: The secret of the APP
      */
-    public readonly attrAppSecret: ros.IResolvable;
+    public readonly attrAppSecret: ros.IResolvable | string;
 
     /**
      * Attribute Tags: Tags of app
      */
-    public readonly attrTags: ros.IResolvable;
+    public readonly attrTags: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -52,10 +52,6 @@ func (j *jsiiProxy_SceneDefensePolicy) validateSetIdParameters(val *string) erro
 	return nil
 }
 
-func (j *jsiiProxy_SceneDefensePolicy) validateSetPropsParameters(val *SceneDefensePolicyProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_SceneDefensePolicy) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

@@ -52,10 +52,6 @@ func (j *jsiiProxy_HaVips) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_HaVips) validateSetPropsParameters(val *HaVipsProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_HaVips) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

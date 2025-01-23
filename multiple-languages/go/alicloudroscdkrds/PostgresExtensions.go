@@ -12,10 +12,20 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::RDS::PostgresExtensions`, which is used to install extensions on a database.
 type PostgresExtensions interface {
 	alicloudroscdkcore.Resource
+	IPostgresExtensions
 	// Attribute InstalledExtensionNames: Extension names installed via ROS.
-	AttrInstalledExtensionNames() alicloudroscdkcore.IResolvable
+	AttrInstalledExtensionNames() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -30,7 +40,6 @@ type PostgresExtensions interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *PostgresExtensionsProps
-	SetProps(val *PostgresExtensionsProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -43,6 +52,9 @@ type PostgresExtensions interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -95,10 +107,11 @@ type PostgresExtensions interface {
 // The jsii proxy struct for PostgresExtensions
 type jsiiProxy_PostgresExtensions struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IPostgresExtensions
 }
 
-func (j *jsiiProxy_PostgresExtensions) AttrInstalledExtensionNames() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PostgresExtensions) AttrInstalledExtensionNames() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstalledExtensionNames",
@@ -112,6 +125,16 @@ func (j *jsiiProxy_PostgresExtensions) EnableResourcePropertyConstraint() *bool 
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_PostgresExtensions) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -249,17 +272,6 @@ func (j *jsiiProxy_PostgresExtensions)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_PostgresExtensions)SetProps(val *PostgresExtensionsProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_PostgresExtensions)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -351,6 +363,45 @@ func (p *jsiiProxy_PostgresExtensions) ApplyRemovalPolicy(policy alicloudroscdkc
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (p *jsiiProxy_PostgresExtensions) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		p,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_PostgresExtensions) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		p,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_PostgresExtensions) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		p,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (p *jsiiProxy_PostgresExtensions) GeneratePhysicalName() *string {

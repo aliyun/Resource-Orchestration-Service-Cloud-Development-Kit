@@ -12,14 +12,24 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ECS::AssignIpv6Addresses`, which is used to assign one or more IPv6 addresses to an elastic network interface (ENI).
 type AssignIpv6Addresses interface {
 	alicloudroscdkcore.Resource
+	IAssignIpv6Addresses
 	// Attribute Ipv6Addresses: Assigned IPv6 addresses.
-	AttrIpv6Addresses() alicloudroscdkcore.IResolvable
+	AttrIpv6Addresses() interface{}
 	// Attribute Ipv6AddressIds: Assigned IPv6 address IDs.
-	AttrIpv6AddressIds() alicloudroscdkcore.IResolvable
+	AttrIpv6AddressIds() interface{}
 	// Attribute NetworkInterfaceId: Elastic network interface ID.
-	AttrNetworkInterfaceId() alicloudroscdkcore.IResolvable
+	AttrNetworkInterfaceId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -34,7 +44,6 @@ type AssignIpv6Addresses interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *AssignIpv6AddressesProps
-	SetProps(val *AssignIpv6AddressesProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -47,6 +56,9 @@ type AssignIpv6Addresses interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -99,10 +111,11 @@ type AssignIpv6Addresses interface {
 // The jsii proxy struct for AssignIpv6Addresses
 type jsiiProxy_AssignIpv6Addresses struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IAssignIpv6Addresses
 }
 
-func (j *jsiiProxy_AssignIpv6Addresses) AttrIpv6Addresses() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AssignIpv6Addresses) AttrIpv6Addresses() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIpv6Addresses",
@@ -111,8 +124,8 @@ func (j *jsiiProxy_AssignIpv6Addresses) AttrIpv6Addresses() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_AssignIpv6Addresses) AttrIpv6AddressIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AssignIpv6Addresses) AttrIpv6AddressIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIpv6AddressIds",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_AssignIpv6Addresses) AttrIpv6AddressIds() alicloudroscdkcore.
 	return returns
 }
 
-func (j *jsiiProxy_AssignIpv6Addresses) AttrNetworkInterfaceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AssignIpv6Addresses) AttrNetworkInterfaceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNetworkInterfaceId",
@@ -136,6 +149,16 @@ func (j *jsiiProxy_AssignIpv6Addresses) EnableResourcePropertyConstraint() *bool
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AssignIpv6Addresses) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -273,17 +296,6 @@ func (j *jsiiProxy_AssignIpv6Addresses)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AssignIpv6Addresses)SetProps(val *AssignIpv6AddressesProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_AssignIpv6Addresses)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -375,6 +387,45 @@ func (a *jsiiProxy_AssignIpv6Addresses) ApplyRemovalPolicy(policy alicloudroscdk
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (a *jsiiProxy_AssignIpv6Addresses) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		a,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AssignIpv6Addresses) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AssignIpv6Addresses) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (a *jsiiProxy_AssignIpv6Addresses) GeneratePhysicalName() *string {

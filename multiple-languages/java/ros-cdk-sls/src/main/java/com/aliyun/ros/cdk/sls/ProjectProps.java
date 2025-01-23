@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.sls;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-project
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:12.359Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:44.537Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.ProjectProps")
 @software.amazon.jsii.Jsii.Proxy(ProjectProps.Jsii$Proxy.class)
 public interface ProjectProps extends software.amazon.jsii.JsiiSerializable {
@@ -13,7 +13,7 @@ public interface ProjectProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property name: Project name: 1.
      * <p>
-     * Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+     * Only supports lowercase letters, numbers, hyphens (-).
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
@@ -70,7 +70,7 @@ public interface ProjectProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link ProjectProps#getName}
          * @param name Property name: Project name: 1. This parameter is required.
-         *             Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+         *             Only supports lowercase letters, numbers, hyphens (-).
          *             2. Must start and end with lowercase letters and numbers.
          *             3. The name length is 3-63 characters.
          * @return {@code this}
@@ -83,7 +83,7 @@ public interface ProjectProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link ProjectProps#getName}
          * @param name Property name: Project name: 1. This parameter is required.
-         *             Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+         *             Only supports lowercase letters, numbers, hyphens (-).
          *             2. Must start and end with lowercase letters and numbers.
          *             3. The name length is 3-63 characters.
          * @return {@code this}

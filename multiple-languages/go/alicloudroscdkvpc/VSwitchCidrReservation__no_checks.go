@@ -52,10 +52,6 @@ func (j *jsiiProxy_VSwitchCidrReservation) validateSetIdParameters(val *string) 
 	return nil
 }
 
-func (j *jsiiProxy_VSwitchCidrReservation) validateSetPropsParameters(val *VSwitchCidrReservationProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_VSwitchCidrReservation) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

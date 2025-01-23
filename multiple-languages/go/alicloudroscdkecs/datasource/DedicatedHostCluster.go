@@ -12,20 +12,30 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::DedicatedHostCluster`, which is used to query the information about a dedicated host cluster.
 type DedicatedHostCluster interface {
 	alicloudroscdkcore.Resource
+	IDedicatedHostCluster
 	// Attribute DedicatedHostClusterId: Dedicated host cluster id.
-	AttrDedicatedHostClusterId() alicloudroscdkcore.IResolvable
+	AttrDedicatedHostClusterId() interface{}
 	// Attribute DedicatedHostClusterName: The name of the dedicated host cluster.
-	AttrDedicatedHostClusterName() alicloudroscdkcore.IResolvable
+	AttrDedicatedHostClusterName() interface{}
 	// Attribute Description: The description of the dedicated host cluster.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute ResourceGroupId: The ID of the resource group to which the dedicated host cluster belongs.
-	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() interface{}
 	// Attribute Tags: The tags of the dedicated host cluster.
-	AttrTags() alicloudroscdkcore.IResolvable
+	AttrTags() interface{}
 	// Attribute ZoneId: The zone ID of the dedicated host cluster.
-	AttrZoneId() alicloudroscdkcore.IResolvable
+	AttrZoneId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -40,7 +50,6 @@ type DedicatedHostCluster interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DedicatedHostClusterProps
-	SetProps(val *DedicatedHostClusterProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -53,6 +62,9 @@ type DedicatedHostCluster interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -105,10 +117,11 @@ type DedicatedHostCluster interface {
 // The jsii proxy struct for DedicatedHostCluster
 type jsiiProxy_DedicatedHostCluster struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDedicatedHostCluster
 }
 
-func (j *jsiiProxy_DedicatedHostCluster) AttrDedicatedHostClusterId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostCluster) AttrDedicatedHostClusterId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDedicatedHostClusterId",
@@ -117,8 +130,8 @@ func (j *jsiiProxy_DedicatedHostCluster) AttrDedicatedHostClusterId() alicloudro
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostCluster) AttrDedicatedHostClusterName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostCluster) AttrDedicatedHostClusterName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDedicatedHostClusterName",
@@ -127,8 +140,8 @@ func (j *jsiiProxy_DedicatedHostCluster) AttrDedicatedHostClusterName() alicloud
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostCluster) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostCluster) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -137,8 +150,8 @@ func (j *jsiiProxy_DedicatedHostCluster) AttrDescription() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostCluster) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostCluster) AttrResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupId",
@@ -147,8 +160,8 @@ func (j *jsiiProxy_DedicatedHostCluster) AttrResourceGroupId() alicloudroscdkcor
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostCluster) AttrTags() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostCluster) AttrTags() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTags",
@@ -157,8 +170,8 @@ func (j *jsiiProxy_DedicatedHostCluster) AttrTags() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostCluster) AttrZoneId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostCluster) AttrZoneId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrZoneId",
@@ -172,6 +185,16 @@ func (j *jsiiProxy_DedicatedHostCluster) EnableResourcePropertyConstraint() *boo
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DedicatedHostCluster) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -309,17 +332,6 @@ func (j *jsiiProxy_DedicatedHostCluster)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DedicatedHostCluster)SetProps(val *DedicatedHostClusterProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_DedicatedHostCluster)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -411,6 +423,45 @@ func (d *jsiiProxy_DedicatedHostCluster) ApplyRemovalPolicy(policy alicloudroscd
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_DedicatedHostCluster) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DedicatedHostCluster) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DedicatedHostCluster) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_DedicatedHostCluster) GeneratePhysicalName() *string {

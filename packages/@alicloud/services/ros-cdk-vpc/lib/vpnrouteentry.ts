@@ -48,30 +48,51 @@ export interface VpnRouteEntryProps {
 }
 
 /**
+ * Represents a `VpnRouteEntry`.
+ */
+export interface IVpnRouteEntry extends ros.IResource {
+    readonly props: VpnRouteEntryProps;
+
+    /**
+     * Attribute NextHop: The next hop of the destination route entry.
+     */
+    readonly attrNextHop: ros.IResolvable | string;
+
+    /**
+     * Attribute RouteDest: The destination CIDR block of the destination route.
+     */
+    readonly attrRouteDest: ros.IResolvable | string;
+
+    /**
+     * Attribute VpnGatewayId: The ID of the VPN Gateway.
+     */
+    readonly attrVpnGatewayId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpnRouteEntry`, which is used to create a destination-based route for a VPN gateway.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpnRouteEntry`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnrouteentry
  */
-export class VpnRouteEntry extends ros.Resource {
+export class VpnRouteEntry extends ros.Resource implements IVpnRouteEntry {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: VpnRouteEntryProps;
+    public readonly props: VpnRouteEntryProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute NextHop: The next hop of the destination route entry.
      */
-    public readonly attrNextHop: ros.IResolvable;
+    public readonly attrNextHop: ros.IResolvable | string;
 
     /**
      * Attribute RouteDest: The destination CIDR block of the destination route.
      */
-    public readonly attrRouteDest: ros.IResolvable;
+    public readonly attrRouteDest: ros.IResolvable | string;
 
     /**
      * Attribute VpnGatewayId: The ID of the VPN Gateway.
      */
-    public readonly attrVpnGatewayId: ros.IResolvable;
+    public readonly attrVpnGatewayId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

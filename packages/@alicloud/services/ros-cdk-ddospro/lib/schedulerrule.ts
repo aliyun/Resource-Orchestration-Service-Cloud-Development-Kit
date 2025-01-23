@@ -48,20 +48,31 @@ export interface SchedulerRuleProps {
 }
 
 /**
+ * Represents a `SchedulerRule`.
+ */
+export interface ISchedulerRule extends ros.IResource {
+    readonly props: SchedulerRuleProps;
+
+    /**
+     * Attribute RuleName: The name of the rule.
+     */
+    readonly attrRuleName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::DDoSPro::SchedulerRule`, which is used to create a scheduling rule for Sec-Traffic Manager.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSchedulerRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-schedulerrule
  */
-export class SchedulerRule extends ros.Resource {
+export class SchedulerRule extends ros.Resource implements ISchedulerRule {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SchedulerRuleProps;
+    public readonly props: SchedulerRuleProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RuleName: The name of the rule.
      */
-    public readonly attrRuleName: ros.IResolvable;
+    public readonly attrRuleName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

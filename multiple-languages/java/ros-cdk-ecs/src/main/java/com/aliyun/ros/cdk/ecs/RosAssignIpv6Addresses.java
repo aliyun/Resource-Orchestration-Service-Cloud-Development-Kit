@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECS::AssignIpv6Addresses</code>, which is used to assign one or more IPv6 addresses to an elastic network interface (ENI).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:07.184Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:38.140Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosAssignIpv6Addresses")
 public class RosAssignIpv6Addresses extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -131,6 +131,47 @@ public class RosAssignIpv6Addresses extends com.aliyun.ros.cdk.core.RosResource 
     }
 
     /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIpv6PrefixCount() {
+        return software.amazon.jsii.Kernel.get(this, "ipv6PrefixCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIpv6PrefixCount(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "ipv6PrefixCount", value);
+    }
+
+    /**
+     */
+    public void setIpv6PrefixCount(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ipv6PrefixCount", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIpv6Prefixes() {
+        return software.amazon.jsii.Kernel.get(this, "ipv6Prefixes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIpv6Prefixes(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "ipv6Prefixes", value);
+    }
+
+    /**
+     */
+    public void setIpv6Prefixes(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ipv6Prefixes", value);
+    }
+
+    /**
      * A fluent builder for {@link com.aliyun.ros.cdk.ecs.RosAssignIpv6Addresses}.
      */
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ecs.RosAssignIpv6Addresses> {
@@ -204,6 +245,40 @@ public class RosAssignIpv6Addresses extends com.aliyun.ros.cdk.core.RosResource 
          */
         public Builder ipv6Addresses(final com.aliyun.ros.cdk.core.IResolvable ipv6Addresses) {
             this.props.ipv6Addresses(ipv6Addresses);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param ipv6PrefixCount This parameter is required.
+         */
+        public Builder ipv6PrefixCount(final java.lang.Number ipv6PrefixCount) {
+            this.props.ipv6PrefixCount(ipv6PrefixCount);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ipv6PrefixCount This parameter is required.
+         */
+        public Builder ipv6PrefixCount(final com.aliyun.ros.cdk.core.IResolvable ipv6PrefixCount) {
+            this.props.ipv6PrefixCount(ipv6PrefixCount);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param ipv6Prefixes This parameter is required.
+         */
+        public Builder ipv6Prefixes(final java.util.List<? extends java.lang.Object> ipv6Prefixes) {
+            this.props.ipv6Prefixes(ipv6Prefixes);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ipv6Prefixes This parameter is required.
+         */
+        public Builder ipv6Prefixes(final com.aliyun.ros.cdk.core.IResolvable ipv6Prefixes) {
+            this.props.ipv6Prefixes(ipv6Prefixes);
             return this;
         }
 

@@ -62,45 +62,40 @@ export interface VaultProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::HBR::Vault`, which is used to create a backup vault.
- * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVault`for a more convenient development experience.
- * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-vault
+ * Represents a `Vault`.
  */
-export class Vault extends ros.Resource {
-    protected scope: ros.Construct;
-    protected id: string;
-    protected props: VaultProps;
-    protected enableResourcePropertyConstraint: boolean;
+export interface IVault extends ros.IResource {
+    readonly props: VaultProps;
 
     /**
      * Attribute BackupPlanStatistics: The statistics of backup plans that use the backup vault.
      */
-    public readonly attrBackupPlanStatistics: ros.IResolvable;
+    readonly attrBackupPlanStatistics: ros.IResolvable | string;
 
     /**
      * Attribute BytesDone: The amount of data that is backed up. Unit: bytes.
      */
-    public readonly attrBytesDone: ros.IResolvable;
+    readonly attrBytesDone: ros.IResolvable | string;
 
     /**
      * Attribute CreateTime: The time when the backup vault was created. This value is a UNIX timestamp. Unit: seconds.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute Dedup: Indicates whether the deduplication feature is enabled.
      */
-    public readonly attrDedup: ros.IResolvable;
+    readonly attrDedup: ros.IResolvable | string;
 
     /**
      * Attribute Description: The description of the backup vault.
      */
-    public readonly attrDescription: ros.IResolvable;
+    readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute IndexAvailable: Indicates whether indexes are available. Indexes are available when they are not being updated.
      */
-    public readonly attrIndexAvailable: ros.IResolvable;
+    readonly attrIndexAvailable: ros.IResolvable | string;
 
     /**
      * Attribute IndexLevel: The index level.
@@ -108,118 +103,278 @@ export class Vault extends ros.Resource {
 - **META**: Metadata indexes are created.
 - **ALL**: Full-text indexes are created.
      */
-    public readonly attrIndexLevel: ros.IResolvable;
+    readonly attrIndexLevel: ros.IResolvable | string;
 
     /**
      * Attribute IndexUpdateTime: The time when the index was updated.
      */
-    public readonly attrIndexUpdateTime: ros.IResolvable;
+    readonly attrIndexUpdateTime: ros.IResolvable | string;
 
     /**
      * Attribute LatestReplicationTime: The time when the last remote backup was synchronized. This value is a UNIX timestamp. Unit: seconds.
      */
-    public readonly attrLatestReplicationTime: ros.IResolvable;
+    readonly attrLatestReplicationTime: ros.IResolvable | string;
 
     /**
      * Attribute PaymentType: PaymentType.
      */
-    public readonly attrPaymentType: ros.IResolvable;
+    readonly attrPaymentType: ros.IResolvable | string;
 
     /**
      * Attribute RedundancyType: The data redundancy type of the backup vault. Valid values:
 - **LRS**: Locally redundant storage (LRS) is enabled for the backup vault. HBR stores the copies of each object on multiple devices of different facilities in the same zone. This way, HBR ensures data durability and availability even if hardware failures occur.
 - **ZRS**: Zone-redundant storage (ZRS) is enabled for the backup vault. HBR uses the multi-zone mechanism to distribute data across three zones within the same region. If a zone fails, the data that is stored in the other two zones is still accessible.
      */
-    public readonly attrRedundancyType: ros.IResolvable;
+    readonly attrRedundancyType: ros.IResolvable | string;
 
     /**
      * Attribute Replication: Indicates whether the backup vault is a remote backup vault. Valid values:
 - **true**: The backup vault is a remote backup vault.
 - **false**: The backup vault is an on-premises backup vault.
      */
-    public readonly attrReplication: ros.IResolvable;
+    readonly attrReplication: ros.IResolvable | string;
 
     /**
      * Attribute ReplicationProgress: The progress of data synchronization from the backup vault to the mirror vault.
      */
-    public readonly attrReplicationProgress: ros.IResolvable;
+    readonly attrReplicationProgress: ros.IResolvable | string;
 
     /**
      * Attribute ReplicationSourceRegionId: The ID of the region where the remote backup vault resides.
      */
-    public readonly attrReplicationSourceRegionId: ros.IResolvable;
+    readonly attrReplicationSourceRegionId: ros.IResolvable | string;
 
     /**
      * Attribute ReplicationSourceVaultId: The ID of the source vault that corresponds to the remote backup vault.
      */
-    public readonly attrReplicationSourceVaultId: ros.IResolvable;
+    readonly attrReplicationSourceVaultId: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroupId: The ID of the resource group.
      */
-    public readonly attrResourceGroupId: ros.IResolvable;
+    readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Attribute Retention: The retention period of the backup vault. Unit: days.
      */
-    public readonly attrRetention: ros.IResolvable;
+    readonly attrRetention: ros.IResolvable | string;
 
     /**
      * Attribute SearchEnabled: Indicates whether the backup search feature is enabled.
      */
-    public readonly attrSearchEnabled: ros.IResolvable;
+    readonly attrSearchEnabled: ros.IResolvable | string;
 
     /**
      * Attribute SourceTypes: The information about the data source.
      */
-    public readonly attrSourceTypes: ros.IResolvable;
+    readonly attrSourceTypes: ros.IResolvable | string;
 
     /**
      * Attribute StorageSize: The usage of the backup vault. Unit: bytes.
      */
-    public readonly attrStorageSize: ros.IResolvable;
+    readonly attrStorageSize: ros.IResolvable | string;
 
     /**
      * Attribute Tags: The tags of the backup vault.
      */
-    public readonly attrTags: ros.IResolvable;
+    readonly attrTags: ros.IResolvable | string;
 
     /**
      * Attribute TrialInfo: The free trial information.
      */
-    public readonly attrTrialInfo: ros.IResolvable;
+    readonly attrTrialInfo: ros.IResolvable | string;
 
     /**
      * Attribute UpdatedTime: The time when the backup vault was updated. This value is a UNIX timestamp. Unit: seconds.
      */
-    public readonly attrUpdatedTime: ros.IResolvable;
+    readonly attrUpdatedTime: ros.IResolvable | string;
 
     /**
      * Attribute VaultId: The ID of the backup vault.
      */
-    public readonly attrVaultId: ros.IResolvable;
+    readonly attrVaultId: ros.IResolvable | string;
 
     /**
      * Attribute VaultName: The name of the backup vault.
      */
-    public readonly attrVaultName: ros.IResolvable;
+    readonly attrVaultName: ros.IResolvable | string;
 
     /**
      * Attribute VaultStatusMessage: The status message that is returned when the backup vault is in the ERROR state. This parameter is available only for remote backup vaults. Valid values:
 - **UNKNOWN_ERROR*: An unknown error occurs.
 - **SOURCE_VAULT_ALREADY_HAS_REPLICATION**: A mirror vault is configured for the source vault.
      */
-    public readonly attrVaultStatusMessage: ros.IResolvable;
+    readonly attrVaultStatusMessage: ros.IResolvable | string;
 
     /**
      * Attribute VaultStorageClass: The storage type of the backup vault. Valid value: **STANDARD**, which indicates standard storage.
      */
-    public readonly attrVaultStorageClass: ros.IResolvable;
+    readonly attrVaultStorageClass: ros.IResolvable | string;
 
     /**
      * Attribute VaultType: The type of the backup vault. Valid value: **STANDARD**, which indicates a standard backup vault.
      */
-    public readonly attrVaultType: ros.IResolvable;
+    readonly attrVaultType: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `ALIYUN::HBR::Vault`, which is used to create a backup vault.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVault`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-vault
+ */
+export class Vault extends ros.Resource implements IVault {
+    protected scope: ros.Construct;
+    protected id: string;
+    public readonly props: VaultProps;
+    protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute BackupPlanStatistics: The statistics of backup plans that use the backup vault.
+     */
+    public readonly attrBackupPlanStatistics: ros.IResolvable | string;
+
+    /**
+     * Attribute BytesDone: The amount of data that is backed up. Unit: bytes.
+     */
+    public readonly attrBytesDone: ros.IResolvable | string;
+
+    /**
+     * Attribute CreateTime: The time when the backup vault was created. This value is a UNIX timestamp. Unit: seconds.
+     */
+    public readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Dedup: Indicates whether the deduplication feature is enabled.
+     */
+    public readonly attrDedup: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: The description of the backup vault.
+     */
+    public readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute IndexAvailable: Indicates whether indexes are available. Indexes are available when they are not being updated.
+     */
+    public readonly attrIndexAvailable: ros.IResolvable | string;
+
+    /**
+     * Attribute IndexLevel: The index level.
+- **OFF**: No indexes are created.
+- **META**: Metadata indexes are created.
+- **ALL**: Full-text indexes are created.
+     */
+    public readonly attrIndexLevel: ros.IResolvable | string;
+
+    /**
+     * Attribute IndexUpdateTime: The time when the index was updated.
+     */
+    public readonly attrIndexUpdateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute LatestReplicationTime: The time when the last remote backup was synchronized. This value is a UNIX timestamp. Unit: seconds.
+     */
+    public readonly attrLatestReplicationTime: ros.IResolvable | string;
+
+    /**
+     * Attribute PaymentType: PaymentType.
+     */
+    public readonly attrPaymentType: ros.IResolvable | string;
+
+    /**
+     * Attribute RedundancyType: The data redundancy type of the backup vault. Valid values:
+- **LRS**: Locally redundant storage (LRS) is enabled for the backup vault. HBR stores the copies of each object on multiple devices of different facilities in the same zone. This way, HBR ensures data durability and availability even if hardware failures occur.
+- **ZRS**: Zone-redundant storage (ZRS) is enabled for the backup vault. HBR uses the multi-zone mechanism to distribute data across three zones within the same region. If a zone fails, the data that is stored in the other two zones is still accessible.
+     */
+    public readonly attrRedundancyType: ros.IResolvable | string;
+
+    /**
+     * Attribute Replication: Indicates whether the backup vault is a remote backup vault. Valid values:
+- **true**: The backup vault is a remote backup vault.
+- **false**: The backup vault is an on-premises backup vault.
+     */
+    public readonly attrReplication: ros.IResolvable | string;
+
+    /**
+     * Attribute ReplicationProgress: The progress of data synchronization from the backup vault to the mirror vault.
+     */
+    public readonly attrReplicationProgress: ros.IResolvable | string;
+
+    /**
+     * Attribute ReplicationSourceRegionId: The ID of the region where the remote backup vault resides.
+     */
+    public readonly attrReplicationSourceRegionId: ros.IResolvable | string;
+
+    /**
+     * Attribute ReplicationSourceVaultId: The ID of the source vault that corresponds to the remote backup vault.
+     */
+    public readonly attrReplicationSourceVaultId: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: The ID of the resource group.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute Retention: The retention period of the backup vault. Unit: days.
+     */
+    public readonly attrRetention: ros.IResolvable | string;
+
+    /**
+     * Attribute SearchEnabled: Indicates whether the backup search feature is enabled.
+     */
+    public readonly attrSearchEnabled: ros.IResolvable | string;
+
+    /**
+     * Attribute SourceTypes: The information about the data source.
+     */
+    public readonly attrSourceTypes: ros.IResolvable | string;
+
+    /**
+     * Attribute StorageSize: The usage of the backup vault. Unit: bytes.
+     */
+    public readonly attrStorageSize: ros.IResolvable | string;
+
+    /**
+     * Attribute Tags: The tags of the backup vault.
+     */
+    public readonly attrTags: ros.IResolvable | string;
+
+    /**
+     * Attribute TrialInfo: The free trial information.
+     */
+    public readonly attrTrialInfo: ros.IResolvable | string;
+
+    /**
+     * Attribute UpdatedTime: The time when the backup vault was updated. This value is a UNIX timestamp. Unit: seconds.
+     */
+    public readonly attrUpdatedTime: ros.IResolvable | string;
+
+    /**
+     * Attribute VaultId: The ID of the backup vault.
+     */
+    public readonly attrVaultId: ros.IResolvable | string;
+
+    /**
+     * Attribute VaultName: The name of the backup vault.
+     */
+    public readonly attrVaultName: ros.IResolvable | string;
+
+    /**
+     * Attribute VaultStatusMessage: The status message that is returned when the backup vault is in the ERROR state. This parameter is available only for remote backup vaults. Valid values:
+- **UNKNOWN_ERROR*: An unknown error occurs.
+- **SOURCE_VAULT_ALREADY_HAS_REPLICATION**: A mirror vault is configured for the source vault.
+     */
+    public readonly attrVaultStatusMessage: ros.IResolvable | string;
+
+    /**
+     * Attribute VaultStorageClass: The storage type of the backup vault. Valid value: **STANDARD**, which indicates standard storage.
+     */
+    public readonly attrVaultStorageClass: ros.IResolvable | string;
+
+    /**
+     * Attribute VaultType: The type of the backup vault. Valid value: **STANDARD**, which indicates a standard backup vault.
+     */
+    public readonly attrVaultType: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

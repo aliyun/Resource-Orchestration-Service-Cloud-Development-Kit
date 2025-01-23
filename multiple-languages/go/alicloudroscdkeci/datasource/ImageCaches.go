@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::ECI::ImageCaches`, which is used to query multiple image caches at a time.
 type ImageCaches interface {
 	alicloudroscdkcore.Resource
+	IImageCaches
 	// Attribute ImageCacheIds: The list of image cache IDs.
-	AttrImageCacheIds() alicloudroscdkcore.IResolvable
+	AttrImageCacheIds() interface{}
 	// Attribute ImageCaches: The list of image caches.
-	AttrImageCaches() alicloudroscdkcore.IResolvable
+	AttrImageCaches() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type ImageCaches interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ImageCachesProps
-	SetProps(val *ImageCachesProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type ImageCaches interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type ImageCaches interface {
 // The jsii proxy struct for ImageCaches
 type jsiiProxy_ImageCaches struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IImageCaches
 }
 
-func (j *jsiiProxy_ImageCaches) AttrImageCacheIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ImageCaches) AttrImageCacheIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrImageCacheIds",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_ImageCaches) AttrImageCacheIds() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_ImageCaches) AttrImageCaches() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ImageCaches) AttrImageCaches() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrImageCaches",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_ImageCaches) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ImageCaches) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_ImageCaches)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ImageCaches)SetProps(val *ImageCachesProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_ImageCaches)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (i *jsiiProxy_ImageCaches) ApplyRemovalPolicy(policy alicloudroscdkcore.Rem
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (i *jsiiProxy_ImageCaches) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		i,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_ImageCaches) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		i,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_ImageCaches) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		i,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (i *jsiiProxy_ImageCaches) GeneratePhysicalName() *string {

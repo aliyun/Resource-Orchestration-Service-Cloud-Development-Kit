@@ -4,6 +4,12 @@
 @alicloud/ros-cdk-waf.DomainConfig=com.aliyun.ros.cdk.waf.DomainConfig
 @alicloud/ros-cdk-waf.DomainConfigProps=com.aliyun.ros.cdk.waf.DomainConfigProps
 @alicloud/ros-cdk-waf.DomainProps=com.aliyun.ros.cdk.waf.DomainProps
+@alicloud/ros-cdk-waf.IAclRule=com.aliyun.ros.cdk.waf.IAclRule
+@alicloud/ros-cdk-waf.IDomain=com.aliyun.ros.cdk.waf.IDomain
+@alicloud/ros-cdk-waf.IDomainConfig=com.aliyun.ros.cdk.waf.IDomainConfig
+@alicloud/ros-cdk-waf.IInstance=com.aliyun.ros.cdk.waf.IInstance
+@alicloud/ros-cdk-waf.ILogServiceEnable=com.aliyun.ros.cdk.waf.ILogServiceEnable
+@alicloud/ros-cdk-waf.IWafSwitch=com.aliyun.ros.cdk.waf.IWafSwitch
 @alicloud/ros-cdk-waf.Instance=com.aliyun.ros.cdk.waf.Instance
 @alicloud/ros-cdk-waf.InstanceProps=com.aliyun.ros.cdk.waf.InstanceProps
 @alicloud/ros-cdk-waf.LogServiceEnable=com.aliyun.ros.cdk.waf.LogServiceEnable

@@ -12,14 +12,24 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::MONGODB::ShardingInstance`, which is used to create or clone an ApsaraDB for MongoDB sharded cluster instance.
 type ShardingInstance interface {
 	alicloudroscdkcore.Resource
+	IShardingInstance
 	// Attribute DBInstanceId: The instance id of created mongodb instance.
-	AttrDbInstanceId() alicloudroscdkcore.IResolvable
+	AttrDbInstanceId() interface{}
 	// Attribute DBInstanceStatus: Status of mongodb instance.
-	AttrDbInstanceStatus() alicloudroscdkcore.IResolvable
+	AttrDbInstanceStatus() interface{}
 	// Attribute OrderId: Order Id of created instance.
-	AttrOrderId() alicloudroscdkcore.IResolvable
+	AttrOrderId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -34,7 +44,6 @@ type ShardingInstance interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ShardingInstanceProps
-	SetProps(val *ShardingInstanceProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -47,6 +56,9 @@ type ShardingInstance interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -99,10 +111,11 @@ type ShardingInstance interface {
 // The jsii proxy struct for ShardingInstance
 type jsiiProxy_ShardingInstance struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IShardingInstance
 }
 
-func (j *jsiiProxy_ShardingInstance) AttrDbInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ShardingInstance) AttrDbInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbInstanceId",
@@ -111,8 +124,8 @@ func (j *jsiiProxy_ShardingInstance) AttrDbInstanceId() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_ShardingInstance) AttrDbInstanceStatus() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ShardingInstance) AttrDbInstanceStatus() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbInstanceStatus",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_ShardingInstance) AttrDbInstanceStatus() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_ShardingInstance) AttrOrderId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ShardingInstance) AttrOrderId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOrderId",
@@ -136,6 +149,16 @@ func (j *jsiiProxy_ShardingInstance) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ShardingInstance) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -273,17 +296,6 @@ func (j *jsiiProxy_ShardingInstance)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ShardingInstance)SetProps(val *ShardingInstanceProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_ShardingInstance)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -375,6 +387,45 @@ func (s *jsiiProxy_ShardingInstance) ApplyRemovalPolicy(policy alicloudroscdkcor
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (s *jsiiProxy_ShardingInstance) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		s,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_ShardingInstance) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_ShardingInstance) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (s *jsiiProxy_ShardingInstance) GeneratePhysicalName() *string {

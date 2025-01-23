@@ -26,25 +26,41 @@ export interface RetcodeAppProps {
 }
 
 /**
+ * Represents a `RetcodeApp`.
+ */
+export interface IRetcodeApp extends ros.IResource {
+    readonly props: RetcodeAppProps;
+
+    /**
+     * Attribute AppId: The ID of the application for which you created the browser monitoring job.
+     */
+    readonly attrAppId: ros.IResolvable | string;
+
+    /**
+     * Attribute Pid: The PID.
+     */
+    readonly attrPid: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::RetcodeApp`, which is used to create a browser monitoring task.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRetcodeApp`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-retcodeapp
  */
-export class RetcodeApp extends ros.Resource {
+export class RetcodeApp extends ros.Resource implements IRetcodeApp {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: RetcodeAppProps;
+    public readonly props: RetcodeAppProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AppId: The ID of the application for which you created the browser monitoring job.
      */
-    public readonly attrAppId: ros.IResolvable;
+    public readonly attrAppId: ros.IResolvable | string;
 
     /**
      * Attribute Pid: The PID.
      */
-    public readonly attrPid: ros.IResolvable;
+    public readonly attrPid: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

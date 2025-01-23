@@ -12,22 +12,32 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::CustomerGateway`, which is used to query the information about a customer gateway.
 type CustomerGateway interface {
 	alicloudroscdkcore.Resource
+	ICustomerGateway
 	// Attribute Asn: Asn.
-	AttrAsn() alicloudroscdkcore.IResolvable
+	AttrAsn() interface{}
 	// Attribute AuthKey: The authentication key of the local data center gateway device BGP routing protocol.
-	AttrAuthKey() alicloudroscdkcore.IResolvable
+	AttrAuthKey() interface{}
 	// Attribute CreateTime: The time when the customer gateway was created.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute CustomerGatewayId: The ID of the customer gateway.
-	AttrCustomerGatewayId() alicloudroscdkcore.IResolvable
+	AttrCustomerGatewayId() interface{}
 	// Attribute CustomerGatewayName: The name of the customer gateway.
-	AttrCustomerGatewayName() alicloudroscdkcore.IResolvable
+	AttrCustomerGatewayName() interface{}
 	// Attribute Description: The description of the customer gateway.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute IpAddress: The IP address of the customer gateway.
-	AttrIpAddress() alicloudroscdkcore.IResolvable
+	AttrIpAddress() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -42,7 +52,6 @@ type CustomerGateway interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *CustomerGatewayProps
-	SetProps(val *CustomerGatewayProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -55,6 +64,9 @@ type CustomerGateway interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -107,10 +119,11 @@ type CustomerGateway interface {
 // The jsii proxy struct for CustomerGateway
 type jsiiProxy_CustomerGateway struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ICustomerGateway
 }
 
-func (j *jsiiProxy_CustomerGateway) AttrAsn() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CustomerGateway) AttrAsn() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAsn",
@@ -119,8 +132,8 @@ func (j *jsiiProxy_CustomerGateway) AttrAsn() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_CustomerGateway) AttrAuthKey() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CustomerGateway) AttrAuthKey() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAuthKey",
@@ -129,8 +142,8 @@ func (j *jsiiProxy_CustomerGateway) AttrAuthKey() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_CustomerGateway) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CustomerGateway) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -139,8 +152,8 @@ func (j *jsiiProxy_CustomerGateway) AttrCreateTime() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_CustomerGateway) AttrCustomerGatewayId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CustomerGateway) AttrCustomerGatewayId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCustomerGatewayId",
@@ -149,8 +162,8 @@ func (j *jsiiProxy_CustomerGateway) AttrCustomerGatewayId() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_CustomerGateway) AttrCustomerGatewayName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CustomerGateway) AttrCustomerGatewayName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCustomerGatewayName",
@@ -159,8 +172,8 @@ func (j *jsiiProxy_CustomerGateway) AttrCustomerGatewayName() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_CustomerGateway) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CustomerGateway) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -169,8 +182,8 @@ func (j *jsiiProxy_CustomerGateway) AttrDescription() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_CustomerGateway) AttrIpAddress() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CustomerGateway) AttrIpAddress() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIpAddress",
@@ -184,6 +197,16 @@ func (j *jsiiProxy_CustomerGateway) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CustomerGateway) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -321,17 +344,6 @@ func (j *jsiiProxy_CustomerGateway)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CustomerGateway)SetProps(val *CustomerGatewayProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_CustomerGateway)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -423,6 +435,45 @@ func (c *jsiiProxy_CustomerGateway) ApplyRemovalPolicy(policy alicloudroscdkcore
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (c *jsiiProxy_CustomerGateway) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		c,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (c *jsiiProxy_CustomerGateway) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		c,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (c *jsiiProxy_CustomerGateway) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (c *jsiiProxy_CustomerGateway) GeneratePhysicalName() *string {

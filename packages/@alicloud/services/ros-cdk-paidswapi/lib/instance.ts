@@ -65,90 +65,171 @@ export interface InstanceProps {
 }
 
 /**
+ * Represents a `Instance`.
+ */
+export interface IInstance extends ros.IResource {
+    readonly props: InstanceProps;
+
+    /**
+     * Attribute Accessibility: Whether the workspace is visible to others.
+     */
+    readonly attrAccessibility: ros.IResolvable | string;
+
+    /**
+     * Attribute Datasets: A collection of datasets.
+     */
+    readonly attrDatasets: ros.IResolvable | string;
+
+    /**
+     * Attribute EcsSpec: The ECS specification of the instance.
+     */
+    readonly attrEcsSpec: ros.IResolvable | string;
+
+    /**
+     * Attribute EnvironmentVariables: Environment variable.
+     */
+    readonly attrEnvironmentVariables: ros.IResolvable | string;
+
+    /**
+     * Attribute ImageUrl: The mirror address.
+     */
+    readonly attrImageUrl: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: The first ID of the resource.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceName: The instance name.
+     */
+    readonly attrInstanceName: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceUrl: The instance address.
+     */
+    readonly attrInstanceUrl: ros.IResolvable | string;
+
+    /**
+     * Attribute JupyterlabUrl: The jupyterlab address.
+     */
+    readonly attrJupyterlabUrl: ros.IResolvable | string;
+
+    /**
+     * Attribute Labels: User-defined labels.
+     */
+    readonly attrLabels: ros.IResolvable | string;
+
+    /**
+     * Attribute PaymentType: The payment type of the resource.
+     */
+    readonly attrPaymentType: ros.IResolvable | string;
+
+    /**
+     * Attribute TerminalUrl: The terminal address.
+     */
+    readonly attrTerminalUrl: ros.IResolvable | string;
+
+    /**
+     * Attribute UserVpc: User vpc configuration.
+     */
+    readonly attrUserVpc: ros.IResolvable | string;
+
+    /**
+     * Attribute WebIDEUrl: The web IDE address.
+     */
+    readonly attrWebIdeUrl: ros.IResolvable | string;
+
+    /**
+     * Attribute WorkspaceId: The Id of the workspace.
+     */
+    readonly attrWorkspaceId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::PaiDswApi::Instance`, which is used to create a Data Science Workshop (DSW) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidswapi-instance
  */
-export class Instance extends ros.Resource {
+export class Instance extends ros.Resource implements IInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InstanceProps;
+    public readonly props: InstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Accessibility: Whether the workspace is visible to others.
      */
-    public readonly attrAccessibility: ros.IResolvable;
+    public readonly attrAccessibility: ros.IResolvable | string;
 
     /**
      * Attribute Datasets: A collection of datasets.
      */
-    public readonly attrDatasets: ros.IResolvable;
+    public readonly attrDatasets: ros.IResolvable | string;
 
     /**
      * Attribute EcsSpec: The ECS specification of the instance.
      */
-    public readonly attrEcsSpec: ros.IResolvable;
+    public readonly attrEcsSpec: ros.IResolvable | string;
 
     /**
      * Attribute EnvironmentVariables: Environment variable.
      */
-    public readonly attrEnvironmentVariables: ros.IResolvable;
+    public readonly attrEnvironmentVariables: ros.IResolvable | string;
 
     /**
      * Attribute ImageUrl: The mirror address.
      */
-    public readonly attrImageUrl: ros.IResolvable;
+    public readonly attrImageUrl: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: The first ID of the resource.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute InstanceName: The instance name.
      */
-    public readonly attrInstanceName: ros.IResolvable;
+    public readonly attrInstanceName: ros.IResolvable | string;
 
     /**
      * Attribute InstanceUrl: The instance address.
      */
-    public readonly attrInstanceUrl: ros.IResolvable;
+    public readonly attrInstanceUrl: ros.IResolvable | string;
 
     /**
      * Attribute JupyterlabUrl: The jupyterlab address.
      */
-    public readonly attrJupyterlabUrl: ros.IResolvable;
+    public readonly attrJupyterlabUrl: ros.IResolvable | string;
 
     /**
      * Attribute Labels: User-defined labels.
      */
-    public readonly attrLabels: ros.IResolvable;
+    public readonly attrLabels: ros.IResolvable | string;
 
     /**
      * Attribute PaymentType: The payment type of the resource.
      */
-    public readonly attrPaymentType: ros.IResolvable;
+    public readonly attrPaymentType: ros.IResolvable | string;
 
     /**
      * Attribute TerminalUrl: The terminal address.
      */
-    public readonly attrTerminalUrl: ros.IResolvable;
+    public readonly attrTerminalUrl: ros.IResolvable | string;
 
     /**
      * Attribute UserVpc: User vpc configuration.
      */
-    public readonly attrUserVpc: ros.IResolvable;
+    public readonly attrUserVpc: ros.IResolvable | string;
 
     /**
      * Attribute WebIDEUrl: The web IDE address.
      */
-    public readonly attrWebIdeUrl: ros.IResolvable;
+    public readonly attrWebIdeUrl: ros.IResolvable | string;
 
     /**
      * Attribute WorkspaceId: The Id of the workspace.
      */
-    public readonly attrWorkspaceId: ros.IResolvable;
+    public readonly attrWorkspaceId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

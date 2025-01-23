@@ -33,6 +33,8 @@ type ASKClusterProps struct {
 	EndpointPublicAccess interface{} `field:"optional" json:"endpointPublicAccess" yaml:"endpointPublicAccess"`
 	// Property kubernetesVersion: The version of the Kubernetes cluster.
 	KubernetesVersion interface{} `field:"optional" json:"kubernetesVersion" yaml:"kubernetesVersion"`
+	// Property maintenanceWindow: Cluster maintenance window.
+	MaintenanceWindow interface{} `field:"optional" json:"maintenanceWindow" yaml:"maintenanceWindow"`
 	// Property privateZone: Whether to enable PrivateZone for service discovery.
 	PrivateZone interface{} `field:"optional" json:"privateZone" yaml:"privateZone"`
 	// Property resourceGroupId: The ID of resource group.

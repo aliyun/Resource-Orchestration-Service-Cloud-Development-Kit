@@ -12,16 +12,26 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::WAF3::TGW`, which is used to add a resource to Web Application Firewall (WAF) in transparent proxy mode.
 type Tgw interface {
 	alicloudroscdkcore.Resource
+	ITgw
 	// Attribute InstanceId: The ID of the WAF instance.
-	AttrInstanceId() alicloudroscdkcore.IResolvable
+	AttrInstanceId() interface{}
 	// Attribute Port: Access the cloud product port of WAF.
-	AttrPort() alicloudroscdkcore.IResolvable
+	AttrPort() interface{}
 	// Attribute ResourceProduct: Access to WAF cloud products.
-	AttrResourceProduct() alicloudroscdkcore.IResolvable
+	AttrResourceProduct() interface{}
 	// Attribute TgwId: The protection object ID of the transparent access resource.
-	AttrTgwId() alicloudroscdkcore.IResolvable
+	AttrTgwId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -36,7 +46,6 @@ type Tgw interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *TGWProps
-	SetProps(val *TGWProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -49,6 +58,9 @@ type Tgw interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -101,10 +113,11 @@ type Tgw interface {
 // The jsii proxy struct for Tgw
 type jsiiProxy_Tgw struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ITgw
 }
 
-func (j *jsiiProxy_Tgw) AttrInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Tgw) AttrInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceId",
@@ -113,8 +126,8 @@ func (j *jsiiProxy_Tgw) AttrInstanceId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Tgw) AttrPort() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Tgw) AttrPort() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPort",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_Tgw) AttrPort() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Tgw) AttrResourceProduct() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Tgw) AttrResourceProduct() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceProduct",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_Tgw) AttrResourceProduct() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Tgw) AttrTgwId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Tgw) AttrTgwId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTgwId",
@@ -148,6 +161,16 @@ func (j *jsiiProxy_Tgw) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Tgw) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -285,17 +308,6 @@ func (j *jsiiProxy_Tgw)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Tgw)SetProps(val *TGWProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Tgw)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -387,6 +399,45 @@ func (t *jsiiProxy_Tgw) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPoli
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (t *jsiiProxy_Tgw) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		t,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (t *jsiiProxy_Tgw) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		t,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (t *jsiiProxy_Tgw) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		t,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (t *jsiiProxy_Tgw) GeneratePhysicalName() *string {

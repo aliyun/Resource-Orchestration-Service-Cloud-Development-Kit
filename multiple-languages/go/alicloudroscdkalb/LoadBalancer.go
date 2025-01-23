@@ -12,20 +12,30 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ALB::LoadBalancer`, which is used to create an Application Load Balancer (ALB) instance.
 type LoadBalancer interface {
 	alicloudroscdkcore.Resource
+	ILoadBalancer
 	// Attribute AddressType: The type of IP address that the ALB instance uses to provide services.
-	AttrAddressType() alicloudroscdkcore.IResolvable
+	AttrAddressType() interface{}
 	// Attribute DNSName: The domain name of the ALB instance.
-	AttrDnsName() alicloudroscdkcore.IResolvable
+	AttrDnsName() interface{}
 	// Attribute LoadBalancerEdition: The edition of the ALB instance.
-	AttrLoadBalancerEdition() alicloudroscdkcore.IResolvable
+	AttrLoadBalancerEdition() interface{}
 	// Attribute LoadBalancerId: The ID of the ALB instance.
-	AttrLoadBalancerId() alicloudroscdkcore.IResolvable
+	AttrLoadBalancerId() interface{}
 	// Attribute VpcId: The ID of the virtual private cloud (VPC) where the ALB instance is deployed.
-	AttrVpcId() alicloudroscdkcore.IResolvable
+	AttrVpcId() interface{}
 	// Attribute ZoneMappings: The zones, vSwitches and addresses which are mapped to the zones.
-	AttrZoneMappings() alicloudroscdkcore.IResolvable
+	AttrZoneMappings() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -40,7 +50,6 @@ type LoadBalancer interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *LoadBalancerProps
-	SetProps(val *LoadBalancerProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -53,6 +62,9 @@ type LoadBalancer interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -105,10 +117,11 @@ type LoadBalancer interface {
 // The jsii proxy struct for LoadBalancer
 type jsiiProxy_LoadBalancer struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ILoadBalancer
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrAddressType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrAddressType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAddressType",
@@ -117,8 +130,8 @@ func (j *jsiiProxy_LoadBalancer) AttrAddressType() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrDnsName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrDnsName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDnsName",
@@ -127,8 +140,8 @@ func (j *jsiiProxy_LoadBalancer) AttrDnsName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrLoadBalancerEdition() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrLoadBalancerEdition() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLoadBalancerEdition",
@@ -137,8 +150,8 @@ func (j *jsiiProxy_LoadBalancer) AttrLoadBalancerEdition() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrLoadBalancerId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrLoadBalancerId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLoadBalancerId",
@@ -147,8 +160,8 @@ func (j *jsiiProxy_LoadBalancer) AttrLoadBalancerId() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrVpcId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrVpcId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVpcId",
@@ -157,8 +170,8 @@ func (j *jsiiProxy_LoadBalancer) AttrVpcId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrZoneMappings() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrZoneMappings() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrZoneMappings",
@@ -172,6 +185,16 @@ func (j *jsiiProxy_LoadBalancer) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LoadBalancer) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -309,17 +332,6 @@ func (j *jsiiProxy_LoadBalancer)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_LoadBalancer)SetProps(val *LoadBalancerProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_LoadBalancer)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -411,6 +423,45 @@ func (l *jsiiProxy_LoadBalancer) ApplyRemovalPolicy(policy alicloudroscdkcore.Re
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (l *jsiiProxy_LoadBalancer) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		l,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (l *jsiiProxy_LoadBalancer) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		l,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (l *jsiiProxy_LoadBalancer) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		l,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (l *jsiiProxy_LoadBalancer) GeneratePhysicalName() *string {

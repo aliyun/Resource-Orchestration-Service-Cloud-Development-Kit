@@ -136,30 +136,51 @@ export interface ReadOnlyDBInstanceProps {
 }
 
 /**
+ * Represents a `ReadOnlyDBInstance`.
+ */
+export interface IReadOnlyDBInstance extends ros.IResource {
+    readonly props: ReadOnlyDBInstanceProps;
+
+    /**
+     * Attribute ConnectionString: DB instance connection url by Intranet.
+     */
+    readonly attrConnectionString: ros.IResolvable | string;
+
+    /**
+     * Attribute DBInstanceId: The instance id of created database instance.
+     */
+    readonly attrDbInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute Port: Intranet port of created DB instance.
+     */
+    readonly attrPort: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::ReadOnlyDBInstance`, which is used to create a read-only ApsaraDB RDS instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosReadOnlyDBInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-readonlydbinstance
  */
-export class ReadOnlyDBInstance extends ros.Resource {
+export class ReadOnlyDBInstance extends ros.Resource implements IReadOnlyDBInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ReadOnlyDBInstanceProps;
+    public readonly props: ReadOnlyDBInstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ConnectionString: DB instance connection url by Intranet.
      */
-    public readonly attrConnectionString: ros.IResolvable;
+    public readonly attrConnectionString: ros.IResolvable | string;
 
     /**
      * Attribute DBInstanceId: The instance id of created database instance.
      */
-    public readonly attrDbInstanceId: ros.IResolvable;
+    public readonly attrDbInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute Port: Intranet port of created DB instance.
      */
-    public readonly attrPort: ros.IResolvable;
+    public readonly attrPort: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

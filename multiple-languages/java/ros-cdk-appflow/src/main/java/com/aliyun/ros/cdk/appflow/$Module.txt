@@ -1,11 +1,14 @@
 @alicloud/ros-cdk-appflow.Flow=com.aliyun.ros.cdk.appflow.Flow
 @alicloud/ros-cdk-appflow.FlowProps=com.aliyun.ros.cdk.appflow.FlowProps
+@alicloud/ros-cdk-appflow.IFlow=com.aliyun.ros.cdk.appflow.IFlow
+@alicloud/ros-cdk-appflow.IUserAuthConfig=com.aliyun.ros.cdk.appflow.IUserAuthConfig
 @alicloud/ros-cdk-appflow.RosFlow=com.aliyun.ros.cdk.appflow.RosFlow
 @alicloud/ros-cdk-appflow.RosFlowProps=com.aliyun.ros.cdk.appflow.RosFlowProps
 @alicloud/ros-cdk-appflow.RosUserAuthConfig=com.aliyun.ros.cdk.appflow.RosUserAuthConfig
 @alicloud/ros-cdk-appflow.RosUserAuthConfigProps=com.aliyun.ros.cdk.appflow.RosUserAuthConfigProps
 @alicloud/ros-cdk-appflow.UserAuthConfig=com.aliyun.ros.cdk.appflow.UserAuthConfig
 @alicloud/ros-cdk-appflow.UserAuthConfigProps=com.aliyun.ros.cdk.appflow.UserAuthConfigProps
+@alicloud/ros-cdk-appflow.datasource.IUserAuthConfigs=com.aliyun.ros.cdk.appflow.datasource.IUserAuthConfigs
 @alicloud/ros-cdk-appflow.datasource.RosUserAuthConfigs=com.aliyun.ros.cdk.appflow.datasource.RosUserAuthConfigs
 @alicloud/ros-cdk-appflow.datasource.RosUserAuthConfigsProps=com.aliyun.ros.cdk.appflow.datasource.RosUserAuthConfigsProps
 @alicloud/ros-cdk-appflow.datasource.UserAuthConfigs=com.aliyun.ros.cdk.appflow.datasource.UserAuthConfigs

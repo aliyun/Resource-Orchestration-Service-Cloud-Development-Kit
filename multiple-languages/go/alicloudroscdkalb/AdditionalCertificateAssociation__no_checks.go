@@ -52,10 +52,6 @@ func (j *jsiiProxy_AdditionalCertificateAssociation) validateSetIdParameters(val
 	return nil
 }
 
-func (j *jsiiProxy_AdditionalCertificateAssociation) validateSetPropsParameters(val *AdditionalCertificateAssociationProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_AdditionalCertificateAssociation) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

@@ -52,10 +52,6 @@ func (j *jsiiProxy_TrFirewallRoutePolicy) validateSetIdParameters(val *string) e
 	return nil
 }
 
-func (j *jsiiProxy_TrFirewallRoutePolicy) validateSetPropsParameters(val *TrFirewallRoutePolicyProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_TrFirewallRoutePolicy) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

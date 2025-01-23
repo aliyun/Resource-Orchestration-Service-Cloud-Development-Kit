@@ -12,24 +12,34 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::PrivateLink::VpcEndpoint`, which is used to create an endpoint.
 type VpcEndpoint interface {
 	alicloudroscdkcore.Resource
+	IVpcEndpoint
 	// Attribute Bandwidth: The bandwidth of the endpoint.
-	AttrBandwidth() alicloudroscdkcore.IResolvable
+	AttrBandwidth() interface{}
 	// Attribute EndpointDomain: The domain name of the endpoint.
-	AttrEndpointDomain() alicloudroscdkcore.IResolvable
+	AttrEndpointDomain() interface{}
 	// Attribute EndpointId: The ID of the endpoint.
-	AttrEndpointId() alicloudroscdkcore.IResolvable
+	AttrEndpointId() interface{}
 	// Attribute EndpointName: The name of the endpoint.
-	AttrEndpointName() alicloudroscdkcore.IResolvable
+	AttrEndpointName() interface{}
 	// Attribute ServiceId: The ID of endpoint service that is associated with the endpoint.
-	AttrServiceId() alicloudroscdkcore.IResolvable
+	AttrServiceId() interface{}
 	// Attribute ServiceName: The name of endpoint service that is associated with the endpoint.
-	AttrServiceName() alicloudroscdkcore.IResolvable
+	AttrServiceName() interface{}
 	// Attribute VpcId: The vpc ID of endpoint.
-	AttrVpcId() alicloudroscdkcore.IResolvable
+	AttrVpcId() interface{}
 	// Attribute ZoneDomains: The zone domains.
-	AttrZoneDomains() alicloudroscdkcore.IResolvable
+	AttrZoneDomains() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -44,7 +54,6 @@ type VpcEndpoint interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *VpcEndpointProps
-	SetProps(val *VpcEndpointProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -57,6 +66,9 @@ type VpcEndpoint interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -109,10 +121,11 @@ type VpcEndpoint interface {
 // The jsii proxy struct for VpcEndpoint
 type jsiiProxy_VpcEndpoint struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IVpcEndpoint
 }
 
-func (j *jsiiProxy_VpcEndpoint) AttrBandwidth() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VpcEndpoint) AttrBandwidth() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBandwidth",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_VpcEndpoint) AttrBandwidth() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_VpcEndpoint) AttrEndpointDomain() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VpcEndpoint) AttrEndpointDomain() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEndpointDomain",
@@ -131,8 +144,8 @@ func (j *jsiiProxy_VpcEndpoint) AttrEndpointDomain() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_VpcEndpoint) AttrEndpointId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VpcEndpoint) AttrEndpointId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEndpointId",
@@ -141,8 +154,8 @@ func (j *jsiiProxy_VpcEndpoint) AttrEndpointId() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_VpcEndpoint) AttrEndpointName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VpcEndpoint) AttrEndpointName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEndpointName",
@@ -151,8 +164,8 @@ func (j *jsiiProxy_VpcEndpoint) AttrEndpointName() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_VpcEndpoint) AttrServiceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VpcEndpoint) AttrServiceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrServiceId",
@@ -161,8 +174,8 @@ func (j *jsiiProxy_VpcEndpoint) AttrServiceId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_VpcEndpoint) AttrServiceName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VpcEndpoint) AttrServiceName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrServiceName",
@@ -171,8 +184,8 @@ func (j *jsiiProxy_VpcEndpoint) AttrServiceName() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_VpcEndpoint) AttrVpcId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VpcEndpoint) AttrVpcId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVpcId",
@@ -181,8 +194,8 @@ func (j *jsiiProxy_VpcEndpoint) AttrVpcId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_VpcEndpoint) AttrZoneDomains() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VpcEndpoint) AttrZoneDomains() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrZoneDomains",
@@ -196,6 +209,16 @@ func (j *jsiiProxy_VpcEndpoint) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcEndpoint) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -333,17 +356,6 @@ func (j *jsiiProxy_VpcEndpoint)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_VpcEndpoint)SetProps(val *VpcEndpointProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_VpcEndpoint)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -435,6 +447,45 @@ func (v *jsiiProxy_VpcEndpoint) ApplyRemovalPolicy(policy alicloudroscdkcore.Rem
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (v *jsiiProxy_VpcEndpoint) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		v,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (v *jsiiProxy_VpcEndpoint) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		v,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (v *jsiiProxy_VpcEndpoint) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		v,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (v *jsiiProxy_VpcEndpoint) GeneratePhysicalName() *string {

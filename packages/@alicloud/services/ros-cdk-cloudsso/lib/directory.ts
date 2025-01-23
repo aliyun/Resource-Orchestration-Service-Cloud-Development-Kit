@@ -19,20 +19,31 @@ export interface DirectoryProps {
 }
 
 /**
+ * Represents a `Directory`.
+ */
+export interface IDirectory extends ros.IResource {
+    readonly props: DirectoryProps;
+
+    /**
+     * Attribute DirectoryId: The ID of the directory.
+     */
+    readonly attrDirectoryId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::Directory`, which is used to create a directory.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDirectory`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-directory
  */
-export class Directory extends ros.Resource {
+export class Directory extends ros.Resource implements IDirectory {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DirectoryProps;
+    public readonly props: DirectoryProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DirectoryId: The ID of the directory.
      */
-    public readonly attrDirectoryId: ros.IResolvable;
+    public readonly attrDirectoryId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

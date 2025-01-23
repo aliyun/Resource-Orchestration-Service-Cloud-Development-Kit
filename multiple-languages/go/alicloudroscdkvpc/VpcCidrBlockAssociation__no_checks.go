@@ -52,10 +52,6 @@ func (j *jsiiProxy_VpcCidrBlockAssociation) validateSetIdParameters(val *string)
 	return nil
 }
 
-func (j *jsiiProxy_VpcCidrBlockAssociation) validateSetPropsParameters(val *VpcCidrBlockAssociationProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_VpcCidrBlockAssociation) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

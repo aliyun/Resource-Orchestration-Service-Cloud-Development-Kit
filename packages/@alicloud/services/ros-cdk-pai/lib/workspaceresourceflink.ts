@@ -38,35 +38,61 @@ export interface WorkspaceResourceFlinkProps {
 }
 
 /**
+ * Represents a `WorkspaceResourceFlink`.
+ */
+export interface IWorkspaceResourceFlink extends ros.IResource {
+    readonly props: WorkspaceResourceFlinkProps;
+
+    /**
+     * Attribute CreateTime: The creation time of the resource.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute GroupName: Resource group name. If you want to obtain a resource group name, see [ListResources].
+     */
+    readonly attrGroupName: ros.IResolvable | string;
+
+    /**
+     * Attribute IsDefault: Indicates whether it is the default resource. Currently, this parameter only supports the input of true and does not support false.
+     */
+    readonly attrIsDefault: ros.IResolvable | string;
+
+    /**
+     * Attribute Resources: Resource List.
+     */
+    readonly attrResources: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::PAI::WorkspaceResourceFlink`, which is used to associate Realtime Compute for Apache Flink resources with a workspace.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWorkspaceResourceFlink`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspaceresourceflink
  */
-export class WorkspaceResourceFlink extends ros.Resource {
+export class WorkspaceResourceFlink extends ros.Resource implements IWorkspaceResourceFlink {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: WorkspaceResourceFlinkProps;
+    public readonly props: WorkspaceResourceFlinkProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateTime: The creation time of the resource.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute GroupName: Resource group name. If you want to obtain a resource group name, see [ListResources].
      */
-    public readonly attrGroupName: ros.IResolvable;
+    public readonly attrGroupName: ros.IResolvable | string;
 
     /**
      * Attribute IsDefault: Indicates whether it is the default resource. Currently, this parameter only supports the input of true and does not support false.
      */
-    public readonly attrIsDefault: ros.IResolvable;
+    public readonly attrIsDefault: ros.IResolvable | string;
 
     /**
      * Attribute Resources: Resource List.
      */
-    public readonly attrResources: ros.IResolvable;
+    public readonly attrResources: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

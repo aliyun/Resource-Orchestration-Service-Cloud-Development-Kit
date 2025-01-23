@@ -52,10 +52,6 @@ func (j *jsiiProxy_CommonBandwidthPackageIp) validateSetIdParameters(val *string
 	return nil
 }
 
-func (j *jsiiProxy_CommonBandwidthPackageIp) validateSetPropsParameters(val *CommonBandwidthPackageIpProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_CommonBandwidthPackageIp) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

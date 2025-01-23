@@ -93,25 +93,41 @@ export interface Cluster2Props {
 }
 
 /**
+ * Represents a `Cluster2`.
+ */
+export interface ICluster2 extends ros.IResource {
+    readonly props: Cluster2Props;
+
+    /**
+     * Attribute ApplicationLinks: ApplicationLinks of cluster.
+     */
+    readonly attrApplicationLinks: ros.IResolvable | string;
+
+    /**
+     * Attribute ClusterId: Cluster ID.
+     */
+    readonly attrClusterId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::EMR::Cluster2`, which is used to create an E-MapReduce (EMR) cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster2`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-cluster2
  */
-export class Cluster2 extends ros.Resource {
+export class Cluster2 extends ros.Resource implements ICluster2 {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: Cluster2Props;
+    public readonly props: Cluster2Props;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ApplicationLinks: ApplicationLinks of cluster.
      */
-    public readonly attrApplicationLinks: ros.IResolvable;
+    public readonly attrApplicationLinks: ros.IResolvable | string;
 
     /**
      * Attribute ClusterId: Cluster ID.
      */
-    public readonly attrClusterId: ros.IResolvable;
+    public readonly attrClusterId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

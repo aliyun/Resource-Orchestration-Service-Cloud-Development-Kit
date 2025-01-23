@@ -24,25 +24,41 @@ export interface ServiceInstancesProps {
 }
 
 /**
+ * Represents a `ServiceInstances`.
+ */
+export interface IServiceInstances extends ros.IResource {
+    readonly props: ServiceInstancesProps;
+
+    /**
+     * Attribute ServiceInstanceIds: The list of service instance IDs.
+     */
+    readonly attrServiceInstanceIds: ros.IResolvable | string;
+
+    /**
+     * Attribute ServiceInstances: The list of service instances.
+     */
+    readonly attrServiceInstances: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ComputeNest::ServiceInstances`, which is used to query the information about service instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosServiceInstances`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-computenest-serviceinstances
  */
-export class ServiceInstances extends ros.Resource {
+export class ServiceInstances extends ros.Resource implements IServiceInstances {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ServiceInstancesProps;
+    public readonly props: ServiceInstancesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ServiceInstanceIds: The list of service instance IDs.
      */
-    public readonly attrServiceInstanceIds: ros.IResolvable;
+    public readonly attrServiceInstanceIds: ros.IResolvable | string;
 
     /**
      * Attribute ServiceInstances: The list of service instances.
      */
-    public readonly attrServiceInstances: ros.IResolvable;
+    public readonly attrServiceInstances: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

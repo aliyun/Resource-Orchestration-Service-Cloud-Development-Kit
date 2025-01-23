@@ -126,35 +126,61 @@ export interface NetworkInterfaceProps {
 }
 
 /**
+ * Represents a `NetworkInterface`.
+ */
+export interface INetworkInterface extends ros.IResource {
+    readonly props: NetworkInterfaceProps;
+
+    /**
+     * Attribute MacAddress: The MAC address of your Network Interface.
+     */
+    readonly attrMacAddress: ros.IResolvable | string;
+
+    /**
+     * Attribute NetworkInterfaceId: ID of your Network Interface.
+     */
+    readonly attrNetworkInterfaceId: ros.IResolvable | string;
+
+    /**
+     * Attribute PrivateIpAddress: The primary private ip address of your Network Interface.
+     */
+    readonly attrPrivateIpAddress: ros.IResolvable | string;
+
+    /**
+     * Attribute SecondaryPrivateIpAddresses: The secondary private IP addresses of your Network Interface.
+     */
+    readonly attrSecondaryPrivateIpAddresses: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::NetworkInterface`, which is used to create an elastic network interface (ENI).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNetworkInterface`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterface
  */
-export class NetworkInterface extends ros.Resource {
+export class NetworkInterface extends ros.Resource implements INetworkInterface {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: NetworkInterfaceProps;
+    public readonly props: NetworkInterfaceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute MacAddress: The MAC address of your Network Interface.
      */
-    public readonly attrMacAddress: ros.IResolvable;
+    public readonly attrMacAddress: ros.IResolvable | string;
 
     /**
      * Attribute NetworkInterfaceId: ID of your Network Interface.
      */
-    public readonly attrNetworkInterfaceId: ros.IResolvable;
+    public readonly attrNetworkInterfaceId: ros.IResolvable | string;
 
     /**
      * Attribute PrivateIpAddress: The primary private ip address of your Network Interface.
      */
-    public readonly attrPrivateIpAddress: ros.IResolvable;
+    public readonly attrPrivateIpAddress: ros.IResolvable | string;
 
     /**
      * Attribute SecondaryPrivateIpAddresses: The secondary private IP addresses of your Network Interface.
      */
-    public readonly attrSecondaryPrivateIpAddresses: ros.IResolvable;
+    public readonly attrSecondaryPrivateIpAddresses: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

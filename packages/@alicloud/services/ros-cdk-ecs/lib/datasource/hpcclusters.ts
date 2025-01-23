@@ -24,25 +24,41 @@ export interface HpcClustersProps {
 }
 
 /**
+ * Represents a `HpcClusters`.
+ */
+export interface IHpcClusters extends ros.IResource {
+    readonly props: HpcClustersProps;
+
+    /**
+     * Attribute HpcClusterIds: the list of hpc cluster ids
+     */
+    readonly attrHpcClusterIds: ros.IResolvable | string;
+
+    /**
+     * Attribute HpcClusters: The list of hpc clusters.
+     */
+    readonly attrHpcClusters: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::HpcClusters`, which is used to query available High Performance Computing (HPC) clusters.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosHpcClusters`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-hpcclusters
  */
-export class HpcClusters extends ros.Resource {
+export class HpcClusters extends ros.Resource implements IHpcClusters {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: HpcClustersProps;
+    public readonly props: HpcClustersProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute HpcClusterIds: the list of hpc cluster ids
      */
-    public readonly attrHpcClusterIds: ros.IResolvable;
+    public readonly attrHpcClusterIds: ros.IResolvable | string;
 
     /**
      * Attribute HpcClusters: The list of hpc clusters.
      */
-    public readonly attrHpcClusters: ros.IResolvable;
+    public readonly attrHpcClusters: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

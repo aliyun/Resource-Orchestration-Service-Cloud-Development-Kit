@@ -52,10 +52,6 @@ func (j *jsiiProxy_OssExternalStore) validateSetIdParameters(val *string) error 
 	return nil
 }
 
-func (j *jsiiProxy_OssExternalStore) validateSetPropsParameters(val *OssExternalStoreProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_OssExternalStore) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

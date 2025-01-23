@@ -76,30 +76,51 @@ export interface SynDbProps {
 }
 
 /**
+ * Represents a `SynDb`.
+ */
+export interface ISynDb extends ros.IResource {
+    readonly props: SynDbProps;
+
+    /**
+     * Attribute DbClusterId: The id of clickhouse.
+     */
+    readonly attrDbClusterId: ros.IResolvable | string;
+
+    /**
+     * Attribute RdsId: The id of RDS
+     */
+    readonly attrRdsId: ros.IResolvable | string;
+
+    /**
+     * Attribute SynDbs: Sync Dbs
+     */
+    readonly attrSynDbs: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ClickHouse::SynDb`, which is used to create a synchronization task for an ApsaraDB for ClickHouse Community-compatible Edition cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSynDb`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-clickhouse-syndb
  */
-export class SynDb extends ros.Resource {
+export class SynDb extends ros.Resource implements ISynDb {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SynDbProps;
+    public readonly props: SynDbProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DbClusterId: The id of clickhouse.
      */
-    public readonly attrDbClusterId: ros.IResolvable;
+    public readonly attrDbClusterId: ros.IResolvable | string;
 
     /**
      * Attribute RdsId: The id of RDS
      */
-    public readonly attrRdsId: ros.IResolvable;
+    public readonly attrRdsId: ros.IResolvable | string;
 
     /**
      * Attribute SynDbs: Sync Dbs
      */
-    public readonly attrSynDbs: ros.IResolvable;
+    public readonly attrSynDbs: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

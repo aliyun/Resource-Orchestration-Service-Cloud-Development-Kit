@@ -24,70 +24,131 @@ export interface RouteTableProps {
 }
 
 /**
+ * Represents a `RouteTable`.
+ */
+export interface IRouteTable extends ros.IResource {
+    readonly props: RouteTableProps;
+
+    /**
+     * Attribute CreateTime: The creation time of the routing table.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: Description of the routing table.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: Resource group ID.
+     */
+    readonly attrResourceGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute RouteTableId: The ID of the routing table.
+     */
+    readonly attrRouteTableId: ros.IResolvable | string;
+
+    /**
+     * Attribute RouteTableName: The name of the routing table.
+     */
+    readonly attrRouteTableName: ros.IResolvable | string;
+
+    /**
+     * Attribute RouteTableType: The type of routing table.
+     */
+    readonly attrRouteTableType: ros.IResolvable | string;
+
+    /**
+     * Attribute RouterId: The router ID to which the routing table belongs.
+     */
+    readonly attrRouterId: ros.IResolvable | string;
+
+    /**
+     * Attribute RouterType: The router type to which the routing table belongs.
+     */
+    readonly attrRouterType: ros.IResolvable | string;
+
+    /**
+     * Attribute Tags: The tag.
+     */
+    readonly attrTags: ros.IResolvable | string;
+
+    /**
+     * Attribute VSwitchIds: The ID of the switch.
+     */
+    readonly attrVSwitchIds: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcId: The ID of VPC.
+     */
+    readonly attrVpcId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::RouteTable`, which is used to query the information about a route table.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRouteTable`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-routetable
  */
-export class RouteTable extends ros.Resource {
+export class RouteTable extends ros.Resource implements IRouteTable {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: RouteTableProps;
+    public readonly props: RouteTableProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateTime: The creation time of the routing table.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute Description: Description of the routing table.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroupId: Resource group ID.
      */
-    public readonly attrResourceGroupId: ros.IResolvable;
+    public readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Attribute RouteTableId: The ID of the routing table.
      */
-    public readonly attrRouteTableId: ros.IResolvable;
+    public readonly attrRouteTableId: ros.IResolvable | string;
 
     /**
      * Attribute RouteTableName: The name of the routing table.
      */
-    public readonly attrRouteTableName: ros.IResolvable;
+    public readonly attrRouteTableName: ros.IResolvable | string;
 
     /**
      * Attribute RouteTableType: The type of routing table.
      */
-    public readonly attrRouteTableType: ros.IResolvable;
+    public readonly attrRouteTableType: ros.IResolvable | string;
 
     /**
      * Attribute RouterId: The router ID to which the routing table belongs.
      */
-    public readonly attrRouterId: ros.IResolvable;
+    public readonly attrRouterId: ros.IResolvable | string;
 
     /**
      * Attribute RouterType: The router type to which the routing table belongs.
      */
-    public readonly attrRouterType: ros.IResolvable;
+    public readonly attrRouterType: ros.IResolvable | string;
 
     /**
      * Attribute Tags: The tag.
      */
-    public readonly attrTags: ros.IResolvable;
+    public readonly attrTags: ros.IResolvable | string;
 
     /**
      * Attribute VSwitchIds: The ID of the switch.
      */
-    public readonly attrVSwitchIds: ros.IResolvable;
+    public readonly attrVSwitchIds: ros.IResolvable | string;
 
     /**
      * Attribute VpcId: The ID of VPC.
      */
-    public readonly attrVpcId: ros.IResolvable;
+    public readonly attrVpcId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

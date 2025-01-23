@@ -13,38 +13,79 @@ export interface DbAgentProps {
      * Property instanceInfo: Instance infos
      */
     readonly instanceInfo: Array<RosDbAgent.InstanceInfoProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property crossAccountRoleName: The RAM role name that the original account created for cross-account backup operations.
+     */
+    readonly crossAccountRoleName?: string | ros.IResolvable;
+
+    /**
+     * Property crossAccountType: The type of cross-account backup. Supported values: SELF_ACCOUNT: backup within the same account; CROSS_ACCOUNT: cross-account backup. Example: CROSS_ACCOUNT
+     */
+    readonly crossAccountType?: string | ros.IResolvable;
+
+    /**
+     * Property crossAccountUserId: The user ID of the original account for cross-account backup operations.
+     */
+    readonly crossAccountUserId?: number | ros.IResolvable;
 }
 
+/**
+ * Represents a `DbAgent`.
+ */
+export interface IDbAgent extends ros.IResource {
+    readonly props: DbAgentProps;
+
+    /**
+     * Attribute InstanceIds: Uni backup agent instance ids
+     */
+    readonly attrInstanceIds: ros.IResolvable | string;
+
+    /**
+     * Attribute TaskId: Uni backup agent install task id.
+     */
+    readonly attrTaskId: ros.IResolvable | string;
+
+    /**
+     * Attribute UniBackupInstanceDetails: Uni backup agent instance info details
+     */
+    readonly attrUniBackupInstanceDetails: ros.IResolvable | string;
+
+    /**
+     * Attribute UniBackupInstances: Uni backup agent instance info
+     */
+    readonly attrUniBackupInstances: ros.IResolvable | string;
+}
 /**
  * This class encapsulates and extends the ROS resource type `ALIYUN::HBR::DbAgent`, which is used to install a Cloud Backup backup client for a database.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDbAgent`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbagent
  */
-export class DbAgent extends ros.Resource {
+export class DbAgent extends ros.Resource implements IDbAgent {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DbAgentProps;
+    public readonly props: DbAgentProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceIds: Uni backup agent instance ids
      */
-    public readonly attrInstanceIds: ros.IResolvable;
+    public readonly attrInstanceIds: ros.IResolvable | string;
 
     /**
      * Attribute TaskId: Uni backup agent install task id.
      */
-    public readonly attrTaskId: ros.IResolvable;
+    public readonly attrTaskId: ros.IResolvable | string;
 
     /**
      * Attribute UniBackupInstanceDetails: Uni backup agent instance info details
      */
-    public readonly attrUniBackupInstanceDetails: ros.IResolvable;
+    public readonly attrUniBackupInstanceDetails: ros.IResolvable | string;
 
     /**
      * Attribute UniBackupInstances: Uni backup agent instance info
      */
-    public readonly attrUniBackupInstances: ros.IResolvable;
+    public readonly attrUniBackupInstances: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -59,6 +100,9 @@ export class DbAgent extends ros.Resource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDbAgent = new RosDbAgent(this, id,  {
+            crossAccountUserId: props.crossAccountUserId,
+            crossAccountRoleName: props.crossAccountRoleName,
+            crossAccountType: props.crossAccountType,
             instanceInfo: props.instanceInfo,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDbAgent;

@@ -12,24 +12,34 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::DeploymentSet`, which is used to query the information about a deployment set.
 type DeploymentSet interface {
 	alicloudroscdkcore.Resource
+	IDeploymentSet
 	// Attribute CreateTime: The time when the deployment set was created.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute DeploymentSetId: The ID of deployment set.
-	AttrDeploymentSetId() alicloudroscdkcore.IResolvable
+	AttrDeploymentSetId() interface{}
 	// Attribute DeploymentSetName: The name of the deployment set.
-	AttrDeploymentSetName() alicloudroscdkcore.IResolvable
+	AttrDeploymentSetName() interface{}
 	// Attribute Granularity: The deployment granularity.
-	AttrGranularity() alicloudroscdkcore.IResolvable
+	AttrGranularity() interface{}
 	// Attribute GroupCount: The number of deployment set groups in the deployment set.
-	AttrGroupCount() alicloudroscdkcore.IResolvable
+	AttrGroupCount() interface{}
 	// Attribute InstanceAmount: The number of instances in the deployment set.
-	AttrInstanceAmount() alicloudroscdkcore.IResolvable
+	AttrInstanceAmount() interface{}
 	// Attribute InstanceIds: The IDs of the instances in the deployment set.
-	AttrInstanceIds() alicloudroscdkcore.IResolvable
+	AttrInstanceIds() interface{}
 	// Attribute Strategy: The deployment strategy.
-	AttrStrategy() alicloudroscdkcore.IResolvable
+	AttrStrategy() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -44,7 +54,6 @@ type DeploymentSet interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DeploymentSetProps
-	SetProps(val *DeploymentSetProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -57,6 +66,9 @@ type DeploymentSet interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -109,10 +121,11 @@ type DeploymentSet interface {
 // The jsii proxy struct for DeploymentSet
 type jsiiProxy_DeploymentSet struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDeploymentSet
 }
 
-func (j *jsiiProxy_DeploymentSet) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DeploymentSet) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_DeploymentSet) AttrCreateTime() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_DeploymentSet) AttrDeploymentSetId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DeploymentSet) AttrDeploymentSetId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDeploymentSetId",
@@ -131,8 +144,8 @@ func (j *jsiiProxy_DeploymentSet) AttrDeploymentSetId() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_DeploymentSet) AttrDeploymentSetName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DeploymentSet) AttrDeploymentSetName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDeploymentSetName",
@@ -141,8 +154,8 @@ func (j *jsiiProxy_DeploymentSet) AttrDeploymentSetName() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_DeploymentSet) AttrGranularity() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DeploymentSet) AttrGranularity() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGranularity",
@@ -151,8 +164,8 @@ func (j *jsiiProxy_DeploymentSet) AttrGranularity() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_DeploymentSet) AttrGroupCount() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DeploymentSet) AttrGroupCount() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGroupCount",
@@ -161,8 +174,8 @@ func (j *jsiiProxy_DeploymentSet) AttrGroupCount() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_DeploymentSet) AttrInstanceAmount() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DeploymentSet) AttrInstanceAmount() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceAmount",
@@ -171,8 +184,8 @@ func (j *jsiiProxy_DeploymentSet) AttrInstanceAmount() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_DeploymentSet) AttrInstanceIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DeploymentSet) AttrInstanceIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceIds",
@@ -181,8 +194,8 @@ func (j *jsiiProxy_DeploymentSet) AttrInstanceIds() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_DeploymentSet) AttrStrategy() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DeploymentSet) AttrStrategy() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStrategy",
@@ -196,6 +209,16 @@ func (j *jsiiProxy_DeploymentSet) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DeploymentSet) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -333,17 +356,6 @@ func (j *jsiiProxy_DeploymentSet)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DeploymentSet)SetProps(val *DeploymentSetProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_DeploymentSet)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -435,6 +447,45 @@ func (d *jsiiProxy_DeploymentSet) ApplyRemovalPolicy(policy alicloudroscdkcore.R
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_DeploymentSet) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DeploymentSet) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DeploymentSet) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_DeploymentSet) GeneratePhysicalName() *string {

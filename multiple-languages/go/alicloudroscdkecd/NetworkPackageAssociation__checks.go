@@ -163,17 +163,6 @@ func (j *jsiiProxy_NetworkPackageAssociation) validateSetIdParameters(val *strin
 	return nil
 }
 
-func (j *jsiiProxy_NetworkPackageAssociation) validateSetPropsParameters(val *NetworkPackageAssociationProps) error {
-	if val == nil {
-		return fmt.Errorf("parameter val is required, but nil was provided")
-	}
-	if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (j *jsiiProxy_NetworkPackageAssociation) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")

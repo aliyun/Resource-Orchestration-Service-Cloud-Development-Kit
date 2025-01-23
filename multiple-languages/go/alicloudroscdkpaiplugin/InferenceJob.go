@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::PAIPlugin::InferenceJob`, which is used to create a prediction job.
 type InferenceJob interface {
 	alicloudroscdkcore.Resource
+	IInferenceJob
 	// Attribute GroupId: The related group id of infernce job result.
-	AttrGroupId() alicloudroscdkcore.IResolvable
+	AttrGroupId() interface{}
 	// Attribute InferenceJobId: The id of inference job.
-	AttrInferenceJobId() alicloudroscdkcore.IResolvable
+	AttrInferenceJobId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type InferenceJob interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *InferenceJobProps
-	SetProps(val *InferenceJobProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type InferenceJob interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type InferenceJob interface {
 // The jsii proxy struct for InferenceJob
 type jsiiProxy_InferenceJob struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IInferenceJob
 }
 
-func (j *jsiiProxy_InferenceJob) AttrGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_InferenceJob) AttrGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGroupId",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_InferenceJob) AttrGroupId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_InferenceJob) AttrInferenceJobId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_InferenceJob) AttrInferenceJobId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInferenceJobId",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_InferenceJob) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_InferenceJob) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_InferenceJob)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_InferenceJob)SetProps(val *InferenceJobProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_InferenceJob)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (i *jsiiProxy_InferenceJob) ApplyRemovalPolicy(policy alicloudroscdkcore.Re
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (i *jsiiProxy_InferenceJob) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		i,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_InferenceJob) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		i,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_InferenceJob) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		i,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (i *jsiiProxy_InferenceJob) GeneratePhysicalName() *string {

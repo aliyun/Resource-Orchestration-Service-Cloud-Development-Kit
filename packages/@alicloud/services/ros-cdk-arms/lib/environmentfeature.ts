@@ -33,35 +33,61 @@ export interface EnvironmentFeatureProps {
 }
 
 /**
+ * Represents a `EnvironmentFeature`.
+ */
+export interface IEnvironmentFeature extends ros.IResource {
+    readonly props: EnvironmentFeatureProps;
+
+    /**
+     * Attribute EnvironmentId: The environment ID.
+     */
+    readonly attrEnvironmentId: ros.IResolvable | string;
+
+    /**
+     * Attribute Feature: The installation information of the feature.
+     */
+    readonly attrFeature: ros.IResolvable | string;
+
+    /**
+     * Attribute FeatureName: The name of the feature.
+     */
+    readonly attrFeatureName: ros.IResolvable | string;
+
+    /**
+     * Attribute FeatureStatus: The status of the feature.
+     */
+    readonly attrFeatureStatus: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::EnvironmentFeature`, which is used to install a feature.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEnvironmentFeature`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-environmentfeature
  */
-export class EnvironmentFeature extends ros.Resource {
+export class EnvironmentFeature extends ros.Resource implements IEnvironmentFeature {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: EnvironmentFeatureProps;
+    public readonly props: EnvironmentFeatureProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute EnvironmentId: The environment ID.
      */
-    public readonly attrEnvironmentId: ros.IResolvable;
+    public readonly attrEnvironmentId: ros.IResolvable | string;
 
     /**
      * Attribute Feature: The installation information of the feature.
      */
-    public readonly attrFeature: ros.IResolvable;
+    public readonly attrFeature: ros.IResolvable | string;
 
     /**
      * Attribute FeatureName: The name of the feature.
      */
-    public readonly attrFeatureName: ros.IResolvable;
+    public readonly attrFeatureName: ros.IResolvable | string;
 
     /**
      * Attribute FeatureStatus: The status of the feature.
      */
-    public readonly attrFeatureStatus: ros.IResolvable;
+    public readonly attrFeatureStatus: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

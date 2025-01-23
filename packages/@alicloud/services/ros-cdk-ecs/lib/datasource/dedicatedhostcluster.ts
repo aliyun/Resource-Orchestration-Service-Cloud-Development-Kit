@@ -24,45 +24,81 @@ export interface DedicatedHostClusterProps {
 }
 
 /**
+ * Represents a `DedicatedHostCluster`.
+ */
+export interface IDedicatedHostCluster extends ros.IResource {
+    readonly props: DedicatedHostClusterProps;
+
+    /**
+     * Attribute DedicatedHostClusterId: Dedicated host cluster id.
+     */
+    readonly attrDedicatedHostClusterId: ros.IResolvable | string;
+
+    /**
+     * Attribute DedicatedHostClusterName: The name of the dedicated host cluster.
+     */
+    readonly attrDedicatedHostClusterName: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: The description of the dedicated host cluster.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: The ID of the resource group to which the dedicated host cluster belongs.
+     */
+    readonly attrResourceGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute Tags: The tags of the dedicated host cluster.
+     */
+    readonly attrTags: ros.IResolvable | string;
+
+    /**
+     * Attribute ZoneId: The zone ID of the dedicated host cluster.
+     */
+    readonly attrZoneId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::DedicatedHostCluster`, which is used to query the information about a dedicated host cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDedicatedHostCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-dedicatedhostcluster
  */
-export class DedicatedHostCluster extends ros.Resource {
+export class DedicatedHostCluster extends ros.Resource implements IDedicatedHostCluster {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DedicatedHostClusterProps;
+    public readonly props: DedicatedHostClusterProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DedicatedHostClusterId: Dedicated host cluster id.
      */
-    public readonly attrDedicatedHostClusterId: ros.IResolvable;
+    public readonly attrDedicatedHostClusterId: ros.IResolvable | string;
 
     /**
      * Attribute DedicatedHostClusterName: The name of the dedicated host cluster.
      */
-    public readonly attrDedicatedHostClusterName: ros.IResolvable;
+    public readonly attrDedicatedHostClusterName: ros.IResolvable | string;
 
     /**
      * Attribute Description: The description of the dedicated host cluster.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroupId: The ID of the resource group to which the dedicated host cluster belongs.
      */
-    public readonly attrResourceGroupId: ros.IResolvable;
+    public readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Attribute Tags: The tags of the dedicated host cluster.
      */
-    public readonly attrTags: ros.IResolvable;
+    public readonly attrTags: ros.IResolvable | string;
 
     /**
      * Attribute ZoneId: The zone ID of the dedicated host cluster.
      */
-    public readonly attrZoneId: ros.IResolvable;
+    public readonly attrZoneId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -46,20 +46,31 @@ export interface TrafficControlProps {
 }
 
 /**
+ * Represents a `TrafficControl`.
+ */
+export interface ITrafficControl extends ros.IResource {
+    readonly props: TrafficControlProps;
+
+    /**
+     * Attribute TrafficControlId: The id of the traffic control
+     */
+    readonly attrTrafficControlId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::TrafficControl`, which is used to create a custom throttling policy.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTrafficControl`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-trafficcontrol
  */
-export class TrafficControl extends ros.Resource {
+export class TrafficControl extends ros.Resource implements ITrafficControl {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: TrafficControlProps;
+    public readonly props: TrafficControlProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute TrafficControlId: The id of the traffic control
      */
-    public readonly attrTrafficControlId: ros.IResolvable;
+    public readonly attrTrafficControlId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

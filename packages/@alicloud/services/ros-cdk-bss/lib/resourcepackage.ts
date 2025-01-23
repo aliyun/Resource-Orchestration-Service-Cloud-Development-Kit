@@ -41,25 +41,41 @@ export interface ResourcePackageProps {
 }
 
 /**
+ * Represents a `ResourcePackage`.
+ */
+export interface IResourcePackage extends ros.IResource {
+    readonly props: ResourcePackageProps;
+
+    /**
+     * Attribute InstanceId: The ID of the specified instance.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute OrderId: The ID of the specified order.
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::BSS::ResourcePackage`, which is used to create a resource plan.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosResourcePackage`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bss-resourcepackage
  */
-export class ResourcePackage extends ros.Resource {
+export class ResourcePackage extends ros.Resource implements IResourcePackage {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ResourcePackageProps;
+    public readonly props: ResourcePackageProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceId: The ID of the specified instance.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute OrderId: The ID of the specified order.
      */
-    public readonly attrOrderId: ros.IResolvable;
+    public readonly attrOrderId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

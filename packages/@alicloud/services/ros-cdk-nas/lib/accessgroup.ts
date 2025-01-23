@@ -32,20 +32,31 @@ export interface AccessGroupProps {
 }
 
 /**
+ * Represents a `AccessGroup`.
+ */
+export interface IAccessGroup extends ros.IResource {
+    readonly props: AccessGroupProps;
+
+    /**
+     * Attribute AccessGroupName: Permission group name
+     */
+    readonly attrAccessGroupName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::AccessGroup`, which is used to create a permission group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccessGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-accessgroup
  */
-export class AccessGroup extends ros.Resource {
+export class AccessGroup extends ros.Resource implements IAccessGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AccessGroupProps;
+    public readonly props: AccessGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccessGroupName: Permission group name
      */
-    public readonly attrAccessGroupName: ros.IResolvable;
+    public readonly attrAccessGroupName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

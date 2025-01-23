@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autoprovisioninggroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:06.938Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:37.815Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.AutoProvisioningGroupProps")
 @software.amazon.jsii.Jsii.Proxy(AutoProvisioningGroupProps.Jsii$Proxy.class)
 public interface AutoProvisioningGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -56,6 +56,13 @@ public interface AutoProvisioningGroupProps extends software.amazon.jsii.JsiiSer
      * If set true, ROS will check the state of AutoProvisioningGroup to be fulfilled. Otherwise ROS will regard AutoProvisioningGroup create failed.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCheckExecutionStatus() {
+        return null;
+    }
+
+    /**
+     * Property dataDiskConfig: List of instance data disk information.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDataDiskConfig() {
         return null;
     }
 
@@ -137,6 +144,19 @@ public interface AutoProvisioningGroupProps extends software.amazon.jsii.JsiiSer
     }
 
     /**
+     * Property minTargetCapacity: The target minimum capacity of the elastic supply group.
+     * <p>
+     * Value range: Positive integer.
+     * Once you have set this parameter, note that:
+     * Only create one-time synchronous delivery type elastic supply group (AutoProvisioningGroupType = instant), the parameters to take effect.
+     * If the inventory of instances in the current domain is less than this value, the call to the interface will fail and no instance will be created.
+     * If the instance inventory in the current domain is greater than the parameter value, the instance is created normally according to the other parameter values that have been set.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMinTargetCapacity() {
+        return null;
+    }
+
+    /**
      * Property payAsYouGoAllocationStrategy: The scale-out policy for pay-as-you-go instances.
      * <p>
      * Valid values:
@@ -154,6 +174,24 @@ public interface AutoProvisioningGroupProps extends software.amazon.jsii.JsiiSer
      * Property payAsYouGoTargetCapacity: The target capacity of pay-as-you-go instances in the auto provisioning group.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPayAsYouGoTargetCapacity() {
+        return null;
+    }
+
+    /**
+     * Property resourceGroupId: The resource group ID.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     * Property resourcePoolOptions: Resource pooling policy to use when creating an instance.
+     * <p>
+     * Once you have set this parameter, note that:
+     * This parameter only applies if a pay-as-you-go instance is created.
+     * Only create one-time synchronous delivery type elastic supply group (AutoProvisioningGroupType = instant), the parameters to take effect.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourcePoolOptions() {
         return null;
     }
 
@@ -197,6 +235,13 @@ public interface AutoProvisioningGroupProps extends software.amazon.jsii.JsiiSer
      * Property spotTargetCapacity: The target capacity of preemptible instances in the auto provisioning group.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSpotTargetCapacity() {
+        return null;
+    }
+
+    /**
+     * Property systemDiskConfig: List of instance system disk information.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskConfig() {
         return null;
     }
 
@@ -261,6 +306,7 @@ public interface AutoProvisioningGroupProps extends software.amazon.jsii.JsiiSer
         java.lang.Object autoProvisioningGroupName;
         java.lang.Object autoProvisioningGroupType;
         java.lang.Object checkExecutionStatus;
+        java.lang.Object dataDiskConfig;
         java.lang.Object defaultTargetCapacityType;
         java.lang.Object description;
         java.lang.Object excessCapacityTerminationPolicy;
@@ -269,12 +315,16 @@ public interface AutoProvisioningGroupProps extends software.amazon.jsii.JsiiSer
         java.lang.Object launchTemplateId;
         java.lang.Object launchTemplateVersion;
         java.lang.Object maxSpotPrice;
+        java.lang.Object minTargetCapacity;
         java.lang.Object payAsYouGoAllocationStrategy;
         java.lang.Object payAsYouGoTargetCapacity;
+        java.lang.Object resourceGroupId;
+        java.lang.Object resourcePoolOptions;
         java.lang.Object spotAllocationStrategy;
         java.lang.Object spotInstanceInterruptionBehavior;
         java.lang.Object spotInstancePoolsToUseCount;
         java.lang.Object spotTargetCapacity;
+        java.lang.Object systemDiskConfig;
         java.lang.Object terminateInstances;
         java.lang.Object terminateInstancesWithExpiration;
         java.lang.Object validFrom;
@@ -395,6 +445,26 @@ public interface AutoProvisioningGroupProps extends software.amazon.jsii.JsiiSer
          */
         public Builder checkExecutionStatus(com.aliyun.ros.cdk.core.IResolvable checkExecutionStatus) {
             this.checkExecutionStatus = checkExecutionStatus;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AutoProvisioningGroupProps#getDataDiskConfig}
+         * @param dataDiskConfig Property dataDiskConfig: List of instance data disk information.
+         * @return {@code this}
+         */
+        public Builder dataDiskConfig(com.aliyun.ros.cdk.core.IResolvable dataDiskConfig) {
+            this.dataDiskConfig = dataDiskConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AutoProvisioningGroupProps#getDataDiskConfig}
+         * @param dataDiskConfig Property dataDiskConfig: List of instance data disk information.
+         * @return {@code this}
+         */
+        public Builder dataDiskConfig(java.util.List<? extends java.lang.Object> dataDiskConfig) {
+            this.dataDiskConfig = dataDiskConfig;
             return this;
         }
 
@@ -591,6 +661,36 @@ public interface AutoProvisioningGroupProps extends software.amazon.jsii.JsiiSer
         }
 
         /**
+         * Sets the value of {@link AutoProvisioningGroupProps#getMinTargetCapacity}
+         * @param minTargetCapacity Property minTargetCapacity: The target minimum capacity of the elastic supply group.
+         *                          Value range: Positive integer.
+         *                          Once you have set this parameter, note that:
+         *                          Only create one-time synchronous delivery type elastic supply group (AutoProvisioningGroupType = instant), the parameters to take effect.
+         *                          If the inventory of instances in the current domain is less than this value, the call to the interface will fail and no instance will be created.
+         *                          If the instance inventory in the current domain is greater than the parameter value, the instance is created normally according to the other parameter values that have been set.
+         * @return {@code this}
+         */
+        public Builder minTargetCapacity(java.lang.String minTargetCapacity) {
+            this.minTargetCapacity = minTargetCapacity;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AutoProvisioningGroupProps#getMinTargetCapacity}
+         * @param minTargetCapacity Property minTargetCapacity: The target minimum capacity of the elastic supply group.
+         *                          Value range: Positive integer.
+         *                          Once you have set this parameter, note that:
+         *                          Only create one-time synchronous delivery type elastic supply group (AutoProvisioningGroupType = instant), the parameters to take effect.
+         *                          If the inventory of instances in the current domain is less than this value, the call to the interface will fail and no instance will be created.
+         *                          If the instance inventory in the current domain is greater than the parameter value, the instance is created normally according to the other parameter values that have been set.
+         * @return {@code this}
+         */
+        public Builder minTargetCapacity(com.aliyun.ros.cdk.core.IResolvable minTargetCapacity) {
+            this.minTargetCapacity = minTargetCapacity;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AutoProvisioningGroupProps#getPayAsYouGoAllocationStrategy}
          * @param payAsYouGoAllocationStrategy Property payAsYouGoAllocationStrategy: The scale-out policy for pay-as-you-go instances.
          *                                     Valid values:
@@ -639,6 +739,52 @@ public interface AutoProvisioningGroupProps extends software.amazon.jsii.JsiiSer
          */
         public Builder payAsYouGoTargetCapacity(com.aliyun.ros.cdk.core.IResolvable payAsYouGoTargetCapacity) {
             this.payAsYouGoTargetCapacity = payAsYouGoTargetCapacity;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AutoProvisioningGroupProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: The resource group ID.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AutoProvisioningGroupProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: The resource group ID.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AutoProvisioningGroupProps#getResourcePoolOptions}
+         * @param resourcePoolOptions Property resourcePoolOptions: Resource pooling policy to use when creating an instance.
+         *                            Once you have set this parameter, note that:
+         *                            This parameter only applies if a pay-as-you-go instance is created.
+         *                            Only create one-time synchronous delivery type elastic supply group (AutoProvisioningGroupType = instant), the parameters to take effect.
+         * @return {@code this}
+         */
+        public Builder resourcePoolOptions(com.aliyun.ros.cdk.core.IResolvable resourcePoolOptions) {
+            this.resourcePoolOptions = resourcePoolOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AutoProvisioningGroupProps#getResourcePoolOptions}
+         * @param resourcePoolOptions Property resourcePoolOptions: Resource pooling policy to use when creating an instance.
+         *                            Once you have set this parameter, note that:
+         *                            This parameter only applies if a pay-as-you-go instance is created.
+         *                            Only create one-time synchronous delivery type elastic supply group (AutoProvisioningGroupType = instant), the parameters to take effect.
+         * @return {@code this}
+         */
+        public Builder resourcePoolOptions(com.aliyun.ros.cdk.ecs.RosAutoProvisioningGroup.ResourcePoolOptionsProperty resourcePoolOptions) {
+            this.resourcePoolOptions = resourcePoolOptions;
             return this;
         }
 
@@ -743,6 +889,26 @@ public interface AutoProvisioningGroupProps extends software.amazon.jsii.JsiiSer
          */
         public Builder spotTargetCapacity(com.aliyun.ros.cdk.core.IResolvable spotTargetCapacity) {
             this.spotTargetCapacity = spotTargetCapacity;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AutoProvisioningGroupProps#getSystemDiskConfig}
+         * @param systemDiskConfig Property systemDiskConfig: List of instance system disk information.
+         * @return {@code this}
+         */
+        public Builder systemDiskConfig(com.aliyun.ros.cdk.core.IResolvable systemDiskConfig) {
+            this.systemDiskConfig = systemDiskConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AutoProvisioningGroupProps#getSystemDiskConfig}
+         * @param systemDiskConfig Property systemDiskConfig: List of instance system disk information.
+         * @return {@code this}
+         */
+        public Builder systemDiskConfig(java.util.List<? extends java.lang.Object> systemDiskConfig) {
+            this.systemDiskConfig = systemDiskConfig;
             return this;
         }
 
@@ -876,6 +1042,7 @@ public interface AutoProvisioningGroupProps extends software.amazon.jsii.JsiiSer
         private final java.lang.Object autoProvisioningGroupName;
         private final java.lang.Object autoProvisioningGroupType;
         private final java.lang.Object checkExecutionStatus;
+        private final java.lang.Object dataDiskConfig;
         private final java.lang.Object defaultTargetCapacityType;
         private final java.lang.Object description;
         private final java.lang.Object excessCapacityTerminationPolicy;
@@ -884,12 +1051,16 @@ public interface AutoProvisioningGroupProps extends software.amazon.jsii.JsiiSer
         private final java.lang.Object launchTemplateId;
         private final java.lang.Object launchTemplateVersion;
         private final java.lang.Object maxSpotPrice;
+        private final java.lang.Object minTargetCapacity;
         private final java.lang.Object payAsYouGoAllocationStrategy;
         private final java.lang.Object payAsYouGoTargetCapacity;
+        private final java.lang.Object resourceGroupId;
+        private final java.lang.Object resourcePoolOptions;
         private final java.lang.Object spotAllocationStrategy;
         private final java.lang.Object spotInstanceInterruptionBehavior;
         private final java.lang.Object spotInstancePoolsToUseCount;
         private final java.lang.Object spotTargetCapacity;
+        private final java.lang.Object systemDiskConfig;
         private final java.lang.Object terminateInstances;
         private final java.lang.Object terminateInstancesWithExpiration;
         private final java.lang.Object validFrom;
@@ -905,6 +1076,7 @@ public interface AutoProvisioningGroupProps extends software.amazon.jsii.JsiiSer
             this.autoProvisioningGroupName = software.amazon.jsii.Kernel.get(this, "autoProvisioningGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoProvisioningGroupType = software.amazon.jsii.Kernel.get(this, "autoProvisioningGroupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.checkExecutionStatus = software.amazon.jsii.Kernel.get(this, "checkExecutionStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dataDiskConfig = software.amazon.jsii.Kernel.get(this, "dataDiskConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.defaultTargetCapacityType = software.amazon.jsii.Kernel.get(this, "defaultTargetCapacityType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.excessCapacityTerminationPolicy = software.amazon.jsii.Kernel.get(this, "excessCapacityTerminationPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -913,12 +1085,16 @@ public interface AutoProvisioningGroupProps extends software.amazon.jsii.JsiiSer
             this.launchTemplateId = software.amazon.jsii.Kernel.get(this, "launchTemplateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.launchTemplateVersion = software.amazon.jsii.Kernel.get(this, "launchTemplateVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.maxSpotPrice = software.amazon.jsii.Kernel.get(this, "maxSpotPrice", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.minTargetCapacity = software.amazon.jsii.Kernel.get(this, "minTargetCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.payAsYouGoAllocationStrategy = software.amazon.jsii.Kernel.get(this, "payAsYouGoAllocationStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.payAsYouGoTargetCapacity = software.amazon.jsii.Kernel.get(this, "payAsYouGoTargetCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourcePoolOptions = software.amazon.jsii.Kernel.get(this, "resourcePoolOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spotAllocationStrategy = software.amazon.jsii.Kernel.get(this, "spotAllocationStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spotInstanceInterruptionBehavior = software.amazon.jsii.Kernel.get(this, "spotInstanceInterruptionBehavior", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spotInstancePoolsToUseCount = software.amazon.jsii.Kernel.get(this, "spotInstancePoolsToUseCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spotTargetCapacity = software.amazon.jsii.Kernel.get(this, "spotTargetCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskConfig = software.amazon.jsii.Kernel.get(this, "systemDiskConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.terminateInstances = software.amazon.jsii.Kernel.get(this, "terminateInstances", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.terminateInstancesWithExpiration = software.amazon.jsii.Kernel.get(this, "terminateInstancesWithExpiration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.validFrom = software.amazon.jsii.Kernel.get(this, "validFrom", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -934,6 +1110,7 @@ public interface AutoProvisioningGroupProps extends software.amazon.jsii.JsiiSer
             this.autoProvisioningGroupName = builder.autoProvisioningGroupName;
             this.autoProvisioningGroupType = builder.autoProvisioningGroupType;
             this.checkExecutionStatus = builder.checkExecutionStatus;
+            this.dataDiskConfig = builder.dataDiskConfig;
             this.defaultTargetCapacityType = builder.defaultTargetCapacityType;
             this.description = builder.description;
             this.excessCapacityTerminationPolicy = builder.excessCapacityTerminationPolicy;
@@ -942,12 +1119,16 @@ public interface AutoProvisioningGroupProps extends software.amazon.jsii.JsiiSer
             this.launchTemplateId = builder.launchTemplateId;
             this.launchTemplateVersion = builder.launchTemplateVersion;
             this.maxSpotPrice = builder.maxSpotPrice;
+            this.minTargetCapacity = builder.minTargetCapacity;
             this.payAsYouGoAllocationStrategy = builder.payAsYouGoAllocationStrategy;
             this.payAsYouGoTargetCapacity = builder.payAsYouGoTargetCapacity;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.resourcePoolOptions = builder.resourcePoolOptions;
             this.spotAllocationStrategy = builder.spotAllocationStrategy;
             this.spotInstanceInterruptionBehavior = builder.spotInstanceInterruptionBehavior;
             this.spotInstancePoolsToUseCount = builder.spotInstancePoolsToUseCount;
             this.spotTargetCapacity = builder.spotTargetCapacity;
+            this.systemDiskConfig = builder.systemDiskConfig;
             this.terminateInstances = builder.terminateInstances;
             this.terminateInstancesWithExpiration = builder.terminateInstancesWithExpiration;
             this.validFrom = builder.validFrom;
@@ -972,6 +1153,11 @@ public interface AutoProvisioningGroupProps extends software.amazon.jsii.JsiiSer
         @Override
         public final java.lang.Object getCheckExecutionStatus() {
             return this.checkExecutionStatus;
+        }
+
+        @Override
+        public final java.lang.Object getDataDiskConfig() {
+            return this.dataDiskConfig;
         }
 
         @Override
@@ -1015,6 +1201,11 @@ public interface AutoProvisioningGroupProps extends software.amazon.jsii.JsiiSer
         }
 
         @Override
+        public final java.lang.Object getMinTargetCapacity() {
+            return this.minTargetCapacity;
+        }
+
+        @Override
         public final java.lang.Object getPayAsYouGoAllocationStrategy() {
             return this.payAsYouGoAllocationStrategy;
         }
@@ -1022,6 +1213,16 @@ public interface AutoProvisioningGroupProps extends software.amazon.jsii.JsiiSer
         @Override
         public final java.lang.Object getPayAsYouGoTargetCapacity() {
             return this.payAsYouGoTargetCapacity;
+        }
+
+        @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
+        public final java.lang.Object getResourcePoolOptions() {
+            return this.resourcePoolOptions;
         }
 
         @Override
@@ -1042,6 +1243,11 @@ public interface AutoProvisioningGroupProps extends software.amazon.jsii.JsiiSer
         @Override
         public final java.lang.Object getSpotTargetCapacity() {
             return this.spotTargetCapacity;
+        }
+
+        @Override
+        public final java.lang.Object getSystemDiskConfig() {
+            return this.systemDiskConfig;
         }
 
         @Override
@@ -1080,6 +1286,9 @@ public interface AutoProvisioningGroupProps extends software.amazon.jsii.JsiiSer
             if (this.getCheckExecutionStatus() != null) {
                 data.set("checkExecutionStatus", om.valueToTree(this.getCheckExecutionStatus()));
             }
+            if (this.getDataDiskConfig() != null) {
+                data.set("dataDiskConfig", om.valueToTree(this.getDataDiskConfig()));
+            }
             if (this.getDefaultTargetCapacityType() != null) {
                 data.set("defaultTargetCapacityType", om.valueToTree(this.getDefaultTargetCapacityType()));
             }
@@ -1104,11 +1313,20 @@ public interface AutoProvisioningGroupProps extends software.amazon.jsii.JsiiSer
             if (this.getMaxSpotPrice() != null) {
                 data.set("maxSpotPrice", om.valueToTree(this.getMaxSpotPrice()));
             }
+            if (this.getMinTargetCapacity() != null) {
+                data.set("minTargetCapacity", om.valueToTree(this.getMinTargetCapacity()));
+            }
             if (this.getPayAsYouGoAllocationStrategy() != null) {
                 data.set("payAsYouGoAllocationStrategy", om.valueToTree(this.getPayAsYouGoAllocationStrategy()));
             }
             if (this.getPayAsYouGoTargetCapacity() != null) {
                 data.set("payAsYouGoTargetCapacity", om.valueToTree(this.getPayAsYouGoTargetCapacity()));
+            }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
+            if (this.getResourcePoolOptions() != null) {
+                data.set("resourcePoolOptions", om.valueToTree(this.getResourcePoolOptions()));
             }
             if (this.getSpotAllocationStrategy() != null) {
                 data.set("spotAllocationStrategy", om.valueToTree(this.getSpotAllocationStrategy()));
@@ -1121,6 +1339,9 @@ public interface AutoProvisioningGroupProps extends software.amazon.jsii.JsiiSer
             }
             if (this.getSpotTargetCapacity() != null) {
                 data.set("spotTargetCapacity", om.valueToTree(this.getSpotTargetCapacity()));
+            }
+            if (this.getSystemDiskConfig() != null) {
+                data.set("systemDiskConfig", om.valueToTree(this.getSystemDiskConfig()));
             }
             if (this.getTerminateInstances() != null) {
                 data.set("terminateInstances", om.valueToTree(this.getTerminateInstances()));
@@ -1156,6 +1377,7 @@ public interface AutoProvisioningGroupProps extends software.amazon.jsii.JsiiSer
             if (this.autoProvisioningGroupName != null ? !this.autoProvisioningGroupName.equals(that.autoProvisioningGroupName) : that.autoProvisioningGroupName != null) return false;
             if (this.autoProvisioningGroupType != null ? !this.autoProvisioningGroupType.equals(that.autoProvisioningGroupType) : that.autoProvisioningGroupType != null) return false;
             if (this.checkExecutionStatus != null ? !this.checkExecutionStatus.equals(that.checkExecutionStatus) : that.checkExecutionStatus != null) return false;
+            if (this.dataDiskConfig != null ? !this.dataDiskConfig.equals(that.dataDiskConfig) : that.dataDiskConfig != null) return false;
             if (this.defaultTargetCapacityType != null ? !this.defaultTargetCapacityType.equals(that.defaultTargetCapacityType) : that.defaultTargetCapacityType != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.excessCapacityTerminationPolicy != null ? !this.excessCapacityTerminationPolicy.equals(that.excessCapacityTerminationPolicy) : that.excessCapacityTerminationPolicy != null) return false;
@@ -1164,12 +1386,16 @@ public interface AutoProvisioningGroupProps extends software.amazon.jsii.JsiiSer
             if (this.launchTemplateId != null ? !this.launchTemplateId.equals(that.launchTemplateId) : that.launchTemplateId != null) return false;
             if (this.launchTemplateVersion != null ? !this.launchTemplateVersion.equals(that.launchTemplateVersion) : that.launchTemplateVersion != null) return false;
             if (this.maxSpotPrice != null ? !this.maxSpotPrice.equals(that.maxSpotPrice) : that.maxSpotPrice != null) return false;
+            if (this.minTargetCapacity != null ? !this.minTargetCapacity.equals(that.minTargetCapacity) : that.minTargetCapacity != null) return false;
             if (this.payAsYouGoAllocationStrategy != null ? !this.payAsYouGoAllocationStrategy.equals(that.payAsYouGoAllocationStrategy) : that.payAsYouGoAllocationStrategy != null) return false;
             if (this.payAsYouGoTargetCapacity != null ? !this.payAsYouGoTargetCapacity.equals(that.payAsYouGoTargetCapacity) : that.payAsYouGoTargetCapacity != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            if (this.resourcePoolOptions != null ? !this.resourcePoolOptions.equals(that.resourcePoolOptions) : that.resourcePoolOptions != null) return false;
             if (this.spotAllocationStrategy != null ? !this.spotAllocationStrategy.equals(that.spotAllocationStrategy) : that.spotAllocationStrategy != null) return false;
             if (this.spotInstanceInterruptionBehavior != null ? !this.spotInstanceInterruptionBehavior.equals(that.spotInstanceInterruptionBehavior) : that.spotInstanceInterruptionBehavior != null) return false;
             if (this.spotInstancePoolsToUseCount != null ? !this.spotInstancePoolsToUseCount.equals(that.spotInstancePoolsToUseCount) : that.spotInstancePoolsToUseCount != null) return false;
             if (this.spotTargetCapacity != null ? !this.spotTargetCapacity.equals(that.spotTargetCapacity) : that.spotTargetCapacity != null) return false;
+            if (this.systemDiskConfig != null ? !this.systemDiskConfig.equals(that.systemDiskConfig) : that.systemDiskConfig != null) return false;
             if (this.terminateInstances != null ? !this.terminateInstances.equals(that.terminateInstances) : that.terminateInstances != null) return false;
             if (this.terminateInstancesWithExpiration != null ? !this.terminateInstancesWithExpiration.equals(that.terminateInstancesWithExpiration) : that.terminateInstancesWithExpiration != null) return false;
             if (this.validFrom != null ? !this.validFrom.equals(that.validFrom) : that.validFrom != null) return false;
@@ -1182,6 +1408,7 @@ public interface AutoProvisioningGroupProps extends software.amazon.jsii.JsiiSer
             result = 31 * result + (this.autoProvisioningGroupName != null ? this.autoProvisioningGroupName.hashCode() : 0);
             result = 31 * result + (this.autoProvisioningGroupType != null ? this.autoProvisioningGroupType.hashCode() : 0);
             result = 31 * result + (this.checkExecutionStatus != null ? this.checkExecutionStatus.hashCode() : 0);
+            result = 31 * result + (this.dataDiskConfig != null ? this.dataDiskConfig.hashCode() : 0);
             result = 31 * result + (this.defaultTargetCapacityType != null ? this.defaultTargetCapacityType.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.excessCapacityTerminationPolicy != null ? this.excessCapacityTerminationPolicy.hashCode() : 0);
@@ -1190,12 +1417,16 @@ public interface AutoProvisioningGroupProps extends software.amazon.jsii.JsiiSer
             result = 31 * result + (this.launchTemplateId != null ? this.launchTemplateId.hashCode() : 0);
             result = 31 * result + (this.launchTemplateVersion != null ? this.launchTemplateVersion.hashCode() : 0);
             result = 31 * result + (this.maxSpotPrice != null ? this.maxSpotPrice.hashCode() : 0);
+            result = 31 * result + (this.minTargetCapacity != null ? this.minTargetCapacity.hashCode() : 0);
             result = 31 * result + (this.payAsYouGoAllocationStrategy != null ? this.payAsYouGoAllocationStrategy.hashCode() : 0);
             result = 31 * result + (this.payAsYouGoTargetCapacity != null ? this.payAsYouGoTargetCapacity.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.resourcePoolOptions != null ? this.resourcePoolOptions.hashCode() : 0);
             result = 31 * result + (this.spotAllocationStrategy != null ? this.spotAllocationStrategy.hashCode() : 0);
             result = 31 * result + (this.spotInstanceInterruptionBehavior != null ? this.spotInstanceInterruptionBehavior.hashCode() : 0);
             result = 31 * result + (this.spotInstancePoolsToUseCount != null ? this.spotInstancePoolsToUseCount.hashCode() : 0);
             result = 31 * result + (this.spotTargetCapacity != null ? this.spotTargetCapacity.hashCode() : 0);
+            result = 31 * result + (this.systemDiskConfig != null ? this.systemDiskConfig.hashCode() : 0);
             result = 31 * result + (this.terminateInstances != null ? this.terminateInstances.hashCode() : 0);
             result = 31 * result + (this.terminateInstancesWithExpiration != null ? this.terminateInstancesWithExpiration.hashCode() : 0);
             result = 31 * result + (this.validFrom != null ? this.validFrom.hashCode() : 0);

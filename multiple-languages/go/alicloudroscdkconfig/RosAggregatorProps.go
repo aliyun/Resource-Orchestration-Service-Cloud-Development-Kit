@@ -9,5 +9,6 @@ type RosAggregatorProps struct {
 	Description interface{} `field:"required" json:"description" yaml:"description"`
 	AggregatorAccounts interface{} `field:"optional" json:"aggregatorAccounts" yaml:"aggregatorAccounts"`
 	AggregatorType interface{} `field:"optional" json:"aggregatorType" yaml:"aggregatorType"`
+	FolderId interface{} `field:"optional" json:"folderId" yaml:"folderId"`
 }
 

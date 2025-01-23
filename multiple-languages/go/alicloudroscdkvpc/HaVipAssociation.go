@@ -12,8 +12,18 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::VPC::HaVipAssociation`, which is used to associate high-availability virtual IP addresses (HAVIPs) with an Elastic Compute Service (ECS) instance or an elastic network interface (ENI).
 type HaVipAssociation interface {
 	alicloudroscdkcore.Resource
+	IHaVipAssociation
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -28,7 +38,6 @@ type HaVipAssociation interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *HaVipAssociationProps
-	SetProps(val *HaVipAssociationProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -41,6 +50,9 @@ type HaVipAssociation interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -93,6 +105,7 @@ type HaVipAssociation interface {
 // The jsii proxy struct for HaVipAssociation
 type jsiiProxy_HaVipAssociation struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IHaVipAssociation
 }
 
 func (j *jsiiProxy_HaVipAssociation) EnableResourcePropertyConstraint() *bool {
@@ -100,6 +113,16 @@ func (j *jsiiProxy_HaVipAssociation) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HaVipAssociation) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -237,17 +260,6 @@ func (j *jsiiProxy_HaVipAssociation)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_HaVipAssociation)SetProps(val *HaVipAssociationProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_HaVipAssociation)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -339,6 +351,45 @@ func (h *jsiiProxy_HaVipAssociation) ApplyRemovalPolicy(policy alicloudroscdkcor
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (h *jsiiProxy_HaVipAssociation) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		h,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (h *jsiiProxy_HaVipAssociation) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		h,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (h *jsiiProxy_HaVipAssociation) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		h,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (h *jsiiProxy_HaVipAssociation) GeneratePhysicalName() *string {

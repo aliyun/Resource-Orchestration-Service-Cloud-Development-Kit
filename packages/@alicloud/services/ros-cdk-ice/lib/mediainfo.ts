@@ -115,20 +115,31 @@ export interface MediaInfoProps {
 }
 
 /**
+ * Represents a `MediaInfo`.
+ */
+export interface IMediaInfo extends ros.IResource {
+    readonly props: MediaInfoProps;
+
+    /**
+     * Attribute MediaId: The ID of the media asset in IMS.
+     */
+    readonly attrMediaId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ICE::MediaInfo`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMediaInfo`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ice-mediainfo
  */
-export class MediaInfo extends ros.Resource {
+export class MediaInfo extends ros.Resource implements IMediaInfo {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: MediaInfoProps;
+    public readonly props: MediaInfoProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute MediaId: The ID of the media asset in IMS.
      */
-    public readonly attrMediaId: ros.IResolvable;
+    public readonly attrMediaId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

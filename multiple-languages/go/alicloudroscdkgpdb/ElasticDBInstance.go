@@ -12,16 +12,26 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::ElasticDBInstance`, which is used to create an AnalyticDB for PostgreSQL instance in elastic storage mode.
 type ElasticDBInstance interface {
 	alicloudroscdkcore.Resource
+	IElasticDBInstance
 	// Attribute ConnectionString: The endpoint of the instance.
-	AttrConnectionString() alicloudroscdkcore.IResolvable
+	AttrConnectionString() interface{}
 	// Attribute DBInstanceId: The ID of the instance.
-	AttrDbInstanceId() alicloudroscdkcore.IResolvable
+	AttrDbInstanceId() interface{}
 	// Attribute OrderId: The order ID of the instance.
-	AttrOrderId() alicloudroscdkcore.IResolvable
+	AttrOrderId() interface{}
 	// Attribute Port: The port used to connect to the instance.
-	AttrPort() alicloudroscdkcore.IResolvable
+	AttrPort() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -36,7 +46,6 @@ type ElasticDBInstance interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ElasticDBInstanceProps
-	SetProps(val *ElasticDBInstanceProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -49,6 +58,9 @@ type ElasticDBInstance interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -101,10 +113,11 @@ type ElasticDBInstance interface {
 // The jsii proxy struct for ElasticDBInstance
 type jsiiProxy_ElasticDBInstance struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IElasticDBInstance
 }
 
-func (j *jsiiProxy_ElasticDBInstance) AttrConnectionString() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ElasticDBInstance) AttrConnectionString() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrConnectionString",
@@ -113,8 +126,8 @@ func (j *jsiiProxy_ElasticDBInstance) AttrConnectionString() alicloudroscdkcore.
 	return returns
 }
 
-func (j *jsiiProxy_ElasticDBInstance) AttrDbInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ElasticDBInstance) AttrDbInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbInstanceId",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_ElasticDBInstance) AttrDbInstanceId() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_ElasticDBInstance) AttrOrderId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ElasticDBInstance) AttrOrderId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOrderId",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_ElasticDBInstance) AttrOrderId() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_ElasticDBInstance) AttrPort() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ElasticDBInstance) AttrPort() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPort",
@@ -148,6 +161,16 @@ func (j *jsiiProxy_ElasticDBInstance) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ElasticDBInstance) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -285,17 +308,6 @@ func (j *jsiiProxy_ElasticDBInstance)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ElasticDBInstance)SetProps(val *ElasticDBInstanceProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_ElasticDBInstance)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -387,6 +399,45 @@ func (e *jsiiProxy_ElasticDBInstance) ApplyRemovalPolicy(policy alicloudroscdkco
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (e *jsiiProxy_ElasticDBInstance) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		e,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (e *jsiiProxy_ElasticDBInstance) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		e,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (e *jsiiProxy_ElasticDBInstance) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		e,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (e *jsiiProxy_ElasticDBInstance) GeneratePhysicalName() *string {

@@ -76,25 +76,41 @@ export interface ApplicationProps {
 }
 
 /**
+ * Represents a `Application`.
+ */
+export interface IApplication extends ros.IResource {
+    readonly props: ApplicationProps;
+
+    /**
+     * Attribute AppId: The ID of the application.
+     */
+    readonly attrAppId: ros.IResolvable | string;
+
+    /**
+     * Attribute AppName: The name of the application.
+     */
+    readonly attrAppName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::Application`, which is used to create an application.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApplication`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-application
  */
-export class Application extends ros.Resource {
+export class Application extends ros.Resource implements IApplication {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ApplicationProps;
+    public readonly props: ApplicationProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AppId: The ID of the application.
      */
-    public readonly attrAppId: ros.IResolvable;
+    public readonly attrAppId: ros.IResolvable | string;
 
     /**
      * Attribute AppName: The name of the application.
      */
-    public readonly attrAppName: ros.IResolvable;
+    public readonly attrAppName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

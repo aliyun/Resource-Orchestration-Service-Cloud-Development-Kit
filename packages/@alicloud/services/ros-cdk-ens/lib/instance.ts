@@ -111,125 +111,241 @@ export interface InstanceProps {
 }
 
 /**
+ * Represents a `Instance`.
+ */
+export interface IInstance extends ros.IResource {
+    readonly props: InstanceProps;
+
+    /**
+     * Attribute AutoRenew: Whether renew the fee automatically?it could be True,FalseDefault value is False.
+     */
+    readonly attrAutoRenew: ros.IResolvable | string;
+
+    /**
+     * Attribute AutoRenewPeriod: The time period of auto renew. it will take effect.It could be 1, 2, 3, 6, 12. Default value is 1.
+     */
+    readonly attrAutoRenewPeriod: ros.IResolvable | string;
+
+    /**
+     * Attribute DataDiskSize: Disk size of the system disk, range from 20 to 500 GB. If you specify with your own image, make sure the system disk size bigger than image size.
+     */
+    readonly attrDataDiskSize: ros.IResolvable | string;
+
+    /**
+     * Attribute EnsRegionId: ENS Region Id.
+     */
+    readonly attrEnsRegionId: ros.IResolvable | string;
+
+    /**
+     * Attribute HostName: The hostname of the instance.
+     */
+    readonly attrHostName: ros.IResolvable | string;
+
+    /**
+     * Attribute ImageId: Image ID to create ens instance.
+     */
+    readonly attrImageId: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: InstanceId.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceName: Instance name
+     */
+    readonly attrInstanceName: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceType: ENS instance supported instance type, make sure it should be correct.
+     */
+    readonly attrInstanceType: ros.IResolvable | string;
+
+    /**
+     * Attribute InternetChargeType: Instance Charge type.it could be 95BandwidthByMonth, PayByBandwidth4thMonth.
+     */
+    readonly attrInternetChargeType: ros.IResolvable | string;
+
+    /**
+     * Attribute IpType: ip type, It could be ipv4Andipv6,ipv4,ipv6.default value isi pv4.
+     */
+    readonly attrIpType: ros.IResolvable | string;
+
+    /**
+     * Attribute KeyPairName: SSH key pair name.
+     */
+    readonly attrKeyPairName: ros.IResolvable | string;
+
+    /**
+     * Attribute PaymentType: Payment Type.only support value Subscription.
+     */
+    readonly attrPaymentType: ros.IResolvable | string;
+
+    /**
+     * Attribute Period: Prepaid time period. Unit is month, it could be from 1 to 9 or 12. Default value is 1.
+     */
+    readonly attrPeriod: ros.IResolvable | string;
+
+    /**
+     * Attribute PrivateIpAddress: Private IP for the instance created.
+     */
+    readonly attrPrivateIpAddress: ros.IResolvable | string;
+
+    /**
+     * Attribute PrivateIps: Private IP
+     */
+    readonly attrPrivateIps: ros.IResolvable | string;
+
+    /**
+     * Attribute PublicIps: Public IP
+     */
+    readonly attrPublicIps: ros.IResolvable | string;
+
+    /**
+     * Attribute Quantity: number of instances to create.
+     */
+    readonly attrQuantity: ros.IResolvable | string;
+
+    /**
+     * Attribute SystemDiskSize: Disk size of the system disk.
+     */
+    readonly attrSystemDiskSize: ros.IResolvable | string;
+
+    /**
+     * Attribute UniqueSuffix: Specifies whether to automatically append sequential suffixes to the hostnames specified by the HostName parameter and instance names specified by the InstanceName parameter when you create multiple instances at a time. The sequential suffix ranges from 001 to 999. Valid values:  true false Default value: false.
+     */
+    readonly attrUniqueSuffix: ros.IResolvable | string;
+
+    /**
+     * Attribute UserData: User data to pass to instance. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
+     */
+    readonly attrUserData: ros.IResolvable | string;
+
+    /**
+     * Attribute VSwitchId: The vSwitch Id to create ens instance.
+     */
+    readonly attrVSwitchId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ENS::Instance`, which is used to create an Edge Node Service (ENS) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-instance
  */
-export class Instance extends ros.Resource {
+export class Instance extends ros.Resource implements IInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InstanceProps;
+    public readonly props: InstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AutoRenew: Whether renew the fee automatically?it could be True,FalseDefault value is False.
      */
-    public readonly attrAutoRenew: ros.IResolvable;
+    public readonly attrAutoRenew: ros.IResolvable | string;
 
     /**
      * Attribute AutoRenewPeriod: The time period of auto renew. it will take effect.It could be 1, 2, 3, 6, 12. Default value is 1.
      */
-    public readonly attrAutoRenewPeriod: ros.IResolvable;
+    public readonly attrAutoRenewPeriod: ros.IResolvable | string;
 
     /**
      * Attribute DataDiskSize: Disk size of the system disk, range from 20 to 500 GB. If you specify with your own image, make sure the system disk size bigger than image size.
      */
-    public readonly attrDataDiskSize: ros.IResolvable;
+    public readonly attrDataDiskSize: ros.IResolvable | string;
 
     /**
      * Attribute EnsRegionId: ENS Region Id.
      */
-    public readonly attrEnsRegionId: ros.IResolvable;
+    public readonly attrEnsRegionId: ros.IResolvable | string;
 
     /**
      * Attribute HostName: The hostname of the instance.
      */
-    public readonly attrHostName: ros.IResolvable;
+    public readonly attrHostName: ros.IResolvable | string;
 
     /**
      * Attribute ImageId: Image ID to create ens instance.
      */
-    public readonly attrImageId: ros.IResolvable;
+    public readonly attrImageId: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: InstanceId.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute InstanceName: Instance name
      */
-    public readonly attrInstanceName: ros.IResolvable;
+    public readonly attrInstanceName: ros.IResolvable | string;
 
     /**
      * Attribute InstanceType: ENS instance supported instance type, make sure it should be correct.
      */
-    public readonly attrInstanceType: ros.IResolvable;
+    public readonly attrInstanceType: ros.IResolvable | string;
 
     /**
      * Attribute InternetChargeType: Instance Charge type.it could be 95BandwidthByMonth, PayByBandwidth4thMonth.
      */
-    public readonly attrInternetChargeType: ros.IResolvable;
+    public readonly attrInternetChargeType: ros.IResolvable | string;
 
     /**
      * Attribute IpType: ip type, It could be ipv4Andipv6,ipv4,ipv6.default value isi pv4.
      */
-    public readonly attrIpType: ros.IResolvable;
+    public readonly attrIpType: ros.IResolvable | string;
 
     /**
      * Attribute KeyPairName: SSH key pair name.
      */
-    public readonly attrKeyPairName: ros.IResolvable;
+    public readonly attrKeyPairName: ros.IResolvable | string;
 
     /**
      * Attribute PaymentType: Payment Type.only support value Subscription.
      */
-    public readonly attrPaymentType: ros.IResolvable;
+    public readonly attrPaymentType: ros.IResolvable | string;
 
     /**
      * Attribute Period: Prepaid time period. Unit is month, it could be from 1 to 9 or 12. Default value is 1.
      */
-    public readonly attrPeriod: ros.IResolvable;
+    public readonly attrPeriod: ros.IResolvable | string;
 
     /**
      * Attribute PrivateIpAddress: Private IP for the instance created.
      */
-    public readonly attrPrivateIpAddress: ros.IResolvable;
+    public readonly attrPrivateIpAddress: ros.IResolvable | string;
 
     /**
      * Attribute PrivateIps: Private IP
      */
-    public readonly attrPrivateIps: ros.IResolvable;
+    public readonly attrPrivateIps: ros.IResolvable | string;
 
     /**
      * Attribute PublicIps: Public IP
      */
-    public readonly attrPublicIps: ros.IResolvable;
+    public readonly attrPublicIps: ros.IResolvable | string;
 
     /**
      * Attribute Quantity: number of instances to create.
      */
-    public readonly attrQuantity: ros.IResolvable;
+    public readonly attrQuantity: ros.IResolvable | string;
 
     /**
      * Attribute SystemDiskSize: Disk size of the system disk.
      */
-    public readonly attrSystemDiskSize: ros.IResolvable;
+    public readonly attrSystemDiskSize: ros.IResolvable | string;
 
     /**
      * Attribute UniqueSuffix: Specifies whether to automatically append sequential suffixes to the hostnames specified by the HostName parameter and instance names specified by the InstanceName parameter when you create multiple instances at a time. The sequential suffix ranges from 001 to 999. Valid values:  true false Default value: false.
      */
-    public readonly attrUniqueSuffix: ros.IResolvable;
+    public readonly attrUniqueSuffix: ros.IResolvable | string;
 
     /**
      * Attribute UserData: User data to pass to instance. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
      */
-    public readonly attrUserData: ros.IResolvable;
+    public readonly attrUserData: ros.IResolvable | string;
 
     /**
      * Attribute VSwitchId: The vSwitch Id to create ens instance.
      */
-    public readonly attrVSwitchId: ros.IResolvable;
+    public readonly attrVSwitchId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

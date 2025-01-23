@@ -32,6 +32,10 @@ func (s *jsiiProxy_Stack) validateResolveParameters(obj interface{}) error {
 	return nil
 }
 
+func (s *jsiiProxy_Stack) validateSplitArnParameters(arn interface{}, arnFormat ArnFormat) error {
+	return nil
+}
+
 func (s *jsiiProxy_Stack) validateSynthesizeParameters(session ISynthesisSession) error {
 	return nil
 }

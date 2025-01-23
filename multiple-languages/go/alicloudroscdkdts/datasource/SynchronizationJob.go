@@ -12,24 +12,34 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::DTS::SynchronizationJob`.
 type SynchronizationJob interface {
 	alicloudroscdkcore.Resource
+	ISynchronizationJob
 	// Attribute CreateTime: The task creation time, which follows the yyyy-MM-ddTHH:mm:ssZ(UTC time).
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute DestinationEndpointEngineName: The target database engine type.
-	AttrDestinationEndpointEngineName() alicloudroscdkcore.IResolvable
+	AttrDestinationEndpointEngineName() interface{}
 	// Attribute DestinationEndpointRegion: Region of source instance.
-	AttrDestinationEndpointRegion() alicloudroscdkcore.IResolvable
+	AttrDestinationEndpointRegion() interface{}
 	// Attribute DtsInstanceId: Synchronization instance ID.
-	AttrDtsInstanceId() alicloudroscdkcore.IResolvable
+	AttrDtsInstanceId() interface{}
 	// Attribute InstanceClass: The specification of the migration or synchronization instance.
-	AttrInstanceClass() alicloudroscdkcore.IResolvable
+	AttrInstanceClass() interface{}
 	// Attribute PaymentType: The payment type of the resource.
-	AttrPaymentType() alicloudroscdkcore.IResolvable
+	AttrPaymentType() interface{}
 	// Attribute SourceEndpointEngineName: Source instance database engine type.
-	AttrSourceEndpointEngineName() alicloudroscdkcore.IResolvable
+	AttrSourceEndpointEngineName() interface{}
 	// Attribute SourceEndpointRegion: Region of source instance.
-	AttrSourceEndpointRegion() alicloudroscdkcore.IResolvable
+	AttrSourceEndpointRegion() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -44,7 +54,6 @@ type SynchronizationJob interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *SynchronizationJobProps
-	SetProps(val *SynchronizationJobProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -57,6 +66,9 @@ type SynchronizationJob interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -109,10 +121,11 @@ type SynchronizationJob interface {
 // The jsii proxy struct for SynchronizationJob
 type jsiiProxy_SynchronizationJob struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ISynchronizationJob
 }
 
-func (j *jsiiProxy_SynchronizationJob) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SynchronizationJob) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_SynchronizationJob) AttrCreateTime() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_SynchronizationJob) AttrDestinationEndpointEngineName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SynchronizationJob) AttrDestinationEndpointEngineName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDestinationEndpointEngineName",
@@ -131,8 +144,8 @@ func (j *jsiiProxy_SynchronizationJob) AttrDestinationEndpointEngineName() alicl
 	return returns
 }
 
-func (j *jsiiProxy_SynchronizationJob) AttrDestinationEndpointRegion() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SynchronizationJob) AttrDestinationEndpointRegion() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDestinationEndpointRegion",
@@ -141,8 +154,8 @@ func (j *jsiiProxy_SynchronizationJob) AttrDestinationEndpointRegion() alicloudr
 	return returns
 }
 
-func (j *jsiiProxy_SynchronizationJob) AttrDtsInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SynchronizationJob) AttrDtsInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDtsInstanceId",
@@ -151,8 +164,8 @@ func (j *jsiiProxy_SynchronizationJob) AttrDtsInstanceId() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_SynchronizationJob) AttrInstanceClass() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SynchronizationJob) AttrInstanceClass() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceClass",
@@ -161,8 +174,8 @@ func (j *jsiiProxy_SynchronizationJob) AttrInstanceClass() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_SynchronizationJob) AttrPaymentType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SynchronizationJob) AttrPaymentType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPaymentType",
@@ -171,8 +184,8 @@ func (j *jsiiProxy_SynchronizationJob) AttrPaymentType() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_SynchronizationJob) AttrSourceEndpointEngineName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SynchronizationJob) AttrSourceEndpointEngineName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSourceEndpointEngineName",
@@ -181,8 +194,8 @@ func (j *jsiiProxy_SynchronizationJob) AttrSourceEndpointEngineName() alicloudro
 	return returns
 }
 
-func (j *jsiiProxy_SynchronizationJob) AttrSourceEndpointRegion() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SynchronizationJob) AttrSourceEndpointRegion() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSourceEndpointRegion",
@@ -196,6 +209,16 @@ func (j *jsiiProxy_SynchronizationJob) EnableResourcePropertyConstraint() *bool 
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SynchronizationJob) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -333,17 +356,6 @@ func (j *jsiiProxy_SynchronizationJob)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SynchronizationJob)SetProps(val *SynchronizationJobProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_SynchronizationJob)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -435,6 +447,45 @@ func (s *jsiiProxy_SynchronizationJob) ApplyRemovalPolicy(policy alicloudroscdkc
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (s *jsiiProxy_SynchronizationJob) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		s,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_SynchronizationJob) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_SynchronizationJob) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (s *jsiiProxy_SynchronizationJob) GeneratePhysicalName() *string {

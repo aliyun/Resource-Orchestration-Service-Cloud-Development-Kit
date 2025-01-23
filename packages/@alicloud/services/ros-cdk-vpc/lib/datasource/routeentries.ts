@@ -73,25 +73,41 @@ export interface RouteEntriesProps {
 }
 
 /**
+ * Represents a `RouteEntries`.
+ */
+export interface IRouteEntries extends ros.IResource {
+    readonly props: RouteEntriesProps;
+
+    /**
+     * Attribute RouteEntries: The list of The route entries.
+     */
+    readonly attrRouteEntries: ros.IResolvable | string;
+
+    /**
+     * Attribute RouteEntryIds: the list of the route entry ids.
+     */
+    readonly attrRouteEntryIds: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::RouteEntries`, which is used to query routes.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRouteEntries`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-routeentries
  */
-export class RouteEntries extends ros.Resource {
+export class RouteEntries extends ros.Resource implements IRouteEntries {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: RouteEntriesProps;
+    public readonly props: RouteEntriesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RouteEntries: The list of The route entries.
      */
-    public readonly attrRouteEntries: ros.IResolvable;
+    public readonly attrRouteEntries: ros.IResolvable | string;
 
     /**
      * Attribute RouteEntryIds: the list of the route entry ids.
      */
-    public readonly attrRouteEntryIds: ros.IResolvable;
+    public readonly attrRouteEntryIds: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

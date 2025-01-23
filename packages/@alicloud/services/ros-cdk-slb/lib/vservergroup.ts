@@ -31,30 +31,51 @@ export interface VServerGroupProps {
 }
 
 /**
+ * Represents a `VServerGroup`.
+ */
+export interface IVServerGroup extends ros.IResource {
+    readonly props: VServerGroupProps;
+
+    /**
+     * Attribute BackendServers: Backend server list in this VServerGroup.
+     */
+    readonly attrBackendServers: ros.IResolvable | string;
+
+    /**
+     * Attribute LoadBalancerId: The id of load balancer.
+     */
+    readonly attrLoadBalancerId: ros.IResolvable | string;
+
+    /**
+     * Attribute VServerGroupId: The id of VServerGroup created.
+     */
+    readonly attrVServerGroupId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::VServerGroup`, which is used to create a server group and attach backend servers to a Server Load Balancer (SLB) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVServerGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-vservergroup
  */
-export class VServerGroup extends ros.Resource {
+export class VServerGroup extends ros.Resource implements IVServerGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: VServerGroupProps;
+    public readonly props: VServerGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute BackendServers: Backend server list in this VServerGroup.
      */
-    public readonly attrBackendServers: ros.IResolvable;
+    public readonly attrBackendServers: ros.IResolvable | string;
 
     /**
      * Attribute LoadBalancerId: The id of load balancer.
      */
-    public readonly attrLoadBalancerId: ros.IResolvable;
+    public readonly attrLoadBalancerId: ros.IResolvable | string;
 
     /**
      * Attribute VServerGroupId: The id of VServerGroup created.
      */
-    public readonly attrVServerGroupId: ros.IResolvable;
+    public readonly attrVServerGroupId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

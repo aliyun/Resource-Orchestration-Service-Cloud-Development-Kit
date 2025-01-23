@@ -64,20 +64,31 @@ export interface DeliveryChannelProps {
 }
 
 /**
+ * Represents a `DeliveryChannel`.
+ */
+export interface IDeliveryChannel extends ros.IResource {
+    readonly props: DeliveryChannelProps;
+
+    /**
+     * Attribute DeliveryChannelId: The ID of the delivery method.
+     */
+    readonly attrDeliveryChannelId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::Config::DeliveryChannel`, which is used to create or update a delivery channel.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDeliveryChannel`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-deliverychannel
  */
-export class DeliveryChannel extends ros.Resource {
+export class DeliveryChannel extends ros.Resource implements IDeliveryChannel {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DeliveryChannelProps;
+    public readonly props: DeliveryChannelProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DeliveryChannelId: The ID of the delivery method.
      */
-    public readonly attrDeliveryChannelId: ros.IResolvable;
+    public readonly attrDeliveryChannelId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

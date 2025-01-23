@@ -21,35 +21,61 @@ export interface PluginProps {
 }
 
 /**
+ * Represents a `Plugin`.
+ */
+export interface IPlugin extends ros.IResource {
+    readonly props: PluginProps;
+
+    /**
+     * Attribute GatewayId: The ID of the Gateway.
+     */
+    readonly attrGatewayId: ros.IResolvable | string;
+
+    /**
+     * Attribute GatewayName: The name of the gateway.
+     */
+    readonly attrGatewayName: ros.IResolvable | string;
+
+    /**
+     * Attribute PluginClassId: The ID of the plugin class.
+     */
+    readonly attrPluginClassId: ros.IResolvable | string;
+
+    /**
+     * Attribute PluginId: The ID of the plugin.
+     */
+    readonly attrPluginId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Plugin`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPlugin`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-plugin
  */
-export class Plugin extends ros.Resource {
+export class Plugin extends ros.Resource implements IPlugin {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: PluginProps;
+    public readonly props: PluginProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute GatewayId: The ID of the Gateway.
      */
-    public readonly attrGatewayId: ros.IResolvable;
+    public readonly attrGatewayId: ros.IResolvable | string;
 
     /**
      * Attribute GatewayName: The name of the gateway.
      */
-    public readonly attrGatewayName: ros.IResolvable;
+    public readonly attrGatewayName: ros.IResolvable | string;
 
     /**
      * Attribute PluginClassId: The ID of the plugin class.
      */
-    public readonly attrPluginClassId: ros.IResolvable;
+    public readonly attrPluginClassId: ros.IResolvable | string;
 
     /**
      * Attribute PluginId: The ID of the plugin.
      */
-    public readonly attrPluginId: ros.IResolvable;
+    public readonly attrPluginId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

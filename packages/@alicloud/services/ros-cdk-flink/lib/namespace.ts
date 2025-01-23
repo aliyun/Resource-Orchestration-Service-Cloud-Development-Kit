@@ -26,25 +26,41 @@ export interface NamespaceProps {
 }
 
 /**
+ * Represents a `Namespace`.
+ */
+export interface INamespace extends ros.IResource {
+    readonly props: NamespaceProps;
+
+    /**
+     * Attribute InstanceId: Instance ID.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute Namespace: Project space name.
+     */
+    readonly attrNamespace: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::Flink::Namespace`, which is used to create a project.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNamespace`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-namespace
  */
-export class Namespace extends ros.Resource {
+export class Namespace extends ros.Resource implements INamespace {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: NamespaceProps;
+    public readonly props: NamespaceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceId: Instance ID.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute Namespace: Project space name.
      */
-    public readonly attrNamespace: ros.IResolvable;
+    public readonly attrNamespace: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -36,25 +36,41 @@ export interface OssExportProps {
 }
 
 /**
+ * Represents a `OssExport`.
+ */
+export interface IOssExport extends ros.IResource {
+    readonly props: OssExportProps;
+
+    /**
+     * Attribute ExportName: The name of the export job.
+     */
+    readonly attrExportName: ros.IResolvable | string;
+
+    /**
+     * Attribute ProjectName: The project name of SLS.
+     */
+    readonly attrProjectName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::OssExport`, which is used to create an Object Storage Service (OSS) data shipping job to manage Simple Log Service (SLS) data and ship Logstore data to OSS for storage.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosOssExport`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-ossexport
  */
-export class OssExport extends ros.Resource {
+export class OssExport extends ros.Resource implements IOssExport {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: OssExportProps;
+    public readonly props: OssExportProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ExportName: The name of the export job.
      */
-    public readonly attrExportName: ros.IResolvable;
+    public readonly attrExportName: ros.IResolvable | string;
 
     /**
      * Attribute ProjectName: The project name of SLS.
      */
-    public readonly attrProjectName: ros.IResolvable;
+    public readonly attrProjectName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

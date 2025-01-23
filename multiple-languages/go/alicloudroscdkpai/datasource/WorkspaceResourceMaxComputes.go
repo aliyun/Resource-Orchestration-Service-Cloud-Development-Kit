@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::WorkspaceResourceMaxComputes`, which is used to query the MaxCompute resources that are associated with a workspace.
 type WorkspaceResourceMaxComputes interface {
 	alicloudroscdkcore.Resource
+	IWorkspaceResourceMaxComputes
 	// Attribute GroupNames: The list of group names.
-	AttrGroupNames() alicloudroscdkcore.IResolvable
+	AttrGroupNames() interface{}
 	// Attribute WorkspaceResourceMaxComputes: The list of workspace resource max computes.
-	AttrWorkspaceResourceMaxComputes() alicloudroscdkcore.IResolvable
+	AttrWorkspaceResourceMaxComputes() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type WorkspaceResourceMaxComputes interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *WorkspaceResourceMaxComputesProps
-	SetProps(val *WorkspaceResourceMaxComputesProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type WorkspaceResourceMaxComputes interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type WorkspaceResourceMaxComputes interface {
 // The jsii proxy struct for WorkspaceResourceMaxComputes
 type jsiiProxy_WorkspaceResourceMaxComputes struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IWorkspaceResourceMaxComputes
 }
 
-func (j *jsiiProxy_WorkspaceResourceMaxComputes) AttrGroupNames() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_WorkspaceResourceMaxComputes) AttrGroupNames() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGroupNames",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_WorkspaceResourceMaxComputes) AttrGroupNames() alicloudroscdk
 	return returns
 }
 
-func (j *jsiiProxy_WorkspaceResourceMaxComputes) AttrWorkspaceResourceMaxComputes() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_WorkspaceResourceMaxComputes) AttrWorkspaceResourceMaxComputes() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrWorkspaceResourceMaxComputes",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_WorkspaceResourceMaxComputes) EnableResourcePropertyConstrain
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WorkspaceResourceMaxComputes) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_WorkspaceResourceMaxComputes)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_WorkspaceResourceMaxComputes)SetProps(val *WorkspaceResourceMaxComputesProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_WorkspaceResourceMaxComputes)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (w *jsiiProxy_WorkspaceResourceMaxComputes) ApplyRemovalPolicy(policy alicl
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (w *jsiiProxy_WorkspaceResourceMaxComputes) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		w,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (w *jsiiProxy_WorkspaceResourceMaxComputes) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		w,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (w *jsiiProxy_WorkspaceResourceMaxComputes) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		w,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (w *jsiiProxy_WorkspaceResourceMaxComputes) GeneratePhysicalName() *string {

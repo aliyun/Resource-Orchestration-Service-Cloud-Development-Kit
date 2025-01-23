@@ -12,30 +12,40 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::HaVip`, which is used to query a high-availability virtual IP address (HAVIP).
 type HaVip interface {
 	alicloudroscdkcore.Resource
+	IHaVip
 	// Attribute AssociatedEipAddresses: EIP bound to HaVip.
-	AttrAssociatedEipAddresses() alicloudroscdkcore.IResolvable
+	AttrAssociatedEipAddresses() interface{}
 	// Attribute AssociatedInstances: An ECS instance that is bound to HaVip.
-	AttrAssociatedInstances() alicloudroscdkcore.IResolvable
+	AttrAssociatedInstances() interface{}
 	// Attribute AssociatedInstanceType: The type of the instance that is bound to the VIIP.
-	AttrAssociatedInstanceType() alicloudroscdkcore.IResolvable
+	AttrAssociatedInstanceType() interface{}
 	// Attribute CreateTime: The creation time of the  resource.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute Description: Dependence of a HaVip instance.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute HaVipId: The  ID of the resource.
-	AttrHaVipId() alicloudroscdkcore.IResolvable
+	AttrHaVipId() interface{}
 	// Attribute HaVipName: The name of the HaVip instance.
-	AttrHaVipName() alicloudroscdkcore.IResolvable
+	AttrHaVipName() interface{}
 	// Attribute IpAddress: IP address of private network.
-	AttrIpAddress() alicloudroscdkcore.IResolvable
+	AttrIpAddress() interface{}
 	// Attribute MasterInstanceId: The primary instance ID bound to HaVip.
-	AttrMasterInstanceId() alicloudroscdkcore.IResolvable
+	AttrMasterInstanceId() interface{}
 	// Attribute VpcId: The VPC ID to which the HaVip instance belongs.
-	AttrVpcId() alicloudroscdkcore.IResolvable
+	AttrVpcId() interface{}
 	// Attribute VSwitchId: The switch ID to which the HaVip instance belongs.
-	AttrVSwitchId() alicloudroscdkcore.IResolvable
+	AttrVSwitchId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -50,7 +60,6 @@ type HaVip interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *HaVipProps
-	SetProps(val *HaVipProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -63,6 +72,9 @@ type HaVip interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -115,10 +127,11 @@ type HaVip interface {
 // The jsii proxy struct for HaVip
 type jsiiProxy_HaVip struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IHaVip
 }
 
-func (j *jsiiProxy_HaVip) AttrAssociatedEipAddresses() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HaVip) AttrAssociatedEipAddresses() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAssociatedEipAddresses",
@@ -127,8 +140,8 @@ func (j *jsiiProxy_HaVip) AttrAssociatedEipAddresses() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_HaVip) AttrAssociatedInstances() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HaVip) AttrAssociatedInstances() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAssociatedInstances",
@@ -137,8 +150,8 @@ func (j *jsiiProxy_HaVip) AttrAssociatedInstances() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_HaVip) AttrAssociatedInstanceType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HaVip) AttrAssociatedInstanceType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAssociatedInstanceType",
@@ -147,8 +160,8 @@ func (j *jsiiProxy_HaVip) AttrAssociatedInstanceType() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_HaVip) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HaVip) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -157,8 +170,8 @@ func (j *jsiiProxy_HaVip) AttrCreateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_HaVip) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HaVip) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -167,8 +180,8 @@ func (j *jsiiProxy_HaVip) AttrDescription() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_HaVip) AttrHaVipId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HaVip) AttrHaVipId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHaVipId",
@@ -177,8 +190,8 @@ func (j *jsiiProxy_HaVip) AttrHaVipId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_HaVip) AttrHaVipName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HaVip) AttrHaVipName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHaVipName",
@@ -187,8 +200,8 @@ func (j *jsiiProxy_HaVip) AttrHaVipName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_HaVip) AttrIpAddress() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HaVip) AttrIpAddress() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIpAddress",
@@ -197,8 +210,8 @@ func (j *jsiiProxy_HaVip) AttrIpAddress() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_HaVip) AttrMasterInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HaVip) AttrMasterInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMasterInstanceId",
@@ -207,8 +220,8 @@ func (j *jsiiProxy_HaVip) AttrMasterInstanceId() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_HaVip) AttrVpcId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HaVip) AttrVpcId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVpcId",
@@ -217,8 +230,8 @@ func (j *jsiiProxy_HaVip) AttrVpcId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_HaVip) AttrVSwitchId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HaVip) AttrVSwitchId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVSwitchId",
@@ -232,6 +245,16 @@ func (j *jsiiProxy_HaVip) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HaVip) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -369,17 +392,6 @@ func (j *jsiiProxy_HaVip)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_HaVip)SetProps(val *HaVipProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_HaVip)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -471,6 +483,45 @@ func (h *jsiiProxy_HaVip) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (h *jsiiProxy_HaVip) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		h,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (h *jsiiProxy_HaVip) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		h,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (h *jsiiProxy_HaVip) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		h,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (h *jsiiProxy_HaVip) GeneratePhysicalName() *string {

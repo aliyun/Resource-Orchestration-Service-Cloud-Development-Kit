@@ -1,5 +1,8 @@
 @alicloud/ros-cdk-cas.Certificate=com.aliyun.ros.cdk.cas.Certificate
 @alicloud/ros-cdk-cas.CertificateProps=com.aliyun.ros.cdk.cas.CertificateProps
+@alicloud/ros-cdk-cas.ICertificate=com.aliyun.ros.cdk.cas.ICertificate
+@alicloud/ros-cdk-cas.IOrder=com.aliyun.ros.cdk.cas.IOrder
+@alicloud/ros-cdk-cas.ISslCertificate=com.aliyun.ros.cdk.cas.ISslCertificate
 @alicloud/ros-cdk-cas.Order=com.aliyun.ros.cdk.cas.Order
 @alicloud/ros-cdk-cas.OrderProps=com.aliyun.ros.cdk.cas.OrderProps
 @alicloud/ros-cdk-cas.RosCertificate=com.aliyun.ros.cdk.cas.RosCertificate

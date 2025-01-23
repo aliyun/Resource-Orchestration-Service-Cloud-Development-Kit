@@ -12,34 +12,44 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ECS::InstanceGroupClone`, which is used to create clones of an Elastic Compute Service (ECS) instance.
 type InstanceGroupClone interface {
 	alicloudroscdkcore.Resource
+	IInstanceGroupClone
 	// Attribute HostNames: Host names of created instances.
-	AttrHostNames() alicloudroscdkcore.IResolvable
+	AttrHostNames() interface{}
 	// Attribute InnerIps: Inner IP address list of the specified instances.
 	//
 	// Only for classical instances.
-	AttrInnerIps() alicloudroscdkcore.IResolvable
+	AttrInnerIps() interface{}
 	// Attribute InstanceIds: The instance id list of created ecs instances.
-	AttrInstanceIds() alicloudroscdkcore.IResolvable
+	AttrInstanceIds() interface{}
 	// Attribute Ipv6Addresses: IPv6 addresses list of created ecs instances.
 	//
 	// Note: The return type is a two-tier list. If the instance does not have any IPv6 address, the element at the corresponding position in the list is null. If all instances does not have any IPv address, will return null.
-	AttrIpv6Addresses() alicloudroscdkcore.IResolvable
+	AttrIpv6Addresses() interface{}
 	// Attribute Ipv6AddressIds: IPv6 address IDs list of created ecs instances.
 	//
 	// Note: The return type is a two-tier list.If the instance does not have any IPv6 address, the element at the corresponding position in the list is null. If all instances does not have any IPv address, will return null.
-	AttrIpv6AddressIds() alicloudroscdkcore.IResolvable
+	AttrIpv6AddressIds() interface{}
 	// Attribute OrderId: The order id list of created instance.
-	AttrOrderId() alicloudroscdkcore.IResolvable
+	AttrOrderId() interface{}
 	// Attribute PrivateIps: Private IP address list of created ecs instances.
 	//
 	// Only for VPC instance.
-	AttrPrivateIps() alicloudroscdkcore.IResolvable
+	AttrPrivateIps() interface{}
 	// Attribute PublicIps: Public IP address list of created ecs instances.
-	AttrPublicIps() alicloudroscdkcore.IResolvable
+	AttrPublicIps() interface{}
 	// Attribute ZoneIds: Zone id of created instances.
-	AttrZoneIds() alicloudroscdkcore.IResolvable
+	AttrZoneIds() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -54,7 +64,6 @@ type InstanceGroupClone interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *InstanceGroupCloneProps
-	SetProps(val *InstanceGroupCloneProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -67,6 +76,9 @@ type InstanceGroupClone interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -119,10 +131,11 @@ type InstanceGroupClone interface {
 // The jsii proxy struct for InstanceGroupClone
 type jsiiProxy_InstanceGroupClone struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IInstanceGroupClone
 }
 
-func (j *jsiiProxy_InstanceGroupClone) AttrHostNames() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_InstanceGroupClone) AttrHostNames() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHostNames",
@@ -131,8 +144,8 @@ func (j *jsiiProxy_InstanceGroupClone) AttrHostNames() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_InstanceGroupClone) AttrInnerIps() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_InstanceGroupClone) AttrInnerIps() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInnerIps",
@@ -141,8 +154,8 @@ func (j *jsiiProxy_InstanceGroupClone) AttrInnerIps() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_InstanceGroupClone) AttrInstanceIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_InstanceGroupClone) AttrInstanceIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceIds",
@@ -151,8 +164,8 @@ func (j *jsiiProxy_InstanceGroupClone) AttrInstanceIds() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_InstanceGroupClone) AttrIpv6Addresses() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_InstanceGroupClone) AttrIpv6Addresses() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIpv6Addresses",
@@ -161,8 +174,8 @@ func (j *jsiiProxy_InstanceGroupClone) AttrIpv6Addresses() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_InstanceGroupClone) AttrIpv6AddressIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_InstanceGroupClone) AttrIpv6AddressIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIpv6AddressIds",
@@ -171,8 +184,8 @@ func (j *jsiiProxy_InstanceGroupClone) AttrIpv6AddressIds() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_InstanceGroupClone) AttrOrderId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_InstanceGroupClone) AttrOrderId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOrderId",
@@ -181,8 +194,8 @@ func (j *jsiiProxy_InstanceGroupClone) AttrOrderId() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_InstanceGroupClone) AttrPrivateIps() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_InstanceGroupClone) AttrPrivateIps() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPrivateIps",
@@ -191,8 +204,8 @@ func (j *jsiiProxy_InstanceGroupClone) AttrPrivateIps() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_InstanceGroupClone) AttrPublicIps() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_InstanceGroupClone) AttrPublicIps() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPublicIps",
@@ -201,8 +214,8 @@ func (j *jsiiProxy_InstanceGroupClone) AttrPublicIps() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_InstanceGroupClone) AttrZoneIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_InstanceGroupClone) AttrZoneIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrZoneIds",
@@ -216,6 +229,16 @@ func (j *jsiiProxy_InstanceGroupClone) EnableResourcePropertyConstraint() *bool 
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_InstanceGroupClone) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -353,17 +376,6 @@ func (j *jsiiProxy_InstanceGroupClone)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_InstanceGroupClone)SetProps(val *InstanceGroupCloneProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_InstanceGroupClone)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -455,6 +467,45 @@ func (i *jsiiProxy_InstanceGroupClone) ApplyRemovalPolicy(policy alicloudroscdkc
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (i *jsiiProxy_InstanceGroupClone) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		i,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_InstanceGroupClone) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		i,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_InstanceGroupClone) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		i,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (i *jsiiProxy_InstanceGroupClone) GeneratePhysicalName() *string {

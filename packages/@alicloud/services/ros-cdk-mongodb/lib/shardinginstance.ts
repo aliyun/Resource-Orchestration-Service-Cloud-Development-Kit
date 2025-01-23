@@ -134,30 +134,51 @@ export interface ShardingInstanceProps {
 }
 
 /**
+ * Represents a `ShardingInstance`.
+ */
+export interface IShardingInstance extends ros.IResource {
+    readonly props: ShardingInstanceProps;
+
+    /**
+     * Attribute DBInstanceId: The instance id of created mongodb instance.
+     */
+    readonly attrDbInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute DBInstanceStatus: Status of mongodb instance.
+     */
+    readonly attrDbInstanceStatus: ros.IResolvable | string;
+
+    /**
+     * Attribute OrderId: Order Id of created instance.
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::MONGODB::ShardingInstance`, which is used to create or clone an ApsaraDB for MongoDB sharded cluster instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosShardingInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mongodb-shardinginstance
  */
-export class ShardingInstance extends ros.Resource {
+export class ShardingInstance extends ros.Resource implements IShardingInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ShardingInstanceProps;
+    public readonly props: ShardingInstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DBInstanceId: The instance id of created mongodb instance.
      */
-    public readonly attrDbInstanceId: ros.IResolvable;
+    public readonly attrDbInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute DBInstanceStatus: Status of mongodb instance.
      */
-    public readonly attrDbInstanceStatus: ros.IResolvable;
+    public readonly attrDbInstanceStatus: ros.IResolvable | string;
 
     /**
      * Attribute OrderId: Order Id of created instance.
      */
-    public readonly attrOrderId: ros.IResolvable;
+    public readonly attrOrderId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

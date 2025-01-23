@@ -54,20 +54,31 @@ export interface ManagedPolicyProps {
 }
 
 /**
+ * Represents a `ManagedPolicy`.
+ */
+export interface IManagedPolicy extends ros.IResource {
+    readonly props: ManagedPolicyProps;
+
+    /**
+     * Attribute PolicyName: When the logical ID of this resource is provided to the Ref intrinsic function, Ref returns the ARN.
+     */
+    readonly attrPolicyName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::ManagedPolicy`, which is used to create a Resource Access Management (RAM) policy.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosManagedPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-managedpolicy
  */
-export class ManagedPolicy extends ros.Resource {
+export class ManagedPolicy extends ros.Resource implements IManagedPolicy {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ManagedPolicyProps;
+    public readonly props: ManagedPolicyProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute PolicyName: When the logical ID of this resource is provided to the Ref intrinsic function, Ref returns the ARN.
      */
-    public readonly attrPolicyName: ros.IResolvable;
+    public readonly attrPolicyName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

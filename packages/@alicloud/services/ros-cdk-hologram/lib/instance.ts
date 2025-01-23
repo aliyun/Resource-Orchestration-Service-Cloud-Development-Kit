@@ -134,135 +134,261 @@ export interface InstanceProps {
 }
 
 /**
+ * Represents a `Instance`.
+ */
+export interface IInstance extends ros.IResource {
+    readonly props: InstanceProps;
+
+    /**
+     * Attribute AutoRenewal: Whether automatic renewal is enabled.
+     */
+    readonly attrAutoRenewal: ros.IResolvable | string;
+
+    /**
+     * Attribute ColdStorageSize: Instance low-frequency storage space. Unit: GB.
+     */
+    readonly attrColdStorageSize: ros.IResolvable | string;
+
+    /**
+     * Attribute CommodityCode: The commodity code.
+     */
+    readonly attrCommodityCode: ros.IResolvable | string;
+
+    /**
+     * Attribute ComputeNodeCount: Number of compute nodes.
+     */
+    readonly attrComputeNodeCount: ros.IResolvable | string;
+
+    /**
+     * Attribute Cpu: Instance specifications.
+     */
+    readonly attrCpu: ros.IResolvable | string;
+
+    /**
+     * Attribute CreateTime: The creation time of the resource.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute EnableHiveAccess: Whether data Lake acceleration is enabled.
+     */
+    readonly attrEnableHiveAccess: ros.IResolvable | string;
+
+    /**
+     * Attribute Endpoints: List of domain names.
+     */
+    readonly attrEndpoints: ros.IResolvable | string;
+
+    /**
+     * Attribute ExpirationTime: Expiration time.
+     */
+    readonly attrExpirationTime: ros.IResolvable | string;
+
+    /**
+     * Attribute GatewayCount: Number of gateway nodes.
+     */
+    readonly attrGatewayCount: ros.IResolvable | string;
+
+    /**
+     * Attribute GatewayCpu: Cpu resources of the Gateway.
+     */
+    readonly attrGatewayCpu: ros.IResolvable | string;
+
+    /**
+     * Attribute GatewayMemory: Gateway memory resources.
+     */
+    readonly attrGatewayMemory: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: Resource attribute fields that represent the resource's primary key.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceName: The name of the resource.
+     */
+    readonly attrInstanceName: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceOwner: The instance owner.
+     */
+    readonly attrInstanceOwner: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceType: The instance type.
+     */
+    readonly attrInstanceType: ros.IResolvable | string;
+
+    /**
+     * Attribute Memory: Memory.
+     */
+    readonly attrMemory: ros.IResolvable | string;
+
+    /**
+     * Attribute PaymentType: The payment type of the resource.
+     */
+    readonly attrPaymentType: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: The ID of the resource group.
+     */
+    readonly attrResourceGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute StorageSize: The standard storage space of the instance. Unit: GB.
+     */
+    readonly attrStorageSize: ros.IResolvable | string;
+
+    /**
+     * Attribute SuspendReason: Reason for suspension.
+     */
+    readonly attrSuspendReason: ros.IResolvable | string;
+
+    /**
+     * Attribute Tags: Instance tag.
+     */
+    readonly attrTags: ros.IResolvable | string;
+
+    /**
+     * Attribute Version: The instance version.
+     */
+    readonly attrVersion: ros.IResolvable | string;
+
+    /**
+     * Attribute ZoneId: The zone Id.
+     */
+    readonly attrZoneId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::Hologram::Instance`, which is used to create a Hologres instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hologram-instance
  */
-export class Instance extends ros.Resource {
+export class Instance extends ros.Resource implements IInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InstanceProps;
+    public readonly props: InstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AutoRenewal: Whether automatic renewal is enabled.
      */
-    public readonly attrAutoRenewal: ros.IResolvable;
+    public readonly attrAutoRenewal: ros.IResolvable | string;
 
     /**
      * Attribute ColdStorageSize: Instance low-frequency storage space. Unit: GB.
      */
-    public readonly attrColdStorageSize: ros.IResolvable;
+    public readonly attrColdStorageSize: ros.IResolvable | string;
 
     /**
      * Attribute CommodityCode: The commodity code.
      */
-    public readonly attrCommodityCode: ros.IResolvable;
+    public readonly attrCommodityCode: ros.IResolvable | string;
 
     /**
      * Attribute ComputeNodeCount: Number of compute nodes.
      */
-    public readonly attrComputeNodeCount: ros.IResolvable;
+    public readonly attrComputeNodeCount: ros.IResolvable | string;
 
     /**
      * Attribute Cpu: Instance specifications.
      */
-    public readonly attrCpu: ros.IResolvable;
+    public readonly attrCpu: ros.IResolvable | string;
 
     /**
      * Attribute CreateTime: The creation time of the resource.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute EnableHiveAccess: Whether data Lake acceleration is enabled.
      */
-    public readonly attrEnableHiveAccess: ros.IResolvable;
+    public readonly attrEnableHiveAccess: ros.IResolvable | string;
 
     /**
      * Attribute Endpoints: List of domain names.
      */
-    public readonly attrEndpoints: ros.IResolvable;
+    public readonly attrEndpoints: ros.IResolvable | string;
 
     /**
      * Attribute ExpirationTime: Expiration time.
      */
-    public readonly attrExpirationTime: ros.IResolvable;
+    public readonly attrExpirationTime: ros.IResolvable | string;
 
     /**
      * Attribute GatewayCount: Number of gateway nodes.
      */
-    public readonly attrGatewayCount: ros.IResolvable;
+    public readonly attrGatewayCount: ros.IResolvable | string;
 
     /**
      * Attribute GatewayCpu: Cpu resources of the Gateway.
      */
-    public readonly attrGatewayCpu: ros.IResolvable;
+    public readonly attrGatewayCpu: ros.IResolvable | string;
 
     /**
      * Attribute GatewayMemory: Gateway memory resources.
      */
-    public readonly attrGatewayMemory: ros.IResolvable;
+    public readonly attrGatewayMemory: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: Resource attribute fields that represent the resource's primary key.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute InstanceName: The name of the resource.
      */
-    public readonly attrInstanceName: ros.IResolvable;
+    public readonly attrInstanceName: ros.IResolvable | string;
 
     /**
      * Attribute InstanceOwner: The instance owner.
      */
-    public readonly attrInstanceOwner: ros.IResolvable;
+    public readonly attrInstanceOwner: ros.IResolvable | string;
 
     /**
      * Attribute InstanceType: The instance type.
      */
-    public readonly attrInstanceType: ros.IResolvable;
+    public readonly attrInstanceType: ros.IResolvable | string;
 
     /**
      * Attribute Memory: Memory.
      */
-    public readonly attrMemory: ros.IResolvable;
+    public readonly attrMemory: ros.IResolvable | string;
 
     /**
      * Attribute PaymentType: The payment type of the resource.
      */
-    public readonly attrPaymentType: ros.IResolvable;
+    public readonly attrPaymentType: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroupId: The ID of the resource group.
      */
-    public readonly attrResourceGroupId: ros.IResolvable;
+    public readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Attribute StorageSize: The standard storage space of the instance. Unit: GB.
      */
-    public readonly attrStorageSize: ros.IResolvable;
+    public readonly attrStorageSize: ros.IResolvable | string;
 
     /**
      * Attribute SuspendReason: Reason for suspension.
      */
-    public readonly attrSuspendReason: ros.IResolvable;
+    public readonly attrSuspendReason: ros.IResolvable | string;
 
     /**
      * Attribute Tags: Instance tag.
      */
-    public readonly attrTags: ros.IResolvable;
+    public readonly attrTags: ros.IResolvable | string;
 
     /**
      * Attribute Version: The instance version.
      */
-    public readonly attrVersion: ros.IResolvable;
+    public readonly attrVersion: ros.IResolvable | string;
 
     /**
      * Attribute ZoneId: The zone Id.
      */
-    public readonly attrZoneId: ros.IResolvable;
+    public readonly attrZoneId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

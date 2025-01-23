@@ -48,14 +48,20 @@ export interface BindingProps {
 }
 
 /**
+ * Represents a `Binding`.
+ */
+export interface IBinding extends ros.IResource {
+    readonly props: BindingProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::AMQP::Binding`, which is used to bind a queue or an exchange to an exchange.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBinding`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-binding
  */
-export class Binding extends ros.Resource {
+export class Binding extends ros.Resource implements IBinding {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: BindingProps;
+    public readonly props: BindingProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

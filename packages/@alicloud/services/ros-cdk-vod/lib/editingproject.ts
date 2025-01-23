@@ -27,47 +27,85 @@ export interface EditingProjectProps {
 }
 
 /**
+ * Represents a `EditingProject`.
+ */
+export interface IEditingProject extends ros.IResource {
+    readonly props: EditingProjectProps;
+
+    /**
+     * Attribute CreateTime: The time when the online editing project was created.
+The time follows the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. The time is displayed in UTC.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute EditingProjectId: The ID of the online editing project.
+     */
+    readonly attrEditingProjectId: ros.IResolvable | string;
+
+    /**
+     * Attribute EditingProjectName: The name of the online editing project.
+     */
+    readonly attrEditingProjectName: ros.IResolvable | string;
+
+    /**
+     * Attribute ModifiedTime: The last time when the online editing project was modified.
+The time follows the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. The time is displayed in UTC.
+     */
+    readonly attrModifiedTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Timeline: The timeline of the online editing project.
+     */
+    readonly attrTimeline: ros.IResolvable | string;
+
+    /**
+     * Attribute Title: The title of the online editing project.
+     */
+    readonly attrTitle: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VOD::EditingProject`, which is used to create an online editing project.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEditingProject`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-editingproject
  */
-export class EditingProject extends ros.Resource {
+export class EditingProject extends ros.Resource implements IEditingProject {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: EditingProjectProps;
+    public readonly props: EditingProjectProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateTime: The time when the online editing project was created.
 The time follows the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. The time is displayed in UTC.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute EditingProjectId: The ID of the online editing project.
      */
-    public readonly attrEditingProjectId: ros.IResolvable;
+    public readonly attrEditingProjectId: ros.IResolvable | string;
 
     /**
      * Attribute EditingProjectName: The name of the online editing project.
      */
-    public readonly attrEditingProjectName: ros.IResolvable;
+    public readonly attrEditingProjectName: ros.IResolvable | string;
 
     /**
      * Attribute ModifiedTime: The last time when the online editing project was modified.
 The time follows the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. The time is displayed in UTC.
      */
-    public readonly attrModifiedTime: ros.IResolvable;
+    public readonly attrModifiedTime: ros.IResolvable | string;
 
     /**
      * Attribute Timeline: The timeline of the online editing project.
      */
-    public readonly attrTimeline: ros.IResolvable;
+    public readonly attrTimeline: ros.IResolvable | string;
 
     /**
      * Attribute Title: The title of the online editing project.
      */
-    public readonly attrTitle: ros.IResolvable;
+    public readonly attrTitle: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

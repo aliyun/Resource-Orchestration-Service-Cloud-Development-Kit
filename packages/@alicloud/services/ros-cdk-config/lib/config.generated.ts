@@ -482,15 +482,22 @@ export interface RosAggregatorProps {
     readonly description: string | ros.IResolvable;
 
     /**
-     * @Property aggregatorAccounts: The member account in aggregator.When the AggregatorType is RD, this parameter can be empty, which means that all accounts in the resource directory will be added to the global account group.
+     * @Property aggregatorAccounts: The member account in aggregator.When the AggregatorType is RD, this parameter can be empty, which means that all accounts in the resource directory will be added to the global account group.When the AggregatorType is FOLDER, this parameter can be empty,which means that all accounts in the resource folder will be added to the global account group.
      */
     readonly aggregatorAccounts?: Array<RosAggregator.AggregatorAccountsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property aggregatorType: Account group type. Value:
-     * RD: Global account group.CUSTOM: Custom account group (default value).
+     * RD: Global account group.
+     * CUSTOM: Custom account group (default value).
+     * FOLDER: Folder account group. Must set FolderId if the AggregatorType is FOLDER. Please refer to ListAccounts for accessing FolderId.
      */
     readonly aggregatorType?: string | ros.IResolvable;
+
+    /**
+     * @Property folderId: The folder ID.
+     */
+    readonly folderId?: string | ros.IResolvable;
 }
 
 /**
@@ -508,10 +515,11 @@ function RosAggregatorPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('description', ros.requiredValidator)(properties.description));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('aggregatorAccounts', ros.listValidator(RosAggregator_AggregatorAccountsPropertyValidator))(properties.aggregatorAccounts));
+    errors.collect(ros.propertyValidator('folderId', ros.validateString)(properties.folderId));
     if(properties.aggregatorType && (typeof properties.aggregatorType) !== 'object') {
         errors.collect(ros.propertyValidator('aggregatorType', ros.validateAllowedValues)({
           data: properties.aggregatorType,
-          allowedValues: ["RD","CUSTOM"],
+          allowedValues: ["RD","CUSTOM","FOLDER"],
         }));
     }
     errors.collect(ros.propertyValidator('aggregatorType', ros.validateString)(properties.aggregatorType));
@@ -536,6 +544,7 @@ function rosAggregatorPropsToRosTemplate(properties: any, enableResourceProperty
       'Description': ros.stringToRosTemplate(properties.description),
       'AggregatorAccounts': ros.listMapper(rosAggregatorAggregatorAccountsPropertyToRosTemplate)(properties.aggregatorAccounts),
       'AggregatorType': ros.stringToRosTemplate(properties.aggregatorType),
+      'FolderId': ros.stringToRosTemplate(properties.folderId),
     };
 }
 
@@ -569,15 +578,22 @@ export class RosAggregator extends ros.RosResource {
     public description: string | ros.IResolvable;
 
     /**
-     * @Property aggregatorAccounts: The member account in aggregator.When the AggregatorType is RD, this parameter can be empty, which means that all accounts in the resource directory will be added to the global account group.
+     * @Property aggregatorAccounts: The member account in aggregator.When the AggregatorType is RD, this parameter can be empty, which means that all accounts in the resource directory will be added to the global account group.When the AggregatorType is FOLDER, this parameter can be empty,which means that all accounts in the resource folder will be added to the global account group.
      */
     public aggregatorAccounts: Array<RosAggregator.AggregatorAccountsProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property aggregatorType: Account group type. Value:
-     * RD: Global account group.CUSTOM: Custom account group (default value).
+     * RD: Global account group.
+     * CUSTOM: Custom account group (default value).
+     * FOLDER: Folder account group. Must set FolderId if the AggregatorType is FOLDER. Please refer to ListAccounts for accessing FolderId.
      */
     public aggregatorType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property folderId: The folder ID.
+     */
+    public folderId: string | ros.IResolvable | undefined;
 
     /**
      * @param scope - scope in which this resource is defined
@@ -593,6 +609,7 @@ export class RosAggregator extends ros.RosResource {
         this.description = props.description;
         this.aggregatorAccounts = props.aggregatorAccounts;
         this.aggregatorType = props.aggregatorType;
+        this.folderId = props.folderId;
     }
 
 
@@ -602,6 +619,7 @@ export class RosAggregator extends ros.RosResource {
             description: this.description,
             aggregatorAccounts: this.aggregatorAccounts,
             aggregatorType: this.aggregatorType,
+            folderId: this.folderId,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

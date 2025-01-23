@@ -34,25 +34,41 @@ export interface CenBandwidthPackagesProps {
 }
 
 /**
+ * Represents a `CenBandwidthPackages`.
+ */
+export interface ICenBandwidthPackages extends ros.IResource {
+    readonly props: CenBandwidthPackagesProps;
+
+    /**
+     * Attribute CenBandwidthPackageIds: The list of The Cen bandwidth ids.
+     */
+    readonly attrCenBandwidthPackageIds: ros.IResolvable | string;
+
+    /**
+     * Attribute CenBandwidthPackages: The information about CenBandwidthPackages.
+     */
+    readonly attrCenBandwidthPackages: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::CEN::CenBandwidthPackages`, which is used to query the information about Cloud Enterprise Network (CEN) bandwidth plans within the logon account.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenBandwidthPackages`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-cenbandwidthpackages
  */
-export class CenBandwidthPackages extends ros.Resource {
+export class CenBandwidthPackages extends ros.Resource implements ICenBandwidthPackages {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: CenBandwidthPackagesProps;
+    public readonly props: CenBandwidthPackagesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CenBandwidthPackageIds: The list of The Cen bandwidth ids.
      */
-    public readonly attrCenBandwidthPackageIds: ros.IResolvable;
+    public readonly attrCenBandwidthPackageIds: ros.IResolvable | string;
 
     /**
      * Attribute CenBandwidthPackages: The information about CenBandwidthPackages.
      */
-    public readonly attrCenBandwidthPackages: ros.IResolvable;
+    public readonly attrCenBandwidthPackages: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

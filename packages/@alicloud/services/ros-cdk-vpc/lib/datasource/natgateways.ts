@@ -71,25 +71,41 @@ export interface NatGatewaysProps {
 }
 
 /**
+ * Represents a `NatGateways`.
+ */
+export interface INatGateways extends ros.IResource {
+    readonly props: NatGatewaysProps;
+
+    /**
+     * Attribute NatGatewayIds: The list of The nat gateway ids.
+     */
+    readonly attrNatGatewayIds: ros.IResolvable | string;
+
+    /**
+     * Attribute NatGateways: The list of The nat gateways.
+     */
+    readonly attrNatGateways: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::NatGateways`, which is used to query NAT gateways.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNatGateways`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natgateways
  */
-export class NatGateways extends ros.Resource {
+export class NatGateways extends ros.Resource implements INatGateways {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: NatGatewaysProps;
+    public readonly props: NatGatewaysProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute NatGatewayIds: The list of The nat gateway ids.
      */
-    public readonly attrNatGatewayIds: ros.IResolvable;
+    public readonly attrNatGatewayIds: ros.IResolvable | string;
 
     /**
      * Attribute NatGateways: The list of The nat gateways.
      */
-    public readonly attrNatGateways: ros.IResolvable;
+    public readonly attrNatGateways: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

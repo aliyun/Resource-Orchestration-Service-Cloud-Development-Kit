@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::GA::AclsListenerAssociation`, which is used to associate an access control list (ACL) with a listener.
 type AclsListenerAssociation interface {
 	alicloudroscdkcore.Resource
+	IAclsListenerAssociation
 	// Attribute AclIds: The IDs of the ACL.
-	AttrAclIds() alicloudroscdkcore.IResolvable
+	AttrAclIds() interface{}
 	// Attribute ListenerId: The ID of the listener.
-	AttrListenerId() alicloudroscdkcore.IResolvable
+	AttrListenerId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type AclsListenerAssociation interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *AclsListenerAssociationProps
-	SetProps(val *AclsListenerAssociationProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type AclsListenerAssociation interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type AclsListenerAssociation interface {
 // The jsii proxy struct for AclsListenerAssociation
 type jsiiProxy_AclsListenerAssociation struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IAclsListenerAssociation
 }
 
-func (j *jsiiProxy_AclsListenerAssociation) AttrAclIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AclsListenerAssociation) AttrAclIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAclIds",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_AclsListenerAssociation) AttrAclIds() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_AclsListenerAssociation) AttrListenerId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AclsListenerAssociation) AttrListenerId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrListenerId",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_AclsListenerAssociation) EnableResourcePropertyConstraint() *
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AclsListenerAssociation) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_AclsListenerAssociation)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AclsListenerAssociation)SetProps(val *AclsListenerAssociationProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_AclsListenerAssociation)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (a *jsiiProxy_AclsListenerAssociation) ApplyRemovalPolicy(policy alicloudro
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (a *jsiiProxy_AclsListenerAssociation) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		a,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AclsListenerAssociation) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AclsListenerAssociation) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (a *jsiiProxy_AclsListenerAssociation) GeneratePhysicalName() *string {

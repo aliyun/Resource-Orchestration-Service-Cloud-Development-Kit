@@ -61,20 +61,31 @@ export interface StateConfigurationProps {
 }
 
 /**
+ * Represents a `StateConfiguration`.
+ */
+export interface IStateConfiguration extends ros.IResource {
+    readonly props: StateConfigurationProps;
+
+    /**
+     * Attribute StateConfigurationId: The ID of the desired-state configuration.
+     */
+    readonly attrStateConfigurationId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::StateConfiguration`, which is used to create a desired-state configuration.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosStateConfiguration`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-stateconfiguration
  */
-export class StateConfiguration extends ros.Resource {
+export class StateConfiguration extends ros.Resource implements IStateConfiguration {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: StateConfigurationProps;
+    public readonly props: StateConfigurationProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute StateConfigurationId: The ID of the desired-state configuration.
      */
-    public readonly attrStateConfigurationId: ros.IResolvable;
+    public readonly attrStateConfigurationId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

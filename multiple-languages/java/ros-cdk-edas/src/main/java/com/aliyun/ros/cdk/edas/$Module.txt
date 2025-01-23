@@ -6,6 +6,14 @@
 @alicloud/ros-cdk-edas.ClusterProps=com.aliyun.ros.cdk.edas.ClusterProps
 @alicloud/ros-cdk-edas.DeployGroup=com.aliyun.ros.cdk.edas.DeployGroup
 @alicloud/ros-cdk-edas.DeployGroupProps=com.aliyun.ros.cdk.edas.DeployGroupProps
+@alicloud/ros-cdk-edas.IApplication=com.aliyun.ros.cdk.edas.IApplication
+@alicloud/ros-cdk-edas.ICluster=com.aliyun.ros.cdk.edas.ICluster
+@alicloud/ros-cdk-edas.IClusterMember=com.aliyun.ros.cdk.edas.IClusterMember
+@alicloud/ros-cdk-edas.IDeployGroup=com.aliyun.ros.cdk.edas.IDeployGroup
+@alicloud/ros-cdk-edas.IK8sApplication=com.aliyun.ros.cdk.edas.IK8sApplication
+@alicloud/ros-cdk-edas.IK8sCluster=com.aliyun.ros.cdk.edas.IK8sCluster
+@alicloud/ros-cdk-edas.IK8sSlbBinding=com.aliyun.ros.cdk.edas.IK8sSlbBinding
+@alicloud/ros-cdk-edas.IUserDefineRegion=com.aliyun.ros.cdk.edas.IUserDefineRegion
 @alicloud/ros-cdk-edas.K8sApplication=com.aliyun.ros.cdk.edas.K8sApplication
 @alicloud/ros-cdk-edas.K8sApplicationProps=com.aliyun.ros.cdk.edas.K8sApplicationProps
 @alicloud/ros-cdk-edas.K8sCluster=com.aliyun.ros.cdk.edas.K8sCluster
@@ -86,6 +94,9 @@
 @alicloud/ros-cdk-edas.datasource.ApplicationsProps=com.aliyun.ros.cdk.edas.datasource.ApplicationsProps
 @alicloud/ros-cdk-edas.datasource.Clusters=com.aliyun.ros.cdk.edas.datasource.Clusters
 @alicloud/ros-cdk-edas.datasource.ClustersProps=com.aliyun.ros.cdk.edas.datasource.ClustersProps
+@alicloud/ros-cdk-edas.datasource.IApplications=com.aliyun.ros.cdk.edas.datasource.IApplications
+@alicloud/ros-cdk-edas.datasource.IClusters=com.aliyun.ros.cdk.edas.datasource.IClusters
+@alicloud/ros-cdk-edas.datasource.IUserDefineRegions=com.aliyun.ros.cdk.edas.datasource.IUserDefineRegions
 @alicloud/ros-cdk-edas.datasource.RosApplications=com.aliyun.ros.cdk.edas.datasource.RosApplications
 @alicloud/ros-cdk-edas.datasource.RosApplicationsProps=com.aliyun.ros.cdk.edas.datasource.RosApplicationsProps
 @alicloud/ros-cdk-edas.datasource.RosClusters=com.aliyun.ros.cdk.edas.datasource.RosClusters

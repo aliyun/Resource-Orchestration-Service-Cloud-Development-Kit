@@ -24,25 +24,41 @@ export interface DrdsDBsProps {
 }
 
 /**
+ * Represents a `DrdsDBs`.
+ */
+export interface IDrdsDBs extends ros.IResource {
+    readonly props: DrdsDBsProps;
+
+    /**
+     * Attribute Databases: The list of drds databases.
+     */
+    readonly attrDatabases: ros.IResolvable | string;
+
+    /**
+     * Attribute DrdsDatabaseNames: The list of drds database names.
+     */
+    readonly attrDrdsDatabaseNames: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::DRDS::DrdsDBs`, which is used to query the information about databases on an instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDrdsDBs`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-drds-drdsdbs
  */
-export class DrdsDBs extends ros.Resource {
+export class DrdsDBs extends ros.Resource implements IDrdsDBs {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DrdsDBsProps;
+    public readonly props: DrdsDBsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Databases: The list of drds databases.
      */
-    public readonly attrDatabases: ros.IResolvable;
+    public readonly attrDatabases: ros.IResolvable | string;
 
     /**
      * Attribute DrdsDatabaseNames: The list of drds database names.
      */
-    public readonly attrDrdsDatabaseNames: ros.IResolvable;
+    public readonly attrDrdsDatabaseNames: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

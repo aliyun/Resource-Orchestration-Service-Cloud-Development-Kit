@@ -66,60 +66,111 @@ export interface AcceleratorProps {
 }
 
 /**
+ * Represents a `Accelerator`.
+ */
+export interface IAccelerator extends ros.IResource {
+    readonly props: AcceleratorProps;
+
+    /**
+     * Attribute AcceleratorId: The ID of the GA instance to query.
+     */
+    readonly attrAcceleratorId: ros.IResolvable | string;
+
+    /**
+     * Attribute AcceleratorName: The Name of the GA instance
+     */
+    readonly attrAcceleratorName: ros.IResolvable | string;
+
+    /**
+     * Attribute AutoPay: The AutoPay of the GA instance.
+     */
+    readonly attrAutoPay: ros.IResolvable | string;
+
+    /**
+     * Attribute AutoUseCoupon: The AutoUseCoupon of the GA instance.
+     */
+    readonly attrAutoUseCoupon: ros.IResolvable | string;
+
+    /**
+     * Attribute Duration: The Duration of the GA instance
+     */
+    readonly attrDuration: ros.IResolvable | string;
+
+    /**
+     * Attribute OrderId: The OrderId of the GA instance
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+
+    /**
+     * Attribute PaymentType: The Payment Typethe GA instance
+     */
+    readonly attrPaymentType: ros.IResolvable | string;
+
+    /**
+     * Attribute PricingCycle: The PricingCycle of the GA instance.
+     */
+    readonly attrPricingCycle: ros.IResolvable | string;
+
+    /**
+     * Attribute Spec: The instance type of the GA instance
+     */
+    readonly attrSpec: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::GA::Accelerator`, which is used to create a Global Accelerator (GA) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccelerator`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-accelerator
  */
-export class Accelerator extends ros.Resource {
+export class Accelerator extends ros.Resource implements IAccelerator {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AcceleratorProps;
+    public readonly props: AcceleratorProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AcceleratorId: The ID of the GA instance to query.
      */
-    public readonly attrAcceleratorId: ros.IResolvable;
+    public readonly attrAcceleratorId: ros.IResolvable | string;
 
     /**
      * Attribute AcceleratorName: The Name of the GA instance
      */
-    public readonly attrAcceleratorName: ros.IResolvable;
+    public readonly attrAcceleratorName: ros.IResolvable | string;
 
     /**
      * Attribute AutoPay: The AutoPay of the GA instance.
      */
-    public readonly attrAutoPay: ros.IResolvable;
+    public readonly attrAutoPay: ros.IResolvable | string;
 
     /**
      * Attribute AutoUseCoupon: The AutoUseCoupon of the GA instance.
      */
-    public readonly attrAutoUseCoupon: ros.IResolvable;
+    public readonly attrAutoUseCoupon: ros.IResolvable | string;
 
     /**
      * Attribute Duration: The Duration of the GA instance
      */
-    public readonly attrDuration: ros.IResolvable;
+    public readonly attrDuration: ros.IResolvable | string;
 
     /**
      * Attribute OrderId: The OrderId of the GA instance
      */
-    public readonly attrOrderId: ros.IResolvable;
+    public readonly attrOrderId: ros.IResolvable | string;
 
     /**
      * Attribute PaymentType: The Payment Typethe GA instance
      */
-    public readonly attrPaymentType: ros.IResolvable;
+    public readonly attrPaymentType: ros.IResolvable | string;
 
     /**
      * Attribute PricingCycle: The PricingCycle of the GA instance.
      */
-    public readonly attrPricingCycle: ros.IResolvable;
+    public readonly attrPricingCycle: ros.IResolvable | string;
 
     /**
      * Attribute Spec: The instance type of the GA instance
      */
-    public readonly attrSpec: ros.IResolvable;
+    public readonly attrSpec: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

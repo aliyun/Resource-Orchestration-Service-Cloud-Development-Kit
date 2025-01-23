@@ -31,50 +31,91 @@ export interface InstanceProps {
 }
 
 /**
+ * Represents a `Instance`.
+ */
+export interface IInstance extends ros.IResource {
+    readonly props: InstanceProps;
+
+    /**
+     * Attribute HttpInternalEndpoint: The internal HTTP endpoint for the Message Queue for Apache RocketMQ instance.
+     */
+    readonly attrHttpInternalEndpoint: ros.IResolvable | string;
+
+    /**
+     * Attribute HttpInternetEndpoint: The Internet HTTP endpoint for the Message Queue for Apache RocketMQ instance.
+     */
+    readonly attrHttpInternetEndpoint: ros.IResolvable | string;
+
+    /**
+     * Attribute HttpInternetSecureEndpoint: The Internet HTTPS endpoint for the Message Queue for Apache RocketMQ instance.
+     */
+    readonly attrHttpInternetSecureEndpoint: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: Instance ID created
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceName: Instance name
+     */
+    readonly attrInstanceName: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceType: Instance Type
+     */
+    readonly attrInstanceType: ros.IResolvable | string;
+
+    /**
+     * Attribute TcpEndpoint: The TCP endpoint for the Message Queue for Apache RocketMQ instance.
+     */
+    readonly attrTcpEndpoint: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ROCKETMQ::Instance`, which is used to create a Standard Edition instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-instance
  */
-export class Instance extends ros.Resource {
+export class Instance extends ros.Resource implements IInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InstanceProps;
+    public readonly props: InstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute HttpInternalEndpoint: The internal HTTP endpoint for the Message Queue for Apache RocketMQ instance.
      */
-    public readonly attrHttpInternalEndpoint: ros.IResolvable;
+    public readonly attrHttpInternalEndpoint: ros.IResolvable | string;
 
     /**
      * Attribute HttpInternetEndpoint: The Internet HTTP endpoint for the Message Queue for Apache RocketMQ instance.
      */
-    public readonly attrHttpInternetEndpoint: ros.IResolvable;
+    public readonly attrHttpInternetEndpoint: ros.IResolvable | string;
 
     /**
      * Attribute HttpInternetSecureEndpoint: The Internet HTTPS endpoint for the Message Queue for Apache RocketMQ instance.
      */
-    public readonly attrHttpInternetSecureEndpoint: ros.IResolvable;
+    public readonly attrHttpInternetSecureEndpoint: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: Instance ID created
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute InstanceName: Instance name
      */
-    public readonly attrInstanceName: ros.IResolvable;
+    public readonly attrInstanceName: ros.IResolvable | string;
 
     /**
      * Attribute InstanceType: Instance Type
      */
-    public readonly attrInstanceType: ros.IResolvable;
+    public readonly attrInstanceType: ros.IResolvable | string;
 
     /**
      * Attribute TcpEndpoint: The TCP endpoint for the Message Queue for Apache RocketMQ instance.
      */
-    public readonly attrTcpEndpoint: ros.IResolvable;
+    public readonly attrTcpEndpoint: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

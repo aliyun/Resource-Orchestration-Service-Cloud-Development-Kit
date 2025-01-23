@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.pai.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::PAI::WorkspaceResourceFlinks</code>, which is used to query the Realtime Compute for Apache Flink resources that are associated with a workspace.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:10.402Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:42.146Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.datasource.WorkspaceResourceFlinks")
-public class WorkspaceResourceFlinks extends com.aliyun.ros.cdk.core.Resource {
+public class WorkspaceResourceFlinks extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.pai.datasource.IWorkspaceResourceFlinks {
 
     protected WorkspaceResourceFlinks(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -43,15 +43,22 @@ public class WorkspaceResourceFlinks extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute GroupNames: The list of group names.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrGroupNames() {
-        return software.amazon.jsii.Kernel.get(this, "attrGroupNames", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrGroupNames() {
+        return software.amazon.jsii.Kernel.get(this, "attrGroupNames", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute WorkspaceResourceFlinks: The list of workspace resource flinks.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrWorkspaceResourceFlinks() {
-        return software.amazon.jsii.Kernel.get(this, "attrWorkspaceResourceFlinks", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrWorkspaceResourceFlinks() {
+        return software.amazon.jsii.Kernel.get(this, "attrWorkspaceResourceFlinks", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.pai.datasource.WorkspaceResourceFlinksProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.pai.datasource.WorkspaceResourceFlinksProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -68,14 +75,6 @@ public class WorkspaceResourceFlinks extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.pai.datasource.WorkspaceResourceFlinksProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.pai.datasource.WorkspaceResourceFlinksProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.pai.datasource.WorkspaceResourceFlinksProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {

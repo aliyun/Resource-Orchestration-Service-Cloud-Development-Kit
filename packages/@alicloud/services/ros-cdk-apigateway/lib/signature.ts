@@ -26,20 +26,31 @@ export interface SignatureProps {
 }
 
 /**
+ * Represents a `Signature`.
+ */
+export interface ISignature extends ros.IResource {
+    readonly props: SignatureProps;
+
+    /**
+     * Attribute SignatureId: The id of the created signature
+     */
+    readonly attrSignatureId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Signature`, which is used to create a backend signature.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSignature`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-signature
  */
-export class Signature extends ros.Resource {
+export class Signature extends ros.Resource implements ISignature {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SignatureProps;
+    public readonly props: SignatureProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SignatureId: The id of the created signature
      */
-    public readonly attrSignatureId: ros.IResolvable;
+    public readonly attrSignatureId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

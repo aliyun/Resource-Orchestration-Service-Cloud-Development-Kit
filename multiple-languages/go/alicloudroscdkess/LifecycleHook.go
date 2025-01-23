@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ESS::LifecycleHook`, which is used to create a lifecycle hook for a scaling group.
 type LifecycleHook interface {
 	alicloudroscdkcore.Resource
+	ILifecycleHook
 	// Attribute LifecycleHookId: The lifecycle hook ID.
-	AttrLifecycleHookId() alicloudroscdkcore.IResolvable
+	AttrLifecycleHookId() interface{}
 	// Attribute ScalingGroupId: The id of the scaling group to which the lifecycle hook belongs.
-	AttrScalingGroupId() alicloudroscdkcore.IResolvable
+	AttrScalingGroupId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type LifecycleHook interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *LifecycleHookProps
-	SetProps(val *LifecycleHookProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type LifecycleHook interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type LifecycleHook interface {
 // The jsii proxy struct for LifecycleHook
 type jsiiProxy_LifecycleHook struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ILifecycleHook
 }
 
-func (j *jsiiProxy_LifecycleHook) AttrLifecycleHookId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LifecycleHook) AttrLifecycleHookId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLifecycleHookId",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_LifecycleHook) AttrLifecycleHookId() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_LifecycleHook) AttrScalingGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LifecycleHook) AttrScalingGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrScalingGroupId",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_LifecycleHook) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LifecycleHook) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_LifecycleHook)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_LifecycleHook)SetProps(val *LifecycleHookProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_LifecycleHook)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (l *jsiiProxy_LifecycleHook) ApplyRemovalPolicy(policy alicloudroscdkcore.R
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (l *jsiiProxy_LifecycleHook) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		l,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (l *jsiiProxy_LifecycleHook) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		l,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (l *jsiiProxy_LifecycleHook) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		l,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (l *jsiiProxy_LifecycleHook) GeneratePhysicalName() *string {

@@ -12,10 +12,20 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::RDS::DBInstanceSecurityIps`, which is used to modify an IP address whitelist of an ApsaraDB for RDS instance.
 type DBInstanceSecurityIps interface {
 	alicloudroscdkcore.Resource
+	IDBInstanceSecurityIps
 	// Attribute SecurityIps: The security ips of selected database instance.
-	AttrSecurityIps() alicloudroscdkcore.IResolvable
+	AttrSecurityIps() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -30,7 +40,6 @@ type DBInstanceSecurityIps interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DBInstanceSecurityIpsProps
-	SetProps(val *DBInstanceSecurityIpsProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -43,6 +52,9 @@ type DBInstanceSecurityIps interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -95,10 +107,11 @@ type DBInstanceSecurityIps interface {
 // The jsii proxy struct for DBInstanceSecurityIps
 type jsiiProxy_DBInstanceSecurityIps struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDBInstanceSecurityIps
 }
 
-func (j *jsiiProxy_DBInstanceSecurityIps) AttrSecurityIps() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBInstanceSecurityIps) AttrSecurityIps() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSecurityIps",
@@ -112,6 +125,16 @@ func (j *jsiiProxy_DBInstanceSecurityIps) EnableResourcePropertyConstraint() *bo
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DBInstanceSecurityIps) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -249,17 +272,6 @@ func (j *jsiiProxy_DBInstanceSecurityIps)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DBInstanceSecurityIps)SetProps(val *DBInstanceSecurityIpsProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_DBInstanceSecurityIps)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -351,6 +363,45 @@ func (d *jsiiProxy_DBInstanceSecurityIps) ApplyRemovalPolicy(policy alicloudrosc
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_DBInstanceSecurityIps) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DBInstanceSecurityIps) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DBInstanceSecurityIps) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_DBInstanceSecurityIps) GeneratePhysicalName() *string {

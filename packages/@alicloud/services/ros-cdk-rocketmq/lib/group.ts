@@ -36,30 +36,51 @@ export interface GroupProps {
 }
 
 /**
+ * Represents a `Group`.
+ */
+export interface IGroup extends ros.IResource {
+    readonly props: GroupProps;
+
+    /**
+     * Attribute GroupId: Group ID
+     */
+    readonly attrGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute GroupType: Group Type
+     */
+    readonly attrGroupType: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: Instance ID
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ROCKETMQ::Group`, which is used to create a Group ID on the ROCKETMQ client. The Group ID that you create is used to publish and subscribe to messages.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-group
  */
-export class Group extends ros.Resource {
+export class Group extends ros.Resource implements IGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: GroupProps;
+    public readonly props: GroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute GroupId: Group ID
      */
-    public readonly attrGroupId: ros.IResolvable;
+    public readonly attrGroupId: ros.IResolvable | string;
 
     /**
      * Attribute GroupType: Group Type
      */
-    public readonly attrGroupType: ros.IResolvable;
+    public readonly attrGroupType: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: Instance ID
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

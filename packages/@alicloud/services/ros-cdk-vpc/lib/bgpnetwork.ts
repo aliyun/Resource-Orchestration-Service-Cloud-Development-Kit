@@ -22,26 +22,43 @@ export interface BgpNetworkProps {
 }
 
 /**
+ * Represents a `BgpNetwork`.
+ */
+export interface IBgpNetwork extends ros.IResource {
+    readonly props: BgpNetworkProps;
+
+    /**
+     * Attribute DstCidrBlock: The CIDR block of the virtual private cloud (VPC) or vSwitch that you want to connect
+to a data center.
+     */
+    readonly attrDstCidrBlock: ros.IResolvable | string;
+
+    /**
+     * Attribute RouterId: The ID of the vRouter associated with the router interface.
+     */
+    readonly attrRouterId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::BgpNetwork`, which is used to advertise a Border Gateway Protocol (BGP) network.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBgpNetwork`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgpnetwork
  */
-export class BgpNetwork extends ros.Resource {
+export class BgpNetwork extends ros.Resource implements IBgpNetwork {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: BgpNetworkProps;
+    public readonly props: BgpNetworkProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DstCidrBlock: The CIDR block of the virtual private cloud (VPC) or vSwitch that you want to connect
 to a data center.
      */
-    public readonly attrDstCidrBlock: ros.IResolvable;
+    public readonly attrDstCidrBlock: ros.IResolvable | string;
 
     /**
      * Attribute RouterId: The ID of the vRouter associated with the router interface.
      */
-    public readonly attrRouterId: ros.IResolvable;
+    public readonly attrRouterId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -102,6 +102,8 @@ type ManagedKubernetesClusterProps struct {
 	//
 	// Password rules are 8-30 characters and contain three items (upper and lower case letters, numbers, and special symbols). Specify one of KeyPair or LoginPassword.
 	LoginPassword interface{} `field:"optional" json:"loginPassword" yaml:"loginPassword"`
+	// Property maintenanceWindow: Cluster maintenance window.
+	MaintenanceWindow interface{} `field:"optional" json:"maintenanceWindow" yaml:"maintenanceWindow"`
 	// Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes.
 	//
 	// This number is determined by the specified pod CIDR block.

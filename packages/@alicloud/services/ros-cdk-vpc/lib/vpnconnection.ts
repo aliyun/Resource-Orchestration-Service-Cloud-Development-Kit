@@ -110,30 +110,51 @@ export interface VpnConnectionProps {
 }
 
 /**
+ * Represents a `VpnConnection`.
+ */
+export interface IVpnConnection extends ros.IResource {
+    readonly props: VpnConnectionProps;
+
+    /**
+     * Attribute PeerVpnConnectionConfig: Peer vpc connection config.
+     */
+    readonly attrPeerVpnConnectionConfig: ros.IResolvable | string;
+
+    /**
+     * Attribute Status: Status of the IPsec connection.
+     */
+    readonly attrStatus: ros.IResolvable | string;
+
+    /**
+     * Attribute VpnConnectionId: ID of the IPsec connection.
+     */
+    readonly attrVpnConnectionId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpnConnection`, which is used to create an IPsec-VPN connection.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpnConnection`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnconnection
  */
-export class VpnConnection extends ros.Resource {
+export class VpnConnection extends ros.Resource implements IVpnConnection {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: VpnConnectionProps;
+    public readonly props: VpnConnectionProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute PeerVpnConnectionConfig: Peer vpc connection config.
      */
-    public readonly attrPeerVpnConnectionConfig: ros.IResolvable;
+    public readonly attrPeerVpnConnectionConfig: ros.IResolvable | string;
 
     /**
      * Attribute Status: Status of the IPsec connection.
      */
-    public readonly attrStatus: ros.IResolvable;
+    public readonly attrStatus: ros.IResolvable | string;
 
     /**
      * Attribute VpnConnectionId: ID of the IPsec connection.
      */
-    public readonly attrVpnConnectionId: ros.IResolvable;
+    public readonly attrVpnConnectionId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

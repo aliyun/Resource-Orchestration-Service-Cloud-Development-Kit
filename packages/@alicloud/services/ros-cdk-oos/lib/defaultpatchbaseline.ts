@@ -16,65 +16,121 @@ export interface DefaultPatchBaselineProps {
 }
 
 /**
+ * Represents a `DefaultPatchBaseline`.
+ */
+export interface IDefaultPatchBaseline extends ros.IResource {
+    readonly props: DefaultPatchBaselineProps;
+
+    /**
+     * Attribute ApprovalRules: The rules of scanning and installing patches for the specified operating system.
+     */
+    readonly attrApprovalRules: ros.IResolvable | string;
+
+    /**
+     * Attribute CreatedBy: The creator of the patch baseline.
+     */
+    readonly attrCreatedBy: ros.IResolvable | string;
+
+    /**
+     * Attribute CreatedDate: The time when the patch baseline was created.
+     */
+    readonly attrCreatedDate: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: The description of the patch baseline.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute OperationSystem: The type of the operating system.
+     */
+    readonly attrOperationSystem: ros.IResolvable | string;
+
+    /**
+     * Attribute PatchBaselineId: The ID of the patch baseline.
+     */
+    readonly attrPatchBaselineId: ros.IResolvable | string;
+
+    /**
+     * Attribute PatchBaselineName: The name of the patch baseline.
+     */
+    readonly attrPatchBaselineName: ros.IResolvable | string;
+
+    /**
+     * Attribute ShareType: The share type of the patch baseline.
+     */
+    readonly attrShareType: ros.IResolvable | string;
+
+    /**
+     * Attribute UpdatedBy: The user who last modified the patch baseline.
+     */
+    readonly attrUpdatedBy: ros.IResolvable | string;
+
+    /**
+     * Attribute UpdatedDate: The time when the patch baseline was last modified.
+     */
+    readonly attrUpdatedDate: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::DefaultPatchBaseline`, which is used to register a default patch baseline.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDefaultPatchBaseline`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-defaultpatchbaseline
  */
-export class DefaultPatchBaseline extends ros.Resource {
+export class DefaultPatchBaseline extends ros.Resource implements IDefaultPatchBaseline {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DefaultPatchBaselineProps;
+    public readonly props: DefaultPatchBaselineProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ApprovalRules: The rules of scanning and installing patches for the specified operating system.
      */
-    public readonly attrApprovalRules: ros.IResolvable;
+    public readonly attrApprovalRules: ros.IResolvable | string;
 
     /**
      * Attribute CreatedBy: The creator of the patch baseline.
      */
-    public readonly attrCreatedBy: ros.IResolvable;
+    public readonly attrCreatedBy: ros.IResolvable | string;
 
     /**
      * Attribute CreatedDate: The time when the patch baseline was created.
      */
-    public readonly attrCreatedDate: ros.IResolvable;
+    public readonly attrCreatedDate: ros.IResolvable | string;
 
     /**
      * Attribute Description: The description of the patch baseline.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute OperationSystem: The type of the operating system.
      */
-    public readonly attrOperationSystem: ros.IResolvable;
+    public readonly attrOperationSystem: ros.IResolvable | string;
 
     /**
      * Attribute PatchBaselineId: The ID of the patch baseline.
      */
-    public readonly attrPatchBaselineId: ros.IResolvable;
+    public readonly attrPatchBaselineId: ros.IResolvable | string;
 
     /**
      * Attribute PatchBaselineName: The name of the patch baseline.
      */
-    public readonly attrPatchBaselineName: ros.IResolvable;
+    public readonly attrPatchBaselineName: ros.IResolvable | string;
 
     /**
      * Attribute ShareType: The share type of the patch baseline.
      */
-    public readonly attrShareType: ros.IResolvable;
+    public readonly attrShareType: ros.IResolvable | string;
 
     /**
      * Attribute UpdatedBy: The user who last modified the patch baseline.
      */
-    public readonly attrUpdatedBy: ros.IResolvable;
+    public readonly attrUpdatedBy: ros.IResolvable | string;
 
     /**
      * Attribute UpdatedDate: The time when the patch baseline was last modified.
      */
-    public readonly attrUpdatedDate: ros.IResolvable;
+    public readonly attrUpdatedDate: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

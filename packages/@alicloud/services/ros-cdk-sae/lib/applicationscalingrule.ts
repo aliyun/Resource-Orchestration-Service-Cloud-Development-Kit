@@ -51,20 +51,31 @@ export interface ApplicationScalingRuleProps {
 }
 
 /**
+ * Represents a `ApplicationScalingRule`.
+ */
+export interface IApplicationScalingRule extends ros.IResource {
+    readonly props: ApplicationScalingRuleProps;
+
+    /**
+     * Attribute ScalingRuleName: The name of the scaling rule.
+     */
+    readonly attrScalingRuleName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SAE::ApplicationScalingRule`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApplicationScalingRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-applicationscalingrule
  */
-export class ApplicationScalingRule extends ros.Resource {
+export class ApplicationScalingRule extends ros.Resource implements IApplicationScalingRule {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ApplicationScalingRuleProps;
+    public readonly props: ApplicationScalingRuleProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ScalingRuleName: The name of the scaling rule.
      */
-    public readonly attrScalingRuleName: ros.IResolvable;
+    public readonly attrScalingRuleName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

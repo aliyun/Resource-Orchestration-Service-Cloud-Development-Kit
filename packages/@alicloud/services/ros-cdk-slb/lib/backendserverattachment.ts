@@ -31,25 +31,41 @@ export interface BackendServerAttachmentProps {
 }
 
 /**
+ * Represents a `BackendServerAttachment`.
+ */
+export interface IBackendServerAttachment extends ros.IResource {
+    readonly props: BackendServerAttachmentProps;
+
+    /**
+     * Attribute BackendServers: The collection of attached backend server.
+     */
+    readonly attrBackendServers: ros.IResolvable | string;
+
+    /**
+     * Attribute LoadBalancerId: The id of load balancer.
+     */
+    readonly attrLoadBalancerId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::BackendServerAttachment`, which is used to attach backend servers to an SLB instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBackendServerAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-backendserverattachment
  */
-export class BackendServerAttachment extends ros.Resource {
+export class BackendServerAttachment extends ros.Resource implements IBackendServerAttachment {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: BackendServerAttachmentProps;
+    public readonly props: BackendServerAttachmentProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute BackendServers: The collection of attached backend server.
      */
-    public readonly attrBackendServers: ros.IResolvable;
+    public readonly attrBackendServers: ros.IResolvable | string;
 
     /**
      * Attribute LoadBalancerId: The id of load balancer.
      */
-    public readonly attrLoadBalancerId: ros.IResolvable;
+    public readonly attrLoadBalancerId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

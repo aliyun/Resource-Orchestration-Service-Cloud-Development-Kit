@@ -52,10 +52,6 @@ func (j *jsiiProxy_GrantPermissions) validateSetIdParameters(val *string) error 
 	return nil
 }
 
-func (j *jsiiProxy_GrantPermissions) validateSetPropsParameters(val *GrantPermissionsProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_GrantPermissions) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

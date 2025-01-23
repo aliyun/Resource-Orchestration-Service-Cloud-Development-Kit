@@ -14,14 +14,24 @@ import (
 // Queues can be classified into standard and delayed queues.
 type Queue interface {
 	alicloudroscdkcore.Resource
+	IQueue
 	// Attribute ARN.WithSlash: The ARN: acs:mns:$region:$accountid:/queues/$queueName.
-	AttrArnWithSlash() alicloudroscdkcore.IResolvable
+	AttrArnWithSlash() interface{}
 	// Attribute QueueName: Queue name.
-	AttrQueueName() alicloudroscdkcore.IResolvable
+	AttrQueueName() interface{}
 	// Attribute QueueUrl: URL of created queue.
-	AttrQueueUrl() alicloudroscdkcore.IResolvable
+	AttrQueueUrl() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -36,7 +46,6 @@ type Queue interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *QueueProps
-	SetProps(val *QueueProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -49,6 +58,9 @@ type Queue interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -101,10 +113,11 @@ type Queue interface {
 // The jsii proxy struct for Queue
 type jsiiProxy_Queue struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IQueue
 }
 
-func (j *jsiiProxy_Queue) AttrArnWithSlash() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Queue) AttrArnWithSlash() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrArnWithSlash",
@@ -113,8 +126,8 @@ func (j *jsiiProxy_Queue) AttrArnWithSlash() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Queue) AttrQueueName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Queue) AttrQueueName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrQueueName",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_Queue) AttrQueueName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Queue) AttrQueueUrl() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Queue) AttrQueueUrl() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrQueueUrl",
@@ -138,6 +151,16 @@ func (j *jsiiProxy_Queue) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Queue) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -275,17 +298,6 @@ func (j *jsiiProxy_Queue)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Queue)SetProps(val *QueueProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Queue)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -303,6 +315,43 @@ func (j *jsiiProxy_Queue)SetScope(val alicloudroscdkcore.Construct) {
 		"scope",
 		val,
 	)
+}
+
+func Queue_FromQueueArn(scope alicloudroscdkcore.Construct, id *string, attrArnWithSlash *string) IQueue {
+	_init_.Initialize()
+
+	if err := validateQueue_FromQueueArnParameters(scope, id, attrArnWithSlash); err != nil {
+		panic(err)
+	}
+	var returns IQueue
+
+	_jsii_.StaticInvoke(
+		"@alicloud/ros-cdk-mns.Queue",
+		"fromQueueArn",
+		[]interface{}{scope, id, attrArnWithSlash},
+		&returns,
+	)
+
+	return returns
+}
+
+// Import an existing queue.
+func Queue_FromQueueAttributes(scope alicloudroscdkcore.Construct, id *string, attrs *QueueAttributes) IQueue {
+	_init_.Initialize()
+
+	if err := validateQueue_FromQueueAttributesParameters(scope, id, attrs); err != nil {
+		panic(err)
+	}
+	var returns IQueue
+
+	_jsii_.StaticInvoke(
+		"@alicloud/ros-cdk-mns.Queue",
+		"fromQueueAttributes",
+		[]interface{}{scope, id, attrs},
+		&returns,
+	)
+
+	return returns
 }
 
 // Return whether the given object is a Construct.
@@ -377,6 +426,45 @@ func (q *jsiiProxy_Queue) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (q *jsiiProxy_Queue) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		q,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (q *jsiiProxy_Queue) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		q,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (q *jsiiProxy_Queue) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		q,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (q *jsiiProxy_Queue) GeneratePhysicalName() *string {

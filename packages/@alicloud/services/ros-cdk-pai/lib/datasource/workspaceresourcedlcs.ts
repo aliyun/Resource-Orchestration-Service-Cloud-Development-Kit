@@ -29,25 +29,41 @@ export interface WorkspaceResourceDlcsProps {
 }
 
 /**
+ * Represents a `WorkspaceResourceDlcs`.
+ */
+export interface IWorkspaceResourceDlcs extends ros.IResource {
+    readonly props: WorkspaceResourceDlcsProps;
+
+    /**
+     * Attribute GroupNames: The list of group names.
+     */
+    readonly attrGroupNames: ros.IResolvable | string;
+
+    /**
+     * Attribute WorkspaceResourceDlcs: The list of workspace resource dlcs.
+     */
+    readonly attrWorkspaceResourceDlcs: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::WorkspaceResourceDlcs`, which is used to query a list of Deep Learning Containers (DLC) resources that are associated with a Platform for AI (PAI) workspace.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWorkspaceResourceDlcs`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-workspaceresourcedlcs
  */
-export class WorkspaceResourceDlcs extends ros.Resource {
+export class WorkspaceResourceDlcs extends ros.Resource implements IWorkspaceResourceDlcs {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: WorkspaceResourceDlcsProps;
+    public readonly props: WorkspaceResourceDlcsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute GroupNames: The list of group names.
      */
-    public readonly attrGroupNames: ros.IResolvable;
+    public readonly attrGroupNames: ros.IResolvable | string;
 
     /**
      * Attribute WorkspaceResourceDlcs: The list of workspace resource dlcs.
      */
-    public readonly attrWorkspaceResourceDlcs: ros.IResolvable;
+    public readonly attrWorkspaceResourceDlcs: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

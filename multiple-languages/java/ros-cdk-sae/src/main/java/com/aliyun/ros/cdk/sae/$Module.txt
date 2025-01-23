@@ -4,6 +4,12 @@
 @alicloud/ros-cdk-sae.ApplicationScalingRuleProps=com.aliyun.ros.cdk.sae.ApplicationScalingRuleProps
 @alicloud/ros-cdk-sae.ConfigMap=com.aliyun.ros.cdk.sae.ConfigMap
 @alicloud/ros-cdk-sae.ConfigMapProps=com.aliyun.ros.cdk.sae.ConfigMapProps
+@alicloud/ros-cdk-sae.IApplication=com.aliyun.ros.cdk.sae.IApplication
+@alicloud/ros-cdk-sae.IApplicationScalingRule=com.aliyun.ros.cdk.sae.IApplicationScalingRule
+@alicloud/ros-cdk-sae.IConfigMap=com.aliyun.ros.cdk.sae.IConfigMap
+@alicloud/ros-cdk-sae.IIngress=com.aliyun.ros.cdk.sae.IIngress
+@alicloud/ros-cdk-sae.INamespace=com.aliyun.ros.cdk.sae.INamespace
+@alicloud/ros-cdk-sae.ISlbBinding=com.aliyun.ros.cdk.sae.ISlbBinding
 @alicloud/ros-cdk-sae.Ingress=com.aliyun.ros.cdk.sae.Ingress
 @alicloud/ros-cdk-sae.IngressProps=com.aliyun.ros.cdk.sae.IngressProps
 @alicloud/ros-cdk-sae.Namespace=com.aliyun.ros.cdk.sae.Namespace
@@ -33,6 +39,8 @@
 @alicloud/ros-cdk-sae.SlbBindingProps=com.aliyun.ros.cdk.sae.SlbBindingProps
 @alicloud/ros-cdk-sae.datasource.Applications=com.aliyun.ros.cdk.sae.datasource.Applications
 @alicloud/ros-cdk-sae.datasource.ApplicationsProps=com.aliyun.ros.cdk.sae.datasource.ApplicationsProps
+@alicloud/ros-cdk-sae.datasource.IApplications=com.aliyun.ros.cdk.sae.datasource.IApplications
+@alicloud/ros-cdk-sae.datasource.INamespaces=com.aliyun.ros.cdk.sae.datasource.INamespaces
 @alicloud/ros-cdk-sae.datasource.Namespaces=com.aliyun.ros.cdk.sae.datasource.Namespaces
 @alicloud/ros-cdk-sae.datasource.NamespacesProps=com.aliyun.ros.cdk.sae.datasource.NamespacesProps
 @alicloud/ros-cdk-sae.datasource.RosApplications=com.aliyun.ros.cdk.sae.datasource.RosApplications

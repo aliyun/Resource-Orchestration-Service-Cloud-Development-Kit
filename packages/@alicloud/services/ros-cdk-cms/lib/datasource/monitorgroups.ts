@@ -42,25 +42,41 @@ export interface MonitorGroupsProps {
 }
 
 /**
+ * Represents a `MonitorGroups`.
+ */
+export interface IMonitorGroups extends ros.IResource {
+    readonly props: MonitorGroupsProps;
+
+    /**
+     * Attribute GroupIds: The list of group IDs.
+     */
+    readonly attrGroupIds: ros.IResolvable | string;
+
+    /**
+     * Attribute MonitorGroups: The list of monitor groups.
+     */
+    readonly attrMonitorGroups: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::CMS::MonitorGroups`, which is used to query the information about application groups.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMonitorGroups`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-monitorgroups
  */
-export class MonitorGroups extends ros.Resource {
+export class MonitorGroups extends ros.Resource implements IMonitorGroups {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: MonitorGroupsProps;
+    public readonly props: MonitorGroupsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute GroupIds: The list of group IDs.
      */
-    public readonly attrGroupIds: ros.IResolvable;
+    public readonly attrGroupIds: ros.IResolvable | string;
 
     /**
      * Attribute MonitorGroups: The list of monitor groups.
      */
-    public readonly attrMonitorGroups: ros.IResolvable;
+    public readonly attrMonitorGroups: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

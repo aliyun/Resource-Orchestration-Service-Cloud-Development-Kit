@@ -65,55 +65,101 @@ export interface InstanceProps {
 }
 
 /**
+ * Represents a `Instance`.
+ */
+export interface IInstance extends ros.IResource {
+    readonly props: InstanceProps;
+
+    /**
+     * Attribute EgressIpv6Enable: Whether enable egress IPV6.
+     */
+    readonly attrEgressIpv6Enable: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: Instance ID.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceType: Instance type.
+     */
+    readonly attrInstanceType: ros.IResolvable | string;
+
+    /**
+     * Attribute InternetEgressAddress: Internet egress dddress.
+     */
+    readonly attrInternetEgressAddress: ros.IResolvable | string;
+
+    /**
+     * Attribute SupportIpv6: Whether support IPV6.
+     */
+    readonly attrSupportIpv6: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcEgressAddress: VPC network egress address.
+     */
+    readonly attrVpcEgressAddress: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcIntranetEnable: Whether enable VPC intranet.
+     */
+    readonly attrVpcIntranetEnable: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcSlbIntranetEnable: Whether enable VPC SLB intranet.
+     */
+    readonly attrVpcSlbIntranetEnable: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Instance`, which is used to create a dedicated instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-instance
  */
-export class Instance extends ros.Resource {
+export class Instance extends ros.Resource implements IInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InstanceProps;
+    public readonly props: InstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute EgressIpv6Enable: Whether enable egress IPV6.
      */
-    public readonly attrEgressIpv6Enable: ros.IResolvable;
+    public readonly attrEgressIpv6Enable: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: Instance ID.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute InstanceType: Instance type.
      */
-    public readonly attrInstanceType: ros.IResolvable;
+    public readonly attrInstanceType: ros.IResolvable | string;
 
     /**
      * Attribute InternetEgressAddress: Internet egress dddress.
      */
-    public readonly attrInternetEgressAddress: ros.IResolvable;
+    public readonly attrInternetEgressAddress: ros.IResolvable | string;
 
     /**
      * Attribute SupportIpv6: Whether support IPV6.
      */
-    public readonly attrSupportIpv6: ros.IResolvable;
+    public readonly attrSupportIpv6: ros.IResolvable | string;
 
     /**
      * Attribute VpcEgressAddress: VPC network egress address.
      */
-    public readonly attrVpcEgressAddress: ros.IResolvable;
+    public readonly attrVpcEgressAddress: ros.IResolvable | string;
 
     /**
      * Attribute VpcIntranetEnable: Whether enable VPC intranet.
      */
-    public readonly attrVpcIntranetEnable: ros.IResolvable;
+    public readonly attrVpcIntranetEnable: ros.IResolvable | string;
 
     /**
      * Attribute VpcSlbIntranetEnable: Whether enable VPC SLB intranet.
      */
-    public readonly attrVpcSlbIntranetEnable: ros.IResolvable;
+    public readonly attrVpcSlbIntranetEnable: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

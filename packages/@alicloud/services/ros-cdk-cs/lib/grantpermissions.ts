@@ -21,14 +21,20 @@ export interface GrantPermissionsProps {
 }
 
 /**
+ * Represents a `GrantPermissions`.
+ */
+export interface IGrantPermissions extends ros.IResource {
+    readonly props: GrantPermissionsProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CS::GrantPermissions`, which is used to grant role-based access control (RBAC) permissions to a Resource Access Management (RAM) user or RAM role.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGrantPermissions`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-grantpermissions
  */
-export class GrantPermissions extends ros.Resource {
+export class GrantPermissions extends ros.Resource implements IGrantPermissions {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: GrantPermissionsProps;
+    public readonly props: GrantPermissionsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

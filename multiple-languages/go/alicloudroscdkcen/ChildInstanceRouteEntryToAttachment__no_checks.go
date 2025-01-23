@@ -52,10 +52,6 @@ func (j *jsiiProxy_ChildInstanceRouteEntryToAttachment) validateSetIdParameters(
 	return nil
 }
 
-func (j *jsiiProxy_ChildInstanceRouteEntryToAttachment) validateSetPropsParameters(val *ChildInstanceRouteEntryToAttachmentProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_ChildInstanceRouteEntryToAttachment) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

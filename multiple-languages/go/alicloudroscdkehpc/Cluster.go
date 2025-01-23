@@ -12,18 +12,28 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::EHPC::Cluster`, which is used to create an Elastic High Performance Computing (E-HPC) cluster.
 type Cluster interface {
 	alicloudroscdkcore.Resource
+	ICluster
 	// Attribute ClusterId: Cluster Id.
-	AttrClusterId() alicloudroscdkcore.IResolvable
+	AttrClusterId() interface{}
 	// Attribute EcsInfo: A data structure describing the number and specifications of ECS for various components of the cluster.
 	//
 	// You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2, "InstanceType": "ecs.n1.large"}, "Compute": {"Count": 8, "InstanceType": "ecs.n1.large"}, "Login": {"Count": 1, "InstanceType": "ecs.n1.large"}}
-	AttrEcsInfo() alicloudroscdkcore.IResolvable
+	AttrEcsInfo() interface{}
 	// Attribute Name: Cluster name.
-	AttrName() alicloudroscdkcore.IResolvable
+	AttrName() interface{}
 	// Attribute SecurityGroupId: Security group ID.
-	AttrSecurityGroupId() alicloudroscdkcore.IResolvable
+	AttrSecurityGroupId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -38,7 +48,6 @@ type Cluster interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ClusterProps
-	SetProps(val *ClusterProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -51,6 +60,9 @@ type Cluster interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -103,10 +115,11 @@ type Cluster interface {
 // The jsii proxy struct for Cluster
 type jsiiProxy_Cluster struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ICluster
 }
 
-func (j *jsiiProxy_Cluster) AttrClusterId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Cluster) AttrClusterId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrClusterId",
@@ -115,8 +128,8 @@ func (j *jsiiProxy_Cluster) AttrClusterId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Cluster) AttrEcsInfo() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Cluster) AttrEcsInfo() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEcsInfo",
@@ -125,8 +138,8 @@ func (j *jsiiProxy_Cluster) AttrEcsInfo() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Cluster) AttrName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Cluster) AttrName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrName",
@@ -135,8 +148,8 @@ func (j *jsiiProxy_Cluster) AttrName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Cluster) AttrSecurityGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Cluster) AttrSecurityGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSecurityGroupId",
@@ -150,6 +163,16 @@ func (j *jsiiProxy_Cluster) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Cluster) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -287,17 +310,6 @@ func (j *jsiiProxy_Cluster)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Cluster)SetProps(val *ClusterProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Cluster)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -389,6 +401,45 @@ func (c *jsiiProxy_Cluster) ApplyRemovalPolicy(policy alicloudroscdkcore.Removal
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (c *jsiiProxy_Cluster) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		c,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (c *jsiiProxy_Cluster) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		c,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (c *jsiiProxy_Cluster) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (c *jsiiProxy_Cluster) GeneratePhysicalName() *string {

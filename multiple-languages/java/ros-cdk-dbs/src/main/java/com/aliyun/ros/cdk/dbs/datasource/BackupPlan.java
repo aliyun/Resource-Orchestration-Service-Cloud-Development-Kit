@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.dbs.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::DBS::BackupPlan</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:06.196Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:36.784Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dbs.$Module.class, fqn = "@alicloud/ros-cdk-dbs.datasource.BackupPlan")
-public class BackupPlan extends com.aliyun.ros.cdk.core.Resource {
+public class BackupPlan extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dbs.datasource.IBackupPlan {
 
     protected BackupPlan(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -43,43 +43,49 @@ public class BackupPlan extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute BackupGatewayId: The ID of the backup gateway.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrBackupGatewayId() {
-        return software.amazon.jsii.Kernel.get(this, "attrBackupGatewayId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrBackupGatewayId() {
+        return software.amazon.jsii.Kernel.get(this, "attrBackupGatewayId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute BackupMethod: Backup method.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrBackupMethod() {
-        return software.amazon.jsii.Kernel.get(this, "attrBackupMethod", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrBackupMethod() {
+        return software.amazon.jsii.Kernel.get(this, "attrBackupMethod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute BackupObjects: The backup object.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrBackupObjects() {
-        return software.amazon.jsii.Kernel.get(this, "attrBackupObjects", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrBackupObjects() {
+        return software.amazon.jsii.Kernel.get(this, "attrBackupObjects", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute BackupPeriod: Full backup cycle.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrBackupPeriod() {
-        return software.amazon.jsii.Kernel.get(this, "attrBackupPeriod", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrBackupPeriod() {
+        return software.amazon.jsii.Kernel.get(this, "attrBackupPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute BackupPlanId: The ID of the backup plan.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrBackupPlanId() {
-        return software.amazon.jsii.Kernel.get(this, "attrBackupPlanId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrBackupPlanId() {
+        return software.amazon.jsii.Kernel.get(this, "attrBackupPlanId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute BackupPlanName: The name of the backup plan.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrBackupPlanName() {
-        return software.amazon.jsii.Kernel.get(this, "attrBackupPlanName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrBackupPlanName() {
+        return software.amazon.jsii.Kernel.get(this, "attrBackupPlanName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -87,57 +93,65 @@ public class BackupPlan extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * Valid values: 0 to 1825. Default value: 730 days.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrBackupRetentionPeriod() {
-        return software.amazon.jsii.Kernel.get(this, "attrBackupRetentionPeriod", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrBackupRetentionPeriod() {
+        return software.amazon.jsii.Kernel.get(this, "attrBackupRetentionPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute BackupStartTime: The start time of full Backup.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrBackupStartTime() {
-        return software.amazon.jsii.Kernel.get(this, "attrBackupStartTime", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrBackupStartTime() {
+        return software.amazon.jsii.Kernel.get(this, "attrBackupStartTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute BackupStorageType: Built-in storage type:.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrBackupStorageType() {
-        return software.amazon.jsii.Kernel.get(this, "attrBackupStorageType", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrBackupStorageType() {
+        return software.amazon.jsii.Kernel.get(this, "attrBackupStorageType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute CreateTime: The creation time of the backup plans.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCreateTime() {
-        return software.amazon.jsii.Kernel.get(this, "attrCreateTime", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCreateTime() {
+        return software.amazon.jsii.Kernel.get(this, "attrCreateTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute CrossAliyunId: The UID that is backed up across Alibaba cloud accounts.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCrossAliyunId() {
-        return software.amazon.jsii.Kernel.get(this, "attrCrossAliyunId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCrossAliyunId() {
+        return software.amazon.jsii.Kernel.get(this, "attrCrossAliyunId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute CrossRoleName: The name of the RAM role that is backed up across Alibaba cloud accounts.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCrossRoleName() {
-        return software.amazon.jsii.Kernel.get(this, "attrCrossRoleName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCrossRoleName() {
+        return software.amazon.jsii.Kernel.get(this, "attrCrossRoleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute DatabaseType: Database type.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDatabaseType() {
-        return software.amazon.jsii.Kernel.get(this, "attrDatabaseType", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDatabaseType() {
+        return software.amazon.jsii.Kernel.get(this, "attrDatabaseType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute DuplicationArchivePeriod: The storage time for conversion to archive cold standby is 365 days by default.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDuplicationArchivePeriod() {
-        return software.amazon.jsii.Kernel.get(this, "attrDuplicationArchivePeriod", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDuplicationArchivePeriod() {
+        return software.amazon.jsii.Kernel.get(this, "attrDuplicationArchivePeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -145,85 +159,102 @@ public class BackupPlan extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * The default time is 180 days.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDuplicationInfrequentAccessPeriod() {
-        return software.amazon.jsii.Kernel.get(this, "attrDuplicationInfrequentAccessPeriod", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDuplicationInfrequentAccessPeriod() {
+        return software.amazon.jsii.Kernel.get(this, "attrDuplicationInfrequentAccessPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute EnableBackupLog: Whether to enable incremental log Backup.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrEnableBackupLog() {
-        return software.amazon.jsii.Kernel.get(this, "attrEnableBackupLog", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrEnableBackupLog() {
+        return software.amazon.jsii.Kernel.get(this, "attrEnableBackupLog", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute InstanceClass: Instance class.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInstanceClass() {
-        return software.amazon.jsii.Kernel.get(this, "attrInstanceClass", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrInstanceClass() {
+        return software.amazon.jsii.Kernel.get(this, "attrInstanceClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute OssBucketName: OSS Bucket name.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrOssBucketName() {
-        return software.amazon.jsii.Kernel.get(this, "attrOssBucketName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrOssBucketName() {
+        return software.amazon.jsii.Kernel.get(this, "attrOssBucketName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute PaymentType: The payment type of the resource.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPaymentType() {
-        return software.amazon.jsii.Kernel.get(this, "attrPaymentType", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPaymentType() {
+        return software.amazon.jsii.Kernel.get(this, "attrPaymentType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute ResourceGroupId: The ID of the resource group.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrResourceGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "attrResourceGroupId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "attrResourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute SourceEndpointDatabaseName: The name of the database.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSourceEndpointDatabaseName() {
-        return software.amazon.jsii.Kernel.get(this, "attrSourceEndpointDatabaseName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSourceEndpointDatabaseName() {
+        return software.amazon.jsii.Kernel.get(this, "attrSourceEndpointDatabaseName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute SourceEndpointInstanceId: The ID of the database instance.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSourceEndpointInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrSourceEndpointInstanceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSourceEndpointInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrSourceEndpointInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute SourceEndpointInstanceType: The location of the database.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSourceEndpointInstanceType() {
-        return software.amazon.jsii.Kernel.get(this, "attrSourceEndpointInstanceType", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSourceEndpointInstanceType() {
+        return software.amazon.jsii.Kernel.get(this, "attrSourceEndpointInstanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute SourceEndpointRegion: The region of the database.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSourceEndpointRegion() {
-        return software.amazon.jsii.Kernel.get(this, "attrSourceEndpointRegion", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSourceEndpointRegion() {
+        return software.amazon.jsii.Kernel.get(this, "attrSourceEndpointRegion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute SourceEndpointSid: Oracle SID name.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSourceEndpointSid() {
-        return software.amazon.jsii.Kernel.get(this, "attrSourceEndpointSid", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSourceEndpointSid() {
+        return software.amazon.jsii.Kernel.get(this, "attrSourceEndpointSid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute SourceEndpointUserName: Database account.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSourceEndpointUserName() {
-        return software.amazon.jsii.Kernel.get(this, "attrSourceEndpointUserName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSourceEndpointUserName() {
+        return software.amazon.jsii.Kernel.get(this, "attrSourceEndpointUserName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.dbs.datasource.BackupPlanProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.dbs.datasource.BackupPlanProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -240,14 +271,6 @@ public class BackupPlan extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.dbs.datasource.BackupPlanProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.dbs.datasource.BackupPlanProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.dbs.datasource.BackupPlanProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {

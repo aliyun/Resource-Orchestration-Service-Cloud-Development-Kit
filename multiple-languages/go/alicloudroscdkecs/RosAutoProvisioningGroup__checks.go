@@ -286,6 +286,66 @@ func (j *jsiiProxy_RosAutoProvisioningGroup) validateSetCheckExecutionStatusPara
 	return nil
 }
 
+func (j *jsiiProxy_RosAutoProvisioningGroup) validateSetDataDiskConfigParameters(val interface{}) error {
+	switch val.(type) {
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	case *[]interface{}:
+		val := val.(*[]interface{})
+		for idx_97dfc6, v := range *val {
+			switch v.(type) {
+			case alicloudroscdkcore.IResolvable:
+				// ok
+			case *RosAutoProvisioningGroup_DataDiskConfigProperty:
+				v := v.(*RosAutoProvisioningGroup_DataDiskConfigProperty)
+				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+					return err
+				}
+			case RosAutoProvisioningGroup_DataDiskConfigProperty:
+				v_ := v.(RosAutoProvisioningGroup_DataDiskConfigProperty)
+				v := &v_
+				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+					return err
+				}
+			default:
+				if !_jsii_.IsAnonymousProxy(v) {
+					return fmt.Errorf("parameter val[%#v] must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosAutoProvisioningGroup_DataDiskConfigProperty; received %#v (a %T)", idx_97dfc6, v, v)
+				}
+			}
+		}
+	case []interface{}:
+		val_ := val.([]interface{})
+		val := &val_
+		for idx_97dfc6, v := range *val {
+			switch v.(type) {
+			case alicloudroscdkcore.IResolvable:
+				// ok
+			case *RosAutoProvisioningGroup_DataDiskConfigProperty:
+				v := v.(*RosAutoProvisioningGroup_DataDiskConfigProperty)
+				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+					return err
+				}
+			case RosAutoProvisioningGroup_DataDiskConfigProperty:
+				v_ := v.(RosAutoProvisioningGroup_DataDiskConfigProperty)
+				v := &v_
+				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+					return err
+				}
+			default:
+				if !_jsii_.IsAnonymousProxy(v) {
+					return fmt.Errorf("parameter val[%#v] must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosAutoProvisioningGroup_DataDiskConfigProperty; received %#v (a %T)", idx_97dfc6, v, v)
+				}
+			}
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *[]interface{}; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosAutoProvisioningGroup) validateSetDefaultTargetCapacityTypeParameters(val interface{}) error {
 	switch val.(type) {
 	case *string:
@@ -520,6 +580,23 @@ func (j *jsiiProxy_RosAutoProvisioningGroup) validateSetMaxSpotPriceParameters(v
 	return nil
 }
 
+func (j *jsiiProxy_RosAutoProvisioningGroup) validateSetMinTargetCapacityParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosAutoProvisioningGroup) validateSetPayAsYouGoAllocationStrategyParameters(val interface{}) error {
 	switch val.(type) {
 	case *string:
@@ -548,6 +625,47 @@ func (j *jsiiProxy_RosAutoProvisioningGroup) validateSetPayAsYouGoTargetCapacity
 	default:
 		if !_jsii_.IsAnonymousProxy(val) {
 			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosAutoProvisioningGroup) validateSetResourceGroupIdParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosAutoProvisioningGroup) validateSetResourcePoolOptionsParameters(val interface{}) error {
+	switch val.(type) {
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	case *RosAutoProvisioningGroup_ResourcePoolOptionsProperty:
+		val := val.(*RosAutoProvisioningGroup_ResourcePoolOptionsProperty)
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	case RosAutoProvisioningGroup_ResourcePoolOptionsProperty:
+		val_ := val.(RosAutoProvisioningGroup_ResourcePoolOptionsProperty)
+		val := &val_
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosAutoProvisioningGroup_ResourcePoolOptionsProperty; received %#v (a %T)", val, val)
 		}
 	}
 
@@ -656,6 +774,66 @@ func (j *jsiiProxy_RosAutoProvisioningGroup) validateSetSpotTargetCapacityParame
 	default:
 		if !_jsii_.IsAnonymousProxy(val) {
 			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosAutoProvisioningGroup) validateSetSystemDiskConfigParameters(val interface{}) error {
+	switch val.(type) {
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	case *[]interface{}:
+		val := val.(*[]interface{})
+		for idx_97dfc6, v := range *val {
+			switch v.(type) {
+			case alicloudroscdkcore.IResolvable:
+				// ok
+			case *RosAutoProvisioningGroup_SystemDiskConfigProperty:
+				v := v.(*RosAutoProvisioningGroup_SystemDiskConfigProperty)
+				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+					return err
+				}
+			case RosAutoProvisioningGroup_SystemDiskConfigProperty:
+				v_ := v.(RosAutoProvisioningGroup_SystemDiskConfigProperty)
+				v := &v_
+				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+					return err
+				}
+			default:
+				if !_jsii_.IsAnonymousProxy(v) {
+					return fmt.Errorf("parameter val[%#v] must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosAutoProvisioningGroup_SystemDiskConfigProperty; received %#v (a %T)", idx_97dfc6, v, v)
+				}
+			}
+		}
+	case []interface{}:
+		val_ := val.([]interface{})
+		val := &val_
+		for idx_97dfc6, v := range *val {
+			switch v.(type) {
+			case alicloudroscdkcore.IResolvable:
+				// ok
+			case *RosAutoProvisioningGroup_SystemDiskConfigProperty:
+				v := v.(*RosAutoProvisioningGroup_SystemDiskConfigProperty)
+				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+					return err
+				}
+			case RosAutoProvisioningGroup_SystemDiskConfigProperty:
+				v_ := v.(RosAutoProvisioningGroup_SystemDiskConfigProperty)
+				v := &v_
+				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+					return err
+				}
+			default:
+				if !_jsii_.IsAnonymousProxy(v) {
+					return fmt.Errorf("parameter val[%#v] must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosAutoProvisioningGroup_SystemDiskConfigProperty; received %#v (a %T)", idx_97dfc6, v, v)
+				}
+			}
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *[]interface{}; received %#v (a %T)", val, val)
 		}
 	}
 

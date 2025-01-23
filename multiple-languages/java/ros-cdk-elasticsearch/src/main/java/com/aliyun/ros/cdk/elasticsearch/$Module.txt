@@ -1,3 +1,4 @@
+@alicloud/ros-cdk-elasticsearch.IInstance=com.aliyun.ros.cdk.elasticsearch.IInstance
 @alicloud/ros-cdk-elasticsearch.Instance=com.aliyun.ros.cdk.elasticsearch.Instance
 @alicloud/ros-cdk-elasticsearch.InstanceProps=com.aliyun.ros.cdk.elasticsearch.InstanceProps
 @alicloud/ros-cdk-elasticsearch.RosInstance=com.aliyun.ros.cdk.elasticsearch.RosInstance

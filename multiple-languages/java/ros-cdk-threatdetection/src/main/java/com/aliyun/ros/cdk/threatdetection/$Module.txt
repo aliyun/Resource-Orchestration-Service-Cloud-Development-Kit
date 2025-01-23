@@ -1,5 +1,7 @@
 @alicloud/ros-cdk-threatdetection.AntiBruteForceRule=com.aliyun.ros.cdk.threatdetection.AntiBruteForceRule
 @alicloud/ros-cdk-threatdetection.AntiBruteForceRuleProps=com.aliyun.ros.cdk.threatdetection.AntiBruteForceRuleProps
+@alicloud/ros-cdk-threatdetection.IAntiBruteForceRule=com.aliyun.ros.cdk.threatdetection.IAntiBruteForceRule
+@alicloud/ros-cdk-threatdetection.IInstance=com.aliyun.ros.cdk.threatdetection.IInstance
 @alicloud/ros-cdk-threatdetection.Instance=com.aliyun.ros.cdk.threatdetection.Instance
 @alicloud/ros-cdk-threatdetection.InstanceProps=com.aliyun.ros.cdk.threatdetection.InstanceProps
 @alicloud/ros-cdk-threatdetection.RosAntiBruteForceRule=com.aliyun.ros.cdk.threatdetection.RosAntiBruteForceRule
@@ -10,6 +12,9 @@
 @alicloud/ros-cdk-threatdetection.datasource.AntiBruteForceRuleProps=com.aliyun.ros.cdk.threatdetection.datasource.AntiBruteForceRuleProps
 @alicloud/ros-cdk-threatdetection.datasource.AntiBruteForceRules=com.aliyun.ros.cdk.threatdetection.datasource.AntiBruteForceRules
 @alicloud/ros-cdk-threatdetection.datasource.AntiBruteForceRulesProps=com.aliyun.ros.cdk.threatdetection.datasource.AntiBruteForceRulesProps
+@alicloud/ros-cdk-threatdetection.datasource.IAntiBruteForceRule=com.aliyun.ros.cdk.threatdetection.datasource.IAntiBruteForceRule
+@alicloud/ros-cdk-threatdetection.datasource.IAntiBruteForceRules=com.aliyun.ros.cdk.threatdetection.datasource.IAntiBruteForceRules
+@alicloud/ros-cdk-threatdetection.datasource.IInstances=com.aliyun.ros.cdk.threatdetection.datasource.IInstances
 @alicloud/ros-cdk-threatdetection.datasource.Instances=com.aliyun.ros.cdk.threatdetection.datasource.Instances
 @alicloud/ros-cdk-threatdetection.datasource.InstancesProps=com.aliyun.ros.cdk.threatdetection.datasource.InstancesProps
 @alicloud/ros-cdk-threatdetection.datasource.RosAntiBruteForceRule=com.aliyun.ros.cdk.threatdetection.datasource.RosAntiBruteForceRule

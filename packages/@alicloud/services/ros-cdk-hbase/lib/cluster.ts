@@ -165,45 +165,81 @@ export interface ClusterProps {
 }
 
 /**
+ * Represents a `Cluster`.
+ */
+export interface ICluster extends ros.IResource {
+    readonly props: ClusterProps;
+
+    /**
+     * Attribute ClusterId: The ID of the instance.
+     */
+    readonly attrClusterId: ros.IResolvable | string;
+
+    /**
+     * Attribute ServiceConnAddrs: LIST of ServiceConnAddr.
+     */
+    readonly attrServiceConnAddrs: ros.IResolvable | string;
+
+    /**
+     * Attribute SlbConnAddrs: LIST of SlbConnAddr.
+     */
+    readonly attrSlbConnAddrs: ros.IResolvable | string;
+
+    /**
+     * Attribute ThriftConn: Thrift Connection address list.
+     */
+    readonly attrThriftConn: ros.IResolvable | string;
+
+    /**
+     * Attribute UiProxyConnAddrInfo: WebUI connection information list.
+     */
+    readonly attrUiProxyConnAddrInfo: ros.IResolvable | string;
+
+    /**
+     * Attribute ZkConnAddrs: List of ZkConnAddr.
+     */
+    readonly attrZkConnAddrs: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::HBase::Cluster`, which is used to create an ApsaraDB for HBase cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbase-cluster
  */
-export class Cluster extends ros.Resource {
+export class Cluster extends ros.Resource implements ICluster {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ClusterProps;
+    public readonly props: ClusterProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterId: The ID of the instance.
      */
-    public readonly attrClusterId: ros.IResolvable;
+    public readonly attrClusterId: ros.IResolvable | string;
 
     /**
      * Attribute ServiceConnAddrs: LIST of ServiceConnAddr.
      */
-    public readonly attrServiceConnAddrs: ros.IResolvable;
+    public readonly attrServiceConnAddrs: ros.IResolvable | string;
 
     /**
      * Attribute SlbConnAddrs: LIST of SlbConnAddr.
      */
-    public readonly attrSlbConnAddrs: ros.IResolvable;
+    public readonly attrSlbConnAddrs: ros.IResolvable | string;
 
     /**
      * Attribute ThriftConn: Thrift Connection address list.
      */
-    public readonly attrThriftConn: ros.IResolvable;
+    public readonly attrThriftConn: ros.IResolvable | string;
 
     /**
      * Attribute UiProxyConnAddrInfo: WebUI connection information list.
      */
-    public readonly attrUiProxyConnAddrInfo: ros.IResolvable;
+    public readonly attrUiProxyConnAddrInfo: ros.IResolvable | string;
 
     /**
      * Attribute ZkConnAddrs: List of ZkConnAddr.
      */
-    public readonly attrZkConnAddrs: ros.IResolvable;
+    public readonly attrZkConnAddrs: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

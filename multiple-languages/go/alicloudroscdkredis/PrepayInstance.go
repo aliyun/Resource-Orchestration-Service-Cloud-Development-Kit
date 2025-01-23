@@ -12,74 +12,84 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::PrepayInstance`, which is used to create a subscription ApsaraDB for Redis instance.
 type PrepayInstance interface {
 	alicloudroscdkcore.Resource
+	IPrepayInstance
 	// Attribute ArchitectureType: The architecture.
-	AttrArchitectureType() alicloudroscdkcore.IResolvable
+	AttrArchitectureType() interface{}
 	// Attribute Bandwidth: The bandwidth of the instance.
 	//
 	// Unit: Mbit/s.
-	AttrBandwidth() alicloudroscdkcore.IResolvable
+	AttrBandwidth() interface{}
 	// Attribute Capacity: The storage capacity of the instance.
 	//
 	// Unit: MB.
-	AttrCapacity() alicloudroscdkcore.IResolvable
+	AttrCapacity() interface{}
 	// Attribute ChargeType: The billing method of the instance.
-	AttrChargeType() alicloudroscdkcore.IResolvable
+	AttrChargeType() interface{}
 	// Attribute ClassicInnerConnectionPort: The classic inner connection port of the instance.
-	AttrClassicInnerConnectionPort() alicloudroscdkcore.IResolvable
+	AttrClassicInnerConnectionPort() interface{}
 	// Attribute ClassicInnerConnectionString: The classic inner connection string of the instance.
-	AttrClassicInnerConnectionString() alicloudroscdkcore.IResolvable
+	AttrClassicInnerConnectionString() interface{}
 	// Attribute ConnectionDomain: Connection domain of created instance.
-	AttrConnectionDomain() alicloudroscdkcore.IResolvable
+	AttrConnectionDomain() interface{}
 	// Attribute Connections: The maximum number of connections supported by the instance.
-	AttrConnections() alicloudroscdkcore.IResolvable
+	AttrConnections() interface{}
 	// Attribute DirectConnectionPort: The direct connection port of the instance.
-	AttrDirectConnectionPort() alicloudroscdkcore.IResolvable
+	AttrDirectConnectionPort() interface{}
 	// Attribute DirectConnectionString: The direct connection string of the instance.
-	AttrDirectConnectionString() alicloudroscdkcore.IResolvable
+	AttrDirectConnectionString() interface{}
 	// Attribute EngineVersion: The engine version of the instance.
-	AttrEngineVersion() alicloudroscdkcore.IResolvable
+	AttrEngineVersion() interface{}
 	// Attribute HasRenewChangeOrder: Indicates whether the Alibaba Cloud account has pending renewal or scaling orders.
-	AttrHasRenewChangeOrder() alicloudroscdkcore.IResolvable
+	AttrHasRenewChangeOrder() interface{}
 	// Attribute InstanceClass: Redis instance type.
-	AttrInstanceClass() alicloudroscdkcore.IResolvable
+	AttrInstanceClass() interface{}
 	// Attribute InstanceId: Instance id of created redis instance.
-	AttrInstanceId() alicloudroscdkcore.IResolvable
+	AttrInstanceId() interface{}
 	// Attribute InstanceName: Name of created redis instance.
-	AttrInstanceName() alicloudroscdkcore.IResolvable
+	AttrInstanceName() interface{}
 	// Attribute InstanceType: The engine type of the instance.
-	AttrInstanceType() alicloudroscdkcore.IResolvable
+	AttrInstanceType() interface{}
 	// Attribute NetworkType: The network type.
-	AttrNetworkType() alicloudroscdkcore.IResolvable
+	AttrNetworkType() interface{}
 	// Attribute NodeType: The type of node.
-	AttrNodeType() alicloudroscdkcore.IResolvable
+	AttrNodeType() interface{}
 	// Attribute OrderId: Order Id of created instance.
-	AttrOrderId() alicloudroscdkcore.IResolvable
+	AttrOrderId() interface{}
 	// Attribute PackageType: The plan type.
-	AttrPackageType() alicloudroscdkcore.IResolvable
+	AttrPackageType() interface{}
 	// Attribute Port: Port of created instance.
-	AttrPort() alicloudroscdkcore.IResolvable
+	AttrPort() interface{}
 	// Attribute PrivateIp: The internal IP address of the instance.
-	AttrPrivateIp() alicloudroscdkcore.IResolvable
+	AttrPrivateIp() interface{}
 	// Attribute PublicConnectionPort: The public connection port of the instance.
-	AttrPublicConnectionPort() alicloudroscdkcore.IResolvable
+	AttrPublicConnectionPort() interface{}
 	// Attribute PublicConnectionString: The public connection string of the instance.
-	AttrPublicConnectionString() alicloudroscdkcore.IResolvable
+	AttrPublicConnectionString() interface{}
 	// Attribute QPS: The queries per second (QPS) supported by the instance.
-	AttrQps() alicloudroscdkcore.IResolvable
+	AttrQps() interface{}
 	// Attribute ResourceGroupId: The ID of the resource group to which the instance belongs.
-	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() interface{}
 	// Attribute VpcId: The ID of the VPC.
-	AttrVpcId() alicloudroscdkcore.IResolvable
+	AttrVpcId() interface{}
 	// Attribute VpcPrivateConnectionPort: The vpc private connection port of the instance.
-	AttrVpcPrivateConnectionPort() alicloudroscdkcore.IResolvable
+	AttrVpcPrivateConnectionPort() interface{}
 	// Attribute VpcPrivateConnectionString: The vpc private connection string of the instance.
-	AttrVpcPrivateConnectionString() alicloudroscdkcore.IResolvable
+	AttrVpcPrivateConnectionString() interface{}
 	// Attribute VSwitchId: The ID of the vSwitch.
-	AttrVSwitchId() alicloudroscdkcore.IResolvable
+	AttrVSwitchId() interface{}
 	// Attribute ZoneId: The ID of the zone.
-	AttrZoneId() alicloudroscdkcore.IResolvable
+	AttrZoneId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -94,7 +104,6 @@ type PrepayInstance interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *PrepayInstanceProps
-	SetProps(val *PrepayInstanceProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -107,6 +116,9 @@ type PrepayInstance interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -159,10 +171,11 @@ type PrepayInstance interface {
 // The jsii proxy struct for PrepayInstance
 type jsiiProxy_PrepayInstance struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IPrepayInstance
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrArchitectureType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrArchitectureType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrArchitectureType",
@@ -171,8 +184,8 @@ func (j *jsiiProxy_PrepayInstance) AttrArchitectureType() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrBandwidth() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrBandwidth() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBandwidth",
@@ -181,8 +194,8 @@ func (j *jsiiProxy_PrepayInstance) AttrBandwidth() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrCapacity() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrCapacity() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCapacity",
@@ -191,8 +204,8 @@ func (j *jsiiProxy_PrepayInstance) AttrCapacity() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrChargeType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrChargeType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrChargeType",
@@ -201,8 +214,8 @@ func (j *jsiiProxy_PrepayInstance) AttrChargeType() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrClassicInnerConnectionPort() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrClassicInnerConnectionPort() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrClassicInnerConnectionPort",
@@ -211,8 +224,8 @@ func (j *jsiiProxy_PrepayInstance) AttrClassicInnerConnectionPort() alicloudrosc
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrClassicInnerConnectionString() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrClassicInnerConnectionString() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrClassicInnerConnectionString",
@@ -221,8 +234,8 @@ func (j *jsiiProxy_PrepayInstance) AttrClassicInnerConnectionString() alicloudro
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrConnectionDomain() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrConnectionDomain() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrConnectionDomain",
@@ -231,8 +244,8 @@ func (j *jsiiProxy_PrepayInstance) AttrConnectionDomain() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrConnections() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrConnections() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrConnections",
@@ -241,8 +254,8 @@ func (j *jsiiProxy_PrepayInstance) AttrConnections() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrDirectConnectionPort() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrDirectConnectionPort() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDirectConnectionPort",
@@ -251,8 +264,8 @@ func (j *jsiiProxy_PrepayInstance) AttrDirectConnectionPort() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrDirectConnectionString() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrDirectConnectionString() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDirectConnectionString",
@@ -261,8 +274,8 @@ func (j *jsiiProxy_PrepayInstance) AttrDirectConnectionString() alicloudroscdkco
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrEngineVersion() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrEngineVersion() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEngineVersion",
@@ -271,8 +284,8 @@ func (j *jsiiProxy_PrepayInstance) AttrEngineVersion() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrHasRenewChangeOrder() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrHasRenewChangeOrder() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHasRenewChangeOrder",
@@ -281,8 +294,8 @@ func (j *jsiiProxy_PrepayInstance) AttrHasRenewChangeOrder() alicloudroscdkcore.
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrInstanceClass() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrInstanceClass() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceClass",
@@ -291,8 +304,8 @@ func (j *jsiiProxy_PrepayInstance) AttrInstanceClass() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceId",
@@ -301,8 +314,8 @@ func (j *jsiiProxy_PrepayInstance) AttrInstanceId() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrInstanceName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrInstanceName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceName",
@@ -311,8 +324,8 @@ func (j *jsiiProxy_PrepayInstance) AttrInstanceName() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrInstanceType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrInstanceType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceType",
@@ -321,8 +334,8 @@ func (j *jsiiProxy_PrepayInstance) AttrInstanceType() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrNetworkType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrNetworkType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNetworkType",
@@ -331,8 +344,8 @@ func (j *jsiiProxy_PrepayInstance) AttrNetworkType() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrNodeType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrNodeType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNodeType",
@@ -341,8 +354,8 @@ func (j *jsiiProxy_PrepayInstance) AttrNodeType() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrOrderId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrOrderId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOrderId",
@@ -351,8 +364,8 @@ func (j *jsiiProxy_PrepayInstance) AttrOrderId() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrPackageType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrPackageType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPackageType",
@@ -361,8 +374,8 @@ func (j *jsiiProxy_PrepayInstance) AttrPackageType() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrPort() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrPort() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPort",
@@ -371,8 +384,8 @@ func (j *jsiiProxy_PrepayInstance) AttrPort() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrPrivateIp() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrPrivateIp() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPrivateIp",
@@ -381,8 +394,8 @@ func (j *jsiiProxy_PrepayInstance) AttrPrivateIp() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrPublicConnectionPort() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrPublicConnectionPort() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPublicConnectionPort",
@@ -391,8 +404,8 @@ func (j *jsiiProxy_PrepayInstance) AttrPublicConnectionPort() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrPublicConnectionString() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrPublicConnectionString() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPublicConnectionString",
@@ -401,8 +414,8 @@ func (j *jsiiProxy_PrepayInstance) AttrPublicConnectionString() alicloudroscdkco
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrQps() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrQps() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrQps",
@@ -411,8 +424,8 @@ func (j *jsiiProxy_PrepayInstance) AttrQps() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupId",
@@ -421,8 +434,8 @@ func (j *jsiiProxy_PrepayInstance) AttrResourceGroupId() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrVpcId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrVpcId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVpcId",
@@ -431,8 +444,8 @@ func (j *jsiiProxy_PrepayInstance) AttrVpcId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrVpcPrivateConnectionPort() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrVpcPrivateConnectionPort() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVpcPrivateConnectionPort",
@@ -441,8 +454,8 @@ func (j *jsiiProxy_PrepayInstance) AttrVpcPrivateConnectionPort() alicloudroscdk
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrVpcPrivateConnectionString() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrVpcPrivateConnectionString() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVpcPrivateConnectionString",
@@ -451,8 +464,8 @@ func (j *jsiiProxy_PrepayInstance) AttrVpcPrivateConnectionString() alicloudrosc
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrVSwitchId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrVSwitchId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVSwitchId",
@@ -461,8 +474,8 @@ func (j *jsiiProxy_PrepayInstance) AttrVSwitchId() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_PrepayInstance) AttrZoneId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayInstance) AttrZoneId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrZoneId",
@@ -476,6 +489,16 @@ func (j *jsiiProxy_PrepayInstance) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_PrepayInstance) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -613,17 +636,6 @@ func (j *jsiiProxy_PrepayInstance)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_PrepayInstance)SetProps(val *PrepayInstanceProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_PrepayInstance)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -715,6 +727,45 @@ func (p *jsiiProxy_PrepayInstance) ApplyRemovalPolicy(policy alicloudroscdkcore.
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (p *jsiiProxy_PrepayInstance) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		p,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_PrepayInstance) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		p,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_PrepayInstance) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		p,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (p *jsiiProxy_PrepayInstance) GeneratePhysicalName() *string {

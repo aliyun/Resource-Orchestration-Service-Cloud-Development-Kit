@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::AutoSnapshotPolicies`, which is used to query automatic snapshot policies.
 type AutoSnapshotPolicies interface {
 	alicloudroscdkcore.Resource
+	IAutoSnapshotPolicies
 	// Attribute AutoSnapshotPolicies: The list of auto snapshot policies.
-	AttrAutoSnapshotPolicies() alicloudroscdkcore.IResolvable
+	AttrAutoSnapshotPolicies() interface{}
 	// Attribute AutoSnapshotPolicyIds: The list of auto snapshot policy ids.
-	AttrAutoSnapshotPolicyIds() alicloudroscdkcore.IResolvable
+	AttrAutoSnapshotPolicyIds() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type AutoSnapshotPolicies interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *AutoSnapshotPoliciesProps
-	SetProps(val *AutoSnapshotPoliciesProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type AutoSnapshotPolicies interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type AutoSnapshotPolicies interface {
 // The jsii proxy struct for AutoSnapshotPolicies
 type jsiiProxy_AutoSnapshotPolicies struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IAutoSnapshotPolicies
 }
 
-func (j *jsiiProxy_AutoSnapshotPolicies) AttrAutoSnapshotPolicies() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AutoSnapshotPolicies) AttrAutoSnapshotPolicies() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAutoSnapshotPolicies",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_AutoSnapshotPolicies) AttrAutoSnapshotPolicies() alicloudrosc
 	return returns
 }
 
-func (j *jsiiProxy_AutoSnapshotPolicies) AttrAutoSnapshotPolicyIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AutoSnapshotPolicies) AttrAutoSnapshotPolicyIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAutoSnapshotPolicyIds",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_AutoSnapshotPolicies) EnableResourcePropertyConstraint() *boo
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AutoSnapshotPolicies) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_AutoSnapshotPolicies)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AutoSnapshotPolicies)SetProps(val *AutoSnapshotPoliciesProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_AutoSnapshotPolicies)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (a *jsiiProxy_AutoSnapshotPolicies) ApplyRemovalPolicy(policy alicloudroscd
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (a *jsiiProxy_AutoSnapshotPolicies) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		a,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AutoSnapshotPolicies) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AutoSnapshotPolicies) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (a *jsiiProxy_AutoSnapshotPolicies) GeneratePhysicalName() *string {

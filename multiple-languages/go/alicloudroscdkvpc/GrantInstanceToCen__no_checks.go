@@ -52,10 +52,6 @@ func (j *jsiiProxy_GrantInstanceToCen) validateSetIdParameters(val *string) erro
 	return nil
 }
 
-func (j *jsiiProxy_GrantInstanceToCen) validateSetPropsParameters(val *GrantInstanceToCenProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_GrantInstanceToCen) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

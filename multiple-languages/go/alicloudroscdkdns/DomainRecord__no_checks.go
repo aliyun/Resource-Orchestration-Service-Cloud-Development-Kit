@@ -52,10 +52,6 @@ func (j *jsiiProxy_DomainRecord) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_DomainRecord) validateSetPropsParameters(val *DomainRecordProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_DomainRecord) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

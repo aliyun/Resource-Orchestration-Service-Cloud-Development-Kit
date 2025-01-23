@@ -49,30 +49,51 @@ export interface SubscriptionProps {
 }
 
 /**
+ * Represents a `Subscription`.
+ */
+export interface ISubscription extends ros.IResource {
+    readonly props: SubscriptionProps;
+
+    /**
+     * Attribute SubscriptionName: Subscription name
+     */
+    readonly attrSubscriptionName: ros.IResolvable | string;
+
+    /**
+     * Attribute SubscriptionUrl: URL of created subscription
+     */
+    readonly attrSubscriptionUrl: ros.IResolvable | string;
+
+    /**
+     * Attribute TopicName: Topic name
+     */
+    readonly attrTopicName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::MNS::Subscription`, which is used to subscribe an endpoint to an Alibaba Cloud Message Service (MNS) topic. For a subscription to be created, the owner of the endpoint must confirm the subscription.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSubscription`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-subscription
  */
-export class Subscription extends ros.Resource {
+export class Subscription extends ros.Resource implements ISubscription {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SubscriptionProps;
+    public readonly props: SubscriptionProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SubscriptionName: Subscription name
      */
-    public readonly attrSubscriptionName: ros.IResolvable;
+    public readonly attrSubscriptionName: ros.IResolvable | string;
 
     /**
      * Attribute SubscriptionUrl: URL of created subscription
      */
-    public readonly attrSubscriptionUrl: ros.IResolvable;
+    public readonly attrSubscriptionUrl: ros.IResolvable | string;
 
     /**
      * Attribute TopicName: Topic name
      */
-    public readonly attrTopicName: ros.IResolvable;
+    public readonly attrTopicName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

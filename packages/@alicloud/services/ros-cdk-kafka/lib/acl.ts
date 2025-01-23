@@ -68,30 +68,51 @@ export interface AclProps {
 }
 
 /**
+ * Represents a `Acl`.
+ */
+export interface IAcl extends ros.IResource {
+    readonly props: AclProps;
+
+    /**
+     * Attribute AclResourceType: The resource type.
+     */
+    readonly attrAclResourceType: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: The instance ID.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute Username: The username.
+     */
+    readonly attrUsername: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::KAFKA::Acl`, which is used to create an access control list (ACL).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAcl`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-acl
  */
-export class Acl extends ros.Resource {
+export class Acl extends ros.Resource implements IAcl {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AclProps;
+    public readonly props: AclProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AclResourceType: The resource type.
      */
-    public readonly attrAclResourceType: ros.IResolvable;
+    public readonly attrAclResourceType: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: The instance ID.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute Username: The username.
      */
-    public readonly attrUsername: ros.IResolvable;
+    public readonly attrUsername: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

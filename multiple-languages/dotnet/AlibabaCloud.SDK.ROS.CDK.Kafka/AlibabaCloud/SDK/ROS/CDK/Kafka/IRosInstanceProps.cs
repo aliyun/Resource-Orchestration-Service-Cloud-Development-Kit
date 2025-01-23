@@ -177,8 +177,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
 
         /// <remarks>
         /// <strong>Property</strong>: specType: The edition of the Message Queue for Apache Kafka instance. Valid values:
-        /// professional: Professional Edition
         /// normal: Normal version
+        /// professional: Professional Edition (high writing edition)
+        /// professionalForHighRead: Professional Edition (high reading edition)
         /// </remarks>
         [JsiiProperty(name: "specType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -367,8 +368,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
 
             /// <remarks>
             /// <strong>Property</strong>: specType: The edition of the Message Queue for Apache Kafka instance. Valid values:
-            /// professional: Professional Edition
             /// normal: Normal version
+            /// professional: Professional Edition (high writing edition)
+            /// professionalForHighRead: Professional Edition (high reading edition)
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "specType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

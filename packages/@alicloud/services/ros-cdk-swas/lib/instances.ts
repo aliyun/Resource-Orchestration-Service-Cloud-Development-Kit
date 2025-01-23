@@ -53,30 +53,51 @@ export interface InstancesProps {
 }
 
 /**
+ * Represents a `Instances`.
+ */
+export interface IInstances extends ros.IResource {
+    readonly props: InstancesProps;
+
+    /**
+     * Attribute InnerIpAddresses: The inner IP addresses of simple application servers.
+     */
+    readonly attrInnerIpAddresses: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceIds: The IDs of the simple application servers.
+     */
+    readonly attrInstanceIds: ros.IResolvable | string;
+
+    /**
+     * Attribute PublicIpAddresses: The public IP addresses of simple application servers.
+     */
+    readonly attrPublicIpAddresses: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SWAS::Instances`, which is used to create subscription simple application servers.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstances`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-swas-instances
  */
-export class Instances extends ros.Resource {
+export class Instances extends ros.Resource implements IInstances {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InstancesProps;
+    public readonly props: InstancesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InnerIpAddresses: The inner IP addresses of simple application servers.
      */
-    public readonly attrInnerIpAddresses: ros.IResolvable;
+    public readonly attrInnerIpAddresses: ros.IResolvable | string;
 
     /**
      * Attribute InstanceIds: The IDs of the simple application servers.
      */
-    public readonly attrInstanceIds: ros.IResolvable;
+    public readonly attrInstanceIds: ros.IResolvable | string;
 
     /**
      * Attribute PublicIpAddresses: The public IP addresses of simple application servers.
      */
-    public readonly attrPublicIpAddresses: ros.IResolvable;
+    public readonly attrPublicIpAddresses: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -458,55 +458,101 @@ export interface PrepayDBInstanceProps {
 }
 
 /**
+ * Represents a `PrepayDBInstance`.
+ */
+export interface IPrepayDBInstance extends ros.IResource {
+    readonly props: PrepayDBInstanceProps;
+
+    /**
+     * Attribute DBInstanceId: The instance id of created database instance.
+     */
+    readonly attrDbInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute InnerConnectionString: DB instance connection url by Intranet.
+     */
+    readonly attrInnerConnectionString: ros.IResolvable | string;
+
+    /**
+     * Attribute InnerIPAddress: IP Address for created DB instance of Intranet.
+     */
+    readonly attrInnerIpAddress: ros.IResolvable | string;
+
+    /**
+     * Attribute InnerPort: Intranet port of created DB instance.
+     */
+    readonly attrInnerPort: ros.IResolvable | string;
+
+    /**
+     * Attribute OrderId: The order id list of created instance.
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+
+    /**
+     * Attribute PublicConnectionString: DB instance connection url by Internet.
+     */
+    readonly attrPublicConnectionString: ros.IResolvable | string;
+
+    /**
+     * Attribute PublicIPAddress: IP Address for created DB instance of Internet.
+     */
+    readonly attrPublicIpAddress: ros.IResolvable | string;
+
+    /**
+     * Attribute PublicPort: Internet port of created DB instance.
+     */
+    readonly attrPublicPort: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::PrepayDBInstance`, which is used to create subscription ApsaraDB RDS instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPrepayDBInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-prepaydbinstance
  */
-export class PrepayDBInstance extends ros.Resource {
+export class PrepayDBInstance extends ros.Resource implements IPrepayDBInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: PrepayDBInstanceProps;
+    public readonly props: PrepayDBInstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DBInstanceId: The instance id of created database instance.
      */
-    public readonly attrDbInstanceId: ros.IResolvable;
+    public readonly attrDbInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute InnerConnectionString: DB instance connection url by Intranet.
      */
-    public readonly attrInnerConnectionString: ros.IResolvable;
+    public readonly attrInnerConnectionString: ros.IResolvable | string;
 
     /**
      * Attribute InnerIPAddress: IP Address for created DB instance of Intranet.
      */
-    public readonly attrInnerIpAddress: ros.IResolvable;
+    public readonly attrInnerIpAddress: ros.IResolvable | string;
 
     /**
      * Attribute InnerPort: Intranet port of created DB instance.
      */
-    public readonly attrInnerPort: ros.IResolvable;
+    public readonly attrInnerPort: ros.IResolvable | string;
 
     /**
      * Attribute OrderId: The order id list of created instance.
      */
-    public readonly attrOrderId: ros.IResolvable;
+    public readonly attrOrderId: ros.IResolvable | string;
 
     /**
      * Attribute PublicConnectionString: DB instance connection url by Internet.
      */
-    public readonly attrPublicConnectionString: ros.IResolvable;
+    public readonly attrPublicConnectionString: ros.IResolvable | string;
 
     /**
      * Attribute PublicIPAddress: IP Address for created DB instance of Internet.
      */
-    public readonly attrPublicIpAddress: ros.IResolvable;
+    public readonly attrPublicIpAddress: ros.IResolvable | string;
 
     /**
      * Attribute PublicPort: Internet port of created DB instance.
      */
-    public readonly attrPublicPort: ros.IResolvable;
+    public readonly attrPublicPort: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

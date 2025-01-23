@@ -42,35 +42,61 @@ export interface ConnectionProps {
 }
 
 /**
+ * Represents a `Connection`.
+ */
+export interface IConnection extends ros.IResource {
+    readonly props: ConnectionProps;
+
+    /**
+     * Attribute BabelfishPort: The name of the dedicated cluster to which the instance belongs.
+     */
+    readonly attrBabelfishPort: ros.IResolvable | string;
+
+    /**
+     * Attribute ConnectionString: Connection string
+     */
+    readonly attrConnectionString: ros.IResolvable | string;
+
+    /**
+     * Attribute DBInstanceId: RDS instance ID.
+     */
+    readonly attrDbInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute Port: The port of the database service.
+     */
+    readonly attrPort: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::Connection`, which is used to apply for a public endpoint.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosConnection`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-connection
  */
-export class Connection extends ros.Resource {
+export class Connection extends ros.Resource implements IConnection {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ConnectionProps;
+    public readonly props: ConnectionProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute BabelfishPort: The name of the dedicated cluster to which the instance belongs.
      */
-    public readonly attrBabelfishPort: ros.IResolvable;
+    public readonly attrBabelfishPort: ros.IResolvable | string;
 
     /**
      * Attribute ConnectionString: Connection string
      */
-    public readonly attrConnectionString: ros.IResolvable;
+    public readonly attrConnectionString: ros.IResolvable | string;
 
     /**
      * Attribute DBInstanceId: RDS instance ID.
      */
-    public readonly attrDbInstanceId: ros.IResolvable;
+    public readonly attrDbInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute Port: The port of the database service.
      */
-    public readonly attrPort: ros.IResolvable;
+    public readonly attrPort: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

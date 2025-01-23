@@ -12,22 +12,32 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::TSDB::HiTSDBInstance`, which is used to create a Time Series Database (TSDB) instance.
 type HiTSDBInstance interface {
 	alicloudroscdkcore.Resource
+	IHiTSDBInstance
 	// Attribute ConnectionString: Connection string of the instance.
-	AttrConnectionString() alicloudroscdkcore.IResolvable
+	AttrConnectionString() interface{}
 	// Attribute EngineType: Engine type of the instance.
-	AttrEngineType() alicloudroscdkcore.IResolvable
+	AttrEngineType() interface{}
 	// Attribute InstanceId: The ID of the instance.
-	AttrInstanceId() alicloudroscdkcore.IResolvable
+	AttrInstanceId() interface{}
 	// Attribute OrderId: Order id of created instance.
-	AttrOrderId() alicloudroscdkcore.IResolvable
+	AttrOrderId() interface{}
 	// Attribute PublicConnectionString: Public connection string of the instance.
-	AttrPublicConnectionString() alicloudroscdkcore.IResolvable
+	AttrPublicConnectionString() interface{}
 	// Attribute ReverseVpcIp: Reverse vpc ip of the instance.
-	AttrReverseVpcIp() alicloudroscdkcore.IResolvable
+	AttrReverseVpcIp() interface{}
 	// Attribute ReverseVpcPort: Reverse vpc port of the instance.
-	AttrReverseVpcPort() alicloudroscdkcore.IResolvable
+	AttrReverseVpcPort() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -42,7 +52,6 @@ type HiTSDBInstance interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *HiTSDBInstanceProps
-	SetProps(val *HiTSDBInstanceProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -55,6 +64,9 @@ type HiTSDBInstance interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -107,10 +119,11 @@ type HiTSDBInstance interface {
 // The jsii proxy struct for HiTSDBInstance
 type jsiiProxy_HiTSDBInstance struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IHiTSDBInstance
 }
 
-func (j *jsiiProxy_HiTSDBInstance) AttrConnectionString() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HiTSDBInstance) AttrConnectionString() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrConnectionString",
@@ -119,8 +132,8 @@ func (j *jsiiProxy_HiTSDBInstance) AttrConnectionString() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_HiTSDBInstance) AttrEngineType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HiTSDBInstance) AttrEngineType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEngineType",
@@ -129,8 +142,8 @@ func (j *jsiiProxy_HiTSDBInstance) AttrEngineType() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_HiTSDBInstance) AttrInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HiTSDBInstance) AttrInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceId",
@@ -139,8 +152,8 @@ func (j *jsiiProxy_HiTSDBInstance) AttrInstanceId() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_HiTSDBInstance) AttrOrderId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HiTSDBInstance) AttrOrderId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOrderId",
@@ -149,8 +162,8 @@ func (j *jsiiProxy_HiTSDBInstance) AttrOrderId() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_HiTSDBInstance) AttrPublicConnectionString() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HiTSDBInstance) AttrPublicConnectionString() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPublicConnectionString",
@@ -159,8 +172,8 @@ func (j *jsiiProxy_HiTSDBInstance) AttrPublicConnectionString() alicloudroscdkco
 	return returns
 }
 
-func (j *jsiiProxy_HiTSDBInstance) AttrReverseVpcIp() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HiTSDBInstance) AttrReverseVpcIp() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrReverseVpcIp",
@@ -169,8 +182,8 @@ func (j *jsiiProxy_HiTSDBInstance) AttrReverseVpcIp() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_HiTSDBInstance) AttrReverseVpcPort() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HiTSDBInstance) AttrReverseVpcPort() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrReverseVpcPort",
@@ -184,6 +197,16 @@ func (j *jsiiProxy_HiTSDBInstance) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HiTSDBInstance) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -321,17 +344,6 @@ func (j *jsiiProxy_HiTSDBInstance)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_HiTSDBInstance)SetProps(val *HiTSDBInstanceProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_HiTSDBInstance)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -423,6 +435,45 @@ func (h *jsiiProxy_HiTSDBInstance) ApplyRemovalPolicy(policy alicloudroscdkcore.
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (h *jsiiProxy_HiTSDBInstance) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		h,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (h *jsiiProxy_HiTSDBInstance) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		h,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (h *jsiiProxy_HiTSDBInstance) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		h,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (h *jsiiProxy_HiTSDBInstance) GeneratePhysicalName() *string {

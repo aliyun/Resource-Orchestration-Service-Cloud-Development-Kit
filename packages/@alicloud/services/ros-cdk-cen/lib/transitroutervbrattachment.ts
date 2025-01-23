@@ -46,65 +46,121 @@ export interface TransitRouterVbrAttachmentProps {
 }
 
 /**
+ * Represents a `TransitRouterVbrAttachment`.
+ */
+export interface ITransitRouterVbrAttachment extends ros.IResource {
+    readonly props: TransitRouterVbrAttachmentProps;
+
+    /**
+     * Attribute AutoPublishRouteEnabled: AutoPublishRouteEnabled
+     */
+    readonly attrAutoPublishRouteEnabled: ros.IResolvable | string;
+
+    /**
+     * Attribute CenId: CenId
+     */
+    readonly attrCenId: ros.IResolvable | string;
+
+    /**
+     * Attribute ClientToken: ClientToken
+     */
+    readonly attrClientToken: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceType: ResourceType
+     */
+    readonly attrResourceType: ros.IResolvable | string;
+
+    /**
+     * Attribute TransitRouterAttachmentDescription: TransitRouterAttachmentDescription
+     */
+    readonly attrTransitRouterAttachmentDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute TransitRouterAttachmentId: The first ID of the resource
+     */
+    readonly attrTransitRouterAttachmentId: ros.IResolvable | string;
+
+    /**
+     * Attribute TransitRouterAttachmentName: TransitRouterAttachmentName
+     */
+    readonly attrTransitRouterAttachmentName: ros.IResolvable | string;
+
+    /**
+     * Attribute TransitRouterId: TransitRouterId
+     */
+    readonly attrTransitRouterId: ros.IResolvable | string;
+
+    /**
+     * Attribute VbrId: VbrId
+     */
+    readonly attrVbrId: ros.IResolvable | string;
+
+    /**
+     * Attribute VbrOwnerId: VbrOwnerId
+     */
+    readonly attrVbrOwnerId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterVbrAttachment`, which is used to create a virtual border router (VBR) connection on an Enterprise Edition transit router.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouterVbrAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervbrattachment
  */
-export class TransitRouterVbrAttachment extends ros.Resource {
+export class TransitRouterVbrAttachment extends ros.Resource implements ITransitRouterVbrAttachment {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: TransitRouterVbrAttachmentProps;
+    public readonly props: TransitRouterVbrAttachmentProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AutoPublishRouteEnabled: AutoPublishRouteEnabled
      */
-    public readonly attrAutoPublishRouteEnabled: ros.IResolvable;
+    public readonly attrAutoPublishRouteEnabled: ros.IResolvable | string;
 
     /**
      * Attribute CenId: CenId
      */
-    public readonly attrCenId: ros.IResolvable;
+    public readonly attrCenId: ros.IResolvable | string;
 
     /**
      * Attribute ClientToken: ClientToken
      */
-    public readonly attrClientToken: ros.IResolvable;
+    public readonly attrClientToken: ros.IResolvable | string;
 
     /**
      * Attribute ResourceType: ResourceType
      */
-    public readonly attrResourceType: ros.IResolvable;
+    public readonly attrResourceType: ros.IResolvable | string;
 
     /**
      * Attribute TransitRouterAttachmentDescription: TransitRouterAttachmentDescription
      */
-    public readonly attrTransitRouterAttachmentDescription: ros.IResolvable;
+    public readonly attrTransitRouterAttachmentDescription: ros.IResolvable | string;
 
     /**
      * Attribute TransitRouterAttachmentId: The first ID of the resource
      */
-    public readonly attrTransitRouterAttachmentId: ros.IResolvable;
+    public readonly attrTransitRouterAttachmentId: ros.IResolvable | string;
 
     /**
      * Attribute TransitRouterAttachmentName: TransitRouterAttachmentName
      */
-    public readonly attrTransitRouterAttachmentName: ros.IResolvable;
+    public readonly attrTransitRouterAttachmentName: ros.IResolvable | string;
 
     /**
      * Attribute TransitRouterId: TransitRouterId
      */
-    public readonly attrTransitRouterId: ros.IResolvable;
+    public readonly attrTransitRouterId: ros.IResolvable | string;
 
     /**
      * Attribute VbrId: VbrId
      */
-    public readonly attrVbrId: ros.IResolvable;
+    public readonly attrVbrId: ros.IResolvable | string;
 
     /**
      * Attribute VbrOwnerId: VbrOwnerId
      */
-    public readonly attrVbrOwnerId: ros.IResolvable;
+    public readonly attrVbrOwnerId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

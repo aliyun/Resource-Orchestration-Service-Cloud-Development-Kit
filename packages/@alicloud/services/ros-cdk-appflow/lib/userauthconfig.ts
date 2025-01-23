@@ -26,25 +26,41 @@ export interface UserAuthConfigProps {
 }
 
 /**
+ * Represents a `UserAuthConfig`.
+ */
+export interface IUserAuthConfig extends ros.IResource {
+    readonly props: UserAuthConfigProps;
+
+    /**
+     * Attribute AuthConfig: AuthConfig
+     */
+    readonly attrAuthConfig: ros.IResolvable | string;
+
+    /**
+     * Attribute AuthConfigId: The id of the config.
+     */
+    readonly attrAuthConfigId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::AppFlow::UserAuthConfig`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUserAuthConfig`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-appflow-userauthconfig
  */
-export class UserAuthConfig extends ros.Resource {
+export class UserAuthConfig extends ros.Resource implements IUserAuthConfig {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: UserAuthConfigProps;
+    public readonly props: UserAuthConfigProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AuthConfig: AuthConfig
      */
-    public readonly attrAuthConfig: ros.IResolvable;
+    public readonly attrAuthConfig: ros.IResolvable | string;
 
     /**
      * Attribute AuthConfigId: The id of the config.
      */
-    public readonly attrAuthConfigId: ros.IResolvable;
+    public readonly attrAuthConfigId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

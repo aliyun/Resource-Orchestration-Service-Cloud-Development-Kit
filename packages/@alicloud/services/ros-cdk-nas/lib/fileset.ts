@@ -32,30 +32,51 @@ export interface FilesetProps {
 }
 
 /**
+ * Represents a `Fileset`.
+ */
+export interface IFileset extends ros.IResource {
+    readonly props: FilesetProps;
+
+    /**
+     * Attribute FileSystemId: File system ID.
+     */
+    readonly attrFileSystemId: ros.IResolvable | string;
+
+    /**
+     * Attribute FileSystemPath: File system path.
+     */
+    readonly attrFileSystemPath: ros.IResolvable | string;
+
+    /**
+     * Attribute FsetId: Fileset ID.
+     */
+    readonly attrFsetId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::Fileset`, which is used to create a fileset.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFileset`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-fileset
  */
-export class Fileset extends ros.Resource {
+export class Fileset extends ros.Resource implements IFileset {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: FilesetProps;
+    public readonly props: FilesetProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute FileSystemId: File system ID.
      */
-    public readonly attrFileSystemId: ros.IResolvable;
+    public readonly attrFileSystemId: ros.IResolvable | string;
 
     /**
      * Attribute FileSystemPath: File system path.
      */
-    public readonly attrFileSystemPath: ros.IResolvable;
+    public readonly attrFileSystemPath: ros.IResolvable | string;
 
     /**
      * Attribute FsetId: Fileset ID.
      */
-    public readonly attrFsetId: ros.IResolvable;
+    public readonly attrFsetId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

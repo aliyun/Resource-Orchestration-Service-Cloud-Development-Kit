@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mongodb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::MONGODB::Instance</code>, which is used to create or clone an ApsaraDB for MongoDB replica set instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:09.365Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:41.369Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -751,12 +751,14 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getConnectionPort();
+        @org.jetbrains.annotations.NotNull java.lang.Object getConnectionString();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getConnectionString();
+        default @org.jetbrains.annotations.Nullable java.lang.Object getConnectionPort() {
+            return null;
+        }
 
         /**
          * @return a {@link Builder} of {@link ReplicaConnectionsProperty}
@@ -770,30 +772,8 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ReplicaConnectionsProperty> {
-            java.lang.Object connectionPort;
             java.lang.Object connectionString;
-
-            /**
-             * Sets the value of {@link ReplicaConnectionsProperty#getConnectionPort}
-             * @param connectionPort the value to be set. This parameter is required.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder connectionPort(java.lang.Number connectionPort) {
-                this.connectionPort = connectionPort;
-                return this;
-            }
-
-            /**
-             * Sets the value of {@link ReplicaConnectionsProperty#getConnectionPort}
-             * @param connectionPort the value to be set. This parameter is required.
-             * @return {@code this}
-             */
-            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder connectionPort(com.aliyun.ros.cdk.core.IResolvable connectionPort) {
-                this.connectionPort = connectionPort;
-                return this;
-            }
+            java.lang.Object connectionPort;
 
             /**
              * Sets the value of {@link ReplicaConnectionsProperty#getConnectionString}
@@ -818,6 +798,28 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link ReplicaConnectionsProperty#getConnectionPort}
+             * @param connectionPort the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder connectionPort(java.lang.Number connectionPort) {
+                this.connectionPort = connectionPort;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ReplicaConnectionsProperty#getConnectionPort}
+             * @param connectionPort the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder connectionPort(com.aliyun.ros.cdk.core.IResolvable connectionPort) {
+                this.connectionPort = connectionPort;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link ReplicaConnectionsProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -835,8 +837,8 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ReplicaConnectionsProperty {
-            private final java.lang.Object connectionPort;
             private final java.lang.Object connectionString;
+            private final java.lang.Object connectionPort;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -844,8 +846,8 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.connectionPort = software.amazon.jsii.Kernel.get(this, "connectionPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.connectionString = software.amazon.jsii.Kernel.get(this, "connectionString", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.connectionPort = software.amazon.jsii.Kernel.get(this, "connectionPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -853,13 +855,8 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.connectionPort = java.util.Objects.requireNonNull(builder.connectionPort, "connectionPort is required");
                 this.connectionString = java.util.Objects.requireNonNull(builder.connectionString, "connectionString is required");
-            }
-
-            @Override
-            public final java.lang.Object getConnectionPort() {
-                return this.connectionPort;
+                this.connectionPort = builder.connectionPort;
             }
 
             @Override
@@ -868,13 +865,20 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getConnectionPort() {
+                return this.connectionPort;
+            }
+
+            @Override
             @software.amazon.jsii.Internal
             public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
-                data.set("connectionPort", om.valueToTree(this.getConnectionPort()));
                 data.set("connectionString", om.valueToTree(this.getConnectionString()));
+                if (this.getConnectionPort() != null) {
+                    data.set("connectionPort", om.valueToTree(this.getConnectionPort()));
+                }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
                 struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-mongodb.RosInstance.ReplicaConnectionsProperty"));
@@ -893,14 +897,14 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
                 ReplicaConnectionsProperty.Jsii$Proxy that = (ReplicaConnectionsProperty.Jsii$Proxy) o;
 
-                if (!connectionPort.equals(that.connectionPort)) return false;
-                return this.connectionString.equals(that.connectionString);
+                if (!connectionString.equals(that.connectionString)) return false;
+                return this.connectionPort != null ? this.connectionPort.equals(that.connectionPort) : that.connectionPort == null;
             }
 
             @Override
             public final int hashCode() {
-                int result = this.connectionPort.hashCode();
-                result = 31 * result + (this.connectionString.hashCode());
+                int result = this.connectionString.hashCode();
+                result = 31 * result + (this.connectionPort != null ? this.connectionPort.hashCode() : 0);
                 return result;
             }
         }

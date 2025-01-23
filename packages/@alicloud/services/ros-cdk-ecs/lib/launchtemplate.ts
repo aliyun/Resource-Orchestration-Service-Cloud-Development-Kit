@@ -241,35 +241,61 @@ export interface LaunchTemplateProps {
 }
 
 /**
+ * Represents a `LaunchTemplate`.
+ */
+export interface ILaunchTemplate extends ros.IResource {
+    readonly props: LaunchTemplateProps;
+
+    /**
+     * Attribute DefaultVersionNumber: The default version number of launch template.
+     */
+    readonly attrDefaultVersionNumber: ros.IResolvable | string;
+
+    /**
+     * Attribute LatestVersionNumber: The latest version number of launch template.
+     */
+    readonly attrLatestVersionNumber: ros.IResolvable | string;
+
+    /**
+     * Attribute LaunchTemplateId: The id of launch template.
+     */
+    readonly attrLaunchTemplateId: ros.IResolvable | string;
+
+    /**
+     * Attribute LaunchTemplateName: The name of launch template.
+     */
+    readonly attrLaunchTemplateName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::LaunchTemplate`, which is used to create a launch template. You can use a launch template to create an Elastic Compute Service (ECS) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLaunchTemplate`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-launchtemplate
  */
-export class LaunchTemplate extends ros.Resource {
+export class LaunchTemplate extends ros.Resource implements ILaunchTemplate {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: LaunchTemplateProps;
+    public readonly props: LaunchTemplateProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DefaultVersionNumber: The default version number of launch template.
      */
-    public readonly attrDefaultVersionNumber: ros.IResolvable;
+    public readonly attrDefaultVersionNumber: ros.IResolvable | string;
 
     /**
      * Attribute LatestVersionNumber: The latest version number of launch template.
      */
-    public readonly attrLatestVersionNumber: ros.IResolvable;
+    public readonly attrLatestVersionNumber: ros.IResolvable | string;
 
     /**
      * Attribute LaunchTemplateId: The id of launch template.
      */
-    public readonly attrLaunchTemplateId: ros.IResolvable;
+    public readonly attrLaunchTemplateId: ros.IResolvable | string;
 
     /**
      * Attribute LaunchTemplateName: The name of launch template.
      */
-    public readonly attrLaunchTemplateName: ros.IResolvable;
+    public readonly attrLaunchTemplateName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-askcluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:05.958Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:36.449Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ASKClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ASKClusterProps.Jsii$Proxy.class)
 public interface ASKClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -68,6 +68,13 @@ public interface ASKClusterProps extends software.amazon.jsii.JsiiSerializable {
      * Property kubernetesVersion: The version of the Kubernetes cluster.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getKubernetesVersion() {
+        return null;
+    }
+
+    /**
+     * Property maintenanceWindow: Cluster maintenance window.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMaintenanceWindow() {
         return null;
     }
 
@@ -183,6 +190,7 @@ public interface ASKClusterProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object deletionProtection;
         java.lang.Object endpointPublicAccess;
         java.lang.Object kubernetesVersion;
+        java.lang.Object maintenanceWindow;
         java.lang.Object privateZone;
         java.lang.Object resourceGroupId;
         java.lang.Object securityGroupId;
@@ -352,6 +360,26 @@ public interface ASKClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder kubernetesVersion(com.aliyun.ros.cdk.core.IResolvable kubernetesVersion) {
             this.kubernetesVersion = kubernetesVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ASKClusterProps#getMaintenanceWindow}
+         * @param maintenanceWindow Property maintenanceWindow: Cluster maintenance window.
+         * @return {@code this}
+         */
+        public Builder maintenanceWindow(com.aliyun.ros.cdk.core.IResolvable maintenanceWindow) {
+            this.maintenanceWindow = maintenanceWindow;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ASKClusterProps#getMaintenanceWindow}
+         * @param maintenanceWindow Property maintenanceWindow: Cluster maintenance window.
+         * @return {@code this}
+         */
+        public Builder maintenanceWindow(com.aliyun.ros.cdk.cs.RosASKCluster.MaintenanceWindowProperty maintenanceWindow) {
+            this.maintenanceWindow = maintenanceWindow;
             return this;
         }
 
@@ -617,6 +645,7 @@ public interface ASKClusterProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object deletionProtection;
         private final java.lang.Object endpointPublicAccess;
         private final java.lang.Object kubernetesVersion;
+        private final java.lang.Object maintenanceWindow;
         private final java.lang.Object privateZone;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object securityGroupId;
@@ -642,6 +671,7 @@ public interface ASKClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.endpointPublicAccess = software.amazon.jsii.Kernel.get(this, "endpointPublicAccess", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.kubernetesVersion = software.amazon.jsii.Kernel.get(this, "kubernetesVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.maintenanceWindow = software.amazon.jsii.Kernel.get(this, "maintenanceWindow", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.privateZone = software.amazon.jsii.Kernel.get(this, "privateZone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -668,6 +698,7 @@ public interface ASKClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.deletionProtection = builder.deletionProtection;
             this.endpointPublicAccess = builder.endpointPublicAccess;
             this.kubernetesVersion = builder.kubernetesVersion;
+            this.maintenanceWindow = builder.maintenanceWindow;
             this.privateZone = builder.privateZone;
             this.resourceGroupId = builder.resourceGroupId;
             this.securityGroupId = builder.securityGroupId;
@@ -714,6 +745,11 @@ public interface ASKClusterProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getKubernetesVersion() {
             return this.kubernetesVersion;
+        }
+
+        @Override
+        public final java.lang.Object getMaintenanceWindow() {
+            return this.maintenanceWindow;
         }
 
         @Override
@@ -796,6 +832,9 @@ public interface ASKClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getKubernetesVersion() != null) {
                 data.set("kubernetesVersion", om.valueToTree(this.getKubernetesVersion()));
             }
+            if (this.getMaintenanceWindow() != null) {
+                data.set("maintenanceWindow", om.valueToTree(this.getMaintenanceWindow()));
+            }
             if (this.getPrivateZone() != null) {
                 data.set("privateZone", om.valueToTree(this.getPrivateZone()));
             }
@@ -854,6 +893,7 @@ public interface ASKClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
             if (this.endpointPublicAccess != null ? !this.endpointPublicAccess.equals(that.endpointPublicAccess) : that.endpointPublicAccess != null) return false;
             if (this.kubernetesVersion != null ? !this.kubernetesVersion.equals(that.kubernetesVersion) : that.kubernetesVersion != null) return false;
+            if (this.maintenanceWindow != null ? !this.maintenanceWindow.equals(that.maintenanceWindow) : that.maintenanceWindow != null) return false;
             if (this.privateZone != null ? !this.privateZone.equals(that.privateZone) : that.privateZone != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
@@ -876,6 +916,7 @@ public interface ASKClusterProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
             result = 31 * result + (this.endpointPublicAccess != null ? this.endpointPublicAccess.hashCode() : 0);
             result = 31 * result + (this.kubernetesVersion != null ? this.kubernetesVersion.hashCode() : 0);
+            result = 31 * result + (this.maintenanceWindow != null ? this.maintenanceWindow.hashCode() : 0);
             result = 31 * result + (this.privateZone != null ? this.privateZone.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);

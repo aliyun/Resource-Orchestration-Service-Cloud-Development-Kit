@@ -4422,7 +4422,7 @@ function rosLogtailConfigCloneFromPropertyToRosTemplate(properties: any): any {
 export interface RosMachineGroupProps {
 
     /**
-     * @Property groupAttribute: Group attribute, default is null. The object value is groupToic and externalName
+     * @Property groupAttribute: Group attribute, default is null. The object value is groupTopic and externalName
      */
     readonly groupAttribute?: string | ros.IResolvable;
 
@@ -4531,7 +4531,7 @@ export class RosMachineGroup extends ros.RosResource {
 
 
     /**
-     * @Property groupAttribute: Group attribute, default is null. The object value is groupToic and externalName
+     * @Property groupAttribute: Group attribute, default is null. The object value is groupTopic and externalName
      */
     public groupAttribute: string | ros.IResolvable | undefined;
 
@@ -5530,7 +5530,7 @@ export interface RosProjectProps {
 
     /**
      * @Property name: Project name:
-     * 1. Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+     * 1. Only supports lowercase letters, numbers, hyphens (-).
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
@@ -5602,7 +5602,7 @@ function RosProjectPropsValidator(properties: any): ros.ValidationResult {
     if(properties.name && (typeof properties.name) !== 'object') {
         errors.collect(ros.propertyValidator('name', ros.validateAllowedPattern)({
           data: properties.name,
-          reg: /^[a-zA-Z0-9_-]+$/
+          reg: /^[a-zA-Z0-9-]+$/
         }));
     }
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
@@ -5652,7 +5652,7 @@ export class RosProject extends ros.RosResource {
 
     /**
      * @Property name: Project name:
-     * 1. Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+     * 1. Only supports lowercase letters, numbers, hyphens (-).
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */

@@ -13,7 +13,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
     {
         /// <remarks>
         /// <strong>Property</strong>: name: Project name:
-        /// 1. Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+        /// 1. Only supports lowercase letters, numbers, hyphens (-).
         /// 2. Must start and end with lowercase letters and numbers.
         /// 3. The name length is 3-63 characters.
         /// </remarks>
@@ -88,7 +88,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
 
             /// <remarks>
             /// <strong>Property</strong>: name: Project name:
-            /// 1. Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+            /// 1. Only supports lowercase letters, numbers, hyphens (-).
             /// 2. Must start and end with lowercase letters and numbers.
             /// 3. The name length is 3-63 characters.
             /// </remarks>

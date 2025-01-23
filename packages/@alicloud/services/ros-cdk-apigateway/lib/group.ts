@@ -52,30 +52,51 @@ export interface GroupProps {
 }
 
 /**
+ * Represents a `Group`.
+ */
+export interface IGroup extends ros.IResource {
+    readonly props: GroupProps;
+
+    /**
+     * Attribute GroupId: The id of the created Group resource
+     */
+    readonly attrGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute SubDomain: The sub domain assigned to the Group by the system
+     */
+    readonly attrSubDomain: ros.IResolvable | string;
+
+    /**
+     * Attribute Tags: Tags of app
+     */
+    readonly attrTags: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Group`, which is used to create an API group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-group
  */
-export class Group extends ros.Resource {
+export class Group extends ros.Resource implements IGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: GroupProps;
+    public readonly props: GroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute GroupId: The id of the created Group resource
      */
-    public readonly attrGroupId: ros.IResolvable;
+    public readonly attrGroupId: ros.IResolvable | string;
 
     /**
      * Attribute SubDomain: The sub domain assigned to the Group by the system
      */
-    public readonly attrSubDomain: ros.IResolvable;
+    public readonly attrSubDomain: ros.IResolvable | string;
 
     /**
      * Attribute Tags: Tags of app
      */
-    public readonly attrTags: ros.IResolvable;
+    public readonly attrTags: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

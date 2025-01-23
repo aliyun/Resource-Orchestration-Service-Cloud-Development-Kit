@@ -70,35 +70,61 @@ export interface VPCProps {
 }
 
 /**
+ * Represents a `VPC`.
+ */
+export interface IVpc extends ros.IResource {
+    readonly props: VPCProps;
+
+    /**
+     * Attribute RouteTableId: The router table id of created VPC.
+     */
+    readonly attrRouteTableId: ros.IResolvable | string;
+
+    /**
+     * Attribute VRouterId: Router id of created VPC.
+     */
+    readonly attrVRouterId: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcId: Id of created VPC.
+     */
+    readonly attrVpcId: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcName: The name of VPC
+     */
+    readonly attrVpcName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::VPC`, which is used to create a virtual private cloud (VPC).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVPC`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-vpc
  */
-export class Vpc extends ros.Resource {
+export class Vpc extends ros.Resource implements IVpc {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: VPCProps;
+    public readonly props: VPCProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RouteTableId: The router table id of created VPC.
      */
-    public readonly attrRouteTableId: ros.IResolvable;
+    public readonly attrRouteTableId: ros.IResolvable | string;
 
     /**
      * Attribute VRouterId: Router id of created VPC.
      */
-    public readonly attrVRouterId: ros.IResolvable;
+    public readonly attrVRouterId: ros.IResolvable | string;
 
     /**
      * Attribute VpcId: Id of created VPC.
      */
-    public readonly attrVpcId: ros.IResolvable;
+    public readonly attrVpcId: ros.IResolvable | string;
 
     /**
      * Attribute VpcName: The name of VPC
      */
-    public readonly attrVpcName: ros.IResolvable;
+    public readonly attrVpcName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -7,6 +7,10 @@ package alicloudroscdkecs
 type AssignPrivateIpAddressesProps struct {
 	// Property networkInterfaceId: The ID of the ENI.
 	NetworkInterfaceId interface{} `field:"required" json:"networkInterfaceId" yaml:"networkInterfaceId"`
+	// Property ipv4PrefixCount: The specified number of IPv4 prefixes to be assigned to the ENI.
+	Ipv4PrefixCount interface{} `field:"optional" json:"ipv4PrefixCount" yaml:"ipv4PrefixCount"`
+	// Property ipv4Prefixes: One or multiple IPv4 prefixes to be assigned to the ENI.
+	Ipv4Prefixes interface{} `field:"optional" json:"ipv4Prefixes" yaml:"ipv4Prefixes"`
 	// Property privateIpAddresses: One or multiple secondary private IP addresses selected from the CIDR block of the VSwitch that hosts the ENI.
 	//
 	// Valid values of number of private ip addresses:

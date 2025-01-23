@@ -56,25 +56,41 @@ export interface DomainProps {
 }
 
 /**
+ * Represents a `Domain`.
+ */
+export interface IDomain extends ros.IResource {
+    readonly props: DomainProps;
+
+    /**
+     * Attribute Cname: The CNAME generated for the CDN domain.You must add a CNAME record with your DNS provider to map the CDN domain name to the CNAME.
+     */
+    readonly attrCname: ros.IResolvable | string;
+
+    /**
+     * Attribute DomainName: The CDN domain name. Wildcard domain names that start with periods (.) are supported. For example, .a.com.
+     */
+    readonly attrDomainName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CDN::Domain`, which is used to add an accelerated domain name.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomain`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cdn-domain
  */
-export class Domain extends ros.Resource {
+export class Domain extends ros.Resource implements IDomain {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DomainProps;
+    public readonly props: DomainProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Cname: The CNAME generated for the CDN domain.You must add a CNAME record with your DNS provider to map the CDN domain name to the CNAME.
      */
-    public readonly attrCname: ros.IResolvable;
+    public readonly attrCname: ros.IResolvable | string;
 
     /**
      * Attribute DomainName: The CDN domain name. Wildcard domain names that start with periods (.) are supported. For example, .a.com.
      */
-    public readonly attrDomainName: ros.IResolvable;
+    public readonly attrDomainName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

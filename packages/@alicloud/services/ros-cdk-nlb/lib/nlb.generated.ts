@@ -663,7 +663,7 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
     if(properties.zoneMappings && (Array.isArray(properties.zoneMappings) || (typeof properties.zoneMappings) === 'string')) {
         errors.collect(ros.propertyValidator('zoneMappings', ros.validateLength)({
             data: properties.zoneMappings.length,
-            min: 2,
+            min: 1,
             max: 3,
           }));
     }

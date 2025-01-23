@@ -37,45 +37,81 @@ export interface ImageLibProps {
 }
 
 /**
+ * Represents a `ImageLib`.
+ */
+export interface IImageLib extends ros.IResource {
+    readonly props: ImageLibProps;
+
+    /**
+     * Attribute BizTypes: List of business scenarios.
+     */
+    readonly attrBizTypes: ros.IResolvable | string;
+
+    /**
+     * Attribute Category: The category of the image library.
+     */
+    readonly attrCategory: ros.IResolvable | string;
+
+    /**
+     * Attribute Enable: Specifies whether to enable the image library.
+     */
+    readonly attrEnable: ros.IResolvable | string;
+
+    /**
+     * Attribute ImageLibId: The ID of the primary key of the image library.
+     */
+    readonly attrImageLibId: ros.IResolvable | string;
+
+    /**
+     * Attribute ImageLibName: The name of the image library defined by the customer.
+     */
+    readonly attrImageLibName: ros.IResolvable | string;
+
+    /**
+     * Attribute Scene: The moderation scenario to which the custom image library applies.
+     */
+    readonly attrScene: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::Aligreen::ImageLib`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosImageLib`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-imagelib
  */
-export class ImageLib extends ros.Resource {
+export class ImageLib extends ros.Resource implements IImageLib {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ImageLibProps;
+    public readonly props: ImageLibProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute BizTypes: List of business scenarios.
      */
-    public readonly attrBizTypes: ros.IResolvable;
+    public readonly attrBizTypes: ros.IResolvable | string;
 
     /**
      * Attribute Category: The category of the image library.
      */
-    public readonly attrCategory: ros.IResolvable;
+    public readonly attrCategory: ros.IResolvable | string;
 
     /**
      * Attribute Enable: Specifies whether to enable the image library.
      */
-    public readonly attrEnable: ros.IResolvable;
+    public readonly attrEnable: ros.IResolvable | string;
 
     /**
      * Attribute ImageLibId: The ID of the primary key of the image library.
      */
-    public readonly attrImageLibId: ros.IResolvable;
+    public readonly attrImageLibId: ros.IResolvable | string;
 
     /**
      * Attribute ImageLibName: The name of the image library defined by the customer.
      */
-    public readonly attrImageLibName: ros.IResolvable;
+    public readonly attrImageLibName: ros.IResolvable | string;
 
     /**
      * Attribute Scene: The moderation scenario to which the custom image library applies.
      */
-    public readonly attrScene: ros.IResolvable;
+    public readonly attrScene: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

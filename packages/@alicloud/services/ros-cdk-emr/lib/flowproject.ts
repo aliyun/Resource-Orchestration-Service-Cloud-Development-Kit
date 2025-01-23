@@ -26,45 +26,81 @@ export interface FlowProjectProps {
 }
 
 /**
+ * Represents a `FlowProject`.
+ */
+export interface IFlowProject extends ros.IResource {
+    readonly props: FlowProjectProps;
+
+    /**
+     * Attribute CreateTime: The time when the project was created.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: The description of the project.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute FlowProjectId: The ID of the project.
+     */
+    readonly attrFlowProjectId: ros.IResolvable | string;
+
+    /**
+     * Attribute FlowProjectName: The name of the project.
+     */
+    readonly attrFlowProjectName: ros.IResolvable | string;
+
+    /**
+     * Attribute GmtModified: The time when the project was modified.
+     */
+    readonly attrGmtModified: ros.IResolvable | string;
+
+    /**
+     * Attribute UserId: The ID of the primary account.
+     */
+    readonly attrUserId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::EMR::FlowProject`, which is used to create a data development project.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFlowProject`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-flowproject
  */
-export class FlowProject extends ros.Resource {
+export class FlowProject extends ros.Resource implements IFlowProject {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: FlowProjectProps;
+    public readonly props: FlowProjectProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateTime: The time when the project was created.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute Description: The description of the project.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute FlowProjectId: The ID of the project.
      */
-    public readonly attrFlowProjectId: ros.IResolvable;
+    public readonly attrFlowProjectId: ros.IResolvable | string;
 
     /**
      * Attribute FlowProjectName: The name of the project.
      */
-    public readonly attrFlowProjectName: ros.IResolvable;
+    public readonly attrFlowProjectName: ros.IResolvable | string;
 
     /**
      * Attribute GmtModified: The time when the project was modified.
      */
-    public readonly attrGmtModified: ros.IResolvable;
+    public readonly attrGmtModified: ros.IResolvable | string;
 
     /**
      * Attribute UserId: The ID of the primary account.
      */
-    public readonly attrUserId: ros.IResolvable;
+    public readonly attrUserId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

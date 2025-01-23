@@ -9,15 +9,25 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::REDIS::InstanceClasses`, which is used to query the types of ApsaraDB for Redis instances.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::REDIS::InstanceClasses`, which is used to query Tair (Redis OSS-compatible) instance types.
 type InstanceClasses interface {
 	alicloudroscdkcore.Resource
+	IInstanceClasses
 	// Attribute InstanceClasses: The list of instance classes.
-	AttrInstanceClasses() alicloudroscdkcore.IResolvable
+	AttrInstanceClasses() interface{}
 	// Attribute InstanceClassIds: The list of db instance class ids.
-	AttrInstanceClassIds() alicloudroscdkcore.IResolvable
+	AttrInstanceClassIds() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type InstanceClasses interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *InstanceClassesProps
-	SetProps(val *InstanceClassesProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type InstanceClasses interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type InstanceClasses interface {
 // The jsii proxy struct for InstanceClasses
 type jsiiProxy_InstanceClasses struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IInstanceClasses
 }
 
-func (j *jsiiProxy_InstanceClasses) AttrInstanceClasses() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_InstanceClasses) AttrInstanceClasses() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceClasses",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_InstanceClasses) AttrInstanceClasses() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_InstanceClasses) AttrInstanceClassIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_InstanceClasses) AttrInstanceClassIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceClassIds",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_InstanceClasses) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_InstanceClasses) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_InstanceClasses)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_InstanceClasses)SetProps(val *InstanceClassesProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_InstanceClasses)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (i *jsiiProxy_InstanceClasses) ApplyRemovalPolicy(policy alicloudroscdkcore
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (i *jsiiProxy_InstanceClasses) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		i,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_InstanceClasses) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		i,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_InstanceClasses) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		i,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (i *jsiiProxy_InstanceClasses) GeneratePhysicalName() *string {

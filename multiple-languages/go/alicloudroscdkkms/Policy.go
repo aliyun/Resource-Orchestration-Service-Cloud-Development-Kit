@@ -12,22 +12,32 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Policy`.
 type Policy interface {
 	alicloudroscdkcore.Resource
+	IPolicy
 	// Attribute AccessControlRules: Network Rules info.
-	AttrAccessControlRules() alicloudroscdkcore.IResolvable
+	AttrAccessControlRules() interface{}
 	// Attribute Description: Description.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute KmsInstanceId: The scope of the permission policy.
 	//
 	// You need to specify the KMS instance that you want to access.
-	AttrKmsInstanceId() alicloudroscdkcore.IResolvable
+	AttrKmsInstanceId() interface{}
 	// Attribute Permissions: RbacPermission Template, support RbacPermission/Template/CryptoServiceKeyUser and RbacPermission/Template/CryptoServiceSecretUser.
-	AttrPermissions() alicloudroscdkcore.IResolvable
+	AttrPermissions() interface{}
 	// Attribute PolicyName: The name of the permission policy.
-	AttrPolicyName() alicloudroscdkcore.IResolvable
+	AttrPolicyName() interface{}
 	// Attribute Resources: Resources that allowed access by this policy.
-	AttrResources() alicloudroscdkcore.IResolvable
+	AttrResources() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -42,7 +52,6 @@ type Policy interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *PolicyProps
-	SetProps(val *PolicyProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -55,6 +64,9 @@ type Policy interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -107,10 +119,11 @@ type Policy interface {
 // The jsii proxy struct for Policy
 type jsiiProxy_Policy struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IPolicy
 }
 
-func (j *jsiiProxy_Policy) AttrAccessControlRules() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Policy) AttrAccessControlRules() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAccessControlRules",
@@ -119,8 +132,8 @@ func (j *jsiiProxy_Policy) AttrAccessControlRules() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_Policy) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Policy) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -129,8 +142,8 @@ func (j *jsiiProxy_Policy) AttrDescription() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Policy) AttrKmsInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Policy) AttrKmsInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrKmsInstanceId",
@@ -139,8 +152,8 @@ func (j *jsiiProxy_Policy) AttrKmsInstanceId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Policy) AttrPermissions() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Policy) AttrPermissions() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPermissions",
@@ -149,8 +162,8 @@ func (j *jsiiProxy_Policy) AttrPermissions() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Policy) AttrPolicyName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Policy) AttrPolicyName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPolicyName",
@@ -159,8 +172,8 @@ func (j *jsiiProxy_Policy) AttrPolicyName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Policy) AttrResources() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Policy) AttrResources() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResources",
@@ -174,6 +187,16 @@ func (j *jsiiProxy_Policy) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Policy) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -311,17 +334,6 @@ func (j *jsiiProxy_Policy)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Policy)SetProps(val *PolicyProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Policy)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -413,6 +425,45 @@ func (p *jsiiProxy_Policy) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalP
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (p *jsiiProxy_Policy) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		p,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_Policy) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		p,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_Policy) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		p,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (p *jsiiProxy_Policy) GeneratePhysicalName() *string {

@@ -12,10 +12,20 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::SLS::MetricStore`, which is used to create a Logstore.
 type MetricStore interface {
 	alicloudroscdkcore.Resource
+	IMetricStore
 	// Attribute LogstoreName: Metric store name.
-	AttrLogstoreName() alicloudroscdkcore.IResolvable
+	AttrLogstoreName() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -30,7 +40,6 @@ type MetricStore interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *MetricStoreProps
-	SetProps(val *MetricStoreProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -43,6 +52,9 @@ type MetricStore interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -95,10 +107,11 @@ type MetricStore interface {
 // The jsii proxy struct for MetricStore
 type jsiiProxy_MetricStore struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IMetricStore
 }
 
-func (j *jsiiProxy_MetricStore) AttrLogstoreName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MetricStore) AttrLogstoreName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLogstoreName",
@@ -112,6 +125,16 @@ func (j *jsiiProxy_MetricStore) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MetricStore) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -249,17 +272,6 @@ func (j *jsiiProxy_MetricStore)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_MetricStore)SetProps(val *MetricStoreProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_MetricStore)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -351,6 +363,45 @@ func (m *jsiiProxy_MetricStore) ApplyRemovalPolicy(policy alicloudroscdkcore.Rem
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (m *jsiiProxy_MetricStore) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		m,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (m *jsiiProxy_MetricStore) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		m,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (m *jsiiProxy_MetricStore) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		m,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (m *jsiiProxy_MetricStore) GeneratePhysicalName() *string {

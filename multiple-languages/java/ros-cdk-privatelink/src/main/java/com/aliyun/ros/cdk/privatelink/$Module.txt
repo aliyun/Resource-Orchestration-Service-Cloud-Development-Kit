@@ -1,3 +1,6 @@
+@alicloud/ros-cdk-privatelink.IVpcEndpoint=com.aliyun.ros.cdk.privatelink.IVpcEndpoint
+@alicloud/ros-cdk-privatelink.IVpcEndpointService=com.aliyun.ros.cdk.privatelink.IVpcEndpointService
+@alicloud/ros-cdk-privatelink.IVpcEndpointServiceAttachment=com.aliyun.ros.cdk.privatelink.IVpcEndpointServiceAttachment
 @alicloud/ros-cdk-privatelink.RosVpcEndpoint=com.aliyun.ros.cdk.privatelink.RosVpcEndpoint
 @alicloud/ros-cdk-privatelink.RosVpcEndpoint.TagsProperty=com.aliyun.ros.cdk.privatelink.RosVpcEndpoint$TagsProperty
 @alicloud/ros-cdk-privatelink.RosVpcEndpoint.ZoneProperty=com.aliyun.ros.cdk.privatelink.RosVpcEndpoint$ZoneProperty

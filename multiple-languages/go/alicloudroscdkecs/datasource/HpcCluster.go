@@ -12,14 +12,24 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::HpcCluster`, which is used to query a High Performance Computing (HPC) cluster.
 type HpcCluster interface {
 	alicloudroscdkcore.Resource
+	IHpcCluster
 	// Attribute Description: The description of the HPC cluster.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute HpcClusterId: The ID of cluster.
-	AttrHpcClusterId() alicloudroscdkcore.IResolvable
+	AttrHpcClusterId() interface{}
 	// Attribute HpcClusterName: The name of the HPC cluster.
-	AttrHpcClusterName() alicloudroscdkcore.IResolvable
+	AttrHpcClusterName() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -34,7 +44,6 @@ type HpcCluster interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *HpcClusterProps
-	SetProps(val *HpcClusterProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -47,6 +56,9 @@ type HpcCluster interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -99,10 +111,11 @@ type HpcCluster interface {
 // The jsii proxy struct for HpcCluster
 type jsiiProxy_HpcCluster struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IHpcCluster
 }
 
-func (j *jsiiProxy_HpcCluster) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HpcCluster) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -111,8 +124,8 @@ func (j *jsiiProxy_HpcCluster) AttrDescription() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_HpcCluster) AttrHpcClusterId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HpcCluster) AttrHpcClusterId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHpcClusterId",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_HpcCluster) AttrHpcClusterId() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_HpcCluster) AttrHpcClusterName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HpcCluster) AttrHpcClusterName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHpcClusterName",
@@ -136,6 +149,16 @@ func (j *jsiiProxy_HpcCluster) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HpcCluster) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -273,17 +296,6 @@ func (j *jsiiProxy_HpcCluster)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_HpcCluster)SetProps(val *HpcClusterProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_HpcCluster)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -375,6 +387,45 @@ func (h *jsiiProxy_HpcCluster) ApplyRemovalPolicy(policy alicloudroscdkcore.Remo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (h *jsiiProxy_HpcCluster) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		h,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (h *jsiiProxy_HpcCluster) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		h,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (h *jsiiProxy_HpcCluster) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		h,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (h *jsiiProxy_HpcCluster) GeneratePhysicalName() *string {

@@ -173,40 +173,71 @@ export interface InstanceProps {
 }
 
 /**
+ * Represents a `Instance`.
+ */
+export interface IInstance extends ros.IResource {
+    readonly props: InstanceProps;
+
+    /**
+     * Attribute ConnectionURI: Connection uri.
+     */
+    readonly attrConnectionUri: ros.IResolvable | string;
+
+    /**
+     * Attribute DBInstanceId: The instance id of created mongodb instance.
+     */
+    readonly attrDbInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute DBInstanceStatus: Status of mongodb instance.
+     */
+    readonly attrDbInstanceStatus: ros.IResolvable | string;
+
+    /**
+     * Attribute OrderId: Order Id of created instance.
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+
+    /**
+     * Attribute ReplicaSetName: Name of replica set
+     */
+    readonly attrReplicaSetName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::MONGODB::Instance`, which is used to create or clone an ApsaraDB for MongoDB replica set instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mongodb-instance
  */
-export class Instance extends ros.Resource {
+export class Instance extends ros.Resource implements IInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InstanceProps;
+    public readonly props: InstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ConnectionURI: Connection uri.
      */
-    public readonly attrConnectionUri: ros.IResolvable;
+    public readonly attrConnectionUri: ros.IResolvable | string;
 
     /**
      * Attribute DBInstanceId: The instance id of created mongodb instance.
      */
-    public readonly attrDbInstanceId: ros.IResolvable;
+    public readonly attrDbInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute DBInstanceStatus: Status of mongodb instance.
      */
-    public readonly attrDbInstanceStatus: ros.IResolvable;
+    public readonly attrDbInstanceStatus: ros.IResolvable | string;
 
     /**
      * Attribute OrderId: Order Id of created instance.
      */
-    public readonly attrOrderId: ros.IResolvable;
+    public readonly attrOrderId: ros.IResolvable | string;
 
     /**
      * Attribute ReplicaSetName: Name of replica set
      */
-    public readonly attrReplicaSetName: ros.IResolvable;
+    public readonly attrReplicaSetName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

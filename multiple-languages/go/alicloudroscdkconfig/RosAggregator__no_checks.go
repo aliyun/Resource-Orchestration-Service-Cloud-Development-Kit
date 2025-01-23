@@ -104,6 +104,10 @@ func (j *jsiiProxy_RosAggregator) validateSetEnableResourcePropertyConstraintPar
 	return nil
 }
 
+func (j *jsiiProxy_RosAggregator) validateSetFolderIdParameters(val interface{}) error {
+	return nil
+}
+
 func validateNewRosAggregatorParameters(scope alicloudroscdkcore.Construct, id *string, props *RosAggregatorProps, enableResourcePropertyConstraint *bool) error {
 	return nil
 }

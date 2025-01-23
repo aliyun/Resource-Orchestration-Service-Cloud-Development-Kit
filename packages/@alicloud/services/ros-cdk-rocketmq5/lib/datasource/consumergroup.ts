@@ -29,55 +29,101 @@ export interface ConsumerGroupProps {
 }
 
 /**
+ * Represents a `ConsumerGroup`.
+ */
+export interface IConsumerGroup extends ros.IResource {
+    readonly props: ConsumerGroupProps;
+
+    /**
+     * Attribute ConsumeRetryPolicy: The consumption retry policy that you want to configure for the consumer group.
+     */
+    readonly attrConsumeRetryPolicy: ros.IResolvable | string;
+
+    /**
+     * Attribute ConsumerGroupId: The ID of the consumer group.
+     */
+    readonly attrConsumerGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute CreateTime: The time when the consumer group was created.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute DeliveryOrderType: The message delivery order of the consumer group.
+     */
+    readonly attrDeliveryOrderType: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: The ID of the RocketMQ instance.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute Remark: The remarks on the consumer group.
+     */
+    readonly attrRemark: ros.IResolvable | string;
+
+    /**
+     * Attribute Status: The state of the consumer group.
+     */
+    readonly attrStatus: ros.IResolvable | string;
+
+    /**
+     * Attribute UpdateTime: The time when the consumer group was last updated.
+     */
+    readonly attrUpdateTime: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ROCKETMQ5::ConsumerGroup`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosConsumerGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq5-consumergroup
  */
-export class ConsumerGroup extends ros.Resource {
+export class ConsumerGroup extends ros.Resource implements IConsumerGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ConsumerGroupProps;
+    public readonly props: ConsumerGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ConsumeRetryPolicy: The consumption retry policy that you want to configure for the consumer group.
      */
-    public readonly attrConsumeRetryPolicy: ros.IResolvable;
+    public readonly attrConsumeRetryPolicy: ros.IResolvable | string;
 
     /**
      * Attribute ConsumerGroupId: The ID of the consumer group.
      */
-    public readonly attrConsumerGroupId: ros.IResolvable;
+    public readonly attrConsumerGroupId: ros.IResolvable | string;
 
     /**
      * Attribute CreateTime: The time when the consumer group was created.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute DeliveryOrderType: The message delivery order of the consumer group.
      */
-    public readonly attrDeliveryOrderType: ros.IResolvable;
+    public readonly attrDeliveryOrderType: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: The ID of the RocketMQ instance.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute Remark: The remarks on the consumer group.
      */
-    public readonly attrRemark: ros.IResolvable;
+    public readonly attrRemark: ros.IResolvable | string;
 
     /**
      * Attribute Status: The state of the consumer group.
      */
-    public readonly attrStatus: ros.IResolvable;
+    public readonly attrStatus: ros.IResolvable | string;
 
     /**
      * Attribute UpdateTime: The time when the consumer group was last updated.
      */
-    public readonly attrUpdateTime: ros.IResolvable;
+    public readonly attrUpdateTime: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

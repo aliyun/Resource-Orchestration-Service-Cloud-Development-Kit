@@ -1,3 +1,5 @@
+@alicloud/ros-cdk-ddos.IOriginInstance=com.aliyun.ros.cdk.ddos.IOriginInstance
+@alicloud/ros-cdk-ddos.IPolicy=com.aliyun.ros.cdk.ddos.IPolicy
 @alicloud/ros-cdk-ddos.OriginInstance=com.aliyun.ros.cdk.ddos.OriginInstance
 @alicloud/ros-cdk-ddos.OriginInstanceProps=com.aliyun.ros.cdk.ddos.OriginInstanceProps
 @alicloud/ros-cdk-ddos.Policy=com.aliyun.ros.cdk.ddos.Policy

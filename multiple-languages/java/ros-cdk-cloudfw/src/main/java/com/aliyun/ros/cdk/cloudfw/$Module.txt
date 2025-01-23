@@ -6,6 +6,17 @@
 @alicloud/ros-cdk-cloudfw.ControlPolicyProps=com.aliyun.ros.cdk.cloudfw.ControlPolicyProps
 @alicloud/ros-cdk-cloudfw.FwSwitch=com.aliyun.ros.cdk.cloudfw.FwSwitch
 @alicloud/ros-cdk-cloudfw.FwSwitchProps=com.aliyun.ros.cdk.cloudfw.FwSwitchProps
+@alicloud/ros-cdk-cloudfw.IAddressBook=com.aliyun.ros.cdk.cloudfw.IAddressBook
+@alicloud/ros-cdk-cloudfw.IAllFwSwitch=com.aliyun.ros.cdk.cloudfw.IAllFwSwitch
+@alicloud/ros-cdk-cloudfw.IControlPolicy=com.aliyun.ros.cdk.cloudfw.IControlPolicy
+@alicloud/ros-cdk-cloudfw.IFwSwitch=com.aliyun.ros.cdk.cloudfw.IFwSwitch
+@alicloud/ros-cdk-cloudfw.IInstance=com.aliyun.ros.cdk.cloudfw.IInstance
+@alicloud/ros-cdk-cloudfw.INatFirewallControlPolicy=com.aliyun.ros.cdk.cloudfw.INatFirewallControlPolicy
+@alicloud/ros-cdk-cloudfw.ITrFirewall=com.aliyun.ros.cdk.cloudfw.ITrFirewall
+@alicloud/ros-cdk-cloudfw.ITrFirewallRoutePolicy=com.aliyun.ros.cdk.cloudfw.ITrFirewallRoutePolicy
+@alicloud/ros-cdk-cloudfw.IVpcFirewallCen=com.aliyun.ros.cdk.cloudfw.IVpcFirewallCen
+@alicloud/ros-cdk-cloudfw.IVpcFirewallConfigure=com.aliyun.ros.cdk.cloudfw.IVpcFirewallConfigure
+@alicloud/ros-cdk-cloudfw.IVpcFirewallControlPolicy=com.aliyun.ros.cdk.cloudfw.IVpcFirewallControlPolicy
 @alicloud/ros-cdk-cloudfw.Instance=com.aliyun.ros.cdk.cloudfw.Instance
 @alicloud/ros-cdk-cloudfw.InstanceProps=com.aliyun.ros.cdk.cloudfw.InstanceProps
 @alicloud/ros-cdk-cloudfw.NatFirewallControlPolicy=com.aliyun.ros.cdk.cloudfw.NatFirewallControlPolicy
@@ -53,6 +64,8 @@
 @alicloud/ros-cdk-cloudfw.datasource.AddressBookProps=com.aliyun.ros.cdk.cloudfw.datasource.AddressBookProps
 @alicloud/ros-cdk-cloudfw.datasource.AddressBooks=com.aliyun.ros.cdk.cloudfw.datasource.AddressBooks
 @alicloud/ros-cdk-cloudfw.datasource.AddressBooksProps=com.aliyun.ros.cdk.cloudfw.datasource.AddressBooksProps
+@alicloud/ros-cdk-cloudfw.datasource.IAddressBook=com.aliyun.ros.cdk.cloudfw.datasource.IAddressBook
+@alicloud/ros-cdk-cloudfw.datasource.IAddressBooks=com.aliyun.ros.cdk.cloudfw.datasource.IAddressBooks
 @alicloud/ros-cdk-cloudfw.datasource.RosAddressBook=com.aliyun.ros.cdk.cloudfw.datasource.RosAddressBook
 @alicloud/ros-cdk-cloudfw.datasource.RosAddressBookProps=com.aliyun.ros.cdk.cloudfw.datasource.RosAddressBookProps
 @alicloud/ros-cdk-cloudfw.datasource.RosAddressBooks=com.aliyun.ros.cdk.cloudfw.datasource.RosAddressBooks

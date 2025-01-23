@@ -50,20 +50,31 @@ export interface IntranetConnectorEndpointProps {
 }
 
 /**
+ * Represents a `IntranetConnectorEndpoint`.
+ */
+export interface IIntranetConnectorEndpoint extends ros.IResource {
+    readonly props: IntranetConnectorEndpointProps;
+
+    /**
+     * Attribute EndpointId: The ID of the endpoint.
+     */
+    readonly attrEndpointId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ComputeNest::IntranetConnectorEndpoint`, which is used to create an endpoint.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosIntranetConnectorEndpoint`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-computenest-intranetconnectorendpoint
  */
-export class IntranetConnectorEndpoint extends ros.Resource {
+export class IntranetConnectorEndpoint extends ros.Resource implements IIntranetConnectorEndpoint {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: IntranetConnectorEndpointProps;
+    public readonly props: IntranetConnectorEndpointProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute EndpointId: The ID of the endpoint.
      */
-    public readonly attrEndpointId: ros.IResolvable;
+    public readonly attrEndpointId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.cen;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::CenVbrHealthCheck</code>, which is used to enable the health check feature or modify the health check configurations for a virtual border router (VBR).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:05.066Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:35.396Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenVbrHealthCheck")
-public class CenVbrHealthCheck extends com.aliyun.ros.cdk.core.Resource {
+public class CenVbrHealthCheck extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cen.ICenVbrHealthCheck {
 
     protected CenVbrHealthCheck(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -43,8 +43,9 @@ public class CenVbrHealthCheck extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute CenId: The ID of the CEN instance.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCenId() {
-        return software.amazon.jsii.Kernel.get(this, "attrCenId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCenId() {
+        return software.amazon.jsii.Kernel.get(this, "attrCenId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -52,8 +53,9 @@ public class CenVbrHealthCheck extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * Default value: 2. Valid values: 2 to 3.  Unit: second.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrHealthCheckInterval() {
-        return software.amazon.jsii.Kernel.get(this, "attrHealthCheckInterval", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrHealthCheckInterval() {
+        return software.amazon.jsii.Kernel.get(this, "attrHealthCheckInterval", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -61,8 +63,9 @@ public class CenVbrHealthCheck extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * Automatic IP Address: The system automatically assigns an IP address within the CIDR block 100.96.0.0/16 (recommended).  Custom IP Address: You can specify a source IP address that is available within the CIDR block 10.0.0.0/8, 192.168.0.0/16, or 172.16.0.0/12. The specified source IP address must not overlap with the IP addresses of the Alibaba Cloud-facing and client-facing interfaces on the VBR instance, or the IP addresses of the instances with which the VBR instance needs to communicate in the CEN.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrHealthCheckSourceIp() {
-        return software.amazon.jsii.Kernel.get(this, "attrHealthCheckSourceIp", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrHealthCheckSourceIp() {
+        return software.amazon.jsii.Kernel.get(this, "attrHealthCheckSourceIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -70,8 +73,9 @@ public class CenVbrHealthCheck extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * The destination IP address is the IP address of the client-facing interface on the VBR instance.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrHealthCheckTargetIp() {
-        return software.amazon.jsii.Kernel.get(this, "attrHealthCheckTargetIp", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrHealthCheckTargetIp() {
+        return software.amazon.jsii.Kernel.get(this, "attrHealthCheckTargetIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -79,22 +83,25 @@ public class CenVbrHealthCheck extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * Default value: 8. Valid values: 3 to 8.  Unit: packet.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrHealthyThreshold() {
-        return software.amazon.jsii.Kernel.get(this, "attrHealthyThreshold", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrHealthyThreshold() {
+        return software.amazon.jsii.Kernel.get(this, "attrHealthyThreshold", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute VbrInstanceId: The ID of the VBR instance.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVbrInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrVbrInstanceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVbrInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrVbrInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute VbrInstanceOwnerId: The User ID (UID) of the account to which the VBR instance belongs.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVbrInstanceOwnerId() {
-        return software.amazon.jsii.Kernel.get(this, "attrVbrInstanceOwnerId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVbrInstanceOwnerId() {
+        return software.amazon.jsii.Kernel.get(this, "attrVbrInstanceOwnerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -102,8 +109,14 @@ public class CenVbrHealthCheck extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * You can call the DescribeRegionsoperation to query region IDs.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVbrInstanceRegionId() {
-        return software.amazon.jsii.Kernel.get(this, "attrVbrInstanceRegionId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVbrInstanceRegionId() {
+        return software.amazon.jsii.Kernel.get(this, "attrVbrInstanceRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cen.CenVbrHealthCheckProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cen.CenVbrHealthCheckProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -120,14 +133,6 @@ public class CenVbrHealthCheck extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cen.CenVbrHealthCheckProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cen.CenVbrHealthCheckProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cen.CenVbrHealthCheckProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {

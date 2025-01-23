@@ -122,25 +122,41 @@ export interface RecommendInstanceTypesProps {
 }
 
 /**
+ * Represents a `RecommendInstanceTypes`.
+ */
+export interface IRecommendInstanceTypes extends ros.IResource {
+    readonly props: RecommendInstanceTypesProps;
+
+    /**
+     * Attribute InstanceTypeIds: The list of instance type ids. Note that instance type ids are not unique.
+     */
+    readonly attrInstanceTypeIds: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceTypes: The list of instance types, including information such as cores and memory.
+     */
+    readonly attrInstanceTypes: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::RecommendInstanceTypes`, which is used to query the recommended instance types of Elastic Compute Service (ECS) instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRecommendInstanceTypes`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-recommendinstancetypes
  */
-export class RecommendInstanceTypes extends ros.Resource {
+export class RecommendInstanceTypes extends ros.Resource implements IRecommendInstanceTypes {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: RecommendInstanceTypesProps;
+    public readonly props: RecommendInstanceTypesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceTypeIds: The list of instance type ids. Note that instance type ids are not unique.
      */
-    public readonly attrInstanceTypeIds: ros.IResolvable;
+    public readonly attrInstanceTypeIds: ros.IResolvable | string;
 
     /**
      * Attribute InstanceTypes: The list of instance types, including information such as cores and memory.
      */
-    public readonly attrInstanceTypes: ros.IResolvable;
+    public readonly attrInstanceTypes: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

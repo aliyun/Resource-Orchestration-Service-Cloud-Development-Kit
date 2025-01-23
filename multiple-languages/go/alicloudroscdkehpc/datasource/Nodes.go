@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::EHPC::Nodes`, which is used to query nodes in an Elastic High Performance Computing (E-HPC) cluster.
 type Nodes interface {
 	alicloudroscdkcore.Resource
+	INodes
 	// Attribute NodeIds: The list of node IDs.
-	AttrNodeIds() alicloudroscdkcore.IResolvable
+	AttrNodeIds() interface{}
 	// Attribute Nodes: The list of nodes.
-	AttrNodes() alicloudroscdkcore.IResolvable
+	AttrNodes() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type Nodes interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *NodesProps
-	SetProps(val *NodesProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type Nodes interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type Nodes interface {
 // The jsii proxy struct for Nodes
 type jsiiProxy_Nodes struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_INodes
 }
 
-func (j *jsiiProxy_Nodes) AttrNodeIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Nodes) AttrNodeIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNodeIds",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_Nodes) AttrNodeIds() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Nodes) AttrNodes() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Nodes) AttrNodes() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNodes",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_Nodes) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Nodes) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_Nodes)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Nodes)SetProps(val *NodesProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Nodes)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (n *jsiiProxy_Nodes) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (n *jsiiProxy_Nodes) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		n,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (n *jsiiProxy_Nodes) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		n,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (n *jsiiProxy_Nodes) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		n,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (n *jsiiProxy_Nodes) GeneratePhysicalName() *string {

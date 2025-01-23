@@ -2222,6 +2222,13 @@ function RosWorkspaceResourceMaxComputePropsValidator(properties: any): ros.Vali
     errors.collect(ros.propertyValidator('groupName', ros.requiredValidator)(properties.groupName));
     errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
     errors.collect(ros.propertyValidator('workspaceId', ros.requiredValidator)(properties.workspaceId));
+    if(properties.workspaceId && (Array.isArray(properties.workspaceId) || (typeof properties.workspaceId) === 'string')) {
+        errors.collect(ros.propertyValidator('workspaceId', ros.validateLength)({
+            data: properties.workspaceId.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
     errors.collect(ros.propertyValidator('workspaceId', ros.validateString)(properties.workspaceId));
     if(properties.option && (typeof properties.option) !== 'object') {
         errors.collect(ros.propertyValidator('option', ros.validateAllowedValues)({

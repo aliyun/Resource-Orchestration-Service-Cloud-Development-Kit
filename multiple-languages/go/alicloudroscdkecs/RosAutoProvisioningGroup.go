@@ -24,6 +24,8 @@ type RosAutoProvisioningGroup interface {
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
 	CreationStack() *[]*string
+	DataDiskConfig() interface{}
+	SetDataDiskConfig(val interface{})
 	DefaultTargetCapacityType() interface{}
 	SetDefaultTargetCapacityType(val interface{})
 	Description() interface{}
@@ -52,6 +54,8 @@ type RosAutoProvisioningGroup interface {
 	LogicalId() *string
 	MaxSpotPrice() interface{}
 	SetMaxSpotPrice(val interface{})
+	MinTargetCapacity() interface{}
+	SetMinTargetCapacity(val interface{})
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
 	PayAsYouGoAllocationStrategy() interface{}
@@ -63,6 +67,10 @@ type RosAutoProvisioningGroup interface {
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
 	// coerce it to an IResolvable through `Lazy.any({ produce: resource.ref })`.
 	Ref() *string
+	ResourceGroupId() interface{}
+	SetResourceGroupId(val interface{})
+	ResourcePoolOptions() interface{}
+	SetResourcePoolOptions(val interface{})
 	// Options for this resource, such as condition, update policy etc.
 	RosOptions() alicloudroscdkcore.IRosResourceOptions
 	RosProperties() *map[string]interface{}
@@ -80,6 +88,8 @@ type RosAutoProvisioningGroup interface {
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
 	Stack() alicloudroscdkcore.Stack
+	SystemDiskConfig() interface{}
+	SetSystemDiskConfig(val interface{})
 	TerminateInstances() interface{}
 	SetTerminateInstances(val interface{})
 	TerminateInstancesWithExpiration() interface{}
@@ -149,6 +159,9 @@ type RosAutoProvisioningGroup interface {
 	AddRosDependency(target *string)
 	// Sets the deletion policy of the resource based on the removal policy specified.
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy, options *alicloudroscdkcore.RemovalPolicyOptions)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDesc() *string
+	FetchRosDependency() *[]*string
 	// Returns a token for an runtime attribute of this resource.
 	//
 	// Ideally, use generated attribute accessors (e.g. `resource.arn`), but this can be used for future compatibility
@@ -271,6 +284,16 @@ func (j *jsiiProxy_RosAutoProvisioningGroup) CreationStack() *[]*string {
 	return returns
 }
 
+func (j *jsiiProxy_RosAutoProvisioningGroup) DataDiskConfig() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"dataDiskConfig",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosAutoProvisioningGroup) DefaultTargetCapacityType() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -371,6 +394,16 @@ func (j *jsiiProxy_RosAutoProvisioningGroup) MaxSpotPrice() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosAutoProvisioningGroup) MinTargetCapacity() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"minTargetCapacity",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosAutoProvisioningGroup) Node() alicloudroscdkcore.ConstructNode {
 	var returns alicloudroscdkcore.ConstructNode
 	_jsii_.Get(
@@ -406,6 +439,26 @@ func (j *jsiiProxy_RosAutoProvisioningGroup) Ref() *string {
 	_jsii_.Get(
 		j,
 		"ref",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosAutoProvisioningGroup) ResourceGroupId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"resourceGroupId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosAutoProvisioningGroup) ResourcePoolOptions() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"resourcePoolOptions",
 		&returns,
 	)
 	return returns
@@ -486,6 +539,16 @@ func (j *jsiiProxy_RosAutoProvisioningGroup) Stack() alicloudroscdkcore.Stack {
 	_jsii_.Get(
 		j,
 		"stack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosAutoProvisioningGroup) SystemDiskConfig() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"systemDiskConfig",
 		&returns,
 	)
 	return returns
@@ -612,6 +675,17 @@ func (j *jsiiProxy_RosAutoProvisioningGroup)SetCheckExecutionStatus(val interfac
 	)
 }
 
+func (j *jsiiProxy_RosAutoProvisioningGroup)SetDataDiskConfig(val interface{}) {
+	if err := j.validateSetDataDiskConfigParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"dataDiskConfig",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosAutoProvisioningGroup)SetDefaultTargetCapacityType(val interface{}) {
 	if err := j.validateSetDefaultTargetCapacityTypeParameters(val); err != nil {
 		panic(err)
@@ -711,6 +785,17 @@ func (j *jsiiProxy_RosAutoProvisioningGroup)SetMaxSpotPrice(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosAutoProvisioningGroup)SetMinTargetCapacity(val interface{}) {
+	if err := j.validateSetMinTargetCapacityParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"minTargetCapacity",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosAutoProvisioningGroup)SetPayAsYouGoAllocationStrategy(val interface{}) {
 	if err := j.validateSetPayAsYouGoAllocationStrategyParameters(val); err != nil {
 		panic(err)
@@ -729,6 +814,28 @@ func (j *jsiiProxy_RosAutoProvisioningGroup)SetPayAsYouGoTargetCapacity(val inte
 	_jsii_.Set(
 		j,
 		"payAsYouGoTargetCapacity",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosAutoProvisioningGroup)SetResourceGroupId(val interface{}) {
+	if err := j.validateSetResourceGroupIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"resourceGroupId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosAutoProvisioningGroup)SetResourcePoolOptions(val interface{}) {
+	if err := j.validateSetResourcePoolOptionsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"resourcePoolOptions",
 		val,
 	)
 }
@@ -773,6 +880,17 @@ func (j *jsiiProxy_RosAutoProvisioningGroup)SetSpotTargetCapacity(val interface{
 	_jsii_.Set(
 		j,
 		"spotTargetCapacity",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosAutoProvisioningGroup)SetSystemDiskConfig(val interface{}) {
+	if err := j.validateSetSystemDiskConfigParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"systemDiskConfig",
 		val,
 	)
 }
@@ -1024,6 +1142,45 @@ func (r *jsiiProxy_RosAutoProvisioningGroup) ApplyRemovalPolicy(policy alicloudr
 		"applyRemovalPolicy",
 		[]interface{}{policy, options},
 	)
+}
+
+func (r *jsiiProxy_RosAutoProvisioningGroup) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		r,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_RosAutoProvisioningGroup) FetchDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		r,
+		"fetchDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_RosAutoProvisioningGroup) FetchRosDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		r,
+		"fetchRosDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (r *jsiiProxy_RosAutoProvisioningGroup) GetAtt(attributeName *string) alicloudroscdkcore.Reference {

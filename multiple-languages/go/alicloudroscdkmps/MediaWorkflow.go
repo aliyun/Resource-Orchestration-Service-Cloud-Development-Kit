@@ -12,20 +12,30 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::MPS::MediaWorkflow`, which is used to add a media workflow.
 type MediaWorkflow interface {
 	alicloudroscdkcore.Resource
+	IMediaWorkflow
 	// Attribute CreationTime: The time when the media workflow was created.
-	AttrCreationTime() alicloudroscdkcore.IResolvable
+	AttrCreationTime() interface{}
 	// Attribute MediaWorkflowId: The ID of the media workflow.
-	AttrMediaWorkflowId() alicloudroscdkcore.IResolvable
+	AttrMediaWorkflowId() interface{}
 	// Attribute Name: The name of the media workflow.
-	AttrName() alicloudroscdkcore.IResolvable
+	AttrName() interface{}
 	// Attribute State: The state of the media workflow.
-	AttrState() alicloudroscdkcore.IResolvable
+	AttrState() interface{}
 	// Attribute Topology: The topology of the media workflow.
-	AttrTopology() alicloudroscdkcore.IResolvable
+	AttrTopology() interface{}
 	// Attribute TriggerMode: The trigger mode of the media workflow.
-	AttrTriggerMode() alicloudroscdkcore.IResolvable
+	AttrTriggerMode() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -40,7 +50,6 @@ type MediaWorkflow interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *MediaWorkflowProps
-	SetProps(val *MediaWorkflowProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -53,6 +62,9 @@ type MediaWorkflow interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -105,10 +117,11 @@ type MediaWorkflow interface {
 // The jsii proxy struct for MediaWorkflow
 type jsiiProxy_MediaWorkflow struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IMediaWorkflow
 }
 
-func (j *jsiiProxy_MediaWorkflow) AttrCreationTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MediaWorkflow) AttrCreationTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreationTime",
@@ -117,8 +130,8 @@ func (j *jsiiProxy_MediaWorkflow) AttrCreationTime() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_MediaWorkflow) AttrMediaWorkflowId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MediaWorkflow) AttrMediaWorkflowId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMediaWorkflowId",
@@ -127,8 +140,8 @@ func (j *jsiiProxy_MediaWorkflow) AttrMediaWorkflowId() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_MediaWorkflow) AttrName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MediaWorkflow) AttrName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrName",
@@ -137,8 +150,8 @@ func (j *jsiiProxy_MediaWorkflow) AttrName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_MediaWorkflow) AttrState() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MediaWorkflow) AttrState() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrState",
@@ -147,8 +160,8 @@ func (j *jsiiProxy_MediaWorkflow) AttrState() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_MediaWorkflow) AttrTopology() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MediaWorkflow) AttrTopology() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTopology",
@@ -157,8 +170,8 @@ func (j *jsiiProxy_MediaWorkflow) AttrTopology() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_MediaWorkflow) AttrTriggerMode() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MediaWorkflow) AttrTriggerMode() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTriggerMode",
@@ -172,6 +185,16 @@ func (j *jsiiProxy_MediaWorkflow) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MediaWorkflow) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -309,17 +332,6 @@ func (j *jsiiProxy_MediaWorkflow)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_MediaWorkflow)SetProps(val *MediaWorkflowProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_MediaWorkflow)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -411,6 +423,45 @@ func (m *jsiiProxy_MediaWorkflow) ApplyRemovalPolicy(policy alicloudroscdkcore.R
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (m *jsiiProxy_MediaWorkflow) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		m,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (m *jsiiProxy_MediaWorkflow) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		m,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (m *jsiiProxy_MediaWorkflow) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		m,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (m *jsiiProxy_MediaWorkflow) GeneratePhysicalName() *string {

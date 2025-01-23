@@ -12,48 +12,58 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::DataWorks::Project`, which is used to create a DataWorks workspace.
 type Project interface {
 	alicloudroscdkcore.Resource
+	IProject
 	// Attribute EnvTypes: The environment of the workspace.
 	//
 	// Valid values: PROD and DEV.
 	// The value PROD indicates the production environment. Workspaces in basic mode provide only the production environment.
 	// The value DEV indicates the development environment. Workspaces in standard mode provide both the development environment and the production environment.
-	AttrEnvTypes() alicloudroscdkcore.IResolvable
+	AttrEnvTypes() interface{}
 	// Attribute IsDefault: Indicates whether the workspace is the default workspace.
 	//
 	// Valid values:
 	// 1: The workspace is the default workspace.
 	// 0: The workspace is not the default workspace.
-	AttrIsDefault() alicloudroscdkcore.IResolvable
+	AttrIsDefault() interface{}
 	// Attribute ProjectId: The ID of the workspace.
-	AttrProjectId() alicloudroscdkcore.IResolvable
+	AttrProjectId() interface{}
 	// Attribute ProjectIdentifier: The name of the workspace.
 	//
 	// The name can contain letters, digits, and underscores (_) and must start with a letter or digit.
-	AttrProjectIdentifier() alicloudroscdkcore.IResolvable
+	AttrProjectIdentifier() interface{}
 	// Attribute ProtectedMode: Indicates whether the workspace protection feature is enabled.
 	//
 	// Valid values:
 	// 1: The workspace protection feature is enabled.
 	// 0: The workspace protection feature is disabled.
-	AttrProtectedMode() alicloudroscdkcore.IResolvable
+	AttrProtectedMode() interface{}
 	// Attribute ResidentArea: The type of the workspace.
 	//
 	// Valid values: private and swap.
-	AttrResidentArea() alicloudroscdkcore.IResolvable
+	AttrResidentArea() interface{}
 	// Attribute SchedulerMaxRetryTimes: The default maximum number of automatic reruns that are allowed after an error occurs.
-	AttrSchedulerMaxRetryTimes() alicloudroscdkcore.IResolvable
+	AttrSchedulerMaxRetryTimes() interface{}
 	// Attribute SchedulerRetryInterval: The interval between automatic reruns after an error occurs.
 	//
 	// Unit: milliseconds. The maximum interval is 30 minutes. You must pay attention to the conversion between units.
-	AttrSchedulerRetryInterval() alicloudroscdkcore.IResolvable
+	AttrSchedulerRetryInterval() interface{}
 	// Attribute TablePrivacyMode: Indicates whether the MaxCompute tables in the workspace are visible to the users within the tenant.
 	//
 	// Valid values:
 	// 0: The MaxCompute tables are invisible to the users within a tenant.
 	// 1: The MaxCompute tables are visible to the users within a tenant.
-	AttrTablePrivacyMode() alicloudroscdkcore.IResolvable
+	AttrTablePrivacyMode() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -68,7 +78,6 @@ type Project interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ProjectProps
-	SetProps(val *ProjectProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -81,6 +90,9 @@ type Project interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -133,10 +145,11 @@ type Project interface {
 // The jsii proxy struct for Project
 type jsiiProxy_Project struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IProject
 }
 
-func (j *jsiiProxy_Project) AttrEnvTypes() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Project) AttrEnvTypes() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEnvTypes",
@@ -145,8 +158,8 @@ func (j *jsiiProxy_Project) AttrEnvTypes() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Project) AttrIsDefault() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Project) AttrIsDefault() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIsDefault",
@@ -155,8 +168,8 @@ func (j *jsiiProxy_Project) AttrIsDefault() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Project) AttrProjectId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Project) AttrProjectId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrProjectId",
@@ -165,8 +178,8 @@ func (j *jsiiProxy_Project) AttrProjectId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Project) AttrProjectIdentifier() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Project) AttrProjectIdentifier() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrProjectIdentifier",
@@ -175,8 +188,8 @@ func (j *jsiiProxy_Project) AttrProjectIdentifier() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_Project) AttrProtectedMode() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Project) AttrProtectedMode() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrProtectedMode",
@@ -185,8 +198,8 @@ func (j *jsiiProxy_Project) AttrProtectedMode() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Project) AttrResidentArea() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Project) AttrResidentArea() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResidentArea",
@@ -195,8 +208,8 @@ func (j *jsiiProxy_Project) AttrResidentArea() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Project) AttrSchedulerMaxRetryTimes() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Project) AttrSchedulerMaxRetryTimes() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSchedulerMaxRetryTimes",
@@ -205,8 +218,8 @@ func (j *jsiiProxy_Project) AttrSchedulerMaxRetryTimes() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_Project) AttrSchedulerRetryInterval() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Project) AttrSchedulerRetryInterval() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSchedulerRetryInterval",
@@ -215,8 +228,8 @@ func (j *jsiiProxy_Project) AttrSchedulerRetryInterval() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_Project) AttrTablePrivacyMode() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Project) AttrTablePrivacyMode() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTablePrivacyMode",
@@ -230,6 +243,16 @@ func (j *jsiiProxy_Project) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Project) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -367,17 +390,6 @@ func (j *jsiiProxy_Project)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Project)SetProps(val *ProjectProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Project)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -469,6 +481,45 @@ func (p *jsiiProxy_Project) ApplyRemovalPolicy(policy alicloudroscdkcore.Removal
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (p *jsiiProxy_Project) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		p,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_Project) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		p,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_Project) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		p,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (p *jsiiProxy_Project) GeneratePhysicalName() *string {

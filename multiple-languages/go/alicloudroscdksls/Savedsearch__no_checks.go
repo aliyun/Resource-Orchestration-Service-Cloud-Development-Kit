@@ -52,10 +52,6 @@ func (j *jsiiProxy_Savedsearch) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_Savedsearch) validateSetPropsParameters(val *SavedsearchProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_Savedsearch) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

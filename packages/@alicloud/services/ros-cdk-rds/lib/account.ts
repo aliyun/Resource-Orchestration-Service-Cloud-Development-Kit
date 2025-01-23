@@ -52,20 +52,31 @@ export interface AccountProps {
 }
 
 /**
+ * Represents a `Account`.
+ */
+export interface IAccount extends ros.IResource {
+    readonly props: AccountProps;
+
+    /**
+     * Attribute AccountName: Account name
+     */
+    readonly attrAccountName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::Account`, which is used to create a database account for an ApsaraDB for RDS instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccount`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-account
  */
-export class Account extends ros.Resource {
+export class Account extends ros.Resource implements IAccount {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AccountProps;
+    public readonly props: AccountProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccountName: Account name
      */
-    public readonly attrAccountName: ros.IResolvable;
+    public readonly attrAccountName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

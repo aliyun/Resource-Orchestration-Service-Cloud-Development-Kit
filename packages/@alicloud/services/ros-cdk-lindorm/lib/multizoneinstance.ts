@@ -247,30 +247,51 @@ export interface MultiZoneInstanceProps {
 }
 
 /**
+ * Represents a `MultiZoneInstance`.
+ */
+export interface IMultiZoneInstance extends ros.IResource {
+    readonly props: MultiZoneInstanceProps;
+
+    /**
+     * Attribute AuthInfos: The list of the Lindorm instance auth infos.
+     */
+    readonly attrAuthInfos: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: The ID of the Lindorm instance that is created.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute JdbcUrlList: The list of the jdbc connection address.
+     */
+    readonly attrJdbcUrlList: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::Lindorm::MultiZoneInstance`, which is used to create a multi-zone Lindorm instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMultiZoneInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-lindorm-multizoneinstance
  */
-export class MultiZoneInstance extends ros.Resource {
+export class MultiZoneInstance extends ros.Resource implements IMultiZoneInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: MultiZoneInstanceProps;
+    public readonly props: MultiZoneInstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AuthInfos: The list of the Lindorm instance auth infos.
      */
-    public readonly attrAuthInfos: ros.IResolvable;
+    public readonly attrAuthInfos: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: The ID of the Lindorm instance that is created.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute JdbcUrlList: The list of the jdbc connection address.
      */
-    public readonly attrJdbcUrlList: ros.IResolvable;
+    public readonly attrJdbcUrlList: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

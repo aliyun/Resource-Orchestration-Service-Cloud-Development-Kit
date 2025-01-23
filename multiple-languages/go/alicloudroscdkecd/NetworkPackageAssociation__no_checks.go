@@ -52,10 +52,6 @@ func (j *jsiiProxy_NetworkPackageAssociation) validateSetIdParameters(val *strin
 	return nil
 }
 
-func (j *jsiiProxy_NetworkPackageAssociation) validateSetPropsParameters(val *NetworkPackageAssociationProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_NetworkPackageAssociation) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

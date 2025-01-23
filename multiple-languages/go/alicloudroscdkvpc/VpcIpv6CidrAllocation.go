@@ -12,10 +12,20 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpcIpv6CidrAllocation`, which is used to reserve an IPv6 CIDR block.
 type VpcIpv6CidrAllocation interface {
 	alicloudroscdkcore.Resource
+	IVpcIpv6CidrAllocation
 	// Attribute Ipv6CidrBlock: The IPv6 CIDR block that is reserved.
-	AttrIpv6CidrBlock() alicloudroscdkcore.IResolvable
+	AttrIpv6CidrBlock() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -30,7 +40,6 @@ type VpcIpv6CidrAllocation interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *VpcIpv6CidrAllocationProps
-	SetProps(val *VpcIpv6CidrAllocationProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -43,6 +52,9 @@ type VpcIpv6CidrAllocation interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -95,10 +107,11 @@ type VpcIpv6CidrAllocation interface {
 // The jsii proxy struct for VpcIpv6CidrAllocation
 type jsiiProxy_VpcIpv6CidrAllocation struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IVpcIpv6CidrAllocation
 }
 
-func (j *jsiiProxy_VpcIpv6CidrAllocation) AttrIpv6CidrBlock() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VpcIpv6CidrAllocation) AttrIpv6CidrBlock() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIpv6CidrBlock",
@@ -112,6 +125,16 @@ func (j *jsiiProxy_VpcIpv6CidrAllocation) EnableResourcePropertyConstraint() *bo
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpcIpv6CidrAllocation) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -249,17 +272,6 @@ func (j *jsiiProxy_VpcIpv6CidrAllocation)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_VpcIpv6CidrAllocation)SetProps(val *VpcIpv6CidrAllocationProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_VpcIpv6CidrAllocation)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -351,6 +363,45 @@ func (v *jsiiProxy_VpcIpv6CidrAllocation) ApplyRemovalPolicy(policy alicloudrosc
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (v *jsiiProxy_VpcIpv6CidrAllocation) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		v,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (v *jsiiProxy_VpcIpv6CidrAllocation) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		v,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (v *jsiiProxy_VpcIpv6CidrAllocation) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		v,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (v *jsiiProxy_VpcIpv6CidrAllocation) GeneratePhysicalName() *string {

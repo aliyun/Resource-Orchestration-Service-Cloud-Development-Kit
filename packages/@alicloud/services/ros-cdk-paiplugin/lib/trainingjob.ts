@@ -46,20 +46,31 @@ export interface TrainingJobProps {
 }
 
 /**
+ * Represents a `TrainingJob`.
+ */
+export interface ITrainingJob extends ros.IResource {
+    readonly props: TrainingJobProps;
+
+    /**
+     * Attribute TrainingJobId: The training job id.
+     */
+    readonly attrTrainingJobId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::PAIPlugin::TrainingJob`, which is used to create a training job.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTrainingJob`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paiplugin-trainingjob
  */
-export class TrainingJob extends ros.Resource {
+export class TrainingJob extends ros.Resource implements ITrainingJob {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: TrainingJobProps;
+    public readonly props: TrainingJobProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute TrainingJobId: The training job id.
      */
-    public readonly attrTrainingJobId: ros.IResolvable;
+    public readonly attrTrainingJobId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

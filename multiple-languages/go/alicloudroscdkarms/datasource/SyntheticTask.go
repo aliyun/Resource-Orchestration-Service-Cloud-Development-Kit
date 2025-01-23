@@ -12,34 +12,44 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::SyntheticTask`.
 type SyntheticTask interface {
 	alicloudroscdkcore.Resource
+	ISyntheticTask
 	// Attribute AvailableAssertions: The list of assertions.
-	AttrAvailableAssertions() alicloudroscdkcore.IResolvable
+	AttrAvailableAssertions() interface{}
 	// Attribute CommonSetting: The general settings.
-	AttrCommonSetting() alicloudroscdkcore.IResolvable
+	AttrCommonSetting() interface{}
 	// Attribute CustomPeriod: The custom cycle.
-	AttrCustomPeriod() alicloudroscdkcore.IResolvable
+	AttrCustomPeriod() interface{}
 	// Attribute Frequency: The detection frequency.
-	AttrFrequency() alicloudroscdkcore.IResolvable
+	AttrFrequency() interface{}
 	// Attribute MonitorCategory: The detection point type.
 	//
 	// 1: PC. 2: mobile device.
-	AttrMonitorCategory() alicloudroscdkcore.IResolvable
+	AttrMonitorCategory() interface{}
 	// Attribute MonitorConf: The monitoring configurations.
-	AttrMonitorConf() alicloudroscdkcore.IResolvable
+	AttrMonitorConf() interface{}
 	// Attribute Monitors: The list of monitoring points.
-	AttrMonitors() alicloudroscdkcore.IResolvable
+	AttrMonitors() interface{}
 	// Attribute ResourceGroupId: The ID of the resource group.
-	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() interface{}
 	// Attribute SyntheticTaskName: The name of synthetic task.
-	AttrSyntheticTaskName() alicloudroscdkcore.IResolvable
+	AttrSyntheticTaskName() interface{}
 	// Attribute Tags: The tags of the instance.
-	AttrTags() alicloudroscdkcore.IResolvable
+	AttrTags() interface{}
 	// Attribute TaskId: The ID of the synthetic monitoring task.
-	AttrTaskId() alicloudroscdkcore.IResolvable
+	AttrTaskId() interface{}
 	// Attribute TaskType: The type of the task.
-	AttrTaskType() alicloudroscdkcore.IResolvable
+	AttrTaskType() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -54,7 +64,6 @@ type SyntheticTask interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *SyntheticTaskProps
-	SetProps(val *SyntheticTaskProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -67,6 +76,9 @@ type SyntheticTask interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -119,10 +131,11 @@ type SyntheticTask interface {
 // The jsii proxy struct for SyntheticTask
 type jsiiProxy_SyntheticTask struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ISyntheticTask
 }
 
-func (j *jsiiProxy_SyntheticTask) AttrAvailableAssertions() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SyntheticTask) AttrAvailableAssertions() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAvailableAssertions",
@@ -131,8 +144,8 @@ func (j *jsiiProxy_SyntheticTask) AttrAvailableAssertions() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_SyntheticTask) AttrCommonSetting() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SyntheticTask) AttrCommonSetting() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCommonSetting",
@@ -141,8 +154,8 @@ func (j *jsiiProxy_SyntheticTask) AttrCommonSetting() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_SyntheticTask) AttrCustomPeriod() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SyntheticTask) AttrCustomPeriod() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCustomPeriod",
@@ -151,8 +164,8 @@ func (j *jsiiProxy_SyntheticTask) AttrCustomPeriod() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_SyntheticTask) AttrFrequency() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SyntheticTask) AttrFrequency() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrFrequency",
@@ -161,8 +174,8 @@ func (j *jsiiProxy_SyntheticTask) AttrFrequency() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_SyntheticTask) AttrMonitorCategory() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SyntheticTask) AttrMonitorCategory() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMonitorCategory",
@@ -171,8 +184,8 @@ func (j *jsiiProxy_SyntheticTask) AttrMonitorCategory() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_SyntheticTask) AttrMonitorConf() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SyntheticTask) AttrMonitorConf() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMonitorConf",
@@ -181,8 +194,8 @@ func (j *jsiiProxy_SyntheticTask) AttrMonitorConf() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_SyntheticTask) AttrMonitors() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SyntheticTask) AttrMonitors() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMonitors",
@@ -191,8 +204,8 @@ func (j *jsiiProxy_SyntheticTask) AttrMonitors() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_SyntheticTask) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SyntheticTask) AttrResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupId",
@@ -201,8 +214,8 @@ func (j *jsiiProxy_SyntheticTask) AttrResourceGroupId() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_SyntheticTask) AttrSyntheticTaskName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SyntheticTask) AttrSyntheticTaskName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSyntheticTaskName",
@@ -211,8 +224,8 @@ func (j *jsiiProxy_SyntheticTask) AttrSyntheticTaskName() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_SyntheticTask) AttrTags() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SyntheticTask) AttrTags() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTags",
@@ -221,8 +234,8 @@ func (j *jsiiProxy_SyntheticTask) AttrTags() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_SyntheticTask) AttrTaskId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SyntheticTask) AttrTaskId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTaskId",
@@ -231,8 +244,8 @@ func (j *jsiiProxy_SyntheticTask) AttrTaskId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_SyntheticTask) AttrTaskType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SyntheticTask) AttrTaskType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTaskType",
@@ -246,6 +259,16 @@ func (j *jsiiProxy_SyntheticTask) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SyntheticTask) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -383,17 +406,6 @@ func (j *jsiiProxy_SyntheticTask)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SyntheticTask)SetProps(val *SyntheticTaskProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_SyntheticTask)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -485,6 +497,45 @@ func (s *jsiiProxy_SyntheticTask) ApplyRemovalPolicy(policy alicloudroscdkcore.R
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (s *jsiiProxy_SyntheticTask) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		s,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_SyntheticTask) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_SyntheticTask) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (s *jsiiProxy_SyntheticTask) GeneratePhysicalName() *string {

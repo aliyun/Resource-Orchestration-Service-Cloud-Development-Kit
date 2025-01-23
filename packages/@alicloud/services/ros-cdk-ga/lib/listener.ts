@@ -79,20 +79,31 @@ export interface ListenerProps {
 }
 
 /**
+ * Represents a `Listener`.
+ */
+export interface IListener extends ros.IResource {
+    readonly props: ListenerProps;
+
+    /**
+     * Attribute ListenerId: The ID of the listener.
+     */
+    readonly attrListenerId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::GA::Listener`, which is used to create a listener for a Global Accelerator (GA) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosListener`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-listener
  */
-export class Listener extends ros.Resource {
+export class Listener extends ros.Resource implements IListener {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ListenerProps;
+    public readonly props: ListenerProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ListenerId: The ID of the listener.
      */
-    public readonly attrListenerId: ros.IResolvable;
+    public readonly attrListenerId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

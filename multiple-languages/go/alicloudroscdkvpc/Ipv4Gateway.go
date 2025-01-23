@@ -12,20 +12,30 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::VPC::Ipv4Gateway`, which is used to create an IPv4 gateway.
 type Ipv4Gateway interface {
 	alicloudroscdkcore.Resource
+	IIpv4Gateway
 	// Attribute CreateTime: The creation time of the resource.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute Ipv4GatewayDescription: Description information.
-	AttrIpv4GatewayDescription() alicloudroscdkcore.IResolvable
+	AttrIpv4GatewayDescription() interface{}
 	// Attribute Ipv4GatewayId: The resource attribute field that represents the resource level 1 ID.
-	AttrIpv4GatewayId() alicloudroscdkcore.IResolvable
+	AttrIpv4GatewayId() interface{}
 	// Attribute Ipv4GatewayName: Resource name.
-	AttrIpv4GatewayName() alicloudroscdkcore.IResolvable
+	AttrIpv4GatewayName() interface{}
 	// Attribute Ipv4GatewayRouteTableId: ID of the route table associated with IPv4 Gateway.
-	AttrIpv4GatewayRouteTableId() alicloudroscdkcore.IResolvable
+	AttrIpv4GatewayRouteTableId() interface{}
 	// Attribute VpcId: The ID of the VPC associated with the IPv4 Gateway.
-	AttrVpcId() alicloudroscdkcore.IResolvable
+	AttrVpcId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -40,7 +50,6 @@ type Ipv4Gateway interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *Ipv4GatewayProps
-	SetProps(val *Ipv4GatewayProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -53,6 +62,9 @@ type Ipv4Gateway interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -105,10 +117,11 @@ type Ipv4Gateway interface {
 // The jsii proxy struct for Ipv4Gateway
 type jsiiProxy_Ipv4Gateway struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IIpv4Gateway
 }
 
-func (j *jsiiProxy_Ipv4Gateway) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Ipv4Gateway) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -117,8 +130,8 @@ func (j *jsiiProxy_Ipv4Gateway) AttrCreateTime() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_Ipv4Gateway) AttrIpv4GatewayDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Ipv4Gateway) AttrIpv4GatewayDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIpv4GatewayDescription",
@@ -127,8 +140,8 @@ func (j *jsiiProxy_Ipv4Gateway) AttrIpv4GatewayDescription() alicloudroscdkcore.
 	return returns
 }
 
-func (j *jsiiProxy_Ipv4Gateway) AttrIpv4GatewayId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Ipv4Gateway) AttrIpv4GatewayId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIpv4GatewayId",
@@ -137,8 +150,8 @@ func (j *jsiiProxy_Ipv4Gateway) AttrIpv4GatewayId() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_Ipv4Gateway) AttrIpv4GatewayName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Ipv4Gateway) AttrIpv4GatewayName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIpv4GatewayName",
@@ -147,8 +160,8 @@ func (j *jsiiProxy_Ipv4Gateway) AttrIpv4GatewayName() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_Ipv4Gateway) AttrIpv4GatewayRouteTableId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Ipv4Gateway) AttrIpv4GatewayRouteTableId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIpv4GatewayRouteTableId",
@@ -157,8 +170,8 @@ func (j *jsiiProxy_Ipv4Gateway) AttrIpv4GatewayRouteTableId() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_Ipv4Gateway) AttrVpcId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Ipv4Gateway) AttrVpcId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVpcId",
@@ -172,6 +185,16 @@ func (j *jsiiProxy_Ipv4Gateway) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Ipv4Gateway) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -309,17 +332,6 @@ func (j *jsiiProxy_Ipv4Gateway)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Ipv4Gateway)SetProps(val *Ipv4GatewayProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Ipv4Gateway)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -411,6 +423,45 @@ func (i *jsiiProxy_Ipv4Gateway) ApplyRemovalPolicy(policy alicloudroscdkcore.Rem
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (i *jsiiProxy_Ipv4Gateway) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		i,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_Ipv4Gateway) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		i,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_Ipv4Gateway) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		i,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (i *jsiiProxy_Ipv4Gateway) GeneratePhysicalName() *string {

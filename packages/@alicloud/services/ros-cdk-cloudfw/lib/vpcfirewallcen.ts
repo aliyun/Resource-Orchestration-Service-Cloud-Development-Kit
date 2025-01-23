@@ -63,20 +63,31 @@ export interface VpcFirewallCenProps {
 }
 
 /**
+ * Represents a `VpcFirewallCen`.
+ */
+export interface IVpcFirewallCen extends ros.IResource {
+    readonly props: VpcFirewallCenProps;
+
+    /**
+     * Attribute VpcFirewallId: The instance ID of the VPC firewall.
+     */
+    readonly attrVpcFirewallId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallCen`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpcFirewallCen`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallcen
  */
-export class VpcFirewallCen extends ros.Resource {
+export class VpcFirewallCen extends ros.Resource implements IVpcFirewallCen {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: VpcFirewallCenProps;
+    public readonly props: VpcFirewallCenProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute VpcFirewallId: The instance ID of the VPC firewall.
      */
-    public readonly attrVpcFirewallId: ros.IResolvable;
+    public readonly attrVpcFirewallId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

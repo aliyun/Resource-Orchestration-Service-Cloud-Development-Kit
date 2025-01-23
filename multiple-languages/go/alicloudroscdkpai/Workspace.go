@@ -12,30 +12,40 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::PAI::Workspace`, which is used to create a workspace.
 type Workspace interface {
 	alicloudroscdkcore.Resource
+	IWorkspace
 	// Attribute AdminNames: List of administrator account names.
-	AttrAdminNames() alicloudroscdkcore.IResolvable
+	AttrAdminNames() interface{}
 	// Attribute Creator: The user ID of the creator.
-	AttrCreator() alicloudroscdkcore.IResolvable
+	AttrCreator() interface{}
 	// Attribute Description: Workspace description, no more than 80 characters.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute DisplayName: It is recommended that you name the workspace based on the business attribute to identify the purpose of the workspace.
 	//
 	// If not configured, the default value is the workspace name.
-	AttrDisplayName() alicloudroscdkcore.IResolvable
+	AttrDisplayName() interface{}
 	// Attribute EnvTypes: Environments contained in the workspace:.
-	AttrEnvTypes() alicloudroscdkcore.IResolvable
+	AttrEnvTypes() interface{}
 	// Attribute ExtraInfos: Additional information, currently including TenantId (tenant ID).
-	AttrExtraInfos() alicloudroscdkcore.IResolvable
+	AttrExtraInfos() interface{}
 	// Attribute Owner: Workspace owner ID, displayed when Verbose is true.
-	AttrOwner() alicloudroscdkcore.IResolvable
+	AttrOwner() interface{}
 	// Attribute Users: List of users.
-	AttrUsers() alicloudroscdkcore.IResolvable
+	AttrUsers() interface{}
 	// Attribute WorkspaceId: The ID of the workspace.
-	AttrWorkspaceId() alicloudroscdkcore.IResolvable
+	AttrWorkspaceId() interface{}
 	// Attribute WorkspaceName: The workspace name.
-	AttrWorkspaceName() alicloudroscdkcore.IResolvable
+	AttrWorkspaceName() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -50,7 +60,6 @@ type Workspace interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *WorkspaceProps
-	SetProps(val *WorkspaceProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -63,6 +72,9 @@ type Workspace interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -115,10 +127,11 @@ type Workspace interface {
 // The jsii proxy struct for Workspace
 type jsiiProxy_Workspace struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IWorkspace
 }
 
-func (j *jsiiProxy_Workspace) AttrAdminNames() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Workspace) AttrAdminNames() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAdminNames",
@@ -127,8 +140,8 @@ func (j *jsiiProxy_Workspace) AttrAdminNames() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Workspace) AttrCreator() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Workspace) AttrCreator() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreator",
@@ -137,8 +150,8 @@ func (j *jsiiProxy_Workspace) AttrCreator() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Workspace) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Workspace) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -147,8 +160,8 @@ func (j *jsiiProxy_Workspace) AttrDescription() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Workspace) AttrDisplayName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Workspace) AttrDisplayName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDisplayName",
@@ -157,8 +170,8 @@ func (j *jsiiProxy_Workspace) AttrDisplayName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Workspace) AttrEnvTypes() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Workspace) AttrEnvTypes() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEnvTypes",
@@ -167,8 +180,8 @@ func (j *jsiiProxy_Workspace) AttrEnvTypes() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Workspace) AttrExtraInfos() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Workspace) AttrExtraInfos() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrExtraInfos",
@@ -177,8 +190,8 @@ func (j *jsiiProxy_Workspace) AttrExtraInfos() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Workspace) AttrOwner() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Workspace) AttrOwner() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOwner",
@@ -187,8 +200,8 @@ func (j *jsiiProxy_Workspace) AttrOwner() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Workspace) AttrUsers() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Workspace) AttrUsers() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUsers",
@@ -197,8 +210,8 @@ func (j *jsiiProxy_Workspace) AttrUsers() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Workspace) AttrWorkspaceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Workspace) AttrWorkspaceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrWorkspaceId",
@@ -207,8 +220,8 @@ func (j *jsiiProxy_Workspace) AttrWorkspaceId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Workspace) AttrWorkspaceName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Workspace) AttrWorkspaceName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrWorkspaceName",
@@ -222,6 +235,16 @@ func (j *jsiiProxy_Workspace) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Workspace) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -359,17 +382,6 @@ func (j *jsiiProxy_Workspace)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Workspace)SetProps(val *WorkspaceProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Workspace)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -461,6 +473,45 @@ func (w *jsiiProxy_Workspace) ApplyRemovalPolicy(policy alicloudroscdkcore.Remov
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (w *jsiiProxy_Workspace) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		w,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (w *jsiiProxy_Workspace) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		w,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (w *jsiiProxy_Workspace) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		w,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (w *jsiiProxy_Workspace) GeneratePhysicalName() *string {

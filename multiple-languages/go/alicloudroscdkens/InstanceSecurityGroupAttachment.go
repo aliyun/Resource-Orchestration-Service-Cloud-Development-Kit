@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ENS::InstanceSecurityGroupAttachment`, which is used to add an Edge Node Service (ENS) instance to a security group.
 type InstanceSecurityGroupAttachment interface {
 	alicloudroscdkcore.Resource
+	IInstanceSecurityGroupAttachment
 	// Attribute InstanceId: Instance ID.
-	AttrInstanceId() alicloudroscdkcore.IResolvable
+	AttrInstanceId() interface{}
 	// Attribute SecurityGroupId: Security group ID.
-	AttrSecurityGroupId() alicloudroscdkcore.IResolvable
+	AttrSecurityGroupId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type InstanceSecurityGroupAttachment interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *InstanceSecurityGroupAttachmentProps
-	SetProps(val *InstanceSecurityGroupAttachmentProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type InstanceSecurityGroupAttachment interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type InstanceSecurityGroupAttachment interface {
 // The jsii proxy struct for InstanceSecurityGroupAttachment
 type jsiiProxy_InstanceSecurityGroupAttachment struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IInstanceSecurityGroupAttachment
 }
 
-func (j *jsiiProxy_InstanceSecurityGroupAttachment) AttrInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_InstanceSecurityGroupAttachment) AttrInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceId",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_InstanceSecurityGroupAttachment) AttrInstanceId() alicloudros
 	return returns
 }
 
-func (j *jsiiProxy_InstanceSecurityGroupAttachment) AttrSecurityGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_InstanceSecurityGroupAttachment) AttrSecurityGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSecurityGroupId",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_InstanceSecurityGroupAttachment) EnableResourcePropertyConstr
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_InstanceSecurityGroupAttachment) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_InstanceSecurityGroupAttachment)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_InstanceSecurityGroupAttachment)SetProps(val *InstanceSecurityGroupAttachmentProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_InstanceSecurityGroupAttachment)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (i *jsiiProxy_InstanceSecurityGroupAttachment) ApplyRemovalPolicy(policy al
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (i *jsiiProxy_InstanceSecurityGroupAttachment) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		i,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_InstanceSecurityGroupAttachment) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		i,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_InstanceSecurityGroupAttachment) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		i,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (i *jsiiProxy_InstanceSecurityGroupAttachment) GeneratePhysicalName() *string {

@@ -52,10 +52,6 @@ func (j *jsiiProxy_ScalingGroups) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_ScalingGroups) validateSetPropsParameters(val *ScalingGroupsProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_ScalingGroups) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

@@ -56,25 +56,41 @@ export interface ClusterApplicationProps {
 }
 
 /**
+ * Represents a `ClusterApplication`.
+ */
+export interface IClusterApplication extends ros.IResource {
+    readonly props: ClusterApplicationProps;
+
+    /**
+     * Attribute ClusterId: The ID of the cluster.
+     */
+    readonly attrClusterId: ros.IResolvable | string;
+
+    /**
+     * Attribute WaitUntilData: A list of values for each JsonPath in WaitUntil.
+     */
+    readonly attrWaitUntilData: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ClusterApplication`, which is used to deploy an application in a Container Service for Kubernetes (ACK) cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusterApplication`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterapplication
  */
-export class ClusterApplication extends ros.Resource {
+export class ClusterApplication extends ros.Resource implements IClusterApplication {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ClusterApplicationProps;
+    public readonly props: ClusterApplicationProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterId: The ID of the cluster.
      */
-    public readonly attrClusterId: ros.IResolvable;
+    public readonly attrClusterId: ros.IResolvable | string;
 
     /**
      * Attribute WaitUntilData: A list of values for each JsonPath in WaitUntil.
      */
-    public readonly attrWaitUntilData: ros.IResolvable;
+    public readonly attrWaitUntilData: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

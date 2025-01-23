@@ -119,25 +119,41 @@ export interface DBInstancesProps {
 }
 
 /**
+ * Represents a `DBInstances`.
+ */
+export interface IDBInstances extends ros.IResource {
+    readonly props: DBInstancesProps;
+
+    /**
+     * Attribute DBInstanceIds: The list of The RDS Database instance Ids.
+     */
+    readonly attrDbInstanceIds: ros.IResolvable | string;
+
+    /**
+     * Attribute DBInstances: The list of The RDS Database instances.
+     */
+    readonly attrDbInstances: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::RDS::DBInstances`, which is used to query ApsaraDB RDS instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBInstances`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-dbinstances
  */
-export class DBInstances extends ros.Resource {
+export class DBInstances extends ros.Resource implements IDBInstances {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DBInstancesProps;
+    public readonly props: DBInstancesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DBInstanceIds: The list of The RDS Database instance Ids.
      */
-    public readonly attrDbInstanceIds: ros.IResolvable;
+    public readonly attrDbInstanceIds: ros.IResolvable | string;
 
     /**
      * Attribute DBInstances: The list of The RDS Database instances.
      */
-    public readonly attrDbInstances: ros.IResolvable;
+    public readonly attrDbInstances: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

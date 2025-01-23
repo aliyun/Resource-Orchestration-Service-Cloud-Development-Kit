@@ -52,10 +52,6 @@ func (j *jsiiProxy_AnycastEIP) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_AnycastEIP) validateSetPropsParameters(val *AnycastEIPProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_AnycastEIP) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

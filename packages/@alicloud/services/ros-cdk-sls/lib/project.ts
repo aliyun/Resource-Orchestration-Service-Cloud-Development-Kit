@@ -11,7 +11,7 @@ export interface ProjectProps {
 
     /**
      * Property name: Project name:
-     * 1. Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+     * 1. Only supports lowercase letters, numbers, hyphens (-).
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
@@ -39,20 +39,31 @@ export interface ProjectProps {
 }
 
 /**
+ * Represents a `Project`.
+ */
+export interface IProject extends ros.IResource {
+    readonly props: ProjectProps;
+
+    /**
+     * Attribute Name: Project name.
+     */
+    readonly attrName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Project`, which is used to create a Log Service project.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosProject`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-project
  */
-export class Project extends ros.Resource {
+export class Project extends ros.Resource implements IProject {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ProjectProps;
+    public readonly props: ProjectProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Name: Project name.
      */
-    public readonly attrName: ros.IResolvable;
+    public readonly attrName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

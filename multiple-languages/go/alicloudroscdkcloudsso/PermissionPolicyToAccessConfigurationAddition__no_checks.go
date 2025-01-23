@@ -52,10 +52,6 @@ func (j *jsiiProxy_PermissionPolicyToAccessConfigurationAddition) validateSetIdP
 	return nil
 }
 
-func (j *jsiiProxy_PermissionPolicyToAccessConfigurationAddition) validateSetPropsParameters(val *PermissionPolicyToAccessConfigurationAdditionProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_PermissionPolicyToAccessConfigurationAddition) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

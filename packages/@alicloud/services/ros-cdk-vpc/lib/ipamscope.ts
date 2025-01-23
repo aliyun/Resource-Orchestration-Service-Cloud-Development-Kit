@@ -40,50 +40,91 @@ export interface IpamScopeProps {
 }
 
 /**
+ * Represents a `IpamScope`.
+ */
+export interface IIpamScope extends ros.IResource {
+    readonly props: IpamScopeProps;
+
+    /**
+     * Attribute CreateTime: The creation time of the IPAM scope.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute IpamId: The id of the Ipam instance.
+     */
+    readonly attrIpamId: ros.IResolvable | string;
+
+    /**
+     * Attribute IpamScopeDescription: The description of the IPAM's scope of action.
+     */
+    readonly attrIpamScopeDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute IpamScopeId: The ID of the IPAM scope.
+     */
+    readonly attrIpamScopeId: ros.IResolvable | string;
+
+    /**
+     * Attribute IpamScopeName: The name of the IPAM scope.
+     */
+    readonly attrIpamScopeName: ros.IResolvable | string;
+
+    /**
+     * Attribute IpamScopeType: IPAM scope of action type.
+     */
+    readonly attrIpamScopeType: ros.IResolvable | string;
+
+    /**
+     * Attribute Tags: The tag of the IPAM scope.
+     */
+    readonly attrTags: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::IpamScope`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosIpamScope`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipamscope
  */
-export class IpamScope extends ros.Resource {
+export class IpamScope extends ros.Resource implements IIpamScope {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: IpamScopeProps;
+    public readonly props: IpamScopeProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateTime: The creation time of the IPAM scope.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute IpamId: The id of the Ipam instance.
      */
-    public readonly attrIpamId: ros.IResolvable;
+    public readonly attrIpamId: ros.IResolvable | string;
 
     /**
      * Attribute IpamScopeDescription: The description of the IPAM's scope of action.
      */
-    public readonly attrIpamScopeDescription: ros.IResolvable;
+    public readonly attrIpamScopeDescription: ros.IResolvable | string;
 
     /**
      * Attribute IpamScopeId: The ID of the IPAM scope.
      */
-    public readonly attrIpamScopeId: ros.IResolvable;
+    public readonly attrIpamScopeId: ros.IResolvable | string;
 
     /**
      * Attribute IpamScopeName: The name of the IPAM scope.
      */
-    public readonly attrIpamScopeName: ros.IResolvable;
+    public readonly attrIpamScopeName: ros.IResolvable | string;
 
     /**
      * Attribute IpamScopeType: IPAM scope of action type.
      */
-    public readonly attrIpamScopeType: ros.IResolvable;
+    public readonly attrIpamScopeType: ros.IResolvable | string;
 
     /**
      * Attribute Tags: The tag of the IPAM scope.
      */
-    public readonly attrTags: ros.IResolvable;
+    public readonly attrTags: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

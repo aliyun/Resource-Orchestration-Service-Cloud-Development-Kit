@@ -52,10 +52,6 @@ func (j *jsiiProxy_SaslUser) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_SaslUser) validateSetPropsParameters(val *SaslUserProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_SaslUser) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

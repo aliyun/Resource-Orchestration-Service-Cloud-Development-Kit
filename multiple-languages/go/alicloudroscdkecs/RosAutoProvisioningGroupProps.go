@@ -9,6 +9,7 @@ type RosAutoProvisioningGroupProps struct {
 	AutoProvisioningGroupName interface{} `field:"optional" json:"autoProvisioningGroupName" yaml:"autoProvisioningGroupName"`
 	AutoProvisioningGroupType interface{} `field:"optional" json:"autoProvisioningGroupType" yaml:"autoProvisioningGroupType"`
 	CheckExecutionStatus interface{} `field:"optional" json:"checkExecutionStatus" yaml:"checkExecutionStatus"`
+	DataDiskConfig interface{} `field:"optional" json:"dataDiskConfig" yaml:"dataDiskConfig"`
 	DefaultTargetCapacityType interface{} `field:"optional" json:"defaultTargetCapacityType" yaml:"defaultTargetCapacityType"`
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
 	ExcessCapacityTerminationPolicy interface{} `field:"optional" json:"excessCapacityTerminationPolicy" yaml:"excessCapacityTerminationPolicy"`
@@ -17,12 +18,16 @@ type RosAutoProvisioningGroupProps struct {
 	LaunchTemplateId interface{} `field:"optional" json:"launchTemplateId" yaml:"launchTemplateId"`
 	LaunchTemplateVersion interface{} `field:"optional" json:"launchTemplateVersion" yaml:"launchTemplateVersion"`
 	MaxSpotPrice interface{} `field:"optional" json:"maxSpotPrice" yaml:"maxSpotPrice"`
+	MinTargetCapacity interface{} `field:"optional" json:"minTargetCapacity" yaml:"minTargetCapacity"`
 	PayAsYouGoAllocationStrategy interface{} `field:"optional" json:"payAsYouGoAllocationStrategy" yaml:"payAsYouGoAllocationStrategy"`
 	PayAsYouGoTargetCapacity interface{} `field:"optional" json:"payAsYouGoTargetCapacity" yaml:"payAsYouGoTargetCapacity"`
+	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
+	ResourcePoolOptions interface{} `field:"optional" json:"resourcePoolOptions" yaml:"resourcePoolOptions"`
 	SpotAllocationStrategy interface{} `field:"optional" json:"spotAllocationStrategy" yaml:"spotAllocationStrategy"`
 	SpotInstanceInterruptionBehavior interface{} `field:"optional" json:"spotInstanceInterruptionBehavior" yaml:"spotInstanceInterruptionBehavior"`
 	SpotInstancePoolsToUseCount interface{} `field:"optional" json:"spotInstancePoolsToUseCount" yaml:"spotInstancePoolsToUseCount"`
 	SpotTargetCapacity interface{} `field:"optional" json:"spotTargetCapacity" yaml:"spotTargetCapacity"`
+	SystemDiskConfig interface{} `field:"optional" json:"systemDiskConfig" yaml:"systemDiskConfig"`
 	TerminateInstances interface{} `field:"optional" json:"terminateInstances" yaml:"terminateInstances"`
 	TerminateInstancesWithExpiration interface{} `field:"optional" json:"terminateInstancesWithExpiration" yaml:"terminateInstancesWithExpiration"`
 	ValidFrom interface{} `field:"optional" json:"validFrom" yaml:"validFrom"`

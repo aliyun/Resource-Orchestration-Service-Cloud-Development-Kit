@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::MNS::Queues`, which is used to query all queues within an Alibaba Cloud account.
 type Queues interface {
 	alicloudroscdkcore.Resource
+	IQueues
 	// Attribute QueueNames: The list of queue names.
-	AttrQueueNames() alicloudroscdkcore.IResolvable
+	AttrQueueNames() interface{}
 	// Attribute Queues: The list of queues.
-	AttrQueues() alicloudroscdkcore.IResolvable
+	AttrQueues() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type Queues interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *QueuesProps
-	SetProps(val *QueuesProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type Queues interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type Queues interface {
 // The jsii proxy struct for Queues
 type jsiiProxy_Queues struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IQueues
 }
 
-func (j *jsiiProxy_Queues) AttrQueueNames() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Queues) AttrQueueNames() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrQueueNames",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_Queues) AttrQueueNames() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Queues) AttrQueues() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Queues) AttrQueues() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrQueues",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_Queues) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Queues) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_Queues)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Queues)SetProps(val *QueuesProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Queues)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (q *jsiiProxy_Queues) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalP
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (q *jsiiProxy_Queues) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		q,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (q *jsiiProxy_Queues) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		q,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (q *jsiiProxy_Queues) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		q,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (q *jsiiProxy_Queues) GeneratePhysicalName() *string {

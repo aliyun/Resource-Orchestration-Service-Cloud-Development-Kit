@@ -7,7 +7,7 @@ package alicloudroscdksls
 type ProjectProps struct {
 	// Property name: Project name: 1.
 	//
-	// Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+	// Only supports lowercase letters, numbers, hyphens (-).
 	// 2. Must start and end with lowercase letters and numbers.
 	// 3. The name length is 3-63 characters.
 	Name interface{} `field:"required" json:"name" yaml:"name"`

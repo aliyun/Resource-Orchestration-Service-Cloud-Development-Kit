@@ -57,25 +57,41 @@ export interface DBNodeClassesProps {
 }
 
 /**
+ * Represents a `DBNodeClasses`.
+ */
+export interface IDBNodeClasses extends ros.IResource {
+    readonly props: DBNodeClassesProps;
+
+    /**
+     * Attribute DBNodeClassIds: The list of db node class ids.
+     */
+    readonly attrDbNodeClassIds: ros.IResolvable | string;
+
+    /**
+     * Attribute DBNodeClasses: The list of db node classes.
+     */
+    readonly attrDbNodeClasses: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::POLARDB::DBNodeClasses`, which is used to query available PolarDB cluster resources.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBNodeClasses`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-dbnodeclasses
  */
-export class DBNodeClasses extends ros.Resource {
+export class DBNodeClasses extends ros.Resource implements IDBNodeClasses {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DBNodeClassesProps;
+    public readonly props: DBNodeClassesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DBNodeClassIds: The list of db node class ids.
      */
-    public readonly attrDbNodeClassIds: ros.IResolvable;
+    public readonly attrDbNodeClassIds: ros.IResolvable | string;
 
     /**
      * Attribute DBNodeClasses: The list of db node classes.
      */
-    public readonly attrDbNodeClasses: ros.IResolvable;
+    public readonly attrDbNodeClasses: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

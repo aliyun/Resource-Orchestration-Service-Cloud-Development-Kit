@@ -16,30 +16,51 @@ export interface AccessKeyProps {
 }
 
 /**
+ * Represents a `AccessKey`.
+ */
+export interface IAccessKey extends ros.IResource {
+    readonly props: AccessKeyProps;
+
+    /**
+     * Attribute AccessKeyId: Id of access key.
+     */
+    readonly attrAccessKeyId: ros.IResolvable | string;
+
+    /**
+     * Attribute AccessKeySecret: Secret of access key.
+     */
+    readonly attrAccessKeySecret: ros.IResolvable | string;
+
+    /**
+     * Attribute Status: Status of access key.
+     */
+    readonly attrStatus: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::AccessKey`, which is used to obtain the AccessKey pair (AccessKey ID and AccessKey secret) of a specified user and its status.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccessKey`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-accesskey
  */
-export class AccessKey extends ros.Resource {
+export class AccessKey extends ros.Resource implements IAccessKey {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AccessKeyProps;
+    public readonly props: AccessKeyProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccessKeyId: Id of access key.
      */
-    public readonly attrAccessKeyId: ros.IResolvable;
+    public readonly attrAccessKeyId: ros.IResolvable | string;
 
     /**
      * Attribute AccessKeySecret: Secret of access key.
      */
-    public readonly attrAccessKeySecret: ros.IResolvable;
+    public readonly attrAccessKeySecret: ros.IResolvable | string;
 
     /**
      * Attribute Status: Status of access key.
      */
-    public readonly attrStatus: ros.IResolvable;
+    public readonly attrStatus: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

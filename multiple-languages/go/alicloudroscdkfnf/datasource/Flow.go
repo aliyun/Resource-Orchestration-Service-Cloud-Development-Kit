@@ -12,32 +12,42 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::FNF::Flow`.
 type Flow interface {
 	alicloudroscdkcore.Resource
+	IFlow
 	// Attribute CreateTime: The time when the flow was created.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute Definition: The flow definition, which follows the flow definition language (FDL) syntax standard.
 	//
 	// Considering compatibility, the system supports the two flow definition specifications.
-	AttrDefinition() alicloudroscdkcore.IResolvable
+	AttrDefinition() interface{}
 	// Attribute Description: The description of the flow.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute FlowId: The unique ID of the flow.
-	AttrFlowId() alicloudroscdkcore.IResolvable
+	AttrFlowId() interface{}
 	// Attribute FlowName: The name of the flow.
 	//
 	// The name must be unique within a region for the same Alibaba Cloud account.
-	AttrFlowName() alicloudroscdkcore.IResolvable
+	AttrFlowName() interface{}
 	// Attribute LastModifiedTime: The time when the flow was last modified.
-	AttrLastModifiedTime() alicloudroscdkcore.IResolvable
+	AttrLastModifiedTime() interface{}
 	// Attribute RoleArn: The Alibaba Cloud resource name (ARN) of the authorized role on which the execution of the flow relies.
 	//
 	// During the execution of the flow, CloudFlow assumes the role to call API operations of relevant services.
-	AttrRoleArn() alicloudroscdkcore.IResolvable
+	AttrRoleArn() interface{}
 	// Attribute Type: The type of the flow.
 	//
 	// Valid values are FDL or DEFAULT.
-	AttrType() alicloudroscdkcore.IResolvable
+	AttrType() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -52,7 +62,6 @@ type Flow interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *FlowProps
-	SetProps(val *FlowProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -65,6 +74,9 @@ type Flow interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -117,10 +129,11 @@ type Flow interface {
 // The jsii proxy struct for Flow
 type jsiiProxy_Flow struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IFlow
 }
 
-func (j *jsiiProxy_Flow) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Flow) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -129,8 +142,8 @@ func (j *jsiiProxy_Flow) AttrCreateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Flow) AttrDefinition() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Flow) AttrDefinition() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDefinition",
@@ -139,8 +152,8 @@ func (j *jsiiProxy_Flow) AttrDefinition() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Flow) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Flow) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -149,8 +162,8 @@ func (j *jsiiProxy_Flow) AttrDescription() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Flow) AttrFlowId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Flow) AttrFlowId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrFlowId",
@@ -159,8 +172,8 @@ func (j *jsiiProxy_Flow) AttrFlowId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Flow) AttrFlowName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Flow) AttrFlowName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrFlowName",
@@ -169,8 +182,8 @@ func (j *jsiiProxy_Flow) AttrFlowName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Flow) AttrLastModifiedTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Flow) AttrLastModifiedTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLastModifiedTime",
@@ -179,8 +192,8 @@ func (j *jsiiProxy_Flow) AttrLastModifiedTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Flow) AttrRoleArn() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Flow) AttrRoleArn() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRoleArn",
@@ -189,8 +202,8 @@ func (j *jsiiProxy_Flow) AttrRoleArn() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Flow) AttrType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Flow) AttrType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrType",
@@ -204,6 +217,16 @@ func (j *jsiiProxy_Flow) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Flow) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -341,17 +364,6 @@ func (j *jsiiProxy_Flow)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Flow)SetProps(val *FlowProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Flow)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -443,6 +455,45 @@ func (f *jsiiProxy_Flow) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPol
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (f *jsiiProxy_Flow) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		f,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (f *jsiiProxy_Flow) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (f *jsiiProxy_Flow) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (f *jsiiProxy_Flow) GeneratePhysicalName() *string {

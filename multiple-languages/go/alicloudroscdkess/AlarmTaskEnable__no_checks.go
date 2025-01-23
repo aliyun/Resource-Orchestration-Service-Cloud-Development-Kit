@@ -52,10 +52,6 @@ func (j *jsiiProxy_AlarmTaskEnable) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_AlarmTaskEnable) validateSetPropsParameters(val *AlarmTaskEnableProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_AlarmTaskEnable) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

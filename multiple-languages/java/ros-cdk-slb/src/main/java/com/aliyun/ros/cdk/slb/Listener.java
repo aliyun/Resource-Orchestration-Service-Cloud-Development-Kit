@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.slb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SLB::Listener</code>, which is used to create a Server Load Balancer (SLB) listener.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:11.967Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:44.239Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.Listener")
-public class Listener extends com.aliyun.ros.cdk.core.Resource {
+public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.slb.IListener {
 
     protected Listener(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -43,15 +43,22 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute ListenerPortsAndProtocol: The collection of listener.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrListenerPortsAndProtocol() {
-        return software.amazon.jsii.Kernel.get(this, "attrListenerPortsAndProtocol", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrListenerPortsAndProtocol() {
+        return software.amazon.jsii.Kernel.get(this, "attrListenerPortsAndProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute LoadBalancerId: The id of load balancer.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrLoadBalancerId() {
-        return software.amazon.jsii.Kernel.get(this, "attrLoadBalancerId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrLoadBalancerId() {
+        return software.amazon.jsii.Kernel.get(this, "attrLoadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.slb.ListenerProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.slb.ListenerProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -68,14 +75,6 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.slb.ListenerProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.slb.ListenerProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.slb.ListenerProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {
@@ -333,20 +332,20 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property backendServerPort: Backend server can listen on ports from 1 to 65535.
+         * Property backendServerPort: Backend server can listen on ports from 0 to 65535.
          * <p>
          * @return {@code this}
-         * @param backendServerPort Property backendServerPort: Backend server can listen on ports from 1 to 65535. This parameter is required.
+         * @param backendServerPort Property backendServerPort: Backend server can listen on ports from 0 to 65535. This parameter is required.
          */
         public Builder backendServerPort(final java.lang.Number backendServerPort) {
             this.props.backendServerPort(backendServerPort);
             return this;
         }
         /**
-         * Property backendServerPort: Backend server can listen on ports from 1 to 65535.
+         * Property backendServerPort: Backend server can listen on ports from 0 to 65535.
          * <p>
          * @return {@code this}
-         * @param backendServerPort Property backendServerPort: Backend server can listen on ports from 1 to 65535. This parameter is required.
+         * @param backendServerPort Property backendServerPort: Backend server can listen on ports from 0 to 65535. This parameter is required.
          */
         public Builder backendServerPort(final com.aliyun.ros.cdk.core.IResolvable backendServerPort) {
             this.props.backendServerPort(backendServerPort);
@@ -477,6 +476,33 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder enableHttp2(final com.aliyun.ros.cdk.core.IResolvable enableHttp2) {
             this.props.enableHttp2(enableHttp2);
+            return this;
+        }
+
+        /**
+         * Property fullNatEnabled: When Full NAT mode is enabled, it can support the backend servers as clients for access.
+         * <p>
+         * Default value is false.
+         * Note: Only effective for TCP or UDP listener.
+         * <p>
+         * @return {@code this}
+         * @param fullNatEnabled Property fullNatEnabled: When Full NAT mode is enabled, it can support the backend servers as clients for access. This parameter is required.
+         */
+        public Builder fullNatEnabled(final java.lang.Boolean fullNatEnabled) {
+            this.props.fullNatEnabled(fullNatEnabled);
+            return this;
+        }
+        /**
+         * Property fullNatEnabled: When Full NAT mode is enabled, it can support the backend servers as clients for access.
+         * <p>
+         * Default value is false.
+         * Note: Only effective for TCP or UDP listener.
+         * <p>
+         * @return {@code this}
+         * @param fullNatEnabled Property fullNatEnabled: When Full NAT mode is enabled, it can support the backend servers as clients for access. This parameter is required.
+         */
+        public Builder fullNatEnabled(final com.aliyun.ros.cdk.core.IResolvable fullNatEnabled) {
+            this.props.fullNatEnabled(fullNatEnabled);
             return this;
         }
 

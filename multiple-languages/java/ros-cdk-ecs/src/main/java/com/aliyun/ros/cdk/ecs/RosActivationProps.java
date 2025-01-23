@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-activation
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:07.184Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:38.139Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosActivationProps")
 @software.amazon.jsii.Jsii.Proxy(RosActivationProps.Jsii$Proxy.class)
 public interface RosActivationProps extends software.amazon.jsii.JsiiSerializable {
@@ -36,6 +36,12 @@ public interface RosActivationProps extends software.amazon.jsii.JsiiSerializabl
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.RosActivation.TagsProperty> getTags() {
         return null;
     }
@@ -60,6 +66,7 @@ public interface RosActivationProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object instanceCount;
         java.lang.Object instanceName;
         java.lang.Object ipAddressRange;
+        java.lang.Object resourceGroupId;
         java.util.List<com.aliyun.ros.cdk.ecs.RosActivation.TagsProperty> tags;
         java.lang.Object timeToLiveInHours;
 
@@ -144,6 +151,26 @@ public interface RosActivationProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosActivationProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosActivationProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosActivationProps#getTags}
          * @param tags the value to be set.
          * @return {@code this}
@@ -194,6 +221,7 @@ public interface RosActivationProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object instanceCount;
         private final java.lang.Object instanceName;
         private final java.lang.Object ipAddressRange;
+        private final java.lang.Object resourceGroupId;
         private final java.util.List<com.aliyun.ros.cdk.ecs.RosActivation.TagsProperty> tags;
         private final java.lang.Object timeToLiveInHours;
 
@@ -207,6 +235,7 @@ public interface RosActivationProps extends software.amazon.jsii.JsiiSerializabl
             this.instanceCount = software.amazon.jsii.Kernel.get(this, "instanceCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ipAddressRange = software.amazon.jsii.Kernel.get(this, "ipAddressRange", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosActivation.TagsProperty.class)));
             this.timeToLiveInHours = software.amazon.jsii.Kernel.get(this, "timeToLiveInHours", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -221,6 +250,7 @@ public interface RosActivationProps extends software.amazon.jsii.JsiiSerializabl
             this.instanceCount = builder.instanceCount;
             this.instanceName = builder.instanceName;
             this.ipAddressRange = builder.ipAddressRange;
+            this.resourceGroupId = builder.resourceGroupId;
             this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosActivation.TagsProperty>)builder.tags;
             this.timeToLiveInHours = builder.timeToLiveInHours;
         }
@@ -243,6 +273,11 @@ public interface RosActivationProps extends software.amazon.jsii.JsiiSerializabl
         @Override
         public final java.lang.Object getIpAddressRange() {
             return this.ipAddressRange;
+        }
+
+        @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
         }
 
         @Override
@@ -273,6 +308,9 @@ public interface RosActivationProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getIpAddressRange() != null) {
                 data.set("ipAddressRange", om.valueToTree(this.getIpAddressRange()));
             }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
             }
@@ -301,6 +339,7 @@ public interface RosActivationProps extends software.amazon.jsii.JsiiSerializabl
             if (this.instanceCount != null ? !this.instanceCount.equals(that.instanceCount) : that.instanceCount != null) return false;
             if (this.instanceName != null ? !this.instanceName.equals(that.instanceName) : that.instanceName != null) return false;
             if (this.ipAddressRange != null ? !this.ipAddressRange.equals(that.ipAddressRange) : that.ipAddressRange != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             return this.timeToLiveInHours != null ? this.timeToLiveInHours.equals(that.timeToLiveInHours) : that.timeToLiveInHours == null;
         }
@@ -311,6 +350,7 @@ public interface RosActivationProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.instanceCount != null ? this.instanceCount.hashCode() : 0);
             result = 31 * result + (this.instanceName != null ? this.instanceName.hashCode() : 0);
             result = 31 * result + (this.ipAddressRange != null ? this.ipAddressRange.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.timeToLiveInHours != null ? this.timeToLiveInHours.hashCode() : 0);
             return result;

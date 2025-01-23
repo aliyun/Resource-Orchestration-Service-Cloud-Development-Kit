@@ -124,20 +124,31 @@ export interface GroupMetricRuleProps {
 }
 
 /**
+ * Represents a `GroupMetricRule`.
+ */
+export interface IGroupMetricRule extends ros.IResource {
+    readonly props: GroupMetricRuleProps;
+
+    /**
+     * Attribute RuleId: Rule ID.
+     */
+    readonly attrRuleId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::GroupMetricRule`, which is used to create an alert rule for an application group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGroupMetricRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-groupmetricrule
  */
-export class GroupMetricRule extends ros.Resource {
+export class GroupMetricRule extends ros.Resource implements IGroupMetricRule {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: GroupMetricRuleProps;
+    public readonly props: GroupMetricRuleProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RuleId: Rule ID.
      */
-    public readonly attrRuleId: ros.IResolvable;
+    public readonly attrRuleId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

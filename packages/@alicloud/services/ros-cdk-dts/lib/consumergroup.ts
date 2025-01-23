@@ -31,30 +31,51 @@ export interface ConsumerGroupProps {
 }
 
 /**
+ * Represents a `ConsumerGroup`.
+ */
+export interface IConsumerGroup extends ros.IResource {
+    readonly props: ConsumerGroupProps;
+
+    /**
+     * Attribute ConsumerGroupID: Consumer group ID
+     */
+    readonly attrConsumerGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute ConsumerGroupName: Consumer group name
+     */
+    readonly attrConsumerGroupName: ros.IResolvable | string;
+
+    /**
+     * Attribute SubscriptionInstanceId: Subscription instance ID
+     */
+    readonly attrSubscriptionInstanceId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::ConsumerGroup`, which is used to create a consumer group for a change tracking instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosConsumerGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-consumergroup
  */
-export class ConsumerGroup extends ros.Resource {
+export class ConsumerGroup extends ros.Resource implements IConsumerGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ConsumerGroupProps;
+    public readonly props: ConsumerGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ConsumerGroupID: Consumer group ID
      */
-    public readonly attrConsumerGroupId: ros.IResolvable;
+    public readonly attrConsumerGroupId: ros.IResolvable | string;
 
     /**
      * Attribute ConsumerGroupName: Consumer group name
      */
-    public readonly attrConsumerGroupName: ros.IResolvable;
+    public readonly attrConsumerGroupName: ros.IResolvable | string;
 
     /**
      * Attribute SubscriptionInstanceId: Subscription instance ID
      */
-    public readonly attrSubscriptionInstanceId: ros.IResolvable;
+    public readonly attrSubscriptionInstanceId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

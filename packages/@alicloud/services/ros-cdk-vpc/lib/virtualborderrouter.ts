@@ -64,35 +64,61 @@ export interface VirtualBorderRouterProps {
 }
 
 /**
+ * Represents a `VirtualBorderRouter`.
+ */
+export interface IVirtualBorderRouter extends ros.IResource {
+    readonly props: VirtualBorderRouterProps;
+
+    /**
+     * Attribute Name: The name of the VBR.
+     */
+    readonly attrName: ros.IResolvable | string;
+
+    /**
+     * Attribute RouteTableId: The ID of the route table of the VBR.
+     */
+    readonly attrRouteTableId: ros.IResolvable | string;
+
+    /**
+     * Attribute VbrId: The ID of the VBR.
+     */
+    readonly attrVbrId: ros.IResolvable | string;
+
+    /**
+     * Attribute VlanInterfaceId: The ID of the VBR interface.
+     */
+    readonly attrVlanInterfaceId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VirtualBorderRouter`, which is used to create a virtual border router (VBR).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVirtualBorderRouter`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-virtualborderrouter
  */
-export class VirtualBorderRouter extends ros.Resource {
+export class VirtualBorderRouter extends ros.Resource implements IVirtualBorderRouter {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: VirtualBorderRouterProps;
+    public readonly props: VirtualBorderRouterProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Name: The name of the VBR.
      */
-    public readonly attrName: ros.IResolvable;
+    public readonly attrName: ros.IResolvable | string;
 
     /**
      * Attribute RouteTableId: The ID of the route table of the VBR.
      */
-    public readonly attrRouteTableId: ros.IResolvable;
+    public readonly attrRouteTableId: ros.IResolvable | string;
 
     /**
      * Attribute VbrId: The ID of the VBR.
      */
-    public readonly attrVbrId: ros.IResolvable;
+    public readonly attrVbrId: ros.IResolvable | string;
 
     /**
      * Attribute VlanInterfaceId: The ID of the VBR interface.
      */
-    public readonly attrVlanInterfaceId: ros.IResolvable;
+    public readonly attrVlanInterfaceId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

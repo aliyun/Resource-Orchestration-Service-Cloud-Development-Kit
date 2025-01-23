@@ -12,20 +12,30 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::EMR::FlowProject`, which is used to create a data development project.
 type FlowProject interface {
 	alicloudroscdkcore.Resource
+	IFlowProject
 	// Attribute CreateTime: The time when the project was created.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute Description: The description of the project.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute FlowProjectId: The ID of the project.
-	AttrFlowProjectId() alicloudroscdkcore.IResolvable
+	AttrFlowProjectId() interface{}
 	// Attribute FlowProjectName: The name of the project.
-	AttrFlowProjectName() alicloudroscdkcore.IResolvable
+	AttrFlowProjectName() interface{}
 	// Attribute GmtModified: The time when the project was modified.
-	AttrGmtModified() alicloudroscdkcore.IResolvable
+	AttrGmtModified() interface{}
 	// Attribute UserId: The ID of the primary account.
-	AttrUserId() alicloudroscdkcore.IResolvable
+	AttrUserId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -40,7 +50,6 @@ type FlowProject interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *FlowProjectProps
-	SetProps(val *FlowProjectProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -53,6 +62,9 @@ type FlowProject interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -105,10 +117,11 @@ type FlowProject interface {
 // The jsii proxy struct for FlowProject
 type jsiiProxy_FlowProject struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IFlowProject
 }
 
-func (j *jsiiProxy_FlowProject) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FlowProject) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -117,8 +130,8 @@ func (j *jsiiProxy_FlowProject) AttrCreateTime() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_FlowProject) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FlowProject) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -127,8 +140,8 @@ func (j *jsiiProxy_FlowProject) AttrDescription() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_FlowProject) AttrFlowProjectId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FlowProject) AttrFlowProjectId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrFlowProjectId",
@@ -137,8 +150,8 @@ func (j *jsiiProxy_FlowProject) AttrFlowProjectId() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_FlowProject) AttrFlowProjectName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FlowProject) AttrFlowProjectName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrFlowProjectName",
@@ -147,8 +160,8 @@ func (j *jsiiProxy_FlowProject) AttrFlowProjectName() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_FlowProject) AttrGmtModified() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FlowProject) AttrGmtModified() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGmtModified",
@@ -157,8 +170,8 @@ func (j *jsiiProxy_FlowProject) AttrGmtModified() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_FlowProject) AttrUserId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FlowProject) AttrUserId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUserId",
@@ -172,6 +185,16 @@ func (j *jsiiProxy_FlowProject) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FlowProject) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -309,17 +332,6 @@ func (j *jsiiProxy_FlowProject)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_FlowProject)SetProps(val *FlowProjectProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_FlowProject)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -411,6 +423,45 @@ func (f *jsiiProxy_FlowProject) ApplyRemovalPolicy(policy alicloudroscdkcore.Rem
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (f *jsiiProxy_FlowProject) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		f,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (f *jsiiProxy_FlowProject) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (f *jsiiProxy_FlowProject) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (f *jsiiProxy_FlowProject) GeneratePhysicalName() *string {

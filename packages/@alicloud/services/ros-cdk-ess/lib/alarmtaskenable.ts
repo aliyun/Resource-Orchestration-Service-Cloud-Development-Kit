@@ -21,14 +21,20 @@ export interface AlarmTaskEnableProps {
 }
 
 /**
+ * Represents a `AlarmTaskEnable`.
+ */
+export interface IAlarmTaskEnable extends ros.IResource {
+    readonly props: AlarmTaskEnableProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::AlarmTaskEnable`, which is used to start an alarm task. You can call this operation to enable alarm tasks when the task is stopped.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAlarmTaskEnable`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-alarmtaskenable
  */
-export class AlarmTaskEnable extends ros.Resource {
+export class AlarmTaskEnable extends ros.Resource implements IAlarmTaskEnable {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AlarmTaskEnableProps;
+    public readonly props: AlarmTaskEnableProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::CR::Repositories`, which is used to query the information about image repositories.
 type Repositories interface {
 	alicloudroscdkcore.Resource
+	IRepositories
 	// Attribute RepoNames: The list of repository names.
-	AttrRepoNames() alicloudroscdkcore.IResolvable
+	AttrRepoNames() interface{}
 	// Attribute Repos: The list of repositories.
-	AttrRepos() alicloudroscdkcore.IResolvable
+	AttrRepos() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type Repositories interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *RepositoriesProps
-	SetProps(val *RepositoriesProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type Repositories interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type Repositories interface {
 // The jsii proxy struct for Repositories
 type jsiiProxy_Repositories struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IRepositories
 }
 
-func (j *jsiiProxy_Repositories) AttrRepoNames() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Repositories) AttrRepoNames() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRepoNames",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_Repositories) AttrRepoNames() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_Repositories) AttrRepos() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Repositories) AttrRepos() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRepos",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_Repositories) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Repositories) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_Repositories)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Repositories)SetProps(val *RepositoriesProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Repositories)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (r *jsiiProxy_Repositories) ApplyRemovalPolicy(policy alicloudroscdkcore.Re
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (r *jsiiProxy_Repositories) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		r,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_Repositories) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		r,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_Repositories) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		r,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (r *jsiiProxy_Repositories) GeneratePhysicalName() *string {

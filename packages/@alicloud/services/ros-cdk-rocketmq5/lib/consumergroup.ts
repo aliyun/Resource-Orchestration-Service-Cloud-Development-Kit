@@ -39,30 +39,51 @@ export interface ConsumerGroupProps {
 }
 
 /**
+ * Represents a `ConsumerGroup`.
+ */
+export interface IConsumerGroup extends ros.IResource {
+    readonly props: ConsumerGroupProps;
+
+    /**
+     * Attribute ConsumerGroupId: The ID of the consumer group.
+     */
+    readonly attrConsumerGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute DeliveryOrderType: Delivery sequence of consumer group.
+     */
+    readonly attrDeliveryOrderType: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: The ID of the instance.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ROCKETMQ5::ConsumerGroup`, which is used to create a consumer group in ApsaraMQ for RocketMQ 5.0.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosConsumerGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-consumergroup
  */
-export class ConsumerGroup extends ros.Resource {
+export class ConsumerGroup extends ros.Resource implements IConsumerGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ConsumerGroupProps;
+    public readonly props: ConsumerGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ConsumerGroupId: The ID of the consumer group.
      */
-    public readonly attrConsumerGroupId: ros.IResolvable;
+    public readonly attrConsumerGroupId: ros.IResolvable | string;
 
     /**
      * Attribute DeliveryOrderType: Delivery sequence of consumer group.
      */
-    public readonly attrDeliveryOrderType: ros.IResolvable;
+    public readonly attrDeliveryOrderType: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: The ID of the instance.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

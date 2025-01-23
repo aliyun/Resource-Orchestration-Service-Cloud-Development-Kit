@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::KeyPairs`, which is used to query key pairs.
 type KeyPairs interface {
 	alicloudroscdkcore.Resource
+	IKeyPairs
 	// Attribute KeyPairNames: The list of key pair names.
-	AttrKeyPairNames() alicloudroscdkcore.IResolvable
+	AttrKeyPairNames() interface{}
 	// Attribute KeyPairs: The list of key pairs.
-	AttrKeyPairs() alicloudroscdkcore.IResolvable
+	AttrKeyPairs() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type KeyPairs interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *KeyPairsProps
-	SetProps(val *KeyPairsProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type KeyPairs interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type KeyPairs interface {
 // The jsii proxy struct for KeyPairs
 type jsiiProxy_KeyPairs struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IKeyPairs
 }
 
-func (j *jsiiProxy_KeyPairs) AttrKeyPairNames() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KeyPairs) AttrKeyPairNames() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrKeyPairNames",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_KeyPairs) AttrKeyPairNames() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_KeyPairs) AttrKeyPairs() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KeyPairs) AttrKeyPairs() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrKeyPairs",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_KeyPairs) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KeyPairs) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_KeyPairs)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_KeyPairs)SetProps(val *KeyPairsProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_KeyPairs)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (k *jsiiProxy_KeyPairs) ApplyRemovalPolicy(policy alicloudroscdkcore.Remova
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (k *jsiiProxy_KeyPairs) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		k,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (k *jsiiProxy_KeyPairs) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		k,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (k *jsiiProxy_KeyPairs) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		k,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (k *jsiiProxy_KeyPairs) GeneratePhysicalName() *string {

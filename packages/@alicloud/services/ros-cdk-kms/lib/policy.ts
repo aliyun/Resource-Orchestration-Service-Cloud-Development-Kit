@@ -45,45 +45,81 @@ export interface PolicyProps {
 }
 
 /**
+ * Represents a `Policy`.
+ */
+export interface IPolicy extends ros.IResource {
+    readonly props: PolicyProps;
+
+    /**
+     * Attribute AccessControlRules: Network Rules info.
+     */
+    readonly attrAccessControlRules: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: Description.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute KmsInstanceId: The scope of the permission policy. You need to specify the KMS instance that you want to access.
+     */
+    readonly attrKmsInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute Permissions: RbacPermission Template, support RbacPermission/Template/CryptoServiceKeyUser and RbacPermission/Template/CryptoServiceSecretUser.
+     */
+    readonly attrPermissions: ros.IResolvable | string;
+
+    /**
+     * Attribute PolicyName: The name of the permission policy.
+     */
+    readonly attrPolicyName: ros.IResolvable | string;
+
+    /**
+     * Attribute Resources: Resources that allowed access by this policy.
+     */
+    readonly attrResources: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Policy`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-policy
  */
-export class Policy extends ros.Resource {
+export class Policy extends ros.Resource implements IPolicy {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: PolicyProps;
+    public readonly props: PolicyProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccessControlRules: Network Rules info.
      */
-    public readonly attrAccessControlRules: ros.IResolvable;
+    public readonly attrAccessControlRules: ros.IResolvable | string;
 
     /**
      * Attribute Description: Description.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute KmsInstanceId: The scope of the permission policy. You need to specify the KMS instance that you want to access.
      */
-    public readonly attrKmsInstanceId: ros.IResolvable;
+    public readonly attrKmsInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute Permissions: RbacPermission Template, support RbacPermission/Template/CryptoServiceKeyUser and RbacPermission/Template/CryptoServiceSecretUser.
      */
-    public readonly attrPermissions: ros.IResolvable;
+    public readonly attrPermissions: ros.IResolvable | string;
 
     /**
      * Attribute PolicyName: The name of the permission policy.
      */
-    public readonly attrPolicyName: ros.IResolvable;
+    public readonly attrPolicyName: ros.IResolvable | string;
 
     /**
      * Attribute Resources: Resources that allowed access by this policy.
      */
-    public readonly attrResources: ros.IResolvable;
+    public readonly attrResources: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

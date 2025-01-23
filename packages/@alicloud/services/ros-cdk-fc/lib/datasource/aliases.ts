@@ -29,25 +29,41 @@ export interface AliasesProps {
 }
 
 /**
+ * Represents a `Aliases`.
+ */
+export interface IAliases extends ros.IResource {
+    readonly props: AliasesProps;
+
+    /**
+     * Attribute AliasNames: The list of alias names.
+     */
+    readonly attrAliasNames: ros.IResolvable | string;
+
+    /**
+     * Attribute Aliases: The list of aliases.
+     */
+    readonly attrAliases: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::FC::Aliases`, which is used to query the aliases of a Function Compute service.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAliases`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-aliases
  */
-export class Aliases extends ros.Resource {
+export class Aliases extends ros.Resource implements IAliases {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AliasesProps;
+    public readonly props: AliasesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AliasNames: The list of alias names.
      */
-    public readonly attrAliasNames: ros.IResolvable;
+    public readonly attrAliasNames: ros.IResolvable | string;
 
     /**
      * Attribute Aliases: The list of aliases.
      */
-    public readonly attrAliases: ros.IResolvable;
+    public readonly attrAliases: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

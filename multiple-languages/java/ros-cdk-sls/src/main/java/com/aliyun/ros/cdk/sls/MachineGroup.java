@@ -5,9 +5,9 @@ package com.aliyun.ros.cdk.sls;
  * <p>
  * Log Service manages all the ECS instances whose logs need to be collected using the Logtail client in the form of machine groups.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:12.336Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:44.527Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.MachineGroup")
-public class MachineGroup extends com.aliyun.ros.cdk.core.Resource {
+public class MachineGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.sls.IMachineGroup {
 
     protected MachineGroup(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -56,15 +56,22 @@ public class MachineGroup extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute GroupName: GroupName of SLS.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrGroupName() {
-        return software.amazon.jsii.Kernel.get(this, "attrGroupName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrGroupName() {
+        return software.amazon.jsii.Kernel.get(this, "attrGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute ProjectName: ProjectName of SLS.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrProjectName() {
-        return software.amazon.jsii.Kernel.get(this, "attrProjectName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrProjectName() {
+        return software.amazon.jsii.Kernel.get(this, "attrProjectName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.sls.MachineGroupProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.sls.MachineGroupProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -81,14 +88,6 @@ public class MachineGroup extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.sls.MachineGroupProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.sls.MachineGroupProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.sls.MachineGroupProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {
@@ -135,7 +134,7 @@ public class MachineGroup extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property groupAttribute: Group attribute, default is null.
          * <p>
-         * The object value is groupToic and externalName
+         * The object value is groupTopic and externalName
          * <p>
          * @return {@code this}
          * @param groupAttribute Property groupAttribute: Group attribute, default is null. This parameter is required.
@@ -147,7 +146,7 @@ public class MachineGroup extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property groupAttribute: Group attribute, default is null.
          * <p>
-         * The object value is groupToic and externalName
+         * The object value is groupTopic and externalName
          * <p>
          * @return {@code this}
          * @param groupAttribute Property groupAttribute: Group attribute, default is null. This parameter is required.

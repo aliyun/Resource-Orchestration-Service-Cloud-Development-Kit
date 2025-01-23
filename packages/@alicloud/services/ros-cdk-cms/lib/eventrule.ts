@@ -45,20 +45,31 @@ export interface EventRuleProps {
 }
 
 /**
+ * Represents a `EventRule`.
+ */
+export interface IEventRule extends ros.IResource {
+    readonly props: EventRuleProps;
+
+    /**
+     * Attribute Data: Number of rows affected.
+     */
+    readonly attrData: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::EventRule`, which is used to create or modify an event-triggered alert rule. If the specified rule name does not exist, an event-triggered alert rule is created. If the specified rule name exists, the specified event-triggered alert rule is modified.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEventRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-eventrule
  */
-export class EventRule extends ros.Resource {
+export class EventRule extends ros.Resource implements IEventRule {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: EventRuleProps;
+    public readonly props: EventRuleProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Data: Number of rows affected.
      */
-    public readonly attrData: ros.IResolvable;
+    public readonly attrData: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

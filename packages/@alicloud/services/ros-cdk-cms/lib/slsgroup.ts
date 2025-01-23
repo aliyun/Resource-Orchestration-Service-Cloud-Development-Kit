@@ -26,35 +26,61 @@ export interface SlsGroupProps {
 }
 
 /**
+ * Represents a `SlsGroup`.
+ */
+export interface ISlsGroup extends ros.IResource {
+    readonly props: SlsGroupProps;
+
+    /**
+     * Attribute CreateTime: The creation time of the Logstore group.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute SlsGroupConfig: The configurations of the Logstore group.
+     */
+    readonly attrSlsGroupConfig: ros.IResolvable | string;
+
+    /**
+     * Attribute SlsGroupDescription: The description of the Logstore group.
+     */
+    readonly attrSlsGroupDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute SlsGroupName: The name of the Logstore group.
+     */
+    readonly attrSlsGroupName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::SlsGroup`, which is used to create a Logstore group for the metrics of Simple Log Service logs.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSlsGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-slsgroup
  */
-export class SlsGroup extends ros.Resource {
+export class SlsGroup extends ros.Resource implements ISlsGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SlsGroupProps;
+    public readonly props: SlsGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateTime: The creation time of the Logstore group.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute SlsGroupConfig: The configurations of the Logstore group.
      */
-    public readonly attrSlsGroupConfig: ros.IResolvable;
+    public readonly attrSlsGroupConfig: ros.IResolvable | string;
 
     /**
      * Attribute SlsGroupDescription: The description of the Logstore group.
      */
-    public readonly attrSlsGroupDescription: ros.IResolvable;
+    public readonly attrSlsGroupDescription: ros.IResolvable | string;
 
     /**
      * Attribute SlsGroupName: The name of the Logstore group.
      */
-    public readonly attrSlsGroupName: ros.IResolvable;
+    public readonly attrSlsGroupName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

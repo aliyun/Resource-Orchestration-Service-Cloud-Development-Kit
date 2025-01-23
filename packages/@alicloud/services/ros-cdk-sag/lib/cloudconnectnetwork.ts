@@ -33,20 +33,31 @@ export interface CloudConnectNetworkProps {
 }
 
 /**
+ * Represents a `CloudConnectNetwork`.
+ */
+export interface ICloudConnectNetwork extends ros.IResource {
+    readonly props: CloudConnectNetworkProps;
+
+    /**
+     * Attribute CcnId: The ID of the CCN instance.
+     */
+    readonly attrCcnId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::CloudConnectNetwork`, which is used to create a Cloud Connect Network (CCN) instance. CNN is a device access matrix composed of Alibaba Cloud distributed Smart Access Gateways (SAGs). You can add multiple SAGs to a CCN instance and then attach the CCN instance to a Cloud Enterprise Network (CEN) instance. In this way, you can connect your local branches to Alibaba Cloud.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCloudConnectNetwork`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-cloudconnectnetwork
  */
-export class CloudConnectNetwork extends ros.Resource {
+export class CloudConnectNetwork extends ros.Resource implements ICloudConnectNetwork {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: CloudConnectNetworkProps;
+    public readonly props: CloudConnectNetworkProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CcnId: The ID of the CCN instance.
      */
-    public readonly attrCcnId: ros.IResolvable;
+    public readonly attrCcnId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

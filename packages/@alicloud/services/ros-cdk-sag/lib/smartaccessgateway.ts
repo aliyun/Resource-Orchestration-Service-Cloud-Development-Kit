@@ -172,25 +172,41 @@ export interface SmartAccessGatewayProps {
 }
 
 /**
+ * Represents a `SmartAccessGateway`.
+ */
+export interface ISmartAccessGateway extends ros.IResource {
+    readonly props: SmartAccessGatewayProps;
+
+    /**
+     * Attribute OrderId: The ID of the order.
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+
+    /**
+     * Attribute SmartAGId: The ID of the SAG instance.
+     */
+    readonly attrSmartAgId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::SmartAccessGateway`, which is used to create a Smart Access Gateway (SAG) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSmartAccessGateway`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-smartaccessgateway
  */
-export class SmartAccessGateway extends ros.Resource {
+export class SmartAccessGateway extends ros.Resource implements ISmartAccessGateway {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SmartAccessGatewayProps;
+    public readonly props: SmartAccessGatewayProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute OrderId: The ID of the order.
      */
-    public readonly attrOrderId: ros.IResolvable;
+    public readonly attrOrderId: ros.IResolvable | string;
 
     /**
      * Attribute SmartAGId: The ID of the SAG instance.
      */
-    public readonly attrSmartAgId: ros.IResolvable;
+    public readonly attrSmartAgId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

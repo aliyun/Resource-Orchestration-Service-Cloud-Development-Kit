@@ -33,20 +33,31 @@ export interface AITaskProps {
 }
 
 /**
+ * Represents a `AITask`.
+ */
+export interface IAITask extends ros.IResource {
+    readonly props: AITaskProps;
+
+    /**
+     * Attribute DBClusterId: The ID of the DB cluster.
+     */
+    readonly attrDbClusterId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::AITask`, which is used to enable the PolarDB for AI feature.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAITask`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-aitask
  */
-export class AITask extends ros.Resource {
+export class AITask extends ros.Resource implements IAITask {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AITaskProps;
+    public readonly props: AITaskProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DBClusterId: The ID of the DB cluster.
      */
-    public readonly attrDbClusterId: ros.IResolvable;
+    public readonly attrDbClusterId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

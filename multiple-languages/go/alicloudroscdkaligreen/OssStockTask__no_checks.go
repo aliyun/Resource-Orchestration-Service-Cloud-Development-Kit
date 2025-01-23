@@ -52,10 +52,6 @@ func (j *jsiiProxy_OssStockTask) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_OssStockTask) validateSetPropsParameters(val *OssStockTaskProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_OssStockTask) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

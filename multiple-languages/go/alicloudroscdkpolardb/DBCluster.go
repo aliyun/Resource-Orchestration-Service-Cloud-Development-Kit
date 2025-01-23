@@ -12,34 +12,44 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::DBCluster`, which is used to create a PolarDB cluster.
 type DBCluster interface {
 	alicloudroscdkcore.Resource
+	IDBCluster
 	// Attribute ClusterConnectionString: The cluster connection string of the db cluster.
-	AttrClusterConnectionString() alicloudroscdkcore.IResolvable
+	AttrClusterConnectionString() interface{}
 	// Attribute ClusterEndpointId: The cluster endpoint ID of the db cluster.
-	AttrClusterEndpointId() alicloudroscdkcore.IResolvable
+	AttrClusterEndpointId() interface{}
 	// Attribute ColdStorageInstanceId: The ID of the cold storage instance.
-	AttrColdStorageInstanceId() alicloudroscdkcore.IResolvable
+	AttrColdStorageInstanceId() interface{}
 	// Attribute CustomConnectionStrings: The custom connection strings of the db cluster.
-	AttrCustomConnectionStrings() alicloudroscdkcore.IResolvable
+	AttrCustomConnectionStrings() interface{}
 	// Attribute CustomEndpointIds: The custom endpoint IDs of the db cluster.
-	AttrCustomEndpointIds() alicloudroscdkcore.IResolvable
+	AttrCustomEndpointIds() interface{}
 	// Attribute DBClusterDescription: The description of the db cluster.
-	AttrDbClusterDescription() alicloudroscdkcore.IResolvable
+	AttrDbClusterDescription() interface{}
 	// Attribute DBClusterId: The ID of the ApsaraDB for POLARDB cluster.
-	AttrDbClusterId() alicloudroscdkcore.IResolvable
+	AttrDbClusterId() interface{}
 	// Attribute DBNodeIds: The ID list of cluster nodes.
-	AttrDbNodeIds() alicloudroscdkcore.IResolvable
+	AttrDbNodeIds() interface{}
 	// Attribute OrderId: The Order ID.
-	AttrOrderId() alicloudroscdkcore.IResolvable
+	AttrOrderId() interface{}
 	// Attribute PrimaryConnectionString: The primary connection string of the db cluster.
-	AttrPrimaryConnectionString() alicloudroscdkcore.IResolvable
+	AttrPrimaryConnectionString() interface{}
 	// Attribute PrimaryConnectionStrings: The primary connection strings of the db cluster.
-	AttrPrimaryConnectionStrings() alicloudroscdkcore.IResolvable
+	AttrPrimaryConnectionStrings() interface{}
 	// Attribute PrimaryEndpointId: The primary endpoint ID of the db cluster.
-	AttrPrimaryEndpointId() alicloudroscdkcore.IResolvable
+	AttrPrimaryEndpointId() interface{}
 	// Attribute PrimaryEndpointIds: The primary endpoint IDs of the db cluster.
-	AttrPrimaryEndpointIds() alicloudroscdkcore.IResolvable
+	AttrPrimaryEndpointIds() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -54,7 +64,6 @@ type DBCluster interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DBClusterProps
-	SetProps(val *DBClusterProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -67,6 +76,9 @@ type DBCluster interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -119,10 +131,11 @@ type DBCluster interface {
 // The jsii proxy struct for DBCluster
 type jsiiProxy_DBCluster struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDBCluster
 }
 
-func (j *jsiiProxy_DBCluster) AttrClusterConnectionString() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrClusterConnectionString() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrClusterConnectionString",
@@ -131,8 +144,8 @@ func (j *jsiiProxy_DBCluster) AttrClusterConnectionString() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrClusterEndpointId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrClusterEndpointId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrClusterEndpointId",
@@ -141,8 +154,8 @@ func (j *jsiiProxy_DBCluster) AttrClusterEndpointId() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrColdStorageInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrColdStorageInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrColdStorageInstanceId",
@@ -151,8 +164,8 @@ func (j *jsiiProxy_DBCluster) AttrColdStorageInstanceId() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrCustomConnectionStrings() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrCustomConnectionStrings() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCustomConnectionStrings",
@@ -161,8 +174,8 @@ func (j *jsiiProxy_DBCluster) AttrCustomConnectionStrings() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrCustomEndpointIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrCustomEndpointIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCustomEndpointIds",
@@ -171,8 +184,8 @@ func (j *jsiiProxy_DBCluster) AttrCustomEndpointIds() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrDbClusterDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrDbClusterDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbClusterDescription",
@@ -181,8 +194,8 @@ func (j *jsiiProxy_DBCluster) AttrDbClusterDescription() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrDbClusterId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrDbClusterId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbClusterId",
@@ -191,8 +204,8 @@ func (j *jsiiProxy_DBCluster) AttrDbClusterId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrDbNodeIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrDbNodeIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbNodeIds",
@@ -201,8 +214,8 @@ func (j *jsiiProxy_DBCluster) AttrDbNodeIds() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrOrderId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrOrderId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOrderId",
@@ -211,8 +224,8 @@ func (j *jsiiProxy_DBCluster) AttrOrderId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrPrimaryConnectionString() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrPrimaryConnectionString() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPrimaryConnectionString",
@@ -221,8 +234,8 @@ func (j *jsiiProxy_DBCluster) AttrPrimaryConnectionString() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrPrimaryConnectionStrings() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrPrimaryConnectionStrings() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPrimaryConnectionStrings",
@@ -231,8 +244,8 @@ func (j *jsiiProxy_DBCluster) AttrPrimaryConnectionStrings() alicloudroscdkcore.
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrPrimaryEndpointId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrPrimaryEndpointId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPrimaryEndpointId",
@@ -241,8 +254,8 @@ func (j *jsiiProxy_DBCluster) AttrPrimaryEndpointId() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrPrimaryEndpointIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrPrimaryEndpointIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPrimaryEndpointIds",
@@ -256,6 +269,16 @@ func (j *jsiiProxy_DBCluster) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DBCluster) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -393,17 +416,6 @@ func (j *jsiiProxy_DBCluster)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DBCluster)SetProps(val *DBClusterProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_DBCluster)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -495,6 +507,45 @@ func (d *jsiiProxy_DBCluster) ApplyRemovalPolicy(policy alicloudroscdkcore.Remov
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_DBCluster) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DBCluster) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DBCluster) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_DBCluster) GeneratePhysicalName() *string {

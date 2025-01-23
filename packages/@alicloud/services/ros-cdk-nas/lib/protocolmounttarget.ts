@@ -68,35 +68,61 @@ export interface ProtocolMountTargetProps {
 }
 
 /**
+ * Represents a `ProtocolMountTarget`.
+ */
+export interface IProtocolMountTarget extends ros.IResource {
+    readonly props: ProtocolMountTargetProps;
+
+    /**
+     * Attribute ExportId: The protocol service exports directory ID.
+     */
+    readonly attrExportId: ros.IResolvable | string;
+
+    /**
+     * Attribute FileSystemId: File system ID.
+     */
+    readonly attrFileSystemId: ros.IResolvable | string;
+
+    /**
+     * Attribute ProtocolMountTargetDomain: The protocol mount target domain.
+     */
+    readonly attrProtocolMountTargetDomain: ros.IResolvable | string;
+
+    /**
+     * Attribute ProtocolServiceId: Protocol service ID.
+     */
+    readonly attrProtocolServiceId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::ProtocolMountTarget`, which is used to create an export directory for a protocol service.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosProtocolMountTarget`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-protocolmounttarget
  */
-export class ProtocolMountTarget extends ros.Resource {
+export class ProtocolMountTarget extends ros.Resource implements IProtocolMountTarget {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ProtocolMountTargetProps;
+    public readonly props: ProtocolMountTargetProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ExportId: The protocol service exports directory ID.
      */
-    public readonly attrExportId: ros.IResolvable;
+    public readonly attrExportId: ros.IResolvable | string;
 
     /**
      * Attribute FileSystemId: File system ID.
      */
-    public readonly attrFileSystemId: ros.IResolvable;
+    public readonly attrFileSystemId: ros.IResolvable | string;
 
     /**
      * Attribute ProtocolMountTargetDomain: The protocol mount target domain.
      */
-    public readonly attrProtocolMountTargetDomain: ros.IResolvable;
+    public readonly attrProtocolMountTargetDomain: ros.IResolvable | string;
 
     /**
      * Attribute ProtocolServiceId: Protocol service ID.
      */
-    public readonly attrProtocolServiceId: ros.IResolvable;
+    public readonly attrProtocolServiceId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

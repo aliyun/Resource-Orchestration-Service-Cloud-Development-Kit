@@ -163,17 +163,6 @@ func (j *jsiiProxy_DedicatedHostClusters) validateSetIdParameters(val *string) e
 	return nil
 }
 
-func (j *jsiiProxy_DedicatedHostClusters) validateSetPropsParameters(val *DedicatedHostClustersProps) error {
-	if val == nil {
-		return fmt.Errorf("parameter val is required, but nil was provided")
-	}
-	if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (j *jsiiProxy_DedicatedHostClusters) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")

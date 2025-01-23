@@ -52,10 +52,6 @@ func (j *jsiiProxy_MigrationJobs) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_MigrationJobs) validateSetPropsParameters(val *MigrationJobsProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_MigrationJobs) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

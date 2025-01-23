@@ -21,6 +21,8 @@ type ActivationProps struct {
 	//
 	// The value can be IPv4 addresses, IPv6 addresses, or CIDR blocks.
 	IpAddressRange interface{} `field:"optional" json:"ipAddressRange" yaml:"ipAddressRange"`
+	// Property resourceGroupId: The ID of the resource group.
+	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 	// Property tags: Tags to attach to instance.
 	//
 	// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.

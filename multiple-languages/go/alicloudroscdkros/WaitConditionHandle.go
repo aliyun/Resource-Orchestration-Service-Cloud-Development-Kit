@@ -14,24 +14,34 @@ import (
 // You can use ALIYUN::ROS::WaitConditionHandle together with ALIYUN::ROS::WaitCondition to manage the execution process of a stack. When you create an Elastic Compute Service (ECS) instance, a signal is sent during the execution of the user data.
 type WaitConditionHandle interface {
 	alicloudroscdkcore.Resource
+	IWaitConditionHandle
 	// Attribute CurlCli: Convenience attribute, provides curl CLI command prefix, which can be used for signalling handle completion or failure.
 	//
 	// You can signal success by adding --data-binary '{"status": "SUCCESS"}' , or signal failure by adding --data-binary '{"status": "FAILURE"}'.
-	AttrCurlCli() alicloudroscdkcore.IResolvable
+	AttrCurlCli() interface{}
 	// Attribute Headers: HTTP POST Headers used for signalling handle completion or failure.
-	AttrHeaders() alicloudroscdkcore.IResolvable
+	AttrHeaders() interface{}
 	// Attribute PowerShellCurlCli: Convenience attribute, provides curl CLI command prefix for PowerShell, which can be used for signalling handle completion or failure.
 	//
 	// As this cmdlet was introduced in PowerShell 3.0, ensure the version of PowerShell satisfies the constraint. (Show the version via $PSVersionTable.PSVersion.) You can signal success by adding -Body '{"status": "SUCCESS"}' , or signal failure by adding -Body '{"status": "FAILURE"}'
-	AttrPowerShellCurlCli() alicloudroscdkcore.IResolvable
+	AttrPowerShellCurlCli() interface{}
 	// Attribute URL: HTTP POST URL used for signalling handle completion or failure.
-	AttrUrl() alicloudroscdkcore.IResolvable
+	AttrUrl() interface{}
 	// Attribute WindowsCurlCli: Convenience attribute, provides curl CLI command prefix for Windows, which can be used for signalling handle completion or failure.
 	//
 	// As Windows does not support curl command, you need to install curl.exe and add it to PATH first. You can signal success by adding --data-binary "{\"status\": \"SUCCESS\"}" , or signal failure by adding --data-binary "{\"status\": \"FAILURE\"}"
-	AttrWindowsCurlCli() alicloudroscdkcore.IResolvable
+	AttrWindowsCurlCli() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -46,7 +56,6 @@ type WaitConditionHandle interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *WaitConditionHandleProps
-	SetProps(val *WaitConditionHandleProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -59,6 +68,9 @@ type WaitConditionHandle interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -111,10 +123,11 @@ type WaitConditionHandle interface {
 // The jsii proxy struct for WaitConditionHandle
 type jsiiProxy_WaitConditionHandle struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IWaitConditionHandle
 }
 
-func (j *jsiiProxy_WaitConditionHandle) AttrCurlCli() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_WaitConditionHandle) AttrCurlCli() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCurlCli",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_WaitConditionHandle) AttrCurlCli() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_WaitConditionHandle) AttrHeaders() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_WaitConditionHandle) AttrHeaders() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHeaders",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_WaitConditionHandle) AttrHeaders() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_WaitConditionHandle) AttrPowerShellCurlCli() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_WaitConditionHandle) AttrPowerShellCurlCli() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPowerShellCurlCli",
@@ -143,8 +156,8 @@ func (j *jsiiProxy_WaitConditionHandle) AttrPowerShellCurlCli() alicloudroscdkco
 	return returns
 }
 
-func (j *jsiiProxy_WaitConditionHandle) AttrUrl() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_WaitConditionHandle) AttrUrl() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUrl",
@@ -153,8 +166,8 @@ func (j *jsiiProxy_WaitConditionHandle) AttrUrl() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_WaitConditionHandle) AttrWindowsCurlCli() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_WaitConditionHandle) AttrWindowsCurlCli() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrWindowsCurlCli",
@@ -168,6 +181,16 @@ func (j *jsiiProxy_WaitConditionHandle) EnableResourcePropertyConstraint() *bool
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WaitConditionHandle) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -305,17 +328,6 @@ func (j *jsiiProxy_WaitConditionHandle)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_WaitConditionHandle)SetProps(val *WaitConditionHandleProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_WaitConditionHandle)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -407,6 +419,45 @@ func (w *jsiiProxy_WaitConditionHandle) ApplyRemovalPolicy(policy alicloudroscdk
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (w *jsiiProxy_WaitConditionHandle) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		w,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (w *jsiiProxy_WaitConditionHandle) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		w,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (w *jsiiProxy_WaitConditionHandle) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		w,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (w *jsiiProxy_WaitConditionHandle) GeneratePhysicalName() *string {

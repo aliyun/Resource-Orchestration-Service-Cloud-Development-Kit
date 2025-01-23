@@ -52,10 +52,6 @@ func (j *jsiiProxy_DhcpOptionsSet) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_DhcpOptionsSet) validateSetPropsParameters(val *DhcpOptionsSetProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_DhcpOptionsSet) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

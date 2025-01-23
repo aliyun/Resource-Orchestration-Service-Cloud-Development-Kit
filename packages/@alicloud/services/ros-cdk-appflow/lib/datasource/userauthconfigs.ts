@@ -29,25 +29,41 @@ export interface UserAuthConfigsProps {
 }
 
 /**
+ * Represents a `UserAuthConfigs`.
+ */
+export interface IUserAuthConfigs extends ros.IResource {
+    readonly props: UserAuthConfigsProps;
+
+    /**
+     * Attribute AuthConfigIds: The list of auth config ids.
+     */
+    readonly attrAuthConfigIds: ros.IResolvable | string;
+
+    /**
+     * Attribute AuthConfigs: The list of auth configs
+     */
+    readonly attrAuthConfigs: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::AppFlow::UserAuthConfigs`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUserAuthConfigs`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-appflow-userauthconfigs
  */
-export class UserAuthConfigs extends ros.Resource {
+export class UserAuthConfigs extends ros.Resource implements IUserAuthConfigs {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: UserAuthConfigsProps;
+    public readonly props: UserAuthConfigsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AuthConfigIds: The list of auth config ids.
      */
-    public readonly attrAuthConfigIds: ros.IResolvable;
+    public readonly attrAuthConfigIds: ros.IResolvable | string;
 
     /**
      * Attribute AuthConfigs: The list of auth configs
      */
-    public readonly attrAuthConfigs: ros.IResolvable;
+    public readonly attrAuthConfigs: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

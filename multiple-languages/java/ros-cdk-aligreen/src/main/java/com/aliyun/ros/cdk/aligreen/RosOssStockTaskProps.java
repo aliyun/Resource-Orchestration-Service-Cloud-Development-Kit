@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.aligreen;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-ossstocktask
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:04.143Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:34.499Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.aligreen.$Module.class, fqn = "@alicloud/ros-cdk-aligreen.RosOssStockTaskProps")
 @software.amazon.jsii.Jsii.Proxy(RosOssStockTaskProps.Jsii$Proxy.class)
 public interface RosOssStockTaskProps extends software.amazon.jsii.JsiiSerializable {

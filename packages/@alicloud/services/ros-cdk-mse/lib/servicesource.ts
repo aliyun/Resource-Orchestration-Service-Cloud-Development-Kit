@@ -53,37 +53,65 @@ export interface ServiceSourceProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::ServiceSource`, which is used to create a Nacos service source.
- * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosServiceSource`for a more convenient development experience.
- * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-servicesource
+ * Represents a `ServiceSource`.
  */
-export class ServiceSource extends ros.Resource {
-    protected scope: ros.Construct;
-    protected id: string;
-    protected props: ServiceSourceProps;
-    protected enableResourcePropertyConstraint: boolean;
+export interface IServiceSource extends ros.IResource {
+    readonly props: ServiceSourceProps;
 
     /**
      * Attribute Address: Registration Address. If not specified, it will be automatically generated based on the selected instance.
      */
-    public readonly attrAddress: ros.IResolvable;
+    readonly attrAddress: ros.IResolvable | string;
 
     /**
      * Attribute GatewayUniqueId: The unique ID of the gateway.
      */
-    public readonly attrGatewayUniqueId: ros.IResolvable;
+    readonly attrGatewayUniqueId: ros.IResolvable | string;
 
     /**
      * Attribute Id: The ID of service source.
      */
-    public readonly attrId: ros.IResolvable;
+    readonly attrId: ros.IResolvable | string;
 
     /**
      * Attribute Name: The name.
 If Type is set to K8S, this parameter specifies the name of the ACK cluster.
 If Type is set to NACOS, this parameter specifies the ID of the Nacos instance.
      */
-    public readonly attrName: ros.IResolvable;
+    readonly attrName: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::ServiceSource`, which is used to create a Nacos service source.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosServiceSource`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-servicesource
+ */
+export class ServiceSource extends ros.Resource implements IServiceSource {
+    protected scope: ros.Construct;
+    protected id: string;
+    public readonly props: ServiceSourceProps;
+    protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Address: Registration Address. If not specified, it will be automatically generated based on the selected instance.
+     */
+    public readonly attrAddress: ros.IResolvable | string;
+
+    /**
+     * Attribute GatewayUniqueId: The unique ID of the gateway.
+     */
+    public readonly attrGatewayUniqueId: ros.IResolvable | string;
+
+    /**
+     * Attribute Id: The ID of service source.
+     */
+    public readonly attrId: ros.IResolvable | string;
+
+    /**
+     * Attribute Name: The name.
+If Type is set to K8S, this parameter specifies the name of the ACK cluster.
+If Type is set to NACOS, this parameter specifies the ID of the Nacos instance.
+     */
+    public readonly attrName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

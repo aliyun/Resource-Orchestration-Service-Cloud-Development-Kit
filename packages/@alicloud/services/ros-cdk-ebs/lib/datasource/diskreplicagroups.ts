@@ -31,25 +31,41 @@ export interface DiskReplicaGroupsProps {
 }
 
 /**
+ * Represents a `DiskReplicaGroups`.
+ */
+export interface IDiskReplicaGroups extends ros.IResource {
+    readonly props: DiskReplicaGroupsProps;
+
+    /**
+     * Attribute DiskReplicaGroups: The list of disk replica groups.
+     */
+    readonly attrDiskReplicaGroups: ros.IResolvable | string;
+
+    /**
+     * Attribute ReplicaGroupIds: The list of replica group IDs.
+     */
+    readonly attrReplicaGroupIds: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::EBS::DiskReplicaGroups`, which is used to query the information about replication pair-consistent groups.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDiskReplicaGroups`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ebs-diskreplicagroups
  */
-export class DiskReplicaGroups extends ros.Resource {
+export class DiskReplicaGroups extends ros.Resource implements IDiskReplicaGroups {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DiskReplicaGroupsProps;
+    public readonly props: DiskReplicaGroupsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DiskReplicaGroups: The list of disk replica groups.
      */
-    public readonly attrDiskReplicaGroups: ros.IResolvable;
+    public readonly attrDiskReplicaGroups: ros.IResolvable | string;
 
     /**
      * Attribute ReplicaGroupIds: The list of replica group IDs.
      */
-    public readonly attrReplicaGroupIds: ros.IResolvable;
+    public readonly attrReplicaGroupIds: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

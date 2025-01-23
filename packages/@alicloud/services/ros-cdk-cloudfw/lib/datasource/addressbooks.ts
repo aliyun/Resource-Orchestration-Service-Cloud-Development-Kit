@@ -35,25 +35,41 @@ export interface AddressBooksProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::CLOUDFW::AddressBooks`, which is used to query the information about address books that are used for access control in Cloud Firewall.
+ * Represents a `AddressBooks`.
+ */
+export interface IAddressBooks extends ros.IResource {
+    readonly props: AddressBooksProps;
+
+    /**
+     * Attribute AddressBooks: The list of address books.
+     */
+    readonly attrAddressBooks: ros.IResolvable | string;
+
+    /**
+     * Attribute GroupUuids: The list of group uuids.
+     */
+    readonly attrGroupUuids: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CLOUDFW::AddressBooks`, which is used to query the information about address books for access control in Cloud Firewall.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAddressBooks`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudfw-addressbooks
  */
-export class AddressBooks extends ros.Resource {
+export class AddressBooks extends ros.Resource implements IAddressBooks {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AddressBooksProps;
+    public readonly props: AddressBooksProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AddressBooks: The list of address books.
      */
-    public readonly attrAddressBooks: ros.IResolvable;
+    public readonly attrAddressBooks: ros.IResolvable | string;
 
     /**
      * Attribute GroupUuids: The list of group uuids.
      */
-    public readonly attrGroupUuids: ros.IResolvable;
+    public readonly attrGroupUuids: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

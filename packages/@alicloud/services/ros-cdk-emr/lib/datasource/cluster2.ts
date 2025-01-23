@@ -54,25 +54,41 @@ export interface Cluster2Props {
 }
 
 /**
+ * Represents a `Cluster2`.
+ */
+export interface ICluster2 extends ros.IResource {
+    readonly props: Cluster2Props;
+
+    /**
+     * Attribute ClusterIds: The list of the cluster id.
+     */
+    readonly attrClusterIds: ros.IResolvable | string;
+
+    /**
+     * Attribute Clusters: The detail of the cluster.
+     */
+    readonly attrClusters: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::EMR::Cluster2`, which is used to query E-MapReduce (EMR) clusters.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster2`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-emr-cluster2
  */
-export class Cluster2 extends ros.Resource {
+export class Cluster2 extends ros.Resource implements ICluster2 {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: Cluster2Props;
+    public readonly props: Cluster2Props;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterIds: The list of the cluster id.
      */
-    public readonly attrClusterIds: ros.IResolvable;
+    public readonly attrClusterIds: ros.IResolvable | string;
 
     /**
      * Attribute Clusters: The detail of the cluster.
      */
-    public readonly attrClusters: ros.IResolvable;
+    public readonly attrClusters: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

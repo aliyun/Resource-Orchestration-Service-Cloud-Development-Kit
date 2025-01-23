@@ -94,25 +94,41 @@ export interface SslCertificateProps {
 }
 
 /**
+ * Represents a `SslCertificate`.
+ */
+export interface ISslCertificate extends ros.IResource {
+    readonly props: SslCertificateProps;
+
+    /**
+     * Attribute CertificateId: The ID of the certificate issued to you.
+     */
+    readonly attrCertificateId: ros.IResolvable | string;
+
+    /**
+     * Attribute OrderId: The ID of the certificate order.
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CAS::SslCertificate`, which is used to create an SSL certificate.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSslCertificate`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cas-sslcertificate
  */
-export class SslCertificate extends ros.Resource {
+export class SslCertificate extends ros.Resource implements ISslCertificate {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SslCertificateProps;
+    public readonly props: SslCertificateProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CertificateId: The ID of the certificate issued to you.
      */
-    public readonly attrCertificateId: ros.IResolvable;
+    public readonly attrCertificateId: ros.IResolvable | string;
 
     /**
      * Attribute OrderId: The ID of the certificate order.
      */
-    public readonly attrOrderId: ros.IResolvable;
+    public readonly attrOrderId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

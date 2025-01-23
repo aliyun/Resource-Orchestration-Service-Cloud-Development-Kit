@@ -88,6 +88,14 @@ func (j *jsiiProxy_RosAssignPrivateIpAddresses) validateSetEnableResourcePropert
 	return nil
 }
 
+func (j *jsiiProxy_RosAssignPrivateIpAddresses) validateSetIpv4PrefixCountParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosAssignPrivateIpAddresses) validateSetIpv4PrefixesParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosAssignPrivateIpAddresses) validateSetNetworkInterfaceIdParameters(val interface{}) error {
 	return nil
 }

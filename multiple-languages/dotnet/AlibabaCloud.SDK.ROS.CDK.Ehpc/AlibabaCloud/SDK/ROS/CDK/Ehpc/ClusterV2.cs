@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-clusterv2
     /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Ehpc.ClusterV2), fullyQualifiedName: "@alicloud/ros-cdk-ehpc.ClusterV2", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-ehpc.ClusterV2Props\"}},{\"name\":\"enableResourcePropertyConstraint\",\"optional\":true,\"type\":{\"primitive\":\"boolean\"}}]")]
-    public class ClusterV2 : AlibabaCloud.SDK.ROS.CDK.Core.Resource_
+    public class ClusterV2 : AlibabaCloud.SDK.ROS.CDK.Core.Resource_, AlibabaCloud.SDK.ROS.CDK.Ehpc.IClusterV2
     {
         /// <summary>Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.</summary>
         public ClusterV2(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Ehpc.IClusterV2Props props, bool? enableResourcePropertyConstraint = null): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
@@ -38,10 +38,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         }
 
         /// <summary>Attribute ClusterId: Cluster Id.</summary>
-        [JsiiProperty(name: "attrClusterId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClusterId
+        [JsiiProperty(name: "attrClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrClusterId
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
+        }
+
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-ehpc.ClusterV2Props\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Ehpc.IClusterV2Props Props
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Ehpc.IClusterV2Props>()!;
         }
 
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
@@ -55,13 +61,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         protected virtual string Id
         {
             get => GetInstanceProperty<string>()!;
-            set => SetInstanceProperty(value);
-        }
-
-        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-ehpc.ClusterV2Props\"}")]
-        protected virtual AlibabaCloud.SDK.ROS.CDK.Ehpc.IClusterV2Props Props
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Ehpc.IClusterV2Props>()!;
             set => SetInstanceProperty(value);
         }
 

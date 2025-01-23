@@ -24,70 +24,131 @@ export interface HaVipProps {
 }
 
 /**
+ * Represents a `HaVip`.
+ */
+export interface IHaVip extends ros.IResource {
+    readonly props: HaVipProps;
+
+    /**
+     * Attribute AssociatedEipAddresses: EIP bound to HaVip.
+     */
+    readonly attrAssociatedEipAddresses: ros.IResolvable | string;
+
+    /**
+     * Attribute AssociatedInstanceType: The type of the instance that is bound to the VIIP.
+     */
+    readonly attrAssociatedInstanceType: ros.IResolvable | string;
+
+    /**
+     * Attribute AssociatedInstances: An ECS instance that is bound to HaVip.
+     */
+    readonly attrAssociatedInstances: ros.IResolvable | string;
+
+    /**
+     * Attribute CreateTime: The creation time of the  resource.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: Dependence of a HaVip instance.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute HaVipId: The  ID of the resource.
+     */
+    readonly attrHaVipId: ros.IResolvable | string;
+
+    /**
+     * Attribute HaVipName: The name of the HaVip instance.
+     */
+    readonly attrHaVipName: ros.IResolvable | string;
+
+    /**
+     * Attribute IpAddress: IP address of private network.
+     */
+    readonly attrIpAddress: ros.IResolvable | string;
+
+    /**
+     * Attribute MasterInstanceId: The primary instance ID bound to HaVip.
+     */
+    readonly attrMasterInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute VSwitchId: The switch ID to which the HaVip instance belongs.
+     */
+    readonly attrVSwitchId: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcId: The VPC ID to which the HaVip instance belongs.
+     */
+    readonly attrVpcId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::HaVip`, which is used to query a high-availability virtual IP address (HAVIP).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosHaVip`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-havip
  */
-export class HaVip extends ros.Resource {
+export class HaVip extends ros.Resource implements IHaVip {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: HaVipProps;
+    public readonly props: HaVipProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AssociatedEipAddresses: EIP bound to HaVip.
      */
-    public readonly attrAssociatedEipAddresses: ros.IResolvable;
+    public readonly attrAssociatedEipAddresses: ros.IResolvable | string;
 
     /**
      * Attribute AssociatedInstanceType: The type of the instance that is bound to the VIIP.
      */
-    public readonly attrAssociatedInstanceType: ros.IResolvable;
+    public readonly attrAssociatedInstanceType: ros.IResolvable | string;
 
     /**
      * Attribute AssociatedInstances: An ECS instance that is bound to HaVip.
      */
-    public readonly attrAssociatedInstances: ros.IResolvable;
+    public readonly attrAssociatedInstances: ros.IResolvable | string;
 
     /**
      * Attribute CreateTime: The creation time of the  resource.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute Description: Dependence of a HaVip instance.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute HaVipId: The  ID of the resource.
      */
-    public readonly attrHaVipId: ros.IResolvable;
+    public readonly attrHaVipId: ros.IResolvable | string;
 
     /**
      * Attribute HaVipName: The name of the HaVip instance.
      */
-    public readonly attrHaVipName: ros.IResolvable;
+    public readonly attrHaVipName: ros.IResolvable | string;
 
     /**
      * Attribute IpAddress: IP address of private network.
      */
-    public readonly attrIpAddress: ros.IResolvable;
+    public readonly attrIpAddress: ros.IResolvable | string;
 
     /**
      * Attribute MasterInstanceId: The primary instance ID bound to HaVip.
      */
-    public readonly attrMasterInstanceId: ros.IResolvable;
+    public readonly attrMasterInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute VSwitchId: The switch ID to which the HaVip instance belongs.
      */
-    public readonly attrVSwitchId: ros.IResolvable;
+    public readonly attrVSwitchId: ros.IResolvable | string;
 
     /**
      * Attribute VpcId: The VPC ID to which the HaVip instance belongs.
      */
-    public readonly attrVpcId: ros.IResolvable;
+    public readonly attrVpcId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

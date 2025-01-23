@@ -24,55 +24,101 @@ export interface MigrationJobProps {
 }
 
 /**
+ * Represents a `MigrationJob`.
+ */
+export interface IMigrationJob extends ros.IResource {
+    readonly props: MigrationJobProps;
+
+    /**
+     * Attribute CreateTime: The task creation time, which follows the yyyy-MM-ddTHH:mm:ssZ(UTC time).
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute DestinationEndpointEngineName: The target database engine type.
+     */
+    readonly attrDestinationEndpointEngineName: ros.IResolvable | string;
+
+    /**
+     * Attribute DestinationSourceEndpointRegion: The target database engine type.
+     */
+    readonly attrDestinationSourceEndpointRegion: ros.IResolvable | string;
+
+    /**
+     * Attribute DtsInstanceId: The ID of the synchronization instance.
+     */
+    readonly attrDtsInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceClass: The specification of the migration or synchronization instance.
+     */
+    readonly attrInstanceClass: ros.IResolvable | string;
+
+    /**
+     * Attribute PaymentType: The payment type of the resource.
+     */
+    readonly attrPaymentType: ros.IResolvable | string;
+
+    /**
+     * Attribute SourceEndpointEngineName: The type of the source instance database engine.
+     */
+    readonly attrSourceEndpointEngineName: ros.IResolvable | string;
+
+    /**
+     * Attribute SourceEndpointRegion: The type of the source instance database engine.
+     */
+    readonly attrSourceEndpointRegion: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::DTS::MigrationJob`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMigrationJob`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dts-migrationjob
  */
-export class MigrationJob extends ros.Resource {
+export class MigrationJob extends ros.Resource implements IMigrationJob {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: MigrationJobProps;
+    public readonly props: MigrationJobProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateTime: The task creation time, which follows the yyyy-MM-ddTHH:mm:ssZ(UTC time).
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute DestinationEndpointEngineName: The target database engine type.
      */
-    public readonly attrDestinationEndpointEngineName: ros.IResolvable;
+    public readonly attrDestinationEndpointEngineName: ros.IResolvable | string;
 
     /**
      * Attribute DestinationSourceEndpointRegion: The target database engine type.
      */
-    public readonly attrDestinationSourceEndpointRegion: ros.IResolvable;
+    public readonly attrDestinationSourceEndpointRegion: ros.IResolvable | string;
 
     /**
      * Attribute DtsInstanceId: The ID of the synchronization instance.
      */
-    public readonly attrDtsInstanceId: ros.IResolvable;
+    public readonly attrDtsInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute InstanceClass: The specification of the migration or synchronization instance.
      */
-    public readonly attrInstanceClass: ros.IResolvable;
+    public readonly attrInstanceClass: ros.IResolvable | string;
 
     /**
      * Attribute PaymentType: The payment type of the resource.
      */
-    public readonly attrPaymentType: ros.IResolvable;
+    public readonly attrPaymentType: ros.IResolvable | string;
 
     /**
      * Attribute SourceEndpointEngineName: The type of the source instance database engine.
      */
-    public readonly attrSourceEndpointEngineName: ros.IResolvable;
+    public readonly attrSourceEndpointEngineName: ros.IResolvable | string;
 
     /**
      * Attribute SourceEndpointRegion: The type of the source instance database engine.
      */
-    public readonly attrSourceEndpointRegion: ros.IResolvable;
+    public readonly attrSourceEndpointRegion: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

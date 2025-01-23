@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::AutoProvisioningGroup</code>, which is used to create an auto provisioning group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:06.933Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:37.795Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.AutoProvisioningGroup")
-public class AutoProvisioningGroup extends com.aliyun.ros.cdk.core.Resource {
+public class AutoProvisioningGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IAutoProvisioningGroup {
 
     protected AutoProvisioningGroup(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -43,15 +43,22 @@ public class AutoProvisioningGroup extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute AutoProvisioningGroupId: The ID of the auto provisioning group.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAutoProvisioningGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "attrAutoProvisioningGroupId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAutoProvisioningGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "attrAutoProvisioningGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute AutoProvisioningGroupName: The name of the auto provisioning group.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAutoProvisioningGroupName() {
-        return software.amazon.jsii.Kernel.get(this, "attrAutoProvisioningGroupName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAutoProvisioningGroupName() {
+        return software.amazon.jsii.Kernel.get(this, "attrAutoProvisioningGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.AutoProvisioningGroupProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.AutoProvisioningGroupProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -68,14 +75,6 @@ public class AutoProvisioningGroup extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.AutoProvisioningGroupProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.AutoProvisioningGroupProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.AutoProvisioningGroupProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {
@@ -247,6 +246,27 @@ public class AutoProvisioningGroup extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder checkExecutionStatus(final com.aliyun.ros.cdk.core.IResolvable checkExecutionStatus) {
             this.props.checkExecutionStatus(checkExecutionStatus);
+            return this;
+        }
+
+        /**
+         * Property dataDiskConfig: List of instance data disk information.
+         * <p>
+         * @return {@code this}
+         * @param dataDiskConfig Property dataDiskConfig: List of instance data disk information. This parameter is required.
+         */
+        public Builder dataDiskConfig(final com.aliyun.ros.cdk.core.IResolvable dataDiskConfig) {
+            this.props.dataDiskConfig(dataDiskConfig);
+            return this;
+        }
+        /**
+         * Property dataDiskConfig: List of instance data disk information.
+         * <p>
+         * @return {@code this}
+         * @param dataDiskConfig Property dataDiskConfig: List of instance data disk information. This parameter is required.
+         */
+        public Builder dataDiskConfig(final java.util.List<? extends java.lang.Object> dataDiskConfig) {
+            this.props.dataDiskConfig(dataDiskConfig);
             return this;
         }
 
@@ -461,6 +481,39 @@ public class AutoProvisioningGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property minTargetCapacity: The target minimum capacity of the elastic supply group.
+         * <p>
+         * Value range: Positive integer.
+         * Once you have set this parameter, note that:
+         * Only create one-time synchronous delivery type elastic supply group (AutoProvisioningGroupType = instant), the parameters to take effect.
+         * If the inventory of instances in the current domain is less than this value, the call to the interface will fail and no instance will be created.
+         * If the instance inventory in the current domain is greater than the parameter value, the instance is created normally according to the other parameter values that have been set.
+         * <p>
+         * @return {@code this}
+         * @param minTargetCapacity Property minTargetCapacity: The target minimum capacity of the elastic supply group. This parameter is required.
+         */
+        public Builder minTargetCapacity(final java.lang.String minTargetCapacity) {
+            this.props.minTargetCapacity(minTargetCapacity);
+            return this;
+        }
+        /**
+         * Property minTargetCapacity: The target minimum capacity of the elastic supply group.
+         * <p>
+         * Value range: Positive integer.
+         * Once you have set this parameter, note that:
+         * Only create one-time synchronous delivery type elastic supply group (AutoProvisioningGroupType = instant), the parameters to take effect.
+         * If the inventory of instances in the current domain is less than this value, the call to the interface will fail and no instance will be created.
+         * If the instance inventory in the current domain is greater than the parameter value, the instance is created normally according to the other parameter values that have been set.
+         * <p>
+         * @return {@code this}
+         * @param minTargetCapacity Property minTargetCapacity: The target minimum capacity of the elastic supply group. This parameter is required.
+         */
+        public Builder minTargetCapacity(final com.aliyun.ros.cdk.core.IResolvable minTargetCapacity) {
+            this.props.minTargetCapacity(minTargetCapacity);
+            return this;
+        }
+
+        /**
          * Property payAsYouGoAllocationStrategy: The scale-out policy for pay-as-you-go instances.
          * <p>
          * Valid values:
@@ -513,6 +566,56 @@ public class AutoProvisioningGroup extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder payAsYouGoTargetCapacity(final com.aliyun.ros.cdk.core.IResolvable payAsYouGoTargetCapacity) {
             this.props.payAsYouGoTargetCapacity(payAsYouGoTargetCapacity);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: The resource group ID.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The resource group ID. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: The resource group ID.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The resource group ID. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * Property resourcePoolOptions: Resource pooling policy to use when creating an instance.
+         * <p>
+         * Once you have set this parameter, note that:
+         * This parameter only applies if a pay-as-you-go instance is created.
+         * Only create one-time synchronous delivery type elastic supply group (AutoProvisioningGroupType = instant), the parameters to take effect.
+         * <p>
+         * @return {@code this}
+         * @param resourcePoolOptions Property resourcePoolOptions: Resource pooling policy to use when creating an instance. This parameter is required.
+         */
+        public Builder resourcePoolOptions(final com.aliyun.ros.cdk.core.IResolvable resourcePoolOptions) {
+            this.props.resourcePoolOptions(resourcePoolOptions);
+            return this;
+        }
+        /**
+         * Property resourcePoolOptions: Resource pooling policy to use when creating an instance.
+         * <p>
+         * Once you have set this parameter, note that:
+         * This parameter only applies if a pay-as-you-go instance is created.
+         * Only create one-time synchronous delivery type elastic supply group (AutoProvisioningGroupType = instant), the parameters to take effect.
+         * <p>
+         * @return {@code this}
+         * @param resourcePoolOptions Property resourcePoolOptions: Resource pooling policy to use when creating an instance. This parameter is required.
+         */
+        public Builder resourcePoolOptions(final com.aliyun.ros.cdk.ecs.RosAutoProvisioningGroup.ResourcePoolOptionsProperty resourcePoolOptions) {
+            this.props.resourcePoolOptions(resourcePoolOptions);
             return this;
         }
 
@@ -627,6 +730,27 @@ public class AutoProvisioningGroup extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder spotTargetCapacity(final com.aliyun.ros.cdk.core.IResolvable spotTargetCapacity) {
             this.props.spotTargetCapacity(spotTargetCapacity);
+            return this;
+        }
+
+        /**
+         * Property systemDiskConfig: List of instance system disk information.
+         * <p>
+         * @return {@code this}
+         * @param systemDiskConfig Property systemDiskConfig: List of instance system disk information. This parameter is required.
+         */
+        public Builder systemDiskConfig(final com.aliyun.ros.cdk.core.IResolvable systemDiskConfig) {
+            this.props.systemDiskConfig(systemDiskConfig);
+            return this;
+        }
+        /**
+         * Property systemDiskConfig: List of instance system disk information.
+         * <p>
+         * @return {@code this}
+         * @param systemDiskConfig Property systemDiskConfig: List of instance system disk information. This parameter is required.
+         */
+        public Builder systemDiskConfig(final java.util.List<? extends java.lang.Object> systemDiskConfig) {
+            this.props.systemDiskConfig(systemDiskConfig);
             return this;
         }
 

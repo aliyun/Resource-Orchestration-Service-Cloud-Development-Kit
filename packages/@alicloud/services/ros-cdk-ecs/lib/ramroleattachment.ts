@@ -27,25 +27,41 @@ export interface RamRoleAttachmentProps {
 }
 
 /**
+ * Represents a `RamRoleAttachment`.
+ */
+export interface IRamRoleAttachment extends ros.IResource {
+    readonly props: RamRoleAttachmentProps;
+
+    /**
+     * Attribute InstanceIds: The list of ecs instance id
+     */
+    readonly attrInstanceIds: ros.IResolvable | string;
+
+    /**
+     * Attribute RamRoleName: The ram role name.
+     */
+    readonly attrRamRoleName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::RamRoleAttachment`, which is used to attach an instance Resource Access Management (RAM) role to Elastic Compute Service (ECS) instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRamRoleAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-ramroleattachment
  */
-export class RamRoleAttachment extends ros.Resource {
+export class RamRoleAttachment extends ros.Resource implements IRamRoleAttachment {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: RamRoleAttachmentProps;
+    public readonly props: RamRoleAttachmentProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceIds: The list of ecs instance id
      */
-    public readonly attrInstanceIds: ros.IResolvable;
+    public readonly attrInstanceIds: ros.IResolvable | string;
 
     /**
      * Attribute RamRoleName: The ram role name.
      */
-    public readonly attrRamRoleName: ros.IResolvable;
+    public readonly attrRamRoleName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

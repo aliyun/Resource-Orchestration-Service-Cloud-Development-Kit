@@ -29,20 +29,31 @@ export interface BgpPeerProps {
 }
 
 /**
+ * Represents a `BgpPeer`.
+ */
+export interface IBgpPeer extends ros.IResource {
+    readonly props: BgpPeerProps;
+
+    /**
+     * Attribute BgpPeerId: The ID of the BGP peer.
+     */
+    readonly attrBgpPeerId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::BgpPeer`, which is used to add a Border Gateway Protocol (BGP) peer to a specific BGP group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBgpPeer`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgppeer
  */
-export class BgpPeer extends ros.Resource {
+export class BgpPeer extends ros.Resource implements IBgpPeer {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: BgpPeerProps;
+    public readonly props: BgpPeerProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute BgpPeerId: The ID of the BGP peer.
      */
-    public readonly attrBgpPeerId: ros.IResolvable;
+    public readonly attrBgpPeerId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -14,10 +14,20 @@ import (
 // If the specified rule name does not exist, an event-triggered alert rule is created. If the specified rule name exists, the specified event-triggered alert rule is modified.
 type EventRule interface {
 	alicloudroscdkcore.Resource
+	IEventRule
 	// Attribute Data: Number of rows affected.
-	AttrData() alicloudroscdkcore.IResolvable
+	AttrData() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type EventRule interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *EventRuleProps
-	SetProps(val *EventRuleProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type EventRule interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type EventRule interface {
 // The jsii proxy struct for EventRule
 type jsiiProxy_EventRule struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IEventRule
 }
 
-func (j *jsiiProxy_EventRule) AttrData() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_EventRule) AttrData() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrData",
@@ -114,6 +127,16 @@ func (j *jsiiProxy_EventRule) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EventRule) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -251,17 +274,6 @@ func (j *jsiiProxy_EventRule)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_EventRule)SetProps(val *EventRuleProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_EventRule)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -353,6 +365,45 @@ func (e *jsiiProxy_EventRule) ApplyRemovalPolicy(policy alicloudroscdkcore.Remov
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (e *jsiiProxy_EventRule) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		e,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (e *jsiiProxy_EventRule) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		e,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (e *jsiiProxy_EventRule) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		e,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (e *jsiiProxy_EventRule) GeneratePhysicalName() *string {

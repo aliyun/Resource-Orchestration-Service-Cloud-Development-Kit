@@ -46,25 +46,41 @@ export interface ManagedPrometheusProps {
 }
 
 /**
+ * Represents a `ManagedPrometheus`.
+ */
+export interface IManagedPrometheus extends ros.IResource {
+    readonly props: ManagedPrometheusProps;
+
+    /**
+     * Attribute ClusterType: The type of the cluster.
+     */
+    readonly attrClusterType: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcId: The vpc ID of the cluster.
+     */
+    readonly attrVpcId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::ManagedPrometheus`, which is used to install a Prometheus instance to monitor a serverless Kubernetes (ASK) cluster or an Elastic Compute Service (ECS) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosManagedPrometheus`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-managedprometheus
  */
-export class ManagedPrometheus extends ros.Resource {
+export class ManagedPrometheus extends ros.Resource implements IManagedPrometheus {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ManagedPrometheusProps;
+    public readonly props: ManagedPrometheusProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterType: The type of the cluster.
      */
-    public readonly attrClusterType: ros.IResolvable;
+    public readonly attrClusterType: ros.IResolvable | string;
 
     /**
      * Attribute VpcId: The vpc ID of the cluster.
      */
-    public readonly attrVpcId: ros.IResolvable;
+    public readonly attrVpcId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

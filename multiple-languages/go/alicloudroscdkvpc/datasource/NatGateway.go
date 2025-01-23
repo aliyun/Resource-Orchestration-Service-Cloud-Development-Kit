@@ -12,91 +12,101 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::NatGateway`, which is used to query the information about a NAT gateway.
 type NatGateway interface {
 	alicloudroscdkcore.Resource
+	INatGateway
 	// Attribute AutoPay: Indicates whether automatic payment is enabled.
 	//
 	// Valid values:
 	// false: no
 	// true: yes.
-	AttrAutoPay() alicloudroscdkcore.IResolvable
+	AttrAutoPay() interface{}
 	// Attribute BusinessStatus: The status of the NAT gateway.
 	//
 	// Valid values:
 	// Normal: normal
 	// FinancialLocked: locked due to overdue payments.
-	AttrBusinessStatus() alicloudroscdkcore.IResolvable
+	AttrBusinessStatus() interface{}
 	// Attribute CreateTime: The time when the NAT gateway was created.
 	//
 	// The time follows the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. The time is displayed in UTC.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute DeletionProtection: Indicates whether the deletion protection feature is enabled.
 	//
 	// Valid values:
 	// true: yes
 	// false: no.
-	AttrDeletionProtection() alicloudroscdkcore.IResolvable
+	AttrDeletionProtection() interface{}
 	// Attribute Description: The description of the NAT gateway.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute EipBindMode: The mode in which the NAT gateway is associated with an elastic IP address (EIP).
 	//
 	// Valid values:
 	// MULTI_BINDED: multi-EIP-to-ENI mode* NAT: NAT mode, which is compatible with IPv4 addresses.
-	AttrEipBindMode() alicloudroscdkcore.IResolvable
+	AttrEipBindMode() interface{}
 	// Attribute ExpiredTime: The time when the NAT gateway expires.
-	AttrExpiredTime() alicloudroscdkcore.IResolvable
+	AttrExpiredTime() interface{}
 	// Attribute ForwardTableIds: The ID of the Destination Network Address Translation (DNAT) table.
-	AttrForwardTableIds() alicloudroscdkcore.IResolvable
+	AttrForwardTableIds() interface{}
 	// Attribute IcmpReplyEnabled: Indicates whether the ICMP non-retrieval feature is enabled.
 	//
 	// Valid values:
 	// true: yes
 	// false: no.
-	AttrIcmpReplyEnabled() alicloudroscdkcore.IResolvable
+	AttrIcmpReplyEnabled() interface{}
 	// Attribute InternetChargeType: The metering method of the NAT gateway.
 	//
 	// Valid values:
 	// PayBySpec: pay-by-specification
 	// PayByLcu: pay-by-CU.
-	AttrInternetChargeType() alicloudroscdkcore.IResolvable
+	AttrInternetChargeType() interface{}
 	// Attribute IpLists: The list of elastic IP addresses (EIPs) that are associated with the Internet NAT gateway.
-	AttrIpLists() alicloudroscdkcore.IResolvable
+	AttrIpLists() interface{}
 	// Attribute NatGatewayId: The ID of the NAT gateway.
-	AttrNatGatewayId() alicloudroscdkcore.IResolvable
+	AttrNatGatewayId() interface{}
 	// Attribute NatGatewayName: The name of the NAT gateway.
 	//
 	// The name must be 1 to 128 characters in length, and cannot start with http:// or https://. If this parameter is not set, the system automatically assigns a name to the NAT gateway.
-	AttrNatGatewayName() alicloudroscdkcore.IResolvable
+	AttrNatGatewayName() interface{}
 	// Attribute NatGatewayPrivateInfo: The private network information about the enhanced Internet NAT gateway.
-	AttrNatGatewayPrivateInfo() alicloudroscdkcore.IResolvable
+	AttrNatGatewayPrivateInfo() interface{}
 	// Attribute NatType: The type of the NAT gateway.
 	//
 	// The value is set to Enhanced (enhanced NAT gateway).
-	AttrNatType() alicloudroscdkcore.IResolvable
+	AttrNatType() interface{}
 	// Attribute NetworkType: The type of NAT gateway.
 	//
 	// Valid values:
 	// internet: an Internet NAT gateway
 	// intranet: a VPC NAT gateway.
-	AttrNetworkType() alicloudroscdkcore.IResolvable
+	AttrNetworkType() interface{}
 	// Attribute PaymentType: The billing method of the NAT gateway.
 	//
 	// Valid values:  PrePaid: subscription PostPaid: pay-as-you-go.
-	AttrPaymentType() alicloudroscdkcore.IResolvable
+	AttrPaymentType() interface{}
 	// Attribute SecurityProtectionEnabled: Indicates whether the firewall feature is enabled.
 	//
 	// Valid values:
 	// false: no
 	// true: yes.
-	AttrSecurityProtectionEnabled() alicloudroscdkcore.IResolvable
+	AttrSecurityProtectionEnabled() interface{}
 	// Attribute SnatTableIds: The ID of the SNAT table of the NAT gateway.
-	AttrSnatTableIds() alicloudroscdkcore.IResolvable
+	AttrSnatTableIds() interface{}
 	// Attribute Spec: The size of the NAT gateway.
 	//
 	// An empty value is returned for the parameter. If InternetChargeType is set to PayByLcu, an empty value is returned.
-	AttrSpec() alicloudroscdkcore.IResolvable
+	AttrSpec() interface{}
 	// Attribute VpcId: The ID of the VPC where the NAT gateway is deployed.
-	AttrVpcId() alicloudroscdkcore.IResolvable
+	AttrVpcId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -111,7 +121,6 @@ type NatGateway interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *NatGatewayProps
-	SetProps(val *NatGatewayProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -124,6 +133,9 @@ type NatGateway interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -176,10 +188,11 @@ type NatGateway interface {
 // The jsii proxy struct for NatGateway
 type jsiiProxy_NatGateway struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_INatGateway
 }
 
-func (j *jsiiProxy_NatGateway) AttrAutoPay() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NatGateway) AttrAutoPay() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAutoPay",
@@ -188,8 +201,8 @@ func (j *jsiiProxy_NatGateway) AttrAutoPay() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_NatGateway) AttrBusinessStatus() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NatGateway) AttrBusinessStatus() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBusinessStatus",
@@ -198,8 +211,8 @@ func (j *jsiiProxy_NatGateway) AttrBusinessStatus() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_NatGateway) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NatGateway) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -208,8 +221,8 @@ func (j *jsiiProxy_NatGateway) AttrCreateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_NatGateway) AttrDeletionProtection() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NatGateway) AttrDeletionProtection() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDeletionProtection",
@@ -218,8 +231,8 @@ func (j *jsiiProxy_NatGateway) AttrDeletionProtection() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_NatGateway) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NatGateway) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -228,8 +241,8 @@ func (j *jsiiProxy_NatGateway) AttrDescription() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_NatGateway) AttrEipBindMode() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NatGateway) AttrEipBindMode() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEipBindMode",
@@ -238,8 +251,8 @@ func (j *jsiiProxy_NatGateway) AttrEipBindMode() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_NatGateway) AttrExpiredTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NatGateway) AttrExpiredTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrExpiredTime",
@@ -248,8 +261,8 @@ func (j *jsiiProxy_NatGateway) AttrExpiredTime() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_NatGateway) AttrForwardTableIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NatGateway) AttrForwardTableIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrForwardTableIds",
@@ -258,8 +271,8 @@ func (j *jsiiProxy_NatGateway) AttrForwardTableIds() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_NatGateway) AttrIcmpReplyEnabled() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NatGateway) AttrIcmpReplyEnabled() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIcmpReplyEnabled",
@@ -268,8 +281,8 @@ func (j *jsiiProxy_NatGateway) AttrIcmpReplyEnabled() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_NatGateway) AttrInternetChargeType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NatGateway) AttrInternetChargeType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInternetChargeType",
@@ -278,8 +291,8 @@ func (j *jsiiProxy_NatGateway) AttrInternetChargeType() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_NatGateway) AttrIpLists() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NatGateway) AttrIpLists() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIpLists",
@@ -288,8 +301,8 @@ func (j *jsiiProxy_NatGateway) AttrIpLists() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_NatGateway) AttrNatGatewayId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NatGateway) AttrNatGatewayId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNatGatewayId",
@@ -298,8 +311,8 @@ func (j *jsiiProxy_NatGateway) AttrNatGatewayId() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_NatGateway) AttrNatGatewayName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NatGateway) AttrNatGatewayName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNatGatewayName",
@@ -308,8 +321,8 @@ func (j *jsiiProxy_NatGateway) AttrNatGatewayName() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_NatGateway) AttrNatGatewayPrivateInfo() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NatGateway) AttrNatGatewayPrivateInfo() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNatGatewayPrivateInfo",
@@ -318,8 +331,8 @@ func (j *jsiiProxy_NatGateway) AttrNatGatewayPrivateInfo() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_NatGateway) AttrNatType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NatGateway) AttrNatType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNatType",
@@ -328,8 +341,8 @@ func (j *jsiiProxy_NatGateway) AttrNatType() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_NatGateway) AttrNetworkType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NatGateway) AttrNetworkType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNetworkType",
@@ -338,8 +351,8 @@ func (j *jsiiProxy_NatGateway) AttrNetworkType() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_NatGateway) AttrPaymentType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NatGateway) AttrPaymentType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPaymentType",
@@ -348,8 +361,8 @@ func (j *jsiiProxy_NatGateway) AttrPaymentType() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_NatGateway) AttrSecurityProtectionEnabled() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NatGateway) AttrSecurityProtectionEnabled() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSecurityProtectionEnabled",
@@ -358,8 +371,8 @@ func (j *jsiiProxy_NatGateway) AttrSecurityProtectionEnabled() alicloudroscdkcor
 	return returns
 }
 
-func (j *jsiiProxy_NatGateway) AttrSnatTableIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NatGateway) AttrSnatTableIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSnatTableIds",
@@ -368,8 +381,8 @@ func (j *jsiiProxy_NatGateway) AttrSnatTableIds() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_NatGateway) AttrSpec() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NatGateway) AttrSpec() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSpec",
@@ -378,8 +391,8 @@ func (j *jsiiProxy_NatGateway) AttrSpec() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_NatGateway) AttrVpcId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NatGateway) AttrVpcId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVpcId",
@@ -393,6 +406,16 @@ func (j *jsiiProxy_NatGateway) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_NatGateway) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -530,17 +553,6 @@ func (j *jsiiProxy_NatGateway)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_NatGateway)SetProps(val *NatGatewayProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_NatGateway)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -632,6 +644,45 @@ func (n *jsiiProxy_NatGateway) ApplyRemovalPolicy(policy alicloudroscdkcore.Remo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (n *jsiiProxy_NatGateway) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		n,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (n *jsiiProxy_NatGateway) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		n,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (n *jsiiProxy_NatGateway) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		n,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (n *jsiiProxy_NatGateway) GeneratePhysicalName() *string {

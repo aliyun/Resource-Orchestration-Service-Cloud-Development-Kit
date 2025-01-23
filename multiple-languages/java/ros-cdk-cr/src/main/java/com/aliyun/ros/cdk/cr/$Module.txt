@@ -1,3 +1,9 @@
+@alicloud/ros-cdk-cr.IInstance=com.aliyun.ros.cdk.cr.IInstance
+@alicloud/ros-cdk-cr.IInstanceEndpointAclPolicy=com.aliyun.ros.cdk.cr.IInstanceEndpointAclPolicy
+@alicloud/ros-cdk-cr.IInstanceVpcEndpointLinkedVpc=com.aliyun.ros.cdk.cr.IInstanceVpcEndpointLinkedVpc
+@alicloud/ros-cdk-cr.INamespace=com.aliyun.ros.cdk.cr.INamespace
+@alicloud/ros-cdk-cr.IRepository=com.aliyun.ros.cdk.cr.IRepository
+@alicloud/ros-cdk-cr.IUserInfo=com.aliyun.ros.cdk.cr.IUserInfo
 @alicloud/ros-cdk-cr.Instance=com.aliyun.ros.cdk.cr.Instance
 @alicloud/ros-cdk-cr.InstanceEndpointAclPolicy=com.aliyun.ros.cdk.cr.InstanceEndpointAclPolicy
 @alicloud/ros-cdk-cr.InstanceEndpointAclPolicyProps=com.aliyun.ros.cdk.cr.InstanceEndpointAclPolicyProps
@@ -24,6 +30,10 @@
 @alicloud/ros-cdk-cr.RosUserInfoProps=com.aliyun.ros.cdk.cr.RosUserInfoProps
 @alicloud/ros-cdk-cr.UserInfo=com.aliyun.ros.cdk.cr.UserInfo
 @alicloud/ros-cdk-cr.UserInfoProps=com.aliyun.ros.cdk.cr.UserInfoProps
+@alicloud/ros-cdk-cr.datasource.IInstance=com.aliyun.ros.cdk.cr.datasource.IInstance
+@alicloud/ros-cdk-cr.datasource.IInstances=com.aliyun.ros.cdk.cr.datasource.IInstances
+@alicloud/ros-cdk-cr.datasource.INamespaces=com.aliyun.ros.cdk.cr.datasource.INamespaces
+@alicloud/ros-cdk-cr.datasource.IRepositories=com.aliyun.ros.cdk.cr.datasource.IRepositories
 @alicloud/ros-cdk-cr.datasource.Instance=com.aliyun.ros.cdk.cr.datasource.Instance
 @alicloud/ros-cdk-cr.datasource.InstanceProps=com.aliyun.ros.cdk.cr.datasource.InstanceProps
 @alicloud/ros-cdk-cr.datasource.Instances=com.aliyun.ros.cdk.cr.datasource.Instances

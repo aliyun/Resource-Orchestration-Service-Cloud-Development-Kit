@@ -44,25 +44,41 @@ export interface PoliciesProps {
 }
 
 /**
+ * Represents a `Policies`.
+ */
+export interface IPolicies extends ros.IResource {
+    readonly props: PoliciesProps;
+
+    /**
+     * Attribute Policies: The list of policies.
+     */
+    readonly attrPolicies: ros.IResolvable | string;
+
+    /**
+     * Attribute PolicyNames: The list of policy names.
+     */
+    readonly attrPolicyNames: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::RAM::Policies`, which is used to query policies.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPolicies`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-policies
  */
-export class Policies extends ros.Resource {
+export class Policies extends ros.Resource implements IPolicies {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: PoliciesProps;
+    public readonly props: PoliciesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Policies: The list of policies.
      */
-    public readonly attrPolicies: ros.IResolvable;
+    public readonly attrPolicies: ros.IResolvable | string;
 
     /**
      * Attribute PolicyNames: The list of policy names.
      */
-    public readonly attrPolicyNames: ros.IResolvable;
+    public readonly attrPolicyNames: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

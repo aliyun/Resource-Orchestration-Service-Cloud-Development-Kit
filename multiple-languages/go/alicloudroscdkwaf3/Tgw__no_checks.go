@@ -52,10 +52,6 @@ func (j *jsiiProxy_Tgw) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_Tgw) validateSetPropsParameters(val *TGWProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_Tgw) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

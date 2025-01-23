@@ -14,6 +14,7 @@ type RosDBInstanceProps struct {
 	DbInstanceDescription interface{} `field:"optional" json:"dbInstanceDescription" yaml:"dbInstanceDescription"`
 	DbInstanceGroupCount interface{} `field:"optional" json:"dbInstanceGroupCount" yaml:"dbInstanceGroupCount"`
 	DbInstanceMode interface{} `field:"optional" json:"dbInstanceMode" yaml:"dbInstanceMode"`
+	DeployMode interface{} `field:"optional" json:"deployMode" yaml:"deployMode"`
 	EncryptionKey interface{} `field:"optional" json:"encryptionKey" yaml:"encryptionKey"`
 	EncryptionType interface{} `field:"optional" json:"encryptionType" yaml:"encryptionType"`
 	IdleTime interface{} `field:"optional" json:"idleTime" yaml:"idleTime"`
@@ -30,6 +31,8 @@ type RosDBInstanceProps struct {
 	SegStorageType interface{} `field:"optional" json:"segStorageType" yaml:"segStorageType"`
 	ServerlessMode interface{} `field:"optional" json:"serverlessMode" yaml:"serverlessMode"`
 	ServerlessResource interface{} `field:"optional" json:"serverlessResource" yaml:"serverlessResource"`
+	StandbyVSwitchId interface{} `field:"optional" json:"standbyVSwitchId" yaml:"standbyVSwitchId"`
+	StandbyZoneId interface{} `field:"optional" json:"standbyZoneId" yaml:"standbyZoneId"`
 	StorageSize interface{} `field:"optional" json:"storageSize" yaml:"storageSize"`
 	Tags *[]*RosDBInstance_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 	VectorConfigurationStatus interface{} `field:"optional" json:"vectorConfigurationStatus" yaml:"vectorConfigurationStatus"`

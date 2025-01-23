@@ -52,10 +52,6 @@ func (j *jsiiProxy_PrepayInstance) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_PrepayInstance) validateSetPropsParameters(val *PrepayInstanceProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_PrepayInstance) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

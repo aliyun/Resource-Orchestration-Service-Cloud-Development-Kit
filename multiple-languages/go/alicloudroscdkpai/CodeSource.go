@@ -12,38 +12,48 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::PAI::CodeSource`.
 type CodeSource interface {
 	alicloudroscdkcore.Resource
+	ICodeSource
 	// Attribute Accessibility: Visibility of the code configuration.
-	AttrAccessibility() alicloudroscdkcore.IResolvable
+	AttrAccessibility() interface{}
 	// Attribute CodeBranch: Code repository branch.
-	AttrCodeBranch() alicloudroscdkcore.IResolvable
+	AttrCodeBranch() interface{}
 	// Attribute CodeCommit: The code CommitId.
-	AttrCodeCommit() alicloudroscdkcore.IResolvable
+	AttrCodeCommit() interface{}
 	// Attribute CodeRepo: Code repository address.
-	AttrCodeRepo() alicloudroscdkcore.IResolvable
+	AttrCodeRepo() interface{}
 	// Attribute CodeRepoAccessToken: The Token used to access the code repository.
-	AttrCodeRepoAccessToken() alicloudroscdkcore.IResolvable
+	AttrCodeRepoAccessToken() interface{}
 	// Attribute CodeRepoUserName: The user name of the code repository.
-	AttrCodeRepoUserName() alicloudroscdkcore.IResolvable
+	AttrCodeRepoUserName() interface{}
 	// Attribute CodeSourcesId: The ID of the created code configuration.
-	AttrCodeSourcesId() alicloudroscdkcore.IResolvable
+	AttrCodeSourcesId() interface{}
 	// Attribute CreateTime: The creation time of the code.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute Description: A detailed description of the code configuration.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute DisplayName: Code source configuration name.
-	AttrDisplayName() alicloudroscdkcore.IResolvable
+	AttrDisplayName() interface{}
 	// Attribute GmtModifyTime: Code configuration modification time.
 	//
 	// The time format is iso8601.
-	AttrGmtModifyTime() alicloudroscdkcore.IResolvable
+	AttrGmtModifyTime() interface{}
 	// Attribute MountPath: The local Mount Directory of the code.
-	AttrMountPath() alicloudroscdkcore.IResolvable
+	AttrMountPath() interface{}
 	// Attribute UserId: The ID of the creator of the code configuration source.
-	AttrUserId() alicloudroscdkcore.IResolvable
+	AttrUserId() interface{}
 	// Attribute WorkspaceId: The ID of the workspace.
-	AttrWorkspaceId() alicloudroscdkcore.IResolvable
+	AttrWorkspaceId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -58,7 +68,6 @@ type CodeSource interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *CodeSourceProps
-	SetProps(val *CodeSourceProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -71,6 +80,9 @@ type CodeSource interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -123,10 +135,11 @@ type CodeSource interface {
 // The jsii proxy struct for CodeSource
 type jsiiProxy_CodeSource struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ICodeSource
 }
 
-func (j *jsiiProxy_CodeSource) AttrAccessibility() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CodeSource) AttrAccessibility() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAccessibility",
@@ -135,8 +148,8 @@ func (j *jsiiProxy_CodeSource) AttrAccessibility() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_CodeSource) AttrCodeBranch() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CodeSource) AttrCodeBranch() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCodeBranch",
@@ -145,8 +158,8 @@ func (j *jsiiProxy_CodeSource) AttrCodeBranch() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_CodeSource) AttrCodeCommit() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CodeSource) AttrCodeCommit() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCodeCommit",
@@ -155,8 +168,8 @@ func (j *jsiiProxy_CodeSource) AttrCodeCommit() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_CodeSource) AttrCodeRepo() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CodeSource) AttrCodeRepo() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCodeRepo",
@@ -165,8 +178,8 @@ func (j *jsiiProxy_CodeSource) AttrCodeRepo() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_CodeSource) AttrCodeRepoAccessToken() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CodeSource) AttrCodeRepoAccessToken() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCodeRepoAccessToken",
@@ -175,8 +188,8 @@ func (j *jsiiProxy_CodeSource) AttrCodeRepoAccessToken() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_CodeSource) AttrCodeRepoUserName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CodeSource) AttrCodeRepoUserName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCodeRepoUserName",
@@ -185,8 +198,8 @@ func (j *jsiiProxy_CodeSource) AttrCodeRepoUserName() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_CodeSource) AttrCodeSourcesId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CodeSource) AttrCodeSourcesId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCodeSourcesId",
@@ -195,8 +208,8 @@ func (j *jsiiProxy_CodeSource) AttrCodeSourcesId() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_CodeSource) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CodeSource) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -205,8 +218,8 @@ func (j *jsiiProxy_CodeSource) AttrCreateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_CodeSource) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CodeSource) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -215,8 +228,8 @@ func (j *jsiiProxy_CodeSource) AttrDescription() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_CodeSource) AttrDisplayName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CodeSource) AttrDisplayName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDisplayName",
@@ -225,8 +238,8 @@ func (j *jsiiProxy_CodeSource) AttrDisplayName() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_CodeSource) AttrGmtModifyTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CodeSource) AttrGmtModifyTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGmtModifyTime",
@@ -235,8 +248,8 @@ func (j *jsiiProxy_CodeSource) AttrGmtModifyTime() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_CodeSource) AttrMountPath() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CodeSource) AttrMountPath() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMountPath",
@@ -245,8 +258,8 @@ func (j *jsiiProxy_CodeSource) AttrMountPath() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_CodeSource) AttrUserId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CodeSource) AttrUserId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUserId",
@@ -255,8 +268,8 @@ func (j *jsiiProxy_CodeSource) AttrUserId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_CodeSource) AttrWorkspaceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CodeSource) AttrWorkspaceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrWorkspaceId",
@@ -270,6 +283,16 @@ func (j *jsiiProxy_CodeSource) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CodeSource) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -407,17 +430,6 @@ func (j *jsiiProxy_CodeSource)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CodeSource)SetProps(val *CodeSourceProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_CodeSource)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -509,6 +521,45 @@ func (c *jsiiProxy_CodeSource) ApplyRemovalPolicy(policy alicloudroscdkcore.Remo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (c *jsiiProxy_CodeSource) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		c,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (c *jsiiProxy_CodeSource) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		c,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (c *jsiiProxy_CodeSource) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (c *jsiiProxy_CodeSource) GeneratePhysicalName() *string {

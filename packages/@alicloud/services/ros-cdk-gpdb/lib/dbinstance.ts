@@ -60,6 +60,11 @@ export interface DBInstanceProps {
     readonly dbInstanceMode?: string | ros.IResolvable;
 
     /**
+     * Property deployMode: The deployment mode of the instance.
+     */
+    readonly deployMode?: string | ros.IResolvable;
+
+    /**
      * Property encryptionKey: If the EncryptionType parameter is set to CloudDisk, you must specify this parameter to the encryption key that is in the same region with the disks that is specified by the EncryptionType parameter. Otherwise, leave this parameter empty.
      */
     readonly encryptionKey?: string | ros.IResolvable;
@@ -159,6 +164,16 @@ export interface DBInstanceProps {
     readonly serverlessResource?: number | ros.IResolvable;
 
     /**
+     * Property standbyVSwitchId: The standby VSwitch ID of the instance.
+     */
+    readonly standbyVSwitchId?: string | ros.IResolvable;
+
+    /**
+     * Property standbyZoneId: The standby zone ID of the instance.
+     */
+    readonly standbyZoneId?: string | ros.IResolvable;
+
+    /**
      * Property storageSize: The storage capacity of per segment node. Unit: GB. Minimum is 50, max is 4000, step is 50.
      */
     readonly storageSize?: number | ros.IResolvable;
@@ -183,35 +198,61 @@ export interface DBInstanceProps {
 }
 
 /**
+ * Represents a `DBInstance`.
+ */
+export interface IDBInstance extends ros.IResource {
+    readonly props: DBInstanceProps;
+
+    /**
+     * Attribute ConnectionString: The endpoint of the instance.
+     */
+    readonly attrConnectionString: ros.IResolvable | string;
+
+    /**
+     * Attribute DBInstanceId: The ID of the instance.
+     */
+    readonly attrDbInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute OrderId: The order ID of the instance.
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+
+    /**
+     * Attribute Port: The port used to connect to the instance.
+     */
+    readonly attrPort: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::DBInstance`, which is used to create an AnalyticDB for PostgreSQL instance in reserved storage mode.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-dbinstance
  */
-export class DBInstance extends ros.Resource {
+export class DBInstance extends ros.Resource implements IDBInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DBInstanceProps;
+    public readonly props: DBInstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ConnectionString: The endpoint of the instance.
      */
-    public readonly attrConnectionString: ros.IResolvable;
+    public readonly attrConnectionString: ros.IResolvable | string;
 
     /**
      * Attribute DBInstanceId: The ID of the instance.
      */
-    public readonly attrDbInstanceId: ros.IResolvable;
+    public readonly attrDbInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute OrderId: The order ID of the instance.
      */
-    public readonly attrOrderId: ros.IResolvable;
+    public readonly attrOrderId: ros.IResolvable | string;
 
     /**
      * Attribute Port: The port used to connect to the instance.
      */
-    public readonly attrPort: ros.IResolvable;
+    public readonly attrPort: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -227,6 +268,7 @@ export class DBInstance extends ros.Resource {
 
         const rosDBInstance = new RosDBInstance(this, id,  {
             masterNodeNum: props.masterNodeNum,
+            standbyZoneId: props.standbyZoneId,
             instanceSpec: props.instanceSpec,
             privateIpAddress: props.privateIpAddress,
             idleTime: props.idleTime,
@@ -234,8 +276,10 @@ export class DBInstance extends ros.Resource {
             segStorageType: props.segStorageType,
             encryptionKey: props.encryptionKey,
             dbInstanceGroupCount: props.dbInstanceGroupCount,
+            standbyVSwitchId: props.standbyVSwitchId,
             dbInstanceCategory: props.dbInstanceCategory,
             vectorConfigurationStatus: props.vectorConfigurationStatus,
+            deployMode: props.deployMode,
             securityIpList: props.securityIpList,
             serverlessResource: props.serverlessResource,
             tags: props.tags,

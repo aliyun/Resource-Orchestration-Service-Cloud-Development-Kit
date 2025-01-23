@@ -36,25 +36,41 @@ export interface SlbBindingProps {
 }
 
 /**
+ * Represents a `SlbBinding`.
+ */
+export interface ISlbBinding extends ros.IResource {
+    readonly props: SlbBindingProps;
+
+    /**
+     * Attribute AppId: Successful application deployment target ID
+     */
+    readonly attrAppId: ros.IResolvable | string;
+
+    /**
+     * Attribute ChangeOrderId: Return to release a single ID, used to query task execution status.
+     */
+    readonly attrChangeOrderId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SAE::SlbBinding`, which is used to bind an SLB instance to an application.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSlbBinding`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-slbbinding
  */
-export class SlbBinding extends ros.Resource {
+export class SlbBinding extends ros.Resource implements ISlbBinding {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SlbBindingProps;
+    public readonly props: SlbBindingProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AppId: Successful application deployment target ID
      */
-    public readonly attrAppId: ros.IResolvable;
+    public readonly attrAppId: ros.IResolvable | string;
 
     /**
      * Attribute ChangeOrderId: Return to release a single ID, used to query task execution status.
      */
-    public readonly attrChangeOrderId: ros.IResolvable;
+    public readonly attrChangeOrderId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

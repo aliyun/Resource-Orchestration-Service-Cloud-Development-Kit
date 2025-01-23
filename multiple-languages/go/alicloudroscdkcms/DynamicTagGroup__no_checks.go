@@ -52,10 +52,6 @@ func (j *jsiiProxy_DynamicTagGroup) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_DynamicTagGroup) validateSetPropsParameters(val *DynamicTagGroupProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_DynamicTagGroup) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

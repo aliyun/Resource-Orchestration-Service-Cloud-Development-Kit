@@ -24,30 +24,51 @@ export interface IpfilterProps {
 }
 
 /**
+ * Represents a `Ipfilter`.
+ */
+export interface IIpfilter extends ros.IResource {
+    readonly props: IpfilterProps;
+
+    /**
+     * Attribute CreateTime: The creation time of the resource.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute IpAddress: The IP address of the resource.
+     */
+    readonly attrIpAddress: ros.IResolvable | string;
+
+    /**
+     * Attribute IpfilterId: The ID of the resource.
+     */
+    readonly attrIpfilterId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::DirectMail::Ipfilter`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosIpfilter`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-directmail-ipfilter
  */
-export class Ipfilter extends ros.Resource {
+export class Ipfilter extends ros.Resource implements IIpfilter {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: IpfilterProps;
+    public readonly props: IpfilterProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateTime: The creation time of the resource.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute IpAddress: The IP address of the resource.
      */
-    public readonly attrIpAddress: ros.IResolvable;
+    public readonly attrIpAddress: ros.IResolvable | string;
 
     /**
      * Attribute IpfilterId: The ID of the resource.
      */
-    public readonly attrIpfilterId: ros.IResolvable;
+    public readonly attrIpfilterId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

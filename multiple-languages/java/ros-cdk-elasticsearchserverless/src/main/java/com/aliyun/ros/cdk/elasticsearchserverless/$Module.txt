@@ -1,5 +1,6 @@
 @alicloud/ros-cdk-elasticsearchserverless.App=com.aliyun.ros.cdk.elasticsearchserverless.App
 @alicloud/ros-cdk-elasticsearchserverless.AppProps=com.aliyun.ros.cdk.elasticsearchserverless.AppProps
+@alicloud/ros-cdk-elasticsearchserverless.IApp=com.aliyun.ros.cdk.elasticsearchserverless.IApp
 @alicloud/ros-cdk-elasticsearchserverless.RosApp=com.aliyun.ros.cdk.elasticsearchserverless.RosApp
 @alicloud/ros-cdk-elasticsearchserverless.RosApp.AuthenticationProperty=com.aliyun.ros.cdk.elasticsearchserverless.RosApp$AuthenticationProperty
 @alicloud/ros-cdk-elasticsearchserverless.RosApp.BasicAuthProperty=com.aliyun.ros.cdk.elasticsearchserverless.RosApp$BasicAuthProperty

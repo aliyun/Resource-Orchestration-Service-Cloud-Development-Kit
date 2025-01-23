@@ -31,20 +31,31 @@ export interface EngineNamespaceProps {
 }
 
 /**
+ * Represents a `EngineNamespace`.
+ */
+export interface IEngineNamespace extends ros.IResource {
+    readonly props: EngineNamespaceProps;
+
+    /**
+     * Attribute NamespaceId: The ID of the namespace.
+     */
+    readonly attrNamespaceId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::EngineNamespace`, which is used to create a namespace for an engine.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEngineNamespace`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-enginenamespace
  */
-export class EngineNamespace extends ros.Resource {
+export class EngineNamespace extends ros.Resource implements IEngineNamespace {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: EngineNamespaceProps;
+    public readonly props: EngineNamespaceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute NamespaceId: The ID of the namespace.
      */
-    public readonly attrNamespaceId: ros.IResolvable;
+    public readonly attrNamespaceId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

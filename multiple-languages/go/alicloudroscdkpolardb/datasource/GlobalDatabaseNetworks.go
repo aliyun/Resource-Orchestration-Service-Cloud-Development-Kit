@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::POLARDB::GlobalDatabaseNetworks`, which is used to query all global database networks (GDNs) within the current Alibaba Cloud account.
 type GlobalDatabaseNetworks interface {
 	alicloudroscdkcore.Resource
+	IGlobalDatabaseNetworks
 	// Attribute GdnIds: The list of gdn IDs.
-	AttrGdnIds() alicloudroscdkcore.IResolvable
+	AttrGdnIds() interface{}
 	// Attribute GlobalDatabaseNetworks: The list of global database networks.
-	AttrGlobalDatabaseNetworks() alicloudroscdkcore.IResolvable
+	AttrGlobalDatabaseNetworks() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type GlobalDatabaseNetworks interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *GlobalDatabaseNetworksProps
-	SetProps(val *GlobalDatabaseNetworksProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type GlobalDatabaseNetworks interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type GlobalDatabaseNetworks interface {
 // The jsii proxy struct for GlobalDatabaseNetworks
 type jsiiProxy_GlobalDatabaseNetworks struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IGlobalDatabaseNetworks
 }
 
-func (j *jsiiProxy_GlobalDatabaseNetworks) AttrGdnIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_GlobalDatabaseNetworks) AttrGdnIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGdnIds",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_GlobalDatabaseNetworks) AttrGdnIds() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_GlobalDatabaseNetworks) AttrGlobalDatabaseNetworks() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_GlobalDatabaseNetworks) AttrGlobalDatabaseNetworks() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGlobalDatabaseNetworks",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_GlobalDatabaseNetworks) EnableResourcePropertyConstraint() *b
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GlobalDatabaseNetworks) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_GlobalDatabaseNetworks)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GlobalDatabaseNetworks)SetProps(val *GlobalDatabaseNetworksProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_GlobalDatabaseNetworks)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (g *jsiiProxy_GlobalDatabaseNetworks) ApplyRemovalPolicy(policy alicloudros
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (g *jsiiProxy_GlobalDatabaseNetworks) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		g,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (g *jsiiProxy_GlobalDatabaseNetworks) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		g,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (g *jsiiProxy_GlobalDatabaseNetworks) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		g,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (g *jsiiProxy_GlobalDatabaseNetworks) GeneratePhysicalName() *string {

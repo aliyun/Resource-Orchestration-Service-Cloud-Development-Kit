@@ -1,3 +1,5 @@
+@alicloud/ros-cdk-datahub.IProject=com.aliyun.ros.cdk.datahub.IProject
+@alicloud/ros-cdk-datahub.ITopic=com.aliyun.ros.cdk.datahub.ITopic
 @alicloud/ros-cdk-datahub.Project=com.aliyun.ros.cdk.datahub.Project
 @alicloud/ros-cdk-datahub.ProjectProps=com.aliyun.ros.cdk.datahub.ProjectProps
 @alicloud/ros-cdk-datahub.RosProject=com.aliyun.ros.cdk.datahub.RosProject

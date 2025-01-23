@@ -79,25 +79,41 @@ export interface DataFlowProps {
 }
 
 /**
+ * Represents a `DataFlow`.
+ */
+export interface IDataFlow extends ros.IResource {
+    readonly props: DataFlowProps;
+
+    /**
+     * Attribute DataFlowId: Data flow ID.
+     */
+    readonly attrDataFlowId: ros.IResolvable | string;
+
+    /**
+     * Attribute FileSystemId: File system ID.
+     */
+    readonly attrFileSystemId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::DataFlow`, which is used to create a data flow between a Cloud Parallel File Storage (CPFS) file system and an Object Storage Service (OSS) bucket.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDataFlow`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-dataflow
  */
-export class DataFlow extends ros.Resource {
+export class DataFlow extends ros.Resource implements IDataFlow {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DataFlowProps;
+    public readonly props: DataFlowProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DataFlowId: Data flow ID.
      */
-    public readonly attrDataFlowId: ros.IResolvable;
+    public readonly attrDataFlowId: ros.IResolvable | string;
 
     /**
      * Attribute FileSystemId: File system ID.
      */
-    public readonly attrFileSystemId: ros.IResolvable;
+    public readonly attrFileSystemId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

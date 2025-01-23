@@ -112,30 +112,51 @@ export interface LogtailConfigProps {
 }
 
 /**
+ * Represents a `LogtailConfig`.
+ */
+export interface ILogtailConfig extends ros.IResource {
+    readonly props: LogtailConfigProps;
+
+    /**
+     * Attribute AppliedMachineGroups: Applied machine groups.
+     */
+    readonly attrAppliedMachineGroups: ros.IResolvable | string;
+
+    /**
+     * Attribute Endpoint: Endpoint address.
+     */
+    readonly attrEndpoint: ros.IResolvable | string;
+
+    /**
+     * Attribute LogtailConfigName: Logtail config name.
+     */
+    readonly attrLogtailConfigName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::LogtailConfig`, which is used to configure Logtail properties for data collection.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLogtailConfig`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logtailconfig
  */
-export class LogtailConfig extends ros.Resource {
+export class LogtailConfig extends ros.Resource implements ILogtailConfig {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: LogtailConfigProps;
+    public readonly props: LogtailConfigProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AppliedMachineGroups: Applied machine groups.
      */
-    public readonly attrAppliedMachineGroups: ros.IResolvable;
+    public readonly attrAppliedMachineGroups: ros.IResolvable | string;
 
     /**
      * Attribute Endpoint: Endpoint address.
      */
-    public readonly attrEndpoint: ros.IResolvable;
+    public readonly attrEndpoint: ros.IResolvable | string;
 
     /**
      * Attribute LogtailConfigName: Logtail config name.
      */
-    public readonly attrLogtailConfigName: ros.IResolvable;
+    public readonly attrLogtailConfigName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -1,3 +1,5 @@
+@alicloud/ros-cdk-waf3.IInstance=com.aliyun.ros.cdk.waf3.IInstance
+@alicloud/ros-cdk-waf3.ITgw=com.aliyun.ros.cdk.waf3.ITgw
 @alicloud/ros-cdk-waf3.Instance=com.aliyun.ros.cdk.waf3.Instance
 @alicloud/ros-cdk-waf3.InstanceProps=com.aliyun.ros.cdk.waf3.InstanceProps
 @alicloud/ros-cdk-waf3.RosInstance=com.aliyun.ros.cdk.waf3.RosInstance

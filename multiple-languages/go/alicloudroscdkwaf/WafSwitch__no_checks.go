@@ -52,10 +52,6 @@ func (j *jsiiProxy_WafSwitch) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_WafSwitch) validateSetPropsParameters(val *WafSwitchProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_WafSwitch) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

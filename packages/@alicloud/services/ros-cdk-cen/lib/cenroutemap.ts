@@ -192,20 +192,31 @@ export interface CenRouteMapProps {
 }
 
 /**
+ * Represents a `CenRouteMap`.
+ */
+export interface ICenRouteMap extends ros.IResource {
+    readonly props: CenRouteMapProps;
+
+    /**
+     * Attribute RouteMapId: The ID of the route map.
+     */
+    readonly attrRouteMapId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenRouteMap`, which is used to create a routing policy.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenRouteMap`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenroutemap
  */
-export class CenRouteMap extends ros.Resource {
+export class CenRouteMap extends ros.Resource implements ICenRouteMap {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: CenRouteMapProps;
+    public readonly props: CenRouteMapProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RouteMapId: The ID of the route map.
      */
-    public readonly attrRouteMapId: ros.IResolvable;
+    public readonly attrRouteMapId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

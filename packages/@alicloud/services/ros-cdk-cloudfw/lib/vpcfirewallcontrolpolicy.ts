@@ -193,20 +193,31 @@ export interface VpcFirewallControlPolicyProps {
 }
 
 /**
+ * Represents a `VpcFirewallControlPolicy`.
+ */
+export interface IVpcFirewallControlPolicy extends ros.IResource {
+    readonly props: VpcFirewallControlPolicyProps;
+
+    /**
+     * Attribute AclUuid: The unique ID of the access control policy.
+     */
+    readonly attrAclUuid: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`, which is used to add an access control policy to a policy group of a virtual private cloud (VPC) firewall.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpcFirewallControlPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallcontrolpolicy
  */
-export class VpcFirewallControlPolicy extends ros.Resource {
+export class VpcFirewallControlPolicy extends ros.Resource implements IVpcFirewallControlPolicy {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: VpcFirewallControlPolicyProps;
+    public readonly props: VpcFirewallControlPolicyProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AclUuid: The unique ID of the access control policy.
      */
-    public readonly attrAclUuid: ros.IResolvable;
+    public readonly attrAclUuid: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -52,10 +52,6 @@ func (j *jsiiProxy_BandwidthPackages) validateSetIdParameters(val *string) error
 	return nil
 }
 
-func (j *jsiiProxy_BandwidthPackages) validateSetPropsParameters(val *BandwidthPackagesProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_BandwidthPackages) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

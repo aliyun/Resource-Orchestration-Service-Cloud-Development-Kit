@@ -59,20 +59,31 @@ export interface UserProvisionProps {
 }
 
 /**
+ * Represents a `UserProvision`.
+ */
+export interface IUserProvision extends ros.IResource {
+    readonly props: UserProvisionProps;
+
+    /**
+     * Attribute UserProvisionId: The ID of the user provisioning.
+     */
+    readonly attrUserProvisionId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::UserProvision`, which is used to create a Resource Access Management (RAM) user provisioning.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUserProvision`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-userprovision
  */
-export class UserProvision extends ros.Resource {
+export class UserProvision extends ros.Resource implements IUserProvision {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: UserProvisionProps;
+    public readonly props: UserProvisionProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute UserProvisionId: The ID of the user provisioning.
      */
-    public readonly attrUserProvisionId: ros.IResolvable;
+    public readonly attrUserProvisionId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

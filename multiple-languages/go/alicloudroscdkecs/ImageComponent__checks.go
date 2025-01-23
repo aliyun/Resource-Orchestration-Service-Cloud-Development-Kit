@@ -163,17 +163,6 @@ func (j *jsiiProxy_ImageComponent) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_ImageComponent) validateSetPropsParameters(val *ImageComponentProps) error {
-	if val == nil {
-		return fmt.Errorf("parameter val is required, but nil was provided")
-	}
-	if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (j *jsiiProxy_ImageComponent) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")

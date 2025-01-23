@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::SLS::OssExternalStore`.
 type OssExternalStore interface {
 	alicloudroscdkcore.Resource
+	IOssExternalStore
 	// Attribute ExternalStoreName: The name of the external store.
-	AttrExternalStoreName() alicloudroscdkcore.IResolvable
+	AttrExternalStoreName() interface{}
 	// Attribute Project: The name of the project to which the external store belongs.
-	AttrProject() alicloudroscdkcore.IResolvable
+	AttrProject() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type OssExternalStore interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *OssExternalStoreProps
-	SetProps(val *OssExternalStoreProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type OssExternalStore interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type OssExternalStore interface {
 // The jsii proxy struct for OssExternalStore
 type jsiiProxy_OssExternalStore struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IOssExternalStore
 }
 
-func (j *jsiiProxy_OssExternalStore) AttrExternalStoreName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssExternalStore) AttrExternalStoreName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrExternalStoreName",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_OssExternalStore) AttrExternalStoreName() alicloudroscdkcore.
 	return returns
 }
 
-func (j *jsiiProxy_OssExternalStore) AttrProject() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssExternalStore) AttrProject() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrProject",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_OssExternalStore) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OssExternalStore) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_OssExternalStore)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_OssExternalStore)SetProps(val *OssExternalStoreProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_OssExternalStore)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (o *jsiiProxy_OssExternalStore) ApplyRemovalPolicy(policy alicloudroscdkcor
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (o *jsiiProxy_OssExternalStore) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		o,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (o *jsiiProxy_OssExternalStore) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		o,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (o *jsiiProxy_OssExternalStore) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		o,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (o *jsiiProxy_OssExternalStore) GeneratePhysicalName() *string {

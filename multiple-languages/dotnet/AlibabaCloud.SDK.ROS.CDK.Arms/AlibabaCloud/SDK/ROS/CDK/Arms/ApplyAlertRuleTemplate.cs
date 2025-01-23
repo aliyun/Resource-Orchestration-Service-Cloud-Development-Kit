@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-applyalertruletemplate
     /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Arms.ApplyAlertRuleTemplate), fullyQualifiedName: "@alicloud/ros-cdk-arms.ApplyAlertRuleTemplate", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"optional\":true,\"type\":{\"fqn\":\"@alicloud/ros-cdk-arms.ApplyAlertRuleTemplateProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"optional\":true,\"type\":{\"primitive\":\"boolean\"}}]")]
-    public class ApplyAlertRuleTemplate : AlibabaCloud.SDK.ROS.CDK.Core.Resource_
+    public class ApplyAlertRuleTemplate : AlibabaCloud.SDK.ROS.CDK.Core.Resource_, AlibabaCloud.SDK.ROS.CDK.Arms.IApplyAlertRuleTemplate
     {
         /// <summary>Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.</summary>
         public ApplyAlertRuleTemplate(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Arms.IApplyAlertRuleTemplateProps? props = null, bool? enableResourcePropertyConstraint = null): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
@@ -37,6 +37,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         {
         }
 
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-arms.ApplyAlertRuleTemplateProps\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Arms.IApplyAlertRuleTemplateProps Props
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Arms.IApplyAlertRuleTemplateProps>()!;
+        }
+
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
         protected virtual bool EnableResourcePropertyConstraint
         {
@@ -48,13 +54,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         protected virtual string Id
         {
             get => GetInstanceProperty<string>()!;
-            set => SetInstanceProperty(value);
-        }
-
-        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-arms.ApplyAlertRuleTemplateProps\"}")]
-        protected virtual AlibabaCloud.SDK.ROS.CDK.Arms.IApplyAlertRuleTemplateProps Props
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Arms.IApplyAlertRuleTemplateProps>()!;
             set => SetInstanceProperty(value);
         }
 

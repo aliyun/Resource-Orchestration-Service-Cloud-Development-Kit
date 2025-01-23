@@ -56,105 +56,201 @@ export interface DiskReplicaGroupProps {
 }
 
 /**
+ * Represents a `DiskReplicaGroup`.
+ */
+export interface IDiskReplicaGroup extends ros.IResource {
+    readonly props: DiskReplicaGroupProps;
+
+    /**
+     * Attribute Description: The description of the consistent replication group.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute DestinationRegionId: The ID of the region to which the disaster recovery site belongs.
+     */
+    readonly attrDestinationRegionId: ros.IResolvable | string;
+
+    /**
+     * Attribute DestinationZoneId: The ID of the zone to which the disaster recovery site belongs.
+     */
+    readonly attrDestinationZoneId: ros.IResolvable | string;
+
+    /**
+     * Attribute DiskReplicaGroupName: Consistent replication group name.
+     */
+    readonly attrDiskReplicaGroupName: ros.IResolvable | string;
+
+    /**
+     * Attribute LastRecoverPoint: The time when the last asynchronous replication operation of the consistent replication group completed. This parameter provides the return value as a timestamp. Unit: seconds.
+     */
+    readonly attrLastRecoverPoint: ros.IResolvable | string;
+
+    /**
+     * Attribute PairIds: List of replication pair IDs contained in a consistent replication group.
+     */
+    readonly attrPairIds: ros.IResolvable | string;
+
+    /**
+     * Attribute PairNumber: The number of replication pairs contained in a consistent replication group.
+     */
+    readonly attrPairNumber: ros.IResolvable | string;
+
+    /**
+     * Attribute PrimaryRegion: The initial source region of the replication group.
+     */
+    readonly attrPrimaryRegion: ros.IResolvable | string;
+
+    /**
+     * Attribute PrimaryZone: The initial source available area of the replication group.
+     */
+    readonly attrPrimaryZone: ros.IResolvable | string;
+
+    /**
+     * Attribute RPO: The RPO value set by the consistency group in seconds.
+     */
+    readonly attrRpo: ros.IResolvable | string;
+
+    /**
+     * Attribute ReplicaGroupId: The ID of the consistent replication group.
+     */
+    readonly attrReplicaGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: resource group ID of enterprise
+     */
+    readonly attrResourceGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute Site: Site information sources for replication pairs and consistent replication groups. Possible values:
+     */
+    readonly attrSite: ros.IResolvable | string;
+
+    /**
+     * Attribute SourceRegionId: The ID of the region to which the production site belongs.
+     */
+    readonly attrSourceRegionId: ros.IResolvable | string;
+
+    /**
+     * Attribute SourceZoneId: The ID of the zone to which the production site belongs.
+     */
+    readonly attrSourceZoneId: ros.IResolvable | string;
+
+    /**
+     * Attribute StandbyRegion: The initial destination region of the replication group.
+     */
+    readonly attrStandbyRegion: ros.IResolvable | string;
+
+    /**
+     * Attribute StandbyZone: The initial destination zone of the replication group.
+     */
+    readonly attrStandbyZone: ros.IResolvable | string;
+
+    /**
+     * Attribute Tags: The tags of the disk replica group.
+     */
+    readonly attrTags: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::EBS::DiskReplicaGroup`, which is used to create a replication pair-consistent group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDiskReplicaGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ebs-diskreplicagroup
  */
-export class DiskReplicaGroup extends ros.Resource {
+export class DiskReplicaGroup extends ros.Resource implements IDiskReplicaGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DiskReplicaGroupProps;
+    public readonly props: DiskReplicaGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Description: The description of the consistent replication group.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute DestinationRegionId: The ID of the region to which the disaster recovery site belongs.
      */
-    public readonly attrDestinationRegionId: ros.IResolvable;
+    public readonly attrDestinationRegionId: ros.IResolvable | string;
 
     /**
      * Attribute DestinationZoneId: The ID of the zone to which the disaster recovery site belongs.
      */
-    public readonly attrDestinationZoneId: ros.IResolvable;
+    public readonly attrDestinationZoneId: ros.IResolvable | string;
 
     /**
      * Attribute DiskReplicaGroupName: Consistent replication group name.
      */
-    public readonly attrDiskReplicaGroupName: ros.IResolvable;
+    public readonly attrDiskReplicaGroupName: ros.IResolvable | string;
 
     /**
      * Attribute LastRecoverPoint: The time when the last asynchronous replication operation of the consistent replication group completed. This parameter provides the return value as a timestamp. Unit: seconds.
      */
-    public readonly attrLastRecoverPoint: ros.IResolvable;
+    public readonly attrLastRecoverPoint: ros.IResolvable | string;
 
     /**
      * Attribute PairIds: List of replication pair IDs contained in a consistent replication group.
      */
-    public readonly attrPairIds: ros.IResolvable;
+    public readonly attrPairIds: ros.IResolvable | string;
 
     /**
      * Attribute PairNumber: The number of replication pairs contained in a consistent replication group.
      */
-    public readonly attrPairNumber: ros.IResolvable;
+    public readonly attrPairNumber: ros.IResolvable | string;
 
     /**
      * Attribute PrimaryRegion: The initial source region of the replication group.
      */
-    public readonly attrPrimaryRegion: ros.IResolvable;
+    public readonly attrPrimaryRegion: ros.IResolvable | string;
 
     /**
      * Attribute PrimaryZone: The initial source available area of the replication group.
      */
-    public readonly attrPrimaryZone: ros.IResolvable;
+    public readonly attrPrimaryZone: ros.IResolvable | string;
 
     /**
      * Attribute RPO: The RPO value set by the consistency group in seconds.
      */
-    public readonly attrRpo: ros.IResolvable;
+    public readonly attrRpo: ros.IResolvable | string;
 
     /**
      * Attribute ReplicaGroupId: The ID of the consistent replication group.
      */
-    public readonly attrReplicaGroupId: ros.IResolvable;
+    public readonly attrReplicaGroupId: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroupId: resource group ID of enterprise
      */
-    public readonly attrResourceGroupId: ros.IResolvable;
+    public readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Attribute Site: Site information sources for replication pairs and consistent replication groups. Possible values:
      */
-    public readonly attrSite: ros.IResolvable;
+    public readonly attrSite: ros.IResolvable | string;
 
     /**
      * Attribute SourceRegionId: The ID of the region to which the production site belongs.
      */
-    public readonly attrSourceRegionId: ros.IResolvable;
+    public readonly attrSourceRegionId: ros.IResolvable | string;
 
     /**
      * Attribute SourceZoneId: The ID of the zone to which the production site belongs.
      */
-    public readonly attrSourceZoneId: ros.IResolvable;
+    public readonly attrSourceZoneId: ros.IResolvable | string;
 
     /**
      * Attribute StandbyRegion: The initial destination region of the replication group.
      */
-    public readonly attrStandbyRegion: ros.IResolvable;
+    public readonly attrStandbyRegion: ros.IResolvable | string;
 
     /**
      * Attribute StandbyZone: The initial destination zone of the replication group.
      */
-    public readonly attrStandbyZone: ros.IResolvable;
+    public readonly attrStandbyZone: ros.IResolvable | string;
 
     /**
      * Attribute Tags: The tags of the disk replica group.
      */
-    public readonly attrTags: ros.IResolvable;
+    public readonly attrTags: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

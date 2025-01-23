@@ -53,8 +53,9 @@ type InstanceProps struct {
 	// Property specType: The edition of the Message Queue for Apache Kafka instance.
 	//
 	// Valid values:
-	// professional: Professional Edition
-	// normal: Normal version.
+	// normal: Normal version
+	// professional: Professional Edition (high writing edition)
+	// professionalForHighRead: Professional Edition (high reading edition).
 	SpecType interface{} `field:"optional" json:"specType" yaml:"specType"`
 	// Property tags: Tags to attach to instance.
 	//

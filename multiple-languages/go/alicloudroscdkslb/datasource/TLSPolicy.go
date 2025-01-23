@@ -12,18 +12,28 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::TLSPolicy`.
 type TLSPolicy interface {
 	alicloudroscdkcore.Resource
+	ITLSPolicy
 	// Attribute Ciphers: The cipher suites supported by the TLS version.
-	AttrCiphers() alicloudroscdkcore.IResolvable
+	AttrCiphers() interface{}
 	// Attribute CreateTime: The timestamp generated when the TLS policy is created.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute InstanceId: The ID of the TLS policy.
-	AttrInstanceId() alicloudroscdkcore.IResolvable
+	AttrInstanceId() interface{}
 	// Attribute TLSPolicyName: The name of the TLS policy.
-	AttrTlsPolicyName() alicloudroscdkcore.IResolvable
+	AttrTlsPolicyName() interface{}
 	// Attribute TlsVersions: The version of the TLS protocol.
-	AttrTlsVersions() alicloudroscdkcore.IResolvable
+	AttrTlsVersions() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -38,7 +48,6 @@ type TLSPolicy interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *TLSPolicyProps
-	SetProps(val *TLSPolicyProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -51,6 +60,9 @@ type TLSPolicy interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -103,10 +115,11 @@ type TLSPolicy interface {
 // The jsii proxy struct for TLSPolicy
 type jsiiProxy_TLSPolicy struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ITLSPolicy
 }
 
-func (j *jsiiProxy_TLSPolicy) AttrCiphers() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_TLSPolicy) AttrCiphers() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCiphers",
@@ -115,8 +128,8 @@ func (j *jsiiProxy_TLSPolicy) AttrCiphers() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_TLSPolicy) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_TLSPolicy) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -125,8 +138,8 @@ func (j *jsiiProxy_TLSPolicy) AttrCreateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_TLSPolicy) AttrInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_TLSPolicy) AttrInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceId",
@@ -135,8 +148,8 @@ func (j *jsiiProxy_TLSPolicy) AttrInstanceId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_TLSPolicy) AttrTlsPolicyName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_TLSPolicy) AttrTlsPolicyName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTlsPolicyName",
@@ -145,8 +158,8 @@ func (j *jsiiProxy_TLSPolicy) AttrTlsPolicyName() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_TLSPolicy) AttrTlsVersions() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_TLSPolicy) AttrTlsVersions() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTlsVersions",
@@ -160,6 +173,16 @@ func (j *jsiiProxy_TLSPolicy) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_TLSPolicy) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -297,17 +320,6 @@ func (j *jsiiProxy_TLSPolicy)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_TLSPolicy)SetProps(val *TLSPolicyProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_TLSPolicy)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -399,6 +411,45 @@ func (t *jsiiProxy_TLSPolicy) ApplyRemovalPolicy(policy alicloudroscdkcore.Remov
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (t *jsiiProxy_TLSPolicy) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		t,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (t *jsiiProxy_TLSPolicy) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		t,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (t *jsiiProxy_TLSPolicy) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		t,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (t *jsiiProxy_TLSPolicy) GeneratePhysicalName() *string {

@@ -60,25 +60,41 @@ export interface DiskCategoriesProps {
 }
 
 /**
+ * Represents a `DiskCategories`.
+ */
+export interface IDiskCategories extends ros.IResource {
+    readonly props: DiskCategoriesProps;
+
+    /**
+     * Attribute DiskCategories: The list of disk categories.
+     */
+    readonly attrDiskCategories: ros.IResolvable | string;
+
+    /**
+     * Attribute DiskCategoryIds: The list of disk category IDs.
+     */
+    readonly attrDiskCategoryIds: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::DiskCategories`, which is used to query the information about disk categories.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDiskCategories`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-diskcategories
  */
-export class DiskCategories extends ros.Resource {
+export class DiskCategories extends ros.Resource implements IDiskCategories {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DiskCategoriesProps;
+    public readonly props: DiskCategoriesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DiskCategories: The list of disk categories.
      */
-    public readonly attrDiskCategories: ros.IResolvable;
+    public readonly attrDiskCategories: ros.IResolvable | string;
 
     /**
      * Attribute DiskCategoryIds: The list of disk category IDs.
      */
-    public readonly attrDiskCategoryIds: ros.IResolvable;
+    public readonly attrDiskCategoryIds: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

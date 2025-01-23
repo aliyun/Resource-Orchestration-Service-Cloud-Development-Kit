@@ -2,6 +2,11 @@
 @alicloud/ros-cdk-kafka.AclProps=com.aliyun.ros.cdk.kafka.AclProps
 @alicloud/ros-cdk-kafka.ConsumerGroup=com.aliyun.ros.cdk.kafka.ConsumerGroup
 @alicloud/ros-cdk-kafka.ConsumerGroupProps=com.aliyun.ros.cdk.kafka.ConsumerGroupProps
+@alicloud/ros-cdk-kafka.IAcl=com.aliyun.ros.cdk.kafka.IAcl
+@alicloud/ros-cdk-kafka.IConsumerGroup=com.aliyun.ros.cdk.kafka.IConsumerGroup
+@alicloud/ros-cdk-kafka.IInstance=com.aliyun.ros.cdk.kafka.IInstance
+@alicloud/ros-cdk-kafka.ISaslUser=com.aliyun.ros.cdk.kafka.ISaslUser
+@alicloud/ros-cdk-kafka.ITopic=com.aliyun.ros.cdk.kafka.ITopic
 @alicloud/ros-cdk-kafka.Instance=com.aliyun.ros.cdk.kafka.Instance
 @alicloud/ros-cdk-kafka.InstanceProps=com.aliyun.ros.cdk.kafka.InstanceProps
 @alicloud/ros-cdk-kafka.RosAcl=com.aliyun.ros.cdk.kafka.RosAcl
@@ -23,6 +28,10 @@
 @alicloud/ros-cdk-kafka.SaslUserProps=com.aliyun.ros.cdk.kafka.SaslUserProps
 @alicloud/ros-cdk-kafka.Topic=com.aliyun.ros.cdk.kafka.Topic
 @alicloud/ros-cdk-kafka.TopicProps=com.aliyun.ros.cdk.kafka.TopicProps
+@alicloud/ros-cdk-kafka.datasource.IInstance=com.aliyun.ros.cdk.kafka.datasource.IInstance
+@alicloud/ros-cdk-kafka.datasource.IInstances=com.aliyun.ros.cdk.kafka.datasource.IInstances
+@alicloud/ros-cdk-kafka.datasource.ITopic=com.aliyun.ros.cdk.kafka.datasource.ITopic
+@alicloud/ros-cdk-kafka.datasource.ITopics=com.aliyun.ros.cdk.kafka.datasource.ITopics
 @alicloud/ros-cdk-kafka.datasource.Instance=com.aliyun.ros.cdk.kafka.datasource.Instance
 @alicloud/ros-cdk-kafka.datasource.InstanceProps=com.aliyun.ros.cdk.kafka.datasource.InstanceProps
 @alicloud/ros-cdk-kafka.datasource.Instances=com.aliyun.ros.cdk.kafka.datasource.Instances

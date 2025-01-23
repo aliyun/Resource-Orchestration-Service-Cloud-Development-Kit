@@ -52,10 +52,6 @@ func (j *jsiiProxy_SCIMSynchronization) validateSetIdParameters(val *string) err
 	return nil
 }
 
-func (j *jsiiProxy_SCIMSynchronization) validateSetPropsParameters(val *SCIMSynchronizationProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_SCIMSynchronization) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

@@ -61,25 +61,41 @@ export interface StackInstancesProps {
 }
 
 /**
+ * Represents a `StackInstances`.
+ */
+export interface IStackInstances extends ros.IResource {
+    readonly props: StackInstancesProps;
+
+    /**
+     * Attribute LastOperationId: undefined
+     */
+    readonly attrLastOperationId: ros.IResolvable | string;
+
+    /**
+     * Attribute Stacks: undefined
+     */
+    readonly attrStacks: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::StackInstances`, which is used to create stack instances within specified accounts in specified regions.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosStackInstances`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stackinstances
  */
-export class StackInstances extends ros.Resource {
+export class StackInstances extends ros.Resource implements IStackInstances {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: StackInstancesProps;
+    public readonly props: StackInstancesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute LastOperationId: undefined
      */
-    public readonly attrLastOperationId: ros.IResolvable;
+    public readonly attrLastOperationId: ros.IResolvable | string;
 
     /**
      * Attribute Stacks: undefined
      */
-    public readonly attrStacks: ros.IResolvable;
+    public readonly attrStacks: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

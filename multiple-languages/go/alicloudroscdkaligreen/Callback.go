@@ -12,20 +12,30 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::Aligreen::Callback`.
 type Callback interface {
 	alicloudroscdkcore.Resource
+	ICallback
 	// Attribute CallbackId: The ID of the primary key of the Callback.
-	AttrCallbackId() alicloudroscdkcore.IResolvable
+	AttrCallbackId() interface{}
 	// Attribute CallbackName: The Callback name defined by the customer.
-	AttrCallbackName() alicloudroscdkcore.IResolvable
+	AttrCallbackName() interface{}
 	// Attribute CallbackSuggestions: List of audit results supported by message notification.
-	AttrCallbackSuggestions() alicloudroscdkcore.IResolvable
+	AttrCallbackSuggestions() interface{}
 	// Attribute CallbackTypes: The list of Callback types.
-	AttrCallbackTypes() alicloudroscdkcore.IResolvable
+	AttrCallbackTypes() interface{}
 	// Attribute CallbackUrl: The detection result will be called back to the url.
-	AttrCallbackUrl() alicloudroscdkcore.IResolvable
+	AttrCallbackUrl() interface{}
 	// Attribute CryptType: The encryption algorithm is used to verify that the callback request is sent by the Aliyun Green Service to your business service.
-	AttrCryptType() alicloudroscdkcore.IResolvable
+	AttrCryptType() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -40,7 +50,6 @@ type Callback interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *CallbackProps
-	SetProps(val *CallbackProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -53,6 +62,9 @@ type Callback interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -105,10 +117,11 @@ type Callback interface {
 // The jsii proxy struct for Callback
 type jsiiProxy_Callback struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ICallback
 }
 
-func (j *jsiiProxy_Callback) AttrCallbackId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Callback) AttrCallbackId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCallbackId",
@@ -117,8 +130,8 @@ func (j *jsiiProxy_Callback) AttrCallbackId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Callback) AttrCallbackName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Callback) AttrCallbackName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCallbackName",
@@ -127,8 +140,8 @@ func (j *jsiiProxy_Callback) AttrCallbackName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Callback) AttrCallbackSuggestions() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Callback) AttrCallbackSuggestions() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCallbackSuggestions",
@@ -137,8 +150,8 @@ func (j *jsiiProxy_Callback) AttrCallbackSuggestions() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_Callback) AttrCallbackTypes() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Callback) AttrCallbackTypes() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCallbackTypes",
@@ -147,8 +160,8 @@ func (j *jsiiProxy_Callback) AttrCallbackTypes() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_Callback) AttrCallbackUrl() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Callback) AttrCallbackUrl() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCallbackUrl",
@@ -157,8 +170,8 @@ func (j *jsiiProxy_Callback) AttrCallbackUrl() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Callback) AttrCryptType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Callback) AttrCryptType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCryptType",
@@ -172,6 +185,16 @@ func (j *jsiiProxy_Callback) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Callback) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -309,17 +332,6 @@ func (j *jsiiProxy_Callback)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Callback)SetProps(val *CallbackProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Callback)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -411,6 +423,45 @@ func (c *jsiiProxy_Callback) ApplyRemovalPolicy(policy alicloudroscdkcore.Remova
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (c *jsiiProxy_Callback) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		c,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (c *jsiiProxy_Callback) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		c,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (c *jsiiProxy_Callback) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (c *jsiiProxy_Callback) GeneratePhysicalName() *string {

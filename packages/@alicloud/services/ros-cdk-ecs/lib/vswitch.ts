@@ -59,35 +59,61 @@ export interface VSwitchProps {
 }
 
 /**
+ * Represents a `VSwitch`.
+ */
+export interface IVSwitch extends ros.IResource {
+    readonly props: VSwitchProps;
+
+    /**
+     * Attribute CidrBlock: CIDR Block of created VSwitch
+     */
+    readonly attrCidrBlock: ros.IResolvable | string;
+
+    /**
+     * Attribute Ipv6CidrBlock: The IPv6 network segment of the VSwitch
+     */
+    readonly attrIpv6CidrBlock: ros.IResolvable | string;
+
+    /**
+     * Attribute VSwitchId: Id of created VSwitch.
+     */
+    readonly attrVSwitchId: ros.IResolvable | string;
+
+    /**
+     * Attribute VSwitchName: The name of the VSwitch
+     */
+    readonly attrVSwitchName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::VSwitch`, which is used to create a vSwitch.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVSwitch`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-vswitch
  */
-export class VSwitch extends ros.Resource {
+export class VSwitch extends ros.Resource implements IVSwitch {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: VSwitchProps;
+    public readonly props: VSwitchProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CidrBlock: CIDR Block of created VSwitch
      */
-    public readonly attrCidrBlock: ros.IResolvable;
+    public readonly attrCidrBlock: ros.IResolvable | string;
 
     /**
      * Attribute Ipv6CidrBlock: The IPv6 network segment of the VSwitch
      */
-    public readonly attrIpv6CidrBlock: ros.IResolvable;
+    public readonly attrIpv6CidrBlock: ros.IResolvable | string;
 
     /**
      * Attribute VSwitchId: Id of created VSwitch.
      */
-    public readonly attrVSwitchId: ros.IResolvable;
+    public readonly attrVSwitchId: ros.IResolvable | string;
 
     /**
      * Attribute VSwitchName: The name of the VSwitch
      */
-    public readonly attrVSwitchName: ros.IResolvable;
+    public readonly attrVSwitchName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

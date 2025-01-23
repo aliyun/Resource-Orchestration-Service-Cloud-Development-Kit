@@ -1,3 +1,9 @@
+@alicloud/ros-cdk-ddospro.IPort=com.aliyun.ros.cdk.ddospro.IPort
+@alicloud/ros-cdk-ddospro.IPremiumInstance=com.aliyun.ros.cdk.ddospro.IPremiumInstance
+@alicloud/ros-cdk-ddospro.IProInstance=com.aliyun.ros.cdk.ddospro.IProInstance
+@alicloud/ros-cdk-ddospro.ISceneDefensePolicy=com.aliyun.ros.cdk.ddospro.ISceneDefensePolicy
+@alicloud/ros-cdk-ddospro.ISchedulerRule=com.aliyun.ros.cdk.ddospro.ISchedulerRule
+@alicloud/ros-cdk-ddospro.IWebRule=com.aliyun.ros.cdk.ddospro.IWebRule
 @alicloud/ros-cdk-ddospro.Port=com.aliyun.ros.cdk.ddospro.Port
 @alicloud/ros-cdk-ddospro.PortProps=com.aliyun.ros.cdk.ddospro.PortProps
 @alicloud/ros-cdk-ddospro.PremiumInstance=com.aliyun.ros.cdk.ddospro.PremiumInstance

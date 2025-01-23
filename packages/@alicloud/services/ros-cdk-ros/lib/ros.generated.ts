@@ -219,6 +219,7 @@ export interface RosAutoEnableServiceProps {
      * TrustedService\/ROS: Trusted Service for ROS
      * CloudSSO: Cloud SSO
      * ControlPolicy: Control Policy
+     * DSC: Data Security Center Free Edition Service
      */
     readonly serviceName: string | ros.IResolvable;
 }
@@ -237,7 +238,7 @@ function RosAutoEnableServicePropsValidator(properties: any): ros.ValidationResu
     if(properties.serviceName && (typeof properties.serviceName) !== 'object') {
         errors.collect(ros.propertyValidator('serviceName', ros.validateAllowedValues)({
           data: properties.serviceName,
-          allowedValues: ["EMAS","ARMS/SyntheticPost","Xtrace","DataWorks","FNF","FC","KMS","PAI","Config","HBR","IOT","ARMS","SAE","CloudStorageGateway","BatchCompute","BrainIndustrial","ARMS/PrometheusMonitor","IMM","CS","CR","NAS","CDN","PrivateZone","AHAS","TrafficMirror","CMS","ApiGateway","NLP","OSS","MNS","CDT","PrivateLink","TransitRouter","ARMS/Web","MaxCompute","SLS","VS","CloudSSO","DataHub","EDAS","RocketMQ","ControlPolicy","CDTCb","ARMS/App","DCDN","OTS","TrustedService/ROS"],
+          allowedValues: ["EMAS","ARMS/SyntheticPost","Xtrace","DataWorks","FNF","FC","KMS","PAI","Config","HBR","IOT","ARMS","SAE","CloudStorageGateway","BatchCompute","BrainIndustrial","ARMS/PrometheusMonitor","IMM","CS","CR","NAS","CDN","PrivateZone","AHAS","TrafficMirror","CMS","ApiGateway","NLP","OSS","MNS","CDT","PrivateLink","TransitRouter","ARMS/Web","MaxCompute","SLS","VS","CloudSSO","DataHub","EDAS","DSC","RocketMQ","ControlPolicy","CDTCb","ARMS/App","DCDN","OTS","TrustedService/ROS"],
         }));
     }
     errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
@@ -325,6 +326,7 @@ export class RosAutoEnableService extends ros.RosResource {
      * TrustedService\/ROS: Trusted Service for ROS
      * CloudSSO: Cloud SSO
      * ControlPolicy: Control Policy
+     * DSC: Data Security Center Free Edition Service
      */
     public serviceName: string | ros.IResolvable;
 
@@ -361,6 +363,7 @@ export interface RosCustomResourceProps {
      * @Property serviceToken: The service token that was given to the template developer by the service provider to access the service.
      * Allowed values:
      * - Function Compute: acs:fc:<region_id>:<account_id>:services\/<service_name>\/functions\/<function_name>
+     * - Function Compute 3: acs:fc:<region_id>:<account_id>:functions\/<function_name>
      * - MNS Queue: acs:mns:<region_id>:<account_id>:queues\/<queue_name> or acs:mns:<region_id>:<account_id>:\/queues\/<queue_name>
      * - MNS Topic: acs:mns:<region_id>:<account_id>:topics\/<topic_name> or acs:mns:<region_id>:<account_id>:\/topics\/<topic_name>
      * - HTTP&HTTPS: web[options]:<url>
@@ -369,6 +372,7 @@ export interface RosCustomResourceProps {
      *   - idempotent: indicates that the Create request is idempotent. Update and Delete requests should be always idempotent.
      * Examples:
      *   - acs:fc:cn-hangzhou:123456789:services\/test-service\/functions\/test-function
+     *   - acs:fc:cn-hangzhou:123456789:functions\/test-function
      *   - acs:mns:cn-hangzhou:123456789:queues\/test-queue
      *   - acs:mns:cn-hangzhou:123456789:\/queues\/test-queue
      *   - acs:mns:cn-hangzhou:123456789:topics\/test-topic
@@ -474,6 +478,7 @@ export class RosCustomResource extends ros.RosResource {
      * @Property serviceToken: The service token that was given to the template developer by the service provider to access the service.
      * Allowed values:
      * - Function Compute: acs:fc:<region_id>:<account_id>:services\/<service_name>\/functions\/<function_name>
+     * - Function Compute 3: acs:fc:<region_id>:<account_id>:functions\/<function_name>
      * - MNS Queue: acs:mns:<region_id>:<account_id>:queues\/<queue_name> or acs:mns:<region_id>:<account_id>:\/queues\/<queue_name>
      * - MNS Topic: acs:mns:<region_id>:<account_id>:topics\/<topic_name> or acs:mns:<region_id>:<account_id>:\/topics\/<topic_name>
      * - HTTP&HTTPS: web[options]:<url>
@@ -482,6 +487,7 @@ export class RosCustomResource extends ros.RosResource {
      *   - idempotent: indicates that the Create request is idempotent. Update and Delete requests should be always idempotent.
      * Examples:
      *   - acs:fc:cn-hangzhou:123456789:services\/test-service\/functions\/test-function
+     *   - acs:fc:cn-hangzhou:123456789:functions\/test-function
      *   - acs:mns:cn-hangzhou:123456789:queues\/test-queue
      *   - acs:mns:cn-hangzhou:123456789:\/queues\/test-queue
      *   - acs:mns:cn-hangzhou:123456789:topics\/test-topic

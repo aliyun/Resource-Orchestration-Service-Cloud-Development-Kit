@@ -234,6 +234,11 @@ export interface RosDBInstanceProps {
     readonly dbInstanceMode?: string | ros.IResolvable;
 
     /**
+     * @Property deployMode: The deployment mode of the instance.
+     */
+    readonly deployMode?: string | ros.IResolvable;
+
+    /**
      * @Property encryptionKey: If the EncryptionType parameter is set to CloudDisk, you must specify this parameter to the encryption key that is in the same region with the disks that is specified by the EncryptionType parameter. Otherwise, leave this parameter empty.
      */
     readonly encryptionKey?: string | ros.IResolvable;
@@ -333,6 +338,16 @@ export interface RosDBInstanceProps {
     readonly serverlessResource?: number | ros.IResolvable;
 
     /**
+     * @Property standbyVSwitchId: The standby VSwitch ID of the instance.
+     */
+    readonly standbyVSwitchId?: string | ros.IResolvable;
+
+    /**
+     * @Property standbyZoneId: The standby zone ID of the instance.
+     */
+    readonly standbyZoneId?: string | ros.IResolvable;
+
+    /**
      * @Property storageSize: The storage capacity of per segment node. Unit: GB. Minimum is 50, max is 4000, step is 50.
      */
     readonly storageSize?: number | ros.IResolvable;
@@ -374,6 +389,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('masterNodeNum', ros.validateNumber)(properties.masterNodeNum));
+    errors.collect(ros.propertyValidator('standbyZoneId', ros.validateString)(properties.standbyZoneId));
     errors.collect(ros.propertyValidator('instanceSpec', ros.validateString)(properties.instanceSpec));
     errors.collect(ros.propertyValidator('privateIpAddress', ros.validateString)(properties.privateIpAddress));
     if(properties.idleTime && (typeof properties.idleTime) !== 'object') {
@@ -402,6 +418,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('dbInstanceGroupCount', ros.validateNumber)(properties.dbInstanceGroupCount));
+    errors.collect(ros.propertyValidator('standbyVSwitchId', ros.validateString)(properties.standbyVSwitchId));
     if(properties.dbInstanceCategory && (typeof properties.dbInstanceCategory) !== 'object') {
         errors.collect(ros.propertyValidator('dbInstanceCategory', ros.validateAllowedValues)({
           data: properties.dbInstanceCategory,
@@ -416,6 +433,13 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('vectorConfigurationStatus', ros.validateString)(properties.vectorConfigurationStatus));
+    if(properties.deployMode && (typeof properties.deployMode) !== 'object') {
+        errors.collect(ros.propertyValidator('deployMode', ros.validateAllowedValues)({
+          data: properties.deployMode,
+          allowedValues: ["single","multiple"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('deployMode', ros.validateString)(properties.deployMode));
     errors.collect(ros.propertyValidator('securityIpList', ros.validateString)(properties.securityIpList));
     if(properties.serverlessResource && (typeof properties.serverlessResource) !== 'object') {
         errors.collect(ros.propertyValidator('serverlessResource', ros.validateAllowedValues)({
@@ -540,6 +564,7 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
       'DBInstanceDescription': ros.stringToRosTemplate(properties.dbInstanceDescription),
       'DBInstanceGroupCount': ros.numberToRosTemplate(properties.dbInstanceGroupCount),
       'DBInstanceMode': ros.stringToRosTemplate(properties.dbInstanceMode),
+      'DeployMode': ros.stringToRosTemplate(properties.deployMode),
       'EncryptionKey': ros.stringToRosTemplate(properties.encryptionKey),
       'EncryptionType': ros.stringToRosTemplate(properties.encryptionType),
       'IdleTime': ros.numberToRosTemplate(properties.idleTime),
@@ -556,6 +581,8 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
       'SegStorageType': ros.stringToRosTemplate(properties.segStorageType),
       'ServerlessMode': ros.stringToRosTemplate(properties.serverlessMode),
       'ServerlessResource': ros.numberToRosTemplate(properties.serverlessResource),
+      'StandbyVSwitchId': ros.stringToRosTemplate(properties.standbyVSwitchId),
+      'StandbyZoneId': ros.stringToRosTemplate(properties.standbyZoneId),
       'StorageSize': ros.numberToRosTemplate(properties.storageSize),
       'Tags': ros.listMapper(rosDBInstanceTagsPropertyToRosTemplate)(properties.tags),
       'VectorConfigurationStatus': ros.stringToRosTemplate(properties.vectorConfigurationStatus),
@@ -646,6 +673,11 @@ export class RosDBInstance extends ros.RosResource {
      * @Property dbInstanceMode: The db instance mode. Valid values: StorageElastic, Serverless, Classic.
      */
     public dbInstanceMode: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property deployMode: The deployment mode of the instance.
+     */
+    public deployMode: string | ros.IResolvable | undefined;
 
     /**
      * @Property encryptionKey: If the EncryptionType parameter is set to CloudDisk, you must specify this parameter to the encryption key that is in the same region with the disks that is specified by the EncryptionType parameter. Otherwise, leave this parameter empty.
@@ -747,6 +779,16 @@ export class RosDBInstance extends ros.RosResource {
     public serverlessResource: number | ros.IResolvable | undefined;
 
     /**
+     * @Property standbyVSwitchId: The standby VSwitch ID of the instance.
+     */
+    public standbyVSwitchId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property standbyZoneId: The standby zone ID of the instance.
+     */
+    public standbyZoneId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property storageSize: The storage capacity of per segment node. Unit: GB. Minimum is 50, max is 4000, step is 50.
      */
     public storageSize: number | ros.IResolvable | undefined;
@@ -791,6 +833,7 @@ export class RosDBInstance extends ros.RosResource {
         this.dbInstanceDescription = props.dbInstanceDescription;
         this.dbInstanceGroupCount = props.dbInstanceGroupCount;
         this.dbInstanceMode = props.dbInstanceMode;
+        this.deployMode = props.deployMode;
         this.encryptionKey = props.encryptionKey;
         this.encryptionType = props.encryptionType;
         this.idleTime = props.idleTime;
@@ -807,6 +850,8 @@ export class RosDBInstance extends ros.RosResource {
         this.segStorageType = props.segStorageType;
         this.serverlessMode = props.serverlessMode;
         this.serverlessResource = props.serverlessResource;
+        this.standbyVSwitchId = props.standbyVSwitchId;
+        this.standbyZoneId = props.standbyZoneId;
         this.storageSize = props.storageSize;
         this.tags = props.tags;
         this.vectorConfigurationStatus = props.vectorConfigurationStatus;
@@ -825,6 +870,7 @@ export class RosDBInstance extends ros.RosResource {
             dbInstanceDescription: this.dbInstanceDescription,
             dbInstanceGroupCount: this.dbInstanceGroupCount,
             dbInstanceMode: this.dbInstanceMode,
+            deployMode: this.deployMode,
             encryptionKey: this.encryptionKey,
             encryptionType: this.encryptionType,
             idleTime: this.idleTime,
@@ -841,6 +887,8 @@ export class RosDBInstance extends ros.RosResource {
             segStorageType: this.segStorageType,
             serverlessMode: this.serverlessMode,
             serverlessResource: this.serverlessResource,
+            standbyVSwitchId: this.standbyVSwitchId,
+            standbyZoneId: this.standbyZoneId,
             storageSize: this.storageSize,
             tags: this.tags,
             vectorConfigurationStatus: this.vectorConfigurationStatus,

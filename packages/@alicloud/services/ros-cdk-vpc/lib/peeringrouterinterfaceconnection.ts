@@ -21,25 +21,41 @@ export interface PeeringRouterInterfaceConnectionProps {
 }
 
 /**
+ * Represents a `PeeringRouterInterfaceConnection`.
+ */
+export interface IPeeringRouterInterfaceConnection extends ros.IResource {
+    readonly props: PeeringRouterInterfaceConnectionProps;
+
+    /**
+     * Attribute OppositeInterfaceId: The receiver RouterInterface ID.
+     */
+    readonly attrOppositeInterfaceId: ros.IResolvable | string;
+
+    /**
+     * Attribute RouterInterfaceId: The initiator RouterInterface ID.
+     */
+    readonly attrRouterInterfaceId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::PeeringRouterInterfaceConnection`, which is used to initiate a router interface connection.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPeeringRouterInterfaceConnection`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-peeringrouterinterfaceconnection
  */
-export class PeeringRouterInterfaceConnection extends ros.Resource {
+export class PeeringRouterInterfaceConnection extends ros.Resource implements IPeeringRouterInterfaceConnection {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: PeeringRouterInterfaceConnectionProps;
+    public readonly props: PeeringRouterInterfaceConnectionProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute OppositeInterfaceId: The receiver RouterInterface ID.
      */
-    public readonly attrOppositeInterfaceId: ros.IResolvable;
+    public readonly attrOppositeInterfaceId: ros.IResolvable | string;
 
     /**
      * Attribute RouterInterfaceId: The initiator RouterInterface ID.
      */
-    public readonly attrRouterInterfaceId: ros.IResolvable;
+    public readonly attrRouterInterfaceId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -12,16 +12,26 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpnPbrRouteEntry`, which is used to create a policy-based route for a VPN gateway.
 type VpnPbrRouteEntry interface {
 	alicloudroscdkcore.Resource
+	IVpnPbrRouteEntry
 	// Attribute NextHop: The next hop of the destination route entry.
-	AttrNextHop() alicloudroscdkcore.IResolvable
+	AttrNextHop() interface{}
 	// Attribute RouteDest: The destination CIDR block of the destination route.
-	AttrRouteDest() alicloudroscdkcore.IResolvable
+	AttrRouteDest() interface{}
 	// Attribute RouteSource: The destination CIDR block of the policy-based route.
-	AttrRouteSource() alicloudroscdkcore.IResolvable
+	AttrRouteSource() interface{}
 	// Attribute VpnGatewayId: The ID of the VPN Gateway.
-	AttrVpnGatewayId() alicloudroscdkcore.IResolvable
+	AttrVpnGatewayId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -36,7 +46,6 @@ type VpnPbrRouteEntry interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *VpnPbrRouteEntryProps
-	SetProps(val *VpnPbrRouteEntryProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -49,6 +58,9 @@ type VpnPbrRouteEntry interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -101,10 +113,11 @@ type VpnPbrRouteEntry interface {
 // The jsii proxy struct for VpnPbrRouteEntry
 type jsiiProxy_VpnPbrRouteEntry struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IVpnPbrRouteEntry
 }
 
-func (j *jsiiProxy_VpnPbrRouteEntry) AttrNextHop() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VpnPbrRouteEntry) AttrNextHop() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNextHop",
@@ -113,8 +126,8 @@ func (j *jsiiProxy_VpnPbrRouteEntry) AttrNextHop() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_VpnPbrRouteEntry) AttrRouteDest() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VpnPbrRouteEntry) AttrRouteDest() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRouteDest",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_VpnPbrRouteEntry) AttrRouteDest() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_VpnPbrRouteEntry) AttrRouteSource() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VpnPbrRouteEntry) AttrRouteSource() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRouteSource",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_VpnPbrRouteEntry) AttrRouteSource() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_VpnPbrRouteEntry) AttrVpnGatewayId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VpnPbrRouteEntry) AttrVpnGatewayId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVpnGatewayId",
@@ -148,6 +161,16 @@ func (j *jsiiProxy_VpnPbrRouteEntry) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpnPbrRouteEntry) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -285,17 +308,6 @@ func (j *jsiiProxy_VpnPbrRouteEntry)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_VpnPbrRouteEntry)SetProps(val *VpnPbrRouteEntryProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_VpnPbrRouteEntry)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -387,6 +399,45 @@ func (v *jsiiProxy_VpnPbrRouteEntry) ApplyRemovalPolicy(policy alicloudroscdkcor
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (v *jsiiProxy_VpnPbrRouteEntry) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		v,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (v *jsiiProxy_VpnPbrRouteEntry) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		v,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (v *jsiiProxy_VpnPbrRouteEntry) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		v,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (v *jsiiProxy_VpnPbrRouteEntry) GeneratePhysicalName() *string {

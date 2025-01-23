@@ -24,25 +24,41 @@ export interface AccessGroupsProps {
 }
 
 /**
+ * Represents a `AccessGroups`.
+ */
+export interface IAccessGroups extends ros.IResource {
+    readonly props: AccessGroupsProps;
+
+    /**
+     * Attribute AccessGroupNames: The list of access group names.
+     */
+    readonly attrAccessGroupNames: ros.IResolvable | string;
+
+    /**
+     * Attribute AccessGroups: The list of access groups.
+     */
+    readonly attrAccessGroups: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::NAS::AccessGroups`, which is used to query the information about permission groups.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccessGroups`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-accessgroups
  */
-export class AccessGroups extends ros.Resource {
+export class AccessGroups extends ros.Resource implements IAccessGroups {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AccessGroupsProps;
+    public readonly props: AccessGroupsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccessGroupNames: The list of access group names.
      */
-    public readonly attrAccessGroupNames: ros.IResolvable;
+    public readonly attrAccessGroupNames: ros.IResolvable | string;
 
     /**
      * Attribute AccessGroups: The list of access groups.
      */
-    public readonly attrAccessGroups: ros.IResolvable;
+    public readonly attrAccessGroups: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

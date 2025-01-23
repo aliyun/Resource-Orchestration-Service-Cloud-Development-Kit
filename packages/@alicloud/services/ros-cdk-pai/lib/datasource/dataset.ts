@@ -30,95 +30,181 @@ export interface DatasetProps {
 }
 
 /**
+ * Represents a `Dataset`.
+ */
+export interface IDataset extends ros.IResource {
+    readonly props: DatasetProps;
+
+    /**
+     * Attribute Accessibility: Workspace visibility.
+     */
+    readonly attrAccessibility: ros.IResolvable | string;
+
+    /**
+     * Attribute CreateTime: The creation time of the resource.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute DataSourceType: The data source type.
+     */
+    readonly attrDataSourceType: ros.IResolvable | string;
+
+    /**
+     * Attribute DataType: The dataset type. The default value is COMMON.
+     */
+    readonly attrDataType: ros.IResolvable | string;
+
+    /**
+     * Attribute DatasetId: The first ID of the resource.
+     */
+    readonly attrDatasetId: ros.IResolvable | string;
+
+    /**
+     * Attribute DatasetName: The name of the dataset.
+     */
+    readonly attrDatasetName: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: Custom descriptions of datasets to distinguish between different datasets.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute GmtModifiedTime: Update time.
+     */
+    readonly attrGmtModifiedTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Options: The extended field, which is of the JsonString type.
+     */
+    readonly attrOptions: ros.IResolvable | string;
+
+    /**
+     * Attribute OwnerId: The ID of the primary account.
+     */
+    readonly attrOwnerId: ros.IResolvable | string;
+
+    /**
+     * Attribute Property: The properties of the dataset.
+     */
+    readonly attrProperty: ros.IResolvable | string;
+
+    /**
+     * Attribute SourceId: The data source ID.
+     */
+    readonly attrSourceId: ros.IResolvable | string;
+
+    /**
+     * Attribute SourceType: The data source type. The default value is USER.
+     */
+    readonly attrSourceType: ros.IResolvable | string;
+
+    /**
+     * Attribute Uri: The Uri configuration sample is as follows:.
+     */
+    readonly attrUri: ros.IResolvable | string;
+
+    /**
+     * Attribute UserId: The ID of the user to which the dataset belongs.
+     */
+    readonly attrUserId: ros.IResolvable | string;
+
+    /**
+     * Attribute WorkspaceId: The ID of the workspace where the dataset is located.
+     */
+    readonly attrWorkspaceId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::Dataset`, which is used to query a dataset.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDataset`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-dataset
  */
-export class Dataset extends ros.Resource {
+export class Dataset extends ros.Resource implements IDataset {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DatasetProps;
+    public readonly props: DatasetProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Accessibility: Workspace visibility.
      */
-    public readonly attrAccessibility: ros.IResolvable;
+    public readonly attrAccessibility: ros.IResolvable | string;
 
     /**
      * Attribute CreateTime: The creation time of the resource.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute DataSourceType: The data source type.
      */
-    public readonly attrDataSourceType: ros.IResolvable;
+    public readonly attrDataSourceType: ros.IResolvable | string;
 
     /**
      * Attribute DataType: The dataset type. The default value is COMMON.
      */
-    public readonly attrDataType: ros.IResolvable;
+    public readonly attrDataType: ros.IResolvable | string;
 
     /**
      * Attribute DatasetId: The first ID of the resource.
      */
-    public readonly attrDatasetId: ros.IResolvable;
+    public readonly attrDatasetId: ros.IResolvable | string;
 
     /**
      * Attribute DatasetName: The name of the dataset.
      */
-    public readonly attrDatasetName: ros.IResolvable;
+    public readonly attrDatasetName: ros.IResolvable | string;
 
     /**
      * Attribute Description: Custom descriptions of datasets to distinguish between different datasets.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute GmtModifiedTime: Update time.
      */
-    public readonly attrGmtModifiedTime: ros.IResolvable;
+    public readonly attrGmtModifiedTime: ros.IResolvable | string;
 
     /**
      * Attribute Options: The extended field, which is of the JsonString type.
      */
-    public readonly attrOptions: ros.IResolvable;
+    public readonly attrOptions: ros.IResolvable | string;
 
     /**
      * Attribute OwnerId: The ID of the primary account.
      */
-    public readonly attrOwnerId: ros.IResolvable;
+    public readonly attrOwnerId: ros.IResolvable | string;
 
     /**
      * Attribute Property: The properties of the dataset.
      */
-    public readonly attrProperty: ros.IResolvable;
+    public readonly attrProperty: ros.IResolvable | string;
 
     /**
      * Attribute SourceId: The data source ID.
      */
-    public readonly attrSourceId: ros.IResolvable;
+    public readonly attrSourceId: ros.IResolvable | string;
 
     /**
      * Attribute SourceType: The data source type. The default value is USER.
      */
-    public readonly attrSourceType: ros.IResolvable;
+    public readonly attrSourceType: ros.IResolvable | string;
 
     /**
      * Attribute Uri: The Uri configuration sample is as follows:.
      */
-    public readonly attrUri: ros.IResolvable;
+    public readonly attrUri: ros.IResolvable | string;
 
     /**
      * Attribute UserId: The ID of the user to which the dataset belongs.
      */
-    public readonly attrUserId: ros.IResolvable;
+    public readonly attrUserId: ros.IResolvable | string;
 
     /**
      * Attribute WorkspaceId: The ID of the workspace where the dataset is located.
      */
-    public readonly attrWorkspaceId: ros.IResolvable;
+    public readonly attrWorkspaceId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

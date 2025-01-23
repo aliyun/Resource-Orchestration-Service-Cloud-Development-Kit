@@ -1020,6 +1020,244 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc3
                 }
             }
         }
+        [JsiiInterface(nativeType: typeof(IAuthConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-fc3.RosFunction.AuthConfigProperty")]
+        public interface IAuthConfigProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: password: The password of the username that is used to log on to the image repository.
+            /// </remarks>
+            [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Password
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: userName: The username that is used to log on to the image repository.
+            /// </remarks>
+            [JsiiProperty(name: "userName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object UserName
+            {
+                get;
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IAuthConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-fc3.RosFunction.AuthConfigProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Fc3.RosFunction.IAuthConfigProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: password: The password of the username that is used to log on to the image repository.
+                /// </remarks>
+                [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Password
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: userName: The username that is used to log on to the image repository.
+                /// </remarks>
+                [JsiiProperty(name: "userName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object UserName
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-fc3.RosFunction.AuthConfigProperty")]
+        public class AuthConfigProperty : AlibabaCloud.SDK.ROS.CDK.Fc3.RosFunction.IAuthConfigProperty
+        {
+            private object _password;
+
+            /// <remarks>
+            /// <strong>Property</strong>: password: The password of the username that is used to log on to the image repository.
+            /// </remarks>
+            [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Password
+            {
+                get => _password;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _password = value;
+                }
+            }
+
+            private object _userName;
+
+            /// <remarks>
+            /// <strong>Property</strong>: userName: The username that is used to log on to the image repository.
+            /// </remarks>
+            [JsiiProperty(name: "userName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object UserName
+            {
+                get => _userName;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _userName = value;
+                }
+            }
+        }
+        [JsiiInterface(nativeType: typeof(ICertConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-fc3.RosFunction.CertConfigProperty")]
+        public interface ICertConfigProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: insecure: Whether to skip certificate verification. Default value is false.
+            /// </remarks>
+            [JsiiProperty(name: "insecure", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Insecure
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: rootCaCertBase64: The certificate authority (CA) certificate of the image repository.
+            /// </remarks>
+            [JsiiProperty(name: "rootCaCertBase64", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RootCaCertBase64
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(ICertConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-fc3.RosFunction.CertConfigProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Fc3.RosFunction.ICertConfigProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: insecure: Whether to skip certificate verification. Default value is false.
+                /// </remarks>
+                [JsiiProperty(name: "insecure", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Insecure
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: rootCaCertBase64: The certificate authority (CA) certificate of the image repository.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "rootCaCertBase64", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? RootCaCertBase64
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-fc3.RosFunction.CertConfigProperty")]
+        public class CertConfigProperty : AlibabaCloud.SDK.ROS.CDK.Fc3.RosFunction.ICertConfigProperty
+        {
+            private object _insecure;
+
+            /// <remarks>
+            /// <strong>Property</strong>: insecure: Whether to skip certificate verification. Default value is false.
+            /// </remarks>
+            [JsiiProperty(name: "insecure", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Insecure
+            {
+                get => _insecure;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _insecure = value;
+                }
+            }
+
+            private object? _rootCaCertBase64;
+
+            /// <remarks>
+            /// <strong>Property</strong>: rootCaCertBase64: The certificate authority (CA) certificate of the image repository.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "rootCaCertBase64", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RootCaCertBase64
+            {
+                get => _rootCaCertBase64;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _rootCaCertBase64 = value;
+                }
+            }
+        }
         [JsiiInterface(nativeType: typeof(ICodeProperty), fullyQualifiedName: "@alicloud/ros-cdk-fc3.RosFunction.CodeProperty")]
         public interface ICodeProperty
         {
@@ -1428,6 +1666,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc3
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: registryConfig: The configurations of the image repository.
+            /// </remarks>
+            [JsiiProperty(name: "registryConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc3.RosFunction.RegistryConfigProperty\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? RegistryConfig
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: resolvedImageUri: The actual digest version of the deployed image. The code version specified by this digest is actually used when the function is started.
             /// </remarks>
             [JsiiProperty(name: "resolvedImageUri", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1523,6 +1774,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc3
                 [JsiiOptional]
                 [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? Port
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: registryConfig: The configurations of the image repository.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "registryConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc3.RosFunction.RegistryConfigProperty\"}]}}", isOptional: true)]
+                public object? RegistryConfig
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -1856,6 +2117,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc3
                         }
                     }
                     _port = value;
+                }
+            }
+
+            private object? _registryConfig;
+
+            /// <remarks>
+            /// <strong>Property</strong>: registryConfig: The configurations of the image repository.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "registryConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc3.RosFunction.RegistryConfigProperty\"}]}}", isOptional: true)]
+            public object? RegistryConfig
+            {
+                get => _registryConfig;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Fc3.RosFunction.IRegistryConfigProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Fc3.RosFunction.IRegistryConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _registryConfig = value;
                 }
             }
 
@@ -4576,6 +4870,172 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc3
                 }
             }
         }
+        [JsiiInterface(nativeType: typeof(INetworkConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-fc3.RosFunction.NetworkConfigProperty")]
+        public interface INetworkConfigProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: securityGroupId: The ID of the security group that can be used to connect to the image repository.
+            /// </remarks>
+            [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object SecurityGroupId
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: vpcId: The ID of the virtual private cloud (VPC) that can be used to connect to the image repository.
+            /// </remarks>
+            [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object VpcId
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: vSwitchId: The ID of the vSwitch that can be used to connect to the image repository.
+            /// </remarks>
+            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object VSwitchId
+            {
+                get;
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(INetworkConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-fc3.RosFunction.NetworkConfigProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Fc3.RosFunction.INetworkConfigProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: securityGroupId: The ID of the security group that can be used to connect to the image repository.
+                /// </remarks>
+                [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object SecurityGroupId
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: vpcId: The ID of the virtual private cloud (VPC) that can be used to connect to the image repository.
+                /// </remarks>
+                [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object VpcId
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: vSwitchId: The ID of the vSwitch that can be used to connect to the image repository.
+                /// </remarks>
+                [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object VSwitchId
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-fc3.RosFunction.NetworkConfigProperty")]
+        public class NetworkConfigProperty : AlibabaCloud.SDK.ROS.CDK.Fc3.RosFunction.INetworkConfigProperty
+        {
+            private object _securityGroupId;
+
+            /// <remarks>
+            /// <strong>Property</strong>: securityGroupId: The ID of the security group that can be used to connect to the image repository.
+            /// </remarks>
+            [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object SecurityGroupId
+            {
+                get => _securityGroupId;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _securityGroupId = value;
+                }
+            }
+
+            private object _vpcId;
+
+            /// <remarks>
+            /// <strong>Property</strong>: vpcId: The ID of the virtual private cloud (VPC) that can be used to connect to the image repository.
+            /// </remarks>
+            [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object VpcId
+            {
+                get => _vpcId;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _vpcId = value;
+                }
+            }
+
+            private object _vSwitchId;
+
+            /// <remarks>
+            /// <strong>Property</strong>: vSwitchId: The ID of the vSwitch that can be used to connect to the image repository.
+            /// </remarks>
+            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object VSwitchId
+            {
+                get => _vSwitchId;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _vSwitchId = value;
+                }
+            }
+        }
         [JsiiInterface(nativeType: typeof(IOssMountConfigMountPointsProperty), fullyQualifiedName: "@alicloud/ros-cdk-fc3.RosFunction.OssMountConfigMountPointsProperty")]
         public interface IOssMountConfigMountPointsProperty
         {
@@ -5100,6 +5560,184 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc3
                         }
                     }
                     _timeout = value;
+                }
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IRegistryConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-fc3.RosFunction.RegistryConfigProperty")]
+        public interface IRegistryConfigProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: certConfig: The certificate configurations.
+            /// </remarks>
+            [JsiiProperty(name: "certConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc3.RosFunction.CertConfigProperty\"}]}}")]
+            object CertConfig
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: authConfig: The authentication information of the image repository.
+            /// </remarks>
+            [JsiiProperty(name: "authConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc3.RosFunction.AuthConfigProperty\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? AuthConfig
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: networkConfig: The network information of the image repository.
+            /// </remarks>
+            [JsiiProperty(name: "networkConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc3.RosFunction.NetworkConfigProperty\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? NetworkConfig
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IRegistryConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-fc3.RosFunction.RegistryConfigProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Fc3.RosFunction.IRegistryConfigProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: certConfig: The certificate configurations.
+                /// </remarks>
+                [JsiiProperty(name: "certConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc3.RosFunction.CertConfigProperty\"}]}}")]
+                public object CertConfig
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: authConfig: The authentication information of the image repository.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "authConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc3.RosFunction.AuthConfigProperty\"}]}}", isOptional: true)]
+                public object? AuthConfig
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: networkConfig: The network information of the image repository.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "networkConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc3.RosFunction.NetworkConfigProperty\"}]}}", isOptional: true)]
+                public object? NetworkConfig
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-fc3.RosFunction.RegistryConfigProperty")]
+        public class RegistryConfigProperty : AlibabaCloud.SDK.ROS.CDK.Fc3.RosFunction.IRegistryConfigProperty
+        {
+            private object _certConfig;
+
+            /// <remarks>
+            /// <strong>Property</strong>: certConfig: The certificate configurations.
+            /// </remarks>
+            [JsiiProperty(name: "certConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc3.RosFunction.CertConfigProperty\"}]}}")]
+            public object CertConfig
+            {
+                get => _certConfig;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Fc3.RosFunction.ICertConfigProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Fc3.RosFunction.ICertConfigProperty).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Fc3.RosFunction.ICertConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _certConfig = value;
+                }
+            }
+
+            private object? _authConfig;
+
+            /// <remarks>
+            /// <strong>Property</strong>: authConfig: The authentication information of the image repository.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "authConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc3.RosFunction.AuthConfigProperty\"}]}}", isOptional: true)]
+            public object? AuthConfig
+            {
+                get => _authConfig;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Fc3.RosFunction.IAuthConfigProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Fc3.RosFunction.IAuthConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _authConfig = value;
+                }
+            }
+
+            private object? _networkConfig;
+
+            /// <remarks>
+            /// <strong>Property</strong>: networkConfig: The network information of the image repository.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "networkConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc3.RosFunction.NetworkConfigProperty\"}]}}", isOptional: true)]
+            public object? NetworkConfig
+            {
+                get => _networkConfig;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Fc3.RosFunction.INetworkConfigProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Fc3.RosFunction.INetworkConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _networkConfig = value;
                 }
             }
         }

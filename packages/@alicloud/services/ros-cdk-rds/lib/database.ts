@@ -48,25 +48,41 @@ export interface DatabaseProps {
 }
 
 /**
+ * Represents a `Database`.
+ */
+export interface IDatabase extends ros.IResource {
+    readonly props: DatabaseProps;
+
+    /**
+     * Attribute DBInstanceId: The ID of the instance.
+     */
+    readonly attrDbInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute DBName: The name of the database.
+     */
+    readonly attrDbName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::Database`, which is used to create a database in an ApsaraDB for RDS instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDatabase`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-database
  */
-export class Database extends ros.Resource {
+export class Database extends ros.Resource implements IDatabase {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DatabaseProps;
+    public readonly props: DatabaseProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DBInstanceId: The ID of the instance.
      */
-    public readonly attrDbInstanceId: ros.IResolvable;
+    public readonly attrDbInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute DBName: The name of the database.
      */
-    public readonly attrDbName: ros.IResolvable;
+    public readonly attrDbName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

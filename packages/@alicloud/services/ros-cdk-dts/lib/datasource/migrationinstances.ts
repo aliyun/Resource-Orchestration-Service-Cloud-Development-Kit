@@ -24,25 +24,41 @@ export interface MigrationInstancesProps {
 }
 
 /**
+ * Represents a `MigrationInstances`.
+ */
+export interface IMigrationInstances extends ros.IResource {
+    readonly props: MigrationInstancesProps;
+
+    /**
+     * Attribute DtsInstanceIds: The list of dts instance IDs.
+     */
+    readonly attrDtsInstanceIds: ros.IResolvable | string;
+
+    /**
+     * Attribute MigrationInstances: The list of migration instances.
+     */
+    readonly attrMigrationInstances: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::DTS::MigrationInstances`, which is used to query information about Data Transmission Service (DTS) tasks.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMigrationInstances`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dts-migrationinstances
  */
-export class MigrationInstances extends ros.Resource {
+export class MigrationInstances extends ros.Resource implements IMigrationInstances {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: MigrationInstancesProps;
+    public readonly props: MigrationInstancesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DtsInstanceIds: The list of dts instance IDs.
      */
-    public readonly attrDtsInstanceIds: ros.IResolvable;
+    public readonly attrDtsInstanceIds: ros.IResolvable | string;
 
     /**
      * Attribute MigrationInstances: The list of migration instances.
      */
-    public readonly attrMigrationInstances: ros.IResolvable;
+    public readonly attrMigrationInstances: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

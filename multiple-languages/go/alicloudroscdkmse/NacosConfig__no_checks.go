@@ -52,10 +52,6 @@ func (j *jsiiProxy_NacosConfig) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_NacosConfig) validateSetPropsParameters(val *NacosConfigProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_NacosConfig) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

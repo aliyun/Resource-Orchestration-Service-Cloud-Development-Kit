@@ -21,20 +21,31 @@ export interface ProjectProps {
 }
 
 /**
+ * Represents a `Project`.
+ */
+export interface IProject extends ros.IResource {
+    readonly props: ProjectProps;
+
+    /**
+     * Attribute ProjectName: Project name
+     */
+    readonly attrProjectName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::DATAHUB::Project`, which is used to create a DataHub project.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosProject`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-datahub-project
  */
-export class Project extends ros.Resource {
+export class Project extends ros.Resource implements IProject {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ProjectProps;
+    public readonly props: ProjectProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ProjectName: Project name
      */
-    public readonly attrProjectName: ros.IResolvable;
+    public readonly attrProjectName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

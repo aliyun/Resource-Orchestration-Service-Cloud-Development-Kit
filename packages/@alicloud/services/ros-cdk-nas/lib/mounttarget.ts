@@ -54,20 +54,31 @@ export interface MountTargetProps {
 }
 
 /**
+ * Represents a `MountTarget`.
+ */
+export interface IMountTarget extends ros.IResource {
+    readonly props: MountTargetProps;
+
+    /**
+     * Attribute MountTargetDomain: Mount point domain name
+     */
+    readonly attrMountTargetDomain: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::MountTarget`, which is used to create a mount target.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMountTarget`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-mounttarget
  */
-export class MountTarget extends ros.Resource {
+export class MountTarget extends ros.Resource implements IMountTarget {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: MountTargetProps;
+    public readonly props: MountTargetProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute MountTargetDomain: Mount point domain name
      */
-    public readonly attrMountTargetDomain: ros.IResolvable;
+    public readonly attrMountTargetDomain: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

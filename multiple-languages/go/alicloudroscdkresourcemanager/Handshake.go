@@ -12,24 +12,34 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::Handshake`, which is used to create an invitation.
 type Handshake interface {
 	alicloudroscdkcore.Resource
+	IHandshake
 	// Attribute HandshakeId: This ID of Resource Manager handshake.
-	AttrHandshakeId() alicloudroscdkcore.IResolvable
+	AttrHandshakeId() interface{}
 	// Attribute MasterAccountId: Resource account master account ID.
-	AttrMasterAccountId() alicloudroscdkcore.IResolvable
+	AttrMasterAccountId() interface{}
 	// Attribute MasterAccountName: The name of the main account of the resource directory.
-	AttrMasterAccountName() alicloudroscdkcore.IResolvable
+	AttrMasterAccountName() interface{}
 	// Attribute Note: Remarks.
-	AttrNote() alicloudroscdkcore.IResolvable
+	AttrNote() interface{}
 	// Attribute ResourceDirectoryId: Resource directory ID.
-	AttrResourceDirectoryId() alicloudroscdkcore.IResolvable
+	AttrResourceDirectoryId() interface{}
 	// Attribute TargetEntity: Invited account ID or login email.
-	AttrTargetEntity() alicloudroscdkcore.IResolvable
+	AttrTargetEntity() interface{}
 	// Attribute TargetType: Type of account being invited.
 	//
 	// Valid values: Account, Email.
-	AttrTargetType() alicloudroscdkcore.IResolvable
+	AttrTargetType() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -44,7 +54,6 @@ type Handshake interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *HandshakeProps
-	SetProps(val *HandshakeProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -57,6 +66,9 @@ type Handshake interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -109,10 +121,11 @@ type Handshake interface {
 // The jsii proxy struct for Handshake
 type jsiiProxy_Handshake struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IHandshake
 }
 
-func (j *jsiiProxy_Handshake) AttrHandshakeId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Handshake) AttrHandshakeId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHandshakeId",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_Handshake) AttrHandshakeId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Handshake) AttrMasterAccountId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Handshake) AttrMasterAccountId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMasterAccountId",
@@ -131,8 +144,8 @@ func (j *jsiiProxy_Handshake) AttrMasterAccountId() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_Handshake) AttrMasterAccountName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Handshake) AttrMasterAccountName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMasterAccountName",
@@ -141,8 +154,8 @@ func (j *jsiiProxy_Handshake) AttrMasterAccountName() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_Handshake) AttrNote() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Handshake) AttrNote() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNote",
@@ -151,8 +164,8 @@ func (j *jsiiProxy_Handshake) AttrNote() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Handshake) AttrResourceDirectoryId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Handshake) AttrResourceDirectoryId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceDirectoryId",
@@ -161,8 +174,8 @@ func (j *jsiiProxy_Handshake) AttrResourceDirectoryId() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_Handshake) AttrTargetEntity() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Handshake) AttrTargetEntity() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTargetEntity",
@@ -171,8 +184,8 @@ func (j *jsiiProxy_Handshake) AttrTargetEntity() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_Handshake) AttrTargetType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Handshake) AttrTargetType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTargetType",
@@ -186,6 +199,16 @@ func (j *jsiiProxy_Handshake) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Handshake) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -323,17 +346,6 @@ func (j *jsiiProxy_Handshake)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Handshake)SetProps(val *HandshakeProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Handshake)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -425,6 +437,45 @@ func (h *jsiiProxy_Handshake) ApplyRemovalPolicy(policy alicloudroscdkcore.Remov
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (h *jsiiProxy_Handshake) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		h,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (h *jsiiProxy_Handshake) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		h,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (h *jsiiProxy_Handshake) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		h,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (h *jsiiProxy_Handshake) GeneratePhysicalName() *string {

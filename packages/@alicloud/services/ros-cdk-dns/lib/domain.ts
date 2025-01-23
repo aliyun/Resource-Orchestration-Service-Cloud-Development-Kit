@@ -31,45 +31,81 @@ export interface DomainProps {
 }
 
 /**
+ * Represents a `Domain`.
+ */
+export interface IDomain extends ros.IResource {
+    readonly props: DomainProps;
+
+    /**
+     * Attribute DnsServers: The DNS list for the domain name under resolution
+     */
+    readonly attrDnsServers: ros.IResolvable | string;
+
+    /**
+     * Attribute DomainId: Domain ID
+     */
+    readonly attrDomainId: ros.IResolvable | string;
+
+    /**
+     * Attribute DomainName: Domain name
+     */
+    readonly attrDomainName: ros.IResolvable | string;
+
+    /**
+     * Attribute GroupId: Domain name group ID
+     */
+    readonly attrGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute GroupName: The name of the domain name group
+     */
+    readonly attrGroupName: ros.IResolvable | string;
+
+    /**
+     * Attribute PunyCode: punycode returned only for a Chinese domain name
+     */
+    readonly attrPunyCode: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::DNS::Domain`, which is used to add a domain name.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomain`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-domain
  */
-export class Domain extends ros.Resource {
+export class Domain extends ros.Resource implements IDomain {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DomainProps;
+    public readonly props: DomainProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DnsServers: The DNS list for the domain name under resolution
      */
-    public readonly attrDnsServers: ros.IResolvable;
+    public readonly attrDnsServers: ros.IResolvable | string;
 
     /**
      * Attribute DomainId: Domain ID
      */
-    public readonly attrDomainId: ros.IResolvable;
+    public readonly attrDomainId: ros.IResolvable | string;
 
     /**
      * Attribute DomainName: Domain name
      */
-    public readonly attrDomainName: ros.IResolvable;
+    public readonly attrDomainName: ros.IResolvable | string;
 
     /**
      * Attribute GroupId: Domain name group ID
      */
-    public readonly attrGroupId: ros.IResolvable;
+    public readonly attrGroupId: ros.IResolvable | string;
 
     /**
      * Attribute GroupName: The name of the domain name group
      */
-    public readonly attrGroupName: ros.IResolvable;
+    public readonly attrGroupName: ros.IResolvable | string;
 
     /**
      * Attribute PunyCode: punycode returned only for a Chinese domain name
      */
-    public readonly attrPunyCode: ros.IResolvable;
+    public readonly attrPunyCode: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -26,14 +26,20 @@ export interface AttachPolicyToUserProps {
 }
 
 /**
+ * Represents a `AttachPolicyToUser`.
+ */
+export interface IAttachPolicyToUser extends ros.IResource {
+    readonly props: AttachPolicyToUserProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::AttachPolicyToUser`, which is used to grant permissions to a specified user.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAttachPolicyToUser`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-attachpolicytouser
  */
-export class AttachPolicyToUser extends ros.Resource {
+export class AttachPolicyToUser extends ros.Resource implements IAttachPolicyToUser {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AttachPolicyToUserProps;
+    public readonly props: AttachPolicyToUserProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

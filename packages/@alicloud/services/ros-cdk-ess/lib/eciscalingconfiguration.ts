@@ -273,20 +273,31 @@ export interface EciScalingConfigurationProps {
 }
 
 /**
+ * Represents a `EciScalingConfiguration`.
+ */
+export interface IEciScalingConfiguration extends ros.IResource {
+    readonly props: EciScalingConfigurationProps;
+
+    /**
+     * Attribute ScalingConfigurationId: The ID of the elastic container instance.
+     */
+    readonly attrScalingConfigurationId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::EciScalingConfiguration`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEciScalingConfiguration`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-eciscalingconfiguration
  */
-export class EciScalingConfiguration extends ros.Resource {
+export class EciScalingConfiguration extends ros.Resource implements IEciScalingConfiguration {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: EciScalingConfigurationProps;
+    public readonly props: EciScalingConfigurationProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ScalingConfigurationId: The ID of the elastic container instance.
      */
-    public readonly attrScalingConfigurationId: ros.IResolvable;
+    public readonly attrScalingConfigurationId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

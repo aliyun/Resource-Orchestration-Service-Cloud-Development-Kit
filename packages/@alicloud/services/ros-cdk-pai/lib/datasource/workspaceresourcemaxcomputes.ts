@@ -29,25 +29,41 @@ export interface WorkspaceResourceMaxComputesProps {
 }
 
 /**
+ * Represents a `WorkspaceResourceMaxComputes`.
+ */
+export interface IWorkspaceResourceMaxComputes extends ros.IResource {
+    readonly props: WorkspaceResourceMaxComputesProps;
+
+    /**
+     * Attribute GroupNames: The list of group names.
+     */
+    readonly attrGroupNames: ros.IResolvable | string;
+
+    /**
+     * Attribute WorkspaceResourceMaxComputes: The list of workspace resource max computes.
+     */
+    readonly attrWorkspaceResourceMaxComputes: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::WorkspaceResourceMaxComputes`, which is used to query the MaxCompute resources that are associated with a workspace.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWorkspaceResourceMaxComputes`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-workspaceresourcemaxcomputes
  */
-export class WorkspaceResourceMaxComputes extends ros.Resource {
+export class WorkspaceResourceMaxComputes extends ros.Resource implements IWorkspaceResourceMaxComputes {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: WorkspaceResourceMaxComputesProps;
+    public readonly props: WorkspaceResourceMaxComputesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute GroupNames: The list of group names.
      */
-    public readonly attrGroupNames: ros.IResolvable;
+    public readonly attrGroupNames: ros.IResolvable | string;
 
     /**
      * Attribute WorkspaceResourceMaxComputes: The list of workspace resource max computes.
      */
-    public readonly attrWorkspaceResourceMaxComputes: ros.IResolvable;
+    public readonly attrWorkspaceResourceMaxComputes: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

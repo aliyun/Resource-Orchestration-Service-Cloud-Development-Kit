@@ -12,32 +12,42 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::CS::ManagedEdgeKubernetesCluster`, which is used to create a Container Service for Kubernetes (ACK) edge cluster.
 type ManagedEdgeKubernetesCluster interface {
 	alicloudroscdkcore.Resource
+	IManagedEdgeKubernetesCluster
 	// Attribute APIServerSLBId: The id of API server SLB.
-	AttrApiServerSlbId() alicloudroscdkcore.IResolvable
+	AttrApiServerSlbId() interface{}
 	// Attribute ClusterId: Cluster instance ID.
-	AttrClusterId() alicloudroscdkcore.IResolvable
+	AttrClusterId() interface{}
 	// Attribute DefaultUserKubeConfig: Default user kubernetes config which is used for configuring cluster credentials.
-	AttrDefaultUserKubeConfig() alicloudroscdkcore.IResolvable
+	AttrDefaultUserKubeConfig() interface{}
 	// Attribute IngressSLBId: The id of ingress SLB.
-	AttrIngressSlbId() alicloudroscdkcore.IResolvable
+	AttrIngressSlbId() interface{}
 	// Attribute Nodes: The list of cluster nodes.
-	AttrNodes() alicloudroscdkcore.IResolvable
+	AttrNodes() interface{}
 	// Attribute PrivateUserKubConfig: Private user kubernetes config which is used for configuring cluster credentials.
-	AttrPrivateUserKubConfig() alicloudroscdkcore.IResolvable
+	AttrPrivateUserKubConfig() interface{}
 	// Attribute ScalingConfigurationId: Scaling configuration id.
-	AttrScalingConfigurationId() alicloudroscdkcore.IResolvable
+	AttrScalingConfigurationId() interface{}
 	// Attribute ScalingGroupId: Scaling group id.
-	AttrScalingGroupId() alicloudroscdkcore.IResolvable
+	AttrScalingGroupId() interface{}
 	// Attribute ScalingRuleId: Scaling rule id.
-	AttrScalingRuleId() alicloudroscdkcore.IResolvable
+	AttrScalingRuleId() interface{}
 	// Attribute TaskId: Task ID.
 	//
 	// Automatically assigned by the system, the user queries the task status.
-	AttrTaskId() alicloudroscdkcore.IResolvable
+	AttrTaskId() interface{}
 	// Attribute WorkerRamRoleName: Worker ram role name.
-	AttrWorkerRamRoleName() alicloudroscdkcore.IResolvable
+	AttrWorkerRamRoleName() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -52,7 +62,6 @@ type ManagedEdgeKubernetesCluster interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ManagedEdgeKubernetesClusterProps
-	SetProps(val *ManagedEdgeKubernetesClusterProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -65,6 +74,9 @@ type ManagedEdgeKubernetesCluster interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -117,10 +129,11 @@ type ManagedEdgeKubernetesCluster interface {
 // The jsii proxy struct for ManagedEdgeKubernetesCluster
 type jsiiProxy_ManagedEdgeKubernetesCluster struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IManagedEdgeKubernetesCluster
 }
 
-func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrApiServerSlbId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrApiServerSlbId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrApiServerSlbId",
@@ -129,8 +142,8 @@ func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrApiServerSlbId() alicloudro
 	return returns
 }
 
-func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrClusterId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrClusterId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrClusterId",
@@ -139,8 +152,8 @@ func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrClusterId() alicloudroscdkc
 	return returns
 }
 
-func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrDefaultUserKubeConfig() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrDefaultUserKubeConfig() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDefaultUserKubeConfig",
@@ -149,8 +162,8 @@ func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrDefaultUserKubeConfig() ali
 	return returns
 }
 
-func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrIngressSlbId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrIngressSlbId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIngressSlbId",
@@ -159,8 +172,8 @@ func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrIngressSlbId() alicloudrosc
 	return returns
 }
 
-func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrNodes() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrNodes() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNodes",
@@ -169,8 +182,8 @@ func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrNodes() alicloudroscdkcore.
 	return returns
 }
 
-func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrPrivateUserKubConfig() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrPrivateUserKubConfig() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPrivateUserKubConfig",
@@ -179,8 +192,8 @@ func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrPrivateUserKubConfig() alic
 	return returns
 }
 
-func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrScalingConfigurationId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrScalingConfigurationId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrScalingConfigurationId",
@@ -189,8 +202,8 @@ func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrScalingConfigurationId() al
 	return returns
 }
 
-func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrScalingGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrScalingGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrScalingGroupId",
@@ -199,8 +212,8 @@ func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrScalingGroupId() alicloudro
 	return returns
 }
 
-func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrScalingRuleId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrScalingRuleId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrScalingRuleId",
@@ -209,8 +222,8 @@ func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrScalingRuleId() alicloudros
 	return returns
 }
 
-func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrTaskId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrTaskId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTaskId",
@@ -219,8 +232,8 @@ func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrTaskId() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrWorkerRamRoleName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ManagedEdgeKubernetesCluster) AttrWorkerRamRoleName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrWorkerRamRoleName",
@@ -234,6 +247,16 @@ func (j *jsiiProxy_ManagedEdgeKubernetesCluster) EnableResourcePropertyConstrain
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ManagedEdgeKubernetesCluster) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -371,17 +394,6 @@ func (j *jsiiProxy_ManagedEdgeKubernetesCluster)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ManagedEdgeKubernetesCluster)SetProps(val *ManagedEdgeKubernetesClusterProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_ManagedEdgeKubernetesCluster)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -473,6 +485,45 @@ func (m *jsiiProxy_ManagedEdgeKubernetesCluster) ApplyRemovalPolicy(policy alicl
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (m *jsiiProxy_ManagedEdgeKubernetesCluster) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		m,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (m *jsiiProxy_ManagedEdgeKubernetesCluster) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		m,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (m *jsiiProxy_ManagedEdgeKubernetesCluster) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		m,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (m *jsiiProxy_ManagedEdgeKubernetesCluster) GeneratePhysicalName() *string {

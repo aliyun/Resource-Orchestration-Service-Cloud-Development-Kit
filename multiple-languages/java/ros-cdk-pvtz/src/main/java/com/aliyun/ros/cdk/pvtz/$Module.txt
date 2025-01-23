@@ -1,3 +1,9 @@
+@alicloud/ros-cdk-pvtz.IRule=com.aliyun.ros.cdk.pvtz.IRule
+@alicloud/ros-cdk-pvtz.ISyncEcsHost=com.aliyun.ros.cdk.pvtz.ISyncEcsHost
+@alicloud/ros-cdk-pvtz.IUserVpcAuthorization=com.aliyun.ros.cdk.pvtz.IUserVpcAuthorization
+@alicloud/ros-cdk-pvtz.IZone=com.aliyun.ros.cdk.pvtz.IZone
+@alicloud/ros-cdk-pvtz.IZoneRecord=com.aliyun.ros.cdk.pvtz.IZoneRecord
+@alicloud/ros-cdk-pvtz.IZoneVpcBinder=com.aliyun.ros.cdk.pvtz.IZoneVpcBinder
 @alicloud/ros-cdk-pvtz.RosRule=com.aliyun.ros.cdk.pvtz.RosRule
 @alicloud/ros-cdk-pvtz.RosRule.ForwardIpProperty=com.aliyun.ros.cdk.pvtz.RosRule$ForwardIpProperty
 @alicloud/ros-cdk-pvtz.RosRuleProps=com.aliyun.ros.cdk.pvtz.RosRuleProps
@@ -26,6 +32,10 @@
 @alicloud/ros-cdk-pvtz.ZoneRecordProps=com.aliyun.ros.cdk.pvtz.ZoneRecordProps
 @alicloud/ros-cdk-pvtz.ZoneVpcBinder=com.aliyun.ros.cdk.pvtz.ZoneVpcBinder
 @alicloud/ros-cdk-pvtz.ZoneVpcBinderProps=com.aliyun.ros.cdk.pvtz.ZoneVpcBinderProps
+@alicloud/ros-cdk-pvtz.datasource.IRule=com.aliyun.ros.cdk.pvtz.datasource.IRule
+@alicloud/ros-cdk-pvtz.datasource.IRules=com.aliyun.ros.cdk.pvtz.datasource.IRules
+@alicloud/ros-cdk-pvtz.datasource.IZone=com.aliyun.ros.cdk.pvtz.datasource.IZone
+@alicloud/ros-cdk-pvtz.datasource.IZones=com.aliyun.ros.cdk.pvtz.datasource.IZones
 @alicloud/ros-cdk-pvtz.datasource.RosRule=com.aliyun.ros.cdk.pvtz.datasource.RosRule
 @alicloud/ros-cdk-pvtz.datasource.RosRuleProps=com.aliyun.ros.cdk.pvtz.datasource.RosRuleProps
 @alicloud/ros-cdk-pvtz.datasource.RosRules=com.aliyun.ros.cdk.pvtz.datasource.RosRules

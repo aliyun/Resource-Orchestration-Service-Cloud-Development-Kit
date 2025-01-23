@@ -12,16 +12,26 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::VPC::AnycastEIP`, which is used to create an Anycast elastic IP address (Anycast EIP).
 type AnycastEIP interface {
 	alicloudroscdkcore.Resource
+	IAnycastEIP
 	// Attribute AnycastId: Anycast EIP instance ID.
-	AttrAnycastId() alicloudroscdkcore.IResolvable
+	AttrAnycastId() interface{}
 	// Attribute IpAddress: Anycase IP address.
-	AttrIpAddress() alicloudroscdkcore.IResolvable
+	AttrIpAddress() interface{}
 	// Attribute Name: Anycast EIP instance name.
-	AttrName() alicloudroscdkcore.IResolvable
+	AttrName() interface{}
 	// Attribute OrderId: Order ID.
-	AttrOrderId() alicloudroscdkcore.IResolvable
+	AttrOrderId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -36,7 +46,6 @@ type AnycastEIP interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *AnycastEIPProps
-	SetProps(val *AnycastEIPProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -49,6 +58,9 @@ type AnycastEIP interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -101,10 +113,11 @@ type AnycastEIP interface {
 // The jsii proxy struct for AnycastEIP
 type jsiiProxy_AnycastEIP struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IAnycastEIP
 }
 
-func (j *jsiiProxy_AnycastEIP) AttrAnycastId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AnycastEIP) AttrAnycastId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAnycastId",
@@ -113,8 +126,8 @@ func (j *jsiiProxy_AnycastEIP) AttrAnycastId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_AnycastEIP) AttrIpAddress() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AnycastEIP) AttrIpAddress() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIpAddress",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_AnycastEIP) AttrIpAddress() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_AnycastEIP) AttrName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AnycastEIP) AttrName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrName",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_AnycastEIP) AttrName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_AnycastEIP) AttrOrderId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AnycastEIP) AttrOrderId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOrderId",
@@ -148,6 +161,16 @@ func (j *jsiiProxy_AnycastEIP) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AnycastEIP) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -285,17 +308,6 @@ func (j *jsiiProxy_AnycastEIP)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AnycastEIP)SetProps(val *AnycastEIPProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_AnycastEIP)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -387,6 +399,45 @@ func (a *jsiiProxy_AnycastEIP) ApplyRemovalPolicy(policy alicloudroscdkcore.Remo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (a *jsiiProxy_AnycastEIP) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		a,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AnycastEIP) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AnycastEIP) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (a *jsiiProxy_AnycastEIP) GeneratePhysicalName() *string {

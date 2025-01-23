@@ -57,25 +57,41 @@ export interface IpsecServerProps {
 }
 
 /**
+ * Represents a `IpsecServer`.
+ */
+export interface IIpsecServer extends ros.IResource {
+    readonly props: IpsecServerProps;
+
+    /**
+     * Attribute IpsecServerId: IPsec server ID.
+     */
+    readonly attrIpsecServerId: ros.IResolvable | string;
+
+    /**
+     * Attribute IpsecServerName: IPsec server name.
+     */
+    readonly attrIpsecServerName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::IpsecServer`, which is used to create an IPsec-VPN server.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosIpsecServer`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipsecserver
  */
-export class IpsecServer extends ros.Resource {
+export class IpsecServer extends ros.Resource implements IIpsecServer {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: IpsecServerProps;
+    public readonly props: IpsecServerProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute IpsecServerId: IPsec server ID.
      */
-    public readonly attrIpsecServerId: ros.IResolvable;
+    public readonly attrIpsecServerId: ros.IResolvable | string;
 
     /**
      * Attribute IpsecServerName: IPsec server name.
      */
-    public readonly attrIpsecServerName: ros.IResolvable;
+    public readonly attrIpsecServerName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

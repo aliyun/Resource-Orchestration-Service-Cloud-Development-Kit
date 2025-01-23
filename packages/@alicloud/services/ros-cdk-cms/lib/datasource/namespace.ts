@@ -24,40 +24,71 @@ export interface NamespaceProps {
 }
 
 /**
+ * Represents a `Namespace`.
+ */
+export interface INamespace extends ros.IResource {
+    readonly props: NamespaceProps;
+
+    /**
+     * Attribute CreateTime: Create the timestamp of the indicator warehouse.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: Description of indicator warehouse.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute ModifyTime: The timestamp of the last modification indicator warehouse.
+     */
+    readonly attrModifyTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Namespace: Indicator warehouse name.
+     */
+    readonly attrNamespace: ros.IResolvable | string;
+
+    /**
+     * Attribute Specification: Data storage duration.
+     */
+    readonly attrSpecification: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::CMS::Namespace`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNamespace`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-namespace
  */
-export class Namespace extends ros.Resource {
+export class Namespace extends ros.Resource implements INamespace {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: NamespaceProps;
+    public readonly props: NamespaceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateTime: Create the timestamp of the indicator warehouse.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute Description: Description of indicator warehouse.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute ModifyTime: The timestamp of the last modification indicator warehouse.
      */
-    public readonly attrModifyTime: ros.IResolvable;
+    public readonly attrModifyTime: ros.IResolvable | string;
 
     /**
      * Attribute Namespace: Indicator warehouse name.
      */
-    public readonly attrNamespace: ros.IResolvable;
+    public readonly attrNamespace: ros.IResolvable | string;
 
     /**
      * Attribute Specification: Data storage duration.
      */
-    public readonly attrSpecification: ros.IResolvable;
+    public readonly attrSpecification: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

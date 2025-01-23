@@ -41,25 +41,41 @@ export interface DeploymentSetsProps {
 }
 
 /**
+ * Represents a `DeploymentSets`.
+ */
+export interface IDeploymentSets extends ros.IResource {
+    readonly props: DeploymentSetsProps;
+
+    /**
+     * Attribute DeploymentSetIds: the list of deployment set ids
+     */
+    readonly attrDeploymentSetIds: ros.IResolvable | string;
+
+    /**
+     * Attribute DeploymentSets: The list of deployment sets.
+     */
+    readonly attrDeploymentSets: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::DeploymentSets`, which is used to query the information about deployment sets.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDeploymentSets`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-deploymentsets
  */
-export class DeploymentSets extends ros.Resource {
+export class DeploymentSets extends ros.Resource implements IDeploymentSets {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DeploymentSetsProps;
+    public readonly props: DeploymentSetsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DeploymentSetIds: the list of deployment set ids
      */
-    public readonly attrDeploymentSetIds: ros.IResolvable;
+    public readonly attrDeploymentSetIds: ros.IResolvable | string;
 
     /**
      * Attribute DeploymentSets: The list of deployment sets.
      */
-    public readonly attrDeploymentSets: ros.IResolvable;
+    public readonly attrDeploymentSets: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

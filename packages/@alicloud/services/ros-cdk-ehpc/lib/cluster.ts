@@ -325,36 +325,63 @@ export interface ClusterProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::EHPC::Cluster`, which is used to create an Elastic High Performance Computing (E-HPC) cluster.
- * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster`for a more convenient development experience.
- * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-cluster
+ * Represents a `Cluster`.
  */
-export class Cluster extends ros.Resource {
-    protected scope: ros.Construct;
-    protected id: string;
-    protected props: ClusterProps;
-    protected enableResourcePropertyConstraint: boolean;
+export interface ICluster extends ros.IResource {
+    readonly props: ClusterProps;
 
     /**
      * Attribute ClusterId: Cluster Id.
      */
-    public readonly attrClusterId: ros.IResolvable;
+    readonly attrClusterId: ros.IResolvable | string;
 
     /**
      * Attribute EcsInfo: A data structure describing the number and specifications of ECS for various components of the cluster.
 You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2, "InstanceType": "ecs.n1.large"}, "Compute": {"Count": 8, "InstanceType": "ecs.n1.large"}, "Login": {"Count": 1, "InstanceType": "ecs.n1.large"}}
      */
-    public readonly attrEcsInfo: ros.IResolvable;
+    readonly attrEcsInfo: ros.IResolvable | string;
 
     /**
      * Attribute Name: Cluster name.
      */
-    public readonly attrName: ros.IResolvable;
+    readonly attrName: ros.IResolvable | string;
 
     /**
      * Attribute SecurityGroupId: Security group ID.
      */
-    public readonly attrSecurityGroupId: ros.IResolvable;
+    readonly attrSecurityGroupId: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EHPC::Cluster`, which is used to create an Elastic High Performance Computing (E-HPC) cluster.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-cluster
+ */
+export class Cluster extends ros.Resource implements ICluster {
+    protected scope: ros.Construct;
+    protected id: string;
+    public readonly props: ClusterProps;
+    protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute ClusterId: Cluster Id.
+     */
+    public readonly attrClusterId: ros.IResolvable | string;
+
+    /**
+     * Attribute EcsInfo: A data structure describing the number and specifications of ECS for various components of the cluster.
+You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2, "InstanceType": "ecs.n1.large"}, "Compute": {"Count": 8, "InstanceType": "ecs.n1.large"}, "Login": {"Count": 1, "InstanceType": "ecs.n1.large"}}
+     */
+    public readonly attrEcsInfo: ros.IResolvable | string;
+
+    /**
+     * Attribute Name: Cluster name.
+     */
+    public readonly attrName: ros.IResolvable | string;
+
+    /**
+     * Attribute SecurityGroupId: Security group ID.
+     */
+    public readonly attrSecurityGroupId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

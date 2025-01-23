@@ -12,26 +12,36 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::K8sCluster`, which is used to create a cluster of Container Service for Kubernetes (ACK).
 type K8sCluster interface {
 	alicloudroscdkcore.Resource
+	IK8sCluster
 	// Attribute ClusterId: The ID of the cluster.
-	AttrClusterId() alicloudroscdkcore.IResolvable
+	AttrClusterId() interface{}
 	// Attribute ClusterName: The name of the cluster.
-	AttrClusterName() alicloudroscdkcore.IResolvable
+	AttrClusterName() interface{}
 	// Attribute ClusterType: The type of the cluster: 2: ECS cluster 5: Container Service K8s cluster or Serverless K8s cluster.
-	AttrClusterType() alicloudroscdkcore.IResolvable
+	AttrClusterType() interface{}
 	// Attribute CsClusterId: The ID of the K8s cluster.
-	AttrCsClusterId() alicloudroscdkcore.IResolvable
+	AttrCsClusterId() interface{}
 	// Attribute NetworkMode: Network node: 1: Classic network 2: VPC.
-	AttrNetworkMode() alicloudroscdkcore.IResolvable
+	AttrNetworkMode() interface{}
 	// Attribute NodeNum: Number of nodes.
-	AttrNodeNum() alicloudroscdkcore.IResolvable
+	AttrNodeNum() interface{}
 	// Attribute SubNetCidr: Sub net CIDR.
-	AttrSubNetCidr() alicloudroscdkcore.IResolvable
+	AttrSubNetCidr() interface{}
 	// Attribute VpcId: The ID of the cluster.
-	AttrVpcId() alicloudroscdkcore.IResolvable
+	AttrVpcId() interface{}
 	// Attribute VswitchId: The ID of the cluster.
-	AttrVswitchId() alicloudroscdkcore.IResolvable
+	AttrVswitchId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -46,7 +56,6 @@ type K8sCluster interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *K8sClusterProps
-	SetProps(val *K8sClusterProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -59,6 +68,9 @@ type K8sCluster interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -111,10 +123,11 @@ type K8sCluster interface {
 // The jsii proxy struct for K8sCluster
 type jsiiProxy_K8sCluster struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IK8sCluster
 }
 
-func (j *jsiiProxy_K8sCluster) AttrClusterId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_K8sCluster) AttrClusterId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrClusterId",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_K8sCluster) AttrClusterId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_K8sCluster) AttrClusterName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_K8sCluster) AttrClusterName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrClusterName",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_K8sCluster) AttrClusterName() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_K8sCluster) AttrClusterType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_K8sCluster) AttrClusterType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrClusterType",
@@ -143,8 +156,8 @@ func (j *jsiiProxy_K8sCluster) AttrClusterType() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_K8sCluster) AttrCsClusterId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_K8sCluster) AttrCsClusterId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCsClusterId",
@@ -153,8 +166,8 @@ func (j *jsiiProxy_K8sCluster) AttrCsClusterId() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_K8sCluster) AttrNetworkMode() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_K8sCluster) AttrNetworkMode() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNetworkMode",
@@ -163,8 +176,8 @@ func (j *jsiiProxy_K8sCluster) AttrNetworkMode() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_K8sCluster) AttrNodeNum() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_K8sCluster) AttrNodeNum() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNodeNum",
@@ -173,8 +186,8 @@ func (j *jsiiProxy_K8sCluster) AttrNodeNum() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_K8sCluster) AttrSubNetCidr() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_K8sCluster) AttrSubNetCidr() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSubNetCidr",
@@ -183,8 +196,8 @@ func (j *jsiiProxy_K8sCluster) AttrSubNetCidr() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_K8sCluster) AttrVpcId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_K8sCluster) AttrVpcId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVpcId",
@@ -193,8 +206,8 @@ func (j *jsiiProxy_K8sCluster) AttrVpcId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_K8sCluster) AttrVswitchId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_K8sCluster) AttrVswitchId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVswitchId",
@@ -208,6 +221,16 @@ func (j *jsiiProxy_K8sCluster) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_K8sCluster) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -345,17 +368,6 @@ func (j *jsiiProxy_K8sCluster)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_K8sCluster)SetProps(val *K8sClusterProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_K8sCluster)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -447,6 +459,45 @@ func (k *jsiiProxy_K8sCluster) ApplyRemovalPolicy(policy alicloudroscdkcore.Remo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (k *jsiiProxy_K8sCluster) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		k,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (k *jsiiProxy_K8sCluster) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		k,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (k *jsiiProxy_K8sCluster) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		k,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (k *jsiiProxy_K8sCluster) GeneratePhysicalName() *string {

@@ -24,180 +24,351 @@ export interface AddressProps {
 }
 
 /**
+ * Represents a `Address`.
+ */
+export interface IAddress extends ros.IResource {
+    readonly props: AddressProps;
+
+    /**
+     * Attribute AddressName: The name of the EIP.
+     */
+    readonly attrAddressName: ros.IResolvable | string;
+
+    /**
+     * Attribute AllocationId: The ID of the EIP instance.
+     */
+    readonly attrAllocationId: ros.IResolvable | string;
+
+    /**
+     * Attribute Bandwidth: The peak bandwidth of the EIP. Unit: Mbps.
+     */
+    readonly attrBandwidth: ros.IResolvable | string;
+
+    /**
+     * Attribute BandwidthPackageBandwidth: The bandwidth value of the Internet shared bandwidth added to the EIP. The unit is Mbps.
+     */
+    readonly attrBandwidthPackageBandwidth: ros.IResolvable | string;
+
+    /**
+     * Attribute BandwidthPackageId: The ID of the added shared bandwidth.
+     */
+    readonly attrBandwidthPackageId: ros.IResolvable | string;
+
+    /**
+     * Attribute BandwidthPackageType: The type of bandwidth. Only **CommonBandwidthPackage** (shared bandwidth) is supported.
+     */
+    readonly attrBandwidthPackageType: ros.IResolvable | string;
+
+    /**
+     * Attribute BusinessStatus: The business status of the EIP instance.
+     */
+    readonly attrBusinessStatus: ros.IResolvable | string;
+
+    /**
+     * Attribute CreateTime: The time when the EIP was created.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute DeletionProtection: Whether the delete protection function is turned on.
+     */
+    readonly attrDeletionProtection: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: The description of the EIP instance.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute EipBandwidth: AN EIP is added to an Internet shared bandwidth before or exit purchase an Internet shared bandwidth instance after the bandwidth Mbps Set for the bandwidth.
+     */
+    readonly attrEipBandwidth: ros.IResolvable | string;
+
+    /**
+     * Attribute ExpiredTime: Expiration time, format' YYYY-MM-DDThh:mm:ssZ '.
+     */
+    readonly attrExpiredTime: ros.IResolvable | string;
+
+    /**
+     * Attribute HasReservationData: Whether there is renewal data.
+     */
+    readonly attrHasReservationData: ros.IResolvable | string;
+
+    /**
+     * Attribute HdMonitorStatus: Whether the second-level monitoring is enabled for the EIP.
+     */
+    readonly attrHdMonitorStatus: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: The ID of the current bound instance.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceRegionId: The region ID of the currently bound resource.
+     */
+    readonly attrInstanceRegionId: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceType: The type of the current bound instance.
+     */
+    readonly attrInstanceType: ros.IResolvable | string;
+
+    /**
+     * Attribute IpAddress: The IP address of the EIP.
+     */
+    readonly attrIpAddress: ros.IResolvable | string;
+
+    /**
+     * Attribute Isp: Service providers.
+     */
+    readonly attrIsp: ros.IResolvable | string;
+
+    /**
+     * Attribute Netmode: Network type.
+     */
+    readonly attrNetmode: ros.IResolvable | string;
+
+    /**
+     * Attribute OperationLocks: Lock details.
+     */
+    readonly attrOperationLocks: ros.IResolvable | string;
+
+    /**
+     * Attribute PaymentType: The billing method of the EIP.
+     */
+    readonly attrPaymentType: ros.IResolvable | string;
+
+    /**
+     * Attribute PublicIpAddressPoolId: The ID of the IP address pool to which the EIP belongs.
+     */
+    readonly attrPublicIpAddressPoolId: ros.IResolvable | string;
+
+    /**
+     * Attribute ReservationActiveTime: The effective time of the renewal fee, in the format of 'YYYY-MM-DDThh:mm:ssZ'.
+     */
+    readonly attrReservationActiveTime: ros.IResolvable | string;
+
+    /**
+     * Attribute ReservationBandwidth: Renewal bandwidth, in Mbps.
+     */
+    readonly attrReservationBandwidth: ros.IResolvable | string;
+
+    /**
+     * Attribute ReservationInternetChargeType: Renewal Payment type.
+     */
+    readonly attrReservationInternetChargeType: ros.IResolvable | string;
+
+    /**
+     * Attribute ReservationOrderType: Renewal order type.
+     */
+    readonly attrReservationOrderType: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: The ID of the resource group.
+     */
+    readonly attrResourceGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute SecondLimited: Whether a secondary speed limit is configured.
+     */
+    readonly attrSecondLimited: ros.IResolvable | string;
+
+    /**
+     * Attribute SecurityProtectionTypes: Security protection level.
+     */
+    readonly attrSecurityProtectionTypes: ros.IResolvable | string;
+
+    /**
+     * Attribute SegmentInstanceId: The ID of the consecutive EIPs.
+     */
+    readonly attrSegmentInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute ServiceManaged: Indicates the resource created for the service account.
+     */
+    readonly attrServiceManaged: ros.IResolvable | string;
+
+    /**
+     * Attribute Tags: The tag of the resource.
+     */
+    readonly attrTags: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::EIP::Address`, which is used to query the information about a created elastic IP address (EIP).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAddress`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eip-address
  */
-export class Address extends ros.Resource {
+export class Address extends ros.Resource implements IAddress {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AddressProps;
+    public readonly props: AddressProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AddressName: The name of the EIP.
      */
-    public readonly attrAddressName: ros.IResolvable;
+    public readonly attrAddressName: ros.IResolvable | string;
 
     /**
      * Attribute AllocationId: The ID of the EIP instance.
      */
-    public readonly attrAllocationId: ros.IResolvable;
+    public readonly attrAllocationId: ros.IResolvable | string;
 
     /**
      * Attribute Bandwidth: The peak bandwidth of the EIP. Unit: Mbps.
      */
-    public readonly attrBandwidth: ros.IResolvable;
+    public readonly attrBandwidth: ros.IResolvable | string;
 
     /**
      * Attribute BandwidthPackageBandwidth: The bandwidth value of the Internet shared bandwidth added to the EIP. The unit is Mbps.
      */
-    public readonly attrBandwidthPackageBandwidth: ros.IResolvable;
+    public readonly attrBandwidthPackageBandwidth: ros.IResolvable | string;
 
     /**
      * Attribute BandwidthPackageId: The ID of the added shared bandwidth.
      */
-    public readonly attrBandwidthPackageId: ros.IResolvable;
+    public readonly attrBandwidthPackageId: ros.IResolvable | string;
 
     /**
      * Attribute BandwidthPackageType: The type of bandwidth. Only **CommonBandwidthPackage** (shared bandwidth) is supported.
      */
-    public readonly attrBandwidthPackageType: ros.IResolvable;
+    public readonly attrBandwidthPackageType: ros.IResolvable | string;
 
     /**
      * Attribute BusinessStatus: The business status of the EIP instance.
      */
-    public readonly attrBusinessStatus: ros.IResolvable;
+    public readonly attrBusinessStatus: ros.IResolvable | string;
 
     /**
      * Attribute CreateTime: The time when the EIP was created.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute DeletionProtection: Whether the delete protection function is turned on.
      */
-    public readonly attrDeletionProtection: ros.IResolvable;
+    public readonly attrDeletionProtection: ros.IResolvable | string;
 
     /**
      * Attribute Description: The description of the EIP instance.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute EipBandwidth: AN EIP is added to an Internet shared bandwidth before or exit purchase an Internet shared bandwidth instance after the bandwidth Mbps Set for the bandwidth.
      */
-    public readonly attrEipBandwidth: ros.IResolvable;
+    public readonly attrEipBandwidth: ros.IResolvable | string;
 
     /**
      * Attribute ExpiredTime: Expiration time, format' YYYY-MM-DDThh:mm:ssZ '.
      */
-    public readonly attrExpiredTime: ros.IResolvable;
+    public readonly attrExpiredTime: ros.IResolvable | string;
 
     /**
      * Attribute HasReservationData: Whether there is renewal data.
      */
-    public readonly attrHasReservationData: ros.IResolvable;
+    public readonly attrHasReservationData: ros.IResolvable | string;
 
     /**
      * Attribute HdMonitorStatus: Whether the second-level monitoring is enabled for the EIP.
      */
-    public readonly attrHdMonitorStatus: ros.IResolvable;
+    public readonly attrHdMonitorStatus: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: The ID of the current bound instance.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute InstanceRegionId: The region ID of the currently bound resource.
      */
-    public readonly attrInstanceRegionId: ros.IResolvable;
+    public readonly attrInstanceRegionId: ros.IResolvable | string;
 
     /**
      * Attribute InstanceType: The type of the current bound instance.
      */
-    public readonly attrInstanceType: ros.IResolvable;
+    public readonly attrInstanceType: ros.IResolvable | string;
 
     /**
      * Attribute IpAddress: The IP address of the EIP.
      */
-    public readonly attrIpAddress: ros.IResolvable;
+    public readonly attrIpAddress: ros.IResolvable | string;
 
     /**
      * Attribute Isp: Service providers.
      */
-    public readonly attrIsp: ros.IResolvable;
+    public readonly attrIsp: ros.IResolvable | string;
 
     /**
      * Attribute Netmode: Network type.
      */
-    public readonly attrNetmode: ros.IResolvable;
+    public readonly attrNetmode: ros.IResolvable | string;
 
     /**
      * Attribute OperationLocks: Lock details.
      */
-    public readonly attrOperationLocks: ros.IResolvable;
+    public readonly attrOperationLocks: ros.IResolvable | string;
 
     /**
      * Attribute PaymentType: The billing method of the EIP.
      */
-    public readonly attrPaymentType: ros.IResolvable;
+    public readonly attrPaymentType: ros.IResolvable | string;
 
     /**
      * Attribute PublicIpAddressPoolId: The ID of the IP address pool to which the EIP belongs.
      */
-    public readonly attrPublicIpAddressPoolId: ros.IResolvable;
+    public readonly attrPublicIpAddressPoolId: ros.IResolvable | string;
 
     /**
      * Attribute ReservationActiveTime: The effective time of the renewal fee, in the format of 'YYYY-MM-DDThh:mm:ssZ'.
      */
-    public readonly attrReservationActiveTime: ros.IResolvable;
+    public readonly attrReservationActiveTime: ros.IResolvable | string;
 
     /**
      * Attribute ReservationBandwidth: Renewal bandwidth, in Mbps.
      */
-    public readonly attrReservationBandwidth: ros.IResolvable;
+    public readonly attrReservationBandwidth: ros.IResolvable | string;
 
     /**
      * Attribute ReservationInternetChargeType: Renewal Payment type.
      */
-    public readonly attrReservationInternetChargeType: ros.IResolvable;
+    public readonly attrReservationInternetChargeType: ros.IResolvable | string;
 
     /**
      * Attribute ReservationOrderType: Renewal order type.
      */
-    public readonly attrReservationOrderType: ros.IResolvable;
+    public readonly attrReservationOrderType: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroupId: The ID of the resource group.
      */
-    public readonly attrResourceGroupId: ros.IResolvable;
+    public readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Attribute SecondLimited: Whether a secondary speed limit is configured.
      */
-    public readonly attrSecondLimited: ros.IResolvable;
+    public readonly attrSecondLimited: ros.IResolvable | string;
 
     /**
      * Attribute SecurityProtectionTypes: Security protection level.
      */
-    public readonly attrSecurityProtectionTypes: ros.IResolvable;
+    public readonly attrSecurityProtectionTypes: ros.IResolvable | string;
 
     /**
      * Attribute SegmentInstanceId: The ID of the consecutive EIPs.
      */
-    public readonly attrSegmentInstanceId: ros.IResolvable;
+    public readonly attrSegmentInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute ServiceManaged: Indicates the resource created for the service account.
      */
-    public readonly attrServiceManaged: ros.IResolvable;
+    public readonly attrServiceManaged: ros.IResolvable | string;
 
     /**
      * Attribute Tags: The tag of the resource.
      */
-    public readonly attrTags: ros.IResolvable;
+    public readonly attrTags: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

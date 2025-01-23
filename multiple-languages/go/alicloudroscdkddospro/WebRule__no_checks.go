@@ -52,10 +52,6 @@ func (j *jsiiProxy_WebRule) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_WebRule) validateSetPropsParameters(val *WebRuleProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_WebRule) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

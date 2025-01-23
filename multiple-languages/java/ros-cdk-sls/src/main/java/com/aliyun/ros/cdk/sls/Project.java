@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.sls;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SLS::Project</code>, which is used to create a Log Service project.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:12.357Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:44.536Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.Project")
-public class Project extends com.aliyun.ros.cdk.core.Resource {
+public class Project extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.sls.IProject {
 
     protected Project(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -43,8 +43,14 @@ public class Project extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute Name: Project name.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrName() {
-        return software.amazon.jsii.Kernel.get(this, "attrName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrName() {
+        return software.amazon.jsii.Kernel.get(this, "attrName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.sls.ProjectProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.sls.ProjectProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -61,14 +67,6 @@ public class Project extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.sls.ProjectProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.sls.ProjectProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.sls.ProjectProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {
@@ -116,7 +114,7 @@ public class Project extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property name: Project name: 1.
          * <p>
-         * Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+         * Only supports lowercase letters, numbers, hyphens (-).
          * 2. Must start and end with lowercase letters and numbers.
          * 3. The name length is 3-63 characters.
          * <p>
@@ -130,7 +128,7 @@ public class Project extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property name: Project name: 1.
          * <p>
-         * Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+         * Only supports lowercase letters, numbers, hyphens (-).
          * 2. Must start and end with lowercase letters and numbers.
          * 3. The name length is 3-63 characters.
          * <p>

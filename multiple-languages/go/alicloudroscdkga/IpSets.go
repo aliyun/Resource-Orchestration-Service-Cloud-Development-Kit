@@ -12,14 +12,24 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::GA::IpSets`, which is used to create acceleration regions.
 type IpSets interface {
 	alicloudroscdkcore.Resource
+	IIpSets
 	// Attribute AccelerateRegionIds: The ID list of the accelerate region.
-	AttrAccelerateRegionIds() alicloudroscdkcore.IResolvable
+	AttrAccelerateRegionIds() interface{}
 	// Attribute IpSetIds: The ID list of the ip set.
-	AttrIpSetIds() alicloudroscdkcore.IResolvable
+	AttrIpSetIds() interface{}
 	// Attribute IpVersions: The IP version list of the accelerate region.
-	AttrIpVersions() alicloudroscdkcore.IResolvable
+	AttrIpVersions() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -34,7 +44,6 @@ type IpSets interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *IpSetsProps
-	SetProps(val *IpSetsProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -47,6 +56,9 @@ type IpSets interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -99,10 +111,11 @@ type IpSets interface {
 // The jsii proxy struct for IpSets
 type jsiiProxy_IpSets struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IIpSets
 }
 
-func (j *jsiiProxy_IpSets) AttrAccelerateRegionIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_IpSets) AttrAccelerateRegionIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAccelerateRegionIds",
@@ -111,8 +124,8 @@ func (j *jsiiProxy_IpSets) AttrAccelerateRegionIds() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_IpSets) AttrIpSetIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_IpSets) AttrIpSetIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIpSetIds",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_IpSets) AttrIpSetIds() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_IpSets) AttrIpVersions() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_IpSets) AttrIpVersions() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIpVersions",
@@ -136,6 +149,16 @@ func (j *jsiiProxy_IpSets) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IpSets) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -273,17 +296,6 @@ func (j *jsiiProxy_IpSets)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_IpSets)SetProps(val *IpSetsProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_IpSets)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -375,6 +387,45 @@ func (i *jsiiProxy_IpSets) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalP
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (i *jsiiProxy_IpSets) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		i,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_IpSets) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		i,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_IpSets) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		i,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (i *jsiiProxy_IpSets) GeneratePhysicalName() *string {

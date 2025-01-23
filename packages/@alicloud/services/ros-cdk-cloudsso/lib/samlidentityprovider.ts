@@ -51,14 +51,20 @@ export interface SAMLIdentityProviderProps {
 }
 
 /**
+ * Represents a `SAMLIdentityProvider`.
+ */
+export interface ISAMLIdentityProvider extends ros.IResource {
+    readonly props: SAMLIdentityProviderProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::SAMLIdentityProvider`, which is used to configure the information about a Security Assertion Markup Language (SAML) identity provider (IdP).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSAMLIdentityProvider`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-samlidentityprovider
  */
-export class SAMLIdentityProvider extends ros.Resource {
+export class SAMLIdentityProvider extends ros.Resource implements ISAMLIdentityProvider {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SAMLIdentityProviderProps;
+    public readonly props: SAMLIdentityProviderProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

@@ -66,20 +66,31 @@ export interface HostGroupProps {
 }
 
 /**
+ * Represents a `HostGroup`.
+ */
+export interface IHostGroup extends ros.IResource {
+    readonly props: HostGroupProps;
+
+    /**
+     * Attribute HostGroupId: The id of the host group.
+     */
+    readonly attrHostGroupId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::DEVOPS::HostGroup`, which is used to create a host group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosHostGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-hostgroup
  */
-export class HostGroup extends ros.Resource {
+export class HostGroup extends ros.Resource implements IHostGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: HostGroupProps;
+    public readonly props: HostGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute HostGroupId: The id of the host group.
      */
-    public readonly attrHostGroupId: ros.IResolvable;
+    public readonly attrHostGroupId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -52,10 +52,6 @@ func (j *jsiiProxy_SiteMonitor) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_SiteMonitor) validateSetPropsParameters(val *SiteMonitorProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_SiteMonitor) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

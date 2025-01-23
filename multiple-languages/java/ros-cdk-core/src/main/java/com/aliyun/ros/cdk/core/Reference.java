@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.core;
  * <p>
  * References are recorded.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:03.698Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:33.718Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Reference")
 public abstract class Reference extends com.aliyun.ros.cdk.core.Intrinsic {
 

@@ -7,7 +7,7 @@ package alicloudroscdksls
 type MachineGroupProps struct {
 	// Property groupAttribute: Group attribute, default is null.
 	//
-	// The object value is groupToic and externalName.
+	// The object value is groupTopic and externalName.
 	GroupAttribute interface{} `field:"optional" json:"groupAttribute" yaml:"groupAttribute"`
 	// Property groupName: Display name of the group name, the Project only.
 	//

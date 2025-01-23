@@ -53,25 +53,41 @@ export interface FlowProps {
 }
 
 /**
+ * Represents a `Flow`.
+ */
+export interface IFlow extends ros.IResource {
+    readonly props: FlowProps;
+
+    /**
+     * Attribute FlowId: The ID of the flow.
+     */
+    readonly attrFlowId: ros.IResolvable | string;
+
+    /**
+     * Attribute WebhookAddress: The webhook address of the flow.
+     */
+    readonly attrWebhookAddress: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::AppFlow::Flow`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFlow`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-appflow-flow
  */
-export class Flow extends ros.Resource {
+export class Flow extends ros.Resource implements IFlow {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: FlowProps;
+    public readonly props: FlowProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute FlowId: The ID of the flow.
      */
-    public readonly attrFlowId: ros.IResolvable;
+    public readonly attrFlowId: ros.IResolvable | string;
 
     /**
      * Attribute WebhookAddress: The webhook address of the flow.
      */
-    public readonly attrWebhookAddress: ros.IResolvable;
+    public readonly attrWebhookAddress: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

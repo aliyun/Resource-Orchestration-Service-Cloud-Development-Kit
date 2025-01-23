@@ -1,3 +1,4 @@
+@alicloud/ros-cdk-serverlessdev.IProject=com.aliyun.ros.cdk.serverlessdev.IProject
 @alicloud/ros-cdk-serverlessdev.Project=com.aliyun.ros.cdk.serverlessdev.Project
 @alicloud/ros-cdk-serverlessdev.ProjectProps=com.aliyun.ros.cdk.serverlessdev.ProjectProps
 @alicloud/ros-cdk-serverlessdev.RosProject=com.aliyun.ros.cdk.serverlessdev.RosProject

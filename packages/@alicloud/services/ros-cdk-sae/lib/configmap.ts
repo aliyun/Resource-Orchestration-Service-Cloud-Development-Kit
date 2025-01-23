@@ -33,25 +33,41 @@ export interface ConfigMapProps {
 }
 
 /**
+ * Represents a `ConfigMap`.
+ */
+export interface IConfigMap extends ros.IResource {
+    readonly props: ConfigMapProps;
+
+    /**
+     * Attribute ConfigMapId: The ID of the config map.
+     */
+    readonly attrConfigMapId: ros.IResolvable | string;
+
+    /**
+     * Attribute NamespaceId: The ID of the namespace to which this config map instance belongs.
+     */
+    readonly attrNamespaceId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SAE::ConfigMap`, which is used to create a ConfigMap instance in a namespace.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosConfigMap`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-configmap
  */
-export class ConfigMap extends ros.Resource {
+export class ConfigMap extends ros.Resource implements IConfigMap {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ConfigMapProps;
+    public readonly props: ConfigMapProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ConfigMapId: The ID of the config map.
      */
-    public readonly attrConfigMapId: ros.IResolvable;
+    public readonly attrConfigMapId: ros.IResolvable | string;
 
     /**
      * Attribute NamespaceId: The ID of the namespace to which this config map instance belongs.
      */
-    public readonly attrNamespaceId: ros.IResolvable;
+    public readonly attrNamespaceId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

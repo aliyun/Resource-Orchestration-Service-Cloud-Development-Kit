@@ -35,25 +35,41 @@ export interface DomainExtensionsProps {
 }
 
 /**
+ * Represents a `DomainExtensions`.
+ */
+export interface IDomainExtensions extends ros.IResource {
+    readonly props: DomainExtensionsProps;
+
+    /**
+     * Attribute DomainExtensionIds: The list of domain extension IDs.
+     */
+    readonly attrDomainExtensionIds: ros.IResolvable | string;
+
+    /**
+     * Attribute DomainExtensions: The list of domain extensions.
+     */
+    readonly attrDomainExtensions: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::DomainExtensions`, which is used to query the domain name extensions that are added to a listener of a Server Load Balancer (SLB) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomainExtensions`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-domainextensions
  */
-export class DomainExtensions extends ros.Resource {
+export class DomainExtensions extends ros.Resource implements IDomainExtensions {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DomainExtensionsProps;
+    public readonly props: DomainExtensionsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DomainExtensionIds: The list of domain extension IDs.
      */
-    public readonly attrDomainExtensionIds: ros.IResolvable;
+    public readonly attrDomainExtensionIds: ros.IResolvable | string;
 
     /**
      * Attribute DomainExtensions: The list of domain extensions.
      */
-    public readonly attrDomainExtensions: ros.IResolvable;
+    public readonly attrDomainExtensions: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

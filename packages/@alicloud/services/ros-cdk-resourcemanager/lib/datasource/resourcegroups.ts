@@ -39,25 +39,41 @@ export interface ResourceGroupsProps {
 }
 
 /**
+ * Represents a `ResourceGroups`.
+ */
+export interface IResourceGroups extends ros.IResource {
+    readonly props: ResourceGroupsProps;
+
+    /**
+     * Attribute ResourceGroupIds: The IDs of the resource groups.
+     */
+    readonly attrResourceGroupIds: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroups: The list of the resource groups.
+     */
+    readonly attrResourceGroups: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ResourceManager::ResourceGroups`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosResourceGroups`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-resourcemanager-resourcegroups
  */
-export class ResourceGroups extends ros.Resource {
+export class ResourceGroups extends ros.Resource implements IResourceGroups {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ResourceGroupsProps;
+    public readonly props: ResourceGroupsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ResourceGroupIds: The IDs of the resource groups.
      */
-    public readonly attrResourceGroupIds: ros.IResolvable;
+    public readonly attrResourceGroupIds: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroups: The list of the resource groups.
      */
-    public readonly attrResourceGroups: ros.IResolvable;
+    public readonly attrResourceGroups: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

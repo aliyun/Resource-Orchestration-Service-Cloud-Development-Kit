@@ -40,7 +40,7 @@ type ListenerProps struct {
 	//
 	// If the value of the AclStatus parameter is on, this parameter is required.
 	AclType interface{} `field:"optional" json:"aclType" yaml:"aclType"`
-	// Property backendServerPort: Backend server can listen on ports from 1 to 65535.
+	// Property backendServerPort: Backend server can listen on ports from 0 to 65535.
 	BackendServerPort interface{} `field:"optional" json:"backendServerPort" yaml:"backendServerPort"`
 	// Property caCertificateId: CA server certificate id, for https listener only.
 	CaCertificateId interface{} `field:"optional" json:"caCertificateId" yaml:"caCertificateId"`
@@ -63,6 +63,11 @@ type ListenerProps struct {
 	// on: yes
 	// off: no.
 	EnableHttp2 interface{} `field:"optional" json:"enableHttp2" yaml:"enableHttp2"`
+	// Property fullNatEnabled: When Full NAT mode is enabled, it can support the backend servers as clients for access.
+	//
+	// Default value is false.
+	// Note: Only effective for TCP or UDP listener.
+	FullNatEnabled interface{} `field:"optional" json:"fullNatEnabled" yaml:"fullNatEnabled"`
 	// Property gzip: Specifies whether to enable Gzip compression to compress specific types of files.
 	//
 	// Valid values:

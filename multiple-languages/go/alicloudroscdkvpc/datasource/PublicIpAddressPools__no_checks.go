@@ -52,10 +52,6 @@ func (j *jsiiProxy_PublicIpAddressPools) validateSetIdParameters(val *string) er
 	return nil
 }
 
-func (j *jsiiProxy_PublicIpAddressPools) validateSetPropsParameters(val *PublicIpAddressPoolsProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_PublicIpAddressPools) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

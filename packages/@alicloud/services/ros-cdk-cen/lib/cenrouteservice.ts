@@ -49,20 +49,31 @@ export interface CenRouteServiceProps {
 }
 
 /**
+ * Represents a `CenRouteService`.
+ */
+export interface ICenRouteService extends ros.IResource {
+    readonly props: CenRouteServiceProps;
+
+    /**
+     * Attribute Id: The ID of the cloud service. It is formatted to {CenId}/{HostRegionId}/{Host}/{AccessRegionId}
+     */
+    readonly attrId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenRouteService`, which is used to access an Alibaba Cloud service.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenRouteService`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenrouteservice
  */
-export class CenRouteService extends ros.Resource {
+export class CenRouteService extends ros.Resource implements ICenRouteService {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: CenRouteServiceProps;
+    public readonly props: CenRouteServiceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Id: The ID of the cloud service. It is formatted to {CenId}/{HostRegionId}/{Host}/{AccessRegionId}
      */
-    public readonly attrId: ros.IResolvable;
+    public readonly attrId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

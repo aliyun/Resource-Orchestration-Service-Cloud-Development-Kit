@@ -1,3 +1,7 @@
+@alicloud/ros-cdk-ots.IInstance=com.aliyun.ros.cdk.ots.IInstance
+@alicloud/ros-cdk-ots.ISearchIndex=com.aliyun.ros.cdk.ots.ISearchIndex
+@alicloud/ros-cdk-ots.ITable=com.aliyun.ros.cdk.ots.ITable
+@alicloud/ros-cdk-ots.IVpcBinder=com.aliyun.ros.cdk.ots.IVpcBinder
 @alicloud/ros-cdk-ots.Instance=com.aliyun.ros.cdk.ots.Instance
 @alicloud/ros-cdk-ots.InstanceProps=com.aliyun.ros.cdk.ots.InstanceProps
 @alicloud/ros-cdk-ots.RosInstance=com.aliyun.ros.cdk.ots.RosInstance
@@ -29,6 +33,8 @@
 @alicloud/ros-cdk-ots.TableProps=com.aliyun.ros.cdk.ots.TableProps
 @alicloud/ros-cdk-ots.VpcBinder=com.aliyun.ros.cdk.ots.VpcBinder
 @alicloud/ros-cdk-ots.VpcBinderProps=com.aliyun.ros.cdk.ots.VpcBinderProps
+@alicloud/ros-cdk-ots.datasource.IInstances=com.aliyun.ros.cdk.ots.datasource.IInstances
+@alicloud/ros-cdk-ots.datasource.ITables=com.aliyun.ros.cdk.ots.datasource.ITables
 @alicloud/ros-cdk-ots.datasource.Instances=com.aliyun.ros.cdk.ots.datasource.Instances
 @alicloud/ros-cdk-ots.datasource.InstancesProps=com.aliyun.ros.cdk.ots.datasource.InstancesProps
 @alicloud/ros-cdk-ots.datasource.RosInstances=com.aliyun.ros.cdk.ots.datasource.RosInstances

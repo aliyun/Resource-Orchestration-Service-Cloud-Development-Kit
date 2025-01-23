@@ -160,6 +160,10 @@ func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetLoginPasswordParamete
 	return nil
 }
 
+func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetMaintenanceWindowParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetNameParameters(val interface{}) error {
 	return nil
 }

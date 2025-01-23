@@ -115,25 +115,41 @@ export interface RuleProps {
 }
 
 /**
+ * Represents a `Rule`.
+ */
+export interface IRule extends ros.IResource {
+    readonly props: RuleProps;
+
+    /**
+     * Attribute ActionId: The ID of the rule action.
+     */
+    readonly attrActionId: ros.IResolvable | string;
+
+    /**
+     * Attribute RuleId: The ID of the rule.
+     */
+    readonly attrRuleId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::IOT::Rule`, which is used to create a rule for a specific topic.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-rule
  */
-export class Rule extends ros.Resource {
+export class Rule extends ros.Resource implements IRule {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: RuleProps;
+    public readonly props: RuleProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ActionId: The ID of the rule action.
      */
-    public readonly attrActionId: ros.IResolvable;
+    public readonly attrActionId: ros.IResolvable | string;
 
     /**
      * Attribute RuleId: The ID of the rule.
      */
-    public readonly attrRuleId: ros.IResolvable;
+    public readonly attrRuleId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

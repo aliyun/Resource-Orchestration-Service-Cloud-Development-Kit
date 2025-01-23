@@ -26,25 +26,41 @@ export interface GrantCcnToCenProps {
 }
 
 /**
+ * Represents a `GrantCcnToCen`.
+ */
+export interface IGrantCcnToCen extends ros.IResource {
+    readonly props: GrantCcnToCenProps;
+
+    /**
+     * Attribute CcnInstanceId: The ID of the CCN instance.
+     */
+    readonly attrCcnInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute CenInstanceId: The ID of the CEN instance.
+     */
+    readonly attrCenInstanceId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::GrantCcnToCen`, which is used to grant permissions on a Cloud Connect Network (CCN) instance to a Cloud Enterprise Network (CEN) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGrantCcnToCen`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-grantccntocen
  */
-export class GrantCcnToCen extends ros.Resource {
+export class GrantCcnToCen extends ros.Resource implements IGrantCcnToCen {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: GrantCcnToCenProps;
+    public readonly props: GrantCcnToCenProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CcnInstanceId: The ID of the CCN instance.
      */
-    public readonly attrCcnInstanceId: ros.IResolvable;
+    public readonly attrCcnInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute CenInstanceId: The ID of the CEN instance.
      */
-    public readonly attrCenInstanceId: ros.IResolvable;
+    public readonly attrCenInstanceId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

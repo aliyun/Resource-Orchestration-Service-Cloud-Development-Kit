@@ -63,85 +63,161 @@ export interface CodeSourceProps {
 }
 
 /**
+ * Represents a `CodeSource`.
+ */
+export interface ICodeSource extends ros.IResource {
+    readonly props: CodeSourceProps;
+
+    /**
+     * Attribute Accessibility: Visibility of the code configuration.
+     */
+    readonly attrAccessibility: ros.IResolvable | string;
+
+    /**
+     * Attribute CodeBranch: Code repository branch.
+     */
+    readonly attrCodeBranch: ros.IResolvable | string;
+
+    /**
+     * Attribute CodeCommit: The code CommitId.
+     */
+    readonly attrCodeCommit: ros.IResolvable | string;
+
+    /**
+     * Attribute CodeRepo: Code repository address.
+     */
+    readonly attrCodeRepo: ros.IResolvable | string;
+
+    /**
+     * Attribute CodeRepoAccessToken: The Token used to access the code repository.
+     */
+    readonly attrCodeRepoAccessToken: ros.IResolvable | string;
+
+    /**
+     * Attribute CodeRepoUserName: The user name of the code repository.
+     */
+    readonly attrCodeRepoUserName: ros.IResolvable | string;
+
+    /**
+     * Attribute CodeSourcesId: The ID of the created code configuration.
+     */
+    readonly attrCodeSourcesId: ros.IResolvable | string;
+
+    /**
+     * Attribute CreateTime: The creation time of the code.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: A detailed description of the code configuration.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute DisplayName: Code source configuration name.
+     */
+    readonly attrDisplayName: ros.IResolvable | string;
+
+    /**
+     * Attribute GmtModifyTime: Code configuration modification time. The time format is iso8601.
+     */
+    readonly attrGmtModifyTime: ros.IResolvable | string;
+
+    /**
+     * Attribute MountPath: The local Mount Directory of the code.
+     */
+    readonly attrMountPath: ros.IResolvable | string;
+
+    /**
+     * Attribute UserId: The ID of the creator of the code configuration source.
+     */
+    readonly attrUserId: ros.IResolvable | string;
+
+    /**
+     * Attribute WorkspaceId: The ID of the workspace.
+     */
+    readonly attrWorkspaceId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::PAI::CodeSource`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCodeSource`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-codesource
  */
-export class CodeSource extends ros.Resource {
+export class CodeSource extends ros.Resource implements ICodeSource {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: CodeSourceProps;
+    public readonly props: CodeSourceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Accessibility: Visibility of the code configuration.
      */
-    public readonly attrAccessibility: ros.IResolvable;
+    public readonly attrAccessibility: ros.IResolvable | string;
 
     /**
      * Attribute CodeBranch: Code repository branch.
      */
-    public readonly attrCodeBranch: ros.IResolvable;
+    public readonly attrCodeBranch: ros.IResolvable | string;
 
     /**
      * Attribute CodeCommit: The code CommitId.
      */
-    public readonly attrCodeCommit: ros.IResolvable;
+    public readonly attrCodeCommit: ros.IResolvable | string;
 
     /**
      * Attribute CodeRepo: Code repository address.
      */
-    public readonly attrCodeRepo: ros.IResolvable;
+    public readonly attrCodeRepo: ros.IResolvable | string;
 
     /**
      * Attribute CodeRepoAccessToken: The Token used to access the code repository.
      */
-    public readonly attrCodeRepoAccessToken: ros.IResolvable;
+    public readonly attrCodeRepoAccessToken: ros.IResolvable | string;
 
     /**
      * Attribute CodeRepoUserName: The user name of the code repository.
      */
-    public readonly attrCodeRepoUserName: ros.IResolvable;
+    public readonly attrCodeRepoUserName: ros.IResolvable | string;
 
     /**
      * Attribute CodeSourcesId: The ID of the created code configuration.
      */
-    public readonly attrCodeSourcesId: ros.IResolvable;
+    public readonly attrCodeSourcesId: ros.IResolvable | string;
 
     /**
      * Attribute CreateTime: The creation time of the code.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute Description: A detailed description of the code configuration.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute DisplayName: Code source configuration name.
      */
-    public readonly attrDisplayName: ros.IResolvable;
+    public readonly attrDisplayName: ros.IResolvable | string;
 
     /**
      * Attribute GmtModifyTime: Code configuration modification time. The time format is iso8601.
      */
-    public readonly attrGmtModifyTime: ros.IResolvable;
+    public readonly attrGmtModifyTime: ros.IResolvable | string;
 
     /**
      * Attribute MountPath: The local Mount Directory of the code.
      */
-    public readonly attrMountPath: ros.IResolvable;
+    public readonly attrMountPath: ros.IResolvable | string;
 
     /**
      * Attribute UserId: The ID of the creator of the code configuration source.
      */
-    public readonly attrUserId: ros.IResolvable;
+    public readonly attrUserId: ros.IResolvable | string;
 
     /**
      * Attribute WorkspaceId: The ID of the workspace.
      */
-    public readonly attrWorkspaceId: ros.IResolvable;
+    public readonly attrWorkspaceId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

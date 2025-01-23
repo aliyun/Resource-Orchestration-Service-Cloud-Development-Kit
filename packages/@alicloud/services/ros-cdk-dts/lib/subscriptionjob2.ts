@@ -101,30 +101,51 @@ export interface SubscriptionJob2Props {
 }
 
 /**
+ * Represents a `SubscriptionJob2`.
+ */
+export interface ISubscriptionJob2 extends ros.IResource {
+    readonly props: SubscriptionJob2Props;
+
+    /**
+     * Attribute DtsInstanceId: The ID of the DTS instance.
+     */
+    readonly attrDtsInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute DtsJobId: The ID of the task.
+     */
+    readonly attrDtsJobId: ros.IResolvable | string;
+
+    /**
+     * Attribute DtsJobName: The name of the DTS job.
+     */
+    readonly attrDtsJobName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::SubscriptionJob2`, which is used to configure a change tracking task.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSubscriptionJob2`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-subscriptionjob2
  */
-export class SubscriptionJob2 extends ros.Resource {
+export class SubscriptionJob2 extends ros.Resource implements ISubscriptionJob2 {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SubscriptionJob2Props;
+    public readonly props: SubscriptionJob2Props;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DtsInstanceId: The ID of the DTS instance.
      */
-    public readonly attrDtsInstanceId: ros.IResolvable;
+    public readonly attrDtsInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute DtsJobId: The ID of the task.
      */
-    public readonly attrDtsJobId: ros.IResolvable;
+    public readonly attrDtsJobId: ros.IResolvable | string;
 
     /**
      * Attribute DtsJobName: The name of the DTS job.
      */
-    public readonly attrDtsJobName: ros.IResolvable;
+    public readonly attrDtsJobName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

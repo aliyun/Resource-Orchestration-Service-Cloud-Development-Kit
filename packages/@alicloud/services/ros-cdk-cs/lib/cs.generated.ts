@@ -53,6 +53,11 @@ export interface RosASKClusterProps {
     readonly kubernetesVersion?: string | ros.IResolvable;
 
     /**
+     * @Property maintenanceWindow: Cluster maintenance window.
+     */
+    readonly maintenanceWindow?: RosASKCluster.MaintenanceWindowProperty | ros.IResolvable;
+
+    /**
      * @Property privateZone: Whether to enable PrivateZone for service discovery.
      */
     readonly privateZone?: boolean | ros.IResolvable;
@@ -162,6 +167,7 @@ function RosASKClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('serviceCidr', ros.validateString)(properties.serviceCidr));
     errors.collect(ros.propertyValidator('snatEntry', ros.validateBoolean)(properties.snatEntry));
+    errors.collect(ros.propertyValidator('maintenanceWindow', RosASKCluster_MaintenanceWindowPropertyValidator)(properties.maintenanceWindow));
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosASKCluster_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('privateZone', ros.validateBoolean)(properties.privateZone));
     return errors.wrap('supplied properties not correct for "RosASKClusterProps"');
@@ -188,6 +194,7 @@ function rosASKClusterPropsToRosTemplate(properties: any, enableResourceProperty
       'DeletionProtection': ros.booleanToRosTemplate(properties.deletionProtection),
       'EndpointPublicAccess': ros.booleanToRosTemplate(properties.endpointPublicAccess),
       'KubernetesVersion': ros.stringToRosTemplate(properties.kubernetesVersion),
+      'MaintenanceWindow': rosASKClusterMaintenanceWindowPropertyToRosTemplate(properties.maintenanceWindow),
       'PrivateZone': ros.booleanToRosTemplate(properties.privateZone),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
       'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
@@ -203,7 +210,7 @@ function rosASKClusterPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ASKCluster`, which is used to create an ACK Serverless cluster of Container Service for Kubernetes (ACK).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ASKCluster`, which is used to create a Container Service for Kubernetes (ACK) Serverless cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `ASKCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-askcluster
  */
@@ -316,6 +323,11 @@ export class RosASKCluster extends ros.RosResource {
     public kubernetesVersion: string | ros.IResolvable | undefined;
 
     /**
+     * @Property maintenanceWindow: Cluster maintenance window.
+     */
+    public maintenanceWindow: RosASKCluster.MaintenanceWindowProperty | ros.IResolvable | undefined;
+
+    /**
      * @Property privateZone: Whether to enable PrivateZone for service discovery.
      */
     public privateZone: boolean | ros.IResolvable | undefined;
@@ -410,6 +422,7 @@ export class RosASKCluster extends ros.RosResource {
         this.deletionProtection = props.deletionProtection;
         this.endpointPublicAccess = props.endpointPublicAccess;
         this.kubernetesVersion = props.kubernetesVersion;
+        this.maintenanceWindow = props.maintenanceWindow;
         this.privateZone = props.privateZone;
         this.resourceGroupId = props.resourceGroupId;
         this.securityGroupId = props.securityGroupId;
@@ -433,6 +446,7 @@ export class RosASKCluster extends ros.RosResource {
             deletionProtection: this.deletionProtection,
             endpointPublicAccess: this.endpointPublicAccess,
             kubernetesVersion: this.kubernetesVersion,
+            maintenanceWindow: this.maintenanceWindow,
             privateZone: this.privateZone,
             resourceGroupId: this.resourceGroupId,
             securityGroupId: this.securityGroupId,
@@ -569,6 +583,75 @@ function rosASKClusterDeleteOptionsPropertyToRosTemplate(properties: any): any {
     return {
       'DeleteMode': ros.stringToRosTemplate(properties.deleteMode),
       'ResourceType': ros.stringToRosTemplate(properties.resourceType),
+    };
+}
+
+export namespace RosASKCluster {
+    /**
+     * @stability external
+     */
+    export interface MaintenanceWindowProperty {
+        /**
+         * @Property recurrence: The RFC5545 Recurrence Rule currently only supports FREQ=WEEKLY and does not support specifying COUNT or UNTIL
+         */
+        readonly recurrence?: string | ros.IResolvable;
+        /**
+         * @Property maintenanceTime: Maintenance start time. RFC3339 standard format.
+         */
+        readonly maintenanceTime?: string | ros.IResolvable;
+        /**
+         * @Property weeklyPeriod: Maintenance cycle. Multiple values are separated by a half-comma (,). Values: {Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday}
+         */
+        readonly weeklyPeriod?: string | ros.IResolvable;
+        /**
+         * @Property enable: Whether to open the maintenance window. Value:
+     * - true: Opens the maintenance window.
+     * - false: The maintenance window is not opened.
+     * Default value: false
+         */
+        readonly enable?: boolean | ros.IResolvable;
+        /**
+         * @Property duration: Maintenance time. Value range [1,24] in hours.
+     * Default value: 3h
+         */
+        readonly duration?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `MaintenanceWindowProperty`
+ *
+ * @param properties - the TypeScript properties of a `MaintenanceWindowProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosASKCluster_MaintenanceWindowPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('recurrence', ros.validateString)(properties.recurrence));
+    errors.collect(ros.propertyValidator('maintenanceTime', ros.validateString)(properties.maintenanceTime));
+    errors.collect(ros.propertyValidator('weeklyPeriod', ros.validateString)(properties.weeklyPeriod));
+    errors.collect(ros.propertyValidator('enable', ros.validateBoolean)(properties.enable));
+    errors.collect(ros.propertyValidator('duration', ros.validateString)(properties.duration));
+    return errors.wrap('supplied properties not correct for "MaintenanceWindowProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ASKCluster.MaintenanceWindow` resource
+ *
+ * @param properties - the TypeScript properties of a `MaintenanceWindowProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ASKCluster.MaintenanceWindow` resource.
+ */
+// @ts-ignore TS6133
+function rosASKClusterMaintenanceWindowPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosASKCluster_MaintenanceWindowPropertyValidator(properties).assertSuccess();
+    return {
+      'Recurrence': ros.stringToRosTemplate(properties.recurrence),
+      'MaintenanceTime': ros.stringToRosTemplate(properties.maintenanceTime),
+      'WeeklyPeriod': ros.stringToRosTemplate(properties.weeklyPeriod),
+      'Enable': ros.booleanToRosTemplate(properties.enable),
+      'Duration': ros.stringToRosTemplate(properties.duration),
     };
 }
 
@@ -1238,6 +1321,10 @@ export namespace RosClusterAddons {
          */
         readonly operator: string | ros.IResolvable;
         /**
+         * @Property apiVersion: The API version of the kubernetes resource to query.
+         */
+        readonly apiVersion?: string | ros.IResolvable;
+        /**
          * @Property firstMatch: Only the first matching result in jsonpath's filtered results is returned. Default False
          */
         readonly firstMatch?: boolean | ros.IResolvable;
@@ -1296,6 +1383,7 @@ function RosClusterAddons_WaitUntilPropertyValidator(properties: any): ros.Valid
         }));
     }
     errors.collect(ros.propertyValidator('operator', ros.validateString)(properties.operator));
+    errors.collect(ros.propertyValidator('apiVersion', ros.validateString)(properties.apiVersion));
     errors.collect(ros.propertyValidator('firstMatch', ros.validateBoolean)(properties.firstMatch));
     if(properties.valueType && (typeof properties.valueType) !== 'object') {
         errors.collect(ros.propertyValidator('valueType', ros.validateAllowedValues)({
@@ -1342,6 +1430,7 @@ function rosClusterAddonsWaitUntilPropertyToRosTemplate(properties: any): any {
     RosClusterAddons_WaitUntilPropertyValidator(properties).assertSuccess();
     return {
       'Operator': ros.stringToRosTemplate(properties.operator),
+      'ApiVersion': ros.stringToRosTemplate(properties.apiVersion),
       'FirstMatch': ros.booleanToRosTemplate(properties.firstMatch),
       'ValueType': ros.stringToRosTemplate(properties.valueType),
       'Timeout': ros.numberToRosTemplate(properties.timeout),
@@ -1600,6 +1689,10 @@ export namespace RosClusterApplication {
          */
         readonly operator: string | ros.IResolvable;
         /**
+         * @Property apiVersion: The API version of the kubernetes resource to query.
+         */
+        readonly apiVersion?: string | ros.IResolvable;
+        /**
          * @Property firstMatch: Only the first matching result in jsonpath's filtered results is returned. Default False
          */
         readonly firstMatch?: boolean | ros.IResolvable;
@@ -1658,6 +1751,7 @@ function RosClusterApplication_WaitUntilPropertyValidator(properties: any): ros.
         }));
     }
     errors.collect(ros.propertyValidator('operator', ros.validateString)(properties.operator));
+    errors.collect(ros.propertyValidator('apiVersion', ros.validateString)(properties.apiVersion));
     errors.collect(ros.propertyValidator('firstMatch', ros.validateBoolean)(properties.firstMatch));
     if(properties.valueType && (typeof properties.valueType) !== 'object') {
         errors.collect(ros.propertyValidator('valueType', ros.validateAllowedValues)({
@@ -1704,6 +1798,7 @@ function rosClusterApplicationWaitUntilPropertyToRosTemplate(properties: any): a
     RosClusterApplication_WaitUntilPropertyValidator(properties).assertSuccess();
     return {
       'Operator': ros.stringToRosTemplate(properties.operator),
+      'ApiVersion': ros.stringToRosTemplate(properties.apiVersion),
       'FirstMatch': ros.booleanToRosTemplate(properties.firstMatch),
       'ValueType': ros.stringToRosTemplate(properties.valueType),
       'Timeout': ros.numberToRosTemplate(properties.timeout),
@@ -2025,6 +2120,10 @@ export namespace RosClusterHelmApplication {
          */
         readonly operator: string | ros.IResolvable;
         /**
+         * @Property apiVersion: The API version of the kubernetes resource to query.
+         */
+        readonly apiVersion?: string | ros.IResolvable;
+        /**
          * @Property firstMatch: Only the first matching result in jsonpath's filtered results is returned. Default False
          */
         readonly firstMatch?: boolean | ros.IResolvable;
@@ -2083,6 +2182,7 @@ function RosClusterHelmApplication_WaitUntilPropertyValidator(properties: any): 
         }));
     }
     errors.collect(ros.propertyValidator('operator', ros.validateString)(properties.operator));
+    errors.collect(ros.propertyValidator('apiVersion', ros.validateString)(properties.apiVersion));
     errors.collect(ros.propertyValidator('firstMatch', ros.validateBoolean)(properties.firstMatch));
     if(properties.valueType && (typeof properties.valueType) !== 'object') {
         errors.collect(ros.propertyValidator('valueType', ros.validateAllowedValues)({
@@ -2129,6 +2229,7 @@ function rosClusterHelmApplicationWaitUntilPropertyToRosTemplate(properties: any
     RosClusterHelmApplication_WaitUntilPropertyValidator(properties).assertSuccess();
     return {
       'Operator': ros.stringToRosTemplate(properties.operator),
+      'ApiVersion': ros.stringToRosTemplate(properties.apiVersion),
       'FirstMatch': ros.booleanToRosTemplate(properties.firstMatch),
       'ValueType': ros.stringToRosTemplate(properties.valueType),
       'Timeout': ros.numberToRosTemplate(properties.timeout),
@@ -3666,6 +3767,11 @@ export interface RosManagedEdgeKubernetesClusterProps {
     readonly loginPassword?: string | ros.IResolvable;
 
     /**
+     * @Property maintenanceWindow: Cluster maintenance window.
+     */
+    readonly maintenanceWindow?: RosManagedEdgeKubernetesCluster.MaintenanceWindowProperty | ros.IResolvable;
+
+    /**
      * @Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes. 
      * This number is determined by the specified pod CIDR block. 
      * This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
@@ -3752,6 +3858,7 @@ function RosManagedEdgeKubernetesClusterPropsValidator(properties: any): ros.Val
     errors.collect(ros.propertyValidator('serviceCidr', ros.validateString)(properties.serviceCidr));
     errors.collect(ros.propertyValidator('snatEntry', ros.validateBoolean)(properties.snatEntry));
     errors.collect(ros.propertyValidator('zoneIds', ros.listValidator(ros.validateString))(properties.zoneIds));
+    errors.collect(ros.propertyValidator('maintenanceWindow', RosManagedEdgeKubernetesCluster_MaintenanceWindowPropertyValidator)(properties.maintenanceWindow));
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosManagedEdgeKubernetesCluster_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('proxyMode', ros.validateString)(properties.proxyMode));
     errors.collect(ros.propertyValidator('loginPassword', ros.validateString)(properties.loginPassword));
@@ -3782,6 +3889,7 @@ function rosManagedEdgeKubernetesClusterPropsToRosTemplate(properties: any, enab
       'IsEnterpriseSecurityGroup': ros.booleanToRosTemplate(properties.isEnterpriseSecurityGroup),
       'KeyPair': ros.stringToRosTemplate(properties.keyPair),
       'LoginPassword': ros.stringToRosTemplate(properties.loginPassword),
+      'MaintenanceWindow': rosManagedEdgeKubernetesClusterMaintenanceWindowPropertyToRosTemplate(properties.maintenanceWindow),
       'NodeCidrMask': ros.stringToRosTemplate(properties.nodeCidrMask),
       'Profile': ros.stringToRosTemplate(properties.profile),
       'ProxyMode': ros.stringToRosTemplate(properties.proxyMode),
@@ -3932,6 +4040,11 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
     public loginPassword: string | ros.IResolvable | undefined;
 
     /**
+     * @Property maintenanceWindow: Cluster maintenance window.
+     */
+    public maintenanceWindow: RosManagedEdgeKubernetesCluster.MaintenanceWindowProperty | ros.IResolvable | undefined;
+
+    /**
      * @Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes. 
      * This number is determined by the specified pod CIDR block. 
      * This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
@@ -4019,6 +4132,7 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
         this.isEnterpriseSecurityGroup = props.isEnterpriseSecurityGroup;
         this.keyPair = props.keyPair;
         this.loginPassword = props.loginPassword;
+        this.maintenanceWindow = props.maintenanceWindow;
         this.nodeCidrMask = props.nodeCidrMask;
         this.profile = props.profile;
         this.proxyMode = props.proxyMode;
@@ -4044,6 +4158,7 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
             isEnterpriseSecurityGroup: this.isEnterpriseSecurityGroup,
             keyPair: this.keyPair,
             loginPassword: this.loginPassword,
+            maintenanceWindow: this.maintenanceWindow,
             nodeCidrMask: this.nodeCidrMask,
             profile: this.profile,
             proxyMode: this.proxyMode,
@@ -4112,6 +4227,75 @@ function rosManagedEdgeKubernetesClusterAddonsPropertyToRosTemplate(properties: 
       'Config': ros.stringToRosTemplate(properties.config),
       'Disabled': ros.booleanToRosTemplate(properties.disabled),
       'Name': ros.stringToRosTemplate(properties.name),
+    };
+}
+
+export namespace RosManagedEdgeKubernetesCluster {
+    /**
+     * @stability external
+     */
+    export interface MaintenanceWindowProperty {
+        /**
+         * @Property recurrence: The RFC5545 Recurrence Rule currently only supports FREQ=WEEKLY and does not support specifying COUNT or UNTIL
+         */
+        readonly recurrence?: string | ros.IResolvable;
+        /**
+         * @Property maintenanceTime: Maintenance start time. RFC3339 standard format.
+         */
+        readonly maintenanceTime?: string | ros.IResolvable;
+        /**
+         * @Property weeklyPeriod: Maintenance cycle. Multiple values are separated by a half-comma (,). Values: {Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday}
+         */
+        readonly weeklyPeriod?: string | ros.IResolvable;
+        /**
+         * @Property enable: Whether to open the maintenance window. Value:
+     * - true: Opens the maintenance window.
+     * - false: The maintenance window is not opened.
+     * Default value: false
+         */
+        readonly enable?: boolean | ros.IResolvable;
+        /**
+         * @Property duration: Maintenance time. Value range [1,24] in hours.
+     * Default value: 3h
+         */
+        readonly duration?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `MaintenanceWindowProperty`
+ *
+ * @param properties - the TypeScript properties of a `MaintenanceWindowProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosManagedEdgeKubernetesCluster_MaintenanceWindowPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('recurrence', ros.validateString)(properties.recurrence));
+    errors.collect(ros.propertyValidator('maintenanceTime', ros.validateString)(properties.maintenanceTime));
+    errors.collect(ros.propertyValidator('weeklyPeriod', ros.validateString)(properties.weeklyPeriod));
+    errors.collect(ros.propertyValidator('enable', ros.validateBoolean)(properties.enable));
+    errors.collect(ros.propertyValidator('duration', ros.validateString)(properties.duration));
+    return errors.wrap('supplied properties not correct for "MaintenanceWindowProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedEdgeKubernetesCluster.MaintenanceWindow` resource
+ *
+ * @param properties - the TypeScript properties of a `MaintenanceWindowProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedEdgeKubernetesCluster.MaintenanceWindow` resource.
+ */
+// @ts-ignore TS6133
+function rosManagedEdgeKubernetesClusterMaintenanceWindowPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosManagedEdgeKubernetesCluster_MaintenanceWindowPropertyValidator(properties).assertSuccess();
+    return {
+      'Recurrence': ros.stringToRosTemplate(properties.recurrence),
+      'MaintenanceTime': ros.stringToRosTemplate(properties.maintenanceTime),
+      'WeeklyPeriod': ros.stringToRosTemplate(properties.weeklyPeriod),
+      'Enable': ros.booleanToRosTemplate(properties.enable),
+      'Duration': ros.stringToRosTemplate(properties.duration),
     };
 }
 
@@ -4303,6 +4487,11 @@ export interface RosManagedKubernetesClusterProps {
      * @Property loginPassword: SSH login password. Password rules are 8-30 characters and contain three items (upper and lower case letters, numbers, and special symbols). Specify one of KeyPair or LoginPassword.
      */
     readonly loginPassword?: string | ros.IResolvable;
+
+    /**
+     * @Property maintenanceWindow: Cluster maintenance window.
+     */
+    readonly maintenanceWindow?: RosManagedKubernetesCluster.MaintenanceWindowProperty | ros.IResolvable;
 
     /**
      * @Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes. 
@@ -4497,8 +4686,8 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     errors.collect(ros.propertyValidator('deleteOptions', ros.listValidator(RosManagedKubernetesCluster_DeleteOptionsPropertyValidator))(properties.deleteOptions));
     errors.collect(ros.propertyValidator('keyPair', ros.validateString)(properties.keyPair));
     errors.collect(ros.propertyValidator('nodeCidrMask', ros.validateString)(properties.nodeCidrMask));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('timeoutMins', ros.validateNumber)(properties.timeoutMins));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('clusterSpec', ros.validateString)(properties.clusterSpec));
     errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     if(properties.controlPlaneLogTtl && (typeof properties.controlPlaneLogTtl) !== 'object') {
@@ -4522,6 +4711,7 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     errors.collect(ros.propertyValidator('nodePools', ros.listValidator(RosManagedKubernetesCluster_NodePoolsPropertyValidator))(properties.nodePools));
     errors.collect(ros.propertyValidator('encryptionProviderKey', ros.validateString)(properties.encryptionProviderKey));
     errors.collect(ros.propertyValidator('snatEntry', ros.validateBoolean)(properties.snatEntry));
+    errors.collect(ros.propertyValidator('maintenanceWindow', RosManagedKubernetesCluster_MaintenanceWindowPropertyValidator)(properties.maintenanceWindow));
     return errors.wrap('supplied properties not correct for "RosManagedKubernetesClusterProps"');
 }
 
@@ -4559,6 +4749,7 @@ function rosManagedKubernetesClusterPropsToRosTemplate(properties: any, enableRe
       'KubernetesVersion': ros.stringToRosTemplate(properties.kubernetesVersion),
       'LoadBalancerSpec': ros.stringToRosTemplate(properties.loadBalancerSpec),
       'LoginPassword': ros.stringToRosTemplate(properties.loginPassword),
+      'MaintenanceWindow': rosManagedKubernetesClusterMaintenanceWindowPropertyToRosTemplate(properties.maintenanceWindow),
       'NodeCidrMask': ros.stringToRosTemplate(properties.nodeCidrMask),
       'NodeNameMode': ros.stringToRosTemplate(properties.nodeNameMode),
       'NodePools': ros.listMapper(rosManagedKubernetesClusterNodePoolsPropertyToRosTemplate)(properties.nodePools),
@@ -4786,6 +4977,11 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
     public loginPassword: string | ros.IResolvable | undefined;
 
     /**
+     * @Property maintenanceWindow: Cluster maintenance window.
+     */
+    public maintenanceWindow: RosManagedKubernetesCluster.MaintenanceWindowProperty | ros.IResolvable | undefined;
+
+    /**
      * @Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes. 
      * This number is determined by the specified pod CIDR block. 
      * This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
@@ -4951,6 +5147,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
         this.kubernetesVersion = props.kubernetesVersion;
         this.loadBalancerSpec = props.loadBalancerSpec;
         this.loginPassword = props.loginPassword;
+        this.maintenanceWindow = props.maintenanceWindow;
         this.nodeCidrMask = props.nodeCidrMask;
         this.nodeNameMode = props.nodeNameMode;
         this.nodePools = props.nodePools;
@@ -4995,6 +5192,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
             kubernetesVersion: this.kubernetesVersion,
             loadBalancerSpec: this.loadBalancerSpec,
             loginPassword: this.loginPassword,
+            maintenanceWindow: this.maintenanceWindow,
             nodeCidrMask: this.nodeCidrMask,
             nodeNameMode: this.nodeNameMode,
             nodePools: this.nodePools,
@@ -5372,6 +5570,75 @@ export namespace RosManagedKubernetesCluster {
     /**
      * @stability external
      */
+    export interface MaintenanceWindowProperty {
+        /**
+         * @Property recurrence: The RFC5545 Recurrence Rule currently only supports FREQ=WEEKLY and does not support specifying COUNT or UNTIL
+         */
+        readonly recurrence?: string | ros.IResolvable;
+        /**
+         * @Property maintenanceTime: Maintenance start time. RFC3339 standard format.
+         */
+        readonly maintenanceTime?: string | ros.IResolvable;
+        /**
+         * @Property weeklyPeriod: Maintenance cycle. Multiple values are separated by a half-comma (,). Values: {Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday}
+         */
+        readonly weeklyPeriod?: string | ros.IResolvable;
+        /**
+         * @Property enable: Whether to open the maintenance window. Value:
+     * - true: Opens the maintenance window.
+     * - false: The maintenance window is not opened.
+     * Default value: false
+         */
+        readonly enable?: boolean | ros.IResolvable;
+        /**
+         * @Property duration: Maintenance time. Value range [1,24] in hours.
+     * Default value: 3h
+         */
+        readonly duration?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `MaintenanceWindowProperty`
+ *
+ * @param properties - the TypeScript properties of a `MaintenanceWindowProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosManagedKubernetesCluster_MaintenanceWindowPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('recurrence', ros.validateString)(properties.recurrence));
+    errors.collect(ros.propertyValidator('maintenanceTime', ros.validateString)(properties.maintenanceTime));
+    errors.collect(ros.propertyValidator('weeklyPeriod', ros.validateString)(properties.weeklyPeriod));
+    errors.collect(ros.propertyValidator('enable', ros.validateBoolean)(properties.enable));
+    errors.collect(ros.propertyValidator('duration', ros.validateString)(properties.duration));
+    return errors.wrap('supplied properties not correct for "MaintenanceWindowProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedKubernetesCluster.MaintenanceWindow` resource
+ *
+ * @param properties - the TypeScript properties of a `MaintenanceWindowProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedKubernetesCluster.MaintenanceWindow` resource.
+ */
+// @ts-ignore TS6133
+function rosManagedKubernetesClusterMaintenanceWindowPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosManagedKubernetesCluster_MaintenanceWindowPropertyValidator(properties).assertSuccess();
+    return {
+      'Recurrence': ros.stringToRosTemplate(properties.recurrence),
+      'MaintenanceTime': ros.stringToRosTemplate(properties.maintenanceTime),
+      'WeeklyPeriod': ros.stringToRosTemplate(properties.weeklyPeriod),
+      'Enable': ros.booleanToRosTemplate(properties.enable),
+      'Duration': ros.stringToRosTemplate(properties.duration),
+    };
+}
+
+export namespace RosManagedKubernetesCluster {
+    /**
+     * @stability external
+     */
     export interface NodePoolInfoProperty {
         /**
          * @Property type: Node pool type. Value range:
@@ -5511,6 +5778,12 @@ function RosManagedKubernetesCluster_RuntimePropertyValidator(properties: any): 
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    if(properties.name && (typeof properties.name) !== 'object') {
+        errors.collect(ros.propertyValidator('name', ros.validateAllowedValues)({
+          data: properties.name,
+          allowedValues: ["containerd","Docker","Sandboxed-Container"],
+        }));
+    }
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     return errors.wrap('supplied properties not correct for "RuntimeProperty"');
 }

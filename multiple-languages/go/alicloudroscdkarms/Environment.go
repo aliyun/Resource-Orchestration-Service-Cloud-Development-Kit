@@ -12,26 +12,36 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::Environment`, which is used to create an environment.
 type Environment interface {
 	alicloudroscdkcore.Resource
+	IEnvironment
 	// Attribute EnvironmentId: The id of the environment.
-	AttrEnvironmentId() alicloudroscdkcore.IResolvable
+	AttrEnvironmentId() interface{}
 	// Attribute EnvironmentName: The name of the environment.
-	AttrEnvironmentName() alicloudroscdkcore.IResolvable
+	AttrEnvironmentName() interface{}
 	// Attribute EnvironmentSubType: The subtype of the environment.
-	AttrEnvironmentSubType() alicloudroscdkcore.IResolvable
+	AttrEnvironmentSubType() interface{}
 	// Attribute EnvironmentType: The type of the environment.
-	AttrEnvironmentType() alicloudroscdkcore.IResolvable
+	AttrEnvironmentType() interface{}
 	// Attribute FeePackage: The payable resource plan.
-	AttrFeePackage() alicloudroscdkcore.IResolvable
+	AttrFeePackage() interface{}
 	// Attribute GrafanaWorkspaceId: The ID of the grafana workspace bound to the environment.
-	AttrGrafanaWorkspaceId() alicloudroscdkcore.IResolvable
+	AttrGrafanaWorkspaceId() interface{}
 	// Attribute ManagedType: Specifies whether agents or exporters are managed.
-	AttrManagedType() alicloudroscdkcore.IResolvable
+	AttrManagedType() interface{}
 	// Attribute PrometheusInstanceId: The ID of the Prometheus instance.
-	AttrPrometheusInstanceId() alicloudroscdkcore.IResolvable
+	AttrPrometheusInstanceId() interface{}
 	// Attribute ResourceGroupId: The ID of the resource group.
-	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -46,7 +56,6 @@ type Environment interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *EnvironmentProps
-	SetProps(val *EnvironmentProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -59,6 +68,9 @@ type Environment interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -111,10 +123,11 @@ type Environment interface {
 // The jsii proxy struct for Environment
 type jsiiProxy_Environment struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IEnvironment
 }
 
-func (j *jsiiProxy_Environment) AttrEnvironmentId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Environment) AttrEnvironmentId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEnvironmentId",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_Environment) AttrEnvironmentId() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_Environment) AttrEnvironmentName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Environment) AttrEnvironmentName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEnvironmentName",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_Environment) AttrEnvironmentName() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_Environment) AttrEnvironmentSubType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Environment) AttrEnvironmentSubType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEnvironmentSubType",
@@ -143,8 +156,8 @@ func (j *jsiiProxy_Environment) AttrEnvironmentSubType() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_Environment) AttrEnvironmentType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Environment) AttrEnvironmentType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEnvironmentType",
@@ -153,8 +166,8 @@ func (j *jsiiProxy_Environment) AttrEnvironmentType() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_Environment) AttrFeePackage() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Environment) AttrFeePackage() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrFeePackage",
@@ -163,8 +176,8 @@ func (j *jsiiProxy_Environment) AttrFeePackage() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_Environment) AttrGrafanaWorkspaceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Environment) AttrGrafanaWorkspaceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGrafanaWorkspaceId",
@@ -173,8 +186,8 @@ func (j *jsiiProxy_Environment) AttrGrafanaWorkspaceId() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_Environment) AttrManagedType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Environment) AttrManagedType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrManagedType",
@@ -183,8 +196,8 @@ func (j *jsiiProxy_Environment) AttrManagedType() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Environment) AttrPrometheusInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Environment) AttrPrometheusInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPrometheusInstanceId",
@@ -193,8 +206,8 @@ func (j *jsiiProxy_Environment) AttrPrometheusInstanceId() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_Environment) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Environment) AttrResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupId",
@@ -208,6 +221,16 @@ func (j *jsiiProxy_Environment) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Environment) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -345,17 +368,6 @@ func (j *jsiiProxy_Environment)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Environment)SetProps(val *EnvironmentProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Environment)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -447,6 +459,45 @@ func (e *jsiiProxy_Environment) ApplyRemovalPolicy(policy alicloudroscdkcore.Rem
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (e *jsiiProxy_Environment) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		e,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (e *jsiiProxy_Environment) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		e,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (e *jsiiProxy_Environment) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		e,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (e *jsiiProxy_Environment) GeneratePhysicalName() *string {

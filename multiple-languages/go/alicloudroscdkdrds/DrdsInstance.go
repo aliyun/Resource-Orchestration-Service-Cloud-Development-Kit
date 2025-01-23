@@ -12,16 +12,26 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::DRDS::DrdsInstance`, which is used to create a PolarDB-X 1.0 instance of specified instance specifications.
 type DrdsInstance interface {
 	alicloudroscdkcore.Resource
+	IDrdsInstance
 	// Attribute DrdsInstanceId: instance id.
-	AttrDrdsInstanceId() alicloudroscdkcore.IResolvable
+	AttrDrdsInstanceId() interface{}
 	// Attribute InternetEndpoint: Public endpoint.
-	AttrInternetEndpoint() alicloudroscdkcore.IResolvable
+	AttrInternetEndpoint() interface{}
 	// Attribute IntranetEndpoint: VPC endpoint.
-	AttrIntranetEndpoint() alicloudroscdkcore.IResolvable
+	AttrIntranetEndpoint() interface{}
 	// Attribute OrderId: order number.
-	AttrOrderId() alicloudroscdkcore.IResolvable
+	AttrOrderId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -36,7 +46,6 @@ type DrdsInstance interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DrdsInstanceProps
-	SetProps(val *DrdsInstanceProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -49,6 +58,9 @@ type DrdsInstance interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -101,10 +113,11 @@ type DrdsInstance interface {
 // The jsii proxy struct for DrdsInstance
 type jsiiProxy_DrdsInstance struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDrdsInstance
 }
 
-func (j *jsiiProxy_DrdsInstance) AttrDrdsInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsInstance) AttrDrdsInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDrdsInstanceId",
@@ -113,8 +126,8 @@ func (j *jsiiProxy_DrdsInstance) AttrDrdsInstanceId() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_DrdsInstance) AttrInternetEndpoint() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsInstance) AttrInternetEndpoint() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInternetEndpoint",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_DrdsInstance) AttrInternetEndpoint() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_DrdsInstance) AttrIntranetEndpoint() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsInstance) AttrIntranetEndpoint() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIntranetEndpoint",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_DrdsInstance) AttrIntranetEndpoint() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_DrdsInstance) AttrOrderId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsInstance) AttrOrderId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOrderId",
@@ -148,6 +161,16 @@ func (j *jsiiProxy_DrdsInstance) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DrdsInstance) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -285,17 +308,6 @@ func (j *jsiiProxy_DrdsInstance)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DrdsInstance)SetProps(val *DrdsInstanceProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_DrdsInstance)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -387,6 +399,45 @@ func (d *jsiiProxy_DrdsInstance) ApplyRemovalPolicy(policy alicloudroscdkcore.Re
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_DrdsInstance) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DrdsInstance) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DrdsInstance) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_DrdsInstance) GeneratePhysicalName() *string {

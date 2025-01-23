@@ -60,20 +60,31 @@ export interface UserProps {
 }
 
 /**
+ * Represents a `User`.
+ */
+export interface IUser extends ros.IResource {
+    readonly props: UserProps;
+
+    /**
+     * Attribute UserId: The ID of the user.
+     */
+    readonly attrUserId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::User`, which is used to create a user.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUser`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-user
  */
-export class User extends ros.Resource {
+export class User extends ros.Resource implements IUser {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: UserProps;
+    public readonly props: UserProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute UserId: The ID of the user.
      */
-    public readonly attrUserId: ros.IResolvable;
+    public readonly attrUserId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

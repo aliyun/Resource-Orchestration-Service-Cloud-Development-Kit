@@ -13,44 +13,54 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::DirectMail::Domain`, which is used to create a domain name in Direct Mail.
 type Domain interface {
 	alicloudroscdkcore.Resource
+	IDomain
 	// Attribute CnameAuthStatus: Cname auth status.
-	AttrCnameAuthStatus() alicloudroscdkcore.IResolvable
+	AttrCnameAuthStatus() interface{}
 	// Attribute CnameConfirmStatus: Cname confirm status.
-	AttrCnameConfirmStatus() alicloudroscdkcore.IResolvable
+	AttrCnameConfirmStatus() interface{}
 	// Attribute CnameRecord: Cname record.
-	AttrCnameRecord() alicloudroscdkcore.IResolvable
+	AttrCnameRecord() interface{}
 	// Attribute CreateTime: The creation time of the domain.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute DefaultDomain: Default domain.
-	AttrDefaultDomain() alicloudroscdkcore.IResolvable
+	AttrDefaultDomain() interface{}
 	// Attribute DnsMx: DNS MX.
-	AttrDnsMx() alicloudroscdkcore.IResolvable
+	AttrDnsMx() interface{}
 	// Attribute DnsSpf: DNS SPF.
-	AttrDnsSpf() alicloudroscdkcore.IResolvable
+	AttrDnsSpf() interface{}
 	// Attribute DnsTxt: DNS txt.
-	AttrDnsTxt() alicloudroscdkcore.IResolvable
+	AttrDnsTxt() interface{}
 	// Attribute DomainId: The ID of the domain.
-	AttrDomainId() alicloudroscdkcore.IResolvable
+	AttrDomainId() interface{}
 	// Attribute DomainName: The name of the domain.
-	AttrDomainName() alicloudroscdkcore.IResolvable
+	AttrDomainName() interface{}
 	// Attribute DomainType: The type of the domain.
-	AttrDomainType() alicloudroscdkcore.IResolvable
+	AttrDomainType() interface{}
 	// Attribute IcpStatus: ICP status.
-	AttrIcpStatus() alicloudroscdkcore.IResolvable
+	AttrIcpStatus() interface{}
 	// Attribute MxAuthStatus: MX auth status.
-	AttrMxAuthStatus() alicloudroscdkcore.IResolvable
+	AttrMxAuthStatus() interface{}
 	// Attribute MxRecord: MX Record.
-	AttrMxRecord() alicloudroscdkcore.IResolvable
+	AttrMxRecord() interface{}
 	// Attribute SpfAuthStatus: SPF auth status.
-	AttrSpfAuthStatus() alicloudroscdkcore.IResolvable
+	AttrSpfAuthStatus() interface{}
 	// Attribute SpfRecord: SPF record.
-	AttrSpfRecord() alicloudroscdkcore.IResolvable
+	AttrSpfRecord() interface{}
 	// Attribute TlDomainName: TL domain name.
-	AttrTlDomainName() alicloudroscdkcore.IResolvable
+	AttrTlDomainName() interface{}
 	// Attribute TracefRecord: Tracef Record.
-	AttrTracefRecord() alicloudroscdkcore.IResolvable
+	AttrTracefRecord() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -65,7 +75,6 @@ type Domain interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DomainProps
-	SetProps(val *DomainProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -78,6 +87,9 @@ type Domain interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -130,10 +142,11 @@ type Domain interface {
 // The jsii proxy struct for Domain
 type jsiiProxy_Domain struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDomain
 }
 
-func (j *jsiiProxy_Domain) AttrCnameAuthStatus() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Domain) AttrCnameAuthStatus() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCnameAuthStatus",
@@ -142,8 +155,8 @@ func (j *jsiiProxy_Domain) AttrCnameAuthStatus() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_Domain) AttrCnameConfirmStatus() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Domain) AttrCnameConfirmStatus() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCnameConfirmStatus",
@@ -152,8 +165,8 @@ func (j *jsiiProxy_Domain) AttrCnameConfirmStatus() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_Domain) AttrCnameRecord() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Domain) AttrCnameRecord() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCnameRecord",
@@ -162,8 +175,8 @@ func (j *jsiiProxy_Domain) AttrCnameRecord() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Domain) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Domain) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -172,8 +185,8 @@ func (j *jsiiProxy_Domain) AttrCreateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Domain) AttrDefaultDomain() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Domain) AttrDefaultDomain() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDefaultDomain",
@@ -182,8 +195,8 @@ func (j *jsiiProxy_Domain) AttrDefaultDomain() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Domain) AttrDnsMx() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Domain) AttrDnsMx() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDnsMx",
@@ -192,8 +205,8 @@ func (j *jsiiProxy_Domain) AttrDnsMx() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Domain) AttrDnsSpf() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Domain) AttrDnsSpf() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDnsSpf",
@@ -202,8 +215,8 @@ func (j *jsiiProxy_Domain) AttrDnsSpf() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Domain) AttrDnsTxt() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Domain) AttrDnsTxt() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDnsTxt",
@@ -212,8 +225,8 @@ func (j *jsiiProxy_Domain) AttrDnsTxt() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Domain) AttrDomainId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Domain) AttrDomainId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDomainId",
@@ -222,8 +235,8 @@ func (j *jsiiProxy_Domain) AttrDomainId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Domain) AttrDomainName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Domain) AttrDomainName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDomainName",
@@ -232,8 +245,8 @@ func (j *jsiiProxy_Domain) AttrDomainName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Domain) AttrDomainType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Domain) AttrDomainType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDomainType",
@@ -242,8 +255,8 @@ func (j *jsiiProxy_Domain) AttrDomainType() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Domain) AttrIcpStatus() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Domain) AttrIcpStatus() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIcpStatus",
@@ -252,8 +265,8 @@ func (j *jsiiProxy_Domain) AttrIcpStatus() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Domain) AttrMxAuthStatus() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Domain) AttrMxAuthStatus() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMxAuthStatus",
@@ -262,8 +275,8 @@ func (j *jsiiProxy_Domain) AttrMxAuthStatus() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Domain) AttrMxRecord() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Domain) AttrMxRecord() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMxRecord",
@@ -272,8 +285,8 @@ func (j *jsiiProxy_Domain) AttrMxRecord() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Domain) AttrSpfAuthStatus() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Domain) AttrSpfAuthStatus() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSpfAuthStatus",
@@ -282,8 +295,8 @@ func (j *jsiiProxy_Domain) AttrSpfAuthStatus() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Domain) AttrSpfRecord() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Domain) AttrSpfRecord() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSpfRecord",
@@ -292,8 +305,8 @@ func (j *jsiiProxy_Domain) AttrSpfRecord() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Domain) AttrTlDomainName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Domain) AttrTlDomainName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTlDomainName",
@@ -302,8 +315,8 @@ func (j *jsiiProxy_Domain) AttrTlDomainName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Domain) AttrTracefRecord() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Domain) AttrTracefRecord() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTracefRecord",
@@ -317,6 +330,16 @@ func (j *jsiiProxy_Domain) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Domain) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -454,17 +477,6 @@ func (j *jsiiProxy_Domain)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Domain)SetProps(val *DomainProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Domain)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -556,6 +568,45 @@ func (d *jsiiProxy_Domain) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalP
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_Domain) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_Domain) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_Domain) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_Domain) GeneratePhysicalName() *string {

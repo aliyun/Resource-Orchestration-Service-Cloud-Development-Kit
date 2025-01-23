@@ -12,17 +12,27 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ECD::Desktops`, which is used to create one or more cloud desktops.
 type Desktops interface {
 	alicloudroscdkcore.Resource
+	IDesktops
 	// Attribute DesktopId: The ID of the cloud desktop.
 	//
 	// If multiple cloud desktops are created in a call, the
 	// IDs of the cloud desktops are returned.
-	AttrDesktopId() alicloudroscdkcore.IResolvable
+	AttrDesktopId() interface{}
 	// Attribute OrderId: The ID of the order.
 	//
 	// Note This parameter is returned only when the ChargeType parameter is set to PrePaid.
-	AttrOrderId() alicloudroscdkcore.IResolvable
+	AttrOrderId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -37,7 +47,6 @@ type Desktops interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DesktopsProps
-	SetProps(val *DesktopsProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -50,6 +59,9 @@ type Desktops interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -102,10 +114,11 @@ type Desktops interface {
 // The jsii proxy struct for Desktops
 type jsiiProxy_Desktops struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDesktops
 }
 
-func (j *jsiiProxy_Desktops) AttrDesktopId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Desktops) AttrDesktopId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDesktopId",
@@ -114,8 +127,8 @@ func (j *jsiiProxy_Desktops) AttrDesktopId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Desktops) AttrOrderId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Desktops) AttrOrderId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOrderId",
@@ -129,6 +142,16 @@ func (j *jsiiProxy_Desktops) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Desktops) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -266,17 +289,6 @@ func (j *jsiiProxy_Desktops)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Desktops)SetProps(val *DesktopsProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Desktops)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -368,6 +380,45 @@ func (d *jsiiProxy_Desktops) ApplyRemovalPolicy(policy alicloudroscdkcore.Remova
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_Desktops) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_Desktops) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_Desktops) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_Desktops) GeneratePhysicalName() *string {

@@ -36,20 +36,31 @@ export interface PrefixListProps {
 }
 
 /**
+ * Represents a `PrefixList`.
+ */
+export interface IPrefixList extends ros.IResource {
+    readonly props: PrefixListProps;
+
+    /**
+     * Attribute PrefixListId: The ID of the prefix list.
+     */
+    readonly attrPrefixListId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::PrefixList`, which is used to create a prefix list.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPrefixList`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-prefixlist
  */
-export class PrefixList extends ros.Resource {
+export class PrefixList extends ros.Resource implements IPrefixList {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: PrefixListProps;
+    public readonly props: PrefixListProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute PrefixListId: The ID of the prefix list.
      */
-    public readonly attrPrefixListId: ros.IResolvable;
+    public readonly attrPrefixListId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

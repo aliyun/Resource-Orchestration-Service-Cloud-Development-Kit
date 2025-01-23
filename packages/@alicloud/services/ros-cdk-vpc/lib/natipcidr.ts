@@ -38,20 +38,31 @@ export interface NatIpCidrProps {
 }
 
 /**
+ * Represents a `NatIpCidr`.
+ */
+export interface INatIpCidr extends ros.IResource {
+    readonly props: NatIpCidrProps;
+
+    /**
+     * Attribute NatIpCidrId: The ID of the NAT CIDR block.
+     */
+    readonly attrNatIpCidrId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::NatIpCidr`, which is used to create a NAT CIDR block.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNatIpCidr`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natipcidr
  */
-export class NatIpCidr extends ros.Resource {
+export class NatIpCidr extends ros.Resource implements INatIpCidr {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: NatIpCidrProps;
+    public readonly props: NatIpCidrProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute NatIpCidrId: The ID of the NAT CIDR block.
      */
-    public readonly attrNatIpCidrId: ros.IResolvable;
+    public readonly attrNatIpCidrId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

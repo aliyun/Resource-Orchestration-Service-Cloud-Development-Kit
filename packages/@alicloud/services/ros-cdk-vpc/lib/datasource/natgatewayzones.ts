@@ -19,20 +19,31 @@ export interface NatGatewayZonesProps {
 }
 
 /**
+ * Represents a `NatGatewayZones`.
+ */
+export interface INatGatewayZones extends ros.IResource {
+    readonly props: NatGatewayZonesProps;
+
+    /**
+     * Attribute ZoneIds: The list of The Zone Ids.
+     */
+    readonly attrZoneIds: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::NatGatewayZones`, which is used to query the zones of a NAT gateway.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNatGatewayZones`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natgatewayzones
  */
-export class NatGatewayZones extends ros.Resource {
+export class NatGatewayZones extends ros.Resource implements INatGatewayZones {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: NatGatewayZonesProps;
+    public readonly props: NatGatewayZonesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ZoneIds: The list of The Zone Ids.
      */
-    public readonly attrZoneIds: ros.IResolvable;
+    public readonly attrZoneIds: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

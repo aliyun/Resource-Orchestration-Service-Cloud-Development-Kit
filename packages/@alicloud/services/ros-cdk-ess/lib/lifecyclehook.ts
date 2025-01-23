@@ -60,25 +60,41 @@ export interface LifecycleHookProps {
 }
 
 /**
+ * Represents a `LifecycleHook`.
+ */
+export interface ILifecycleHook extends ros.IResource {
+    readonly props: LifecycleHookProps;
+
+    /**
+     * Attribute LifecycleHookId: The lifecycle hook ID
+     */
+    readonly attrLifecycleHookId: ros.IResolvable | string;
+
+    /**
+     * Attribute ScalingGroupId: The id of the scaling group to which the lifecycle hook belongs.
+     */
+    readonly attrScalingGroupId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::LifecycleHook`, which is used to create a lifecycle hook for a scaling group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLifecycleHook`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-lifecyclehook
  */
-export class LifecycleHook extends ros.Resource {
+export class LifecycleHook extends ros.Resource implements ILifecycleHook {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: LifecycleHookProps;
+    public readonly props: LifecycleHookProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute LifecycleHookId: The lifecycle hook ID
      */
-    public readonly attrLifecycleHookId: ros.IResolvable;
+    public readonly attrLifecycleHookId: ros.IResolvable | string;
 
     /**
      * Attribute ScalingGroupId: The id of the scaling group to which the lifecycle hook belongs.
      */
-    public readonly attrScalingGroupId: ros.IResolvable;
+    public readonly attrScalingGroupId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

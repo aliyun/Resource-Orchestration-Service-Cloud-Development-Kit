@@ -26,14 +26,20 @@ export interface StageConfigProps {
 }
 
 /**
+ * Represents a `StageConfig`.
+ */
+export interface IStageConfig extends ros.IResource {
+    readonly props: StageConfigProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::StageConfig`, which is used to configure the test, staging, or production environment variables for an API group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosStageConfig`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-stageconfig
  */
-export class StageConfig extends ros.Resource {
+export class StageConfig extends ros.Resource implements IStageConfig {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: StageConfigProps;
+    public readonly props: StageConfigProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

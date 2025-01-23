@@ -81,115 +81,221 @@ export interface DbPlanProps {
 }
 
 /**
+ * Represents a `DbPlan`.
+ */
+export interface IDbPlan extends ros.IResource {
+    readonly props: DbPlanProps;
+
+    /**
+     * Attribute ContinuousPlan: Continuous backup plan schedule. Use {   "type": "continuous" }.
+     */
+    readonly attrContinuousPlan: ros.IResolvable | string;
+
+    /**
+     * Attribute ContinuousUuid: Uuid of continuous backup plan.
+     */
+    readonly attrContinuousUuid: ros.IResolvable | string;
+
+    /**
+     * Attribute CumulativePlan: Cumulative plan schedule, only for mssql. More details see FullPlan.
+     */
+    readonly attrCumulativePlan: ros.IResolvable | string;
+
+    /**
+     * Attribute CumulativeUuid: Uuid of cumulative plan.
+     */
+    readonly attrCumulativeUuid: ros.IResolvable | string;
+
+    /**
+     * Attribute DbPlanName: Display name of the backup plan.
+     */
+    readonly attrDbPlanName: ros.IResolvable | string;
+
+    /**
+     * Attribute FullPlan: Full backup plan schedule. daily: {"type": "daily", "start": "00:00:00", "interval": 3}, weekly {"type":"weekly","start": "03:00:00","days": [1,2,3,4,5],"interval": 1}, days can be 0 - 6, 0 means Sunday, and interval can be 1 - 52.
+     */
+    readonly attrFullPlan: ros.IResolvable | string;
+
+    /**
+     * Attribute FullUuid: Uuid of full backup plan.
+     */
+    readonly attrFullUuid: ros.IResolvable | string;
+
+    /**
+     * Attribute HostUuid: Uuid of the host of the database instance.
+     */
+    readonly attrHostUuid: ros.IResolvable | string;
+
+    /**
+     * Attribute IncPlan: Incremental backup plan schedule. Only for mysql and oracle. More details see FullPlan.
+     */
+    readonly attrIncPlan: ros.IResolvable | string;
+
+    /**
+     * Attribute IncUuid: Uuid of the incremental bakcup plan.
+     */
+    readonly attrIncUuid: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceUuid: Uuid of database instance.
+     */
+    readonly attrInstanceUuid: ros.IResolvable | string;
+
+    /**
+     * Attribute LogPlan: Log backup plan schedule.More details see FullPlan.
+     */
+    readonly attrLogPlan: ros.IResolvable | string;
+
+    /**
+     * Attribute LogUuid: Uuid of the log backup plan.
+     */
+    readonly attrLogUuid: ros.IResolvable | string;
+
+    /**
+     * Attribute MaxRateLimit: Max rate limit for backup job,
+     */
+    readonly attrMaxRateLimit: ros.IResolvable | string;
+
+    /**
+     * Attribute MaxRetrySeconds: Max retry seconds on network failure.
+     */
+    readonly attrMaxRetrySeconds: ros.IResolvable | string;
+
+    /**
+     * Attribute Options: Backup options in json format, different for each type of database. For Oracle, use {"channels":4,"compression":"lzop","offline_backup":false,"archivelog_reserve_hours":24,"custom_commands":""}, "channels" means numbers of concurrent theads, "archivelog_reserve_hours" means how long before the archive log will be deleted after backup job completed, other paramters should use the default vaule. For Mysql, use {"channels":4,"compression":"lzop","del_binlog":false}, "del_binlog" means whether the binlog will be deleted after backup completed, only take effect for log or continuous backup. For SQL Server, use {\"channels\":4,\"verify\":false,\"compression\":\"lzop\",\"backup_new_databases\":false}.
+     */
+    readonly attrOptions: ros.IResolvable | string;
+
+    /**
+     * Attribute PlanId: Id of the backup plan.
+     */
+    readonly attrPlanId: ros.IResolvable | string;
+
+    /**
+     * Attribute SourceType: Database type, allowed value: MYSQL, ORACLE, MSSQL
+     */
+    readonly attrSourceType: ros.IResolvable | string;
+
+    /**
+     * Attribute Target: Target vault to backup.
+     */
+    readonly attrTarget: ros.IResolvable | string;
+
+    /**
+     * Attribute VaultId: Vault ID to create backup plan, the backup data will be stored to the vault.
+     */
+    readonly attrVaultId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::HBR::DbPlan`, which is used to create a backup plan.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDbPlan`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbplan
  */
-export class DbPlan extends ros.Resource {
+export class DbPlan extends ros.Resource implements IDbPlan {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DbPlanProps;
+    public readonly props: DbPlanProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ContinuousPlan: Continuous backup plan schedule. Use {   "type": "continuous" }.
      */
-    public readonly attrContinuousPlan: ros.IResolvable;
+    public readonly attrContinuousPlan: ros.IResolvable | string;
 
     /**
      * Attribute ContinuousUuid: Uuid of continuous backup plan.
      */
-    public readonly attrContinuousUuid: ros.IResolvable;
+    public readonly attrContinuousUuid: ros.IResolvable | string;
 
     /**
      * Attribute CumulativePlan: Cumulative plan schedule, only for mssql. More details see FullPlan.
      */
-    public readonly attrCumulativePlan: ros.IResolvable;
+    public readonly attrCumulativePlan: ros.IResolvable | string;
 
     /**
      * Attribute CumulativeUuid: Uuid of cumulative plan.
      */
-    public readonly attrCumulativeUuid: ros.IResolvable;
+    public readonly attrCumulativeUuid: ros.IResolvable | string;
 
     /**
      * Attribute DbPlanName: Display name of the backup plan.
      */
-    public readonly attrDbPlanName: ros.IResolvable;
+    public readonly attrDbPlanName: ros.IResolvable | string;
 
     /**
      * Attribute FullPlan: Full backup plan schedule. daily: {"type": "daily", "start": "00:00:00", "interval": 3}, weekly {"type":"weekly","start": "03:00:00","days": [1,2,3,4,5],"interval": 1}, days can be 0 - 6, 0 means Sunday, and interval can be 1 - 52.
      */
-    public readonly attrFullPlan: ros.IResolvable;
+    public readonly attrFullPlan: ros.IResolvable | string;
 
     /**
      * Attribute FullUuid: Uuid of full backup plan.
      */
-    public readonly attrFullUuid: ros.IResolvable;
+    public readonly attrFullUuid: ros.IResolvable | string;
 
     /**
      * Attribute HostUuid: Uuid of the host of the database instance.
      */
-    public readonly attrHostUuid: ros.IResolvable;
+    public readonly attrHostUuid: ros.IResolvable | string;
 
     /**
      * Attribute IncPlan: Incremental backup plan schedule. Only for mysql and oracle. More details see FullPlan.
      */
-    public readonly attrIncPlan: ros.IResolvable;
+    public readonly attrIncPlan: ros.IResolvable | string;
 
     /**
      * Attribute IncUuid: Uuid of the incremental bakcup plan.
      */
-    public readonly attrIncUuid: ros.IResolvable;
+    public readonly attrIncUuid: ros.IResolvable | string;
 
     /**
      * Attribute InstanceUuid: Uuid of database instance.
      */
-    public readonly attrInstanceUuid: ros.IResolvable;
+    public readonly attrInstanceUuid: ros.IResolvable | string;
 
     /**
      * Attribute LogPlan: Log backup plan schedule.More details see FullPlan.
      */
-    public readonly attrLogPlan: ros.IResolvable;
+    public readonly attrLogPlan: ros.IResolvable | string;
 
     /**
      * Attribute LogUuid: Uuid of the log backup plan.
      */
-    public readonly attrLogUuid: ros.IResolvable;
+    public readonly attrLogUuid: ros.IResolvable | string;
 
     /**
      * Attribute MaxRateLimit: Max rate limit for backup job,
      */
-    public readonly attrMaxRateLimit: ros.IResolvable;
+    public readonly attrMaxRateLimit: ros.IResolvable | string;
 
     /**
      * Attribute MaxRetrySeconds: Max retry seconds on network failure.
      */
-    public readonly attrMaxRetrySeconds: ros.IResolvable;
+    public readonly attrMaxRetrySeconds: ros.IResolvable | string;
 
     /**
      * Attribute Options: Backup options in json format, different for each type of database. For Oracle, use {"channels":4,"compression":"lzop","offline_backup":false,"archivelog_reserve_hours":24,"custom_commands":""}, "channels" means numbers of concurrent theads, "archivelog_reserve_hours" means how long before the archive log will be deleted after backup job completed, other paramters should use the default vaule. For Mysql, use {"channels":4,"compression":"lzop","del_binlog":false}, "del_binlog" means whether the binlog will be deleted after backup completed, only take effect for log or continuous backup. For SQL Server, use {\"channels\":4,\"verify\":false,\"compression\":\"lzop\",\"backup_new_databases\":false}.
      */
-    public readonly attrOptions: ros.IResolvable;
+    public readonly attrOptions: ros.IResolvable | string;
 
     /**
      * Attribute PlanId: Id of the backup plan.
      */
-    public readonly attrPlanId: ros.IResolvable;
+    public readonly attrPlanId: ros.IResolvable | string;
 
     /**
      * Attribute SourceType: Database type, allowed value: MYSQL, ORACLE, MSSQL
      */
-    public readonly attrSourceType: ros.IResolvable;
+    public readonly attrSourceType: ros.IResolvable | string;
 
     /**
      * Attribute Target: Target vault to backup.
      */
-    public readonly attrTarget: ros.IResolvable;
+    public readonly attrTarget: ros.IResolvable | string;
 
     /**
      * Attribute VaultId: Vault ID to create backup plan, the backup data will be stored to the vault.
      */
-    public readonly attrVaultId: ros.IResolvable;
+    public readonly attrVaultId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

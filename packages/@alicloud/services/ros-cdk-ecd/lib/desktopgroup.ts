@@ -140,20 +140,31 @@ export interface DesktopGroupProps {
 }
 
 /**
+ * Represents a `DesktopGroup`.
+ */
+export interface IDesktopGroup extends ros.IResource {
+    readonly props: DesktopGroupProps;
+
+    /**
+     * Attribute DesktopGroupId: Id of created DesktopGroup
+     */
+    readonly attrDesktopGroupId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECD::DesktopGroup`, which is used to create a cloud computer pool.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDesktopGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-desktopgroup
  */
-export class DesktopGroup extends ros.Resource {
+export class DesktopGroup extends ros.Resource implements IDesktopGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DesktopGroupProps;
+    public readonly props: DesktopGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DesktopGroupId: Id of created DesktopGroup
      */
-    public readonly attrDesktopGroupId: ros.IResolvable;
+    public readonly attrDesktopGroupId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

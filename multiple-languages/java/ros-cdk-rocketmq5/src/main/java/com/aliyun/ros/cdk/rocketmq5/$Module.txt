@@ -1,5 +1,8 @@
 @alicloud/ros-cdk-rocketmq5.ConsumerGroup=com.aliyun.ros.cdk.rocketmq5.ConsumerGroup
 @alicloud/ros-cdk-rocketmq5.ConsumerGroupProps=com.aliyun.ros.cdk.rocketmq5.ConsumerGroupProps
+@alicloud/ros-cdk-rocketmq5.IConsumerGroup=com.aliyun.ros.cdk.rocketmq5.IConsumerGroup
+@alicloud/ros-cdk-rocketmq5.IInstance=com.aliyun.ros.cdk.rocketmq5.IInstance
+@alicloud/ros-cdk-rocketmq5.ITopic=com.aliyun.ros.cdk.rocketmq5.ITopic
 @alicloud/ros-cdk-rocketmq5.Instance=com.aliyun.ros.cdk.rocketmq5.Instance
 @alicloud/ros-cdk-rocketmq5.InstanceProps=com.aliyun.ros.cdk.rocketmq5.InstanceProps
 @alicloud/ros-cdk-rocketmq5.RosConsumerGroup=com.aliyun.ros.cdk.rocketmq5.RosConsumerGroup
@@ -18,6 +21,10 @@
 @alicloud/ros-cdk-rocketmq5.datasource.ConsumerGroupProps=com.aliyun.ros.cdk.rocketmq5.datasource.ConsumerGroupProps
 @alicloud/ros-cdk-rocketmq5.datasource.ConsumerGroups=com.aliyun.ros.cdk.rocketmq5.datasource.ConsumerGroups
 @alicloud/ros-cdk-rocketmq5.datasource.ConsumerGroupsProps=com.aliyun.ros.cdk.rocketmq5.datasource.ConsumerGroupsProps
+@alicloud/ros-cdk-rocketmq5.datasource.IConsumerGroup=com.aliyun.ros.cdk.rocketmq5.datasource.IConsumerGroup
+@alicloud/ros-cdk-rocketmq5.datasource.IConsumerGroups=com.aliyun.ros.cdk.rocketmq5.datasource.IConsumerGroups
+@alicloud/ros-cdk-rocketmq5.datasource.IInstance=com.aliyun.ros.cdk.rocketmq5.datasource.IInstance
+@alicloud/ros-cdk-rocketmq5.datasource.ITopic=com.aliyun.ros.cdk.rocketmq5.datasource.ITopic
 @alicloud/ros-cdk-rocketmq5.datasource.Instance=com.aliyun.ros.cdk.rocketmq5.datasource.Instance
 @alicloud/ros-cdk-rocketmq5.datasource.InstanceProps=com.aliyun.ros.cdk.rocketmq5.datasource.InstanceProps
 @alicloud/ros-cdk-rocketmq5.datasource.RosConsumerGroup=com.aliyun.ros.cdk.rocketmq5.datasource.RosConsumerGroup

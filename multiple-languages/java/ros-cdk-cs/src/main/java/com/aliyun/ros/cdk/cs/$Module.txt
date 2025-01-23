@@ -14,6 +14,16 @@
 @alicloud/ros-cdk-cs.ClusterNodePoolProps=com.aliyun.ros.cdk.cs.ClusterNodePoolProps
 @alicloud/ros-cdk-cs.GrantPermissions=com.aliyun.ros.cdk.cs.GrantPermissions
 @alicloud/ros-cdk-cs.GrantPermissionsProps=com.aliyun.ros.cdk.cs.GrantPermissionsProps
+@alicloud/ros-cdk-cs.IASKCluster=com.aliyun.ros.cdk.cs.IASKCluster
+@alicloud/ros-cdk-cs.IAnyCluster=com.aliyun.ros.cdk.cs.IAnyCluster
+@alicloud/ros-cdk-cs.IApplicationDeployment=com.aliyun.ros.cdk.cs.IApplicationDeployment
+@alicloud/ros-cdk-cs.IClusterAddons=com.aliyun.ros.cdk.cs.IClusterAddons
+@alicloud/ros-cdk-cs.IClusterApplication=com.aliyun.ros.cdk.cs.IClusterApplication
+@alicloud/ros-cdk-cs.IClusterHelmApplication=com.aliyun.ros.cdk.cs.IClusterHelmApplication
+@alicloud/ros-cdk-cs.IClusterNodePool=com.aliyun.ros.cdk.cs.IClusterNodePool
+@alicloud/ros-cdk-cs.IGrantPermissions=com.aliyun.ros.cdk.cs.IGrantPermissions
+@alicloud/ros-cdk-cs.IManagedEdgeKubernetesCluster=com.aliyun.ros.cdk.cs.IManagedEdgeKubernetesCluster
+@alicloud/ros-cdk-cs.IManagedKubernetesCluster=com.aliyun.ros.cdk.cs.IManagedKubernetesCluster
 @alicloud/ros-cdk-cs.ManagedEdgeKubernetesCluster=com.aliyun.ros.cdk.cs.ManagedEdgeKubernetesCluster
 @alicloud/ros-cdk-cs.ManagedEdgeKubernetesClusterProps=com.aliyun.ros.cdk.cs.ManagedEdgeKubernetesClusterProps
 @alicloud/ros-cdk-cs.ManagedKubernetesCluster=com.aliyun.ros.cdk.cs.ManagedKubernetesCluster
@@ -21,6 +31,7 @@
 @alicloud/ros-cdk-cs.RosASKCluster=com.aliyun.ros.cdk.cs.RosASKCluster
 @alicloud/ros-cdk-cs.RosASKCluster.AddonsProperty=com.aliyun.ros.cdk.cs.RosASKCluster$AddonsProperty
 @alicloud/ros-cdk-cs.RosASKCluster.DeleteOptionsProperty=com.aliyun.ros.cdk.cs.RosASKCluster$DeleteOptionsProperty
+@alicloud/ros-cdk-cs.RosASKCluster.MaintenanceWindowProperty=com.aliyun.ros.cdk.cs.RosASKCluster$MaintenanceWindowProperty
 @alicloud/ros-cdk-cs.RosASKCluster.TagsProperty=com.aliyun.ros.cdk.cs.RosASKCluster$TagsProperty
 @alicloud/ros-cdk-cs.RosASKClusterProps=com.aliyun.ros.cdk.cs.RosASKClusterProps
 @alicloud/ros-cdk-cs.RosAnyCluster=com.aliyun.ros.cdk.cs.RosAnyCluster
@@ -57,6 +68,7 @@
 @alicloud/ros-cdk-cs.RosGrantPermissionsProps=com.aliyun.ros.cdk.cs.RosGrantPermissionsProps
 @alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster=com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster
 @alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster.AddonsProperty=com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster$AddonsProperty
+@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster.MaintenanceWindowProperty=com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster$MaintenanceWindowProperty
 @alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster.TagsProperty=com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster$TagsProperty
 @alicloud/ros-cdk-cs.RosManagedEdgeKubernetesClusterProps=com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesClusterProps
 @alicloud/ros-cdk-cs.RosManagedKubernetesCluster=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster
@@ -65,6 +77,7 @@
 @alicloud/ros-cdk-cs.RosManagedKubernetesCluster.DeleteOptionsProperty=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster$DeleteOptionsProperty
 @alicloud/ros-cdk-cs.RosManagedKubernetesCluster.KubernetesConfigProperty=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster$KubernetesConfigProperty
 @alicloud/ros-cdk-cs.RosManagedKubernetesCluster.LabelsProperty=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster$LabelsProperty
+@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.MaintenanceWindowProperty=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster$MaintenanceWindowProperty
 @alicloud/ros-cdk-cs.RosManagedKubernetesCluster.NodePoolInfoProperty=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster$NodePoolInfoProperty
 @alicloud/ros-cdk-cs.RosManagedKubernetesCluster.NodePoolsProperty=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster$NodePoolsProperty
 @alicloud/ros-cdk-cs.RosManagedKubernetesCluster.RuntimeProperty=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster$RuntimeProperty
@@ -79,6 +92,11 @@
 @alicloud/ros-cdk-cs.datasource.ClusterNodePoolsProps=com.aliyun.ros.cdk.cs.datasource.ClusterNodePoolsProps
 @alicloud/ros-cdk-cs.datasource.ClusterUserKubeconfig=com.aliyun.ros.cdk.cs.datasource.ClusterUserKubeconfig
 @alicloud/ros-cdk-cs.datasource.ClusterUserKubeconfigProps=com.aliyun.ros.cdk.cs.datasource.ClusterUserKubeconfigProps
+@alicloud/ros-cdk-cs.datasource.IClusterApplicationResources=com.aliyun.ros.cdk.cs.datasource.IClusterApplicationResources
+@alicloud/ros-cdk-cs.datasource.IClusterNodePools=com.aliyun.ros.cdk.cs.datasource.IClusterNodePools
+@alicloud/ros-cdk-cs.datasource.IClusterUserKubeconfig=com.aliyun.ros.cdk.cs.datasource.IClusterUserKubeconfig
+@alicloud/ros-cdk-cs.datasource.IKubernetesCluster=com.aliyun.ros.cdk.cs.datasource.IKubernetesCluster
+@alicloud/ros-cdk-cs.datasource.IKubernetesClusters=com.aliyun.ros.cdk.cs.datasource.IKubernetesClusters
 @alicloud/ros-cdk-cs.datasource.KubernetesCluster=com.aliyun.ros.cdk.cs.datasource.KubernetesCluster
 @alicloud/ros-cdk-cs.datasource.KubernetesClusterProps=com.aliyun.ros.cdk.cs.datasource.KubernetesClusterProps
 @alicloud/ros-cdk-cs.datasource.KubernetesClusters=com.aliyun.ros.cdk.cs.datasource.KubernetesClusters

@@ -21,25 +21,41 @@ export interface InfluxDBDatabaseProps {
 }
 
 /**
+ * Represents a `InfluxDBDatabase`.
+ */
+export interface IInfluxDBDatabase extends ros.IResource {
+    readonly props: InfluxDBDatabaseProps;
+
+    /**
+     * Attribute DBName: The name of database.
+     */
+    readonly attrDbName: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: The ID of TSDB for InfluxDB.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::TSDB::InfluxDBDatabase`, which is used to create a Time Series Database (TSDB) database.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInfluxDBDatabase`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-tsdb-influxdbdatabase
  */
-export class InfluxDBDatabase extends ros.Resource {
+export class InfluxDBDatabase extends ros.Resource implements IInfluxDBDatabase {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InfluxDBDatabaseProps;
+    public readonly props: InfluxDBDatabaseProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DBName: The name of database.
      */
-    public readonly attrDbName: ros.IResolvable;
+    public readonly attrDbName: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: The ID of TSDB for InfluxDB.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

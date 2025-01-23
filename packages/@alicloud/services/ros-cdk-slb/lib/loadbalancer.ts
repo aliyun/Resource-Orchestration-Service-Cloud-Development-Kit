@@ -109,90 +109,171 @@ export interface LoadBalancerProps {
 }
 
 /**
+ * Represents a `LoadBalancer`.
+ */
+export interface ILoadBalancer extends ros.IResource {
+    readonly props: LoadBalancerProps;
+
+    /**
+     * Attribute AddressIPVersion: IP version
+     */
+    readonly attrAddressIpVersion: ros.IResolvable | string;
+
+    /**
+     * Attribute AddressType: The address type of the load balancer. "intranet" or "internet".
+     */
+    readonly attrAddressType: ros.IResolvable | string;
+
+    /**
+     * Attribute Bandwidth: The bandwidth for network
+     */
+    readonly attrBandwidth: ros.IResolvable | string;
+
+    /**
+     * Attribute IpAddress: The ip address of the load balancer.
+     */
+    readonly attrIpAddress: ros.IResolvable | string;
+
+    /**
+     * Attribute LoadBalancerId: The id of load balance created.
+     */
+    readonly attrLoadBalancerId: ros.IResolvable | string;
+
+    /**
+     * Attribute LoadBalancerName: Name of created load balancer.
+     */
+    readonly attrLoadBalancerName: ros.IResolvable | string;
+
+    /**
+     * Attribute LoadBalancerSpec: The specification of the Server Load Balancer instance
+     */
+    readonly attrLoadBalancerSpec: ros.IResolvable | string;
+
+    /**
+     * Attribute MasterZoneId: The master zone id to create load balancer instance.
+     */
+    readonly attrMasterZoneId: ros.IResolvable | string;
+
+    /**
+     * Attribute NetworkType: The network type of the load balancer. "vpc" or "classic" network.
+     */
+    readonly attrNetworkType: ros.IResolvable | string;
+
+    /**
+     * Attribute OrderId: The order ID.
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+
+    /**
+     * Attribute PayType: The billing method of the instance to be created.
+     */
+    readonly attrPayType: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: Resource group id.
+     */
+    readonly attrResourceGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute SlaveZoneId: The slave zone id to create load balancer instance.
+     */
+    readonly attrSlaveZoneId: ros.IResolvable | string;
+
+    /**
+     * Attribute VSwitchId: VSwitch id
+     */
+    readonly attrVSwitchId: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcId: Vpc id
+     */
+    readonly attrVpcId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::LoadBalancer`, which is used to create a Server Load Balancer (SLB) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLoadBalancer`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-loadbalancer
  */
-export class LoadBalancer extends ros.Resource {
+export class LoadBalancer extends ros.Resource implements ILoadBalancer {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: LoadBalancerProps;
+    public readonly props: LoadBalancerProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AddressIPVersion: IP version
      */
-    public readonly attrAddressIpVersion: ros.IResolvable;
+    public readonly attrAddressIpVersion: ros.IResolvable | string;
 
     /**
      * Attribute AddressType: The address type of the load balancer. "intranet" or "internet".
      */
-    public readonly attrAddressType: ros.IResolvable;
+    public readonly attrAddressType: ros.IResolvable | string;
 
     /**
      * Attribute Bandwidth: The bandwidth for network
      */
-    public readonly attrBandwidth: ros.IResolvable;
+    public readonly attrBandwidth: ros.IResolvable | string;
 
     /**
      * Attribute IpAddress: The ip address of the load balancer.
      */
-    public readonly attrIpAddress: ros.IResolvable;
+    public readonly attrIpAddress: ros.IResolvable | string;
 
     /**
      * Attribute LoadBalancerId: The id of load balance created.
      */
-    public readonly attrLoadBalancerId: ros.IResolvable;
+    public readonly attrLoadBalancerId: ros.IResolvable | string;
 
     /**
      * Attribute LoadBalancerName: Name of created load balancer.
      */
-    public readonly attrLoadBalancerName: ros.IResolvable;
+    public readonly attrLoadBalancerName: ros.IResolvable | string;
 
     /**
      * Attribute LoadBalancerSpec: The specification of the Server Load Balancer instance
      */
-    public readonly attrLoadBalancerSpec: ros.IResolvable;
+    public readonly attrLoadBalancerSpec: ros.IResolvable | string;
 
     /**
      * Attribute MasterZoneId: The master zone id to create load balancer instance.
      */
-    public readonly attrMasterZoneId: ros.IResolvable;
+    public readonly attrMasterZoneId: ros.IResolvable | string;
 
     /**
      * Attribute NetworkType: The network type of the load balancer. "vpc" or "classic" network.
      */
-    public readonly attrNetworkType: ros.IResolvable;
+    public readonly attrNetworkType: ros.IResolvable | string;
 
     /**
      * Attribute OrderId: The order ID.
      */
-    public readonly attrOrderId: ros.IResolvable;
+    public readonly attrOrderId: ros.IResolvable | string;
 
     /**
      * Attribute PayType: The billing method of the instance to be created.
      */
-    public readonly attrPayType: ros.IResolvable;
+    public readonly attrPayType: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroupId: Resource group id.
      */
-    public readonly attrResourceGroupId: ros.IResolvable;
+    public readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Attribute SlaveZoneId: The slave zone id to create load balancer instance.
      */
-    public readonly attrSlaveZoneId: ros.IResolvable;
+    public readonly attrSlaveZoneId: ros.IResolvable | string;
 
     /**
      * Attribute VSwitchId: VSwitch id
      */
-    public readonly attrVSwitchId: ros.IResolvable;
+    public readonly attrVSwitchId: ros.IResolvable | string;
 
     /**
      * Attribute VpcId: Vpc id
      */
-    public readonly attrVpcId: ros.IResolvable;
+    public readonly attrVpcId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

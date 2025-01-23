@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ros;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-autoenableservice
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:11.455Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:43.832Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.AutoEnableServiceProps")
 @software.amazon.jsii.Jsii.Proxy(AutoEnableServiceProps.Jsii$Proxy.class)
 public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSerializable {
@@ -61,6 +61,7 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
      * TrustedService/ROS: Trusted Service for ROS
      * CloudSSO: Cloud SSO
      * ControlPolicy: Control Policy
+     * DSC: Data Security Center Free Edition Service
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getServiceName();
 
@@ -127,6 +128,7 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
          *                    TrustedService/ROS: Trusted Service for ROS
          *                    CloudSSO: Cloud SSO
          *                    ControlPolicy: Control Policy
+         *                    DSC: Data Security Center Free Edition Service
          * @return {@code this}
          */
         public Builder serviceName(java.lang.String serviceName) {
@@ -185,6 +187,7 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
          *                    TrustedService/ROS: Trusted Service for ROS
          *                    CloudSSO: Cloud SSO
          *                    ControlPolicy: Control Policy
+         *                    DSC: Data Security Center Free Edition Service
          * @return {@code this}
          */
         public Builder serviceName(com.aliyun.ros.cdk.core.IResolvable serviceName) {

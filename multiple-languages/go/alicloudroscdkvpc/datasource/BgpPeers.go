@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::BgpPeers`, which is used to query Border Gateway Protocol (BGP) peers in a region.
 type BgpPeers interface {
 	alicloudroscdkcore.Resource
+	IBgpPeers
 	// Attribute BgpPeerIds: The list of The BGP peer ids.
-	AttrBgpPeerIds() alicloudroscdkcore.IResolvable
+	AttrBgpPeerIds() interface{}
 	// Attribute BgpPeers: The list of The BGP peers.
-	AttrBgpPeers() alicloudroscdkcore.IResolvable
+	AttrBgpPeers() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type BgpPeers interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *BgpPeersProps
-	SetProps(val *BgpPeersProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type BgpPeers interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type BgpPeers interface {
 // The jsii proxy struct for BgpPeers
 type jsiiProxy_BgpPeers struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IBgpPeers
 }
 
-func (j *jsiiProxy_BgpPeers) AttrBgpPeerIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BgpPeers) AttrBgpPeerIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBgpPeerIds",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_BgpPeers) AttrBgpPeerIds() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_BgpPeers) AttrBgpPeers() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BgpPeers) AttrBgpPeers() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBgpPeers",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_BgpPeers) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BgpPeers) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_BgpPeers)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_BgpPeers)SetProps(val *BgpPeersProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_BgpPeers)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (b *jsiiProxy_BgpPeers) ApplyRemovalPolicy(policy alicloudroscdkcore.Remova
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (b *jsiiProxy_BgpPeers) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		b,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (b *jsiiProxy_BgpPeers) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		b,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (b *jsiiProxy_BgpPeers) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		b,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (b *jsiiProxy_BgpPeers) GeneratePhysicalName() *string {

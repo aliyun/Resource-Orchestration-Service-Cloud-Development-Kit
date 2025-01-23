@@ -53,85 +53,161 @@ export interface GatewayProps {
 }
 
 /**
+ * Represents a `Gateway`.
+ */
+export interface IGateway extends ros.IResource {
+    readonly props: GatewayProps;
+
+    /**
+     * Attribute CreateTime: The creation timestamp. Unit: milliseconds.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Environments: The list of environments associated with the Gateway.
+     */
+    readonly attrEnvironments: ros.IResolvable | string;
+
+    /**
+     * Attribute ExpireTime: Package year and package month expiration timestamp. Unit: milliseconds.
+     */
+    readonly attrExpireTime: ros.IResolvable | string;
+
+    /**
+     * Attribute GatewayId: The ID of the Gateway.
+     */
+    readonly attrGatewayId: ros.IResolvable | string;
+
+    /**
+     * Attribute GatewayName: The name of the resource.
+     */
+    readonly attrGatewayName: ros.IResolvable | string;
+
+    /**
+     * Attribute LoadBalancers: The list of Gateway ingress addresses.
+     */
+    readonly attrLoadBalancers: ros.IResolvable | string;
+
+    /**
+     * Attribute PaymentType: The payment type of the gateway.
+     */
+    readonly attrPaymentType: ros.IResolvable | string;
+
+    /**
+     * Attribute SecurityGroup: The Security Group of the Gateway.
+     */
+    readonly attrSecurityGroup: ros.IResolvable | string;
+
+    /**
+     * Attribute Spec: Gateway instance specifications.
+     */
+    readonly attrSpec: ros.IResolvable | string;
+
+    /**
+     * Attribute UpdateTime: Update the timestamp. Unit: milliseconds.
+     */
+    readonly attrUpdateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute VSwitch: The virtual switch associated with the Gateway.
+     */
+    readonly attrVSwitch: ros.IResolvable | string;
+
+    /**
+     * Attribute Version: The gateway version.
+     */
+    readonly attrVersion: ros.IResolvable | string;
+
+    /**
+     * Attribute Vpc: The VPC associated with the Gateway.
+     */
+    readonly attrVpc: ros.IResolvable | string;
+
+    /**
+     * Attribute Zones: The List of zones associated with the Gateway.
+     */
+    readonly attrZones: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Gateway`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGateway`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-gateway
  */
-export class Gateway extends ros.Resource {
+export class Gateway extends ros.Resource implements IGateway {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: GatewayProps;
+    public readonly props: GatewayProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateTime: The creation timestamp. Unit: milliseconds.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute Environments: The list of environments associated with the Gateway.
      */
-    public readonly attrEnvironments: ros.IResolvable;
+    public readonly attrEnvironments: ros.IResolvable | string;
 
     /**
      * Attribute ExpireTime: Package year and package month expiration timestamp. Unit: milliseconds.
      */
-    public readonly attrExpireTime: ros.IResolvable;
+    public readonly attrExpireTime: ros.IResolvable | string;
 
     /**
      * Attribute GatewayId: The ID of the Gateway.
      */
-    public readonly attrGatewayId: ros.IResolvable;
+    public readonly attrGatewayId: ros.IResolvable | string;
 
     /**
      * Attribute GatewayName: The name of the resource.
      */
-    public readonly attrGatewayName: ros.IResolvable;
+    public readonly attrGatewayName: ros.IResolvable | string;
 
     /**
      * Attribute LoadBalancers: The list of Gateway ingress addresses.
      */
-    public readonly attrLoadBalancers: ros.IResolvable;
+    public readonly attrLoadBalancers: ros.IResolvable | string;
 
     /**
      * Attribute PaymentType: The payment type of the gateway.
      */
-    public readonly attrPaymentType: ros.IResolvable;
+    public readonly attrPaymentType: ros.IResolvable | string;
 
     /**
      * Attribute SecurityGroup: The Security Group of the Gateway.
      */
-    public readonly attrSecurityGroup: ros.IResolvable;
+    public readonly attrSecurityGroup: ros.IResolvable | string;
 
     /**
      * Attribute Spec: Gateway instance specifications.
      */
-    public readonly attrSpec: ros.IResolvable;
+    public readonly attrSpec: ros.IResolvable | string;
 
     /**
      * Attribute UpdateTime: Update the timestamp. Unit: milliseconds.
      */
-    public readonly attrUpdateTime: ros.IResolvable;
+    public readonly attrUpdateTime: ros.IResolvable | string;
 
     /**
      * Attribute VSwitch: The virtual switch associated with the Gateway.
      */
-    public readonly attrVSwitch: ros.IResolvable;
+    public readonly attrVSwitch: ros.IResolvable | string;
 
     /**
      * Attribute Version: The gateway version.
      */
-    public readonly attrVersion: ros.IResolvable;
+    public readonly attrVersion: ros.IResolvable | string;
 
     /**
      * Attribute Vpc: The VPC associated with the Gateway.
      */
-    public readonly attrVpc: ros.IResolvable;
+    public readonly attrVpc: ros.IResolvable | string;
 
     /**
      * Attribute Zones: The List of zones associated with the Gateway.
      */
-    public readonly attrZones: ros.IResolvable;
+    public readonly attrZones: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

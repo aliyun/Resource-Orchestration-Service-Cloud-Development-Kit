@@ -21,14 +21,20 @@ export interface WebsiteProps {
 }
 
 /**
+ * Represents a `Website`.
+ */
+export interface IWebsite extends ros.IResource {
+    readonly props: WebsiteProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::OSS::Website`, which is used to configure static website hosting and redirection rules for an Object Storage Service (OSS) bucket.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWebsite`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-website
  */
-export class Website extends ros.Resource {
+export class Website extends ros.Resource implements IWebsite {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: WebsiteProps;
+    public readonly props: WebsiteProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

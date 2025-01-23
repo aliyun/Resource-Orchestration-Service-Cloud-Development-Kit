@@ -29,40 +29,71 @@ export interface AccountProps {
 }
 
 /**
+ * Represents a `Account`.
+ */
+export interface IAccount extends ros.IResource {
+    readonly props: AccountProps;
+
+    /**
+     * Attribute AccountDescription: The description of the account.
+     */
+    readonly attrAccountDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute AccountType: The type of the account.
+     */
+    readonly attrAccountType: ros.IResolvable | string;
+
+    /**
+     * Attribute CreateTime: The point in time when the account was created.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute DBInstanceId: The ID of the PolarDB-X 2.0 instance.
+     */
+    readonly attrDbInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute PolarDBXAccountName: The username of the account.
+     */
+    readonly attrPolarDbxAccountName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::PolarDBX::Account`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccount`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardbx-account
  */
-export class Account extends ros.Resource {
+export class Account extends ros.Resource implements IAccount {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AccountProps;
+    public readonly props: AccountProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccountDescription: The description of the account.
      */
-    public readonly attrAccountDescription: ros.IResolvable;
+    public readonly attrAccountDescription: ros.IResolvable | string;
 
     /**
      * Attribute AccountType: The type of the account.
      */
-    public readonly attrAccountType: ros.IResolvable;
+    public readonly attrAccountType: ros.IResolvable | string;
 
     /**
      * Attribute CreateTime: The point in time when the account was created.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute DBInstanceId: The ID of the PolarDB-X 2.0 instance.
      */
-    public readonly attrDbInstanceId: ros.IResolvable;
+    public readonly attrDbInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute PolarDBXAccountName: The username of the account.
      */
-    public readonly attrPolarDbxAccountName: ros.IResolvable;
+    public readonly attrPolarDbxAccountName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

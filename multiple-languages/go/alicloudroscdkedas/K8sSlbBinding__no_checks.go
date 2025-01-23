@@ -52,10 +52,6 @@ func (j *jsiiProxy_K8sSlbBinding) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_K8sSlbBinding) validateSetPropsParameters(val *K8sSlbBindingProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_K8sSlbBinding) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

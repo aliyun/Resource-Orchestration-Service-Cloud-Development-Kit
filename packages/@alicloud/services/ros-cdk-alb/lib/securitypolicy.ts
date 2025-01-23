@@ -35,20 +35,31 @@ export interface SecurityPolicyProps {
 }
 
 /**
+ * Represents a `SecurityPolicy`.
+ */
+export interface ISecurityPolicy extends ros.IResource {
+    readonly props: SecurityPolicyProps;
+
+    /**
+     * Attribute SecurityPolicyId: The ID of the security policy.
+     */
+    readonly attrSecurityPolicyId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::SecurityPolicy`, which is used to create a custom security policy.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecurityPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-securitypolicy
  */
-export class SecurityPolicy extends ros.Resource {
+export class SecurityPolicy extends ros.Resource implements ISecurityPolicy {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SecurityPolicyProps;
+    public readonly props: SecurityPolicyProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SecurityPolicyId: The ID of the security policy.
      */
-    public readonly attrSecurityPolicyId: ros.IResolvable;
+    public readonly attrSecurityPolicyId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

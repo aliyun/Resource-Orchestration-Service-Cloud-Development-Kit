@@ -12,18 +12,28 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::CR::Repository`, which is used to create an image repository.
 type Repository interface {
 	alicloudroscdkcore.Resource
+	IRepository
 	// Attribute InstanceId: The ID of the enterprise edition instance which repository belongs to.
-	AttrInstanceId() alicloudroscdkcore.IResolvable
+	AttrInstanceId() interface{}
 	// Attribute RepoId: The repository ID.
-	AttrRepoId() alicloudroscdkcore.IResolvable
+	AttrRepoId() interface{}
 	// Attribute RepoName: The name of the repository.
-	AttrRepoName() alicloudroscdkcore.IResolvable
+	AttrRepoName() interface{}
 	// Attribute RepoNamespace: The name of the namespace to which the repository belongs.
-	AttrRepoNamespace() alicloudroscdkcore.IResolvable
+	AttrRepoNamespace() interface{}
 	// Attribute RepoType: The type of the repository.
-	AttrRepoType() alicloudroscdkcore.IResolvable
+	AttrRepoType() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -38,7 +48,6 @@ type Repository interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *RepositoryProps
-	SetProps(val *RepositoryProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -51,6 +60,9 @@ type Repository interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -103,10 +115,11 @@ type Repository interface {
 // The jsii proxy struct for Repository
 type jsiiProxy_Repository struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IRepository
 }
 
-func (j *jsiiProxy_Repository) AttrInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Repository) AttrInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceId",
@@ -115,8 +128,8 @@ func (j *jsiiProxy_Repository) AttrInstanceId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Repository) AttrRepoId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Repository) AttrRepoId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRepoId",
@@ -125,8 +138,8 @@ func (j *jsiiProxy_Repository) AttrRepoId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Repository) AttrRepoName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Repository) AttrRepoName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRepoName",
@@ -135,8 +148,8 @@ func (j *jsiiProxy_Repository) AttrRepoName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Repository) AttrRepoNamespace() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Repository) AttrRepoNamespace() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRepoNamespace",
@@ -145,8 +158,8 @@ func (j *jsiiProxy_Repository) AttrRepoNamespace() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_Repository) AttrRepoType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Repository) AttrRepoType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRepoType",
@@ -160,6 +173,16 @@ func (j *jsiiProxy_Repository) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Repository) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -297,17 +320,6 @@ func (j *jsiiProxy_Repository)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Repository)SetProps(val *RepositoryProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Repository)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -399,6 +411,45 @@ func (r *jsiiProxy_Repository) ApplyRemovalPolicy(policy alicloudroscdkcore.Remo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (r *jsiiProxy_Repository) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		r,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_Repository) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		r,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_Repository) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		r,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (r *jsiiProxy_Repository) GeneratePhysicalName() *string {

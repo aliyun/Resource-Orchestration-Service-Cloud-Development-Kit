@@ -52,10 +52,6 @@ func (j *jsiiProxy_WaitCondition) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_WaitCondition) validateSetPropsParameters(val *WaitConditionProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_WaitCondition) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

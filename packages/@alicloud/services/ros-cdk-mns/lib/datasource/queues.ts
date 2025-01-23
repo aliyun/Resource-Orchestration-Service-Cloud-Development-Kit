@@ -24,25 +24,41 @@ export interface QueuesProps {
 }
 
 /**
+ * Represents a `Queues`.
+ */
+export interface IQueues extends ros.IResource {
+    readonly props: QueuesProps;
+
+    /**
+     * Attribute QueueNames: The list of queue names.
+     */
+    readonly attrQueueNames: ros.IResolvable | string;
+
+    /**
+     * Attribute Queues: The list of queues.
+     */
+    readonly attrQueues: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::MNS::Queues`, which is used to query all queues within an Alibaba Cloud account.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosQueues`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-queues
  */
-export class Queues extends ros.Resource {
+export class Queues extends ros.Resource implements IQueues {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: QueuesProps;
+    public readonly props: QueuesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute QueueNames: The list of queue names.
      */
-    public readonly attrQueueNames: ros.IResolvable;
+    public readonly attrQueueNames: ros.IResolvable | string;
 
     /**
      * Attribute Queues: The list of queues.
      */
-    public readonly attrQueues: ros.IResolvable;
+    public readonly attrQueues: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

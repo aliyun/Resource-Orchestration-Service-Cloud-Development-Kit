@@ -94,20 +94,31 @@ export interface PremiumInstanceProps {
 }
 
 /**
+ * Represents a `PremiumInstance`.
+ */
+export interface IPremiumInstance extends ros.IResource {
+    readonly props: PremiumInstanceProps;
+
+    /**
+     * Attribute InstanceId: The ID of the instance.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::DDoSPro::PremiumInstance`, which is used to create an Anti-DDoS Proxy (Outside Chinese Mainland) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPremiumInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-premiuminstance
  */
-export class PremiumInstance extends ros.Resource {
+export class PremiumInstance extends ros.Resource implements IPremiumInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: PremiumInstanceProps;
+    public readonly props: PremiumInstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceId: The ID of the instance.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

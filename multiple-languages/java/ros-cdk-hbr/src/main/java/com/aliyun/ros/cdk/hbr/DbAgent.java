@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.hbr;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::HBR::DbAgent</code>, which is used to install a Cloud Backup backup client for a database.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:08.854Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:40.729Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.DbAgent")
-public class DbAgent extends com.aliyun.ros.cdk.core.Resource {
+public class DbAgent extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.hbr.IDbAgent {
 
     protected DbAgent(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -43,29 +43,38 @@ public class DbAgent extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute InstanceIds: Uni backup agent instance ids.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInstanceIds() {
-        return software.amazon.jsii.Kernel.get(this, "attrInstanceIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrInstanceIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrInstanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute TaskId: Uni backup agent install task id.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTaskId() {
-        return software.amazon.jsii.Kernel.get(this, "attrTaskId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTaskId() {
+        return software.amazon.jsii.Kernel.get(this, "attrTaskId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute UniBackupInstanceDetails: Uni backup agent instance info details.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrUniBackupInstanceDetails() {
-        return software.amazon.jsii.Kernel.get(this, "attrUniBackupInstanceDetails", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrUniBackupInstanceDetails() {
+        return software.amazon.jsii.Kernel.get(this, "attrUniBackupInstanceDetails", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute UniBackupInstances: Uni backup agent instance info.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrUniBackupInstances() {
-        return software.amazon.jsii.Kernel.get(this, "attrUniBackupInstances", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrUniBackupInstances() {
+        return software.amazon.jsii.Kernel.get(this, "attrUniBackupInstances", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.hbr.DbAgentProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.hbr.DbAgentProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -82,14 +91,6 @@ public class DbAgent extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.hbr.DbAgentProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.hbr.DbAgentProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.hbr.DbAgentProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {
@@ -152,6 +153,73 @@ public class DbAgent extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder instanceInfo(final java.util.List<? extends java.lang.Object> instanceInfo) {
             this.props.instanceInfo(instanceInfo);
+            return this;
+        }
+
+        /**
+         * Property crossAccountRoleName: The RAM role name that the original account created for cross-account backup operations.
+         * <p>
+         * @return {@code this}
+         * @param crossAccountRoleName Property crossAccountRoleName: The RAM role name that the original account created for cross-account backup operations. This parameter is required.
+         */
+        public Builder crossAccountRoleName(final java.lang.String crossAccountRoleName) {
+            this.props.crossAccountRoleName(crossAccountRoleName);
+            return this;
+        }
+        /**
+         * Property crossAccountRoleName: The RAM role name that the original account created for cross-account backup operations.
+         * <p>
+         * @return {@code this}
+         * @param crossAccountRoleName Property crossAccountRoleName: The RAM role name that the original account created for cross-account backup operations. This parameter is required.
+         */
+        public Builder crossAccountRoleName(final com.aliyun.ros.cdk.core.IResolvable crossAccountRoleName) {
+            this.props.crossAccountRoleName(crossAccountRoleName);
+            return this;
+        }
+
+        /**
+         * Property crossAccountType: The type of cross-account backup.
+         * <p>
+         * Supported values: SELF_ACCOUNT: backup within the same account; CROSS_ACCOUNT: cross-account backup. Example: CROSS_ACCOUNT
+         * <p>
+         * @return {@code this}
+         * @param crossAccountType Property crossAccountType: The type of cross-account backup. This parameter is required.
+         */
+        public Builder crossAccountType(final java.lang.String crossAccountType) {
+            this.props.crossAccountType(crossAccountType);
+            return this;
+        }
+        /**
+         * Property crossAccountType: The type of cross-account backup.
+         * <p>
+         * Supported values: SELF_ACCOUNT: backup within the same account; CROSS_ACCOUNT: cross-account backup. Example: CROSS_ACCOUNT
+         * <p>
+         * @return {@code this}
+         * @param crossAccountType Property crossAccountType: The type of cross-account backup. This parameter is required.
+         */
+        public Builder crossAccountType(final com.aliyun.ros.cdk.core.IResolvable crossAccountType) {
+            this.props.crossAccountType(crossAccountType);
+            return this;
+        }
+
+        /**
+         * Property crossAccountUserId: The user ID of the original account for cross-account backup operations.
+         * <p>
+         * @return {@code this}
+         * @param crossAccountUserId Property crossAccountUserId: The user ID of the original account for cross-account backup operations. This parameter is required.
+         */
+        public Builder crossAccountUserId(final java.lang.Number crossAccountUserId) {
+            this.props.crossAccountUserId(crossAccountUserId);
+            return this;
+        }
+        /**
+         * Property crossAccountUserId: The user ID of the original account for cross-account backup operations.
+         * <p>
+         * @return {@code this}
+         * @param crossAccountUserId Property crossAccountUserId: The user ID of the original account for cross-account backup operations. This parameter is required.
+         */
+        public Builder crossAccountUserId(final com.aliyun.ros.cdk.core.IResolvable crossAccountUserId) {
+            this.props.crossAccountUserId(crossAccountUserId);
             return this;
         }
 

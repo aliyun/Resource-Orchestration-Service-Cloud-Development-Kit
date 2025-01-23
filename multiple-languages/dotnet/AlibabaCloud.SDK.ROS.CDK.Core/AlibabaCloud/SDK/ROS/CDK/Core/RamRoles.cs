@@ -9,12 +9,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     [JsiiByValue(fqn: "@alicloud/ros-cdk-core.RamRoles")]
     public class RamRoles : AlibabaCloud.SDK.ROS.CDK.Core.IRamRoles
     {
+        private object _fcRole;
+
         /// <summary>The RAM role ARN that grants FC function the required permissions.</summary>
-        [JsiiProperty(name: "fcRole", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public AlibabaCloud.SDK.ROS.CDK.Core.IResolvable FcRole
+        [JsiiProperty(name: "fcRole", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public object FcRole
         {
-            get;
-            set;
+            get => _fcRole;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _fcRole = value;
+            }
         }
     }
 }

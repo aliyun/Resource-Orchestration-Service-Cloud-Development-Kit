@@ -52,10 +52,6 @@ func (j *jsiiProxy_UserDefineRegion) validateSetIdParameters(val *string) error 
 	return nil
 }
 
-func (j *jsiiProxy_UserDefineRegion) validateSetPropsParameters(val *UserDefineRegionProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_UserDefineRegion) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

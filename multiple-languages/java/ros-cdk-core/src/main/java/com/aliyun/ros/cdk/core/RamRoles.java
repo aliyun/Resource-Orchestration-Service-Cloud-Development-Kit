@@ -1,6 +1,6 @@
 package com.aliyun.ros.cdk.core;
 
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:03.697Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:33.718Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RamRoles")
 @software.amazon.jsii.Jsii.Proxy(RamRoles.Jsii$Proxy.class)
 public interface RamRoles extends software.amazon.jsii.JsiiSerializable {
@@ -8,7 +8,7 @@ public interface RamRoles extends software.amazon.jsii.JsiiSerializable {
     /**
      * The RAM role ARN that grants FC function the required permissions.
      */
-    @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getFcRole();
+    @org.jetbrains.annotations.NotNull java.lang.Object getFcRole();
 
     /**
      * @return a {@link Builder} of {@link RamRoles}
@@ -20,7 +20,17 @@ public interface RamRoles extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RamRoles}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RamRoles> {
-        com.aliyun.ros.cdk.core.IResolvable fcRole;
+        java.lang.Object fcRole;
+
+        /**
+         * Sets the value of {@link RamRoles#getFcRole}
+         * @param fcRole The RAM role ARN that grants FC function the required permissions. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder fcRole(java.lang.String fcRole) {
+            this.fcRole = fcRole;
+            return this;
+        }
 
         /**
          * Sets the value of {@link RamRoles#getFcRole}
@@ -48,7 +58,7 @@ public interface RamRoles extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RamRoles {
-        private final com.aliyun.ros.cdk.core.IResolvable fcRole;
+        private final java.lang.Object fcRole;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -56,7 +66,7 @@ public interface RamRoles extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.fcRole = software.amazon.jsii.Kernel.get(this, "fcRole", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+            this.fcRole = software.amazon.jsii.Kernel.get(this, "fcRole", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -68,7 +78,7 @@ public interface RamRoles extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final com.aliyun.ros.cdk.core.IResolvable getFcRole() {
+        public final java.lang.Object getFcRole() {
             return this.fcRole;
         }
 

@@ -52,25 +52,41 @@ export interface EIPSegmentProps {
 }
 
 /**
+ * Represents a `EIPSegment`.
+ */
+export interface IEIPSegment extends ros.IResource {
+    readonly props: EIPSegmentProps;
+
+    /**
+     * Attribute EipAddresses: List of EIP addresses. like [{"AllocationId": "eip-xxx", "IpAddress": "xx.xx.xx.xx"}]
+     */
+    readonly attrEipAddresses: ros.IResolvable | string;
+
+    /**
+     * Attribute EipSegmentInstanceId: The ID of the contiguous EIP group.
+     */
+    readonly attrEipSegmentInstanceId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::EIPSegment`, which is used to apply for contiguous elastic IP addresses (EIPs).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEIPSegment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eipsegment
  */
-export class EIPSegment extends ros.Resource {
+export class EIPSegment extends ros.Resource implements IEIPSegment {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: EIPSegmentProps;
+    public readonly props: EIPSegmentProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute EipAddresses: List of EIP addresses. like [{"AllocationId": "eip-xxx", "IpAddress": "xx.xx.xx.xx"}]
      */
-    public readonly attrEipAddresses: ros.IResolvable;
+    public readonly attrEipAddresses: ros.IResolvable | string;
 
     /**
      * Attribute EipSegmentInstanceId: The ID of the contiguous EIP group.
      */
-    public readonly attrEipSegmentInstanceId: ros.IResolvable;
+    public readonly attrEipSegmentInstanceId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

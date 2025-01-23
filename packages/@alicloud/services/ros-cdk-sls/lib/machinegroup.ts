@@ -10,7 +10,7 @@ export { RosMachineGroup as MachineGroupProperty };
 export interface MachineGroupProps {
 
     /**
-     * Property groupAttribute: Group attribute, default is null. The object value is groupToic and externalName
+     * Property groupAttribute: Group attribute, default is null. The object value is groupTopic and externalName
      */
     readonly groupAttribute?: string | ros.IResolvable;
 
@@ -41,25 +41,41 @@ export interface MachineGroupProps {
 }
 
 /**
+ * Represents a `MachineGroup`.
+ */
+export interface IMachineGroup extends ros.IResource {
+    readonly props: MachineGroupProps;
+
+    /**
+     * Attribute GroupName: GroupName of SLS.
+     */
+    readonly attrGroupName: ros.IResolvable | string;
+
+    /**
+     * Attribute ProjectName: ProjectName of SLS.
+     */
+    readonly attrProjectName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::MachineGroup`, which is used to create a machine group. Log Service manages all the ECS instances whose logs need to be collected using the Logtail client in the form of machine groups.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMachineGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-machinegroup
  */
-export class MachineGroup extends ros.Resource {
+export class MachineGroup extends ros.Resource implements IMachineGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: MachineGroupProps;
+    public readonly props: MachineGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute GroupName: GroupName of SLS.
      */
-    public readonly attrGroupName: ros.IResolvable;
+    public readonly attrGroupName: ros.IResolvable | string;
 
     /**
      * Attribute ProjectName: ProjectName of SLS.
      */
-    public readonly attrProjectName: ros.IResolvable;
+    public readonly attrProjectName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

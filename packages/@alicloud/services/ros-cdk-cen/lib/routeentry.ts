@@ -41,14 +41,20 @@ export interface RouteEntryProps {
 }
 
 /**
+ * Represents a `RouteEntry`.
+ */
+export interface IRouteEntry extends ros.IResource {
+    readonly props: RouteEntryProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::RouteEntry`, which is used to advertise a route of an attached virtual private cloud (VPC) or virtual border router (VBR) to a Cloud Enterprise Network (CEN) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRouteEntry`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-routeentry
  */
-export class RouteEntry extends ros.Resource {
+export class RouteEntry extends ros.Resource implements IRouteEntry {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: RouteEntryProps;
+    public readonly props: RouteEntryProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

@@ -52,10 +52,6 @@ func (j *jsiiProxy_GitCodeRepo) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_GitCodeRepo) validateSetPropsParameters(val *GitCodeRepoProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_GitCodeRepo) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

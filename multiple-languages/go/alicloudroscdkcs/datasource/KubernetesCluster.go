@@ -12,14 +12,15 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::CS::KubernetesCluster`, which is used to query the information about a Container Service for Kubernetes (ACK) cluster.
 type KubernetesCluster interface {
 	alicloudroscdkcore.Resource
+	IKubernetesCluster
 	// Attribute ClusterId: Cluster instance ID.
-	AttrClusterId() alicloudroscdkcore.IResolvable
+	AttrClusterId() interface{}
 	// Attribute ClusterSpec: The type of the managed Kubernetes cluster.
 	//
 	// This parameter is returned for a managed Kubernetes cluster. Valid values:
 	// - ack.pro.small: professional managed Kubernetes cluster.
 	// - ack.standard: standard managed Kubernetes cluster.
-	AttrClusterSpec() alicloudroscdkcore.IResolvable
+	AttrClusterSpec() interface{}
 	// Attribute ClusterType: The type of the cluster.
 	//
 	// Valid values:
@@ -27,39 +28,39 @@ type KubernetesCluster interface {
 	// - ManagedKubernetes: managed Kubernetes cluster
 	// - Ask: ASK cluster
 	// - ExternalKubernetes: registered external Kubernetes cluster.
-	AttrClusterType() alicloudroscdkcore.IResolvable
+	AttrClusterType() interface{}
 	// Attribute Created: The time when the cluster was created.
-	AttrCreated() alicloudroscdkcore.IResolvable
+	AttrCreated() interface{}
 	// Attribute CurrentVersion: The current Kubernetes version of the cluster.
 	//
 	// For more information about the Kubernetes versions supported by ACK, see Release notes for Kubernetes versions.
-	AttrCurrentVersion() alicloudroscdkcore.IResolvable
+	AttrCurrentVersion() interface{}
 	// Attribute DeletionProtection: Indicates whether deletion protection is enabled.
 	//
 	// If deletion protection is enabled, the cluster cannot be deleted in the ACK console or by calling the API. Valid values:
 	// - true: Deletion protection is enabled. You cannot delete the cluster in the ACK console or by calling the API.
 	// - false: Deletion protection is not enabled. You can delete the cluster in the ACK console or by calling the API.
-	AttrDeletionProtection() alicloudroscdkcore.IResolvable
+	AttrDeletionProtection() interface{}
 	// Attribute DockerVersion: The Docker version that is used by the cluster.
-	AttrDockerVersion() alicloudroscdkcore.IResolvable
+	AttrDockerVersion() interface{}
 	// Attribute ExternalLoadbalancerId: The ID of the Server Load Balancer (SLB) instance that is used for the Ingress of the cluster.
-	AttrExternalLoadbalancerId() alicloudroscdkcore.IResolvable
+	AttrExternalLoadbalancerId() interface{}
 	// Attribute InitVersion: The Kubernetes version that is initially used by the cluster.
-	AttrInitVersion() alicloudroscdkcore.IResolvable
+	AttrInitVersion() interface{}
 	// Attribute MaintenanceWindow: The maintenance window of the cluster.
 	//
 	// This feature is available in only professional managed Kubernetes clusters.
-	AttrMaintenanceWindow() alicloudroscdkcore.IResolvable
+	AttrMaintenanceWindow() interface{}
 	// Attribute MasterUrl: The address of the cluster.
 	//
 	// It includes an internal endpoint and a public endpoint.
-	AttrMasterUrl() alicloudroscdkcore.IResolvable
+	AttrMasterUrl() interface{}
 	// Attribute MetaData: The metadata of the cluster.
-	AttrMetaData() alicloudroscdkcore.IResolvable
+	AttrMetaData() interface{}
 	// Attribute Name: The name of the cluster.
 	//
 	// The name must be 1 to 63 characters in length, and can contain digits, letters, and hyphens (-). It cannot start with a hyphen (-).
-	AttrName() alicloudroscdkcore.IResolvable
+	AttrName() interface{}
 	// Attribute NetworkMode: The network mode of the cluster.
 	//
 	// Valid values:
@@ -68,31 +69,33 @@ type KubernetesCluster interface {
 	// - overlay: overlay network
 	// - calico: network powered by Calico
 	// Default value: vpc.
-	AttrNetworkMode() alicloudroscdkcore.IResolvable
+	AttrNetworkMode() interface{}
 	// Attribute NextVersion: The Kubernetes version to which the cluster can be upgraded.
-	AttrNextVersion() alicloudroscdkcore.IResolvable
+	AttrNextVersion() interface{}
 	// Attribute Parameters: A collection of cluster ROS parameters.
-	AttrParameters() alicloudroscdkcore.IResolvable
+	AttrParameters() interface{}
 	// Attribute PrivateZone: Indicates whether Alibaba Cloud DNS PrivateZone is enabled.
 	//
 	// - true: indicates that Alibaba Cloud DNS PrivateZone is enabled.- false: indicates that Alibaba Cloud DNS PrivateZone is not enabled.
-	AttrPrivateZone() alicloudroscdkcore.IResolvable
+	AttrPrivateZone() interface{}
 	// Attribute Profile: Indicates the scenario in which the cluster is used.
 	//
 	// Valid values:
 	// - Default: indicates that the cluster is used in non-edge computing scenarios.
 	// - Edge: indicates that the ACK cluster is used in edge computing scenarios.
-	AttrProfile() alicloudroscdkcore.IResolvable
+	AttrProfile() interface{}
 	// Attribute RegionId: The ID of the region where the cluster is deployed.
-	AttrRegionId() alicloudroscdkcore.IResolvable
+	AttrRegionId() interface{}
 	// Attribute ResourceGroupId: The ID of the resource group to which the cluster belongs.
-	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() interface{}
 	// Attribute SecurityGroupId: The ID of the security group to which the instances of the cluster belong.
-	AttrSecurityGroupId() alicloudroscdkcore.IResolvable
+	AttrSecurityGroupId() interface{}
+	// Attribute ServiceCidr: The cluster service cidr.
+	AttrServiceCidr() interface{}
 	// Attribute Size: The number of nodes in the cluster.
 	//
 	// Master nodes and worker nodes are included.
-	AttrSize() alicloudroscdkcore.IResolvable
+	AttrSize() interface{}
 	// Attribute State: The state of the cluster.
 	//
 	// Valid values:
@@ -108,7 +111,7 @@ type KubernetesCluster interface {
 	// - deleting: The cluster is being deleted.
 	// - deleted: The cluster is deleted.
 	// - delete_failed: The cluster failed to be deleted.
-	AttrState() alicloudroscdkcore.IResolvable
+	AttrState() interface{}
 	// Attribute SubnetCidr: The pod CIDR block.
 	//
 	// It must be a valid and private CIDR block, and must be one of the following CIDR blocks or their subnets:
@@ -116,27 +119,38 @@ type KubernetesCluster interface {
 	// - 172.16-31.0.0/12-16
 	// - 192.168.0.0/16
 	// The pod CIDR block cannot overlap with that of the VPC or those of the ACK clusters that are deployed in the VPC. For more information about the network segmentation of ACK clusters, see Plan CIDR blocks for ACK clusters in a VPC.
-	AttrSubnetCidr() alicloudroscdkcore.IResolvable
+	AttrSubnetCidr() interface{}
 	// Attribute Tags: The labels of the cluster.
-	AttrTags() alicloudroscdkcore.IResolvable
+	AttrTags() interface{}
 	// Attribute Updated: The time when the cluster was updated.
-	AttrUpdated() alicloudroscdkcore.IResolvable
+	AttrUpdated() interface{}
 	// Attribute VpcId: The ID of the VPC where the cluster is deployed.
 	//
 	// This parameter is required when you create an ACK cluster.
-	AttrVpcId() alicloudroscdkcore.IResolvable
+	AttrVpcId() interface{}
 	// Attribute VSwitchId: The IDs of the vSwitches.
 	//
 	// You can select one to three vSwitches when you create an ACK cluster. vSwitches in different zones are recommended to ensure high availability.
-	AttrVSwitchId() alicloudroscdkcore.IResolvable
+	AttrVSwitchId() interface{}
+	// Attribute VSwitchIds: The list of cluster control plane VSwitch ID.
+	AttrVSwitchIds() interface{}
 	// Attribute WorkerRamRoleName: The name of the worker RAM role.
 	//
 	// The RAM role is assigned to the worker nodes of the cluster and allows the worker nodes to manage Elastic Compute Service (ECS) instances.
-	AttrWorkerRamRoleName() alicloudroscdkcore.IResolvable
+	AttrWorkerRamRoleName() interface{}
 	// Attribute ZoneId: The ID of the zone where the cluster is deployed.
-	AttrZoneId() alicloudroscdkcore.IResolvable
+	AttrZoneId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -151,7 +165,6 @@ type KubernetesCluster interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *KubernetesClusterProps
-	SetProps(val *KubernetesClusterProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -164,6 +177,9 @@ type KubernetesCluster interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -216,10 +232,11 @@ type KubernetesCluster interface {
 // The jsii proxy struct for KubernetesCluster
 type jsiiProxy_KubernetesCluster struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IKubernetesCluster
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrClusterId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrClusterId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrClusterId",
@@ -228,8 +245,8 @@ func (j *jsiiProxy_KubernetesCluster) AttrClusterId() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrClusterSpec() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrClusterSpec() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrClusterSpec",
@@ -238,8 +255,8 @@ func (j *jsiiProxy_KubernetesCluster) AttrClusterSpec() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrClusterType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrClusterType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrClusterType",
@@ -248,8 +265,8 @@ func (j *jsiiProxy_KubernetesCluster) AttrClusterType() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrCreated() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrCreated() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreated",
@@ -258,8 +275,8 @@ func (j *jsiiProxy_KubernetesCluster) AttrCreated() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrCurrentVersion() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrCurrentVersion() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCurrentVersion",
@@ -268,8 +285,8 @@ func (j *jsiiProxy_KubernetesCluster) AttrCurrentVersion() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrDeletionProtection() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrDeletionProtection() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDeletionProtection",
@@ -278,8 +295,8 @@ func (j *jsiiProxy_KubernetesCluster) AttrDeletionProtection() alicloudroscdkcor
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrDockerVersion() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrDockerVersion() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDockerVersion",
@@ -288,8 +305,8 @@ func (j *jsiiProxy_KubernetesCluster) AttrDockerVersion() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrExternalLoadbalancerId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrExternalLoadbalancerId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrExternalLoadbalancerId",
@@ -298,8 +315,8 @@ func (j *jsiiProxy_KubernetesCluster) AttrExternalLoadbalancerId() alicloudroscd
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrInitVersion() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrInitVersion() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInitVersion",
@@ -308,8 +325,8 @@ func (j *jsiiProxy_KubernetesCluster) AttrInitVersion() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrMaintenanceWindow() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrMaintenanceWindow() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMaintenanceWindow",
@@ -318,8 +335,8 @@ func (j *jsiiProxy_KubernetesCluster) AttrMaintenanceWindow() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrMasterUrl() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrMasterUrl() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMasterUrl",
@@ -328,8 +345,8 @@ func (j *jsiiProxy_KubernetesCluster) AttrMasterUrl() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrMetaData() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrMetaData() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMetaData",
@@ -338,8 +355,8 @@ func (j *jsiiProxy_KubernetesCluster) AttrMetaData() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrName",
@@ -348,8 +365,8 @@ func (j *jsiiProxy_KubernetesCluster) AttrName() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrNetworkMode() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrNetworkMode() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNetworkMode",
@@ -358,8 +375,8 @@ func (j *jsiiProxy_KubernetesCluster) AttrNetworkMode() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrNextVersion() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrNextVersion() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNextVersion",
@@ -368,8 +385,8 @@ func (j *jsiiProxy_KubernetesCluster) AttrNextVersion() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrParameters() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrParameters() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrParameters",
@@ -378,8 +395,8 @@ func (j *jsiiProxy_KubernetesCluster) AttrParameters() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrPrivateZone() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrPrivateZone() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPrivateZone",
@@ -388,8 +405,8 @@ func (j *jsiiProxy_KubernetesCluster) AttrPrivateZone() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrProfile() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrProfile() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrProfile",
@@ -398,8 +415,8 @@ func (j *jsiiProxy_KubernetesCluster) AttrProfile() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrRegionId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrRegionId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRegionId",
@@ -408,8 +425,8 @@ func (j *jsiiProxy_KubernetesCluster) AttrRegionId() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupId",
@@ -418,8 +435,8 @@ func (j *jsiiProxy_KubernetesCluster) AttrResourceGroupId() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrSecurityGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrSecurityGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSecurityGroupId",
@@ -428,8 +445,18 @@ func (j *jsiiProxy_KubernetesCluster) AttrSecurityGroupId() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrSize() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrServiceCidr() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrServiceCidr",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) AttrSize() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSize",
@@ -438,8 +465,8 @@ func (j *jsiiProxy_KubernetesCluster) AttrSize() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrState() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrState() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrState",
@@ -448,8 +475,8 @@ func (j *jsiiProxy_KubernetesCluster) AttrState() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrSubnetCidr() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrSubnetCidr() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSubnetCidr",
@@ -458,8 +485,8 @@ func (j *jsiiProxy_KubernetesCluster) AttrSubnetCidr() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrTags() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrTags() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTags",
@@ -468,8 +495,8 @@ func (j *jsiiProxy_KubernetesCluster) AttrTags() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrUpdated() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrUpdated() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUpdated",
@@ -478,8 +505,8 @@ func (j *jsiiProxy_KubernetesCluster) AttrUpdated() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrVpcId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrVpcId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVpcId",
@@ -488,8 +515,8 @@ func (j *jsiiProxy_KubernetesCluster) AttrVpcId() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrVSwitchId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrVSwitchId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVSwitchId",
@@ -498,8 +525,18 @@ func (j *jsiiProxy_KubernetesCluster) AttrVSwitchId() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrWorkerRamRoleName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrVSwitchIds() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrVSwitchIds",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) AttrWorkerRamRoleName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrWorkerRamRoleName",
@@ -508,8 +545,8 @@ func (j *jsiiProxy_KubernetesCluster) AttrWorkerRamRoleName() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesCluster) AttrZoneId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesCluster) AttrZoneId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrZoneId",
@@ -523,6 +560,16 @@ func (j *jsiiProxy_KubernetesCluster) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -660,17 +707,6 @@ func (j *jsiiProxy_KubernetesCluster)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_KubernetesCluster)SetProps(val *KubernetesClusterProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_KubernetesCluster)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -762,6 +798,45 @@ func (k *jsiiProxy_KubernetesCluster) ApplyRemovalPolicy(policy alicloudroscdkco
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (k *jsiiProxy_KubernetesCluster) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		k,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (k *jsiiProxy_KubernetesCluster) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		k,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (k *jsiiProxy_KubernetesCluster) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		k,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (k *jsiiProxy_KubernetesCluster) GeneratePhysicalName() *string {

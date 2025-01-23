@@ -52,10 +52,6 @@ func (j *jsiiProxy_Audit) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_Audit) validateSetPropsParameters(val *AuditProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_Audit) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

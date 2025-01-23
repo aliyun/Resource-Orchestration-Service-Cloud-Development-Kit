@@ -96,6 +96,14 @@ func (j *jsiiProxy_RosAssignIpv6Addresses) validateSetIpv6AddressesParameters(va
 	return nil
 }
 
+func (j *jsiiProxy_RosAssignIpv6Addresses) validateSetIpv6PrefixCountParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosAssignIpv6Addresses) validateSetIpv6PrefixesParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosAssignIpv6Addresses) validateSetNetworkInterfaceIdParameters(val interface{}) error {
 	return nil
 }

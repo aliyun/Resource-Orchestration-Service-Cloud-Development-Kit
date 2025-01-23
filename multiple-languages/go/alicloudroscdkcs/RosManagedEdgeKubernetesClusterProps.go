@@ -15,6 +15,7 @@ type RosManagedEdgeKubernetesClusterProps struct {
 	IsEnterpriseSecurityGroup interface{} `field:"optional" json:"isEnterpriseSecurityGroup" yaml:"isEnterpriseSecurityGroup"`
 	KeyPair interface{} `field:"optional" json:"keyPair" yaml:"keyPair"`
 	LoginPassword interface{} `field:"optional" json:"loginPassword" yaml:"loginPassword"`
+	MaintenanceWindow interface{} `field:"optional" json:"maintenanceWindow" yaml:"maintenanceWindow"`
 	NodeCidrMask interface{} `field:"optional" json:"nodeCidrMask" yaml:"nodeCidrMask"`
 	Profile interface{} `field:"optional" json:"profile" yaml:"profile"`
 	ProxyMode interface{} `field:"optional" json:"proxyMode" yaml:"proxyMode"`

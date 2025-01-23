@@ -44,25 +44,41 @@ export interface ImageCachesProps {
 }
 
 /**
+ * Represents a `ImageCaches`.
+ */
+export interface IImageCaches extends ros.IResource {
+    readonly props: ImageCachesProps;
+
+    /**
+     * Attribute ImageCacheIds: The list of image cache IDs.
+     */
+    readonly attrImageCacheIds: ros.IResolvable | string;
+
+    /**
+     * Attribute ImageCaches: The list of image caches.
+     */
+    readonly attrImageCaches: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ECI::ImageCaches`, which is used to query multiple image caches at a time.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosImageCaches`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eci-imagecaches
  */
-export class ImageCaches extends ros.Resource {
+export class ImageCaches extends ros.Resource implements IImageCaches {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ImageCachesProps;
+    public readonly props: ImageCachesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ImageCacheIds: The list of image cache IDs.
      */
-    public readonly attrImageCacheIds: ros.IResolvable;
+    public readonly attrImageCacheIds: ros.IResolvable | string;
 
     /**
      * Attribute ImageCaches: The list of image caches.
      */
-    public readonly attrImageCaches: ros.IResolvable;
+    public readonly attrImageCaches: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

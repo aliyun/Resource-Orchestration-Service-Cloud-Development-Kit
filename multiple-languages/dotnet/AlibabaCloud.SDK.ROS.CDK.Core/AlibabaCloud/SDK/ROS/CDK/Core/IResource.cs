@@ -8,6 +8,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     [JsiiInterface(nativeType: typeof(IResource), fullyQualifiedName: "@alicloud/ros-cdk-core.IResource")]
     public interface IResource : AlibabaCloud.SDK.ROS.CDK.Core.IConstruct
     {
+        /// <summary>The environment this resource belongs to.</summary>
+        /// <remarks>
+        /// For resources that are created and managed by the CDK
+        /// (generally, those created by creating new class instances like Role, Bucket, etc.),
+        /// this is always the same as the environment of the stack they belong to;
+        /// however, for imported resources
+        /// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+        /// that might be different than the stack they were imported into.
+        /// </remarks>
+        [JsiiProperty(name: "env", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.ResourceEnvironment\"}")]
+        AlibabaCloud.SDK.ROS.CDK.Core.IResourceEnvironment Env
+        {
+            get;
+        }
+
         /// <summary>The stack in which this resource is defined.</summary>
         [JsiiProperty(name: "stack", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.Stack\"}")]
         AlibabaCloud.SDK.ROS.CDK.Core.Stack Stack
@@ -21,6 +36,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         {
             private _Proxy(ByRefValue reference): base(reference)
             {
+            }
+
+            /// <summary>The environment this resource belongs to.</summary>
+            /// <remarks>
+            /// For resources that are created and managed by the CDK
+            /// (generally, those created by creating new class instances like Role, Bucket, etc.),
+            /// this is always the same as the environment of the stack they belong to;
+            /// however, for imported resources
+            /// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+            /// that might be different than the stack they were imported into.
+            /// </remarks>
+            [JsiiProperty(name: "env", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.ResourceEnvironment\"}")]
+            public AlibabaCloud.SDK.ROS.CDK.Core.IResourceEnvironment Env
+            {
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResourceEnvironment>()!;
             }
 
             /// <summary>The stack in which this resource is defined.</summary>

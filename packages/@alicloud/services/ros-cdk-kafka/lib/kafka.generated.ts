@@ -568,8 +568,9 @@ export interface RosInstanceProps {
 
     /**
      * @Property specType: The edition of the Message Queue for Apache Kafka instance. Valid values: 
-     * professional: Professional Edition 
      * normal: Normal version
+     * professional: Professional Edition (high writing edition)
+     * professionalForHighRead: Professional Edition (high reading edition)
      */
     readonly specType?: string | ros.IResolvable;
 
@@ -813,8 +814,9 @@ export class RosInstance extends ros.RosResource {
 
     /**
      * @Property specType: The edition of the Message Queue for Apache Kafka instance. Valid values: 
-     * professional: Professional Edition 
      * normal: Normal version
+     * professional: Professional Edition (high writing edition)
+     * professionalForHighRead: Professional Edition (high reading edition)
      */
     public specType: string | ros.IResolvable | undefined;
 

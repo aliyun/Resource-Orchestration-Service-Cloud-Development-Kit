@@ -26,14 +26,20 @@ export interface SyncEcsHostProps {
 }
 
 /**
+ * Represents a `SyncEcsHost`.
+ */
+export interface ISyncEcsHost extends ros.IResource {
+    readonly props: SyncEcsHostProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::PVTZ::SyncEcsHost`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSyncEcsHost`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-syncecshost
  */
-export class SyncEcsHost extends ros.Resource {
+export class SyncEcsHost extends ros.Resource implements ISyncEcsHost {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SyncEcsHostProps;
+    public readonly props: SyncEcsHostProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

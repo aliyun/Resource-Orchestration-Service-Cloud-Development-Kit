@@ -12,22 +12,32 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::RAM::SecurityPreference`, which is used to configure security preferences for Resource Access Management (RAM) users.
 type SecurityPreference interface {
 	alicloudroscdkcore.Resource
+	ISecurityPreference
 	// Attribute AllowUserToChangePassword: Specifies whether RAM users can change their passwords.
-	AttrAllowUserToChangePassword() alicloudroscdkcore.IResolvable
+	AttrAllowUserToChangePassword() interface{}
 	// Attribute AllowUserToManageAccessKeys: Specifies whether RAM users can manage their AccessKey pairs.
-	AttrAllowUserToManageAccessKeys() alicloudroscdkcore.IResolvable
+	AttrAllowUserToManageAccessKeys() interface{}
 	// Attribute AllowUserToManageMFADevices: Specifies whether RAM users can manage their MFA devices.
-	AttrAllowUserToManageMfaDevices() alicloudroscdkcore.IResolvable
+	AttrAllowUserToManageMfaDevices() interface{}
 	// Attribute AllowUserToManagePublicKeys: Specifies whether RAM users can manage their public keys.
-	AttrAllowUserToManagePublicKeys() alicloudroscdkcore.IResolvable
+	AttrAllowUserToManagePublicKeys() interface{}
 	// Attribute EnableSaveMFATicket: Specifies whether RAM users can save multi-factor authentication (MFA) security codes during logon.
-	AttrEnableSaveMfaTicket() alicloudroscdkcore.IResolvable
+	AttrEnableSaveMfaTicket() interface{}
 	// Attribute LoginNetworkMasks: The subnet mask that specifies the IP addresses from which logon to the console is allowed.
-	AttrLoginNetworkMasks() alicloudroscdkcore.IResolvable
+	AttrLoginNetworkMasks() interface{}
 	// Attribute LoginSessionDuration: The validity period of the logon session of the RAM user.
-	AttrLoginSessionDuration() alicloudroscdkcore.IResolvable
+	AttrLoginSessionDuration() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -42,7 +52,6 @@ type SecurityPreference interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *SecurityPreferenceProps
-	SetProps(val *SecurityPreferenceProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -55,6 +64,9 @@ type SecurityPreference interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -107,10 +119,11 @@ type SecurityPreference interface {
 // The jsii proxy struct for SecurityPreference
 type jsiiProxy_SecurityPreference struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ISecurityPreference
 }
 
-func (j *jsiiProxy_SecurityPreference) AttrAllowUserToChangePassword() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecurityPreference) AttrAllowUserToChangePassword() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAllowUserToChangePassword",
@@ -119,8 +132,8 @@ func (j *jsiiProxy_SecurityPreference) AttrAllowUserToChangePassword() alicloudr
 	return returns
 }
 
-func (j *jsiiProxy_SecurityPreference) AttrAllowUserToManageAccessKeys() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecurityPreference) AttrAllowUserToManageAccessKeys() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAllowUserToManageAccessKeys",
@@ -129,8 +142,8 @@ func (j *jsiiProxy_SecurityPreference) AttrAllowUserToManageAccessKeys() aliclou
 	return returns
 }
 
-func (j *jsiiProxy_SecurityPreference) AttrAllowUserToManageMfaDevices() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecurityPreference) AttrAllowUserToManageMfaDevices() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAllowUserToManageMfaDevices",
@@ -139,8 +152,8 @@ func (j *jsiiProxy_SecurityPreference) AttrAllowUserToManageMfaDevices() aliclou
 	return returns
 }
 
-func (j *jsiiProxy_SecurityPreference) AttrAllowUserToManagePublicKeys() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecurityPreference) AttrAllowUserToManagePublicKeys() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAllowUserToManagePublicKeys",
@@ -149,8 +162,8 @@ func (j *jsiiProxy_SecurityPreference) AttrAllowUserToManagePublicKeys() aliclou
 	return returns
 }
 
-func (j *jsiiProxy_SecurityPreference) AttrEnableSaveMfaTicket() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecurityPreference) AttrEnableSaveMfaTicket() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEnableSaveMfaTicket",
@@ -159,8 +172,8 @@ func (j *jsiiProxy_SecurityPreference) AttrEnableSaveMfaTicket() alicloudroscdkc
 	return returns
 }
 
-func (j *jsiiProxy_SecurityPreference) AttrLoginNetworkMasks() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecurityPreference) AttrLoginNetworkMasks() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLoginNetworkMasks",
@@ -169,8 +182,8 @@ func (j *jsiiProxy_SecurityPreference) AttrLoginNetworkMasks() alicloudroscdkcor
 	return returns
 }
 
-func (j *jsiiProxy_SecurityPreference) AttrLoginSessionDuration() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecurityPreference) AttrLoginSessionDuration() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLoginSessionDuration",
@@ -184,6 +197,16 @@ func (j *jsiiProxy_SecurityPreference) EnableResourcePropertyConstraint() *bool 
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SecurityPreference) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -321,17 +344,6 @@ func (j *jsiiProxy_SecurityPreference)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SecurityPreference)SetProps(val *SecurityPreferenceProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_SecurityPreference)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -423,6 +435,45 @@ func (s *jsiiProxy_SecurityPreference) ApplyRemovalPolicy(policy alicloudroscdkc
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (s *jsiiProxy_SecurityPreference) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		s,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_SecurityPreference) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_SecurityPreference) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (s *jsiiProxy_SecurityPreference) GeneratePhysicalName() *string {

@@ -43,55 +43,101 @@ export interface AppProps {
 }
 
 /**
+ * Represents a `App`.
+ */
+export interface IApp extends ros.IResource {
+    readonly props: AppProps;
+
+    /**
+     * Attribute AppDescription: Description of application.
+     */
+    readonly attrAppDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute AppIcon: Application icon label, The system provides an icon by default, which is given in the form of a label. The default value is -1.
+     */
+    readonly attrAppIcon: ros.IResolvable | string;
+
+    /**
+     * Attribute AppId: Application ID.
+     */
+    readonly attrAppId: ros.IResolvable | string;
+
+    /**
+     * Attribute AppName: The application name.
+     */
+    readonly attrAppName: ros.IResolvable | string;
+
+    /**
+     * Attribute AppType: The application type. Web applications and Copilot applications are supported.
+     */
+    readonly attrAppType: ros.IResolvable | string;
+
+    /**
+     * Attribute AppWorkspaceId: Workspace ID of application, The application belongs to the workspace.
+     */
+    readonly attrAppWorkspaceId: ros.IResolvable | string;
+
+    /**
+     * Attribute CreateTime: Create time of application.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute ModifiedTime: Modified time of application.
+     */
+    readonly attrModifiedTime: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::MOBI::App`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApp`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mobi-app
  */
-export class App extends ros.Resource {
+export class App extends ros.Resource implements IApp {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AppProps;
+    public readonly props: AppProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AppDescription: Description of application.
      */
-    public readonly attrAppDescription: ros.IResolvable;
+    public readonly attrAppDescription: ros.IResolvable | string;
 
     /**
      * Attribute AppIcon: Application icon label, The system provides an icon by default, which is given in the form of a label. The default value is -1.
      */
-    public readonly attrAppIcon: ros.IResolvable;
+    public readonly attrAppIcon: ros.IResolvable | string;
 
     /**
      * Attribute AppId: Application ID.
      */
-    public readonly attrAppId: ros.IResolvable;
+    public readonly attrAppId: ros.IResolvable | string;
 
     /**
      * Attribute AppName: The application name.
      */
-    public readonly attrAppName: ros.IResolvable;
+    public readonly attrAppName: ros.IResolvable | string;
 
     /**
      * Attribute AppType: The application type. Web applications and Copilot applications are supported.
      */
-    public readonly attrAppType: ros.IResolvable;
+    public readonly attrAppType: ros.IResolvable | string;
 
     /**
      * Attribute AppWorkspaceId: Workspace ID of application, The application belongs to the workspace.
      */
-    public readonly attrAppWorkspaceId: ros.IResolvable;
+    public readonly attrAppWorkspaceId: ros.IResolvable | string;
 
     /**
      * Attribute CreateTime: Create time of application.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute ModifiedTime: Modified time of application.
      */
-    public readonly attrModifiedTime: ros.IResolvable;
+    public readonly attrModifiedTime: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -52,10 +52,6 @@ func (j *jsiiProxy_VpcFirewallConfigure) validateSetIdParameters(val *string) er
 	return nil
 }
 
-func (j *jsiiProxy_VpcFirewallConfigure) validateSetPropsParameters(val *VpcFirewallConfigureProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_VpcFirewallConfigure) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

@@ -35,3 +35,4 @@ export * from "./asset-staging";
 export * from "./helpers-internal";
 export * from "./environment";
 export * from "./bundling";
+export * from "./arn"

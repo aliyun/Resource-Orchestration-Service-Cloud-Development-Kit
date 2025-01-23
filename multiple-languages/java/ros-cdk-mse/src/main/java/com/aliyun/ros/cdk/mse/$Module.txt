@@ -4,6 +4,12 @@
 @alicloud/ros-cdk-mse.EngineNamespaceProps=com.aliyun.ros.cdk.mse.EngineNamespaceProps
 @alicloud/ros-cdk-mse.Gateway=com.aliyun.ros.cdk.mse.Gateway
 @alicloud/ros-cdk-mse.GatewayProps=com.aliyun.ros.cdk.mse.GatewayProps
+@alicloud/ros-cdk-mse.ICluster=com.aliyun.ros.cdk.mse.ICluster
+@alicloud/ros-cdk-mse.IEngineNamespace=com.aliyun.ros.cdk.mse.IEngineNamespace
+@alicloud/ros-cdk-mse.IGateway=com.aliyun.ros.cdk.mse.IGateway
+@alicloud/ros-cdk-mse.INacosConfig=com.aliyun.ros.cdk.mse.INacosConfig
+@alicloud/ros-cdk-mse.INacosService=com.aliyun.ros.cdk.mse.INacosService
+@alicloud/ros-cdk-mse.IServiceSource=com.aliyun.ros.cdk.mse.IServiceSource
 @alicloud/ros-cdk-mse.NacosConfig=com.aliyun.ros.cdk.mse.NacosConfig
 @alicloud/ros-cdk-mse.NacosConfigProps=com.aliyun.ros.cdk.mse.NacosConfigProps
 @alicloud/ros-cdk-mse.NacosService=com.aliyun.ros.cdk.mse.NacosService
@@ -27,6 +33,8 @@
 @alicloud/ros-cdk-mse.datasource.ClustersProps=com.aliyun.ros.cdk.mse.datasource.ClustersProps
 @alicloud/ros-cdk-mse.datasource.Gateways=com.aliyun.ros.cdk.mse.datasource.Gateways
 @alicloud/ros-cdk-mse.datasource.GatewaysProps=com.aliyun.ros.cdk.mse.datasource.GatewaysProps
+@alicloud/ros-cdk-mse.datasource.IClusters=com.aliyun.ros.cdk.mse.datasource.IClusters
+@alicloud/ros-cdk-mse.datasource.IGateways=com.aliyun.ros.cdk.mse.datasource.IGateways
 @alicloud/ros-cdk-mse.datasource.RosClusters=com.aliyun.ros.cdk.mse.datasource.RosClusters
 @alicloud/ros-cdk-mse.datasource.RosClustersProps=com.aliyun.ros.cdk.mse.datasource.RosClustersProps
 @alicloud/ros-cdk-mse.datasource.RosGateways=com.aliyun.ros.cdk.mse.datasource.RosGateways

@@ -36,20 +36,31 @@ export interface SNatEntryProps {
 }
 
 /**
+ * Represents a `SNatEntry`.
+ */
+export interface ISNatEntry extends ros.IResource {
+    readonly props: SNatEntryProps;
+
+    /**
+     * Attribute SNatEntryId: The id of created SNAT entry.
+     */
+    readonly attrSNatEntryId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SNatEntry`, which is used to configure the Source Network Address Translation (SNAT) table of a NAT gateway.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSNatEntry`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snatentry
  */
-export class SNatEntry extends ros.Resource {
+export class SNatEntry extends ros.Resource implements ISNatEntry {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SNatEntryProps;
+    public readonly props: SNatEntryProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SNatEntryId: The id of created SNAT entry.
      */
-    public readonly attrSNatEntryId: ros.IResolvable;
+    public readonly attrSNatEntryId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

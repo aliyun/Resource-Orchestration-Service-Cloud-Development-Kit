@@ -98,25 +98,41 @@ export interface SecretProps {
 }
 
 /**
+ * Represents a `Secret`.
+ */
+export interface ISecret extends ros.IResource {
+    readonly props: SecretProps;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
+     * Attribute SecretName: The name of the secret.
+     */
+    readonly attrSecretName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Secret`, which is used to create a secret and store the initial version of the secret.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecret`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-secret
  */
-export class Secret extends ros.Resource {
+export class Secret extends ros.Resource implements ISecret {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SecretProps;
+    public readonly props: SecretProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
      */
-    public readonly attrArn: ros.IResolvable;
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute SecretName: The name of the secret.
      */
-    public readonly attrSecretName: ros.IResolvable;
+    public readonly attrSecretName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

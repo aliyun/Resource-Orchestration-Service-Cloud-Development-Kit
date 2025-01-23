@@ -140,25 +140,41 @@ export interface MyBaseProps {
 }
 
 /**
+ * Represents a `MyBase`.
+ */
+export interface IMyBase extends ros.IResource {
+    readonly props: MyBaseProps;
+
+    /**
+     * Attribute InstanceIds: The instance id list of created ecs instances
+     */
+    readonly attrInstanceIds: ros.IResolvable | string;
+
+    /**
+     * Attribute OrderIds: The order id list.
+     */
+    readonly attrOrderIds: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CDDC::MyBase`, which is used to create a host in a Proprietary MyBase dedicated cluster in ApsaraDB for MyBase.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMyBase`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-mybase
  */
-export class MyBase extends ros.Resource {
+export class MyBase extends ros.Resource implements IMyBase {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: MyBaseProps;
+    public readonly props: MyBaseProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceIds: The instance id list of created ecs instances
      */
-    public readonly attrInstanceIds: ros.IResolvable;
+    public readonly attrInstanceIds: ros.IResolvable | string;
 
     /**
      * Attribute OrderIds: The order id list.
      */
-    public readonly attrOrderIds: ros.IResolvable;
+    public readonly attrOrderIds: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

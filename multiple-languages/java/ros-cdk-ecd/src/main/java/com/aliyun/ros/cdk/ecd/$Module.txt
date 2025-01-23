@@ -4,6 +4,12 @@
 @alicloud/ros-cdk-ecd.DesktopGroupProps=com.aliyun.ros.cdk.ecd.DesktopGroupProps
 @alicloud/ros-cdk-ecd.Desktops=com.aliyun.ros.cdk.ecd.Desktops
 @alicloud/ros-cdk-ecd.DesktopsProps=com.aliyun.ros.cdk.ecd.DesktopsProps
+@alicloud/ros-cdk-ecd.IBundle=com.aliyun.ros.cdk.ecd.IBundle
+@alicloud/ros-cdk-ecd.IDesktopGroup=com.aliyun.ros.cdk.ecd.IDesktopGroup
+@alicloud/ros-cdk-ecd.IDesktops=com.aliyun.ros.cdk.ecd.IDesktops
+@alicloud/ros-cdk-ecd.INetworkPackage=com.aliyun.ros.cdk.ecd.INetworkPackage
+@alicloud/ros-cdk-ecd.INetworkPackageAssociation=com.aliyun.ros.cdk.ecd.INetworkPackageAssociation
+@alicloud/ros-cdk-ecd.ISimpleOfficeSite=com.aliyun.ros.cdk.ecd.ISimpleOfficeSite
 @alicloud/ros-cdk-ecd.NetworkPackage=com.aliyun.ros.cdk.ecd.NetworkPackage
 @alicloud/ros-cdk-ecd.NetworkPackageAssociation=com.aliyun.ros.cdk.ecd.NetworkPackageAssociation
 @alicloud/ros-cdk-ecd.NetworkPackageAssociationProps=com.aliyun.ros.cdk.ecd.NetworkPackageAssociationProps

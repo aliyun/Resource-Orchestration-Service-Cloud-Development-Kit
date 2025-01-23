@@ -102,70 +102,131 @@ export interface VpnGatewayProps {
 }
 
 /**
+ * Represents a `VpnGateway`.
+ */
+export interface IVpnGateway extends ros.IResource {
+    readonly props: VpnGatewayProps;
+
+    /**
+     * Attribute DisasterRecoveryInternetIp: The second IP address assigned by the system to create an IPsec-VPN connection.This attribute is returned only when the VPN gateway supports the dual-tunnel mode.
+     */
+    readonly attrDisasterRecoveryInternetIp: ros.IResolvable | string;
+
+    /**
+     * Attribute DisasterRecoveryVSwitchId: The ID of the second vSwitch associated with the VPN gateway.This attribute is returned only when the VPN gateway supports the dual-tunnel mode.
+     */
+    readonly attrDisasterRecoveryVSwitchId: ros.IResolvable | string;
+
+    /**
+     * Attribute InternetIp: The public IP address of the VPN gateway.
+     */
+    readonly attrInternetIp: ros.IResolvable | string;
+
+    /**
+     * Attribute OrderId: The order ID.
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+
+    /**
+     * Attribute Spec: The specification of the VPN gateway.
+     */
+    readonly attrSpec: ros.IResolvable | string;
+
+    /**
+     * Attribute SslMaxConnections: The maximum number of concurrent SSL-VPN connections.
+     */
+    readonly attrSslMaxConnections: ros.IResolvable | string;
+
+    /**
+     * Attribute SslVpnInternetIp: The IP address of the SSL-VPN connection.This attribute is returned only when the VPN gateway is a public VPN gateway and supports only the single-tunnel mode. In addition, the VPN gateway must have the SSL-VPN feature enabled.
+     */
+    readonly attrSslVpnInternetIp: ros.IResolvable | string;
+
+    /**
+     * Attribute VSwitchId: The ID of the vSwitch to which the VPN gateway belongs.
+     */
+    readonly attrVSwitchId: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcId: The ID of the virtual private cloud (VPC) to which the VPN gateway belongs.
+     */
+    readonly attrVpcId: ros.IResolvable | string;
+
+    /**
+     * Attribute VpnGatewayId: ID of the VPN gateway.
+     */
+    readonly attrVpnGatewayId: ros.IResolvable | string;
+
+    /**
+     * Attribute VpnType: The type of the VPN gateway.
+     */
+    readonly attrVpnType: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpnGateway`, which is used to create a VPN gateway.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpnGateway`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpngateway
  */
-export class VpnGateway extends ros.Resource {
+export class VpnGateway extends ros.Resource implements IVpnGateway {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: VpnGatewayProps;
+    public readonly props: VpnGatewayProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DisasterRecoveryInternetIp: The second IP address assigned by the system to create an IPsec-VPN connection.This attribute is returned only when the VPN gateway supports the dual-tunnel mode.
      */
-    public readonly attrDisasterRecoveryInternetIp: ros.IResolvable;
+    public readonly attrDisasterRecoveryInternetIp: ros.IResolvable | string;
 
     /**
      * Attribute DisasterRecoveryVSwitchId: The ID of the second vSwitch associated with the VPN gateway.This attribute is returned only when the VPN gateway supports the dual-tunnel mode.
      */
-    public readonly attrDisasterRecoveryVSwitchId: ros.IResolvable;
+    public readonly attrDisasterRecoveryVSwitchId: ros.IResolvable | string;
 
     /**
      * Attribute InternetIp: The public IP address of the VPN gateway.
      */
-    public readonly attrInternetIp: ros.IResolvable;
+    public readonly attrInternetIp: ros.IResolvable | string;
 
     /**
      * Attribute OrderId: The order ID.
      */
-    public readonly attrOrderId: ros.IResolvable;
+    public readonly attrOrderId: ros.IResolvable | string;
 
     /**
      * Attribute Spec: The specification of the VPN gateway.
      */
-    public readonly attrSpec: ros.IResolvable;
+    public readonly attrSpec: ros.IResolvable | string;
 
     /**
      * Attribute SslMaxConnections: The maximum number of concurrent SSL-VPN connections.
      */
-    public readonly attrSslMaxConnections: ros.IResolvable;
+    public readonly attrSslMaxConnections: ros.IResolvable | string;
 
     /**
      * Attribute SslVpnInternetIp: The IP address of the SSL-VPN connection.This attribute is returned only when the VPN gateway is a public VPN gateway and supports only the single-tunnel mode. In addition, the VPN gateway must have the SSL-VPN feature enabled.
      */
-    public readonly attrSslVpnInternetIp: ros.IResolvable;
+    public readonly attrSslVpnInternetIp: ros.IResolvable | string;
 
     /**
      * Attribute VSwitchId: The ID of the vSwitch to which the VPN gateway belongs.
      */
-    public readonly attrVSwitchId: ros.IResolvable;
+    public readonly attrVSwitchId: ros.IResolvable | string;
 
     /**
      * Attribute VpcId: The ID of the virtual private cloud (VPC) to which the VPN gateway belongs.
      */
-    public readonly attrVpcId: ros.IResolvable;
+    public readonly attrVpcId: ros.IResolvable | string;
 
     /**
      * Attribute VpnGatewayId: ID of the VPN gateway.
      */
-    public readonly attrVpnGatewayId: ros.IResolvable;
+    public readonly attrVpnGatewayId: ros.IResolvable | string;
 
     /**
      * Attribute VpnType: The type of the VPN gateway.
      */
-    public readonly attrVpnType: ros.IResolvable;
+    public readonly attrVpnType: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

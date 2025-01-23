@@ -5,6 +5,11 @@
 @alicloud/ros-cdk-oss.DirectoryProps=com.aliyun.ros.cdk.oss.DirectoryProps
 @alicloud/ros-cdk-oss.Domain=com.aliyun.ros.cdk.oss.Domain
 @alicloud/ros-cdk-oss.DomainProps=com.aliyun.ros.cdk.oss.DomainProps
+@alicloud/ros-cdk-oss.IBucket=com.aliyun.ros.cdk.oss.IBucket
+@alicloud/ros-cdk-oss.IDirectory=com.aliyun.ros.cdk.oss.IDirectory
+@alicloud/ros-cdk-oss.IDomain=com.aliyun.ros.cdk.oss.IDomain
+@alicloud/ros-cdk-oss.IObjectAcl=com.aliyun.ros.cdk.oss.IObjectAcl
+@alicloud/ros-cdk-oss.IWebsite=com.aliyun.ros.cdk.oss.IWebsite
 @alicloud/ros-cdk-oss.ObjectAcl=com.aliyun.ros.cdk.oss.ObjectAcl
 @alicloud/ros-cdk-oss.ObjectAclProps=com.aliyun.ros.cdk.oss.ObjectAclProps
 @alicloud/ros-cdk-oss.RosBucket=com.aliyun.ros.cdk.oss.RosBucket
@@ -53,6 +58,8 @@
 @alicloud/ros-cdk-oss.datasource.BucketProps=com.aliyun.ros.cdk.oss.datasource.BucketProps
 @alicloud/ros-cdk-oss.datasource.Buckets=com.aliyun.ros.cdk.oss.datasource.Buckets
 @alicloud/ros-cdk-oss.datasource.BucketsProps=com.aliyun.ros.cdk.oss.datasource.BucketsProps
+@alicloud/ros-cdk-oss.datasource.IBucket=com.aliyun.ros.cdk.oss.datasource.IBucket
+@alicloud/ros-cdk-oss.datasource.IBuckets=com.aliyun.ros.cdk.oss.datasource.IBuckets
 @alicloud/ros-cdk-oss.datasource.RosBucket=com.aliyun.ros.cdk.oss.datasource.RosBucket
 @alicloud/ros-cdk-oss.datasource.RosBucketProps=com.aliyun.ros.cdk.oss.datasource.RosBucketProps
 @alicloud/ros-cdk-oss.datasource.RosBuckets=com.aliyun.ros.cdk.oss.datasource.RosBuckets

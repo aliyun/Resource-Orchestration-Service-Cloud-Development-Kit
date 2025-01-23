@@ -12,10 +12,20 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::NAS::MountTarget`, which is used to create a mount target.
 type MountTarget interface {
 	alicloudroscdkcore.Resource
+	IMountTarget
 	// Attribute MountTargetDomain: Mount point domain name.
-	AttrMountTargetDomain() alicloudroscdkcore.IResolvable
+	AttrMountTargetDomain() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -30,7 +40,6 @@ type MountTarget interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *MountTargetProps
-	SetProps(val *MountTargetProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -43,6 +52,9 @@ type MountTarget interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -95,10 +107,11 @@ type MountTarget interface {
 // The jsii proxy struct for MountTarget
 type jsiiProxy_MountTarget struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IMountTarget
 }
 
-func (j *jsiiProxy_MountTarget) AttrMountTargetDomain() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MountTarget) AttrMountTargetDomain() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMountTargetDomain",
@@ -112,6 +125,16 @@ func (j *jsiiProxy_MountTarget) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MountTarget) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -249,17 +272,6 @@ func (j *jsiiProxy_MountTarget)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_MountTarget)SetProps(val *MountTargetProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_MountTarget)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -351,6 +363,45 @@ func (m *jsiiProxy_MountTarget) ApplyRemovalPolicy(policy alicloudroscdkcore.Rem
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (m *jsiiProxy_MountTarget) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		m,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (m *jsiiProxy_MountTarget) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		m,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (m *jsiiProxy_MountTarget) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		m,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (m *jsiiProxy_MountTarget) GeneratePhysicalName() *string {

@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.ros;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ROS::ResourceCleaner</code>, which is used to create a resource cleaner.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:11.460Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:43.866Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.ResourceCleaner")
-public class ResourceCleaner extends com.aliyun.ros.cdk.core.Resource {
+public class ResourceCleaner extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ros.IResourceCleaner {
 
     protected ResourceCleaner(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -55,8 +55,9 @@ public class ResourceCleaner extends com.aliyun.ros.cdk.core.Resource {
      * <li>None: Cleanup is not triggered.</li>
      * </ul>
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCleanResult() {
-        return software.amazon.jsii.Kernel.get(this, "attrCleanResult", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCleanResult() {
+        return software.amazon.jsii.Kernel.get(this, "attrCleanResult", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -65,8 +66,9 @@ public class ResourceCleaner extends com.aliyun.ros.cdk.core.Resource {
      * Only resources with the resource types ResourceCleaner supports and the regions not filtered are scanned.
      * The format is the same as ResourceDetails.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrNoCleanupResourceDetails() {
-        return software.amazon.jsii.Kernel.get(this, "attrNoCleanupResourceDetails", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrNoCleanupResourceDetails() {
+        return software.amazon.jsii.Kernel.get(this, "attrNoCleanupResourceDetails", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -75,8 +77,9 @@ public class ResourceCleaner extends com.aliyun.ros.cdk.core.Resource {
      * Only resources with the resource types ResourceCleaner supports and the regions not filtered are scanned.
      * The format is the same as ResourcePartialDetails.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrNoCleanupResourcePartialDetails() {
-        return software.amazon.jsii.Kernel.get(this, "attrNoCleanupResourcePartialDetails", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrNoCleanupResourcePartialDetails() {
+        return software.amazon.jsii.Kernel.get(this, "attrNoCleanupResourcePartialDetails", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -107,8 +110,9 @@ public class ResourceCleaner extends com.aliyun.ros.cdk.core.Resource {
      * <li>ResourceId: ID of the dependency resource.</li>
      * </ul>
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrResourceDetails() {
-        return software.amazon.jsii.Kernel.get(this, "attrResourceDetails", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceDetails() {
+        return software.amazon.jsii.Kernel.get(this, "attrResourceDetails", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -130,8 +134,9 @@ public class ResourceCleaner extends com.aliyun.ros.cdk.core.Resource {
      * <li>ResourceStatusReason: The information of the related ResourceStatus.</li>
      * </ul>
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrResourcePartialDetails() {
-        return software.amazon.jsii.Kernel.get(this, "attrResourcePartialDetails", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourcePartialDetails() {
+        return software.amazon.jsii.Kernel.get(this, "attrResourcePartialDetails", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -150,8 +155,9 @@ public class ResourceCleaner extends com.aliyun.ros.cdk.core.Resource {
      * <li>TotalCount: Number of total resources of the resource type.</li>
      * </ul>
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrResourceSummary() {
-        return software.amazon.jsii.Kernel.get(this, "attrResourceSummary", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceSummary() {
+        return software.amazon.jsii.Kernel.get(this, "attrResourceSummary", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -166,8 +172,14 @@ public class ResourceCleaner extends com.aliyun.ros.cdk.core.Resource {
      * <li>ErrorMessage: Error message of scanning with specified resource type and region ID.</li>
      * </ul>
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrScanErrors() {
-        return software.amazon.jsii.Kernel.get(this, "attrScanErrors", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrScanErrors() {
+        return software.amazon.jsii.Kernel.get(this, "attrScanErrors", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ros.ResourceCleanerProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ros.ResourceCleanerProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -184,14 +196,6 @@ public class ResourceCleaner extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ros.ResourceCleanerProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ros.ResourceCleanerProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ros.ResourceCleanerProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {

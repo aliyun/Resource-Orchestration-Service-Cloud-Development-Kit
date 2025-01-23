@@ -29,7 +29,7 @@ export interface RosInstanceProps {
     readonly vSwitchId: string | ros.IResolvable;
 
     /**
-     * @Property description: The description of instance. It a string of 0 to 30 characters. It can contain numbers, letters, underscores, (_) and hyphens (-). It must start with a letter, a number or Chinese character.
+     * @Property description: The description of instance. It a string of 0 to 128 characters. It can contain numbers, letters, underscores, (_) and hyphens (-). It must start with a letter, a number or Chinese character.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -138,7 +138,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         errors.collect(ros.propertyValidator('description', ros.validateLength)({
             data: properties.description.length,
             min: undefined,
-            max: 30,
+            max: 128,
           }));
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
@@ -330,7 +330,7 @@ export class RosInstance extends ros.RosResource {
     public vSwitchId: string | ros.IResolvable;
 
     /**
-     * @Property description: The description of instance. It a string of 0 to 30 characters. It can contain numbers, letters, underscores, (_) and hyphens (-). It must start with a letter, a number or Chinese character.
+     * @Property description: The description of instance. It a string of 0 to 128 characters. It can contain numbers, letters, underscores, (_) and hyphens (-). It must start with a letter, a number or Chinese character.
      */
     public description: string | ros.IResolvable | undefined;
 

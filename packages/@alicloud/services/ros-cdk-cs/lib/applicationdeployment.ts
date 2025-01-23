@@ -41,20 +41,31 @@ export interface ApplicationDeploymentProps {
 }
 
 /**
+ * Represents a `ApplicationDeployment`.
+ */
+export interface IApplicationDeployment extends ros.IResource {
+    readonly props: ApplicationDeploymentProps;
+
+    /**
+     * Attribute TaskId: The task ID of the application deployment.
+     */
+    readonly attrTaskId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ApplicationDeployment`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApplicationDeployment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-applicationdeployment
  */
-export class ApplicationDeployment extends ros.Resource {
+export class ApplicationDeployment extends ros.Resource implements IApplicationDeployment {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ApplicationDeploymentProps;
+    public readonly props: ApplicationDeploymentProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute TaskId: The task ID of the application deployment.
      */
-    public readonly attrTaskId: ros.IResolvable;
+    public readonly attrTaskId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

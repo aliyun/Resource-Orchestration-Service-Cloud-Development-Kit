@@ -12,24 +12,34 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::VOD::EditingProject`, which is used to create an online editing project.
 type EditingProject interface {
 	alicloudroscdkcore.Resource
+	IEditingProject
 	// Attribute CreateTime: The time when the online editing project was created.
 	//
 	// The time follows the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. The time is displayed in UTC.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute EditingProjectId: The ID of the online editing project.
-	AttrEditingProjectId() alicloudroscdkcore.IResolvable
+	AttrEditingProjectId() interface{}
 	// Attribute EditingProjectName: The name of the online editing project.
-	AttrEditingProjectName() alicloudroscdkcore.IResolvable
+	AttrEditingProjectName() interface{}
 	// Attribute ModifiedTime: The last time when the online editing project was modified.
 	//
 	// The time follows the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. The time is displayed in UTC.
-	AttrModifiedTime() alicloudroscdkcore.IResolvable
+	AttrModifiedTime() interface{}
 	// Attribute Timeline: The timeline of the online editing project.
-	AttrTimeline() alicloudroscdkcore.IResolvable
+	AttrTimeline() interface{}
 	// Attribute Title: The title of the online editing project.
-	AttrTitle() alicloudroscdkcore.IResolvable
+	AttrTitle() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -44,7 +54,6 @@ type EditingProject interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *EditingProjectProps
-	SetProps(val *EditingProjectProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -57,6 +66,9 @@ type EditingProject interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -109,10 +121,11 @@ type EditingProject interface {
 // The jsii proxy struct for EditingProject
 type jsiiProxy_EditingProject struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IEditingProject
 }
 
-func (j *jsiiProxy_EditingProject) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_EditingProject) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_EditingProject) AttrCreateTime() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_EditingProject) AttrEditingProjectId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_EditingProject) AttrEditingProjectId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEditingProjectId",
@@ -131,8 +144,8 @@ func (j *jsiiProxy_EditingProject) AttrEditingProjectId() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_EditingProject) AttrEditingProjectName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_EditingProject) AttrEditingProjectName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEditingProjectName",
@@ -141,8 +154,8 @@ func (j *jsiiProxy_EditingProject) AttrEditingProjectName() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_EditingProject) AttrModifiedTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_EditingProject) AttrModifiedTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrModifiedTime",
@@ -151,8 +164,8 @@ func (j *jsiiProxy_EditingProject) AttrModifiedTime() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_EditingProject) AttrTimeline() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_EditingProject) AttrTimeline() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTimeline",
@@ -161,8 +174,8 @@ func (j *jsiiProxy_EditingProject) AttrTimeline() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_EditingProject) AttrTitle() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_EditingProject) AttrTitle() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTitle",
@@ -176,6 +189,16 @@ func (j *jsiiProxy_EditingProject) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EditingProject) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -313,17 +336,6 @@ func (j *jsiiProxy_EditingProject)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_EditingProject)SetProps(val *EditingProjectProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_EditingProject)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -415,6 +427,45 @@ func (e *jsiiProxy_EditingProject) ApplyRemovalPolicy(policy alicloudroscdkcore.
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (e *jsiiProxy_EditingProject) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		e,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (e *jsiiProxy_EditingProject) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		e,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (e *jsiiProxy_EditingProject) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		e,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (e *jsiiProxy_EditingProject) GeneratePhysicalName() *string {

@@ -112,6 +112,10 @@ func (j *jsiiProxy_RosASKCluster) validateSetKubernetesVersionParameters(val int
 	return nil
 }
 
+func (j *jsiiProxy_RosASKCluster) validateSetMaintenanceWindowParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosASKCluster) validateSetNameParameters(val interface{}) error {
 	return nil
 }

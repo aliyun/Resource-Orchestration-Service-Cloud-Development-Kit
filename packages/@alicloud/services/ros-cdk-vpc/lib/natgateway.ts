@@ -107,30 +107,51 @@ export interface NatGatewayProps {
 }
 
 /**
+ * Represents a `NatGateway`.
+ */
+export interface INatGateway extends ros.IResource {
+    readonly props: NatGatewayProps;
+
+    /**
+     * Attribute ForwardTableId: The forward table id.
+     */
+    readonly attrForwardTableId: ros.IResolvable | string;
+
+    /**
+     * Attribute NatGatewayId: The Id of created NAT gateway.
+     */
+    readonly attrNatGatewayId: ros.IResolvable | string;
+
+    /**
+     * Attribute SNatTableId: The SNAT table id.
+     */
+    readonly attrSNatTableId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::NatGateway`, which is used to create a NAT gateway.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNatGateway`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natgateway
  */
-export class NatGateway extends ros.Resource {
+export class NatGateway extends ros.Resource implements INatGateway {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: NatGatewayProps;
+    public readonly props: NatGatewayProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ForwardTableId: The forward table id.
      */
-    public readonly attrForwardTableId: ros.IResolvable;
+    public readonly attrForwardTableId: ros.IResolvable | string;
 
     /**
      * Attribute NatGatewayId: The Id of created NAT gateway.
      */
-    public readonly attrNatGatewayId: ros.IResolvable;
+    public readonly attrNatGatewayId: ros.IResolvable | string;
 
     /**
      * Attribute SNatTableId: The SNAT table id.
      */
-    public readonly attrSNatTableId: ros.IResolvable;
+    public readonly attrSNatTableId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

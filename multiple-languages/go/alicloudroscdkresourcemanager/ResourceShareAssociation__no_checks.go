@@ -52,10 +52,6 @@ func (j *jsiiProxy_ResourceShareAssociation) validateSetIdParameters(val *string
 	return nil
 }
 
-func (j *jsiiProxy_ResourceShareAssociation) validateSetPropsParameters(val *ResourceShareAssociationProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_ResourceShareAssociation) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

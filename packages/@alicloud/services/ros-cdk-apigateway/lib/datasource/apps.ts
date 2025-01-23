@@ -29,25 +29,41 @@ export interface AppsProps {
 }
 
 /**
+ * Represents a `Apps`.
+ */
+export interface IApps extends ros.IResource {
+    readonly props: AppsProps;
+
+    /**
+     * Attribute AppIds: The list of The ApiGateway app ids.
+     */
+    readonly attrAppIds: ros.IResolvable | string;
+
+    /**
+     * Attribute Apps: The information about ApiGateway apps.
+     */
+    readonly attrApps: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ApiGateway::Apps`, which is used to query applications.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApps`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-apps
  */
-export class Apps extends ros.Resource {
+export class Apps extends ros.Resource implements IApps {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AppsProps;
+    public readonly props: AppsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AppIds: The list of The ApiGateway app ids.
      */
-    public readonly attrAppIds: ros.IResolvable;
+    public readonly attrAppIds: ros.IResolvable | string;
 
     /**
      * Attribute Apps: The information about ApiGateway apps.
      */
-    public readonly attrApps: ros.IResolvable;
+    public readonly attrApps: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

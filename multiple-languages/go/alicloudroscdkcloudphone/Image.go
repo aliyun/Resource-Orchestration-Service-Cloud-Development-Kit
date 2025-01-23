@@ -12,34 +12,44 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::CloudPhone::Image`, which is used to create a custom image for a cloud phone.
 type Image interface {
 	alicloudroscdkcore.Resource
+	IImage
 	// Attribute CreateTime: The time when the image was created.
 	//
 	// The time follows the ISO 8601 standard.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute Description: The image description.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute ImageCategory: The image type.
-	AttrImageCategory() alicloudroscdkcore.IResolvable
+	AttrImageCategory() interface{}
 	// Attribute ImageId: The image ID.
-	AttrImageId() alicloudroscdkcore.IResolvable
+	AttrImageId() interface{}
 	// Attribute ImageName: The image name.
-	AttrImageName() alicloudroscdkcore.IResolvable
+	AttrImageName() interface{}
 	// Attribute IsSelfShared: Indicates whether the image is shared with other Alibaba Cloud accounts.
-	AttrIsSelfShared() alicloudroscdkcore.IResolvable
+	AttrIsSelfShared() interface{}
 	// Attribute OsName: The display name of the OS in Chinese.
-	AttrOsName() alicloudroscdkcore.IResolvable
+	AttrOsName() interface{}
 	// Attribute OsNameEn: The display name of the OS in English.
-	AttrOsNameEn() alicloudroscdkcore.IResolvable
+	AttrOsNameEn() interface{}
 	// Attribute OsType: The image OS.
-	AttrOsType() alicloudroscdkcore.IResolvable
+	AttrOsType() interface{}
 	// Attribute Platform: The OS distribution.
-	AttrPlatform() alicloudroscdkcore.IResolvable
+	AttrPlatform() interface{}
 	// Attribute Progress: The progress of image creation.
-	AttrProgress() alicloudroscdkcore.IResolvable
+	AttrProgress() interface{}
 	// Attribute Usage: Whether the image is already running in the cloud phone instance.
-	AttrUsage() alicloudroscdkcore.IResolvable
+	AttrUsage() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -54,7 +64,6 @@ type Image interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ImageProps
-	SetProps(val *ImageProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -67,6 +76,9 @@ type Image interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -119,10 +131,11 @@ type Image interface {
 // The jsii proxy struct for Image
 type jsiiProxy_Image struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IImage
 }
 
-func (j *jsiiProxy_Image) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Image) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -131,8 +144,8 @@ func (j *jsiiProxy_Image) AttrCreateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Image) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Image) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -141,8 +154,8 @@ func (j *jsiiProxy_Image) AttrDescription() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Image) AttrImageCategory() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Image) AttrImageCategory() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrImageCategory",
@@ -151,8 +164,8 @@ func (j *jsiiProxy_Image) AttrImageCategory() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Image) AttrImageId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Image) AttrImageId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrImageId",
@@ -161,8 +174,8 @@ func (j *jsiiProxy_Image) AttrImageId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Image) AttrImageName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Image) AttrImageName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrImageName",
@@ -171,8 +184,8 @@ func (j *jsiiProxy_Image) AttrImageName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Image) AttrIsSelfShared() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Image) AttrIsSelfShared() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIsSelfShared",
@@ -181,8 +194,8 @@ func (j *jsiiProxy_Image) AttrIsSelfShared() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Image) AttrOsName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Image) AttrOsName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOsName",
@@ -191,8 +204,8 @@ func (j *jsiiProxy_Image) AttrOsName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Image) AttrOsNameEn() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Image) AttrOsNameEn() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOsNameEn",
@@ -201,8 +214,8 @@ func (j *jsiiProxy_Image) AttrOsNameEn() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Image) AttrOsType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Image) AttrOsType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOsType",
@@ -211,8 +224,8 @@ func (j *jsiiProxy_Image) AttrOsType() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Image) AttrPlatform() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Image) AttrPlatform() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPlatform",
@@ -221,8 +234,8 @@ func (j *jsiiProxy_Image) AttrPlatform() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Image) AttrProgress() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Image) AttrProgress() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrProgress",
@@ -231,8 +244,8 @@ func (j *jsiiProxy_Image) AttrProgress() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Image) AttrUsage() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Image) AttrUsage() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUsage",
@@ -246,6 +259,16 @@ func (j *jsiiProxy_Image) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Image) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -383,17 +406,6 @@ func (j *jsiiProxy_Image)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Image)SetProps(val *ImageProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Image)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -485,6 +497,45 @@ func (i *jsiiProxy_Image) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (i *jsiiProxy_Image) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		i,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_Image) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		i,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_Image) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		i,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (i *jsiiProxy_Image) GeneratePhysicalName() *string {

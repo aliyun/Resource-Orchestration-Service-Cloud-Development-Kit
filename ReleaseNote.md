@@ -1,5 +1,13 @@
 # Aliyun ROS Cloud Development Toolkit Changelog
 
+## [ros-cdk-cli 1.6.0] (2025-01-23)
+### Features
+- Update ROS resource sdk packages (Added the ALIYUN::FC3::ProvisionConfig, ALIYUN::FC3::ConcurrencyConfig, ALIYUN::FC3::CustomDomain, ALIYUN::RAM::OIDCProvider, ALIYUN::RAM::AttachPolicyToGroup, DATASOURCE::DirectMail::Domain, DATASOURCE::EAIS::ClientInstanceAttachment, DATASOURCE::EBS::DedicatedBlockStorageCluster, DATASOURCE::EBS::DedicatedBlockStoragers, DATASOURCE::EBS::DiskReplicaPair, DATASOURCE::EBS::DiskReplicaGroup, ).
+- Added fetchDependency, fetchCondition, and fetchResourceDesc built-in functions.
+- No OSS bucket is created when the Asset module is not involved in the creation of a resource.
+- ros-cdk-mns supports the fromQueueArn function to obtain the return value of an existing queue through an arn
+- Upgrade typescript project initialization dependency version.
+
 ## [ros-cdk-cli 1.5.0] (2024-12-13)
 ### Features
 - Update ROS resource sdk packages (Added the ALIYUN::Aligreen::AuditCallback, ALIYUN::Aligreen::BizType, ALIYUN::Aligreen::Callback, ALIYUN::Aligreen::ImageLib, ALIYUN::Aligreen::KeywordLib, ALIYUN::Aligreen::OssStockTask, ALIYUN::MOBI::App, DATASOURCE::MOBI::Workspaces, ALIYUN::APIG::ApiAttachment, ALIYUN::APIG::Domain, ALIYUN::APIG::Environment, ALIYUN::APIG::Gateway, ALIYUN::APIG::HttpApi, ALIYUN::APIG::Operation, ALIYUN::APIG::Plugin, ALIYUN::APIG::PluginAttachment, ALIYUN::APIG::PluginClass, ALIYUN::APIG::Policy, ALIYUN::APIG::Route, ALIYUN::APIG::Service, ALIYUN::PAIDatasetAcc::Endpoint).

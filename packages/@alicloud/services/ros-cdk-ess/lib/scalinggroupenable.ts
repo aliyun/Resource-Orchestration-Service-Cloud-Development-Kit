@@ -53,55 +53,101 @@ export interface ScalingGroupEnableProps {
 }
 
 /**
+ * Represents a `ScalingGroupEnable`.
+ */
+export interface IScalingGroupEnable extends ros.IResource {
+    readonly props: ScalingGroupEnableProps;
+
+    /**
+     * Attribute LifecycleState: The scaling group status
+     */
+    readonly attrLifecycleState: ros.IResolvable | string;
+
+    /**
+     * Attribute ScalingGroupId: The scaling group id
+     */
+    readonly attrScalingGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute ScalingInstanceDetails: Detail information of auto created scaling instances
+     */
+    readonly attrScalingInstanceDetails: ros.IResolvable | string;
+
+    /**
+     * Attribute ScalingInstances: The auto created scaling instances
+     */
+    readonly attrScalingInstances: ros.IResolvable | string;
+
+    /**
+     * Attribute ScalingRuleArisExecuteErrorInfo: The error info of the execution of scaling rule aris
+     */
+    readonly attrScalingRuleArisExecuteErrorInfo: ros.IResolvable | string;
+
+    /**
+     * Attribute ScalingRuleArisExecuteResultInstancesAdded: Instances added via the execution of scaling rule aris
+     */
+    readonly attrScalingRuleArisExecuteResultInstancesAdded: ros.IResolvable | string;
+
+    /**
+     * Attribute ScalingRuleArisExecuteResultInstancesRemoved: Instances removed via the execution of scaling rule aris
+     */
+    readonly attrScalingRuleArisExecuteResultInstancesRemoved: ros.IResolvable | string;
+
+    /**
+     * Attribute ScalingRuleArisExecuteResultNumberOfAddedInstances: The number of added vm via the execution of scaling rule aris
+     */
+    readonly attrScalingRuleArisExecuteResultNumberOfAddedInstances: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScalingGroupEnable`, which is used to enable a scaling group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosScalingGroupEnable`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroupenable
  */
-export class ScalingGroupEnable extends ros.Resource {
+export class ScalingGroupEnable extends ros.Resource implements IScalingGroupEnable {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ScalingGroupEnableProps;
+    public readonly props: ScalingGroupEnableProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute LifecycleState: The scaling group status
      */
-    public readonly attrLifecycleState: ros.IResolvable;
+    public readonly attrLifecycleState: ros.IResolvable | string;
 
     /**
      * Attribute ScalingGroupId: The scaling group id
      */
-    public readonly attrScalingGroupId: ros.IResolvable;
+    public readonly attrScalingGroupId: ros.IResolvable | string;
 
     /**
      * Attribute ScalingInstanceDetails: Detail information of auto created scaling instances
      */
-    public readonly attrScalingInstanceDetails: ros.IResolvable;
+    public readonly attrScalingInstanceDetails: ros.IResolvable | string;
 
     /**
      * Attribute ScalingInstances: The auto created scaling instances
      */
-    public readonly attrScalingInstances: ros.IResolvable;
+    public readonly attrScalingInstances: ros.IResolvable | string;
 
     /**
      * Attribute ScalingRuleArisExecuteErrorInfo: The error info of the execution of scaling rule aris
      */
-    public readonly attrScalingRuleArisExecuteErrorInfo: ros.IResolvable;
+    public readonly attrScalingRuleArisExecuteErrorInfo: ros.IResolvable | string;
 
     /**
      * Attribute ScalingRuleArisExecuteResultInstancesAdded: Instances added via the execution of scaling rule aris
      */
-    public readonly attrScalingRuleArisExecuteResultInstancesAdded: ros.IResolvable;
+    public readonly attrScalingRuleArisExecuteResultInstancesAdded: ros.IResolvable | string;
 
     /**
      * Attribute ScalingRuleArisExecuteResultInstancesRemoved: Instances removed via the execution of scaling rule aris
      */
-    public readonly attrScalingRuleArisExecuteResultInstancesRemoved: ros.IResolvable;
+    public readonly attrScalingRuleArisExecuteResultInstancesRemoved: ros.IResolvable | string;
 
     /**
      * Attribute ScalingRuleArisExecuteResultNumberOfAddedInstances: The number of added vm via the execution of scaling rule aris
      */
-    public readonly attrScalingRuleArisExecuteResultNumberOfAddedInstances: ros.IResolvable;
+    public readonly attrScalingRuleArisExecuteResultNumberOfAddedInstances: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

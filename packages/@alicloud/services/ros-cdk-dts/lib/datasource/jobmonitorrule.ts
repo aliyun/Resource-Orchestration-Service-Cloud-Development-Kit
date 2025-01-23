@@ -24,50 +24,91 @@ export interface JobMonitorRuleProps {
 }
 
 /**
+ * Represents a `JobMonitorRule`.
+ */
+export interface IJobMonitorRule extends ros.IResource {
+    readonly props: JobMonitorRuleProps;
+
+    /**
+     * Attribute DelayRuleTime: The threshold that triggers the alert.
+     */
+    readonly attrDelayRuleTime: ros.IResolvable | string;
+
+    /**
+     * Attribute DtsJobId: The ID of the data migration, data synchronization, or change tracking task.
+     */
+    readonly attrDtsJobId: ros.IResolvable | string;
+
+    /**
+     * Attribute Period: The statistical period for incremental validation tasks, in minutes.
+     */
+    readonly attrPeriod: ros.IResolvable | string;
+
+    /**
+     * Attribute Phone: The mobile phone numbers that receive alert notifications. Multiple mobile numbers are separated by commas (,).
+     */
+    readonly attrPhone: ros.IResolvable | string;
+
+    /**
+     * Attribute State: Indicates whether the monitoring rule is enabled.
+     */
+    readonly attrState: ros.IResolvable | string;
+
+    /**
+     * Attribute Times: The number of cycles for the incremental validation task.
+     */
+    readonly attrTimes: ros.IResolvable | string;
+
+    /**
+     * Attribute Type: The type of the monitoring rule.
+     */
+    readonly attrType: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::DTS::JobMonitorRule`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosJobMonitorRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dts-jobmonitorrule
  */
-export class JobMonitorRule extends ros.Resource {
+export class JobMonitorRule extends ros.Resource implements IJobMonitorRule {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: JobMonitorRuleProps;
+    public readonly props: JobMonitorRuleProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DelayRuleTime: The threshold that triggers the alert.
      */
-    public readonly attrDelayRuleTime: ros.IResolvable;
+    public readonly attrDelayRuleTime: ros.IResolvable | string;
 
     /**
      * Attribute DtsJobId: The ID of the data migration, data synchronization, or change tracking task.
      */
-    public readonly attrDtsJobId: ros.IResolvable;
+    public readonly attrDtsJobId: ros.IResolvable | string;
 
     /**
      * Attribute Period: The statistical period for incremental validation tasks, in minutes.
      */
-    public readonly attrPeriod: ros.IResolvable;
+    public readonly attrPeriod: ros.IResolvable | string;
 
     /**
      * Attribute Phone: The mobile phone numbers that receive alert notifications. Multiple mobile numbers are separated by commas (,).
      */
-    public readonly attrPhone: ros.IResolvable;
+    public readonly attrPhone: ros.IResolvable | string;
 
     /**
      * Attribute State: Indicates whether the monitoring rule is enabled.
      */
-    public readonly attrState: ros.IResolvable;
+    public readonly attrState: ros.IResolvable | string;
 
     /**
      * Attribute Times: The number of cycles for the incremental validation task.
      */
-    public readonly attrTimes: ros.IResolvable;
+    public readonly attrTimes: ros.IResolvable | string;
 
     /**
      * Attribute Type: The type of the monitoring rule.
      */
-    public readonly attrType: ros.IResolvable;
+    public readonly attrType: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

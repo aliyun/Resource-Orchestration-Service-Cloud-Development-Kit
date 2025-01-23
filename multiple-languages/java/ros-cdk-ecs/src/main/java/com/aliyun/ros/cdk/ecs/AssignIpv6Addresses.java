@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::AssignIpv6Addresses</code>, which is used to assign one or more IPv6 addresses to an elastic network interface (ENI).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:06.927Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:37.791Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.AssignIpv6Addresses")
-public class AssignIpv6Addresses extends com.aliyun.ros.cdk.core.Resource {
+public class AssignIpv6Addresses extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IAssignIpv6Addresses {
 
     protected AssignIpv6Addresses(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -43,22 +43,30 @@ public class AssignIpv6Addresses extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute Ipv6Addresses: Assigned IPv6 addresses.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrIpv6Addresses() {
-        return software.amazon.jsii.Kernel.get(this, "attrIpv6Addresses", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrIpv6Addresses() {
+        return software.amazon.jsii.Kernel.get(this, "attrIpv6Addresses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute Ipv6AddressIds: Assigned IPv6 address IDs.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrIpv6AddressIds() {
-        return software.amazon.jsii.Kernel.get(this, "attrIpv6AddressIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrIpv6AddressIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrIpv6AddressIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute NetworkInterfaceId: Elastic network interface ID.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrNetworkInterfaceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrNetworkInterfaceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrNetworkInterfaceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrNetworkInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.AssignIpv6AddressesProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.AssignIpv6AddressesProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -75,14 +83,6 @@ public class AssignIpv6Addresses extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.AssignIpv6AddressesProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.AssignIpv6AddressesProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.AssignIpv6AddressesProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {
@@ -176,7 +176,7 @@ public class AssignIpv6Addresses extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property ipv6Addresses: Specify one or more IPv6 addresses for the elastic NIC.
          * <p>
-         * Currently, the maximum list size is 1. Example value: 2001:db8:1234:1a00::*** .
+         * Currently, the maximum list size is 10. Example value: 2001:db8:1234:1a00::*** .
          * Note You cannot specify the parameters Ipv6Addresses and Ipv6AddressCount at the same time.
          * <p>
          * @return {@code this}
@@ -189,7 +189,7 @@ public class AssignIpv6Addresses extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property ipv6Addresses: Specify one or more IPv6 addresses for the elastic NIC.
          * <p>
-         * Currently, the maximum list size is 1. Example value: 2001:db8:1234:1a00::*** .
+         * Currently, the maximum list size is 10. Example value: 2001:db8:1234:1a00::*** .
          * Note You cannot specify the parameters Ipv6Addresses and Ipv6AddressCount at the same time.
          * <p>
          * @return {@code this}
@@ -197,6 +197,48 @@ public class AssignIpv6Addresses extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder ipv6Addresses(final com.aliyun.ros.cdk.core.IResolvable ipv6Addresses) {
             this.props.ipv6Addresses(ipv6Addresses);
+            return this;
+        }
+
+        /**
+         * Property ipv6PrefixCount: IPv6 prefix specified number of randomly generated interfaces elasticity.
+         * <p>
+         * @return {@code this}
+         * @param ipv6PrefixCount Property ipv6PrefixCount: IPv6 prefix specified number of randomly generated interfaces elasticity. This parameter is required.
+         */
+        public Builder ipv6PrefixCount(final java.lang.Number ipv6PrefixCount) {
+            this.props.ipv6PrefixCount(ipv6PrefixCount);
+            return this;
+        }
+        /**
+         * Property ipv6PrefixCount: IPv6 prefix specified number of randomly generated interfaces elasticity.
+         * <p>
+         * @return {@code this}
+         * @param ipv6PrefixCount Property ipv6PrefixCount: IPv6 prefix specified number of randomly generated interfaces elasticity. This parameter is required.
+         */
+        public Builder ipv6PrefixCount(final com.aliyun.ros.cdk.core.IResolvable ipv6PrefixCount) {
+            this.props.ipv6PrefixCount(ipv6PrefixCount);
+            return this;
+        }
+
+        /**
+         * Property ipv6Prefixes: Specify one or more IPv6 prefixes for the elastic NIC.
+         * <p>
+         * @return {@code this}
+         * @param ipv6Prefixes Property ipv6Prefixes: Specify one or more IPv6 prefixes for the elastic NIC. This parameter is required.
+         */
+        public Builder ipv6Prefixes(final java.util.List<? extends java.lang.Object> ipv6Prefixes) {
+            this.props.ipv6Prefixes(ipv6Prefixes);
+            return this;
+        }
+        /**
+         * Property ipv6Prefixes: Specify one or more IPv6 prefixes for the elastic NIC.
+         * <p>
+         * @return {@code this}
+         * @param ipv6Prefixes Property ipv6Prefixes: Specify one or more IPv6 prefixes for the elastic NIC. This parameter is required.
+         */
+        public Builder ipv6Prefixes(final com.aliyun.ros.cdk.core.IResolvable ipv6Prefixes) {
+            this.props.ipv6Prefixes(ipv6Prefixes);
             return this;
         }
 

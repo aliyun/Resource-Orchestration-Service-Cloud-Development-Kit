@@ -46,25 +46,41 @@ export interface NetworkAclsProps {
 }
 
 /**
+ * Represents a `NetworkAcls`.
+ */
+export interface INetworkAcls extends ros.IResource {
+    readonly props: NetworkAclsProps;
+
+    /**
+     * Attribute NetworkAclIds: The list of The network acl ids.
+     */
+    readonly attrNetworkAclIds: ros.IResolvable | string;
+
+    /**
+     * Attribute NetworkAcls: The list of The network acls.
+     */
+    readonly attrNetworkAcls: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::NetworkAcls`, which is used to query created network access control lists (ACLs).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNetworkAcls`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-networkacls
  */
-export class NetworkAcls extends ros.Resource {
+export class NetworkAcls extends ros.Resource implements INetworkAcls {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: NetworkAclsProps;
+    public readonly props: NetworkAclsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute NetworkAclIds: The list of The network acl ids.
      */
-    public readonly attrNetworkAclIds: ros.IResolvable;
+    public readonly attrNetworkAclIds: ros.IResolvable | string;
 
     /**
      * Attribute NetworkAcls: The list of The network acls.
      */
-    public readonly attrNetworkAcls: ros.IResolvable;
+    public readonly attrNetworkAcls: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

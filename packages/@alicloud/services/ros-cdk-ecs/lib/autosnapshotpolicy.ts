@@ -41,9 +41,27 @@ export interface AutoSnapshotPolicyProps {
     readonly autoSnapshotPolicyName?: string | ros.IResolvable;
 
     /**
+     * Property copiedSnapshotsRetentionDays: Retention time in days for replicated snapshots across geographies. Range:
+     * -1: Permanent storage
+     * 1-65535: Specifies the number of days to save
+     * Default value: -1
+     */
+    readonly copiedSnapshotsRetentionDays?: number | ros.IResolvable;
+
+    /**
+     * Property copyEncryptionConfiguration: The encryption configuration for copied snapshots.
+     */
+    readonly copyEncryptionConfiguration?: RosAutoSnapshotPolicy.CopyEncryptionConfigurationProperty | ros.IResolvable;
+
+    /**
      * Property diskIds: The disk ID. When you want to apply the automatic snapshot policy to multiple disks, you can set the DiskIds to an array. The format is list of ["d-xxxxxxxxx", "d-yyyyyyyyy", ..., "d-zzzzzzzzz"] and the IDs are separated by commas (,).
      */
     readonly diskIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property enableCrossRegionCopy: Whether to enable cross-region copying of snapshots.
+     */
+    readonly enableCrossRegionCopy?: boolean | ros.IResolvable;
 
     /**
      * Property resourceGroupId: Resource group id.
@@ -54,23 +72,39 @@ export interface AutoSnapshotPolicyProps {
      * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosAutoSnapshotPolicy.TagsProperty[];
+
+    /**
+     * Property targetCopyRegions: The target region of the snapshot is replicated across geographies. Setting a target region is currently supported.
+     */
+    readonly targetCopyRegions?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
 
+/**
+ * Represents a `AutoSnapshotPolicy`.
+ */
+export interface IAutoSnapshotPolicy extends ros.IResource {
+    readonly props: AutoSnapshotPolicyProps;
+
+    /**
+     * Attribute AutoSnapshotPolicyId: The automatic snapshot policy ID.
+     */
+    readonly attrAutoSnapshotPolicyId: ros.IResolvable | string;
+}
 /**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::AutoSnapshotPolicy`, which is used to create an automatic snapshot policy.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAutoSnapshotPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autosnapshotpolicy
  */
-export class AutoSnapshotPolicy extends ros.Resource {
+export class AutoSnapshotPolicy extends ros.Resource implements IAutoSnapshotPolicy {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AutoSnapshotPolicyProps;
+    public readonly props: AutoSnapshotPolicyProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AutoSnapshotPolicyId: The automatic snapshot policy ID.
      */
-    public readonly attrAutoSnapshotPolicyId: ros.IResolvable;
+    public readonly attrAutoSnapshotPolicyId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -87,11 +121,15 @@ export class AutoSnapshotPolicy extends ros.Resource {
         const rosAutoSnapshotPolicy = new RosAutoSnapshotPolicy(this, id,  {
             timePoints: props.timePoints,
             diskIds: props.diskIds,
+            targetCopyRegions: props.targetCopyRegions,
             resourceGroupId: props.resourceGroupId,
+            enableCrossRegionCopy: props.enableCrossRegionCopy,
+            copyEncryptionConfiguration: props.copyEncryptionConfiguration,
             retentionDays: props.retentionDays,
             repeatWeekdays: props.repeatWeekdays,
             autoSnapshotPolicyName: props.autoSnapshotPolicyName,
             tags: props.tags,
+            copiedSnapshotsRetentionDays: props.copiedSnapshotsRetentionDays,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAutoSnapshotPolicy;
         this.attrAutoSnapshotPolicyId = rosAutoSnapshotPolicy.attrAutoSnapshotPolicyId;

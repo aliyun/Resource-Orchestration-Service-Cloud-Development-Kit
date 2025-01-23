@@ -142,40 +142,71 @@ export interface InstanceProps {
 }
 
 /**
+ * Represents a `Instance`.
+ */
+export interface IInstance extends ros.IResource {
+    readonly props: InstanceProps;
+
+    /**
+     * Attribute ConnectionDomain: The internal endpoint of the instance.
+     */
+    readonly attrConnectionDomain: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: The globally unique identifier (GUID) of the instance.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceName: The name of the instance.
+     */
+    readonly attrInstanceName: ros.IResolvable | string;
+
+    /**
+     * Attribute Port: Port of created instance.
+     */
+    readonly attrPort: ros.IResolvable | string;
+
+    /**
+     * Attribute QPS: QPS.
+     */
+    readonly attrQps: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::Memcache::Instance`ALIYUN::MEMCACHE::Instance is used to create an ApsaraDB for Memcache (OCS) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-memcache-instance
  */
-export class Instance extends ros.Resource {
+export class Instance extends ros.Resource implements IInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InstanceProps;
+    public readonly props: InstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ConnectionDomain: The internal endpoint of the instance.
      */
-    public readonly attrConnectionDomain: ros.IResolvable;
+    public readonly attrConnectionDomain: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: The globally unique identifier (GUID) of the instance.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute InstanceName: The name of the instance.
      */
-    public readonly attrInstanceName: ros.IResolvable;
+    public readonly attrInstanceName: ros.IResolvable | string;
 
     /**
      * Attribute Port: Port of created instance.
      */
-    public readonly attrPort: ros.IResolvable;
+    public readonly attrPort: ros.IResolvable | string;
 
     /**
      * Attribute QPS: QPS.
      */
-    public readonly attrQps: ros.IResolvable;
+    public readonly attrQps: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::EBS::DiskReplicaGroups`, which is used to query the information about replication pair-consistent groups.
 type DiskReplicaGroups interface {
 	alicloudroscdkcore.Resource
+	IDiskReplicaGroups
 	// Attribute DiskReplicaGroups: The list of disk replica groups.
-	AttrDiskReplicaGroups() alicloudroscdkcore.IResolvable
+	AttrDiskReplicaGroups() interface{}
 	// Attribute ReplicaGroupIds: The list of replica group IDs.
-	AttrReplicaGroupIds() alicloudroscdkcore.IResolvable
+	AttrReplicaGroupIds() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type DiskReplicaGroups interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DiskReplicaGroupsProps
-	SetProps(val *DiskReplicaGroupsProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type DiskReplicaGroups interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type DiskReplicaGroups interface {
 // The jsii proxy struct for DiskReplicaGroups
 type jsiiProxy_DiskReplicaGroups struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDiskReplicaGroups
 }
 
-func (j *jsiiProxy_DiskReplicaGroups) AttrDiskReplicaGroups() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DiskReplicaGroups) AttrDiskReplicaGroups() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDiskReplicaGroups",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_DiskReplicaGroups) AttrDiskReplicaGroups() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_DiskReplicaGroups) AttrReplicaGroupIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DiskReplicaGroups) AttrReplicaGroupIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrReplicaGroupIds",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_DiskReplicaGroups) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DiskReplicaGroups) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_DiskReplicaGroups)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DiskReplicaGroups)SetProps(val *DiskReplicaGroupsProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_DiskReplicaGroups)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (d *jsiiProxy_DiskReplicaGroups) ApplyRemovalPolicy(policy alicloudroscdkco
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_DiskReplicaGroups) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DiskReplicaGroups) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DiskReplicaGroups) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_DiskReplicaGroups) GeneratePhysicalName() *string {

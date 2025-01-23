@@ -51,20 +51,31 @@ export interface DeliverTaskProps {
 }
 
 /**
+ * Represents a `DeliverTask`.
+ */
+export interface IDeliverTask extends ros.IResource {
+    readonly props: DeliverTaskProps;
+
+    /**
+     * Attribute TaskId: The ID of the task.
+     */
+    readonly attrTaskId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::DeliverTask`, which is used to create a delivery task.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDeliverTask`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-delivertask
  */
-export class DeliverTask extends ros.Resource {
+export class DeliverTask extends ros.Resource implements IDeliverTask {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DeliverTaskProps;
+    public readonly props: DeliverTaskProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute TaskId: The ID of the task.
      */
-    public readonly attrTaskId: ros.IResolvable;
+    public readonly attrTaskId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

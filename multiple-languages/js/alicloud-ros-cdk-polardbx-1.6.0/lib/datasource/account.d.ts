@@ -1,0 +1,87 @@
+import * as ros from '@alicloud/ros-cdk-core';
+import { RosAccount } from './polardbx.generated';
+export { RosAccount as AccountProperty };
+/**
+ * Properties for defining a `Account`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardbx-account
+ */
+export interface AccountProps {
+    /**
+     * Property dbInstanceId: The ID of the PolarDB-X 2.0 instance.
+     */
+    readonly dbInstanceId: string | ros.IResolvable;
+    /**
+     * Property polarDbxAccountName: The username of the account that you want to query. If you want to query information about a specific account, you must specify this parameter.
+     */
+    readonly polarDbxAccountName: string | ros.IResolvable;
+    /**
+     * Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+}
+/**
+ * Represents a `Account`.
+ */
+export interface IAccount extends ros.IResource {
+    readonly props: AccountProps;
+    /**
+     * Attribute AccountDescription: The description of the account.
+     */
+    readonly attrAccountDescription: ros.IResolvable | string;
+    /**
+     * Attribute AccountType: The type of the account.
+     */
+    readonly attrAccountType: ros.IResolvable | string;
+    /**
+     * Attribute CreateTime: The point in time when the account was created.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+    /**
+     * Attribute DBInstanceId: The ID of the PolarDB-X 2.0 instance.
+     */
+    readonly attrDbInstanceId: ros.IResolvable | string;
+    /**
+     * Attribute PolarDBXAccountName: The username of the account.
+     */
+    readonly attrPolarDbxAccountName: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::PolarDBX::Account`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccount`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardbx-account
+ */
+export declare class Account extends ros.Resource implements IAccount {
+    protected scope: ros.Construct;
+    protected id: string;
+    readonly props: AccountProps;
+    protected enableResourcePropertyConstraint: boolean;
+    /**
+     * Attribute AccountDescription: The description of the account.
+     */
+    readonly attrAccountDescription: ros.IResolvable | string;
+    /**
+     * Attribute AccountType: The type of the account.
+     */
+    readonly attrAccountType: ros.IResolvable | string;
+    /**
+     * Attribute CreateTime: The point in time when the account was created.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+    /**
+     * Attribute DBInstanceId: The ID of the PolarDB-X 2.0 instance.
+     */
+    readonly attrDbInstanceId: ros.IResolvable | string;
+    /**
+     * Attribute PolarDBXAccountName: The username of the account.
+     */
+    readonly attrPolarDbxAccountName: ros.IResolvable | string;
+    /**
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: AccountProps, enableResourcePropertyConstraint?: boolean);
+}

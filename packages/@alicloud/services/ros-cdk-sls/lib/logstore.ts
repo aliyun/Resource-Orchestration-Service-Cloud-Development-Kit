@@ -82,25 +82,41 @@ export interface LogstoreProps {
 }
 
 /**
+ * Represents a `Logstore`.
+ */
+export interface ILogstore extends ros.IResource {
+    readonly props: LogstoreProps;
+
+    /**
+     * Attribute LogstoreName: Logstore name.
+     */
+    readonly attrLogstoreName: ros.IResolvable | string;
+
+    /**
+     * Attribute ProjectName: Project name.
+     */
+    readonly attrProjectName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Logstore`, which is used to create a Logstore in a Simple Log Service (SLS) project.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLogstore`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logstore
  */
-export class Logstore extends ros.Resource {
+export class Logstore extends ros.Resource implements ILogstore {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: LogstoreProps;
+    public readonly props: LogstoreProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute LogstoreName: Logstore name.
      */
-    public readonly attrLogstoreName: ros.IResolvable;
+    public readonly attrLogstoreName: ros.IResolvable | string;
 
     /**
      * Attribute ProjectName: Project name.
      */
-    public readonly attrProjectName: ros.IResolvable;
+    public readonly attrProjectName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

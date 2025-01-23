@@ -42,6 +42,8 @@ type RosListener interface {
 	SetEnableHttp2(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	FullNatEnabled() interface{}
+	SetFullNatEnabled(val interface{})
 	Gzip() interface{}
 	SetGzip(val interface{})
 	HealthCheck() interface{}
@@ -163,6 +165,9 @@ type RosListener interface {
 	AddRosDependency(target *string)
 	// Sets the deletion policy of the resource based on the removal policy specified.
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy, options *alicloudroscdkcore.RemovalPolicyOptions)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDesc() *string
+	FetchRosDependency() *[]*string
 	// Returns a token for an runtime attribute of this resource.
 	//
 	// Ideally, use generated attribute accessors (e.g. `resource.arn`), but this can be used for future compatibility
@@ -370,6 +375,16 @@ func (j *jsiiProxy_RosListener) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosListener) FullNatEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"fullNatEnabled",
 		&returns,
 	)
 	return returns
@@ -795,6 +810,17 @@ func (j *jsiiProxy_RosListener)SetEnableResourcePropertyConstraint(val *bool) {
 	)
 }
 
+func (j *jsiiProxy_RosListener)SetFullNatEnabled(val interface{}) {
+	if err := j.validateSetFullNatEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"fullNatEnabled",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosListener)SetGzip(val interface{}) {
 	if err := j.validateSetGzipParameters(val); err != nil {
 		panic(err)
@@ -1185,6 +1211,45 @@ func (r *jsiiProxy_RosListener) ApplyRemovalPolicy(policy alicloudroscdkcore.Rem
 		"applyRemovalPolicy",
 		[]interface{}{policy, options},
 	)
+}
+
+func (r *jsiiProxy_RosListener) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		r,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_RosListener) FetchDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		r,
+		"fetchDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_RosListener) FetchRosDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		r,
+		"fetchRosDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (r *jsiiProxy_RosListener) GetAtt(attributeName *string) alicloudroscdkcore.Reference {

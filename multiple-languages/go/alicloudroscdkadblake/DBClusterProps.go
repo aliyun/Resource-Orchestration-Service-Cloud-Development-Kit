@@ -37,17 +37,32 @@ type DBClusterProps struct {
 	//
 	// Note You can call the  DescribeBackups  operation to query the backup sets of the cluster.
 	BackupSetId interface{} `field:"optional" json:"backupSetId" yaml:"backupSetId"`
+	// Property cloneSourceRegionId: The ID of the source region where the cluster is located.
+	CloneSourceRegionId interface{} `field:"optional" json:"cloneSourceRegionId" yaml:"cloneSourceRegionId"`
 	// Property dbClusterDescription: The description of the cluster.
 	//
 	// The description cannot start with http:\/\/ or https:\/\/.
 	// The description must be 2 to 256 characters in length.
 	DbClusterDescription interface{} `field:"optional" json:"dbClusterDescription" yaml:"dbClusterDescription"`
+	// Property dbClusterNetworkType: The network type of the cluster.
+	//
+	// Valid values:
+	// VPC.
+	DbClusterNetworkType interface{} `field:"optional" json:"dbClusterNetworkType" yaml:"dbClusterNetworkType"`
+	// Property diskEncryption: Specifies whether to encrypt the disk.
+	//
+	// Valid values:
+	// true
+	// false (default).
+	DiskEncryption interface{} `field:"optional" json:"diskEncryption" yaml:"diskEncryption"`
 	// Property enableDefaultResourcePool: Specifies whether to allocate all reserved computing resources to the user_default resource group.
 	//
 	// Valid values:
 	// true (default)
 	// false.
 	EnableDefaultResourcePool interface{} `field:"optional" json:"enableDefaultResourcePool" yaml:"enableDefaultResourcePool"`
+	// Property kmsId:.
+	KmsId interface{} `field:"optional" json:"kmsId" yaml:"kmsId"`
 	// Property period: The subscription duration of the subscription cluster.
 	//
 	// Valid values when Period is set to Year: 1 to 3 (integer).
@@ -61,6 +76,15 @@ type DBClusterProps struct {
 	// Month: subscription on a monthly basis.
 	// Note This parameter must be specified when PayType is set to Prepaid.
 	PeriodType interface{} `field:"optional" json:"periodType" yaml:"periodType"`
+	// Property productForm: Valid values: IntegrationForm LegacyForm.
+	ProductForm interface{} `field:"optional" json:"productForm" yaml:"productForm"`
+	// Property reservedNodeCount: The number of reserved nodes.
+	//
+	// Must be 1 for basic version and multiple
+	// of 3 for enterprise version.
+	ReservedNodeCount interface{} `field:"optional" json:"reservedNodeCount" yaml:"reservedNodeCount"`
+	// Property reservedNodeSize: The size of each reserved node.
+	ReservedNodeSize interface{} `field:"optional" json:"reservedNodeSize" yaml:"reservedNodeSize"`
 	// Property resourceGroupId: The resource group ID.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 	// Property restoreToTime: The point in time to which you want to restore data from the backup set.

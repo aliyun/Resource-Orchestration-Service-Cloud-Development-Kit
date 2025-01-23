@@ -168,7 +168,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if(properties.edition && (typeof properties.edition) !== 'object') {
         errors.collect(ros.propertyValidator('edition', ros.validateAllowedValues)({
           data: properties.edition,
-          allowedValues: ["Anti-virus","Advanced","Enterprise","Ultimate"],
+          allowedValues: ["Anti-virus","Advanced","Enterprise","Ultimate","Value-added Plan"],
         }));
     }
     errors.collect(ros.propertyValidator('edition', ros.validateString)(properties.edition));

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gpdb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::GPDB::DBInstance</code>, which is used to create an AnalyticDB for PostgreSQL instance in reserved storage mode.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:08.766Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:40.611Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.RosDBInstance")
 public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -237,6 +237,24 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setDbInstanceMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "dbInstanceMode", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDeployMode() {
+        return software.amazon.jsii.Kernel.get(this, "deployMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDeployMode(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "deployMode", value);
+    }
+
+    /**
+     */
+    public void setDeployMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "deployMode", value);
     }
 
     /**
@@ -525,6 +543,42 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setServerlessResource(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "serverlessResource", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getStandbyVSwitchId() {
+        return software.amazon.jsii.Kernel.get(this, "standbyVSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setStandbyVSwitchId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "standbyVSwitchId", value);
+    }
+
+    /**
+     */
+    public void setStandbyVSwitchId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "standbyVSwitchId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getStandbyZoneId() {
+        return software.amazon.jsii.Kernel.get(this, "standbyZoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setStandbyZoneId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "standbyZoneId", value);
+    }
+
+    /**
+     */
+    public void setStandbyZoneId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "standbyZoneId", value);
     }
 
     /**
@@ -942,6 +996,23 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param deployMode This parameter is required.
+         */
+        public Builder deployMode(final java.lang.String deployMode) {
+            this.props.deployMode(deployMode);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param deployMode This parameter is required.
+         */
+        public Builder deployMode(final com.aliyun.ros.cdk.core.IResolvable deployMode) {
+            this.props.deployMode(deployMode);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param encryptionKey This parameter is required.
          */
         public Builder encryptionKey(final java.lang.String encryptionKey) {
@@ -1209,6 +1280,40 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder serverlessResource(final com.aliyun.ros.cdk.core.IResolvable serverlessResource) {
             this.props.serverlessResource(serverlessResource);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param standbyVSwitchId This parameter is required.
+         */
+        public Builder standbyVSwitchId(final java.lang.String standbyVSwitchId) {
+            this.props.standbyVSwitchId(standbyVSwitchId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param standbyVSwitchId This parameter is required.
+         */
+        public Builder standbyVSwitchId(final com.aliyun.ros.cdk.core.IResolvable standbyVSwitchId) {
+            this.props.standbyVSwitchId(standbyVSwitchId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param standbyZoneId This parameter is required.
+         */
+        public Builder standbyZoneId(final java.lang.String standbyZoneId) {
+            this.props.standbyZoneId(standbyZoneId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param standbyZoneId This parameter is required.
+         */
+        public Builder standbyZoneId(final com.aliyun.ros.cdk.core.IResolvable standbyZoneId) {
+            this.props.standbyZoneId(standbyZoneId);
             return this;
         }
 

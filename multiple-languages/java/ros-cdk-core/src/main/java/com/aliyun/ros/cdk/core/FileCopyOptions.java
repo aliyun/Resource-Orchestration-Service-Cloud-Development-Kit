@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Options applied when copying directories into the staging location.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:03.635Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:33.641Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.FileCopyOptions")
 @software.amazon.jsii.Jsii.Proxy(FileCopyOptions.Jsii$Proxy.class)
 public interface FileCopyOptions extends software.amazon.jsii.JsiiSerializable {

@@ -24,25 +24,41 @@ export interface DiskReplicaPairsProps {
 }
 
 /**
+ * Represents a `DiskReplicaPairs`.
+ */
+export interface IDiskReplicaPairs extends ros.IResource {
+    readonly props: DiskReplicaPairsProps;
+
+    /**
+     * Attribute DiskReplicaPairs: The list of disk replica pairs.
+     */
+    readonly attrDiskReplicaPairs: ros.IResolvable | string;
+
+    /**
+     * Attribute ReplicaPairIds: The list of replica pair IDs.
+     */
+    readonly attrReplicaPairIds: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::EBS::DiskReplicaPairs`, which is used to query the information about replication pairs.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDiskReplicaPairs`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ebs-diskreplicapairs
  */
-export class DiskReplicaPairs extends ros.Resource {
+export class DiskReplicaPairs extends ros.Resource implements IDiskReplicaPairs {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DiskReplicaPairsProps;
+    public readonly props: DiskReplicaPairsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DiskReplicaPairs: The list of disk replica pairs.
      */
-    public readonly attrDiskReplicaPairs: ros.IResolvable;
+    public readonly attrDiskReplicaPairs: ros.IResolvable | string;
 
     /**
      * Attribute ReplicaPairIds: The list of replica pair IDs.
      */
-    public readonly attrReplicaPairIds: ros.IResolvable;
+    public readonly attrReplicaPairIds: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

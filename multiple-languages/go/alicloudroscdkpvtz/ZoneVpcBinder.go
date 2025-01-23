@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::PVTZ::ZoneVpcBinder`, which is used to bind a private zone to or unbind a private zone from a virtual private cloud (VPC).
 type ZoneVpcBinder interface {
 	alicloudroscdkcore.Resource
+	IZoneVpcBinder
 	// Attribute Vpcs: Vpc list.
-	AttrVpcs() alicloudroscdkcore.IResolvable
+	AttrVpcs() interface{}
 	// Attribute ZoneId: Zone Id.
-	AttrZoneId() alicloudroscdkcore.IResolvable
+	AttrZoneId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type ZoneVpcBinder interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ZoneVpcBinderProps
-	SetProps(val *ZoneVpcBinderProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type ZoneVpcBinder interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type ZoneVpcBinder interface {
 // The jsii proxy struct for ZoneVpcBinder
 type jsiiProxy_ZoneVpcBinder struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IZoneVpcBinder
 }
 
-func (j *jsiiProxy_ZoneVpcBinder) AttrVpcs() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ZoneVpcBinder) AttrVpcs() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVpcs",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_ZoneVpcBinder) AttrVpcs() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_ZoneVpcBinder) AttrZoneId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ZoneVpcBinder) AttrZoneId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrZoneId",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_ZoneVpcBinder) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ZoneVpcBinder) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_ZoneVpcBinder)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ZoneVpcBinder)SetProps(val *ZoneVpcBinderProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_ZoneVpcBinder)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (z *jsiiProxy_ZoneVpcBinder) ApplyRemovalPolicy(policy alicloudroscdkcore.R
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (z *jsiiProxy_ZoneVpcBinder) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		z,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (z *jsiiProxy_ZoneVpcBinder) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		z,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (z *jsiiProxy_ZoneVpcBinder) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		z,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (z *jsiiProxy_ZoneVpcBinder) GeneratePhysicalName() *string {

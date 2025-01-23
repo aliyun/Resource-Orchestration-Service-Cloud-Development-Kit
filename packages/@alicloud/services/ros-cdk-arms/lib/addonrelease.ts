@@ -36,35 +36,61 @@ export interface AddonReleaseProps {
 }
 
 /**
+ * Represents a `AddonRelease`.
+ */
+export interface IAddonRelease extends ros.IResource {
+    readonly props: AddonReleaseProps;
+
+    /**
+     * Attribute Config: AddonRelease configuration information.
+     */
+    readonly attrConfig: ros.IResolvable | string;
+
+    /**
+     * Attribute EnvironmentId: The environment ID.
+     */
+    readonly attrEnvironmentId: ros.IResolvable | string;
+
+    /**
+     * Attribute Release: Release information.
+     */
+    readonly attrRelease: ros.IResolvable | string;
+
+    /**
+     * Attribute ReleaseName: The name of the add-on.
+     */
+    readonly attrReleaseName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::AddonRelease`, which is used to install an add-on release.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAddonRelease`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-addonrelease
  */
-export class AddonRelease extends ros.Resource {
+export class AddonRelease extends ros.Resource implements IAddonRelease {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AddonReleaseProps;
+    public readonly props: AddonReleaseProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Config: AddonRelease configuration information.
      */
-    public readonly attrConfig: ros.IResolvable;
+    public readonly attrConfig: ros.IResolvable | string;
 
     /**
      * Attribute EnvironmentId: The environment ID.
      */
-    public readonly attrEnvironmentId: ros.IResolvable;
+    public readonly attrEnvironmentId: ros.IResolvable | string;
 
     /**
      * Attribute Release: Release information.
      */
-    public readonly attrRelease: ros.IResolvable;
+    public readonly attrRelease: ros.IResolvable | string;
 
     /**
      * Attribute ReleaseName: The name of the add-on.
      */
-    public readonly attrReleaseName: ros.IResolvable;
+    public readonly attrReleaseName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

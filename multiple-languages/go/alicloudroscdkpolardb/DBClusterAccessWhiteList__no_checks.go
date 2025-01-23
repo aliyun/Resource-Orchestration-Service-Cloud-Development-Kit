@@ -52,10 +52,6 @@ func (j *jsiiProxy_DBClusterAccessWhiteList) validateSetIdParameters(val *string
 	return nil
 }
 
-func (j *jsiiProxy_DBClusterAccessWhiteList) validateSetPropsParameters(val *DBClusterAccessWhiteListProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_DBClusterAccessWhiteList) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

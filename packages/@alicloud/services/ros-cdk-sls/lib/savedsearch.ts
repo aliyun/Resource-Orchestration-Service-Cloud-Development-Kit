@@ -21,20 +21,31 @@ export interface SavedsearchProps {
 }
 
 /**
+ * Represents a `Savedsearch`.
+ */
+export interface ISavedsearch extends ros.IResource {
+    readonly props: SavedsearchProps;
+
+    /**
+     * Attribute SavedsearchName: Savedsearch name.
+     */
+    readonly attrSavedsearchName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Savedsearch`, which is used to save search results as a saved search.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSavedsearch`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-savedsearch
  */
-export class Savedsearch extends ros.Resource {
+export class Savedsearch extends ros.Resource implements ISavedsearch {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SavedsearchProps;
+    public readonly props: SavedsearchProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SavedsearchName: Savedsearch name.
      */
-    public readonly attrSavedsearchName: ros.IResolvable;
+    public readonly attrSavedsearchName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

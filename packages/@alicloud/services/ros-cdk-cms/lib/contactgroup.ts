@@ -26,20 +26,31 @@ export interface ContactGroupProps {
 }
 
 /**
+ * Represents a `ContactGroup`.
+ */
+export interface IContactGroup extends ros.IResource {
+    readonly props: ContactGroupProps;
+
+    /**
+     * Attribute ContactGroupName: The name of the alert contact group.
+     */
+    readonly attrContactGroupName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::ContactGroup`, which is used to create an alert contact group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosContactGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-contactgroup
  */
-export class ContactGroup extends ros.Resource {
+export class ContactGroup extends ros.Resource implements IContactGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ContactGroupProps;
+    public readonly props: ContactGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ContactGroupName: The name of the alert contact group.
      */
-    public readonly attrContactGroupName: ros.IResolvable;
+    public readonly attrContactGroupName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

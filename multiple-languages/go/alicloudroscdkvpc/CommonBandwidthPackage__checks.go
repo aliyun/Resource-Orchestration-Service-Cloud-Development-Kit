@@ -163,17 +163,6 @@ func (j *jsiiProxy_CommonBandwidthPackage) validateSetIdParameters(val *string) 
 	return nil
 }
 
-func (j *jsiiProxy_CommonBandwidthPackage) validateSetPropsParameters(val *CommonBandwidthPackageProps) error {
-	if val == nil {
-		return fmt.Errorf("parameter val is required, but nil was provided")
-	}
-	if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (j *jsiiProxy_CommonBandwidthPackage) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")

@@ -43,30 +43,51 @@ export interface AccountProps {
 }
 
 /**
+ * Represents a `Account`.
+ */
+export interface IAccount extends ros.IResource {
+    readonly props: AccountProps;
+
+    /**
+     * Attribute AccountName: The name of the account.
+     */
+    readonly attrAccountName: ros.IResolvable | string;
+
+    /**
+     * Attribute AccountType: The type of the account.
+     */
+    readonly attrAccountType: ros.IResolvable | string;
+
+    /**
+     * Attribute DBClusterId: The ID of the cluster.
+     */
+    readonly attrDbClusterId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ADB::Account`, which is used to create a database account for an AnalyticDB for MySQL cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccount`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-account
  */
-export class Account extends ros.Resource {
+export class Account extends ros.Resource implements IAccount {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AccountProps;
+    public readonly props: AccountProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccountName: The name of the account.
      */
-    public readonly attrAccountName: ros.IResolvable;
+    public readonly attrAccountName: ros.IResolvable | string;
 
     /**
      * Attribute AccountType: The type of the account.
      */
-    public readonly attrAccountType: ros.IResolvable;
+    public readonly attrAccountType: ros.IResolvable | string;
 
     /**
      * Attribute DBClusterId: The ID of the cluster.
      */
-    public readonly attrDbClusterId: ros.IResolvable;
+    public readonly attrDbClusterId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

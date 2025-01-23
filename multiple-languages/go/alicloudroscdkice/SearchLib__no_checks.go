@@ -52,10 +52,6 @@ func (j *jsiiProxy_SearchLib) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_SearchLib) validateSetPropsParameters(val *SearchLibProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_SearchLib) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

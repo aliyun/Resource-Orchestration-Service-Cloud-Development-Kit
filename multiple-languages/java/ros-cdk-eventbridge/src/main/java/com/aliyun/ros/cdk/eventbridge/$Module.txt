@@ -1,3 +1,4 @@
+@alicloud/ros-cdk-eventbridge.IRule=com.aliyun.ros.cdk.eventbridge.IRule
 @alicloud/ros-cdk-eventbridge.RosRule=com.aliyun.ros.cdk.eventbridge.RosRule
 @alicloud/ros-cdk-eventbridge.RosRule.ParamListProperty=com.aliyun.ros.cdk.eventbridge.RosRule$ParamListProperty
 @alicloud/ros-cdk-eventbridge.RosRule.TargetsProperty=com.aliyun.ros.cdk.eventbridge.RosRule$TargetsProperty

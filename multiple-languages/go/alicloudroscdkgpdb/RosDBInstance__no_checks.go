@@ -108,6 +108,10 @@ func (j *jsiiProxy_RosDBInstance) validateSetDbInstanceModeParameters(val interf
 	return nil
 }
 
+func (j *jsiiProxy_RosDBInstance) validateSetDeployModeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosDBInstance) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
 	return nil
 }
@@ -177,6 +181,14 @@ func (j *jsiiProxy_RosDBInstance) validateSetServerlessModeParameters(val interf
 }
 
 func (j *jsiiProxy_RosDBInstance) validateSetServerlessResourceParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDBInstance) validateSetStandbyVSwitchIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDBInstance) validateSetStandbyZoneIdParameters(val interface{}) error {
 	return nil
 }
 

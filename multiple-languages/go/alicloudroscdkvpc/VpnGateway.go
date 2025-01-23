@@ -12,30 +12,40 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpnGateway`, which is used to create a VPN gateway.
 type VpnGateway interface {
 	alicloudroscdkcore.Resource
+	IVpnGateway
 	// Attribute DisasterRecoveryInternetIp: The second IP address assigned by the system to create an IPsec-VPN connection.This attribute is returned only when the VPN gateway supports the dual-tunnel mode.
-	AttrDisasterRecoveryInternetIp() alicloudroscdkcore.IResolvable
+	AttrDisasterRecoveryInternetIp() interface{}
 	// Attribute DisasterRecoveryVSwitchId: The ID of the second vSwitch associated with the VPN gateway.This attribute is returned only when the VPN gateway supports the dual-tunnel mode.
-	AttrDisasterRecoveryVSwitchId() alicloudroscdkcore.IResolvable
+	AttrDisasterRecoveryVSwitchId() interface{}
 	// Attribute InternetIp: The public IP address of the VPN gateway.
-	AttrInternetIp() alicloudroscdkcore.IResolvable
+	AttrInternetIp() interface{}
 	// Attribute OrderId: The order ID.
-	AttrOrderId() alicloudroscdkcore.IResolvable
+	AttrOrderId() interface{}
 	// Attribute Spec: The specification of the VPN gateway.
-	AttrSpec() alicloudroscdkcore.IResolvable
+	AttrSpec() interface{}
 	// Attribute SslMaxConnections: The maximum number of concurrent SSL-VPN connections.
-	AttrSslMaxConnections() alicloudroscdkcore.IResolvable
+	AttrSslMaxConnections() interface{}
 	// Attribute SslVpnInternetIp: The IP address of the SSL-VPN connection.This attribute is returned only when the VPN gateway is a public VPN gateway and supports only the single-tunnel mode. In addition, the VPN gateway must have the SSL-VPN feature enabled.
-	AttrSslVpnInternetIp() alicloudroscdkcore.IResolvable
+	AttrSslVpnInternetIp() interface{}
 	// Attribute VpcId: The ID of the virtual private cloud (VPC) to which the VPN gateway belongs.
-	AttrVpcId() alicloudroscdkcore.IResolvable
+	AttrVpcId() interface{}
 	// Attribute VpnGatewayId: ID of the VPN gateway.
-	AttrVpnGatewayId() alicloudroscdkcore.IResolvable
+	AttrVpnGatewayId() interface{}
 	// Attribute VpnType: The type of the VPN gateway.
-	AttrVpnType() alicloudroscdkcore.IResolvable
+	AttrVpnType() interface{}
 	// Attribute VSwitchId: The ID of the vSwitch to which the VPN gateway belongs.
-	AttrVSwitchId() alicloudroscdkcore.IResolvable
+	AttrVSwitchId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -50,7 +60,6 @@ type VpnGateway interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *VpnGatewayProps
-	SetProps(val *VpnGatewayProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -63,6 +72,9 @@ type VpnGateway interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -115,10 +127,11 @@ type VpnGateway interface {
 // The jsii proxy struct for VpnGateway
 type jsiiProxy_VpnGateway struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IVpnGateway
 }
 
-func (j *jsiiProxy_VpnGateway) AttrDisasterRecoveryInternetIp() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VpnGateway) AttrDisasterRecoveryInternetIp() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDisasterRecoveryInternetIp",
@@ -127,8 +140,8 @@ func (j *jsiiProxy_VpnGateway) AttrDisasterRecoveryInternetIp() alicloudroscdkco
 	return returns
 }
 
-func (j *jsiiProxy_VpnGateway) AttrDisasterRecoveryVSwitchId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VpnGateway) AttrDisasterRecoveryVSwitchId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDisasterRecoveryVSwitchId",
@@ -137,8 +150,8 @@ func (j *jsiiProxy_VpnGateway) AttrDisasterRecoveryVSwitchId() alicloudroscdkcor
 	return returns
 }
 
-func (j *jsiiProxy_VpnGateway) AttrInternetIp() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VpnGateway) AttrInternetIp() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInternetIp",
@@ -147,8 +160,8 @@ func (j *jsiiProxy_VpnGateway) AttrInternetIp() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_VpnGateway) AttrOrderId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VpnGateway) AttrOrderId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOrderId",
@@ -157,8 +170,8 @@ func (j *jsiiProxy_VpnGateway) AttrOrderId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_VpnGateway) AttrSpec() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VpnGateway) AttrSpec() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSpec",
@@ -167,8 +180,8 @@ func (j *jsiiProxy_VpnGateway) AttrSpec() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_VpnGateway) AttrSslMaxConnections() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VpnGateway) AttrSslMaxConnections() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSslMaxConnections",
@@ -177,8 +190,8 @@ func (j *jsiiProxy_VpnGateway) AttrSslMaxConnections() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_VpnGateway) AttrSslVpnInternetIp() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VpnGateway) AttrSslVpnInternetIp() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSslVpnInternetIp",
@@ -187,8 +200,8 @@ func (j *jsiiProxy_VpnGateway) AttrSslVpnInternetIp() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_VpnGateway) AttrVpcId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VpnGateway) AttrVpcId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVpcId",
@@ -197,8 +210,8 @@ func (j *jsiiProxy_VpnGateway) AttrVpcId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_VpnGateway) AttrVpnGatewayId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VpnGateway) AttrVpnGatewayId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVpnGatewayId",
@@ -207,8 +220,8 @@ func (j *jsiiProxy_VpnGateway) AttrVpnGatewayId() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_VpnGateway) AttrVpnType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VpnGateway) AttrVpnType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVpnType",
@@ -217,8 +230,8 @@ func (j *jsiiProxy_VpnGateway) AttrVpnType() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_VpnGateway) AttrVSwitchId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VpnGateway) AttrVSwitchId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVSwitchId",
@@ -232,6 +245,16 @@ func (j *jsiiProxy_VpnGateway) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpnGateway) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -369,17 +392,6 @@ func (j *jsiiProxy_VpnGateway)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_VpnGateway)SetProps(val *VpnGatewayProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_VpnGateway)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -471,6 +483,45 @@ func (v *jsiiProxy_VpnGateway) ApplyRemovalPolicy(policy alicloudroscdkcore.Remo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (v *jsiiProxy_VpnGateway) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		v,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (v *jsiiProxy_VpnGateway) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		v,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (v *jsiiProxy_VpnGateway) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		v,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (v *jsiiProxy_VpnGateway) GeneratePhysicalName() *string {

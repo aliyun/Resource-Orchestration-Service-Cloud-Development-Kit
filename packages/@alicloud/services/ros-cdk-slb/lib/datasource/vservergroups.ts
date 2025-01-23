@@ -24,25 +24,41 @@ export interface VServerGroupsProps {
 }
 
 /**
+ * Represents a `VServerGroups`.
+ */
+export interface IVServerGroups extends ros.IResource {
+    readonly props: VServerGroupsProps;
+
+    /**
+     * Attribute VServerGroupIds: The list of VServer group IDs.
+     */
+    readonly attrVServerGroupIds: ros.IResolvable | string;
+
+    /**
+     * Attribute VServerGroups: The list of VServer groups.
+     */
+    readonly attrVServerGroups: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::VServerGroups`, which is used to query the server groups of a Classic Load Balancer (CLB) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVServerGroups`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-vservergroups
  */
-export class VServerGroups extends ros.Resource {
+export class VServerGroups extends ros.Resource implements IVServerGroups {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: VServerGroupsProps;
+    public readonly props: VServerGroupsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute VServerGroupIds: The list of VServer group IDs.
      */
-    public readonly attrVServerGroupIds: ros.IResolvable;
+    public readonly attrVServerGroupIds: ros.IResolvable | string;
 
     /**
      * Attribute VServerGroups: The list of VServer groups.
      */
-    public readonly attrVServerGroups: ros.IResolvable;
+    public readonly attrVServerGroups: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

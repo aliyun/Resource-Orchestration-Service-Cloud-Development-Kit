@@ -12,48 +12,58 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Snapshot`, which is used to query the information about a snapshot.
 type Snapshot interface {
 	alicloudroscdkcore.Resource
+	ISnapshot
 	// Attribute CreateTime: The create time.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute Description: The description.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute DiskId: The source disk id.
-	AttrDiskId() alicloudroscdkcore.IResolvable
+	AttrDiskId() interface{}
 	// Attribute Encrypted: Whether the snapshot is encrypted.
-	AttrEncrypted() alicloudroscdkcore.IResolvable
+	AttrEncrypted() interface{}
 	// Attribute InstantAccess: Whether snapshot speed availability is enabled.
-	AttrInstantAccess() alicloudroscdkcore.IResolvable
+	AttrInstantAccess() interface{}
 	// Attribute InstantAccessRetentionDays: InstantAccessRetentionDays.
-	AttrInstantAccessRetentionDays() alicloudroscdkcore.IResolvable
+	AttrInstantAccessRetentionDays() interface{}
 	// Attribute ProductCode: The product number inherited from the mirror market.
-	AttrProductCode() alicloudroscdkcore.IResolvable
+	AttrProductCode() interface{}
 	// Attribute Progress: Snapshot creation progress, in percentage.
-	AttrProgress() alicloudroscdkcore.IResolvable
+	AttrProgress() interface{}
 	// Attribute RemainTime: Remaining completion time for the snapshot being created.
-	AttrRemainTime() alicloudroscdkcore.IResolvable
+	AttrRemainTime() interface{}
 	// Attribute ResourceGroupId: The resource group id.
-	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() interface{}
 	// Attribute RetentionDays: Automatic snapshot retention days.
-	AttrRetentionDays() alicloudroscdkcore.IResolvable
+	AttrRetentionDays() interface{}
 	// Attribute SnapshotId: The snapshot id.
-	AttrSnapshotId() alicloudroscdkcore.IResolvable
+	AttrSnapshotId() interface{}
 	// Attribute SnapshotName: Snapshot Display Name.
-	AttrSnapshotName() alicloudroscdkcore.IResolvable
+	AttrSnapshotName() interface{}
 	// Attribute SnapshotSN: Snapshot serial number.
-	AttrSnapshotSn() alicloudroscdkcore.IResolvable
+	AttrSnapshotSn() interface{}
 	// Attribute SnapshotType: Snapshot creation type.
-	AttrSnapshotType() alicloudroscdkcore.IResolvable
+	AttrSnapshotType() interface{}
 	// Attribute SourceDiskSize: Source disk capacity.
-	AttrSourceDiskSize() alicloudroscdkcore.IResolvable
+	AttrSourceDiskSize() interface{}
 	// Attribute SourceDiskType: Source disk attributes.
-	AttrSourceDiskType() alicloudroscdkcore.IResolvable
+	AttrSourceDiskType() interface{}
 	// Attribute SourceStorageType: Original disk type.
-	AttrSourceStorageType() alicloudroscdkcore.IResolvable
+	AttrSourceStorageType() interface{}
 	// Attribute Tags: The tags.
-	AttrTags() alicloudroscdkcore.IResolvable
+	AttrTags() interface{}
 	// Attribute Usage: A resource type that has a reference relationship.
-	AttrUsage() alicloudroscdkcore.IResolvable
+	AttrUsage() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -68,7 +78,6 @@ type Snapshot interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *SnapshotProps
-	SetProps(val *SnapshotProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -81,6 +90,9 @@ type Snapshot interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -133,10 +145,11 @@ type Snapshot interface {
 // The jsii proxy struct for Snapshot
 type jsiiProxy_Snapshot struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ISnapshot
 }
 
-func (j *jsiiProxy_Snapshot) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Snapshot) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -145,8 +158,8 @@ func (j *jsiiProxy_Snapshot) AttrCreateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Snapshot) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Snapshot) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -155,8 +168,8 @@ func (j *jsiiProxy_Snapshot) AttrDescription() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Snapshot) AttrDiskId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Snapshot) AttrDiskId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDiskId",
@@ -165,8 +178,8 @@ func (j *jsiiProxy_Snapshot) AttrDiskId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Snapshot) AttrEncrypted() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Snapshot) AttrEncrypted() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEncrypted",
@@ -175,8 +188,8 @@ func (j *jsiiProxy_Snapshot) AttrEncrypted() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Snapshot) AttrInstantAccess() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Snapshot) AttrInstantAccess() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstantAccess",
@@ -185,8 +198,8 @@ func (j *jsiiProxy_Snapshot) AttrInstantAccess() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_Snapshot) AttrInstantAccessRetentionDays() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Snapshot) AttrInstantAccessRetentionDays() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstantAccessRetentionDays",
@@ -195,8 +208,8 @@ func (j *jsiiProxy_Snapshot) AttrInstantAccessRetentionDays() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_Snapshot) AttrProductCode() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Snapshot) AttrProductCode() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrProductCode",
@@ -205,8 +218,8 @@ func (j *jsiiProxy_Snapshot) AttrProductCode() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Snapshot) AttrProgress() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Snapshot) AttrProgress() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrProgress",
@@ -215,8 +228,8 @@ func (j *jsiiProxy_Snapshot) AttrProgress() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Snapshot) AttrRemainTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Snapshot) AttrRemainTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRemainTime",
@@ -225,8 +238,8 @@ func (j *jsiiProxy_Snapshot) AttrRemainTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Snapshot) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Snapshot) AttrResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupId",
@@ -235,8 +248,8 @@ func (j *jsiiProxy_Snapshot) AttrResourceGroupId() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_Snapshot) AttrRetentionDays() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Snapshot) AttrRetentionDays() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRetentionDays",
@@ -245,8 +258,8 @@ func (j *jsiiProxy_Snapshot) AttrRetentionDays() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_Snapshot) AttrSnapshotId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Snapshot) AttrSnapshotId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSnapshotId",
@@ -255,8 +268,8 @@ func (j *jsiiProxy_Snapshot) AttrSnapshotId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Snapshot) AttrSnapshotName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Snapshot) AttrSnapshotName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSnapshotName",
@@ -265,8 +278,8 @@ func (j *jsiiProxy_Snapshot) AttrSnapshotName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Snapshot) AttrSnapshotSn() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Snapshot) AttrSnapshotSn() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSnapshotSn",
@@ -275,8 +288,8 @@ func (j *jsiiProxy_Snapshot) AttrSnapshotSn() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Snapshot) AttrSnapshotType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Snapshot) AttrSnapshotType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSnapshotType",
@@ -285,8 +298,8 @@ func (j *jsiiProxy_Snapshot) AttrSnapshotType() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Snapshot) AttrSourceDiskSize() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Snapshot) AttrSourceDiskSize() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSourceDiskSize",
@@ -295,8 +308,8 @@ func (j *jsiiProxy_Snapshot) AttrSourceDiskSize() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Snapshot) AttrSourceDiskType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Snapshot) AttrSourceDiskType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSourceDiskType",
@@ -305,8 +318,8 @@ func (j *jsiiProxy_Snapshot) AttrSourceDiskType() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Snapshot) AttrSourceStorageType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Snapshot) AttrSourceStorageType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSourceStorageType",
@@ -315,8 +328,8 @@ func (j *jsiiProxy_Snapshot) AttrSourceStorageType() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_Snapshot) AttrTags() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Snapshot) AttrTags() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTags",
@@ -325,8 +338,8 @@ func (j *jsiiProxy_Snapshot) AttrTags() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Snapshot) AttrUsage() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Snapshot) AttrUsage() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUsage",
@@ -340,6 +353,16 @@ func (j *jsiiProxy_Snapshot) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Snapshot) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -477,17 +500,6 @@ func (j *jsiiProxy_Snapshot)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Snapshot)SetProps(val *SnapshotProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Snapshot)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -579,6 +591,45 @@ func (s *jsiiProxy_Snapshot) ApplyRemovalPolicy(policy alicloudroscdkcore.Remova
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (s *jsiiProxy_Snapshot) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		s,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_Snapshot) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_Snapshot) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (s *jsiiProxy_Snapshot) GeneratePhysicalName() *string {

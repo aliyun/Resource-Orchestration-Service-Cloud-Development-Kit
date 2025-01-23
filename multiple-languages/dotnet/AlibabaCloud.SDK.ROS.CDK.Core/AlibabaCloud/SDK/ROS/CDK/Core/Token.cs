@@ -67,6 +67,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             return InvokeStaticMethod<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.Token), new System.Type[]{typeof(object), typeof(AlibabaCloud.SDK.ROS.CDK.Core.IEncodingOptions)}, new object?[]{@value, options})!;
         }
 
+        /// <summary>Compare two strings that might contain Tokens with each other.</summary>
+        [JsiiMethod(name: "compareStrings", returnsJson: "{\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.TokenComparison\"}}", parametersJson: "[{\"name\":\"possibleToken1\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"possibleToken2\",\"type\":{\"primitive\":\"string\"}}]")]
+        public static AlibabaCloud.SDK.ROS.CDK.Core.TokenComparison CompareStrings(string possibleToken1, string possibleToken2)
+        {
+            return InvokeStaticMethod<AlibabaCloud.SDK.ROS.CDK.Core.TokenComparison>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.Token), new System.Type[]{typeof(string), typeof(string)}, new object[]{possibleToken1, possibleToken2})!;
+        }
+
         /// <summary>Returns true if obj represents an unresolved value.</summary>
         /// <param name="obj">The object to test.</param>
         /// <remarks>

@@ -21,14 +21,20 @@ export interface DomainConfigProps {
 }
 
 /**
+ * Represents a `DomainConfig`.
+ */
+export interface IDomainConfig extends ros.IResource {
+    readonly props: DomainConfigProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CDN::DomainConfig`, which is used to configure multiple domain names at a time.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomainConfig`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cdn-domainconfig
  */
-export class DomainConfig extends ros.Resource {
+export class DomainConfig extends ros.Resource implements IDomainConfig {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DomainConfigProps;
+    public readonly props: DomainConfigProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

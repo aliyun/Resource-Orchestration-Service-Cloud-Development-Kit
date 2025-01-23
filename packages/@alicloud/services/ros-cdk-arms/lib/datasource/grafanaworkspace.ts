@@ -24,55 +24,101 @@ export interface GrafanaWorkspaceProps {
 }
 
 /**
+ * Represents a `GrafanaWorkspace`.
+ */
+export interface IGrafanaWorkspace extends ros.IResource {
+    readonly props: GrafanaWorkspaceProps;
+
+    /**
+     * Attribute CreateTime: The time when the workspace was created.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: The description of the workspace.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute GrafanaVersion: The version number of Grafana.
+     */
+    readonly attrGrafanaVersion: ros.IResolvable | string;
+
+    /**
+     * Attribute GrafanaWorkspaceEdition: The version of the workspace.
+     */
+    readonly attrGrafanaWorkspaceEdition: ros.IResolvable | string;
+
+    /**
+     * Attribute GrafanaWorkspaceId: The ID of the workspace.
+     */
+    readonly attrGrafanaWorkspaceId: ros.IResolvable | string;
+
+    /**
+     * Attribute GrafanaWorkspaceName: The workspace name.
+     */
+    readonly attrGrafanaWorkspaceName: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: The resource group ID.
+     */
+    readonly attrResourceGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute Tags: The tags of the resource.
+     */
+    readonly attrTags: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::GrafanaWorkspace`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGrafanaWorkspace`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-grafanaworkspace
  */
-export class GrafanaWorkspace extends ros.Resource {
+export class GrafanaWorkspace extends ros.Resource implements IGrafanaWorkspace {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: GrafanaWorkspaceProps;
+    public readonly props: GrafanaWorkspaceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateTime: The time when the workspace was created.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute Description: The description of the workspace.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute GrafanaVersion: The version number of Grafana.
      */
-    public readonly attrGrafanaVersion: ros.IResolvable;
+    public readonly attrGrafanaVersion: ros.IResolvable | string;
 
     /**
      * Attribute GrafanaWorkspaceEdition: The version of the workspace.
      */
-    public readonly attrGrafanaWorkspaceEdition: ros.IResolvable;
+    public readonly attrGrafanaWorkspaceEdition: ros.IResolvable | string;
 
     /**
      * Attribute GrafanaWorkspaceId: The ID of the workspace.
      */
-    public readonly attrGrafanaWorkspaceId: ros.IResolvable;
+    public readonly attrGrafanaWorkspaceId: ros.IResolvable | string;
 
     /**
      * Attribute GrafanaWorkspaceName: The workspace name.
      */
-    public readonly attrGrafanaWorkspaceName: ros.IResolvable;
+    public readonly attrGrafanaWorkspaceName: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroupId: The resource group ID.
      */
-    public readonly attrResourceGroupId: ros.IResolvable;
+    public readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Attribute Tags: The tags of the resource.
      */
-    public readonly attrTags: ros.IResolvable;
+    public readonly attrTags: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

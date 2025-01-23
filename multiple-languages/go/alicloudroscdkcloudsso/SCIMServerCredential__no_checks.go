@@ -52,10 +52,6 @@ func (j *jsiiProxy_SCIMServerCredential) validateSetIdParameters(val *string) er
 	return nil
 }
 
-func (j *jsiiProxy_SCIMServerCredential) validateSetPropsParameters(val *SCIMServerCredentialProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_SCIMServerCredential) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

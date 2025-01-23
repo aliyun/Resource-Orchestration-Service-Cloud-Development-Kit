@@ -163,17 +163,6 @@ func (j *jsiiProxy_Trail) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_Trail) validateSetPropsParameters(val *TrailProps) error {
-	if val == nil {
-		return fmt.Errorf("parameter val is required, but nil was provided")
-	}
-	if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (j *jsiiProxy_Trail) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")

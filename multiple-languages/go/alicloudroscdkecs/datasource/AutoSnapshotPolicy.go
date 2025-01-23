@@ -12,36 +12,46 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::AutoSnapshotPolicy`, which is used to query an automatic snapshot policy.
 type AutoSnapshotPolicy interface {
 	alicloudroscdkcore.Resource
+	IAutoSnapshotPolicy
 	// Attribute AutoSnapshotPolicyName: Name of the automatic snapshot policy.
-	AttrAutoSnapshotPolicyName() alicloudroscdkcore.IResolvable
+	AttrAutoSnapshotPolicyName() interface{}
 	// Attribute CreateTime: The time when the automatic snapshot policy was created.
 	//
 	// The time follows the ISO 8601 standard in the yyyy-MM-ddThh:mm:ssZ format. The time is displayed in UTC.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute DiskNums: Number of cloud disks with this policy enabled.
-	AttrDiskNums() alicloudroscdkcore.IResolvable
+	AttrDiskNums() interface{}
 	// Attribute RepeatWeekdays: The days of the week on which to create automatic snapshots.
 	//
 	// Valid values: 1 to 7, which correspond to the days of the week. 1 indicates Monday. One or more days can be specified.
-	AttrRepeatWeekdays() alicloudroscdkcore.IResolvable
+	AttrRepeatWeekdays() interface{}
 	// Attribute ResourceGroupId: The ID of the resource group.
-	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() interface{}
 	// Attribute RetentionDays: The retention period of the automatic snapshot.
 	//
 	// Unit: days. Valid values:
 	// - -1: The automatic snapshot is retained until it is deleted.
 	// - 1 to 65536: The automatic snapshot is retained for the specified number of days.
-	AttrRetentionDays() alicloudroscdkcore.IResolvable
+	AttrRetentionDays() interface{}
 	// Attribute Tags: The tags of the automatic snapshot policy.
-	AttrTags() alicloudroscdkcore.IResolvable
+	AttrTags() interface{}
 	// Attribute TimePoints: The time when the automatic snapshot policy was created.
 	//
 	// The time follows the ISO 8601 standard in the yyyy-MM-ddThh:mm:ssZ format. The time is displayed in UTC.
-	AttrTimePoints() alicloudroscdkcore.IResolvable
+	AttrTimePoints() interface{}
 	// Attribute VolumeNums: The number of extended volumes to which the automatic snapshot policy is applied.
-	AttrVolumeNums() alicloudroscdkcore.IResolvable
+	AttrVolumeNums() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -56,7 +66,6 @@ type AutoSnapshotPolicy interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *AutoSnapshotPolicyProps
-	SetProps(val *AutoSnapshotPolicyProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -69,6 +78,9 @@ type AutoSnapshotPolicy interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -121,10 +133,11 @@ type AutoSnapshotPolicy interface {
 // The jsii proxy struct for AutoSnapshotPolicy
 type jsiiProxy_AutoSnapshotPolicy struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IAutoSnapshotPolicy
 }
 
-func (j *jsiiProxy_AutoSnapshotPolicy) AttrAutoSnapshotPolicyName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AutoSnapshotPolicy) AttrAutoSnapshotPolicyName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAutoSnapshotPolicyName",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_AutoSnapshotPolicy) AttrAutoSnapshotPolicyName() alicloudrosc
 	return returns
 }
 
-func (j *jsiiProxy_AutoSnapshotPolicy) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AutoSnapshotPolicy) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -143,8 +156,8 @@ func (j *jsiiProxy_AutoSnapshotPolicy) AttrCreateTime() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_AutoSnapshotPolicy) AttrDiskNums() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AutoSnapshotPolicy) AttrDiskNums() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDiskNums",
@@ -153,8 +166,8 @@ func (j *jsiiProxy_AutoSnapshotPolicy) AttrDiskNums() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_AutoSnapshotPolicy) AttrRepeatWeekdays() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AutoSnapshotPolicy) AttrRepeatWeekdays() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRepeatWeekdays",
@@ -163,8 +176,8 @@ func (j *jsiiProxy_AutoSnapshotPolicy) AttrRepeatWeekdays() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_AutoSnapshotPolicy) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AutoSnapshotPolicy) AttrResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupId",
@@ -173,8 +186,8 @@ func (j *jsiiProxy_AutoSnapshotPolicy) AttrResourceGroupId() alicloudroscdkcore.
 	return returns
 }
 
-func (j *jsiiProxy_AutoSnapshotPolicy) AttrRetentionDays() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AutoSnapshotPolicy) AttrRetentionDays() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRetentionDays",
@@ -183,8 +196,8 @@ func (j *jsiiProxy_AutoSnapshotPolicy) AttrRetentionDays() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_AutoSnapshotPolicy) AttrTags() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AutoSnapshotPolicy) AttrTags() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTags",
@@ -193,8 +206,8 @@ func (j *jsiiProxy_AutoSnapshotPolicy) AttrTags() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_AutoSnapshotPolicy) AttrTimePoints() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AutoSnapshotPolicy) AttrTimePoints() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTimePoints",
@@ -203,8 +216,8 @@ func (j *jsiiProxy_AutoSnapshotPolicy) AttrTimePoints() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_AutoSnapshotPolicy) AttrVolumeNums() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AutoSnapshotPolicy) AttrVolumeNums() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVolumeNums",
@@ -218,6 +231,16 @@ func (j *jsiiProxy_AutoSnapshotPolicy) EnableResourcePropertyConstraint() *bool 
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AutoSnapshotPolicy) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -355,17 +378,6 @@ func (j *jsiiProxy_AutoSnapshotPolicy)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AutoSnapshotPolicy)SetProps(val *AutoSnapshotPolicyProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_AutoSnapshotPolicy)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -457,6 +469,45 @@ func (a *jsiiProxy_AutoSnapshotPolicy) ApplyRemovalPolicy(policy alicloudroscdkc
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (a *jsiiProxy_AutoSnapshotPolicy) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		a,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AutoSnapshotPolicy) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AutoSnapshotPolicy) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (a *jsiiProxy_AutoSnapshotPolicy) GeneratePhysicalName() *string {

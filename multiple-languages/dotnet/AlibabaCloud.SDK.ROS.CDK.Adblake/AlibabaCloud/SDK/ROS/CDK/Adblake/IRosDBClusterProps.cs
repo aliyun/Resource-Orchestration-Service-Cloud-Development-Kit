@@ -94,6 +94,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: cloneSourceRegionId: The ID of the source region where the cluster is located.
+        /// </remarks>
+        [JsiiProperty(name: "cloneSourceRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? CloneSourceRegionId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: dbClusterDescription: The description of the cluster.
         /// The description cannot start with http:\/\/ or https:\/\/.
         /// The description must be 2 to 256 characters in length
@@ -109,6 +122,35 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: dbClusterNetworkType: The network type of the cluster. Valid values:
+        /// VPC
+        /// </remarks>
+        [JsiiProperty(name: "dbClusterNetworkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DbClusterNetworkType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: diskEncryption: Specifies whether to encrypt the disk. Valid values:
+        /// true
+        /// false (default)
+        /// </remarks>
+        [JsiiProperty(name: "diskEncryption", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DiskEncryption
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: enableDefaultResourcePool: Specifies whether to allocate all reserved computing resources to the user_default resource group. Valid values:
         /// true (default)
         /// false
@@ -116,6 +158,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
         [JsiiProperty(name: "enableDefaultResourcePool", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? EnableDefaultResourcePool
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: kmsId:
+        /// </remarks>
+        [JsiiProperty(name: "kmsId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? KmsId
         {
             get
             {
@@ -148,6 +203,48 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
         [JsiiProperty(name: "periodType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? PeriodType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: productForm: Valid values:
+        /// IntegrationForm
+        /// LegacyForm
+        /// </remarks>
+        [JsiiProperty(name: "productForm", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ProductForm
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: reservedNodeCount: The number of reserved nodes. Must be 1 for basic version and multiple
+        /// of 3 for enterprise version.
+        /// </remarks>
+        [JsiiProperty(name: "reservedNodeCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ReservedNodeCount
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: reservedNodeSize: The size of each reserved node.
+        /// </remarks>
+        [JsiiProperty(name: "reservedNodeSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ReservedNodeSize
         {
             get
             {
@@ -313,6 +410,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: cloneSourceRegionId: The ID of the source region where the cluster is located.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "cloneSourceRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CloneSourceRegionId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: dbClusterDescription: The description of the cluster.
             /// The description cannot start with http:\/\/ or https:\/\/.
             /// The description must be 2 to 256 characters in length
@@ -325,6 +432,29 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: dbClusterNetworkType: The network type of the cluster. Valid values:
+            /// VPC
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "dbClusterNetworkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DbClusterNetworkType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: diskEncryption: Specifies whether to encrypt the disk. Valid values:
+            /// true
+            /// false (default)
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "diskEncryption", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DiskEncryption
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: enableDefaultResourcePool: Specifies whether to allocate all reserved computing resources to the user_default resource group. Valid values:
             /// true (default)
             /// false
@@ -332,6 +462,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
             [JsiiOptional]
             [JsiiProperty(name: "enableDefaultResourcePool", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EnableDefaultResourcePool
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: kmsId:
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "kmsId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? KmsId
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -358,6 +498,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
             [JsiiOptional]
             [JsiiProperty(name: "periodType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PeriodType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: productForm: Valid values:
+            /// IntegrationForm
+            /// LegacyForm
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "productForm", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ProductForm
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: reservedNodeCount: The number of reserved nodes. Must be 1 for basic version and multiple
+            /// of 3 for enterprise version.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "reservedNodeCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ReservedNodeCount
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: reservedNodeSize: The size of each reserved node.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "reservedNodeSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ReservedNodeSize
             {
                 get => GetInstanceProperty<object?>();
             }

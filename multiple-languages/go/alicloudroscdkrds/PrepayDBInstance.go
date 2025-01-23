@@ -12,24 +12,34 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::RDS::PrepayDBInstance`, which is used to create subscription ApsaraDB RDS instances.
 type PrepayDBInstance interface {
 	alicloudroscdkcore.Resource
+	IPrepayDBInstance
 	// Attribute DBInstanceId: The instance id of created database instance.
-	AttrDbInstanceId() alicloudroscdkcore.IResolvable
+	AttrDbInstanceId() interface{}
 	// Attribute InnerConnectionString: DB instance connection url by Intranet.
-	AttrInnerConnectionString() alicloudroscdkcore.IResolvable
+	AttrInnerConnectionString() interface{}
 	// Attribute InnerIPAddress: IP Address for created DB instance of Intranet.
-	AttrInnerIpAddress() alicloudroscdkcore.IResolvable
+	AttrInnerIpAddress() interface{}
 	// Attribute InnerPort: Intranet port of created DB instance.
-	AttrInnerPort() alicloudroscdkcore.IResolvable
+	AttrInnerPort() interface{}
 	// Attribute OrderId: The order id list of created instance.
-	AttrOrderId() alicloudroscdkcore.IResolvable
+	AttrOrderId() interface{}
 	// Attribute PublicConnectionString: DB instance connection url by Internet.
-	AttrPublicConnectionString() alicloudroscdkcore.IResolvable
+	AttrPublicConnectionString() interface{}
 	// Attribute PublicIPAddress: IP Address for created DB instance of Internet.
-	AttrPublicIpAddress() alicloudroscdkcore.IResolvable
+	AttrPublicIpAddress() interface{}
 	// Attribute PublicPort: Internet port of created DB instance.
-	AttrPublicPort() alicloudroscdkcore.IResolvable
+	AttrPublicPort() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -44,7 +54,6 @@ type PrepayDBInstance interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *PrepayDBInstanceProps
-	SetProps(val *PrepayDBInstanceProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -57,6 +66,9 @@ type PrepayDBInstance interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -109,10 +121,11 @@ type PrepayDBInstance interface {
 // The jsii proxy struct for PrepayDBInstance
 type jsiiProxy_PrepayDBInstance struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IPrepayDBInstance
 }
 
-func (j *jsiiProxy_PrepayDBInstance) AttrDbInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayDBInstance) AttrDbInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbInstanceId",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_PrepayDBInstance) AttrDbInstanceId() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_PrepayDBInstance) AttrInnerConnectionString() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayDBInstance) AttrInnerConnectionString() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInnerConnectionString",
@@ -131,8 +144,8 @@ func (j *jsiiProxy_PrepayDBInstance) AttrInnerConnectionString() alicloudroscdkc
 	return returns
 }
 
-func (j *jsiiProxy_PrepayDBInstance) AttrInnerIpAddress() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayDBInstance) AttrInnerIpAddress() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInnerIpAddress",
@@ -141,8 +154,8 @@ func (j *jsiiProxy_PrepayDBInstance) AttrInnerIpAddress() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_PrepayDBInstance) AttrInnerPort() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayDBInstance) AttrInnerPort() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInnerPort",
@@ -151,8 +164,8 @@ func (j *jsiiProxy_PrepayDBInstance) AttrInnerPort() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_PrepayDBInstance) AttrOrderId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayDBInstance) AttrOrderId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOrderId",
@@ -161,8 +174,8 @@ func (j *jsiiProxy_PrepayDBInstance) AttrOrderId() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_PrepayDBInstance) AttrPublicConnectionString() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayDBInstance) AttrPublicConnectionString() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPublicConnectionString",
@@ -171,8 +184,8 @@ func (j *jsiiProxy_PrepayDBInstance) AttrPublicConnectionString() alicloudroscdk
 	return returns
 }
 
-func (j *jsiiProxy_PrepayDBInstance) AttrPublicIpAddress() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayDBInstance) AttrPublicIpAddress() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPublicIpAddress",
@@ -181,8 +194,8 @@ func (j *jsiiProxy_PrepayDBInstance) AttrPublicIpAddress() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_PrepayDBInstance) AttrPublicPort() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrepayDBInstance) AttrPublicPort() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPublicPort",
@@ -196,6 +209,16 @@ func (j *jsiiProxy_PrepayDBInstance) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_PrepayDBInstance) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -333,17 +356,6 @@ func (j *jsiiProxy_PrepayDBInstance)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_PrepayDBInstance)SetProps(val *PrepayDBInstanceProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_PrepayDBInstance)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -435,6 +447,45 @@ func (p *jsiiProxy_PrepayDBInstance) ApplyRemovalPolicy(policy alicloudroscdkcor
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (p *jsiiProxy_PrepayDBInstance) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		p,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_PrepayDBInstance) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		p,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_PrepayDBInstance) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		p,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (p *jsiiProxy_PrepayDBInstance) GeneratePhysicalName() *string {

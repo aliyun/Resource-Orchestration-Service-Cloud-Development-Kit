@@ -51,40 +51,71 @@ export interface RepositoryProps {
 }
 
 /**
+ * Represents a `Repository`.
+ */
+export interface IRepository extends ros.IResource {
+    readonly props: RepositoryProps;
+
+    /**
+     * Attribute InstanceId: The ID of the enterprise edition instance which repository belongs to.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute RepoId: The repository ID.
+     */
+    readonly attrRepoId: ros.IResolvable | string;
+
+    /**
+     * Attribute RepoName: The name of the repository.
+     */
+    readonly attrRepoName: ros.IResolvable | string;
+
+    /**
+     * Attribute RepoNamespace: The name of the namespace to which the repository belongs.
+     */
+    readonly attrRepoNamespace: ros.IResolvable | string;
+
+    /**
+     * Attribute RepoType: The type of the repository.
+     */
+    readonly attrRepoType: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CR::Repository`, which is used to create an image repository.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRepository`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-repository
  */
-export class Repository extends ros.Resource {
+export class Repository extends ros.Resource implements IRepository {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: RepositoryProps;
+    public readonly props: RepositoryProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceId: The ID of the enterprise edition instance which repository belongs to.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute RepoId: The repository ID.
      */
-    public readonly attrRepoId: ros.IResolvable;
+    public readonly attrRepoId: ros.IResolvable | string;
 
     /**
      * Attribute RepoName: The name of the repository.
      */
-    public readonly attrRepoName: ros.IResolvable;
+    public readonly attrRepoName: ros.IResolvable | string;
 
     /**
      * Attribute RepoNamespace: The name of the namespace to which the repository belongs.
      */
-    public readonly attrRepoNamespace: ros.IResolvable;
+    public readonly attrRepoNamespace: ros.IResolvable | string;
 
     /**
      * Attribute RepoType: The type of the repository.
      */
-    public readonly attrRepoType: ros.IResolvable;
+    public readonly attrRepoType: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

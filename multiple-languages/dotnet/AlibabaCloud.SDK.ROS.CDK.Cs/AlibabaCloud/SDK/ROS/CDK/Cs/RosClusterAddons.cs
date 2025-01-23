@@ -519,6 +519,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: apiVersion: The API version of the kubernetes resource to query.
+            /// </remarks>
+            [JsiiProperty(name: "apiVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ApiVersion
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: firstMatch: Only the first matching result in jsonpath's filtered results is returned. Default False
             /// </remarks>
             [JsiiProperty(name: "firstMatch", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -644,6 +657,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                 public object Operator
                 {
                     get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: apiVersion: The API version of the kubernetes resource to query.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "apiVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ApiVersion
+                {
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
@@ -818,6 +841,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                         }
                     }
                     _operator = value;
+                }
+            }
+
+            private object? _apiVersion;
+
+            /// <remarks>
+            /// <strong>Property</strong>: apiVersion: The API version of the kubernetes resource to query.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "apiVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ApiVersion
+            {
+                get => _apiVersion;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _apiVersion = value;
                 }
             }
 

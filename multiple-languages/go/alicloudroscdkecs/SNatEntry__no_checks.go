@@ -52,10 +52,6 @@ func (j *jsiiProxy_SNatEntry) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_SNatEntry) validateSetPropsParameters(val *SNatEntryProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_SNatEntry) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managedkubernetescluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:06.085Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:36.655Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosManagedKubernetesClusterProps.Jsii$Proxy.class)
 public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -123,6 +123,12 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getLoginPassword() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMaintenanceWindow() {
         return null;
     }
 
@@ -270,6 +276,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         java.lang.Object kubernetesVersion;
         java.lang.Object loadBalancerSpec;
         java.lang.Object loginPassword;
+        java.lang.Object maintenanceWindow;
         java.lang.Object nodeCidrMask;
         java.lang.Object nodeNameMode;
         java.lang.Object nodePools;
@@ -691,6 +698,26 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         }
 
         /**
+         * Sets the value of {@link RosManagedKubernetesClusterProps#getMaintenanceWindow}
+         * @param maintenanceWindow the value to be set.
+         * @return {@code this}
+         */
+        public Builder maintenanceWindow(com.aliyun.ros.cdk.core.IResolvable maintenanceWindow) {
+            this.maintenanceWindow = maintenanceWindow;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosManagedKubernetesClusterProps#getMaintenanceWindow}
+         * @param maintenanceWindow the value to be set.
+         * @return {@code this}
+         */
+        public Builder maintenanceWindow(com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.MaintenanceWindowProperty maintenanceWindow) {
+            this.maintenanceWindow = maintenanceWindow;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosManagedKubernetesClusterProps#getNodeCidrMask}
          * @param nodeCidrMask the value to be set.
          * @return {@code this}
@@ -1097,6 +1124,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         private final java.lang.Object kubernetesVersion;
         private final java.lang.Object loadBalancerSpec;
         private final java.lang.Object loginPassword;
+        private final java.lang.Object maintenanceWindow;
         private final java.lang.Object nodeCidrMask;
         private final java.lang.Object nodeNameMode;
         private final java.lang.Object nodePools;
@@ -1143,6 +1171,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             this.kubernetesVersion = software.amazon.jsii.Kernel.get(this, "kubernetesVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loadBalancerSpec = software.amazon.jsii.Kernel.get(this, "loadBalancerSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loginPassword = software.amazon.jsii.Kernel.get(this, "loginPassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.maintenanceWindow = software.amazon.jsii.Kernel.get(this, "maintenanceWindow", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nodeCidrMask = software.amazon.jsii.Kernel.get(this, "nodeCidrMask", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nodeNameMode = software.amazon.jsii.Kernel.get(this, "nodeNameMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nodePools = software.amazon.jsii.Kernel.get(this, "nodePools", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1190,6 +1219,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             this.kubernetesVersion = builder.kubernetesVersion;
             this.loadBalancerSpec = builder.loadBalancerSpec;
             this.loginPassword = builder.loginPassword;
+            this.maintenanceWindow = builder.maintenanceWindow;
             this.nodeCidrMask = builder.nodeCidrMask;
             this.nodeNameMode = builder.nodeNameMode;
             this.nodePools = builder.nodePools;
@@ -1309,6 +1339,11 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         @Override
         public final java.lang.Object getLoginPassword() {
             return this.loginPassword;
+        }
+
+        @Override
+        public final java.lang.Object getMaintenanceWindow() {
+            return this.maintenanceWindow;
         }
 
         @Override
@@ -1468,6 +1503,9 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             if (this.getLoginPassword() != null) {
                 data.set("loginPassword", om.valueToTree(this.getLoginPassword()));
             }
+            if (this.getMaintenanceWindow() != null) {
+                data.set("maintenanceWindow", om.valueToTree(this.getMaintenanceWindow()));
+            }
             if (this.getNodeCidrMask() != null) {
                 data.set("nodeCidrMask", om.valueToTree(this.getNodeCidrMask()));
             }
@@ -1563,6 +1601,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             if (this.kubernetesVersion != null ? !this.kubernetesVersion.equals(that.kubernetesVersion) : that.kubernetesVersion != null) return false;
             if (this.loadBalancerSpec != null ? !this.loadBalancerSpec.equals(that.loadBalancerSpec) : that.loadBalancerSpec != null) return false;
             if (this.loginPassword != null ? !this.loginPassword.equals(that.loginPassword) : that.loginPassword != null) return false;
+            if (this.maintenanceWindow != null ? !this.maintenanceWindow.equals(that.maintenanceWindow) : that.maintenanceWindow != null) return false;
             if (this.nodeCidrMask != null ? !this.nodeCidrMask.equals(that.nodeCidrMask) : that.nodeCidrMask != null) return false;
             if (this.nodeNameMode != null ? !this.nodeNameMode.equals(that.nodeNameMode) : that.nodeNameMode != null) return false;
             if (this.nodePools != null ? !this.nodePools.equals(that.nodePools) : that.nodePools != null) return false;
@@ -1606,6 +1645,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             result = 31 * result + (this.kubernetesVersion != null ? this.kubernetesVersion.hashCode() : 0);
             result = 31 * result + (this.loadBalancerSpec != null ? this.loadBalancerSpec.hashCode() : 0);
             result = 31 * result + (this.loginPassword != null ? this.loginPassword.hashCode() : 0);
+            result = 31 * result + (this.maintenanceWindow != null ? this.maintenanceWindow.hashCode() : 0);
             result = 31 * result + (this.nodeCidrMask != null ? this.nodeCidrMask.hashCode() : 0);
             result = 31 * result + (this.nodeNameMode != null ? this.nodeNameMode.hashCode() : 0);
             result = 31 * result + (this.nodePools != null ? this.nodePools.hashCode() : 0);

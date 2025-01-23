@@ -62,20 +62,31 @@ export interface IngressProps {
 }
 
 /**
+ * Represents a `Ingress`.
+ */
+export interface IIngress extends ros.IResource {
+    readonly props: IngressProps;
+
+    /**
+     * Attribute IngressId: The ID of the routing rule.
+     */
+    readonly attrIngressId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SAE::Ingress`, which is used to create a routing rule.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosIngress`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-ingress
  */
-export class Ingress extends ros.Resource {
+export class Ingress extends ros.Resource implements IIngress {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: IngressProps;
+    public readonly props: IngressProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute IngressId: The ID of the routing rule.
      */
-    public readonly attrIngressId: ros.IResolvable;
+    public readonly attrIngressId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -24,85 +24,161 @@ export interface ImageCacheProps {
 }
 
 /**
+ * Represents a `ImageCache`.
+ */
+export interface IImageCache extends ros.IResource {
+    readonly props: ImageCacheProps;
+
+    /**
+     * Attribute ContainerGroupId: ContainerGroupId.
+     */
+    readonly attrContainerGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute CreateTime: CreateTime.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute EliminationStrategy: The elimination strategy of the mirror cache. The default is empty, indicating that it has been kept.
+     */
+    readonly attrEliminationStrategy: ros.IResolvable | string;
+
+    /**
+     * Attribute Events: Events.
+     */
+    readonly attrEvents: ros.IResolvable | string;
+
+    /**
+     * Attribute ExpireDateTime: ExpireDateTime.
+     */
+    readonly attrExpireDateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute FlashSnapshotId: FlashSnapshotId.
+     */
+    readonly attrFlashSnapshotId: ros.IResolvable | string;
+
+    /**
+     * Attribute ImageCacheId: ImageCacheId.
+     */
+    readonly attrImageCacheId: ros.IResolvable | string;
+
+    /**
+     * Attribute ImageCacheName: ImageCacheName.
+     */
+    readonly attrImageCacheName: ros.IResolvable | string;
+
+    /**
+     * Attribute ImageCacheSize: ImageCacheSize.
+     */
+    readonly attrImageCacheSize: ros.IResolvable | string;
+
+    /**
+     * Attribute ImageCacheTags: Tags.
+     */
+    readonly attrImageCacheTags: ros.IResolvable | string;
+
+    /**
+     * Attribute Images: Images.
+     */
+    readonly attrImages: ros.IResolvable | string;
+
+    /**
+     * Attribute Progress: Progress.
+     */
+    readonly attrProgress: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: ResourceGroupId.
+     */
+    readonly attrResourceGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute SnapshotId: SnapshotId.
+     */
+    readonly attrSnapshotId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ECI::ImageCache`, which is used to query the information about an image cache.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosImageCache`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eci-imagecache
  */
-export class ImageCache extends ros.Resource {
+export class ImageCache extends ros.Resource implements IImageCache {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ImageCacheProps;
+    public readonly props: ImageCacheProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ContainerGroupId: ContainerGroupId.
      */
-    public readonly attrContainerGroupId: ros.IResolvable;
+    public readonly attrContainerGroupId: ros.IResolvable | string;
 
     /**
      * Attribute CreateTime: CreateTime.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute EliminationStrategy: The elimination strategy of the mirror cache. The default is empty, indicating that it has been kept.
      */
-    public readonly attrEliminationStrategy: ros.IResolvable;
+    public readonly attrEliminationStrategy: ros.IResolvable | string;
 
     /**
      * Attribute Events: Events.
      */
-    public readonly attrEvents: ros.IResolvable;
+    public readonly attrEvents: ros.IResolvable | string;
 
     /**
      * Attribute ExpireDateTime: ExpireDateTime.
      */
-    public readonly attrExpireDateTime: ros.IResolvable;
+    public readonly attrExpireDateTime: ros.IResolvable | string;
 
     /**
      * Attribute FlashSnapshotId: FlashSnapshotId.
      */
-    public readonly attrFlashSnapshotId: ros.IResolvable;
+    public readonly attrFlashSnapshotId: ros.IResolvable | string;
 
     /**
      * Attribute ImageCacheId: ImageCacheId.
      */
-    public readonly attrImageCacheId: ros.IResolvable;
+    public readonly attrImageCacheId: ros.IResolvable | string;
 
     /**
      * Attribute ImageCacheName: ImageCacheName.
      */
-    public readonly attrImageCacheName: ros.IResolvable;
+    public readonly attrImageCacheName: ros.IResolvable | string;
 
     /**
      * Attribute ImageCacheSize: ImageCacheSize.
      */
-    public readonly attrImageCacheSize: ros.IResolvable;
+    public readonly attrImageCacheSize: ros.IResolvable | string;
 
     /**
      * Attribute ImageCacheTags: Tags.
      */
-    public readonly attrImageCacheTags: ros.IResolvable;
+    public readonly attrImageCacheTags: ros.IResolvable | string;
 
     /**
      * Attribute Images: Images.
      */
-    public readonly attrImages: ros.IResolvable;
+    public readonly attrImages: ros.IResolvable | string;
 
     /**
      * Attribute Progress: Progress.
      */
-    public readonly attrProgress: ros.IResolvable;
+    public readonly attrProgress: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroupId: ResourceGroupId.
      */
-    public readonly attrResourceGroupId: ros.IResolvable;
+    public readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Attribute SnapshotId: SnapshotId.
      */
-    public readonly attrSnapshotId: ros.IResolvable;
+    public readonly attrSnapshotId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -41,50 +41,91 @@ export interface OperationProps {
 }
 
 /**
+ * Represents a `Operation`.
+ */
+export interface IOperation extends ros.IResource {
+    readonly props: OperationProps;
+
+    /**
+     * Attribute CreateTime: The creation timestamp of the operation.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: The description of the operation.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute Method: The method of http protocol.
+     */
+    readonly attrMethod: ros.IResolvable | string;
+
+    /**
+     * Attribute Mock: Mock configuration.
+     */
+    readonly attrMock: ros.IResolvable | string;
+
+    /**
+     * Attribute OperationId: The ID of the operation.
+     */
+    readonly attrOperationId: ros.IResolvable | string;
+
+    /**
+     * Attribute OperationName: The name of the resource.
+     */
+    readonly attrOperationName: ros.IResolvable | string;
+
+    /**
+     * Attribute Path: The interface path of the operation.
+     */
+    readonly attrPath: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Operation`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosOperation`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-operation
  */
-export class Operation extends ros.Resource {
+export class Operation extends ros.Resource implements IOperation {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: OperationProps;
+    public readonly props: OperationProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateTime: The creation timestamp of the operation.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute Description: The description of the operation.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute Method: The method of http protocol.
      */
-    public readonly attrMethod: ros.IResolvable;
+    public readonly attrMethod: ros.IResolvable | string;
 
     /**
      * Attribute Mock: Mock configuration.
      */
-    public readonly attrMock: ros.IResolvable;
+    public readonly attrMock: ros.IResolvable | string;
 
     /**
      * Attribute OperationId: The ID of the operation.
      */
-    public readonly attrOperationId: ros.IResolvable;
+    public readonly attrOperationId: ros.IResolvable | string;
 
     /**
      * Attribute OperationName: The name of the resource.
      */
-    public readonly attrOperationName: ros.IResolvable;
+    public readonly attrOperationName: ros.IResolvable | string;
 
     /**
      * Attribute Path: The interface path of the operation.
      */
-    public readonly attrPath: ros.IResolvable;
+    public readonly attrPath: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -68,35 +68,61 @@ export interface GroupProps {
 }
 
 /**
+ * Represents a `Group`.
+ */
+export interface IGroup extends ros.IResource {
+    readonly props: GroupProps;
+
+    /**
+     * Attribute GbId: GB ID space provided. (Applies only to access the space marked States)
+     */
+    readonly attrGbId: ros.IResolvable | string;
+
+    /**
+     * Attribute GbIp: GB signaling server address space provided. (Applies only to access the space marked States)
+     */
+    readonly attrGbIp: ros.IResolvable | string;
+
+    /**
+     * Attribute GbPort: GB Port space provided. (Applies only to access the space marked States)
+     */
+    readonly attrGbPort: ros.IResolvable | string;
+
+    /**
+     * Attribute Id: Space ID.
+     */
+    readonly attrId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VS::Group`, which is used to create a group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vs-group
  */
-export class Group extends ros.Resource {
+export class Group extends ros.Resource implements IGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: GroupProps;
+    public readonly props: GroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute GbId: GB ID space provided. (Applies only to access the space marked States)
      */
-    public readonly attrGbId: ros.IResolvable;
+    public readonly attrGbId: ros.IResolvable | string;
 
     /**
      * Attribute GbIp: GB signaling server address space provided. (Applies only to access the space marked States)
      */
-    public readonly attrGbIp: ros.IResolvable;
+    public readonly attrGbIp: ros.IResolvable | string;
 
     /**
      * Attribute GbPort: GB Port space provided. (Applies only to access the space marked States)
      */
-    public readonly attrGbPort: ros.IResolvable;
+    public readonly attrGbPort: ros.IResolvable | string;
 
     /**
      * Attribute Id: Space ID.
      */
-    public readonly attrId: ros.IResolvable;
+    public readonly attrId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

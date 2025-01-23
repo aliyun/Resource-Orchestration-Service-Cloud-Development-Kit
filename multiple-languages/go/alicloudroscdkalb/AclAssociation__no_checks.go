@@ -52,10 +52,6 @@ func (j *jsiiProxy_AclAssociation) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_AclAssociation) validateSetPropsParameters(val *AclAssociationProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_AclAssociation) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

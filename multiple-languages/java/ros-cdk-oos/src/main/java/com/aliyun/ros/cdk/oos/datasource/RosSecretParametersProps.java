@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.oos.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-secretparameters
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:09.932Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:41.822Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.datasource.RosSecretParametersProps")
 @software.amazon.jsii.Jsii.Proxy(RosSecretParametersProps.Jsii$Proxy.class)
 public interface RosSecretParametersProps extends software.amazon.jsii.JsiiSerializable {

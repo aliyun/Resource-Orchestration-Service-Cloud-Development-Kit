@@ -52,10 +52,6 @@ func (j *jsiiProxy_GrafanaWorkspaces) validateSetIdParameters(val *string) error
 	return nil
 }
 
-func (j *jsiiProxy_GrafanaWorkspaces) validateSetPropsParameters(val *GrafanaWorkspacesProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_GrafanaWorkspaces) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

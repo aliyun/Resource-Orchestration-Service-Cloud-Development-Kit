@@ -52,10 +52,6 @@ func (j *jsiiProxy_GlobalDatabaseNetworks) validateSetIdParameters(val *string) 
 	return nil
 }
 
-func (j *jsiiProxy_GlobalDatabaseNetworks) validateSetPropsParameters(val *GlobalDatabaseNetworksProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_GlobalDatabaseNetworks) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

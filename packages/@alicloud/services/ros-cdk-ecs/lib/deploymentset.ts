@@ -48,20 +48,31 @@ export interface DeploymentSetProps {
 }
 
 /**
+ * Represents a `DeploymentSet`.
+ */
+export interface IDeploymentSet extends ros.IResource {
+    readonly props: DeploymentSetProps;
+
+    /**
+     * Attribute DeploymentSetId: The ID of the deployment set.
+     */
+    readonly attrDeploymentSetId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::DeploymentSet`, which is used to create a deployment set in a region.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDeploymentSet`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-deploymentset
  */
-export class DeploymentSet extends ros.Resource {
+export class DeploymentSet extends ros.Resource implements IDeploymentSet {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DeploymentSetProps;
+    public readonly props: DeploymentSetProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DeploymentSetId: The ID of the deployment set.
      */
-    public readonly attrDeploymentSetId: ros.IResolvable;
+    public readonly attrDeploymentSetId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

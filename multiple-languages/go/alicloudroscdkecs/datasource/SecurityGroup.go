@@ -12,34 +12,44 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::SecurityGroup`, which is used to query the information about a security group.
 type SecurityGroup interface {
 	alicloudroscdkcore.Resource
+	ISecurityGroup
 	// Attribute CreateTime: The create time.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute Description: The description.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute InnerAccessPolicy: Network connectivity policy within the security group.
-	AttrInnerAccessPolicy() alicloudroscdkcore.IResolvable
+	AttrInnerAccessPolicy() interface{}
 	// Attribute Permissions: A collection of Security Group permission rules.
-	AttrPermissions() alicloudroscdkcore.IResolvable
+	AttrPermissions() interface{}
 	// Attribute ResourceGroupId: The enterprise resource group ID where the security group resides.
-	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() interface{}
 	// Attribute SecurityGroupId: Security group ID.
-	AttrSecurityGroupId() alicloudroscdkcore.IResolvable
+	AttrSecurityGroupId() interface{}
 	// Attribute SecurityGroupName: The security group name.
-	AttrSecurityGroupName() alicloudroscdkcore.IResolvable
+	AttrSecurityGroupName() interface{}
 	// Attribute SecurityGroupReferences: The complete information about the authorization of all user-specified security groups.
-	AttrSecurityGroupReferences() alicloudroscdkcore.IResolvable
+	AttrSecurityGroupReferences() interface{}
 	// Attribute SecurityGroupType: Security group type.
-	AttrSecurityGroupType() alicloudroscdkcore.IResolvable
+	AttrSecurityGroupType() interface{}
 	// Attribute ServiceId: The virtual quotient ID corresponding to the security group.
-	AttrServiceId() alicloudroscdkcore.IResolvable
+	AttrServiceId() interface{}
 	// Attribute ServiceManaged: Whether the owner of the security group is a cloud product or vendor.
-	AttrServiceManaged() alicloudroscdkcore.IResolvable
+	AttrServiceManaged() interface{}
 	// Attribute Tags: The tags.
-	AttrTags() alicloudroscdkcore.IResolvable
+	AttrTags() interface{}
 	// Attribute VpcId: Secure the group's proprietary network.
-	AttrVpcId() alicloudroscdkcore.IResolvable
+	AttrVpcId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -54,7 +64,6 @@ type SecurityGroup interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *SecurityGroupProps
-	SetProps(val *SecurityGroupProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -67,6 +76,9 @@ type SecurityGroup interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -119,10 +131,11 @@ type SecurityGroup interface {
 // The jsii proxy struct for SecurityGroup
 type jsiiProxy_SecurityGroup struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ISecurityGroup
 }
 
-func (j *jsiiProxy_SecurityGroup) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecurityGroup) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -131,8 +144,8 @@ func (j *jsiiProxy_SecurityGroup) AttrCreateTime() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_SecurityGroup) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecurityGroup) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -141,8 +154,8 @@ func (j *jsiiProxy_SecurityGroup) AttrDescription() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_SecurityGroup) AttrInnerAccessPolicy() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecurityGroup) AttrInnerAccessPolicy() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInnerAccessPolicy",
@@ -151,8 +164,8 @@ func (j *jsiiProxy_SecurityGroup) AttrInnerAccessPolicy() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_SecurityGroup) AttrPermissions() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecurityGroup) AttrPermissions() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPermissions",
@@ -161,8 +174,8 @@ func (j *jsiiProxy_SecurityGroup) AttrPermissions() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_SecurityGroup) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecurityGroup) AttrResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupId",
@@ -171,8 +184,8 @@ func (j *jsiiProxy_SecurityGroup) AttrResourceGroupId() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_SecurityGroup) AttrSecurityGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecurityGroup) AttrSecurityGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSecurityGroupId",
@@ -181,8 +194,8 @@ func (j *jsiiProxy_SecurityGroup) AttrSecurityGroupId() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_SecurityGroup) AttrSecurityGroupName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecurityGroup) AttrSecurityGroupName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSecurityGroupName",
@@ -191,8 +204,8 @@ func (j *jsiiProxy_SecurityGroup) AttrSecurityGroupName() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_SecurityGroup) AttrSecurityGroupReferences() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecurityGroup) AttrSecurityGroupReferences() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSecurityGroupReferences",
@@ -201,8 +214,8 @@ func (j *jsiiProxy_SecurityGroup) AttrSecurityGroupReferences() alicloudroscdkco
 	return returns
 }
 
-func (j *jsiiProxy_SecurityGroup) AttrSecurityGroupType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecurityGroup) AttrSecurityGroupType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSecurityGroupType",
@@ -211,8 +224,8 @@ func (j *jsiiProxy_SecurityGroup) AttrSecurityGroupType() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_SecurityGroup) AttrServiceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecurityGroup) AttrServiceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrServiceId",
@@ -221,8 +234,8 @@ func (j *jsiiProxy_SecurityGroup) AttrServiceId() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_SecurityGroup) AttrServiceManaged() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecurityGroup) AttrServiceManaged() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrServiceManaged",
@@ -231,8 +244,8 @@ func (j *jsiiProxy_SecurityGroup) AttrServiceManaged() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_SecurityGroup) AttrTags() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecurityGroup) AttrTags() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTags",
@@ -241,8 +254,8 @@ func (j *jsiiProxy_SecurityGroup) AttrTags() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_SecurityGroup) AttrVpcId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SecurityGroup) AttrVpcId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVpcId",
@@ -256,6 +269,16 @@ func (j *jsiiProxy_SecurityGroup) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SecurityGroup) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -393,17 +416,6 @@ func (j *jsiiProxy_SecurityGroup)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SecurityGroup)SetProps(val *SecurityGroupProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_SecurityGroup)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -495,6 +507,45 @@ func (s *jsiiProxy_SecurityGroup) ApplyRemovalPolicy(policy alicloudroscdkcore.R
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (s *jsiiProxy_SecurityGroup) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		s,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_SecurityGroup) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_SecurityGroup) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (s *jsiiProxy_SecurityGroup) GeneratePhysicalName() *string {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hbr;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::HBR::DbAgent</code>, which is used to install a Cloud Backup backup client for a database.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:08.877Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:40.772Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.RosDbAgent")
 public class RosDbAgent extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -109,6 +109,60 @@ public class RosDbAgent extends com.aliyun.ros.cdk.core.RosResource {
             }
         }
         software.amazon.jsii.Kernel.set(this, "instanceInfo", java.util.Objects.requireNonNull(value, "instanceInfo is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCrossAccountRoleName() {
+        return software.amazon.jsii.Kernel.get(this, "crossAccountRoleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setCrossAccountRoleName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "crossAccountRoleName", value);
+    }
+
+    /**
+     */
+    public void setCrossAccountRoleName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "crossAccountRoleName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCrossAccountType() {
+        return software.amazon.jsii.Kernel.get(this, "crossAccountType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setCrossAccountType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "crossAccountType", value);
+    }
+
+    /**
+     */
+    public void setCrossAccountType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "crossAccountType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCrossAccountUserId() {
+        return software.amazon.jsii.Kernel.get(this, "crossAccountUserId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setCrossAccountUserId(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "crossAccountUserId", value);
+    }
+
+    /**
+     */
+    public void setCrossAccountUserId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "crossAccountUserId", value);
     }
     /**
      */
@@ -444,6 +498,57 @@ public class RosDbAgent extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder instanceInfo(final java.util.List<? extends java.lang.Object> instanceInfo) {
             this.props.instanceInfo(instanceInfo);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param crossAccountRoleName This parameter is required.
+         */
+        public Builder crossAccountRoleName(final java.lang.String crossAccountRoleName) {
+            this.props.crossAccountRoleName(crossAccountRoleName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param crossAccountRoleName This parameter is required.
+         */
+        public Builder crossAccountRoleName(final com.aliyun.ros.cdk.core.IResolvable crossAccountRoleName) {
+            this.props.crossAccountRoleName(crossAccountRoleName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param crossAccountType This parameter is required.
+         */
+        public Builder crossAccountType(final java.lang.String crossAccountType) {
+            this.props.crossAccountType(crossAccountType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param crossAccountType This parameter is required.
+         */
+        public Builder crossAccountType(final com.aliyun.ros.cdk.core.IResolvable crossAccountType) {
+            this.props.crossAccountType(crossAccountType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param crossAccountUserId This parameter is required.
+         */
+        public Builder crossAccountUserId(final java.lang.Number crossAccountUserId) {
+            this.props.crossAccountUserId(crossAccountUserId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param crossAccountUserId This parameter is required.
+         */
+        public Builder crossAccountUserId(final com.aliyun.ros.cdk.core.IResolvable crossAccountUserId) {
+            this.props.crossAccountUserId(crossAccountUserId);
             return this;
         }
 

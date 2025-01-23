@@ -37,25 +37,41 @@ export interface DrdsInstancesProps {
 }
 
 /**
+ * Represents a `DrdsInstances`.
+ */
+export interface IDrdsInstances extends ros.IResource {
+    readonly props: DrdsInstancesProps;
+
+    /**
+     * Attribute InstanceIds: The list of drds instance IDs.
+     */
+    readonly attrInstanceIds: ros.IResolvable | string;
+
+    /**
+     * Attribute Instances: The list of drds instances.
+     */
+    readonly attrInstances: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::DRDS::DrdsInstances`, which is used to query instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDrdsInstances`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-drds-drdsinstances
  */
-export class DrdsInstances extends ros.Resource {
+export class DrdsInstances extends ros.Resource implements IDrdsInstances {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DrdsInstancesProps;
+    public readonly props: DrdsInstancesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceIds: The list of drds instance IDs.
      */
-    public readonly attrInstanceIds: ros.IResolvable;
+    public readonly attrInstanceIds: ros.IResolvable | string;
 
     /**
      * Attribute Instances: The list of drds instances.
      */
-    public readonly attrInstances: ros.IResolvable;
+    public readonly attrInstances: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

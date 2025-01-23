@@ -12,32 +12,42 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::VPC::Ipam`.
 type Ipam interface {
 	alicloudroscdkcore.Resource
+	IIpam
 	// Attribute CreateTime: The creation time of the IPAM.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute DefaultResourceDiscoveryAssociationId: After an IPAM is created, the association between the resource discovery created by the system by default and the IPAM.
-	AttrDefaultResourceDiscoveryAssociationId() alicloudroscdkcore.IResolvable
+	AttrDefaultResourceDiscoveryAssociationId() interface{}
 	// Attribute DefaultResourceDiscoveryId: After IPAM is created, the system creates resource discovery by default.
-	AttrDefaultResourceDiscoveryId() alicloudroscdkcore.IResolvable
+	AttrDefaultResourceDiscoveryId() interface{}
 	// Attribute IpamDescription: The description of IPAM.
-	AttrIpamDescription() alicloudroscdkcore.IResolvable
+	AttrIpamDescription() interface{}
 	// Attribute IpamId: The first ID of the resource.
-	AttrIpamId() alicloudroscdkcore.IResolvable
+	AttrIpamId() interface{}
 	// Attribute IpamName: The name of the IPAM.
-	AttrIpamName() alicloudroscdkcore.IResolvable
+	AttrIpamName() interface{}
 	// Attribute OperatingRegionList: List of IPAM effective regions.
-	AttrOperatingRegionList() alicloudroscdkcore.IResolvable
+	AttrOperatingRegionList() interface{}
 	// Attribute PrivateDefaultScopeId: After an IPAM is created, the scope of the private network IPAM created by the system by default.
-	AttrPrivateDefaultScopeId() alicloudroscdkcore.IResolvable
+	AttrPrivateDefaultScopeId() interface{}
 	// Attribute PublicDefaultScopeId: After an IPAM is created, the public network IPAM is created by default.
-	AttrPublicDefaultScopeId() alicloudroscdkcore.IResolvable
+	AttrPublicDefaultScopeId() interface{}
 	// Attribute ResourceDiscoveryAssociationCount: The number of resource discovery objects associated with IPAM.
-	AttrResourceDiscoveryAssociationCount() alicloudroscdkcore.IResolvable
+	AttrResourceDiscoveryAssociationCount() interface{}
 	// Attribute ResourceGroupId: The ID of the resource group.
-	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() interface{}
 	// Attribute Tags: The tag of the IPAM.
-	AttrTags() alicloudroscdkcore.IResolvable
+	AttrTags() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -52,7 +62,6 @@ type Ipam interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *IpamProps
-	SetProps(val *IpamProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -65,6 +74,9 @@ type Ipam interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -117,10 +129,11 @@ type Ipam interface {
 // The jsii proxy struct for Ipam
 type jsiiProxy_Ipam struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IIpam
 }
 
-func (j *jsiiProxy_Ipam) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Ipam) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -129,8 +142,8 @@ func (j *jsiiProxy_Ipam) AttrCreateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Ipam) AttrDefaultResourceDiscoveryAssociationId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Ipam) AttrDefaultResourceDiscoveryAssociationId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDefaultResourceDiscoveryAssociationId",
@@ -139,8 +152,8 @@ func (j *jsiiProxy_Ipam) AttrDefaultResourceDiscoveryAssociationId() alicloudros
 	return returns
 }
 
-func (j *jsiiProxy_Ipam) AttrDefaultResourceDiscoveryId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Ipam) AttrDefaultResourceDiscoveryId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDefaultResourceDiscoveryId",
@@ -149,8 +162,8 @@ func (j *jsiiProxy_Ipam) AttrDefaultResourceDiscoveryId() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_Ipam) AttrIpamDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Ipam) AttrIpamDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIpamDescription",
@@ -159,8 +172,8 @@ func (j *jsiiProxy_Ipam) AttrIpamDescription() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Ipam) AttrIpamId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Ipam) AttrIpamId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIpamId",
@@ -169,8 +182,8 @@ func (j *jsiiProxy_Ipam) AttrIpamId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Ipam) AttrIpamName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Ipam) AttrIpamName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIpamName",
@@ -179,8 +192,8 @@ func (j *jsiiProxy_Ipam) AttrIpamName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Ipam) AttrOperatingRegionList() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Ipam) AttrOperatingRegionList() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOperatingRegionList",
@@ -189,8 +202,8 @@ func (j *jsiiProxy_Ipam) AttrOperatingRegionList() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_Ipam) AttrPrivateDefaultScopeId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Ipam) AttrPrivateDefaultScopeId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPrivateDefaultScopeId",
@@ -199,8 +212,8 @@ func (j *jsiiProxy_Ipam) AttrPrivateDefaultScopeId() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_Ipam) AttrPublicDefaultScopeId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Ipam) AttrPublicDefaultScopeId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPublicDefaultScopeId",
@@ -209,8 +222,8 @@ func (j *jsiiProxy_Ipam) AttrPublicDefaultScopeId() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_Ipam) AttrResourceDiscoveryAssociationCount() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Ipam) AttrResourceDiscoveryAssociationCount() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceDiscoveryAssociationCount",
@@ -219,8 +232,8 @@ func (j *jsiiProxy_Ipam) AttrResourceDiscoveryAssociationCount() alicloudroscdkc
 	return returns
 }
 
-func (j *jsiiProxy_Ipam) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Ipam) AttrResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupId",
@@ -229,8 +242,8 @@ func (j *jsiiProxy_Ipam) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Ipam) AttrTags() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Ipam) AttrTags() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTags",
@@ -244,6 +257,16 @@ func (j *jsiiProxy_Ipam) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Ipam) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -381,17 +404,6 @@ func (j *jsiiProxy_Ipam)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Ipam)SetProps(val *IpamProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Ipam)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -483,6 +495,45 @@ func (i *jsiiProxy_Ipam) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPol
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (i *jsiiProxy_Ipam) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		i,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_Ipam) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		i,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_Ipam) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		i,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (i *jsiiProxy_Ipam) GeneratePhysicalName() *string {

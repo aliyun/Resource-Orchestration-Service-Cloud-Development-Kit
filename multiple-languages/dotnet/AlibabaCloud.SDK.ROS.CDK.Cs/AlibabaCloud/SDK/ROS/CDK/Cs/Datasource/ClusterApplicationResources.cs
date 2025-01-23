@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs.Datasource
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-clusterapplicationresources
     /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Cs.Datasource.ClusterApplicationResources), fullyQualifiedName: "@alicloud/ros-cdk-cs.datasource.ClusterApplicationResources", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-cs.datasource.ClusterApplicationResourcesProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"optional\":true,\"type\":{\"primitive\":\"boolean\"}}]")]
-    public class ClusterApplicationResources : AlibabaCloud.SDK.ROS.CDK.Core.Resource_
+    public class ClusterApplicationResources : AlibabaCloud.SDK.ROS.CDK.Core.Resource_, AlibabaCloud.SDK.ROS.CDK.Cs.Datasource.IClusterApplicationResources
     {
         /// <summary>Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.</summary>
         public ClusterApplicationResources(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Cs.Datasource.IClusterApplicationResourcesProps props, bool? enableResourcePropertyConstraint = null): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
@@ -38,10 +38,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs.Datasource
         }
 
         /// <summary>Attribute Response: Query result of kubernetes resource(s).</summary>
-        [JsiiProperty(name: "attrResponse", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrResponse
+        [JsiiProperty(name: "attrResponse", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrResponse
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
+        }
+
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-cs.datasource.ClusterApplicationResourcesProps\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Cs.Datasource.IClusterApplicationResourcesProps Props
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Cs.Datasource.IClusterApplicationResourcesProps>()!;
         }
 
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
@@ -55,13 +61,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs.Datasource
         protected virtual string Id
         {
             get => GetInstanceProperty<string>()!;
-            set => SetInstanceProperty(value);
-        }
-
-        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-cs.datasource.ClusterApplicationResourcesProps\"}")]
-        protected virtual AlibabaCloud.SDK.ROS.CDK.Cs.Datasource.IClusterApplicationResourcesProps Props
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Cs.Datasource.IClusterApplicationResourcesProps>()!;
             set => SetInstanceProperty(value);
         }
 

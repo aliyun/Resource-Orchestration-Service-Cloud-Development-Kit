@@ -47,20 +47,31 @@ export interface ImageComponentProps {
 }
 
 /**
+ * Represents a `ImageComponent`.
+ */
+export interface IImageComponent extends ros.IResource {
+    readonly props: ImageComponentProps;
+
+    /**
+     * Attribute ImageComponentId: The ID of the image component.
+     */
+    readonly attrImageComponentId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::ImageComponent`, which is used to create an image component.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosImageComponent`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-imagecomponent
  */
-export class ImageComponent extends ros.Resource {
+export class ImageComponent extends ros.Resource implements IImageComponent {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ImageComponentProps;
+    public readonly props: ImageComponentProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ImageComponentId: The ID of the image component.
      */
-    public readonly attrImageComponentId: ros.IResolvable;
+    public readonly attrImageComponentId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

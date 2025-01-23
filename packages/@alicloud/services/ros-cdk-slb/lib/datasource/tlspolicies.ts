@@ -29,25 +29,41 @@ export interface TLSPoliciesProps {
 }
 
 /**
+ * Represents a `TLSPolicies`.
+ */
+export interface ITLSPolicies extends ros.IResource {
+    readonly props: TLSPoliciesProps;
+
+    /**
+     * Attribute InstanceIds: The list of instance IDs.
+     */
+    readonly attrInstanceIds: ros.IResolvable | string;
+
+    /**
+     * Attribute TLSPolicies: The list of tls policies.
+     */
+    readonly attrTlsPolicies: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::TLSPolicies`, which is used to query Transport Layer Security (TLS) policies.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTLSPolicies`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-tlspolicies
  */
-export class TLSPolicies extends ros.Resource {
+export class TLSPolicies extends ros.Resource implements ITLSPolicies {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: TLSPoliciesProps;
+    public readonly props: TLSPoliciesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceIds: The list of instance IDs.
      */
-    public readonly attrInstanceIds: ros.IResolvable;
+    public readonly attrInstanceIds: ros.IResolvable | string;
 
     /**
      * Attribute TLSPolicies: The list of tls policies.
      */
-    public readonly attrTlsPolicies: ros.IResolvable;
+    public readonly attrTlsPolicies: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

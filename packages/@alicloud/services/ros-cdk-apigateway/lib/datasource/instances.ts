@@ -29,25 +29,41 @@ export interface InstancesProps {
 }
 
 /**
+ * Represents a `Instances`.
+ */
+export interface IInstances extends ros.IResource {
+    readonly props: InstancesProps;
+
+    /**
+     * Attribute ApiGatewayInstanceIds: The list of The ApiGateway group ids.
+     */
+    readonly attrApiGatewayInstanceIds: ros.IResolvable | string;
+
+    /**
+     * Attribute ApiGatewayInstances: The information about ApiGateway groups.
+     */
+    readonly attrApiGatewayInstances: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ApiGateway::Instances`, which is used to query instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstances`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-instances
  */
-export class Instances extends ros.Resource {
+export class Instances extends ros.Resource implements IInstances {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InstancesProps;
+    public readonly props: InstancesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ApiGatewayInstanceIds: The list of The ApiGateway group ids.
      */
-    public readonly attrApiGatewayInstanceIds: ros.IResolvable;
+    public readonly attrApiGatewayInstanceIds: ros.IResolvable | string;
 
     /**
      * Attribute ApiGatewayInstances: The information about ApiGateway groups.
      */
-    public readonly attrApiGatewayInstances: ros.IResolvable;
+    public readonly attrApiGatewayInstances: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -10,7 +10,7 @@ package com.aliyun.ros.cdk.core;
  * Tokens can be embedded into strings while retaining their original
  * semantics.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:03.736Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:33.762Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Token")
 public class Token extends software.amazon.jsii.JsiiObject {
 
@@ -92,6 +92,16 @@ public class Token extends software.amazon.jsii.JsiiObject {
      */
     public static @org.jetbrains.annotations.NotNull java.lang.String asString(final @org.jetbrains.annotations.NotNull java.lang.Object value) {
         return software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.core.Token.class, "asString", software.amazon.jsii.NativeType.forClass(java.lang.String.class), new Object[] { value });
+    }
+
+    /**
+     * Compare two strings that might contain Tokens with each other.
+     * <p>
+     * @param possibleToken1 This parameter is required.
+     * @param possibleToken2 This parameter is required.
+     */
+    public static @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.TokenComparison compareStrings(final @org.jetbrains.annotations.NotNull java.lang.String possibleToken1, final @org.jetbrains.annotations.NotNull java.lang.String possibleToken2) {
+        return software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.core.Token.class, "compareStrings", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.TokenComparison.class), new Object[] { java.util.Objects.requireNonNull(possibleToken1, "possibleToken1 is required"), java.util.Objects.requireNonNull(possibleToken2, "possibleToken2 is required") });
     }
 
     /**

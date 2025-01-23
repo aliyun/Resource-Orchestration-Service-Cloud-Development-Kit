@@ -31,30 +31,51 @@ export interface WaitConditionProps {
 }
 
 /**
+ * Represents a `WaitCondition`.
+ */
+export interface IWaitCondition extends ros.IResource {
+    readonly props: WaitConditionProps;
+
+    /**
+     * Attribute Data: JSON serialized dict containing data associated with wait condition signals sent to the handle.
+     */
+    readonly attrData: ros.IResolvable | string;
+
+    /**
+     * Attribute ErrorData: JSON serialized dict containing data associated with wait condition error signals sent to the handle.
+     */
+    readonly attrErrorData: ros.IResolvable | string;
+
+    /**
+     * Attribute JoinedErrorData: String containing data associated with wait condition error signals sent to the handle.
+     */
+    readonly attrJoinedErrorData: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::WaitCondition`, which is used to wait for signals. You can use ALIYUN::ROS::WaitCondition together with ALIYUN::ROS::WaitConditionHandle to manage the execution process of a stack. When you create an Elastic Compute Service (ECS) instance, a signal is sent during the execution of the user data.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWaitCondition`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-waitcondition
  */
-export class WaitCondition extends ros.Resource {
+export class WaitCondition extends ros.Resource implements IWaitCondition {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: WaitConditionProps;
+    public readonly props: WaitConditionProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Data: JSON serialized dict containing data associated with wait condition signals sent to the handle.
      */
-    public readonly attrData: ros.IResolvable;
+    public readonly attrData: ros.IResolvable | string;
 
     /**
      * Attribute ErrorData: JSON serialized dict containing data associated with wait condition error signals sent to the handle.
      */
-    public readonly attrErrorData: ros.IResolvable;
+    public readonly attrErrorData: ros.IResolvable | string;
 
     /**
      * Attribute JoinedErrorData: String containing data associated with wait condition error signals sent to the handle.
      */
-    public readonly attrJoinedErrorData: ros.IResolvable;
+    public readonly attrJoinedErrorData: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

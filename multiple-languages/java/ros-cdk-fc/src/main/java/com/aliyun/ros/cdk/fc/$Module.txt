@@ -6,6 +6,15 @@
 @alicloud/ros-cdk-fc.FunctionInvoker=com.aliyun.ros.cdk.fc.FunctionInvoker
 @alicloud/ros-cdk-fc.FunctionInvokerProps=com.aliyun.ros.cdk.fc.FunctionInvokerProps
 @alicloud/ros-cdk-fc.FunctionProps=com.aliyun.ros.cdk.fc.FunctionProps
+@alicloud/ros-cdk-fc.IAlias=com.aliyun.ros.cdk.fc.IAlias
+@alicloud/ros-cdk-fc.ICustomDomain=com.aliyun.ros.cdk.fc.ICustomDomain
+@alicloud/ros-cdk-fc.IFunction=com.aliyun.ros.cdk.fc.IFunction
+@alicloud/ros-cdk-fc.IFunctionInvoker=com.aliyun.ros.cdk.fc.IFunctionInvoker
+@alicloud/ros-cdk-fc.ILayer=com.aliyun.ros.cdk.fc.ILayer
+@alicloud/ros-cdk-fc.IProvisionConfig=com.aliyun.ros.cdk.fc.IProvisionConfig
+@alicloud/ros-cdk-fc.IService=com.aliyun.ros.cdk.fc.IService
+@alicloud/ros-cdk-fc.ITrigger=com.aliyun.ros.cdk.fc.ITrigger
+@alicloud/ros-cdk-fc.IVersion=com.aliyun.ros.cdk.fc.IVersion
 @alicloud/ros-cdk-fc.Layer=com.aliyun.ros.cdk.fc.Layer
 @alicloud/ros-cdk-fc.LayerProps=com.aliyun.ros.cdk.fc.LayerProps
 @alicloud/ros-cdk-fc.ProvisionConfig=com.aliyun.ros.cdk.fc.ProvisionConfig
@@ -63,6 +72,11 @@
 @alicloud/ros-cdk-fc.datasource.CustomDomainsProps=com.aliyun.ros.cdk.fc.datasource.CustomDomainsProps
 @alicloud/ros-cdk-fc.datasource.Functions=com.aliyun.ros.cdk.fc.datasource.Functions
 @alicloud/ros-cdk-fc.datasource.FunctionsProps=com.aliyun.ros.cdk.fc.datasource.FunctionsProps
+@alicloud/ros-cdk-fc.datasource.IAliases=com.aliyun.ros.cdk.fc.datasource.IAliases
+@alicloud/ros-cdk-fc.datasource.ICustomDomains=com.aliyun.ros.cdk.fc.datasource.ICustomDomains
+@alicloud/ros-cdk-fc.datasource.IFunctions=com.aliyun.ros.cdk.fc.datasource.IFunctions
+@alicloud/ros-cdk-fc.datasource.IServices=com.aliyun.ros.cdk.fc.datasource.IServices
+@alicloud/ros-cdk-fc.datasource.ITriggers=com.aliyun.ros.cdk.fc.datasource.ITriggers
 @alicloud/ros-cdk-fc.datasource.RosAliases=com.aliyun.ros.cdk.fc.datasource.RosAliases
 @alicloud/ros-cdk-fc.datasource.RosAliasesProps=com.aliyun.ros.cdk.fc.datasource.RosAliasesProps
 @alicloud/ros-cdk-fc.datasource.RosCustomDomains=com.aliyun.ros.cdk.fc.datasource.RosCustomDomains

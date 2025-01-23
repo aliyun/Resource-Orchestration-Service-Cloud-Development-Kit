@@ -12,40 +12,50 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::NAS::FileSystem`, which is used to query the information about a file system.
 type FileSystem interface {
 	alicloudroscdkcore.Resource
+	IFileSystem
 	// Attribute Bandwidth: Maximum file system throughput.
-	AttrBandwidth() alicloudroscdkcore.IResolvable
+	AttrBandwidth() interface{}
 	// Attribute Capacity: File system capacity.
-	AttrCapacity() alicloudroscdkcore.IResolvable
+	AttrCapacity() interface{}
 	// Attribute CreateTime: CreateTime.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute Description: File system description.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute EncryptType: Whether the file system is encrypted.
-	AttrEncryptType() alicloudroscdkcore.IResolvable
+	AttrEncryptType() interface{}
 	// Attribute ExpiredTime: ExpiredTime.
-	AttrExpiredTime() alicloudroscdkcore.IResolvable
+	AttrExpiredTime() interface{}
 	// Attribute FileSystemId: The ID of the file system to be created.
-	AttrFileSystemId() alicloudroscdkcore.IResolvable
+	AttrFileSystemId() interface{}
 	// Attribute FileSystemType: File system type.
-	AttrFileSystemType() alicloudroscdkcore.IResolvable
+	AttrFileSystemType() interface{}
 	// Attribute KmsKeyId: The ID of the KMS key.
-	AttrKmsKeyId() alicloudroscdkcore.IResolvable
+	AttrKmsKeyId() interface{}
 	// Attribute Ldap: Ldap.
-	AttrLdap() alicloudroscdkcore.IResolvable
+	AttrLdap() interface{}
 	// Attribute MeteredSize: MeteredSize.
-	AttrMeteredSize() alicloudroscdkcore.IResolvable
+	AttrMeteredSize() interface{}
 	// Attribute PaymentType: ChargeType.
-	AttrPaymentType() alicloudroscdkcore.IResolvable
+	AttrPaymentType() interface{}
 	// Attribute ProtocolType: File transfer protocol type.
-	AttrProtocolType() alicloudroscdkcore.IResolvable
+	AttrProtocolType() interface{}
 	// Attribute StorageType: Storage type.
-	AttrStorageType() alicloudroscdkcore.IResolvable
+	AttrStorageType() interface{}
 	// Attribute Tags: Tags.
-	AttrTags() alicloudroscdkcore.IResolvable
+	AttrTags() interface{}
 	// Attribute ZoneId: The zone ID.
-	AttrZoneId() alicloudroscdkcore.IResolvable
+	AttrZoneId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -60,7 +70,6 @@ type FileSystem interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *FileSystemProps
-	SetProps(val *FileSystemProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -73,6 +82,9 @@ type FileSystem interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -125,10 +137,11 @@ type FileSystem interface {
 // The jsii proxy struct for FileSystem
 type jsiiProxy_FileSystem struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IFileSystem
 }
 
-func (j *jsiiProxy_FileSystem) AttrBandwidth() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FileSystem) AttrBandwidth() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBandwidth",
@@ -137,8 +150,8 @@ func (j *jsiiProxy_FileSystem) AttrBandwidth() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_FileSystem) AttrCapacity() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FileSystem) AttrCapacity() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCapacity",
@@ -147,8 +160,8 @@ func (j *jsiiProxy_FileSystem) AttrCapacity() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_FileSystem) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FileSystem) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -157,8 +170,8 @@ func (j *jsiiProxy_FileSystem) AttrCreateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_FileSystem) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FileSystem) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -167,8 +180,8 @@ func (j *jsiiProxy_FileSystem) AttrDescription() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_FileSystem) AttrEncryptType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FileSystem) AttrEncryptType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEncryptType",
@@ -177,8 +190,8 @@ func (j *jsiiProxy_FileSystem) AttrEncryptType() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_FileSystem) AttrExpiredTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FileSystem) AttrExpiredTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrExpiredTime",
@@ -187,8 +200,8 @@ func (j *jsiiProxy_FileSystem) AttrExpiredTime() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_FileSystem) AttrFileSystemId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FileSystem) AttrFileSystemId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrFileSystemId",
@@ -197,8 +210,8 @@ func (j *jsiiProxy_FileSystem) AttrFileSystemId() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_FileSystem) AttrFileSystemType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FileSystem) AttrFileSystemType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrFileSystemType",
@@ -207,8 +220,8 @@ func (j *jsiiProxy_FileSystem) AttrFileSystemType() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_FileSystem) AttrKmsKeyId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FileSystem) AttrKmsKeyId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrKmsKeyId",
@@ -217,8 +230,8 @@ func (j *jsiiProxy_FileSystem) AttrKmsKeyId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_FileSystem) AttrLdap() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FileSystem) AttrLdap() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLdap",
@@ -227,8 +240,8 @@ func (j *jsiiProxy_FileSystem) AttrLdap() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_FileSystem) AttrMeteredSize() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FileSystem) AttrMeteredSize() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMeteredSize",
@@ -237,8 +250,8 @@ func (j *jsiiProxy_FileSystem) AttrMeteredSize() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_FileSystem) AttrPaymentType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FileSystem) AttrPaymentType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPaymentType",
@@ -247,8 +260,8 @@ func (j *jsiiProxy_FileSystem) AttrPaymentType() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_FileSystem) AttrProtocolType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FileSystem) AttrProtocolType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrProtocolType",
@@ -257,8 +270,8 @@ func (j *jsiiProxy_FileSystem) AttrProtocolType() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_FileSystem) AttrStorageType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FileSystem) AttrStorageType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStorageType",
@@ -267,8 +280,8 @@ func (j *jsiiProxy_FileSystem) AttrStorageType() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_FileSystem) AttrTags() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FileSystem) AttrTags() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTags",
@@ -277,8 +290,8 @@ func (j *jsiiProxy_FileSystem) AttrTags() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_FileSystem) AttrZoneId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FileSystem) AttrZoneId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrZoneId",
@@ -292,6 +305,16 @@ func (j *jsiiProxy_FileSystem) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FileSystem) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -429,17 +452,6 @@ func (j *jsiiProxy_FileSystem)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_FileSystem)SetProps(val *FileSystemProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_FileSystem)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -531,6 +543,45 @@ func (f *jsiiProxy_FileSystem) ApplyRemovalPolicy(policy alicloudroscdkcore.Remo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (f *jsiiProxy_FileSystem) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		f,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (f *jsiiProxy_FileSystem) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (f *jsiiProxy_FileSystem) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (f *jsiiProxy_FileSystem) GeneratePhysicalName() *string {
