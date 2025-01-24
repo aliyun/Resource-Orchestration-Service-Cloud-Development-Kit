@@ -62,25 +62,20 @@ export interface AntiBruteForceRuleProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ThreatDetection::AntiBruteForceRule`, which is used to create a defense rule against brute-force attacks.
- * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAntiBruteForceRule`for a more convenient development experience.
- * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-threatdetection-antibruteforcerule
+ * Represents a `AntiBruteForceRule`.
  */
-export class AntiBruteForceRule extends ros.Resource {
-    protected scope: ros.Construct;
-    protected id: string;
-    protected props: AntiBruteForceRuleProps;
-    protected enableResourcePropertyConstraint: boolean;
+export interface IAntiBruteForceRule extends ros.IResource {
+    readonly props: AntiBruteForceRuleProps;
 
     /**
      * Attribute AntiBruteForceRuleId: The ID of the defense rule.
      */
-    public readonly attrAntiBruteForceRuleId: ros.IResolvable;
+    readonly attrAntiBruteForceRuleId: ros.IResolvable | string;
 
     /**
      * Attribute AntiBruteForceRuleName: The name of the defense rule.
      */
-    public readonly attrAntiBruteForceRuleName: ros.IResolvable;
+    readonly attrAntiBruteForceRuleName: ros.IResolvable | string;
 
     /**
      * Attribute DefaultRule: Specifies whether to set the defense rule as the default rule. 
@@ -88,27 +83,76 @@ Valid values:
 - true: yes
 - false: no
      */
-    public readonly attrDefaultRule: ros.IResolvable;
+    readonly attrDefaultRule: ros.IResolvable | string;
 
     /**
      * Attribute FailCount: The threshold for the number of failed user logins when the brute-force defense rule takes effect.
      */
-    public readonly attrFailCount: ros.IResolvable;
+    readonly attrFailCount: ros.IResolvable | string;
 
     /**
      * Attribute ForbiddenTime: The period of time during which logons from an account are not allowed. Unit: minutes.
      */
-    public readonly attrForbiddenTime: ros.IResolvable;
+    readonly attrForbiddenTime: ros.IResolvable | string;
 
     /**
      * Attribute Span: The period of time during which logon failures from an account are measured. Unit: minutes. If Span is set to 10, the defense rule takes effect when the logon failures measured within 10 minutes reaches the specified threshold. The IP addresses of attackers cannot be used to log on to the server within the specified period of time.
      */
-    public readonly attrSpan: ros.IResolvable;
+    readonly attrSpan: ros.IResolvable | string;
 
     /**
      * Attribute UuidList: The UUIDs of the server to which the defense rule is applied.
      */
-    public readonly attrUuidList: ros.IResolvable;
+    readonly attrUuidList: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ThreatDetection::AntiBruteForceRule`, which is used to create a defense rule against brute-force attacks.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAntiBruteForceRule`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-threatdetection-antibruteforcerule
+ */
+export class AntiBruteForceRule extends ros.Resource implements IAntiBruteForceRule {
+    protected scope: ros.Construct;
+    protected id: string;
+    public readonly props: AntiBruteForceRuleProps;
+    protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute AntiBruteForceRuleId: The ID of the defense rule.
+     */
+    public readonly attrAntiBruteForceRuleId: ros.IResolvable | string;
+
+    /**
+     * Attribute AntiBruteForceRuleName: The name of the defense rule.
+     */
+    public readonly attrAntiBruteForceRuleName: ros.IResolvable | string;
+
+    /**
+     * Attribute DefaultRule: Specifies whether to set the defense rule as the default rule. 
+Valid values:
+- true: yes
+- false: no
+     */
+    public readonly attrDefaultRule: ros.IResolvable | string;
+
+    /**
+     * Attribute FailCount: The threshold for the number of failed user logins when the brute-force defense rule takes effect.
+     */
+    public readonly attrFailCount: ros.IResolvable | string;
+
+    /**
+     * Attribute ForbiddenTime: The period of time during which logons from an account are not allowed. Unit: minutes.
+     */
+    public readonly attrForbiddenTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Span: The period of time during which logon failures from an account are measured. Unit: minutes. If Span is set to 10, the defense rule takes effect when the logon failures measured within 10 minutes reaches the specified threshold. The IP addresses of attackers cannot be used to log on to the server within the specified period of time.
+     */
+    public readonly attrSpan: ros.IResolvable | string;
+
+    /**
+     * Attribute UuidList: The UUIDs of the server to which the defense rule is applied.
+     */
+    public readonly attrUuidList: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

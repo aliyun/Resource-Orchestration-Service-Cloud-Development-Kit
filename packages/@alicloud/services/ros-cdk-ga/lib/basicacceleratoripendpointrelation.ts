@@ -26,30 +26,51 @@ export interface BasicAcceleratorIpEndpointRelationProps {
 }
 
 /**
+ * Represents a `BasicAcceleratorIpEndpointRelation`.
+ */
+export interface IBasicAcceleratorIpEndpointRelation extends ros.IResource {
+    readonly props: BasicAcceleratorIpEndpointRelationProps;
+
+    /**
+     * Attribute AccelerateIpId: The ID of the accelerated IP address.
+     */
+    readonly attrAccelerateIpId: ros.IResolvable | string;
+
+    /**
+     * Attribute AcceleratorId: The ID of the basic GA instance.
+     */
+    readonly attrAcceleratorId: ros.IResolvable | string;
+
+    /**
+     * Attribute EndpointId: The ID of the endpoint.
+     */
+    readonly attrEndpointId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::GA::BasicAcceleratorIpEndpointRelation`, which is used to create a mapping between an accelerated IP address and an endpoint for a basic Global Accelerator (GA) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBasicAcceleratorIpEndpointRelation`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicacceleratoripendpointrelation
  */
-export class BasicAcceleratorIpEndpointRelation extends ros.Resource {
+export class BasicAcceleratorIpEndpointRelation extends ros.Resource implements IBasicAcceleratorIpEndpointRelation {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: BasicAcceleratorIpEndpointRelationProps;
+    public readonly props: BasicAcceleratorIpEndpointRelationProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccelerateIpId: The ID of the accelerated IP address.
      */
-    public readonly attrAccelerateIpId: ros.IResolvable;
+    public readonly attrAccelerateIpId: ros.IResolvable | string;
 
     /**
      * Attribute AcceleratorId: The ID of the basic GA instance.
      */
-    public readonly attrAcceleratorId: ros.IResolvable;
+    public readonly attrAcceleratorId: ros.IResolvable | string;
 
     /**
      * Attribute EndpointId: The ID of the endpoint.
      */
-    public readonly attrEndpointId: ros.IResolvable;
+    public readonly attrEndpointId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -31,25 +31,41 @@ export interface ProjectProps {
 }
 
 /**
+ * Represents a `Project`.
+ */
+export interface IProject extends ros.IResource {
+    readonly props: ProjectProps;
+
+    /**
+     * Attribute AppKey: The app key of the project.
+     */
+    readonly attrAppKey: ros.IResolvable | string;
+
+    /**
+     * Attribute ProjectId: The ID of the project.
+     */
+    readonly attrProjectId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::NLS::Project`, which is used to create a project in Intelligent Speech Interaction.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosProject`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nls-project
  */
-export class Project extends ros.Resource {
+export class Project extends ros.Resource implements IProject {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ProjectProps;
+    public readonly props: ProjectProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AppKey: The app key of the project.
      */
-    public readonly attrAppKey: ros.IResolvable;
+    public readonly attrAppKey: ros.IResolvable | string;
 
     /**
      * Attribute ProjectId: The ID of the project.
      */
-    public readonly attrProjectId: ros.IResolvable;
+    public readonly attrProjectId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

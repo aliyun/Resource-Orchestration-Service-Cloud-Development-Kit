@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::NatIpCidrs`, which is used to query the CIDR blocks of a NAT gateway.
 type NatIpCidrs interface {
 	alicloudroscdkcore.Resource
+	INatIpCidrs
 	// Attribute NatIpCidrIds: The list of nat ip cidr IDs.
-	AttrNatIpCidrIds() alicloudroscdkcore.IResolvable
+	AttrNatIpCidrIds() interface{}
 	// Attribute NatIpCidrs: The list of nat ip cidrs.
-	AttrNatIpCidrs() alicloudroscdkcore.IResolvable
+	AttrNatIpCidrs() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type NatIpCidrs interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *NatIpCidrsProps
-	SetProps(val *NatIpCidrsProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type NatIpCidrs interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type NatIpCidrs interface {
 // The jsii proxy struct for NatIpCidrs
 type jsiiProxy_NatIpCidrs struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_INatIpCidrs
 }
 
-func (j *jsiiProxy_NatIpCidrs) AttrNatIpCidrIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NatIpCidrs) AttrNatIpCidrIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNatIpCidrIds",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_NatIpCidrs) AttrNatIpCidrIds() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_NatIpCidrs) AttrNatIpCidrs() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NatIpCidrs) AttrNatIpCidrs() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNatIpCidrs",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_NatIpCidrs) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_NatIpCidrs) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_NatIpCidrs)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_NatIpCidrs)SetProps(val *NatIpCidrsProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_NatIpCidrs)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (n *jsiiProxy_NatIpCidrs) ApplyRemovalPolicy(policy alicloudroscdkcore.Remo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (n *jsiiProxy_NatIpCidrs) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		n,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (n *jsiiProxy_NatIpCidrs) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		n,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (n *jsiiProxy_NatIpCidrs) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		n,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (n *jsiiProxy_NatIpCidrs) GeneratePhysicalName() *string {

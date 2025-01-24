@@ -88,7 +88,19 @@ func (j *jsiiProxy_RosAutoSnapshotPolicy) validateSetAutoSnapshotPolicyNameParam
 	return nil
 }
 
+func (j *jsiiProxy_RosAutoSnapshotPolicy) validateSetCopiedSnapshotsRetentionDaysParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosAutoSnapshotPolicy) validateSetCopyEncryptionConfigurationParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosAutoSnapshotPolicy) validateSetDiskIdsParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosAutoSnapshotPolicy) validateSetEnableCrossRegionCopyParameters(val interface{}) error {
 	return nil
 }
 
@@ -109,6 +121,10 @@ func (j *jsiiProxy_RosAutoSnapshotPolicy) validateSetRetentionDaysParameters(val
 }
 
 func (j *jsiiProxy_RosAutoSnapshotPolicy) validateSetTagsParameters(val *[]*RosAutoSnapshotPolicy_TagsProperty) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosAutoSnapshotPolicy) validateSetTargetCopyRegionsParameters(val interface{}) error {
 	return nil
 }
 

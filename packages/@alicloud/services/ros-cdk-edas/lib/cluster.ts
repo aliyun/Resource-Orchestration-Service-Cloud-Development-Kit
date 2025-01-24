@@ -46,35 +46,61 @@ export interface ClusterProps {
 }
 
 /**
+ * Represents a `Cluster`.
+ */
+export interface ICluster extends ros.IResource {
+    readonly props: ClusterProps;
+
+    /**
+     * Attribute ClusterId: Cluster ID
+     */
+    readonly attrClusterId: ros.IResolvable | string;
+
+    /**
+     * Attribute ClusterName: Cluster name
+     */
+    readonly attrClusterName: ros.IResolvable | string;
+
+    /**
+     * Attribute ClusterType: Cluster type
+     */
+    readonly attrClusterType: ros.IResolvable | string;
+
+    /**
+     * Attribute IaasProvider: Provider
+     */
+    readonly attrIaasProvider: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::Cluster`, which is used to create a cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-cluster
  */
-export class Cluster extends ros.Resource {
+export class Cluster extends ros.Resource implements ICluster {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ClusterProps;
+    public readonly props: ClusterProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterId: Cluster ID
      */
-    public readonly attrClusterId: ros.IResolvable;
+    public readonly attrClusterId: ros.IResolvable | string;
 
     /**
      * Attribute ClusterName: Cluster name
      */
-    public readonly attrClusterName: ros.IResolvable;
+    public readonly attrClusterName: ros.IResolvable | string;
 
     /**
      * Attribute ClusterType: Cluster type
      */
-    public readonly attrClusterType: ros.IResolvable;
+    public readonly attrClusterType: ros.IResolvable | string;
 
     /**
      * Attribute IaasProvider: Provider
      */
-    public readonly attrIaasProvider: ros.IResolvable;
+    public readonly attrIaasProvider: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

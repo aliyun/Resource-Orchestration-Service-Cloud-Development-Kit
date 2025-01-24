@@ -126,30 +126,51 @@ export interface MigrationJob2Props {
 }
 
 /**
+ * Represents a `MigrationJob2`.
+ */
+export interface IMigrationJob2 extends ros.IResource {
+    readonly props: MigrationJob2Props;
+
+    /**
+     * Attribute DtsInstanceId: The ID of the DTS instance.
+     */
+    readonly attrDtsInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute DtsJobId: The ID of the task.
+     */
+    readonly attrDtsJobId: ros.IResolvable | string;
+
+    /**
+     * Attribute DtsJobName: The name of the DTS job.
+     */
+    readonly attrDtsJobName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::MigrationJob2`, which is used to purchase a data migration instance and configure a data migration task of the new version.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMigrationJob2`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-migrationjob2
  */
-export class MigrationJob2 extends ros.Resource {
+export class MigrationJob2 extends ros.Resource implements IMigrationJob2 {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: MigrationJob2Props;
+    public readonly props: MigrationJob2Props;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DtsInstanceId: The ID of the DTS instance.
      */
-    public readonly attrDtsInstanceId: ros.IResolvable;
+    public readonly attrDtsInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute DtsJobId: The ID of the task.
      */
-    public readonly attrDtsJobId: ros.IResolvable;
+    public readonly attrDtsJobId: ros.IResolvable | string;
 
     /**
      * Attribute DtsJobName: The name of the DTS job.
      */
-    public readonly attrDtsJobName: ros.IResolvable;
+    public readonly attrDtsJobName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -24,170 +24,331 @@ export interface ServiceProps {
 }
 
 /**
+ * Represents a `Service`.
+ */
+export interface IService extends ros.IResource {
+    readonly props: ServiceProps;
+
+    /**
+     * Attribute AccessToken: The request token of the service.
+     */
+    readonly attrAccessToken: ros.IResolvable | string;
+
+    /**
+     * Attribute CallerUid: The user ID of the account that is used to create the service.
+     */
+    readonly attrCallerUid: ros.IResolvable | string;
+
+    /**
+     * Attribute Cpu: The CPU that you applied for each instance.
+     */
+    readonly attrCpu: ros.IResolvable | string;
+
+    /**
+     * Attribute CreateTime: The time when the service was created.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute CurrentVersion: The current version of the model.
+     */
+    readonly attrCurrentVersion: ros.IResolvable | string;
+
+    /**
+     * Attribute ExtraData: The additional information about the service.
+     */
+    readonly attrExtraData: ros.IResolvable | string;
+
+    /**
+     * Attribute Gpu: The GPU that you applied for each instance.
+     */
+    readonly attrGpu: ros.IResolvable | string;
+
+    /**
+     * Attribute Image: The data image of the service.
+     */
+    readonly attrImage: ros.IResolvable | string;
+
+    /**
+     * Attribute InternetEndpoint: The public endpoint of the service.
+     */
+    readonly attrInternetEndpoint: ros.IResolvable | string;
+
+    /**
+     * Attribute IntranetEndpoint: The private endpoint of the service.
+     */
+    readonly attrIntranetEndpoint: ros.IResolvable | string;
+
+    /**
+     * Attribute Labels: The tags of the service.
+     */
+    readonly attrLabels: ros.IResolvable | string;
+
+    /**
+     * Attribute LatestVersion: The latest version of the service.
+     */
+    readonly attrLatestVersion: ros.IResolvable | string;
+
+    /**
+     * Attribute Memory: The memory that you applied for each instance.
+     */
+    readonly attrMemory: ros.IResolvable | string;
+
+    /**
+     * Attribute Message: The summary of the service.
+     */
+    readonly attrMessage: ros.IResolvable | string;
+
+    /**
+     * Attribute Namespace: The namespace of the service.
+     */
+    readonly attrNamespace: ros.IResolvable | string;
+
+    /**
+     * Attribute ParentUid: The user ID of the Alibaba Cloud account that is used to create the service.
+     */
+    readonly attrParentUid: ros.IResolvable | string;
+
+    /**
+     * Attribute PendingInstance: The number of instances for the suspended service.
+     */
+    readonly attrPendingInstance: ros.IResolvable | string;
+
+    /**
+     * Attribute Reason: The reason why the service is in the current state.
+     */
+    readonly attrReason: ros.IResolvable | string;
+
+    /**
+     * Attribute Resource: The resource group to which the service belongs.
+     */
+    readonly attrResource: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceAlias: The alias of the resource group to which the service belongs.
+     */
+    readonly attrResourceAlias: ros.IResolvable | string;
+
+    /**
+     * Attribute Role: The role of the service.
+     */
+    readonly attrRole: ros.IResolvable | string;
+
+    /**
+     * Attribute RoleAttrs: The additional attributes of the service role.
+     */
+    readonly attrRoleAttrs: ros.IResolvable | string;
+
+    /**
+     * Attribute RunningInstance: The number of instances for the running service.
+     */
+    readonly attrRunningInstance: ros.IResolvable | string;
+
+    /**
+     * Attribute SafetyLock: The security lock of the service.
+     */
+    readonly attrSafetyLock: ros.IResolvable | string;
+
+    /**
+     * Attribute ServiceConfig: The configurations of the service.
+     */
+    readonly attrServiceConfig: ros.IResolvable | string;
+
+    /**
+     * Attribute ServiceGroup: The group to which the service belongs.
+     */
+    readonly attrServiceGroup: ros.IResolvable | string;
+
+    /**
+     * Attribute ServiceName: The name of the service.
+     */
+    readonly attrServiceName: ros.IResolvable | string;
+
+    /**
+     * Attribute ServiceUid: The ID of the service. The value of this property is the same as the value of ServiceId.
+     */
+    readonly attrServiceUid: ros.IResolvable | string;
+
+    /**
+     * Attribute TotalInstance: The total number of instances of the service.
+     */
+    readonly attrTotalInstance: ros.IResolvable | string;
+
+    /**
+     * Attribute UpdateTime: The time when the service was updated.
+     */
+    readonly attrUpdateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Weight: The weight of the canary release for the service.
+     */
+    readonly attrWeight: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::Service`, which is used to query the information about a service in Elastic Algorithm Service (EAS).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosService`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-service
  */
-export class Service extends ros.Resource {
+export class Service extends ros.Resource implements IService {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ServiceProps;
+    public readonly props: ServiceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccessToken: The request token of the service.
      */
-    public readonly attrAccessToken: ros.IResolvable;
+    public readonly attrAccessToken: ros.IResolvable | string;
 
     /**
      * Attribute CallerUid: The user ID of the account that is used to create the service.
      */
-    public readonly attrCallerUid: ros.IResolvable;
+    public readonly attrCallerUid: ros.IResolvable | string;
 
     /**
      * Attribute Cpu: The CPU that you applied for each instance.
      */
-    public readonly attrCpu: ros.IResolvable;
+    public readonly attrCpu: ros.IResolvable | string;
 
     /**
      * Attribute CreateTime: The time when the service was created.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute CurrentVersion: The current version of the model.
      */
-    public readonly attrCurrentVersion: ros.IResolvable;
+    public readonly attrCurrentVersion: ros.IResolvable | string;
 
     /**
      * Attribute ExtraData: The additional information about the service.
      */
-    public readonly attrExtraData: ros.IResolvable;
+    public readonly attrExtraData: ros.IResolvable | string;
 
     /**
      * Attribute Gpu: The GPU that you applied for each instance.
      */
-    public readonly attrGpu: ros.IResolvable;
+    public readonly attrGpu: ros.IResolvable | string;
 
     /**
      * Attribute Image: The data image of the service.
      */
-    public readonly attrImage: ros.IResolvable;
+    public readonly attrImage: ros.IResolvable | string;
 
     /**
      * Attribute InternetEndpoint: The public endpoint of the service.
      */
-    public readonly attrInternetEndpoint: ros.IResolvable;
+    public readonly attrInternetEndpoint: ros.IResolvable | string;
 
     /**
      * Attribute IntranetEndpoint: The private endpoint of the service.
      */
-    public readonly attrIntranetEndpoint: ros.IResolvable;
+    public readonly attrIntranetEndpoint: ros.IResolvable | string;
 
     /**
      * Attribute Labels: The tags of the service.
      */
-    public readonly attrLabels: ros.IResolvable;
+    public readonly attrLabels: ros.IResolvable | string;
 
     /**
      * Attribute LatestVersion: The latest version of the service.
      */
-    public readonly attrLatestVersion: ros.IResolvable;
+    public readonly attrLatestVersion: ros.IResolvable | string;
 
     /**
      * Attribute Memory: The memory that you applied for each instance.
      */
-    public readonly attrMemory: ros.IResolvable;
+    public readonly attrMemory: ros.IResolvable | string;
 
     /**
      * Attribute Message: The summary of the service.
      */
-    public readonly attrMessage: ros.IResolvable;
+    public readonly attrMessage: ros.IResolvable | string;
 
     /**
      * Attribute Namespace: The namespace of the service.
      */
-    public readonly attrNamespace: ros.IResolvable;
+    public readonly attrNamespace: ros.IResolvable | string;
 
     /**
      * Attribute ParentUid: The user ID of the Alibaba Cloud account that is used to create the service.
      */
-    public readonly attrParentUid: ros.IResolvable;
+    public readonly attrParentUid: ros.IResolvable | string;
 
     /**
      * Attribute PendingInstance: The number of instances for the suspended service.
      */
-    public readonly attrPendingInstance: ros.IResolvable;
+    public readonly attrPendingInstance: ros.IResolvable | string;
 
     /**
      * Attribute Reason: The reason why the service is in the current state.
      */
-    public readonly attrReason: ros.IResolvable;
+    public readonly attrReason: ros.IResolvable | string;
 
     /**
      * Attribute Resource: The resource group to which the service belongs.
      */
-    public readonly attrResource: ros.IResolvable;
+    public readonly attrResource: ros.IResolvable | string;
 
     /**
      * Attribute ResourceAlias: The alias of the resource group to which the service belongs.
      */
-    public readonly attrResourceAlias: ros.IResolvable;
+    public readonly attrResourceAlias: ros.IResolvable | string;
 
     /**
      * Attribute Role: The role of the service.
      */
-    public readonly attrRole: ros.IResolvable;
+    public readonly attrRole: ros.IResolvable | string;
 
     /**
      * Attribute RoleAttrs: The additional attributes of the service role.
      */
-    public readonly attrRoleAttrs: ros.IResolvable;
+    public readonly attrRoleAttrs: ros.IResolvable | string;
 
     /**
      * Attribute RunningInstance: The number of instances for the running service.
      */
-    public readonly attrRunningInstance: ros.IResolvable;
+    public readonly attrRunningInstance: ros.IResolvable | string;
 
     /**
      * Attribute SafetyLock: The security lock of the service.
      */
-    public readonly attrSafetyLock: ros.IResolvable;
+    public readonly attrSafetyLock: ros.IResolvable | string;
 
     /**
      * Attribute ServiceConfig: The configurations of the service.
      */
-    public readonly attrServiceConfig: ros.IResolvable;
+    public readonly attrServiceConfig: ros.IResolvable | string;
 
     /**
      * Attribute ServiceGroup: The group to which the service belongs.
      */
-    public readonly attrServiceGroup: ros.IResolvable;
+    public readonly attrServiceGroup: ros.IResolvable | string;
 
     /**
      * Attribute ServiceName: The name of the service.
      */
-    public readonly attrServiceName: ros.IResolvable;
+    public readonly attrServiceName: ros.IResolvable | string;
 
     /**
      * Attribute ServiceUid: The ID of the service. The value of this property is the same as the value of ServiceId.
      */
-    public readonly attrServiceUid: ros.IResolvable;
+    public readonly attrServiceUid: ros.IResolvable | string;
 
     /**
      * Attribute TotalInstance: The total number of instances of the service.
      */
-    public readonly attrTotalInstance: ros.IResolvable;
+    public readonly attrTotalInstance: ros.IResolvable | string;
 
     /**
      * Attribute UpdateTime: The time when the service was updated.
      */
-    public readonly attrUpdateTime: ros.IResolvable;
+    public readonly attrUpdateTime: ros.IResolvable | string;
 
     /**
      * Attribute Weight: The weight of the canary release for the service.
      */
-    public readonly attrWeight: ros.IResolvable;
+    public readonly attrWeight: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

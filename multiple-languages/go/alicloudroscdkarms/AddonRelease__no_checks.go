@@ -52,10 +52,6 @@ func (j *jsiiProxy_AddonRelease) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_AddonRelease) validateSetPropsParameters(val *AddonReleaseProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_AddonRelease) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

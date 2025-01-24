@@ -52,10 +52,6 @@ func (j *jsiiProxy_SecurityGroupClone) validateSetIdParameters(val *string) erro
 	return nil
 }
 
-func (j *jsiiProxy_SecurityGroupClone) validateSetPropsParameters(val *SecurityGroupCloneProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_SecurityGroupClone) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

@@ -5,9 +5,9 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * You can specify private IP addresses within the CIDR block of the vSwitch that hosts the ENI. You can also specify the number of private IP addresses for ECS to assign them automatically.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:06.930Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:37.793Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.AssignPrivateIpAddresses")
-public class AssignPrivateIpAddresses extends com.aliyun.ros.cdk.core.Resource {
+public class AssignPrivateIpAddresses extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IAssignPrivateIpAddresses {
 
     protected AssignPrivateIpAddresses(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -45,15 +45,22 @@ public class AssignPrivateIpAddresses extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute NetworkInterfaceId: The ID of the ENI.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrNetworkInterfaceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrNetworkInterfaceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrNetworkInterfaceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrNetworkInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute PrivateIpAddresses: Assigned private ip addresses.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPrivateIpAddresses() {
-        return software.amazon.jsii.Kernel.get(this, "attrPrivateIpAddresses", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPrivateIpAddresses() {
+        return software.amazon.jsii.Kernel.get(this, "attrPrivateIpAddresses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.AssignPrivateIpAddressesProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.AssignPrivateIpAddressesProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -70,14 +77,6 @@ public class AssignPrivateIpAddresses extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.AssignPrivateIpAddressesProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.AssignPrivateIpAddressesProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.AssignPrivateIpAddressesProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {
@@ -140,6 +139,48 @@ public class AssignPrivateIpAddresses extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder networkInterfaceId(final com.aliyun.ros.cdk.core.IResolvable networkInterfaceId) {
             this.props.networkInterfaceId(networkInterfaceId);
+            return this;
+        }
+
+        /**
+         * Property ipv4PrefixCount: The specified number of IPv4 prefixes to be assigned to the ENI.
+         * <p>
+         * @return {@code this}
+         * @param ipv4PrefixCount Property ipv4PrefixCount: The specified number of IPv4 prefixes to be assigned to the ENI. This parameter is required.
+         */
+        public Builder ipv4PrefixCount(final java.lang.Number ipv4PrefixCount) {
+            this.props.ipv4PrefixCount(ipv4PrefixCount);
+            return this;
+        }
+        /**
+         * Property ipv4PrefixCount: The specified number of IPv4 prefixes to be assigned to the ENI.
+         * <p>
+         * @return {@code this}
+         * @param ipv4PrefixCount Property ipv4PrefixCount: The specified number of IPv4 prefixes to be assigned to the ENI. This parameter is required.
+         */
+        public Builder ipv4PrefixCount(final com.aliyun.ros.cdk.core.IResolvable ipv4PrefixCount) {
+            this.props.ipv4PrefixCount(ipv4PrefixCount);
+            return this;
+        }
+
+        /**
+         * Property ipv4Prefixes: One or multiple IPv4 prefixes to be assigned to the ENI.
+         * <p>
+         * @return {@code this}
+         * @param ipv4Prefixes Property ipv4Prefixes: One or multiple IPv4 prefixes to be assigned to the ENI. This parameter is required.
+         */
+        public Builder ipv4Prefixes(final java.util.List<? extends java.lang.Object> ipv4Prefixes) {
+            this.props.ipv4Prefixes(ipv4Prefixes);
+            return this;
+        }
+        /**
+         * Property ipv4Prefixes: One or multiple IPv4 prefixes to be assigned to the ENI.
+         * <p>
+         * @return {@code this}
+         * @param ipv4Prefixes Property ipv4Prefixes: One or multiple IPv4 prefixes to be assigned to the ENI. This parameter is required.
+         */
+        public Builder ipv4Prefixes(final com.aliyun.ros.cdk.core.IResolvable ipv4Prefixes) {
+            this.props.ipv4Prefixes(ipv4Prefixes);
             return this;
         }
 

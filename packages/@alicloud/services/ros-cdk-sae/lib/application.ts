@@ -360,25 +360,41 @@ export interface ApplicationProps {
 }
 
 /**
+ * Represents a `Application`.
+ */
+export interface IApplication extends ros.IResource {
+    readonly props: ApplicationProps;
+
+    /**
+     * Attribute AppId: Creating successful application ID.
+     */
+    readonly attrAppId: ros.IResolvable | string;
+
+    /**
+     * Attribute ChangeOrderId: Return to release a single ID, used to query task execution status.
+     */
+    readonly attrChangeOrderId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SAE::Application`, which is used to create an application in Serverless App Engine (SAE).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApplication`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-application
  */
-export class Application extends ros.Resource {
+export class Application extends ros.Resource implements IApplication {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ApplicationProps;
+    public readonly props: ApplicationProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AppId: Creating successful application ID.
      */
-    public readonly attrAppId: ros.IResolvable;
+    public readonly attrAppId: ros.IResolvable | string;
 
     /**
      * Attribute ChangeOrderId: Return to release a single ID, used to query task execution status.
      */
-    public readonly attrChangeOrderId: ros.IResolvable;
+    public readonly attrChangeOrderId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

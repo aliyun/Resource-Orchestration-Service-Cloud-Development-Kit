@@ -41,50 +41,91 @@ export interface UserProps {
 }
 
 /**
+ * Represents a `User`.
+ */
+export interface IUser extends ros.IResource {
+    readonly props: UserProps;
+
+    /**
+     * Attribute Mobile: UserMobile
+     */
+    readonly attrMobile: ros.IResolvable | string;
+
+    /**
+     * Attribute ParentUid: ParentAliYunUid
+     */
+    readonly attrParentUid: ros.IResolvable | string;
+
+    /**
+     * Attribute RoleIds: UserRoleId
+     */
+    readonly attrRoleIds: ros.IResolvable | string;
+
+    /**
+     * Attribute RoleNames: UserRole
+     */
+    readonly attrRoleNames: ros.IResolvable | string;
+
+    /**
+     * Attribute Uid: UserAliYunUid
+     */
+    readonly attrUid: ros.IResolvable | string;
+
+    /**
+     * Attribute UserId: UserId
+     */
+    readonly attrUserId: ros.IResolvable | string;
+
+    /**
+     * Attribute UserName: UserNickName
+     */
+    readonly attrUserName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::DMS::User`, which is used to add a user to Data Management (DMS).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUser`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-user
  */
-export class User extends ros.Resource {
+export class User extends ros.Resource implements IUser {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: UserProps;
+    public readonly props: UserProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Mobile: UserMobile
      */
-    public readonly attrMobile: ros.IResolvable;
+    public readonly attrMobile: ros.IResolvable | string;
 
     /**
      * Attribute ParentUid: ParentAliYunUid
      */
-    public readonly attrParentUid: ros.IResolvable;
+    public readonly attrParentUid: ros.IResolvable | string;
 
     /**
      * Attribute RoleIds: UserRoleId
      */
-    public readonly attrRoleIds: ros.IResolvable;
+    public readonly attrRoleIds: ros.IResolvable | string;
 
     /**
      * Attribute RoleNames: UserRole
      */
-    public readonly attrRoleNames: ros.IResolvable;
+    public readonly attrRoleNames: ros.IResolvable | string;
 
     /**
      * Attribute Uid: UserAliYunUid
      */
-    public readonly attrUid: ros.IResolvable;
+    public readonly attrUid: ros.IResolvable | string;
 
     /**
      * Attribute UserId: UserId
      */
-    public readonly attrUserId: ros.IResolvable;
+    public readonly attrUserId: ros.IResolvable | string;
 
     /**
      * Attribute UserName: UserNickName
      */
-    public readonly attrUserName: ros.IResolvable;
+    public readonly attrUserName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

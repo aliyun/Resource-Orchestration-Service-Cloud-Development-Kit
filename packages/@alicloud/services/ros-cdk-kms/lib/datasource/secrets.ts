@@ -19,25 +19,41 @@ export interface SecretsProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::KMS::Secrets`, which is used to query all secrets that are created within the current Alibaba Cloud account in the current region.
+ * Represents a `Secrets`.
+ */
+export interface ISecrets extends ros.IResource {
+    readonly props: SecretsProps;
+
+    /**
+     * Attribute SecretNames: The list of secret names.
+     */
+    readonly attrSecretNames: ros.IResolvable | string;
+
+    /**
+     * Attribute Secrets: The list of secrets.
+     */
+    readonly attrSecrets: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::KMS::Secrets`, which is used to query all secrets that are created within the current account in the current region.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecrets`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kms-secrets
  */
-export class Secrets extends ros.Resource {
+export class Secrets extends ros.Resource implements ISecrets {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SecretsProps;
+    public readonly props: SecretsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SecretNames: The list of secret names.
      */
-    public readonly attrSecretNames: ros.IResolvable;
+    public readonly attrSecretNames: ros.IResolvable | string;
 
     /**
      * Attribute Secrets: The list of secrets.
      */
-    public readonly attrSecrets: ros.IResolvable;
+    public readonly attrSecrets: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

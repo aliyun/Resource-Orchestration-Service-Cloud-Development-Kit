@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.dts.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::DTS::SynchronizationJobs</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:06.703Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:37.463Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.datasource.SynchronizationJobs")
-public class SynchronizationJobs extends com.aliyun.ros.cdk.core.Resource {
+public class SynchronizationJobs extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dts.datasource.ISynchronizationJobs {
 
     protected SynchronizationJobs(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -54,15 +54,22 @@ public class SynchronizationJobs extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute DtsInstanceIds: The list of dts instance IDs.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDtsInstanceIds() {
-        return software.amazon.jsii.Kernel.get(this, "attrDtsInstanceIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDtsInstanceIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrDtsInstanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute SynchronizationInstances: The list of synchronization instances.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSynchronizationInstances() {
-        return software.amazon.jsii.Kernel.get(this, "attrSynchronizationInstances", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSynchronizationInstances() {
+        return software.amazon.jsii.Kernel.get(this, "attrSynchronizationInstances", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.dts.datasource.SynchronizationJobsProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.dts.datasource.SynchronizationJobsProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -79,14 +86,6 @@ public class SynchronizationJobs extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.dts.datasource.SynchronizationJobsProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.dts.datasource.SynchronizationJobsProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.dts.datasource.SynchronizationJobsProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {

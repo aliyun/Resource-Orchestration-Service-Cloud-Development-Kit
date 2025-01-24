@@ -43,20 +43,31 @@ export interface VSwitchProps {
 }
 
 /**
+ * Represents a `VSwitch`.
+ */
+export interface IVSwitch extends ros.IResource {
+    readonly props: VSwitchProps;
+
+    /**
+     * Attribute VSwitchId: The ID of the vSwitch.
+     */
+    readonly attrVSwitchId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ENS::VSwitch`, which is used to create a vSwitch.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVSwitch`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-vswitch
  */
-export class VSwitch extends ros.Resource {
+export class VSwitch extends ros.Resource implements IVSwitch {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: VSwitchProps;
+    public readonly props: VSwitchProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute VSwitchId: The ID of the vSwitch.
      */
-    public readonly attrVSwitchId: ros.IResolvable;
+    public readonly attrVSwitchId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

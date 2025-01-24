@@ -52,25 +52,41 @@ export interface RouteTablesProps {
 }
 
 /**
+ * Represents a `RouteTables`.
+ */
+export interface IRouteTables extends ros.IResource {
+    readonly props: RouteTablesProps;
+
+    /**
+     * Attribute RouteTableIds: the list of the route table ids.
+     */
+    readonly attrRouteTableIds: ros.IResolvable | string;
+
+    /**
+     * Attribute RouteTables: The list of The route tables.
+     */
+    readonly attrRouteTables: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::RouteTables`, which is used to query route tables.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRouteTables`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-routetables
  */
-export class RouteTables extends ros.Resource {
+export class RouteTables extends ros.Resource implements IRouteTables {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: RouteTablesProps;
+    public readonly props: RouteTablesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RouteTableIds: the list of the route table ids.
      */
-    public readonly attrRouteTableIds: ros.IResolvable;
+    public readonly attrRouteTableIds: ros.IResolvable | string;
 
     /**
      * Attribute RouteTables: The list of The route tables.
      */
-    public readonly attrRouteTables: ros.IResolvable;
+    public readonly attrRouteTables: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

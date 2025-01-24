@@ -29,25 +29,41 @@ export interface DedicatedHostGroupsProps {
 }
 
 /**
+ * Represents a `DedicatedHostGroups`.
+ */
+export interface IDedicatedHostGroups extends ros.IResource {
+    readonly props: DedicatedHostGroupsProps;
+
+    /**
+     * Attribute DedicatedHostGroupIds: The list of dedicated host group IDs.
+     */
+    readonly attrDedicatedHostGroupIds: ros.IResolvable | string;
+
+    /**
+     * Attribute DedicatedHostGroups: The list of dedicated host groups.
+     */
+    readonly attrDedicatedHostGroups: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::CDDC::DedicatedHostGroups`, which is used to query the information about resources in dedicated clusters.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDedicatedHostGroups`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cddc-dedicatedhostgroups
  */
-export class DedicatedHostGroups extends ros.Resource {
+export class DedicatedHostGroups extends ros.Resource implements IDedicatedHostGroups {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DedicatedHostGroupsProps;
+    public readonly props: DedicatedHostGroupsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DedicatedHostGroupIds: The list of dedicated host group IDs.
      */
-    public readonly attrDedicatedHostGroupIds: ros.IResolvable;
+    public readonly attrDedicatedHostGroupIds: ros.IResolvable | string;
 
     /**
      * Attribute DedicatedHostGroups: The list of dedicated host groups.
      */
-    public readonly attrDedicatedHostGroups: ros.IResolvable;
+    public readonly attrDedicatedHostGroups: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

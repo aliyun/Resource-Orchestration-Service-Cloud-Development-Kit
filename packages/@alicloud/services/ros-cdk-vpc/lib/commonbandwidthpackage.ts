@@ -70,20 +70,31 @@ export interface CommonBandwidthPackageProps {
 }
 
 /**
+ * Represents a `CommonBandwidthPackage`.
+ */
+export interface ICommonBandwidthPackage extends ros.IResource {
+    readonly props: CommonBandwidthPackageProps;
+
+    /**
+     * Attribute BandwidthPackageId: The ID of the Internet Shared Bandwidth instance.
+     */
+    readonly attrBandwidthPackageId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::CommonBandwidthPackage`, which is used to create an elastic IP address (EIP) bandwidth plan.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCommonBandwidthPackage`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-commonbandwidthpackage
  */
-export class CommonBandwidthPackage extends ros.Resource {
+export class CommonBandwidthPackage extends ros.Resource implements ICommonBandwidthPackage {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: CommonBandwidthPackageProps;
+    public readonly props: CommonBandwidthPackageProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute BandwidthPackageId: The ID of the Internet Shared Bandwidth instance.
      */
-    public readonly attrBandwidthPackageId: ros.IResolvable;
+    public readonly attrBandwidthPackageId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

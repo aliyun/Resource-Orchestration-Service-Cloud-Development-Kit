@@ -12,16 +12,26 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::NAS::ProtocolMountTarget`, which is used to create an export directory for a protocol service.
 type ProtocolMountTarget interface {
 	alicloudroscdkcore.Resource
+	IProtocolMountTarget
 	// Attribute ExportId: The protocol service exports directory ID.
-	AttrExportId() alicloudroscdkcore.IResolvable
+	AttrExportId() interface{}
 	// Attribute FileSystemId: File system ID.
-	AttrFileSystemId() alicloudroscdkcore.IResolvable
+	AttrFileSystemId() interface{}
 	// Attribute ProtocolMountTargetDomain: The protocol mount target domain.
-	AttrProtocolMountTargetDomain() alicloudroscdkcore.IResolvable
+	AttrProtocolMountTargetDomain() interface{}
 	// Attribute ProtocolServiceId: Protocol service ID.
-	AttrProtocolServiceId() alicloudroscdkcore.IResolvable
+	AttrProtocolServiceId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -36,7 +46,6 @@ type ProtocolMountTarget interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ProtocolMountTargetProps
-	SetProps(val *ProtocolMountTargetProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -49,6 +58,9 @@ type ProtocolMountTarget interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -101,10 +113,11 @@ type ProtocolMountTarget interface {
 // The jsii proxy struct for ProtocolMountTarget
 type jsiiProxy_ProtocolMountTarget struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IProtocolMountTarget
 }
 
-func (j *jsiiProxy_ProtocolMountTarget) AttrExportId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ProtocolMountTarget) AttrExportId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrExportId",
@@ -113,8 +126,8 @@ func (j *jsiiProxy_ProtocolMountTarget) AttrExportId() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_ProtocolMountTarget) AttrFileSystemId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ProtocolMountTarget) AttrFileSystemId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrFileSystemId",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_ProtocolMountTarget) AttrFileSystemId() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_ProtocolMountTarget) AttrProtocolMountTargetDomain() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ProtocolMountTarget) AttrProtocolMountTargetDomain() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrProtocolMountTargetDomain",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_ProtocolMountTarget) AttrProtocolMountTargetDomain() alicloud
 	return returns
 }
 
-func (j *jsiiProxy_ProtocolMountTarget) AttrProtocolServiceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ProtocolMountTarget) AttrProtocolServiceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrProtocolServiceId",
@@ -148,6 +161,16 @@ func (j *jsiiProxy_ProtocolMountTarget) EnableResourcePropertyConstraint() *bool
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ProtocolMountTarget) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -285,17 +308,6 @@ func (j *jsiiProxy_ProtocolMountTarget)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ProtocolMountTarget)SetProps(val *ProtocolMountTargetProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_ProtocolMountTarget)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -387,6 +399,45 @@ func (p *jsiiProxy_ProtocolMountTarget) ApplyRemovalPolicy(policy alicloudroscdk
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (p *jsiiProxy_ProtocolMountTarget) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		p,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_ProtocolMountTarget) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		p,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_ProtocolMountTarget) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		p,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (p *jsiiProxy_ProtocolMountTarget) GeneratePhysicalName() *string {

@@ -52,10 +52,6 @@ func (j *jsiiProxy_ShardingInstance) validateSetIdParameters(val *string) error 
 	return nil
 }
 
-func (j *jsiiProxy_ShardingInstance) validateSetPropsParameters(val *ShardingInstanceProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_ShardingInstance) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

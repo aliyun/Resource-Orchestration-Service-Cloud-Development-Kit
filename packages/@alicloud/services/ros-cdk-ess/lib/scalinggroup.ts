@@ -238,25 +238,41 @@ export interface ScalingGroupProps {
 }
 
 /**
+ * Represents a `ScalingGroup`.
+ */
+export interface IScalingGroup extends ros.IResource {
+    readonly props: ScalingGroupProps;
+
+    /**
+     * Attribute ScalingGroupId: Scaling group Id
+     */
+    readonly attrScalingGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute ScalingGroupName: Scaling group name
+     */
+    readonly attrScalingGroupName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScalingGroup`, which is used to create a scaling group. A scaling group can be a group of Elastic Compute Service (ECS) instances that are dynamically scaled based on the configured scenario. A scaling group does not immediately take effect after it is created. You must use ALIYUN::ESS::ScalingGroupEnable to enable the scaling group to trigger scaling activities based on scaling rules.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosScalingGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroup
  */
-export class ScalingGroup extends ros.Resource {
+export class ScalingGroup extends ros.Resource implements IScalingGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ScalingGroupProps;
+    public readonly props: ScalingGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ScalingGroupId: Scaling group Id
      */
-    public readonly attrScalingGroupId: ros.IResolvable;
+    public readonly attrScalingGroupId: ros.IResolvable | string;
 
     /**
      * Attribute ScalingGroupName: Scaling group name
      */
-    public readonly attrScalingGroupName: ros.IResolvable;
+    public readonly attrScalingGroupName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

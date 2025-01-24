@@ -28,40 +28,71 @@ export interface KeyPairProps {
 }
 
 /**
+ * Represents a `KeyPair`.
+ */
+export interface IKeyPair extends ros.IResource {
+    readonly props: KeyPairProps;
+
+    /**
+     * Attribute CreateTime: The time when the key pair was created.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute FingerPrint: The fingerprint of the key pair.
+     */
+    readonly attrFingerPrint: ros.IResolvable | string;
+
+    /**
+     * Attribute KeyPairName: The name of the key pair.
+     */
+    readonly attrKeyPairName: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: The ID of the resource group.
+     */
+    readonly attrResourceGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute Tags: The tags of the key pair.
+     */
+    readonly attrTags: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::KeyPair`, which is used to query the information about a key pair.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosKeyPair`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-keypair
  */
-export class KeyPair extends ros.Resource {
+export class KeyPair extends ros.Resource implements IKeyPair {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: KeyPairProps;
+    public readonly props: KeyPairProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateTime: The time when the key pair was created.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute FingerPrint: The fingerprint of the key pair.
      */
-    public readonly attrFingerPrint: ros.IResolvable;
+    public readonly attrFingerPrint: ros.IResolvable | string;
 
     /**
      * Attribute KeyPairName: The name of the key pair.
      */
-    public readonly attrKeyPairName: ros.IResolvable;
+    public readonly attrKeyPairName: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroupId: The ID of the resource group.
      */
-    public readonly attrResourceGroupId: ros.IResolvable;
+    public readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Attribute Tags: The tags of the key pair.
      */
-    public readonly attrTags: ros.IResolvable;
+    public readonly attrTags: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

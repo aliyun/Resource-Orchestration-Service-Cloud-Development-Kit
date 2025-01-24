@@ -1,5 +1,8 @@
 @alicloud/ros-cdk-tsdb.HiTSDBInstance=com.aliyun.ros.cdk.tsdb.HiTSDBInstance
 @alicloud/ros-cdk-tsdb.HiTSDBInstanceProps=com.aliyun.ros.cdk.tsdb.HiTSDBInstanceProps
+@alicloud/ros-cdk-tsdb.IHiTSDBInstance=com.aliyun.ros.cdk.tsdb.IHiTSDBInstance
+@alicloud/ros-cdk-tsdb.IInfluxDBDatabase=com.aliyun.ros.cdk.tsdb.IInfluxDBDatabase
+@alicloud/ros-cdk-tsdb.IInfluxDBUser=com.aliyun.ros.cdk.tsdb.IInfluxDBUser
 @alicloud/ros-cdk-tsdb.InfluxDBDatabase=com.aliyun.ros.cdk.tsdb.InfluxDBDatabase
 @alicloud/ros-cdk-tsdb.InfluxDBDatabaseProps=com.aliyun.ros.cdk.tsdb.InfluxDBDatabaseProps
 @alicloud/ros-cdk-tsdb.InfluxDBUser=com.aliyun.ros.cdk.tsdb.InfluxDBUser

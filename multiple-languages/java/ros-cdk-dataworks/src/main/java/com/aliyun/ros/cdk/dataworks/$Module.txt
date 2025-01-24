@@ -1,3 +1,4 @@
+@alicloud/ros-cdk-dataworks.IProject=com.aliyun.ros.cdk.dataworks.IProject
 @alicloud/ros-cdk-dataworks.Project=com.aliyun.ros.cdk.dataworks.Project
 @alicloud/ros-cdk-dataworks.ProjectProps=com.aliyun.ros.cdk.dataworks.ProjectProps
 @alicloud/ros-cdk-dataworks.RosProject=com.aliyun.ros.cdk.dataworks.RosProject

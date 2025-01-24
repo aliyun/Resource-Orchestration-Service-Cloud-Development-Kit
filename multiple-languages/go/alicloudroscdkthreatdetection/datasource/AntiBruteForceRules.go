@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::ThreatDetection::AntiBruteForceRules`, which is used to query the basic information about defense rules against brute-force attacks.
 type AntiBruteForceRules interface {
 	alicloudroscdkcore.Resource
+	IAntiBruteForceRules
 	// Attribute AntiBruteForceRuleIds: The list of anti brute force rule IDs.
-	AttrAntiBruteForceRuleIds() alicloudroscdkcore.IResolvable
+	AttrAntiBruteForceRuleIds() interface{}
 	// Attribute AntiBruteForceRules: The list of anti brute force rules.
-	AttrAntiBruteForceRules() alicloudroscdkcore.IResolvable
+	AttrAntiBruteForceRules() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type AntiBruteForceRules interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *AntiBruteForceRulesProps
-	SetProps(val *AntiBruteForceRulesProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type AntiBruteForceRules interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type AntiBruteForceRules interface {
 // The jsii proxy struct for AntiBruteForceRules
 type jsiiProxy_AntiBruteForceRules struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IAntiBruteForceRules
 }
 
-func (j *jsiiProxy_AntiBruteForceRules) AttrAntiBruteForceRuleIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AntiBruteForceRules) AttrAntiBruteForceRuleIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAntiBruteForceRuleIds",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_AntiBruteForceRules) AttrAntiBruteForceRuleIds() alicloudrosc
 	return returns
 }
 
-func (j *jsiiProxy_AntiBruteForceRules) AttrAntiBruteForceRules() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AntiBruteForceRules) AttrAntiBruteForceRules() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAntiBruteForceRules",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_AntiBruteForceRules) EnableResourcePropertyConstraint() *bool
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AntiBruteForceRules) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_AntiBruteForceRules)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AntiBruteForceRules)SetProps(val *AntiBruteForceRulesProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_AntiBruteForceRules)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (a *jsiiProxy_AntiBruteForceRules) ApplyRemovalPolicy(policy alicloudroscdk
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (a *jsiiProxy_AntiBruteForceRules) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		a,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AntiBruteForceRules) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AntiBruteForceRules) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (a *jsiiProxy_AntiBruteForceRules) GeneratePhysicalName() *string {

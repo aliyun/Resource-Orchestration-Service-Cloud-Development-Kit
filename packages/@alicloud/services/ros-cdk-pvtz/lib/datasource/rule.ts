@@ -24,55 +24,101 @@ export interface RuleProps {
 }
 
 /**
+ * Represents a `Rule`.
+ */
+export interface IRule extends ros.IResource {
+    readonly props: RuleProps;
+
+    /**
+     * Attribute CreateTime: The time when the forwarding rule was created.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute EndpointId: The endpoint ID.
+     */
+    readonly attrEndpointId: ros.IResolvable | string;
+
+    /**
+     * Attribute EndpointName: The endpoint name.
+     */
+    readonly attrEndpointName: ros.IResolvable | string;
+
+    /**
+     * Attribute ForwardIp: The destination IP address.
+     */
+    readonly attrForwardIp: ros.IResolvable | string;
+
+    /**
+     * Attribute RuleName: The name of the forwarding rule.
+     */
+    readonly attrRuleName: ros.IResolvable | string;
+
+    /**
+     * Attribute Type: The type of the forwarding rule.
+     */
+    readonly attrType: ros.IResolvable | string;
+
+    /**
+     * Attribute Vpcs: The virtual private clouds (VPCs) that are associated with the forwarding rule.
+     */
+    readonly attrVpcs: ros.IResolvable | string;
+
+    /**
+     * Attribute ZoneName: The name of the forward zone.
+     */
+    readonly attrZoneName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::PVTZ::Rule`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pvtz-rule
  */
-export class Rule extends ros.Resource {
+export class Rule extends ros.Resource implements IRule {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: RuleProps;
+    public readonly props: RuleProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateTime: The time when the forwarding rule was created.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute EndpointId: The endpoint ID.
      */
-    public readonly attrEndpointId: ros.IResolvable;
+    public readonly attrEndpointId: ros.IResolvable | string;
 
     /**
      * Attribute EndpointName: The endpoint name.
      */
-    public readonly attrEndpointName: ros.IResolvable;
+    public readonly attrEndpointName: ros.IResolvable | string;
 
     /**
      * Attribute ForwardIp: The destination IP address.
      */
-    public readonly attrForwardIp: ros.IResolvable;
+    public readonly attrForwardIp: ros.IResolvable | string;
 
     /**
      * Attribute RuleName: The name of the forwarding rule.
      */
-    public readonly attrRuleName: ros.IResolvable;
+    public readonly attrRuleName: ros.IResolvable | string;
 
     /**
      * Attribute Type: The type of the forwarding rule.
      */
-    public readonly attrType: ros.IResolvable;
+    public readonly attrType: ros.IResolvable | string;
 
     /**
      * Attribute Vpcs: The virtual private clouds (VPCs) that are associated with the forwarding rule.
      */
-    public readonly attrVpcs: ros.IResolvable;
+    public readonly attrVpcs: ros.IResolvable | string;
 
     /**
      * Attribute ZoneName: The name of the forward zone.
      */
-    public readonly attrZoneName: ros.IResolvable;
+    public readonly attrZoneName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

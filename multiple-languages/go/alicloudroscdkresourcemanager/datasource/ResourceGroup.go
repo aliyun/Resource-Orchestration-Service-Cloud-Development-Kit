@@ -12,24 +12,34 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::ResourceManager::ResourceGroup`.
 type ResourceGroup interface {
 	alicloudroscdkcore.Resource
+	IResourceGroup
 	// Attribute AccountId: The ID of the Alibaba Cloud account to which the resource group belongs.
-	AttrAccountId() alicloudroscdkcore.IResolvable
+	AttrAccountId() interface{}
 	// Attribute CreateDate: The time when the resource group was created.
-	AttrCreateDate() alicloudroscdkcore.IResolvable
+	AttrCreateDate() interface{}
 	// Attribute DisplayName: The display name of the resource group.
-	AttrDisplayName() alicloudroscdkcore.IResolvable
+	AttrDisplayName() interface{}
 	// Attribute Name: The name of the resource group.
-	AttrName() alicloudroscdkcore.IResolvable
+	AttrName() interface{}
 	// Attribute RegionStatuses: The status of the resource group in each region.
-	AttrRegionStatuses() alicloudroscdkcore.IResolvable
+	AttrRegionStatuses() interface{}
 	// Attribute ResourceGroupId: The ID of the resource group.
-	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() interface{}
 	// Attribute Status: The status of the resource group.
-	AttrStatus() alicloudroscdkcore.IResolvable
+	AttrStatus() interface{}
 	// Attribute Tags: The tags of the resource group.
-	AttrTags() alicloudroscdkcore.IResolvable
+	AttrTags() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -44,7 +54,6 @@ type ResourceGroup interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ResourceGroupProps
-	SetProps(val *ResourceGroupProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -57,6 +66,9 @@ type ResourceGroup interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -109,10 +121,11 @@ type ResourceGroup interface {
 // The jsii proxy struct for ResourceGroup
 type jsiiProxy_ResourceGroup struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IResourceGroup
 }
 
-func (j *jsiiProxy_ResourceGroup) AttrAccountId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ResourceGroup) AttrAccountId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAccountId",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_ResourceGroup) AttrAccountId() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_ResourceGroup) AttrCreateDate() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ResourceGroup) AttrCreateDate() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateDate",
@@ -131,8 +144,8 @@ func (j *jsiiProxy_ResourceGroup) AttrCreateDate() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_ResourceGroup) AttrDisplayName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ResourceGroup) AttrDisplayName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDisplayName",
@@ -141,8 +154,8 @@ func (j *jsiiProxy_ResourceGroup) AttrDisplayName() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_ResourceGroup) AttrName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ResourceGroup) AttrName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrName",
@@ -151,8 +164,8 @@ func (j *jsiiProxy_ResourceGroup) AttrName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_ResourceGroup) AttrRegionStatuses() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ResourceGroup) AttrRegionStatuses() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRegionStatuses",
@@ -161,8 +174,8 @@ func (j *jsiiProxy_ResourceGroup) AttrRegionStatuses() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_ResourceGroup) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ResourceGroup) AttrResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupId",
@@ -171,8 +184,8 @@ func (j *jsiiProxy_ResourceGroup) AttrResourceGroupId() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_ResourceGroup) AttrStatus() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ResourceGroup) AttrStatus() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStatus",
@@ -181,8 +194,8 @@ func (j *jsiiProxy_ResourceGroup) AttrStatus() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_ResourceGroup) AttrTags() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ResourceGroup) AttrTags() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTags",
@@ -196,6 +209,16 @@ func (j *jsiiProxy_ResourceGroup) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ResourceGroup) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -333,17 +356,6 @@ func (j *jsiiProxy_ResourceGroup)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ResourceGroup)SetProps(val *ResourceGroupProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_ResourceGroup)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -435,6 +447,45 @@ func (r *jsiiProxy_ResourceGroup) ApplyRemovalPolicy(policy alicloudroscdkcore.R
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (r *jsiiProxy_ResourceGroup) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		r,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_ResourceGroup) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		r,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_ResourceGroup) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		r,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (r *jsiiProxy_ResourceGroup) GeneratePhysicalName() *string {

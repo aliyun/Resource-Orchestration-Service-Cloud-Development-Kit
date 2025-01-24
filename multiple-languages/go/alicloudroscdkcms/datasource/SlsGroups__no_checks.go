@@ -52,10 +52,6 @@ func (j *jsiiProxy_SlsGroups) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_SlsGroups) validateSetPropsParameters(val *SlsGroupsProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_SlsGroups) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

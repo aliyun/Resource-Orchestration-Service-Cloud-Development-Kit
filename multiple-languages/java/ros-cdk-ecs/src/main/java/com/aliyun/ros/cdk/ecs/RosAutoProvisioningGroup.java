@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECS::AutoProvisioningGroup</code>, which is used to create an auto provisioning group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:07.187Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:38.144Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosAutoProvisioningGroup")
 public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -135,6 +135,40 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
      */
     public void setCheckExecutionStatus(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "checkExecutionStatus", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDataDiskConfig() {
+        return software.amazon.jsii.Kernel.get(this, "dataDiskConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDataDiskConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "dataDiskConfig", value);
+    }
+
+    /**
+     */
+    public void setDataDiskConfig(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.ecs.RosAutoProvisioningGroup.DataDiskConfigProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.ecs.RosAutoProvisioningGroup.DataDiskConfigProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "dataDiskConfig", value);
     }
 
     /**
@@ -299,6 +333,24 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMinTargetCapacity() {
+        return software.amazon.jsii.Kernel.get(this, "minTargetCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setMinTargetCapacity(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "minTargetCapacity", value);
+    }
+
+    /**
+     */
+    public void setMinTargetCapacity(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "minTargetCapacity", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getPayAsYouGoAllocationStrategy() {
         return software.amazon.jsii.Kernel.get(this, "payAsYouGoAllocationStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -331,6 +383,42 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
      */
     public void setPayAsYouGoTargetCapacity(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "payAsYouGoTargetCapacity", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getResourcePoolOptions() {
+        return software.amazon.jsii.Kernel.get(this, "resourcePoolOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setResourcePoolOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "resourcePoolOptions", value);
+    }
+
+    /**
+     */
+    public void setResourcePoolOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.ecs.RosAutoProvisioningGroup.ResourcePoolOptionsProperty value) {
+        software.amazon.jsii.Kernel.set(this, "resourcePoolOptions", value);
     }
 
     /**
@@ -407,6 +495,40 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskConfig() {
+        return software.amazon.jsii.Kernel.get(this, "systemDiskConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSystemDiskConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskConfig", value);
+    }
+
+    /**
+     */
+    public void setSystemDiskConfig(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.ecs.RosAutoProvisioningGroup.SystemDiskConfigProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.ecs.RosAutoProvisioningGroup.SystemDiskConfigProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "systemDiskConfig", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getTerminateInstances() {
         return software.amazon.jsii.Kernel.get(this, "terminateInstances", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -478,10 +600,142 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosAutoProvisioningGroup.DataDiskConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(DataDiskConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface DataDiskConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getDiskCategory();
+
+        /**
+         * @return a {@link Builder} of {@link DataDiskConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link DataDiskConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<DataDiskConfigProperty> {
+            java.lang.Object diskCategory;
+
+            /**
+             * Sets the value of {@link DataDiskConfigProperty#getDiskCategory}
+             * @param diskCategory the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder diskCategory(java.lang.String diskCategory) {
+                this.diskCategory = diskCategory;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DataDiskConfigProperty#getDiskCategory}
+             * @param diskCategory the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder diskCategory(com.aliyun.ros.cdk.core.IResolvable diskCategory) {
+                this.diskCategory = diskCategory;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link DataDiskConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public DataDiskConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link DataDiskConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DataDiskConfigProperty {
+            private final java.lang.Object diskCategory;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.diskCategory = software.amazon.jsii.Kernel.get(this, "diskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.diskCategory = java.util.Objects.requireNonNull(builder.diskCategory, "diskCategory is required");
+            }
+
+            @Override
+            public final java.lang.Object getDiskCategory() {
+                return this.diskCategory;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("diskCategory", om.valueToTree(this.getDiskCategory()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ecs.RosAutoProvisioningGroup.DataDiskConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                DataDiskConfigProperty.Jsii$Proxy that = (DataDiskConfigProperty.Jsii$Proxy) o;
+
+                return this.diskCategory.equals(that.diskCategory);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.diskCategory.hashCode();
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosAutoProvisioningGroup.DataDiskProperty")
     @software.amazon.jsii.Jsii.Proxy(DataDiskProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
     public static interface DataDiskProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getBurstingEnabled() {
+            return null;
+        }
 
         /**
          */
@@ -501,6 +755,13 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDevice() {
             return null;
         }
 
@@ -542,6 +803,13 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getProvisionedIops() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getSize() {
             return null;
         }
@@ -565,16 +833,41 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<DataDiskProperty> {
+            java.lang.Object burstingEnabled;
             java.lang.Object category;
             java.lang.Object deleteWithInstance;
             java.lang.Object description;
+            java.lang.Object device;
             java.lang.Object diskName;
             java.lang.Object encrypted;
             java.lang.Object internetChargeType;
             java.lang.Object kmsKeyId;
             java.lang.Object performanceLevel;
+            java.lang.Object provisionedIops;
             java.lang.Object size;
             java.lang.Object snapshotId;
+
+            /**
+             * Sets the value of {@link DataDiskProperty#getBurstingEnabled}
+             * @param burstingEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder burstingEnabled(java.lang.Boolean burstingEnabled) {
+                this.burstingEnabled = burstingEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DataDiskProperty#getBurstingEnabled}
+             * @param burstingEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder burstingEnabled(com.aliyun.ros.cdk.core.IResolvable burstingEnabled) {
+                this.burstingEnabled = burstingEnabled;
+                return this;
+            }
 
             /**
              * Sets the value of {@link DataDiskProperty#getCategory}
@@ -639,6 +932,28 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
                 this.description = description;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DataDiskProperty#getDevice}
+             * @param device the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder device(java.lang.String device) {
+                this.device = device;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DataDiskProperty#getDevice}
+             * @param device the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder device(com.aliyun.ros.cdk.core.IResolvable device) {
+                this.device = device;
                 return this;
             }
 
@@ -753,6 +1068,28 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             }
 
             /**
+             * Sets the value of {@link DataDiskProperty#getProvisionedIops}
+             * @param provisionedIops the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder provisionedIops(java.lang.Number provisionedIops) {
+                this.provisionedIops = provisionedIops;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DataDiskProperty#getProvisionedIops}
+             * @param provisionedIops the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder provisionedIops(com.aliyun.ros.cdk.core.IResolvable provisionedIops) {
+                this.provisionedIops = provisionedIops;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link DataDiskProperty#getSize}
              * @param size the value to be set.
              * @return {@code this}
@@ -814,14 +1151,17 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DataDiskProperty {
+            private final java.lang.Object burstingEnabled;
             private final java.lang.Object category;
             private final java.lang.Object deleteWithInstance;
             private final java.lang.Object description;
+            private final java.lang.Object device;
             private final java.lang.Object diskName;
             private final java.lang.Object encrypted;
             private final java.lang.Object internetChargeType;
             private final java.lang.Object kmsKeyId;
             private final java.lang.Object performanceLevel;
+            private final java.lang.Object provisionedIops;
             private final java.lang.Object size;
             private final java.lang.Object snapshotId;
 
@@ -831,14 +1171,17 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
+                this.burstingEnabled = software.amazon.jsii.Kernel.get(this, "burstingEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.category = software.amazon.jsii.Kernel.get(this, "category", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.deleteWithInstance = software.amazon.jsii.Kernel.get(this, "deleteWithInstance", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.device = software.amazon.jsii.Kernel.get(this, "device", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.diskName = software.amazon.jsii.Kernel.get(this, "diskName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.encrypted = software.amazon.jsii.Kernel.get(this, "encrypted", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.kmsKeyId = software.amazon.jsii.Kernel.get(this, "kmsKeyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.performanceLevel = software.amazon.jsii.Kernel.get(this, "performanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.provisionedIops = software.amazon.jsii.Kernel.get(this, "provisionedIops", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.size = software.amazon.jsii.Kernel.get(this, "size", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.snapshotId = software.amazon.jsii.Kernel.get(this, "snapshotId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
@@ -848,16 +1191,24 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
              */
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.burstingEnabled = builder.burstingEnabled;
                 this.category = builder.category;
                 this.deleteWithInstance = builder.deleteWithInstance;
                 this.description = builder.description;
+                this.device = builder.device;
                 this.diskName = builder.diskName;
                 this.encrypted = builder.encrypted;
                 this.internetChargeType = builder.internetChargeType;
                 this.kmsKeyId = builder.kmsKeyId;
                 this.performanceLevel = builder.performanceLevel;
+                this.provisionedIops = builder.provisionedIops;
                 this.size = builder.size;
                 this.snapshotId = builder.snapshotId;
+            }
+
+            @Override
+            public final java.lang.Object getBurstingEnabled() {
+                return this.burstingEnabled;
             }
 
             @Override
@@ -873,6 +1224,11 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             @Override
             public final java.lang.Object getDescription() {
                 return this.description;
+            }
+
+            @Override
+            public final java.lang.Object getDevice() {
+                return this.device;
             }
 
             @Override
@@ -901,6 +1257,11 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             }
 
             @Override
+            public final java.lang.Object getProvisionedIops() {
+                return this.provisionedIops;
+            }
+
+            @Override
             public final java.lang.Object getSize() {
                 return this.size;
             }
@@ -916,6 +1277,9 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
+                if (this.getBurstingEnabled() != null) {
+                    data.set("burstingEnabled", om.valueToTree(this.getBurstingEnabled()));
+                }
                 if (this.getCategory() != null) {
                     data.set("category", om.valueToTree(this.getCategory()));
                 }
@@ -924,6 +1288,9 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
                 }
                 if (this.getDescription() != null) {
                     data.set("description", om.valueToTree(this.getDescription()));
+                }
+                if (this.getDevice() != null) {
+                    data.set("device", om.valueToTree(this.getDevice()));
                 }
                 if (this.getDiskName() != null) {
                     data.set("diskName", om.valueToTree(this.getDiskName()));
@@ -939,6 +1306,9 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
                 }
                 if (this.getPerformanceLevel() != null) {
                     data.set("performanceLevel", om.valueToTree(this.getPerformanceLevel()));
+                }
+                if (this.getProvisionedIops() != null) {
+                    data.set("provisionedIops", om.valueToTree(this.getProvisionedIops()));
                 }
                 if (this.getSize() != null) {
                     data.set("size", om.valueToTree(this.getSize()));
@@ -964,28 +1334,34 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
 
                 DataDiskProperty.Jsii$Proxy that = (DataDiskProperty.Jsii$Proxy) o;
 
+                if (this.burstingEnabled != null ? !this.burstingEnabled.equals(that.burstingEnabled) : that.burstingEnabled != null) return false;
                 if (this.category != null ? !this.category.equals(that.category) : that.category != null) return false;
                 if (this.deleteWithInstance != null ? !this.deleteWithInstance.equals(that.deleteWithInstance) : that.deleteWithInstance != null) return false;
                 if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+                if (this.device != null ? !this.device.equals(that.device) : that.device != null) return false;
                 if (this.diskName != null ? !this.diskName.equals(that.diskName) : that.diskName != null) return false;
                 if (this.encrypted != null ? !this.encrypted.equals(that.encrypted) : that.encrypted != null) return false;
                 if (this.internetChargeType != null ? !this.internetChargeType.equals(that.internetChargeType) : that.internetChargeType != null) return false;
                 if (this.kmsKeyId != null ? !this.kmsKeyId.equals(that.kmsKeyId) : that.kmsKeyId != null) return false;
                 if (this.performanceLevel != null ? !this.performanceLevel.equals(that.performanceLevel) : that.performanceLevel != null) return false;
+                if (this.provisionedIops != null ? !this.provisionedIops.equals(that.provisionedIops) : that.provisionedIops != null) return false;
                 if (this.size != null ? !this.size.equals(that.size) : that.size != null) return false;
                 return this.snapshotId != null ? this.snapshotId.equals(that.snapshotId) : that.snapshotId == null;
             }
 
             @Override
             public final int hashCode() {
-                int result = this.category != null ? this.category.hashCode() : 0;
+                int result = this.burstingEnabled != null ? this.burstingEnabled.hashCode() : 0;
+                result = 31 * result + (this.category != null ? this.category.hashCode() : 0);
                 result = 31 * result + (this.deleteWithInstance != null ? this.deleteWithInstance.hashCode() : 0);
                 result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+                result = 31 * result + (this.device != null ? this.device.hashCode() : 0);
                 result = 31 * result + (this.diskName != null ? this.diskName.hashCode() : 0);
                 result = 31 * result + (this.encrypted != null ? this.encrypted.hashCode() : 0);
                 result = 31 * result + (this.internetChargeType != null ? this.internetChargeType.hashCode() : 0);
                 result = 31 * result + (this.kmsKeyId != null ? this.kmsKeyId.hashCode() : 0);
                 result = 31 * result + (this.performanceLevel != null ? this.performanceLevel.hashCode() : 0);
+                result = 31 * result + (this.provisionedIops != null ? this.provisionedIops.hashCode() : 0);
                 result = 31 * result + (this.size != null ? this.size.hashCode() : 0);
                 result = 31 * result + (this.snapshotId != null ? this.snapshotId.hashCode() : 0);
                 return result;
@@ -1012,6 +1388,13 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAutoReleaseTime() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getCreditSpecification() {
             return null;
         }
@@ -1026,7 +1409,28 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDeploymentSetId() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getHostName() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getHostNames() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getImageFamily() {
             return null;
         }
 
@@ -1103,6 +1507,20 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupIds() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskBurstingEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskCategory() {
             return null;
         }
@@ -1117,6 +1535,20 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskEncrypted() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskKmsKeyId() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskName() {
             return null;
         }
@@ -1125,6 +1557,13 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskPerformanceLevel() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskProvisionedIops() {
             return null;
         }
 
@@ -1163,9 +1602,13 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
         public static final class Builder implements software.amazon.jsii.Builder<LaunchConfigurationProperty> {
             java.lang.Object imageId;
             java.lang.Object securityGroupId;
+            java.lang.Object autoReleaseTime;
             java.lang.Object creditSpecification;
             java.lang.Object dataDisk;
+            java.lang.Object deploymentSetId;
             java.lang.Object hostName;
+            java.lang.Object hostNames;
+            java.lang.Object imageFamily;
             java.lang.Object instanceDescription;
             java.lang.Object instanceName;
             java.lang.Object internetChargeType;
@@ -1176,10 +1619,15 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             java.lang.Object ramRoleName;
             java.lang.Object resourceGroupId;
             java.lang.Object securityEnhancementStrategy;
+            java.lang.Object securityGroupIds;
+            java.lang.Object systemDiskBurstingEnabled;
             java.lang.Object systemDiskCategory;
             java.lang.Object systemDiskDescription;
+            java.lang.Object systemDiskEncrypted;
+            java.lang.Object systemDiskKmsKeyId;
             java.lang.Object systemDiskName;
             java.lang.Object systemDiskPerformanceLevel;
+            java.lang.Object systemDiskProvisionedIops;
             java.lang.Object systemDiskSize;
             java.lang.Object tag;
             java.lang.Object userData;
@@ -1229,6 +1677,28 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             }
 
             /**
+             * Sets the value of {@link LaunchConfigurationProperty#getAutoReleaseTime}
+             * @param autoReleaseTime the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder autoReleaseTime(java.lang.String autoReleaseTime) {
+                this.autoReleaseTime = autoReleaseTime;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchConfigurationProperty#getAutoReleaseTime}
+             * @param autoReleaseTime the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder autoReleaseTime(com.aliyun.ros.cdk.core.IResolvable autoReleaseTime) {
+                this.autoReleaseTime = autoReleaseTime;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link LaunchConfigurationProperty#getCreditSpecification}
              * @param creditSpecification the value to be set.
              * @return {@code this}
@@ -1273,6 +1743,28 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             }
 
             /**
+             * Sets the value of {@link LaunchConfigurationProperty#getDeploymentSetId}
+             * @param deploymentSetId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder deploymentSetId(java.lang.String deploymentSetId) {
+                this.deploymentSetId = deploymentSetId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchConfigurationProperty#getDeploymentSetId}
+             * @param deploymentSetId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder deploymentSetId(com.aliyun.ros.cdk.core.IResolvable deploymentSetId) {
+                this.deploymentSetId = deploymentSetId;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link LaunchConfigurationProperty#getHostName}
              * @param hostName the value to be set.
              * @return {@code this}
@@ -1291,6 +1783,50 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder hostName(com.aliyun.ros.cdk.core.IResolvable hostName) {
                 this.hostName = hostName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchConfigurationProperty#getHostNames}
+             * @param hostNames the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder hostNames(com.aliyun.ros.cdk.core.IResolvable hostNames) {
+                this.hostNames = hostNames;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchConfigurationProperty#getHostNames}
+             * @param hostNames the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder hostNames(java.util.List<? extends java.lang.Object> hostNames) {
+                this.hostNames = hostNames;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchConfigurationProperty#getImageFamily}
+             * @param imageFamily the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder imageFamily(java.lang.String imageFamily) {
+                this.imageFamily = imageFamily;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchConfigurationProperty#getImageFamily}
+             * @param imageFamily the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder imageFamily(com.aliyun.ros.cdk.core.IResolvable imageFamily) {
+                this.imageFamily = imageFamily;
                 return this;
             }
 
@@ -1515,6 +2051,50 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             }
 
             /**
+             * Sets the value of {@link LaunchConfigurationProperty#getSecurityGroupIds}
+             * @param securityGroupIds the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder securityGroupIds(com.aliyun.ros.cdk.core.IResolvable securityGroupIds) {
+                this.securityGroupIds = securityGroupIds;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchConfigurationProperty#getSecurityGroupIds}
+             * @param securityGroupIds the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder securityGroupIds(java.util.List<? extends java.lang.Object> securityGroupIds) {
+                this.securityGroupIds = securityGroupIds;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchConfigurationProperty#getSystemDiskBurstingEnabled}
+             * @param systemDiskBurstingEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder systemDiskBurstingEnabled(java.lang.Boolean systemDiskBurstingEnabled) {
+                this.systemDiskBurstingEnabled = systemDiskBurstingEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchConfigurationProperty#getSystemDiskBurstingEnabled}
+             * @param systemDiskBurstingEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder systemDiskBurstingEnabled(com.aliyun.ros.cdk.core.IResolvable systemDiskBurstingEnabled) {
+                this.systemDiskBurstingEnabled = systemDiskBurstingEnabled;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link LaunchConfigurationProperty#getSystemDiskCategory}
              * @param systemDiskCategory the value to be set.
              * @return {@code this}
@@ -1559,6 +2139,50 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             }
 
             /**
+             * Sets the value of {@link LaunchConfigurationProperty#getSystemDiskEncrypted}
+             * @param systemDiskEncrypted the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder systemDiskEncrypted(java.lang.Boolean systemDiskEncrypted) {
+                this.systemDiskEncrypted = systemDiskEncrypted;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchConfigurationProperty#getSystemDiskEncrypted}
+             * @param systemDiskEncrypted the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder systemDiskEncrypted(com.aliyun.ros.cdk.core.IResolvable systemDiskEncrypted) {
+                this.systemDiskEncrypted = systemDiskEncrypted;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchConfigurationProperty#getSystemDiskKmsKeyId}
+             * @param systemDiskKmsKeyId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder systemDiskKmsKeyId(java.lang.String systemDiskKmsKeyId) {
+                this.systemDiskKmsKeyId = systemDiskKmsKeyId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchConfigurationProperty#getSystemDiskKmsKeyId}
+             * @param systemDiskKmsKeyId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder systemDiskKmsKeyId(com.aliyun.ros.cdk.core.IResolvable systemDiskKmsKeyId) {
+                this.systemDiskKmsKeyId = systemDiskKmsKeyId;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link LaunchConfigurationProperty#getSystemDiskName}
              * @param systemDiskName the value to be set.
              * @return {@code this}
@@ -1599,6 +2223,28 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder systemDiskPerformanceLevel(com.aliyun.ros.cdk.core.IResolvable systemDiskPerformanceLevel) {
                 this.systemDiskPerformanceLevel = systemDiskPerformanceLevel;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchConfigurationProperty#getSystemDiskProvisionedIops}
+             * @param systemDiskProvisionedIops the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder systemDiskProvisionedIops(java.lang.Number systemDiskProvisionedIops) {
+                this.systemDiskProvisionedIops = systemDiskProvisionedIops;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchConfigurationProperty#getSystemDiskProvisionedIops}
+             * @param systemDiskProvisionedIops the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder systemDiskProvisionedIops(com.aliyun.ros.cdk.core.IResolvable systemDiskProvisionedIops) {
+                this.systemDiskProvisionedIops = systemDiskProvisionedIops;
                 return this;
             }
 
@@ -1688,9 +2334,13 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements LaunchConfigurationProperty {
             private final java.lang.Object imageId;
             private final java.lang.Object securityGroupId;
+            private final java.lang.Object autoReleaseTime;
             private final java.lang.Object creditSpecification;
             private final java.lang.Object dataDisk;
+            private final java.lang.Object deploymentSetId;
             private final java.lang.Object hostName;
+            private final java.lang.Object hostNames;
+            private final java.lang.Object imageFamily;
             private final java.lang.Object instanceDescription;
             private final java.lang.Object instanceName;
             private final java.lang.Object internetChargeType;
@@ -1701,10 +2351,15 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             private final java.lang.Object ramRoleName;
             private final java.lang.Object resourceGroupId;
             private final java.lang.Object securityEnhancementStrategy;
+            private final java.lang.Object securityGroupIds;
+            private final java.lang.Object systemDiskBurstingEnabled;
             private final java.lang.Object systemDiskCategory;
             private final java.lang.Object systemDiskDescription;
+            private final java.lang.Object systemDiskEncrypted;
+            private final java.lang.Object systemDiskKmsKeyId;
             private final java.lang.Object systemDiskName;
             private final java.lang.Object systemDiskPerformanceLevel;
+            private final java.lang.Object systemDiskProvisionedIops;
             private final java.lang.Object systemDiskSize;
             private final java.lang.Object tag;
             private final java.lang.Object userData;
@@ -1717,9 +2372,13 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
                 super(objRef);
                 this.imageId = software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.autoReleaseTime = software.amazon.jsii.Kernel.get(this, "autoReleaseTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.creditSpecification = software.amazon.jsii.Kernel.get(this, "creditSpecification", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.dataDisk = software.amazon.jsii.Kernel.get(this, "dataDisk", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.deploymentSetId = software.amazon.jsii.Kernel.get(this, "deploymentSetId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.hostName = software.amazon.jsii.Kernel.get(this, "hostName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.hostNames = software.amazon.jsii.Kernel.get(this, "hostNames", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.imageFamily = software.amazon.jsii.Kernel.get(this, "imageFamily", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.instanceDescription = software.amazon.jsii.Kernel.get(this, "instanceDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1730,10 +2389,15 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
                 this.ramRoleName = software.amazon.jsii.Kernel.get(this, "ramRoleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.securityEnhancementStrategy = software.amazon.jsii.Kernel.get(this, "securityEnhancementStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.securityGroupIds = software.amazon.jsii.Kernel.get(this, "securityGroupIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.systemDiskBurstingEnabled = software.amazon.jsii.Kernel.get(this, "systemDiskBurstingEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.systemDiskCategory = software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.systemDiskDescription = software.amazon.jsii.Kernel.get(this, "systemDiskDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.systemDiskEncrypted = software.amazon.jsii.Kernel.get(this, "systemDiskEncrypted", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.systemDiskKmsKeyId = software.amazon.jsii.Kernel.get(this, "systemDiskKmsKeyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.systemDiskName = software.amazon.jsii.Kernel.get(this, "systemDiskName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.systemDiskPerformanceLevel = software.amazon.jsii.Kernel.get(this, "systemDiskPerformanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.systemDiskProvisionedIops = software.amazon.jsii.Kernel.get(this, "systemDiskProvisionedIops", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.systemDiskSize = software.amazon.jsii.Kernel.get(this, "systemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.tag = software.amazon.jsii.Kernel.get(this, "tag", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.userData = software.amazon.jsii.Kernel.get(this, "userData", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1746,9 +2410,13 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.imageId = java.util.Objects.requireNonNull(builder.imageId, "imageId is required");
                 this.securityGroupId = java.util.Objects.requireNonNull(builder.securityGroupId, "securityGroupId is required");
+                this.autoReleaseTime = builder.autoReleaseTime;
                 this.creditSpecification = builder.creditSpecification;
                 this.dataDisk = builder.dataDisk;
+                this.deploymentSetId = builder.deploymentSetId;
                 this.hostName = builder.hostName;
+                this.hostNames = builder.hostNames;
+                this.imageFamily = builder.imageFamily;
                 this.instanceDescription = builder.instanceDescription;
                 this.instanceName = builder.instanceName;
                 this.internetChargeType = builder.internetChargeType;
@@ -1759,10 +2427,15 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
                 this.ramRoleName = builder.ramRoleName;
                 this.resourceGroupId = builder.resourceGroupId;
                 this.securityEnhancementStrategy = builder.securityEnhancementStrategy;
+                this.securityGroupIds = builder.securityGroupIds;
+                this.systemDiskBurstingEnabled = builder.systemDiskBurstingEnabled;
                 this.systemDiskCategory = builder.systemDiskCategory;
                 this.systemDiskDescription = builder.systemDiskDescription;
+                this.systemDiskEncrypted = builder.systemDiskEncrypted;
+                this.systemDiskKmsKeyId = builder.systemDiskKmsKeyId;
                 this.systemDiskName = builder.systemDiskName;
                 this.systemDiskPerformanceLevel = builder.systemDiskPerformanceLevel;
+                this.systemDiskProvisionedIops = builder.systemDiskProvisionedIops;
                 this.systemDiskSize = builder.systemDiskSize;
                 this.tag = builder.tag;
                 this.userData = builder.userData;
@@ -1779,6 +2452,11 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             }
 
             @Override
+            public final java.lang.Object getAutoReleaseTime() {
+                return this.autoReleaseTime;
+            }
+
+            @Override
             public final java.lang.Object getCreditSpecification() {
                 return this.creditSpecification;
             }
@@ -1789,8 +2467,23 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             }
 
             @Override
+            public final java.lang.Object getDeploymentSetId() {
+                return this.deploymentSetId;
+            }
+
+            @Override
             public final java.lang.Object getHostName() {
                 return this.hostName;
+            }
+
+            @Override
+            public final java.lang.Object getHostNames() {
+                return this.hostNames;
+            }
+
+            @Override
+            public final java.lang.Object getImageFamily() {
+                return this.imageFamily;
             }
 
             @Override
@@ -1844,6 +2537,16 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             }
 
             @Override
+            public final java.lang.Object getSecurityGroupIds() {
+                return this.securityGroupIds;
+            }
+
+            @Override
+            public final java.lang.Object getSystemDiskBurstingEnabled() {
+                return this.systemDiskBurstingEnabled;
+            }
+
+            @Override
             public final java.lang.Object getSystemDiskCategory() {
                 return this.systemDiskCategory;
             }
@@ -1854,6 +2557,16 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             }
 
             @Override
+            public final java.lang.Object getSystemDiskEncrypted() {
+                return this.systemDiskEncrypted;
+            }
+
+            @Override
+            public final java.lang.Object getSystemDiskKmsKeyId() {
+                return this.systemDiskKmsKeyId;
+            }
+
+            @Override
             public final java.lang.Object getSystemDiskName() {
                 return this.systemDiskName;
             }
@@ -1861,6 +2574,11 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             @Override
             public final java.lang.Object getSystemDiskPerformanceLevel() {
                 return this.systemDiskPerformanceLevel;
+            }
+
+            @Override
+            public final java.lang.Object getSystemDiskProvisionedIops() {
+                return this.systemDiskProvisionedIops;
             }
 
             @Override
@@ -1886,14 +2604,26 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
 
                 data.set("imageId", om.valueToTree(this.getImageId()));
                 data.set("securityGroupId", om.valueToTree(this.getSecurityGroupId()));
+                if (this.getAutoReleaseTime() != null) {
+                    data.set("autoReleaseTime", om.valueToTree(this.getAutoReleaseTime()));
+                }
                 if (this.getCreditSpecification() != null) {
                     data.set("creditSpecification", om.valueToTree(this.getCreditSpecification()));
                 }
                 if (this.getDataDisk() != null) {
                     data.set("dataDisk", om.valueToTree(this.getDataDisk()));
                 }
+                if (this.getDeploymentSetId() != null) {
+                    data.set("deploymentSetId", om.valueToTree(this.getDeploymentSetId()));
+                }
                 if (this.getHostName() != null) {
                     data.set("hostName", om.valueToTree(this.getHostName()));
+                }
+                if (this.getHostNames() != null) {
+                    data.set("hostNames", om.valueToTree(this.getHostNames()));
+                }
+                if (this.getImageFamily() != null) {
+                    data.set("imageFamily", om.valueToTree(this.getImageFamily()));
                 }
                 if (this.getInstanceDescription() != null) {
                     data.set("instanceDescription", om.valueToTree(this.getInstanceDescription()));
@@ -1925,17 +2655,32 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
                 if (this.getSecurityEnhancementStrategy() != null) {
                     data.set("securityEnhancementStrategy", om.valueToTree(this.getSecurityEnhancementStrategy()));
                 }
+                if (this.getSecurityGroupIds() != null) {
+                    data.set("securityGroupIds", om.valueToTree(this.getSecurityGroupIds()));
+                }
+                if (this.getSystemDiskBurstingEnabled() != null) {
+                    data.set("systemDiskBurstingEnabled", om.valueToTree(this.getSystemDiskBurstingEnabled()));
+                }
                 if (this.getSystemDiskCategory() != null) {
                     data.set("systemDiskCategory", om.valueToTree(this.getSystemDiskCategory()));
                 }
                 if (this.getSystemDiskDescription() != null) {
                     data.set("systemDiskDescription", om.valueToTree(this.getSystemDiskDescription()));
                 }
+                if (this.getSystemDiskEncrypted() != null) {
+                    data.set("systemDiskEncrypted", om.valueToTree(this.getSystemDiskEncrypted()));
+                }
+                if (this.getSystemDiskKmsKeyId() != null) {
+                    data.set("systemDiskKmsKeyId", om.valueToTree(this.getSystemDiskKmsKeyId()));
+                }
                 if (this.getSystemDiskName() != null) {
                     data.set("systemDiskName", om.valueToTree(this.getSystemDiskName()));
                 }
                 if (this.getSystemDiskPerformanceLevel() != null) {
                     data.set("systemDiskPerformanceLevel", om.valueToTree(this.getSystemDiskPerformanceLevel()));
+                }
+                if (this.getSystemDiskProvisionedIops() != null) {
+                    data.set("systemDiskProvisionedIops", om.valueToTree(this.getSystemDiskProvisionedIops()));
                 }
                 if (this.getSystemDiskSize() != null) {
                     data.set("systemDiskSize", om.valueToTree(this.getSystemDiskSize()));
@@ -1966,9 +2711,13 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
 
                 if (!imageId.equals(that.imageId)) return false;
                 if (!securityGroupId.equals(that.securityGroupId)) return false;
+                if (this.autoReleaseTime != null ? !this.autoReleaseTime.equals(that.autoReleaseTime) : that.autoReleaseTime != null) return false;
                 if (this.creditSpecification != null ? !this.creditSpecification.equals(that.creditSpecification) : that.creditSpecification != null) return false;
                 if (this.dataDisk != null ? !this.dataDisk.equals(that.dataDisk) : that.dataDisk != null) return false;
+                if (this.deploymentSetId != null ? !this.deploymentSetId.equals(that.deploymentSetId) : that.deploymentSetId != null) return false;
                 if (this.hostName != null ? !this.hostName.equals(that.hostName) : that.hostName != null) return false;
+                if (this.hostNames != null ? !this.hostNames.equals(that.hostNames) : that.hostNames != null) return false;
+                if (this.imageFamily != null ? !this.imageFamily.equals(that.imageFamily) : that.imageFamily != null) return false;
                 if (this.instanceDescription != null ? !this.instanceDescription.equals(that.instanceDescription) : that.instanceDescription != null) return false;
                 if (this.instanceName != null ? !this.instanceName.equals(that.instanceName) : that.instanceName != null) return false;
                 if (this.internetChargeType != null ? !this.internetChargeType.equals(that.internetChargeType) : that.internetChargeType != null) return false;
@@ -1979,10 +2728,15 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
                 if (this.ramRoleName != null ? !this.ramRoleName.equals(that.ramRoleName) : that.ramRoleName != null) return false;
                 if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
                 if (this.securityEnhancementStrategy != null ? !this.securityEnhancementStrategy.equals(that.securityEnhancementStrategy) : that.securityEnhancementStrategy != null) return false;
+                if (this.securityGroupIds != null ? !this.securityGroupIds.equals(that.securityGroupIds) : that.securityGroupIds != null) return false;
+                if (this.systemDiskBurstingEnabled != null ? !this.systemDiskBurstingEnabled.equals(that.systemDiskBurstingEnabled) : that.systemDiskBurstingEnabled != null) return false;
                 if (this.systemDiskCategory != null ? !this.systemDiskCategory.equals(that.systemDiskCategory) : that.systemDiskCategory != null) return false;
                 if (this.systemDiskDescription != null ? !this.systemDiskDescription.equals(that.systemDiskDescription) : that.systemDiskDescription != null) return false;
+                if (this.systemDiskEncrypted != null ? !this.systemDiskEncrypted.equals(that.systemDiskEncrypted) : that.systemDiskEncrypted != null) return false;
+                if (this.systemDiskKmsKeyId != null ? !this.systemDiskKmsKeyId.equals(that.systemDiskKmsKeyId) : that.systemDiskKmsKeyId != null) return false;
                 if (this.systemDiskName != null ? !this.systemDiskName.equals(that.systemDiskName) : that.systemDiskName != null) return false;
                 if (this.systemDiskPerformanceLevel != null ? !this.systemDiskPerformanceLevel.equals(that.systemDiskPerformanceLevel) : that.systemDiskPerformanceLevel != null) return false;
+                if (this.systemDiskProvisionedIops != null ? !this.systemDiskProvisionedIops.equals(that.systemDiskProvisionedIops) : that.systemDiskProvisionedIops != null) return false;
                 if (this.systemDiskSize != null ? !this.systemDiskSize.equals(that.systemDiskSize) : that.systemDiskSize != null) return false;
                 if (this.tag != null ? !this.tag.equals(that.tag) : that.tag != null) return false;
                 return this.userData != null ? this.userData.equals(that.userData) : that.userData == null;
@@ -1992,9 +2746,13 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             public final int hashCode() {
                 int result = this.imageId.hashCode();
                 result = 31 * result + (this.securityGroupId.hashCode());
+                result = 31 * result + (this.autoReleaseTime != null ? this.autoReleaseTime.hashCode() : 0);
                 result = 31 * result + (this.creditSpecification != null ? this.creditSpecification.hashCode() : 0);
                 result = 31 * result + (this.dataDisk != null ? this.dataDisk.hashCode() : 0);
+                result = 31 * result + (this.deploymentSetId != null ? this.deploymentSetId.hashCode() : 0);
                 result = 31 * result + (this.hostName != null ? this.hostName.hashCode() : 0);
+                result = 31 * result + (this.hostNames != null ? this.hostNames.hashCode() : 0);
+                result = 31 * result + (this.imageFamily != null ? this.imageFamily.hashCode() : 0);
                 result = 31 * result + (this.instanceDescription != null ? this.instanceDescription.hashCode() : 0);
                 result = 31 * result + (this.instanceName != null ? this.instanceName.hashCode() : 0);
                 result = 31 * result + (this.internetChargeType != null ? this.internetChargeType.hashCode() : 0);
@@ -2005,10 +2763,15 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
                 result = 31 * result + (this.ramRoleName != null ? this.ramRoleName.hashCode() : 0);
                 result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
                 result = 31 * result + (this.securityEnhancementStrategy != null ? this.securityEnhancementStrategy.hashCode() : 0);
+                result = 31 * result + (this.securityGroupIds != null ? this.securityGroupIds.hashCode() : 0);
+                result = 31 * result + (this.systemDiskBurstingEnabled != null ? this.systemDiskBurstingEnabled.hashCode() : 0);
                 result = 31 * result + (this.systemDiskCategory != null ? this.systemDiskCategory.hashCode() : 0);
                 result = 31 * result + (this.systemDiskDescription != null ? this.systemDiskDescription.hashCode() : 0);
+                result = 31 * result + (this.systemDiskEncrypted != null ? this.systemDiskEncrypted.hashCode() : 0);
+                result = 31 * result + (this.systemDiskKmsKeyId != null ? this.systemDiskKmsKeyId.hashCode() : 0);
                 result = 31 * result + (this.systemDiskName != null ? this.systemDiskName.hashCode() : 0);
                 result = 31 * result + (this.systemDiskPerformanceLevel != null ? this.systemDiskPerformanceLevel.hashCode() : 0);
+                result = 31 * result + (this.systemDiskProvisionedIops != null ? this.systemDiskProvisionedIops.hashCode() : 0);
                 result = 31 * result + (this.systemDiskSize != null ? this.systemDiskSize.hashCode() : 0);
                 result = 31 * result + (this.tag != null ? this.tag.hashCode() : 0);
                 result = 31 * result + (this.userData != null ? this.userData.hashCode() : 0);
@@ -2031,6 +2794,48 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getArchitectures() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getBurstablePerformance() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCores() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getExcludedInstanceTypes() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getImageId() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceFamilyLevel() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceType() {
             return null;
         }
@@ -2039,6 +2844,13 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getMaxPrice() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getMemories() {
             return null;
         }
 
@@ -2069,8 +2881,15 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<LaunchTemplateConfigProperty> {
             java.lang.Object vSwitchId;
+            java.lang.Object architectures;
+            java.lang.Object burstablePerformance;
+            java.lang.Object cores;
+            java.lang.Object excludedInstanceTypes;
+            java.lang.Object imageId;
+            java.lang.Object instanceFamilyLevel;
             java.lang.Object instanceType;
             java.lang.Object maxPrice;
+            java.lang.Object memories;
             java.lang.Object priority;
             java.lang.Object weightedCapacity;
 
@@ -2093,6 +2912,138 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
                 this.vSwitchId = vSwitchId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchTemplateConfigProperty#getArchitectures}
+             * @param architectures the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder architectures(com.aliyun.ros.cdk.core.IResolvable architectures) {
+                this.architectures = architectures;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchTemplateConfigProperty#getArchitectures}
+             * @param architectures the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder architectures(java.util.List<? extends java.lang.Object> architectures) {
+                this.architectures = architectures;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchTemplateConfigProperty#getBurstablePerformance}
+             * @param burstablePerformance the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder burstablePerformance(java.lang.String burstablePerformance) {
+                this.burstablePerformance = burstablePerformance;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchTemplateConfigProperty#getBurstablePerformance}
+             * @param burstablePerformance the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder burstablePerformance(com.aliyun.ros.cdk.core.IResolvable burstablePerformance) {
+                this.burstablePerformance = burstablePerformance;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchTemplateConfigProperty#getCores}
+             * @param cores the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cores(com.aliyun.ros.cdk.core.IResolvable cores) {
+                this.cores = cores;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchTemplateConfigProperty#getCores}
+             * @param cores the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cores(java.util.List<? extends java.lang.Object> cores) {
+                this.cores = cores;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchTemplateConfigProperty#getExcludedInstanceTypes}
+             * @param excludedInstanceTypes the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder excludedInstanceTypes(com.aliyun.ros.cdk.core.IResolvable excludedInstanceTypes) {
+                this.excludedInstanceTypes = excludedInstanceTypes;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchTemplateConfigProperty#getExcludedInstanceTypes}
+             * @param excludedInstanceTypes the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder excludedInstanceTypes(java.util.List<? extends java.lang.Object> excludedInstanceTypes) {
+                this.excludedInstanceTypes = excludedInstanceTypes;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchTemplateConfigProperty#getImageId}
+             * @param imageId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder imageId(java.lang.String imageId) {
+                this.imageId = imageId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchTemplateConfigProperty#getImageId}
+             * @param imageId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder imageId(com.aliyun.ros.cdk.core.IResolvable imageId) {
+                this.imageId = imageId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchTemplateConfigProperty#getInstanceFamilyLevel}
+             * @param instanceFamilyLevel the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instanceFamilyLevel(java.lang.String instanceFamilyLevel) {
+                this.instanceFamilyLevel = instanceFamilyLevel;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchTemplateConfigProperty#getInstanceFamilyLevel}
+             * @param instanceFamilyLevel the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instanceFamilyLevel(com.aliyun.ros.cdk.core.IResolvable instanceFamilyLevel) {
+                this.instanceFamilyLevel = instanceFamilyLevel;
                 return this;
             }
 
@@ -2137,6 +3088,28 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder maxPrice(com.aliyun.ros.cdk.core.IResolvable maxPrice) {
                 this.maxPrice = maxPrice;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchTemplateConfigProperty#getMemories}
+             * @param memories the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder memories(com.aliyun.ros.cdk.core.IResolvable memories) {
+                this.memories = memories;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchTemplateConfigProperty#getMemories}
+             * @param memories the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder memories(java.util.List<? extends java.lang.Object> memories) {
+                this.memories = memories;
                 return this;
             }
 
@@ -2203,8 +3176,15 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements LaunchTemplateConfigProperty {
             private final java.lang.Object vSwitchId;
+            private final java.lang.Object architectures;
+            private final java.lang.Object burstablePerformance;
+            private final java.lang.Object cores;
+            private final java.lang.Object excludedInstanceTypes;
+            private final java.lang.Object imageId;
+            private final java.lang.Object instanceFamilyLevel;
             private final java.lang.Object instanceType;
             private final java.lang.Object maxPrice;
+            private final java.lang.Object memories;
             private final java.lang.Object priority;
             private final java.lang.Object weightedCapacity;
 
@@ -2215,8 +3195,15 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
                 this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.architectures = software.amazon.jsii.Kernel.get(this, "architectures", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.burstablePerformance = software.amazon.jsii.Kernel.get(this, "burstablePerformance", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.cores = software.amazon.jsii.Kernel.get(this, "cores", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.excludedInstanceTypes = software.amazon.jsii.Kernel.get(this, "excludedInstanceTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.imageId = software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.instanceFamilyLevel = software.amazon.jsii.Kernel.get(this, "instanceFamilyLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.maxPrice = software.amazon.jsii.Kernel.get(this, "maxPrice", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.memories = software.amazon.jsii.Kernel.get(this, "memories", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.priority = software.amazon.jsii.Kernel.get(this, "priority", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.weightedCapacity = software.amazon.jsii.Kernel.get(this, "weightedCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
@@ -2227,8 +3214,15 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
+                this.architectures = builder.architectures;
+                this.burstablePerformance = builder.burstablePerformance;
+                this.cores = builder.cores;
+                this.excludedInstanceTypes = builder.excludedInstanceTypes;
+                this.imageId = builder.imageId;
+                this.instanceFamilyLevel = builder.instanceFamilyLevel;
                 this.instanceType = builder.instanceType;
                 this.maxPrice = builder.maxPrice;
+                this.memories = builder.memories;
                 this.priority = builder.priority;
                 this.weightedCapacity = builder.weightedCapacity;
             }
@@ -2239,6 +3233,36 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             }
 
             @Override
+            public final java.lang.Object getArchitectures() {
+                return this.architectures;
+            }
+
+            @Override
+            public final java.lang.Object getBurstablePerformance() {
+                return this.burstablePerformance;
+            }
+
+            @Override
+            public final java.lang.Object getCores() {
+                return this.cores;
+            }
+
+            @Override
+            public final java.lang.Object getExcludedInstanceTypes() {
+                return this.excludedInstanceTypes;
+            }
+
+            @Override
+            public final java.lang.Object getImageId() {
+                return this.imageId;
+            }
+
+            @Override
+            public final java.lang.Object getInstanceFamilyLevel() {
+                return this.instanceFamilyLevel;
+            }
+
+            @Override
             public final java.lang.Object getInstanceType() {
                 return this.instanceType;
             }
@@ -2246,6 +3270,11 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             @Override
             public final java.lang.Object getMaxPrice() {
                 return this.maxPrice;
+            }
+
+            @Override
+            public final java.lang.Object getMemories() {
+                return this.memories;
             }
 
             @Override
@@ -2265,11 +3294,32 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
                 data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
+                if (this.getArchitectures() != null) {
+                    data.set("architectures", om.valueToTree(this.getArchitectures()));
+                }
+                if (this.getBurstablePerformance() != null) {
+                    data.set("burstablePerformance", om.valueToTree(this.getBurstablePerformance()));
+                }
+                if (this.getCores() != null) {
+                    data.set("cores", om.valueToTree(this.getCores()));
+                }
+                if (this.getExcludedInstanceTypes() != null) {
+                    data.set("excludedInstanceTypes", om.valueToTree(this.getExcludedInstanceTypes()));
+                }
+                if (this.getImageId() != null) {
+                    data.set("imageId", om.valueToTree(this.getImageId()));
+                }
+                if (this.getInstanceFamilyLevel() != null) {
+                    data.set("instanceFamilyLevel", om.valueToTree(this.getInstanceFamilyLevel()));
+                }
                 if (this.getInstanceType() != null) {
                     data.set("instanceType", om.valueToTree(this.getInstanceType()));
                 }
                 if (this.getMaxPrice() != null) {
                     data.set("maxPrice", om.valueToTree(this.getMaxPrice()));
+                }
+                if (this.getMemories() != null) {
+                    data.set("memories", om.valueToTree(this.getMemories()));
                 }
                 if (this.getPriority() != null) {
                     data.set("priority", om.valueToTree(this.getPriority()));
@@ -2296,8 +3346,15 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
                 LaunchTemplateConfigProperty.Jsii$Proxy that = (LaunchTemplateConfigProperty.Jsii$Proxy) o;
 
                 if (!vSwitchId.equals(that.vSwitchId)) return false;
+                if (this.architectures != null ? !this.architectures.equals(that.architectures) : that.architectures != null) return false;
+                if (this.burstablePerformance != null ? !this.burstablePerformance.equals(that.burstablePerformance) : that.burstablePerformance != null) return false;
+                if (this.cores != null ? !this.cores.equals(that.cores) : that.cores != null) return false;
+                if (this.excludedInstanceTypes != null ? !this.excludedInstanceTypes.equals(that.excludedInstanceTypes) : that.excludedInstanceTypes != null) return false;
+                if (this.imageId != null ? !this.imageId.equals(that.imageId) : that.imageId != null) return false;
+                if (this.instanceFamilyLevel != null ? !this.instanceFamilyLevel.equals(that.instanceFamilyLevel) : that.instanceFamilyLevel != null) return false;
                 if (this.instanceType != null ? !this.instanceType.equals(that.instanceType) : that.instanceType != null) return false;
                 if (this.maxPrice != null ? !this.maxPrice.equals(that.maxPrice) : that.maxPrice != null) return false;
+                if (this.memories != null ? !this.memories.equals(that.memories) : that.memories != null) return false;
                 if (this.priority != null ? !this.priority.equals(that.priority) : that.priority != null) return false;
                 return this.weightedCapacity != null ? this.weightedCapacity.equals(that.weightedCapacity) : that.weightedCapacity == null;
             }
@@ -2305,10 +3362,314 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
             @Override
             public final int hashCode() {
                 int result = this.vSwitchId.hashCode();
+                result = 31 * result + (this.architectures != null ? this.architectures.hashCode() : 0);
+                result = 31 * result + (this.burstablePerformance != null ? this.burstablePerformance.hashCode() : 0);
+                result = 31 * result + (this.cores != null ? this.cores.hashCode() : 0);
+                result = 31 * result + (this.excludedInstanceTypes != null ? this.excludedInstanceTypes.hashCode() : 0);
+                result = 31 * result + (this.imageId != null ? this.imageId.hashCode() : 0);
+                result = 31 * result + (this.instanceFamilyLevel != null ? this.instanceFamilyLevel.hashCode() : 0);
                 result = 31 * result + (this.instanceType != null ? this.instanceType.hashCode() : 0);
                 result = 31 * result + (this.maxPrice != null ? this.maxPrice.hashCode() : 0);
+                result = 31 * result + (this.memories != null ? this.memories.hashCode() : 0);
                 result = 31 * result + (this.priority != null ? this.priority.hashCode() : 0);
                 result = 31 * result + (this.weightedCapacity != null ? this.weightedCapacity.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosAutoProvisioningGroup.ResourcePoolOptionsProperty")
+    @software.amazon.jsii.Jsii.Proxy(ResourcePoolOptionsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface ResourcePoolOptionsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPrivatePoolIds() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getStrategy() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link ResourcePoolOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link ResourcePoolOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<ResourcePoolOptionsProperty> {
+            java.lang.Object privatePoolIds;
+            java.lang.Object strategy;
+
+            /**
+             * Sets the value of {@link ResourcePoolOptionsProperty#getPrivatePoolIds}
+             * @param privatePoolIds the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder privatePoolIds(com.aliyun.ros.cdk.core.IResolvable privatePoolIds) {
+                this.privatePoolIds = privatePoolIds;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ResourcePoolOptionsProperty#getPrivatePoolIds}
+             * @param privatePoolIds the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder privatePoolIds(java.util.List<? extends java.lang.Object> privatePoolIds) {
+                this.privatePoolIds = privatePoolIds;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ResourcePoolOptionsProperty#getStrategy}
+             * @param strategy the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder strategy(java.lang.String strategy) {
+                this.strategy = strategy;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ResourcePoolOptionsProperty#getStrategy}
+             * @param strategy the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder strategy(com.aliyun.ros.cdk.core.IResolvable strategy) {
+                this.strategy = strategy;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link ResourcePoolOptionsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public ResourcePoolOptionsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link ResourcePoolOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ResourcePoolOptionsProperty {
+            private final java.lang.Object privatePoolIds;
+            private final java.lang.Object strategy;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.privatePoolIds = software.amazon.jsii.Kernel.get(this, "privatePoolIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.strategy = software.amazon.jsii.Kernel.get(this, "strategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.privatePoolIds = builder.privatePoolIds;
+                this.strategy = builder.strategy;
+            }
+
+            @Override
+            public final java.lang.Object getPrivatePoolIds() {
+                return this.privatePoolIds;
+            }
+
+            @Override
+            public final java.lang.Object getStrategy() {
+                return this.strategy;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getPrivatePoolIds() != null) {
+                    data.set("privatePoolIds", om.valueToTree(this.getPrivatePoolIds()));
+                }
+                if (this.getStrategy() != null) {
+                    data.set("strategy", om.valueToTree(this.getStrategy()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ecs.RosAutoProvisioningGroup.ResourcePoolOptionsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                ResourcePoolOptionsProperty.Jsii$Proxy that = (ResourcePoolOptionsProperty.Jsii$Proxy) o;
+
+                if (this.privatePoolIds != null ? !this.privatePoolIds.equals(that.privatePoolIds) : that.privatePoolIds != null) return false;
+                return this.strategy != null ? this.strategy.equals(that.strategy) : that.strategy == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.privatePoolIds != null ? this.privatePoolIds.hashCode() : 0;
+                result = 31 * result + (this.strategy != null ? this.strategy.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosAutoProvisioningGroup.SystemDiskConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(SystemDiskConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface SystemDiskConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getDiskCategory();
+
+        /**
+         * @return a {@link Builder} of {@link SystemDiskConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link SystemDiskConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<SystemDiskConfigProperty> {
+            java.lang.Object diskCategory;
+
+            /**
+             * Sets the value of {@link SystemDiskConfigProperty#getDiskCategory}
+             * @param diskCategory the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder diskCategory(java.lang.String diskCategory) {
+                this.diskCategory = diskCategory;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SystemDiskConfigProperty#getDiskCategory}
+             * @param diskCategory the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder diskCategory(com.aliyun.ros.cdk.core.IResolvable diskCategory) {
+                this.diskCategory = diskCategory;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link SystemDiskConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public SystemDiskConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link SystemDiskConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements SystemDiskConfigProperty {
+            private final java.lang.Object diskCategory;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.diskCategory = software.amazon.jsii.Kernel.get(this, "diskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.diskCategory = java.util.Objects.requireNonNull(builder.diskCategory, "diskCategory is required");
+            }
+
+            @Override
+            public final java.lang.Object getDiskCategory() {
+                return this.diskCategory;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("diskCategory", om.valueToTree(this.getDiskCategory()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ecs.RosAutoProvisioningGroup.SystemDiskConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                SystemDiskConfigProperty.Jsii$Proxy that = (SystemDiskConfigProperty.Jsii$Proxy) o;
+
+                return this.diskCategory.equals(that.diskCategory);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.diskCategory.hashCode();
                 return result;
             }
         }
@@ -2578,6 +3939,23 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
 
         /**
          * @return {@code this}
+         * @param dataDiskConfig This parameter is required.
+         */
+        public Builder dataDiskConfig(final com.aliyun.ros.cdk.core.IResolvable dataDiskConfig) {
+            this.props.dataDiskConfig(dataDiskConfig);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param dataDiskConfig This parameter is required.
+         */
+        public Builder dataDiskConfig(final java.util.List<? extends java.lang.Object> dataDiskConfig) {
+            this.props.dataDiskConfig(dataDiskConfig);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param defaultTargetCapacityType This parameter is required.
          */
         public Builder defaultTargetCapacityType(final java.lang.String defaultTargetCapacityType) {
@@ -2714,6 +4092,23 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
 
         /**
          * @return {@code this}
+         * @param minTargetCapacity This parameter is required.
+         */
+        public Builder minTargetCapacity(final java.lang.String minTargetCapacity) {
+            this.props.minTargetCapacity(minTargetCapacity);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param minTargetCapacity This parameter is required.
+         */
+        public Builder minTargetCapacity(final com.aliyun.ros.cdk.core.IResolvable minTargetCapacity) {
+            this.props.minTargetCapacity(minTargetCapacity);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param payAsYouGoAllocationStrategy This parameter is required.
          */
         public Builder payAsYouGoAllocationStrategy(final java.lang.String payAsYouGoAllocationStrategy) {
@@ -2743,6 +4138,40 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
          */
         public Builder payAsYouGoTargetCapacity(final com.aliyun.ros.cdk.core.IResolvable payAsYouGoTargetCapacity) {
             this.props.payAsYouGoTargetCapacity(payAsYouGoTargetCapacity);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param resourcePoolOptions This parameter is required.
+         */
+        public Builder resourcePoolOptions(final com.aliyun.ros.cdk.core.IResolvable resourcePoolOptions) {
+            this.props.resourcePoolOptions(resourcePoolOptions);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param resourcePoolOptions This parameter is required.
+         */
+        public Builder resourcePoolOptions(final com.aliyun.ros.cdk.ecs.RosAutoProvisioningGroup.ResourcePoolOptionsProperty resourcePoolOptions) {
+            this.props.resourcePoolOptions(resourcePoolOptions);
             return this;
         }
 
@@ -2811,6 +4240,23 @@ public class RosAutoProvisioningGroup extends com.aliyun.ros.cdk.core.RosResourc
          */
         public Builder spotTargetCapacity(final com.aliyun.ros.cdk.core.IResolvable spotTargetCapacity) {
             this.props.spotTargetCapacity(spotTargetCapacity);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param systemDiskConfig This parameter is required.
+         */
+        public Builder systemDiskConfig(final com.aliyun.ros.cdk.core.IResolvable systemDiskConfig) {
+            this.props.systemDiskConfig(systemDiskConfig);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param systemDiskConfig This parameter is required.
+         */
+        public Builder systemDiskConfig(final java.util.List<? extends java.lang.Object> systemDiskConfig) {
+            this.props.systemDiskConfig(systemDiskConfig);
             return this;
         }
 

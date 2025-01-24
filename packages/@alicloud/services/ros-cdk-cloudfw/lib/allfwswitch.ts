@@ -16,14 +16,20 @@ export interface AllFwSwitchProps {
 }
 
 /**
+ * Represents a `AllFwSwitch`.
+ */
+export interface IAllFwSwitch extends ros.IResource {
+    readonly props: AllFwSwitchProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::AllFwSwitch`, which is used to enable all firewalls.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAllFwSwitch`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-allfwswitch
  */
-export class AllFwSwitch extends ros.Resource {
+export class AllFwSwitch extends ros.Resource implements IAllFwSwitch {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AllFwSwitchProps;
+    public readonly props: AllFwSwitchProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

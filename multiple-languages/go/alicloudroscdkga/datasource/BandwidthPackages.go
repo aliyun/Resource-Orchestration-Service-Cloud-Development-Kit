@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::GA::BandwidthPackages`, which is used to query the information about bandwidth plans.
 type BandwidthPackages interface {
 	alicloudroscdkcore.Resource
+	IBandwidthPackages
 	// Attribute BandwidthPackageIds: The list of bandwidth package IDs.
-	AttrBandwidthPackageIds() alicloudroscdkcore.IResolvable
+	AttrBandwidthPackageIds() interface{}
 	// Attribute BandwidthPackages: The list of bandwidth packages.
-	AttrBandwidthPackages() alicloudroscdkcore.IResolvable
+	AttrBandwidthPackages() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type BandwidthPackages interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *BandwidthPackagesProps
-	SetProps(val *BandwidthPackagesProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type BandwidthPackages interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type BandwidthPackages interface {
 // The jsii proxy struct for BandwidthPackages
 type jsiiProxy_BandwidthPackages struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IBandwidthPackages
 }
 
-func (j *jsiiProxy_BandwidthPackages) AttrBandwidthPackageIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BandwidthPackages) AttrBandwidthPackageIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBandwidthPackageIds",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_BandwidthPackages) AttrBandwidthPackageIds() alicloudroscdkco
 	return returns
 }
 
-func (j *jsiiProxy_BandwidthPackages) AttrBandwidthPackages() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BandwidthPackages) AttrBandwidthPackages() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBandwidthPackages",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_BandwidthPackages) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BandwidthPackages) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_BandwidthPackages)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_BandwidthPackages)SetProps(val *BandwidthPackagesProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_BandwidthPackages)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (b *jsiiProxy_BandwidthPackages) ApplyRemovalPolicy(policy alicloudroscdkco
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (b *jsiiProxy_BandwidthPackages) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		b,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (b *jsiiProxy_BandwidthPackages) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		b,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (b *jsiiProxy_BandwidthPackages) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		b,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (b *jsiiProxy_BandwidthPackages) GeneratePhysicalName() *string {

@@ -105,6 +105,25 @@ func Token_AsString(value interface{}, options *EncodingOptions) *string {
 	return returns
 }
 
+// Compare two strings that might contain Tokens with each other.
+func Token_CompareStrings(possibleToken1 *string, possibleToken2 *string) TokenComparison {
+	_init_.Initialize()
+
+	if err := validateToken_CompareStringsParameters(possibleToken1, possibleToken2); err != nil {
+		panic(err)
+	}
+	var returns TokenComparison
+
+	_jsii_.StaticInvoke(
+		"@alicloud/ros-cdk-core.Token",
+		"compareStrings",
+		[]interface{}{possibleToken1, possibleToken2},
+		&returns,
+	)
+
+	return returns
+}
+
 // Returns true if obj represents an unresolved value.
 //
 // One of these must be true:

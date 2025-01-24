@@ -12,14 +12,24 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::TSDB::InfluxDBUser`, which is used to create a Time Series Database (TSDB) database account.
 type InfluxDBUser interface {
 	alicloudroscdkcore.Resource
+	IInfluxDBUser
 	// Attribute InstanceId: The ID of TSDB for InfluxDB.
-	AttrInstanceId() alicloudroscdkcore.IResolvable
+	AttrInstanceId() interface{}
 	// Attribute UserName: The name of user.
-	AttrUserName() alicloudroscdkcore.IResolvable
+	AttrUserName() interface{}
 	// Attribute UserType: The type of user.
-	AttrUserType() alicloudroscdkcore.IResolvable
+	AttrUserType() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -34,7 +44,6 @@ type InfluxDBUser interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *InfluxDBUserProps
-	SetProps(val *InfluxDBUserProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -47,6 +56,9 @@ type InfluxDBUser interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -99,10 +111,11 @@ type InfluxDBUser interface {
 // The jsii proxy struct for InfluxDBUser
 type jsiiProxy_InfluxDBUser struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IInfluxDBUser
 }
 
-func (j *jsiiProxy_InfluxDBUser) AttrInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_InfluxDBUser) AttrInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceId",
@@ -111,8 +124,8 @@ func (j *jsiiProxy_InfluxDBUser) AttrInstanceId() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_InfluxDBUser) AttrUserName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_InfluxDBUser) AttrUserName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUserName",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_InfluxDBUser) AttrUserName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_InfluxDBUser) AttrUserType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_InfluxDBUser) AttrUserType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUserType",
@@ -136,6 +149,16 @@ func (j *jsiiProxy_InfluxDBUser) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_InfluxDBUser) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -273,17 +296,6 @@ func (j *jsiiProxy_InfluxDBUser)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_InfluxDBUser)SetProps(val *InfluxDBUserProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_InfluxDBUser)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -375,6 +387,45 @@ func (i *jsiiProxy_InfluxDBUser) ApplyRemovalPolicy(policy alicloudroscdkcore.Re
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (i *jsiiProxy_InfluxDBUser) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		i,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_InfluxDBUser) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		i,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_InfluxDBUser) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		i,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (i *jsiiProxy_InfluxDBUser) GeneratePhysicalName() *string {

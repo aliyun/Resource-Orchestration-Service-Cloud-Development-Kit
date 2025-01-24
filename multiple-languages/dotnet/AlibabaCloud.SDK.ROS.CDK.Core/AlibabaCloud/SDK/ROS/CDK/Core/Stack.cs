@@ -163,6 +163,38 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             return InvokeInstanceMethod<object>(new System.Type[]{typeof(object)}, new object[]{obj})!;
         }
 
+        /// <summary>Splits the provided ARN into its components.</summary>
+        /// <param name="arn">the ARN to split into its components.</param>
+        /// <param name="arnFormat">the expected format of 'arn' - depends on what format the service 'arn' represents uses.</param>
+        /// <remarks>
+        /// Works both if 'arn' is a string like 'acs:ram::123456789012****:role/RoleName',
+        /// and a Token representing a dynamic ROS expression
+        /// (in which case the returned components will also be dynamic ROS expressions,
+        /// encoded as Tokens).
+        /// </remarks>
+        [JsiiMethod(name: "splitArn", returnsJson: "{\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.ArnComponents\"}}", parametersJson: "[{\"docs\":{\"summary\":\"the ARN to split into its components.\"},\"name\":\"arn\",\"type\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}},{\"docs\":{\"summary\":\"the expected format of 'arn' - depends on what format the service 'arn' represents uses.\"},\"name\":\"arnFormat\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.ArnFormat\"}}]")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IArnComponents SplitArn(object arn, AlibabaCloud.SDK.ROS.CDK.Core.ArnFormat arnFormat)
+        {
+            if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+            {
+                switch (arn)
+                {
+                    case string cast_42e7ab:
+                        break;
+                    case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_42e7ab:
+                        break;
+                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_42e7ab:
+                        // Not enough information to type-check...
+                        break;
+                    case null:
+                        throw new System.ArgumentException($"Expected argument {nameof(arn)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(arn));
+                    default:
+                        throw new System.ArgumentException($"Expected argument {nameof(arn)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {arn.GetType().FullName}", nameof(arn));
+                }
+            }
+            return InvokeInstanceMethod<AlibabaCloud.SDK.ROS.CDK.Core.IArnComponents>(new System.Type[]{typeof(object), typeof(AlibabaCloud.SDK.ROS.CDK.Core.ArnFormat)}, new object[]{arn, arnFormat})!;
+        }
+
         /// <summary>Allows this construct to emit artifacts into the cloud assembly during synthesis.</summary>
         /// <remarks>
         /// This method is usually implemented by framework-level constructs such as <c>Stack</c> and <c>Asset</c>

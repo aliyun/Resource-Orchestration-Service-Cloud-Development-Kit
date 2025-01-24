@@ -644,7 +644,7 @@ export namespace RosInstance {
         /**
          * @Property connectionPort: The service port number of the ApsaraDB for MongoDB instance. Valid values: 1000 to 65535.
          */
-        readonly connectionPort: number | ros.IResolvable;
+        readonly connectionPort?: number | ros.IResolvable;
         /**
          * @Property connectionString: The prefix of the connection string. 
      * The prefix must be 8 to 64 characters in length, 
@@ -664,7 +664,6 @@ export namespace RosInstance {
 function RosInstance_ReplicaConnectionsPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('connectionPort', ros.requiredValidator)(properties.connectionPort));
     if(properties.connectionPort && (typeof properties.connectionPort) !== 'object') {
         errors.collect(ros.propertyValidator('connectionPort', ros.validateRange)({
             data: properties.connectionPort,

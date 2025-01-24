@@ -49,25 +49,41 @@ export interface NatIpProps {
 }
 
 /**
+ * Represents a `NatIp`.
+ */
+export interface INatIp extends ros.IResource {
+    readonly props: NatIpProps;
+
+    /**
+     * Attribute NatIp: NAT IP address.
+     */
+    readonly attrNatIp: ros.IResolvable | string;
+
+    /**
+     * Attribute NatIpId: The ID of the NAT IP address.
+     */
+    readonly attrNatIpId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::NatIp`, which is used to create a NAT IP address.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNatIp`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natip
  */
-export class NatIp extends ros.Resource {
+export class NatIp extends ros.Resource implements INatIp {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: NatIpProps;
+    public readonly props: NatIpProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute NatIp: NAT IP address.
      */
-    public readonly attrNatIp: ros.IResolvable;
+    public readonly attrNatIp: ros.IResolvable | string;
 
     /**
      * Attribute NatIpId: The ID of the NAT IP address.
      */
-    public readonly attrNatIpId: ros.IResolvable;
+    public readonly attrNatIpId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

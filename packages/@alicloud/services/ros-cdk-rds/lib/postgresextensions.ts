@@ -49,20 +49,31 @@ export interface PostgresExtensionsProps {
 }
 
 /**
+ * Represents a `PostgresExtensions`.
+ */
+export interface IPostgresExtensions extends ros.IResource {
+    readonly props: PostgresExtensionsProps;
+
+    /**
+     * Attribute InstalledExtensionNames: Extension names installed via ROS
+     */
+    readonly attrInstalledExtensionNames: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::PostgresExtensions`, which is used to install extensions on a database.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPostgresExtensions`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-postgresextensions
  */
-export class PostgresExtensions extends ros.Resource {
+export class PostgresExtensions extends ros.Resource implements IPostgresExtensions {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: PostgresExtensionsProps;
+    public readonly props: PostgresExtensionsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstalledExtensionNames: Extension names installed via ROS
      */
-    public readonly attrInstalledExtensionNames: ros.IResolvable;
+    public readonly attrInstalledExtensionNames: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

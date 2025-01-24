@@ -65,25 +65,41 @@ export interface SecurityGroupsProps {
 }
 
 /**
+ * Represents a `SecurityGroups`.
+ */
+export interface ISecurityGroups extends ros.IResource {
+    readonly props: SecurityGroupsProps;
+
+    /**
+     * Attribute SecurityGroupIds: The list of security group ids.
+     */
+    readonly attrSecurityGroupIds: ros.IResolvable | string;
+
+    /**
+     * Attribute SecurityGroups: The list of security groups.
+     */
+    readonly attrSecurityGroups: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::SecurityGroups`, which is used to query the basic information about security groups.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecurityGroups`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-securitygroups
  */
-export class SecurityGroups extends ros.Resource {
+export class SecurityGroups extends ros.Resource implements ISecurityGroups {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SecurityGroupsProps;
+    public readonly props: SecurityGroupsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SecurityGroupIds: The list of security group ids.
      */
-    public readonly attrSecurityGroupIds: ros.IResolvable;
+    public readonly attrSecurityGroupIds: ros.IResolvable | string;
 
     /**
      * Attribute SecurityGroups: The list of security groups.
      */
-    public readonly attrSecurityGroups: ros.IResolvable;
+    public readonly attrSecurityGroups: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

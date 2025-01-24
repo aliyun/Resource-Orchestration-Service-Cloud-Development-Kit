@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.adblake;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-dbcluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:03.881Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:33.928Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adblake.$Module.class, fqn = "@alicloud/ros-cdk-adblake.RosDBClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBClusterProps.Jsii$Proxy.class)
 public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -46,13 +46,37 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCloneSourceRegionId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDbClusterDescription() {
         return null;
     }
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDbClusterNetworkType() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDiskEncryption() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEnableDefaultResourcePool() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getKmsId() {
         return null;
     }
 
@@ -65,6 +89,24 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriodType() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getProductForm() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getReservedNodeCount() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getReservedNodeSize() {
         return null;
     }
 
@@ -116,10 +158,17 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Object vSwitchId;
         java.lang.Object zoneId;
         java.lang.Object backupSetId;
+        java.lang.Object cloneSourceRegionId;
         java.lang.Object dbClusterDescription;
+        java.lang.Object dbClusterNetworkType;
+        java.lang.Object diskEncryption;
         java.lang.Object enableDefaultResourcePool;
+        java.lang.Object kmsId;
         java.lang.Object period;
         java.lang.Object periodType;
+        java.lang.Object productForm;
+        java.lang.Object reservedNodeCount;
+        java.lang.Object reservedNodeSize;
         java.lang.Object resourceGroupId;
         java.lang.Object restoreToTime;
         java.lang.Object restoreType;
@@ -287,6 +336,26 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link RosDBClusterProps#getCloneSourceRegionId}
+         * @param cloneSourceRegionId the value to be set.
+         * @return {@code this}
+         */
+        public Builder cloneSourceRegionId(java.lang.String cloneSourceRegionId) {
+            this.cloneSourceRegionId = cloneSourceRegionId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getCloneSourceRegionId}
+         * @param cloneSourceRegionId the value to be set.
+         * @return {@code this}
+         */
+        public Builder cloneSourceRegionId(com.aliyun.ros.cdk.core.IResolvable cloneSourceRegionId) {
+            this.cloneSourceRegionId = cloneSourceRegionId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBClusterProps#getDbClusterDescription}
          * @param dbClusterDescription the value to be set.
          * @return {@code this}
@@ -307,6 +376,46 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link RosDBClusterProps#getDbClusterNetworkType}
+         * @param dbClusterNetworkType the value to be set.
+         * @return {@code this}
+         */
+        public Builder dbClusterNetworkType(java.lang.String dbClusterNetworkType) {
+            this.dbClusterNetworkType = dbClusterNetworkType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getDbClusterNetworkType}
+         * @param dbClusterNetworkType the value to be set.
+         * @return {@code this}
+         */
+        public Builder dbClusterNetworkType(com.aliyun.ros.cdk.core.IResolvable dbClusterNetworkType) {
+            this.dbClusterNetworkType = dbClusterNetworkType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getDiskEncryption}
+         * @param diskEncryption the value to be set.
+         * @return {@code this}
+         */
+        public Builder diskEncryption(java.lang.Boolean diskEncryption) {
+            this.diskEncryption = diskEncryption;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getDiskEncryption}
+         * @param diskEncryption the value to be set.
+         * @return {@code this}
+         */
+        public Builder diskEncryption(com.aliyun.ros.cdk.core.IResolvable diskEncryption) {
+            this.diskEncryption = diskEncryption;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBClusterProps#getEnableDefaultResourcePool}
          * @param enableDefaultResourcePool the value to be set.
          * @return {@code this}
@@ -323,6 +432,26 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
          */
         public Builder enableDefaultResourcePool(com.aliyun.ros.cdk.core.IResolvable enableDefaultResourcePool) {
             this.enableDefaultResourcePool = enableDefaultResourcePool;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getKmsId}
+         * @param kmsId the value to be set.
+         * @return {@code this}
+         */
+        public Builder kmsId(java.lang.String kmsId) {
+            this.kmsId = kmsId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getKmsId}
+         * @param kmsId the value to be set.
+         * @return {@code this}
+         */
+        public Builder kmsId(com.aliyun.ros.cdk.core.IResolvable kmsId) {
+            this.kmsId = kmsId;
             return this;
         }
 
@@ -363,6 +492,66 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
          */
         public Builder periodType(com.aliyun.ros.cdk.core.IResolvable periodType) {
             this.periodType = periodType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getProductForm}
+         * @param productForm the value to be set.
+         * @return {@code this}
+         */
+        public Builder productForm(java.lang.String productForm) {
+            this.productForm = productForm;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getProductForm}
+         * @param productForm the value to be set.
+         * @return {@code this}
+         */
+        public Builder productForm(com.aliyun.ros.cdk.core.IResolvable productForm) {
+            this.productForm = productForm;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getReservedNodeCount}
+         * @param reservedNodeCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder reservedNodeCount(java.lang.Number reservedNodeCount) {
+            this.reservedNodeCount = reservedNodeCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getReservedNodeCount}
+         * @param reservedNodeCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder reservedNodeCount(com.aliyun.ros.cdk.core.IResolvable reservedNodeCount) {
+            this.reservedNodeCount = reservedNodeCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getReservedNodeSize}
+         * @param reservedNodeSize the value to be set.
+         * @return {@code this}
+         */
+        public Builder reservedNodeSize(java.lang.Number reservedNodeSize) {
+            this.reservedNodeSize = reservedNodeSize;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getReservedNodeSize}
+         * @param reservedNodeSize the value to be set.
+         * @return {@code this}
+         */
+        public Builder reservedNodeSize(com.aliyun.ros.cdk.core.IResolvable reservedNodeSize) {
+            this.reservedNodeSize = reservedNodeSize;
             return this;
         }
 
@@ -481,10 +670,17 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object vSwitchId;
         private final java.lang.Object zoneId;
         private final java.lang.Object backupSetId;
+        private final java.lang.Object cloneSourceRegionId;
         private final java.lang.Object dbClusterDescription;
+        private final java.lang.Object dbClusterNetworkType;
+        private final java.lang.Object diskEncryption;
         private final java.lang.Object enableDefaultResourcePool;
+        private final java.lang.Object kmsId;
         private final java.lang.Object period;
         private final java.lang.Object periodType;
+        private final java.lang.Object productForm;
+        private final java.lang.Object reservedNodeCount;
+        private final java.lang.Object reservedNodeSize;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object restoreToTime;
         private final java.lang.Object restoreType;
@@ -505,10 +701,17 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.backupSetId = software.amazon.jsii.Kernel.get(this, "backupSetId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.cloneSourceRegionId = software.amazon.jsii.Kernel.get(this, "cloneSourceRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbClusterDescription = software.amazon.jsii.Kernel.get(this, "dbClusterDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbClusterNetworkType = software.amazon.jsii.Kernel.get(this, "dbClusterNetworkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.diskEncryption = software.amazon.jsii.Kernel.get(this, "diskEncryption", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableDefaultResourcePool = software.amazon.jsii.Kernel.get(this, "enableDefaultResourcePool", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.kmsId = software.amazon.jsii.Kernel.get(this, "kmsId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.periodType = software.amazon.jsii.Kernel.get(this, "periodType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.productForm = software.amazon.jsii.Kernel.get(this, "productForm", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.reservedNodeCount = software.amazon.jsii.Kernel.get(this, "reservedNodeCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.reservedNodeSize = software.amazon.jsii.Kernel.get(this, "reservedNodeSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.restoreToTime = software.amazon.jsii.Kernel.get(this, "restoreToTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.restoreType = software.amazon.jsii.Kernel.get(this, "restoreType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -530,10 +733,17 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
             this.zoneId = java.util.Objects.requireNonNull(builder.zoneId, "zoneId is required");
             this.backupSetId = builder.backupSetId;
+            this.cloneSourceRegionId = builder.cloneSourceRegionId;
             this.dbClusterDescription = builder.dbClusterDescription;
+            this.dbClusterNetworkType = builder.dbClusterNetworkType;
+            this.diskEncryption = builder.diskEncryption;
             this.enableDefaultResourcePool = builder.enableDefaultResourcePool;
+            this.kmsId = builder.kmsId;
             this.period = builder.period;
             this.periodType = builder.periodType;
+            this.productForm = builder.productForm;
+            this.reservedNodeCount = builder.reservedNodeCount;
+            this.reservedNodeSize = builder.reservedNodeSize;
             this.resourceGroupId = builder.resourceGroupId;
             this.restoreToTime = builder.restoreToTime;
             this.restoreType = builder.restoreType;
@@ -582,13 +792,33 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.lang.Object getCloneSourceRegionId() {
+            return this.cloneSourceRegionId;
+        }
+
+        @Override
         public final java.lang.Object getDbClusterDescription() {
             return this.dbClusterDescription;
         }
 
         @Override
+        public final java.lang.Object getDbClusterNetworkType() {
+            return this.dbClusterNetworkType;
+        }
+
+        @Override
+        public final java.lang.Object getDiskEncryption() {
+            return this.diskEncryption;
+        }
+
+        @Override
         public final java.lang.Object getEnableDefaultResourcePool() {
             return this.enableDefaultResourcePool;
+        }
+
+        @Override
+        public final java.lang.Object getKmsId() {
+            return this.kmsId;
         }
 
         @Override
@@ -599,6 +829,21 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         @Override
         public final java.lang.Object getPeriodType() {
             return this.periodType;
+        }
+
+        @Override
+        public final java.lang.Object getProductForm() {
+            return this.productForm;
+        }
+
+        @Override
+        public final java.lang.Object getReservedNodeCount() {
+            return this.reservedNodeCount;
+        }
+
+        @Override
+        public final java.lang.Object getReservedNodeSize() {
+            return this.reservedNodeSize;
         }
 
         @Override
@@ -642,17 +887,38 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             if (this.getBackupSetId() != null) {
                 data.set("backupSetId", om.valueToTree(this.getBackupSetId()));
             }
+            if (this.getCloneSourceRegionId() != null) {
+                data.set("cloneSourceRegionId", om.valueToTree(this.getCloneSourceRegionId()));
+            }
             if (this.getDbClusterDescription() != null) {
                 data.set("dbClusterDescription", om.valueToTree(this.getDbClusterDescription()));
             }
+            if (this.getDbClusterNetworkType() != null) {
+                data.set("dbClusterNetworkType", om.valueToTree(this.getDbClusterNetworkType()));
+            }
+            if (this.getDiskEncryption() != null) {
+                data.set("diskEncryption", om.valueToTree(this.getDiskEncryption()));
+            }
             if (this.getEnableDefaultResourcePool() != null) {
                 data.set("enableDefaultResourcePool", om.valueToTree(this.getEnableDefaultResourcePool()));
+            }
+            if (this.getKmsId() != null) {
+                data.set("kmsId", om.valueToTree(this.getKmsId()));
             }
             if (this.getPeriod() != null) {
                 data.set("period", om.valueToTree(this.getPeriod()));
             }
             if (this.getPeriodType() != null) {
                 data.set("periodType", om.valueToTree(this.getPeriodType()));
+            }
+            if (this.getProductForm() != null) {
+                data.set("productForm", om.valueToTree(this.getProductForm()));
+            }
+            if (this.getReservedNodeCount() != null) {
+                data.set("reservedNodeCount", om.valueToTree(this.getReservedNodeCount()));
+            }
+            if (this.getReservedNodeSize() != null) {
+                data.set("reservedNodeSize", om.valueToTree(this.getReservedNodeSize()));
             }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
@@ -695,10 +961,17 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             if (!vSwitchId.equals(that.vSwitchId)) return false;
             if (!zoneId.equals(that.zoneId)) return false;
             if (this.backupSetId != null ? !this.backupSetId.equals(that.backupSetId) : that.backupSetId != null) return false;
+            if (this.cloneSourceRegionId != null ? !this.cloneSourceRegionId.equals(that.cloneSourceRegionId) : that.cloneSourceRegionId != null) return false;
             if (this.dbClusterDescription != null ? !this.dbClusterDescription.equals(that.dbClusterDescription) : that.dbClusterDescription != null) return false;
+            if (this.dbClusterNetworkType != null ? !this.dbClusterNetworkType.equals(that.dbClusterNetworkType) : that.dbClusterNetworkType != null) return false;
+            if (this.diskEncryption != null ? !this.diskEncryption.equals(that.diskEncryption) : that.diskEncryption != null) return false;
             if (this.enableDefaultResourcePool != null ? !this.enableDefaultResourcePool.equals(that.enableDefaultResourcePool) : that.enableDefaultResourcePool != null) return false;
+            if (this.kmsId != null ? !this.kmsId.equals(that.kmsId) : that.kmsId != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.periodType != null ? !this.periodType.equals(that.periodType) : that.periodType != null) return false;
+            if (this.productForm != null ? !this.productForm.equals(that.productForm) : that.productForm != null) return false;
+            if (this.reservedNodeCount != null ? !this.reservedNodeCount.equals(that.reservedNodeCount) : that.reservedNodeCount != null) return false;
+            if (this.reservedNodeSize != null ? !this.reservedNodeSize.equals(that.reservedNodeSize) : that.reservedNodeSize != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.restoreToTime != null ? !this.restoreToTime.equals(that.restoreToTime) : that.restoreToTime != null) return false;
             if (this.restoreType != null ? !this.restoreType.equals(that.restoreType) : that.restoreType != null) return false;
@@ -716,10 +989,17 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             result = 31 * result + (this.vSwitchId.hashCode());
             result = 31 * result + (this.zoneId.hashCode());
             result = 31 * result + (this.backupSetId != null ? this.backupSetId.hashCode() : 0);
+            result = 31 * result + (this.cloneSourceRegionId != null ? this.cloneSourceRegionId.hashCode() : 0);
             result = 31 * result + (this.dbClusterDescription != null ? this.dbClusterDescription.hashCode() : 0);
+            result = 31 * result + (this.dbClusterNetworkType != null ? this.dbClusterNetworkType.hashCode() : 0);
+            result = 31 * result + (this.diskEncryption != null ? this.diskEncryption.hashCode() : 0);
             result = 31 * result + (this.enableDefaultResourcePool != null ? this.enableDefaultResourcePool.hashCode() : 0);
+            result = 31 * result + (this.kmsId != null ? this.kmsId.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.periodType != null ? this.periodType.hashCode() : 0);
+            result = 31 * result + (this.productForm != null ? this.productForm.hashCode() : 0);
+            result = 31 * result + (this.reservedNodeCount != null ? this.reservedNodeCount.hashCode() : 0);
+            result = 31 * result + (this.reservedNodeSize != null ? this.reservedNodeSize.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.restoreToTime != null ? this.restoreToTime.hashCode() : 0);
             result = 31 * result + (this.restoreType != null ? this.restoreType.hashCode() : 0);

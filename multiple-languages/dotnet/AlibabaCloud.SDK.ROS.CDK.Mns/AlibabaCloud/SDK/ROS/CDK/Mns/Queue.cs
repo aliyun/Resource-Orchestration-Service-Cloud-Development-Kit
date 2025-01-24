@@ -12,7 +12,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-queue
     /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Mns.Queue), fullyQualifiedName: "@alicloud/ros-cdk-mns.Queue", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-mns.QueueProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"optional\":true,\"type\":{\"primitive\":\"boolean\"}}]")]
-    public class Queue : AlibabaCloud.SDK.ROS.CDK.Core.Resource_
+    public class Queue : AlibabaCloud.SDK.ROS.CDK.Core.Resource_, AlibabaCloud.SDK.ROS.CDK.Mns.IQueue
     {
         /// <summary>Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.</summary>
         public Queue(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Mns.IQueueProps props, bool? enableResourcePropertyConstraint = null): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
@@ -39,25 +39,44 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         {
         }
 
-        /// <summary>Attribute ARN.WithSlash: The ARN: acs:mns:$region:$accountid:/queues/$queueName.</summary>
-        [JsiiProperty(name: "attrArnWithSlash", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrArnWithSlash
+        [JsiiMethod(name: "fromQueueArn", returnsJson: "{\"type\":{\"fqn\":\"@alicloud/ros-cdk-mns.IQueue\"}}", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"attrArnWithSlash\",\"type\":{\"primitive\":\"string\"}}]")]
+        public static AlibabaCloud.SDK.ROS.CDK.Mns.IQueue FromQueueArn(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, string attrArnWithSlash)
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            return InvokeStaticMethod<AlibabaCloud.SDK.ROS.CDK.Mns.IQueue>(typeof(AlibabaCloud.SDK.ROS.CDK.Mns.Queue), new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Core.Construct), typeof(string), typeof(string)}, new object[]{scope, id, attrArnWithSlash})!;
+        }
+
+        /// <summary>Import an existing queue.</summary>
+        [JsiiMethod(name: "fromQueueAttributes", returnsJson: "{\"type\":{\"fqn\":\"@alicloud/ros-cdk-mns.IQueue\"}}", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"attrs\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-mns.QueueAttributes\"}}]")]
+        public static AlibabaCloud.SDK.ROS.CDK.Mns.IQueue FromQueueAttributes(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Mns.IQueueAttributes attrs)
+        {
+            return InvokeStaticMethod<AlibabaCloud.SDK.ROS.CDK.Mns.IQueue>(typeof(AlibabaCloud.SDK.ROS.CDK.Mns.Queue), new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Core.Construct), typeof(string), typeof(AlibabaCloud.SDK.ROS.CDK.Mns.IQueueAttributes)}, new object[]{scope, id, attrs})!;
+        }
+
+        /// <summary>Attribute ARN.WithSlash: The ARN: acs:mns:$region:$accountid:/queues/$queueName.</summary>
+        [JsiiProperty(name: "attrArnWithSlash", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrArnWithSlash
+        {
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute QueueName: Queue name.</summary>
-        [JsiiProperty(name: "attrQueueName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrQueueName
+        [JsiiProperty(name: "attrQueueName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrQueueName
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute QueueUrl: URL of created queue.</summary>
-        [JsiiProperty(name: "attrQueueUrl", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrQueueUrl
+        [JsiiProperty(name: "attrQueueUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrQueueUrl
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
+        }
+
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-mns.QueueProps\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Mns.IQueueProps Props
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Mns.IQueueProps>()!;
         }
 
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
@@ -71,13 +90,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         protected virtual string Id
         {
             get => GetInstanceProperty<string>()!;
-            set => SetInstanceProperty(value);
-        }
-
-        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-mns.QueueProps\"}")]
-        protected virtual AlibabaCloud.SDK.ROS.CDK.Mns.IQueueProps Props
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Mns.IQueueProps>()!;
             set => SetInstanceProperty(value);
         }
 

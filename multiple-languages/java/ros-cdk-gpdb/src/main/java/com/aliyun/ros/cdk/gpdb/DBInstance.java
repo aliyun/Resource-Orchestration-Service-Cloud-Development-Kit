@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.gpdb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::GPDB::DBInstance</code>, which is used to create an AnalyticDB for PostgreSQL instance in reserved storage mode.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:08.731Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:40.574Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.DBInstance")
-public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
+public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.gpdb.IDBInstance {
 
     protected DBInstance(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -43,29 +43,38 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute ConnectionString: The endpoint of the instance.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrConnectionString() {
-        return software.amazon.jsii.Kernel.get(this, "attrConnectionString", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrConnectionString() {
+        return software.amazon.jsii.Kernel.get(this, "attrConnectionString", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute DBInstanceId: The ID of the instance.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDbInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrDbInstanceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDbInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrDbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute OrderId: The order ID of the instance.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrOrderId() {
-        return software.amazon.jsii.Kernel.get(this, "attrOrderId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrOrderId() {
+        return software.amazon.jsii.Kernel.get(this, "attrOrderId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute Port: The port used to connect to the instance.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPort() {
-        return software.amazon.jsii.Kernel.get(this, "attrPort", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPort() {
+        return software.amazon.jsii.Kernel.get(this, "attrPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.gpdb.DBInstanceProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.gpdb.DBInstanceProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -82,14 +91,6 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.gpdb.DBInstanceProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.gpdb.DBInstanceProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.gpdb.DBInstanceProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {
@@ -354,6 +355,27 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder dbInstanceMode(final com.aliyun.ros.cdk.core.IResolvable dbInstanceMode) {
             this.props.dbInstanceMode(dbInstanceMode);
+            return this;
+        }
+
+        /**
+         * Property deployMode: The deployment mode of the instance.
+         * <p>
+         * @return {@code this}
+         * @param deployMode Property deployMode: The deployment mode of the instance. This parameter is required.
+         */
+        public Builder deployMode(final java.lang.String deployMode) {
+            this.props.deployMode(deployMode);
+            return this;
+        }
+        /**
+         * Property deployMode: The deployment mode of the instance.
+         * <p>
+         * @return {@code this}
+         * @param deployMode Property deployMode: The deployment mode of the instance. This parameter is required.
+         */
+        public Builder deployMode(final com.aliyun.ros.cdk.core.IResolvable deployMode) {
+            this.props.deployMode(deployMode);
             return this;
         }
 
@@ -796,6 +818,48 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder serverlessResource(final com.aliyun.ros.cdk.core.IResolvable serverlessResource) {
             this.props.serverlessResource(serverlessResource);
+            return this;
+        }
+
+        /**
+         * Property standbyVSwitchId: The standby VSwitch ID of the instance.
+         * <p>
+         * @return {@code this}
+         * @param standbyVSwitchId Property standbyVSwitchId: The standby VSwitch ID of the instance. This parameter is required.
+         */
+        public Builder standbyVSwitchId(final java.lang.String standbyVSwitchId) {
+            this.props.standbyVSwitchId(standbyVSwitchId);
+            return this;
+        }
+        /**
+         * Property standbyVSwitchId: The standby VSwitch ID of the instance.
+         * <p>
+         * @return {@code this}
+         * @param standbyVSwitchId Property standbyVSwitchId: The standby VSwitch ID of the instance. This parameter is required.
+         */
+        public Builder standbyVSwitchId(final com.aliyun.ros.cdk.core.IResolvable standbyVSwitchId) {
+            this.props.standbyVSwitchId(standbyVSwitchId);
+            return this;
+        }
+
+        /**
+         * Property standbyZoneId: The standby zone ID of the instance.
+         * <p>
+         * @return {@code this}
+         * @param standbyZoneId Property standbyZoneId: The standby zone ID of the instance. This parameter is required.
+         */
+        public Builder standbyZoneId(final java.lang.String standbyZoneId) {
+            this.props.standbyZoneId(standbyZoneId);
+            return this;
+        }
+        /**
+         * Property standbyZoneId: The standby zone ID of the instance.
+         * <p>
+         * @return {@code this}
+         * @param standbyZoneId Property standbyZoneId: The standby zone ID of the instance. This parameter is required.
+         */
+        public Builder standbyZoneId(final com.aliyun.ros.cdk.core.IResolvable standbyZoneId) {
+            this.props.standbyZoneId(standbyZoneId);
             return this;
         }
 

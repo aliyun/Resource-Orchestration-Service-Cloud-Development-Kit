@@ -24,40 +24,35 @@ export interface DrdsInstanceProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::DRDS::DrdsInstance`, which is used to query the information about a PolarDB-X 1.0 instance.
- * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDrdsInstance`for a more convenient development experience.
- * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-drds-drdsinstance
+ * Represents a `DrdsInstance`.
  */
-export class DrdsInstance extends ros.Resource {
-    protected scope: ros.Construct;
-    protected id: string;
-    protected props: DrdsInstanceProps;
-    protected enableResourcePropertyConstraint: boolean;
+export interface IDrdsInstance extends ros.IResource {
+    readonly props: DrdsInstanceProps;
 
     /**
      * Attribute CommodityCode: The commodity code of the service.
      */
-    public readonly attrCommodityCode: ros.IResolvable;
+    readonly attrCommodityCode: ros.IResolvable | string;
 
     /**
      * Attribute CreateTime: The timestamp that indicates when the instance is created.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute Description: The description of the instance.
      */
-    public readonly attrDescription: ros.IResolvable;
+    readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute DrdsInstanceId: The ID of the Drds instance.
      */
-    public readonly attrDrdsInstanceId: ros.IResolvable;
+    readonly attrDrdsInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute ExpireDate: The timestamp that indicates when the instance expires.
      */
-    public readonly attrExpireDate: ros.IResolvable;
+    readonly attrExpireDate: ros.IResolvable | string;
 
     /**
      * Attribute InstRole: The role of the instance. Valid values:
@@ -65,7 +60,7 @@ export class DrdsInstance extends ros.Resource {
 * SLAVE: The instance is a read-only instance to analyze complex queries.
 * SLAVE_FLOW: The instance is a read-only instance for high-concurrency scenarios.
      */
-    public readonly attrInstRole: ros.IResolvable;
+    readonly attrInstRole: ros.IResolvable | string;
 
     /**
      * Attribute InstanceSeries: The edition of the instance. Valid values:
@@ -73,12 +68,12 @@ export class DrdsInstance extends ros.Resource {
 * enterprise: Enterprise Edition
 * standard: Standard Edition
      */
-    public readonly attrInstanceSeries: ros.IResolvable;
+    readonly attrInstanceSeries: ros.IResolvable | string;
 
     /**
      * Attribute InstanceSpec: The specification of the instance.
      */
-    public readonly attrInstanceSpec: ros.IResolvable;
+    readonly attrInstanceSpec: ros.IResolvable | string;
 
     /**
      * Attribute Label: The tag of the instance. Valid values:
@@ -86,83 +81,224 @@ export class DrdsInstance extends ros.Resource {
 * HA: The instance is a high-availability (HA) instance.
 * VPC: The instance is a VPC-based instance.
      */
-    public readonly attrLabel: ros.IResolvable;
+    readonly attrLabel: ros.IResolvable | string;
 
     /**
      * Attribute MachineType: The machine type of the instance. Valid value: ecs.
      */
-    public readonly attrMachineType: ros.IResolvable;
+    readonly attrMachineType: ros.IResolvable | string;
 
     /**
      * Attribute MasterInstanceId: The ID of the primary instance.
      */
-    public readonly attrMasterInstanceId: ros.IResolvable;
+    readonly attrMasterInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute MysqlVersion: Engine version.
      */
-    public readonly attrMysqlVersion: ros.IResolvable;
+    readonly attrMysqlVersion: ros.IResolvable | string;
 
     /**
      * Attribute NetworkType: The network type of the instance. Valid values:
 * CLASSIC
 * VPC
      */
-    public readonly attrNetworkType: ros.IResolvable;
+    readonly attrNetworkType: ros.IResolvable | string;
 
     /**
      * Attribute OrderInstanceId: The ID of the purchased instance.
      */
-    public readonly attrOrderInstanceId: ros.IResolvable;
+    readonly attrOrderInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute ReadOnlyDBInstanceIds: The IDs of read-only instances that are associated with the instance.
      */
-    public readonly attrReadOnlyDbInstanceIds: ros.IResolvable;
+    readonly attrReadOnlyDbInstanceIds: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroupId: The ID of the resource group to which the instance belongs.
      */
-    public readonly attrResourceGroupId: ros.IResolvable;
+    readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Attribute StorageType: The storage type of the Drds database. Valid values:
 * RDS
 * PolarDB
      */
-    public readonly attrStorageType: ros.IResolvable;
+    readonly attrStorageType: ros.IResolvable | string;
 
     /**
      * Attribute Type: The type of the instance. Valid values:
 * PUBLIC: The returned instance is a shared instance.
 * PRIVATE: The returned instance is a dedicated instance.
      */
-    public readonly attrType: ros.IResolvable;
+    readonly attrType: ros.IResolvable | string;
 
     /**
      * Attribute Version: The version of the instance.
      */
-    public readonly attrVersion: ros.IResolvable;
+    readonly attrVersion: ros.IResolvable | string;
 
     /**
      * Attribute VersionAction: Indicates whether the version of the instance can be upgraded.
      */
-    public readonly attrVersionAction: ros.IResolvable;
+    readonly attrVersionAction: ros.IResolvable | string;
 
     /**
      * Attribute Vips: The list of returned virtual IP addresses (VIPs).
      */
-    public readonly attrVips: ros.IResolvable;
+    readonly attrVips: ros.IResolvable | string;
 
     /**
      * Attribute VpcCloudInstanceId: The ID of the instance that is deployed in the VPC.
      */
-    public readonly attrVpcCloudInstanceId: ros.IResolvable;
+    readonly attrVpcCloudInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute ZoneId: The ID of the zone in which the resource is located.
      */
-    public readonly attrZoneId: ros.IResolvable;
+    readonly attrZoneId: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::DRDS::DrdsInstance`, which is used to query the information about a PolarDB-X 1.0 instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDrdsInstance`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-drds-drdsinstance
+ */
+export class DrdsInstance extends ros.Resource implements IDrdsInstance {
+    protected scope: ros.Construct;
+    protected id: string;
+    public readonly props: DrdsInstanceProps;
+    protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute CommodityCode: The commodity code of the service.
+     */
+    public readonly attrCommodityCode: ros.IResolvable | string;
+
+    /**
+     * Attribute CreateTime: The timestamp that indicates when the instance is created.
+     */
+    public readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: The description of the instance.
+     */
+    public readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute DrdsInstanceId: The ID of the Drds instance.
+     */
+    public readonly attrDrdsInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute ExpireDate: The timestamp that indicates when the instance expires.
+     */
+    public readonly attrExpireDate: ros.IResolvable | string;
+
+    /**
+     * Attribute InstRole: The role of the instance. Valid values:
+* MASTER: The instance is a primary instance.
+* SLAVE: The instance is a read-only instance to analyze complex queries.
+* SLAVE_FLOW: The instance is a read-only instance for high-concurrency scenarios.
+     */
+    public readonly attrInstRole: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceSeries: The edition of the instance. Valid values:
+* starter: Starter Edition
+* enterprise: Enterprise Edition
+* standard: Standard Edition
+     */
+    public readonly attrInstanceSeries: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceSpec: The specification of the instance.
+     */
+    public readonly attrInstanceSpec: ros.IResolvable | string;
+
+    /**
+     * Attribute Label: The tag of the instance. Valid values:
+* NORMAL: The instance is a standard instance.
+* HA: The instance is a high-availability (HA) instance.
+* VPC: The instance is a VPC-based instance.
+     */
+    public readonly attrLabel: ros.IResolvable | string;
+
+    /**
+     * Attribute MachineType: The machine type of the instance. Valid value: ecs.
+     */
+    public readonly attrMachineType: ros.IResolvable | string;
+
+    /**
+     * Attribute MasterInstanceId: The ID of the primary instance.
+     */
+    public readonly attrMasterInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute MysqlVersion: Engine version.
+     */
+    public readonly attrMysqlVersion: ros.IResolvable | string;
+
+    /**
+     * Attribute NetworkType: The network type of the instance. Valid values:
+* CLASSIC
+* VPC
+     */
+    public readonly attrNetworkType: ros.IResolvable | string;
+
+    /**
+     * Attribute OrderInstanceId: The ID of the purchased instance.
+     */
+    public readonly attrOrderInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute ReadOnlyDBInstanceIds: The IDs of read-only instances that are associated with the instance.
+     */
+    public readonly attrReadOnlyDbInstanceIds: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: The ID of the resource group to which the instance belongs.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute StorageType: The storage type of the Drds database. Valid values:
+* RDS
+* PolarDB
+     */
+    public readonly attrStorageType: ros.IResolvable | string;
+
+    /**
+     * Attribute Type: The type of the instance. Valid values:
+* PUBLIC: The returned instance is a shared instance.
+* PRIVATE: The returned instance is a dedicated instance.
+     */
+    public readonly attrType: ros.IResolvable | string;
+
+    /**
+     * Attribute Version: The version of the instance.
+     */
+    public readonly attrVersion: ros.IResolvable | string;
+
+    /**
+     * Attribute VersionAction: Indicates whether the version of the instance can be upgraded.
+     */
+    public readonly attrVersionAction: ros.IResolvable | string;
+
+    /**
+     * Attribute Vips: The list of returned virtual IP addresses (VIPs).
+     */
+    public readonly attrVips: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcCloudInstanceId: The ID of the instance that is deployed in the VPC.
+     */
+    public readonly attrVpcCloudInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute ZoneId: The ID of the zone in which the resource is located.
+     */
+    public readonly attrZoneId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

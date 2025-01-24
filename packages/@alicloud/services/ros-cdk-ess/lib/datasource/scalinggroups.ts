@@ -37,25 +37,41 @@ export interface ScalingGroupsProps {
 }
 
 /**
+ * Represents a `ScalingGroups`.
+ */
+export interface IScalingGroups extends ros.IResource {
+    readonly props: ScalingGroupsProps;
+
+    /**
+     * Attribute ScalingGroupIds: The list of scaling group IDs.
+     */
+    readonly attrScalingGroupIds: ros.IResolvable | string;
+
+    /**
+     * Attribute ScalingGroups: The list of scaling groups.
+     */
+    readonly attrScalingGroups: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ESS::ScalingGroups`, which is used to query scaling groups.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosScalingGroups`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ess-scalinggroups
  */
-export class ScalingGroups extends ros.Resource {
+export class ScalingGroups extends ros.Resource implements IScalingGroups {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ScalingGroupsProps;
+    public readonly props: ScalingGroupsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ScalingGroupIds: The list of scaling group IDs.
      */
-    public readonly attrScalingGroupIds: ros.IResolvable;
+    public readonly attrScalingGroupIds: ros.IResolvable | string;
 
     /**
      * Attribute ScalingGroups: The list of scaling groups.
      */
-    public readonly attrScalingGroups: ros.IResolvable;
+    public readonly attrScalingGroups: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -79,20 +79,31 @@ export interface TrafficMirrorSessionProps {
 }
 
 /**
+ * Represents a `TrafficMirrorSession`.
+ */
+export interface ITrafficMirrorSession extends ros.IResource {
+    readonly props: TrafficMirrorSessionProps;
+
+    /**
+     * Attribute TrafficMirrorSessionId: The ID of the traffic mirror session.
+     */
+    readonly attrTrafficMirrorSessionId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::TrafficMirrorSession`, which is used to create a traffic image session.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTrafficMirrorSession`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorsession
  */
-export class TrafficMirrorSession extends ros.Resource {
+export class TrafficMirrorSession extends ros.Resource implements ITrafficMirrorSession {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: TrafficMirrorSessionProps;
+    public readonly props: TrafficMirrorSessionProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute TrafficMirrorSessionId: The ID of the traffic mirror session.
      */
-    public readonly attrTrafficMirrorSessionId: ros.IResolvable;
+    public readonly attrTrafficMirrorSessionId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

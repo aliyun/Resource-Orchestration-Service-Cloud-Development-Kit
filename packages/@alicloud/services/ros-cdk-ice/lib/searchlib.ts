@@ -16,20 +16,31 @@ export interface SearchLibProps {
 }
 
 /**
+ * Represents a `SearchLib`.
+ */
+export interface ISearchLib extends ros.IResource {
+    readonly props: SearchLibProps;
+
+    /**
+     * Attribute SearchLibName: The name of the Search Lib.
+     */
+    readonly attrSearchLibName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ICE::SearchLib`, which is used to create a search library.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSearchLib`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ice-searchlib
  */
-export class SearchLib extends ros.Resource {
+export class SearchLib extends ros.Resource implements ISearchLib {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SearchLibProps;
+    public readonly props: SearchLibProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SearchLibName: The name of the Search Lib.
      */
-    public readonly attrSearchLibName: ros.IResolvable;
+    public readonly attrSearchLibName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

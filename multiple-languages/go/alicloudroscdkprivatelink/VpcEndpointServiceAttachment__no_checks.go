@@ -52,10 +52,6 @@ func (j *jsiiProxy_VpcEndpointServiceAttachment) validateSetIdParameters(val *st
 	return nil
 }
 
-func (j *jsiiProxy_VpcEndpointServiceAttachment) validateSetPropsParameters(val *VpcEndpointServiceAttachmentProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_VpcEndpointServiceAttachment) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

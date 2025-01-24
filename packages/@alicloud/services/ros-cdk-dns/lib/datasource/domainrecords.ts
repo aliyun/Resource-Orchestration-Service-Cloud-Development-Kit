@@ -84,25 +84,41 @@ export interface DomainRecordsProps {
 }
 
 /**
+ * Represents a `DomainRecords`.
+ */
+export interface IDomainRecords extends ros.IResource {
+    readonly props: DomainRecordsProps;
+
+    /**
+     * Attribute DomainRecordIds: The list of The DNS domain record ids.
+     */
+    readonly attrDomainRecordIds: ros.IResolvable | string;
+
+    /**
+     * Attribute DomainRecords: The information about DNS records.
+     */
+    readonly attrDomainRecords: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::DNS::DomainRecords`, which is used to query Domain Name System (DNS) records.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomainRecords`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dns-domainrecords
  */
-export class DomainRecords extends ros.Resource {
+export class DomainRecords extends ros.Resource implements IDomainRecords {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DomainRecordsProps;
+    public readonly props: DomainRecordsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DomainRecordIds: The list of The DNS domain record ids.
      */
-    public readonly attrDomainRecordIds: ros.IResolvable;
+    public readonly attrDomainRecordIds: ros.IResolvable | string;
 
     /**
      * Attribute DomainRecords: The information about DNS records.
      */
-    public readonly attrDomainRecords: ros.IResolvable;
+    public readonly attrDomainRecords: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -42,30 +42,51 @@ export interface InstanceVpcEndpointLinkedVpcProps {
 }
 
 /**
+ * Represents a `InstanceVpcEndpointLinkedVpc`.
+ */
+export interface IInstanceVpcEndpointLinkedVpc extends ros.IResource {
+    readonly props: InstanceVpcEndpointLinkedVpcProps;
+
+    /**
+     * Attribute InstanceId: The ID of the instance.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcId: The ID of the vpc.
+     */
+    readonly attrVpcId: ros.IResolvable | string;
+
+    /**
+     * Attribute VswitchId: The ID of the vswitch.
+     */
+    readonly attrVswitchId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CR::InstanceVpcEndpointLinkedVpc`, which is used to associate a virtual private cloud (VPC) with a Container Registry instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstanceVpcEndpointLinkedVpc`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instancevpcendpointlinkedvpc
  */
-export class InstanceVpcEndpointLinkedVpc extends ros.Resource {
+export class InstanceVpcEndpointLinkedVpc extends ros.Resource implements IInstanceVpcEndpointLinkedVpc {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InstanceVpcEndpointLinkedVpcProps;
+    public readonly props: InstanceVpcEndpointLinkedVpcProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceId: The ID of the instance.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute VpcId: The ID of the vpc.
      */
-    public readonly attrVpcId: ros.IResolvable;
+    public readonly attrVpcId: ros.IResolvable | string;
 
     /**
      * Attribute VswitchId: The ID of the vswitch.
      */
-    public readonly attrVswitchId: ros.IResolvable;
+    public readonly attrVswitchId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

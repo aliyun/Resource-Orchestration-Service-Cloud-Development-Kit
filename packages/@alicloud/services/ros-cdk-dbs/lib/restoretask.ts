@@ -130,20 +130,31 @@ export interface RestoreTaskProps {
 }
 
 /**
+ * Represents a `RestoreTask`.
+ */
+export interface IRestoreTask extends ros.IResource {
+    readonly props: RestoreTaskProps;
+
+    /**
+     * Attribute RestoreTaskId: The ID of the restoration task.
+     */
+    readonly attrRestoreTaskId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::DBS::RestoreTask`, which is used to create a restore task.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRestoreTask`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-restoretask
  */
-export class RestoreTask extends ros.Resource {
+export class RestoreTask extends ros.Resource implements IRestoreTask {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: RestoreTaskProps;
+    public readonly props: RestoreTaskProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RestoreTaskId: The ID of the restoration task.
      */
-    public readonly attrRestoreTaskId: ros.IResolvable;
+    public readonly attrRestoreTaskId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

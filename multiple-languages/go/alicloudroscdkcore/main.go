@@ -39,6 +39,28 @@ func init() {
 		"@alicloud/ros-cdk-core.AppProps",
 		reflect.TypeOf((*AppProps)(nil)).Elem(),
 	)
+	_jsii_.RegisterClass(
+		"@alicloud/ros-cdk-core.Arn",
+		reflect.TypeOf((*Arn)(nil)).Elem(),
+		nil, // no members
+		func() interface{} {
+			return &jsiiProxy_Arn{}
+		},
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-core.ArnComponents",
+		reflect.TypeOf((*ArnComponents)(nil)).Elem(),
+	)
+	_jsii_.RegisterEnum(
+		"@alicloud/ros-cdk-core.ArnFormat",
+		reflect.TypeOf((*ArnFormat)(nil)).Elem(),
+		map[string]interface{}{
+			"NO_RESOURCE_NAME": ArnFormat_NO_RESOURCE_NAME,
+			"COLON_RESOURCE_NAME": ArnFormat_COLON_RESOURCE_NAME,
+			"SLASH_RESOURCE_NAME": ArnFormat_SLASH_RESOURCE_NAME,
+			"SLASH_RESOURCE_SLASH_RESOURCE_NAME": ArnFormat_SLASH_RESOURCE_SLASH_RESOURCE_NAME,
+		},
+	)
 	_jsii_.RegisterEnum(
 		"@alicloud/ros-cdk-core.AssetHashType",
 		reflect.TypeOf((*AssetHashType)(nil)).Elem(),
@@ -1156,6 +1178,7 @@ func init() {
 		"@alicloud/ros-cdk-core.IResource",
 		reflect.TypeOf((*IResource)(nil)).Elem(),
 		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
 			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
 		},
@@ -1369,6 +1392,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "resolve", GoMethod: "Resolve"},
 			_jsii_.MemberProperty{JsiiProperty: "roles", GoGetter: "Roles"},
 			_jsii_.MemberMethod{JsiiMethod: "setParameter", GoMethod: "SetParameter"},
+			_jsii_.MemberMethod{JsiiMethod: "splitArn", GoMethod: "SplitArn"},
 			_jsii_.MemberProperty{JsiiProperty: "stackId", GoGetter: "StackId"},
 			_jsii_.MemberProperty{JsiiProperty: "stackName", GoGetter: "StackName"},
 			_jsii_.MemberMethod{JsiiMethod: "synthesize", GoMethod: "Synthesize"},
@@ -1437,6 +1461,10 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "addDependency", GoMethod: "AddDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "addResourceDesc", GoMethod: "AddResourceDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDependency", GoMethod: "FetchDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchResourceDesc", GoMethod: "FetchResourceDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "generatePhysicalName", GoMethod: "GeneratePhysicalName"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
@@ -1459,6 +1487,10 @@ func init() {
 			_jsii_.InitJsiiProxy(&j.jsiiProxy_IResource)
 			return &j
 		},
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-core.ResourceEnvironment",
+		reflect.TypeOf((*ResourceEnvironment)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-core.ResourceProps",
@@ -1712,6 +1744,9 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "addRosDependency", GoMethod: "AddRosDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDesc", GoMethod: "FetchDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchRosDependency", GoMethod: "FetchRosDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "logicalId", GoGetter: "LogicalId"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
@@ -1803,6 +1838,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "renameLogicalId", GoMethod: "RenameLogicalId"},
 			_jsii_.MemberMethod{JsiiMethod: "resolve", GoMethod: "Resolve"},
 			_jsii_.MemberProperty{JsiiProperty: "roles", GoGetter: "Roles"},
+			_jsii_.MemberMethod{JsiiMethod: "splitArn", GoMethod: "SplitArn"},
 			_jsii_.MemberProperty{JsiiProperty: "stackId", GoGetter: "StackId"},
 			_jsii_.MemberProperty{JsiiProperty: "stackName", GoGetter: "StackName"},
 			_jsii_.MemberMethod{JsiiMethod: "synthesize", GoMethod: "Synthesize"},
@@ -1957,6 +1993,14 @@ func init() {
 		nil, // no members
 		func() interface{} {
 			return &jsiiProxy_Token{}
+		},
+	)
+	_jsii_.RegisterClass(
+		"@alicloud/ros-cdk-core.TokenComparison",
+		reflect.TypeOf((*TokenComparison)(nil)).Elem(),
+		nil, // no members
+		func() interface{} {
+			return &jsiiProxy_TokenComparison{}
 		},
 	)
 	_jsii_.RegisterClass(

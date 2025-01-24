@@ -46,30 +46,51 @@ export interface ZoneRecordProps {
 }
 
 /**
+ * Represents a `ZoneRecord`.
+ */
+export interface IZoneRecord extends ros.IResource {
+    readonly props: ZoneRecordProps;
+
+    /**
+     * Attribute Record: Record data.
+     */
+    readonly attrRecord: ros.IResolvable | string;
+
+    /**
+     * Attribute RecordId: Parsing record Id
+     */
+    readonly attrRecordId: ros.IResolvable | string;
+
+    /**
+     * Attribute ZoneId: Zone ID.
+     */
+    readonly attrZoneId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::PVTZ::ZoneRecord`, which is used to add a Domain Name Service (DNS) record to a private zone.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosZoneRecord`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zonerecord
  */
-export class ZoneRecord extends ros.Resource {
+export class ZoneRecord extends ros.Resource implements IZoneRecord {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ZoneRecordProps;
+    public readonly props: ZoneRecordProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Record: Record data.
      */
-    public readonly attrRecord: ros.IResolvable;
+    public readonly attrRecord: ros.IResolvable | string;
 
     /**
      * Attribute RecordId: Parsing record Id
      */
-    public readonly attrRecordId: ros.IResolvable;
+    public readonly attrRecordId: ros.IResolvable | string;
 
     /**
      * Attribute ZoneId: Zone ID.
      */
-    public readonly attrZoneId: ros.IResolvable;
+    public readonly attrZoneId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

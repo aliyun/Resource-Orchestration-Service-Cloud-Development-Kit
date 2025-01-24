@@ -163,17 +163,6 @@ func (j *jsiiProxy_PublicIpAddressPool) validateSetIdParameters(val *string) err
 	return nil
 }
 
-func (j *jsiiProxy_PublicIpAddressPool) validateSetPropsParameters(val *PublicIpAddressPoolProps) error {
-	if val == nil {
-		return fmt.Errorf("parameter val is required, but nil was provided")
-	}
-	if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (j *jsiiProxy_PublicIpAddressPool) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")

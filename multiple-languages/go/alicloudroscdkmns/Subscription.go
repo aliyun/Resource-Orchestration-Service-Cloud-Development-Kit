@@ -14,14 +14,24 @@ import (
 // For a subscription to be created, the owner of the endpoint must confirm the subscription.
 type Subscription interface {
 	alicloudroscdkcore.Resource
+	ISubscription
 	// Attribute SubscriptionName: Subscription name.
-	AttrSubscriptionName() alicloudroscdkcore.IResolvable
+	AttrSubscriptionName() interface{}
 	// Attribute SubscriptionUrl: URL of created subscription.
-	AttrSubscriptionUrl() alicloudroscdkcore.IResolvable
+	AttrSubscriptionUrl() interface{}
 	// Attribute TopicName: Topic name.
-	AttrTopicName() alicloudroscdkcore.IResolvable
+	AttrTopicName() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -36,7 +46,6 @@ type Subscription interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *SubscriptionProps
-	SetProps(val *SubscriptionProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -49,6 +58,9 @@ type Subscription interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -101,10 +113,11 @@ type Subscription interface {
 // The jsii proxy struct for Subscription
 type jsiiProxy_Subscription struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ISubscription
 }
 
-func (j *jsiiProxy_Subscription) AttrSubscriptionName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Subscription) AttrSubscriptionName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSubscriptionName",
@@ -113,8 +126,8 @@ func (j *jsiiProxy_Subscription) AttrSubscriptionName() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_Subscription) AttrSubscriptionUrl() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Subscription) AttrSubscriptionUrl() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSubscriptionUrl",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_Subscription) AttrSubscriptionUrl() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_Subscription) AttrTopicName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Subscription) AttrTopicName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTopicName",
@@ -138,6 +151,16 @@ func (j *jsiiProxy_Subscription) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Subscription) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -275,17 +298,6 @@ func (j *jsiiProxy_Subscription)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Subscription)SetProps(val *SubscriptionProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Subscription)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -377,6 +389,45 @@ func (s *jsiiProxy_Subscription) ApplyRemovalPolicy(policy alicloudroscdkcore.Re
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (s *jsiiProxy_Subscription) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		s,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_Subscription) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_Subscription) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (s *jsiiProxy_Subscription) GeneratePhysicalName() *string {

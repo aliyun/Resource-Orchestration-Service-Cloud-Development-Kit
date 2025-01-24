@@ -30,20 +30,31 @@ export interface VServerGroupAttachmentProps {
 }
 
 /**
+ * Represents a `VServerGroupAttachment`.
+ */
+export interface IVServerGroupAttachment extends ros.IResource {
+    readonly props: VServerGroupAttachmentProps;
+
+    /**
+     * Attribute ScalingGroupId: The ID of the scaling group.
+     */
+    readonly attrScalingGroupId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::VServerGroupAttachment`, which is used to associate vServer groups of a Sever Load Balancer (SLB) instance with a scaling group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVServerGroupAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-vservergroupattachment
  */
-export class VServerGroupAttachment extends ros.Resource {
+export class VServerGroupAttachment extends ros.Resource implements IVServerGroupAttachment {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: VServerGroupAttachmentProps;
+    public readonly props: VServerGroupAttachmentProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ScalingGroupId: The ID of the scaling group.
      */
-    public readonly attrScalingGroupId: ros.IResolvable;
+    public readonly attrScalingGroupId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

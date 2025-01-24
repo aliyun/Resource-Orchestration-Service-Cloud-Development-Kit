@@ -29,21 +29,33 @@ export interface ServerGroupAttachmentProps {
 }
 
 /**
+ * Represents a `ServerGroupAttachment`.
+ */
+export interface IServerGroupAttachment extends ros.IResource {
+    readonly props: ServerGroupAttachmentProps;
+
+    /**
+     * Attribute ScalingActivityId: The ID of the scaling activity during which one or more SLB instances are attached to the scaling group and the ECS instances in the scaling group are added to the backend server groups of the SLB instances.
+Note This parameter is returned only after you set the ForceAttach parameter to true.
+     */
+    readonly attrScalingActivityId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ServerGroupAttachment`, which is used to add one or more Server Load Balancer (SLB) server groups to a scaling group. Supported SLB server groups include Application Load Balancer (ALB) server groups and Network Load Balancer (NLB) server groups.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosServerGroupAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-servergroupattachment
  */
-export class ServerGroupAttachment extends ros.Resource {
+export class ServerGroupAttachment extends ros.Resource implements IServerGroupAttachment {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ServerGroupAttachmentProps;
+    public readonly props: ServerGroupAttachmentProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ScalingActivityId: The ID of the scaling activity during which one or more SLB instances are attached to the scaling group and the ECS instances in the scaling group are added to the backend server groups of the SLB instances.
 Note This parameter is returned only after you set the ForceAttach parameter to true.
      */
-    public readonly attrScalingActivityId: ros.IResolvable;
+    public readonly attrScalingActivityId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

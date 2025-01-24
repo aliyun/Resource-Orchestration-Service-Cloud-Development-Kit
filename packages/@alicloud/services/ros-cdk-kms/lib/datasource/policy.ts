@@ -24,45 +24,81 @@ export interface PolicyProps {
 }
 
 /**
+ * Represents a `Policy`.
+ */
+export interface IPolicy extends ros.IResource {
+    readonly props: PolicyProps;
+
+    /**
+     * Attribute Description: The policy description.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute KmsInstanceId: KMS instance accessed by this policy.
+     */
+    readonly attrKmsInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute NetworkRules: The network access rule that is associated with the permission policy.
+     */
+    readonly attrNetworkRules: ros.IResolvable | string;
+
+    /**
+     * Attribute Permissions: A list of operations that can be performed.
+     */
+    readonly attrPermissions: ros.IResolvable | string;
+
+    /**
+     * Attribute PolicyName: The name of the permission policy.
+     */
+    readonly attrPolicyName: ros.IResolvable | string;
+
+    /**
+     * Attribute Resources: A list of keys and secrets that are allowed to access.
+     */
+    readonly attrResources: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::KMS::Policy`, which is used to query the information about a permission policy.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kms-policy
  */
-export class Policy extends ros.Resource {
+export class Policy extends ros.Resource implements IPolicy {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: PolicyProps;
+    public readonly props: PolicyProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Description: The policy description.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute KmsInstanceId: KMS instance accessed by this policy.
      */
-    public readonly attrKmsInstanceId: ros.IResolvable;
+    public readonly attrKmsInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute NetworkRules: The network access rule that is associated with the permission policy.
      */
-    public readonly attrNetworkRules: ros.IResolvable;
+    public readonly attrNetworkRules: ros.IResolvable | string;
 
     /**
      * Attribute Permissions: A list of operations that can be performed.
      */
-    public readonly attrPermissions: ros.IResolvable;
+    public readonly attrPermissions: ros.IResolvable | string;
 
     /**
      * Attribute PolicyName: The name of the permission policy.
      */
-    public readonly attrPolicyName: ros.IResolvable;
+    public readonly attrPolicyName: ros.IResolvable | string;
 
     /**
      * Attribute Resources: A list of keys and secrets that are allowed to access.
      */
-    public readonly attrResources: ros.IResolvable;
+    public readonly attrResources: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

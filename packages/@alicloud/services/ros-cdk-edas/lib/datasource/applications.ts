@@ -39,25 +39,41 @@ export interface ApplicationsProps {
 }
 
 /**
+ * Represents a `Applications`.
+ */
+export interface IApplications extends ros.IResource {
+    readonly props: ApplicationsProps;
+
+    /**
+     * Attribute AppIds: The list of application IDs.
+     */
+    readonly attrAppIds: ros.IResolvable | string;
+
+    /**
+     * Attribute Applications: The list of applications.
+     */
+    readonly attrApplications: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::EDAS::Applications`, which is used to query applications.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApplications`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-edas-applications
  */
-export class Applications extends ros.Resource {
+export class Applications extends ros.Resource implements IApplications {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ApplicationsProps;
+    public readonly props: ApplicationsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AppIds: The list of application IDs.
      */
-    public readonly attrAppIds: ros.IResolvable;
+    public readonly attrAppIds: ros.IResolvable | string;
 
     /**
      * Attribute Applications: The list of applications.
      */
-    public readonly attrApplications: ros.IResolvable;
+    public readonly attrApplications: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

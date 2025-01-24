@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::PAIDLC::Tensorboard`, which is used to create a TensorBoard instance.
 type Tensorboard interface {
 	alicloudroscdkcore.Resource
+	ITensorboard
 	// Attribute TensorboardId: Tensorboard id.
-	AttrTensorboardId() alicloudroscdkcore.IResolvable
+	AttrTensorboardId() interface{}
 	// Attribute TensorboardUrl: Tensorboard url.
-	AttrTensorboardUrl() alicloudroscdkcore.IResolvable
+	AttrTensorboardUrl() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type Tensorboard interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *TensorboardProps
-	SetProps(val *TensorboardProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type Tensorboard interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type Tensorboard interface {
 // The jsii proxy struct for Tensorboard
 type jsiiProxy_Tensorboard struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ITensorboard
 }
 
-func (j *jsiiProxy_Tensorboard) AttrTensorboardId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Tensorboard) AttrTensorboardId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTensorboardId",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_Tensorboard) AttrTensorboardId() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_Tensorboard) AttrTensorboardUrl() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Tensorboard) AttrTensorboardUrl() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTensorboardUrl",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_Tensorboard) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Tensorboard) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_Tensorboard)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Tensorboard)SetProps(val *TensorboardProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Tensorboard)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (t *jsiiProxy_Tensorboard) ApplyRemovalPolicy(policy alicloudroscdkcore.Rem
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (t *jsiiProxy_Tensorboard) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		t,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (t *jsiiProxy_Tensorboard) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		t,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (t *jsiiProxy_Tensorboard) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		t,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (t *jsiiProxy_Tensorboard) GeneratePhysicalName() *string {

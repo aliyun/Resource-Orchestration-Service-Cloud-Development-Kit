@@ -104,6 +104,10 @@ func (j *jsiiProxy_RosActivation) validateSetIpAddressRangeParameters(val interf
 	return nil
 }
 
+func (j *jsiiProxy_RosActivation) validateSetResourceGroupIdParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosActivation) validateSetTagsParameters(val *[]*RosActivation_TagsProperty) error {
 	return nil
 }

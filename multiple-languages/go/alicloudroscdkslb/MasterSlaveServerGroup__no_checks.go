@@ -52,10 +52,6 @@ func (j *jsiiProxy_MasterSlaveServerGroup) validateSetIdParameters(val *string) 
 	return nil
 }
 
-func (j *jsiiProxy_MasterSlaveServerGroup) validateSetPropsParameters(val *MasterSlaveServerGroupProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_MasterSlaveServerGroup) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

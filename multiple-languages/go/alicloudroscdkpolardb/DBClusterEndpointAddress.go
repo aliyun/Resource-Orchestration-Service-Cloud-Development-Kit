@@ -14,12 +14,22 @@ import (
 // The public endpoint can be a primary endpoint, the default cluster endpoint, or a custom cluster endpoint.
 type DBClusterEndpointAddress interface {
 	alicloudroscdkcore.Resource
+	IDBClusterEndpointAddress
 	// Attribute Address: The details of the endpoint address.
-	AttrAddress() alicloudroscdkcore.IResolvable
+	AttrAddress() interface{}
 	// Attribute ConnectionString: The connection string of the endpoint address.
-	AttrConnectionString() alicloudroscdkcore.IResolvable
+	AttrConnectionString() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -34,7 +44,6 @@ type DBClusterEndpointAddress interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DBClusterEndpointAddressProps
-	SetProps(val *DBClusterEndpointAddressProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -47,6 +56,9 @@ type DBClusterEndpointAddress interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -99,10 +111,11 @@ type DBClusterEndpointAddress interface {
 // The jsii proxy struct for DBClusterEndpointAddress
 type jsiiProxy_DBClusterEndpointAddress struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDBClusterEndpointAddress
 }
 
-func (j *jsiiProxy_DBClusterEndpointAddress) AttrAddress() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBClusterEndpointAddress) AttrAddress() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAddress",
@@ -111,8 +124,8 @@ func (j *jsiiProxy_DBClusterEndpointAddress) AttrAddress() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_DBClusterEndpointAddress) AttrConnectionString() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBClusterEndpointAddress) AttrConnectionString() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrConnectionString",
@@ -126,6 +139,16 @@ func (j *jsiiProxy_DBClusterEndpointAddress) EnableResourcePropertyConstraint() 
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DBClusterEndpointAddress) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -263,17 +286,6 @@ func (j *jsiiProxy_DBClusterEndpointAddress)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DBClusterEndpointAddress)SetProps(val *DBClusterEndpointAddressProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_DBClusterEndpointAddress)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -365,6 +377,45 @@ func (d *jsiiProxy_DBClusterEndpointAddress) ApplyRemovalPolicy(policy alicloudr
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_DBClusterEndpointAddress) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DBClusterEndpointAddress) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DBClusterEndpointAddress) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_DBClusterEndpointAddress) GeneratePhysicalName() *string {

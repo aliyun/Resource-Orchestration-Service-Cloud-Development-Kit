@@ -41,35 +41,61 @@ export interface AnycastEIPProps {
 }
 
 /**
+ * Represents a `AnycastEIP`.
+ */
+export interface IAnycastEIP extends ros.IResource {
+    readonly props: AnycastEIPProps;
+
+    /**
+     * Attribute AnycastId: Anycast EIP instance ID
+     */
+    readonly attrAnycastId: ros.IResolvable | string;
+
+    /**
+     * Attribute IpAddress: Anycase IP address
+     */
+    readonly attrIpAddress: ros.IResolvable | string;
+
+    /**
+     * Attribute Name: Anycast EIP instance name
+     */
+    readonly attrName: ros.IResolvable | string;
+
+    /**
+     * Attribute OrderId: Order ID
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::AnycastEIP`, which is used to create an Anycast elastic IP address (Anycast EIP).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAnycastEIP`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-anycasteip
  */
-export class AnycastEIP extends ros.Resource {
+export class AnycastEIP extends ros.Resource implements IAnycastEIP {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AnycastEIPProps;
+    public readonly props: AnycastEIPProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AnycastId: Anycast EIP instance ID
      */
-    public readonly attrAnycastId: ros.IResolvable;
+    public readonly attrAnycastId: ros.IResolvable | string;
 
     /**
      * Attribute IpAddress: Anycase IP address
      */
-    public readonly attrIpAddress: ros.IResolvable;
+    public readonly attrIpAddress: ros.IResolvable | string;
 
     /**
      * Attribute Name: Anycast EIP instance name
      */
-    public readonly attrName: ros.IResolvable;
+    public readonly attrName: ros.IResolvable | string;
 
     /**
      * Attribute OrderId: Order ID
      */
-    public readonly attrOrderId: ros.IResolvable;
+    public readonly attrOrderId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

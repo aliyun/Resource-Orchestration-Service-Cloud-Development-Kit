@@ -81,20 +81,15 @@ export interface ExecutionProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::Execution`, which is used to start an execution.
- * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosExecution`for a more convenient development experience.
- * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-execution
+ * Represents a `Execution`.
  */
-export class Execution extends ros.Resource {
-    protected scope: ros.Construct;
-    protected id: string;
-    protected props: ExecutionProps;
-    protected enableResourcePropertyConstraint: boolean;
+export interface IExecution extends ros.IResource {
+    readonly props: ExecutionProps;
 
     /**
      * Attribute Counters: Task statistics: FailedTasks, SuccessTasks, TotalTasks.
      */
-    public readonly attrCounters: ros.IResolvable;
+    readonly attrCounters: ros.IResolvable | string;
 
     /**
      * Attribute CurlCli: Convenience attribute, provides curl CLI command prefix, which can be used to notify oos execution instead of OOS API NotifyExecution.
@@ -102,41 +97,99 @@ You can notify approve to oos execution by adding --data-binary '{"data": {"Noti
 For more parameters in data, refer to https://help.aliyun.com/document_detail/120777.html.
 You can also notify execution via ROS API SignalResource. API parameters Status and UniqueId are ignored. Use API parameter Data to pass data.
      */
-    public readonly attrCurlCli: ros.IResolvable;
+    readonly attrCurlCli: ros.IResolvable | string;
 
     /**
      * Attribute ExecutionId: Execution ID.
      */
-    public readonly attrExecutionId: ros.IResolvable;
+    readonly attrExecutionId: ros.IResolvable | string;
 
     /**
      * Attribute Outputs: Execution output.
      */
-    public readonly attrOutputs: ros.IResolvable;
+    readonly attrOutputs: ros.IResolvable | string;
 
     /**
      * Attribute PowerShellCurlCli: Convenience attribute, provides curl CLI command prefix for PowerShell, which can be used to notify oos execution instead of OOS API NotifyExecution.
 You can notify approve to oos execution by adding -Body '{"data": {"NotifyType": "Approve"}}' 
 For more parameters in data, refer to https://help.aliyun.com/document_detail/120777.html.You can also notify execution via ROS API SignalResource. API parameters Status and UniqueId are ignored. Use API parameter Data to pass data.
      */
-    public readonly attrPowerShellCurlCli: ros.IResolvable;
+    readonly attrPowerShellCurlCli: ros.IResolvable | string;
 
     /**
      * Attribute Status: Execution status.
      */
-    public readonly attrStatus: ros.IResolvable;
+    readonly attrStatus: ros.IResolvable | string;
 
     /**
      * Attribute StatusMessage: Execution status information.
      */
-    public readonly attrStatusMessage: ros.IResolvable;
+    readonly attrStatusMessage: ros.IResolvable | string;
 
     /**
      * Attribute WindowsCurlCli: Convenience attribute, provides curl CLI command prefix for Windows, which can be used to notify oos execution instead of OOS API NotifyExecution.
 You can notify approve to oos execution by adding --data-binary "{\"data\": {\"NotifyType\": \"Approve\"}}" 
 For more parameters in data, refer to https://help.aliyun.com/document_detail/120777.html.You can also notify execution via ROS API SignalResource. API parameters Status and UniqueId are ignored. Use API parameter Data to pass data.
      */
-    public readonly attrWindowsCurlCli: ros.IResolvable;
+    readonly attrWindowsCurlCli: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::Execution`, which is used to start an execution.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosExecution`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-execution
+ */
+export class Execution extends ros.Resource implements IExecution {
+    protected scope: ros.Construct;
+    protected id: string;
+    public readonly props: ExecutionProps;
+    protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Counters: Task statistics: FailedTasks, SuccessTasks, TotalTasks.
+     */
+    public readonly attrCounters: ros.IResolvable | string;
+
+    /**
+     * Attribute CurlCli: Convenience attribute, provides curl CLI command prefix, which can be used to notify oos execution instead of OOS API NotifyExecution.
+You can notify approve to oos execution by adding --data-binary '{"data": {"NotifyType": "Approve"}}' 
+For more parameters in data, refer to https://help.aliyun.com/document_detail/120777.html.
+You can also notify execution via ROS API SignalResource. API parameters Status and UniqueId are ignored. Use API parameter Data to pass data.
+     */
+    public readonly attrCurlCli: ros.IResolvable | string;
+
+    /**
+     * Attribute ExecutionId: Execution ID.
+     */
+    public readonly attrExecutionId: ros.IResolvable | string;
+
+    /**
+     * Attribute Outputs: Execution output.
+     */
+    public readonly attrOutputs: ros.IResolvable | string;
+
+    /**
+     * Attribute PowerShellCurlCli: Convenience attribute, provides curl CLI command prefix for PowerShell, which can be used to notify oos execution instead of OOS API NotifyExecution.
+You can notify approve to oos execution by adding -Body '{"data": {"NotifyType": "Approve"}}' 
+For more parameters in data, refer to https://help.aliyun.com/document_detail/120777.html.You can also notify execution via ROS API SignalResource. API parameters Status and UniqueId are ignored. Use API parameter Data to pass data.
+     */
+    public readonly attrPowerShellCurlCli: ros.IResolvable | string;
+
+    /**
+     * Attribute Status: Execution status.
+     */
+    public readonly attrStatus: ros.IResolvable | string;
+
+    /**
+     * Attribute StatusMessage: Execution status information.
+     */
+    public readonly attrStatusMessage: ros.IResolvable | string;
+
+    /**
+     * Attribute WindowsCurlCli: Convenience attribute, provides curl CLI command prefix for Windows, which can be used to notify oos execution instead of OOS API NotifyExecution.
+You can notify approve to oos execution by adding --data-binary "{\"data\": {\"NotifyType\": \"Approve\"}}" 
+For more parameters in data, refer to https://help.aliyun.com/document_detail/120777.html.You can also notify execution via ROS API SignalResource. API parameters Status and UniqueId are ignored. Use API parameter Data to pass data.
+     */
+    public readonly attrWindowsCurlCli: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

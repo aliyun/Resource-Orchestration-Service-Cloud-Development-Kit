@@ -52,10 +52,6 @@ func (j *jsiiProxy_IpamScope) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_IpamScope) validateSetPropsParameters(val *IpamScopeProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_IpamScope) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

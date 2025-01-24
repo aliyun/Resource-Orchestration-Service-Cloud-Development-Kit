@@ -16,30 +16,51 @@ export interface IpfilterProps {
 }
 
 /**
+ * Represents a `Ipfilter`.
+ */
+export interface IIpfilter extends ros.IResource {
+    readonly props: IpfilterProps;
+
+    /**
+     * Attribute CreateTime: Creation time.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute IpAddress: The whitelist IP address.
+     */
+    readonly attrIpAddress: ros.IResolvable | string;
+
+    /**
+     * Attribute IpfilterId: The ID of the IP filter.
+     */
+    readonly attrIpfilterId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::DirectMail::Ipfilter`, which is used to add an IP filter.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosIpfilter`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-directmail-ipfilter
  */
-export class Ipfilter extends ros.Resource {
+export class Ipfilter extends ros.Resource implements IIpfilter {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: IpfilterProps;
+    public readonly props: IpfilterProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateTime: Creation time.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute IpAddress: The whitelist IP address.
      */
-    public readonly attrIpAddress: ros.IResolvable;
+    public readonly attrIpAddress: ros.IResolvable | string;
 
     /**
      * Attribute IpfilterId: The ID of the IP filter.
      */
-    public readonly attrIpfilterId: ros.IResolvable;
+    public readonly attrIpfilterId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

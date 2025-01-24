@@ -12,48 +12,58 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::EBS::DiskReplicaGroup`, which is used to create a replication pair-consistent group.
 type DiskReplicaGroup interface {
 	alicloudroscdkcore.Resource
+	IDiskReplicaGroup
 	// Attribute Description: The description of the consistent replication group.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute DestinationRegionId: The ID of the region to which the disaster recovery site belongs.
-	AttrDestinationRegionId() alicloudroscdkcore.IResolvable
+	AttrDestinationRegionId() interface{}
 	// Attribute DestinationZoneId: The ID of the zone to which the disaster recovery site belongs.
-	AttrDestinationZoneId() alicloudroscdkcore.IResolvable
+	AttrDestinationZoneId() interface{}
 	// Attribute DiskReplicaGroupName: Consistent replication group name.
-	AttrDiskReplicaGroupName() alicloudroscdkcore.IResolvable
+	AttrDiskReplicaGroupName() interface{}
 	// Attribute LastRecoverPoint: The time when the last asynchronous replication operation of the consistent replication group completed.
 	//
 	// This parameter provides the return value as a timestamp. Unit: seconds.
-	AttrLastRecoverPoint() alicloudroscdkcore.IResolvable
+	AttrLastRecoverPoint() interface{}
 	// Attribute PairIds: List of replication pair IDs contained in a consistent replication group.
-	AttrPairIds() alicloudroscdkcore.IResolvable
+	AttrPairIds() interface{}
 	// Attribute PairNumber: The number of replication pairs contained in a consistent replication group.
-	AttrPairNumber() alicloudroscdkcore.IResolvable
+	AttrPairNumber() interface{}
 	// Attribute PrimaryRegion: The initial source region of the replication group.
-	AttrPrimaryRegion() alicloudroscdkcore.IResolvable
+	AttrPrimaryRegion() interface{}
 	// Attribute PrimaryZone: The initial source available area of the replication group.
-	AttrPrimaryZone() alicloudroscdkcore.IResolvable
+	AttrPrimaryZone() interface{}
 	// Attribute ReplicaGroupId: The ID of the consistent replication group.
-	AttrReplicaGroupId() alicloudroscdkcore.IResolvable
+	AttrReplicaGroupId() interface{}
 	// Attribute ResourceGroupId: resource group ID of enterprise.
-	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() interface{}
 	// Attribute RPO: The RPO value set by the consistency group in seconds.
-	AttrRpo() alicloudroscdkcore.IResolvable
+	AttrRpo() interface{}
 	// Attribute Site: Site information sources for replication pairs and consistent replication groups.
 	//
 	// Possible values:.
-	AttrSite() alicloudroscdkcore.IResolvable
+	AttrSite() interface{}
 	// Attribute SourceRegionId: The ID of the region to which the production site belongs.
-	AttrSourceRegionId() alicloudroscdkcore.IResolvable
+	AttrSourceRegionId() interface{}
 	// Attribute SourceZoneId: The ID of the zone to which the production site belongs.
-	AttrSourceZoneId() alicloudroscdkcore.IResolvable
+	AttrSourceZoneId() interface{}
 	// Attribute StandbyRegion: The initial destination region of the replication group.
-	AttrStandbyRegion() alicloudroscdkcore.IResolvable
+	AttrStandbyRegion() interface{}
 	// Attribute StandbyZone: The initial destination zone of the replication group.
-	AttrStandbyZone() alicloudroscdkcore.IResolvable
+	AttrStandbyZone() interface{}
 	// Attribute Tags: The tags of the disk replica group.
-	AttrTags() alicloudroscdkcore.IResolvable
+	AttrTags() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -68,7 +78,6 @@ type DiskReplicaGroup interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DiskReplicaGroupProps
-	SetProps(val *DiskReplicaGroupProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -81,6 +90,9 @@ type DiskReplicaGroup interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -133,10 +145,11 @@ type DiskReplicaGroup interface {
 // The jsii proxy struct for DiskReplicaGroup
 type jsiiProxy_DiskReplicaGroup struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDiskReplicaGroup
 }
 
-func (j *jsiiProxy_DiskReplicaGroup) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DiskReplicaGroup) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -145,8 +158,8 @@ func (j *jsiiProxy_DiskReplicaGroup) AttrDescription() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_DiskReplicaGroup) AttrDestinationRegionId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DiskReplicaGroup) AttrDestinationRegionId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDestinationRegionId",
@@ -155,8 +168,8 @@ func (j *jsiiProxy_DiskReplicaGroup) AttrDestinationRegionId() alicloudroscdkcor
 	return returns
 }
 
-func (j *jsiiProxy_DiskReplicaGroup) AttrDestinationZoneId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DiskReplicaGroup) AttrDestinationZoneId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDestinationZoneId",
@@ -165,8 +178,8 @@ func (j *jsiiProxy_DiskReplicaGroup) AttrDestinationZoneId() alicloudroscdkcore.
 	return returns
 }
 
-func (j *jsiiProxy_DiskReplicaGroup) AttrDiskReplicaGroupName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DiskReplicaGroup) AttrDiskReplicaGroupName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDiskReplicaGroupName",
@@ -175,8 +188,8 @@ func (j *jsiiProxy_DiskReplicaGroup) AttrDiskReplicaGroupName() alicloudroscdkco
 	return returns
 }
 
-func (j *jsiiProxy_DiskReplicaGroup) AttrLastRecoverPoint() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DiskReplicaGroup) AttrLastRecoverPoint() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLastRecoverPoint",
@@ -185,8 +198,8 @@ func (j *jsiiProxy_DiskReplicaGroup) AttrLastRecoverPoint() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_DiskReplicaGroup) AttrPairIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DiskReplicaGroup) AttrPairIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPairIds",
@@ -195,8 +208,8 @@ func (j *jsiiProxy_DiskReplicaGroup) AttrPairIds() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_DiskReplicaGroup) AttrPairNumber() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DiskReplicaGroup) AttrPairNumber() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPairNumber",
@@ -205,8 +218,8 @@ func (j *jsiiProxy_DiskReplicaGroup) AttrPairNumber() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_DiskReplicaGroup) AttrPrimaryRegion() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DiskReplicaGroup) AttrPrimaryRegion() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPrimaryRegion",
@@ -215,8 +228,8 @@ func (j *jsiiProxy_DiskReplicaGroup) AttrPrimaryRegion() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_DiskReplicaGroup) AttrPrimaryZone() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DiskReplicaGroup) AttrPrimaryZone() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPrimaryZone",
@@ -225,8 +238,8 @@ func (j *jsiiProxy_DiskReplicaGroup) AttrPrimaryZone() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_DiskReplicaGroup) AttrReplicaGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DiskReplicaGroup) AttrReplicaGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrReplicaGroupId",
@@ -235,8 +248,8 @@ func (j *jsiiProxy_DiskReplicaGroup) AttrReplicaGroupId() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_DiskReplicaGroup) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DiskReplicaGroup) AttrResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupId",
@@ -245,8 +258,8 @@ func (j *jsiiProxy_DiskReplicaGroup) AttrResourceGroupId() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_DiskReplicaGroup) AttrRpo() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DiskReplicaGroup) AttrRpo() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRpo",
@@ -255,8 +268,8 @@ func (j *jsiiProxy_DiskReplicaGroup) AttrRpo() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DiskReplicaGroup) AttrSite() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DiskReplicaGroup) AttrSite() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSite",
@@ -265,8 +278,8 @@ func (j *jsiiProxy_DiskReplicaGroup) AttrSite() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DiskReplicaGroup) AttrSourceRegionId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DiskReplicaGroup) AttrSourceRegionId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSourceRegionId",
@@ -275,8 +288,8 @@ func (j *jsiiProxy_DiskReplicaGroup) AttrSourceRegionId() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_DiskReplicaGroup) AttrSourceZoneId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DiskReplicaGroup) AttrSourceZoneId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSourceZoneId",
@@ -285,8 +298,8 @@ func (j *jsiiProxy_DiskReplicaGroup) AttrSourceZoneId() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_DiskReplicaGroup) AttrStandbyRegion() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DiskReplicaGroup) AttrStandbyRegion() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStandbyRegion",
@@ -295,8 +308,8 @@ func (j *jsiiProxy_DiskReplicaGroup) AttrStandbyRegion() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_DiskReplicaGroup) AttrStandbyZone() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DiskReplicaGroup) AttrStandbyZone() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStandbyZone",
@@ -305,8 +318,8 @@ func (j *jsiiProxy_DiskReplicaGroup) AttrStandbyZone() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_DiskReplicaGroup) AttrTags() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DiskReplicaGroup) AttrTags() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTags",
@@ -320,6 +333,16 @@ func (j *jsiiProxy_DiskReplicaGroup) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DiskReplicaGroup) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -457,17 +480,6 @@ func (j *jsiiProxy_DiskReplicaGroup)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DiskReplicaGroup)SetProps(val *DiskReplicaGroupProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_DiskReplicaGroup)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -559,6 +571,45 @@ func (d *jsiiProxy_DiskReplicaGroup) ApplyRemovalPolicy(policy alicloudroscdkcor
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_DiskReplicaGroup) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DiskReplicaGroup) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DiskReplicaGroup) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_DiskReplicaGroup) GeneratePhysicalName() *string {

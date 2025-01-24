@@ -21,25 +21,41 @@ export interface CommonBandwidthPackageIpProps {
 }
 
 /**
+ * Represents a `CommonBandwidthPackageIp`.
+ */
+export interface ICommonBandwidthPackageIp extends ros.IResource {
+    readonly props: CommonBandwidthPackageIpProps;
+
+    /**
+     * Attribute AllocationIds: All eip allocation ids of common bandwidth package.
+     */
+    readonly attrAllocationIds: ros.IResolvable | string;
+
+    /**
+     * Attribute IpAddresses: All eip addresses of common bandwidth package.
+     */
+    readonly attrIpAddresses: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::CommonBandwidthPackageIp`, which is used to add EIPs to the Internet shared bandwidth instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCommonBandwidthPackageIp`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-commonbandwidthpackageip
  */
-export class CommonBandwidthPackageIp extends ros.Resource {
+export class CommonBandwidthPackageIp extends ros.Resource implements ICommonBandwidthPackageIp {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: CommonBandwidthPackageIpProps;
+    public readonly props: CommonBandwidthPackageIpProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AllocationIds: All eip allocation ids of common bandwidth package.
      */
-    public readonly attrAllocationIds: ros.IResolvable;
+    public readonly attrAllocationIds: ros.IResolvable | string;
 
     /**
      * Attribute IpAddresses: All eip addresses of common bandwidth package.
      */
-    public readonly attrIpAddresses: ros.IResolvable;
+    public readonly attrIpAddresses: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

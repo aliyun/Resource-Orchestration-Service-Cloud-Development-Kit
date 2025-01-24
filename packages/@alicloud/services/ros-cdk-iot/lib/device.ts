@@ -49,61 +49,113 @@ export interface DeviceProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::IOT::Device`, which is used to register a Device.
- * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDevice`for a more convenient development experience.
- * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-device
+ * Represents a `Device`.
  */
-export class Device extends ros.Resource {
-    protected scope: ros.Construct;
-    protected id: string;
-    protected props: DeviceProps;
-    protected enableResourcePropertyConstraint: boolean;
+export interface IDevice extends ros.IResource {
+    readonly props: DeviceProps;
 
     /**
      * Attribute DeviceName: Device name.
      */
-    public readonly attrDeviceName: ros.IResolvable;
+    readonly attrDeviceName: ros.IResolvable | string;
 
     /**
      * Attribute DeviceSecret: Device key.
      */
-    public readonly attrDeviceSecret: ros.IResolvable;
+    readonly attrDeviceSecret: ros.IResolvable | string;
 
     /**
      * Attribute IotId: Things internet device ID issued for the device, as the unique identifier of the device.
 Description Keep, do not leak.
      */
-    public readonly attrIotId: ros.IResolvable;
+    readonly attrIotId: ros.IResolvable | string;
 
     /**
      * Attribute IotInstanceId: IOT instance ID.
      */
-    public readonly attrIotInstanceId: ros.IResolvable;
+    readonly attrIotInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute IpAddress: IP address.
      */
-    public readonly attrIpAddress: ros.IResolvable;
+    readonly attrIpAddress: ros.IResolvable | string;
 
     /**
      * Attribute NickName: Nick name.
      */
-    public readonly attrNickName: ros.IResolvable;
+    readonly attrNickName: ros.IResolvable | string;
 
     /**
      * Attribute NodeType: Node type.
      */
-    public readonly attrNodeType: ros.IResolvable;
+    readonly attrNodeType: ros.IResolvable | string;
 
     /**
      * Attribute ProductKey: Product key.
      */
-    public readonly attrProductKey: ros.IResolvable;
+    readonly attrProductKey: ros.IResolvable | string;
 
     /**
      * Attribute ProductName: Product name.
      */
-    public readonly attrProductName: ros.IResolvable;
+    readonly attrProductName: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `ALIYUN::IOT::Device`, which is used to register a Device.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDevice`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-device
+ */
+export class Device extends ros.Resource implements IDevice {
+    protected scope: ros.Construct;
+    protected id: string;
+    public readonly props: DeviceProps;
+    protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute DeviceName: Device name.
+     */
+    public readonly attrDeviceName: ros.IResolvable | string;
+
+    /**
+     * Attribute DeviceSecret: Device key.
+     */
+    public readonly attrDeviceSecret: ros.IResolvable | string;
+
+    /**
+     * Attribute IotId: Things internet device ID issued for the device, as the unique identifier of the device.
+Description Keep, do not leak.
+     */
+    public readonly attrIotId: ros.IResolvable | string;
+
+    /**
+     * Attribute IotInstanceId: IOT instance ID.
+     */
+    public readonly attrIotInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute IpAddress: IP address.
+     */
+    public readonly attrIpAddress: ros.IResolvable | string;
+
+    /**
+     * Attribute NickName: Nick name.
+     */
+    public readonly attrNickName: ros.IResolvable | string;
+
+    /**
+     * Attribute NodeType: Node type.
+     */
+    public readonly attrNodeType: ros.IResolvable | string;
+
+    /**
+     * Attribute ProductKey: Product key.
+     */
+    public readonly attrProductKey: ros.IResolvable | string;
+
+    /**
+     * Attribute ProductName: Product name.
+     */
+    public readonly attrProductName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

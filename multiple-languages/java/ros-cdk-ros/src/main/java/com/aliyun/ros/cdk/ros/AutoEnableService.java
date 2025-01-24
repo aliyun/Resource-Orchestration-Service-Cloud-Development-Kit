@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.ros;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ROS::AutoEnableService</code>, which is used to automatically activate an Alibaba Cloud service or feature.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:11.454Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:43.831Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.AutoEnableService")
-public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
+public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ros.IAutoEnableService {
 
     protected AutoEnableService(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -40,6 +40,11 @@ public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
         software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), java.util.Objects.requireNonNull(props, "props is required") });
     }
 
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ros.AutoEnableServiceProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ros.AutoEnableServiceProps.class));
+    }
+
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
         return software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
     }
@@ -54,14 +59,6 @@ public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ros.AutoEnableServiceProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ros.AutoEnableServiceProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ros.AutoEnableServiceProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {
@@ -157,6 +154,7 @@ public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
          * TrustedService/ROS: Trusted Service for ROS
          * CloudSSO: Cloud SSO
          * ControlPolicy: Control Policy
+         * DSC: Data Security Center Free Edition Service
          * <p>
          * @return {@code this}
          * @param serviceName Property serviceName: Which service to enable. This parameter is required.
@@ -216,6 +214,7 @@ public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
          * TrustedService/ROS: Trusted Service for ROS
          * CloudSSO: Cloud SSO
          * ControlPolicy: Control Policy
+         * DSC: Data Security Center Free Edition Service
          * <p>
          * @return {@code this}
          * @param serviceName Property serviceName: Which service to enable. This parameter is required.

@@ -29,25 +29,41 @@ export interface RepositoriesProps {
 }
 
 /**
+ * Represents a `Repositories`.
+ */
+export interface IRepositories extends ros.IResource {
+    readonly props: RepositoriesProps;
+
+    /**
+     * Attribute RepoNames: The list of repository names.
+     */
+    readonly attrRepoNames: ros.IResolvable | string;
+
+    /**
+     * Attribute Repos: The list of repositories.
+     */
+    readonly attrRepos: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::CR::Repositories`, which is used to query the information about image repositories.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRepositories`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cr-repositories
  */
-export class Repositories extends ros.Resource {
+export class Repositories extends ros.Resource implements IRepositories {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: RepositoriesProps;
+    public readonly props: RepositoriesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RepoNames: The list of repository names.
      */
-    public readonly attrRepoNames: ros.IResolvable;
+    public readonly attrRepoNames: ros.IResolvable | string;
 
     /**
      * Attribute Repos: The list of repositories.
      */
-    public readonly attrRepos: ros.IResolvable;
+    public readonly attrRepos: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ASKCluster`, which is used to create an ACK Serverless cluster of Container Service for Kubernetes (ACK).
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ASKCluster`, which is used to create a Container Service for Kubernetes (ACK) Serverless cluster.
 type RosASKCluster interface {
 	alicloudroscdkcore.RosResource
 	Addons() interface{}
@@ -51,6 +51,8 @@ type RosASKCluster interface {
 	// Returns: the logical ID as a stringified token. This value will only get
 	// resolved during synthesis.
 	LogicalId() *string
+	MaintenanceWindow() interface{}
+	SetMaintenanceWindow(val interface{})
 	Name() interface{}
 	SetName(val interface{})
 	// The construct tree node associated with this construct.
@@ -150,6 +152,9 @@ type RosASKCluster interface {
 	AddRosDependency(target *string)
 	// Sets the deletion policy of the resource based on the removal policy specified.
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy, options *alicloudroscdkcore.RemovalPolicyOptions)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDesc() *string
+	FetchRosDependency() *[]*string
 	// Returns a token for an runtime attribute of this resource.
 	//
 	// Ideally, use generated attribute accessors (e.g. `resource.arn`), but this can be used for future compatibility
@@ -407,6 +412,16 @@ func (j *jsiiProxy_RosASKCluster) LogicalId() *string {
 	_jsii_.Get(
 		j,
 		"logicalId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosASKCluster) MaintenanceWindow() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"maintenanceWindow",
 		&returns,
 	)
 	return returns
@@ -703,6 +718,17 @@ func (j *jsiiProxy_RosASKCluster)SetKubernetesVersion(val interface{}) {
 	_jsii_.Set(
 		j,
 		"kubernetesVersion",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosASKCluster)SetMaintenanceWindow(val interface{}) {
+	if err := j.validateSetMaintenanceWindowParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"maintenanceWindow",
 		val,
 	)
 }
@@ -1031,6 +1057,45 @@ func (r *jsiiProxy_RosASKCluster) ApplyRemovalPolicy(policy alicloudroscdkcore.R
 		"applyRemovalPolicy",
 		[]interface{}{policy, options},
 	)
+}
+
+func (r *jsiiProxy_RosASKCluster) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		r,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_RosASKCluster) FetchDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		r,
+		"fetchDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_RosASKCluster) FetchRosDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		r,
+		"fetchRosDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (r *jsiiProxy_RosASKCluster) GetAtt(attributeName *string) alicloudroscdkcore.Reference {

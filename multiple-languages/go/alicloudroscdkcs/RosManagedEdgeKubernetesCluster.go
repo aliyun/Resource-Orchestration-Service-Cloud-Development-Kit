@@ -57,6 +57,8 @@ type RosManagedEdgeKubernetesCluster interface {
 	LogicalId() *string
 	LoginPassword() interface{}
 	SetLoginPassword(val interface{})
+	MaintenanceWindow() interface{}
+	SetMaintenanceWindow(val interface{})
 	Name() interface{}
 	SetName(val interface{})
 	// The construct tree node associated with this construct.
@@ -154,6 +156,9 @@ type RosManagedEdgeKubernetesCluster interface {
 	AddRosDependency(target *string)
 	// Sets the deletion policy of the resource based on the removal policy specified.
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy, options *alicloudroscdkcore.RemovalPolicyOptions)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDesc() *string
+	FetchRosDependency() *[]*string
 	// Returns a token for an runtime attribute of this resource.
 	//
 	// Ideally, use generated attribute accessors (e.g. `resource.arn`), but this can be used for future compatibility
@@ -441,6 +446,16 @@ func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) LoginPassword() interface{} 
 	_jsii_.Get(
 		j,
 		"loginPassword",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) MaintenanceWindow() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"maintenanceWindow",
 		&returns,
 	)
 	return returns
@@ -764,6 +779,17 @@ func (j *jsiiProxy_RosManagedEdgeKubernetesCluster)SetLoginPassword(val interfac
 	)
 }
 
+func (j *jsiiProxy_RosManagedEdgeKubernetesCluster)SetMaintenanceWindow(val interface{}) {
+	if err := j.validateSetMaintenanceWindowParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"maintenanceWindow",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosManagedEdgeKubernetesCluster)SetName(val interface{}) {
 	if err := j.validateSetNameParameters(val); err != nil {
 		panic(err)
@@ -1077,6 +1103,45 @@ func (r *jsiiProxy_RosManagedEdgeKubernetesCluster) ApplyRemovalPolicy(policy al
 		"applyRemovalPolicy",
 		[]interface{}{policy, options},
 	)
+}
+
+func (r *jsiiProxy_RosManagedEdgeKubernetesCluster) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		r,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_RosManagedEdgeKubernetesCluster) FetchDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		r,
+		"fetchDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_RosManagedEdgeKubernetesCluster) FetchRosDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		r,
+		"fetchRosDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (r *jsiiProxy_RosManagedEdgeKubernetesCluster) GetAtt(attributeName *string) alicloudroscdkcore.Reference {

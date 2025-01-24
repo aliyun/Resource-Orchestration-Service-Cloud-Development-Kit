@@ -46,40 +46,71 @@ export interface AppProps {
 }
 
 /**
+ * Represents a `App`.
+ */
+export interface IApp extends ros.IResource {
+    readonly props: AppProps;
+
+    /**
+     * Attribute InstanceId: The Id of the ElasticSearch serverless instance.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute PrivateESDomain: The private network domain of the app.
+     */
+    readonly attrPrivateEsDomain: ros.IResolvable | string;
+
+    /**
+     * Attribute PrivateKibanaDomain: The private network kibana domain of the app.
+     */
+    readonly attrPrivateKibanaDomain: ros.IResolvable | string;
+
+    /**
+     * Attribute PublicESDomain: The public network domain of the app.
+     */
+    readonly attrPublicEsDomain: ros.IResolvable | string;
+
+    /**
+     * Attribute PublicKibanaDomain: The public network kibana domain of the app.
+     */
+    readonly attrPublicKibanaDomain: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ElasticSearchServerless::App`, which is used to create an Elasticsearch serverless application.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApp`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-elasticsearchserverless-app
  */
-export class App extends ros.Resource {
+export class App extends ros.Resource implements IApp {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AppProps;
+    public readonly props: AppProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceId: The Id of the ElasticSearch serverless instance.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute PrivateESDomain: The private network domain of the app.
      */
-    public readonly attrPrivateEsDomain: ros.IResolvable;
+    public readonly attrPrivateEsDomain: ros.IResolvable | string;
 
     /**
      * Attribute PrivateKibanaDomain: The private network kibana domain of the app.
      */
-    public readonly attrPrivateKibanaDomain: ros.IResolvable;
+    public readonly attrPrivateKibanaDomain: ros.IResolvable | string;
 
     /**
      * Attribute PublicESDomain: The public network domain of the app.
      */
-    public readonly attrPublicEsDomain: ros.IResolvable;
+    public readonly attrPublicEsDomain: ros.IResolvable | string;
 
     /**
      * Attribute PublicKibanaDomain: The public network kibana domain of the app.
      */
-    public readonly attrPublicKibanaDomain: ros.IResolvable;
+    public readonly attrPublicKibanaDomain: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

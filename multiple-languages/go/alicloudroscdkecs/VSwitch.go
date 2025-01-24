@@ -12,16 +12,26 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ECS::VSwitch`, which is used to create a vSwitch.
 type VSwitch interface {
 	alicloudroscdkcore.Resource
+	IVSwitch
 	// Attribute CidrBlock: CIDR Block of created VSwitch.
-	AttrCidrBlock() alicloudroscdkcore.IResolvable
+	AttrCidrBlock() interface{}
 	// Attribute Ipv6CidrBlock: The IPv6 network segment of the VSwitch.
-	AttrIpv6CidrBlock() alicloudroscdkcore.IResolvable
+	AttrIpv6CidrBlock() interface{}
 	// Attribute VSwitchId: Id of created VSwitch.
-	AttrVSwitchId() alicloudroscdkcore.IResolvable
+	AttrVSwitchId() interface{}
 	// Attribute VSwitchName: The name of the VSwitch.
-	AttrVSwitchName() alicloudroscdkcore.IResolvable
+	AttrVSwitchName() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -36,7 +46,6 @@ type VSwitch interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *VSwitchProps
-	SetProps(val *VSwitchProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -49,6 +58,9 @@ type VSwitch interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -101,10 +113,11 @@ type VSwitch interface {
 // The jsii proxy struct for VSwitch
 type jsiiProxy_VSwitch struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IVSwitch
 }
 
-func (j *jsiiProxy_VSwitch) AttrCidrBlock() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VSwitch) AttrCidrBlock() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCidrBlock",
@@ -113,8 +126,8 @@ func (j *jsiiProxy_VSwitch) AttrCidrBlock() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_VSwitch) AttrIpv6CidrBlock() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VSwitch) AttrIpv6CidrBlock() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIpv6CidrBlock",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_VSwitch) AttrIpv6CidrBlock() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_VSwitch) AttrVSwitchId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VSwitch) AttrVSwitchId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVSwitchId",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_VSwitch) AttrVSwitchId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_VSwitch) AttrVSwitchName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VSwitch) AttrVSwitchName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVSwitchName",
@@ -148,6 +161,16 @@ func (j *jsiiProxy_VSwitch) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VSwitch) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -285,17 +308,6 @@ func (j *jsiiProxy_VSwitch)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_VSwitch)SetProps(val *VSwitchProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_VSwitch)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -387,6 +399,45 @@ func (v *jsiiProxy_VSwitch) ApplyRemovalPolicy(policy alicloudroscdkcore.Removal
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (v *jsiiProxy_VSwitch) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		v,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (v *jsiiProxy_VSwitch) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		v,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (v *jsiiProxy_VSwitch) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		v,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (v *jsiiProxy_VSwitch) GeneratePhysicalName() *string {

@@ -26,20 +26,31 @@ export interface DBInstanceSecurityIpsProps {
 }
 
 /**
+ * Represents a `DBInstanceSecurityIps`.
+ */
+export interface IDBInstanceSecurityIps extends ros.IResource {
+    readonly props: DBInstanceSecurityIpsProps;
+
+    /**
+     * Attribute SecurityIps: The security ips of selected database instance.
+     */
+    readonly attrSecurityIps: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::DBInstanceSecurityIps`, which is used to modify an IP address whitelist of an ApsaraDB for RDS instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBInstanceSecurityIps`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstancesecurityips
  */
-export class DBInstanceSecurityIps extends ros.Resource {
+export class DBInstanceSecurityIps extends ros.Resource implements IDBInstanceSecurityIps {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DBInstanceSecurityIpsProps;
+    public readonly props: DBInstanceSecurityIpsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SecurityIps: The security ips of selected database instance.
      */
-    public readonly attrSecurityIps: ros.IResolvable;
+    public readonly attrSecurityIps: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

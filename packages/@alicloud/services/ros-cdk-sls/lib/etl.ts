@@ -41,20 +41,31 @@ export interface EtlProps {
 }
 
 /**
+ * Represents a `Etl`.
+ */
+export interface IEtl extends ros.IResource {
+    readonly props: EtlProps;
+
+    /**
+     * Attribute Name: ETL name.
+     */
+    readonly attrName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Etl`, which is used to create a data transformation task.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEtl`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-etl
  */
-export class Etl extends ros.Resource {
+export class Etl extends ros.Resource implements IEtl {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: EtlProps;
+    public readonly props: EtlProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Name: ETL name.
      */
-    public readonly attrName: ros.IResolvable;
+    public readonly attrName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

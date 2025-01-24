@@ -132,6 +132,10 @@ func (j *jsiiProxy_RosListener) validateSetEnableResourcePropertyConstraintParam
 	return nil
 }
 
+func (j *jsiiProxy_RosListener) validateSetFullNatEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosListener) validateSetGzipParameters(val interface{}) error {
 	return nil
 }

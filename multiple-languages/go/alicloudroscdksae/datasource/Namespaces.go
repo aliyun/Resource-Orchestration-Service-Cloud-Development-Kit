@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::SAE::Namespaces`, which is used to query namespaces.
 type Namespaces interface {
 	alicloudroscdkcore.Resource
+	INamespaces
 	// Attribute NamespaceIds: The list of namespace names.
-	AttrNamespaceIds() alicloudroscdkcore.IResolvable
+	AttrNamespaceIds() interface{}
 	// Attribute Namespaces: The list of namespaces.
-	AttrNamespaces() alicloudroscdkcore.IResolvable
+	AttrNamespaces() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type Namespaces interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *NamespacesProps
-	SetProps(val *NamespacesProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type Namespaces interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type Namespaces interface {
 // The jsii proxy struct for Namespaces
 type jsiiProxy_Namespaces struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_INamespaces
 }
 
-func (j *jsiiProxy_Namespaces) AttrNamespaceIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Namespaces) AttrNamespaceIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNamespaceIds",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_Namespaces) AttrNamespaceIds() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Namespaces) AttrNamespaces() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Namespaces) AttrNamespaces() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNamespaces",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_Namespaces) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Namespaces) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_Namespaces)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Namespaces)SetProps(val *NamespacesProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Namespaces)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (n *jsiiProxy_Namespaces) ApplyRemovalPolicy(policy alicloudroscdkcore.Remo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (n *jsiiProxy_Namespaces) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		n,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (n *jsiiProxy_Namespaces) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		n,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (n *jsiiProxy_Namespaces) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		n,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (n *jsiiProxy_Namespaces) GeneratePhysicalName() *string {

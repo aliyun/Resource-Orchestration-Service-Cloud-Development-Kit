@@ -39,25 +39,41 @@ export interface SAMLProviderProps {
 }
 
 /**
+ * Represents a `SAMLProvider`.
+ */
+export interface ISAMLProvider extends ros.IResource {
+    readonly props: SAMLProviderProps;
+
+    /**
+     * Attribute Arn: ARN.
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
+     * Attribute SAMLProviderName: IdP Name.
+     */
+    readonly attrSamlProviderName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::SAMLProvider`, which is used to create an identity provider (IdP) for role-based single sign-on (SSO).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSAMLProvider`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-samlprovider
  */
-export class SAMLProvider extends ros.Resource {
+export class SAMLProvider extends ros.Resource implements ISAMLProvider {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SAMLProviderProps;
+    public readonly props: SAMLProviderProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Arn: ARN.
      */
-    public readonly attrArn: ros.IResolvable;
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute SAMLProviderName: IdP Name.
      */
-    public readonly attrSamlProviderName: ros.IResolvable;
+    public readonly attrSamlProviderName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

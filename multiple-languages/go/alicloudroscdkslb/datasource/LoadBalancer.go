@@ -12,78 +12,88 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::LoadBalancer`.
 type LoadBalancer interface {
 	alicloudroscdkcore.Resource
+	ILoadBalancer
 	// Attribute Address: The service IP address of the CLB instance.
-	AttrAddress() alicloudroscdkcore.IResolvable
+	AttrAddress() interface{}
 	// Attribute AddressIpVersion: The version of the IP address.
 	//
 	// Valid values: ipv4 and ipv6.
-	AttrAddressIpVersion() alicloudroscdkcore.IResolvable
+	AttrAddressIpVersion() interface{}
 	// Attribute AddressType: The address type of the CLB instance.
-	AttrAddressType() alicloudroscdkcore.IResolvable
+	AttrAddressType() interface{}
 	// Attribute AutoReleaseTime: The timestamp generated when the CLB instance is released.
-	AttrAutoReleaseTime() alicloudroscdkcore.IResolvable
+	AttrAutoReleaseTime() interface{}
 	// Attribute BackendServers: The backend servers of the CLB instance.
-	AttrBackendServers() alicloudroscdkcore.IResolvable
+	AttrBackendServers() interface{}
 	// Attribute Bandwidth: The maximum bandwidth of the Internet-facing CLB instance that is billed on a pay-by-bandwidth basis.
-	AttrBandwidth() alicloudroscdkcore.IResolvable
+	AttrBandwidth() interface{}
 	// Attribute CreateTime: The time when the CLB instance was created.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute CreateTimeStamp: The timestamp generated when the CA certificate is uploaded.
-	AttrCreateTimeStamp() alicloudroscdkcore.IResolvable
+	AttrCreateTimeStamp() interface{}
 	// Attribute DeleteProtection: Indicates whether deletion protection is enabled for the CLB instance.
-	AttrDeleteProtection() alicloudroscdkcore.IResolvable
+	AttrDeleteProtection() interface{}
 	// Attribute EndTime: The time when the CLB instance expires.
-	AttrEndTime() alicloudroscdkcore.IResolvable
+	AttrEndTime() interface{}
 	// Attribute EndTimeStamp: The timestamp that indicates the expiration time of the CLB instance.
-	AttrEndTimeStamp() alicloudroscdkcore.IResolvable
+	AttrEndTimeStamp() interface{}
 	// Attribute InstanceChargeType: Instance billing method.
-	AttrInstanceChargeType() alicloudroscdkcore.IResolvable
+	AttrInstanceChargeType() interface{}
 	// Attribute InternetChargeType: The metering method of the Internet-facing CLB instance.
-	AttrInternetChargeType() alicloudroscdkcore.IResolvable
+	AttrInternetChargeType() interface{}
 	// Attribute ListenerPortsAndProtocal: The ports or protocols of the listeners.
-	AttrListenerPortsAndProtocal() alicloudroscdkcore.IResolvable
+	AttrListenerPortsAndProtocal() interface{}
 	// Attribute ListenerPortsAndProtocol: The ports or protocols of the listeners.
-	AttrListenerPortsAndProtocol() alicloudroscdkcore.IResolvable
+	AttrListenerPortsAndProtocol() interface{}
 	// Attribute LoadBalancerId: The CLB instance ID.
-	AttrLoadBalancerId() alicloudroscdkcore.IResolvable
+	AttrLoadBalancerId() interface{}
 	// Attribute LoadBalancerName: The name of the CLB instance.
-	AttrLoadBalancerName() alicloudroscdkcore.IResolvable
+	AttrLoadBalancerName() interface{}
 	// Attribute LoadBalancerSpec: The specification of the CLB instance.
-	AttrLoadBalancerSpec() alicloudroscdkcore.IResolvable
+	AttrLoadBalancerSpec() interface{}
 	// Attribute MasterZoneId: The ID of the primary zone to which the CLB instance belongs.
-	AttrMasterZoneId() alicloudroscdkcore.IResolvable
+	AttrMasterZoneId() interface{}
 	// Attribute ModificationProtectionReason: The reason why the configuration read-only mode is enabled.
-	AttrModificationProtectionReason() alicloudroscdkcore.IResolvable
+	AttrModificationProtectionReason() interface{}
 	// Attribute ModificationProtectionStatus: Load balancing modifies the protection state.
-	AttrModificationProtectionStatus() alicloudroscdkcore.IResolvable
+	AttrModificationProtectionStatus() interface{}
 	// Attribute NetworkType: The network type of the CLB instance.
-	AttrNetworkType() alicloudroscdkcore.IResolvable
+	AttrNetworkType() interface{}
 	// Attribute PaymentType: Load balancing instance payment type.
-	AttrPaymentType() alicloudroscdkcore.IResolvable
+	AttrPaymentType() interface{}
 	// Attribute RegionIdAlias: The alias of the region to which the CLB instance belongs.
-	AttrRegionIdAlias() alicloudroscdkcore.IResolvable
+	AttrRegionIdAlias() interface{}
 	// Attribute RenewalCycUnit: The auto-renewal cycle.
 	//
 	// Valid values: Year and Month. Default value: Month.
-	AttrRenewalCycUnit() alicloudroscdkcore.IResolvable
+	AttrRenewalCycUnit() interface{}
 	// Attribute RenewalDuration: The auto-renewal duration.
 	//
 	// This parameter is valid only if RenewalStatus is set to AutoRenewal.
-	AttrRenewalDuration() alicloudroscdkcore.IResolvable
+	AttrRenewalDuration() interface{}
 	// Attribute RenewalStatus: Indicates whether auto-renewal is enabled.
-	AttrRenewalStatus() alicloudroscdkcore.IResolvable
+	AttrRenewalStatus() interface{}
 	// Attribute ResourceGroupId: The resource group ID.
-	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() interface{}
 	// Attribute SlaveZoneId: The ID of the secondary zone to which the CLB instance belongs.
-	AttrSlaveZoneId() alicloudroscdkcore.IResolvable
+	AttrSlaveZoneId() interface{}
 	// Attribute Tags: The tags of the CLB instance.
-	AttrTags() alicloudroscdkcore.IResolvable
+	AttrTags() interface{}
 	// Attribute VpcId: The ID of the virtual private cloud (VPC) where the internal-facing CLB instance is deployed.
-	AttrVpcId() alicloudroscdkcore.IResolvable
+	AttrVpcId() interface{}
 	// Attribute VSwitchId: The ID of the vSwitch to which the internal-facing CLB instance belongs.
-	AttrVSwitchId() alicloudroscdkcore.IResolvable
+	AttrVSwitchId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -98,7 +108,6 @@ type LoadBalancer interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *LoadBalancerProps
-	SetProps(val *LoadBalancerProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -111,6 +120,9 @@ type LoadBalancer interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -163,10 +175,11 @@ type LoadBalancer interface {
 // The jsii proxy struct for LoadBalancer
 type jsiiProxy_LoadBalancer struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ILoadBalancer
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrAddress() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrAddress() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAddress",
@@ -175,8 +188,8 @@ func (j *jsiiProxy_LoadBalancer) AttrAddress() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrAddressIpVersion() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrAddressIpVersion() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAddressIpVersion",
@@ -185,8 +198,8 @@ func (j *jsiiProxy_LoadBalancer) AttrAddressIpVersion() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrAddressType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrAddressType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAddressType",
@@ -195,8 +208,8 @@ func (j *jsiiProxy_LoadBalancer) AttrAddressType() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrAutoReleaseTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrAutoReleaseTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAutoReleaseTime",
@@ -205,8 +218,8 @@ func (j *jsiiProxy_LoadBalancer) AttrAutoReleaseTime() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrBackendServers() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrBackendServers() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBackendServers",
@@ -215,8 +228,8 @@ func (j *jsiiProxy_LoadBalancer) AttrBackendServers() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrBandwidth() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrBandwidth() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBandwidth",
@@ -225,8 +238,8 @@ func (j *jsiiProxy_LoadBalancer) AttrBandwidth() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -235,8 +248,8 @@ func (j *jsiiProxy_LoadBalancer) AttrCreateTime() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrCreateTimeStamp() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrCreateTimeStamp() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTimeStamp",
@@ -245,8 +258,8 @@ func (j *jsiiProxy_LoadBalancer) AttrCreateTimeStamp() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrDeleteProtection() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrDeleteProtection() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDeleteProtection",
@@ -255,8 +268,8 @@ func (j *jsiiProxy_LoadBalancer) AttrDeleteProtection() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrEndTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrEndTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEndTime",
@@ -265,8 +278,8 @@ func (j *jsiiProxy_LoadBalancer) AttrEndTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrEndTimeStamp() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrEndTimeStamp() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEndTimeStamp",
@@ -275,8 +288,8 @@ func (j *jsiiProxy_LoadBalancer) AttrEndTimeStamp() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrInstanceChargeType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrInstanceChargeType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceChargeType",
@@ -285,8 +298,8 @@ func (j *jsiiProxy_LoadBalancer) AttrInstanceChargeType() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrInternetChargeType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrInternetChargeType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInternetChargeType",
@@ -295,8 +308,8 @@ func (j *jsiiProxy_LoadBalancer) AttrInternetChargeType() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrListenerPortsAndProtocal() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrListenerPortsAndProtocal() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrListenerPortsAndProtocal",
@@ -305,8 +318,8 @@ func (j *jsiiProxy_LoadBalancer) AttrListenerPortsAndProtocal() alicloudroscdkco
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrListenerPortsAndProtocol() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrListenerPortsAndProtocol() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrListenerPortsAndProtocol",
@@ -315,8 +328,8 @@ func (j *jsiiProxy_LoadBalancer) AttrListenerPortsAndProtocol() alicloudroscdkco
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrLoadBalancerId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrLoadBalancerId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLoadBalancerId",
@@ -325,8 +338,8 @@ func (j *jsiiProxy_LoadBalancer) AttrLoadBalancerId() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrLoadBalancerName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrLoadBalancerName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLoadBalancerName",
@@ -335,8 +348,8 @@ func (j *jsiiProxy_LoadBalancer) AttrLoadBalancerName() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrLoadBalancerSpec() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrLoadBalancerSpec() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLoadBalancerSpec",
@@ -345,8 +358,8 @@ func (j *jsiiProxy_LoadBalancer) AttrLoadBalancerSpec() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrMasterZoneId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrMasterZoneId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMasterZoneId",
@@ -355,8 +368,8 @@ func (j *jsiiProxy_LoadBalancer) AttrMasterZoneId() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrModificationProtectionReason() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrModificationProtectionReason() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrModificationProtectionReason",
@@ -365,8 +378,8 @@ func (j *jsiiProxy_LoadBalancer) AttrModificationProtectionReason() alicloudrosc
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrModificationProtectionStatus() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrModificationProtectionStatus() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrModificationProtectionStatus",
@@ -375,8 +388,8 @@ func (j *jsiiProxy_LoadBalancer) AttrModificationProtectionStatus() alicloudrosc
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrNetworkType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrNetworkType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNetworkType",
@@ -385,8 +398,8 @@ func (j *jsiiProxy_LoadBalancer) AttrNetworkType() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrPaymentType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrPaymentType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPaymentType",
@@ -395,8 +408,8 @@ func (j *jsiiProxy_LoadBalancer) AttrPaymentType() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrRegionIdAlias() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrRegionIdAlias() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRegionIdAlias",
@@ -405,8 +418,8 @@ func (j *jsiiProxy_LoadBalancer) AttrRegionIdAlias() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrRenewalCycUnit() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrRenewalCycUnit() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRenewalCycUnit",
@@ -415,8 +428,8 @@ func (j *jsiiProxy_LoadBalancer) AttrRenewalCycUnit() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrRenewalDuration() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrRenewalDuration() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRenewalDuration",
@@ -425,8 +438,8 @@ func (j *jsiiProxy_LoadBalancer) AttrRenewalDuration() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrRenewalStatus() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrRenewalStatus() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRenewalStatus",
@@ -435,8 +448,8 @@ func (j *jsiiProxy_LoadBalancer) AttrRenewalStatus() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupId",
@@ -445,8 +458,8 @@ func (j *jsiiProxy_LoadBalancer) AttrResourceGroupId() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrSlaveZoneId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrSlaveZoneId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSlaveZoneId",
@@ -455,8 +468,8 @@ func (j *jsiiProxy_LoadBalancer) AttrSlaveZoneId() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrTags() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrTags() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTags",
@@ -465,8 +478,8 @@ func (j *jsiiProxy_LoadBalancer) AttrTags() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrVpcId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrVpcId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVpcId",
@@ -475,8 +488,8 @@ func (j *jsiiProxy_LoadBalancer) AttrVpcId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancer) AttrVSwitchId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancer) AttrVSwitchId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVSwitchId",
@@ -490,6 +503,16 @@ func (j *jsiiProxy_LoadBalancer) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LoadBalancer) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -627,17 +650,6 @@ func (j *jsiiProxy_LoadBalancer)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_LoadBalancer)SetProps(val *LoadBalancerProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_LoadBalancer)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -729,6 +741,45 @@ func (l *jsiiProxy_LoadBalancer) ApplyRemovalPolicy(policy alicloudroscdkcore.Re
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (l *jsiiProxy_LoadBalancer) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		l,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (l *jsiiProxy_LoadBalancer) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		l,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (l *jsiiProxy_LoadBalancer) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		l,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (l *jsiiProxy_LoadBalancer) GeneratePhysicalName() *string {

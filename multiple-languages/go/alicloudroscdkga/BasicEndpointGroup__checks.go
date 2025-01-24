@@ -163,17 +163,6 @@ func (j *jsiiProxy_BasicEndpointGroup) validateSetIdParameters(val *string) erro
 	return nil
 }
 
-func (j *jsiiProxy_BasicEndpointGroup) validateSetPropsParameters(val *BasicEndpointGroupProps) error {
-	if val == nil {
-		return fmt.Errorf("parameter val is required, but nil was provided")
-	}
-	if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (j *jsiiProxy_BasicEndpointGroup) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")

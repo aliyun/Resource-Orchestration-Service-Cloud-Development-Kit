@@ -47,30 +47,51 @@ export interface DBClusterEndpointProps {
 }
 
 /**
+ * Represents a `DBClusterEndpoint`.
+ */
+export interface IDBClusterEndpoint extends ros.IResource {
+    readonly props: DBClusterEndpointProps;
+
+    /**
+     * Attribute Addresses: The address items of the db cluster endpoint.
+     */
+    readonly attrAddresses: ros.IResolvable | string;
+
+    /**
+     * Attribute ConnectionString: The first connection string of the db cluster endpoint.
+     */
+    readonly attrConnectionString: ros.IResolvable | string;
+
+    /**
+     * Attribute DBEndpointId: DB cluster endpoint ID. E.g. pe-xxxxxxxx.
+     */
+    readonly attrDbEndpointId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::DBClusterEndpoint`, which is used to create a custom endpoint for a PolarDB cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBClusterEndpoint`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusterendpoint
  */
-export class DBClusterEndpoint extends ros.Resource {
+export class DBClusterEndpoint extends ros.Resource implements IDBClusterEndpoint {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DBClusterEndpointProps;
+    public readonly props: DBClusterEndpointProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Addresses: The address items of the db cluster endpoint.
      */
-    public readonly attrAddresses: ros.IResolvable;
+    public readonly attrAddresses: ros.IResolvable | string;
 
     /**
      * Attribute ConnectionString: The first connection string of the db cluster endpoint.
      */
-    public readonly attrConnectionString: ros.IResolvable;
+    public readonly attrConnectionString: ros.IResolvable | string;
 
     /**
      * Attribute DBEndpointId: DB cluster endpoint ID. E.g. pe-xxxxxxxx.
      */
-    public readonly attrDbEndpointId: ros.IResolvable;
+    public readonly attrDbEndpointId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -19,25 +19,41 @@ export interface InstancesProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ROCKETMQ::Instances`, which is used to query Message Queue for Apache RocketMQ instances.
+ * Represents a `Instances`.
+ */
+export interface IInstances extends ros.IResource {
+    readonly props: InstancesProps;
+
+    /**
+     * Attribute InstanceIds: The list of instance IDs.
+     */
+    readonly attrInstanceIds: ros.IResolvable | string;
+
+    /**
+     * Attribute Instances: The list of instances.
+     */
+    readonly attrInstances: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ROCKETMQ::Instances`, which is used to query the information about all ApsaraMQ for RocketMQ instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstances`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq-instances
  */
-export class Instances extends ros.Resource {
+export class Instances extends ros.Resource implements IInstances {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InstancesProps;
+    public readonly props: InstancesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceIds: The list of instance IDs.
      */
-    public readonly attrInstanceIds: ros.IResolvable;
+    public readonly attrInstanceIds: ros.IResolvable | string;
 
     /**
      * Attribute Instances: The list of instances.
      */
-    public readonly attrInstances: ros.IResolvable;
+    public readonly attrInstances: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

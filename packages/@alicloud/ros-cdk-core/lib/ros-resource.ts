@@ -208,8 +208,16 @@ export class RosResource extends RosRefElement {
     this.rosOptions.description = desc;
   }
 
+  public fetchDesc() {
+    return this.rosOptions.description;
+  }
+
   public addCondition(con: RosCondition) {
     this.rosOptions.condition = con;
+  }
+
+  public fetchCondition() {
+    return this.rosOptions.condition;
   }
 
   public addCount(count: number | IResolvable) {
@@ -275,6 +283,10 @@ export class RosResource extends RosRefElement {
   public addRosDependency(target: string) {
     // target.forEach(x => this.rosDependsOn.add(x));
     this.rosDependsOn.add(target);
+  }
+
+  public fetchRosDependency() {
+    return Array.from(this.rosDependsOn);
   }
 
   /**

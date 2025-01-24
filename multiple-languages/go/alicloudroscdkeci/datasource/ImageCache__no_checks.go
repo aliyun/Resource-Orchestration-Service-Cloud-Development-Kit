@@ -52,10 +52,6 @@ func (j *jsiiProxy_ImageCache) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_ImageCache) validateSetPropsParameters(val *ImageCacheProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_ImageCache) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

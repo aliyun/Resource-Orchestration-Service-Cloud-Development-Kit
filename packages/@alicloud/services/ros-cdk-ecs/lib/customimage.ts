@@ -92,25 +92,41 @@ export interface CustomImageProps {
 }
 
 /**
+ * Represents a `CustomImage`.
+ */
+export interface ICustomImage extends ros.IResource {
+    readonly props: CustomImageProps;
+
+    /**
+     * Attribute ImageId: Image ID
+     */
+    readonly attrImageId: ros.IResolvable | string;
+
+    /**
+     * Attribute SourceRegionId: ID of the region to where the instance/snapshot belongs.
+     */
+    readonly attrSourceRegionId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::CustomImage`, which is used to create a custom image.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCustomImage`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-customimage
  */
-export class CustomImage extends ros.Resource {
+export class CustomImage extends ros.Resource implements ICustomImage {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: CustomImageProps;
+    public readonly props: CustomImageProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ImageId: Image ID
      */
-    public readonly attrImageId: ros.IResolvable;
+    public readonly attrImageId: ros.IResolvable | string;
 
     /**
      * Attribute SourceRegionId: ID of the region to where the instance/snapshot belongs.
      */
-    public readonly attrSourceRegionId: ros.IResolvable;
+    public readonly attrSourceRegionId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

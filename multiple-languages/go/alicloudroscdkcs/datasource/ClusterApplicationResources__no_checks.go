@@ -52,10 +52,6 @@ func (j *jsiiProxy_ClusterApplicationResources) validateSetIdParameters(val *str
 	return nil
 }
 
-func (j *jsiiProxy_ClusterApplicationResources) validateSetPropsParameters(val *ClusterApplicationResourcesProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_ClusterApplicationResources) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

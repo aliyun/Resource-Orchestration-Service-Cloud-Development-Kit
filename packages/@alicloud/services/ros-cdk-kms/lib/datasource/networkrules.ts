@@ -19,25 +19,41 @@ export interface NetworkRulesProps {
 }
 
 /**
+ * Represents a `NetworkRules`.
+ */
+export interface INetworkRules extends ros.IResource {
+    readonly props: NetworkRulesProps;
+
+    /**
+     * Attribute NetworkRuleNames: The list of network rule names.
+     */
+    readonly attrNetworkRuleNames: ros.IResolvable | string;
+
+    /**
+     * Attribute NetworkRules: The list of network rules.
+     */
+    readonly attrNetworkRules: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::KMS::NetworkRules`, which is used to query the information about network access rules.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNetworkRules`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kms-networkrules
  */
-export class NetworkRules extends ros.Resource {
+export class NetworkRules extends ros.Resource implements INetworkRules {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: NetworkRulesProps;
+    public readonly props: NetworkRulesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute NetworkRuleNames: The list of network rule names.
      */
-    public readonly attrNetworkRuleNames: ros.IResolvable;
+    public readonly attrNetworkRuleNames: ros.IResolvable | string;
 
     /**
      * Attribute NetworkRules: The list of network rules.
      */
-    public readonly attrNetworkRules: ros.IResolvable;
+    public readonly attrNetworkRules: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

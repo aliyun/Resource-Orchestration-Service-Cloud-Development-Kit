@@ -19,25 +19,41 @@ export interface DomainsProps {
 }
 
 /**
+ * Represents a `Domains`.
+ */
+export interface IDomains extends ros.IResource {
+    readonly props: DomainsProps;
+
+    /**
+     * Attribute DomainIds: The list of domain IDs.
+     */
+    readonly attrDomainIds: ros.IResolvable | string;
+
+    /**
+     * Attribute Domains: The list of domains.
+     */
+    readonly attrDomains: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::DirectMail::Domains`, which is used to query the information about domain names.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomains`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-directmail-domains
  */
-export class Domains extends ros.Resource {
+export class Domains extends ros.Resource implements IDomains {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DomainsProps;
+    public readonly props: DomainsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DomainIds: The list of domain IDs.
      */
-    public readonly attrDomainIds: ros.IResolvable;
+    public readonly attrDomainIds: ros.IResolvable | string;
 
     /**
      * Attribute Domains: The list of domains.
      */
-    public readonly attrDomains: ros.IResolvable;
+    public readonly attrDomains: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -12,86 +12,96 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::Aligreen::OssStockTask`.
 type OssStockTask interface {
 	alicloudroscdkcore.Resource
+	IOssStockTask
 	// Attribute AudioAntispamFreezeConfig: Voice auto freeze configuration.
-	AttrAudioAntispamFreezeConfig() alicloudroscdkcore.IResolvable
+	AttrAudioAntispamFreezeConfig() interface{}
 	// Attribute AudioAutoFreezeOpened: Audio detection auto freeze switch.
 	//
 	// Value: true: automatically freeze, false: not automatically freeze.
-	AttrAudioAutoFreezeOpened() alicloudroscdkcore.IResolvable
+	AttrAudioAutoFreezeOpened() interface{}
 	// Attribute AudioMaxSize: Resource property field representing the maximum size of a single audio.
-	AttrAudioMaxSize() alicloudroscdkcore.IResolvable
+	AttrAudioMaxSize() interface{}
 	// Attribute AudioOpened: oss stock scan task detect audio.
-	AttrAudioOpened() alicloudroscdkcore.IResolvable
+	AttrAudioOpened() interface{}
 	// Attribute AudioScanLimit: The upper limit of voice scan in the oss stock scan task.
 	//
 	// The default value is 1000/Bucket.
-	AttrAudioScanLimit() alicloudroscdkcore.IResolvable
+	AttrAudioScanLimit() interface{}
 	// Attribute AudioScenes: The audio detection scenarios included in the oss stock scan task.
 	//
 	// Set the value to antispam.
-	AttrAudioScenes() alicloudroscdkcore.IResolvable
+	AttrAudioScenes() interface{}
 	// Attribute AutoFreezeType: Automatic freeze type.
-	AttrAutoFreezeType() alicloudroscdkcore.IResolvable
+	AttrAutoFreezeType() interface{}
 	// Attribute BizType: Business scenarios used by the oss stock scan task.
-	AttrBizType() alicloudroscdkcore.IResolvable
+	AttrBizType() interface{}
 	// Attribute Buckets: The bucket configuration list of the oss stock scan task.
-	AttrBuckets() alicloudroscdkcore.IResolvable
+	AttrBuckets() interface{}
 	// Attribute CallbackId: The ID of the primary key of the notification message bound to the oss stock scan task.
-	AttrCallbackId() alicloudroscdkcore.IResolvable
+	AttrCallbackId() interface{}
 	// Attribute EndDate: The end time of the file upload time range indicates the scanning of files uploaded before this time point.
-	AttrEndDate() alicloudroscdkcore.IResolvable
+	AttrEndDate() interface{}
 	// Attribute ImageAdFreezeConfig: Picture automatically freezes the configuration of ad scenes.
-	AttrImageAdFreezeConfig() alicloudroscdkcore.IResolvable
+	AttrImageAdFreezeConfig() interface{}
 	// Attribute ImageAutoFreezeOpened: Picture detection auto freeze switch.
 	//
 	// Value: true: auto freeze, false: not auto freeze.
-	AttrImageAutoFreezeOpened() alicloudroscdkcore.IResolvable
+	AttrImageAutoFreezeOpened() interface{}
 	// Attribute ImageLiveFreezeConfig: Picture automatic freezing live scene configuration.
-	AttrImageLiveFreezeConfig() alicloudroscdkcore.IResolvable
+	AttrImageLiveFreezeConfig() interface{}
 	// Attribute ImageOpened: oss stock scan task detect images.
-	AttrImageOpened() alicloudroscdkcore.IResolvable
+	AttrImageOpened() interface{}
 	// Attribute ImagePornFreezeConfig: Picture automatic freezing porn scene configuration.
-	AttrImagePornFreezeConfig() alicloudroscdkcore.IResolvable
+	AttrImagePornFreezeConfig() interface{}
 	// Attribute ImageScanLimit: The upper limit for scanning images in the oss stock scan task.
-	AttrImageScanLimit() alicloudroscdkcore.IResolvable
+	AttrImageScanLimit() interface{}
 	// Attribute ImageScenes: The image moderation scenario included in the oss stock scan task.
-	AttrImageScenes() alicloudroscdkcore.IResolvable
+	AttrImageScenes() interface{}
 	// Attribute ImageTerrorismFreezeConfig: The picture automatically freezes the configuration of terrorism scenes.
-	AttrImageTerrorismFreezeConfig() alicloudroscdkcore.IResolvable
+	AttrImageTerrorismFreezeConfig() interface{}
 	// Attribute ScanImageNoFileType: Whether the oss stock scan task detects images with file names without suffixes.
-	AttrScanImageNoFileType() alicloudroscdkcore.IResolvable
+	AttrScanImageNoFileType() interface{}
 	// Attribute StartDate: The start time of the file upload time range represents the files uploaded after scanning this time point.
-	AttrStartDate() alicloudroscdkcore.IResolvable
+	AttrStartDate() interface{}
 	// Attribute VideoAdFreezeConfig: The video automatically freezes the configuration of ad scenarios.
-	AttrVideoAdFreezeConfig() alicloudroscdkcore.IResolvable
+	AttrVideoAdFreezeConfig() interface{}
 	// Attribute VideoAutoFreezeOpened: Video detection auto freeze switch.
 	//
 	// Value: true: automatically freeze, false: not automatically freeze.
-	AttrVideoAutoFreezeOpened() alicloudroscdkcore.IResolvable
+	AttrVideoAutoFreezeOpened() interface{}
 	// Attribute VideoFrameInterval: Resource attribute field representing the framing frequency.
-	AttrVideoFrameInterval() alicloudroscdkcore.IResolvable
+	AttrVideoFrameInterval() interface{}
 	// Attribute VideoLiveFreezeConfig: Video automatic freeze live scene configuration.
-	AttrVideoLiveFreezeConfig() alicloudroscdkcore.IResolvable
+	AttrVideoLiveFreezeConfig() interface{}
 	// Attribute VideoMaxFrames: A resource attribute field that represents the upper limit of a single video frame cut.
-	AttrVideoMaxFrames() alicloudroscdkcore.IResolvable
+	AttrVideoMaxFrames() interface{}
 	// Attribute VideoMaxSize: Resource property field representing the maximum size of a single video.
-	AttrVideoMaxSize() alicloudroscdkcore.IResolvable
+	AttrVideoMaxSize() interface{}
 	// Attribute VideoOpened: oss stock scan task detect video.
-	AttrVideoOpened() alicloudroscdkcore.IResolvable
+	AttrVideoOpened() interface{}
 	// Attribute VideoPornFreezeConfig: Video automatic freezing porn scene configuration.
-	AttrVideoPornFreezeConfig() alicloudroscdkcore.IResolvable
+	AttrVideoPornFreezeConfig() interface{}
 	// Attribute VideoScanLimit: The upper limit of video scanning in the oss stock scan task.
 	//
 	// The default value is 1000/Bucket.
-	AttrVideoScanLimit() alicloudroscdkcore.IResolvable
+	AttrVideoScanLimit() interface{}
 	// Attribute VideoScenes: The video detection scenarios included in the oss stock scan task.
-	AttrVideoScenes() alicloudroscdkcore.IResolvable
+	AttrVideoScenes() interface{}
 	// Attribute VideoTerrorismFreezeConfig: The video automatically freezes the configuration of terrorism scenes.
-	AttrVideoTerrorismFreezeConfig() alicloudroscdkcore.IResolvable
+	AttrVideoTerrorismFreezeConfig() interface{}
 	// Attribute VideoVoiceAntispamFreezeConfig: Voice auto freeze configuration in video.
-	AttrVideoVoiceAntispamFreezeConfig() alicloudroscdkcore.IResolvable
+	AttrVideoVoiceAntispamFreezeConfig() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -106,7 +116,6 @@ type OssStockTask interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *OssStockTaskProps
-	SetProps(val *OssStockTaskProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -119,6 +128,9 @@ type OssStockTask interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -171,10 +183,11 @@ type OssStockTask interface {
 // The jsii proxy struct for OssStockTask
 type jsiiProxy_OssStockTask struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IOssStockTask
 }
 
-func (j *jsiiProxy_OssStockTask) AttrAudioAntispamFreezeConfig() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrAudioAntispamFreezeConfig() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAudioAntispamFreezeConfig",
@@ -183,8 +196,8 @@ func (j *jsiiProxy_OssStockTask) AttrAudioAntispamFreezeConfig() alicloudroscdkc
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrAudioAutoFreezeOpened() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrAudioAutoFreezeOpened() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAudioAutoFreezeOpened",
@@ -193,8 +206,8 @@ func (j *jsiiProxy_OssStockTask) AttrAudioAutoFreezeOpened() alicloudroscdkcore.
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrAudioMaxSize() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrAudioMaxSize() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAudioMaxSize",
@@ -203,8 +216,8 @@ func (j *jsiiProxy_OssStockTask) AttrAudioMaxSize() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrAudioOpened() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrAudioOpened() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAudioOpened",
@@ -213,8 +226,8 @@ func (j *jsiiProxy_OssStockTask) AttrAudioOpened() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrAudioScanLimit() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrAudioScanLimit() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAudioScanLimit",
@@ -223,8 +236,8 @@ func (j *jsiiProxy_OssStockTask) AttrAudioScanLimit() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrAudioScenes() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrAudioScenes() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAudioScenes",
@@ -233,8 +246,8 @@ func (j *jsiiProxy_OssStockTask) AttrAudioScenes() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrAutoFreezeType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrAutoFreezeType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAutoFreezeType",
@@ -243,8 +256,8 @@ func (j *jsiiProxy_OssStockTask) AttrAutoFreezeType() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrBizType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrBizType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBizType",
@@ -253,8 +266,8 @@ func (j *jsiiProxy_OssStockTask) AttrBizType() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrBuckets() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrBuckets() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBuckets",
@@ -263,8 +276,8 @@ func (j *jsiiProxy_OssStockTask) AttrBuckets() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrCallbackId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrCallbackId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCallbackId",
@@ -273,8 +286,8 @@ func (j *jsiiProxy_OssStockTask) AttrCallbackId() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrEndDate() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrEndDate() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEndDate",
@@ -283,8 +296,8 @@ func (j *jsiiProxy_OssStockTask) AttrEndDate() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrImageAdFreezeConfig() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrImageAdFreezeConfig() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrImageAdFreezeConfig",
@@ -293,8 +306,8 @@ func (j *jsiiProxy_OssStockTask) AttrImageAdFreezeConfig() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrImageAutoFreezeOpened() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrImageAutoFreezeOpened() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrImageAutoFreezeOpened",
@@ -303,8 +316,8 @@ func (j *jsiiProxy_OssStockTask) AttrImageAutoFreezeOpened() alicloudroscdkcore.
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrImageLiveFreezeConfig() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrImageLiveFreezeConfig() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrImageLiveFreezeConfig",
@@ -313,8 +326,8 @@ func (j *jsiiProxy_OssStockTask) AttrImageLiveFreezeConfig() alicloudroscdkcore.
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrImageOpened() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrImageOpened() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrImageOpened",
@@ -323,8 +336,8 @@ func (j *jsiiProxy_OssStockTask) AttrImageOpened() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrImagePornFreezeConfig() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrImagePornFreezeConfig() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrImagePornFreezeConfig",
@@ -333,8 +346,8 @@ func (j *jsiiProxy_OssStockTask) AttrImagePornFreezeConfig() alicloudroscdkcore.
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrImageScanLimit() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrImageScanLimit() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrImageScanLimit",
@@ -343,8 +356,8 @@ func (j *jsiiProxy_OssStockTask) AttrImageScanLimit() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrImageScenes() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrImageScenes() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrImageScenes",
@@ -353,8 +366,8 @@ func (j *jsiiProxy_OssStockTask) AttrImageScenes() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrImageTerrorismFreezeConfig() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrImageTerrorismFreezeConfig() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrImageTerrorismFreezeConfig",
@@ -363,8 +376,8 @@ func (j *jsiiProxy_OssStockTask) AttrImageTerrorismFreezeConfig() alicloudroscdk
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrScanImageNoFileType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrScanImageNoFileType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrScanImageNoFileType",
@@ -373,8 +386,8 @@ func (j *jsiiProxy_OssStockTask) AttrScanImageNoFileType() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrStartDate() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrStartDate() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStartDate",
@@ -383,8 +396,8 @@ func (j *jsiiProxy_OssStockTask) AttrStartDate() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrVideoAdFreezeConfig() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrVideoAdFreezeConfig() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVideoAdFreezeConfig",
@@ -393,8 +406,8 @@ func (j *jsiiProxy_OssStockTask) AttrVideoAdFreezeConfig() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrVideoAutoFreezeOpened() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrVideoAutoFreezeOpened() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVideoAutoFreezeOpened",
@@ -403,8 +416,8 @@ func (j *jsiiProxy_OssStockTask) AttrVideoAutoFreezeOpened() alicloudroscdkcore.
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrVideoFrameInterval() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrVideoFrameInterval() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVideoFrameInterval",
@@ -413,8 +426,8 @@ func (j *jsiiProxy_OssStockTask) AttrVideoFrameInterval() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrVideoLiveFreezeConfig() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrVideoLiveFreezeConfig() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVideoLiveFreezeConfig",
@@ -423,8 +436,8 @@ func (j *jsiiProxy_OssStockTask) AttrVideoLiveFreezeConfig() alicloudroscdkcore.
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrVideoMaxFrames() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrVideoMaxFrames() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVideoMaxFrames",
@@ -433,8 +446,8 @@ func (j *jsiiProxy_OssStockTask) AttrVideoMaxFrames() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrVideoMaxSize() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrVideoMaxSize() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVideoMaxSize",
@@ -443,8 +456,8 @@ func (j *jsiiProxy_OssStockTask) AttrVideoMaxSize() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrVideoOpened() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrVideoOpened() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVideoOpened",
@@ -453,8 +466,8 @@ func (j *jsiiProxy_OssStockTask) AttrVideoOpened() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrVideoPornFreezeConfig() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrVideoPornFreezeConfig() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVideoPornFreezeConfig",
@@ -463,8 +476,8 @@ func (j *jsiiProxy_OssStockTask) AttrVideoPornFreezeConfig() alicloudroscdkcore.
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrVideoScanLimit() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrVideoScanLimit() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVideoScanLimit",
@@ -473,8 +486,8 @@ func (j *jsiiProxy_OssStockTask) AttrVideoScanLimit() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrVideoScenes() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrVideoScenes() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVideoScenes",
@@ -483,8 +496,8 @@ func (j *jsiiProxy_OssStockTask) AttrVideoScenes() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrVideoTerrorismFreezeConfig() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrVideoTerrorismFreezeConfig() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVideoTerrorismFreezeConfig",
@@ -493,8 +506,8 @@ func (j *jsiiProxy_OssStockTask) AttrVideoTerrorismFreezeConfig() alicloudroscdk
 	return returns
 }
 
-func (j *jsiiProxy_OssStockTask) AttrVideoVoiceAntispamFreezeConfig() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_OssStockTask) AttrVideoVoiceAntispamFreezeConfig() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVideoVoiceAntispamFreezeConfig",
@@ -508,6 +521,16 @@ func (j *jsiiProxy_OssStockTask) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OssStockTask) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -645,17 +668,6 @@ func (j *jsiiProxy_OssStockTask)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_OssStockTask)SetProps(val *OssStockTaskProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_OssStockTask)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -747,6 +759,45 @@ func (o *jsiiProxy_OssStockTask) ApplyRemovalPolicy(policy alicloudroscdkcore.Re
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (o *jsiiProxy_OssStockTask) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		o,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (o *jsiiProxy_OssStockTask) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		o,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (o *jsiiProxy_OssStockTask) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		o,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (o *jsiiProxy_OssStockTask) GeneratePhysicalName() *string {

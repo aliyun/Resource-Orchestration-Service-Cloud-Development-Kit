@@ -13,6 +13,7 @@ export interface CustomResourceProps {
      * Property serviceToken: The service token that was given to the template developer by the service provider to access the service.
      * Allowed values:
      * - Function Compute: acs:fc:<region_id>:<account_id>:services\/<service_name>\/functions\/<function_name>
+     * - Function Compute 3: acs:fc:<region_id>:<account_id>:functions\/<function_name>
      * - MNS Queue: acs:mns:<region_id>:<account_id>:queues\/<queue_name> or acs:mns:<region_id>:<account_id>:\/queues\/<queue_name>
      * - MNS Topic: acs:mns:<region_id>:<account_id>:topics\/<topic_name> or acs:mns:<region_id>:<account_id>:\/topics\/<topic_name>
      * - HTTP&HTTPS: web[options]:<url>
@@ -21,6 +22,7 @@ export interface CustomResourceProps {
      *   - idempotent: indicates that the Create request is idempotent. Update and Delete requests should be always idempotent.
      * Examples:
      *   - acs:fc:cn-hangzhou:123456789:services\/test-service\/functions\/test-function
+     *   - acs:fc:cn-hangzhou:123456789:functions\/test-function
      *   - acs:mns:cn-hangzhou:123456789:queues\/test-queue
      *   - acs:mns:cn-hangzhou:123456789:\/queues\/test-queue
      *   - acs:mns:cn-hangzhou:123456789:topics\/test-topic
@@ -50,20 +52,31 @@ export interface CustomResourceProps {
 }
 
 /**
+ * Represents a `CustomResource`.
+ */
+export interface ICustomResource extends ros.IResource {
+    readonly props: CustomResourceProps;
+
+    /**
+     * Attribute Outputs: Output data received from service provider.
+     */
+    readonly attrOutputs: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::CustomResource`, which is used to create a custom resource.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCustomResource`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-customresource
  */
-export class CustomResource extends ros.Resource {
+export class CustomResource extends ros.Resource implements ICustomResource {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: CustomResourceProps;
+    public readonly props: CustomResourceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Outputs: Output data received from service provider.
      */
-    public readonly attrOutputs: ros.IResolvable;
+    public readonly attrOutputs: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

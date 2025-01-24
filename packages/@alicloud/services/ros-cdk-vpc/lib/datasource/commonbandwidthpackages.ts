@@ -34,25 +34,41 @@ export interface CommonBandwidthPackagesProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::CommonBandwidthPackages`, which is used to query the elastic IP address (EIP) bandwidth plans in a specified region.
+ * Represents a `CommonBandwidthPackages`.
+ */
+export interface ICommonBandwidthPackages extends ros.IResource {
+    readonly props: CommonBandwidthPackagesProps;
+
+    /**
+     * Attribute CommonBandwidthPackageIds: The list of common bandwidth package IDs.
+     */
+    readonly attrCommonBandwidthPackageIds: ros.IResolvable | string;
+
+    /**
+     * Attribute CommonBandwidthPackages: The list of common bandwidth packages.
+     */
+    readonly attrCommonBandwidthPackages: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::CommonBandwidthPackages`, which is used to query the Internet Shared Bandwidth instances in a region.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCommonBandwidthPackages`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-commonbandwidthpackages
  */
-export class CommonBandwidthPackages extends ros.Resource {
+export class CommonBandwidthPackages extends ros.Resource implements ICommonBandwidthPackages {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: CommonBandwidthPackagesProps;
+    public readonly props: CommonBandwidthPackagesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CommonBandwidthPackageIds: The list of common bandwidth package IDs.
      */
-    public readonly attrCommonBandwidthPackageIds: ros.IResolvable;
+    public readonly attrCommonBandwidthPackageIds: ros.IResolvable | string;
 
     /**
      * Attribute CommonBandwidthPackages: The list of common bandwidth packages.
      */
-    public readonly attrCommonBandwidthPackages: ros.IResolvable;
+    public readonly attrCommonBandwidthPackages: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

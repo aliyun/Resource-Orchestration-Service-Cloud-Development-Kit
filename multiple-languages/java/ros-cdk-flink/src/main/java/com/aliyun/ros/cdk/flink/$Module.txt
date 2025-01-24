@@ -1,3 +1,5 @@
+@alicloud/ros-cdk-flink.IInstance=com.aliyun.ros.cdk.flink.IInstance
+@alicloud/ros-cdk-flink.INamespace=com.aliyun.ros.cdk.flink.INamespace
 @alicloud/ros-cdk-flink.Instance=com.aliyun.ros.cdk.flink.Instance
 @alicloud/ros-cdk-flink.InstanceProps=com.aliyun.ros.cdk.flink.InstanceProps
 @alicloud/ros-cdk-flink.Namespace=com.aliyun.ros.cdk.flink.Namespace

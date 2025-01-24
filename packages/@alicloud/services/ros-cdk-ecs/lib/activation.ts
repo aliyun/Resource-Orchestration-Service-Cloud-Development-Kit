@@ -30,6 +30,11 @@ export interface ActivationProps {
     readonly ipAddressRange?: string | ros.IResolvable;
 
     /**
+     * Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosActivation.TagsProperty[];
@@ -41,35 +46,61 @@ export interface ActivationProps {
 }
 
 /**
+ * Represents a `Activation`.
+ */
+export interface IActivation extends ros.IResource {
+    readonly props: ActivationProps;
+
+    /**
+     * Attribute ActivationCode: Activation code.
+     */
+    readonly attrActivationCode: ros.IResolvable | string;
+
+    /**
+     * Attribute ActivationId: Activation code ID.
+     */
+    readonly attrActivationId: ros.IResolvable | string;
+
+    /**
+     * Attribute DeregisteredCount: The number of instances that have been logged out.
+     */
+    readonly attrDeregisteredCount: ros.IResolvable | string;
+
+    /**
+     * Attribute RegisteredCount: The number of registered instances.
+     */
+    readonly attrRegisteredCount: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Activation`, which is used to create an activation code.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosActivation`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-activation
  */
-export class Activation extends ros.Resource {
+export class Activation extends ros.Resource implements IActivation {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ActivationProps;
+    public readonly props: ActivationProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ActivationCode: Activation code.
      */
-    public readonly attrActivationCode: ros.IResolvable;
+    public readonly attrActivationCode: ros.IResolvable | string;
 
     /**
      * Attribute ActivationId: Activation code ID.
      */
-    public readonly attrActivationId: ros.IResolvable;
+    public readonly attrActivationId: ros.IResolvable | string;
 
     /**
      * Attribute DeregisteredCount: The number of instances that have been logged out.
      */
-    public readonly attrDeregisteredCount: ros.IResolvable;
+    public readonly attrDeregisteredCount: ros.IResolvable | string;
 
     /**
      * Attribute RegisteredCount: The number of registered instances.
      */
-    public readonly attrRegisteredCount: ros.IResolvable;
+    public readonly attrRegisteredCount: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -87,6 +118,7 @@ export class Activation extends ros.Resource {
             instanceName: props.instanceName,
             instanceCount: props.instanceCount,
             description: props.description,
+            resourceGroupId: props.resourceGroupId,
             timeToLiveInHours: props.timeToLiveInHours,
             ipAddressRange: props.ipAddressRange,
             tags: props.tags,

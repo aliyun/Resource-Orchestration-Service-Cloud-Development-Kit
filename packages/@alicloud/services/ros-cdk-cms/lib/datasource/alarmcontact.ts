@@ -24,85 +24,161 @@ export interface AlarmContactProps {
 }
 
 /**
+ * Represents a `AlarmContact`.
+ */
+export interface IAlarmContact extends ros.IResource {
+    readonly props: AlarmContactProps;
+
+    /**
+     * Attribute AlarmContactName: AlarmContactName.
+     */
+    readonly attrAlarmContactName: ros.IResolvable | string;
+
+    /**
+     * Attribute ChannelsAliIm: ChannelsAliIM.
+     */
+    readonly attrChannelsAliIm: ros.IResolvable | string;
+
+    /**
+     * Attribute ChannelsDingWebHook: ChannelsDingWebHook.
+     */
+    readonly attrChannelsDingWebHook: ros.IResolvable | string;
+
+    /**
+     * Attribute ChannelsMail: ChannelsMail.
+     */
+    readonly attrChannelsMail: ros.IResolvable | string;
+
+    /**
+     * Attribute ChannelsSms: ChannelsSMS.
+     */
+    readonly attrChannelsSms: ros.IResolvable | string;
+
+    /**
+     * Attribute ChannelsStateAliIm: ChannelsStateAliIM.
+     */
+    readonly attrChannelsStateAliIm: ros.IResolvable | string;
+
+    /**
+     * Attribute ChannelsStateDingWebHook: ChannelsStateDingWebHook.
+     */
+    readonly attrChannelsStateDingWebHook: ros.IResolvable | string;
+
+    /**
+     * Attribute ChannelsStateMail: ChannelsStateMail.
+     */
+    readonly attrChannelsStateMail: ros.IResolvable | string;
+
+    /**
+     * Attribute ChannelsStateSms: ChannelsStateSMS.
+     */
+    readonly attrChannelsStateSms: ros.IResolvable | string;
+
+    /**
+     * Attribute ContactGroups: ContactGroups.
+     */
+    readonly attrContactGroups: ros.IResolvable | string;
+
+    /**
+     * Attribute CreateTime: CreateTime.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Describe: Describe.
+     */
+    readonly attrDescribe: ros.IResolvable | string;
+
+    /**
+     * Attribute Lang: The language type of the alarm.
+     */
+    readonly attrLang: ros.IResolvable | string;
+
+    /**
+     * Attribute UpdateTime: UpdateTime.
+     */
+    readonly attrUpdateTime: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::CMS::AlarmContact`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAlarmContact`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-alarmcontact
  */
-export class AlarmContact extends ros.Resource {
+export class AlarmContact extends ros.Resource implements IAlarmContact {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AlarmContactProps;
+    public readonly props: AlarmContactProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AlarmContactName: AlarmContactName.
      */
-    public readonly attrAlarmContactName: ros.IResolvable;
+    public readonly attrAlarmContactName: ros.IResolvable | string;
 
     /**
      * Attribute ChannelsAliIm: ChannelsAliIM.
      */
-    public readonly attrChannelsAliIm: ros.IResolvable;
+    public readonly attrChannelsAliIm: ros.IResolvable | string;
 
     /**
      * Attribute ChannelsDingWebHook: ChannelsDingWebHook.
      */
-    public readonly attrChannelsDingWebHook: ros.IResolvable;
+    public readonly attrChannelsDingWebHook: ros.IResolvable | string;
 
     /**
      * Attribute ChannelsMail: ChannelsMail.
      */
-    public readonly attrChannelsMail: ros.IResolvable;
+    public readonly attrChannelsMail: ros.IResolvable | string;
 
     /**
      * Attribute ChannelsSms: ChannelsSMS.
      */
-    public readonly attrChannelsSms: ros.IResolvable;
+    public readonly attrChannelsSms: ros.IResolvable | string;
 
     /**
      * Attribute ChannelsStateAliIm: ChannelsStateAliIM.
      */
-    public readonly attrChannelsStateAliIm: ros.IResolvable;
+    public readonly attrChannelsStateAliIm: ros.IResolvable | string;
 
     /**
      * Attribute ChannelsStateDingWebHook: ChannelsStateDingWebHook.
      */
-    public readonly attrChannelsStateDingWebHook: ros.IResolvable;
+    public readonly attrChannelsStateDingWebHook: ros.IResolvable | string;
 
     /**
      * Attribute ChannelsStateMail: ChannelsStateMail.
      */
-    public readonly attrChannelsStateMail: ros.IResolvable;
+    public readonly attrChannelsStateMail: ros.IResolvable | string;
 
     /**
      * Attribute ChannelsStateSms: ChannelsStateSMS.
      */
-    public readonly attrChannelsStateSms: ros.IResolvable;
+    public readonly attrChannelsStateSms: ros.IResolvable | string;
 
     /**
      * Attribute ContactGroups: ContactGroups.
      */
-    public readonly attrContactGroups: ros.IResolvable;
+    public readonly attrContactGroups: ros.IResolvable | string;
 
     /**
      * Attribute CreateTime: CreateTime.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute Describe: Describe.
      */
-    public readonly attrDescribe: ros.IResolvable;
+    public readonly attrDescribe: ros.IResolvable | string;
 
     /**
      * Attribute Lang: The language type of the alarm.
      */
-    public readonly attrLang: ros.IResolvable;
+    public readonly attrLang: ros.IResolvable | string;
 
     /**
      * Attribute UpdateTime: UpdateTime.
      */
-    public readonly attrUpdateTime: ros.IResolvable;
+    public readonly attrUpdateTime: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

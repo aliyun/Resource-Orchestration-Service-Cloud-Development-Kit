@@ -78,60 +78,111 @@ export interface EnvironmentProps {
 }
 
 /**
+ * Represents a `Environment`.
+ */
+export interface IEnvironment extends ros.IResource {
+    readonly props: EnvironmentProps;
+
+    /**
+     * Attribute EnvironmentId: The id of the environment.
+     */
+    readonly attrEnvironmentId: ros.IResolvable | string;
+
+    /**
+     * Attribute EnvironmentName: The name of the environment.
+     */
+    readonly attrEnvironmentName: ros.IResolvable | string;
+
+    /**
+     * Attribute EnvironmentSubType: The subtype of the environment.
+     */
+    readonly attrEnvironmentSubType: ros.IResolvable | string;
+
+    /**
+     * Attribute EnvironmentType: The type of the environment.
+     */
+    readonly attrEnvironmentType: ros.IResolvable | string;
+
+    /**
+     * Attribute FeePackage: The payable resource plan.
+     */
+    readonly attrFeePackage: ros.IResolvable | string;
+
+    /**
+     * Attribute GrafanaWorkspaceId: The ID of the grafana workspace bound to the environment.
+     */
+    readonly attrGrafanaWorkspaceId: ros.IResolvable | string;
+
+    /**
+     * Attribute ManagedType: Specifies whether agents or exporters are managed.
+     */
+    readonly attrManagedType: ros.IResolvable | string;
+
+    /**
+     * Attribute PrometheusInstanceId: The ID of the Prometheus instance.
+     */
+    readonly attrPrometheusInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: The ID of the resource group.
+     */
+    readonly attrResourceGroupId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::Environment`, which is used to create an environment.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEnvironment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-environment
  */
-export class Environment extends ros.Resource {
+export class Environment extends ros.Resource implements IEnvironment {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: EnvironmentProps;
+    public readonly props: EnvironmentProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute EnvironmentId: The id of the environment.
      */
-    public readonly attrEnvironmentId: ros.IResolvable;
+    public readonly attrEnvironmentId: ros.IResolvable | string;
 
     /**
      * Attribute EnvironmentName: The name of the environment.
      */
-    public readonly attrEnvironmentName: ros.IResolvable;
+    public readonly attrEnvironmentName: ros.IResolvable | string;
 
     /**
      * Attribute EnvironmentSubType: The subtype of the environment.
      */
-    public readonly attrEnvironmentSubType: ros.IResolvable;
+    public readonly attrEnvironmentSubType: ros.IResolvable | string;
 
     /**
      * Attribute EnvironmentType: The type of the environment.
      */
-    public readonly attrEnvironmentType: ros.IResolvable;
+    public readonly attrEnvironmentType: ros.IResolvable | string;
 
     /**
      * Attribute FeePackage: The payable resource plan.
      */
-    public readonly attrFeePackage: ros.IResolvable;
+    public readonly attrFeePackage: ros.IResolvable | string;
 
     /**
      * Attribute GrafanaWorkspaceId: The ID of the grafana workspace bound to the environment.
      */
-    public readonly attrGrafanaWorkspaceId: ros.IResolvable;
+    public readonly attrGrafanaWorkspaceId: ros.IResolvable | string;
 
     /**
      * Attribute ManagedType: Specifies whether agents or exporters are managed.
      */
-    public readonly attrManagedType: ros.IResolvable;
+    public readonly attrManagedType: ros.IResolvable | string;
 
     /**
      * Attribute PrometheusInstanceId: The ID of the Prometheus instance.
      */
-    public readonly attrPrometheusInstanceId: ros.IResolvable;
+    public readonly attrPrometheusInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroupId: The ID of the resource group.
      */
-    public readonly attrResourceGroupId: ros.IResolvable;
+    public readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -12,16 +12,26 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::CEN::ChildInstanceRouteEntryToAttachment`, which is used to add a route to a network instance that is connected to an Enterprise Edition transit router.
 type ChildInstanceRouteEntryToAttachment interface {
 	alicloudroscdkcore.Resource
+	IChildInstanceRouteEntryToAttachment
 	// Attribute CenId: The ID of the CEN instance.
-	AttrCenId() alicloudroscdkcore.IResolvable
+	AttrCenId() interface{}
 	// Attribute DestinationCidrBlock: The destination CIDR block of the route.
-	AttrDestinationCidrBlock() alicloudroscdkcore.IResolvable
+	AttrDestinationCidrBlock() interface{}
 	// Attribute RouteTableId: The ID of the route table configured on the network instance.
-	AttrRouteTableId() alicloudroscdkcore.IResolvable
+	AttrRouteTableId() interface{}
 	// Attribute TransitRouterAttachmentId: The ID of the network instance connection.
-	AttrTransitRouterAttachmentId() alicloudroscdkcore.IResolvable
+	AttrTransitRouterAttachmentId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -36,7 +46,6 @@ type ChildInstanceRouteEntryToAttachment interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ChildInstanceRouteEntryToAttachmentProps
-	SetProps(val *ChildInstanceRouteEntryToAttachmentProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -49,6 +58,9 @@ type ChildInstanceRouteEntryToAttachment interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -101,10 +113,11 @@ type ChildInstanceRouteEntryToAttachment interface {
 // The jsii proxy struct for ChildInstanceRouteEntryToAttachment
 type jsiiProxy_ChildInstanceRouteEntryToAttachment struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IChildInstanceRouteEntryToAttachment
 }
 
-func (j *jsiiProxy_ChildInstanceRouteEntryToAttachment) AttrCenId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ChildInstanceRouteEntryToAttachment) AttrCenId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCenId",
@@ -113,8 +126,8 @@ func (j *jsiiProxy_ChildInstanceRouteEntryToAttachment) AttrCenId() alicloudrosc
 	return returns
 }
 
-func (j *jsiiProxy_ChildInstanceRouteEntryToAttachment) AttrDestinationCidrBlock() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ChildInstanceRouteEntryToAttachment) AttrDestinationCidrBlock() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDestinationCidrBlock",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_ChildInstanceRouteEntryToAttachment) AttrDestinationCidrBlock
 	return returns
 }
 
-func (j *jsiiProxy_ChildInstanceRouteEntryToAttachment) AttrRouteTableId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ChildInstanceRouteEntryToAttachment) AttrRouteTableId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRouteTableId",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_ChildInstanceRouteEntryToAttachment) AttrRouteTableId() alicl
 	return returns
 }
 
-func (j *jsiiProxy_ChildInstanceRouteEntryToAttachment) AttrTransitRouterAttachmentId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ChildInstanceRouteEntryToAttachment) AttrTransitRouterAttachmentId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTransitRouterAttachmentId",
@@ -148,6 +161,16 @@ func (j *jsiiProxy_ChildInstanceRouteEntryToAttachment) EnableResourcePropertyCo
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ChildInstanceRouteEntryToAttachment) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -285,17 +308,6 @@ func (j *jsiiProxy_ChildInstanceRouteEntryToAttachment)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ChildInstanceRouteEntryToAttachment)SetProps(val *ChildInstanceRouteEntryToAttachmentProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_ChildInstanceRouteEntryToAttachment)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -387,6 +399,45 @@ func (c *jsiiProxy_ChildInstanceRouteEntryToAttachment) ApplyRemovalPolicy(polic
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (c *jsiiProxy_ChildInstanceRouteEntryToAttachment) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		c,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (c *jsiiProxy_ChildInstanceRouteEntryToAttachment) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		c,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (c *jsiiProxy_ChildInstanceRouteEntryToAttachment) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (c *jsiiProxy_ChildInstanceRouteEntryToAttachment) GeneratePhysicalName() *string {

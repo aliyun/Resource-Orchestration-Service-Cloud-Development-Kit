@@ -139,6 +139,41 @@ func (q *jsiiProxy_Queue) validateSynthesizeParameters(session alicloudroscdkcor
 	return nil
 }
 
+func validateQueue_FromQueueArnParameters(scope alicloudroscdkcore.Construct, id *string, attrArnWithSlash *string) error {
+	if scope == nil {
+		return fmt.Errorf("parameter scope is required, but nil was provided")
+	}
+
+	if id == nil {
+		return fmt.Errorf("parameter id is required, but nil was provided")
+	}
+
+	if attrArnWithSlash == nil {
+		return fmt.Errorf("parameter attrArnWithSlash is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func validateQueue_FromQueueAttributesParameters(scope alicloudroscdkcore.Construct, id *string, attrs *QueueAttributes) error {
+	if scope == nil {
+		return fmt.Errorf("parameter scope is required, but nil was provided")
+	}
+
+	if id == nil {
+		return fmt.Errorf("parameter id is required, but nil was provided")
+	}
+
+	if attrs == nil {
+		return fmt.Errorf("parameter attrs is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(attrs, func() string { return "parameter attrs" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func validateQueue_IsConstructParameters(x interface{}) error {
 	if x == nil {
 		return fmt.Errorf("parameter x is required, but nil was provided")
@@ -158,17 +193,6 @@ func (j *jsiiProxy_Queue) validateSetEnableResourcePropertyConstraintParameters(
 func (j *jsiiProxy_Queue) validateSetIdParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
-	}
-
-	return nil
-}
-
-func (j *jsiiProxy_Queue) validateSetPropsParameters(val *QueueProps) error {
-	if val == nil {
-		return fmt.Errorf("parameter val is required, but nil was provided")
-	}
-	if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
-		return err
 	}
 
 	return nil

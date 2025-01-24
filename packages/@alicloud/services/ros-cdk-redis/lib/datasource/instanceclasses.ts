@@ -81,25 +81,41 @@ export interface InstanceClassesProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::REDIS::InstanceClasses`, which is used to query the types of ApsaraDB for Redis instances.
+ * Represents a `InstanceClasses`.
+ */
+export interface IInstanceClasses extends ros.IResource {
+    readonly props: InstanceClassesProps;
+
+    /**
+     * Attribute InstanceClassIds: The list of db instance class ids.
+     */
+    readonly attrInstanceClassIds: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceClasses: The list of instance classes.
+     */
+    readonly attrInstanceClasses: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::REDIS::InstanceClasses`, which is used to query Tair (Redis OSS-compatible) instance types.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstanceClasses`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instanceclasses
  */
-export class InstanceClasses extends ros.Resource {
+export class InstanceClasses extends ros.Resource implements IInstanceClasses {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InstanceClassesProps;
+    public readonly props: InstanceClassesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceClassIds: The list of db instance class ids.
      */
-    public readonly attrInstanceClassIds: ros.IResolvable;
+    public readonly attrInstanceClassIds: ros.IResolvable | string;
 
     /**
      * Attribute InstanceClasses: The list of instance classes.
      */
-    public readonly attrInstanceClasses: ros.IResolvable;
+    public readonly attrInstanceClasses: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

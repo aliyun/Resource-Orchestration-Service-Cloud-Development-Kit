@@ -84,6 +84,18 @@ func validateRosDbAgent_IsRosResourceParameters(construct alicloudroscdkcore.ICo
 	return nil
 }
 
+func (j *jsiiProxy_RosDbAgent) validateSetCrossAccountRoleNameParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDbAgent) validateSetCrossAccountTypeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosDbAgent) validateSetCrossAccountUserIdParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosDbAgent) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
 	return nil
 }

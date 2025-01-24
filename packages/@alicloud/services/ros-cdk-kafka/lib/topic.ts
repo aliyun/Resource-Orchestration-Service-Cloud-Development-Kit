@@ -85,26 +85,43 @@ export interface TopicProps {
 }
 
 /**
+ * Represents a `Topic`.
+ */
+export interface ITopic extends ros.IResource {
+    readonly props: TopicProps;
+
+    /**
+     * Attribute InstanceId: The ID of the Message Queue for Apache Kafka instance where the topic is located.
+You can call the GetInstanceList operation to query instances.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute Topic: Topic name.
+     */
+    readonly attrTopic: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::KAFKA::Topic`, which is used to create a topic.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTopic`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-topic
  */
-export class Topic extends ros.Resource {
+export class Topic extends ros.Resource implements ITopic {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: TopicProps;
+    public readonly props: TopicProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceId: The ID of the Message Queue for Apache Kafka instance where the topic is located.
 You can call the GetInstanceList operation to query instances.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute Topic: Topic name.
      */
-    public readonly attrTopic: ros.IResolvable;
+    public readonly attrTopic: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

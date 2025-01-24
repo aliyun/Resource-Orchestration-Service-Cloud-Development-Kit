@@ -84,6 +84,38 @@ func validateRosServiceMesh_IsRosResourceParameters(construct alicloudroscdkcore
 	return nil
 }
 
+func (j *jsiiProxy_RosServiceMesh) validateSetAccessLogEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetAccessLogFileParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetAccessLogFormatParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetAccessLogProjectParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetAccessLogServiceEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetAccessLogServiceHostParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetAccessLogServicePortParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetApiServerLoadBalancerSpecParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosServiceMesh) validateSetApiServerPublicEipParameters(val interface{}) error {
 	return nil
 }
@@ -92,7 +124,71 @@ func (j *jsiiProxy_RosServiceMesh) validateSetAuditProjectParameters(val interfa
 	return nil
 }
 
+func (j *jsiiProxy_RosServiceMesh) validateSetAutoRenewParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetAutoRenewPeriodParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetCertChainParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetChargeTypeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetClusterSpecParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetConfigSourceEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetConfigSourceNacosIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetControlPlaneLogEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetControlPlaneLogProjectParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetCrAggregationEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetCustomizedPrometheusParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosServiceMesh) validateSetCustomizedZipkinParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetDnsProxyingEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetDubboFilterEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetEditionParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetEnableAcmgParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetEnableAmbientParameters(val interface{}) error {
 	return nil
 }
 
@@ -100,7 +196,59 @@ func (j *jsiiProxy_RosServiceMesh) validateSetEnableAuditParameters(val interfac
 	return nil
 }
 
+func (j *jsiiProxy_RosServiceMesh) validateSetEnableCrHistoryParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosServiceMesh) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetEnableSdsServerParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetExcludeInboundPortsParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetExcludeIpRangesParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetExcludeOutboundPortsParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetExistingCaCertParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetExistingCaKeyParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetExistingCaTypeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetExistingRootCaCertParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetExistingRootCaKeyParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetFilterGatewayClusterConfigParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetGatewayApiEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetGuestClusterParameters(val interface{}) error {
 	return nil
 }
 
@@ -112,7 +260,31 @@ func (j *jsiiProxy_RosServiceMesh) validateSetIstioVersionParameters(val interfa
 	return nil
 }
 
+func (j *jsiiProxy_RosServiceMesh) validateSetKialiEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetLocalityLbConfParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosServiceMesh) validateSetLocalityLoadBalancingParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetMseEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetMultiBufferEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetMultiBufferPollDelayParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetMysqlFilterEnabledParameters(val interface{}) error {
 	return nil
 }
 
@@ -124,11 +296,31 @@ func (j *jsiiProxy_RosServiceMesh) validateSetOpaParameters(val interface{}) err
 	return nil
 }
 
+func (j *jsiiProxy_RosServiceMesh) validateSetOpaEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosServiceMesh) validateSetOutboundTrafficPolicyParameters(val interface{}) error {
 	return nil
 }
 
+func (j *jsiiProxy_RosServiceMesh) validateSetPeriodParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetPilotLoadBalancerSpecParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosServiceMesh) validateSetPilotPublicEipParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetPlaygroundSceneParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetPrometheusUrlParameters(val interface{}) error {
 	return nil
 }
 
@@ -148,11 +340,19 @@ func (j *jsiiProxy_RosServiceMesh) validateSetTracingParameters(val interface{})
 	return nil
 }
 
+func (j *jsiiProxy_RosServiceMesh) validateSetUseExistingCaParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosServiceMesh) validateSetVpcIdParameters(val interface{}) error {
 	return nil
 }
 
 func (j *jsiiProxy_RosServiceMesh) validateSetVSwitchesParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosServiceMesh) validateSetWebAssemblyFilterEnabledParameters(val interface{}) error {
 	return nil
 }
 

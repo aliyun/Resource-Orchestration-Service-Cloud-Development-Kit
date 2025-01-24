@@ -24,55 +24,101 @@ export interface FlowProps {
 }
 
 /**
+ * Represents a `Flow`.
+ */
+export interface IFlow extends ros.IResource {
+    readonly props: FlowProps;
+
+    /**
+     * Attribute CreateTime: The time when the flow was created.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Definition: The flow definition, which follows the flow definition language (FDL) syntax standard. Considering compatibility, the system supports the two flow definition specifications.
+     */
+    readonly attrDefinition: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: The description of the flow.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute FlowId: The unique ID of the flow.
+     */
+    readonly attrFlowId: ros.IResolvable | string;
+
+    /**
+     * Attribute FlowName: The name of the flow. The name must be unique within a region for the same Alibaba Cloud account.
+     */
+    readonly attrFlowName: ros.IResolvable | string;
+
+    /**
+     * Attribute LastModifiedTime: The time when the flow was last modified.
+     */
+    readonly attrLastModifiedTime: ros.IResolvable | string;
+
+    /**
+     * Attribute RoleArn: The Alibaba Cloud resource name (ARN) of the authorized role on which the execution of the flow relies. During the execution of the flow, CloudFlow assumes the role to call API operations of relevant services.
+     */
+    readonly attrRoleArn: ros.IResolvable | string;
+
+    /**
+     * Attribute Type: The type of the flow. Valid values are FDL or DEFAULT.
+     */
+    readonly attrType: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::FNF::Flow`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFlow`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fnf-flow
  */
-export class Flow extends ros.Resource {
+export class Flow extends ros.Resource implements IFlow {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: FlowProps;
+    public readonly props: FlowProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateTime: The time when the flow was created.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute Definition: The flow definition, which follows the flow definition language (FDL) syntax standard. Considering compatibility, the system supports the two flow definition specifications.
      */
-    public readonly attrDefinition: ros.IResolvable;
+    public readonly attrDefinition: ros.IResolvable | string;
 
     /**
      * Attribute Description: The description of the flow.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute FlowId: The unique ID of the flow.
      */
-    public readonly attrFlowId: ros.IResolvable;
+    public readonly attrFlowId: ros.IResolvable | string;
 
     /**
      * Attribute FlowName: The name of the flow. The name must be unique within a region for the same Alibaba Cloud account.
      */
-    public readonly attrFlowName: ros.IResolvable;
+    public readonly attrFlowName: ros.IResolvable | string;
 
     /**
      * Attribute LastModifiedTime: The time when the flow was last modified.
      */
-    public readonly attrLastModifiedTime: ros.IResolvable;
+    public readonly attrLastModifiedTime: ros.IResolvable | string;
 
     /**
      * Attribute RoleArn: The Alibaba Cloud resource name (ARN) of the authorized role on which the execution of the flow relies. During the execution of the flow, CloudFlow assumes the role to call API operations of relevant services.
      */
-    public readonly attrRoleArn: ros.IResolvable;
+    public readonly attrRoleArn: ros.IResolvable | string;
 
     /**
      * Attribute Type: The type of the flow. Valid values are FDL or DEFAULT.
      */
-    public readonly attrType: ros.IResolvable;
+    public readonly attrType: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -12,116 +12,126 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::LaunchTemplate`, which is used to query the information about a launch template.
 type LaunchTemplate interface {
 	alicloudroscdkcore.Resource
+	ILaunchTemplate
 	// Attribute AutoReleaseTime: Automatic release time (UTC).
 	//
 	// The format is: yyyy-MM-ddTHH:mm:ssZ.
-	AttrAutoReleaseTime() alicloudroscdkcore.IResolvable
+	AttrAutoReleaseTime() interface{}
 	// Attribute CreatedBy: The creator of the launch template.
-	AttrCreatedBy() alicloudroscdkcore.IResolvable
+	AttrCreatedBy() interface{}
 	// Attribute CreateTime: The time when the instance launch template was created.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute DataDisk: Data disk information list.
-	AttrDataDisk() alicloudroscdkcore.IResolvable
+	AttrDataDisk() interface{}
 	// Attribute DefaultVersionNumber: The default version number of the template.
-	AttrDefaultVersionNumber() alicloudroscdkcore.IResolvable
+	AttrDefaultVersionNumber() interface{}
 	// Attribute DeletionProtection: Instance deletion protection attribute.
-	AttrDeletionProtection() alicloudroscdkcore.IResolvable
+	AttrDeletionProtection() interface{}
 	// Attribute DeploymentSetId: The ID of the deployment set.
-	AttrDeploymentSetId() alicloudroscdkcore.IResolvable
+	AttrDeploymentSetId() interface{}
 	// Attribute Description: Instance description.
 	//
 	// 2 to 256 English or Chinese characters in length and cannot start with' http:// 'or' https.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute HostName: The hostname of the instance.
-	AttrHostName() alicloudroscdkcore.IResolvable
+	AttrHostName() interface{}
 	// Attribute ImageId: The ID of the image.
-	AttrImageId() alicloudroscdkcore.IResolvable
+	AttrImageId() interface{}
 	// Attribute ImageOwnerAlias: The source of the image.
-	AttrImageOwnerAlias() alicloudroscdkcore.IResolvable
+	AttrImageOwnerAlias() interface{}
 	// Attribute InstanceChargeType: The billing method of the instance.
-	AttrInstanceChargeType() alicloudroscdkcore.IResolvable
+	AttrInstanceChargeType() interface{}
 	// Attribute InstanceName: The name of the instance.
 	//
 	// The length is 2~128 English or Chinese characters. It must start with a large or small letter or Chinese, and cannot start with' http:// 'or' https. It can contain numbers, colons (:), underscores (_), or dashes (-).
-	AttrInstanceName() alicloudroscdkcore.IResolvable
+	AttrInstanceName() interface{}
 	// Attribute InstanceType: The instance type.
-	AttrInstanceType() alicloudroscdkcore.IResolvable
+	AttrInstanceType() interface{}
 	// Attribute InternetChargeType: Network billing method.
-	AttrInternetChargeType() alicloudroscdkcore.IResolvable
+	AttrInternetChargeType() interface{}
 	// Attribute InternetMaxBandwidthIn: The maximum public inbound bandwidth, in Mbit/s.
-	AttrInternetMaxBandwidthIn() alicloudroscdkcore.IResolvable
+	AttrInternetMaxBandwidthIn() interface{}
 	// Attribute InternetMaxBandwidthOut: The maximum outbound bandwidth of the public network.
 	//
 	// The unit is Mbit/s. The value range is 0~100.
-	AttrInternetMaxBandwidthOut() alicloudroscdkcore.IResolvable
+	AttrInternetMaxBandwidthOut() interface{}
 	// Attribute IoOptimized: Whether to optimize the instance for I/O.
-	AttrIoOptimized() alicloudroscdkcore.IResolvable
+	AttrIoOptimized() interface{}
 	// Attribute Ipv6AddressCount: Specify the number of randomly generated IPv6 addresses for the primary network card.
 	//
 	// The value range is 1 to 10.
-	AttrIpv6AddressCount() alicloudroscdkcore.IResolvable
+	AttrIpv6AddressCount() interface{}
 	// Attribute KeyPairName: The name of the key pair.
-	AttrKeyPairName() alicloudroscdkcore.IResolvable
+	AttrKeyPairName() interface{}
 	// Attribute LatestVersionNumber: The latest version number of the template.
-	AttrLatestVersionNumber() alicloudroscdkcore.IResolvable
+	AttrLatestVersionNumber() interface{}
 	// Attribute LaunchTemplateId: The ID of the launch template.
-	AttrLaunchTemplateId() alicloudroscdkcore.IResolvable
+	AttrLaunchTemplateId() interface{}
 	// Attribute LaunchTemplateName: The name of the launch template.
-	AttrLaunchTemplateName() alicloudroscdkcore.IResolvable
+	AttrLaunchTemplateName() interface{}
 	// Attribute ModifiedTime: The time when the launch template was modified.
-	AttrModifiedTime() alicloudroscdkcore.IResolvable
+	AttrModifiedTime() interface{}
 	// Attribute NetworkInterface: The elastic network interfaces (ENIs).
-	AttrNetworkInterface() alicloudroscdkcore.IResolvable
+	AttrNetworkInterface() interface{}
 	// Attribute NetworkType: The network type of the instance.
-	AttrNetworkType() alicloudroscdkcore.IResolvable
+	AttrNetworkType() interface{}
 	// Attribute PasswordInherit: Whether to use the password preset by the image.
-	AttrPasswordInherit() alicloudroscdkcore.IResolvable
+	AttrPasswordInherit() interface{}
 	// Attribute Period: The duration of the purchase of resources, in months.
 	//
 	// When creating an instance, the parameter 'InstanceChargeType' takes effect and is required only when the value of the parameter 'PrePaid' is 'PrePaid. Value range: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36, 48, 60.
-	AttrPeriod() alicloudroscdkcore.IResolvable
+	AttrPeriod() interface{}
 	// Attribute PrivateIpAddress: The private IP address of the instance.
-	AttrPrivateIpAddress() alicloudroscdkcore.IResolvable
+	AttrPrivateIpAddress() interface{}
 	// Attribute RamRoleName: The instance RAM role name.
-	AttrRamRoleName() alicloudroscdkcore.IResolvable
+	AttrRamRoleName() interface{}
 	// Attribute ResourceGroupId: The ID of the resource group to which the instance, Elastic Block Storage (EBS) device, and ENI belong.
-	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() interface{}
 	// Attribute SecurityEnhancementStrategy: Whether to turn on security reinforcement for the operating system.
-	AttrSecurityEnhancementStrategy() alicloudroscdkcore.IResolvable
+	AttrSecurityEnhancementStrategy() interface{}
 	// Attribute SecurityGroupIds: The IDs of one or more security groups to which you want to add the instance.
-	AttrSecurityGroupIds() alicloudroscdkcore.IResolvable
+	AttrSecurityGroupIds() interface{}
 	// Attribute SpotPriceLimit: Set the maximum price per hour for the instance.
 	//
 	// The maximum number of 3 decimal places is supported. The value of the parameter 'SpotStrategy' is 'SpotWithPriceLimit.
-	AttrSpotPriceLimit() alicloudroscdkcore.IResolvable
+	AttrSpotPriceLimit() interface{}
 	// Attribute SpotStrategy: The preemption policy for a pay-as-you-go instance.
 	//
 	// This parameter takes effect when the value of the parameter 'InstanceChargeType' is 'PostPaid.
-	AttrSpotStrategy() alicloudroscdkcore.IResolvable
+	AttrSpotStrategy() interface{}
 	// Attribute SystemDisk: System disk configuration.
-	AttrSystemDisk() alicloudroscdkcore.IResolvable
+	AttrSystemDisk() interface{}
 	// Attribute Tags: The tags of the launch template.
-	AttrTags() alicloudroscdkcore.IResolvable
+	AttrTags() interface{}
 	// Attribute TemplateResourceGroupId: Q.
-	AttrTemplateResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrTemplateResourceGroupId() interface{}
 	// Attribute TemplateTag: The tags of the launch template.
-	AttrTemplateTag() alicloudroscdkcore.IResolvable
+	AttrTemplateTag() interface{}
 	// Attribute UserData: The user-defined data of the instance must be encoded in Base64.
 	//
 	// The maximum original data is 16KB.
-	AttrUserData() alicloudroscdkcore.IResolvable
+	AttrUserData() interface{}
 	// Attribute VersionDescription: Instance launch template version description.
 	//
 	// 2 to 256 English or Chinese characters in length and cannot start with' http:// 'or' https.
-	AttrVersionDescription() alicloudroscdkcore.IResolvable
+	AttrVersionDescription() interface{}
 	// Attribute VpcId: VPC Id.
-	AttrVpcId() alicloudroscdkcore.IResolvable
+	AttrVpcId() interface{}
 	// Attribute VSwitchId: The ID of the vSwitch.
-	AttrVSwitchId() alicloudroscdkcore.IResolvable
+	AttrVSwitchId() interface{}
 	// Attribute ZoneId: The ID of the zone to which the instance belongs.
-	AttrZoneId() alicloudroscdkcore.IResolvable
+	AttrZoneId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -136,7 +146,6 @@ type LaunchTemplate interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *LaunchTemplateProps
-	SetProps(val *LaunchTemplateProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -149,6 +158,9 @@ type LaunchTemplate interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -201,10 +213,11 @@ type LaunchTemplate interface {
 // The jsii proxy struct for LaunchTemplate
 type jsiiProxy_LaunchTemplate struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ILaunchTemplate
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrAutoReleaseTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrAutoReleaseTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAutoReleaseTime",
@@ -213,8 +226,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrAutoReleaseTime() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrCreatedBy() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrCreatedBy() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreatedBy",
@@ -223,8 +236,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrCreatedBy() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -233,8 +246,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrCreateTime() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrDataDisk() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrDataDisk() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDataDisk",
@@ -243,8 +256,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrDataDisk() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrDefaultVersionNumber() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrDefaultVersionNumber() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDefaultVersionNumber",
@@ -253,8 +266,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrDefaultVersionNumber() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrDeletionProtection() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrDeletionProtection() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDeletionProtection",
@@ -263,8 +276,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrDeletionProtection() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrDeploymentSetId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrDeploymentSetId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDeploymentSetId",
@@ -273,8 +286,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrDeploymentSetId() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -283,8 +296,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrDescription() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrHostName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrHostName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHostName",
@@ -293,8 +306,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrHostName() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrImageId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrImageId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrImageId",
@@ -303,8 +316,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrImageId() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrImageOwnerAlias() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrImageOwnerAlias() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrImageOwnerAlias",
@@ -313,8 +326,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrImageOwnerAlias() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrInstanceChargeType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrInstanceChargeType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceChargeType",
@@ -323,8 +336,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrInstanceChargeType() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrInstanceName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrInstanceName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceName",
@@ -333,8 +346,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrInstanceName() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrInstanceType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrInstanceType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceType",
@@ -343,8 +356,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrInstanceType() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrInternetChargeType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrInternetChargeType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInternetChargeType",
@@ -353,8 +366,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrInternetChargeType() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrInternetMaxBandwidthIn() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrInternetMaxBandwidthIn() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInternetMaxBandwidthIn",
@@ -363,8 +376,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrInternetMaxBandwidthIn() alicloudroscdkco
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrInternetMaxBandwidthOut() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrInternetMaxBandwidthOut() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInternetMaxBandwidthOut",
@@ -373,8 +386,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrInternetMaxBandwidthOut() alicloudroscdkc
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrIoOptimized() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrIoOptimized() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIoOptimized",
@@ -383,8 +396,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrIoOptimized() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrIpv6AddressCount() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrIpv6AddressCount() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIpv6AddressCount",
@@ -393,8 +406,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrIpv6AddressCount() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrKeyPairName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrKeyPairName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrKeyPairName",
@@ -403,8 +416,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrKeyPairName() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrLatestVersionNumber() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrLatestVersionNumber() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLatestVersionNumber",
@@ -413,8 +426,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrLatestVersionNumber() alicloudroscdkcore.
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrLaunchTemplateId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrLaunchTemplateId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLaunchTemplateId",
@@ -423,8 +436,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrLaunchTemplateId() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrLaunchTemplateName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrLaunchTemplateName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLaunchTemplateName",
@@ -433,8 +446,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrLaunchTemplateName() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrModifiedTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrModifiedTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrModifiedTime",
@@ -443,8 +456,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrModifiedTime() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrNetworkInterface() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrNetworkInterface() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNetworkInterface",
@@ -453,8 +466,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrNetworkInterface() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrNetworkType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrNetworkType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNetworkType",
@@ -463,8 +476,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrNetworkType() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrPasswordInherit() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrPasswordInherit() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPasswordInherit",
@@ -473,8 +486,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrPasswordInherit() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrPeriod() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrPeriod() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPeriod",
@@ -483,8 +496,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrPeriod() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrPrivateIpAddress() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrPrivateIpAddress() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPrivateIpAddress",
@@ -493,8 +506,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrPrivateIpAddress() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrRamRoleName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrRamRoleName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRamRoleName",
@@ -503,8 +516,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrRamRoleName() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupId",
@@ -513,8 +526,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrResourceGroupId() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrSecurityEnhancementStrategy() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrSecurityEnhancementStrategy() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSecurityEnhancementStrategy",
@@ -523,8 +536,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrSecurityEnhancementStrategy() alicloudros
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrSecurityGroupIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrSecurityGroupIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSecurityGroupIds",
@@ -533,8 +546,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrSecurityGroupIds() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrSpotPriceLimit() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrSpotPriceLimit() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSpotPriceLimit",
@@ -543,8 +556,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrSpotPriceLimit() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrSpotStrategy() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrSpotStrategy() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSpotStrategy",
@@ -553,8 +566,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrSpotStrategy() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrSystemDisk() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrSystemDisk() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSystemDisk",
@@ -563,8 +576,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrSystemDisk() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrTags() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrTags() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTags",
@@ -573,8 +586,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrTags() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrTemplateResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrTemplateResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTemplateResourceGroupId",
@@ -583,8 +596,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrTemplateResourceGroupId() alicloudroscdkc
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrTemplateTag() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrTemplateTag() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTemplateTag",
@@ -593,8 +606,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrTemplateTag() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrUserData() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrUserData() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUserData",
@@ -603,8 +616,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrUserData() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrVersionDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrVersionDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVersionDescription",
@@ -613,8 +626,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrVersionDescription() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrVpcId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrVpcId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVpcId",
@@ -623,8 +636,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrVpcId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrVSwitchId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrVSwitchId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVSwitchId",
@@ -633,8 +646,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrVSwitchId() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrZoneId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrZoneId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrZoneId",
@@ -648,6 +661,16 @@ func (j *jsiiProxy_LaunchTemplate) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LaunchTemplate) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -785,17 +808,6 @@ func (j *jsiiProxy_LaunchTemplate)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_LaunchTemplate)SetProps(val *LaunchTemplateProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_LaunchTemplate)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -887,6 +899,45 @@ func (l *jsiiProxy_LaunchTemplate) ApplyRemovalPolicy(policy alicloudroscdkcore.
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (l *jsiiProxy_LaunchTemplate) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		l,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (l *jsiiProxy_LaunchTemplate) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		l,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (l *jsiiProxy_LaunchTemplate) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		l,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (l *jsiiProxy_LaunchTemplate) GeneratePhysicalName() *string {

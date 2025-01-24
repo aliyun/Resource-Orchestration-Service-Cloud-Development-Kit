@@ -32,20 +32,31 @@ export interface ImageSharePermissionProps {
 }
 
 /**
+ * Represents a `ImageSharePermission`.
+ */
+export interface IImageSharePermission extends ros.IResource {
+    readonly props: ImageSharePermissionProps;
+
+    /**
+     * Attribute ImageId: The shared custom image ID.
+     */
+    readonly attrImageId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::ImageSharePermission`, which is used to manage the share permissions on a custom image.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosImageSharePermission`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-imagesharepermission
  */
-export class ImageSharePermission extends ros.Resource {
+export class ImageSharePermission extends ros.Resource implements IImageSharePermission {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ImageSharePermissionProps;
+    public readonly props: ImageSharePermissionProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ImageId: The shared custom image ID.
      */
-    public readonly attrImageId: ros.IResolvable;
+    public readonly attrImageId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

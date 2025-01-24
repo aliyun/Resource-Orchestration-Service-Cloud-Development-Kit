@@ -190,180 +190,351 @@ export interface OssStockTaskProps {
 }
 
 /**
+ * Represents a `OssStockTask`.
+ */
+export interface IOssStockTask extends ros.IResource {
+    readonly props: OssStockTaskProps;
+
+    /**
+     * Attribute AudioAntispamFreezeConfig: Voice auto freeze configuration.
+     */
+    readonly attrAudioAntispamFreezeConfig: ros.IResolvable | string;
+
+    /**
+     * Attribute AudioAutoFreezeOpened: Audio detection auto freeze switch. Value: true: automatically freeze, false: not automatically freeze.
+     */
+    readonly attrAudioAutoFreezeOpened: ros.IResolvable | string;
+
+    /**
+     * Attribute AudioMaxSize: Resource property field representing the maximum size of a single audio.
+     */
+    readonly attrAudioMaxSize: ros.IResolvable | string;
+
+    /**
+     * Attribute AudioOpened: oss stock scan task detect audio.
+     */
+    readonly attrAudioOpened: ros.IResolvable | string;
+
+    /**
+     * Attribute AudioScanLimit: The upper limit of voice scan in the oss stock scan task. The default value is 1000/Bucket.
+     */
+    readonly attrAudioScanLimit: ros.IResolvable | string;
+
+    /**
+     * Attribute AudioScenes: The audio detection scenarios included in the oss stock scan task. Set the value to antispam.
+     */
+    readonly attrAudioScenes: ros.IResolvable | string;
+
+    /**
+     * Attribute AutoFreezeType: Automatic freeze type.
+     */
+    readonly attrAutoFreezeType: ros.IResolvable | string;
+
+    /**
+     * Attribute BizType: Business scenarios used by the oss stock scan task.
+     */
+    readonly attrBizType: ros.IResolvable | string;
+
+    /**
+     * Attribute Buckets: The bucket configuration list of the oss stock scan task.
+     */
+    readonly attrBuckets: ros.IResolvable | string;
+
+    /**
+     * Attribute CallbackId: The ID of the primary key of the notification message bound to the oss stock scan task.
+     */
+    readonly attrCallbackId: ros.IResolvable | string;
+
+    /**
+     * Attribute EndDate: The end time of the file upload time range indicates the scanning of files uploaded before this time point.
+     */
+    readonly attrEndDate: ros.IResolvable | string;
+
+    /**
+     * Attribute ImageAdFreezeConfig: Picture automatically freezes the configuration of ad scenes.
+     */
+    readonly attrImageAdFreezeConfig: ros.IResolvable | string;
+
+    /**
+     * Attribute ImageAutoFreezeOpened: Picture detection auto freeze switch. Value: true: auto freeze, false: not auto freeze.
+     */
+    readonly attrImageAutoFreezeOpened: ros.IResolvable | string;
+
+    /**
+     * Attribute ImageLiveFreezeConfig: Picture automatic freezing live scene configuration.
+     */
+    readonly attrImageLiveFreezeConfig: ros.IResolvable | string;
+
+    /**
+     * Attribute ImageOpened: oss stock scan task detect images.
+     */
+    readonly attrImageOpened: ros.IResolvable | string;
+
+    /**
+     * Attribute ImagePornFreezeConfig: Picture automatic freezing porn scene configuration.
+     */
+    readonly attrImagePornFreezeConfig: ros.IResolvable | string;
+
+    /**
+     * Attribute ImageScanLimit: The upper limit for scanning images in the oss stock scan task.
+     */
+    readonly attrImageScanLimit: ros.IResolvable | string;
+
+    /**
+     * Attribute ImageScenes: The image moderation scenario included in the oss stock scan task.
+     */
+    readonly attrImageScenes: ros.IResolvable | string;
+
+    /**
+     * Attribute ImageTerrorismFreezeConfig: The picture automatically freezes the configuration of terrorism scenes.
+     */
+    readonly attrImageTerrorismFreezeConfig: ros.IResolvable | string;
+
+    /**
+     * Attribute ScanImageNoFileType: Whether the oss stock scan task detects images with file names without suffixes.
+     */
+    readonly attrScanImageNoFileType: ros.IResolvable | string;
+
+    /**
+     * Attribute StartDate: The start time of the file upload time range represents the files uploaded after scanning this time point.
+     */
+    readonly attrStartDate: ros.IResolvable | string;
+
+    /**
+     * Attribute VideoAdFreezeConfig: The video automatically freezes the configuration of ad scenarios.
+     */
+    readonly attrVideoAdFreezeConfig: ros.IResolvable | string;
+
+    /**
+     * Attribute VideoAutoFreezeOpened: Video detection auto freeze switch. Value: true: automatically freeze, false: not automatically freeze.
+     */
+    readonly attrVideoAutoFreezeOpened: ros.IResolvable | string;
+
+    /**
+     * Attribute VideoFrameInterval: Resource attribute field representing the framing frequency.
+     */
+    readonly attrVideoFrameInterval: ros.IResolvable | string;
+
+    /**
+     * Attribute VideoLiveFreezeConfig: Video automatic freeze live scene configuration.
+     */
+    readonly attrVideoLiveFreezeConfig: ros.IResolvable | string;
+
+    /**
+     * Attribute VideoMaxFrames: A resource attribute field that represents the upper limit of a single video frame cut.
+     */
+    readonly attrVideoMaxFrames: ros.IResolvable | string;
+
+    /**
+     * Attribute VideoMaxSize: Resource property field representing the maximum size of a single video.
+     */
+    readonly attrVideoMaxSize: ros.IResolvable | string;
+
+    /**
+     * Attribute VideoOpened: oss stock scan task detect video.
+     */
+    readonly attrVideoOpened: ros.IResolvable | string;
+
+    /**
+     * Attribute VideoPornFreezeConfig: Video automatic freezing porn scene configuration.
+     */
+    readonly attrVideoPornFreezeConfig: ros.IResolvable | string;
+
+    /**
+     * Attribute VideoScanLimit: The upper limit of video scanning in the oss stock scan task. The default value is 1000/Bucket.
+     */
+    readonly attrVideoScanLimit: ros.IResolvable | string;
+
+    /**
+     * Attribute VideoScenes: The video detection scenarios included in the oss stock scan task.
+     */
+    readonly attrVideoScenes: ros.IResolvable | string;
+
+    /**
+     * Attribute VideoTerrorismFreezeConfig: The video automatically freezes the configuration of terrorism scenes.
+     */
+    readonly attrVideoTerrorismFreezeConfig: ros.IResolvable | string;
+
+    /**
+     * Attribute VideoVoiceAntispamFreezeConfig: Voice auto freeze configuration in video.
+     */
+    readonly attrVideoVoiceAntispamFreezeConfig: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::Aligreen::OssStockTask`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosOssStockTask`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-ossstocktask
  */
-export class OssStockTask extends ros.Resource {
+export class OssStockTask extends ros.Resource implements IOssStockTask {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: OssStockTaskProps;
+    public readonly props: OssStockTaskProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AudioAntispamFreezeConfig: Voice auto freeze configuration.
      */
-    public readonly attrAudioAntispamFreezeConfig: ros.IResolvable;
+    public readonly attrAudioAntispamFreezeConfig: ros.IResolvable | string;
 
     /**
      * Attribute AudioAutoFreezeOpened: Audio detection auto freeze switch. Value: true: automatically freeze, false: not automatically freeze.
      */
-    public readonly attrAudioAutoFreezeOpened: ros.IResolvable;
+    public readonly attrAudioAutoFreezeOpened: ros.IResolvable | string;
 
     /**
      * Attribute AudioMaxSize: Resource property field representing the maximum size of a single audio.
      */
-    public readonly attrAudioMaxSize: ros.IResolvable;
+    public readonly attrAudioMaxSize: ros.IResolvable | string;
 
     /**
      * Attribute AudioOpened: oss stock scan task detect audio.
      */
-    public readonly attrAudioOpened: ros.IResolvable;
+    public readonly attrAudioOpened: ros.IResolvable | string;
 
     /**
      * Attribute AudioScanLimit: The upper limit of voice scan in the oss stock scan task. The default value is 1000/Bucket.
      */
-    public readonly attrAudioScanLimit: ros.IResolvable;
+    public readonly attrAudioScanLimit: ros.IResolvable | string;
 
     /**
      * Attribute AudioScenes: The audio detection scenarios included in the oss stock scan task. Set the value to antispam.
      */
-    public readonly attrAudioScenes: ros.IResolvable;
+    public readonly attrAudioScenes: ros.IResolvable | string;
 
     /**
      * Attribute AutoFreezeType: Automatic freeze type.
      */
-    public readonly attrAutoFreezeType: ros.IResolvable;
+    public readonly attrAutoFreezeType: ros.IResolvable | string;
 
     /**
      * Attribute BizType: Business scenarios used by the oss stock scan task.
      */
-    public readonly attrBizType: ros.IResolvable;
+    public readonly attrBizType: ros.IResolvable | string;
 
     /**
      * Attribute Buckets: The bucket configuration list of the oss stock scan task.
      */
-    public readonly attrBuckets: ros.IResolvable;
+    public readonly attrBuckets: ros.IResolvable | string;
 
     /**
      * Attribute CallbackId: The ID of the primary key of the notification message bound to the oss stock scan task.
      */
-    public readonly attrCallbackId: ros.IResolvable;
+    public readonly attrCallbackId: ros.IResolvable | string;
 
     /**
      * Attribute EndDate: The end time of the file upload time range indicates the scanning of files uploaded before this time point.
      */
-    public readonly attrEndDate: ros.IResolvable;
+    public readonly attrEndDate: ros.IResolvable | string;
 
     /**
      * Attribute ImageAdFreezeConfig: Picture automatically freezes the configuration of ad scenes.
      */
-    public readonly attrImageAdFreezeConfig: ros.IResolvable;
+    public readonly attrImageAdFreezeConfig: ros.IResolvable | string;
 
     /**
      * Attribute ImageAutoFreezeOpened: Picture detection auto freeze switch. Value: true: auto freeze, false: not auto freeze.
      */
-    public readonly attrImageAutoFreezeOpened: ros.IResolvable;
+    public readonly attrImageAutoFreezeOpened: ros.IResolvable | string;
 
     /**
      * Attribute ImageLiveFreezeConfig: Picture automatic freezing live scene configuration.
      */
-    public readonly attrImageLiveFreezeConfig: ros.IResolvable;
+    public readonly attrImageLiveFreezeConfig: ros.IResolvable | string;
 
     /**
      * Attribute ImageOpened: oss stock scan task detect images.
      */
-    public readonly attrImageOpened: ros.IResolvable;
+    public readonly attrImageOpened: ros.IResolvable | string;
 
     /**
      * Attribute ImagePornFreezeConfig: Picture automatic freezing porn scene configuration.
      */
-    public readonly attrImagePornFreezeConfig: ros.IResolvable;
+    public readonly attrImagePornFreezeConfig: ros.IResolvable | string;
 
     /**
      * Attribute ImageScanLimit: The upper limit for scanning images in the oss stock scan task.
      */
-    public readonly attrImageScanLimit: ros.IResolvable;
+    public readonly attrImageScanLimit: ros.IResolvable | string;
 
     /**
      * Attribute ImageScenes: The image moderation scenario included in the oss stock scan task.
      */
-    public readonly attrImageScenes: ros.IResolvable;
+    public readonly attrImageScenes: ros.IResolvable | string;
 
     /**
      * Attribute ImageTerrorismFreezeConfig: The picture automatically freezes the configuration of terrorism scenes.
      */
-    public readonly attrImageTerrorismFreezeConfig: ros.IResolvable;
+    public readonly attrImageTerrorismFreezeConfig: ros.IResolvable | string;
 
     /**
      * Attribute ScanImageNoFileType: Whether the oss stock scan task detects images with file names without suffixes.
      */
-    public readonly attrScanImageNoFileType: ros.IResolvable;
+    public readonly attrScanImageNoFileType: ros.IResolvable | string;
 
     /**
      * Attribute StartDate: The start time of the file upload time range represents the files uploaded after scanning this time point.
      */
-    public readonly attrStartDate: ros.IResolvable;
+    public readonly attrStartDate: ros.IResolvable | string;
 
     /**
      * Attribute VideoAdFreezeConfig: The video automatically freezes the configuration of ad scenarios.
      */
-    public readonly attrVideoAdFreezeConfig: ros.IResolvable;
+    public readonly attrVideoAdFreezeConfig: ros.IResolvable | string;
 
     /**
      * Attribute VideoAutoFreezeOpened: Video detection auto freeze switch. Value: true: automatically freeze, false: not automatically freeze.
      */
-    public readonly attrVideoAutoFreezeOpened: ros.IResolvable;
+    public readonly attrVideoAutoFreezeOpened: ros.IResolvable | string;
 
     /**
      * Attribute VideoFrameInterval: Resource attribute field representing the framing frequency.
      */
-    public readonly attrVideoFrameInterval: ros.IResolvable;
+    public readonly attrVideoFrameInterval: ros.IResolvable | string;
 
     /**
      * Attribute VideoLiveFreezeConfig: Video automatic freeze live scene configuration.
      */
-    public readonly attrVideoLiveFreezeConfig: ros.IResolvable;
+    public readonly attrVideoLiveFreezeConfig: ros.IResolvable | string;
 
     /**
      * Attribute VideoMaxFrames: A resource attribute field that represents the upper limit of a single video frame cut.
      */
-    public readonly attrVideoMaxFrames: ros.IResolvable;
+    public readonly attrVideoMaxFrames: ros.IResolvable | string;
 
     /**
      * Attribute VideoMaxSize: Resource property field representing the maximum size of a single video.
      */
-    public readonly attrVideoMaxSize: ros.IResolvable;
+    public readonly attrVideoMaxSize: ros.IResolvable | string;
 
     /**
      * Attribute VideoOpened: oss stock scan task detect video.
      */
-    public readonly attrVideoOpened: ros.IResolvable;
+    public readonly attrVideoOpened: ros.IResolvable | string;
 
     /**
      * Attribute VideoPornFreezeConfig: Video automatic freezing porn scene configuration.
      */
-    public readonly attrVideoPornFreezeConfig: ros.IResolvable;
+    public readonly attrVideoPornFreezeConfig: ros.IResolvable | string;
 
     /**
      * Attribute VideoScanLimit: The upper limit of video scanning in the oss stock scan task. The default value is 1000/Bucket.
      */
-    public readonly attrVideoScanLimit: ros.IResolvable;
+    public readonly attrVideoScanLimit: ros.IResolvable | string;
 
     /**
      * Attribute VideoScenes: The video detection scenarios included in the oss stock scan task.
      */
-    public readonly attrVideoScenes: ros.IResolvable;
+    public readonly attrVideoScenes: ros.IResolvable | string;
 
     /**
      * Attribute VideoTerrorismFreezeConfig: The video automatically freezes the configuration of terrorism scenes.
      */
-    public readonly attrVideoTerrorismFreezeConfig: ros.IResolvable;
+    public readonly attrVideoTerrorismFreezeConfig: ros.IResolvable | string;
 
     /**
      * Attribute VideoVoiceAntispamFreezeConfig: Voice auto freeze configuration in video.
      */
-    public readonly attrVideoVoiceAntispamFreezeConfig: ros.IResolvable;
+    public readonly attrVideoVoiceAntispamFreezeConfig: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

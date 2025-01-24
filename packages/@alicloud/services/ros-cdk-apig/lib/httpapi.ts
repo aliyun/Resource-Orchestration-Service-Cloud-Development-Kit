@@ -40,50 +40,91 @@ export interface HttpApiProps {
 }
 
 /**
+ * Represents a `HttpApi`.
+ */
+export interface IHttpApi extends ros.IResource {
+    readonly props: HttpApiProps;
+
+    /**
+     * Attribute BasePath: The base path of the API.
+     */
+    readonly attrBasePath: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: Description of API.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute Environments: Published Environmental Information of the API.
+     */
+    readonly attrEnvironments: ros.IResolvable | string;
+
+    /**
+     * Attribute HttpApiId: The ID of the API.
+     */
+    readonly attrHttpApiId: ros.IResolvable | string;
+
+    /**
+     * Attribute HttpApiName: The name of the API.
+     */
+    readonly attrHttpApiName: ros.IResolvable | string;
+
+    /**
+     * Attribute Protocols: List of API Access Protocols.
+     */
+    readonly attrProtocols: ros.IResolvable | string;
+
+    /**
+     * Attribute Type: The type of HTTP API
+     */
+    readonly attrType: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::APIG::HttpApi`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosHttpApi`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-httpapi
  */
-export class HttpApi extends ros.Resource {
+export class HttpApi extends ros.Resource implements IHttpApi {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: HttpApiProps;
+    public readonly props: HttpApiProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute BasePath: The base path of the API.
      */
-    public readonly attrBasePath: ros.IResolvable;
+    public readonly attrBasePath: ros.IResolvable | string;
 
     /**
      * Attribute Description: Description of API.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute Environments: Published Environmental Information of the API.
      */
-    public readonly attrEnvironments: ros.IResolvable;
+    public readonly attrEnvironments: ros.IResolvable | string;
 
     /**
      * Attribute HttpApiId: The ID of the API.
      */
-    public readonly attrHttpApiId: ros.IResolvable;
+    public readonly attrHttpApiId: ros.IResolvable | string;
 
     /**
      * Attribute HttpApiName: The name of the API.
      */
-    public readonly attrHttpApiName: ros.IResolvable;
+    public readonly attrHttpApiName: ros.IResolvable | string;
 
     /**
      * Attribute Protocols: List of API Access Protocols.
      */
-    public readonly attrProtocols: ros.IResolvable;
+    public readonly attrProtocols: ros.IResolvable | string;
 
     /**
      * Attribute Type: The type of HTTP API
      */
-    public readonly attrType: ros.IResolvable;
+    public readonly attrType: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

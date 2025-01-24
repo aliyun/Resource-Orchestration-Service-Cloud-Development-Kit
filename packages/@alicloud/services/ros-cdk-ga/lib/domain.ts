@@ -21,25 +21,41 @@ export interface DomainProps {
 }
 
 /**
+ * Represents a `Domain`.
+ */
+export interface IDomain extends ros.IResource {
+    readonly props: DomainProps;
+
+    /**
+     * Attribute AcceleratorIds: The IDs of GA instances.
+     */
+    readonly attrAcceleratorIds: ros.IResolvable | string;
+
+    /**
+     * Attribute Domain: The accelerated domain name.
+     */
+    readonly attrDomain: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::GA::Domain`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomain`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-domain
  */
-export class Domain extends ros.Resource {
+export class Domain extends ros.Resource implements IDomain {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DomainProps;
+    public readonly props: DomainProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AcceleratorIds: The IDs of GA instances.
      */
-    public readonly attrAcceleratorIds: ros.IResolvable;
+    public readonly attrAcceleratorIds: ros.IResolvable | string;
 
     /**
      * Attribute Domain: The accelerated domain name.
      */
-    public readonly attrDomain: ros.IResolvable;
+    public readonly attrDomain: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

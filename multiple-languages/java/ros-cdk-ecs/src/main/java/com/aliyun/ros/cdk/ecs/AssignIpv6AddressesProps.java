@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-assignipv6addresses
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:06.929Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:37.792Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.AssignIpv6AddressesProps")
 @software.amazon.jsii.Jsii.Proxy(AssignIpv6AddressesProps.Jsii$Proxy.class)
 public interface AssignIpv6AddressesProps extends software.amazon.jsii.JsiiSerializable {
@@ -27,10 +27,24 @@ public interface AssignIpv6AddressesProps extends software.amazon.jsii.JsiiSeria
     /**
      * Property ipv6Addresses: Specify one or more IPv6 addresses for the elastic NIC.
      * <p>
-     * Currently, the maximum list size is 1. Example value: 2001:db8:1234:1a00::*** .
+     * Currently, the maximum list size is 10. Example value: 2001:db8:1234:1a00::*** .
      * Note You cannot specify the parameters Ipv6Addresses and Ipv6AddressCount at the same time.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6Addresses() {
+        return null;
+    }
+
+    /**
+     * Property ipv6PrefixCount: IPv6 prefix specified number of randomly generated interfaces elasticity.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6PrefixCount() {
+        return null;
+    }
+
+    /**
+     * Property ipv6Prefixes: Specify one or more IPv6 prefixes for the elastic NIC.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6Prefixes() {
         return null;
     }
 
@@ -47,6 +61,8 @@ public interface AssignIpv6AddressesProps extends software.amazon.jsii.JsiiSeria
         java.lang.Object networkInterfaceId;
         java.lang.Object ipv6AddressCount;
         java.lang.Object ipv6Addresses;
+        java.lang.Object ipv6PrefixCount;
+        java.lang.Object ipv6Prefixes;
 
         /**
          * Sets the value of {@link AssignIpv6AddressesProps#getNetworkInterfaceId}
@@ -93,7 +109,7 @@ public interface AssignIpv6AddressesProps extends software.amazon.jsii.JsiiSeria
         /**
          * Sets the value of {@link AssignIpv6AddressesProps#getIpv6Addresses}
          * @param ipv6Addresses Property ipv6Addresses: Specify one or more IPv6 addresses for the elastic NIC.
-         *                      Currently, the maximum list size is 1. Example value: 2001:db8:1234:1a00::*** .
+         *                      Currently, the maximum list size is 10. Example value: 2001:db8:1234:1a00::*** .
          *                      Note You cannot specify the parameters Ipv6Addresses and Ipv6AddressCount at the same time.
          * @return {@code this}
          */
@@ -105,12 +121,52 @@ public interface AssignIpv6AddressesProps extends software.amazon.jsii.JsiiSeria
         /**
          * Sets the value of {@link AssignIpv6AddressesProps#getIpv6Addresses}
          * @param ipv6Addresses Property ipv6Addresses: Specify one or more IPv6 addresses for the elastic NIC.
-         *                      Currently, the maximum list size is 1. Example value: 2001:db8:1234:1a00::*** .
+         *                      Currently, the maximum list size is 10. Example value: 2001:db8:1234:1a00::*** .
          *                      Note You cannot specify the parameters Ipv6Addresses and Ipv6AddressCount at the same time.
          * @return {@code this}
          */
         public Builder ipv6Addresses(com.aliyun.ros.cdk.core.IResolvable ipv6Addresses) {
             this.ipv6Addresses = ipv6Addresses;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AssignIpv6AddressesProps#getIpv6PrefixCount}
+         * @param ipv6PrefixCount Property ipv6PrefixCount: IPv6 prefix specified number of randomly generated interfaces elasticity.
+         * @return {@code this}
+         */
+        public Builder ipv6PrefixCount(java.lang.Number ipv6PrefixCount) {
+            this.ipv6PrefixCount = ipv6PrefixCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AssignIpv6AddressesProps#getIpv6PrefixCount}
+         * @param ipv6PrefixCount Property ipv6PrefixCount: IPv6 prefix specified number of randomly generated interfaces elasticity.
+         * @return {@code this}
+         */
+        public Builder ipv6PrefixCount(com.aliyun.ros.cdk.core.IResolvable ipv6PrefixCount) {
+            this.ipv6PrefixCount = ipv6PrefixCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AssignIpv6AddressesProps#getIpv6Prefixes}
+         * @param ipv6Prefixes Property ipv6Prefixes: Specify one or more IPv6 prefixes for the elastic NIC.
+         * @return {@code this}
+         */
+        public Builder ipv6Prefixes(java.util.List<? extends java.lang.Object> ipv6Prefixes) {
+            this.ipv6Prefixes = ipv6Prefixes;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AssignIpv6AddressesProps#getIpv6Prefixes}
+         * @param ipv6Prefixes Property ipv6Prefixes: Specify one or more IPv6 prefixes for the elastic NIC.
+         * @return {@code this}
+         */
+        public Builder ipv6Prefixes(com.aliyun.ros.cdk.core.IResolvable ipv6Prefixes) {
+            this.ipv6Prefixes = ipv6Prefixes;
             return this;
         }
 
@@ -133,6 +189,8 @@ public interface AssignIpv6AddressesProps extends software.amazon.jsii.JsiiSeria
         private final java.lang.Object networkInterfaceId;
         private final java.lang.Object ipv6AddressCount;
         private final java.lang.Object ipv6Addresses;
+        private final java.lang.Object ipv6PrefixCount;
+        private final java.lang.Object ipv6Prefixes;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -143,6 +201,8 @@ public interface AssignIpv6AddressesProps extends software.amazon.jsii.JsiiSeria
             this.networkInterfaceId = software.amazon.jsii.Kernel.get(this, "networkInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ipv6AddressCount = software.amazon.jsii.Kernel.get(this, "ipv6AddressCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ipv6Addresses = software.amazon.jsii.Kernel.get(this, "ipv6Addresses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipv6PrefixCount = software.amazon.jsii.Kernel.get(this, "ipv6PrefixCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipv6Prefixes = software.amazon.jsii.Kernel.get(this, "ipv6Prefixes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -153,6 +213,8 @@ public interface AssignIpv6AddressesProps extends software.amazon.jsii.JsiiSeria
             this.networkInterfaceId = java.util.Objects.requireNonNull(builder.networkInterfaceId, "networkInterfaceId is required");
             this.ipv6AddressCount = builder.ipv6AddressCount;
             this.ipv6Addresses = builder.ipv6Addresses;
+            this.ipv6PrefixCount = builder.ipv6PrefixCount;
+            this.ipv6Prefixes = builder.ipv6Prefixes;
         }
 
         @Override
@@ -171,6 +233,16 @@ public interface AssignIpv6AddressesProps extends software.amazon.jsii.JsiiSeria
         }
 
         @Override
+        public final java.lang.Object getIpv6PrefixCount() {
+            return this.ipv6PrefixCount;
+        }
+
+        @Override
+        public final java.lang.Object getIpv6Prefixes() {
+            return this.ipv6Prefixes;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -182,6 +254,12 @@ public interface AssignIpv6AddressesProps extends software.amazon.jsii.JsiiSeria
             }
             if (this.getIpv6Addresses() != null) {
                 data.set("ipv6Addresses", om.valueToTree(this.getIpv6Addresses()));
+            }
+            if (this.getIpv6PrefixCount() != null) {
+                data.set("ipv6PrefixCount", om.valueToTree(this.getIpv6PrefixCount()));
+            }
+            if (this.getIpv6Prefixes() != null) {
+                data.set("ipv6Prefixes", om.valueToTree(this.getIpv6Prefixes()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -203,7 +281,9 @@ public interface AssignIpv6AddressesProps extends software.amazon.jsii.JsiiSeria
 
             if (!networkInterfaceId.equals(that.networkInterfaceId)) return false;
             if (this.ipv6AddressCount != null ? !this.ipv6AddressCount.equals(that.ipv6AddressCount) : that.ipv6AddressCount != null) return false;
-            return this.ipv6Addresses != null ? this.ipv6Addresses.equals(that.ipv6Addresses) : that.ipv6Addresses == null;
+            if (this.ipv6Addresses != null ? !this.ipv6Addresses.equals(that.ipv6Addresses) : that.ipv6Addresses != null) return false;
+            if (this.ipv6PrefixCount != null ? !this.ipv6PrefixCount.equals(that.ipv6PrefixCount) : that.ipv6PrefixCount != null) return false;
+            return this.ipv6Prefixes != null ? this.ipv6Prefixes.equals(that.ipv6Prefixes) : that.ipv6Prefixes == null;
         }
 
         @Override
@@ -211,6 +291,8 @@ public interface AssignIpv6AddressesProps extends software.amazon.jsii.JsiiSeria
             int result = this.networkInterfaceId.hashCode();
             result = 31 * result + (this.ipv6AddressCount != null ? this.ipv6AddressCount.hashCode() : 0);
             result = 31 * result + (this.ipv6Addresses != null ? this.ipv6Addresses.hashCode() : 0);
+            result = 31 * result + (this.ipv6PrefixCount != null ? this.ipv6PrefixCount.hashCode() : 0);
+            result = 31 * result + (this.ipv6Prefixes != null ? this.ipv6Prefixes.hashCode() : 0);
             return result;
         }
     }

@@ -112,35 +112,61 @@ export interface InstanceGroupProps {
 }
 
 /**
+ * Represents a `InstanceGroup`.
+ */
+export interface IInstanceGroup extends ros.IResource {
+    readonly props: InstanceGroupProps;
+
+    /**
+     * Attribute InstanceIds: instance ids
+     */
+    readonly attrInstanceIds: ros.IResolvable | string;
+
+    /**
+     * Attribute OrderId: oder id
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+
+    /**
+     * Attribute PrivateIps: Private IP address list of created cloud phone instances. Only for VPC instance.
+     */
+    readonly attrPrivateIps: ros.IResolvable | string;
+
+    /**
+     * Attribute TradePrice: price
+     */
+    readonly attrTradePrice: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CloudPhone::InstanceGroup`, which is used to create and start cloud phones.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstanceGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-instancegroup
  */
-export class InstanceGroup extends ros.Resource {
+export class InstanceGroup extends ros.Resource implements IInstanceGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InstanceGroupProps;
+    public readonly props: InstanceGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceIds: instance ids
      */
-    public readonly attrInstanceIds: ros.IResolvable;
+    public readonly attrInstanceIds: ros.IResolvable | string;
 
     /**
      * Attribute OrderId: oder id
      */
-    public readonly attrOrderId: ros.IResolvable;
+    public readonly attrOrderId: ros.IResolvable | string;
 
     /**
      * Attribute PrivateIps: Private IP address list of created cloud phone instances. Only for VPC instance.
      */
-    public readonly attrPrivateIps: ros.IResolvable;
+    public readonly attrPrivateIps: ros.IResolvable | string;
 
     /**
      * Attribute TradePrice: price
      */
-    public readonly attrTradePrice: ros.IResolvable;
+    public readonly attrTradePrice: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -24,25 +24,41 @@ export interface StackGroupsProps {
 }
 
 /**
+ * Represents a `StackGroups`.
+ */
+export interface IStackGroups extends ros.IResource {
+    readonly props: StackGroupsProps;
+
+    /**
+     * Attribute StackGroupNames: The list of stack group names.
+     */
+    readonly attrStackGroupNames: ros.IResolvable | string;
+
+    /**
+     * Attribute StackGroups: The list of stack groups.
+     */
+    readonly attrStackGroups: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ROS::StackGroups`, which is used to query the details of stack groups.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosStackGroups`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ros-stackgroups
  */
-export class StackGroups extends ros.Resource {
+export class StackGroups extends ros.Resource implements IStackGroups {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: StackGroupsProps;
+    public readonly props: StackGroupsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute StackGroupNames: The list of stack group names.
      */
-    public readonly attrStackGroupNames: ros.IResolvable;
+    public readonly attrStackGroupNames: ros.IResolvable | string;
 
     /**
      * Attribute StackGroups: The list of stack groups.
      */
-    public readonly attrStackGroups: ros.IResolvable;
+    public readonly attrStackGroups: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

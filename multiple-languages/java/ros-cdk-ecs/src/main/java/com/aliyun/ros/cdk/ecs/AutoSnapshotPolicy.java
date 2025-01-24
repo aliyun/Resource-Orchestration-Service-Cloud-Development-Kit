@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::AutoSnapshotPolicy</code>, which is used to create an automatic snapshot policy.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:06.944Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:37.821Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.AutoSnapshotPolicy")
-public class AutoSnapshotPolicy extends com.aliyun.ros.cdk.core.Resource {
+public class AutoSnapshotPolicy extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IAutoSnapshotPolicy {
 
     protected AutoSnapshotPolicy(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -43,8 +43,14 @@ public class AutoSnapshotPolicy extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute AutoSnapshotPolicyId: The automatic snapshot policy ID.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAutoSnapshotPolicyId() {
-        return software.amazon.jsii.Kernel.get(this, "attrAutoSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAutoSnapshotPolicyId() {
+        return software.amazon.jsii.Kernel.get(this, "attrAutoSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.AutoSnapshotPolicyProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.AutoSnapshotPolicyProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -61,14 +67,6 @@ public class AutoSnapshotPolicy extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.AutoSnapshotPolicyProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.AutoSnapshotPolicyProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.AutoSnapshotPolicyProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {
@@ -234,6 +232,58 @@ public class AutoSnapshotPolicy extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property copiedSnapshotsRetentionDays: Retention time in days for replicated snapshots across geographies.
+         * <p>
+         * Range:
+         * -1: Permanent storage
+         * 1-65535: Specifies the number of days to save
+         * Default value: -1
+         * <p>
+         * @return {@code this}
+         * @param copiedSnapshotsRetentionDays Property copiedSnapshotsRetentionDays: Retention time in days for replicated snapshots across geographies. This parameter is required.
+         */
+        public Builder copiedSnapshotsRetentionDays(final java.lang.Number copiedSnapshotsRetentionDays) {
+            this.props.copiedSnapshotsRetentionDays(copiedSnapshotsRetentionDays);
+            return this;
+        }
+        /**
+         * Property copiedSnapshotsRetentionDays: Retention time in days for replicated snapshots across geographies.
+         * <p>
+         * Range:
+         * -1: Permanent storage
+         * 1-65535: Specifies the number of days to save
+         * Default value: -1
+         * <p>
+         * @return {@code this}
+         * @param copiedSnapshotsRetentionDays Property copiedSnapshotsRetentionDays: Retention time in days for replicated snapshots across geographies. This parameter is required.
+         */
+        public Builder copiedSnapshotsRetentionDays(final com.aliyun.ros.cdk.core.IResolvable copiedSnapshotsRetentionDays) {
+            this.props.copiedSnapshotsRetentionDays(copiedSnapshotsRetentionDays);
+            return this;
+        }
+
+        /**
+         * Property copyEncryptionConfiguration: The encryption configuration for copied snapshots.
+         * <p>
+         * @return {@code this}
+         * @param copyEncryptionConfiguration Property copyEncryptionConfiguration: The encryption configuration for copied snapshots. This parameter is required.
+         */
+        public Builder copyEncryptionConfiguration(final com.aliyun.ros.cdk.core.IResolvable copyEncryptionConfiguration) {
+            this.props.copyEncryptionConfiguration(copyEncryptionConfiguration);
+            return this;
+        }
+        /**
+         * Property copyEncryptionConfiguration: The encryption configuration for copied snapshots.
+         * <p>
+         * @return {@code this}
+         * @param copyEncryptionConfiguration Property copyEncryptionConfiguration: The encryption configuration for copied snapshots. This parameter is required.
+         */
+        public Builder copyEncryptionConfiguration(final com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.CopyEncryptionConfigurationProperty copyEncryptionConfiguration) {
+            this.props.copyEncryptionConfiguration(copyEncryptionConfiguration);
+            return this;
+        }
+
+        /**
          * Property diskIds: The disk ID.
          * <p>
          * When you want to apply the automatic snapshot policy to multiple disks, you can set the DiskIds to an array. The format is list of ["d-xxxxxxxxx", "d-yyyyyyyyy", ..., "d-zzzzzzzzz"] and the IDs are separated by commas (,).
@@ -255,6 +305,27 @@ public class AutoSnapshotPolicy extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder diskIds(final java.util.List<? extends java.lang.Object> diskIds) {
             this.props.diskIds(diskIds);
+            return this;
+        }
+
+        /**
+         * Property enableCrossRegionCopy: Whether to enable cross-region copying of snapshots.
+         * <p>
+         * @return {@code this}
+         * @param enableCrossRegionCopy Property enableCrossRegionCopy: Whether to enable cross-region copying of snapshots. This parameter is required.
+         */
+        public Builder enableCrossRegionCopy(final java.lang.Boolean enableCrossRegionCopy) {
+            this.props.enableCrossRegionCopy(enableCrossRegionCopy);
+            return this;
+        }
+        /**
+         * Property enableCrossRegionCopy: Whether to enable cross-region copying of snapshots.
+         * <p>
+         * @return {@code this}
+         * @param enableCrossRegionCopy Property enableCrossRegionCopy: Whether to enable cross-region copying of snapshots. This parameter is required.
+         */
+        public Builder enableCrossRegionCopy(final com.aliyun.ros.cdk.core.IResolvable enableCrossRegionCopy) {
+            this.props.enableCrossRegionCopy(enableCrossRegionCopy);
             return this;
         }
 
@@ -289,6 +360,31 @@ public class AutoSnapshotPolicy extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.TagsProperty> tags) {
             this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * Property targetCopyRegions: The target region of the snapshot is replicated across geographies.
+         * <p>
+         * Setting a target region is currently supported.
+         * <p>
+         * @return {@code this}
+         * @param targetCopyRegions Property targetCopyRegions: The target region of the snapshot is replicated across geographies. This parameter is required.
+         */
+        public Builder targetCopyRegions(final com.aliyun.ros.cdk.core.IResolvable targetCopyRegions) {
+            this.props.targetCopyRegions(targetCopyRegions);
+            return this;
+        }
+        /**
+         * Property targetCopyRegions: The target region of the snapshot is replicated across geographies.
+         * <p>
+         * Setting a target region is currently supported.
+         * <p>
+         * @return {@code this}
+         * @param targetCopyRegions Property targetCopyRegions: The target region of the snapshot is replicated across geographies. This parameter is required.
+         */
+        public Builder targetCopyRegions(final java.util.List<? extends java.lang.Object> targetCopyRegions) {
+            this.props.targetCopyRegions(targetCopyRegions);
             return this;
         }
 

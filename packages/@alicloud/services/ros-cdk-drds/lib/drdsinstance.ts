@@ -81,35 +81,61 @@ export interface DrdsInstanceProps {
 }
 
 /**
+ * Represents a `DrdsInstance`.
+ */
+export interface IDrdsInstance extends ros.IResource {
+    readonly props: DrdsInstanceProps;
+
+    /**
+     * Attribute DrdsInstanceId: instance id
+     */
+    readonly attrDrdsInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute InternetEndpoint: Public endpoint
+     */
+    readonly attrInternetEndpoint: ros.IResolvable | string;
+
+    /**
+     * Attribute IntranetEndpoint: VPC endpoint
+     */
+    readonly attrIntranetEndpoint: ros.IResolvable | string;
+
+    /**
+     * Attribute OrderId: order number
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::DRDS::DrdsInstance`, which is used to create a PolarDB-X 1.0 instance of specified instance specifications.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDrdsInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-drds-drdsinstance
  */
-export class DrdsInstance extends ros.Resource {
+export class DrdsInstance extends ros.Resource implements IDrdsInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DrdsInstanceProps;
+    public readonly props: DrdsInstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DrdsInstanceId: instance id
      */
-    public readonly attrDrdsInstanceId: ros.IResolvable;
+    public readonly attrDrdsInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute InternetEndpoint: Public endpoint
      */
-    public readonly attrInternetEndpoint: ros.IResolvable;
+    public readonly attrInternetEndpoint: ros.IResolvable | string;
 
     /**
      * Attribute IntranetEndpoint: VPC endpoint
      */
-    public readonly attrIntranetEndpoint: ros.IResolvable;
+    public readonly attrIntranetEndpoint: ros.IResolvable | string;
 
     /**
      * Attribute OrderId: order number
      */
-    public readonly attrOrderId: ros.IResolvable;
+    public readonly attrOrderId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -12,34 +12,44 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenVbrHealthCheck`, which is used to enable the health check feature or modify the health check configurations for a virtual border router (VBR).
 type CenVbrHealthCheck interface {
 	alicloudroscdkcore.Resource
+	ICenVbrHealthCheck
 	// Attribute CenId: The ID of the CEN instance.
-	AttrCenId() alicloudroscdkcore.IResolvable
+	AttrCenId() interface{}
 	// Attribute HealthCheckInterval: Specifies the time interval at which probe packets are sent during the health check.
 	//
 	// Default value: 2. Valid values: 2 to 3.  Unit: second.
-	AttrHealthCheckInterval() alicloudroscdkcore.IResolvable
+	AttrHealthCheckInterval() interface{}
 	// Attribute HealthCheckSourceIp: You can use either of the following methods to specify the source IP address of the health check.
 	//
 	// Automatic IP Address: The system automatically assigns an IP address within the CIDR block 100.96.0.0/16 (recommended).  Custom IP Address: You can specify a source IP address that is available within the CIDR block 10.0.0.0/8, 192.168.0.0/16, or 172.16.0.0/12. The specified source IP address must not overlap with the IP addresses of the Alibaba Cloud-facing and client-facing interfaces on the VBR instance, or the IP addresses of the instances with which the VBR instance needs to communicate in the CEN.
-	AttrHealthCheckSourceIp() alicloudroscdkcore.IResolvable
+	AttrHealthCheckSourceIp() interface{}
 	// Attribute HealthCheckTargetIp: Specifies the destination IP address of the health check.
 	//
 	// The destination IP address is the IP address of the client-facing interface on the VBR instance.
-	AttrHealthCheckTargetIp() alicloudroscdkcore.IResolvable
+	AttrHealthCheckTargetIp() interface{}
 	// Attribute HealthyThreshold: Specifies the number of probe packets to be sent during the health check.
 	//
 	// Default value: 8. Valid values: 3 to 8.  Unit: packet.
-	AttrHealthyThreshold() alicloudroscdkcore.IResolvable
+	AttrHealthyThreshold() interface{}
 	// Attribute VbrInstanceId: The ID of the VBR instance.
-	AttrVbrInstanceId() alicloudroscdkcore.IResolvable
+	AttrVbrInstanceId() interface{}
 	// Attribute VbrInstanceOwnerId: The User ID (UID) of the account to which the VBR instance belongs.
-	AttrVbrInstanceOwnerId() alicloudroscdkcore.IResolvable
+	AttrVbrInstanceOwnerId() interface{}
 	// Attribute VbrInstanceRegionId: The ID of the region where the VBR instance is deployed.
 	//
 	// You can call the DescribeRegionsoperation to query region IDs.
-	AttrVbrInstanceRegionId() alicloudroscdkcore.IResolvable
+	AttrVbrInstanceRegionId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -54,7 +64,6 @@ type CenVbrHealthCheck interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *CenVbrHealthCheckProps
-	SetProps(val *CenVbrHealthCheckProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -67,6 +76,9 @@ type CenVbrHealthCheck interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -119,10 +131,11 @@ type CenVbrHealthCheck interface {
 // The jsii proxy struct for CenVbrHealthCheck
 type jsiiProxy_CenVbrHealthCheck struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ICenVbrHealthCheck
 }
 
-func (j *jsiiProxy_CenVbrHealthCheck) AttrCenId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CenVbrHealthCheck) AttrCenId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCenId",
@@ -131,8 +144,8 @@ func (j *jsiiProxy_CenVbrHealthCheck) AttrCenId() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_CenVbrHealthCheck) AttrHealthCheckInterval() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CenVbrHealthCheck) AttrHealthCheckInterval() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHealthCheckInterval",
@@ -141,8 +154,8 @@ func (j *jsiiProxy_CenVbrHealthCheck) AttrHealthCheckInterval() alicloudroscdkco
 	return returns
 }
 
-func (j *jsiiProxy_CenVbrHealthCheck) AttrHealthCheckSourceIp() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CenVbrHealthCheck) AttrHealthCheckSourceIp() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHealthCheckSourceIp",
@@ -151,8 +164,8 @@ func (j *jsiiProxy_CenVbrHealthCheck) AttrHealthCheckSourceIp() alicloudroscdkco
 	return returns
 }
 
-func (j *jsiiProxy_CenVbrHealthCheck) AttrHealthCheckTargetIp() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CenVbrHealthCheck) AttrHealthCheckTargetIp() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHealthCheckTargetIp",
@@ -161,8 +174,8 @@ func (j *jsiiProxy_CenVbrHealthCheck) AttrHealthCheckTargetIp() alicloudroscdkco
 	return returns
 }
 
-func (j *jsiiProxy_CenVbrHealthCheck) AttrHealthyThreshold() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CenVbrHealthCheck) AttrHealthyThreshold() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHealthyThreshold",
@@ -171,8 +184,8 @@ func (j *jsiiProxy_CenVbrHealthCheck) AttrHealthyThreshold() alicloudroscdkcore.
 	return returns
 }
 
-func (j *jsiiProxy_CenVbrHealthCheck) AttrVbrInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CenVbrHealthCheck) AttrVbrInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVbrInstanceId",
@@ -181,8 +194,8 @@ func (j *jsiiProxy_CenVbrHealthCheck) AttrVbrInstanceId() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_CenVbrHealthCheck) AttrVbrInstanceOwnerId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CenVbrHealthCheck) AttrVbrInstanceOwnerId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVbrInstanceOwnerId",
@@ -191,8 +204,8 @@ func (j *jsiiProxy_CenVbrHealthCheck) AttrVbrInstanceOwnerId() alicloudroscdkcor
 	return returns
 }
 
-func (j *jsiiProxy_CenVbrHealthCheck) AttrVbrInstanceRegionId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CenVbrHealthCheck) AttrVbrInstanceRegionId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVbrInstanceRegionId",
@@ -206,6 +219,16 @@ func (j *jsiiProxy_CenVbrHealthCheck) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CenVbrHealthCheck) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -343,17 +366,6 @@ func (j *jsiiProxy_CenVbrHealthCheck)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CenVbrHealthCheck)SetProps(val *CenVbrHealthCheckProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_CenVbrHealthCheck)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -445,6 +457,45 @@ func (c *jsiiProxy_CenVbrHealthCheck) ApplyRemovalPolicy(policy alicloudroscdkco
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (c *jsiiProxy_CenVbrHealthCheck) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		c,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (c *jsiiProxy_CenVbrHealthCheck) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		c,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (c *jsiiProxy_CenVbrHealthCheck) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (c *jsiiProxy_CenVbrHealthCheck) GeneratePhysicalName() *string {

@@ -98,20 +98,31 @@ export interface AggregateCompliancePackProps {
 }
 
 /**
+ * Represents a `AggregateCompliancePack`.
+ */
+export interface IAggregateCompliancePack extends ros.IResource {
+    readonly props: AggregateCompliancePackProps;
+
+    /**
+     * Attribute CompliancePackId: The ID of the compliance pack id.
+     */
+    readonly attrCompliancePackId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::Config::AggregateCompliancePack`, which is used to create a compliance package for an account group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAggregateCompliancePack`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-aggregatecompliancepack
  */
-export class AggregateCompliancePack extends ros.Resource {
+export class AggregateCompliancePack extends ros.Resource implements IAggregateCompliancePack {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AggregateCompliancePackProps;
+    public readonly props: AggregateCompliancePackProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CompliancePackId: The ID of the compliance pack id.
      */
-    public readonly attrCompliancePackId: ros.IResolvable;
+    public readonly attrCompliancePackId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

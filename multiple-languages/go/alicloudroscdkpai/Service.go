@@ -12,70 +12,80 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::PAI::Service`, which is used to create an Elastic Algorithm Service (EAS) service in Machine Learning Platform for AI (PAI).
 type Service interface {
 	alicloudroscdkcore.Resource
+	IService
 	// Attribute AccessToken: Service Request authentication token.
-	AttrAccessToken() alicloudroscdkcore.IResolvable
+	AttrAccessToken() interface{}
 	// Attribute CallerUid: The ID of the service creator, which can be the ID of the RAM account.
-	AttrCallerUid() alicloudroscdkcore.IResolvable
+	AttrCallerUid() interface{}
 	// Attribute Cpu: Number of service CPU cores.
-	AttrCpu() alicloudroscdkcore.IResolvable
+	AttrCpu() interface{}
 	// Attribute CreateTime: Creation time of the service.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute CurrentVersion: Current running version of the service.
-	AttrCurrentVersion() alicloudroscdkcore.IResolvable
+	AttrCurrentVersion() interface{}
 	// Attribute ExtraData: Service Extra Information.
-	AttrExtraData() alicloudroscdkcore.IResolvable
+	AttrExtraData() interface{}
 	// Attribute Gpu: Number of service GPU cards.
-	AttrGpu() alicloudroscdkcore.IResolvable
+	AttrGpu() interface{}
 	// Attribute Image: Service Deployment Mirroring.
-	AttrImage() alicloudroscdkcore.IResolvable
+	AttrImage() interface{}
 	// Attribute InternetEndpoint: Public network Endpoint of the service.
-	AttrInternetEndpoint() alicloudroscdkcore.IResolvable
+	AttrInternetEndpoint() interface{}
 	// Attribute IntranetEndpoint: The intranet Endpoint of the service.
-	AttrIntranetEndpoint() alicloudroscdkcore.IResolvable
+	AttrIntranetEndpoint() interface{}
 	// Attribute Labels: Service Tag.
-	AttrLabels() alicloudroscdkcore.IResolvable
+	AttrLabels() interface{}
 	// Attribute LatestVersion: The latest version of the service.
-	AttrLatestVersion() alicloudroscdkcore.IResolvable
+	AttrLatestVersion() interface{}
 	// Attribute Memory: Memory of service (MB).
-	AttrMemory() alicloudroscdkcore.IResolvable
+	AttrMemory() interface{}
 	// Attribute Message: Latest information on services.
-	AttrMessage() alicloudroscdkcore.IResolvable
+	AttrMessage() interface{}
 	// Attribute Namespace: The namespace to which the service belongs.
-	AttrNamespace() alicloudroscdkcore.IResolvable
+	AttrNamespace() interface{}
 	// Attribute ParentUid: Primary account ID of the creator.
-	AttrParentUid() alicloudroscdkcore.IResolvable
+	AttrParentUid() interface{}
 	// Attribute PendingInstance: Number of instances where the service is not currently ready.
-	AttrPendingInstance() alicloudroscdkcore.IResolvable
+	AttrPendingInstance() interface{}
 	// Attribute Reason: Service deployment failure reason.
-	AttrReason() alicloudroscdkcore.IResolvable
+	AttrReason() interface{}
 	// Attribute Resource: The ID of the resource group to which the service belongs.
-	AttrResource() alicloudroscdkcore.IResolvable
+	AttrResource() interface{}
 	// Attribute ResourceAlias: Name of the resource group where the service resides.
-	AttrResourceAlias() alicloudroscdkcore.IResolvable
+	AttrResourceAlias() interface{}
 	// Attribute Role: Grouping Service Role.
-	AttrRole() alicloudroscdkcore.IResolvable
+	AttrRole() interface{}
 	// Attribute RoleAttrs: Grouping Service Role Properties.
-	AttrRoleAttrs() alicloudroscdkcore.IResolvable
+	AttrRoleAttrs() interface{}
 	// Attribute RunningInstance: Number of instances in service running.
-	AttrRunningInstance() alicloudroscdkcore.IResolvable
+	AttrRunningInstance() interface{}
 	// Attribute SafetyLock: Service Security Lock Status.
-	AttrSafetyLock() alicloudroscdkcore.IResolvable
+	AttrSafetyLock() interface{}
 	// Attribute ServiceConfig: Service configuration information.
-	AttrServiceConfig() alicloudroscdkcore.IResolvable
+	AttrServiceConfig() interface{}
 	// Attribute ServiceGroup: Group to which the service belongs.
-	AttrServiceGroup() alicloudroscdkcore.IResolvable
+	AttrServiceGroup() interface{}
 	// Attribute ServiceName: Service Name.
-	AttrServiceName() alicloudroscdkcore.IResolvable
+	AttrServiceName() interface{}
 	// Attribute ServiceUid: Unique Service ID.
-	AttrServiceUid() alicloudroscdkcore.IResolvable
+	AttrServiceUid() interface{}
 	// Attribute TotalInstance: Total number of instances required by the service.
-	AttrTotalInstance() alicloudroscdkcore.IResolvable
+	AttrTotalInstance() interface{}
 	// Attribute UpdateTime: Service Last Updated.
-	AttrUpdateTime() alicloudroscdkcore.IResolvable
+	AttrUpdateTime() interface{}
 	// Attribute Weight: Packet Service Traffic Weight.
-	AttrWeight() alicloudroscdkcore.IResolvable
+	AttrWeight() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -90,7 +100,6 @@ type Service interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ServiceProps
-	SetProps(val *ServiceProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -103,6 +112,9 @@ type Service interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -155,10 +167,11 @@ type Service interface {
 // The jsii proxy struct for Service
 type jsiiProxy_Service struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IService
 }
 
-func (j *jsiiProxy_Service) AttrAccessToken() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrAccessToken() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAccessToken",
@@ -167,8 +180,8 @@ func (j *jsiiProxy_Service) AttrAccessToken() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrCallerUid() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrCallerUid() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCallerUid",
@@ -177,8 +190,8 @@ func (j *jsiiProxy_Service) AttrCallerUid() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrCpu() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrCpu() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCpu",
@@ -187,8 +200,8 @@ func (j *jsiiProxy_Service) AttrCpu() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -197,8 +210,8 @@ func (j *jsiiProxy_Service) AttrCreateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrCurrentVersion() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrCurrentVersion() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCurrentVersion",
@@ -207,8 +220,8 @@ func (j *jsiiProxy_Service) AttrCurrentVersion() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrExtraData() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrExtraData() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrExtraData",
@@ -217,8 +230,8 @@ func (j *jsiiProxy_Service) AttrExtraData() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrGpu() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrGpu() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGpu",
@@ -227,8 +240,8 @@ func (j *jsiiProxy_Service) AttrGpu() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrImage() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrImage() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrImage",
@@ -237,8 +250,8 @@ func (j *jsiiProxy_Service) AttrImage() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrInternetEndpoint() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrInternetEndpoint() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInternetEndpoint",
@@ -247,8 +260,8 @@ func (j *jsiiProxy_Service) AttrInternetEndpoint() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrIntranetEndpoint() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrIntranetEndpoint() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIntranetEndpoint",
@@ -257,8 +270,8 @@ func (j *jsiiProxy_Service) AttrIntranetEndpoint() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrLabels() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrLabels() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLabels",
@@ -267,8 +280,8 @@ func (j *jsiiProxy_Service) AttrLabels() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrLatestVersion() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrLatestVersion() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLatestVersion",
@@ -277,8 +290,8 @@ func (j *jsiiProxy_Service) AttrLatestVersion() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrMemory() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrMemory() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMemory",
@@ -287,8 +300,8 @@ func (j *jsiiProxy_Service) AttrMemory() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrMessage() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrMessage() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMessage",
@@ -297,8 +310,8 @@ func (j *jsiiProxy_Service) AttrMessage() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrNamespace() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrNamespace() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNamespace",
@@ -307,8 +320,8 @@ func (j *jsiiProxy_Service) AttrNamespace() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrParentUid() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrParentUid() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrParentUid",
@@ -317,8 +330,8 @@ func (j *jsiiProxy_Service) AttrParentUid() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrPendingInstance() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrPendingInstance() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPendingInstance",
@@ -327,8 +340,8 @@ func (j *jsiiProxy_Service) AttrPendingInstance() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrReason() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrReason() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrReason",
@@ -337,8 +350,8 @@ func (j *jsiiProxy_Service) AttrReason() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrResource() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrResource() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResource",
@@ -347,8 +360,8 @@ func (j *jsiiProxy_Service) AttrResource() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrResourceAlias() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrResourceAlias() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceAlias",
@@ -357,8 +370,8 @@ func (j *jsiiProxy_Service) AttrResourceAlias() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrRole() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrRole() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRole",
@@ -367,8 +380,8 @@ func (j *jsiiProxy_Service) AttrRole() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrRoleAttrs() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrRoleAttrs() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRoleAttrs",
@@ -377,8 +390,8 @@ func (j *jsiiProxy_Service) AttrRoleAttrs() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrRunningInstance() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrRunningInstance() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRunningInstance",
@@ -387,8 +400,8 @@ func (j *jsiiProxy_Service) AttrRunningInstance() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrSafetyLock() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrSafetyLock() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSafetyLock",
@@ -397,8 +410,8 @@ func (j *jsiiProxy_Service) AttrSafetyLock() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrServiceConfig() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrServiceConfig() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrServiceConfig",
@@ -407,8 +420,8 @@ func (j *jsiiProxy_Service) AttrServiceConfig() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrServiceGroup() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrServiceGroup() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrServiceGroup",
@@ -417,8 +430,8 @@ func (j *jsiiProxy_Service) AttrServiceGroup() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrServiceName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrServiceName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrServiceName",
@@ -427,8 +440,8 @@ func (j *jsiiProxy_Service) AttrServiceName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrServiceUid() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrServiceUid() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrServiceUid",
@@ -437,8 +450,8 @@ func (j *jsiiProxy_Service) AttrServiceUid() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrTotalInstance() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrTotalInstance() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTotalInstance",
@@ -447,8 +460,8 @@ func (j *jsiiProxy_Service) AttrTotalInstance() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrUpdateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrUpdateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUpdateTime",
@@ -457,8 +470,8 @@ func (j *jsiiProxy_Service) AttrUpdateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Service) AttrWeight() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Service) AttrWeight() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrWeight",
@@ -472,6 +485,16 @@ func (j *jsiiProxy_Service) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Service) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -609,17 +632,6 @@ func (j *jsiiProxy_Service)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Service)SetProps(val *ServiceProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Service)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -711,6 +723,45 @@ func (s *jsiiProxy_Service) ApplyRemovalPolicy(policy alicloudroscdkcore.Removal
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (s *jsiiProxy_Service) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		s,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_Service) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_Service) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (s *jsiiProxy_Service) GeneratePhysicalName() *string {

@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::EDAS::UserDefineRegions`, which is used to query custom namespaces.
 type UserDefineRegions interface {
 	alicloudroscdkcore.Resource
+	IUserDefineRegions
 	// Attribute Ids: The list of user define region IDs.
-	AttrIds() alicloudroscdkcore.IResolvable
+	AttrIds() interface{}
 	// Attribute UserDefineRegions: The list of user define regions.
-	AttrUserDefineRegions() alicloudroscdkcore.IResolvable
+	AttrUserDefineRegions() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type UserDefineRegions interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *UserDefineRegionsProps
-	SetProps(val *UserDefineRegionsProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type UserDefineRegions interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type UserDefineRegions interface {
 // The jsii proxy struct for UserDefineRegions
 type jsiiProxy_UserDefineRegions struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IUserDefineRegions
 }
 
-func (j *jsiiProxy_UserDefineRegions) AttrIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_UserDefineRegions) AttrIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIds",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_UserDefineRegions) AttrIds() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_UserDefineRegions) AttrUserDefineRegions() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_UserDefineRegions) AttrUserDefineRegions() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUserDefineRegions",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_UserDefineRegions) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_UserDefineRegions) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_UserDefineRegions)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_UserDefineRegions)SetProps(val *UserDefineRegionsProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_UserDefineRegions)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (u *jsiiProxy_UserDefineRegions) ApplyRemovalPolicy(policy alicloudroscdkco
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (u *jsiiProxy_UserDefineRegions) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		u,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (u *jsiiProxy_UserDefineRegions) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		u,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (u *jsiiProxy_UserDefineRegions) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		u,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (u *jsiiProxy_UserDefineRegions) GeneratePhysicalName() *string {

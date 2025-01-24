@@ -12,30 +12,40 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::PrefixList`, which is used to query the information about a prefix list.
 type PrefixList interface {
 	alicloudroscdkcore.Resource
+	IPrefixList
 	// Attribute CreateTime: The time when the prefix list was created.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute Entries: The CIDR address block list of the prefix list.
-	AttrEntries() alicloudroscdkcore.IResolvable
+	AttrEntries() interface{}
 	// Attribute IpVersion: The IP version of the prefix list.
-	AttrIpVersion() alicloudroscdkcore.IResolvable
+	AttrIpVersion() interface{}
 	// Attribute MaxEntries: The maximum number of entries for CIDR address blocks in the prefix list.
-	AttrMaxEntries() alicloudroscdkcore.IResolvable
+	AttrMaxEntries() interface{}
 	// Attribute OwnerId: The Alibaba Cloud account (primary account) to which the prefix list belongs.
-	AttrOwnerId() alicloudroscdkcore.IResolvable
+	AttrOwnerId() interface{}
 	// Attribute PrefixListDescription: The description of the prefix list.
-	AttrPrefixListDescription() alicloudroscdkcore.IResolvable
+	AttrPrefixListDescription() interface{}
 	// Attribute PrefixListId: The ID of the query Prefix List.
-	AttrPrefixListId() alicloudroscdkcore.IResolvable
+	AttrPrefixListId() interface{}
 	// Attribute PrefixListName: The name of the prefix list.
-	AttrPrefixListName() alicloudroscdkcore.IResolvable
+	AttrPrefixListName() interface{}
 	// Attribute ResourceGroupId: The ID of the resource group to which the VPC belongs.
-	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() interface{}
 	// Attribute ShareType: The share type of the prefix list.
-	AttrShareType() alicloudroscdkcore.IResolvable
+	AttrShareType() interface{}
 	// Attribute Tags: The tags of PrefixList.
-	AttrTags() alicloudroscdkcore.IResolvable
+	AttrTags() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -50,7 +60,6 @@ type PrefixList interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *PrefixListProps
-	SetProps(val *PrefixListProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -63,6 +72,9 @@ type PrefixList interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -115,10 +127,11 @@ type PrefixList interface {
 // The jsii proxy struct for PrefixList
 type jsiiProxy_PrefixList struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IPrefixList
 }
 
-func (j *jsiiProxy_PrefixList) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrefixList) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -127,8 +140,8 @@ func (j *jsiiProxy_PrefixList) AttrCreateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_PrefixList) AttrEntries() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrefixList) AttrEntries() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEntries",
@@ -137,8 +150,8 @@ func (j *jsiiProxy_PrefixList) AttrEntries() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_PrefixList) AttrIpVersion() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrefixList) AttrIpVersion() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIpVersion",
@@ -147,8 +160,8 @@ func (j *jsiiProxy_PrefixList) AttrIpVersion() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_PrefixList) AttrMaxEntries() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrefixList) AttrMaxEntries() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMaxEntries",
@@ -157,8 +170,8 @@ func (j *jsiiProxy_PrefixList) AttrMaxEntries() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_PrefixList) AttrOwnerId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrefixList) AttrOwnerId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOwnerId",
@@ -167,8 +180,8 @@ func (j *jsiiProxy_PrefixList) AttrOwnerId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_PrefixList) AttrPrefixListDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrefixList) AttrPrefixListDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPrefixListDescription",
@@ -177,8 +190,8 @@ func (j *jsiiProxy_PrefixList) AttrPrefixListDescription() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_PrefixList) AttrPrefixListId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrefixList) AttrPrefixListId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPrefixListId",
@@ -187,8 +200,8 @@ func (j *jsiiProxy_PrefixList) AttrPrefixListId() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_PrefixList) AttrPrefixListName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrefixList) AttrPrefixListName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPrefixListName",
@@ -197,8 +210,8 @@ func (j *jsiiProxy_PrefixList) AttrPrefixListName() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_PrefixList) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrefixList) AttrResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupId",
@@ -207,8 +220,8 @@ func (j *jsiiProxy_PrefixList) AttrResourceGroupId() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_PrefixList) AttrShareType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrefixList) AttrShareType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrShareType",
@@ -217,8 +230,8 @@ func (j *jsiiProxy_PrefixList) AttrShareType() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_PrefixList) AttrTags() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrefixList) AttrTags() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTags",
@@ -232,6 +245,16 @@ func (j *jsiiProxy_PrefixList) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_PrefixList) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -369,17 +392,6 @@ func (j *jsiiProxy_PrefixList)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_PrefixList)SetProps(val *PrefixListProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_PrefixList)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -471,6 +483,45 @@ func (p *jsiiProxy_PrefixList) ApplyRemovalPolicy(policy alicloudroscdkcore.Remo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (p *jsiiProxy_PrefixList) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		p,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_PrefixList) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		p,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_PrefixList) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		p,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (p *jsiiProxy_PrefixList) GeneratePhysicalName() *string {

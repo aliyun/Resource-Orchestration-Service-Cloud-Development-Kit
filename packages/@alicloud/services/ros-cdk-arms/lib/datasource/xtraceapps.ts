@@ -24,25 +24,41 @@ export interface XTraceAppsProps {
 }
 
 /**
+ * Represents a `XTraceApps`.
+ */
+export interface IXTraceApps extends ros.IResource {
+    readonly props: XTraceAppsProps;
+
+    /**
+     * Attribute Pids: The list of Pids.
+     */
+    readonly attrPids: ros.IResolvable | string;
+
+    /**
+     * Attribute XTraceApps: The list of Application Monitoring tasks.
+     */
+    readonly attrXTraceApps: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::XTraceApps`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosXTraceApps`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-xtraceapps
  */
-export class XTraceApps extends ros.Resource {
+export class XTraceApps extends ros.Resource implements IXTraceApps {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: XTraceAppsProps;
+    public readonly props: XTraceAppsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Pids: The list of Pids.
      */
-    public readonly attrPids: ros.IResolvable;
+    public readonly attrPids: ros.IResolvable | string;
 
     /**
      * Attribute XTraceApps: The list of Application Monitoring tasks.
      */
-    public readonly attrXTraceApps: ros.IResolvable;
+    public readonly attrXTraceApps: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

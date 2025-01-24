@@ -43,30 +43,51 @@ export interface RuleProps {
 }
 
 /**
+ * Represents a `Rule`.
+ */
+export interface IRule extends ros.IResource {
+    readonly props: RuleProps;
+
+    /**
+     * Attribute EventBusName: The name of the event bus.
+     */
+    readonly attrEventBusName: ros.IResolvable | string;
+
+    /**
+     * Attribute RuleARN: The Alibaba Cloud Resource Name (ARN) of the event rule. The ARN is used for authorization.
+     */
+    readonly attrRuleArn: ros.IResolvable | string;
+
+    /**
+     * Attribute RuleName: The name of the event rule.
+     */
+    readonly attrRuleName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::EventBridge::Rule`, which is used to create an event rule for an event bus.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eventbridge-rule
  */
-export class Rule extends ros.Resource {
+export class Rule extends ros.Resource implements IRule {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: RuleProps;
+    public readonly props: RuleProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute EventBusName: The name of the event bus.
      */
-    public readonly attrEventBusName: ros.IResolvable;
+    public readonly attrEventBusName: ros.IResolvable | string;
 
     /**
      * Attribute RuleARN: The Alibaba Cloud Resource Name (ARN) of the event rule. The ARN is used for authorization.
      */
-    public readonly attrRuleArn: ros.IResolvable;
+    public readonly attrRuleArn: ros.IResolvable | string;
 
     /**
      * Attribute RuleName: The name of the event rule.
      */
-    public readonly attrRuleName: ros.IResolvable;
+    public readonly attrRuleName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -42,25 +42,41 @@ export interface CommandsProps {
 }
 
 /**
+ * Represents a `Commands`.
+ */
+export interface ICommands extends ros.IResource {
+    readonly props: CommandsProps;
+
+    /**
+     * Attribute CommandIds: The list of command IDs.
+     */
+    readonly attrCommandIds: ros.IResolvable | string;
+
+    /**
+     * Attribute Commands: The list of commands.
+     */
+    readonly attrCommands: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Commands`, which is used to query all available commands that you created.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCommands`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-commands
  */
-export class Commands extends ros.Resource {
+export class Commands extends ros.Resource implements ICommands {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: CommandsProps;
+    public readonly props: CommandsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CommandIds: The list of command IDs.
      */
-    public readonly attrCommandIds: ros.IResolvable;
+    public readonly attrCommandIds: ros.IResolvable | string;
 
     /**
      * Attribute Commands: The list of commands.
      */
-    public readonly attrCommands: ros.IResolvable;
+    public readonly attrCommands: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

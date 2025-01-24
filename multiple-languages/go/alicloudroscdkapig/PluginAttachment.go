@@ -12,28 +12,38 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::APIG::PluginAttachment`.
 type PluginAttachment interface {
 	alicloudroscdkcore.Resource
+	IPluginAttachment
 	// Attribute AttachResourceId: The resource ID to be attached by the plugin.
-	AttrAttachResourceId() alicloudroscdkcore.IResolvable
+	AttrAttachResourceId() interface{}
 	// Attribute AttachResourceIds: The list of resource IDs to be attached by the plugin.
-	AttrAttachResourceIds() alicloudroscdkcore.IResolvable
+	AttrAttachResourceIds() interface{}
 	// Attribute AttachResourceNames: The list of resource names to be attached by the plugin.
-	AttrAttachResourceNames() alicloudroscdkcore.IResolvable
+	AttrAttachResourceNames() interface{}
 	// Attribute AttachResourceParentIds: The list of parent IDs for resources to be attached by the plugin.
-	AttrAttachResourceParentIds() alicloudroscdkcore.IResolvable
+	AttrAttachResourceParentIds() interface{}
 	// Attribute AttachResourceType: The type of the resource to be attached by the plugin.
-	AttrAttachResourceType() alicloudroscdkcore.IResolvable
+	AttrAttachResourceType() interface{}
 	// Attribute Enable: Whether to enable this plugin.
-	AttrEnable() alicloudroscdkcore.IResolvable
+	AttrEnable() interface{}
 	// Attribute EnvironmentId: The ID of the environment.
-	AttrEnvironmentId() alicloudroscdkcore.IResolvable
+	AttrEnvironmentId() interface{}
 	// Attribute PluginAttachmentId: The ID of plugin attachment.
-	AttrPluginAttachmentId() alicloudroscdkcore.IResolvable
+	AttrPluginAttachmentId() interface{}
 	// Attribute PluginClassInfo: The type of the plugin.
-	AttrPluginClassInfo() alicloudroscdkcore.IResolvable
+	AttrPluginClassInfo() interface{}
 	// Attribute PluginInfo: The information about the association of plugin with gateway instance.
-	AttrPluginInfo() alicloudroscdkcore.IResolvable
+	AttrPluginInfo() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -48,7 +58,6 @@ type PluginAttachment interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *PluginAttachmentProps
-	SetProps(val *PluginAttachmentProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -61,6 +70,9 @@ type PluginAttachment interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -113,10 +125,11 @@ type PluginAttachment interface {
 // The jsii proxy struct for PluginAttachment
 type jsiiProxy_PluginAttachment struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IPluginAttachment
 }
 
-func (j *jsiiProxy_PluginAttachment) AttrAttachResourceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PluginAttachment) AttrAttachResourceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAttachResourceId",
@@ -125,8 +138,8 @@ func (j *jsiiProxy_PluginAttachment) AttrAttachResourceId() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_PluginAttachment) AttrAttachResourceIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PluginAttachment) AttrAttachResourceIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAttachResourceIds",
@@ -135,8 +148,8 @@ func (j *jsiiProxy_PluginAttachment) AttrAttachResourceIds() alicloudroscdkcore.
 	return returns
 }
 
-func (j *jsiiProxy_PluginAttachment) AttrAttachResourceNames() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PluginAttachment) AttrAttachResourceNames() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAttachResourceNames",
@@ -145,8 +158,8 @@ func (j *jsiiProxy_PluginAttachment) AttrAttachResourceNames() alicloudroscdkcor
 	return returns
 }
 
-func (j *jsiiProxy_PluginAttachment) AttrAttachResourceParentIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PluginAttachment) AttrAttachResourceParentIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAttachResourceParentIds",
@@ -155,8 +168,8 @@ func (j *jsiiProxy_PluginAttachment) AttrAttachResourceParentIds() alicloudroscd
 	return returns
 }
 
-func (j *jsiiProxy_PluginAttachment) AttrAttachResourceType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PluginAttachment) AttrAttachResourceType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAttachResourceType",
@@ -165,8 +178,8 @@ func (j *jsiiProxy_PluginAttachment) AttrAttachResourceType() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_PluginAttachment) AttrEnable() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PluginAttachment) AttrEnable() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEnable",
@@ -175,8 +188,8 @@ func (j *jsiiProxy_PluginAttachment) AttrEnable() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_PluginAttachment) AttrEnvironmentId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PluginAttachment) AttrEnvironmentId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEnvironmentId",
@@ -185,8 +198,8 @@ func (j *jsiiProxy_PluginAttachment) AttrEnvironmentId() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_PluginAttachment) AttrPluginAttachmentId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PluginAttachment) AttrPluginAttachmentId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPluginAttachmentId",
@@ -195,8 +208,8 @@ func (j *jsiiProxy_PluginAttachment) AttrPluginAttachmentId() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_PluginAttachment) AttrPluginClassInfo() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PluginAttachment) AttrPluginClassInfo() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPluginClassInfo",
@@ -205,8 +218,8 @@ func (j *jsiiProxy_PluginAttachment) AttrPluginClassInfo() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_PluginAttachment) AttrPluginInfo() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PluginAttachment) AttrPluginInfo() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPluginInfo",
@@ -220,6 +233,16 @@ func (j *jsiiProxy_PluginAttachment) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_PluginAttachment) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -357,17 +380,6 @@ func (j *jsiiProxy_PluginAttachment)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_PluginAttachment)SetProps(val *PluginAttachmentProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_PluginAttachment)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -459,6 +471,45 @@ func (p *jsiiProxy_PluginAttachment) ApplyRemovalPolicy(policy alicloudroscdkcor
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (p *jsiiProxy_PluginAttachment) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		p,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_PluginAttachment) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		p,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_PluginAttachment) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		p,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (p *jsiiProxy_PluginAttachment) GeneratePhysicalName() *string {

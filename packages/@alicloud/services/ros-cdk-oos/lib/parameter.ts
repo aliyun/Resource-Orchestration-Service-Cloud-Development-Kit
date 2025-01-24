@@ -51,25 +51,41 @@ export interface ParameterProps {
 }
 
 /**
+ * Represents a `Parameter`.
+ */
+export interface IParameter extends ros.IResource {
+    readonly props: ParameterProps;
+
+    /**
+     * Attribute Name: The Name of the parameter.
+     */
+    readonly attrName: ros.IResolvable | string;
+
+    /**
+     * Attribute Value: The Value of the parameter.
+     */
+    readonly attrValue: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::Parameter`, which is used to create a common parameter.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosParameter`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-parameter
  */
-export class Parameter extends ros.Resource {
+export class Parameter extends ros.Resource implements IParameter {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ParameterProps;
+    public readonly props: ParameterProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Name: The Name of the parameter.
      */
-    public readonly attrName: ros.IResolvable;
+    public readonly attrName: ros.IResolvable | string;
 
     /**
      * Attribute Value: The Value of the parameter.
      */
-    public readonly attrValue: ros.IResolvable;
+    public readonly attrValue: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

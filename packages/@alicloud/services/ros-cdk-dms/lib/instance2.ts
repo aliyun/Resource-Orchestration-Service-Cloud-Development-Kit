@@ -199,30 +199,51 @@ export interface Instance2Props {
 }
 
 /**
+ * Represents a `Instance2`.
+ */
+export interface IInstance2 extends ros.IResource {
+    readonly props: Instance2Props;
+
+    /**
+     * Attribute Host: The endpoint of the database instance.
+     */
+    readonly attrHost: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: The ID of the database instance.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute Port: The connection port of the database instance.
+     */
+    readonly attrPort: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::DMS::Instance2`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance2`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-instance2
  */
-export class Instance2 extends ros.Resource {
+export class Instance2 extends ros.Resource implements IInstance2 {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: Instance2Props;
+    public readonly props: Instance2Props;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Host: The endpoint of the database instance.
      */
-    public readonly attrHost: ros.IResolvable;
+    public readonly attrHost: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: The ID of the database instance.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute Port: The connection port of the database instance.
      */
-    public readonly attrPort: ros.IResolvable;
+    public readonly attrPort: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

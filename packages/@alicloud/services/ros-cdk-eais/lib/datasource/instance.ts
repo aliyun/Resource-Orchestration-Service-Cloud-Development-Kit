@@ -24,75 +24,141 @@ export interface InstanceProps {
 }
 
 /**
+ * Represents a `Instance`.
+ */
+export interface IInstance extends ros.IResource {
+    readonly props: InstanceProps;
+
+    /**
+     * Attribute ClientInstanceId: The ID of the ECS instance to be bound.
+     */
+    readonly attrClientInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute ClientInstanceName: The name of the ECS instance bound to the EAIS instance.
+     */
+    readonly attrClientInstanceName: ros.IResolvable | string;
+
+    /**
+     * Attribute ClientInstanceType: The type of the ECS instance bound to the EAIS instance.
+     */
+    readonly attrClientInstanceType: ros.IResolvable | string;
+
+    /**
+     * Attribute CreateTime: The creation time of the resource.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: Elastic accelerated instance ID.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceName: Name of the instance.
+     */
+    readonly attrInstanceName: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceType: EAIS instance type.
+     */
+    readonly attrInstanceType: ros.IResolvable | string;
+
+    /**
+     * Attribute JupyterUrl: The address of the Eais Notebook.
+     */
+    readonly attrJupyterUrl: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: The ID of the resource group.
+     */
+    readonly attrResourceGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute SecurityGroupId: Security group ID.
+     */
+    readonly attrSecurityGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute VSwitchId: Switch ID.
+     */
+    readonly attrVSwitchId: ros.IResolvable | string;
+
+    /**
+     * Attribute ZoneId: The ID of the region to which the EAIS instance belongs.
+     */
+    readonly attrZoneId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::EAIS::Instance`, which is used to query the information about a created Elastic Accelerated Computing Instances (EAIS) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eais-instance
  */
-export class Instance extends ros.Resource {
+export class Instance extends ros.Resource implements IInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InstanceProps;
+    public readonly props: InstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClientInstanceId: The ID of the ECS instance to be bound.
      */
-    public readonly attrClientInstanceId: ros.IResolvable;
+    public readonly attrClientInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute ClientInstanceName: The name of the ECS instance bound to the EAIS instance.
      */
-    public readonly attrClientInstanceName: ros.IResolvable;
+    public readonly attrClientInstanceName: ros.IResolvable | string;
 
     /**
      * Attribute ClientInstanceType: The type of the ECS instance bound to the EAIS instance.
      */
-    public readonly attrClientInstanceType: ros.IResolvable;
+    public readonly attrClientInstanceType: ros.IResolvable | string;
 
     /**
      * Attribute CreateTime: The creation time of the resource.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: Elastic accelerated instance ID.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute InstanceName: Name of the instance.
      */
-    public readonly attrInstanceName: ros.IResolvable;
+    public readonly attrInstanceName: ros.IResolvable | string;
 
     /**
      * Attribute InstanceType: EAIS instance type.
      */
-    public readonly attrInstanceType: ros.IResolvable;
+    public readonly attrInstanceType: ros.IResolvable | string;
 
     /**
      * Attribute JupyterUrl: The address of the Eais Notebook.
      */
-    public readonly attrJupyterUrl: ros.IResolvable;
+    public readonly attrJupyterUrl: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroupId: The ID of the resource group.
      */
-    public readonly attrResourceGroupId: ros.IResolvable;
+    public readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Attribute SecurityGroupId: Security group ID.
      */
-    public readonly attrSecurityGroupId: ros.IResolvable;
+    public readonly attrSecurityGroupId: ros.IResolvable | string;
 
     /**
      * Attribute VSwitchId: Switch ID.
      */
-    public readonly attrVSwitchId: ros.IResolvable;
+    public readonly attrVSwitchId: ros.IResolvable | string;
 
     /**
      * Attribute ZoneId: The ID of the region to which the EAIS instance belongs.
      */
-    public readonly attrZoneId: ros.IResolvable;
+    public readonly attrZoneId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

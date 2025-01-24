@@ -12,58 +12,68 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::HBR::DbPlan`, which is used to create a backup plan.
 type DbPlan interface {
 	alicloudroscdkcore.Resource
+	IDbPlan
 	// Attribute ContinuousPlan: Continuous backup plan schedule.
 	//
 	// Use {   "type": "continuous" }.
-	AttrContinuousPlan() alicloudroscdkcore.IResolvable
+	AttrContinuousPlan() interface{}
 	// Attribute ContinuousUuid: Uuid of continuous backup plan.
-	AttrContinuousUuid() alicloudroscdkcore.IResolvable
+	AttrContinuousUuid() interface{}
 	// Attribute CumulativePlan: Cumulative plan schedule, only for mssql.
 	//
 	// More details see FullPlan.
-	AttrCumulativePlan() alicloudroscdkcore.IResolvable
+	AttrCumulativePlan() interface{}
 	// Attribute CumulativeUuid: Uuid of cumulative plan.
-	AttrCumulativeUuid() alicloudroscdkcore.IResolvable
+	AttrCumulativeUuid() interface{}
 	// Attribute DbPlanName: Display name of the backup plan.
-	AttrDbPlanName() alicloudroscdkcore.IResolvable
+	AttrDbPlanName() interface{}
 	// Attribute FullPlan: Full backup plan schedule.
 	//
 	// daily: {"type": "daily", "start": "00:00:00", "interval": 3}, weekly {"type":"weekly","start": "03:00:00","days": [1,2,3,4,5],"interval": 1}, days can be 0 - 6, 0 means Sunday, and interval can be 1 - 52.
-	AttrFullPlan() alicloudroscdkcore.IResolvable
+	AttrFullPlan() interface{}
 	// Attribute FullUuid: Uuid of full backup plan.
-	AttrFullUuid() alicloudroscdkcore.IResolvable
+	AttrFullUuid() interface{}
 	// Attribute HostUuid: Uuid of the host of the database instance.
-	AttrHostUuid() alicloudroscdkcore.IResolvable
+	AttrHostUuid() interface{}
 	// Attribute IncPlan: Incremental backup plan schedule.
 	//
 	// Only for mysql and oracle. More details see FullPlan.
-	AttrIncPlan() alicloudroscdkcore.IResolvable
+	AttrIncPlan() interface{}
 	// Attribute IncUuid: Uuid of the incremental bakcup plan.
-	AttrIncUuid() alicloudroscdkcore.IResolvable
+	AttrIncUuid() interface{}
 	// Attribute InstanceUuid: Uuid of database instance.
-	AttrInstanceUuid() alicloudroscdkcore.IResolvable
+	AttrInstanceUuid() interface{}
 	// Attribute LogPlan: Log backup plan schedule.More details see FullPlan.
-	AttrLogPlan() alicloudroscdkcore.IResolvable
+	AttrLogPlan() interface{}
 	// Attribute LogUuid: Uuid of the log backup plan.
-	AttrLogUuid() alicloudroscdkcore.IResolvable
+	AttrLogUuid() interface{}
 	// Attribute MaxRateLimit: Max rate limit for backup job,.
-	AttrMaxRateLimit() alicloudroscdkcore.IResolvable
+	AttrMaxRateLimit() interface{}
 	// Attribute MaxRetrySeconds: Max retry seconds on network failure.
-	AttrMaxRetrySeconds() alicloudroscdkcore.IResolvable
+	AttrMaxRetrySeconds() interface{}
 	// Attribute Options: Backup options in json format, different for each type of database.
 	//
 	// For Oracle, use {"channels":4,"compression":"lzop","offline_backup":false,"archivelog_reserve_hours":24,"custom_commands":""}, "channels" means numbers of concurrent theads, "archivelog_reserve_hours" means how long before the archive log will be deleted after backup job completed, other paramters should use the default vaule. For Mysql, use {"channels":4,"compression":"lzop","del_binlog":false}, "del_binlog" means whether the binlog will be deleted after backup completed, only take effect for log or continuous backup. For SQL Server, use {\"channels\":4,\"verify\":false,\"compression\":\"lzop\",\"backup_new_databases\":false}.
-	AttrOptions() alicloudroscdkcore.IResolvable
+	AttrOptions() interface{}
 	// Attribute PlanId: Id of the backup plan.
-	AttrPlanId() alicloudroscdkcore.IResolvable
+	AttrPlanId() interface{}
 	// Attribute SourceType: Database type, allowed value: MYSQL, ORACLE, MSSQL.
-	AttrSourceType() alicloudroscdkcore.IResolvable
+	AttrSourceType() interface{}
 	// Attribute Target: Target vault to backup.
-	AttrTarget() alicloudroscdkcore.IResolvable
+	AttrTarget() interface{}
 	// Attribute VaultId: Vault ID to create backup plan, the backup data will be stored to the vault.
-	AttrVaultId() alicloudroscdkcore.IResolvable
+	AttrVaultId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -78,7 +88,6 @@ type DbPlan interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DbPlanProps
-	SetProps(val *DbPlanProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -91,6 +100,9 @@ type DbPlan interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -143,10 +155,11 @@ type DbPlan interface {
 // The jsii proxy struct for DbPlan
 type jsiiProxy_DbPlan struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDbPlan
 }
 
-func (j *jsiiProxy_DbPlan) AttrContinuousPlan() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbPlan) AttrContinuousPlan() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrContinuousPlan",
@@ -155,8 +168,8 @@ func (j *jsiiProxy_DbPlan) AttrContinuousPlan() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbPlan) AttrContinuousUuid() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbPlan) AttrContinuousUuid() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrContinuousUuid",
@@ -165,8 +178,8 @@ func (j *jsiiProxy_DbPlan) AttrContinuousUuid() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbPlan) AttrCumulativePlan() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbPlan) AttrCumulativePlan() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCumulativePlan",
@@ -175,8 +188,8 @@ func (j *jsiiProxy_DbPlan) AttrCumulativePlan() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbPlan) AttrCumulativeUuid() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbPlan) AttrCumulativeUuid() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCumulativeUuid",
@@ -185,8 +198,8 @@ func (j *jsiiProxy_DbPlan) AttrCumulativeUuid() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbPlan) AttrDbPlanName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbPlan) AttrDbPlanName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbPlanName",
@@ -195,8 +208,8 @@ func (j *jsiiProxy_DbPlan) AttrDbPlanName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbPlan) AttrFullPlan() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbPlan) AttrFullPlan() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrFullPlan",
@@ -205,8 +218,8 @@ func (j *jsiiProxy_DbPlan) AttrFullPlan() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbPlan) AttrFullUuid() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbPlan) AttrFullUuid() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrFullUuid",
@@ -215,8 +228,8 @@ func (j *jsiiProxy_DbPlan) AttrFullUuid() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbPlan) AttrHostUuid() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbPlan) AttrHostUuid() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHostUuid",
@@ -225,8 +238,8 @@ func (j *jsiiProxy_DbPlan) AttrHostUuid() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbPlan) AttrIncPlan() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbPlan) AttrIncPlan() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIncPlan",
@@ -235,8 +248,8 @@ func (j *jsiiProxy_DbPlan) AttrIncPlan() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbPlan) AttrIncUuid() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbPlan) AttrIncUuid() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIncUuid",
@@ -245,8 +258,8 @@ func (j *jsiiProxy_DbPlan) AttrIncUuid() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbPlan) AttrInstanceUuid() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbPlan) AttrInstanceUuid() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceUuid",
@@ -255,8 +268,8 @@ func (j *jsiiProxy_DbPlan) AttrInstanceUuid() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbPlan) AttrLogPlan() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbPlan) AttrLogPlan() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLogPlan",
@@ -265,8 +278,8 @@ func (j *jsiiProxy_DbPlan) AttrLogPlan() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbPlan) AttrLogUuid() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbPlan) AttrLogUuid() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLogUuid",
@@ -275,8 +288,8 @@ func (j *jsiiProxy_DbPlan) AttrLogUuid() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbPlan) AttrMaxRateLimit() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbPlan) AttrMaxRateLimit() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMaxRateLimit",
@@ -285,8 +298,8 @@ func (j *jsiiProxy_DbPlan) AttrMaxRateLimit() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbPlan) AttrMaxRetrySeconds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbPlan) AttrMaxRetrySeconds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMaxRetrySeconds",
@@ -295,8 +308,8 @@ func (j *jsiiProxy_DbPlan) AttrMaxRetrySeconds() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_DbPlan) AttrOptions() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbPlan) AttrOptions() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOptions",
@@ -305,8 +318,8 @@ func (j *jsiiProxy_DbPlan) AttrOptions() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbPlan) AttrPlanId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbPlan) AttrPlanId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPlanId",
@@ -315,8 +328,8 @@ func (j *jsiiProxy_DbPlan) AttrPlanId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbPlan) AttrSourceType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbPlan) AttrSourceType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSourceType",
@@ -325,8 +338,8 @@ func (j *jsiiProxy_DbPlan) AttrSourceType() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbPlan) AttrTarget() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbPlan) AttrTarget() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTarget",
@@ -335,8 +348,8 @@ func (j *jsiiProxy_DbPlan) AttrTarget() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbPlan) AttrVaultId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbPlan) AttrVaultId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVaultId",
@@ -350,6 +363,16 @@ func (j *jsiiProxy_DbPlan) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DbPlan) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -487,17 +510,6 @@ func (j *jsiiProxy_DbPlan)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DbPlan)SetProps(val *DbPlanProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_DbPlan)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -589,6 +601,45 @@ func (d *jsiiProxy_DbPlan) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalP
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_DbPlan) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DbPlan) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DbPlan) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_DbPlan) GeneratePhysicalName() *string {

@@ -26,20 +26,31 @@ export interface AuditProps {
 }
 
 /**
+ * Represents a `Audit`.
+ */
+export interface IAudit extends ros.IResource {
+    readonly props: AuditProps;
+
+    /**
+     * Attribute DisplayName: Name of SLS log audit.
+     */
+    readonly attrDisplayName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Audit`, which is used to configure Log Audit Service.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAudit`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-audit
  */
-export class Audit extends ros.Resource {
+export class Audit extends ros.Resource implements IAudit {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AuditProps;
+    public readonly props: AuditProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DisplayName: Name of SLS log audit.
      */
-    public readonly attrDisplayName: ros.IResolvable;
+    public readonly attrDisplayName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

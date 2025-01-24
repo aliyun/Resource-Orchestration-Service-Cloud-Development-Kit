@@ -4,6 +4,9 @@
 @alicloud/ros-cdk-polardbx.DBInstanceProps=com.aliyun.ros.cdk.polardbx.DBInstanceProps
 @alicloud/ros-cdk-polardbx.Database=com.aliyun.ros.cdk.polardbx.Database
 @alicloud/ros-cdk-polardbx.DatabaseProps=com.aliyun.ros.cdk.polardbx.DatabaseProps
+@alicloud/ros-cdk-polardbx.IAccount=com.aliyun.ros.cdk.polardbx.IAccount
+@alicloud/ros-cdk-polardbx.IDBInstance=com.aliyun.ros.cdk.polardbx.IDBInstance
+@alicloud/ros-cdk-polardbx.IDatabase=com.aliyun.ros.cdk.polardbx.IDatabase
 @alicloud/ros-cdk-polardbx.RosAccount=com.aliyun.ros.cdk.polardbx.RosAccount
 @alicloud/ros-cdk-polardbx.RosAccountProps=com.aliyun.ros.cdk.polardbx.RosAccountProps
 @alicloud/ros-cdk-polardbx.RosDBInstance=com.aliyun.ros.cdk.polardbx.RosDBInstance
@@ -20,6 +23,10 @@
 @alicloud/ros-cdk-polardbx.datasource.DatabaseProps=com.aliyun.ros.cdk.polardbx.datasource.DatabaseProps
 @alicloud/ros-cdk-polardbx.datasource.Databases=com.aliyun.ros.cdk.polardbx.datasource.Databases
 @alicloud/ros-cdk-polardbx.datasource.DatabasesProps=com.aliyun.ros.cdk.polardbx.datasource.DatabasesProps
+@alicloud/ros-cdk-polardbx.datasource.IAccount=com.aliyun.ros.cdk.polardbx.datasource.IAccount
+@alicloud/ros-cdk-polardbx.datasource.IAccounts=com.aliyun.ros.cdk.polardbx.datasource.IAccounts
+@alicloud/ros-cdk-polardbx.datasource.IDatabase=com.aliyun.ros.cdk.polardbx.datasource.IDatabase
+@alicloud/ros-cdk-polardbx.datasource.IDatabases=com.aliyun.ros.cdk.polardbx.datasource.IDatabases
 @alicloud/ros-cdk-polardbx.datasource.RosAccount=com.aliyun.ros.cdk.polardbx.datasource.RosAccount
 @alicloud/ros-cdk-polardbx.datasource.RosAccountProps=com.aliyun.ros.cdk.polardbx.datasource.RosAccountProps
 @alicloud/ros-cdk-polardbx.datasource.RosAccounts=com.aliyun.ros.cdk.polardbx.datasource.RosAccounts

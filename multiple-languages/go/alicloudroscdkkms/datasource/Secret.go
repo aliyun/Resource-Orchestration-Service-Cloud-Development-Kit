@@ -12,38 +12,48 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::KMS::Secret`.
 type Secret interface {
 	alicloudroscdkcore.Resource
+	ISecret
 	// Attribute Arn: The Alibaba Cloud Resource Name (ARN) of the secret.
-	AttrArn() alicloudroscdkcore.IResolvable
+	AttrArn() interface{}
 	// Attribute AutomaticRotation: Indicates whether automatic rotation is enabled.
-	AttrAutomaticRotation() alicloudroscdkcore.IResolvable
+	AttrAutomaticRotation() interface{}
 	// Attribute CreateTime: The time when the secret was created.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute Description: The description of the secret.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute DKMSInstanceId: The ID of the dedicated KMS instance.
-	AttrDkmsInstanceId() alicloudroscdkcore.IResolvable
+	AttrDkmsInstanceId() interface{}
 	// Attribute EncryptionKeyId: The ID of the customer master key (CMK) that is used to encrypt the secret value.
-	AttrEncryptionKeyId() alicloudroscdkcore.IResolvable
+	AttrEncryptionKeyId() interface{}
 	// Attribute ExtendedConfig: The extended configuration of the secret.
-	AttrExtendedConfig() alicloudroscdkcore.IResolvable
+	AttrExtendedConfig() interface{}
 	// Attribute LastRotationDate: The time when the last rotation was performed.
-	AttrLastRotationDate() alicloudroscdkcore.IResolvable
+	AttrLastRotationDate() interface{}
 	// Attribute NextRotationDate: The time when the next rotation will be performed.
-	AttrNextRotationDate() alicloudroscdkcore.IResolvable
+	AttrNextRotationDate() interface{}
 	// Attribute PlannedDeleteTime: The time when the secret is scheduled to be deleted.
-	AttrPlannedDeleteTime() alicloudroscdkcore.IResolvable
+	AttrPlannedDeleteTime() interface{}
 	// Attribute RotationInterval: The interval for automatic rotation.
 	//
 	// The value is in the integer[unit] format. integer indicates the length of time. unit: indicates the time unit. The value of unit is fixed as s. For example, if the value is 604800s, automatic rotation is performed at a 7-day interval.The value is in the integer[unit] format. integer indicates the length of time. unit: indicates the time unit. The value of unit is fixed as s. For example, if the value is 604800s, automatic rotation is performed at a 7-day interval.
-	AttrRotationInterval() alicloudroscdkcore.IResolvable
+	AttrRotationInterval() interface{}
 	// Attribute SecretName: The name of the secret.
-	AttrSecretName() alicloudroscdkcore.IResolvable
+	AttrSecretName() interface{}
 	// Attribute SecretType: The type of the secret.
-	AttrSecretType() alicloudroscdkcore.IResolvable
+	AttrSecretType() interface{}
 	// Attribute UpdateTime: The time when the secret was updated.
-	AttrUpdateTime() alicloudroscdkcore.IResolvable
+	AttrUpdateTime() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -58,7 +68,6 @@ type Secret interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *SecretProps
-	SetProps(val *SecretProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -71,6 +80,9 @@ type Secret interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -123,10 +135,11 @@ type Secret interface {
 // The jsii proxy struct for Secret
 type jsiiProxy_Secret struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ISecret
 }
 
-func (j *jsiiProxy_Secret) AttrArn() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Secret) AttrArn() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrArn",
@@ -135,8 +148,8 @@ func (j *jsiiProxy_Secret) AttrArn() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Secret) AttrAutomaticRotation() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Secret) AttrAutomaticRotation() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAutomaticRotation",
@@ -145,8 +158,8 @@ func (j *jsiiProxy_Secret) AttrAutomaticRotation() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_Secret) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Secret) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -155,8 +168,8 @@ func (j *jsiiProxy_Secret) AttrCreateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Secret) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Secret) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -165,8 +178,8 @@ func (j *jsiiProxy_Secret) AttrDescription() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Secret) AttrDkmsInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Secret) AttrDkmsInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDkmsInstanceId",
@@ -175,8 +188,8 @@ func (j *jsiiProxy_Secret) AttrDkmsInstanceId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Secret) AttrEncryptionKeyId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Secret) AttrEncryptionKeyId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEncryptionKeyId",
@@ -185,8 +198,8 @@ func (j *jsiiProxy_Secret) AttrEncryptionKeyId() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_Secret) AttrExtendedConfig() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Secret) AttrExtendedConfig() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrExtendedConfig",
@@ -195,8 +208,8 @@ func (j *jsiiProxy_Secret) AttrExtendedConfig() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Secret) AttrLastRotationDate() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Secret) AttrLastRotationDate() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLastRotationDate",
@@ -205,8 +218,8 @@ func (j *jsiiProxy_Secret) AttrLastRotationDate() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Secret) AttrNextRotationDate() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Secret) AttrNextRotationDate() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNextRotationDate",
@@ -215,8 +228,8 @@ func (j *jsiiProxy_Secret) AttrNextRotationDate() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Secret) AttrPlannedDeleteTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Secret) AttrPlannedDeleteTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPlannedDeleteTime",
@@ -225,8 +238,8 @@ func (j *jsiiProxy_Secret) AttrPlannedDeleteTime() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_Secret) AttrRotationInterval() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Secret) AttrRotationInterval() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRotationInterval",
@@ -235,8 +248,8 @@ func (j *jsiiProxy_Secret) AttrRotationInterval() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Secret) AttrSecretName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Secret) AttrSecretName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSecretName",
@@ -245,8 +258,8 @@ func (j *jsiiProxy_Secret) AttrSecretName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Secret) AttrSecretType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Secret) AttrSecretType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSecretType",
@@ -255,8 +268,8 @@ func (j *jsiiProxy_Secret) AttrSecretType() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Secret) AttrUpdateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Secret) AttrUpdateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUpdateTime",
@@ -270,6 +283,16 @@ func (j *jsiiProxy_Secret) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Secret) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -407,17 +430,6 @@ func (j *jsiiProxy_Secret)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Secret)SetProps(val *SecretProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Secret)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -509,6 +521,45 @@ func (s *jsiiProxy_Secret) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalP
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (s *jsiiProxy_Secret) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		s,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_Secret) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_Secret) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (s *jsiiProxy_Secret) GeneratePhysicalName() *string {

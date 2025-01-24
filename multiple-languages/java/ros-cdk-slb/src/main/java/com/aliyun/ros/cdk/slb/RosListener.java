@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SLB::Listener</code>, which is used to create a Server Load Balancer (SLB) listener.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:12.044Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:44.292Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosListener")
 public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -331,6 +331,24 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setEnableHttp2(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "enableHttp2", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getFullNatEnabled() {
+        return software.amazon.jsii.Kernel.get(this, "fullNatEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setFullNatEnabled(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "fullNatEnabled", value);
+    }
+
+    /**
+     */
+    public void setFullNatEnabled(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "fullNatEnabled", value);
     }
 
     /**
@@ -2582,6 +2600,23 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder enableHttp2(final com.aliyun.ros.cdk.core.IResolvable enableHttp2) {
             this.props.enableHttp2(enableHttp2);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param fullNatEnabled This parameter is required.
+         */
+        public Builder fullNatEnabled(final java.lang.Boolean fullNatEnabled) {
+            this.props.fullNatEnabled(fullNatEnabled);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param fullNatEnabled This parameter is required.
+         */
+        public Builder fullNatEnabled(final com.aliyun.ros.cdk.core.IResolvable fullNatEnabled) {
+            this.props.fullNatEnabled(fullNatEnabled);
             return this;
         }
 

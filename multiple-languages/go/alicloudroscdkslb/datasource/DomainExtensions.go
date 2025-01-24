@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::DomainExtensions`, which is used to query the domain name extensions that are added to a listener of a Server Load Balancer (SLB) instance.
 type DomainExtensions interface {
 	alicloudroscdkcore.Resource
+	IDomainExtensions
 	// Attribute DomainExtensionIds: The list of domain extension IDs.
-	AttrDomainExtensionIds() alicloudroscdkcore.IResolvable
+	AttrDomainExtensionIds() interface{}
 	// Attribute DomainExtensions: The list of domain extensions.
-	AttrDomainExtensions() alicloudroscdkcore.IResolvable
+	AttrDomainExtensions() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type DomainExtensions interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DomainExtensionsProps
-	SetProps(val *DomainExtensionsProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type DomainExtensions interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type DomainExtensions interface {
 // The jsii proxy struct for DomainExtensions
 type jsiiProxy_DomainExtensions struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDomainExtensions
 }
 
-func (j *jsiiProxy_DomainExtensions) AttrDomainExtensionIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DomainExtensions) AttrDomainExtensionIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDomainExtensionIds",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_DomainExtensions) AttrDomainExtensionIds() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_DomainExtensions) AttrDomainExtensions() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DomainExtensions) AttrDomainExtensions() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDomainExtensions",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_DomainExtensions) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DomainExtensions) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_DomainExtensions)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DomainExtensions)SetProps(val *DomainExtensionsProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_DomainExtensions)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (d *jsiiProxy_DomainExtensions) ApplyRemovalPolicy(policy alicloudroscdkcor
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_DomainExtensions) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DomainExtensions) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DomainExtensions) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_DomainExtensions) GeneratePhysicalName() *string {

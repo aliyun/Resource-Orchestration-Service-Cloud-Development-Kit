@@ -52,10 +52,6 @@ func (j *jsiiProxy_WorkspaceResourceMaxCompute) validateSetIdParameters(val *str
 	return nil
 }
 
-func (j *jsiiProxy_WorkspaceResourceMaxCompute) validateSetPropsParameters(val *WorkspaceResourceMaxComputeProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_WorkspaceResourceMaxCompute) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

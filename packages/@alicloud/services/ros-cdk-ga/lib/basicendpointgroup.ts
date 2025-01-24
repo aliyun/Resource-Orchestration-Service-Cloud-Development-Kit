@@ -51,20 +51,31 @@ export interface BasicEndpointGroupProps {
 }
 
 /**
+ * Represents a `BasicEndpointGroup`.
+ */
+export interface IBasicEndpointGroup extends ros.IResource {
+    readonly props: BasicEndpointGroupProps;
+
+    /**
+     * Attribute EndpointGroupId: The endpoint group ID.
+     */
+    readonly attrEndpointGroupId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::GA::BasicEndpointGroup`, which is used to create an endpoint group for a basic Global Accelerator (GA) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBasicEndpointGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicendpointgroup
  */
-export class BasicEndpointGroup extends ros.Resource {
+export class BasicEndpointGroup extends ros.Resource implements IBasicEndpointGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: BasicEndpointGroupProps;
+    public readonly props: BasicEndpointGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute EndpointGroupId: The endpoint group ID.
      */
-    public readonly attrEndpointGroupId: ros.IResolvable;
+    public readonly attrEndpointGroupId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

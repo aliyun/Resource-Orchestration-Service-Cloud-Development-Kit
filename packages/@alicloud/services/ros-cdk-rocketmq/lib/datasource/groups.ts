@@ -34,25 +34,41 @@ export interface GroupsProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ROCKETMQ::Groups`, which is used to query the groups in Message Queue for Apache RocketMQ.
+ * Represents a `Groups`.
+ */
+export interface IGroups extends ros.IResource {
+    readonly props: GroupsProps;
+
+    /**
+     * Attribute GroupNames: The list of group names.
+     */
+    readonly attrGroupNames: ros.IResolvable | string;
+
+    /**
+     * Attribute Groups: The list of groups.
+     */
+    readonly attrGroups: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ROCKETMQ::Groups`, which is used to query groups.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGroups`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq-groups
  */
-export class Groups extends ros.Resource {
+export class Groups extends ros.Resource implements IGroups {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: GroupsProps;
+    public readonly props: GroupsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute GroupNames: The list of group names.
      */
-    public readonly attrGroupNames: ros.IResolvable;
+    public readonly attrGroupNames: ros.IResolvable | string;
 
     /**
      * Attribute Groups: The list of groups.
      */
-    public readonly attrGroups: ros.IResolvable;
+    public readonly attrGroups: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

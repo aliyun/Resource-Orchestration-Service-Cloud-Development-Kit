@@ -21,6 +21,7 @@
     "@alicloud/ros-cdk-ossdeployment": "file:../packages/@alicloud/services/ros-cdk-ossdeployment",
     "@alicloud/ros-cdk-oss": "file:../packages/@alicloud/services/ros-cdk-oss",
     "@alicloud/ros-cdk-fc": "file:../packages/@alicloud/services/ros-cdk-fc",
+    "@alicloud/ros-cdk-mns": "file:../packages/@alicloud/services/ros-cdk-mns",
     "@types/jest": "^26.0.14",
     "jest": "^25.5.0",
     "ts-jest": "^25.3.1"

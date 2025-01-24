@@ -10,6 +10,18 @@
 @alicloud/ros-cdk-alb.BackendServerAttachmentProps=com.aliyun.ros.cdk.alb.BackendServerAttachmentProps
 @alicloud/ros-cdk-alb.HealthCheckTemplate=com.aliyun.ros.cdk.alb.HealthCheckTemplate
 @alicloud/ros-cdk-alb.HealthCheckTemplateProps=com.aliyun.ros.cdk.alb.HealthCheckTemplateProps
+@alicloud/ros-cdk-alb.IAScript=com.aliyun.ros.cdk.alb.IAScript
+@alicloud/ros-cdk-alb.IAcl=com.aliyun.ros.cdk.alb.IAcl
+@alicloud/ros-cdk-alb.IAclAssociation=com.aliyun.ros.cdk.alb.IAclAssociation
+@alicloud/ros-cdk-alb.IAdditionalCertificateAssociation=com.aliyun.ros.cdk.alb.IAdditionalCertificateAssociation
+@alicloud/ros-cdk-alb.IBackendServerAttachment=com.aliyun.ros.cdk.alb.IBackendServerAttachment
+@alicloud/ros-cdk-alb.IHealthCheckTemplate=com.aliyun.ros.cdk.alb.IHealthCheckTemplate
+@alicloud/ros-cdk-alb.IListener=com.aliyun.ros.cdk.alb.IListener
+@alicloud/ros-cdk-alb.ILoadBalancer=com.aliyun.ros.cdk.alb.ILoadBalancer
+@alicloud/ros-cdk-alb.IRule=com.aliyun.ros.cdk.alb.IRule
+@alicloud/ros-cdk-alb.ISecurityGroupAttachment=com.aliyun.ros.cdk.alb.ISecurityGroupAttachment
+@alicloud/ros-cdk-alb.ISecurityPolicy=com.aliyun.ros.cdk.alb.ISecurityPolicy
+@alicloud/ros-cdk-alb.IServerGroup=com.aliyun.ros.cdk.alb.IServerGroup
 @alicloud/ros-cdk-alb.Listener=com.aliyun.ros.cdk.alb.Listener
 @alicloud/ros-cdk-alb.ListenerProps=com.aliyun.ros.cdk.alb.ListenerProps
 @alicloud/ros-cdk-alb.LoadBalancer=com.aliyun.ros.cdk.alb.LoadBalancer
@@ -95,6 +107,7 @@
 @alicloud/ros-cdk-alb.SecurityPolicyProps=com.aliyun.ros.cdk.alb.SecurityPolicyProps
 @alicloud/ros-cdk-alb.ServerGroup=com.aliyun.ros.cdk.alb.ServerGroup
 @alicloud/ros-cdk-alb.ServerGroupProps=com.aliyun.ros.cdk.alb.ServerGroupProps
+@alicloud/ros-cdk-alb.datasource.ILoadBalancers=com.aliyun.ros.cdk.alb.datasource.ILoadBalancers
 @alicloud/ros-cdk-alb.datasource.LoadBalancers=com.aliyun.ros.cdk.alb.datasource.LoadBalancers
 @alicloud/ros-cdk-alb.datasource.LoadBalancersProps=com.aliyun.ros.cdk.alb.datasource.LoadBalancersProps
 @alicloud/ros-cdk-alb.datasource.RosLoadBalancers=com.aliyun.ros.cdk.alb.datasource.RosLoadBalancers

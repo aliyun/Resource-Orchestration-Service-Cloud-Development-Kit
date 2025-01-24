@@ -28,30 +28,51 @@ export interface TopicProps {
 }
 
 /**
+ * Represents a `Topic`.
+ */
+export interface ITopic extends ros.IResource {
+    readonly props: TopicProps;
+
+    /**
+     * Attribute ARN.WithSlash: The ARN: acs:mns:$region:$accountid:/topics/$topicName
+     */
+    readonly attrArnWithSlash: ros.IResolvable | string;
+
+    /**
+     * Attribute TopicName: Topic name
+     */
+    readonly attrTopicName: ros.IResolvable | string;
+
+    /**
+     * Attribute TopicUrl: URL of created topic
+     */
+    readonly attrTopicUrl: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::MNS::Topic`, which is used to create a topic.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTopic`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-topic
  */
-export class Topic extends ros.Resource {
+export class Topic extends ros.Resource implements ITopic {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: TopicProps;
+    public readonly props: TopicProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ARN.WithSlash: The ARN: acs:mns:$region:$accountid:/topics/$topicName
      */
-    public readonly attrArnWithSlash: ros.IResolvable;
+    public readonly attrArnWithSlash: ros.IResolvable | string;
 
     /**
      * Attribute TopicName: Topic name
      */
-    public readonly attrTopicName: ros.IResolvable;
+    public readonly attrTopicName: ros.IResolvable | string;
 
     /**
      * Attribute TopicUrl: URL of created topic
      */
-    public readonly attrTopicUrl: ros.IResolvable;
+    public readonly attrTopicUrl: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

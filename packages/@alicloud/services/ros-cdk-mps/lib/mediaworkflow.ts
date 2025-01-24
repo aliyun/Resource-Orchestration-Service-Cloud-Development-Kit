@@ -32,45 +32,81 @@ export interface MediaWorkflowProps {
 }
 
 /**
+ * Represents a `MediaWorkflow`.
+ */
+export interface IMediaWorkflow extends ros.IResource {
+    readonly props: MediaWorkflowProps;
+
+    /**
+     * Attribute CreationTime: The time when the media workflow was created.
+     */
+    readonly attrCreationTime: ros.IResolvable | string;
+
+    /**
+     * Attribute MediaWorkflowId: The ID of the media workflow.
+     */
+    readonly attrMediaWorkflowId: ros.IResolvable | string;
+
+    /**
+     * Attribute Name: The name of the media workflow.
+     */
+    readonly attrName: ros.IResolvable | string;
+
+    /**
+     * Attribute State: The state of the media workflow.
+     */
+    readonly attrState: ros.IResolvable | string;
+
+    /**
+     * Attribute Topology: The topology of the media workflow.
+     */
+    readonly attrTopology: ros.IResolvable | string;
+
+    /**
+     * Attribute TriggerMode: The trigger mode of the media workflow.
+     */
+    readonly attrTriggerMode: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::MPS::MediaWorkflow`, which is used to add a media workflow.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMediaWorkflow`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mps-mediaworkflow
  */
-export class MediaWorkflow extends ros.Resource {
+export class MediaWorkflow extends ros.Resource implements IMediaWorkflow {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: MediaWorkflowProps;
+    public readonly props: MediaWorkflowProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreationTime: The time when the media workflow was created.
      */
-    public readonly attrCreationTime: ros.IResolvable;
+    public readonly attrCreationTime: ros.IResolvable | string;
 
     /**
      * Attribute MediaWorkflowId: The ID of the media workflow.
      */
-    public readonly attrMediaWorkflowId: ros.IResolvable;
+    public readonly attrMediaWorkflowId: ros.IResolvable | string;
 
     /**
      * Attribute Name: The name of the media workflow.
      */
-    public readonly attrName: ros.IResolvable;
+    public readonly attrName: ros.IResolvable | string;
 
     /**
      * Attribute State: The state of the media workflow.
      */
-    public readonly attrState: ros.IResolvable;
+    public readonly attrState: ros.IResolvable | string;
 
     /**
      * Attribute Topology: The topology of the media workflow.
      */
-    public readonly attrTopology: ros.IResolvable;
+    public readonly attrTopology: ros.IResolvable | string;
 
     /**
      * Attribute TriggerMode: The trigger mode of the media workflow.
      */
-    public readonly attrTriggerMode: ros.IResolvable;
+    public readonly attrTriggerMode: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

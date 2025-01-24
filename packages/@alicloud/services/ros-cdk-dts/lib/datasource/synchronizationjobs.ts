@@ -24,25 +24,41 @@ export interface SynchronizationJobsProps {
 }
 
 /**
+ * Represents a `SynchronizationJobs`.
+ */
+export interface ISynchronizationJobs extends ros.IResource {
+    readonly props: SynchronizationJobsProps;
+
+    /**
+     * Attribute DtsInstanceIds: The list of dts instance IDs.
+     */
+    readonly attrDtsInstanceIds: ros.IResolvable | string;
+
+    /**
+     * Attribute SynchronizationInstances: The list of synchronization instances.
+     */
+    readonly attrSynchronizationInstances: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::DTS::SynchronizationJobs`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSynchronizationJobs`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dts-synchronizationjobs
  */
-export class SynchronizationJobs extends ros.Resource {
+export class SynchronizationJobs extends ros.Resource implements ISynchronizationJobs {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SynchronizationJobsProps;
+    public readonly props: SynchronizationJobsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DtsInstanceIds: The list of dts instance IDs.
      */
-    public readonly attrDtsInstanceIds: ros.IResolvable;
+    public readonly attrDtsInstanceIds: ros.IResolvable | string;
 
     /**
      * Attribute SynchronizationInstances: The list of synchronization instances.
      */
-    public readonly attrSynchronizationInstances: ros.IResolvable;
+    public readonly attrSynchronizationInstances: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

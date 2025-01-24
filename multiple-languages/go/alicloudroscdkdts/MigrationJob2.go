@@ -12,14 +12,24 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::DTS::MigrationJob2`, which is used to purchase a data migration instance and configure a data migration task of the new version.
 type MigrationJob2 interface {
 	alicloudroscdkcore.Resource
+	IMigrationJob2
 	// Attribute DtsInstanceId: The ID of the DTS instance.
-	AttrDtsInstanceId() alicloudroscdkcore.IResolvable
+	AttrDtsInstanceId() interface{}
 	// Attribute DtsJobId: The ID of the task.
-	AttrDtsJobId() alicloudroscdkcore.IResolvable
+	AttrDtsJobId() interface{}
 	// Attribute DtsJobName: The name of the DTS job.
-	AttrDtsJobName() alicloudroscdkcore.IResolvable
+	AttrDtsJobName() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -34,7 +44,6 @@ type MigrationJob2 interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *MigrationJob2Props
-	SetProps(val *MigrationJob2Props)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -47,6 +56,9 @@ type MigrationJob2 interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -99,10 +111,11 @@ type MigrationJob2 interface {
 // The jsii proxy struct for MigrationJob2
 type jsiiProxy_MigrationJob2 struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IMigrationJob2
 }
 
-func (j *jsiiProxy_MigrationJob2) AttrDtsInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MigrationJob2) AttrDtsInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDtsInstanceId",
@@ -111,8 +124,8 @@ func (j *jsiiProxy_MigrationJob2) AttrDtsInstanceId() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_MigrationJob2) AttrDtsJobId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MigrationJob2) AttrDtsJobId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDtsJobId",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_MigrationJob2) AttrDtsJobId() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_MigrationJob2) AttrDtsJobName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MigrationJob2) AttrDtsJobName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDtsJobName",
@@ -136,6 +149,16 @@ func (j *jsiiProxy_MigrationJob2) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MigrationJob2) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -273,17 +296,6 @@ func (j *jsiiProxy_MigrationJob2)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_MigrationJob2)SetProps(val *MigrationJob2Props) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_MigrationJob2)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -375,6 +387,45 @@ func (m *jsiiProxy_MigrationJob2) ApplyRemovalPolicy(policy alicloudroscdkcore.R
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (m *jsiiProxy_MigrationJob2) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		m,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (m *jsiiProxy_MigrationJob2) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		m,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (m *jsiiProxy_MigrationJob2) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		m,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (m *jsiiProxy_MigrationJob2) GeneratePhysicalName() *string {

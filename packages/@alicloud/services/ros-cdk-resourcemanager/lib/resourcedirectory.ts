@@ -11,35 +11,61 @@ export interface ResourceDirectoryProps {
 }
 
 /**
+ * Represents a `ResourceDirectory`.
+ */
+export interface IResourceDirectory extends ros.IResource {
+    readonly props: ResourceDirectoryProps;
+
+    /**
+     * Attribute MasterAccountId: The ID of the master account
+     */
+    readonly attrMasterAccountId: ros.IResolvable | string;
+
+    /**
+     * Attribute MasterAccountName: The name of the master account
+     */
+    readonly attrMasterAccountName: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceDirectoryId: The ID of the resource directory
+     */
+    readonly attrResourceDirectoryId: ros.IResolvable | string;
+
+    /**
+     * Attribute RootFolderId: The ID of the root folder
+     */
+    readonly attrRootFolderId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ResourceDirectory`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosResourceDirectory`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourcedirectory
  */
-export class ResourceDirectory extends ros.Resource {
+export class ResourceDirectory extends ros.Resource implements IResourceDirectory {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ResourceDirectoryProps;
+    public readonly props: ResourceDirectoryProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute MasterAccountId: The ID of the master account
      */
-    public readonly attrMasterAccountId: ros.IResolvable;
+    public readonly attrMasterAccountId: ros.IResolvable | string;
 
     /**
      * Attribute MasterAccountName: The name of the master account
      */
-    public readonly attrMasterAccountName: ros.IResolvable;
+    public readonly attrMasterAccountName: ros.IResolvable | string;
 
     /**
      * Attribute ResourceDirectoryId: The ID of the resource directory
      */
-    public readonly attrResourceDirectoryId: ros.IResolvable;
+    public readonly attrResourceDirectoryId: ros.IResolvable | string;
 
     /**
      * Attribute RootFolderId: The ID of the root folder
      */
-    public readonly attrRootFolderId: ros.IResolvable;
+    public readonly attrRootFolderId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -12,14 +12,24 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::OSS::Bucket`, which is used to create a bucket in Object Storage Service (OSS).
 type Bucket interface {
 	alicloudroscdkcore.Resource
+	IBucket
 	// Attribute DomainName: The public DNS name of the specified bucket.
-	AttrDomainName() alicloudroscdkcore.IResolvable
+	AttrDomainName() interface{}
 	// Attribute InternalDomainName: The internal DNS name of the specified bucket.
-	AttrInternalDomainName() alicloudroscdkcore.IResolvable
+	AttrInternalDomainName() interface{}
 	// Attribute Name: The name of Bucket.
-	AttrName() alicloudroscdkcore.IResolvable
+	AttrName() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -34,7 +44,6 @@ type Bucket interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *BucketProps
-	SetProps(val *BucketProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -47,6 +56,9 @@ type Bucket interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -99,10 +111,11 @@ type Bucket interface {
 // The jsii proxy struct for Bucket
 type jsiiProxy_Bucket struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IBucket
 }
 
-func (j *jsiiProxy_Bucket) AttrDomainName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Bucket) AttrDomainName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDomainName",
@@ -111,8 +124,8 @@ func (j *jsiiProxy_Bucket) AttrDomainName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Bucket) AttrInternalDomainName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Bucket) AttrInternalDomainName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInternalDomainName",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_Bucket) AttrInternalDomainName() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_Bucket) AttrName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Bucket) AttrName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrName",
@@ -136,6 +149,16 @@ func (j *jsiiProxy_Bucket) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Bucket) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -273,17 +296,6 @@ func (j *jsiiProxy_Bucket)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Bucket)SetProps(val *BucketProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Bucket)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -389,6 +401,45 @@ func (b *jsiiProxy_Bucket) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalP
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (b *jsiiProxy_Bucket) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		b,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (b *jsiiProxy_Bucket) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		b,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (b *jsiiProxy_Bucket) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		b,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (b *jsiiProxy_Bucket) GeneratePhysicalName() *string {

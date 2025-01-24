@@ -12,10 +12,20 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::SLB::BackendServerToVServerGroupAddition`, which is used to add backend servers to an existing server group.
 type BackendServerToVServerGroupAddition interface {
 	alicloudroscdkcore.Resource
+	IBackendServerToVServerGroupAddition
 	// Attribute VServerGroupId: The ID of virtual server group.
-	AttrVServerGroupId() alicloudroscdkcore.IResolvable
+	AttrVServerGroupId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -30,7 +40,6 @@ type BackendServerToVServerGroupAddition interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *BackendServerToVServerGroupAdditionProps
-	SetProps(val *BackendServerToVServerGroupAdditionProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -43,6 +52,9 @@ type BackendServerToVServerGroupAddition interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -95,10 +107,11 @@ type BackendServerToVServerGroupAddition interface {
 // The jsii proxy struct for BackendServerToVServerGroupAddition
 type jsiiProxy_BackendServerToVServerGroupAddition struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IBackendServerToVServerGroupAddition
 }
 
-func (j *jsiiProxy_BackendServerToVServerGroupAddition) AttrVServerGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BackendServerToVServerGroupAddition) AttrVServerGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVServerGroupId",
@@ -112,6 +125,16 @@ func (j *jsiiProxy_BackendServerToVServerGroupAddition) EnableResourcePropertyCo
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BackendServerToVServerGroupAddition) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -249,17 +272,6 @@ func (j *jsiiProxy_BackendServerToVServerGroupAddition)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_BackendServerToVServerGroupAddition)SetProps(val *BackendServerToVServerGroupAdditionProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_BackendServerToVServerGroupAddition)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -351,6 +363,45 @@ func (b *jsiiProxy_BackendServerToVServerGroupAddition) ApplyRemovalPolicy(polic
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (b *jsiiProxy_BackendServerToVServerGroupAddition) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		b,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (b *jsiiProxy_BackendServerToVServerGroupAddition) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		b,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (b *jsiiProxy_BackendServerToVServerGroupAddition) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		b,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (b *jsiiProxy_BackendServerToVServerGroupAddition) GeneratePhysicalName() *string {

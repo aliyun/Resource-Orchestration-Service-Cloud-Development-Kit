@@ -268,6 +268,123 @@ function rosAccessControlTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
+ * Properties for defining a `RosAccessLogsAddition`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-accesslogsaddition
+ */
+export interface RosAccessLogsAdditionProps {
+
+    /**
+     * @Property loadBalancerId: The load balancer id.Only SLB Layer 7 load balancing (HTTP\/HTTPS listening) supports the access log function.Prerequisites1. A SLB instance has been created. For details, see Creating and Managing CLB Instances.2. A virtual server group has been created. Backend servers have been added to the server group.3. HTTP or HTTPS listening has been configured for CLB. 4. You have enabled the log service. For details, see Activating the Log Service.
+     */
+    readonly loadBalancerId: string | ros.IResolvable;
+
+    /**
+     * @Property logProject: The log project name.
+     */
+    readonly logProject: string | ros.IResolvable;
+
+    /**
+     * @Property logStore: The log store name.
+     */
+    readonly logStore: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAccessLogsAdditionProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAccessLogsAdditionProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAccessLogsAdditionPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('logStore', ros.requiredValidator)(properties.logStore));
+    errors.collect(ros.propertyValidator('logStore', ros.validateString)(properties.logStore));
+    errors.collect(ros.propertyValidator('loadBalancerId', ros.requiredValidator)(properties.loadBalancerId));
+    errors.collect(ros.propertyValidator('loadBalancerId', ros.validateString)(properties.loadBalancerId));
+    errors.collect(ros.propertyValidator('logProject', ros.requiredValidator)(properties.logProject));
+    errors.collect(ros.propertyValidator('logProject', ros.validateString)(properties.logProject));
+    return errors.wrap('supplied properties not correct for "RosAccessLogsAdditionProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLB::AccessLogsAddition` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAccessLogsAdditionProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLB::AccessLogsAddition` resource.
+ */
+// @ts-ignore TS6133
+function rosAccessLogsAdditionPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAccessLogsAdditionPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'LoadBalancerId': ros.stringToRosTemplate(properties.loadBalancerId),
+      'LogProject': ros.stringToRosTemplate(properties.logProject),
+      'LogStore': ros.stringToRosTemplate(properties.logStore),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::AccessLogsAddition`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AccessLogsAddition` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-accesslogsaddition
+ */
+export class RosAccessLogsAddition extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SLB::AccessLogsAddition";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property loadBalancerId: The load balancer id.Only SLB Layer 7 load balancing (HTTP\/HTTPS listening) supports the access log function.Prerequisites1. A SLB instance has been created. For details, see Creating and Managing CLB Instances.2. A virtual server group has been created. Backend servers have been added to the server group.3. HTTP or HTTPS listening has been configured for CLB. 4. You have enabled the log service. For details, see Activating the Log Service.
+     */
+    public loadBalancerId: string | ros.IResolvable;
+
+    /**
+     * @Property logProject: The log project name.
+     */
+    public logProject: string | ros.IResolvable;
+
+    /**
+     * @Property logStore: The log store name.
+     */
+    public logStore: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAccessLogsAdditionProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAccessLogsAddition.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.loadBalancerId = props.loadBalancerId;
+        this.logProject = props.logProject;
+        this.logStore = props.logStore;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            loadBalancerId: this.loadBalancerId,
+            logProject: this.logProject,
+            logStore: this.logStore,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAccessLogsAdditionPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosBackendServerAttachment`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-backendserverattachment
  */
@@ -1149,7 +1266,7 @@ export interface RosListenerProps {
     readonly aclType?: string | ros.IResolvable;
 
     /**
-     * @Property backendServerPort: Backend server can listen on ports from 1 to 65535.
+     * @Property backendServerPort: Backend server can listen on ports from 0 to 65535.
      */
     readonly backendServerPort?: number | ros.IResolvable;
 
@@ -1182,6 +1299,12 @@ export interface RosListenerProps {
      * off: no
      */
     readonly enableHttp2?: string | ros.IResolvable;
+
+    /**
+     * @Property fullNatEnabled: When Full NAT mode is enabled, it can support the backend servers as clients for access. Default value is false.
+     * Note: Only effective for TCP or UDP listener.
+     */
+    readonly fullNatEnabled?: boolean | ros.IResolvable;
 
     /**
      * @Property gzip: Specifies whether to enable Gzip compression to compress specific types of files. Valid values:
@@ -1311,7 +1434,7 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
     if(properties.backendServerPort && (typeof properties.backendServerPort) !== 'object') {
         errors.collect(ros.propertyValidator('backendServerPort', ros.validateRange)({
             data: properties.backendServerPort,
-            min: 1,
+            min: 0,
             max: 65535,
           }));
     }
@@ -1410,6 +1533,7 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('aclType', ros.validateString)(properties.aclType));
+    errors.collect(ros.propertyValidator('fullNatEnabled', ros.validateBoolean)(properties.fullNatEnabled));
     errors.collect(ros.propertyValidator('enableHttp2', ros.validateString)(properties.enableHttp2));
     errors.collect(ros.propertyValidator('aclIds', ros.listValidator(ros.validateString))(properties.aclIds));
     return errors.wrap('supplied properties not correct for "RosListenerProps"');
@@ -1443,6 +1567,7 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
       'ConnectionDrainTimeout': ros.numberToRosTemplate(properties.connectionDrainTimeout),
       'Description': ros.stringToRosTemplate(properties.description),
       'EnableHttp2': ros.stringToRosTemplate(properties.enableHttp2),
+      'FullNatEnabled': ros.booleanToRosTemplate(properties.fullNatEnabled),
       'Gzip': ros.stringToRosTemplate(properties.gzip),
       'HealthCheck': rosListenerHealthCheckPropertyToRosTemplate(properties.healthCheck),
       'HttpConfig': rosListenerHttpConfigPropertyToRosTemplate(properties.httpConfig),
@@ -1537,7 +1662,7 @@ export class RosListener extends ros.RosResource {
     public aclType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property backendServerPort: Backend server can listen on ports from 1 to 65535.
+     * @Property backendServerPort: Backend server can listen on ports from 0 to 65535.
      */
     public backendServerPort: number | ros.IResolvable | undefined;
 
@@ -1570,6 +1695,12 @@ export class RosListener extends ros.RosResource {
      * off: no
      */
     public enableHttp2: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property fullNatEnabled: When Full NAT mode is enabled, it can support the backend servers as clients for access. Default value is false.
+     * Note: Only effective for TCP or UDP listener.
+     */
+    public fullNatEnabled: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property gzip: Specifies whether to enable Gzip compression to compress specific types of files. Valid values:
@@ -1682,6 +1813,7 @@ export class RosListener extends ros.RosResource {
         this.connectionDrainTimeout = props.connectionDrainTimeout;
         this.description = props.description;
         this.enableHttp2 = props.enableHttp2;
+        this.fullNatEnabled = props.fullNatEnabled;
         this.gzip = props.gzip;
         this.healthCheck = props.healthCheck;
         this.httpConfig = props.httpConfig;
@@ -1716,6 +1848,7 @@ export class RosListener extends ros.RosResource {
             connectionDrainTimeout: this.connectionDrainTimeout,
             description: this.description,
             enableHttp2: this.enableHttp2,
+            fullNatEnabled: this.fullNatEnabled,
             gzip: this.gzip,
             healthCheck: this.healthCheck,
             httpConfig: this.httpConfig,

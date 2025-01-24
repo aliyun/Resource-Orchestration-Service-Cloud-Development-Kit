@@ -29,25 +29,41 @@ export interface PrefixListsProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::PrefixLists`, which is used to query the details of prefix lists.
+ * Represents a `PrefixLists`.
+ */
+export interface IPrefixLists extends ros.IResource {
+    readonly props: PrefixListsProps;
+
+    /**
+     * Attribute PrefixListIds: The list of prefix list IDs.
+     */
+    readonly attrPrefixListIds: ros.IResolvable | string;
+
+    /**
+     * Attribute PrefixLists: The list of prefix lists.
+     */
+    readonly attrPrefixLists: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::PrefixLists`, which is used to query prefix lists.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPrefixLists`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-prefixlists
  */
-export class PrefixLists extends ros.Resource {
+export class PrefixLists extends ros.Resource implements IPrefixLists {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: PrefixListsProps;
+    public readonly props: PrefixListsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute PrefixListIds: The list of prefix list IDs.
      */
-    public readonly attrPrefixListIds: ros.IResolvable;
+    public readonly attrPrefixListIds: ros.IResolvable | string;
 
     /**
      * Attribute PrefixLists: The list of prefix lists.
      */
-    public readonly attrPrefixLists: ros.IResolvable;
+    public readonly attrPrefixLists: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

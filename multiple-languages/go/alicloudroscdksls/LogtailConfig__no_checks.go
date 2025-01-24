@@ -52,10 +52,6 @@ func (j *jsiiProxy_LogtailConfig) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_LogtailConfig) validateSetPropsParameters(val *LogtailConfigProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_LogtailConfig) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

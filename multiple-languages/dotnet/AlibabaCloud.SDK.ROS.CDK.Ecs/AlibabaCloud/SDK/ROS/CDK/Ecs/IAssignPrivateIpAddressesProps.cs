@@ -18,6 +18,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             get;
         }
 
+        /// <summary>Property ipv4PrefixCount: The specified number of IPv4 prefixes to be assigned to the ENI.</summary>
+        [JsiiProperty(name: "ipv4PrefixCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Ipv4PrefixCount
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property ipv4Prefixes: One or multiple IPv4 prefixes to be assigned to the ENI.</summary>
+        [JsiiProperty(name: "ipv4Prefixes", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Ipv4Prefixes
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property privateIpAddresses: One or multiple secondary private IP addresses selected from the CIDR block of the VSwitch that hosts the ENI.</summary>
         /// <remarks>
         /// Valid values of number of private ip addresses:
@@ -63,6 +85,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             public object NetworkInterfaceId
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property ipv4PrefixCount: The specified number of IPv4 prefixes to be assigned to the ENI.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "ipv4PrefixCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Ipv4PrefixCount
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property ipv4Prefixes: One or multiple IPv4 prefixes to be assigned to the ENI.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "ipv4Prefixes", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Ipv4Prefixes
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property privateIpAddresses: One or multiple secondary private IP addresses selected from the CIDR block of the VSwitch that hosts the ENI.</summary>

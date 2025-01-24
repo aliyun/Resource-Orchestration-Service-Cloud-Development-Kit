@@ -1,6 +1,28 @@
 import * as ros from '@alicloud/ros-cdk-core';
 import { RosQueue } from './mns.generated';
 // Generated from the AliCloud ROS Resource Specification
+
+/**
+ * Represents a `Queue`.
+ */
+export interface QueueAttributes {
+
+    /**
+     * Attribute ARN.WithSlash: The ARN: acs:mns:$region:$accountid:/queues/$queueName
+     */
+    readonly attrArnWithSlash: ros.IResolvable | string;
+
+    /**
+     * Attribute QueueName: Queue name
+     */
+    readonly attrQueueName?: ros.IResolvable | string;
+
+    /**
+     * Attribute QueueUrl: URL of created queue
+     */
+    readonly attrQueueUrl?: ros.IResolvable | string;
+}
+
 export { RosQueue as QueueProperty };
 
 /**
@@ -52,30 +74,51 @@ export interface QueueProps {
 }
 
 /**
+ * Represents a `Queue`.
+ */
+export interface IQueue extends ros.IResource {
+    readonly props: QueueProps;
+
+    /**
+     * Attribute ARN.WithSlash: The ARN: acs:mns:$region:$accountid:/queues/$queueName
+     */
+    readonly attrArnWithSlash: ros.IResolvable | string;
+
+    /**
+     * Attribute QueueName: Queue name
+     */
+    readonly attrQueueName: ros.IResolvable | string;
+
+    /**
+     * Attribute QueueUrl: URL of created queue
+     */
+    readonly attrQueueUrl: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::MNS::Queue`, which is used to create a queue to contain messages. Queues can be classified into standard and delayed queues.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosQueue`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-queue
  */
-export class Queue extends ros.Resource {
+export class Queue extends ros.Resource implements IQueue {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: QueueProps;
+    public readonly props: QueueProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ARN.WithSlash: The ARN: acs:mns:$region:$accountid:/queues/$queueName
      */
-    public readonly attrArnWithSlash: ros.IResolvable;
+    public readonly attrArnWithSlash: ros.IResolvable | string;
 
     /**
      * Attribute QueueName: Queue name
      */
-    public readonly attrQueueName: ros.IResolvable;
+    public readonly attrQueueName: ros.IResolvable | string;
 
     /**
      * Attribute QueueUrl: URL of created queue
      */
-    public readonly attrQueueUrl: ros.IResolvable;
+    public readonly attrQueueUrl: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -102,5 +145,35 @@ export class Queue extends ros.Resource {
         this.attrArnWithSlash = rosQueue.attrArnWithSlash;
         this.attrQueueName = rosQueue.attrQueueName;
         this.attrQueueUrl = rosQueue.attrQueueUrl;
+    }
+
+    public static fromQueueArn(scope: ros.Construct, id: string, attrArnWithSlash: string): IQueue {
+        return Queue.fromQueueAttributes(scope, id, { attrArnWithSlash });    }
+
+    /**
+     * Import an existing queue
+     */
+    public static fromQueueAttributes(scope: ros.Construct, id: string, attrs: QueueAttributes): IQueue {
+        const stack = ros.Stack.of(scope);
+        const parsedArn = stack.splitArn(attrs.attrArnWithSlash, ros.ArnFormat.SLASH_RESOURCE_SLASH_RESOURCE_NAME);
+        const queueName = attrs.attrQueueName || parsedArn.resourceName;
+        if (!queueName) {
+            throw new Error('The Queue Name cannot be parsed from Arn. Please ensure that the Arn is in the correct format.');
+        }
+        const queueUrl = attrs.attrQueueUrl || `http://${parsedArn.account}.mns.${parsedArn.region}.aliyuncs.com/queues/${queueName}`;
+
+        class Import extends ros.Resource implements IQueue {
+            public readonly props = {
+                queueName: queueName!,
+            };
+
+            public readonly attrArnWithSlash = attrs.attrArnWithSlash;
+            public readonly attrQueueUrl = queueUrl;
+            public readonly attrQueueName = queueName!;
+        }
+
+        return new Import(scope, id, {
+            environmentFromArn: attrs.attrArnWithSlash,
+        });
     }
 }

@@ -52,10 +52,6 @@ func (j *jsiiProxy_WorkspaceResourceFlinks) validateSetIdParameters(val *string)
 	return nil
 }
 
-func (j *jsiiProxy_WorkspaceResourceFlinks) validateSetPropsParameters(val *WorkspaceResourceFlinksProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_WorkspaceResourceFlinks) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

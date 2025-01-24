@@ -1,5 +1,8 @@
 @alicloud/ros-cdk-core.App=com.aliyun.ros.cdk.core.App
 @alicloud/ros-cdk-core.AppProps=com.aliyun.ros.cdk.core.AppProps
+@alicloud/ros-cdk-core.Arn=com.aliyun.ros.cdk.core.Arn
+@alicloud/ros-cdk-core.ArnComponents=com.aliyun.ros.cdk.core.ArnComponents
+@alicloud/ros-cdk-core.ArnFormat=com.aliyun.ros.cdk.core.ArnFormat
 @alicloud/ros-cdk-core.AssetHashType=com.aliyun.ros.cdk.core.AssetHashType
 @alicloud/ros-cdk-core.AssetManifestBuilder=com.aliyun.ros.cdk.core.AssetManifestBuilder
 @alicloud/ros-cdk-core.AssetManifestDockerImageDestination=com.aliyun.ros.cdk.core.AssetManifestDockerImageDestination
@@ -119,6 +122,7 @@
 @alicloud/ros-cdk-core.RemovalPolicyOptions=com.aliyun.ros.cdk.core.RemovalPolicyOptions
 @alicloud/ros-cdk-core.ResolveOptions=com.aliyun.ros.cdk.core.ResolveOptions
 @alicloud/ros-cdk-core.Resource=com.aliyun.ros.cdk.core.Resource
+@alicloud/ros-cdk-core.ResourceEnvironment=com.aliyun.ros.cdk.core.ResourceEnvironment
 @alicloud/ros-cdk-core.ResourceProps=com.aliyun.ros.cdk.core.ResourceProps
 @alicloud/ros-cdk-core.RosCondition=com.aliyun.ros.cdk.core.RosCondition
 @alicloud/ros-cdk-core.RosConditionProps=com.aliyun.ros.cdk.core.RosConditionProps
@@ -156,6 +160,7 @@
 @alicloud/ros-cdk-core.TagManagerOptions=com.aliyun.ros.cdk.core.TagManagerOptions
 @alicloud/ros-cdk-core.TagType=com.aliyun.ros.cdk.core.TagType
 @alicloud/ros-cdk-core.Token=com.aliyun.ros.cdk.core.Token
+@alicloud/ros-cdk-core.TokenComparison=com.aliyun.ros.cdk.core.TokenComparison
 @alicloud/ros-cdk-core.Tokenization=com.aliyun.ros.cdk.core.Tokenization
 @alicloud/ros-cdk-core.TokenizedStringFragments=com.aliyun.ros.cdk.core.TokenizedStringFragments
 @alicloud/ros-cdk-core.TreeInspector=com.aliyun.ros.cdk.core.TreeInspector

@@ -2,6 +2,8 @@
 @alicloud/ros-cdk-graphdatabase.AccountProps=com.aliyun.ros.cdk.graphdatabase.AccountProps
 @alicloud/ros-cdk-graphdatabase.DbInstance=com.aliyun.ros.cdk.graphdatabase.DbInstance
 @alicloud/ros-cdk-graphdatabase.DbInstanceProps=com.aliyun.ros.cdk.graphdatabase.DbInstanceProps
+@alicloud/ros-cdk-graphdatabase.IAccount=com.aliyun.ros.cdk.graphdatabase.IAccount
+@alicloud/ros-cdk-graphdatabase.IDbInstance=com.aliyun.ros.cdk.graphdatabase.IDbInstance
 @alicloud/ros-cdk-graphdatabase.RosAccount=com.aliyun.ros.cdk.graphdatabase.RosAccount
 @alicloud/ros-cdk-graphdatabase.RosAccountProps=com.aliyun.ros.cdk.graphdatabase.RosAccountProps
 @alicloud/ros-cdk-graphdatabase.RosDbInstance=com.aliyun.ros.cdk.graphdatabase.RosDbInstance
@@ -17,6 +19,10 @@
 @alicloud/ros-cdk-graphdatabase.datasource.DbInstanceProps=com.aliyun.ros.cdk.graphdatabase.datasource.DbInstanceProps
 @alicloud/ros-cdk-graphdatabase.datasource.DbInstances=com.aliyun.ros.cdk.graphdatabase.datasource.DbInstances
 @alicloud/ros-cdk-graphdatabase.datasource.DbInstancesProps=com.aliyun.ros.cdk.graphdatabase.datasource.DbInstancesProps
+@alicloud/ros-cdk-graphdatabase.datasource.IAccount=com.aliyun.ros.cdk.graphdatabase.datasource.IAccount
+@alicloud/ros-cdk-graphdatabase.datasource.IAccounts=com.aliyun.ros.cdk.graphdatabase.datasource.IAccounts
+@alicloud/ros-cdk-graphdatabase.datasource.IDbInstance=com.aliyun.ros.cdk.graphdatabase.datasource.IDbInstance
+@alicloud/ros-cdk-graphdatabase.datasource.IDbInstances=com.aliyun.ros.cdk.graphdatabase.datasource.IDbInstances
 @alicloud/ros-cdk-graphdatabase.datasource.RosAccount=com.aliyun.ros.cdk.graphdatabase.datasource.RosAccount
 @alicloud/ros-cdk-graphdatabase.datasource.RosAccountProps=com.aliyun.ros.cdk.graphdatabase.datasource.RosAccountProps
 @alicloud/ros-cdk-graphdatabase.datasource.RosAccounts=com.aliyun.ros.cdk.graphdatabase.datasource.RosAccounts

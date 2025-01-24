@@ -1,5 +1,10 @@
 @alicloud/ros-cdk-ice.Category=com.aliyun.ros.cdk.ice.Category
 @alicloud/ros-cdk-ice.CategoryProps=com.aliyun.ros.cdk.ice.CategoryProps
+@alicloud/ros-cdk-ice.ICategory=com.aliyun.ros.cdk.ice.ICategory
+@alicloud/ros-cdk-ice.IInsertMediaToSearchLib=com.aliyun.ros.cdk.ice.IInsertMediaToSearchLib
+@alicloud/ros-cdk-ice.IMediaInfo=com.aliyun.ros.cdk.ice.IMediaInfo
+@alicloud/ros-cdk-ice.ISearchLib=com.aliyun.ros.cdk.ice.ISearchLib
+@alicloud/ros-cdk-ice.IUploadMedia=com.aliyun.ros.cdk.ice.IUploadMedia
 @alicloud/ros-cdk-ice.InsertMediaToSearchLib=com.aliyun.ros.cdk.ice.InsertMediaToSearchLib
 @alicloud/ros-cdk-ice.InsertMediaToSearchLibProps=com.aliyun.ros.cdk.ice.InsertMediaToSearchLibProps
 @alicloud/ros-cdk-ice.MediaInfo=com.aliyun.ros.cdk.ice.MediaInfo

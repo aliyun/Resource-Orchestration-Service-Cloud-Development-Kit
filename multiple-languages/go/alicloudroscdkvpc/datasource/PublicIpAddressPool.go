@@ -12,28 +12,38 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::PublicIpAddressPool`, which is used to query the basic information about an available IP address pool.
 type PublicIpAddressPool interface {
 	alicloudroscdkcore.Resource
+	IPublicIpAddressPool
 	// Attribute CreateTime: The creation time of the resource.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute Description: Description.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute IpAddressRemaining: Whether there is a free IP address.
-	AttrIpAddressRemaining() alicloudroscdkcore.IResolvable
+	AttrIpAddressRemaining() interface{}
 	// Attribute Isp: Service providers.
-	AttrIsp() alicloudroscdkcore.IResolvable
+	AttrIsp() interface{}
 	// Attribute PublicIpAddressPoolId: The first ID of the resource.
-	AttrPublicIpAddressPoolId() alicloudroscdkcore.IResolvable
+	AttrPublicIpAddressPoolId() interface{}
 	// Attribute PublicIpAddressPoolName: The name of the resource.
-	AttrPublicIpAddressPoolName() alicloudroscdkcore.IResolvable
+	AttrPublicIpAddressPoolName() interface{}
 	// Attribute ResourceGroupId: The ID of the resource group to which the VPC belongs.
-	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() interface{}
 	// Attribute Tags: The tags of PrefixList.
-	AttrTags() alicloudroscdkcore.IResolvable
+	AttrTags() interface{}
 	// Attribute TotalIpNum: Total ip number of PublicIpAddressPool.
-	AttrTotalIpNum() alicloudroscdkcore.IResolvable
+	AttrTotalIpNum() interface{}
 	// Attribute UsedIpNum: Used ip number of PublicIpAddressPool.
-	AttrUsedIpNum() alicloudroscdkcore.IResolvable
+	AttrUsedIpNum() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -48,7 +58,6 @@ type PublicIpAddressPool interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *PublicIpAddressPoolProps
-	SetProps(val *PublicIpAddressPoolProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -61,6 +70,9 @@ type PublicIpAddressPool interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -113,10 +125,11 @@ type PublicIpAddressPool interface {
 // The jsii proxy struct for PublicIpAddressPool
 type jsiiProxy_PublicIpAddressPool struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IPublicIpAddressPool
 }
 
-func (j *jsiiProxy_PublicIpAddressPool) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PublicIpAddressPool) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -125,8 +138,8 @@ func (j *jsiiProxy_PublicIpAddressPool) AttrCreateTime() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_PublicIpAddressPool) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PublicIpAddressPool) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -135,8 +148,8 @@ func (j *jsiiProxy_PublicIpAddressPool) AttrDescription() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_PublicIpAddressPool) AttrIpAddressRemaining() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PublicIpAddressPool) AttrIpAddressRemaining() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIpAddressRemaining",
@@ -145,8 +158,8 @@ func (j *jsiiProxy_PublicIpAddressPool) AttrIpAddressRemaining() alicloudroscdkc
 	return returns
 }
 
-func (j *jsiiProxy_PublicIpAddressPool) AttrIsp() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PublicIpAddressPool) AttrIsp() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIsp",
@@ -155,8 +168,8 @@ func (j *jsiiProxy_PublicIpAddressPool) AttrIsp() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_PublicIpAddressPool) AttrPublicIpAddressPoolId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PublicIpAddressPool) AttrPublicIpAddressPoolId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPublicIpAddressPoolId",
@@ -165,8 +178,8 @@ func (j *jsiiProxy_PublicIpAddressPool) AttrPublicIpAddressPoolId() alicloudrosc
 	return returns
 }
 
-func (j *jsiiProxy_PublicIpAddressPool) AttrPublicIpAddressPoolName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PublicIpAddressPool) AttrPublicIpAddressPoolName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPublicIpAddressPoolName",
@@ -175,8 +188,8 @@ func (j *jsiiProxy_PublicIpAddressPool) AttrPublicIpAddressPoolName() alicloudro
 	return returns
 }
 
-func (j *jsiiProxy_PublicIpAddressPool) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PublicIpAddressPool) AttrResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupId",
@@ -185,8 +198,8 @@ func (j *jsiiProxy_PublicIpAddressPool) AttrResourceGroupId() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_PublicIpAddressPool) AttrTags() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PublicIpAddressPool) AttrTags() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTags",
@@ -195,8 +208,8 @@ func (j *jsiiProxy_PublicIpAddressPool) AttrTags() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_PublicIpAddressPool) AttrTotalIpNum() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PublicIpAddressPool) AttrTotalIpNum() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTotalIpNum",
@@ -205,8 +218,8 @@ func (j *jsiiProxy_PublicIpAddressPool) AttrTotalIpNum() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_PublicIpAddressPool) AttrUsedIpNum() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PublicIpAddressPool) AttrUsedIpNum() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUsedIpNum",
@@ -220,6 +233,16 @@ func (j *jsiiProxy_PublicIpAddressPool) EnableResourcePropertyConstraint() *bool
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_PublicIpAddressPool) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -357,17 +380,6 @@ func (j *jsiiProxy_PublicIpAddressPool)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_PublicIpAddressPool)SetProps(val *PublicIpAddressPoolProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_PublicIpAddressPool)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -459,6 +471,45 @@ func (p *jsiiProxy_PublicIpAddressPool) ApplyRemovalPolicy(policy alicloudroscdk
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (p *jsiiProxy_PublicIpAddressPool) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		p,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_PublicIpAddressPool) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		p,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_PublicIpAddressPool) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		p,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (p *jsiiProxy_PublicIpAddressPool) GeneratePhysicalName() *string {

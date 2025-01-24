@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::CS::KubernetesClusters`, which is used to query Container Service for Kubernetes (ACK) clusters.
 type KubernetesClusters interface {
 	alicloudroscdkcore.Resource
+	IKubernetesClusters
 	// Attribute ClusterIds: The list of cluster IDs.
-	AttrClusterIds() alicloudroscdkcore.IResolvable
+	AttrClusterIds() interface{}
 	// Attribute Clusters: The list of clusters.
-	AttrClusters() alicloudroscdkcore.IResolvable
+	AttrClusters() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type KubernetesClusters interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *KubernetesClustersProps
-	SetProps(val *KubernetesClustersProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type KubernetesClusters interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type KubernetesClusters interface {
 // The jsii proxy struct for KubernetesClusters
 type jsiiProxy_KubernetesClusters struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IKubernetesClusters
 }
 
-func (j *jsiiProxy_KubernetesClusters) AttrClusterIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesClusters) AttrClusterIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrClusterIds",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_KubernetesClusters) AttrClusterIds() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_KubernetesClusters) AttrClusters() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_KubernetesClusters) AttrClusters() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrClusters",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_KubernetesClusters) EnableResourcePropertyConstraint() *bool 
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesClusters) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_KubernetesClusters)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_KubernetesClusters)SetProps(val *KubernetesClustersProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_KubernetesClusters)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (k *jsiiProxy_KubernetesClusters) ApplyRemovalPolicy(policy alicloudroscdkc
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (k *jsiiProxy_KubernetesClusters) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		k,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (k *jsiiProxy_KubernetesClusters) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		k,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (k *jsiiProxy_KubernetesClusters) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		k,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (k *jsiiProxy_KubernetesClusters) GeneratePhysicalName() *string {

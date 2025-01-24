@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::OOS::PatchBaselines`, which is used to query patch baselines.
 type PatchBaselines interface {
 	alicloudroscdkcore.Resource
+	IPatchBaselines
 	// Attribute PatchBaselineNames: The list of patch baseline names.
-	AttrPatchBaselineNames() alicloudroscdkcore.IResolvable
+	AttrPatchBaselineNames() interface{}
 	// Attribute PatchBaselines: The list of patch baselines.
-	AttrPatchBaselines() alicloudroscdkcore.IResolvable
+	AttrPatchBaselines() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type PatchBaselines interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *PatchBaselinesProps
-	SetProps(val *PatchBaselinesProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type PatchBaselines interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type PatchBaselines interface {
 // The jsii proxy struct for PatchBaselines
 type jsiiProxy_PatchBaselines struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IPatchBaselines
 }
 
-func (j *jsiiProxy_PatchBaselines) AttrPatchBaselineNames() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PatchBaselines) AttrPatchBaselineNames() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPatchBaselineNames",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_PatchBaselines) AttrPatchBaselineNames() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_PatchBaselines) AttrPatchBaselines() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PatchBaselines) AttrPatchBaselines() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPatchBaselines",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_PatchBaselines) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_PatchBaselines) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_PatchBaselines)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_PatchBaselines)SetProps(val *PatchBaselinesProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_PatchBaselines)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (p *jsiiProxy_PatchBaselines) ApplyRemovalPolicy(policy alicloudroscdkcore.
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (p *jsiiProxy_PatchBaselines) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		p,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_PatchBaselines) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		p,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_PatchBaselines) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		p,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (p *jsiiProxy_PatchBaselines) GeneratePhysicalName() *string {

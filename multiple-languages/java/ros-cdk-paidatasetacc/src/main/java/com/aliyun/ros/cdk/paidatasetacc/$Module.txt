@@ -1,4 +1,5 @@
 @alicloud/ros-cdk-paidatasetacc.Endpoint=com.aliyun.ros.cdk.paidatasetacc.Endpoint
 @alicloud/ros-cdk-paidatasetacc.EndpointProps=com.aliyun.ros.cdk.paidatasetacc.EndpointProps
+@alicloud/ros-cdk-paidatasetacc.IEndpoint=com.aliyun.ros.cdk.paidatasetacc.IEndpoint
 @alicloud/ros-cdk-paidatasetacc.RosEndpoint=com.aliyun.ros.cdk.paidatasetacc.RosEndpoint
 @alicloud/ros-cdk-paidatasetacc.RosEndpointProps=com.aliyun.ros.cdk.paidatasetacc.RosEndpointProps

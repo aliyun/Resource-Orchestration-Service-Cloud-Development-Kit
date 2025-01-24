@@ -12,98 +12,108 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::HBR::Vault`, which is used to create a backup vault.
 type Vault interface {
 	alicloudroscdkcore.Resource
+	IVault
 	// Attribute BackupPlanStatistics: The statistics of backup plans that use the backup vault.
-	AttrBackupPlanStatistics() alicloudroscdkcore.IResolvable
+	AttrBackupPlanStatistics() interface{}
 	// Attribute BytesDone: The amount of data that is backed up.
 	//
 	// Unit: bytes.
-	AttrBytesDone() alicloudroscdkcore.IResolvable
+	AttrBytesDone() interface{}
 	// Attribute CreateTime: The time when the backup vault was created.
 	//
 	// This value is a UNIX timestamp. Unit: seconds.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute Dedup: Indicates whether the deduplication feature is enabled.
-	AttrDedup() alicloudroscdkcore.IResolvable
+	AttrDedup() interface{}
 	// Attribute Description: The description of the backup vault.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute IndexAvailable: Indicates whether indexes are available.
 	//
 	// Indexes are available when they are not being updated.
-	AttrIndexAvailable() alicloudroscdkcore.IResolvable
+	AttrIndexAvailable() interface{}
 	// Attribute IndexLevel: The index level.
 	//
 	// - **OFF**: No indexes are created.
 	// - **META**: Metadata indexes are created.
 	// - **ALL**: Full-text indexes are created.
-	AttrIndexLevel() alicloudroscdkcore.IResolvable
+	AttrIndexLevel() interface{}
 	// Attribute IndexUpdateTime: The time when the index was updated.
-	AttrIndexUpdateTime() alicloudroscdkcore.IResolvable
+	AttrIndexUpdateTime() interface{}
 	// Attribute LatestReplicationTime: The time when the last remote backup was synchronized.
 	//
 	// This value is a UNIX timestamp. Unit: seconds.
-	AttrLatestReplicationTime() alicloudroscdkcore.IResolvable
+	AttrLatestReplicationTime() interface{}
 	// Attribute PaymentType: PaymentType.
-	AttrPaymentType() alicloudroscdkcore.IResolvable
+	AttrPaymentType() interface{}
 	// Attribute RedundancyType: The data redundancy type of the backup vault.
 	//
 	// Valid values:
 	// - **LRS**: Locally redundant storage (LRS) is enabled for the backup vault. HBR stores the copies of each object on multiple devices of different facilities in the same zone. This way, HBR ensures data durability and availability even if hardware failures occur.
 	// - **ZRS**: Zone-redundant storage (ZRS) is enabled for the backup vault. HBR uses the multi-zone mechanism to distribute data across three zones within the same region. If a zone fails, the data that is stored in the other two zones is still accessible.
-	AttrRedundancyType() alicloudroscdkcore.IResolvable
+	AttrRedundancyType() interface{}
 	// Attribute Replication: Indicates whether the backup vault is a remote backup vault.
 	//
 	// Valid values:
 	// - **true**: The backup vault is a remote backup vault.
 	// - **false**: The backup vault is an on-premises backup vault.
-	AttrReplication() alicloudroscdkcore.IResolvable
+	AttrReplication() interface{}
 	// Attribute ReplicationProgress: The progress of data synchronization from the backup vault to the mirror vault.
-	AttrReplicationProgress() alicloudroscdkcore.IResolvable
+	AttrReplicationProgress() interface{}
 	// Attribute ReplicationSourceRegionId: The ID of the region where the remote backup vault resides.
-	AttrReplicationSourceRegionId() alicloudroscdkcore.IResolvable
+	AttrReplicationSourceRegionId() interface{}
 	// Attribute ReplicationSourceVaultId: The ID of the source vault that corresponds to the remote backup vault.
-	AttrReplicationSourceVaultId() alicloudroscdkcore.IResolvable
+	AttrReplicationSourceVaultId() interface{}
 	// Attribute ResourceGroupId: The ID of the resource group.
-	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() interface{}
 	// Attribute Retention: The retention period of the backup vault.
 	//
 	// Unit: days.
-	AttrRetention() alicloudroscdkcore.IResolvable
+	AttrRetention() interface{}
 	// Attribute SearchEnabled: Indicates whether the backup search feature is enabled.
-	AttrSearchEnabled() alicloudroscdkcore.IResolvable
+	AttrSearchEnabled() interface{}
 	// Attribute SourceTypes: The information about the data source.
-	AttrSourceTypes() alicloudroscdkcore.IResolvable
+	AttrSourceTypes() interface{}
 	// Attribute StorageSize: The usage of the backup vault.
 	//
 	// Unit: bytes.
-	AttrStorageSize() alicloudroscdkcore.IResolvable
+	AttrStorageSize() interface{}
 	// Attribute Tags: The tags of the backup vault.
-	AttrTags() alicloudroscdkcore.IResolvable
+	AttrTags() interface{}
 	// Attribute TrialInfo: The free trial information.
-	AttrTrialInfo() alicloudroscdkcore.IResolvable
+	AttrTrialInfo() interface{}
 	// Attribute UpdatedTime: The time when the backup vault was updated.
 	//
 	// This value is a UNIX timestamp. Unit: seconds.
-	AttrUpdatedTime() alicloudroscdkcore.IResolvable
+	AttrUpdatedTime() interface{}
 	// Attribute VaultId: The ID of the backup vault.
-	AttrVaultId() alicloudroscdkcore.IResolvable
+	AttrVaultId() interface{}
 	// Attribute VaultName: The name of the backup vault.
-	AttrVaultName() alicloudroscdkcore.IResolvable
+	AttrVaultName() interface{}
 	// Attribute VaultStatusMessage: The status message that is returned when the backup vault is in the ERROR state.
 	//
 	// This parameter is available only for remote backup vaults. Valid values:
 	// - **UNKNOWN_ERROR*: An unknown error occurs.
 	// - **SOURCE_VAULT_ALREADY_HAS_REPLICATION**: A mirror vault is configured for the source vault.
-	AttrVaultStatusMessage() alicloudroscdkcore.IResolvable
+	AttrVaultStatusMessage() interface{}
 	// Attribute VaultStorageClass: The storage type of the backup vault.
 	//
 	// Valid value: **STANDARD**, which indicates standard storage.
-	AttrVaultStorageClass() alicloudroscdkcore.IResolvable
+	AttrVaultStorageClass() interface{}
 	// Attribute VaultType: The type of the backup vault.
 	//
 	// Valid value: **STANDARD**, which indicates a standard backup vault.
-	AttrVaultType() alicloudroscdkcore.IResolvable
+	AttrVaultType() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -118,7 +128,6 @@ type Vault interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *VaultProps
-	SetProps(val *VaultProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -131,6 +140,9 @@ type Vault interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -183,10 +195,11 @@ type Vault interface {
 // The jsii proxy struct for Vault
 type jsiiProxy_Vault struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IVault
 }
 
-func (j *jsiiProxy_Vault) AttrBackupPlanStatistics() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vault) AttrBackupPlanStatistics() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBackupPlanStatistics",
@@ -195,8 +208,8 @@ func (j *jsiiProxy_Vault) AttrBackupPlanStatistics() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_Vault) AttrBytesDone() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vault) AttrBytesDone() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBytesDone",
@@ -205,8 +218,8 @@ func (j *jsiiProxy_Vault) AttrBytesDone() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vault) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vault) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -215,8 +228,8 @@ func (j *jsiiProxy_Vault) AttrCreateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vault) AttrDedup() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vault) AttrDedup() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDedup",
@@ -225,8 +238,8 @@ func (j *jsiiProxy_Vault) AttrDedup() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vault) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vault) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -235,8 +248,8 @@ func (j *jsiiProxy_Vault) AttrDescription() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vault) AttrIndexAvailable() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vault) AttrIndexAvailable() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIndexAvailable",
@@ -245,8 +258,8 @@ func (j *jsiiProxy_Vault) AttrIndexAvailable() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vault) AttrIndexLevel() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vault) AttrIndexLevel() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIndexLevel",
@@ -255,8 +268,8 @@ func (j *jsiiProxy_Vault) AttrIndexLevel() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vault) AttrIndexUpdateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vault) AttrIndexUpdateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIndexUpdateTime",
@@ -265,8 +278,8 @@ func (j *jsiiProxy_Vault) AttrIndexUpdateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vault) AttrLatestReplicationTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vault) AttrLatestReplicationTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLatestReplicationTime",
@@ -275,8 +288,8 @@ func (j *jsiiProxy_Vault) AttrLatestReplicationTime() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_Vault) AttrPaymentType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vault) AttrPaymentType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPaymentType",
@@ -285,8 +298,8 @@ func (j *jsiiProxy_Vault) AttrPaymentType() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vault) AttrRedundancyType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vault) AttrRedundancyType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRedundancyType",
@@ -295,8 +308,8 @@ func (j *jsiiProxy_Vault) AttrRedundancyType() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vault) AttrReplication() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vault) AttrReplication() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrReplication",
@@ -305,8 +318,8 @@ func (j *jsiiProxy_Vault) AttrReplication() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vault) AttrReplicationProgress() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vault) AttrReplicationProgress() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrReplicationProgress",
@@ -315,8 +328,8 @@ func (j *jsiiProxy_Vault) AttrReplicationProgress() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_Vault) AttrReplicationSourceRegionId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vault) AttrReplicationSourceRegionId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrReplicationSourceRegionId",
@@ -325,8 +338,8 @@ func (j *jsiiProxy_Vault) AttrReplicationSourceRegionId() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_Vault) AttrReplicationSourceVaultId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vault) AttrReplicationSourceVaultId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrReplicationSourceVaultId",
@@ -335,8 +348,8 @@ func (j *jsiiProxy_Vault) AttrReplicationSourceVaultId() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_Vault) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vault) AttrResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupId",
@@ -345,8 +358,8 @@ func (j *jsiiProxy_Vault) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vault) AttrRetention() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vault) AttrRetention() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRetention",
@@ -355,8 +368,8 @@ func (j *jsiiProxy_Vault) AttrRetention() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vault) AttrSearchEnabled() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vault) AttrSearchEnabled() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSearchEnabled",
@@ -365,8 +378,8 @@ func (j *jsiiProxy_Vault) AttrSearchEnabled() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vault) AttrSourceTypes() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vault) AttrSourceTypes() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSourceTypes",
@@ -375,8 +388,8 @@ func (j *jsiiProxy_Vault) AttrSourceTypes() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vault) AttrStorageSize() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vault) AttrStorageSize() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStorageSize",
@@ -385,8 +398,8 @@ func (j *jsiiProxy_Vault) AttrStorageSize() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vault) AttrTags() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vault) AttrTags() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTags",
@@ -395,8 +408,8 @@ func (j *jsiiProxy_Vault) AttrTags() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vault) AttrTrialInfo() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vault) AttrTrialInfo() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTrialInfo",
@@ -405,8 +418,8 @@ func (j *jsiiProxy_Vault) AttrTrialInfo() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vault) AttrUpdatedTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vault) AttrUpdatedTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUpdatedTime",
@@ -415,8 +428,8 @@ func (j *jsiiProxy_Vault) AttrUpdatedTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vault) AttrVaultId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vault) AttrVaultId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVaultId",
@@ -425,8 +438,8 @@ func (j *jsiiProxy_Vault) AttrVaultId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vault) AttrVaultName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vault) AttrVaultName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVaultName",
@@ -435,8 +448,8 @@ func (j *jsiiProxy_Vault) AttrVaultName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Vault) AttrVaultStatusMessage() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vault) AttrVaultStatusMessage() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVaultStatusMessage",
@@ -445,8 +458,8 @@ func (j *jsiiProxy_Vault) AttrVaultStatusMessage() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_Vault) AttrVaultStorageClass() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vault) AttrVaultStorageClass() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVaultStorageClass",
@@ -455,8 +468,8 @@ func (j *jsiiProxy_Vault) AttrVaultStorageClass() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Vault) AttrVaultType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Vault) AttrVaultType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVaultType",
@@ -470,6 +483,16 @@ func (j *jsiiProxy_Vault) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Vault) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -607,17 +630,6 @@ func (j *jsiiProxy_Vault)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Vault)SetProps(val *VaultProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Vault)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -709,6 +721,45 @@ func (v *jsiiProxy_Vault) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (v *jsiiProxy_Vault) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		v,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (v *jsiiProxy_Vault) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		v,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (v *jsiiProxy_Vault) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		v,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (v *jsiiProxy_Vault) GeneratePhysicalName() *string {

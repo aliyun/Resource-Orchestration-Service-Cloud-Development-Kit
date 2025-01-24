@@ -24,25 +24,41 @@ export interface LoadBalancerTCPListenersProps {
 }
 
 /**
+ * Represents a `LoadBalancerTCPListeners`.
+ */
+export interface ILoadBalancerTCPListeners extends ros.IResource {
+    readonly props: LoadBalancerTCPListenersProps;
+
+    /**
+     * Attribute ListenerPorts: The list of listener ports.
+     */
+    readonly attrListenerPorts: ros.IResolvable | string;
+
+    /**
+     * Attribute LoadBalancerTCPListeners: The list of load balancer tcp listeners.
+     */
+    readonly attrLoadBalancerTcpListeners: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::LoadBalancerTCPListeners`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLoadBalancerTCPListeners`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-loadbalancertcplisteners
  */
-export class LoadBalancerTCPListeners extends ros.Resource {
+export class LoadBalancerTCPListeners extends ros.Resource implements ILoadBalancerTCPListeners {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: LoadBalancerTCPListenersProps;
+    public readonly props: LoadBalancerTCPListenersProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ListenerPorts: The list of listener ports.
      */
-    public readonly attrListenerPorts: ros.IResolvable;
+    public readonly attrListenerPorts: ros.IResolvable | string;
 
     /**
      * Attribute LoadBalancerTCPListeners: The list of load balancer tcp listeners.
      */
-    public readonly attrLoadBalancerTcpListeners: ros.IResolvable;
+    public readonly attrLoadBalancerTcpListeners: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

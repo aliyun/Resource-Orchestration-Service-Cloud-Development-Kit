@@ -100,20 +100,31 @@ export interface ServerGroupProps {
 }
 
 /**
+ * Represents a `ServerGroup`.
+ */
+export interface IServerGroup extends ros.IResource {
+    readonly props: ServerGroupProps;
+
+    /**
+     * Attribute ServerGroupId: The ID of the server group.
+     */
+    readonly attrServerGroupId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::ServerGroup`, which is used to create a server group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosServerGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-servergroup
  */
-export class ServerGroup extends ros.Resource {
+export class ServerGroup extends ros.Resource implements IServerGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ServerGroupProps;
+    public readonly props: ServerGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ServerGroupId: The ID of the server group.
      */
-    public readonly attrServerGroupId: ros.IResolvable;
+    public readonly attrServerGroupId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

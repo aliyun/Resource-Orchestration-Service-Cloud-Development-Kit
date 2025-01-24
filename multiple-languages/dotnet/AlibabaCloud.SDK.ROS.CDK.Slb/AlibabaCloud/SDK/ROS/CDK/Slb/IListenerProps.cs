@@ -111,7 +111,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
         }
 
-        /// <summary>Property backendServerPort: Backend server can listen on ports from 1 to 65535.</summary>
+        /// <summary>Property backendServerPort: Backend server can listen on ports from 0 to 65535.</summary>
         [JsiiProperty(name: "backendServerPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? BackendServerPort
@@ -184,6 +184,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         [JsiiProperty(name: "enableHttp2", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? EnableHttp2
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property fullNatEnabled: When Full NAT mode is enabled, it can support the backend servers as clients for access.</summary>
+        /// <remarks>
+        /// Default value is false.
+        /// Note: Only effective for TCP or UDP listener.
+        /// </remarks>
+        [JsiiProperty(name: "fullNatEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? FullNatEnabled
         {
             get
             {
@@ -493,7 +508,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property backendServerPort: Backend server can listen on ports from 1 to 65535.</summary>
+            /// <summary>Property backendServerPort: Backend server can listen on ports from 0 to 65535.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "backendServerPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? BackendServerPort
@@ -551,6 +566,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             [JsiiOptional]
             [JsiiProperty(name: "enableHttp2", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EnableHttp2
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property fullNatEnabled: When Full NAT mode is enabled, it can support the backend servers as clients for access.</summary>
+            /// <remarks>
+            /// Default value is false.
+            /// Note: Only effective for TCP or UDP listener.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "fullNatEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? FullNatEnabled
             {
                 get => GetInstanceProperty<object?>();
             }

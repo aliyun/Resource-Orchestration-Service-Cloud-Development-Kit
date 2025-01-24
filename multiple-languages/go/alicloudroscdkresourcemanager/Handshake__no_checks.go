@@ -52,10 +52,6 @@ func (j *jsiiProxy_Handshake) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_Handshake) validateSetPropsParameters(val *HandshakeProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_Handshake) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

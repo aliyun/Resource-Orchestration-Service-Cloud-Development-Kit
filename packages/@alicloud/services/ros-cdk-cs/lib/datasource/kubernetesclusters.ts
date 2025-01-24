@@ -51,25 +51,41 @@ export interface KubernetesClustersProps {
 }
 
 /**
+ * Represents a `KubernetesClusters`.
+ */
+export interface IKubernetesClusters extends ros.IResource {
+    readonly props: KubernetesClustersProps;
+
+    /**
+     * Attribute ClusterIds: The list of cluster IDs.
+     */
+    readonly attrClusterIds: ros.IResolvable | string;
+
+    /**
+     * Attribute Clusters: The list of clusters.
+     */
+    readonly attrClusters: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::CS::KubernetesClusters`, which is used to query Container Service for Kubernetes (ACK) clusters.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosKubernetesClusters`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-kubernetesclusters
  */
-export class KubernetesClusters extends ros.Resource {
+export class KubernetesClusters extends ros.Resource implements IKubernetesClusters {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: KubernetesClustersProps;
+    public readonly props: KubernetesClustersProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterIds: The list of cluster IDs.
      */
-    public readonly attrClusterIds: ros.IResolvable;
+    public readonly attrClusterIds: ros.IResolvable | string;
 
     /**
      * Attribute Clusters: The list of clusters.
      */
-    public readonly attrClusters: ros.IResolvable;
+    public readonly attrClusters: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

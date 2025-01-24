@@ -40,20 +40,31 @@ export interface CenInstanceProps {
 }
 
 /**
+ * Represents a `CenInstance`.
+ */
+export interface ICenInstance extends ros.IResource {
+    readonly props: CenInstanceProps;
+
+    /**
+     * Attribute CenId: The ID of the request.
+     */
+    readonly attrCenId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenInstance`, which is used to create a Cloud Enterprise Network (CEN) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-ceninstance
  */
-export class CenInstance extends ros.Resource {
+export class CenInstance extends ros.Resource implements ICenInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: CenInstanceProps;
+    public readonly props: CenInstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CenId: The ID of the request.
      */
-    public readonly attrCenId: ros.IResolvable;
+    public readonly attrCenId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

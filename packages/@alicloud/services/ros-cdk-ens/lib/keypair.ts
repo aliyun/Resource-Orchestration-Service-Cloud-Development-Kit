@@ -23,30 +23,51 @@ export interface KeyPairProps {
 }
 
 /**
+ * Represents a `KeyPair`.
+ */
+export interface IKeyPair extends ros.IResource {
+    readonly props: KeyPairProps;
+
+    /**
+     * Attribute KeyPairFingerPrint: The fingerprint of the key pair. The message-digest algorithm 5 (MD5) is used based on the public key fingerprint format defined in RFC 4716. For more information, see RFC 4716.
+     */
+    readonly attrKeyPairFingerPrint: ros.IResolvable | string;
+
+    /**
+     * Attribute KeyPairName: SSH Key pair name.
+     */
+    readonly attrKeyPairName: ros.IResolvable | string;
+
+    /**
+     * Attribute PrivateKeyBody: The private key of the key pair. The private key is encoded with PEM in the PKCS#8 format.
+     */
+    readonly attrPrivateKeyBody: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ENS::KeyPair`, which is used to import the public key of a Rivest-Shamir-Adleman (RSA)-encrypted key pair.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosKeyPair`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-keypair
  */
-export class KeyPair extends ros.Resource {
+export class KeyPair extends ros.Resource implements IKeyPair {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: KeyPairProps;
+    public readonly props: KeyPairProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute KeyPairFingerPrint: The fingerprint of the key pair. The message-digest algorithm 5 (MD5) is used based on the public key fingerprint format defined in RFC 4716. For more information, see RFC 4716.
      */
-    public readonly attrKeyPairFingerPrint: ros.IResolvable;
+    public readonly attrKeyPairFingerPrint: ros.IResolvable | string;
 
     /**
      * Attribute KeyPairName: SSH Key pair name.
      */
-    public readonly attrKeyPairName: ros.IResolvable;
+    public readonly attrKeyPairName: ros.IResolvable | string;
 
     /**
      * Attribute PrivateKeyBody: The private key of the key pair. The private key is encoded with PEM in the PKCS#8 format.
      */
-    public readonly attrPrivateKeyBody: ros.IResolvable;
+    public readonly attrPrivateKeyBody: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

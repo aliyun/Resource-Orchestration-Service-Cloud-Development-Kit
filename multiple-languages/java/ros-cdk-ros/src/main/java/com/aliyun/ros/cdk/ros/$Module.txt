@@ -4,6 +4,16 @@
 @alicloud/ros-cdk-ros.AutoEnableServiceProps=com.aliyun.ros.cdk.ros.AutoEnableServiceProps
 @alicloud/ros-cdk-ros.CustomResource=com.aliyun.ros.cdk.ros.CustomResource
 @alicloud/ros-cdk-ros.CustomResourceProps=com.aliyun.ros.cdk.ros.CustomResourceProps
+@alicloud/ros-cdk-ros.IAssert=com.aliyun.ros.cdk.ros.IAssert
+@alicloud/ros-cdk-ros.IAutoEnableService=com.aliyun.ros.cdk.ros.IAutoEnableService
+@alicloud/ros-cdk-ros.ICustomResource=com.aliyun.ros.cdk.ros.ICustomResource
+@alicloud/ros-cdk-ros.IResourceCleaner=com.aliyun.ros.cdk.ros.IResourceCleaner
+@alicloud/ros-cdk-ros.ISleep=com.aliyun.ros.cdk.ros.ISleep
+@alicloud/ros-cdk-ros.IStack=com.aliyun.ros.cdk.ros.IStack
+@alicloud/ros-cdk-ros.IStackGroup=com.aliyun.ros.cdk.ros.IStackGroup
+@alicloud/ros-cdk-ros.IStackInstances=com.aliyun.ros.cdk.ros.IStackInstances
+@alicloud/ros-cdk-ros.IWaitCondition=com.aliyun.ros.cdk.ros.IWaitCondition
+@alicloud/ros-cdk-ros.IWaitConditionHandle=com.aliyun.ros.cdk.ros.IWaitConditionHandle
 @alicloud/ros-cdk-ros.ResourceCleaner=com.aliyun.ros.cdk.ros.ResourceCleaner
 @alicloud/ros-cdk-ros.ResourceCleanerProps=com.aliyun.ros.cdk.ros.ResourceCleanerProps
 @alicloud/ros-cdk-ros.RosAssert=com.aliyun.ros.cdk.ros.RosAssert
@@ -47,6 +57,8 @@
 @alicloud/ros-cdk-ros.WaitConditionHandle=com.aliyun.ros.cdk.ros.WaitConditionHandle
 @alicloud/ros-cdk-ros.WaitConditionHandleProps=com.aliyun.ros.cdk.ros.WaitConditionHandleProps
 @alicloud/ros-cdk-ros.WaitConditionProps=com.aliyun.ros.cdk.ros.WaitConditionProps
+@alicloud/ros-cdk-ros.datasource.IStackGroups=com.aliyun.ros.cdk.ros.datasource.IStackGroups
+@alicloud/ros-cdk-ros.datasource.IStackInstance=com.aliyun.ros.cdk.ros.datasource.IStackInstance
 @alicloud/ros-cdk-ros.datasource.RosStackGroups=com.aliyun.ros.cdk.ros.datasource.RosStackGroups
 @alicloud/ros-cdk-ros.datasource.RosStackGroupsProps=com.aliyun.ros.cdk.ros.datasource.RosStackGroupsProps
 @alicloud/ros-cdk-ros.datasource.RosStackInstance=com.aliyun.ros.cdk.ros.datasource.RosStackInstance

@@ -56,45 +56,81 @@ export interface TriggerProps {
 }
 
 /**
+ * Represents a `Trigger`.
+ */
+export interface ITrigger extends ros.IResource {
+    readonly props: TriggerProps;
+
+    /**
+     * Attribute FunctionName: Function name.
+     */
+    readonly attrFunctionName: ros.IResolvable | string;
+
+    /**
+     * Attribute ServiceName: Service name.
+     */
+    readonly attrServiceName: ros.IResolvable | string;
+
+    /**
+     * Attribute TriggerId: The trigger ID.
+     */
+    readonly attrTriggerId: ros.IResolvable | string;
+
+    /**
+     * Attribute TriggerName: Trigger name.
+     */
+    readonly attrTriggerName: ros.IResolvable | string;
+
+    /**
+     * Attribute UrlInternet: The public domain address. You can access HTTP triggers over the Internet by using HTTP or HTTPS.
+     */
+    readonly attrUrlInternet: ros.IResolvable | string;
+
+    /**
+     * Attribute UrlIntranet: The private endpoint. In a VPC, you can access HTTP triggers by using HTTP or HTTPS.
+     */
+    readonly attrUrlIntranet: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::FC::Trigger`, which is used to trigger the invocation of a function.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTrigger`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-trigger
  */
-export class Trigger extends ros.Resource {
+export class Trigger extends ros.Resource implements ITrigger {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: TriggerProps;
+    public readonly props: TriggerProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute FunctionName: Function name.
      */
-    public readonly attrFunctionName: ros.IResolvable;
+    public readonly attrFunctionName: ros.IResolvable | string;
 
     /**
      * Attribute ServiceName: Service name.
      */
-    public readonly attrServiceName: ros.IResolvable;
+    public readonly attrServiceName: ros.IResolvable | string;
 
     /**
      * Attribute TriggerId: The trigger ID.
      */
-    public readonly attrTriggerId: ros.IResolvable;
+    public readonly attrTriggerId: ros.IResolvable | string;
 
     /**
      * Attribute TriggerName: Trigger name.
      */
-    public readonly attrTriggerName: ros.IResolvable;
+    public readonly attrTriggerName: ros.IResolvable | string;
 
     /**
      * Attribute UrlInternet: The public domain address. You can access HTTP triggers over the Internet by using HTTP or HTTPS.
      */
-    public readonly attrUrlInternet: ros.IResolvable;
+    public readonly attrUrlInternet: ros.IResolvable | string;
 
     /**
      * Attribute UrlIntranet: The private endpoint. In a VPC, you can access HTTP triggers by using HTTP or HTTPS.
      */
-    public readonly attrUrlIntranet: ros.IResolvable;
+    public readonly attrUrlIntranet: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

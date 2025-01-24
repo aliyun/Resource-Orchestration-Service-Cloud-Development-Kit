@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::SAG::QosAssociation`, which is used to associate a quality of service (QoS) policy with a Smart Access Gateway (SAG) instance.
 type QosAssociation interface {
 	alicloudroscdkcore.Resource
+	IQosAssociation
 	// Attribute QosId: The ID of the QoS policy.
-	AttrQosId() alicloudroscdkcore.IResolvable
+	AttrQosId() interface{}
 	// Attribute SmartAGId: The ID of the SAG instance to which the QoS policy is to be applied.
-	AttrSmartAgId() alicloudroscdkcore.IResolvable
+	AttrSmartAgId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type QosAssociation interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *QosAssociationProps
-	SetProps(val *QosAssociationProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type QosAssociation interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type QosAssociation interface {
 // The jsii proxy struct for QosAssociation
 type jsiiProxy_QosAssociation struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IQosAssociation
 }
 
-func (j *jsiiProxy_QosAssociation) AttrQosId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_QosAssociation) AttrQosId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrQosId",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_QosAssociation) AttrQosId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_QosAssociation) AttrSmartAgId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_QosAssociation) AttrSmartAgId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSmartAgId",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_QosAssociation) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_QosAssociation) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_QosAssociation)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_QosAssociation)SetProps(val *QosAssociationProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_QosAssociation)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (q *jsiiProxy_QosAssociation) ApplyRemovalPolicy(policy alicloudroscdkcore.
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (q *jsiiProxy_QosAssociation) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		q,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (q *jsiiProxy_QosAssociation) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		q,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (q *jsiiProxy_QosAssociation) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		q,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (q *jsiiProxy_QosAssociation) GeneratePhysicalName() *string {

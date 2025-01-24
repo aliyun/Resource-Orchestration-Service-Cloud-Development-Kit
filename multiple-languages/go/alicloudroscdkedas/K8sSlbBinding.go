@@ -12,18 +12,28 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::K8sSlbBinding`, which is used to bind a Server Load Balancer (SLB) instance to an application in a Container Service for Kubernetes (ACK) cluster.
 type K8sSlbBinding interface {
 	alicloudroscdkcore.Resource
+	IK8sSlbBinding
 	// Attribute Address: The address of load balancer instance.
-	AttrAddress() alicloudroscdkcore.IResolvable
+	AttrAddress() interface{}
 	// Attribute AppId: The ID of the application.
-	AttrAppId() alicloudroscdkcore.IResolvable
+	AttrAppId() interface{}
 	// Attribute ChangeOrderId: The ID of the change process.
-	AttrChangeOrderId() alicloudroscdkcore.IResolvable
+	AttrChangeOrderId() interface{}
 	// Attribute LoadBalancerId: The ID of load balancer instance.
-	AttrLoadBalancerId() alicloudroscdkcore.IResolvable
+	AttrLoadBalancerId() interface{}
 	// Attribute LoadBalancerName: The name of load balancer instance defined in EDAS.
-	AttrLoadBalancerName() alicloudroscdkcore.IResolvable
+	AttrLoadBalancerName() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -38,7 +48,6 @@ type K8sSlbBinding interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *K8sSlbBindingProps
-	SetProps(val *K8sSlbBindingProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -51,6 +60,9 @@ type K8sSlbBinding interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -103,10 +115,11 @@ type K8sSlbBinding interface {
 // The jsii proxy struct for K8sSlbBinding
 type jsiiProxy_K8sSlbBinding struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IK8sSlbBinding
 }
 
-func (j *jsiiProxy_K8sSlbBinding) AttrAddress() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_K8sSlbBinding) AttrAddress() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAddress",
@@ -115,8 +128,8 @@ func (j *jsiiProxy_K8sSlbBinding) AttrAddress() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_K8sSlbBinding) AttrAppId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_K8sSlbBinding) AttrAppId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAppId",
@@ -125,8 +138,8 @@ func (j *jsiiProxy_K8sSlbBinding) AttrAppId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_K8sSlbBinding) AttrChangeOrderId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_K8sSlbBinding) AttrChangeOrderId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrChangeOrderId",
@@ -135,8 +148,8 @@ func (j *jsiiProxy_K8sSlbBinding) AttrChangeOrderId() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_K8sSlbBinding) AttrLoadBalancerId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_K8sSlbBinding) AttrLoadBalancerId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLoadBalancerId",
@@ -145,8 +158,8 @@ func (j *jsiiProxy_K8sSlbBinding) AttrLoadBalancerId() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_K8sSlbBinding) AttrLoadBalancerName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_K8sSlbBinding) AttrLoadBalancerName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLoadBalancerName",
@@ -160,6 +173,16 @@ func (j *jsiiProxy_K8sSlbBinding) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_K8sSlbBinding) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -297,17 +320,6 @@ func (j *jsiiProxy_K8sSlbBinding)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_K8sSlbBinding)SetProps(val *K8sSlbBindingProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_K8sSlbBinding)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -399,6 +411,45 @@ func (k *jsiiProxy_K8sSlbBinding) ApplyRemovalPolicy(policy alicloudroscdkcore.R
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (k *jsiiProxy_K8sSlbBinding) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		k,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (k *jsiiProxy_K8sSlbBinding) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		k,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (k *jsiiProxy_K8sSlbBinding) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		k,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (k *jsiiProxy_K8sSlbBinding) GeneratePhysicalName() *string {

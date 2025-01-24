@@ -42,14 +42,20 @@ export interface PermissionPolicyToAccessConfigurationAdditionProps {
 }
 
 /**
+ * Represents a `PermissionPolicyToAccessConfigurationAddition`.
+ */
+export interface IPermissionPolicyToAccessConfigurationAddition extends ros.IResource {
+    readonly props: PermissionPolicyToAccessConfigurationAdditionProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::PermissionPolicyToAccessConfigurationAddition`, which is used to add a policy to an access configuration.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPermissionPolicyToAccessConfigurationAddition`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-permissionpolicytoaccessconfigurationaddition
  */
-export class PermissionPolicyToAccessConfigurationAddition extends ros.Resource {
+export class PermissionPolicyToAccessConfigurationAddition extends ros.Resource implements IPermissionPolicyToAccessConfigurationAddition {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: PermissionPolicyToAccessConfigurationAdditionProps;
+    public readonly props: PermissionPolicyToAccessConfigurationAdditionProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

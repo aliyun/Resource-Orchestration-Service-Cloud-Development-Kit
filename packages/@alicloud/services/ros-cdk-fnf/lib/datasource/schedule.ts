@@ -37,50 +37,91 @@ export interface ScheduleProps {
 }
 
 /**
+ * Represents a `Schedule`.
+ */
+export interface ISchedule extends ros.IResource {
+    readonly props: ScheduleProps;
+
+    /**
+     * Attribute CreateTime: The time when the time-based schedule was created.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute CronExpression: The CRON expression of the time-based schedule to be created.
+     */
+    readonly attrCronExpression: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: The description of the time-based schedule to be created.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute LastModifiedTime: The time when the time-based schedule was last updated.
+     */
+    readonly attrLastModifiedTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Payload: The trigger message of the time-based schedule to be created.
+     */
+    readonly attrPayload: ros.IResolvable | string;
+
+    /**
+     * Attribute ScheduleId: The ID of the time-based schedule.
+     */
+    readonly attrScheduleId: ros.IResolvable | string;
+
+    /**
+     * Attribute ScheduleName: The name of the time-based schedule to be created.
+     */
+    readonly attrScheduleName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::FNF::Schedule`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSchedule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fnf-schedule
  */
-export class Schedule extends ros.Resource {
+export class Schedule extends ros.Resource implements ISchedule {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ScheduleProps;
+    public readonly props: ScheduleProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateTime: The time when the time-based schedule was created.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute CronExpression: The CRON expression of the time-based schedule to be created.
      */
-    public readonly attrCronExpression: ros.IResolvable;
+    public readonly attrCronExpression: ros.IResolvable | string;
 
     /**
      * Attribute Description: The description of the time-based schedule to be created.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute LastModifiedTime: The time when the time-based schedule was last updated.
      */
-    public readonly attrLastModifiedTime: ros.IResolvable;
+    public readonly attrLastModifiedTime: ros.IResolvable | string;
 
     /**
      * Attribute Payload: The trigger message of the time-based schedule to be created.
      */
-    public readonly attrPayload: ros.IResolvable;
+    public readonly attrPayload: ros.IResolvable | string;
 
     /**
      * Attribute ScheduleId: The ID of the time-based schedule.
      */
-    public readonly attrScheduleId: ros.IResolvable;
+    public readonly attrScheduleId: ros.IResolvable | string;
 
     /**
      * Attribute ScheduleName: The name of the time-based schedule to be created.
      */
-    public readonly attrScheduleName: ros.IResolvable;
+    public readonly attrScheduleName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -56,25 +56,41 @@ export interface InferenceJobProps {
 }
 
 /**
+ * Represents a `InferenceJob`.
+ */
+export interface IInferenceJob extends ros.IResource {
+    readonly props: InferenceJobProps;
+
+    /**
+     * Attribute GroupId: The related group id of infernce job result.
+     */
+    readonly attrGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute InferenceJobId: The id of inference job.
+     */
+    readonly attrInferenceJobId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::PAIPlugin::InferenceJob`, which is used to create a prediction job.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInferenceJob`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paiplugin-inferencejob
  */
-export class InferenceJob extends ros.Resource {
+export class InferenceJob extends ros.Resource implements IInferenceJob {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InferenceJobProps;
+    public readonly props: InferenceJobProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute GroupId: The related group id of infernce job result.
      */
-    public readonly attrGroupId: ros.IResolvable;
+    public readonly attrGroupId: ros.IResolvable | string;
 
     /**
      * Attribute InferenceJobId: The id of inference job.
      */
-    public readonly attrInferenceJobId: ros.IResolvable;
+    public readonly attrInferenceJobId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

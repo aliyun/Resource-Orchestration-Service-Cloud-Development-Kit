@@ -29,44 +29,79 @@ export interface AccountProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::REDIS::Account`, which is used to query an account in an ApsaraDB for Redis instance.
- * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccount`for a more convenient development experience.
- * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-account
+ * Represents a `Account`.
  */
-export class Account extends ros.Resource {
-    protected scope: ros.Construct;
-    protected id: string;
-    protected props: AccountProps;
-    protected enableResourcePropertyConstraint: boolean;
+export interface IAccount extends ros.IResource {
+    readonly props: AccountProps;
 
     /**
      * Attribute AccountName: The name of the account.
      */
-    public readonly attrAccountName: ros.IResolvable;
+    readonly attrAccountName: ros.IResolvable | string;
 
     /**
      * Attribute AccountPrivilege: The permission of the account. Default value: RoleReadWrite. Valid values:
 * RoleReadOnly: The account has the read-only permissions.
 * RoleReadWrite: The account has the read and write permissions.
      */
-    public readonly attrAccountPrivilege: ros.IResolvable;
+    readonly attrAccountPrivilege: ros.IResolvable | string;
 
     /**
      * Attribute AccountType: The type of the account. Valid values:
 * Normal: standard account
 * Super: super account
      */
-    public readonly attrAccountType: ros.IResolvable;
+    readonly attrAccountType: ros.IResolvable | string;
 
     /**
      * Attribute Description: The description of the account.
      */
-    public readonly attrDescription: ros.IResolvable;
+    readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: The ID of the Redis instance.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    readonly attrInstanceId: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::REDIS::Account`, which is used to query an account in an ApsaraDB for Redis instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccount`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-account
+ */
+export class Account extends ros.Resource implements IAccount {
+    protected scope: ros.Construct;
+    protected id: string;
+    public readonly props: AccountProps;
+    protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute AccountName: The name of the account.
+     */
+    public readonly attrAccountName: ros.IResolvable | string;
+
+    /**
+     * Attribute AccountPrivilege: The permission of the account. Default value: RoleReadWrite. Valid values:
+* RoleReadOnly: The account has the read-only permissions.
+* RoleReadWrite: The account has the read and write permissions.
+     */
+    public readonly attrAccountPrivilege: ros.IResolvable | string;
+
+    /**
+     * Attribute AccountType: The type of the account. Valid values:
+* Normal: standard account
+* Super: super account
+     */
+    public readonly attrAccountType: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: The description of the account.
+     */
+    public readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: The ID of the Redis instance.
+     */
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

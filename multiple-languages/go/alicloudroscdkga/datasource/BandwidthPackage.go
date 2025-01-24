@@ -12,52 +12,62 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::GA::BandwidthPackage`, which is used to query the information about a bandwidth plan.
 type BandwidthPackage interface {
 	alicloudroscdkcore.Resource
+	IBandwidthPackage
 	// Attribute AutoRenew: Whether to enable automatic renewal.
-	AttrAutoRenew() alicloudroscdkcore.IResolvable
+	AttrAutoRenew() interface{}
 	// Attribute AutoRenewDuration: The duration of automatic renewal.
 	//
 	// Unit: Month.
-	AttrAutoRenewDuration() alicloudroscdkcore.IResolvable
+	AttrAutoRenewDuration() interface{}
 	// Attribute Bandwidth: The bandwidth value of the bandwidth package.
 	//
 	// Unit: Mbps. Value range: 2~2000.
-	AttrBandwidth() alicloudroscdkcore.IResolvable
+	AttrBandwidth() interface{}
 	// Attribute BandwidthPackageId: The Resource ID of the bandwidth.
-	AttrBandwidthPackageId() alicloudroscdkcore.IResolvable
+	AttrBandwidthPackageId() interface{}
 	// Attribute BandwidthPackageName: The Resource name of the bandwidth.
-	AttrBandwidthPackageName() alicloudroscdkcore.IResolvable
+	AttrBandwidthPackageName() interface{}
 	// Attribute BandwidthType: Bandwidth type.
-	AttrBandwidthType() alicloudroscdkcore.IResolvable
+	AttrBandwidthType() interface{}
 	// Attribute BillingType: Post-payment billing method.
-	AttrBillingType() alicloudroscdkcore.IResolvable
+	AttrBillingType() interface{}
 	// Attribute CbnGeographicRegionIdA: The interworking region A of cross-region acceleration packages.
 	//
 	// The value is China-mainland only.
-	AttrCbnGeographicRegionIdA() alicloudroscdkcore.IResolvable
+	AttrCbnGeographicRegionIdA() interface{}
 	// Attribute CbnGeographicRegionIdB: The interworking Region B of cross-region acceleration packages.
 	//
 	// The value is Global only.
-	AttrCbnGeographicRegionIdB() alicloudroscdkcore.IResolvable
+	AttrCbnGeographicRegionIdB() interface{}
 	// Attribute CreateTime: Bandwidth package creation time.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute Description: the description of bandwidth package.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute ExpiredTime: Bandwidth package expiration time.
-	AttrExpiredTime() alicloudroscdkcore.IResolvable
+	AttrExpiredTime() interface{}
 	// Attribute PaymentType: Type of payment.
-	AttrPaymentType() alicloudroscdkcore.IResolvable
+	AttrPaymentType() interface{}
 	// Attribute Ratio: 95 Billing guaranteed percentage.
 	//
 	// Value range: 30~100.
-	AttrRatio() alicloudroscdkcore.IResolvable
+	AttrRatio() interface{}
 	// Attribute RenewalStatus: Renewal status.
-	AttrRenewalStatus() alicloudroscdkcore.IResolvable
+	AttrRenewalStatus() interface{}
 	// Attribute ResourceGroupId: The ID of the resource group.
-	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() interface{}
 	// Attribute Type: The type of the bandwidth package.
-	AttrType() alicloudroscdkcore.IResolvable
+	AttrType() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -72,7 +82,6 @@ type BandwidthPackage interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *BandwidthPackageProps
-	SetProps(val *BandwidthPackageProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -85,6 +94,9 @@ type BandwidthPackage interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -137,10 +149,11 @@ type BandwidthPackage interface {
 // The jsii proxy struct for BandwidthPackage
 type jsiiProxy_BandwidthPackage struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IBandwidthPackage
 }
 
-func (j *jsiiProxy_BandwidthPackage) AttrAutoRenew() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BandwidthPackage) AttrAutoRenew() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAutoRenew",
@@ -149,8 +162,8 @@ func (j *jsiiProxy_BandwidthPackage) AttrAutoRenew() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_BandwidthPackage) AttrAutoRenewDuration() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BandwidthPackage) AttrAutoRenewDuration() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAutoRenewDuration",
@@ -159,8 +172,8 @@ func (j *jsiiProxy_BandwidthPackage) AttrAutoRenewDuration() alicloudroscdkcore.
 	return returns
 }
 
-func (j *jsiiProxy_BandwidthPackage) AttrBandwidth() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BandwidthPackage) AttrBandwidth() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBandwidth",
@@ -169,8 +182,8 @@ func (j *jsiiProxy_BandwidthPackage) AttrBandwidth() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_BandwidthPackage) AttrBandwidthPackageId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BandwidthPackage) AttrBandwidthPackageId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBandwidthPackageId",
@@ -179,8 +192,8 @@ func (j *jsiiProxy_BandwidthPackage) AttrBandwidthPackageId() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_BandwidthPackage) AttrBandwidthPackageName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BandwidthPackage) AttrBandwidthPackageName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBandwidthPackageName",
@@ -189,8 +202,8 @@ func (j *jsiiProxy_BandwidthPackage) AttrBandwidthPackageName() alicloudroscdkco
 	return returns
 }
 
-func (j *jsiiProxy_BandwidthPackage) AttrBandwidthType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BandwidthPackage) AttrBandwidthType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBandwidthType",
@@ -199,8 +212,8 @@ func (j *jsiiProxy_BandwidthPackage) AttrBandwidthType() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_BandwidthPackage) AttrBillingType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BandwidthPackage) AttrBillingType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBillingType",
@@ -209,8 +222,8 @@ func (j *jsiiProxy_BandwidthPackage) AttrBillingType() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_BandwidthPackage) AttrCbnGeographicRegionIdA() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BandwidthPackage) AttrCbnGeographicRegionIdA() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCbnGeographicRegionIdA",
@@ -219,8 +232,8 @@ func (j *jsiiProxy_BandwidthPackage) AttrCbnGeographicRegionIdA() alicloudroscdk
 	return returns
 }
 
-func (j *jsiiProxy_BandwidthPackage) AttrCbnGeographicRegionIdB() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BandwidthPackage) AttrCbnGeographicRegionIdB() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCbnGeographicRegionIdB",
@@ -229,8 +242,8 @@ func (j *jsiiProxy_BandwidthPackage) AttrCbnGeographicRegionIdB() alicloudroscdk
 	return returns
 }
 
-func (j *jsiiProxy_BandwidthPackage) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BandwidthPackage) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -239,8 +252,8 @@ func (j *jsiiProxy_BandwidthPackage) AttrCreateTime() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_BandwidthPackage) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BandwidthPackage) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -249,8 +262,8 @@ func (j *jsiiProxy_BandwidthPackage) AttrDescription() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_BandwidthPackage) AttrExpiredTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BandwidthPackage) AttrExpiredTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrExpiredTime",
@@ -259,8 +272,8 @@ func (j *jsiiProxy_BandwidthPackage) AttrExpiredTime() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_BandwidthPackage) AttrPaymentType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BandwidthPackage) AttrPaymentType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPaymentType",
@@ -269,8 +282,8 @@ func (j *jsiiProxy_BandwidthPackage) AttrPaymentType() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_BandwidthPackage) AttrRatio() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BandwidthPackage) AttrRatio() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRatio",
@@ -279,8 +292,8 @@ func (j *jsiiProxy_BandwidthPackage) AttrRatio() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_BandwidthPackage) AttrRenewalStatus() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BandwidthPackage) AttrRenewalStatus() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRenewalStatus",
@@ -289,8 +302,8 @@ func (j *jsiiProxy_BandwidthPackage) AttrRenewalStatus() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_BandwidthPackage) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BandwidthPackage) AttrResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupId",
@@ -299,8 +312,8 @@ func (j *jsiiProxy_BandwidthPackage) AttrResourceGroupId() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_BandwidthPackage) AttrType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BandwidthPackage) AttrType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrType",
@@ -314,6 +327,16 @@ func (j *jsiiProxy_BandwidthPackage) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BandwidthPackage) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -451,17 +474,6 @@ func (j *jsiiProxy_BandwidthPackage)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_BandwidthPackage)SetProps(val *BandwidthPackageProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_BandwidthPackage)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -553,6 +565,45 @@ func (b *jsiiProxy_BandwidthPackage) ApplyRemovalPolicy(policy alicloudroscdkcor
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (b *jsiiProxy_BandwidthPackage) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		b,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (b *jsiiProxy_BandwidthPackage) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		b,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (b *jsiiProxy_BandwidthPackage) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		b,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (b *jsiiProxy_BandwidthPackage) GeneratePhysicalName() *string {

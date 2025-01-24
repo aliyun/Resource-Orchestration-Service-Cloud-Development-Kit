@@ -9,6 +9,7 @@ type CustomResourceProps struct {
 	//
 	// Allowed values:
 	// - Function Compute: acs:fc:<region_id>:<account_id>:services\/<service_name>\/functions\/<function_name>
+	// - Function Compute 3: acs:fc:<region_id>:<account_id>:functions\/<function_name>
 	// - MNS Queue: acs:mns:<region_id>:<account_id>:queues\/<queue_name> or acs:mns:<region_id>:<account_id>:\/queues\/<queue_name>
 	// - MNS Topic: acs:mns:<region_id>:<account_id>:topics\/<topic_name> or acs:mns:<region_id>:<account_id>:\/topics\/<topic_name>
 	// - HTTP&HTTPS: web[options]:<url>
@@ -17,6 +18,7 @@ type CustomResourceProps struct {
 	//    - idempotent: indicates that the Create request is idempotent. Update and Delete requests should be always idempotent.
 	// Examples:
 	//    - acs:fc:cn-hangzhou:123456789:services\/test-service\/functions\/test-function
+	//    - acs:fc:cn-hangzhou:123456789:functions\/test-function
 	//    - acs:mns:cn-hangzhou:123456789:queues\/test-queue
 	//    - acs:mns:cn-hangzhou:123456789:\/queues\/test-queue
 	//    - acs:mns:cn-hangzhou:123456789:topics\/test-topic

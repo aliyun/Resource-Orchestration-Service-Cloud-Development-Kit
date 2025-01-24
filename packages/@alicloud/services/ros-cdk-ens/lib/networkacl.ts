@@ -28,20 +28,31 @@ export interface NetworkAclProps {
 }
 
 /**
+ * Represents a `NetworkAcl`.
+ */
+export interface INetworkAcl extends ros.IResource {
+    readonly props: NetworkAclProps;
+
+    /**
+     * Attribute NetworkAclId: The ID of the network ACL.
+     */
+    readonly attrNetworkAclId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ENS::NetworkAcl`, which is used to create a network access control list (ACL).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNetworkAcl`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-networkacl
  */
-export class NetworkAcl extends ros.Resource {
+export class NetworkAcl extends ros.Resource implements INetworkAcl {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: NetworkAclProps;
+    public readonly props: NetworkAclProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute NetworkAclId: The ID of the network ACL.
      */
-    public readonly attrNetworkAclId: ros.IResolvable;
+    public readonly attrNetworkAclId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

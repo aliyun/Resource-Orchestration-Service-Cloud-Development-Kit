@@ -74,45 +74,81 @@ export interface VpcEndpointServiceProps {
 }
 
 /**
+ * Represents a `VpcEndpointService`.
+ */
+export interface IVpcEndpointService extends ros.IResource {
+    readonly props: VpcEndpointServiceProps;
+
+    /**
+     * Attribute MaxBandwidth: The maximum bandwidth of the endpoint connection.
+     */
+    readonly attrMaxBandwidth: ros.IResolvable | string;
+
+    /**
+     * Attribute MinBandwidth: The minimum bandwidth of the endpoint connection.
+     */
+    readonly attrMinBandwidth: ros.IResolvable | string;
+
+    /**
+     * Attribute ServiceDescription: The description of the endpoint service.
+     */
+    readonly attrServiceDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute ServiceDomain: The domain name of the endpoint service.
+     */
+    readonly attrServiceDomain: ros.IResolvable | string;
+
+    /**
+     * Attribute ServiceId: The ID of the endpoint service.
+     */
+    readonly attrServiceId: ros.IResolvable | string;
+
+    /**
+     * Attribute ServiceName: The name of the endpoint service.
+     */
+    readonly attrServiceName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::PrivateLink::VpcEndpointService`, which is used to create an endpoint service.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpcEndpointService`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpointservice
  */
-export class VpcEndpointService extends ros.Resource {
+export class VpcEndpointService extends ros.Resource implements IVpcEndpointService {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: VpcEndpointServiceProps;
+    public readonly props: VpcEndpointServiceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute MaxBandwidth: The maximum bandwidth of the endpoint connection.
      */
-    public readonly attrMaxBandwidth: ros.IResolvable;
+    public readonly attrMaxBandwidth: ros.IResolvable | string;
 
     /**
      * Attribute MinBandwidth: The minimum bandwidth of the endpoint connection.
      */
-    public readonly attrMinBandwidth: ros.IResolvable;
+    public readonly attrMinBandwidth: ros.IResolvable | string;
 
     /**
      * Attribute ServiceDescription: The description of the endpoint service.
      */
-    public readonly attrServiceDescription: ros.IResolvable;
+    public readonly attrServiceDescription: ros.IResolvable | string;
 
     /**
      * Attribute ServiceDomain: The domain name of the endpoint service.
      */
-    public readonly attrServiceDomain: ros.IResolvable;
+    public readonly attrServiceDomain: ros.IResolvable | string;
 
     /**
      * Attribute ServiceId: The ID of the endpoint service.
      */
-    public readonly attrServiceId: ros.IResolvable;
+    public readonly attrServiceId: ros.IResolvable | string;
 
     /**
      * Attribute ServiceName: The name of the endpoint service.
      */
-    public readonly attrServiceName: ros.IResolvable;
+    public readonly attrServiceName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

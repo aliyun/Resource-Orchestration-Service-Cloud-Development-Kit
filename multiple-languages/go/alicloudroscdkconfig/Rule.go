@@ -12,52 +12,62 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::Config::Rule`, which is used to create or modify a rule.
 type Rule interface {
 	alicloudroscdkcore.Resource
+	IRule
 	// Attribute ConfigRuleArn: config rule arn.
-	AttrConfigRuleArn() alicloudroscdkcore.IResolvable
+	AttrConfigRuleArn() interface{}
 	// Attribute ConfigRuleId: The ID of the rule.
-	AttrConfigRuleId() alicloudroscdkcore.IResolvable
+	AttrConfigRuleId() interface{}
 	// Attribute ConfigRuleTriggerTypes: The trigger type of the rule.
 	//
 	// Valid values:  ConfigurationItemChangeNotification: The rule is triggered upon configuration changes. ScheduledNotification: The rule is triggered as scheduled.
-	AttrConfigRuleTriggerTypes() alicloudroscdkcore.IResolvable
+	AttrConfigRuleTriggerTypes() interface{}
 	// Attribute Description: The description of the rule.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute EventSource: The event source of the rule.
-	AttrEventSource() alicloudroscdkcore.IResolvable
+	AttrEventSource() interface{}
 	// Attribute ExcludeResourceIdsScope: The rule monitors excluded resource IDs, multiple of which are separated by commas, only applies to rules created based on managed rules, , custom rule this field is empty.
-	AttrExcludeResourceIdsScope() alicloudroscdkcore.IResolvable
+	AttrExcludeResourceIdsScope() interface{}
 	// Attribute InputParameters: The settings of the input parameters for the rule.
-	AttrInputParameters() alicloudroscdkcore.IResolvable
+	AttrInputParameters() interface{}
 	// Attribute MaximumExecutionFrequency: The frequency of the compliance evaluations.
 	//
 	// Valid values:  One_Hour Three_Hours Six_Hours Twelve_Hours TwentyFour_Hours.
-	AttrMaximumExecutionFrequency() alicloudroscdkcore.IResolvable
+	AttrMaximumExecutionFrequency() interface{}
 	// Attribute RegionIdsScope: The rule monitors region IDs, separated by commas, only applies to rules created based on managed rules.
-	AttrRegionIdsScope() alicloudroscdkcore.IResolvable
+	AttrRegionIdsScope() interface{}
 	// Attribute ResourceGroupIdsScope: The rule monitors resource group IDs, separated by commas, only applies to rules created based on managed rules.
-	AttrResourceGroupIdsScope() alicloudroscdkcore.IResolvable
+	AttrResourceGroupIdsScope() interface{}
 	// Attribute ResourceTypesScope: The types of the resources to be evaluated against the rule.
-	AttrResourceTypesScope() alicloudroscdkcore.IResolvable
+	AttrResourceTypesScope() interface{}
 	// Attribute RiskLevel: The risk level of the resources that are not compliant with the rule.
 	//
 	// Valid values:  1: critical 2: warning 3: info.
-	AttrRiskLevel() alicloudroscdkcore.IResolvable
+	AttrRiskLevel() interface{}
 	// Attribute RuleName: The name of the rule.
-	AttrRuleName() alicloudroscdkcore.IResolvable
+	AttrRuleName() interface{}
 	// Attribute SourceIdentifier: The identifier of the rule.
 	//
 	// For a managed rule, the value is the name of the managed rule. For a custom rule, the value is the ARN of the custom rule
-	AttrSourceIdentifier() alicloudroscdkcore.IResolvable
+	AttrSourceIdentifier() interface{}
 	// Attribute SourceOwner: Specifies whether you or Alibaba Cloud owns and manages the rule.
 	//
 	// Valid values:  CUSTOM_FC: The rule is a custom rule and you own the rule. ALIYUN: The rule is a managed rule and Alibaba Cloud owns the rule
-	AttrSourceOwner() alicloudroscdkcore.IResolvable
+	AttrSourceOwner() interface{}
 	// Attribute TagKeyScope: The rule monitors the tag key, only applies to rules created based on managed rules.
-	AttrTagKeyScope() alicloudroscdkcore.IResolvable
+	AttrTagKeyScope() interface{}
 	// Attribute TagValueScope: The rule monitors the tag value, only applies to rules created based on managed rules.
-	AttrTagValueScope() alicloudroscdkcore.IResolvable
+	AttrTagValueScope() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -72,7 +82,6 @@ type Rule interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *RuleProps
-	SetProps(val *RuleProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -85,6 +94,9 @@ type Rule interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -137,10 +149,11 @@ type Rule interface {
 // The jsii proxy struct for Rule
 type jsiiProxy_Rule struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IRule
 }
 
-func (j *jsiiProxy_Rule) AttrConfigRuleArn() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Rule) AttrConfigRuleArn() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrConfigRuleArn",
@@ -149,8 +162,8 @@ func (j *jsiiProxy_Rule) AttrConfigRuleArn() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Rule) AttrConfigRuleId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Rule) AttrConfigRuleId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrConfigRuleId",
@@ -159,8 +172,8 @@ func (j *jsiiProxy_Rule) AttrConfigRuleId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Rule) AttrConfigRuleTriggerTypes() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Rule) AttrConfigRuleTriggerTypes() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrConfigRuleTriggerTypes",
@@ -169,8 +182,8 @@ func (j *jsiiProxy_Rule) AttrConfigRuleTriggerTypes() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_Rule) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Rule) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -179,8 +192,8 @@ func (j *jsiiProxy_Rule) AttrDescription() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Rule) AttrEventSource() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Rule) AttrEventSource() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEventSource",
@@ -189,8 +202,8 @@ func (j *jsiiProxy_Rule) AttrEventSource() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Rule) AttrExcludeResourceIdsScope() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Rule) AttrExcludeResourceIdsScope() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrExcludeResourceIdsScope",
@@ -199,8 +212,8 @@ func (j *jsiiProxy_Rule) AttrExcludeResourceIdsScope() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_Rule) AttrInputParameters() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Rule) AttrInputParameters() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInputParameters",
@@ -209,8 +222,8 @@ func (j *jsiiProxy_Rule) AttrInputParameters() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Rule) AttrMaximumExecutionFrequency() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Rule) AttrMaximumExecutionFrequency() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMaximumExecutionFrequency",
@@ -219,8 +232,8 @@ func (j *jsiiProxy_Rule) AttrMaximumExecutionFrequency() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_Rule) AttrRegionIdsScope() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Rule) AttrRegionIdsScope() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRegionIdsScope",
@@ -229,8 +242,8 @@ func (j *jsiiProxy_Rule) AttrRegionIdsScope() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Rule) AttrResourceGroupIdsScope() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Rule) AttrResourceGroupIdsScope() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupIdsScope",
@@ -239,8 +252,8 @@ func (j *jsiiProxy_Rule) AttrResourceGroupIdsScope() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_Rule) AttrResourceTypesScope() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Rule) AttrResourceTypesScope() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceTypesScope",
@@ -249,8 +262,8 @@ func (j *jsiiProxy_Rule) AttrResourceTypesScope() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Rule) AttrRiskLevel() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Rule) AttrRiskLevel() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRiskLevel",
@@ -259,8 +272,8 @@ func (j *jsiiProxy_Rule) AttrRiskLevel() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Rule) AttrRuleName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Rule) AttrRuleName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRuleName",
@@ -269,8 +282,8 @@ func (j *jsiiProxy_Rule) AttrRuleName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Rule) AttrSourceIdentifier() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Rule) AttrSourceIdentifier() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSourceIdentifier",
@@ -279,8 +292,8 @@ func (j *jsiiProxy_Rule) AttrSourceIdentifier() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Rule) AttrSourceOwner() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Rule) AttrSourceOwner() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSourceOwner",
@@ -289,8 +302,8 @@ func (j *jsiiProxy_Rule) AttrSourceOwner() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Rule) AttrTagKeyScope() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Rule) AttrTagKeyScope() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTagKeyScope",
@@ -299,8 +312,8 @@ func (j *jsiiProxy_Rule) AttrTagKeyScope() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Rule) AttrTagValueScope() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Rule) AttrTagValueScope() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTagValueScope",
@@ -314,6 +327,16 @@ func (j *jsiiProxy_Rule) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Rule) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -451,17 +474,6 @@ func (j *jsiiProxy_Rule)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Rule)SetProps(val *RuleProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Rule)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -553,6 +565,45 @@ func (r *jsiiProxy_Rule) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPol
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (r *jsiiProxy_Rule) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		r,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_Rule) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		r,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_Rule) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		r,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (r *jsiiProxy_Rule) GeneratePhysicalName() *string {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CS::ManagedEdgeKubernetesCluster</code>, which is used to create a Container Service for Kubernetes (ACK) edge cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:06.068Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:36.636Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster")
 public class RosManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -313,6 +313,24 @@ public class RosManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Ros
      */
     public void setLoginPassword(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "loginPassword", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMaintenanceWindow() {
+        return software.amazon.jsii.Kernel.get(this, "maintenanceWindow", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setMaintenanceWindow(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "maintenanceWindow", value);
+    }
+
+    /**
+     */
+    public void setMaintenanceWindow(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.MaintenanceWindowProperty value) {
+        software.amazon.jsii.Kernel.set(this, "maintenanceWindow", value);
     }
 
     /**
@@ -717,6 +735,307 @@ public class RosManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Ros
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster.MaintenanceWindowProperty")
+    @software.amazon.jsii.Jsii.Proxy(MaintenanceWindowProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface MaintenanceWindowProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDuration() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEnable() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getMaintenanceTime() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getRecurrence() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getWeeklyPeriod() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link MaintenanceWindowProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link MaintenanceWindowProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<MaintenanceWindowProperty> {
+            java.lang.Object duration;
+            java.lang.Object enable;
+            java.lang.Object maintenanceTime;
+            java.lang.Object recurrence;
+            java.lang.Object weeklyPeriod;
+
+            /**
+             * Sets the value of {@link MaintenanceWindowProperty#getDuration}
+             * @param duration the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder duration(java.lang.String duration) {
+                this.duration = duration;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link MaintenanceWindowProperty#getDuration}
+             * @param duration the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder duration(com.aliyun.ros.cdk.core.IResolvable duration) {
+                this.duration = duration;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link MaintenanceWindowProperty#getEnable}
+             * @param enable the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enable(java.lang.Boolean enable) {
+                this.enable = enable;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link MaintenanceWindowProperty#getEnable}
+             * @param enable the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enable(com.aliyun.ros.cdk.core.IResolvable enable) {
+                this.enable = enable;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link MaintenanceWindowProperty#getMaintenanceTime}
+             * @param maintenanceTime the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder maintenanceTime(java.lang.String maintenanceTime) {
+                this.maintenanceTime = maintenanceTime;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link MaintenanceWindowProperty#getMaintenanceTime}
+             * @param maintenanceTime the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder maintenanceTime(com.aliyun.ros.cdk.core.IResolvable maintenanceTime) {
+                this.maintenanceTime = maintenanceTime;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link MaintenanceWindowProperty#getRecurrence}
+             * @param recurrence the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder recurrence(java.lang.String recurrence) {
+                this.recurrence = recurrence;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link MaintenanceWindowProperty#getRecurrence}
+             * @param recurrence the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder recurrence(com.aliyun.ros.cdk.core.IResolvable recurrence) {
+                this.recurrence = recurrence;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link MaintenanceWindowProperty#getWeeklyPeriod}
+             * @param weeklyPeriod the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder weeklyPeriod(java.lang.String weeklyPeriod) {
+                this.weeklyPeriod = weeklyPeriod;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link MaintenanceWindowProperty#getWeeklyPeriod}
+             * @param weeklyPeriod the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder weeklyPeriod(com.aliyun.ros.cdk.core.IResolvable weeklyPeriod) {
+                this.weeklyPeriod = weeklyPeriod;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link MaintenanceWindowProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public MaintenanceWindowProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link MaintenanceWindowProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements MaintenanceWindowProperty {
+            private final java.lang.Object duration;
+            private final java.lang.Object enable;
+            private final java.lang.Object maintenanceTime;
+            private final java.lang.Object recurrence;
+            private final java.lang.Object weeklyPeriod;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.duration = software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.enable = software.amazon.jsii.Kernel.get(this, "enable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.maintenanceTime = software.amazon.jsii.Kernel.get(this, "maintenanceTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.recurrence = software.amazon.jsii.Kernel.get(this, "recurrence", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.weeklyPeriod = software.amazon.jsii.Kernel.get(this, "weeklyPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.duration = builder.duration;
+                this.enable = builder.enable;
+                this.maintenanceTime = builder.maintenanceTime;
+                this.recurrence = builder.recurrence;
+                this.weeklyPeriod = builder.weeklyPeriod;
+            }
+
+            @Override
+            public final java.lang.Object getDuration() {
+                return this.duration;
+            }
+
+            @Override
+            public final java.lang.Object getEnable() {
+                return this.enable;
+            }
+
+            @Override
+            public final java.lang.Object getMaintenanceTime() {
+                return this.maintenanceTime;
+            }
+
+            @Override
+            public final java.lang.Object getRecurrence() {
+                return this.recurrence;
+            }
+
+            @Override
+            public final java.lang.Object getWeeklyPeriod() {
+                return this.weeklyPeriod;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getDuration() != null) {
+                    data.set("duration", om.valueToTree(this.getDuration()));
+                }
+                if (this.getEnable() != null) {
+                    data.set("enable", om.valueToTree(this.getEnable()));
+                }
+                if (this.getMaintenanceTime() != null) {
+                    data.set("maintenanceTime", om.valueToTree(this.getMaintenanceTime()));
+                }
+                if (this.getRecurrence() != null) {
+                    data.set("recurrence", om.valueToTree(this.getRecurrence()));
+                }
+                if (this.getWeeklyPeriod() != null) {
+                    data.set("weeklyPeriod", om.valueToTree(this.getWeeklyPeriod()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster.MaintenanceWindowProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                MaintenanceWindowProperty.Jsii$Proxy that = (MaintenanceWindowProperty.Jsii$Proxy) o;
+
+                if (this.duration != null ? !this.duration.equals(that.duration) : that.duration != null) return false;
+                if (this.enable != null ? !this.enable.equals(that.enable) : that.enable != null) return false;
+                if (this.maintenanceTime != null ? !this.maintenanceTime.equals(that.maintenanceTime) : that.maintenanceTime != null) return false;
+                if (this.recurrence != null ? !this.recurrence.equals(that.recurrence) : that.recurrence != null) return false;
+                return this.weeklyPeriod != null ? this.weeklyPeriod.equals(that.weeklyPeriod) : that.weeklyPeriod == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.duration != null ? this.duration.hashCode() : 0;
+                result = 31 * result + (this.enable != null ? this.enable.hashCode() : 0);
+                result = 31 * result + (this.maintenanceTime != null ? this.maintenanceTime.hashCode() : 0);
+                result = 31 * result + (this.recurrence != null ? this.recurrence.hashCode() : 0);
+                result = 31 * result + (this.weeklyPeriod != null ? this.weeklyPeriod.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster.TagsProperty")
     @software.amazon.jsii.Jsii.Proxy(TagsProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1077,6 +1396,23 @@ public class RosManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Ros
          */
         public Builder loginPassword(final com.aliyun.ros.cdk.core.IResolvable loginPassword) {
             this.props.loginPassword(loginPassword);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param maintenanceWindow This parameter is required.
+         */
+        public Builder maintenanceWindow(final com.aliyun.ros.cdk.core.IResolvable maintenanceWindow) {
+            this.props.maintenanceWindow(maintenanceWindow);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param maintenanceWindow This parameter is required.
+         */
+        public Builder maintenanceWindow(final com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.MaintenanceWindowProperty maintenanceWindow) {
+            this.props.maintenanceWindow(maintenanceWindow);
             return this;
         }
 

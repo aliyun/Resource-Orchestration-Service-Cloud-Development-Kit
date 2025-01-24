@@ -29,6 +29,11 @@ export interface RosActivationProps {
     readonly ipAddressRange?: string | ros.IResolvable;
 
     /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosActivation.TagsProperty[];
@@ -66,6 +71,7 @@ function RosActivationPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.timeToLiveInHours && (typeof properties.timeToLiveInHours) !== 'object') {
         errors.collect(ros.propertyValidator('timeToLiveInHours', ros.validateRange)({
             data: properties.timeToLiveInHours,
@@ -104,6 +110,7 @@ function rosActivationPropsToRosTemplate(properties: any, enableResourceProperty
       'InstanceCount': ros.numberToRosTemplate(properties.instanceCount),
       'InstanceName': ros.stringToRosTemplate(properties.instanceName),
       'IpAddressRange': ros.stringToRosTemplate(properties.ipAddressRange),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
       'Tags': ros.listMapper(rosActivationTagsPropertyToRosTemplate)(properties.tags),
       'TimeToLiveInHours': ros.numberToRosTemplate(properties.timeToLiveInHours),
     };
@@ -164,6 +171,11 @@ export class RosActivation extends ros.RosResource {
     public ipAddressRange: string | ros.IResolvable | undefined;
 
     /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     public tags: RosActivation.TagsProperty[] | undefined;
@@ -190,6 +202,7 @@ export class RosActivation extends ros.RosResource {
         this.instanceCount = props.instanceCount;
         this.instanceName = props.instanceName;
         this.ipAddressRange = props.ipAddressRange;
+        this.resourceGroupId = props.resourceGroupId;
         this.tags = props.tags;
         this.timeToLiveInHours = props.timeToLiveInHours;
     }
@@ -201,6 +214,7 @@ export class RosActivation extends ros.RosResource {
             instanceCount: this.instanceCount,
             instanceName: this.instanceName,
             ipAddressRange: this.ipAddressRange,
+            resourceGroupId: this.resourceGroupId,
             tags: this.tags,
             timeToLiveInHours: this.timeToLiveInHours,
         };
@@ -276,10 +290,20 @@ export interface RosAssignIpv6AddressesProps {
     readonly ipv6AddressCount?: number | ros.IResolvable;
 
     /**
-     * @Property ipv6Addresses: Specify one or more IPv6 addresses for the elastic NIC. Currently, the maximum list size is 1. Example value: 2001:db8:1234:1a00::*** .
+     * @Property ipv6Addresses: Specify one or more IPv6 addresses for the elastic NIC. Currently, the maximum list size is 10. Example value: 2001:db8:1234:1a00::*** .
      * Note You cannot specify the parameters Ipv6Addresses and Ipv6AddressCount at the same time.
      */
     readonly ipv6Addresses?: Array<any | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property ipv6PrefixCount: IPv6 prefix specified number of randomly generated interfaces elasticity.
+     */
+    readonly ipv6PrefixCount?: number | ros.IResolvable;
+
+    /**
+     * @Property ipv6Prefixes: Specify one or more IPv6 prefixes for the elastic NIC.
+     */
+    readonly ipv6Prefixes?: Array<any | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -292,6 +316,14 @@ export interface RosAssignIpv6AddressesProps {
 function RosAssignIpv6AddressesPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.ipv6PrefixCount && (typeof properties.ipv6PrefixCount) !== 'object') {
+        errors.collect(ros.propertyValidator('ipv6PrefixCount', ros.validateRange)({
+            data: properties.ipv6PrefixCount,
+            min: 1,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ipv6PrefixCount', ros.validateNumber)(properties.ipv6PrefixCount));
     if(properties.ipv6AddressCount && (typeof properties.ipv6AddressCount) !== 'object') {
         errors.collect(ros.propertyValidator('ipv6AddressCount', ros.validateRange)({
             data: properties.ipv6AddressCount,
@@ -304,10 +336,18 @@ function RosAssignIpv6AddressesPropsValidator(properties: any): ros.ValidationRe
         errors.collect(ros.propertyValidator('ipv6Addresses', ros.validateLength)({
             data: properties.ipv6Addresses.length,
             min: undefined,
-            max: 1,
+            max: 10,
           }));
     }
     errors.collect(ros.propertyValidator('ipv6Addresses', ros.listValidator(ros.validateAny))(properties.ipv6Addresses));
+    if(properties.ipv6Prefixes && (Array.isArray(properties.ipv6Prefixes) || (typeof properties.ipv6Prefixes) === 'string')) {
+        errors.collect(ros.propertyValidator('ipv6Prefixes', ros.validateLength)({
+            data: properties.ipv6Prefixes.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ipv6Prefixes', ros.listValidator(ros.validateAny))(properties.ipv6Prefixes));
     errors.collect(ros.propertyValidator('networkInterfaceId', ros.requiredValidator)(properties.networkInterfaceId));
     errors.collect(ros.propertyValidator('networkInterfaceId', ros.validateString)(properties.networkInterfaceId));
     return errors.wrap('supplied properties not correct for "RosAssignIpv6AddressesProps"');
@@ -330,6 +370,8 @@ function rosAssignIpv6AddressesPropsToRosTemplate(properties: any, enableResourc
       'NetworkInterfaceId': ros.stringToRosTemplate(properties.networkInterfaceId),
       'Ipv6AddressCount': ros.numberToRosTemplate(properties.ipv6AddressCount),
       'Ipv6Addresses': ros.listMapper(ros.objectToRosTemplate)(properties.ipv6Addresses),
+      'Ipv6PrefixCount': ros.numberToRosTemplate(properties.ipv6PrefixCount),
+      'Ipv6Prefixes': ros.listMapper(ros.objectToRosTemplate)(properties.ipv6Prefixes),
     };
 }
 
@@ -374,10 +416,20 @@ export class RosAssignIpv6Addresses extends ros.RosResource {
     public ipv6AddressCount: number | ros.IResolvable | undefined;
 
     /**
-     * @Property ipv6Addresses: Specify one or more IPv6 addresses for the elastic NIC. Currently, the maximum list size is 1. Example value: 2001:db8:1234:1a00::*** .
+     * @Property ipv6Addresses: Specify one or more IPv6 addresses for the elastic NIC. Currently, the maximum list size is 10. Example value: 2001:db8:1234:1a00::*** .
      * Note You cannot specify the parameters Ipv6Addresses and Ipv6AddressCount at the same time.
      */
     public ipv6Addresses: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipv6PrefixCount: IPv6 prefix specified number of randomly generated interfaces elasticity.
+     */
+    public ipv6PrefixCount: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipv6Prefixes: Specify one or more IPv6 prefixes for the elastic NIC.
+     */
+    public ipv6Prefixes: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @param scope - scope in which this resource is defined
@@ -394,6 +446,8 @@ export class RosAssignIpv6Addresses extends ros.RosResource {
         this.networkInterfaceId = props.networkInterfaceId;
         this.ipv6AddressCount = props.ipv6AddressCount;
         this.ipv6Addresses = props.ipv6Addresses;
+        this.ipv6PrefixCount = props.ipv6PrefixCount;
+        this.ipv6Prefixes = props.ipv6Prefixes;
     }
 
 
@@ -402,6 +456,8 @@ export class RosAssignIpv6Addresses extends ros.RosResource {
             networkInterfaceId: this.networkInterfaceId,
             ipv6AddressCount: this.ipv6AddressCount,
             ipv6Addresses: this.ipv6Addresses,
+            ipv6PrefixCount: this.ipv6PrefixCount,
+            ipv6Prefixes: this.ipv6Prefixes,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -419,6 +475,16 @@ export interface RosAssignPrivateIpAddressesProps {
      * @Property networkInterfaceId: The ID of the ENI.
      */
     readonly networkInterfaceId: string | ros.IResolvable;
+
+    /**
+     * @Property ipv4PrefixCount: The specified number of IPv4 prefixes to be assigned to the ENI.
+     */
+    readonly ipv4PrefixCount?: number | ros.IResolvable;
+
+    /**
+     * @Property ipv4Prefixes: One or multiple IPv4 prefixes to be assigned to the ENI.
+     */
+    readonly ipv4Prefixes?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property privateIpAddresses: One or multiple secondary private IP addresses selected from the CIDR block of the VSwitch that hosts the ENI. 
@@ -462,6 +528,15 @@ function RosAssignPrivateIpAddressesPropsValidator(properties: any): ros.Validat
           }));
     }
     errors.collect(ros.propertyValidator('privateIpAddresses', ros.listValidator(ros.validateAny))(properties.privateIpAddresses));
+    if(properties.ipv4Prefixes && (Array.isArray(properties.ipv4Prefixes) || (typeof properties.ipv4Prefixes) === 'string')) {
+        errors.collect(ros.propertyValidator('ipv4Prefixes', ros.validateLength)({
+            data: properties.ipv4Prefixes.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ipv4Prefixes', ros.listValidator(ros.validateAny))(properties.ipv4Prefixes));
+    errors.collect(ros.propertyValidator('ipv4PrefixCount', ros.validateNumber)(properties.ipv4PrefixCount));
     errors.collect(ros.propertyValidator('networkInterfaceId', ros.requiredValidator)(properties.networkInterfaceId));
     errors.collect(ros.propertyValidator('networkInterfaceId', ros.validateString)(properties.networkInterfaceId));
     return errors.wrap('supplied properties not correct for "RosAssignPrivateIpAddressesProps"');
@@ -482,6 +557,8 @@ function rosAssignPrivateIpAddressesPropsToRosTemplate(properties: any, enableRe
     }
     return {
       'NetworkInterfaceId': ros.stringToRosTemplate(properties.networkInterfaceId),
+      'Ipv4PrefixCount': ros.numberToRosTemplate(properties.ipv4PrefixCount),
+      'Ipv4Prefixes': ros.listMapper(ros.objectToRosTemplate)(properties.ipv4Prefixes),
       'PrivateIpAddresses': ros.listMapper(ros.objectToRosTemplate)(properties.privateIpAddresses),
       'SecondaryPrivateIpAddressCount': ros.numberToRosTemplate(properties.secondaryPrivateIpAddressCount),
     };
@@ -517,6 +594,16 @@ export class RosAssignPrivateIpAddresses extends ros.RosResource {
     public networkInterfaceId: string | ros.IResolvable;
 
     /**
+     * @Property ipv4PrefixCount: The specified number of IPv4 prefixes to be assigned to the ENI.
+     */
+    public ipv4PrefixCount: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipv4Prefixes: One or multiple IPv4 prefixes to be assigned to the ENI.
+     */
+    public ipv4Prefixes: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @Property privateIpAddresses: One or multiple secondary private IP addresses selected from the CIDR block of the VSwitch that hosts the ENI. 
      * Valid values of number of private ip addresses:
      * When the ENI is in the Available state: 1 to 10.
@@ -543,6 +630,8 @@ export class RosAssignPrivateIpAddresses extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.networkInterfaceId = props.networkInterfaceId;
+        this.ipv4PrefixCount = props.ipv4PrefixCount;
+        this.ipv4Prefixes = props.ipv4Prefixes;
         this.privateIpAddresses = props.privateIpAddresses;
         this.secondaryPrivateIpAddressCount = props.secondaryPrivateIpAddressCount;
     }
@@ -551,6 +640,8 @@ export class RosAssignPrivateIpAddresses extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             networkInterfaceId: this.networkInterfaceId,
+            ipv4PrefixCount: this.ipv4PrefixCount,
+            ipv4Prefixes: this.ipv4Prefixes,
             privateIpAddresses: this.privateIpAddresses,
             secondaryPrivateIpAddressCount: this.secondaryPrivateIpAddressCount,
         };
@@ -600,6 +691,11 @@ export interface RosAutoProvisioningGroupProps {
      * @Property checkExecutionStatus: Whether check execution status. If set true, ROS will check the state of AutoProvisioningGroup to be fulfilled. Otherwise ROS will regard AutoProvisioningGroup create failed.
      */
     readonly checkExecutionStatus?: boolean | ros.IResolvable;
+
+    /**
+     * @Property dataDiskConfig: List of instance data disk information.
+     */
+    readonly dataDiskConfig?: Array<RosAutoProvisioningGroup.DataDiskConfigProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property defaultTargetCapacityType: The type of supplemental instances. When the total value of PayAsYouGoTargetCapacity and SpotTargetCapacity is smaller than the value of TotalTargetCapacity, the auto provisioning group will create instances of the specified type to meet
@@ -657,6 +753,15 @@ export interface RosAutoProvisioningGroupProps {
     readonly maxSpotPrice?: number | ros.IResolvable;
 
     /**
+     * @Property minTargetCapacity: The target minimum capacity of the elastic supply group. Value range: Positive integer.
+     * Once you have set this parameter, note that:
+     * Only create one-time synchronous delivery type elastic supply group (AutoProvisioningGroupType = instant), the parameters to take effect.
+     * If the inventory of instances in the current domain is less than this value, the call to the interface will fail and no instance will be created.
+     * If the instance inventory in the current domain is greater than the parameter value, the instance is created normally according to the other parameter values that have been set.
+     */
+    readonly minTargetCapacity?: string | ros.IResolvable;
+
+    /**
      * @Property payAsYouGoAllocationStrategy: The scale-out policy for pay-as-you-go instances. Valid values:
      * lowest-price: The cost optimization policy the auto provisioning group follows to select instance
      * types of the lowest cost to create instances.
@@ -670,6 +775,18 @@ export interface RosAutoProvisioningGroupProps {
      * @Property payAsYouGoTargetCapacity: The target capacity of pay-as-you-go instances in the auto provisioning group.
      */
     readonly payAsYouGoTargetCapacity?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The resource group ID.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property resourcePoolOptions: Resource pooling policy to use when creating an instance. Once you have set this parameter, note that:
+     * This parameter only applies if a pay-as-you-go instance is created.
+     * Only create one-time synchronous delivery type elastic supply group (AutoProvisioningGroupType = instant), the parameters to take effect.
+     */
+    readonly resourcePoolOptions?: RosAutoProvisioningGroup.ResourcePoolOptionsProperty | ros.IResolvable;
 
     /**
      * @Property spotAllocationStrategy: The scale-out policy for preemptible instances. Valid values:
@@ -699,6 +816,11 @@ export interface RosAutoProvisioningGroupProps {
      * @Property spotTargetCapacity: The target capacity of preemptible instances in the auto provisioning group.
      */
     readonly spotTargetCapacity?: string | ros.IResolvable;
+
+    /**
+     * @Property systemDiskConfig: List of instance system disk information.
+     */
+    readonly systemDiskConfig?: Array<RosAutoProvisioningGroup.SystemDiskConfigProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property terminateInstances: Specifies whether to release instances of the auto provisioning group. Valid values:
@@ -743,21 +865,9 @@ export interface RosAutoProvisioningGroupProps {
 function RosAutoProvisioningGroupPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('totalTargetCapacity', ros.requiredValidator)(properties.totalTargetCapacity));
-    errors.collect(ros.propertyValidator('totalTargetCapacity', ros.validateString)(properties.totalTargetCapacity));
-    errors.collect(ros.propertyValidator('autoProvisioningGroupName', ros.validateString)(properties.autoProvisioningGroupName));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    if(properties.excessCapacityTerminationPolicy && (typeof properties.excessCapacityTerminationPolicy) !== 'object') {
-        errors.collect(ros.propertyValidator('excessCapacityTerminationPolicy', ros.validateAllowedValues)({
-          data: properties.excessCapacityTerminationPolicy,
-          allowedValues: ["no-termination","termination"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('excessCapacityTerminationPolicy', ros.validateString)(properties.excessCapacityTerminationPolicy));
-    errors.collect(ros.propertyValidator('launchTemplateConfig', ros.listValidator(RosAutoProvisioningGroup_LaunchTemplateConfigPropertyValidator))(properties.launchTemplateConfig));
-    errors.collect(ros.propertyValidator('launchTemplateId', ros.validateString)(properties.launchTemplateId));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('checkExecutionStatus', ros.validateBoolean)(properties.checkExecutionStatus));
-    errors.collect(ros.propertyValidator('payAsYouGoTargetCapacity', ros.validateString)(properties.payAsYouGoTargetCapacity));
     if(properties.autoProvisioningGroupType && (typeof properties.autoProvisioningGroupType) !== 'object') {
         errors.collect(ros.propertyValidator('autoProvisioningGroupType', ros.validateAllowedValues)({
           data: properties.autoProvisioningGroupType,
@@ -765,15 +875,6 @@ function RosAutoProvisioningGroupPropsValidator(properties: any): ros.Validation
         }));
     }
     errors.collect(ros.propertyValidator('autoProvisioningGroupType', ros.validateString)(properties.autoProvisioningGroupType));
-    if(properties.spotInstanceInterruptionBehavior && (typeof properties.spotInstanceInterruptionBehavior) !== 'object') {
-        errors.collect(ros.propertyValidator('spotInstanceInterruptionBehavior', ros.validateAllowedValues)({
-          data: properties.spotInstanceInterruptionBehavior,
-          allowedValues: ["stop","terminate"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('spotInstanceInterruptionBehavior', ros.validateString)(properties.spotInstanceInterruptionBehavior));
-    errors.collect(ros.propertyValidator('validUntil', ros.validateString)(properties.validUntil));
-    errors.collect(ros.propertyValidator('terminateInstancesWithExpiration', ros.validateBoolean)(properties.terminateInstancesWithExpiration));
     if(properties.defaultTargetCapacityType && (typeof properties.defaultTargetCapacityType) !== 'object') {
         errors.collect(ros.propertyValidator('defaultTargetCapacityType', ros.validateAllowedValues)({
           data: properties.defaultTargetCapacityType,
@@ -783,14 +884,12 @@ function RosAutoProvisioningGroupPropsValidator(properties: any): ros.Validation
     errors.collect(ros.propertyValidator('defaultTargetCapacityType', ros.validateString)(properties.defaultTargetCapacityType));
     errors.collect(ros.propertyValidator('launchConfiguration', RosAutoProvisioningGroup_LaunchConfigurationPropertyValidator)(properties.launchConfiguration));
     errors.collect(ros.propertyValidator('spotInstancePoolsToUseCount', ros.validateNumber)(properties.spotInstancePoolsToUseCount));
-    errors.collect(ros.propertyValidator('spotTargetCapacity', ros.validateString)(properties.spotTargetCapacity));
-    errors.collect(ros.propertyValidator('launchTemplateVersion', ros.validateString)(properties.launchTemplateVersion));
     errors.collect(ros.propertyValidator('validFrom', ros.validateString)(properties.validFrom));
     errors.collect(ros.propertyValidator('maxSpotPrice', ros.validateNumber)(properties.maxSpotPrice));
     if(properties.spotAllocationStrategy && (typeof properties.spotAllocationStrategy) !== 'object') {
         errors.collect(ros.propertyValidator('spotAllocationStrategy', ros.validateAllowedValues)({
           data: properties.spotAllocationStrategy,
-          allowedValues: ["diversified","lowest-price"],
+          allowedValues: ["diversified","lowest-price","capacity-optimized"],
         }));
     }
     errors.collect(ros.propertyValidator('spotAllocationStrategy', ros.validateString)(properties.spotAllocationStrategy));
@@ -802,6 +901,55 @@ function RosAutoProvisioningGroupPropsValidator(properties: any): ros.Validation
         }));
     }
     errors.collect(ros.propertyValidator('payAsYouGoAllocationStrategy', ros.validateString)(properties.payAsYouGoAllocationStrategy));
+    errors.collect(ros.propertyValidator('totalTargetCapacity', ros.requiredValidator)(properties.totalTargetCapacity));
+    errors.collect(ros.propertyValidator('totalTargetCapacity', ros.validateString)(properties.totalTargetCapacity));
+    errors.collect(ros.propertyValidator('resourcePoolOptions', RosAutoProvisioningGroup_ResourcePoolOptionsPropertyValidator)(properties.resourcePoolOptions));
+    errors.collect(ros.propertyValidator('autoProvisioningGroupName', ros.validateString)(properties.autoProvisioningGroupName));
+    if(properties.excessCapacityTerminationPolicy && (typeof properties.excessCapacityTerminationPolicy) !== 'object') {
+        errors.collect(ros.propertyValidator('excessCapacityTerminationPolicy', ros.validateAllowedValues)({
+          data: properties.excessCapacityTerminationPolicy,
+          allowedValues: ["no-termination","termination"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('excessCapacityTerminationPolicy', ros.validateString)(properties.excessCapacityTerminationPolicy));
+    if(properties.dataDiskConfig && (Array.isArray(properties.dataDiskConfig) || (typeof properties.dataDiskConfig) === 'string')) {
+        errors.collect(ros.propertyValidator('dataDiskConfig', ros.validateLength)({
+            data: properties.dataDiskConfig.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('dataDiskConfig', ros.listValidator(RosAutoProvisioningGroup_DataDiskConfigPropertyValidator))(properties.dataDiskConfig));
+    if(properties.launchTemplateConfig && (Array.isArray(properties.launchTemplateConfig) || (typeof properties.launchTemplateConfig) === 'string')) {
+        errors.collect(ros.propertyValidator('launchTemplateConfig', ros.validateLength)({
+            data: properties.launchTemplateConfig.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('launchTemplateConfig', ros.listValidator(RosAutoProvisioningGroup_LaunchTemplateConfigPropertyValidator))(properties.launchTemplateConfig));
+    errors.collect(ros.propertyValidator('launchTemplateId', ros.validateString)(properties.launchTemplateId));
+    errors.collect(ros.propertyValidator('payAsYouGoTargetCapacity', ros.validateString)(properties.payAsYouGoTargetCapacity));
+    if(properties.spotInstanceInterruptionBehavior && (typeof properties.spotInstanceInterruptionBehavior) !== 'object') {
+        errors.collect(ros.propertyValidator('spotInstanceInterruptionBehavior', ros.validateAllowedValues)({
+          data: properties.spotInstanceInterruptionBehavior,
+          allowedValues: ["stop","terminate"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('spotInstanceInterruptionBehavior', ros.validateString)(properties.spotInstanceInterruptionBehavior));
+    errors.collect(ros.propertyValidator('validUntil', ros.validateString)(properties.validUntil));
+    errors.collect(ros.propertyValidator('terminateInstancesWithExpiration', ros.validateBoolean)(properties.terminateInstancesWithExpiration));
+    errors.collect(ros.propertyValidator('spotTargetCapacity', ros.validateString)(properties.spotTargetCapacity));
+    errors.collect(ros.propertyValidator('minTargetCapacity', ros.validateString)(properties.minTargetCapacity));
+    errors.collect(ros.propertyValidator('launchTemplateVersion', ros.validateString)(properties.launchTemplateVersion));
+    if(properties.systemDiskConfig && (Array.isArray(properties.systemDiskConfig) || (typeof properties.systemDiskConfig) === 'string')) {
+        errors.collect(ros.propertyValidator('systemDiskConfig', ros.validateLength)({
+            data: properties.systemDiskConfig.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('systemDiskConfig', ros.listValidator(RosAutoProvisioningGroup_SystemDiskConfigPropertyValidator))(properties.systemDiskConfig));
     return errors.wrap('supplied properties not correct for "RosAutoProvisioningGroupProps"');
 }
 
@@ -823,6 +971,7 @@ function rosAutoProvisioningGroupPropsToRosTemplate(properties: any, enableResou
       'AutoProvisioningGroupName': ros.stringToRosTemplate(properties.autoProvisioningGroupName),
       'AutoProvisioningGroupType': ros.stringToRosTemplate(properties.autoProvisioningGroupType),
       'CheckExecutionStatus': ros.booleanToRosTemplate(properties.checkExecutionStatus),
+      'DataDiskConfig': ros.listMapper(rosAutoProvisioningGroupDataDiskConfigPropertyToRosTemplate)(properties.dataDiskConfig),
       'DefaultTargetCapacityType': ros.stringToRosTemplate(properties.defaultTargetCapacityType),
       'Description': ros.stringToRosTemplate(properties.description),
       'ExcessCapacityTerminationPolicy': ros.stringToRosTemplate(properties.excessCapacityTerminationPolicy),
@@ -831,12 +980,16 @@ function rosAutoProvisioningGroupPropsToRosTemplate(properties: any, enableResou
       'LaunchTemplateId': ros.stringToRosTemplate(properties.launchTemplateId),
       'LaunchTemplateVersion': ros.stringToRosTemplate(properties.launchTemplateVersion),
       'MaxSpotPrice': ros.numberToRosTemplate(properties.maxSpotPrice),
+      'MinTargetCapacity': ros.stringToRosTemplate(properties.minTargetCapacity),
       'PayAsYouGoAllocationStrategy': ros.stringToRosTemplate(properties.payAsYouGoAllocationStrategy),
       'PayAsYouGoTargetCapacity': ros.stringToRosTemplate(properties.payAsYouGoTargetCapacity),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'ResourcePoolOptions': rosAutoProvisioningGroupResourcePoolOptionsPropertyToRosTemplate(properties.resourcePoolOptions),
       'SpotAllocationStrategy': ros.stringToRosTemplate(properties.spotAllocationStrategy),
       'SpotInstanceInterruptionBehavior': ros.stringToRosTemplate(properties.spotInstanceInterruptionBehavior),
       'SpotInstancePoolsToUseCount': ros.numberToRosTemplate(properties.spotInstancePoolsToUseCount),
       'SpotTargetCapacity': ros.stringToRosTemplate(properties.spotTargetCapacity),
+      'SystemDiskConfig': ros.listMapper(rosAutoProvisioningGroupSystemDiskConfigPropertyToRosTemplate)(properties.systemDiskConfig),
       'TerminateInstances': ros.booleanToRosTemplate(properties.terminateInstances),
       'TerminateInstancesWithExpiration': ros.booleanToRosTemplate(properties.terminateInstancesWithExpiration),
       'ValidFrom': ros.stringToRosTemplate(properties.validFrom),
@@ -904,6 +1057,11 @@ export class RosAutoProvisioningGroup extends ros.RosResource {
     public checkExecutionStatus: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property dataDiskConfig: List of instance data disk information.
+     */
+    public dataDiskConfig: Array<RosAutoProvisioningGroup.DataDiskConfigProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @Property defaultTargetCapacityType: The type of supplemental instances. When the total value of PayAsYouGoTargetCapacity and SpotTargetCapacity is smaller than the value of TotalTargetCapacity, the auto provisioning group will create instances of the specified type to meet
      * the capacity requirements. Valid values:
      * PayAsYouGo: Pay-as-you-go instances.
@@ -959,6 +1117,15 @@ export class RosAutoProvisioningGroup extends ros.RosResource {
     public maxSpotPrice: number | ros.IResolvable | undefined;
 
     /**
+     * @Property minTargetCapacity: The target minimum capacity of the elastic supply group. Value range: Positive integer.
+     * Once you have set this parameter, note that:
+     * Only create one-time synchronous delivery type elastic supply group (AutoProvisioningGroupType = instant), the parameters to take effect.
+     * If the inventory of instances in the current domain is less than this value, the call to the interface will fail and no instance will be created.
+     * If the instance inventory in the current domain is greater than the parameter value, the instance is created normally according to the other parameter values that have been set.
+     */
+    public minTargetCapacity: string | ros.IResolvable | undefined;
+
+    /**
      * @Property payAsYouGoAllocationStrategy: The scale-out policy for pay-as-you-go instances. Valid values:
      * lowest-price: The cost optimization policy the auto provisioning group follows to select instance
      * types of the lowest cost to create instances.
@@ -972,6 +1139,18 @@ export class RosAutoProvisioningGroup extends ros.RosResource {
      * @Property payAsYouGoTargetCapacity: The target capacity of pay-as-you-go instances in the auto provisioning group.
      */
     public payAsYouGoTargetCapacity: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The resource group ID.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourcePoolOptions: Resource pooling policy to use when creating an instance. Once you have set this parameter, note that:
+     * This parameter only applies if a pay-as-you-go instance is created.
+     * Only create one-time synchronous delivery type elastic supply group (AutoProvisioningGroupType = instant), the parameters to take effect.
+     */
+    public resourcePoolOptions: RosAutoProvisioningGroup.ResourcePoolOptionsProperty | ros.IResolvable | undefined;
 
     /**
      * @Property spotAllocationStrategy: The scale-out policy for preemptible instances. Valid values:
@@ -1001,6 +1180,11 @@ export class RosAutoProvisioningGroup extends ros.RosResource {
      * @Property spotTargetCapacity: The target capacity of preemptible instances in the auto provisioning group.
      */
     public spotTargetCapacity: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property systemDiskConfig: List of instance system disk information.
+     */
+    public systemDiskConfig: Array<RosAutoProvisioningGroup.SystemDiskConfigProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property terminateInstances: Specifies whether to release instances of the auto provisioning group. Valid values:
@@ -1049,6 +1233,7 @@ export class RosAutoProvisioningGroup extends ros.RosResource {
         this.autoProvisioningGroupName = props.autoProvisioningGroupName;
         this.autoProvisioningGroupType = props.autoProvisioningGroupType;
         this.checkExecutionStatus = props.checkExecutionStatus;
+        this.dataDiskConfig = props.dataDiskConfig;
         this.defaultTargetCapacityType = props.defaultTargetCapacityType;
         this.description = props.description;
         this.excessCapacityTerminationPolicy = props.excessCapacityTerminationPolicy;
@@ -1057,12 +1242,16 @@ export class RosAutoProvisioningGroup extends ros.RosResource {
         this.launchTemplateId = props.launchTemplateId;
         this.launchTemplateVersion = props.launchTemplateVersion;
         this.maxSpotPrice = props.maxSpotPrice;
+        this.minTargetCapacity = props.minTargetCapacity;
         this.payAsYouGoAllocationStrategy = props.payAsYouGoAllocationStrategy;
         this.payAsYouGoTargetCapacity = props.payAsYouGoTargetCapacity;
+        this.resourceGroupId = props.resourceGroupId;
+        this.resourcePoolOptions = props.resourcePoolOptions;
         this.spotAllocationStrategy = props.spotAllocationStrategy;
         this.spotInstanceInterruptionBehavior = props.spotInstanceInterruptionBehavior;
         this.spotInstancePoolsToUseCount = props.spotInstancePoolsToUseCount;
         this.spotTargetCapacity = props.spotTargetCapacity;
+        this.systemDiskConfig = props.systemDiskConfig;
         this.terminateInstances = props.terminateInstances;
         this.terminateInstancesWithExpiration = props.terminateInstancesWithExpiration;
         this.validFrom = props.validFrom;
@@ -1076,6 +1265,7 @@ export class RosAutoProvisioningGroup extends ros.RosResource {
             autoProvisioningGroupName: this.autoProvisioningGroupName,
             autoProvisioningGroupType: this.autoProvisioningGroupType,
             checkExecutionStatus: this.checkExecutionStatus,
+            dataDiskConfig: this.dataDiskConfig,
             defaultTargetCapacityType: this.defaultTargetCapacityType,
             description: this.description,
             excessCapacityTerminationPolicy: this.excessCapacityTerminationPolicy,
@@ -1084,12 +1274,16 @@ export class RosAutoProvisioningGroup extends ros.RosResource {
             launchTemplateId: this.launchTemplateId,
             launchTemplateVersion: this.launchTemplateVersion,
             maxSpotPrice: this.maxSpotPrice,
+            minTargetCapacity: this.minTargetCapacity,
             payAsYouGoAllocationStrategy: this.payAsYouGoAllocationStrategy,
             payAsYouGoTargetCapacity: this.payAsYouGoTargetCapacity,
+            resourceGroupId: this.resourceGroupId,
+            resourcePoolOptions: this.resourcePoolOptions,
             spotAllocationStrategy: this.spotAllocationStrategy,
             spotInstanceInterruptionBehavior: this.spotInstanceInterruptionBehavior,
             spotInstancePoolsToUseCount: this.spotInstancePoolsToUseCount,
             spotTargetCapacity: this.spotTargetCapacity,
+            systemDiskConfig: this.systemDiskConfig,
             terminateInstances: this.terminateInstances,
             terminateInstancesWithExpiration: this.terminateInstancesWithExpiration,
             validFrom: this.validFrom,
@@ -1107,9 +1301,9 @@ export namespace RosAutoProvisioningGroup {
      */
     export interface DataDiskProperty {
         /**
-         * @Property snapshotId: The ID of the snapshot used to create data disk
+         * @Property burstingEnabled: Specifies whether to enable the bursting feature for the data disk.
          */
-        readonly snapshotId?: string | ros.IResolvable;
+        readonly burstingEnabled?: boolean | ros.IResolvable;
         /**
          * @Property category: The category of data disk. Valid values:
      * cloud_efficiency: ultra disk
@@ -1131,6 +1325,10 @@ export namespace RosAutoProvisioningGroup {
          */
         readonly encrypted?: boolean | ros.IResolvable;
         /**
+         * @Property device: The mount point of the data disk. When specifying both the launch template and the launch configuration information, the launch template is preferred.
+         */
+        readonly device?: string | ros.IResolvable;
+        /**
          * @Property performanceLevel: The performance level of the ESSD used as data disk. Default value: PL1. Valid values:
      * PL0: A single ESSD can deliver up to 10,000 random read\/write IOPS.
      * PL1: A single ESSD can deliver up to 50,000 random read\/write IOPS.
@@ -1151,11 +1349,20 @@ export namespace RosAutoProvisioningGroup {
          */
         readonly diskName?: string | ros.IResolvable;
         /**
+         * @Property provisionedIops: ESSD AutoPL preconfigured read and write IOPS for cloud disk. Possible values: 0-min {50,000, 1000* capacity - baseline performance}.
+     * Baseline performance =min{1,800+50* capacity, 50000}.
+         */
+        readonly provisionedIops?: number | ros.IResolvable;
+        /**
          * @Property internetChargeType: The billing method for network usage. Default value: PayByTraffic. Valid values:
      * PayByBandwidth
      * PayByTraffic
          */
         readonly internetChargeType?: string | ros.IResolvable;
+        /**
+         * @Property snapshotId: The ID of the snapshot used to create data disk
+         */
+        readonly snapshotId?: string | ros.IResolvable;
     }
 }
 /**
@@ -1168,16 +1375,19 @@ export namespace RosAutoProvisioningGroup {
 function RosAutoProvisioningGroup_DataDiskPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('snapshotId', ros.validateString)(properties.snapshotId));
+    errors.collect(ros.propertyValidator('burstingEnabled', ros.validateBoolean)(properties.burstingEnabled));
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('kmsKeyId', ros.validateString)(properties.kmsKeyId));
     errors.collect(ros.propertyValidator('encrypted', ros.validateBoolean)(properties.encrypted));
+    errors.collect(ros.propertyValidator('device', ros.validateString)(properties.device));
     errors.collect(ros.propertyValidator('performanceLevel', ros.validateString)(properties.performanceLevel));
     errors.collect(ros.propertyValidator('size', ros.validateNumber)(properties.size));
     errors.collect(ros.propertyValidator('deleteWithInstance', ros.validateBoolean)(properties.deleteWithInstance));
     errors.collect(ros.propertyValidator('diskName', ros.validateString)(properties.diskName));
+    errors.collect(ros.propertyValidator('provisionedIops', ros.validateNumber)(properties.provisionedIops));
     errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
+    errors.collect(ros.propertyValidator('snapshotId', ros.validateString)(properties.snapshotId));
     return errors.wrap('supplied properties not correct for "DataDiskProperty"');
 }
 
@@ -1193,16 +1403,61 @@ function rosAutoProvisioningGroupDataDiskPropertyToRosTemplate(properties: any):
     if (!ros.canInspect(properties)) { return properties; }
     RosAutoProvisioningGroup_DataDiskPropertyValidator(properties).assertSuccess();
     return {
-      'SnapshotId': ros.stringToRosTemplate(properties.snapshotId),
+      'BurstingEnabled': ros.booleanToRosTemplate(properties.burstingEnabled),
       'Category': ros.stringToRosTemplate(properties.category),
       'Description': ros.stringToRosTemplate(properties.description),
       'KmsKeyId': ros.stringToRosTemplate(properties.kmsKeyId),
       'Encrypted': ros.booleanToRosTemplate(properties.encrypted),
+      'Device': ros.stringToRosTemplate(properties.device),
       'PerformanceLevel': ros.stringToRosTemplate(properties.performanceLevel),
       'Size': ros.numberToRosTemplate(properties.size),
       'DeleteWithInstance': ros.booleanToRosTemplate(properties.deleteWithInstance),
       'DiskName': ros.stringToRosTemplate(properties.diskName),
+      'ProvisionedIops': ros.numberToRosTemplate(properties.provisionedIops),
       'InternetChargeType': ros.stringToRosTemplate(properties.internetChargeType),
+      'SnapshotId': ros.stringToRosTemplate(properties.snapshotId),
+    };
+}
+
+export namespace RosAutoProvisioningGroup {
+    /**
+     * @stability external
+     */
+    export interface DataDiskConfigProperty {
+        /**
+         * @Property diskCategory: The category of the data disk.
+         */
+        readonly diskCategory: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DataDiskConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `DataDiskConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAutoProvisioningGroup_DataDiskConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('diskCategory', ros.requiredValidator)(properties.diskCategory));
+    errors.collect(ros.propertyValidator('diskCategory', ros.validateString)(properties.diskCategory));
+    return errors.wrap('supplied properties not correct for "DataDiskConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::AutoProvisioningGroup.DataDiskConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `DataDiskConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::AutoProvisioningGroup.DataDiskConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosAutoProvisioningGroupDataDiskConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAutoProvisioningGroup_DataDiskConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'DiskCategory': ros.stringToRosTemplate(properties.diskCategory),
     };
 }
 
@@ -1211,16 +1466,6 @@ export namespace RosAutoProvisioningGroup {
      * @stability external
      */
     export interface LaunchConfigurationProperty {
-        /**
-         * @Property keyPairName: The name of the key pair to be bound to the instance.
-         */
-        readonly keyPairName?: string | ros.IResolvable;
-        /**
-         * @Property ioOptimized: Specifies whether the instance is I\/O optimized. Valid values:
-     * none: The instance is not I\/O optimized.
-     * optimized: The instance is I\/O optimized.
-         */
-        readonly ioOptimized?: string | ros.IResolvable;
         /**
          * @Property resourceGroupId: The ID of the resource group to which to assign the instance.
          */
@@ -1238,9 +1483,78 @@ export namespace RosAutoProvisioningGroup {
          */
         readonly systemDiskDescription?: string | ros.IResolvable;
         /**
+         * @Property systemDiskProvisionedIops: The provisioned IOPS.
+         */
+        readonly systemDiskProvisionedIops?: number | ros.IResolvable;
+        /**
+         * @Property systemDiskEncrypted: Specifies whether the disk is encrypted.
+         */
+        readonly systemDiskEncrypted?: boolean | ros.IResolvable;
+        /**
+         * @Property systemDiskName: The name of the system disk. The name must be 2 to 128 characters in length. It must start with a letter but cannot start with http:\/\/ or https:\/\/. It can contain letters, digits, periods (.), colons (:), underscores (_), and hyphens (-).
+         */
+        readonly systemDiskName?: string | ros.IResolvable;
+        /**
+         * @Property ramRoleName: The name of the RAM role.
+         */
+        readonly ramRoleName?: string | ros.IResolvable;
+        /**
+         * @Property systemDiskPerformanceLevel: The performance level of the ESSD used as the system disk. Default value: PL0. Valid values:
+     * PL0: A single ESSD can deliver up to 10,000 random read\/write IOPS.
+     * PL1: A single ESSD can deliver up to 50,000 random read\/write IOPS.
+     * PL2: A single ESSD can deliver up to 100,000 random read\/write IOPS.
+     * PL3: A single ESSD can deliver up to 1,000,000 random read\/write IOPS.
+         */
+        readonly systemDiskPerformanceLevel?: string | ros.IResolvable;
+        /**
+         * @Property imageId: Image ID.
+         */
+        readonly imageId: string | ros.IResolvable;
+        /**
+         * @Property hostNames: Specify different host names for one or more instances. The limitations are as follows:
+     * Only create one-time synchronous delivery type elastic supply group (AutoProvisioningGroupType = instant), the parameters to take effect.
+     * N is the number of instances, ranging from 1 to 1000 and matching the TotalTargetCapacity parameter.
+     * Half-angular period (.) The and dash (-) are not allowed to start or end characters, nor can they be used continuously.
+     * Windows example: Character length 2 to 15, does not support half-corner period (.) It can't be all numbers. Allows upper - and lowercase letters, numbers, and a dash (-).
+     * Other type instances (Linux, etc.) : Character lengths from 2 to 64, support multiple half-angular periods (.) Half-angular period (.) Each paragraph is allowed to contain upper - and lowercase letters, numbers, and a dash (-).
+     * Does not support at the same time set up LaunchConfiguration. The HostName and LaunchConfiguration. HostNames. N, otherwise it will return an error message.
+     * When specifying both the launch template and the launch configuration information, the launch template is preferred.
+         */
+        readonly hostNames?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property hostName: The hostname of the instance.
+         */
+        readonly hostName?: string | ros.IResolvable;
+        /**
+         * @Property passwordInherit: Specifies whether to use the password preset in the image.
+         */
+        readonly passwordInherit?: boolean | ros.IResolvable;
+        /**
+         * @Property keyPairName: The name of the key pair to be bound to the instance.
+         */
+        readonly keyPairName?: string | ros.IResolvable;
+        /**
+         * @Property ioOptimized: Specifies whether the instance is I\/O optimized. Valid values:
+     * none: The instance is not I\/O optimized.
+     * optimized: The instance is I\/O optimized.
+         */
+        readonly ioOptimized?: string | ros.IResolvable;
+        /**
+         * @Property systemDiskKmsKeyId: The ID of the KMS key.
+         */
+        readonly systemDiskKmsKeyId?: string | ros.IResolvable;
+        /**
          * @Property securityGroupId: Security group ID.
          */
         readonly securityGroupId: string | ros.IResolvable;
+        /**
+         * @Property imageFamily: The image family.
+         */
+        readonly imageFamily?: string | ros.IResolvable;
+        /**
+         * @Property securityGroupIds: A list of security groups to which the instance belongs.
+         */
+        readonly securityGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property internetChargeType: The billing method for network usage. Default value: PayByTraffic. Valid values:
      * PayByBandwidth
@@ -1256,37 +1570,25 @@ export namespace RosAutoProvisioningGroup {
          */
         readonly systemDiskCategory?: string | ros.IResolvable;
         /**
+         * @Property systemDiskBurstingEnabled: Specifies whether bursting is enabled.
+         */
+        readonly systemDiskBurstingEnabled?: boolean | ros.IResolvable;
+        /**
          * @Property instanceName: The name of the instance.
          */
         readonly instanceName?: string | ros.IResolvable;
         /**
-         * @Property systemDiskName: The name of the system disk. The name must be 2 to 128 characters in length. It must start with a letter but cannot start with http:\/\/ or https:\/\/. It can contain letters, digits, periods (.), colons (:), underscores (_), and hyphens (-).
+         * @Property deploymentSetId: The deployment set ID.
          */
-        readonly systemDiskName?: string | ros.IResolvable;
+        readonly deploymentSetId?: string | ros.IResolvable;
         /**
          * @Property dataDisk: Data disk
          */
         readonly dataDisk?: Array<RosAutoProvisioningGroup.DataDiskProperty | ros.IResolvable> | ros.IResolvable;
         /**
-         * @Property ramRoleName: The name of the RAM role.
-         */
-        readonly ramRoleName?: string | ros.IResolvable;
-        /**
          * @Property internetMaxBandwidthOut: The maximum outbound public bandwidth. Unit: Mbit\/s. Valid values: 0 to 100. Default value: 0.
          */
         readonly internetMaxBandwidthOut?: number | ros.IResolvable;
-        /**
-         * @Property systemDiskPerformanceLevel: The performance level of the ESSD used as the system disk. Default value: PL0. Valid values:
-     * PL0: A single ESSD can deliver up to 10,000 random read\/write IOPS.
-     * PL1: A single ESSD can deliver up to 50,000 random read\/write IOPS.
-     * PL2: A single ESSD can deliver up to 100,000 random read\/write IOPS.
-     * PL3: A single ESSD can deliver up to 1,000,000 random read\/write IOPS.
-         */
-        readonly systemDiskPerformanceLevel?: string | ros.IResolvable;
-        /**
-         * @Property imageId: Image ID.
-         */
-        readonly imageId: string | ros.IResolvable;
         /**
          * @Property instanceDescription: The description of the instance.
          */
@@ -1295,10 +1597,6 @@ export namespace RosAutoProvisioningGroup {
          * @Property tag:
          */
         readonly tag?: Array<ros.RosTag | ros.IResolvable> | ros.IResolvable;
-        /**
-         * @Property hostName: The hostname of the instance.
-         */
-        readonly hostName?: string | ros.IResolvable;
         /**
          * @Property creditSpecification: The performance mode of the burstable instance. Valid values:
      * Standard: the standard mode. For more information, see the "Standard mode" section of the Burstable instances topic.
@@ -1312,9 +1610,9 @@ export namespace RosAutoProvisioningGroup {
          */
         readonly securityEnhancementStrategy?: string | ros.IResolvable;
         /**
-         * @Property passwordInherit: Specifies whether to use the password preset in the image.
+         * @Property autoReleaseTime: The auto release time of the instance.
          */
-        readonly passwordInherit?: boolean | ros.IResolvable;
+        readonly autoReleaseTime?: string | ros.IResolvable;
     }
 }
 /**
@@ -1327,6 +1625,27 @@ export namespace RosAutoProvisioningGroup {
 function RosAutoProvisioningGroup_LaunchConfigurationPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('systemDiskSize', ros.validateNumber)(properties.systemDiskSize));
+    errors.collect(ros.propertyValidator('userData', ros.validateString)(properties.userData));
+    errors.collect(ros.propertyValidator('systemDiskDescription', ros.validateString)(properties.systemDiskDescription));
+    errors.collect(ros.propertyValidator('systemDiskProvisionedIops', ros.validateNumber)(properties.systemDiskProvisionedIops));
+    errors.collect(ros.propertyValidator('systemDiskEncrypted', ros.validateBoolean)(properties.systemDiskEncrypted));
+    errors.collect(ros.propertyValidator('systemDiskName', ros.validateString)(properties.systemDiskName));
+    errors.collect(ros.propertyValidator('ramRoleName', ros.validateString)(properties.ramRoleName));
+    errors.collect(ros.propertyValidator('systemDiskPerformanceLevel', ros.validateString)(properties.systemDiskPerformanceLevel));
+    errors.collect(ros.propertyValidator('imageId', ros.requiredValidator)(properties.imageId));
+    errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
+    if(properties.hostNames && (Array.isArray(properties.hostNames) || (typeof properties.hostNames) === 'string')) {
+        errors.collect(ros.propertyValidator('hostNames', ros.validateLength)({
+            data: properties.hostNames.length,
+            min: undefined,
+            max: 1000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('hostNames', ros.listValidator(ros.validateString))(properties.hostNames));
+    errors.collect(ros.propertyValidator('hostName', ros.validateString)(properties.hostName));
+    errors.collect(ros.propertyValidator('passwordInherit', ros.validateBoolean)(properties.passwordInherit));
     errors.collect(ros.propertyValidator('keyPairName', ros.validateString)(properties.keyPairName));
     if(properties.ioOptimized && (typeof properties.ioOptimized) !== 'object') {
         errors.collect(ros.propertyValidator('ioOptimized', ros.validateAllowedValues)({
@@ -1335,16 +1654,23 @@ function RosAutoProvisioningGroup_LaunchConfigurationPropertyValidator(propertie
         }));
     }
     errors.collect(ros.propertyValidator('ioOptimized', ros.validateString)(properties.ioOptimized));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
-    errors.collect(ros.propertyValidator('systemDiskSize', ros.validateNumber)(properties.systemDiskSize));
-    errors.collect(ros.propertyValidator('userData', ros.validateString)(properties.userData));
-    errors.collect(ros.propertyValidator('systemDiskDescription', ros.validateString)(properties.systemDiskDescription));
+    errors.collect(ros.propertyValidator('systemDiskKmsKeyId', ros.validateString)(properties.systemDiskKmsKeyId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.requiredValidator)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('imageFamily', ros.validateString)(properties.imageFamily));
+    if(properties.securityGroupIds && (Array.isArray(properties.securityGroupIds) || (typeof properties.securityGroupIds) === 'string')) {
+        errors.collect(ros.propertyValidator('securityGroupIds', ros.validateLength)({
+            data: properties.securityGroupIds.length,
+            min: undefined,
+            max: 16,
+          }));
+    }
+    errors.collect(ros.propertyValidator('securityGroupIds', ros.listValidator(ros.validateString))(properties.securityGroupIds));
     errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
     errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
+    errors.collect(ros.propertyValidator('systemDiskBurstingEnabled', ros.validateBoolean)(properties.systemDiskBurstingEnabled));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
-    errors.collect(ros.propertyValidator('systemDiskName', ros.validateString)(properties.systemDiskName));
+    errors.collect(ros.propertyValidator('deploymentSetId', ros.validateString)(properties.deploymentSetId));
     if(properties.dataDisk && (Array.isArray(properties.dataDisk) || (typeof properties.dataDisk) === 'string')) {
         errors.collect(ros.propertyValidator('dataDisk', ros.validateLength)({
             data: properties.dataDisk.length,
@@ -1353,11 +1679,7 @@ function RosAutoProvisioningGroup_LaunchConfigurationPropertyValidator(propertie
           }));
     }
     errors.collect(ros.propertyValidator('dataDisk', ros.listValidator(RosAutoProvisioningGroup_DataDiskPropertyValidator))(properties.dataDisk));
-    errors.collect(ros.propertyValidator('ramRoleName', ros.validateString)(properties.ramRoleName));
     errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateNumber)(properties.internetMaxBandwidthOut));
-    errors.collect(ros.propertyValidator('systemDiskPerformanceLevel', ros.validateString)(properties.systemDiskPerformanceLevel));
-    errors.collect(ros.propertyValidator('imageId', ros.requiredValidator)(properties.imageId));
-    errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
     errors.collect(ros.propertyValidator('instanceDescription', ros.validateString)(properties.instanceDescription));
     if(properties.tag && (Array.isArray(properties.tag) || (typeof properties.tag) === 'string')) {
         errors.collect(ros.propertyValidator('tag', ros.validateLength)({
@@ -1367,10 +1689,9 @@ function RosAutoProvisioningGroup_LaunchConfigurationPropertyValidator(propertie
           }));
     }
     errors.collect(ros.propertyValidator('tag', ros.listValidator(ros.validateRosTag))(properties.tag));
-    errors.collect(ros.propertyValidator('hostName', ros.validateString)(properties.hostName));
     errors.collect(ros.propertyValidator('creditSpecification', ros.validateString)(properties.creditSpecification));
     errors.collect(ros.propertyValidator('securityEnhancementStrategy', ros.validateString)(properties.securityEnhancementStrategy));
-    errors.collect(ros.propertyValidator('passwordInherit', ros.validateBoolean)(properties.passwordInherit));
+    errors.collect(ros.propertyValidator('autoReleaseTime', ros.validateString)(properties.autoReleaseTime));
     return errors.wrap('supplied properties not correct for "LaunchConfigurationProperty"');
 }
 
@@ -1386,28 +1707,37 @@ function rosAutoProvisioningGroupLaunchConfigurationPropertyToRosTemplate(proper
     if (!ros.canInspect(properties)) { return properties; }
     RosAutoProvisioningGroup_LaunchConfigurationPropertyValidator(properties).assertSuccess();
     return {
-      'KeyPairName': ros.stringToRosTemplate(properties.keyPairName),
-      'IoOptimized': ros.stringToRosTemplate(properties.ioOptimized),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
       'SystemDiskSize': ros.numberToRosTemplate(properties.systemDiskSize),
       'UserData': ros.stringToRosTemplate(properties.userData),
       'SystemDiskDescription': ros.stringToRosTemplate(properties.systemDiskDescription),
-      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
-      'InternetChargeType': ros.stringToRosTemplate(properties.internetChargeType),
-      'SystemDiskCategory': ros.stringToRosTemplate(properties.systemDiskCategory),
-      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'SystemDiskProvisionedIops': ros.numberToRosTemplate(properties.systemDiskProvisionedIops),
+      'SystemDiskEncrypted': ros.booleanToRosTemplate(properties.systemDiskEncrypted),
       'SystemDiskName': ros.stringToRosTemplate(properties.systemDiskName),
-      'DataDisk': ros.listMapper(rosAutoProvisioningGroupDataDiskPropertyToRosTemplate)(properties.dataDisk),
       'RamRoleName': ros.stringToRosTemplate(properties.ramRoleName),
-      'InternetMaxBandwidthOut': ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
       'SystemDiskPerformanceLevel': ros.stringToRosTemplate(properties.systemDiskPerformanceLevel),
       'ImageId': ros.stringToRosTemplate(properties.imageId),
+      'HostNames': ros.listMapper(ros.stringToRosTemplate)(properties.hostNames),
+      'HostName': ros.stringToRosTemplate(properties.hostName),
+      'PasswordInherit': ros.booleanToRosTemplate(properties.passwordInherit),
+      'KeyPairName': ros.stringToRosTemplate(properties.keyPairName),
+      'IoOptimized': ros.stringToRosTemplate(properties.ioOptimized),
+      'SystemDiskKMSKeyId': ros.stringToRosTemplate(properties.systemDiskKmsKeyId),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'ImageFamily': ros.stringToRosTemplate(properties.imageFamily),
+      'SecurityGroupIds': ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
+      'InternetChargeType': ros.stringToRosTemplate(properties.internetChargeType),
+      'SystemDiskCategory': ros.stringToRosTemplate(properties.systemDiskCategory),
+      'SystemDiskBurstingEnabled': ros.booleanToRosTemplate(properties.systemDiskBurstingEnabled),
+      'InstanceName': ros.stringToRosTemplate(properties.instanceName),
+      'DeploymentSetId': ros.stringToRosTemplate(properties.deploymentSetId),
+      'DataDisk': ros.listMapper(rosAutoProvisioningGroupDataDiskPropertyToRosTemplate)(properties.dataDisk),
+      'InternetMaxBandwidthOut': ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
       'InstanceDescription': ros.stringToRosTemplate(properties.instanceDescription),
       'Tag': ros.listMapper(ros.rosTagToRosTemplate)(properties.tag),
-      'HostName': ros.stringToRosTemplate(properties.hostName),
       'CreditSpecification': ros.stringToRosTemplate(properties.creditSpecification),
       'SecurityEnhancementStrategy': ros.stringToRosTemplate(properties.securityEnhancementStrategy),
-      'PasswordInherit': ros.booleanToRosTemplate(properties.passwordInherit),
+      'AutoReleaseTime': ros.stringToRosTemplate(properties.autoReleaseTime),
     };
 }
 
@@ -1416,6 +1746,10 @@ export namespace RosAutoProvisioningGroup {
      * @stability external
      */
     export interface LaunchTemplateConfigProperty {
+        /**
+         * @Property cores: The cores.
+         */
+        readonly cores?: Array<number | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property weightedCapacity: The weight of the instance type specified in the Nth extended configurations of the
      * launch template.
@@ -1438,14 +1772,45 @@ export namespace RosAutoProvisioningGroup {
          */
         readonly vSwitchId: string | ros.IResolvable;
         /**
-         * @Property instanceType: The instance type of the Nth extended configurations of the launch template.
+         * @Property instanceFamilyLevel: Instance specification family level, used to filter the range of instance specifications that meet the requirements. Valid values:
+     * - EntryLevel: This is the shared instance specification. The cost is lower, but the performance of instance calculation cannot be guaranteed to be stable. It is suitable for business scenarios with low CPU usage at ordinary times.
+     * - EnterpriseLevel: Enterprise level. Stable performance, resource exclusive, suitable for high stability requirements of business scenarios.
+     * - CreditEntryLevel: Credit entry level, that is, burst performance instance. CPU credits are used to ensure the computing performance, which is suitable for the situation of low CPU utilization and occasional burst CPU utilization.
          */
-        readonly instanceType?: string | ros.IResolvable;
+        readonly instanceFamilyLevel?: string | ros.IResolvable;
+        /**
+         * @Property imageId: The image ID.
+         */
+        readonly imageId?: string | ros.IResolvable;
+        /**
+         * @Property burstablePerformance: Whether it is a performance burst instance specification. Valid values:
+     * - Exclude: The performance burst instance specification is not included.
+     * - Include: Contains the performance burst instance specification.
+     * - Required: Contains only the performance burst instance specification.
+     * Default value: Include
+         */
+        readonly burstablePerformance?: string | ros.IResolvable;
         /**
          * @Property maxPrice: The maximum price of the instance type specified in the Nth extended configurations
      * of the launch template.
          */
         readonly maxPrice?: number | ros.IResolvable;
+        /**
+         * @Property excludedInstanceTypes: The excluded instance types.
+         */
+        readonly excludedInstanceTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property instanceType: The instance type of the Nth extended configurations of the launch template.
+         */
+        readonly instanceType?: string | ros.IResolvable;
+        /**
+         * @Property memories: The memories.
+         */
+        readonly memories?: Array<number | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property architectures: The architectures.
+         */
+        readonly architectures?: Array<string | ros.IResolvable> | ros.IResolvable;
     }
 }
 /**
@@ -1458,12 +1823,59 @@ export namespace RosAutoProvisioningGroup {
 function RosAutoProvisioningGroup_LaunchTemplateConfigPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.cores && (Array.isArray(properties.cores) || (typeof properties.cores) === 'string')) {
+        errors.collect(ros.propertyValidator('cores', ros.validateLength)({
+            data: properties.cores.length,
+            min: undefined,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('cores', ros.listValidator(ros.validateNumber))(properties.cores));
     errors.collect(ros.propertyValidator('weightedCapacity', ros.validateNumber)(properties.weightedCapacity));
     errors.collect(ros.propertyValidator('priority', ros.validateNumber)(properties.priority));
     errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
-    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    if(properties.instanceFamilyLevel && (typeof properties.instanceFamilyLevel) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceFamilyLevel', ros.validateAllowedValues)({
+          data: properties.instanceFamilyLevel,
+          allowedValues: ["EntryLevel","EnterpriseLevel","CreditEntryLevel"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('instanceFamilyLevel', ros.validateString)(properties.instanceFamilyLevel));
+    errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
+    if(properties.burstablePerformance && (typeof properties.burstablePerformance) !== 'object') {
+        errors.collect(ros.propertyValidator('burstablePerformance', ros.validateAllowedValues)({
+          data: properties.burstablePerformance,
+          allowedValues: ["Exclude","Include","Required"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('burstablePerformance', ros.validateString)(properties.burstablePerformance));
     errors.collect(ros.propertyValidator('maxPrice', ros.validateNumber)(properties.maxPrice));
+    if(properties.excludedInstanceTypes && (Array.isArray(properties.excludedInstanceTypes) || (typeof properties.excludedInstanceTypes) === 'string')) {
+        errors.collect(ros.propertyValidator('excludedInstanceTypes', ros.validateLength)({
+            data: properties.excludedInstanceTypes.length,
+            min: undefined,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('excludedInstanceTypes', ros.listValidator(ros.validateString))(properties.excludedInstanceTypes));
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    if(properties.memories && (Array.isArray(properties.memories) || (typeof properties.memories) === 'string')) {
+        errors.collect(ros.propertyValidator('memories', ros.validateLength)({
+            data: properties.memories.length,
+            min: undefined,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('memories', ros.listValidator(ros.validateNumber))(properties.memories));
+    if(properties.architectures && (Array.isArray(properties.architectures) || (typeof properties.architectures) === 'string')) {
+        errors.collect(ros.propertyValidator('architectures', ros.validateLength)({
+            data: properties.architectures.length,
+            min: undefined,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('architectures', ros.listValidator(ros.validateString))(properties.architectures));
     return errors.wrap('supplied properties not correct for "LaunchTemplateConfigProperty"');
 }
 
@@ -1479,11 +1891,124 @@ function rosAutoProvisioningGroupLaunchTemplateConfigPropertyToRosTemplate(prope
     if (!ros.canInspect(properties)) { return properties; }
     RosAutoProvisioningGroup_LaunchTemplateConfigPropertyValidator(properties).assertSuccess();
     return {
+      'Cores': ros.listMapper(ros.numberToRosTemplate)(properties.cores),
       'WeightedCapacity': ros.numberToRosTemplate(properties.weightedCapacity),
       'Priority': ros.numberToRosTemplate(properties.priority),
       'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
-      'InstanceType': ros.stringToRosTemplate(properties.instanceType),
+      'InstanceFamilyLevel': ros.stringToRosTemplate(properties.instanceFamilyLevel),
+      'ImageId': ros.stringToRosTemplate(properties.imageId),
+      'BurstablePerformance': ros.stringToRosTemplate(properties.burstablePerformance),
       'MaxPrice': ros.numberToRosTemplate(properties.maxPrice),
+      'ExcludedInstanceTypes': ros.listMapper(ros.stringToRosTemplate)(properties.excludedInstanceTypes),
+      'InstanceType': ros.stringToRosTemplate(properties.instanceType),
+      'Memories': ros.listMapper(ros.numberToRosTemplate)(properties.memories),
+      'Architectures': ros.listMapper(ros.stringToRosTemplate)(properties.architectures),
+    };
+}
+
+export namespace RosAutoProvisioningGroup {
+    /**
+     * @stability external
+     */
+    export interface ResourcePoolOptionsProperty {
+        /**
+         * @Property strategy: The resource pool includes the private pool and the public pool generated after the elastic guarantee service or capacity reservation service is in effect, which can be selected when the instance is started. Range:
+     * PrivatePoolFirst: Private pools take precedence Choosing this strategy, when specifying the ResourcePoolOptions. PrivatePoolIds, using the specified priority private pool. If the private pool is not specified or the designated private pool has insufficient capacity, the open type private pool will be matched automatically. If there is no eligible private pool, the instance is created using the public pool.
+     * PrivatePoolOnly: Private pools only Choosing this strategy, you must specify ResourcePoolOptions. PrivatePoolIds. If the specified private pool capacity is insufficient, the instance will fail to start.
+     * PublicPoolOnly: Creates instances using a public pool.
+     * Default value: PublicPoolOnly
+         */
+        readonly strategy?: string | ros.IResolvable;
+        /**
+         * @Property privatePoolIds: Private pool ID. That is, elastic guarantee service ID or capacity reservation service ID. This parameter can only be passed to the Target mode private pool ID.
+         */
+        readonly privatePoolIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ResourcePoolOptionsProperty`
+ *
+ * @param properties - the TypeScript properties of a `ResourcePoolOptionsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAutoProvisioningGroup_ResourcePoolOptionsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.strategy && (typeof properties.strategy) !== 'object') {
+        errors.collect(ros.propertyValidator('strategy', ros.validateAllowedValues)({
+          data: properties.strategy,
+          allowedValues: ["PrivatePoolFirst","PrivatePoolOnly","PublicPoolOnly"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('strategy', ros.validateString)(properties.strategy));
+    if(properties.privatePoolIds && (Array.isArray(properties.privatePoolIds) || (typeof properties.privatePoolIds) === 'string')) {
+        errors.collect(ros.propertyValidator('privatePoolIds', ros.validateLength)({
+            data: properties.privatePoolIds.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('privatePoolIds', ros.listValidator(ros.validateString))(properties.privatePoolIds));
+    return errors.wrap('supplied properties not correct for "ResourcePoolOptionsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::AutoProvisioningGroup.ResourcePoolOptions` resource
+ *
+ * @param properties - the TypeScript properties of a `ResourcePoolOptionsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::AutoProvisioningGroup.ResourcePoolOptions` resource.
+ */
+// @ts-ignore TS6133
+function rosAutoProvisioningGroupResourcePoolOptionsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAutoProvisioningGroup_ResourcePoolOptionsPropertyValidator(properties).assertSuccess();
+    return {
+      'Strategy': ros.stringToRosTemplate(properties.strategy),
+      'PrivatePoolIds': ros.listMapper(ros.stringToRosTemplate)(properties.privatePoolIds),
+    };
+}
+
+export namespace RosAutoProvisioningGroup {
+    /**
+     * @stability external
+     */
+    export interface SystemDiskConfigProperty {
+        /**
+         * @Property diskCategory: The category of the system disk.
+         */
+        readonly diskCategory: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `SystemDiskConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `SystemDiskConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAutoProvisioningGroup_SystemDiskConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('diskCategory', ros.requiredValidator)(properties.diskCategory));
+    errors.collect(ros.propertyValidator('diskCategory', ros.validateString)(properties.diskCategory));
+    return errors.wrap('supplied properties not correct for "SystemDiskConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::AutoProvisioningGroup.SystemDiskConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `SystemDiskConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::AutoProvisioningGroup.SystemDiskConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosAutoProvisioningGroupSystemDiskConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAutoProvisioningGroup_SystemDiskConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'DiskCategory': ros.stringToRosTemplate(properties.diskCategory),
     };
 }
 
@@ -1573,9 +2098,27 @@ export interface RosAutoSnapshotPolicyProps {
     readonly autoSnapshotPolicyName?: string | ros.IResolvable;
 
     /**
+     * @Property copiedSnapshotsRetentionDays: Retention time in days for replicated snapshots across geographies. Range:
+     * -1: Permanent storage
+     * 1-65535: Specifies the number of days to save
+     * Default value: -1
+     */
+    readonly copiedSnapshotsRetentionDays?: number | ros.IResolvable;
+
+    /**
+     * @Property copyEncryptionConfiguration: The encryption configuration for copied snapshots.
+     */
+    readonly copyEncryptionConfiguration?: RosAutoSnapshotPolicy.CopyEncryptionConfigurationProperty | ros.IResolvable;
+
+    /**
      * @Property diskIds: The disk ID. When you want to apply the automatic snapshot policy to multiple disks, you can set the DiskIds to an array. The format is list of ["d-xxxxxxxxx", "d-yyyyyyyyy", ..., "d-zzzzzzzzz"] and the IDs are separated by commas (,).
      */
     readonly diskIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property enableCrossRegionCopy: Whether to enable cross-region copying of snapshots.
+     */
+    readonly enableCrossRegionCopy?: boolean | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: Resource group id.
@@ -1586,6 +2129,11 @@ export interface RosAutoSnapshotPolicyProps {
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosAutoSnapshotPolicy.TagsProperty[];
+
+    /**
+     * @Property targetCopyRegions: The target region of the snapshot is replicated across geographies. Setting a target region is currently supported.
+     */
+    readonly targetCopyRegions?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -1601,7 +2149,17 @@ function RosAutoSnapshotPolicyPropsValidator(properties: any): ros.ValidationRes
     errors.collect(ros.propertyValidator('timePoints', ros.requiredValidator)(properties.timePoints));
     errors.collect(ros.propertyValidator('timePoints', ros.listValidator(ros.validateAny))(properties.timePoints));
     errors.collect(ros.propertyValidator('diskIds', ros.listValidator(ros.validateString))(properties.diskIds));
+    if(properties.targetCopyRegions && (Array.isArray(properties.targetCopyRegions) || (typeof properties.targetCopyRegions) === 'string')) {
+        errors.collect(ros.propertyValidator('targetCopyRegions', ros.validateLength)({
+            data: properties.targetCopyRegions.length,
+            min: undefined,
+            max: 1,
+          }));
+    }
+    errors.collect(ros.propertyValidator('targetCopyRegions', ros.listValidator(ros.validateString))(properties.targetCopyRegions));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('enableCrossRegionCopy', ros.validateBoolean)(properties.enableCrossRegionCopy));
+    errors.collect(ros.propertyValidator('copyEncryptionConfiguration', RosAutoSnapshotPolicy_CopyEncryptionConfigurationPropertyValidator)(properties.copyEncryptionConfiguration));
     errors.collect(ros.propertyValidator('retentionDays', ros.requiredValidator)(properties.retentionDays));
     if(properties.retentionDays && (typeof properties.retentionDays) !== 'object') {
         errors.collect(ros.propertyValidator('retentionDays', ros.validateRange)({
@@ -1622,6 +2180,14 @@ function RosAutoSnapshotPolicyPropsValidator(properties: any): ros.ValidationRes
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosAutoSnapshotPolicy_TagsPropertyValidator))(properties.tags));
+    if(properties.copiedSnapshotsRetentionDays && (typeof properties.copiedSnapshotsRetentionDays) !== 'object') {
+        errors.collect(ros.propertyValidator('copiedSnapshotsRetentionDays', ros.validateRange)({
+            data: properties.copiedSnapshotsRetentionDays,
+            min: -1,
+            max: 65536,
+          }));
+    }
+    errors.collect(ros.propertyValidator('copiedSnapshotsRetentionDays', ros.validateNumber)(properties.copiedSnapshotsRetentionDays));
     return errors.wrap('supplied properties not correct for "RosAutoSnapshotPolicyProps"');
 }
 
@@ -1643,9 +2209,13 @@ function rosAutoSnapshotPolicyPropsToRosTemplate(properties: any, enableResource
       'RetentionDays': ros.numberToRosTemplate(properties.retentionDays),
       'TimePoints': ros.listMapper(ros.objectToRosTemplate)(properties.timePoints),
       'AutoSnapshotPolicyName': ros.stringToRosTemplate(properties.autoSnapshotPolicyName),
+      'CopiedSnapshotsRetentionDays': ros.numberToRosTemplate(properties.copiedSnapshotsRetentionDays),
+      'CopyEncryptionConfiguration': rosAutoSnapshotPolicyCopyEncryptionConfigurationPropertyToRosTemplate(properties.copyEncryptionConfiguration),
       'DiskIds': ros.listMapper(ros.stringToRosTemplate)(properties.diskIds),
+      'EnableCrossRegionCopy': ros.booleanToRosTemplate(properties.enableCrossRegionCopy),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
       'Tags': ros.listMapper(rosAutoSnapshotPolicyTagsPropertyToRosTemplate)(properties.tags),
+      'TargetCopyRegions': ros.listMapper(ros.stringToRosTemplate)(properties.targetCopyRegions),
     };
 }
 
@@ -1700,9 +2270,27 @@ export class RosAutoSnapshotPolicy extends ros.RosResource {
     public autoSnapshotPolicyName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property copiedSnapshotsRetentionDays: Retention time in days for replicated snapshots across geographies. Range:
+     * -1: Permanent storage
+     * 1-65535: Specifies the number of days to save
+     * Default value: -1
+     */
+    public copiedSnapshotsRetentionDays: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property copyEncryptionConfiguration: The encryption configuration for copied snapshots.
+     */
+    public copyEncryptionConfiguration: RosAutoSnapshotPolicy.CopyEncryptionConfigurationProperty | ros.IResolvable | undefined;
+
+    /**
      * @Property diskIds: The disk ID. When you want to apply the automatic snapshot policy to multiple disks, you can set the DiskIds to an array. The format is list of ["d-xxxxxxxxx", "d-yyyyyyyyy", ..., "d-zzzzzzzzz"] and the IDs are separated by commas (,).
      */
     public diskIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableCrossRegionCopy: Whether to enable cross-region copying of snapshots.
+     */
+    public enableCrossRegionCopy: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property resourceGroupId: Resource group id.
@@ -1713,6 +2301,11 @@ export class RosAutoSnapshotPolicy extends ros.RosResource {
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     public tags: RosAutoSnapshotPolicy.TagsProperty[] | undefined;
+
+    /**
+     * @Property targetCopyRegions: The target region of the snapshot is replicated across geographies. Setting a target region is currently supported.
+     */
+    public targetCopyRegions: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @param scope - scope in which this resource is defined
@@ -1728,9 +2321,13 @@ export class RosAutoSnapshotPolicy extends ros.RosResource {
         this.retentionDays = props.retentionDays;
         this.timePoints = props.timePoints;
         this.autoSnapshotPolicyName = props.autoSnapshotPolicyName;
+        this.copiedSnapshotsRetentionDays = props.copiedSnapshotsRetentionDays;
+        this.copyEncryptionConfiguration = props.copyEncryptionConfiguration;
         this.diskIds = props.diskIds;
+        this.enableCrossRegionCopy = props.enableCrossRegionCopy;
         this.resourceGroupId = props.resourceGroupId;
         this.tags = props.tags;
+        this.targetCopyRegions = props.targetCopyRegions;
     }
 
 
@@ -1740,14 +2337,65 @@ export class RosAutoSnapshotPolicy extends ros.RosResource {
             retentionDays: this.retentionDays,
             timePoints: this.timePoints,
             autoSnapshotPolicyName: this.autoSnapshotPolicyName,
+            copiedSnapshotsRetentionDays: this.copiedSnapshotsRetentionDays,
+            copyEncryptionConfiguration: this.copyEncryptionConfiguration,
             diskIds: this.diskIds,
+            enableCrossRegionCopy: this.enableCrossRegionCopy,
             resourceGroupId: this.resourceGroupId,
             tags: this.tags,
+            targetCopyRegions: this.targetCopyRegions,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosAutoSnapshotPolicyPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosAutoSnapshotPolicy {
+    /**
+     * @stability external
+     */
+    export interface CopyEncryptionConfigurationProperty {
+        /**
+         * @Property kmsKeyId: KMS key ID used for snapshot offsite encryption backup
+         */
+        readonly kmsKeyId?: string | ros.IResolvable;
+        /**
+         * @Property encrypted: Whether to enable remote encrypted backup of snapshots. Default: false.
+         */
+        readonly encrypted?: boolean | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `CopyEncryptionConfigurationProperty`
+ *
+ * @param properties - the TypeScript properties of a `CopyEncryptionConfigurationProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAutoSnapshotPolicy_CopyEncryptionConfigurationPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('kmsKeyId', ros.validateString)(properties.kmsKeyId));
+    errors.collect(ros.propertyValidator('encrypted', ros.validateBoolean)(properties.encrypted));
+    return errors.wrap('supplied properties not correct for "CopyEncryptionConfigurationProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::AutoSnapshotPolicy.CopyEncryptionConfiguration` resource
+ *
+ * @param properties - the TypeScript properties of a `CopyEncryptionConfigurationProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::AutoSnapshotPolicy.CopyEncryptionConfiguration` resource.
+ */
+// @ts-ignore TS6133
+function rosAutoSnapshotPolicyCopyEncryptionConfigurationPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAutoSnapshotPolicy_CopyEncryptionConfigurationPropertyValidator(properties).assertSuccess();
+    return {
+      'KMSKeyId': ros.stringToRosTemplate(properties.kmsKeyId),
+      'Encrypted': ros.booleanToRosTemplate(properties.encrypted),
+    };
 }
 
 export namespace RosAutoSnapshotPolicy {
@@ -8532,11 +9180,6 @@ export class RosInstanceGroup extends ros.RosResource {
     public readonly attrPublicIps: ros.IResolvable;
 
     /**
-     * @Attribute RelatedOrderIds: The related order id list of created ecs instances
-     */
-    public readonly attrRelatedOrderIds: ros.IResolvable;
-
-    /**
      * @Attribute ZoneIds: Zone id of created instances.
      */
     public readonly attrZoneIds: ros.IResolvable;
@@ -9026,7 +9669,6 @@ export class RosInstanceGroup extends ros.RosResource {
         this.attrOrderId = this.getAtt('OrderId');
         this.attrPrivateIps = this.getAtt('PrivateIps');
         this.attrPublicIps = this.getAtt('PublicIps');
-        this.attrRelatedOrderIds = this.getAtt('RelatedOrderIds');
         this.attrZoneIds = this.getAtt('ZoneIds');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;

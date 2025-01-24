@@ -31,30 +31,51 @@ export interface SSHKeyPairProps {
 }
 
 /**
+ * Represents a `SSHKeyPair`.
+ */
+export interface ISSHKeyPair extends ros.IResource {
+    readonly props: SSHKeyPairProps;
+
+    /**
+     * Attribute KeyPairFingerPrint: The fingerprint of the key pair. The public key fingerprint format defined in RFC4716: MD5 message digest algorithm. Refer to http://tools.ietf.org/html/rfc4716.
+     */
+    readonly attrKeyPairFingerPrint: ros.IResolvable | string;
+
+    /**
+     * Attribute KeyPairName: SSH Key pair name.
+     */
+    readonly attrKeyPairName: ros.IResolvable | string;
+
+    /**
+     * Attribute PrivateKeyBody: The private key of the key pair. Content of the RSA private key in the PKCS#8 format of the unencrypted PEM encoding. Refer to: https://www.openssl.org/docs/apps/pkcs8.html.User only can get the private key one time when and only when SSH key pair is created.
+     */
+    readonly attrPrivateKeyBody: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SSHKeyPair`, which is used to create an SSH key pair or import an existing SSH key pair to access an Elastic Compute Service (ECS) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSSHKeyPair`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-sshkeypair
  */
-export class SSHKeyPair extends ros.Resource {
+export class SSHKeyPair extends ros.Resource implements ISSHKeyPair {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SSHKeyPairProps;
+    public readonly props: SSHKeyPairProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute KeyPairFingerPrint: The fingerprint of the key pair. The public key fingerprint format defined in RFC4716: MD5 message digest algorithm. Refer to http://tools.ietf.org/html/rfc4716.
      */
-    public readonly attrKeyPairFingerPrint: ros.IResolvable;
+    public readonly attrKeyPairFingerPrint: ros.IResolvable | string;
 
     /**
      * Attribute KeyPairName: SSH Key pair name.
      */
-    public readonly attrKeyPairName: ros.IResolvable;
+    public readonly attrKeyPairName: ros.IResolvable | string;
 
     /**
      * Attribute PrivateKeyBody: The private key of the key pair. Content of the RSA private key in the PKCS#8 format of the unencrypted PEM encoding. Refer to: https://www.openssl.org/docs/apps/pkcs8.html.User only can get the private key one time when and only when SSH key pair is created.
      */
-    public readonly attrPrivateKeyBody: ros.IResolvable;
+    public readonly attrPrivateKeyBody: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

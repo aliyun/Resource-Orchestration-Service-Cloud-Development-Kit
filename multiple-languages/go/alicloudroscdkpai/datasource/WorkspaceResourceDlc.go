@@ -12,20 +12,30 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::WorkspaceResourceDlc`, which is used to query the information about a Deep Learning Containers (DLC) resource that is associated with a Platform for AI (PAI) workspace.
 type WorkspaceResourceDlc interface {
 	alicloudroscdkcore.Resource
+	IWorkspaceResourceDlc
 	// Attribute CreateTime: The creation time of the resource.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute GroupName: Resource group name.
 	//
 	// If you want to obtain a resource group name, see [ListResources].
-	AttrGroupName() alicloudroscdkcore.IResolvable
+	AttrGroupName() interface{}
 	// Attribute IsDefault: Indicates whether it is the default resource.
 	//
 	// Currently, this parameter only supports the input of true and does not support false.
-	AttrIsDefault() alicloudroscdkcore.IResolvable
+	AttrIsDefault() interface{}
 	// Attribute Resources: Resource List.
-	AttrResources() alicloudroscdkcore.IResolvable
+	AttrResources() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -40,7 +50,6 @@ type WorkspaceResourceDlc interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *WorkspaceResourceDlcProps
-	SetProps(val *WorkspaceResourceDlcProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -53,6 +62,9 @@ type WorkspaceResourceDlc interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -105,10 +117,11 @@ type WorkspaceResourceDlc interface {
 // The jsii proxy struct for WorkspaceResourceDlc
 type jsiiProxy_WorkspaceResourceDlc struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IWorkspaceResourceDlc
 }
 
-func (j *jsiiProxy_WorkspaceResourceDlc) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_WorkspaceResourceDlc) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -117,8 +130,8 @@ func (j *jsiiProxy_WorkspaceResourceDlc) AttrCreateTime() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_WorkspaceResourceDlc) AttrGroupName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_WorkspaceResourceDlc) AttrGroupName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGroupName",
@@ -127,8 +140,8 @@ func (j *jsiiProxy_WorkspaceResourceDlc) AttrGroupName() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_WorkspaceResourceDlc) AttrIsDefault() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_WorkspaceResourceDlc) AttrIsDefault() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIsDefault",
@@ -137,8 +150,8 @@ func (j *jsiiProxy_WorkspaceResourceDlc) AttrIsDefault() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_WorkspaceResourceDlc) AttrResources() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_WorkspaceResourceDlc) AttrResources() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResources",
@@ -152,6 +165,16 @@ func (j *jsiiProxy_WorkspaceResourceDlc) EnableResourcePropertyConstraint() *boo
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WorkspaceResourceDlc) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -289,17 +312,6 @@ func (j *jsiiProxy_WorkspaceResourceDlc)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_WorkspaceResourceDlc)SetProps(val *WorkspaceResourceDlcProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_WorkspaceResourceDlc)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -391,6 +403,45 @@ func (w *jsiiProxy_WorkspaceResourceDlc) ApplyRemovalPolicy(policy alicloudroscd
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (w *jsiiProxy_WorkspaceResourceDlc) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		w,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (w *jsiiProxy_WorkspaceResourceDlc) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		w,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (w *jsiiProxy_WorkspaceResourceDlc) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		w,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (w *jsiiProxy_WorkspaceResourceDlc) GeneratePhysicalName() *string {

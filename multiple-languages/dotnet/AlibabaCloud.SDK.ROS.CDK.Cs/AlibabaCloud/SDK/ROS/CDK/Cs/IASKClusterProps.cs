@@ -102,6 +102,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
+        /// <summary>Property maintenanceWindow: Cluster maintenance window.</summary>
+        [JsiiProperty(name: "maintenanceWindow", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosASKCluster.MaintenanceWindowProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? MaintenanceWindow
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property privateZone: Whether to enable PrivateZone for service discovery.</summary>
         [JsiiProperty(name: "privateZone", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -325,6 +336,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             [JsiiOptional]
             [JsiiProperty(name: "kubernetesVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? KubernetesVersion
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property maintenanceWindow: Cluster maintenance window.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "maintenanceWindow", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosASKCluster.MaintenanceWindowProperty\"}]}}", isOptional: true)]
+            public object? MaintenanceWindow
             {
                 get => GetInstanceProperty<object?>();
             }

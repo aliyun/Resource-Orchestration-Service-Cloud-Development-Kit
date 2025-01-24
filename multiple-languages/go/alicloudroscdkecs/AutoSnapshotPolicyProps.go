@@ -31,15 +31,30 @@ type AutoSnapshotPolicyProps struct {
 	// Cannot start with http:\/\/ or https:\/\/.
 	// Default value: null.
 	AutoSnapshotPolicyName interface{} `field:"optional" json:"autoSnapshotPolicyName" yaml:"autoSnapshotPolicyName"`
+	// Property copiedSnapshotsRetentionDays: Retention time in days for replicated snapshots across geographies.
+	//
+	// Range:
+	// -1: Permanent storage
+	// 1-65535: Specifies the number of days to save
+	// Default value: -1.
+	CopiedSnapshotsRetentionDays interface{} `field:"optional" json:"copiedSnapshotsRetentionDays" yaml:"copiedSnapshotsRetentionDays"`
+	// Property copyEncryptionConfiguration: The encryption configuration for copied snapshots.
+	CopyEncryptionConfiguration interface{} `field:"optional" json:"copyEncryptionConfiguration" yaml:"copyEncryptionConfiguration"`
 	// Property diskIds: The disk ID.
 	//
 	// When you want to apply the automatic snapshot policy to multiple disks, you can set the DiskIds to an array. The format is list of ["d-xxxxxxxxx", "d-yyyyyyyyy", ..., "d-zzzzzzzzz"] and the IDs are separated by commas (,).
 	DiskIds interface{} `field:"optional" json:"diskIds" yaml:"diskIds"`
+	// Property enableCrossRegionCopy: Whether to enable cross-region copying of snapshots.
+	EnableCrossRegionCopy interface{} `field:"optional" json:"enableCrossRegionCopy" yaml:"enableCrossRegionCopy"`
 	// Property resourceGroupId: Resource group id.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 	// Property tags: Tags to attach to instance.
 	//
 	// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
 	Tags *[]*RosAutoSnapshotPolicy_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
+	// Property targetCopyRegions: The target region of the snapshot is replicated across geographies.
+	//
+	// Setting a target region is currently supported.
+	TargetCopyRegions interface{} `field:"optional" json:"targetCopyRegions" yaml:"targetCopyRegions"`
 }
 

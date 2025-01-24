@@ -71,60 +71,111 @@ export interface TransitRouterVpcAttachmentProps {
 }
 
 /**
+ * Represents a `TransitRouterVpcAttachment`.
+ */
+export interface ITransitRouterVpcAttachment extends ros.IResource {
+    readonly props: TransitRouterVpcAttachmentProps;
+
+    /**
+     * Attribute CenId: CenId
+     */
+    readonly attrCenId: ros.IResolvable | string;
+
+    /**
+     * Attribute ClientToken: ClientToken
+     */
+    readonly attrClientToken: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceType: ResourceType
+     */
+    readonly attrResourceType: ros.IResolvable | string;
+
+    /**
+     * Attribute TransitRouterAttachmentDescription: TransitRouterAttachmentDescription
+     */
+    readonly attrTransitRouterAttachmentDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute TransitRouterAttachmentId: The first ID of the resource
+     */
+    readonly attrTransitRouterAttachmentId: ros.IResolvable | string;
+
+    /**
+     * Attribute TransitRouterAttachmentName: TransitRouterAttachmentName
+     */
+    readonly attrTransitRouterAttachmentName: ros.IResolvable | string;
+
+    /**
+     * Attribute TransitRouterId: TransitRouterId
+     */
+    readonly attrTransitRouterId: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcId: VpcId
+     */
+    readonly attrVpcId: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcOwnerId: VpcOwnerId
+     */
+    readonly attrVpcOwnerId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterVpcAttachment`, which is used to create a virtual private cloud (VPC) connection on an Enterprise Edition transit router.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouterVpcAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervpcattachment
  */
-export class TransitRouterVpcAttachment extends ros.Resource {
+export class TransitRouterVpcAttachment extends ros.Resource implements ITransitRouterVpcAttachment {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: TransitRouterVpcAttachmentProps;
+    public readonly props: TransitRouterVpcAttachmentProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CenId: CenId
      */
-    public readonly attrCenId: ros.IResolvable;
+    public readonly attrCenId: ros.IResolvable | string;
 
     /**
      * Attribute ClientToken: ClientToken
      */
-    public readonly attrClientToken: ros.IResolvable;
+    public readonly attrClientToken: ros.IResolvable | string;
 
     /**
      * Attribute ResourceType: ResourceType
      */
-    public readonly attrResourceType: ros.IResolvable;
+    public readonly attrResourceType: ros.IResolvable | string;
 
     /**
      * Attribute TransitRouterAttachmentDescription: TransitRouterAttachmentDescription
      */
-    public readonly attrTransitRouterAttachmentDescription: ros.IResolvable;
+    public readonly attrTransitRouterAttachmentDescription: ros.IResolvable | string;
 
     /**
      * Attribute TransitRouterAttachmentId: The first ID of the resource
      */
-    public readonly attrTransitRouterAttachmentId: ros.IResolvable;
+    public readonly attrTransitRouterAttachmentId: ros.IResolvable | string;
 
     /**
      * Attribute TransitRouterAttachmentName: TransitRouterAttachmentName
      */
-    public readonly attrTransitRouterAttachmentName: ros.IResolvable;
+    public readonly attrTransitRouterAttachmentName: ros.IResolvable | string;
 
     /**
      * Attribute TransitRouterId: TransitRouterId
      */
-    public readonly attrTransitRouterId: ros.IResolvable;
+    public readonly attrTransitRouterId: ros.IResolvable | string;
 
     /**
      * Attribute VpcId: VpcId
      */
-    public readonly attrVpcId: ros.IResolvable;
+    public readonly attrVpcId: ros.IResolvable | string;
 
     /**
      * Attribute VpcOwnerId: VpcOwnerId
      */
-    public readonly attrVpcOwnerId: ros.IResolvable;
+    public readonly attrVpcOwnerId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

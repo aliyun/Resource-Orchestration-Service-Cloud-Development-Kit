@@ -64,20 +64,31 @@ export interface NetworkPackageProps {
 }
 
 /**
+ * Represents a `NetworkPackage`.
+ */
+export interface INetworkPackage extends ros.IResource {
+    readonly props: NetworkPackageProps;
+
+    /**
+     * Attribute NetworkPackageId: The ID of the Internet access package.
+     */
+    readonly attrNetworkPackageId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECD::NetworkPackage`, which is used to create a premium bandwidth plan for an office network.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNetworkPackage`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-networkpackage
  */
-export class NetworkPackage extends ros.Resource {
+export class NetworkPackage extends ros.Resource implements INetworkPackage {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: NetworkPackageProps;
+    public readonly props: NetworkPackageProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute NetworkPackageId: The ID of the Internet access package.
      */
-    public readonly attrNetworkPackageId: ros.IResolvable;
+    public readonly attrNetworkPackageId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

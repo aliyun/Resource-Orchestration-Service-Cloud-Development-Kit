@@ -12,44 +12,54 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::OOS::PatchBaseline`, which is used to query a patch baseline.
 type PatchBaseline interface {
 	alicloudroscdkcore.Resource
+	IPatchBaseline
 	// Attribute ApprovalRules: Accept the rules.
-	AttrApprovalRules() alicloudroscdkcore.IResolvable
+	AttrApprovalRules() interface{}
 	// Attribute ApprovedPatches: Approved patch list.
-	AttrApprovedPatches() alicloudroscdkcore.IResolvable
+	AttrApprovedPatches() interface{}
 	// Attribute ApprovedPatchesEnableNonSecurity: Approve whether the patch includes updates other than security.
-	AttrApprovedPatchesEnableNonSecurity() alicloudroscdkcore.IResolvable
+	AttrApprovedPatchesEnableNonSecurity() interface{}
 	// Attribute CreatedBy: Patch baseline creator.
-	AttrCreatedBy() alicloudroscdkcore.IResolvable
+	AttrCreatedBy() interface{}
 	// Attribute CreateTime: Creation time.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute Description: Patches baseline description information.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute IsDefault: Whether it is the default patch baseline.
-	AttrIsDefault() alicloudroscdkcore.IResolvable
+	AttrIsDefault() interface{}
 	// Attribute OperationSystem: Operating system type.
-	AttrOperationSystem() alicloudroscdkcore.IResolvable
+	AttrOperationSystem() interface{}
 	// Attribute PatchBaselineId: Patch baseline ID.
-	AttrPatchBaselineId() alicloudroscdkcore.IResolvable
+	AttrPatchBaselineId() interface{}
 	// Attribute PatchBaselineName: The name of the patch baseline.
-	AttrPatchBaselineName() alicloudroscdkcore.IResolvable
+	AttrPatchBaselineName() interface{}
 	// Attribute RejectedPatches: Reject the name of the patch.
-	AttrRejectedPatches() alicloudroscdkcore.IResolvable
+	AttrRejectedPatches() interface{}
 	// Attribute RejectedPatchesAction: The operation of rejecting the patch.
-	AttrRejectedPatchesAction() alicloudroscdkcore.IResolvable
+	AttrRejectedPatchesAction() interface{}
 	// Attribute ResourceGroupId: Approve whether the patch includes updates other than security.
-	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() interface{}
 	// Attribute ShareType: Patch baseline sharing type.
-	AttrShareType() alicloudroscdkcore.IResolvable
+	AttrShareType() interface{}
 	// Attribute Sources: Patch source configuration list.
-	AttrSources() alicloudroscdkcore.IResolvable
+	AttrSources() interface{}
 	// Attribute Tags: Tags of patch baseline.
-	AttrTags() alicloudroscdkcore.IResolvable
+	AttrTags() interface{}
 	// Attribute UpdatedBy: Patch baseline updater.
-	AttrUpdatedBy() alicloudroscdkcore.IResolvable
+	AttrUpdatedBy() interface{}
 	// Attribute UpdatedDate: Update time.
-	AttrUpdatedDate() alicloudroscdkcore.IResolvable
+	AttrUpdatedDate() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -64,7 +74,6 @@ type PatchBaseline interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *PatchBaselineProps
-	SetProps(val *PatchBaselineProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -77,6 +86,9 @@ type PatchBaseline interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -129,10 +141,11 @@ type PatchBaseline interface {
 // The jsii proxy struct for PatchBaseline
 type jsiiProxy_PatchBaseline struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IPatchBaseline
 }
 
-func (j *jsiiProxy_PatchBaseline) AttrApprovalRules() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PatchBaseline) AttrApprovalRules() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrApprovalRules",
@@ -141,8 +154,8 @@ func (j *jsiiProxy_PatchBaseline) AttrApprovalRules() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_PatchBaseline) AttrApprovedPatches() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PatchBaseline) AttrApprovedPatches() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrApprovedPatches",
@@ -151,8 +164,8 @@ func (j *jsiiProxy_PatchBaseline) AttrApprovedPatches() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_PatchBaseline) AttrApprovedPatchesEnableNonSecurity() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PatchBaseline) AttrApprovedPatchesEnableNonSecurity() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrApprovedPatchesEnableNonSecurity",
@@ -161,8 +174,8 @@ func (j *jsiiProxy_PatchBaseline) AttrApprovedPatchesEnableNonSecurity() aliclou
 	return returns
 }
 
-func (j *jsiiProxy_PatchBaseline) AttrCreatedBy() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PatchBaseline) AttrCreatedBy() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreatedBy",
@@ -171,8 +184,8 @@ func (j *jsiiProxy_PatchBaseline) AttrCreatedBy() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_PatchBaseline) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PatchBaseline) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -181,8 +194,8 @@ func (j *jsiiProxy_PatchBaseline) AttrCreateTime() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_PatchBaseline) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PatchBaseline) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -191,8 +204,8 @@ func (j *jsiiProxy_PatchBaseline) AttrDescription() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_PatchBaseline) AttrIsDefault() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PatchBaseline) AttrIsDefault() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIsDefault",
@@ -201,8 +214,8 @@ func (j *jsiiProxy_PatchBaseline) AttrIsDefault() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_PatchBaseline) AttrOperationSystem() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PatchBaseline) AttrOperationSystem() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOperationSystem",
@@ -211,8 +224,8 @@ func (j *jsiiProxy_PatchBaseline) AttrOperationSystem() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_PatchBaseline) AttrPatchBaselineId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PatchBaseline) AttrPatchBaselineId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPatchBaselineId",
@@ -221,8 +234,8 @@ func (j *jsiiProxy_PatchBaseline) AttrPatchBaselineId() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_PatchBaseline) AttrPatchBaselineName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PatchBaseline) AttrPatchBaselineName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPatchBaselineName",
@@ -231,8 +244,8 @@ func (j *jsiiProxy_PatchBaseline) AttrPatchBaselineName() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_PatchBaseline) AttrRejectedPatches() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PatchBaseline) AttrRejectedPatches() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRejectedPatches",
@@ -241,8 +254,8 @@ func (j *jsiiProxy_PatchBaseline) AttrRejectedPatches() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_PatchBaseline) AttrRejectedPatchesAction() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PatchBaseline) AttrRejectedPatchesAction() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRejectedPatchesAction",
@@ -251,8 +264,8 @@ func (j *jsiiProxy_PatchBaseline) AttrRejectedPatchesAction() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_PatchBaseline) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PatchBaseline) AttrResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupId",
@@ -261,8 +274,8 @@ func (j *jsiiProxy_PatchBaseline) AttrResourceGroupId() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_PatchBaseline) AttrShareType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PatchBaseline) AttrShareType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrShareType",
@@ -271,8 +284,8 @@ func (j *jsiiProxy_PatchBaseline) AttrShareType() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_PatchBaseline) AttrSources() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PatchBaseline) AttrSources() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSources",
@@ -281,8 +294,8 @@ func (j *jsiiProxy_PatchBaseline) AttrSources() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_PatchBaseline) AttrTags() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PatchBaseline) AttrTags() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTags",
@@ -291,8 +304,8 @@ func (j *jsiiProxy_PatchBaseline) AttrTags() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_PatchBaseline) AttrUpdatedBy() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PatchBaseline) AttrUpdatedBy() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUpdatedBy",
@@ -301,8 +314,8 @@ func (j *jsiiProxy_PatchBaseline) AttrUpdatedBy() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_PatchBaseline) AttrUpdatedDate() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PatchBaseline) AttrUpdatedDate() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUpdatedDate",
@@ -316,6 +329,16 @@ func (j *jsiiProxy_PatchBaseline) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_PatchBaseline) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -453,17 +476,6 @@ func (j *jsiiProxy_PatchBaseline)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_PatchBaseline)SetProps(val *PatchBaselineProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_PatchBaseline)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -555,6 +567,45 @@ func (p *jsiiProxy_PatchBaseline) ApplyRemovalPolicy(policy alicloudroscdkcore.R
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (p *jsiiProxy_PatchBaseline) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		p,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_PatchBaseline) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		p,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_PatchBaseline) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		p,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (p *jsiiProxy_PatchBaseline) GeneratePhysicalName() *string {

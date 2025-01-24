@@ -61,7 +61,7 @@ export interface ListenerProps {
     readonly aclType?: string | ros.IResolvable;
 
     /**
-     * Property backendServerPort: Backend server can listen on ports from 1 to 65535.
+     * Property backendServerPort: Backend server can listen on ports from 0 to 65535.
      */
     readonly backendServerPort?: number | ros.IResolvable;
 
@@ -94,6 +94,12 @@ export interface ListenerProps {
      * off: no
      */
     readonly enableHttp2?: string | ros.IResolvable;
+
+    /**
+     * Property fullNatEnabled: When Full NAT mode is enabled, it can support the backend servers as clients for access. Default value is false.
+     * Note: Only effective for TCP or UDP listener.
+     */
+    readonly fullNatEnabled?: boolean | ros.IResolvable;
 
     /**
      * Property gzip: Specifies whether to enable Gzip compression to compress specific types of files. Valid values:
@@ -183,25 +189,41 @@ export interface ListenerProps {
 }
 
 /**
+ * Represents a `Listener`.
+ */
+export interface IListener extends ros.IResource {
+    readonly props: ListenerProps;
+
+    /**
+     * Attribute ListenerPortsAndProtocol: The collection of listener.
+     */
+    readonly attrListenerPortsAndProtocol: ros.IResolvable | string;
+
+    /**
+     * Attribute LoadBalancerId: The id of load balancer
+     */
+    readonly attrLoadBalancerId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::Listener`, which is used to create a Server Load Balancer (SLB) listener.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosListener`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-listener
  */
-export class Listener extends ros.Resource {
+export class Listener extends ros.Resource implements IListener {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ListenerProps;
+    public readonly props: ListenerProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ListenerPortsAndProtocol: The collection of listener.
      */
-    public readonly attrListenerPortsAndProtocol: ros.IResolvable;
+    public readonly attrListenerPortsAndProtocol: ros.IResolvable | string;
 
     /**
      * Attribute LoadBalancerId: The id of load balancer
      */
-    public readonly attrLoadBalancerId: ros.IResolvable;
+    public readonly attrLoadBalancerId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -243,6 +265,7 @@ export class Listener extends ros.Resource {
             masterSlaveServerGroupId: props.masterSlaveServerGroupId,
             startListener: props.startListener === undefined || props.startListener === null ? true : props.startListener,
             aclType: props.aclType,
+            fullNatEnabled: props.fullNatEnabled,
             enableHttp2: props.enableHttp2,
             aclIds: props.aclIds,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

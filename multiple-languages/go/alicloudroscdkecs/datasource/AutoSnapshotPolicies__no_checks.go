@@ -52,10 +52,6 @@ func (j *jsiiProxy_AutoSnapshotPolicies) validateSetIdParameters(val *string) er
 	return nil
 }
 
-func (j *jsiiProxy_AutoSnapshotPolicies) validateSetPropsParameters(val *AutoSnapshotPoliciesProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_AutoSnapshotPolicies) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

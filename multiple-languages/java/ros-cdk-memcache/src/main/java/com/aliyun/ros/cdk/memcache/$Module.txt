@@ -1,3 +1,5 @@
+@alicloud/ros-cdk-memcache.IInstance=com.aliyun.ros.cdk.memcache.IInstance
+@alicloud/ros-cdk-memcache.IWhitelist=com.aliyun.ros.cdk.memcache.IWhitelist
 @alicloud/ros-cdk-memcache.Instance=com.aliyun.ros.cdk.memcache.Instance
 @alicloud/ros-cdk-memcache.InstanceProps=com.aliyun.ros.cdk.memcache.InstanceProps
 @alicloud/ros-cdk-memcache.RosInstance=com.aliyun.ros.cdk.memcache.RosInstance

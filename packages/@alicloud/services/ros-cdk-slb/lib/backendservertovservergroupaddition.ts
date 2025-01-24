@@ -21,20 +21,31 @@ export interface BackendServerToVServerGroupAdditionProps {
 }
 
 /**
+ * Represents a `BackendServerToVServerGroupAddition`.
+ */
+export interface IBackendServerToVServerGroupAddition extends ros.IResource {
+    readonly props: BackendServerToVServerGroupAdditionProps;
+
+    /**
+     * Attribute VServerGroupId: The ID of virtual server group.
+     */
+    readonly attrVServerGroupId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::BackendServerToVServerGroupAddition`, which is used to add backend servers to an existing server group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBackendServerToVServerGroupAddition`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-backendservertovservergroupaddition
  */
-export class BackendServerToVServerGroupAddition extends ros.Resource {
+export class BackendServerToVServerGroupAddition extends ros.Resource implements IBackendServerToVServerGroupAddition {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: BackendServerToVServerGroupAdditionProps;
+    public readonly props: BackendServerToVServerGroupAdditionProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute VServerGroupId: The ID of virtual server group.
      */
-    public readonly attrVServerGroupId: ros.IResolvable;
+    public readonly attrVServerGroupId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -36,40 +36,71 @@ export interface DbVaultProps {
 }
 
 /**
+ * Represents a `DbVault`.
+ */
+export interface IDbVault extends ros.IResource {
+    readonly props: DbVaultProps;
+
+    /**
+     * Attribute Description: Description of the vault.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute RetentionDays: Data retention days of the vault. Data will be deleted when it's older than this time.
+     */
+    readonly attrRetentionDays: ros.IResolvable | string;
+
+    /**
+     * Attribute VaultId: Vault ID.
+     */
+    readonly attrVaultId: ros.IResolvable | string;
+
+    /**
+     * Attribute VaultName: Display name of the vault.
+     */
+    readonly attrVaultName: ros.IResolvable | string;
+
+    /**
+     * Attribute VaultRegionId: The region ID to create the vault.
+     */
+    readonly attrVaultRegionId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::HBR::DbVault`, which is used to create a mirror vault.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDbVault`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbvault
  */
-export class DbVault extends ros.Resource {
+export class DbVault extends ros.Resource implements IDbVault {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DbVaultProps;
+    public readonly props: DbVaultProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Description: Description of the vault.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute RetentionDays: Data retention days of the vault. Data will be deleted when it's older than this time.
      */
-    public readonly attrRetentionDays: ros.IResolvable;
+    public readonly attrRetentionDays: ros.IResolvable | string;
 
     /**
      * Attribute VaultId: Vault ID.
      */
-    public readonly attrVaultId: ros.IResolvable;
+    public readonly attrVaultId: ros.IResolvable | string;
 
     /**
      * Attribute VaultName: Display name of the vault.
      */
-    public readonly attrVaultName: ros.IResolvable;
+    public readonly attrVaultName: ros.IResolvable | string;
 
     /**
      * Attribute VaultRegionId: The region ID to create the vault.
      */
-    public readonly attrVaultRegionId: ros.IResolvable;
+    public readonly attrVaultRegionId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

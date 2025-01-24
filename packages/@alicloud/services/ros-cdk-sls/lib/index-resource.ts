@@ -44,14 +44,20 @@ export interface IndexProps {
 }
 
 /**
+ * Represents a `Index`.
+ */
+export interface IIndex extends ros.IResource {
+    readonly props: IndexProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Index`, which is used to create an index for a specified Logstore.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosIndex`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-index
  */
-export class Index extends ros.Resource {
+export class Index extends ros.Resource implements IIndex {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: IndexProps;
+    public readonly props: IndexProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

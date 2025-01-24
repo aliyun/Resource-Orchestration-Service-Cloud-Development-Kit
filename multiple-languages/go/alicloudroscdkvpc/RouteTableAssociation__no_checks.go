@@ -52,10 +52,6 @@ func (j *jsiiProxy_RouteTableAssociation) validateSetIdParameters(val *string) e
 	return nil
 }
 
-func (j *jsiiProxy_RouteTableAssociation) validateSetPropsParameters(val *RouteTableAssociationProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_RouteTableAssociation) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

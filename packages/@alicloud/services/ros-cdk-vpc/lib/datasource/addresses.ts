@@ -83,25 +83,41 @@ export interface AddressesProps {
 }
 
 /**
+ * Represents a `Addresses`.
+ */
+export interface IAddresses extends ros.IResource {
+    readonly props: AddressesProps;
+
+    /**
+     * Attribute Addresses: The details about the EIP
+     */
+    readonly attrAddresses: ros.IResolvable | string;
+
+    /**
+     * Attribute AllocationIds: The list of allocation IDs.
+     */
+    readonly attrAllocationIds: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::EIP::Addresses`, which is used to query the information about elastic IP addresses (EIPs).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAddresses`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eip-addresses
  */
-export class Addresses extends ros.Resource {
+export class Addresses extends ros.Resource implements IAddresses {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AddressesProps;
+    public readonly props: AddressesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Addresses: The details about the EIP
      */
-    public readonly attrAddresses: ros.IResolvable;
+    public readonly attrAddresses: ros.IResolvable | string;
 
     /**
      * Attribute AllocationIds: The list of allocation IDs.
      */
-    public readonly attrAllocationIds: ros.IResolvable;
+    public readonly attrAllocationIds: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

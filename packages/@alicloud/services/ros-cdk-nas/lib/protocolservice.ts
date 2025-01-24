@@ -54,25 +54,41 @@ export interface ProtocolServiceProps {
 }
 
 /**
+ * Represents a `ProtocolService`.
+ */
+export interface IProtocolService extends ros.IResource {
+    readonly props: ProtocolServiceProps;
+
+    /**
+     * Attribute FileSystemId: File system ID.
+     */
+    readonly attrFileSystemId: ros.IResolvable | string;
+
+    /**
+     * Attribute ProtocolServiceId: Agreement cluster group ID.
+     */
+    readonly attrProtocolServiceId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::ProtocolService`, which is used to create a protocol service for a Cloud Paralleled File System (CPFS) file system.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosProtocolService`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-protocolservice
  */
-export class ProtocolService extends ros.Resource {
+export class ProtocolService extends ros.Resource implements IProtocolService {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ProtocolServiceProps;
+    public readonly props: ProtocolServiceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute FileSystemId: File system ID.
      */
-    public readonly attrFileSystemId: ros.IResolvable;
+    public readonly attrFileSystemId: ros.IResolvable | string;
 
     /**
      * Attribute ProtocolServiceId: Agreement cluster group ID.
      */
-    public readonly attrProtocolServiceId: ros.IResolvable;
+    public readonly attrProtocolServiceId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -126,20 +126,31 @@ export interface ClusterV2Props {
 }
 
 /**
+ * Represents a `ClusterV2`.
+ */
+export interface IClusterV2 extends ros.IResource {
+    readonly props: ClusterV2Props;
+
+    /**
+     * Attribute ClusterId: Cluster Id.
+     */
+    readonly attrClusterId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::EHPC::ClusterV2`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusterV2`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-clusterv2
  */
-export class ClusterV2 extends ros.Resource {
+export class ClusterV2 extends ros.Resource implements IClusterV2 {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ClusterV2Props;
+    public readonly props: ClusterV2Props;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterId: Cluster Id.
      */
-    public readonly attrClusterId: ros.IResolvable;
+    public readonly attrClusterId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

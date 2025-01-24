@@ -31,40 +31,71 @@ export interface UserDefineRegionProps {
 }
 
 /**
+ * Represents a `UserDefineRegion`.
+ */
+export interface IUserDefineRegion extends ros.IResource {
+    readonly props: UserDefineRegionProps;
+
+    /**
+     * Attribute BelongRegion: Under the physical region ID
+     */
+    readonly attrBelongRegion: ros.IResolvable | string;
+
+    /**
+     * Attribute DebugEnable: Whether debug is enable
+     */
+    readonly attrDebugEnable: ros.IResolvable | string;
+
+    /**
+     * Attribute Id: Resource ID
+     */
+    readonly attrId: ros.IResolvable | string;
+
+    /**
+     * Attribute RegionName: Region name
+     */
+    readonly attrRegionName: ros.IResolvable | string;
+
+    /**
+     * Attribute UserId: User account ID
+     */
+    readonly attrUserId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::UserDefineRegion`, which is used to create or edit a custom namespace.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUserDefineRegion`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-userdefineregion
  */
-export class UserDefineRegion extends ros.Resource {
+export class UserDefineRegion extends ros.Resource implements IUserDefineRegion {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: UserDefineRegionProps;
+    public readonly props: UserDefineRegionProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute BelongRegion: Under the physical region ID
      */
-    public readonly attrBelongRegion: ros.IResolvable;
+    public readonly attrBelongRegion: ros.IResolvable | string;
 
     /**
      * Attribute DebugEnable: Whether debug is enable
      */
-    public readonly attrDebugEnable: ros.IResolvable;
+    public readonly attrDebugEnable: ros.IResolvable | string;
 
     /**
      * Attribute Id: Resource ID
      */
-    public readonly attrId: ros.IResolvable;
+    public readonly attrId: ros.IResolvable | string;
 
     /**
      * Attribute RegionName: Region name
      */
-    public readonly attrRegionName: ros.IResolvable;
+    public readonly attrRegionName: ros.IResolvable | string;
 
     /**
      * Attribute UserId: User account ID
      */
-    public readonly attrUserId: ros.IResolvable;
+    public readonly attrUserId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

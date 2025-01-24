@@ -60,14 +60,73 @@ export interface ProjectProps {
 }
 
 /**
+ * Represents a `Project`.
+ */
+export interface IProject extends ros.IResource {
+    readonly props: ProjectProps;
+
+    /**
+     * Attribute EnvTypes: The environment of the workspace. Valid values: PROD and DEV.
+The value PROD indicates the production environment. Workspaces in basic mode provide only the production environment.
+The value DEV indicates the development environment. Workspaces in standard mode provide both the development environment and the production environment.
+     */
+    readonly attrEnvTypes: ros.IResolvable | string;
+
+    /**
+     * Attribute IsDefault: Indicates whether the workspace is the default workspace. Valid values:
+1: The workspace is the default workspace.
+0: The workspace is not the default workspace.
+     */
+    readonly attrIsDefault: ros.IResolvable | string;
+
+    /**
+     * Attribute ProjectId: The ID of the workspace.
+     */
+    readonly attrProjectId: ros.IResolvable | string;
+
+    /**
+     * Attribute ProjectIdentifier: The name of the workspace. The name can contain letters, digits, and underscores (_) and must start with a letter or digit.
+     */
+    readonly attrProjectIdentifier: ros.IResolvable | string;
+
+    /**
+     * Attribute ProtectedMode: Indicates whether the workspace protection feature is enabled. Valid values:
+1: The workspace protection feature is enabled.
+0: The workspace protection feature is disabled.
+     */
+    readonly attrProtectedMode: ros.IResolvable | string;
+
+    /**
+     * Attribute ResidentArea: The type of the workspace. Valid values: private and swap.
+     */
+    readonly attrResidentArea: ros.IResolvable | string;
+
+    /**
+     * Attribute SchedulerMaxRetryTimes: The default maximum number of automatic reruns that are allowed after an error occurs.
+     */
+    readonly attrSchedulerMaxRetryTimes: ros.IResolvable | string;
+
+    /**
+     * Attribute SchedulerRetryInterval: The interval between automatic reruns after an error occurs. Unit: milliseconds. The maximum interval is 30 minutes. You must pay attention to the conversion between units.
+     */
+    readonly attrSchedulerRetryInterval: ros.IResolvable | string;
+
+    /**
+     * Attribute TablePrivacyMode: Indicates whether the MaxCompute tables in the workspace are visible to the users within the tenant. Valid values:
+0: The MaxCompute tables are invisible to the users within a tenant.
+1: The MaxCompute tables are visible to the users within a tenant.
+     */
+    readonly attrTablePrivacyMode: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::DataWorks::Project`, which is used to create a DataWorks workspace.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosProject`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dataworks-project
  */
-export class Project extends ros.Resource {
+export class Project extends ros.Resource implements IProject {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ProjectProps;
+    public readonly props: ProjectProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
@@ -75,53 +134,53 @@ export class Project extends ros.Resource {
 The value PROD indicates the production environment. Workspaces in basic mode provide only the production environment.
 The value DEV indicates the development environment. Workspaces in standard mode provide both the development environment and the production environment.
      */
-    public readonly attrEnvTypes: ros.IResolvable;
+    public readonly attrEnvTypes: ros.IResolvable | string;
 
     /**
      * Attribute IsDefault: Indicates whether the workspace is the default workspace. Valid values:
 1: The workspace is the default workspace.
 0: The workspace is not the default workspace.
      */
-    public readonly attrIsDefault: ros.IResolvable;
+    public readonly attrIsDefault: ros.IResolvable | string;
 
     /**
      * Attribute ProjectId: The ID of the workspace.
      */
-    public readonly attrProjectId: ros.IResolvable;
+    public readonly attrProjectId: ros.IResolvable | string;
 
     /**
      * Attribute ProjectIdentifier: The name of the workspace. The name can contain letters, digits, and underscores (_) and must start with a letter or digit.
      */
-    public readonly attrProjectIdentifier: ros.IResolvable;
+    public readonly attrProjectIdentifier: ros.IResolvable | string;
 
     /**
      * Attribute ProtectedMode: Indicates whether the workspace protection feature is enabled. Valid values:
 1: The workspace protection feature is enabled.
 0: The workspace protection feature is disabled.
      */
-    public readonly attrProtectedMode: ros.IResolvable;
+    public readonly attrProtectedMode: ros.IResolvable | string;
 
     /**
      * Attribute ResidentArea: The type of the workspace. Valid values: private and swap.
      */
-    public readonly attrResidentArea: ros.IResolvable;
+    public readonly attrResidentArea: ros.IResolvable | string;
 
     /**
      * Attribute SchedulerMaxRetryTimes: The default maximum number of automatic reruns that are allowed after an error occurs.
      */
-    public readonly attrSchedulerMaxRetryTimes: ros.IResolvable;
+    public readonly attrSchedulerMaxRetryTimes: ros.IResolvable | string;
 
     /**
      * Attribute SchedulerRetryInterval: The interval between automatic reruns after an error occurs. Unit: milliseconds. The maximum interval is 30 minutes. You must pay attention to the conversion between units.
      */
-    public readonly attrSchedulerRetryInterval: ros.IResolvable;
+    public readonly attrSchedulerRetryInterval: ros.IResolvable | string;
 
     /**
      * Attribute TablePrivacyMode: Indicates whether the MaxCompute tables in the workspace are visible to the users within the tenant. Valid values:
 0: The MaxCompute tables are invisible to the users within a tenant.
 1: The MaxCompute tables are visible to the users within a tenant.
      */
-    public readonly attrTablePrivacyMode: ros.IResolvable;
+    public readonly attrTablePrivacyMode: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

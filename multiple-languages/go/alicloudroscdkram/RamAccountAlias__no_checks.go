@@ -52,10 +52,6 @@ func (j *jsiiProxy_RamAccountAlias) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_RamAccountAlias) validateSetPropsParameters(val *RamAccountAliasProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_RamAccountAlias) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

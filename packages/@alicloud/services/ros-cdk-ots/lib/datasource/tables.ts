@@ -29,25 +29,41 @@ export interface TablesProps {
 }
 
 /**
+ * Represents a `Tables`.
+ */
+export interface ITables extends ros.IResource {
+    readonly props: TablesProps;
+
+    /**
+     * Attribute TableNames: The list of table names.
+     */
+    readonly attrTableNames: ros.IResolvable | string;
+
+    /**
+     * Attribute Tables: The list of tables.
+     */
+    readonly attrTables: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::OTS::Tables`, which is used to query the names of all tables that are created in an instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTables`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ots-tables
  */
-export class Tables extends ros.Resource {
+export class Tables extends ros.Resource implements ITables {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: TablesProps;
+    public readonly props: TablesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute TableNames: The list of table names.
      */
-    public readonly attrTableNames: ros.IResolvable;
+    public readonly attrTableNames: ros.IResolvable | string;
 
     /**
      * Attribute Tables: The list of tables.
      */
-    public readonly attrTables: ros.IResolvable;
+    public readonly attrTables: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

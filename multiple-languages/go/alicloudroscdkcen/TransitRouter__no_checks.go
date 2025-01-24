@@ -52,10 +52,6 @@ func (j *jsiiProxy_TransitRouter) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_TransitRouter) validateSetPropsParameters(val *TransitRouterProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_TransitRouter) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

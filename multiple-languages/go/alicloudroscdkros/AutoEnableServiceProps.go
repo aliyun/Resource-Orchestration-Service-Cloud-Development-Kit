@@ -54,7 +54,8 @@ type AutoEnableServiceProps struct {
 	// Config: Cloud Config
 	// TrustedService\/ROS: Trusted Service for ROS
 	// CloudSSO: Cloud SSO
-	// ControlPolicy: Control Policy.
+	// ControlPolicy: Control Policy
+	// DSC: Data Security Center Free Edition Service.
 	ServiceName interface{} `field:"required" json:"serviceName" yaml:"serviceName"`
 }
 

@@ -56,85 +56,161 @@ export interface TransitRouterPeerAttachmentProps {
 }
 
 /**
+ * Represents a `TransitRouterPeerAttachment`.
+ */
+export interface ITransitRouterPeerAttachment extends ros.IResource {
+    readonly props: TransitRouterPeerAttachmentProps;
+
+    /**
+     * Attribute AutoPublishRouteEnabled: AutoPublishRouteEnabled
+     */
+    readonly attrAutoPublishRouteEnabled: ros.IResolvable | string;
+
+    /**
+     * Attribute Bandwidth: Bandwidth
+     */
+    readonly attrBandwidth: ros.IResolvable | string;
+
+    /**
+     * Attribute CenBandwidthPackageId: BandwidthPackageId
+     */
+    readonly attrCenBandwidthPackageId: ros.IResolvable | string;
+
+    /**
+     * Attribute CenId: CenId
+     */
+    readonly attrCenId: ros.IResolvable | string;
+
+    /**
+     * Attribute ClientToken: ClientToken
+     */
+    readonly attrClientToken: ros.IResolvable | string;
+
+    /**
+     * Attribute GeographicSpanId: GeographicSpanId
+     */
+    readonly attrGeographicSpanId: ros.IResolvable | string;
+
+    /**
+     * Attribute PeerTransitRouterId: PeerTransitRouterId
+     */
+    readonly attrPeerTransitRouterId: ros.IResolvable | string;
+
+    /**
+     * Attribute PeerTransitRouterOwnerId: PeerTransitRouterOwnerId
+     */
+    readonly attrPeerTransitRouterOwnerId: ros.IResolvable | string;
+
+    /**
+     * Attribute PeerTransitRouterRegionId: PeerTransitRouterRegionId
+     */
+    readonly attrPeerTransitRouterRegionId: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceType: ResourceType
+     */
+    readonly attrResourceType: ros.IResolvable | string;
+
+    /**
+     * Attribute TransitRouterAttachmentDescription: TransitRouterAttachmentDescription
+     */
+    readonly attrTransitRouterAttachmentDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute TransitRouterAttachmentId: The first ID of the resource
+     */
+    readonly attrTransitRouterAttachmentId: ros.IResolvable | string;
+
+    /**
+     * Attribute TransitRouterAttachmentName: TransitRouterAttachmentName
+     */
+    readonly attrTransitRouterAttachmentName: ros.IResolvable | string;
+
+    /**
+     * Attribute TransitRouterId: TransitRouterId
+     */
+    readonly attrTransitRouterId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterPeerAttachment`, which is used to create a cross-region connection for an Enterprise Edition transit router.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouterPeerAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterpeerattachment
  */
-export class TransitRouterPeerAttachment extends ros.Resource {
+export class TransitRouterPeerAttachment extends ros.Resource implements ITransitRouterPeerAttachment {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: TransitRouterPeerAttachmentProps;
+    public readonly props: TransitRouterPeerAttachmentProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AutoPublishRouteEnabled: AutoPublishRouteEnabled
      */
-    public readonly attrAutoPublishRouteEnabled: ros.IResolvable;
+    public readonly attrAutoPublishRouteEnabled: ros.IResolvable | string;
 
     /**
      * Attribute Bandwidth: Bandwidth
      */
-    public readonly attrBandwidth: ros.IResolvable;
+    public readonly attrBandwidth: ros.IResolvable | string;
 
     /**
      * Attribute CenBandwidthPackageId: BandwidthPackageId
      */
-    public readonly attrCenBandwidthPackageId: ros.IResolvable;
+    public readonly attrCenBandwidthPackageId: ros.IResolvable | string;
 
     /**
      * Attribute CenId: CenId
      */
-    public readonly attrCenId: ros.IResolvable;
+    public readonly attrCenId: ros.IResolvable | string;
 
     /**
      * Attribute ClientToken: ClientToken
      */
-    public readonly attrClientToken: ros.IResolvable;
+    public readonly attrClientToken: ros.IResolvable | string;
 
     /**
      * Attribute GeographicSpanId: GeographicSpanId
      */
-    public readonly attrGeographicSpanId: ros.IResolvable;
+    public readonly attrGeographicSpanId: ros.IResolvable | string;
 
     /**
      * Attribute PeerTransitRouterId: PeerTransitRouterId
      */
-    public readonly attrPeerTransitRouterId: ros.IResolvable;
+    public readonly attrPeerTransitRouterId: ros.IResolvable | string;
 
     /**
      * Attribute PeerTransitRouterOwnerId: PeerTransitRouterOwnerId
      */
-    public readonly attrPeerTransitRouterOwnerId: ros.IResolvable;
+    public readonly attrPeerTransitRouterOwnerId: ros.IResolvable | string;
 
     /**
      * Attribute PeerTransitRouterRegionId: PeerTransitRouterRegionId
      */
-    public readonly attrPeerTransitRouterRegionId: ros.IResolvable;
+    public readonly attrPeerTransitRouterRegionId: ros.IResolvable | string;
 
     /**
      * Attribute ResourceType: ResourceType
      */
-    public readonly attrResourceType: ros.IResolvable;
+    public readonly attrResourceType: ros.IResolvable | string;
 
     /**
      * Attribute TransitRouterAttachmentDescription: TransitRouterAttachmentDescription
      */
-    public readonly attrTransitRouterAttachmentDescription: ros.IResolvable;
+    public readonly attrTransitRouterAttachmentDescription: ros.IResolvable | string;
 
     /**
      * Attribute TransitRouterAttachmentId: The first ID of the resource
      */
-    public readonly attrTransitRouterAttachmentId: ros.IResolvable;
+    public readonly attrTransitRouterAttachmentId: ros.IResolvable | string;
 
     /**
      * Attribute TransitRouterAttachmentName: TransitRouterAttachmentName
      */
-    public readonly attrTransitRouterAttachmentName: ros.IResolvable;
+    public readonly attrTransitRouterAttachmentName: ros.IResolvable | string;
 
     /**
      * Attribute TransitRouterId: TransitRouterId
      */
-    public readonly attrTransitRouterId: ros.IResolvable;
+    public readonly attrTransitRouterId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

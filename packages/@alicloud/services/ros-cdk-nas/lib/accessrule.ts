@@ -51,20 +51,31 @@ export interface AccessRuleProps {
 }
 
 /**
+ * Represents a `AccessRule`.
+ */
+export interface IAccessRule extends ros.IResource {
+    readonly props: AccessRuleProps;
+
+    /**
+     * Attribute AccessRuleId: Rule serial number
+     */
+    readonly attrAccessRuleId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::AccessRule`, which is used to create a rule for a permission group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccessRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-accessrule
  */
-export class AccessRule extends ros.Resource {
+export class AccessRule extends ros.Resource implements IAccessRule {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AccessRuleProps;
+    public readonly props: AccessRuleProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccessRuleId: Rule serial number
      */
-    public readonly attrAccessRuleId: ros.IResolvable;
+    public readonly attrAccessRuleId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -52,10 +52,6 @@ func (j *jsiiProxy_SslVpnServer) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_SslVpnServer) validateSetPropsParameters(val *SslVpnServerProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_SslVpnServer) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

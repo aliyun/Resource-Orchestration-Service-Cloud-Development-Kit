@@ -23,6 +23,10 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "attrCryptType", GoGetter: "AttrCryptType"},
 			_jsii_.MemberProperty{JsiiProperty: "attrUrl", GoGetter: "AttrUrl"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDependency", GoMethod: "FetchDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchResourceDesc", GoMethod: "FetchResourceDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "generatePhysicalName", GoMethod: "GeneratePhysicalName"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
@@ -45,6 +49,7 @@ func init() {
 		func() interface{} {
 			j := jsiiProxy_AuditCallback{}
 			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreResource)
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IAuditCallback)
 			return &j
 		},
 	)
@@ -66,6 +71,10 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "attrDescription", GoGetter: "AttrDescription"},
 			_jsii_.MemberProperty{JsiiProperty: "attrIndustryInfo", GoGetter: "AttrIndustryInfo"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDependency", GoMethod: "FetchDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchResourceDesc", GoMethod: "FetchResourceDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "generatePhysicalName", GoMethod: "GeneratePhysicalName"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
@@ -88,6 +97,7 @@ func init() {
 		func() interface{} {
 			j := jsiiProxy_BizType{}
 			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreResource)
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IBizType)
 			return &j
 		},
 	)
@@ -111,6 +121,10 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "attrCallbackUrl", GoGetter: "AttrCallbackUrl"},
 			_jsii_.MemberProperty{JsiiProperty: "attrCryptType", GoGetter: "AttrCryptType"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDependency", GoMethod: "FetchDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchResourceDesc", GoMethod: "FetchResourceDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "generatePhysicalName", GoMethod: "GeneratePhysicalName"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
@@ -133,12 +147,166 @@ func init() {
 		func() interface{} {
 			j := jsiiProxy_Callback{}
 			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreResource)
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_ICallback)
 			return &j
 		},
 	)
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-aligreen.CallbackProps",
 		reflect.TypeOf((*CallbackProps)(nil)).Elem(),
+	)
+	_jsii_.RegisterInterface(
+		"@alicloud/ros-cdk-aligreen.IAuditCallback",
+		reflect.TypeOf((*IAuditCallback)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "attrAuditCallbackName", GoGetter: "AttrAuditCallbackName"},
+			_jsii_.MemberProperty{JsiiProperty: "attrCallbackSuggestions", GoGetter: "AttrCallbackSuggestions"},
+			_jsii_.MemberProperty{JsiiProperty: "attrCallbackTypes", GoGetter: "AttrCallbackTypes"},
+			_jsii_.MemberProperty{JsiiProperty: "attrCryptType", GoGetter: "AttrCryptType"},
+			_jsii_.MemberProperty{JsiiProperty: "attrUrl", GoGetter: "AttrUrl"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberProperty{JsiiProperty: "props", GoGetter: "Props"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+		},
+		func() interface{} {
+			j := jsiiProxy_IAuditCallback{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreIResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterInterface(
+		"@alicloud/ros-cdk-aligreen.IBizType",
+		reflect.TypeOf((*IBizType)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "attrBizTypeName", GoGetter: "AttrBizTypeName"},
+			_jsii_.MemberProperty{JsiiProperty: "attrCiteTemplate", GoGetter: "AttrCiteTemplate"},
+			_jsii_.MemberProperty{JsiiProperty: "attrDescription", GoGetter: "AttrDescription"},
+			_jsii_.MemberProperty{JsiiProperty: "attrIndustryInfo", GoGetter: "AttrIndustryInfo"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberProperty{JsiiProperty: "props", GoGetter: "Props"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+		},
+		func() interface{} {
+			j := jsiiProxy_IBizType{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreIResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterInterface(
+		"@alicloud/ros-cdk-aligreen.ICallback",
+		reflect.TypeOf((*ICallback)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "attrCallbackId", GoGetter: "AttrCallbackId"},
+			_jsii_.MemberProperty{JsiiProperty: "attrCallbackName", GoGetter: "AttrCallbackName"},
+			_jsii_.MemberProperty{JsiiProperty: "attrCallbackSuggestions", GoGetter: "AttrCallbackSuggestions"},
+			_jsii_.MemberProperty{JsiiProperty: "attrCallbackTypes", GoGetter: "AttrCallbackTypes"},
+			_jsii_.MemberProperty{JsiiProperty: "attrCallbackUrl", GoGetter: "AttrCallbackUrl"},
+			_jsii_.MemberProperty{JsiiProperty: "attrCryptType", GoGetter: "AttrCryptType"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberProperty{JsiiProperty: "props", GoGetter: "Props"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+		},
+		func() interface{} {
+			j := jsiiProxy_ICallback{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreIResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterInterface(
+		"@alicloud/ros-cdk-aligreen.IImageLib",
+		reflect.TypeOf((*IImageLib)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "attrBizTypes", GoGetter: "AttrBizTypes"},
+			_jsii_.MemberProperty{JsiiProperty: "attrCategory", GoGetter: "AttrCategory"},
+			_jsii_.MemberProperty{JsiiProperty: "attrEnable", GoGetter: "AttrEnable"},
+			_jsii_.MemberProperty{JsiiProperty: "attrImageLibId", GoGetter: "AttrImageLibId"},
+			_jsii_.MemberProperty{JsiiProperty: "attrImageLibName", GoGetter: "AttrImageLibName"},
+			_jsii_.MemberProperty{JsiiProperty: "attrScene", GoGetter: "AttrScene"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberProperty{JsiiProperty: "props", GoGetter: "Props"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+		},
+		func() interface{} {
+			j := jsiiProxy_IImageLib{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreIResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterInterface(
+		"@alicloud/ros-cdk-aligreen.IKeywordLib",
+		reflect.TypeOf((*IKeywordLib)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "attrBizTypes", GoGetter: "AttrBizTypes"},
+			_jsii_.MemberProperty{JsiiProperty: "attrCategory", GoGetter: "AttrCategory"},
+			_jsii_.MemberProperty{JsiiProperty: "attrEnable", GoGetter: "AttrEnable"},
+			_jsii_.MemberProperty{JsiiProperty: "attrKeywordLibId", GoGetter: "AttrKeywordLibId"},
+			_jsii_.MemberProperty{JsiiProperty: "attrKeywordLibName", GoGetter: "AttrKeywordLibName"},
+			_jsii_.MemberProperty{JsiiProperty: "attrLanguage", GoGetter: "AttrLanguage"},
+			_jsii_.MemberProperty{JsiiProperty: "attrLibType", GoGetter: "AttrLibType"},
+			_jsii_.MemberProperty{JsiiProperty: "attrMatchMode", GoGetter: "AttrMatchMode"},
+			_jsii_.MemberProperty{JsiiProperty: "attrResourceType", GoGetter: "AttrResourceType"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberProperty{JsiiProperty: "props", GoGetter: "Props"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+		},
+		func() interface{} {
+			j := jsiiProxy_IKeywordLib{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreIResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterInterface(
+		"@alicloud/ros-cdk-aligreen.IOssStockTask",
+		reflect.TypeOf((*IOssStockTask)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "attrAudioAntispamFreezeConfig", GoGetter: "AttrAudioAntispamFreezeConfig"},
+			_jsii_.MemberProperty{JsiiProperty: "attrAudioAutoFreezeOpened", GoGetter: "AttrAudioAutoFreezeOpened"},
+			_jsii_.MemberProperty{JsiiProperty: "attrAudioMaxSize", GoGetter: "AttrAudioMaxSize"},
+			_jsii_.MemberProperty{JsiiProperty: "attrAudioOpened", GoGetter: "AttrAudioOpened"},
+			_jsii_.MemberProperty{JsiiProperty: "attrAudioScanLimit", GoGetter: "AttrAudioScanLimit"},
+			_jsii_.MemberProperty{JsiiProperty: "attrAudioScenes", GoGetter: "AttrAudioScenes"},
+			_jsii_.MemberProperty{JsiiProperty: "attrAutoFreezeType", GoGetter: "AttrAutoFreezeType"},
+			_jsii_.MemberProperty{JsiiProperty: "attrBizType", GoGetter: "AttrBizType"},
+			_jsii_.MemberProperty{JsiiProperty: "attrBuckets", GoGetter: "AttrBuckets"},
+			_jsii_.MemberProperty{JsiiProperty: "attrCallbackId", GoGetter: "AttrCallbackId"},
+			_jsii_.MemberProperty{JsiiProperty: "attrEndDate", GoGetter: "AttrEndDate"},
+			_jsii_.MemberProperty{JsiiProperty: "attrImageAdFreezeConfig", GoGetter: "AttrImageAdFreezeConfig"},
+			_jsii_.MemberProperty{JsiiProperty: "attrImageAutoFreezeOpened", GoGetter: "AttrImageAutoFreezeOpened"},
+			_jsii_.MemberProperty{JsiiProperty: "attrImageLiveFreezeConfig", GoGetter: "AttrImageLiveFreezeConfig"},
+			_jsii_.MemberProperty{JsiiProperty: "attrImageOpened", GoGetter: "AttrImageOpened"},
+			_jsii_.MemberProperty{JsiiProperty: "attrImagePornFreezeConfig", GoGetter: "AttrImagePornFreezeConfig"},
+			_jsii_.MemberProperty{JsiiProperty: "attrImageScanLimit", GoGetter: "AttrImageScanLimit"},
+			_jsii_.MemberProperty{JsiiProperty: "attrImageScenes", GoGetter: "AttrImageScenes"},
+			_jsii_.MemberProperty{JsiiProperty: "attrImageTerrorismFreezeConfig", GoGetter: "AttrImageTerrorismFreezeConfig"},
+			_jsii_.MemberProperty{JsiiProperty: "attrScanImageNoFileType", GoGetter: "AttrScanImageNoFileType"},
+			_jsii_.MemberProperty{JsiiProperty: "attrStartDate", GoGetter: "AttrStartDate"},
+			_jsii_.MemberProperty{JsiiProperty: "attrVideoAdFreezeConfig", GoGetter: "AttrVideoAdFreezeConfig"},
+			_jsii_.MemberProperty{JsiiProperty: "attrVideoAutoFreezeOpened", GoGetter: "AttrVideoAutoFreezeOpened"},
+			_jsii_.MemberProperty{JsiiProperty: "attrVideoFrameInterval", GoGetter: "AttrVideoFrameInterval"},
+			_jsii_.MemberProperty{JsiiProperty: "attrVideoLiveFreezeConfig", GoGetter: "AttrVideoLiveFreezeConfig"},
+			_jsii_.MemberProperty{JsiiProperty: "attrVideoMaxFrames", GoGetter: "AttrVideoMaxFrames"},
+			_jsii_.MemberProperty{JsiiProperty: "attrVideoMaxSize", GoGetter: "AttrVideoMaxSize"},
+			_jsii_.MemberProperty{JsiiProperty: "attrVideoOpened", GoGetter: "AttrVideoOpened"},
+			_jsii_.MemberProperty{JsiiProperty: "attrVideoPornFreezeConfig", GoGetter: "AttrVideoPornFreezeConfig"},
+			_jsii_.MemberProperty{JsiiProperty: "attrVideoScanLimit", GoGetter: "AttrVideoScanLimit"},
+			_jsii_.MemberProperty{JsiiProperty: "attrVideoScenes", GoGetter: "AttrVideoScenes"},
+			_jsii_.MemberProperty{JsiiProperty: "attrVideoTerrorismFreezeConfig", GoGetter: "AttrVideoTerrorismFreezeConfig"},
+			_jsii_.MemberProperty{JsiiProperty: "attrVideoVoiceAntispamFreezeConfig", GoGetter: "AttrVideoVoiceAntispamFreezeConfig"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberProperty{JsiiProperty: "props", GoGetter: "Props"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+		},
+		func() interface{} {
+			j := jsiiProxy_IOssStockTask{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreIResource)
+			return &j
+		},
 	)
 	_jsii_.RegisterClass(
 		"@alicloud/ros-cdk-aligreen.ImageLib",
@@ -156,6 +324,10 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "attrImageLibName", GoGetter: "AttrImageLibName"},
 			_jsii_.MemberProperty{JsiiProperty: "attrScene", GoGetter: "AttrScene"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDependency", GoMethod: "FetchDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchResourceDesc", GoMethod: "FetchResourceDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "generatePhysicalName", GoMethod: "GeneratePhysicalName"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
@@ -178,6 +350,7 @@ func init() {
 		func() interface{} {
 			j := jsiiProxy_ImageLib{}
 			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreResource)
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IImageLib)
 			return &j
 		},
 	)
@@ -204,6 +377,10 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "attrMatchMode", GoGetter: "AttrMatchMode"},
 			_jsii_.MemberProperty{JsiiProperty: "attrResourceType", GoGetter: "AttrResourceType"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDependency", GoMethod: "FetchDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchResourceDesc", GoMethod: "FetchResourceDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "generatePhysicalName", GoMethod: "GeneratePhysicalName"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
@@ -226,6 +403,7 @@ func init() {
 		func() interface{} {
 			j := jsiiProxy_KeywordLib{}
 			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreResource)
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IKeywordLib)
 			return &j
 		},
 	)
@@ -276,6 +454,10 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "attrVideoTerrorismFreezeConfig", GoGetter: "AttrVideoTerrorismFreezeConfig"},
 			_jsii_.MemberProperty{JsiiProperty: "attrVideoVoiceAntispamFreezeConfig", GoGetter: "AttrVideoVoiceAntispamFreezeConfig"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDependency", GoMethod: "FetchDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchResourceDesc", GoMethod: "FetchResourceDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "generatePhysicalName", GoMethod: "GeneratePhysicalName"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
@@ -298,6 +480,7 @@ func init() {
 		func() interface{} {
 			j := jsiiProxy_OssStockTask{}
 			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreResource)
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IOssStockTask)
 			return &j
 		},
 	)
@@ -331,6 +514,9 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
 			_jsii_.MemberProperty{JsiiProperty: "cryptType", GoGetter: "CryptType"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDesc", GoMethod: "FetchDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchRosDependency", GoMethod: "FetchRosDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "logicalId", GoGetter: "LogicalId"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
@@ -387,6 +573,9 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
 			_jsii_.MemberProperty{JsiiProperty: "description", GoGetter: "Description"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDesc", GoMethod: "FetchDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchRosDependency", GoMethod: "FetchRosDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "industryInfo", GoGetter: "IndustryInfo"},
 			_jsii_.MemberProperty{JsiiProperty: "logicalId", GoGetter: "LogicalId"},
@@ -446,6 +635,9 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
 			_jsii_.MemberProperty{JsiiProperty: "cryptType", GoGetter: "CryptType"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDesc", GoMethod: "FetchDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchRosDependency", GoMethod: "FetchRosDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "logicalId", GoGetter: "LogicalId"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
@@ -502,6 +694,9 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
 			_jsii_.MemberProperty{JsiiProperty: "enable", GoGetter: "Enable"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDesc", GoMethod: "FetchDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchRosDependency", GoMethod: "FetchRosDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "imageLibName", GoGetter: "ImageLibName"},
 			_jsii_.MemberProperty{JsiiProperty: "logicalId", GoGetter: "LogicalId"},
@@ -563,6 +758,9 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
 			_jsii_.MemberProperty{JsiiProperty: "enable", GoGetter: "Enable"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDesc", GoMethod: "FetchDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchRosDependency", GoMethod: "FetchRosDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "keywordLibName", GoGetter: "KeywordLibName"},
 			_jsii_.MemberProperty{JsiiProperty: "language", GoGetter: "Language"},
@@ -659,6 +857,9 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
 			_jsii_.MemberProperty{JsiiProperty: "endDate", GoGetter: "EndDate"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDesc", GoMethod: "FetchDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchRosDependency", GoMethod: "FetchRosDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "imageAdFreezeConfig", GoGetter: "ImageAdFreezeConfig"},
 			_jsii_.MemberProperty{JsiiProperty: "imageAutoFreezeOpened", GoGetter: "ImageAutoFreezeOpened"},

@@ -122,6 +122,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
         }
 
+        /// <summary>Property deployMode: The deployment mode of the instance.</summary>
+        [JsiiProperty(name: "deployMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DeployMode
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property encryptionKey: If the EncryptionType parameter is set to CloudDisk, you must specify this parameter to the encryption key that is in the same region with the disks that is specified by the EncryptionType parameter.</summary>
         /// <remarks>
         /// Otherwise, leave this parameter empty.
@@ -366,6 +377,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
         }
 
+        /// <summary>Property standbyVSwitchId: The standby VSwitch ID of the instance.</summary>
+        [JsiiProperty(name: "standbyVSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? StandbyVSwitchId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property standbyZoneId: The standby zone ID of the instance.</summary>
+        [JsiiProperty(name: "standbyZoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? StandbyZoneId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property storageSize: The storage capacity of per segment node.</summary>
         /// <remarks>
         /// Unit: GB. Minimum is 50, max is 4000, step is 50.
@@ -524,6 +557,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             [JsiiOptional]
             [JsiiProperty(name: "dbInstanceMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DbInstanceMode
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property deployMode: The deployment mode of the instance.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "deployMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeployMode
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -720,6 +761,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             [JsiiOptional]
             [JsiiProperty(name: "serverlessResource", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ServerlessResource
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property standbyVSwitchId: The standby VSwitch ID of the instance.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "standbyVSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? StandbyVSwitchId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property standbyZoneId: The standby zone ID of the instance.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "standbyZoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? StandbyZoneId
             {
                 get => GetInstanceProperty<object?>();
             }

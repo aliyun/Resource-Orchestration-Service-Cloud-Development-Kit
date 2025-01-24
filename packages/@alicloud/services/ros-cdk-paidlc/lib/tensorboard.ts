@@ -88,25 +88,41 @@ export interface TensorboardProps {
 }
 
 /**
+ * Represents a `Tensorboard`.
+ */
+export interface ITensorboard extends ros.IResource {
+    readonly props: TensorboardProps;
+
+    /**
+     * Attribute TensorboardId: Tensorboard id.
+     */
+    readonly attrTensorboardId: ros.IResolvable | string;
+
+    /**
+     * Attribute TensorboardUrl: Tensorboard url.
+     */
+    readonly attrTensorboardUrl: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::PAIDLC::Tensorboard`, which is used to create a TensorBoard instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTensorboard`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidlc-tensorboard
  */
-export class Tensorboard extends ros.Resource {
+export class Tensorboard extends ros.Resource implements ITensorboard {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: TensorboardProps;
+    public readonly props: TensorboardProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute TensorboardId: Tensorboard id.
      */
-    public readonly attrTensorboardId: ros.IResolvable;
+    public readonly attrTensorboardId: ros.IResolvable | string;
 
     /**
      * Attribute TensorboardUrl: Tensorboard url.
      */
-    public readonly attrTensorboardUrl: ros.IResolvable;
+    public readonly attrTensorboardUrl: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -12,18 +12,28 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ACTIONTRAIL::TrailLogging`, which is used to enable or disable trail logging.
 type TrailLogging interface {
 	alicloudroscdkcore.Resource
+	ITrailLogging
 	// Attribute IsLogging: Indicates whether the trail is logging API invocations.
-	AttrIsLogging() alicloudroscdkcore.IResolvable
+	AttrIsLogging() interface{}
 	// Attribute LatestDeliveryError: The last time an error occurred when the trail attempted to deliver log files.
-	AttrLatestDeliveryError() alicloudroscdkcore.IResolvable
+	AttrLatestDeliveryError() interface{}
 	// Attribute LatestDeliveryTime: The date and time of the last successful delivery of a log file.
-	AttrLatestDeliveryTime() alicloudroscdkcore.IResolvable
+	AttrLatestDeliveryTime() interface{}
 	// Attribute StartLoggingTime: The most recent date and time when the user enables the trail.
-	AttrStartLoggingTime() alicloudroscdkcore.IResolvable
+	AttrStartLoggingTime() interface{}
 	// Attribute StopLoggingTime: The most recent date and time when the user disables the trail.
-	AttrStopLoggingTime() alicloudroscdkcore.IResolvable
+	AttrStopLoggingTime() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -38,7 +48,6 @@ type TrailLogging interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *TrailLoggingProps
-	SetProps(val *TrailLoggingProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -51,6 +60,9 @@ type TrailLogging interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -103,10 +115,11 @@ type TrailLogging interface {
 // The jsii proxy struct for TrailLogging
 type jsiiProxy_TrailLogging struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ITrailLogging
 }
 
-func (j *jsiiProxy_TrailLogging) AttrIsLogging() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_TrailLogging) AttrIsLogging() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIsLogging",
@@ -115,8 +128,8 @@ func (j *jsiiProxy_TrailLogging) AttrIsLogging() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_TrailLogging) AttrLatestDeliveryError() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_TrailLogging) AttrLatestDeliveryError() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLatestDeliveryError",
@@ -125,8 +138,8 @@ func (j *jsiiProxy_TrailLogging) AttrLatestDeliveryError() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_TrailLogging) AttrLatestDeliveryTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_TrailLogging) AttrLatestDeliveryTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLatestDeliveryTime",
@@ -135,8 +148,8 @@ func (j *jsiiProxy_TrailLogging) AttrLatestDeliveryTime() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_TrailLogging) AttrStartLoggingTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_TrailLogging) AttrStartLoggingTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStartLoggingTime",
@@ -145,8 +158,8 @@ func (j *jsiiProxy_TrailLogging) AttrStartLoggingTime() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_TrailLogging) AttrStopLoggingTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_TrailLogging) AttrStopLoggingTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStopLoggingTime",
@@ -160,6 +173,16 @@ func (j *jsiiProxy_TrailLogging) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_TrailLogging) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -297,17 +320,6 @@ func (j *jsiiProxy_TrailLogging)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_TrailLogging)SetProps(val *TrailLoggingProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_TrailLogging)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -399,6 +411,45 @@ func (t *jsiiProxy_TrailLogging) ApplyRemovalPolicy(policy alicloudroscdkcore.Re
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (t *jsiiProxy_TrailLogging) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		t,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (t *jsiiProxy_TrailLogging) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		t,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (t *jsiiProxy_TrailLogging) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		t,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (t *jsiiProxy_TrailLogging) GeneratePhysicalName() *string {

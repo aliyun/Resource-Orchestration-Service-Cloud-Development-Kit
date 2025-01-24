@@ -12,30 +12,40 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::CMS::MonitorGroup`.
 type MonitorGroup interface {
 	alicloudroscdkcore.Resource
+	IMonitorGroup
 	// Attribute BindUrl: BindUrl.
-	AttrBindUrl() alicloudroscdkcore.IResolvable
+	AttrBindUrl() interface{}
 	// Attribute ContactGroups: AlarmContactGroupName.
-	AttrContactGroups() alicloudroscdkcore.IResolvable
+	AttrContactGroups() interface{}
 	// Attribute CreateTime: GmtCreate.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute DynamicTagRuleId: DynamicTagRuleId.
-	AttrDynamicTagRuleId() alicloudroscdkcore.IResolvable
+	AttrDynamicTagRuleId() interface{}
 	// Attribute GmtModified: GmtModified.
-	AttrGmtModified() alicloudroscdkcore.IResolvable
+	AttrGmtModified() interface{}
 	// Attribute GroupId: GroupId.
-	AttrGroupId() alicloudroscdkcore.IResolvable
+	AttrGroupId() interface{}
 	// Attribute MonitorGroupName: MonitorGroupName.
-	AttrMonitorGroupName() alicloudroscdkcore.IResolvable
+	AttrMonitorGroupName() interface{}
 	// Attribute ServiceId: ServiceId.
-	AttrServiceId() alicloudroscdkcore.IResolvable
+	AttrServiceId() interface{}
 	// Attribute Tags: Tags.
-	AttrTags() alicloudroscdkcore.IResolvable
+	AttrTags() interface{}
 	// Attribute TemplateIds: TemplateIds.
-	AttrTemplateIds() alicloudroscdkcore.IResolvable
+	AttrTemplateIds() interface{}
 	// Attribute Type: Type.
-	AttrType() alicloudroscdkcore.IResolvable
+	AttrType() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -50,7 +60,6 @@ type MonitorGroup interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *MonitorGroupProps
-	SetProps(val *MonitorGroupProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -63,6 +72,9 @@ type MonitorGroup interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -115,10 +127,11 @@ type MonitorGroup interface {
 // The jsii proxy struct for MonitorGroup
 type jsiiProxy_MonitorGroup struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IMonitorGroup
 }
 
-func (j *jsiiProxy_MonitorGroup) AttrBindUrl() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MonitorGroup) AttrBindUrl() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBindUrl",
@@ -127,8 +140,8 @@ func (j *jsiiProxy_MonitorGroup) AttrBindUrl() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_MonitorGroup) AttrContactGroups() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MonitorGroup) AttrContactGroups() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrContactGroups",
@@ -137,8 +150,8 @@ func (j *jsiiProxy_MonitorGroup) AttrContactGroups() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_MonitorGroup) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MonitorGroup) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -147,8 +160,8 @@ func (j *jsiiProxy_MonitorGroup) AttrCreateTime() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_MonitorGroup) AttrDynamicTagRuleId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MonitorGroup) AttrDynamicTagRuleId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDynamicTagRuleId",
@@ -157,8 +170,8 @@ func (j *jsiiProxy_MonitorGroup) AttrDynamicTagRuleId() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_MonitorGroup) AttrGmtModified() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MonitorGroup) AttrGmtModified() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGmtModified",
@@ -167,8 +180,8 @@ func (j *jsiiProxy_MonitorGroup) AttrGmtModified() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_MonitorGroup) AttrGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MonitorGroup) AttrGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGroupId",
@@ -177,8 +190,8 @@ func (j *jsiiProxy_MonitorGroup) AttrGroupId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_MonitorGroup) AttrMonitorGroupName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MonitorGroup) AttrMonitorGroupName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMonitorGroupName",
@@ -187,8 +200,8 @@ func (j *jsiiProxy_MonitorGroup) AttrMonitorGroupName() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_MonitorGroup) AttrServiceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MonitorGroup) AttrServiceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrServiceId",
@@ -197,8 +210,8 @@ func (j *jsiiProxy_MonitorGroup) AttrServiceId() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_MonitorGroup) AttrTags() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MonitorGroup) AttrTags() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTags",
@@ -207,8 +220,8 @@ func (j *jsiiProxy_MonitorGroup) AttrTags() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_MonitorGroup) AttrTemplateIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MonitorGroup) AttrTemplateIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTemplateIds",
@@ -217,8 +230,8 @@ func (j *jsiiProxy_MonitorGroup) AttrTemplateIds() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_MonitorGroup) AttrType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MonitorGroup) AttrType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrType",
@@ -232,6 +245,16 @@ func (j *jsiiProxy_MonitorGroup) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MonitorGroup) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -369,17 +392,6 @@ func (j *jsiiProxy_MonitorGroup)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_MonitorGroup)SetProps(val *MonitorGroupProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_MonitorGroup)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -471,6 +483,45 @@ func (m *jsiiProxy_MonitorGroup) ApplyRemovalPolicy(policy alicloudroscdkcore.Re
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (m *jsiiProxy_MonitorGroup) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		m,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (m *jsiiProxy_MonitorGroup) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		m,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (m *jsiiProxy_MonitorGroup) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		m,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (m *jsiiProxy_MonitorGroup) GeneratePhysicalName() *string {

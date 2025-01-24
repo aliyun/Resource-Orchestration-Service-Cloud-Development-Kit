@@ -25,6 +25,10 @@ type RosAssignIpv6Addresses interface {
 	SetIpv6AddressCount(val interface{})
 	Ipv6Addresses() interface{}
 	SetIpv6Addresses(val interface{})
+	Ipv6PrefixCount() interface{}
+	SetIpv6PrefixCount(val interface{})
+	Ipv6Prefixes() interface{}
+	SetIpv6Prefixes(val interface{})
 	// The logical ID for this stack element.
 	//
 	// The logical ID of the element
@@ -112,6 +116,9 @@ type RosAssignIpv6Addresses interface {
 	AddRosDependency(target *string)
 	// Sets the deletion policy of the resource based on the removal policy specified.
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy, options *alicloudroscdkcore.RemovalPolicyOptions)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDesc() *string
+	FetchRosDependency() *[]*string
 	// Returns a token for an runtime attribute of this resource.
 	//
 	// Ideally, use generated attribute accessors (e.g. `resource.arn`), but this can be used for future compatibility
@@ -239,6 +246,26 @@ func (j *jsiiProxy_RosAssignIpv6Addresses) Ipv6Addresses() interface{} {
 	_jsii_.Get(
 		j,
 		"ipv6Addresses",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosAssignIpv6Addresses) Ipv6PrefixCount() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ipv6PrefixCount",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosAssignIpv6Addresses) Ipv6Prefixes() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ipv6Prefixes",
 		&returns,
 	)
 	return returns
@@ -391,6 +418,28 @@ func (j *jsiiProxy_RosAssignIpv6Addresses)SetIpv6Addresses(val interface{}) {
 	_jsii_.Set(
 		j,
 		"ipv6Addresses",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosAssignIpv6Addresses)SetIpv6PrefixCount(val interface{}) {
+	if err := j.validateSetIpv6PrefixCountParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"ipv6PrefixCount",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosAssignIpv6Addresses)SetIpv6Prefixes(val interface{}) {
+	if err := j.validateSetIpv6PrefixesParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"ipv6Prefixes",
 		val,
 	)
 }
@@ -598,6 +647,45 @@ func (r *jsiiProxy_RosAssignIpv6Addresses) ApplyRemovalPolicy(policy alicloudros
 		"applyRemovalPolicy",
 		[]interface{}{policy, options},
 	)
+}
+
+func (r *jsiiProxy_RosAssignIpv6Addresses) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		r,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_RosAssignIpv6Addresses) FetchDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		r,
+		"fetchDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_RosAssignIpv6Addresses) FetchRosDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		r,
+		"fetchRosDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (r *jsiiProxy_RosAssignIpv6Addresses) GetAtt(attributeName *string) alicloudroscdkcore.Reference {

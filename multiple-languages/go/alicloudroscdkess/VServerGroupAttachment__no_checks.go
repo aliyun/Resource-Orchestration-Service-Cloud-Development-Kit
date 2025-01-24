@@ -52,10 +52,6 @@ func (j *jsiiProxy_VServerGroupAttachment) validateSetIdParameters(val *string) 
 	return nil
 }
 
-func (j *jsiiProxy_VServerGroupAttachment) validateSetPropsParameters(val *VServerGroupAttachmentProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_VServerGroupAttachment) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

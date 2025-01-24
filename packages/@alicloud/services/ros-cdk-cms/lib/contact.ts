@@ -26,20 +26,31 @@ export interface ContactProps {
 }
 
 /**
+ * Represents a `Contact`.
+ */
+export interface IContact extends ros.IResource {
+    readonly props: ContactProps;
+
+    /**
+     * Attribute ContactName: The name of the alarm contact.
+     */
+    readonly attrContactName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::Contact`, which is used to create an alert contact.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosContact`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-contact
  */
-export class Contact extends ros.Resource {
+export class Contact extends ros.Resource implements IContact {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ContactProps;
+    public readonly props: ContactProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ContactName: The name of the alarm contact.
      */
-    public readonly attrContactName: ros.IResolvable;
+    public readonly attrContactName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

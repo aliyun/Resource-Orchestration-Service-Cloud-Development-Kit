@@ -80,20 +80,31 @@ export interface FileSystemProps {
 }
 
 /**
+ * Represents a `FileSystem`.
+ */
+export interface IFileSystem extends ros.IResource {
+    readonly props: FileSystemProps;
+
+    /**
+     * Attribute FileSystemId: The ID of the file system.
+     */
+    readonly attrFileSystemId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::DFS::FileSystem`, which is used to create a file system.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFileSystem`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-filesystem
  */
-export class FileSystem extends ros.Resource {
+export class FileSystem extends ros.Resource implements IFileSystem {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: FileSystemProps;
+    public readonly props: FileSystemProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute FileSystemId: The ID of the file system.
      */
-    public readonly attrFileSystemId: ros.IResolvable;
+    public readonly attrFileSystemId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -56,6 +56,11 @@ export interface DBClusterProps {
     readonly backupSetId?: string | ros.IResolvable;
 
     /**
+     * Property cloneSourceRegionId: The ID of the source region where the cluster is located.
+     */
+    readonly cloneSourceRegionId?: string | ros.IResolvable;
+
+    /**
      * Property dbClusterDescription: The description of the cluster.
      * The description cannot start with http:\/\/ or https:\/\/.
      * The description must be 2 to 256 characters in length
@@ -63,11 +68,29 @@ export interface DBClusterProps {
     readonly dbClusterDescription?: string | ros.IResolvable;
 
     /**
+     * Property dbClusterNetworkType: The network type of the cluster. Valid values:
+     * VPC
+     */
+    readonly dbClusterNetworkType?: string | ros.IResolvable;
+
+    /**
+     * Property diskEncryption: Specifies whether to encrypt the disk. Valid values:
+     * true
+     * false (default)
+     */
+    readonly diskEncryption?: boolean | ros.IResolvable;
+
+    /**
      * Property enableDefaultResourcePool: Specifies whether to allocate all reserved computing resources to the user_default resource group. Valid values:
      * true (default)
      * false
      */
     readonly enableDefaultResourcePool?: boolean | ros.IResolvable;
+
+    /**
+     * Property kmsId:
+     */
+    readonly kmsId?: string | ros.IResolvable;
 
     /**
      * Property period: The subscription duration of the subscription cluster.
@@ -84,6 +107,24 @@ export interface DBClusterProps {
      * Note This parameter must be specified when PayType is set to Prepaid.
      */
     readonly periodType?: string | ros.IResolvable;
+
+    /**
+     * Property productForm: Valid values:
+     * IntegrationForm
+     * LegacyForm
+     */
+    readonly productForm?: string | ros.IResolvable;
+
+    /**
+     * Property reservedNodeCount: The number of reserved nodes. Must be 1 for basic version and multiple 
+     * of 3 for enterprise version.
+     */
+    readonly reservedNodeCount?: number | ros.IResolvable;
+
+    /**
+     * Property reservedNodeSize: The size of each reserved node.
+     */
+    readonly reservedNodeSize?: number | ros.IResolvable;
 
     /**
      * Property resourceGroupId: The resource group ID.
@@ -114,30 +155,51 @@ export interface DBClusterProps {
 }
 
 /**
+ * Represents a `DBCluster`.
+ */
+export interface IDBCluster extends ros.IResource {
+    readonly props: DBClusterProps;
+
+    /**
+     * Attribute ConnectionString: The public endpoint that is used to connect to the cluster.
+     */
+    readonly attrConnectionString: ros.IResolvable | string;
+
+    /**
+     * Attribute DBClusterId: The ID of the AnalyticDB for MySQL Data Lakehouse Edition (V3.0) cluster.
+     */
+    readonly attrDbClusterId: ros.IResolvable | string;
+
+    /**
+     * Attribute OrderId: The order ID.
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ADBLake::DBCluster`, which is used to create an AnalyticDB for MySQL Data Lakehouse Edition (V3.0) cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-dbcluster
  */
-export class DBCluster extends ros.Resource {
+export class DBCluster extends ros.Resource implements IDBCluster {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DBClusterProps;
+    public readonly props: DBClusterProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ConnectionString: The public endpoint that is used to connect to the cluster.
      */
-    public readonly attrConnectionString: ros.IResolvable;
+    public readonly attrConnectionString: ros.IResolvable | string;
 
     /**
      * Attribute DBClusterId: The ID of the AnalyticDB for MySQL Data Lakehouse Edition (V3.0) cluster.
      */
-    public readonly attrDbClusterId: ros.IResolvable;
+    public readonly attrDbClusterId: ros.IResolvable | string;
 
     /**
      * Attribute OrderId: The order ID.
      */
-    public readonly attrOrderId: ros.IResolvable;
+    public readonly attrOrderId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -153,20 +215,27 @@ export class DBCluster extends ros.Resource {
 
         const rosDBCluster = new RosDBCluster(this, id,  {
             periodType: props.periodType,
-            storageResource: props.storageResource,
             enableDefaultResourcePool: props.enableDefaultResourcePool,
+            storageResource: props.storageResource,
             restoreToTime: props.restoreToTime,
+            cloneSourceRegionId: props.cloneSourceRegionId,
             resourceGroupId: props.resourceGroupId,
             zoneId: props.zoneId,
             vpcId: props.vpcId,
             vSwitchId: props.vSwitchId,
             dbClusterDescription: props.dbClusterDescription,
+            productForm: props.productForm,
+            reservedNodeSize: props.reservedNodeSize,
             computeResource: props.computeResource,
             period: props.period,
+            dbClusterNetworkType: props.dbClusterNetworkType,
             payType: props.payType === undefined || props.payType === null ? 'Postpaid' : props.payType,
             backupSetId: props.backupSetId,
             sourceDbClusterId: props.sourceDbClusterId,
+            reservedNodeCount: props.reservedNodeCount,
+            diskEncryption: props.diskEncryption,
             dbClusterVersion: props.dbClusterVersion,
+            kmsId: props.kmsId,
             restoreType: props.restoreType,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

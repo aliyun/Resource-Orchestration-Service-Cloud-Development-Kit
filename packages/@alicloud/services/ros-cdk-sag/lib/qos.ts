@@ -25,20 +25,31 @@ export interface QosProps {
 }
 
 /**
+ * Represents a `Qos`.
+ */
+export interface IQos extends ros.IResource {
+    readonly props: QosProps;
+
+    /**
+     * Attribute QosId: The ID of the QoS policy.
+     */
+    readonly attrQosId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::Qos`ALIYUN::SAG::QoS is used to create a quality of service (QoS) policy for a Smart Access Gateway (SAG) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosQos`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qos
  */
-export class Qos extends ros.Resource {
+export class Qos extends ros.Resource implements IQos {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: QosProps;
+    public readonly props: QosProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute QosId: The ID of the QoS policy.
      */
-    public readonly attrQosId: ros.IResolvable;
+    public readonly attrQosId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -29,65 +29,121 @@ export interface TopicProps {
 }
 
 /**
+ * Represents a `Topic`.
+ */
+export interface ITopic extends ros.IResource {
+    readonly props: TopicProps;
+
+    /**
+     * Attribute CompactTopic: Can log merge.
+     */
+    readonly attrCompactTopic: ros.IResolvable | string;
+
+    /**
+     * Attribute CreateTime: Creation time.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: Resource id.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute LocalTopic: Whether to store locally.
+     */
+    readonly attrLocalTopic: ros.IResolvable | string;
+
+    /**
+     * Attribute PartitionNum: Number of partitions.
+     */
+    readonly attrPartitionNum: ros.IResolvable | string;
+
+    /**
+     * Attribute Remark: Remarks.
+     */
+    readonly attrRemark: ros.IResolvable | string;
+
+    /**
+     * Attribute StatusName: Meaning of status value.
+     */
+    readonly attrStatusName: ros.IResolvable | string;
+
+    /**
+     * Attribute Tags: The tag of the kafka console, which is used to group instance,topic, and consumption.
+     */
+    readonly attrTags: ros.IResolvable | string;
+
+    /**
+     * Attribute Topic: Topic Name.
+     */
+    readonly attrTopic: ros.IResolvable | string;
+
+    /**
+     * Attribute TopicStatus: The Topic status.
+     */
+    readonly attrTopicStatus: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::KAFKA::Topic`, which is used to query the information about a topic.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTopic`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kafka-topic
  */
-export class Topic extends ros.Resource {
+export class Topic extends ros.Resource implements ITopic {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: TopicProps;
+    public readonly props: TopicProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CompactTopic: Can log merge.
      */
-    public readonly attrCompactTopic: ros.IResolvable;
+    public readonly attrCompactTopic: ros.IResolvable | string;
 
     /**
      * Attribute CreateTime: Creation time.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: Resource id.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute LocalTopic: Whether to store locally.
      */
-    public readonly attrLocalTopic: ros.IResolvable;
+    public readonly attrLocalTopic: ros.IResolvable | string;
 
     /**
      * Attribute PartitionNum: Number of partitions.
      */
-    public readonly attrPartitionNum: ros.IResolvable;
+    public readonly attrPartitionNum: ros.IResolvable | string;
 
     /**
      * Attribute Remark: Remarks.
      */
-    public readonly attrRemark: ros.IResolvable;
+    public readonly attrRemark: ros.IResolvable | string;
 
     /**
      * Attribute StatusName: Meaning of status value.
      */
-    public readonly attrStatusName: ros.IResolvable;
+    public readonly attrStatusName: ros.IResolvable | string;
 
     /**
      * Attribute Tags: The tag of the kafka console, which is used to group instance,topic, and consumption.
      */
-    public readonly attrTags: ros.IResolvable;
+    public readonly attrTags: ros.IResolvable | string;
 
     /**
      * Attribute Topic: Topic Name.
      */
-    public readonly attrTopic: ros.IResolvable;
+    public readonly attrTopic: ros.IResolvable | string;
 
     /**
      * Attribute TopicStatus: The Topic status.
      */
-    public readonly attrTopicStatus: ros.IResolvable;
+    public readonly attrTopicStatus: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

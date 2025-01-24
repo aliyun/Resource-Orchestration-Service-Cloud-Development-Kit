@@ -66,20 +66,31 @@ export interface SnapshotProps {
 }
 
 /**
+ * Represents a `Snapshot`.
+ */
+export interface ISnapshot extends ros.IResource {
+    readonly props: SnapshotProps;
+
+    /**
+     * Attribute SnapshotId: The snapshot ID.
+     */
+    readonly attrSnapshotId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Snapshot`, which is used to create a snapshot for a disk.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSnapshot`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snapshot
  */
-export class Snapshot extends ros.Resource {
+export class Snapshot extends ros.Resource implements ISnapshot {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SnapshotProps;
+    public readonly props: SnapshotProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SnapshotId: The snapshot ID.
      */
-    public readonly attrSnapshotId: ros.IResolvable;
+    public readonly attrSnapshotId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

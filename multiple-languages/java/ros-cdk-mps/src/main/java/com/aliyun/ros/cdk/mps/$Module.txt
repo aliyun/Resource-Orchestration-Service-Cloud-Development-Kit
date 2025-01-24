@@ -1,3 +1,5 @@
+@alicloud/ros-cdk-mps.IMediaWorkflow=com.aliyun.ros.cdk.mps.IMediaWorkflow
+@alicloud/ros-cdk-mps.IPipeline=com.aliyun.ros.cdk.mps.IPipeline
 @alicloud/ros-cdk-mps.MediaWorkflow=com.aliyun.ros.cdk.mps.MediaWorkflow
 @alicloud/ros-cdk-mps.MediaWorkflowProps=com.aliyun.ros.cdk.mps.MediaWorkflowProps
 @alicloud/ros-cdk-mps.Pipeline=com.aliyun.ros.cdk.mps.Pipeline

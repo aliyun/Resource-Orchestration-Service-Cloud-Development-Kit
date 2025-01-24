@@ -36,20 +36,31 @@ export interface CustomDomainProps {
 }
 
 /**
+ * Represents a `CustomDomain`.
+ */
+export interface ICustomDomain extends ros.IResource {
+    readonly props: CustomDomainProps;
+
+    /**
+     * Attribute CertificateId: The id of the certificate.
+     */
+    readonly attrCertificateId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::CustomDomain`, which is used to bind a custom domain name and upload a Secure Sockets Layer (SSL) certificate to a specific API group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCustomDomain`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-customdomain
  */
-export class CustomDomain extends ros.Resource {
+export class CustomDomain extends ros.Resource implements ICustomDomain {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: CustomDomainProps;
+    public readonly props: CustomDomainProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CertificateId: The id of the certificate.
      */
-    public readonly attrCertificateId: ros.IResolvable;
+    public readonly attrCertificateId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -46,55 +46,101 @@ export interface FlowLogProps {
 }
 
 /**
+ * Represents a `FlowLog`.
+ */
+export interface IFlowLog extends ros.IResource {
+    readonly props: FlowLogProps;
+
+    /**
+     * Attribute Description: The Description of flow log.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute FlowLogId: The flow log ID.
+     */
+    readonly attrFlowLogId: ros.IResolvable | string;
+
+    /**
+     * Attribute FlowLogName: The flow log name.
+     */
+    readonly attrFlowLogName: ros.IResolvable | string;
+
+    /**
+     * Attribute LogStoreName: The log store name.
+     */
+    readonly attrLogStoreName: ros.IResolvable | string;
+
+    /**
+     * Attribute ProjectName: The project name.
+     */
+    readonly attrProjectName: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceId: The resource id.
+     */
+    readonly attrResourceId: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceType: The resource type.
+     */
+    readonly attrResourceType: ros.IResolvable | string;
+
+    /**
+     * Attribute TrafficType: The traffic type.
+     */
+    readonly attrTrafficType: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::FlowLog`, which is used to create a flow log.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFlowLog`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-flowlog
  */
-export class FlowLog extends ros.Resource {
+export class FlowLog extends ros.Resource implements IFlowLog {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: FlowLogProps;
+    public readonly props: FlowLogProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Description: The Description of flow log.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute FlowLogId: The flow log ID.
      */
-    public readonly attrFlowLogId: ros.IResolvable;
+    public readonly attrFlowLogId: ros.IResolvable | string;
 
     /**
      * Attribute FlowLogName: The flow log name.
      */
-    public readonly attrFlowLogName: ros.IResolvable;
+    public readonly attrFlowLogName: ros.IResolvable | string;
 
     /**
      * Attribute LogStoreName: The log store name.
      */
-    public readonly attrLogStoreName: ros.IResolvable;
+    public readonly attrLogStoreName: ros.IResolvable | string;
 
     /**
      * Attribute ProjectName: The project name.
      */
-    public readonly attrProjectName: ros.IResolvable;
+    public readonly attrProjectName: ros.IResolvable | string;
 
     /**
      * Attribute ResourceId: The resource id.
      */
-    public readonly attrResourceId: ros.IResolvable;
+    public readonly attrResourceId: ros.IResolvable | string;
 
     /**
      * Attribute ResourceType: The resource type.
      */
-    public readonly attrResourceType: ros.IResolvable;
+    public readonly attrResourceType: ros.IResolvable | string;
 
     /**
      * Attribute TrafficType: The traffic type.
      */
-    public readonly attrTrafficType: ros.IResolvable;
+    public readonly attrTrafficType: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

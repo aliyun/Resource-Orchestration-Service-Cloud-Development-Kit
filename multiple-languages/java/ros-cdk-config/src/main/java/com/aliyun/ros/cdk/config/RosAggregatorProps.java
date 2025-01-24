@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.config;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-aggregator
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:05.860Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:36.329Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.RosAggregatorProps")
 @software.amazon.jsii.Jsii.Proxy(RosAggregatorProps.Jsii$Proxy.class)
 public interface RosAggregatorProps extends software.amazon.jsii.JsiiSerializable {
@@ -31,6 +31,12 @@ public interface RosAggregatorProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getFolderId() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosAggregatorProps}
      */
     static Builder builder() {
@@ -44,6 +50,7 @@ public interface RosAggregatorProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object description;
         java.lang.Object aggregatorAccounts;
         java.lang.Object aggregatorType;
+        java.lang.Object folderId;
 
         /**
          * Sets the value of {@link RosAggregatorProps#getAggregatorName}
@@ -126,6 +133,26 @@ public interface RosAggregatorProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosAggregatorProps#getFolderId}
+         * @param folderId the value to be set.
+         * @return {@code this}
+         */
+        public Builder folderId(java.lang.String folderId) {
+            this.folderId = folderId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAggregatorProps#getFolderId}
+         * @param folderId the value to be set.
+         * @return {@code this}
+         */
+        public Builder folderId(com.aliyun.ros.cdk.core.IResolvable folderId) {
+            this.folderId = folderId;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosAggregatorProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -145,6 +172,7 @@ public interface RosAggregatorProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object description;
         private final java.lang.Object aggregatorAccounts;
         private final java.lang.Object aggregatorType;
+        private final java.lang.Object folderId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -156,6 +184,7 @@ public interface RosAggregatorProps extends software.amazon.jsii.JsiiSerializabl
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.aggregatorAccounts = software.amazon.jsii.Kernel.get(this, "aggregatorAccounts", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.aggregatorType = software.amazon.jsii.Kernel.get(this, "aggregatorType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.folderId = software.amazon.jsii.Kernel.get(this, "folderId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -167,6 +196,7 @@ public interface RosAggregatorProps extends software.amazon.jsii.JsiiSerializabl
             this.description = java.util.Objects.requireNonNull(builder.description, "description is required");
             this.aggregatorAccounts = builder.aggregatorAccounts;
             this.aggregatorType = builder.aggregatorType;
+            this.folderId = builder.folderId;
         }
 
         @Override
@@ -190,6 +220,11 @@ public interface RosAggregatorProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getFolderId() {
+            return this.folderId;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -202,6 +237,9 @@ public interface RosAggregatorProps extends software.amazon.jsii.JsiiSerializabl
             }
             if (this.getAggregatorType() != null) {
                 data.set("aggregatorType", om.valueToTree(this.getAggregatorType()));
+            }
+            if (this.getFolderId() != null) {
+                data.set("folderId", om.valueToTree(this.getFolderId()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -224,7 +262,8 @@ public interface RosAggregatorProps extends software.amazon.jsii.JsiiSerializabl
             if (!aggregatorName.equals(that.aggregatorName)) return false;
             if (!description.equals(that.description)) return false;
             if (this.aggregatorAccounts != null ? !this.aggregatorAccounts.equals(that.aggregatorAccounts) : that.aggregatorAccounts != null) return false;
-            return this.aggregatorType != null ? this.aggregatorType.equals(that.aggregatorType) : that.aggregatorType == null;
+            if (this.aggregatorType != null ? !this.aggregatorType.equals(that.aggregatorType) : that.aggregatorType != null) return false;
+            return this.folderId != null ? this.folderId.equals(that.folderId) : that.folderId == null;
         }
 
         @Override
@@ -233,6 +272,7 @@ public interface RosAggregatorProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.description.hashCode());
             result = 31 * result + (this.aggregatorAccounts != null ? this.aggregatorAccounts.hashCode() : 0);
             result = 31 * result + (this.aggregatorType != null ? this.aggregatorType.hashCode() : 0);
+            result = 31 * result + (this.folderId != null ? this.folderId.hashCode() : 0);
             return result;
         }
     }

@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::FNF::Schedules`, which is used to query time-based schedules.
 type Schedules interface {
 	alicloudroscdkcore.Resource
+	ISchedules
 	// Attribute ScheduleNames: The list of schedule names.
-	AttrScheduleNames() alicloudroscdkcore.IResolvable
+	AttrScheduleNames() interface{}
 	// Attribute Schedules: The queried time-based schedules.
-	AttrSchedules() alicloudroscdkcore.IResolvable
+	AttrSchedules() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type Schedules interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *SchedulesProps
-	SetProps(val *SchedulesProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type Schedules interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type Schedules interface {
 // The jsii proxy struct for Schedules
 type jsiiProxy_Schedules struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ISchedules
 }
 
-func (j *jsiiProxy_Schedules) AttrScheduleNames() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Schedules) AttrScheduleNames() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrScheduleNames",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_Schedules) AttrScheduleNames() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Schedules) AttrSchedules() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Schedules) AttrSchedules() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSchedules",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_Schedules) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Schedules) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_Schedules)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Schedules)SetProps(val *SchedulesProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Schedules)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (s *jsiiProxy_Schedules) ApplyRemovalPolicy(policy alicloudroscdkcore.Remov
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (s *jsiiProxy_Schedules) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		s,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_Schedules) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_Schedules) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (s *jsiiProxy_Schedules) GeneratePhysicalName() *string {

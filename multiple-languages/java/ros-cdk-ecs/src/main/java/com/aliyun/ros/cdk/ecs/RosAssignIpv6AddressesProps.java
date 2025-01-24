@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-assignipv6addresses
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:07.185Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:38.141Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosAssignIpv6AddressesProps")
 @software.amazon.jsii.Jsii.Proxy(RosAssignIpv6AddressesProps.Jsii$Proxy.class)
 public interface RosAssignIpv6AddressesProps extends software.amazon.jsii.JsiiSerializable {
@@ -27,6 +27,18 @@ public interface RosAssignIpv6AddressesProps extends software.amazon.jsii.JsiiSe
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6PrefixCount() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6Prefixes() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosAssignIpv6AddressesProps}
      */
     static Builder builder() {
@@ -39,6 +51,8 @@ public interface RosAssignIpv6AddressesProps extends software.amazon.jsii.JsiiSe
         java.lang.Object networkInterfaceId;
         java.lang.Object ipv6AddressCount;
         java.lang.Object ipv6Addresses;
+        java.lang.Object ipv6PrefixCount;
+        java.lang.Object ipv6Prefixes;
 
         /**
          * Sets the value of {@link RosAssignIpv6AddressesProps#getNetworkInterfaceId}
@@ -101,6 +115,46 @@ public interface RosAssignIpv6AddressesProps extends software.amazon.jsii.JsiiSe
         }
 
         /**
+         * Sets the value of {@link RosAssignIpv6AddressesProps#getIpv6PrefixCount}
+         * @param ipv6PrefixCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipv6PrefixCount(java.lang.Number ipv6PrefixCount) {
+            this.ipv6PrefixCount = ipv6PrefixCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAssignIpv6AddressesProps#getIpv6PrefixCount}
+         * @param ipv6PrefixCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipv6PrefixCount(com.aliyun.ros.cdk.core.IResolvable ipv6PrefixCount) {
+            this.ipv6PrefixCount = ipv6PrefixCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAssignIpv6AddressesProps#getIpv6Prefixes}
+         * @param ipv6Prefixes the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipv6Prefixes(java.util.List<? extends java.lang.Object> ipv6Prefixes) {
+            this.ipv6Prefixes = ipv6Prefixes;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAssignIpv6AddressesProps#getIpv6Prefixes}
+         * @param ipv6Prefixes the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipv6Prefixes(com.aliyun.ros.cdk.core.IResolvable ipv6Prefixes) {
+            this.ipv6Prefixes = ipv6Prefixes;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosAssignIpv6AddressesProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -119,6 +173,8 @@ public interface RosAssignIpv6AddressesProps extends software.amazon.jsii.JsiiSe
         private final java.lang.Object networkInterfaceId;
         private final java.lang.Object ipv6AddressCount;
         private final java.lang.Object ipv6Addresses;
+        private final java.lang.Object ipv6PrefixCount;
+        private final java.lang.Object ipv6Prefixes;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -129,6 +185,8 @@ public interface RosAssignIpv6AddressesProps extends software.amazon.jsii.JsiiSe
             this.networkInterfaceId = software.amazon.jsii.Kernel.get(this, "networkInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ipv6AddressCount = software.amazon.jsii.Kernel.get(this, "ipv6AddressCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ipv6Addresses = software.amazon.jsii.Kernel.get(this, "ipv6Addresses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipv6PrefixCount = software.amazon.jsii.Kernel.get(this, "ipv6PrefixCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipv6Prefixes = software.amazon.jsii.Kernel.get(this, "ipv6Prefixes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -139,6 +197,8 @@ public interface RosAssignIpv6AddressesProps extends software.amazon.jsii.JsiiSe
             this.networkInterfaceId = java.util.Objects.requireNonNull(builder.networkInterfaceId, "networkInterfaceId is required");
             this.ipv6AddressCount = builder.ipv6AddressCount;
             this.ipv6Addresses = builder.ipv6Addresses;
+            this.ipv6PrefixCount = builder.ipv6PrefixCount;
+            this.ipv6Prefixes = builder.ipv6Prefixes;
         }
 
         @Override
@@ -157,6 +217,16 @@ public interface RosAssignIpv6AddressesProps extends software.amazon.jsii.JsiiSe
         }
 
         @Override
+        public final java.lang.Object getIpv6PrefixCount() {
+            return this.ipv6PrefixCount;
+        }
+
+        @Override
+        public final java.lang.Object getIpv6Prefixes() {
+            return this.ipv6Prefixes;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -168,6 +238,12 @@ public interface RosAssignIpv6AddressesProps extends software.amazon.jsii.JsiiSe
             }
             if (this.getIpv6Addresses() != null) {
                 data.set("ipv6Addresses", om.valueToTree(this.getIpv6Addresses()));
+            }
+            if (this.getIpv6PrefixCount() != null) {
+                data.set("ipv6PrefixCount", om.valueToTree(this.getIpv6PrefixCount()));
+            }
+            if (this.getIpv6Prefixes() != null) {
+                data.set("ipv6Prefixes", om.valueToTree(this.getIpv6Prefixes()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -189,7 +265,9 @@ public interface RosAssignIpv6AddressesProps extends software.amazon.jsii.JsiiSe
 
             if (!networkInterfaceId.equals(that.networkInterfaceId)) return false;
             if (this.ipv6AddressCount != null ? !this.ipv6AddressCount.equals(that.ipv6AddressCount) : that.ipv6AddressCount != null) return false;
-            return this.ipv6Addresses != null ? this.ipv6Addresses.equals(that.ipv6Addresses) : that.ipv6Addresses == null;
+            if (this.ipv6Addresses != null ? !this.ipv6Addresses.equals(that.ipv6Addresses) : that.ipv6Addresses != null) return false;
+            if (this.ipv6PrefixCount != null ? !this.ipv6PrefixCount.equals(that.ipv6PrefixCount) : that.ipv6PrefixCount != null) return false;
+            return this.ipv6Prefixes != null ? this.ipv6Prefixes.equals(that.ipv6Prefixes) : that.ipv6Prefixes == null;
         }
 
         @Override
@@ -197,6 +275,8 @@ public interface RosAssignIpv6AddressesProps extends software.amazon.jsii.JsiiSe
             int result = this.networkInterfaceId.hashCode();
             result = 31 * result + (this.ipv6AddressCount != null ? this.ipv6AddressCount.hashCode() : 0);
             result = 31 * result + (this.ipv6Addresses != null ? this.ipv6Addresses.hashCode() : 0);
+            result = 31 * result + (this.ipv6PrefixCount != null ? this.ipv6PrefixCount.hashCode() : 0);
+            result = 31 * result + (this.ipv6Prefixes != null ? this.ipv6Prefixes.hashCode() : 0);
             return result;
         }
     }

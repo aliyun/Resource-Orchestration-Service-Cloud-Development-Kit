@@ -31,14 +31,20 @@ export interface AccessConfigurationProvisionProps {
 }
 
 /**
+ * Represents a `AccessConfigurationProvision`.
+ */
+export interface IAccessConfigurationProvision extends ros.IResource {
+    readonly props: AccessConfigurationProvisionProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::AccessConfigurationProvision`, which is used to provision an access configuration for an account in your resource directory.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccessConfigurationProvision`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-accessconfigurationprovision
  */
-export class AccessConfigurationProvision extends ros.Resource {
+export class AccessConfigurationProvision extends ros.Resource implements IAccessConfigurationProvision {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AccessConfigurationProvisionProps;
+    public readonly props: AccessConfigurationProvisionProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

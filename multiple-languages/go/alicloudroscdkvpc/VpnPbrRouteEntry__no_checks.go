@@ -52,10 +52,6 @@ func (j *jsiiProxy_VpnPbrRouteEntry) validateSetIdParameters(val *string) error 
 	return nil
 }
 
-func (j *jsiiProxy_VpnPbrRouteEntry) validateSetPropsParameters(val *VpnPbrRouteEntryProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_VpnPbrRouteEntry) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

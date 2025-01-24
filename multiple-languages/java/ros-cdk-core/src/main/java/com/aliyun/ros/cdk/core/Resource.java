@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * A construct which represents a resource.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:03.699Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:33.720Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Resource")
 public abstract class Resource extends com.aliyun.ros.cdk.core.Construct implements com.aliyun.ros.cdk.core.IResource {
 
@@ -58,6 +58,18 @@ public abstract class Resource extends com.aliyun.ros.cdk.core.Construct impleme
         software.amazon.jsii.Kernel.call(this, "applyRemovalPolicy", software.amazon.jsii.NativeType.VOID, new Object[] { java.util.Objects.requireNonNull(policy, "policy is required") });
     }
 
+    public @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.RosCondition fetchCondition() {
+        return software.amazon.jsii.Kernel.call(this, "fetchCondition", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.RosCondition.class));
+    }
+
+    public @org.jetbrains.annotations.Nullable java.util.List<java.lang.String> fetchDependency() {
+        return java.util.Optional.ofNullable((java.util.List<java.lang.String>)(software.amazon.jsii.Kernel.call(this, "fetchDependency", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class))))).map(java.util.Collections::unmodifiableList).orElse(null);
+    }
+
+    public @org.jetbrains.annotations.Nullable java.lang.String fetchResourceDesc() {
+        return software.amazon.jsii.Kernel.call(this, "fetchResourceDesc", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    }
+
     protected @org.jetbrains.annotations.NotNull java.lang.String generatePhysicalName() {
         return software.amazon.jsii.Kernel.call(this, "generatePhysicalName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
     }
@@ -68,6 +80,21 @@ public abstract class Resource extends com.aliyun.ros.cdk.core.Construct impleme
 
     public void setMetadata(final @org.jetbrains.annotations.NotNull java.lang.String key, final @org.jetbrains.annotations.NotNull java.lang.Object value) {
         software.amazon.jsii.Kernel.call(this, "setMetadata", software.amazon.jsii.NativeType.VOID, new Object[] { java.util.Objects.requireNonNull(key, "key is required"), value });
+    }
+
+    /**
+     * The environment this resource belongs to.
+     * <p>
+     * For resources that are created and managed by the CDK
+     * (generally, those created by creating new class instances like Role, Bucket, etc.),
+     * this is always the same as the environment of the stack they belong to;
+     * however, for imported resources
+     * (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+     * that might be different than the stack they were imported into.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.ResourceEnvironment getEnv() {
+        return software.amazon.jsii.Kernel.get(this, "env", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.ResourceEnvironment.class));
     }
 
     /**

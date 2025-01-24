@@ -267,40 +267,71 @@ export interface K8sApplicationProps {
 }
 
 /**
+ * Represents a `K8sApplication`.
+ */
+export interface IK8sApplication extends ros.IResource {
+    readonly props: K8sApplicationProps;
+
+    /**
+     * Attribute AppId: The ID of the application.
+     */
+    readonly attrAppId: ros.IResolvable | string;
+
+    /**
+     * Attribute AppName: The name of the application.
+     */
+    readonly attrAppName: ros.IResolvable | string;
+
+    /**
+     * Attribute ChangeOrderId: The ID of the change process.
+     */
+    readonly attrChangeOrderId: ros.IResolvable | string;
+
+    /**
+     * Attribute ClusterId: The cluster ID of the application.
+     */
+    readonly attrClusterId: ros.IResolvable | string;
+
+    /**
+     * Attribute CsClusterId: The K8s cluster ID of the application.
+     */
+    readonly attrCsClusterId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::K8sApplication`, which is used to create an application in a Kubernetes cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosK8sApplication`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8sapplication
  */
-export class K8sApplication extends ros.Resource {
+export class K8sApplication extends ros.Resource implements IK8sApplication {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: K8sApplicationProps;
+    public readonly props: K8sApplicationProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AppId: The ID of the application.
      */
-    public readonly attrAppId: ros.IResolvable;
+    public readonly attrAppId: ros.IResolvable | string;
 
     /**
      * Attribute AppName: The name of the application.
      */
-    public readonly attrAppName: ros.IResolvable;
+    public readonly attrAppName: ros.IResolvable | string;
 
     /**
      * Attribute ChangeOrderId: The ID of the change process.
      */
-    public readonly attrChangeOrderId: ros.IResolvable;
+    public readonly attrChangeOrderId: ros.IResolvable | string;
 
     /**
      * Attribute ClusterId: The cluster ID of the application.
      */
-    public readonly attrClusterId: ros.IResolvable;
+    public readonly attrClusterId: ros.IResolvable | string;
 
     /**
      * Attribute CsClusterId: The K8s cluster ID of the application.
      */
-    public readonly attrCsClusterId: ros.IResolvable;
+    public readonly attrCsClusterId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -12,72 +12,82 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ClickHouse::DBCluster`, which is used to create an ApsaraDB for ClickHouse cluster.
 type DBCluster interface {
 	alicloudroscdkcore.Resource
+	IDBCluster
 	// Attribute AliUid: AliUid.
-	AttrAliUid() alicloudroscdkcore.IResolvable
+	AttrAliUid() interface{}
 	// Attribute Bid: BusinessID.
-	AttrBid() alicloudroscdkcore.IResolvable
+	AttrBid() interface{}
 	// Attribute Category: The edition of the cluster.
-	AttrCategory() alicloudroscdkcore.IResolvable
+	AttrCategory() interface{}
 	// Attribute CommodityCode: Product Code.
-	AttrCommodityCode() alicloudroscdkcore.IResolvable
+	AttrCommodityCode() interface{}
 	// Attribute ConnectionString: ConnectionString.
-	AttrConnectionString() alicloudroscdkcore.IResolvable
+	AttrConnectionString() interface{}
 	// Attribute DBClusterDescription: The description of the cluster.
-	AttrDbClusterDescription() alicloudroscdkcore.IResolvable
+	AttrDbClusterDescription() interface{}
 	// Attribute DBClusterId: The id of DBCluster.
-	AttrDbClusterId() alicloudroscdkcore.IResolvable
+	AttrDbClusterId() interface{}
 	// Attribute DBClusterNetworkType: Network type of the cluster instance, value: VPC.
-	AttrDbClusterNetworkType() alicloudroscdkcore.IResolvable
+	AttrDbClusterNetworkType() interface{}
 	// Attribute DBClusterType: The specification of the cluster.
-	AttrDbClusterType() alicloudroscdkcore.IResolvable
+	AttrDbClusterType() interface{}
 	// Attribute DBClusterVersion: Version, value:  19.15.2.2.
-	AttrDbClusterVersion() alicloudroscdkcore.IResolvable
+	AttrDbClusterVersion() interface{}
 	// Attribute DBNodeClass: DBNodeClass.
-	AttrDbNodeClass() alicloudroscdkcore.IResolvable
+	AttrDbNodeClass() interface{}
 	// Attribute DBNodeCount: The number of nodes.
-	AttrDbNodeCount() alicloudroscdkcore.IResolvable
+	AttrDbNodeCount() interface{}
 	// Attribute DBNodeStorage: The storage capacity of a single node.
-	AttrDbNodeStorage() alicloudroscdkcore.IResolvable
+	AttrDbNodeStorage() interface{}
 	// Attribute DbNodeStorageType: Instance node storage type.
 	//
 	// Valid values:  cloud_essd, cloud_efficiency.
-	AttrDbNodeStorageType() alicloudroscdkcore.IResolvable
+	AttrDbNodeStorageType() interface{}
 	// Attribute EncryptionKey: KMS key ID.
-	AttrEncryptionKey() alicloudroscdkcore.IResolvable
+	AttrEncryptionKey() interface{}
 	// Attribute EncryptionType: Kms key type, only cloud disk encryption is supported and the value is CloudDisk.
-	AttrEncryptionType() alicloudroscdkcore.IResolvable
+	AttrEncryptionType() interface{}
 	// Attribute Engine: Engine.
-	AttrEngine() alicloudroscdkcore.IResolvable
+	AttrEngine() interface{}
 	// Attribute EngineVersion: EngineVersion.
-	AttrEngineVersion() alicloudroscdkcore.IResolvable
+	AttrEngineVersion() interface{}
 	// Attribute IsExpired: IsExpired.
-	AttrIsExpired() alicloudroscdkcore.IResolvable
+	AttrIsExpired() interface{}
 	// Attribute LockMode: LockMode.
-	AttrLockMode() alicloudroscdkcore.IResolvable
+	AttrLockMode() interface{}
 	// Attribute LockReason: Reason for lock.
-	AttrLockReason() alicloudroscdkcore.IResolvable
+	AttrLockReason() interface{}
 	// Attribute PaymentType: PayType.
-	AttrPaymentType() alicloudroscdkcore.IResolvable
+	AttrPaymentType() interface{}
 	// Attribute Period: Prepaid time period.If the payment type is Prepaid, this parameter is mandatory. Specify the prepaid cluster as a yearly or monthly type. Valid values:  Year, Month.
-	AttrPeriod() alicloudroscdkcore.IResolvable
+	AttrPeriod() interface{}
 	// Attribute Port: Connection port.
-	AttrPort() alicloudroscdkcore.IResolvable
+	AttrPort() interface{}
 	// Attribute PublicConnectionString: Internet connection address.
-	AttrPublicConnectionString() alicloudroscdkcore.IResolvable
+	AttrPublicConnectionString() interface{}
 	// Attribute PublicPort: PublicPort.
-	AttrPublicPort() alicloudroscdkcore.IResolvable
+	AttrPublicPort() interface{}
 	// Attribute StorageType: StorageType.
-	AttrStorageType() alicloudroscdkcore.IResolvable
+	AttrStorageType() interface{}
 	// Attribute VpcCloudInstanceId: VpcCloudInstanceId.
-	AttrVpcCloudInstanceId() alicloudroscdkcore.IResolvable
+	AttrVpcCloudInstanceId() interface{}
 	// Attribute VpcId: VpcId.
-	AttrVpcId() alicloudroscdkcore.IResolvable
+	AttrVpcId() interface{}
 	// Attribute VSwitchId: VSwitchId.
-	AttrVSwitchId() alicloudroscdkcore.IResolvable
+	AttrVSwitchId() interface{}
 	// Attribute ZoneId: ZoneId.
-	AttrZoneId() alicloudroscdkcore.IResolvable
+	AttrZoneId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -92,7 +102,6 @@ type DBCluster interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DBClusterProps
-	SetProps(val *DBClusterProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -105,6 +114,9 @@ type DBCluster interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -157,10 +169,11 @@ type DBCluster interface {
 // The jsii proxy struct for DBCluster
 type jsiiProxy_DBCluster struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDBCluster
 }
 
-func (j *jsiiProxy_DBCluster) AttrAliUid() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrAliUid() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAliUid",
@@ -169,8 +182,8 @@ func (j *jsiiProxy_DBCluster) AttrAliUid() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrBid() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrBid() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBid",
@@ -179,8 +192,8 @@ func (j *jsiiProxy_DBCluster) AttrBid() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrCategory() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrCategory() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCategory",
@@ -189,8 +202,8 @@ func (j *jsiiProxy_DBCluster) AttrCategory() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrCommodityCode() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrCommodityCode() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCommodityCode",
@@ -199,8 +212,8 @@ func (j *jsiiProxy_DBCluster) AttrCommodityCode() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrConnectionString() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrConnectionString() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrConnectionString",
@@ -209,8 +222,8 @@ func (j *jsiiProxy_DBCluster) AttrConnectionString() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrDbClusterDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrDbClusterDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbClusterDescription",
@@ -219,8 +232,8 @@ func (j *jsiiProxy_DBCluster) AttrDbClusterDescription() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrDbClusterId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrDbClusterId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbClusterId",
@@ -229,8 +242,8 @@ func (j *jsiiProxy_DBCluster) AttrDbClusterId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrDbClusterNetworkType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrDbClusterNetworkType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbClusterNetworkType",
@@ -239,8 +252,8 @@ func (j *jsiiProxy_DBCluster) AttrDbClusterNetworkType() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrDbClusterType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrDbClusterType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbClusterType",
@@ -249,8 +262,8 @@ func (j *jsiiProxy_DBCluster) AttrDbClusterType() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrDbClusterVersion() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrDbClusterVersion() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbClusterVersion",
@@ -259,8 +272,8 @@ func (j *jsiiProxy_DBCluster) AttrDbClusterVersion() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrDbNodeClass() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrDbNodeClass() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbNodeClass",
@@ -269,8 +282,8 @@ func (j *jsiiProxy_DBCluster) AttrDbNodeClass() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrDbNodeCount() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrDbNodeCount() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbNodeCount",
@@ -279,8 +292,8 @@ func (j *jsiiProxy_DBCluster) AttrDbNodeCount() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrDbNodeStorage() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrDbNodeStorage() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbNodeStorage",
@@ -289,8 +302,8 @@ func (j *jsiiProxy_DBCluster) AttrDbNodeStorage() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrDbNodeStorageType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrDbNodeStorageType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbNodeStorageType",
@@ -299,8 +312,8 @@ func (j *jsiiProxy_DBCluster) AttrDbNodeStorageType() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrEncryptionKey() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrEncryptionKey() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEncryptionKey",
@@ -309,8 +322,8 @@ func (j *jsiiProxy_DBCluster) AttrEncryptionKey() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrEncryptionType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrEncryptionType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEncryptionType",
@@ -319,8 +332,8 @@ func (j *jsiiProxy_DBCluster) AttrEncryptionType() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrEngine() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrEngine() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEngine",
@@ -329,8 +342,8 @@ func (j *jsiiProxy_DBCluster) AttrEngine() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrEngineVersion() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrEngineVersion() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEngineVersion",
@@ -339,8 +352,8 @@ func (j *jsiiProxy_DBCluster) AttrEngineVersion() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrIsExpired() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrIsExpired() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIsExpired",
@@ -349,8 +362,8 @@ func (j *jsiiProxy_DBCluster) AttrIsExpired() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrLockMode() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrLockMode() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLockMode",
@@ -359,8 +372,8 @@ func (j *jsiiProxy_DBCluster) AttrLockMode() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrLockReason() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrLockReason() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLockReason",
@@ -369,8 +382,8 @@ func (j *jsiiProxy_DBCluster) AttrLockReason() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrPaymentType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrPaymentType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPaymentType",
@@ -379,8 +392,8 @@ func (j *jsiiProxy_DBCluster) AttrPaymentType() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrPeriod() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrPeriod() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPeriod",
@@ -389,8 +402,8 @@ func (j *jsiiProxy_DBCluster) AttrPeriod() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrPort() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrPort() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPort",
@@ -399,8 +412,8 @@ func (j *jsiiProxy_DBCluster) AttrPort() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrPublicConnectionString() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrPublicConnectionString() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPublicConnectionString",
@@ -409,8 +422,8 @@ func (j *jsiiProxy_DBCluster) AttrPublicConnectionString() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrPublicPort() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrPublicPort() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPublicPort",
@@ -419,8 +432,8 @@ func (j *jsiiProxy_DBCluster) AttrPublicPort() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrStorageType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrStorageType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStorageType",
@@ -429,8 +442,8 @@ func (j *jsiiProxy_DBCluster) AttrStorageType() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrVpcCloudInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrVpcCloudInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVpcCloudInstanceId",
@@ -439,8 +452,8 @@ func (j *jsiiProxy_DBCluster) AttrVpcCloudInstanceId() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrVpcId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrVpcId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVpcId",
@@ -449,8 +462,8 @@ func (j *jsiiProxy_DBCluster) AttrVpcId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrVSwitchId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrVSwitchId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVSwitchId",
@@ -459,8 +472,8 @@ func (j *jsiiProxy_DBCluster) AttrVSwitchId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DBCluster) AttrZoneId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DBCluster) AttrZoneId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrZoneId",
@@ -474,6 +487,16 @@ func (j *jsiiProxy_DBCluster) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DBCluster) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -611,17 +634,6 @@ func (j *jsiiProxy_DBCluster)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DBCluster)SetProps(val *DBClusterProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_DBCluster)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -713,6 +725,45 @@ func (d *jsiiProxy_DBCluster) ApplyRemovalPolicy(policy alicloudroscdkcore.Remov
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_DBCluster) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DBCluster) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DBCluster) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_DBCluster) GeneratePhysicalName() *string {

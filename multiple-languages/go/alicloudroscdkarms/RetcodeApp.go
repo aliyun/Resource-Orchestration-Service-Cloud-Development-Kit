@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::RetcodeApp`, which is used to create a browser monitoring task.
 type RetcodeApp interface {
 	alicloudroscdkcore.Resource
+	IRetcodeApp
 	// Attribute AppId: The ID of the application for which you created the browser monitoring job.
-	AttrAppId() alicloudroscdkcore.IResolvable
+	AttrAppId() interface{}
 	// Attribute Pid: The PID.
-	AttrPid() alicloudroscdkcore.IResolvable
+	AttrPid() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type RetcodeApp interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *RetcodeAppProps
-	SetProps(val *RetcodeAppProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type RetcodeApp interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type RetcodeApp interface {
 // The jsii proxy struct for RetcodeApp
 type jsiiProxy_RetcodeApp struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IRetcodeApp
 }
 
-func (j *jsiiProxy_RetcodeApp) AttrAppId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_RetcodeApp) AttrAppId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAppId",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_RetcodeApp) AttrAppId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_RetcodeApp) AttrPid() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_RetcodeApp) AttrPid() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPid",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_RetcodeApp) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RetcodeApp) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_RetcodeApp)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_RetcodeApp)SetProps(val *RetcodeAppProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_RetcodeApp)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (r *jsiiProxy_RetcodeApp) ApplyRemovalPolicy(policy alicloudroscdkcore.Remo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (r *jsiiProxy_RetcodeApp) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		r,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_RetcodeApp) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		r,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_RetcodeApp) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		r,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (r *jsiiProxy_RetcodeApp) GeneratePhysicalName() *string {

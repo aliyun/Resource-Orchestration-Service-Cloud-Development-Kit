@@ -60,35 +60,61 @@ export interface PolicyProps {
 }
 
 /**
+ * Represents a `Policy`.
+ */
+export interface IPolicy extends ros.IResource {
+    readonly props: PolicyProps;
+
+    /**
+     * Attribute Content: Configuration Content.
+     */
+    readonly attrContent: ros.IResolvable | string;
+
+    /**
+     * Attribute PolicyId: The ID of the policy.
+     */
+    readonly attrPolicyId: ros.IResolvable | string;
+
+    /**
+     * Attribute PolicyName: The name of the policy.
+     */
+    readonly attrPolicyName: ros.IResolvable | string;
+
+    /**
+     * Attribute Type: The type of the policy.
+     */
+    readonly attrType: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::DDoS::Policy`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddos-policy
  */
-export class Policy extends ros.Resource {
+export class Policy extends ros.Resource implements IPolicy {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: PolicyProps;
+    public readonly props: PolicyProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Content: Configuration Content.
      */
-    public readonly attrContent: ros.IResolvable;
+    public readonly attrContent: ros.IResolvable | string;
 
     /**
      * Attribute PolicyId: The ID of the policy.
      */
-    public readonly attrPolicyId: ros.IResolvable;
+    public readonly attrPolicyId: ros.IResolvable | string;
 
     /**
      * Attribute PolicyName: The name of the policy.
      */
-    public readonly attrPolicyName: ros.IResolvable;
+    public readonly attrPolicyName: ros.IResolvable | string;
 
     /**
      * Attribute Type: The type of the policy.
      */
-    public readonly attrType: ros.IResolvable;
+    public readonly attrType: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

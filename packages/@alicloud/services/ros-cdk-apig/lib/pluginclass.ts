@@ -61,45 +61,81 @@ export interface PluginClassProps {
 }
 
 /**
+ * Represents a `PluginClass`.
+ */
+export interface IPluginClass extends ros.IResource {
+    readonly props: PluginClassProps;
+
+    /**
+     * Attribute Alias: The alias of the plugin class.
+     */
+    readonly attrAlias: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: The description of the plugin class.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute Document: The document of plugin.
+     */
+    readonly attrDocument: ros.IResolvable | string;
+
+    /**
+     * Attribute PluginClassName: The name of the plugin class.
+     */
+    readonly attrPluginClassName: ros.IResolvable | string;
+
+    /**
+     * Attribute Type: The type of the plugin class.
+     */
+    readonly attrType: ros.IResolvable | string;
+
+    /**
+     * Attribute WasmLanguage: Wasm language.
+     */
+    readonly attrWasmLanguage: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::APIG::PluginClass`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPluginClass`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-pluginclass
  */
-export class PluginClass extends ros.Resource {
+export class PluginClass extends ros.Resource implements IPluginClass {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: PluginClassProps;
+    public readonly props: PluginClassProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Alias: The alias of the plugin class.
      */
-    public readonly attrAlias: ros.IResolvable;
+    public readonly attrAlias: ros.IResolvable | string;
 
     /**
      * Attribute Description: The description of the plugin class.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute Document: The document of plugin.
      */
-    public readonly attrDocument: ros.IResolvable;
+    public readonly attrDocument: ros.IResolvable | string;
 
     /**
      * Attribute PluginClassName: The name of the plugin class.
      */
-    public readonly attrPluginClassName: ros.IResolvable;
+    public readonly attrPluginClassName: ros.IResolvable | string;
 
     /**
      * Attribute Type: The type of the plugin class.
      */
-    public readonly attrType: ros.IResolvable;
+    public readonly attrType: ros.IResolvable | string;
 
     /**
      * Attribute WasmLanguage: Wasm language.
      */
-    public readonly attrWasmLanguage: ros.IResolvable;
+    public readonly attrWasmLanguage: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

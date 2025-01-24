@@ -12,14 +12,24 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ECS::NetworkInterfaceAttachment`, which is used to bind an elastic network interface (ENI) to an Elastic Compute Service (ECS) instance in a virtual private cloud (VPC).
 type NetworkInterfaceAttachment interface {
 	alicloudroscdkcore.Resource
+	INetworkInterfaceAttachment
 	// Attribute InstanceId: ID of ECS instance.
-	AttrInstanceId() alicloudroscdkcore.IResolvable
+	AttrInstanceId() interface{}
 	// Attribute NetworkInterfaceId: ID of your Network Interface.
-	AttrNetworkInterfaceId() alicloudroscdkcore.IResolvable
+	AttrNetworkInterfaceId() interface{}
 	// Attribute TrunkNetworkInstanceId: ID of Trunk Network Interface.
-	AttrTrunkNetworkInstanceId() alicloudroscdkcore.IResolvable
+	AttrTrunkNetworkInstanceId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -34,7 +44,6 @@ type NetworkInterfaceAttachment interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *NetworkInterfaceAttachmentProps
-	SetProps(val *NetworkInterfaceAttachmentProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -47,6 +56,9 @@ type NetworkInterfaceAttachment interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -99,10 +111,11 @@ type NetworkInterfaceAttachment interface {
 // The jsii proxy struct for NetworkInterfaceAttachment
 type jsiiProxy_NetworkInterfaceAttachment struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_INetworkInterfaceAttachment
 }
 
-func (j *jsiiProxy_NetworkInterfaceAttachment) AttrInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NetworkInterfaceAttachment) AttrInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceId",
@@ -111,8 +124,8 @@ func (j *jsiiProxy_NetworkInterfaceAttachment) AttrInstanceId() alicloudroscdkco
 	return returns
 }
 
-func (j *jsiiProxy_NetworkInterfaceAttachment) AttrNetworkInterfaceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NetworkInterfaceAttachment) AttrNetworkInterfaceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNetworkInterfaceId",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_NetworkInterfaceAttachment) AttrNetworkInterfaceId() alicloud
 	return returns
 }
 
-func (j *jsiiProxy_NetworkInterfaceAttachment) AttrTrunkNetworkInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NetworkInterfaceAttachment) AttrTrunkNetworkInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTrunkNetworkInstanceId",
@@ -136,6 +149,16 @@ func (j *jsiiProxy_NetworkInterfaceAttachment) EnableResourcePropertyConstraint(
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_NetworkInterfaceAttachment) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -273,17 +296,6 @@ func (j *jsiiProxy_NetworkInterfaceAttachment)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_NetworkInterfaceAttachment)SetProps(val *NetworkInterfaceAttachmentProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_NetworkInterfaceAttachment)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -375,6 +387,45 @@ func (n *jsiiProxy_NetworkInterfaceAttachment) ApplyRemovalPolicy(policy aliclou
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (n *jsiiProxy_NetworkInterfaceAttachment) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		n,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (n *jsiiProxy_NetworkInterfaceAttachment) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		n,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (n *jsiiProxy_NetworkInterfaceAttachment) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		n,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (n *jsiiProxy_NetworkInterfaceAttachment) GeneratePhysicalName() *string {

@@ -17,6 +17,8 @@ type RosDBCluster interface {
 	AttrOrderId() alicloudroscdkcore.IResolvable
 	BackupSetId() interface{}
 	SetBackupSetId(val interface{})
+	CloneSourceRegionId() interface{}
+	SetCloneSourceRegionId(val interface{})
 	ComputeResource() interface{}
 	SetComputeResource(val interface{})
 	// Returns: the stack trace of the point where this Resource was created from, sourced
@@ -25,12 +27,18 @@ type RosDBCluster interface {
 	CreationStack() *[]*string
 	DbClusterDescription() interface{}
 	SetDbClusterDescription(val interface{})
+	DbClusterNetworkType() interface{}
+	SetDbClusterNetworkType(val interface{})
 	DbClusterVersion() interface{}
 	SetDbClusterVersion(val interface{})
+	DiskEncryption() interface{}
+	SetDiskEncryption(val interface{})
 	EnableDefaultResourcePool() interface{}
 	SetEnableDefaultResourcePool(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	KmsId() interface{}
+	SetKmsId(val interface{})
 	// The logical ID for this stack element.
 	//
 	// The logical ID of the element
@@ -49,11 +57,17 @@ type RosDBCluster interface {
 	SetPeriod(val interface{})
 	PeriodType() interface{}
 	SetPeriodType(val interface{})
+	ProductForm() interface{}
+	SetProductForm(val interface{})
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
 	//
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
 	// coerce it to an IResolvable through `Lazy.any({ produce: resource.ref })`.
 	Ref() *string
+	ReservedNodeCount() interface{}
+	SetReservedNodeCount(val interface{})
+	ReservedNodeSize() interface{}
+	SetReservedNodeSize(val interface{})
 	ResourceGroupId() interface{}
 	SetResourceGroupId(val interface{})
 	RestoreToTime() interface{}
@@ -140,6 +154,9 @@ type RosDBCluster interface {
 	AddRosDependency(target *string)
 	// Sets the deletion policy of the resource based on the removal policy specified.
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy, options *alicloudroscdkcore.RemovalPolicyOptions)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDesc() *string
+	FetchRosDependency() *[]*string
 	// Returns a token for an runtime attribute of this resource.
 	//
 	// Ideally, use generated attribute accessors (e.g. `resource.arn`), but this can be used for future compatibility
@@ -242,6 +259,16 @@ func (j *jsiiProxy_RosDBCluster) BackupSetId() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosDBCluster) CloneSourceRegionId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"cloneSourceRegionId",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosDBCluster) ComputeResource() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -272,11 +299,31 @@ func (j *jsiiProxy_RosDBCluster) DbClusterDescription() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosDBCluster) DbClusterNetworkType() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"dbClusterNetworkType",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosDBCluster) DbClusterVersion() interface{} {
 	var returns interface{}
 	_jsii_.Get(
 		j,
 		"dbClusterVersion",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDBCluster) DiskEncryption() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"diskEncryption",
 		&returns,
 	)
 	return returns
@@ -297,6 +344,16 @@ func (j *jsiiProxy_RosDBCluster) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDBCluster) KmsId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"kmsId",
 		&returns,
 	)
 	return returns
@@ -352,11 +409,41 @@ func (j *jsiiProxy_RosDBCluster) PeriodType() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosDBCluster) ProductForm() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"productForm",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosDBCluster) Ref() *string {
 	var returns *string
 	_jsii_.Get(
 		j,
 		"ref",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDBCluster) ReservedNodeCount() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"reservedNodeCount",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDBCluster) ReservedNodeSize() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"reservedNodeSize",
 		&returns,
 	)
 	return returns
@@ -541,6 +628,17 @@ func (j *jsiiProxy_RosDBCluster)SetBackupSetId(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosDBCluster)SetCloneSourceRegionId(val interface{}) {
+	if err := j.validateSetCloneSourceRegionIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"cloneSourceRegionId",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosDBCluster)SetComputeResource(val interface{}) {
 	if err := j.validateSetComputeResourceParameters(val); err != nil {
 		panic(err)
@@ -563,6 +661,17 @@ func (j *jsiiProxy_RosDBCluster)SetDbClusterDescription(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosDBCluster)SetDbClusterNetworkType(val interface{}) {
+	if err := j.validateSetDbClusterNetworkTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"dbClusterNetworkType",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosDBCluster)SetDbClusterVersion(val interface{}) {
 	if err := j.validateSetDbClusterVersionParameters(val); err != nil {
 		panic(err)
@@ -570,6 +679,17 @@ func (j *jsiiProxy_RosDBCluster)SetDbClusterVersion(val interface{}) {
 	_jsii_.Set(
 		j,
 		"dbClusterVersion",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDBCluster)SetDiskEncryption(val interface{}) {
+	if err := j.validateSetDiskEncryptionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"diskEncryption",
 		val,
 	)
 }
@@ -592,6 +712,17 @@ func (j *jsiiProxy_RosDBCluster)SetEnableResourcePropertyConstraint(val *bool) {
 	_jsii_.Set(
 		j,
 		"enableResourcePropertyConstraint",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDBCluster)SetKmsId(val interface{}) {
+	if err := j.validateSetKmsIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"kmsId",
 		val,
 	)
 }
@@ -625,6 +756,39 @@ func (j *jsiiProxy_RosDBCluster)SetPeriodType(val interface{}) {
 	_jsii_.Set(
 		j,
 		"periodType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDBCluster)SetProductForm(val interface{}) {
+	if err := j.validateSetProductFormParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"productForm",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDBCluster)SetReservedNodeCount(val interface{}) {
+	if err := j.validateSetReservedNodeCountParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"reservedNodeCount",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDBCluster)SetReservedNodeSize(val interface{}) {
+	if err := j.validateSetReservedNodeSizeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"reservedNodeSize",
 		val,
 	)
 }
@@ -920,6 +1084,45 @@ func (r *jsiiProxy_RosDBCluster) ApplyRemovalPolicy(policy alicloudroscdkcore.Re
 		"applyRemovalPolicy",
 		[]interface{}{policy, options},
 	)
+}
+
+func (r *jsiiProxy_RosDBCluster) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		r,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_RosDBCluster) FetchDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		r,
+		"fetchDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_RosDBCluster) FetchRosDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		r,
+		"fetchRosDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (r *jsiiProxy_RosDBCluster) GetAtt(attributeName *string) alicloudroscdkcore.Reference {

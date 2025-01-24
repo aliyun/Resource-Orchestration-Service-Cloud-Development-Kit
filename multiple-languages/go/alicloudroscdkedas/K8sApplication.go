@@ -12,18 +12,28 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::K8sApplication`, which is used to create an application in a Kubernetes cluster.
 type K8sApplication interface {
 	alicloudroscdkcore.Resource
+	IK8sApplication
 	// Attribute AppId: The ID of the application.
-	AttrAppId() alicloudroscdkcore.IResolvable
+	AttrAppId() interface{}
 	// Attribute AppName: The name of the application.
-	AttrAppName() alicloudroscdkcore.IResolvable
+	AttrAppName() interface{}
 	// Attribute ChangeOrderId: The ID of the change process.
-	AttrChangeOrderId() alicloudroscdkcore.IResolvable
+	AttrChangeOrderId() interface{}
 	// Attribute ClusterId: The cluster ID of the application.
-	AttrClusterId() alicloudroscdkcore.IResolvable
+	AttrClusterId() interface{}
 	// Attribute CsClusterId: The K8s cluster ID of the application.
-	AttrCsClusterId() alicloudroscdkcore.IResolvable
+	AttrCsClusterId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -38,7 +48,6 @@ type K8sApplication interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *K8sApplicationProps
-	SetProps(val *K8sApplicationProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -51,6 +60,9 @@ type K8sApplication interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -103,10 +115,11 @@ type K8sApplication interface {
 // The jsii proxy struct for K8sApplication
 type jsiiProxy_K8sApplication struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IK8sApplication
 }
 
-func (j *jsiiProxy_K8sApplication) AttrAppId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_K8sApplication) AttrAppId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAppId",
@@ -115,8 +128,8 @@ func (j *jsiiProxy_K8sApplication) AttrAppId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_K8sApplication) AttrAppName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_K8sApplication) AttrAppName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAppName",
@@ -125,8 +138,8 @@ func (j *jsiiProxy_K8sApplication) AttrAppName() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_K8sApplication) AttrChangeOrderId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_K8sApplication) AttrChangeOrderId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrChangeOrderId",
@@ -135,8 +148,8 @@ func (j *jsiiProxy_K8sApplication) AttrChangeOrderId() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_K8sApplication) AttrClusterId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_K8sApplication) AttrClusterId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrClusterId",
@@ -145,8 +158,8 @@ func (j *jsiiProxy_K8sApplication) AttrClusterId() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_K8sApplication) AttrCsClusterId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_K8sApplication) AttrCsClusterId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCsClusterId",
@@ -160,6 +173,16 @@ func (j *jsiiProxy_K8sApplication) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_K8sApplication) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -297,17 +320,6 @@ func (j *jsiiProxy_K8sApplication)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_K8sApplication)SetProps(val *K8sApplicationProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_K8sApplication)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -399,6 +411,45 @@ func (k *jsiiProxy_K8sApplication) ApplyRemovalPolicy(policy alicloudroscdkcore.
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (k *jsiiProxy_K8sApplication) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		k,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (k *jsiiProxy_K8sApplication) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		k,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (k *jsiiProxy_K8sApplication) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		k,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (k *jsiiProxy_K8sApplication) GeneratePhysicalName() *string {

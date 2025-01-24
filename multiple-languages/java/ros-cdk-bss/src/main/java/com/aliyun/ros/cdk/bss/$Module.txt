@@ -1,3 +1,5 @@
+@alicloud/ros-cdk-bss.IResourcePackage=com.aliyun.ros.cdk.bss.IResourcePackage
+@alicloud/ros-cdk-bss.IWaitOrder=com.aliyun.ros.cdk.bss.IWaitOrder
 @alicloud/ros-cdk-bss.ResourcePackage=com.aliyun.ros.cdk.bss.ResourcePackage
 @alicloud/ros-cdk-bss.ResourcePackageProps=com.aliyun.ros.cdk.bss.ResourcePackageProps
 @alicloud/ros-cdk-bss.RosResourcePackage=com.aliyun.ros.cdk.bss.RosResourcePackage

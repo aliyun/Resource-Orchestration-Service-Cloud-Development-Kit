@@ -124,6 +124,10 @@ func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetLoginPasswordPara
 	return nil
 }
 
+func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetMaintenanceWindowParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosManagedEdgeKubernetesCluster) validateSetNameParameters(val interface{}) error {
 	return nil
 }

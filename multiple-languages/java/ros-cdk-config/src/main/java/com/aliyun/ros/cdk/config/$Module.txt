@@ -6,6 +6,11 @@
 @alicloud/ros-cdk-config.CompliancePackProps=com.aliyun.ros.cdk.config.CompliancePackProps
 @alicloud/ros-cdk-config.DeliveryChannel=com.aliyun.ros.cdk.config.DeliveryChannel
 @alicloud/ros-cdk-config.DeliveryChannelProps=com.aliyun.ros.cdk.config.DeliveryChannelProps
+@alicloud/ros-cdk-config.IAggregateCompliancePack=com.aliyun.ros.cdk.config.IAggregateCompliancePack
+@alicloud/ros-cdk-config.IAggregator=com.aliyun.ros.cdk.config.IAggregator
+@alicloud/ros-cdk-config.ICompliancePack=com.aliyun.ros.cdk.config.ICompliancePack
+@alicloud/ros-cdk-config.IDeliveryChannel=com.aliyun.ros.cdk.config.IDeliveryChannel
+@alicloud/ros-cdk-config.IRule=com.aliyun.ros.cdk.config.IRule
 @alicloud/ros-cdk-config.RosAggregateCompliancePack=com.aliyun.ros.cdk.config.RosAggregateCompliancePack
 @alicloud/ros-cdk-config.RosAggregateCompliancePack.ConfigRuleParametersProperty=com.aliyun.ros.cdk.config.RosAggregateCompliancePack$ConfigRuleParametersProperty
 @alicloud/ros-cdk-config.RosAggregateCompliancePack.ConfigRulesProperty=com.aliyun.ros.cdk.config.RosAggregateCompliancePack$ConfigRulesProperty

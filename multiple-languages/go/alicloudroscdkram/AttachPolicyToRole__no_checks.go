@@ -52,10 +52,6 @@ func (j *jsiiProxy_AttachPolicyToRole) validateSetIdParameters(val *string) erro
 	return nil
 }
 
-func (j *jsiiProxy_AttachPolicyToRole) validateSetPropsParameters(val *AttachPolicyToRoleProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_AttachPolicyToRole) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

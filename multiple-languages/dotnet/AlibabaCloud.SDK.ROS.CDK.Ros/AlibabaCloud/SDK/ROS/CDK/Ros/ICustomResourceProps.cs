@@ -17,6 +17,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         ///
         /// <list type="bullet">
         /// <description>Function Compute: acs:fc:&lt;region_id&gt;:&lt;account_id&gt;:services/&lt;service_name&gt;/functions/&lt;function_name&gt;</description>
+        /// <description>Function Compute 3: acs:fc:&lt;region_id&gt;:&lt;account_id&gt;:functions/&lt;function_name&gt;</description>
         /// <description>MNS Queue: acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:queues/&lt;queue_name&gt; or acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:/queues/&lt;queue_name&gt;</description>
         /// <description>MNS Topic: acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:topics/&lt;topic_name&gt; or acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:/topics/&lt;topic_name&gt;</description>
         /// <description>HTTP&amp;HTTPS: web[options]:<url xmlns="http://www.w3.org/1999/xhtml"></url>
@@ -27,6 +28,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// <description>idempotent: indicates that the Create request is idempotent. Update and Delete requests should be always idempotent.
         /// Examples:</description>
         /// <description>acs:fc:cn-hangzhou:123456789:services/test-service/functions/test-function</description>
+        /// <description>acs:fc:cn-hangzhou:123456789:functions/test-function</description>
         /// <description>acs:mns:cn-hangzhou:123456789:queues/test-queue</description>
         /// <description>acs:mns:cn-hangzhou:123456789:/queues/test-queue</description>
         /// <description>acs:mns:cn-hangzhou:123456789:topics/test-topic</description>
@@ -93,6 +95,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             ///
             /// <list type="bullet">
             /// <description>Function Compute: acs:fc:&lt;region_id&gt;:&lt;account_id&gt;:services/&lt;service_name&gt;/functions/&lt;function_name&gt;</description>
+            /// <description>Function Compute 3: acs:fc:&lt;region_id&gt;:&lt;account_id&gt;:functions/&lt;function_name&gt;</description>
             /// <description>MNS Queue: acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:queues/&lt;queue_name&gt; or acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:/queues/&lt;queue_name&gt;</description>
             /// <description>MNS Topic: acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:topics/&lt;topic_name&gt; or acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:/topics/&lt;topic_name&gt;</description>
             /// <description>HTTP&amp;HTTPS: web[options]:<url xmlns="http://www.w3.org/1999/xhtml"></url>
@@ -103,6 +106,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             /// <description>idempotent: indicates that the Create request is idempotent. Update and Delete requests should be always idempotent.
             /// Examples:</description>
             /// <description>acs:fc:cn-hangzhou:123456789:services/test-service/functions/test-function</description>
+            /// <description>acs:fc:cn-hangzhou:123456789:functions/test-function</description>
             /// <description>acs:mns:cn-hangzhou:123456789:queues/test-queue</description>
             /// <description>acs:mns:cn-hangzhou:123456789:/queues/test-queue</description>
             /// <description>acs:mns:cn-hangzhou:123456789:topics/test-topic</description>

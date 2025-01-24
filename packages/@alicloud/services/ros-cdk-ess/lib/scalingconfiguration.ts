@@ -368,25 +368,41 @@ export interface ScalingConfigurationProps {
 }
 
 /**
+ * Represents a `ScalingConfiguration`.
+ */
+export interface IScalingConfiguration extends ros.IResource {
+    readonly props: ScalingConfigurationProps;
+
+    /**
+     * Attribute ScalingConfigurationId: The scaling configuration id
+     */
+    readonly attrScalingConfigurationId: ros.IResolvable | string;
+
+    /**
+     * Attribute ScalingGroupId: The id of the scaling group to which the scaling configuration belongs.
+     */
+    readonly attrScalingGroupId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScalingConfiguration`, which is used to create a scaling configuration for a scaling group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosScalingConfiguration`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalingconfiguration
  */
-export class ScalingConfiguration extends ros.Resource {
+export class ScalingConfiguration extends ros.Resource implements IScalingConfiguration {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ScalingConfigurationProps;
+    public readonly props: ScalingConfigurationProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ScalingConfigurationId: The scaling configuration id
      */
-    public readonly attrScalingConfigurationId: ros.IResolvable;
+    public readonly attrScalingConfigurationId: ros.IResolvable | string;
 
     /**
      * Attribute ScalingGroupId: The id of the scaling group to which the scaling configuration belongs.
      */
-    public readonly attrScalingGroupId: ros.IResolvable;
+    public readonly attrScalingGroupId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

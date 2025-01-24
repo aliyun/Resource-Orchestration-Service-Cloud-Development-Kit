@@ -40,6 +40,14 @@ func (q *jsiiProxy_Queue) validateSynthesizeParameters(session alicloudroscdkcor
 	return nil
 }
 
+func validateQueue_FromQueueArnParameters(scope alicloudroscdkcore.Construct, id *string, attrArnWithSlash *string) error {
+	return nil
+}
+
+func validateQueue_FromQueueAttributesParameters(scope alicloudroscdkcore.Construct, id *string, attrs *QueueAttributes) error {
+	return nil
+}
+
 func validateQueue_IsConstructParameters(x interface{}) error {
 	return nil
 }
@@ -49,10 +57,6 @@ func (j *jsiiProxy_Queue) validateSetEnableResourcePropertyConstraintParameters(
 }
 
 func (j *jsiiProxy_Queue) validateSetIdParameters(val *string) error {
-	return nil
-}
-
-func (j *jsiiProxy_Queue) validateSetPropsParameters(val *QueueProps) error {
 	return nil
 }
 

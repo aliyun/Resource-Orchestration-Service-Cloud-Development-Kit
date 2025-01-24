@@ -49,25 +49,41 @@ export interface PublicIpAddressPoolsProps {
 }
 
 /**
+ * Represents a `PublicIpAddressPools`.
+ */
+export interface IPublicIpAddressPools extends ros.IResource {
+    readonly props: PublicIpAddressPoolsProps;
+
+    /**
+     * Attribute PublicIpAddressPoolIds: The list of public ip address pool IDs.
+     */
+    readonly attrPublicIpAddressPoolIds: ros.IResolvable | string;
+
+    /**
+     * Attribute PublicIpAddressPools: The list of public ip address pools.
+     */
+    readonly attrPublicIpAddressPools: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::PublicIpAddressPools`, which is used to query available IP address pools.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPublicIpAddressPools`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-publicipaddresspools
  */
-export class PublicIpAddressPools extends ros.Resource {
+export class PublicIpAddressPools extends ros.Resource implements IPublicIpAddressPools {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: PublicIpAddressPoolsProps;
+    public readonly props: PublicIpAddressPoolsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute PublicIpAddressPoolIds: The list of public ip address pool IDs.
      */
-    public readonly attrPublicIpAddressPoolIds: ros.IResolvable;
+    public readonly attrPublicIpAddressPoolIds: ros.IResolvable | string;
 
     /**
      * Attribute PublicIpAddressPools: The list of public ip address pools.
      */
-    public readonly attrPublicIpAddressPools: ros.IResolvable;
+    public readonly attrPublicIpAddressPools: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

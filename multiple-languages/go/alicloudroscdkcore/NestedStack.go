@@ -189,6 +189,13 @@ type NestedStack interface {
 	// Resolve a tokenized value in the context of the current stack.
 	Resolve(obj interface{}) interface{}
 	SetParameter(name *string, value interface{})
+	// Splits the provided ARN into its components.
+	//
+	// Works both if 'arn' is a string like 'acs:ram::123456789012****:role/RoleName',
+	// and a Token representing a dynamic ROS expression
+	// (in which case the returned components will also be dynamic ROS expressions,
+	// encoded as Tokens).
+	SplitArn(arn interface{}, arnFormat ArnFormat) *ArnComponents
 	// Allows this construct to emit artifacts into the cloud assembly during synthesis.
 	//
 	// This method is usually implemented by framework-level constructs such as `Stack` and `Asset`
@@ -661,6 +668,22 @@ func (n *jsiiProxy_NestedStack) SetParameter(name *string, value interface{}) {
 		"setParameter",
 		[]interface{}{name, value},
 	)
+}
+
+func (n *jsiiProxy_NestedStack) SplitArn(arn interface{}, arnFormat ArnFormat) *ArnComponents {
+	if err := n.validateSplitArnParameters(arn, arnFormat); err != nil {
+		panic(err)
+	}
+	var returns *ArnComponents
+
+	_jsii_.Invoke(
+		n,
+		"splitArn",
+		[]interface{}{arn, arnFormat},
+		&returns,
+	)
+
+	return returns
 }
 
 func (n *jsiiProxy_NestedStack) Synthesize(session ISynthesisSession) {

@@ -46,35 +46,61 @@ export interface FlowProps {
 }
 
 /**
+ * Represents a `Flow`.
+ */
+export interface IFlow extends ros.IResource {
+    readonly props: FlowProps;
+
+    /**
+     * Attribute CreatedTime: Flow creation time.
+     */
+    readonly attrCreatedTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Id: The unique ID of the flow.
+     */
+    readonly attrId: ros.IResolvable | string;
+
+    /**
+     * Attribute LastModifiedTime: The most recently modified time of the flow.
+     */
+    readonly attrLastModifiedTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Name: The name of the flow created.
+     */
+    readonly attrName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::FNF::Flow`, which is used to create a flow.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFlow`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fnf-flow
  */
-export class Flow extends ros.Resource {
+export class Flow extends ros.Resource implements IFlow {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: FlowProps;
+    public readonly props: FlowProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreatedTime: Flow creation time.
      */
-    public readonly attrCreatedTime: ros.IResolvable;
+    public readonly attrCreatedTime: ros.IResolvable | string;
 
     /**
      * Attribute Id: The unique ID of the flow.
      */
-    public readonly attrId: ros.IResolvable;
+    public readonly attrId: ros.IResolvable | string;
 
     /**
      * Attribute LastModifiedTime: The most recently modified time of the flow.
      */
-    public readonly attrLastModifiedTime: ros.IResolvable;
+    public readonly attrLastModifiedTime: ros.IResolvable | string;
 
     /**
      * Attribute Name: The name of the flow created.
      */
-    public readonly attrName: ros.IResolvable;
+    public readonly attrName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

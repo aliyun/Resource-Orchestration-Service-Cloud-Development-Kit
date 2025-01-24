@@ -91,35 +91,61 @@ export interface InstanceProps {
 }
 
 /**
+ * Represents a `Instance`.
+ */
+export interface IInstance extends ros.IResource {
+    readonly props: InstanceProps;
+
+    /**
+     * Attribute ClassicEndpoint: The classic endpoint of the instance.
+     */
+    readonly attrClassicEndpoint: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: The ID of the instance.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute PrivateEndpoint: The private endpoint of the instance.
+     */
+    readonly attrPrivateEndpoint: ros.IResolvable | string;
+
+    /**
+     * Attribute PublicEndpoint: The public endpoint of the instance.
+     */
+    readonly attrPublicEndpoint: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::AMQP::Instance`, which is used to create an ApsaraMQ for RabbitMQ instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-instance
  */
-export class Instance extends ros.Resource {
+export class Instance extends ros.Resource implements IInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InstanceProps;
+    public readonly props: InstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClassicEndpoint: The classic endpoint of the instance.
      */
-    public readonly attrClassicEndpoint: ros.IResolvable;
+    public readonly attrClassicEndpoint: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: The ID of the instance.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute PrivateEndpoint: The private endpoint of the instance.
      */
-    public readonly attrPrivateEndpoint: ros.IResolvable;
+    public readonly attrPrivateEndpoint: ros.IResolvable | string;
 
     /**
      * Attribute PublicEndpoint: The public endpoint of the instance.
      */
-    public readonly attrPublicEndpoint: ros.IResolvable;
+    public readonly attrPublicEndpoint: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

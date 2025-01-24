@@ -52,10 +52,6 @@ func (j *jsiiProxy_InsertMediaToSearchLib) validateSetIdParameters(val *string) 
 	return nil
 }
 
-func (j *jsiiProxy_InsertMediaToSearchLib) validateSetPropsParameters(val *InsertMediaToSearchLibProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_InsertMediaToSearchLib) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

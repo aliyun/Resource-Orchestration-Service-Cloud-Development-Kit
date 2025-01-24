@@ -1,3 +1,7 @@
+@alicloud/ros-cdk-cloudphone.IImage=com.aliyun.ros.cdk.cloudphone.IImage
+@alicloud/ros-cdk-cloudphone.IInstanceGroup=com.aliyun.ros.cdk.cloudphone.IInstanceGroup
+@alicloud/ros-cdk-cloudphone.IKeyPair=com.aliyun.ros.cdk.cloudphone.IKeyPair
+@alicloud/ros-cdk-cloudphone.IRunCommand=com.aliyun.ros.cdk.cloudphone.IRunCommand
 @alicloud/ros-cdk-cloudphone.Image=com.aliyun.ros.cdk.cloudphone.Image
 @alicloud/ros-cdk-cloudphone.ImageProps=com.aliyun.ros.cdk.cloudphone.ImageProps
 @alicloud/ros-cdk-cloudphone.InstanceGroup=com.aliyun.ros.cdk.cloudphone.InstanceGroup
@@ -15,6 +19,10 @@
 @alicloud/ros-cdk-cloudphone.RosRunCommandProps=com.aliyun.ros.cdk.cloudphone.RosRunCommandProps
 @alicloud/ros-cdk-cloudphone.RunCommand=com.aliyun.ros.cdk.cloudphone.RunCommand
 @alicloud/ros-cdk-cloudphone.RunCommandProps=com.aliyun.ros.cdk.cloudphone.RunCommandProps
+@alicloud/ros-cdk-cloudphone.datasource.IImage=com.aliyun.ros.cdk.cloudphone.datasource.IImage
+@alicloud/ros-cdk-cloudphone.datasource.IImages=com.aliyun.ros.cdk.cloudphone.datasource.IImages
+@alicloud/ros-cdk-cloudphone.datasource.IKeyPair=com.aliyun.ros.cdk.cloudphone.datasource.IKeyPair
+@alicloud/ros-cdk-cloudphone.datasource.IKeyPairs=com.aliyun.ros.cdk.cloudphone.datasource.IKeyPairs
 @alicloud/ros-cdk-cloudphone.datasource.Image=com.aliyun.ros.cdk.cloudphone.datasource.Image
 @alicloud/ros-cdk-cloudphone.datasource.ImageProps=com.aliyun.ros.cdk.cloudphone.datasource.ImageProps
 @alicloud/ros-cdk-cloudphone.datasource.Images=com.aliyun.ros.cdk.cloudphone.datasource.Images

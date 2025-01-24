@@ -96,25 +96,41 @@ export interface DedicatedHostProps {
 }
 
 /**
+ * Represents a `DedicatedHost`.
+ */
+export interface IDedicatedHost extends ros.IResource {
+    readonly props: DedicatedHostProps;
+
+    /**
+     * Attribute DedicatedHostIds: The host id list of created hosts
+     */
+    readonly attrDedicatedHostIds: ros.IResolvable | string;
+
+    /**
+     * Attribute OrderId: The order id list of created instance.
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::DedicatedHost`, which is used to create a dedicated host.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDedicatedHost`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-dedicatedhost
  */
-export class DedicatedHost extends ros.Resource {
+export class DedicatedHost extends ros.Resource implements IDedicatedHost {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DedicatedHostProps;
+    public readonly props: DedicatedHostProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DedicatedHostIds: The host id list of created hosts
      */
-    public readonly attrDedicatedHostIds: ros.IResolvable;
+    public readonly attrDedicatedHostIds: ros.IResolvable | string;
 
     /**
      * Attribute OrderId: The order id list of created instance.
      */
-    public readonly attrOrderId: ros.IResolvable;
+    public readonly attrOrderId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

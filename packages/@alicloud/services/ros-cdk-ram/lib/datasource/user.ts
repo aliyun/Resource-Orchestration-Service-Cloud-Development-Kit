@@ -29,45 +29,81 @@ export interface UserProps {
 }
 
 /**
+ * Represents a `User`.
+ */
+export interface IUser extends ros.IResource {
+    readonly props: UserProps;
+
+    /**
+     * Attribute Comments: The comments of the RAM user.
+     */
+    readonly attrComments: ros.IResolvable | string;
+
+    /**
+     * Attribute DisplayName: The display name of the RAM user.
+     */
+    readonly attrDisplayName: ros.IResolvable | string;
+
+    /**
+     * Attribute Email: The email address of the RAM user.
+     */
+    readonly attrEmail: ros.IResolvable | string;
+
+    /**
+     * Attribute MobilePhone: The mobile phone number of the RAM user.
+     */
+    readonly attrMobilePhone: ros.IResolvable | string;
+
+    /**
+     * Attribute UserId: The ID of the RAM user.
+     */
+    readonly attrUserId: ros.IResolvable | string;
+
+    /**
+     * Attribute UserName: The name of the RAM user.
+     */
+    readonly attrUserName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::RAM::User`, which is used to query the information about a Resource Access Management (RAM) user.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUser`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-user
  */
-export class User extends ros.Resource {
+export class User extends ros.Resource implements IUser {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: UserProps;
+    public readonly props: UserProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Comments: The comments of the RAM user.
      */
-    public readonly attrComments: ros.IResolvable;
+    public readonly attrComments: ros.IResolvable | string;
 
     /**
      * Attribute DisplayName: The display name of the RAM user.
      */
-    public readonly attrDisplayName: ros.IResolvable;
+    public readonly attrDisplayName: ros.IResolvable | string;
 
     /**
      * Attribute Email: The email address of the RAM user.
      */
-    public readonly attrEmail: ros.IResolvable;
+    public readonly attrEmail: ros.IResolvable | string;
 
     /**
      * Attribute MobilePhone: The mobile phone number of the RAM user.
      */
-    public readonly attrMobilePhone: ros.IResolvable;
+    public readonly attrMobilePhone: ros.IResolvable | string;
 
     /**
      * Attribute UserId: The ID of the RAM user.
      */
-    public readonly attrUserId: ros.IResolvable;
+    public readonly attrUserId: ros.IResolvable | string;
 
     /**
      * Attribute UserName: The name of the RAM user.
      */
-    public readonly attrUserName: ros.IResolvable;
+    public readonly attrUserName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

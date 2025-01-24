@@ -35,25 +35,41 @@ export interface TransitRoutersProps {
 }
 
 /**
+ * Represents a `TransitRouters`.
+ */
+export interface ITransitRouters extends ros.IResource {
+    readonly props: TransitRoutersProps;
+
+    /**
+     * Attribute TransitRouterIds: The list of TransitRouter IDs.
+     */
+    readonly attrTransitRouterIds: ros.IResolvable | string;
+
+    /**
+     * Attribute TransitRouters: The list of TransitRouters.
+     */
+    readonly attrTransitRouters: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::CEN::TransitRouters`, which is used to query the information about transit routers of a Cloud Enterprise Network (CEN) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouters`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-transitrouters
  */
-export class TransitRouters extends ros.Resource {
+export class TransitRouters extends ros.Resource implements ITransitRouters {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: TransitRoutersProps;
+    public readonly props: TransitRoutersProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute TransitRouterIds: The list of TransitRouter IDs.
      */
-    public readonly attrTransitRouterIds: ros.IResolvable;
+    public readonly attrTransitRouterIds: ros.IResolvable | string;
 
     /**
      * Attribute TransitRouters: The list of TransitRouters.
      */
-    public readonly attrTransitRouters: ros.IResolvable;
+    public readonly attrTransitRouters: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

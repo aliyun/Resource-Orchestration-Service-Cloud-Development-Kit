@@ -71,50 +71,91 @@ export interface SecurityPreferenceProps {
 }
 
 /**
+ * Represents a `SecurityPreference`.
+ */
+export interface ISecurityPreference extends ros.IResource {
+    readonly props: SecurityPreferenceProps;
+
+    /**
+     * Attribute AllowUserToChangePassword: Specifies whether RAM users can change their passwords.
+     */
+    readonly attrAllowUserToChangePassword: ros.IResolvable | string;
+
+    /**
+     * Attribute AllowUserToManageAccessKeys: Specifies whether RAM users can manage their AccessKey pairs.
+     */
+    readonly attrAllowUserToManageAccessKeys: ros.IResolvable | string;
+
+    /**
+     * Attribute AllowUserToManageMFADevices: Specifies whether RAM users can manage their MFA devices.
+     */
+    readonly attrAllowUserToManageMfaDevices: ros.IResolvable | string;
+
+    /**
+     * Attribute AllowUserToManagePublicKeys: Specifies whether RAM users can manage their public keys.
+     */
+    readonly attrAllowUserToManagePublicKeys: ros.IResolvable | string;
+
+    /**
+     * Attribute EnableSaveMFATicket: Specifies whether RAM users can save multi-factor authentication (MFA) security codes during logon.
+     */
+    readonly attrEnableSaveMfaTicket: ros.IResolvable | string;
+
+    /**
+     * Attribute LoginNetworkMasks: The subnet mask that specifies the IP addresses from which logon to the console is allowed.
+     */
+    readonly attrLoginNetworkMasks: ros.IResolvable | string;
+
+    /**
+     * Attribute LoginSessionDuration: The validity period of the logon session of the RAM user.
+     */
+    readonly attrLoginSessionDuration: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::SecurityPreference`, which is used to configure security preferences for Resource Access Management (RAM) users.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecurityPreference`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-securitypreference
  */
-export class SecurityPreference extends ros.Resource {
+export class SecurityPreference extends ros.Resource implements ISecurityPreference {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SecurityPreferenceProps;
+    public readonly props: SecurityPreferenceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AllowUserToChangePassword: Specifies whether RAM users can change their passwords.
      */
-    public readonly attrAllowUserToChangePassword: ros.IResolvable;
+    public readonly attrAllowUserToChangePassword: ros.IResolvable | string;
 
     /**
      * Attribute AllowUserToManageAccessKeys: Specifies whether RAM users can manage their AccessKey pairs.
      */
-    public readonly attrAllowUserToManageAccessKeys: ros.IResolvable;
+    public readonly attrAllowUserToManageAccessKeys: ros.IResolvable | string;
 
     /**
      * Attribute AllowUserToManageMFADevices: Specifies whether RAM users can manage their MFA devices.
      */
-    public readonly attrAllowUserToManageMfaDevices: ros.IResolvable;
+    public readonly attrAllowUserToManageMfaDevices: ros.IResolvable | string;
 
     /**
      * Attribute AllowUserToManagePublicKeys: Specifies whether RAM users can manage their public keys.
      */
-    public readonly attrAllowUserToManagePublicKeys: ros.IResolvable;
+    public readonly attrAllowUserToManagePublicKeys: ros.IResolvable | string;
 
     /**
      * Attribute EnableSaveMFATicket: Specifies whether RAM users can save multi-factor authentication (MFA) security codes during logon.
      */
-    public readonly attrEnableSaveMfaTicket: ros.IResolvable;
+    public readonly attrEnableSaveMfaTicket: ros.IResolvable | string;
 
     /**
      * Attribute LoginNetworkMasks: The subnet mask that specifies the IP addresses from which logon to the console is allowed.
      */
-    public readonly attrLoginNetworkMasks: ros.IResolvable;
+    public readonly attrLoginNetworkMasks: ros.IResolvable | string;
 
     /**
      * Attribute LoginSessionDuration: The validity period of the logon session of the RAM user.
      */
-    public readonly attrLoginSessionDuration: ros.IResolvable;
+    public readonly attrLoginSessionDuration: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

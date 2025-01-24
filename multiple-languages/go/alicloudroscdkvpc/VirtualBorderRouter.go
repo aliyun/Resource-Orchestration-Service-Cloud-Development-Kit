@@ -12,16 +12,26 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VirtualBorderRouter`, which is used to create a virtual border router (VBR).
 type VirtualBorderRouter interface {
 	alicloudroscdkcore.Resource
+	IVirtualBorderRouter
 	// Attribute Name: The name of the VBR.
-	AttrName() alicloudroscdkcore.IResolvable
+	AttrName() interface{}
 	// Attribute RouteTableId: The ID of the route table of the VBR.
-	AttrRouteTableId() alicloudroscdkcore.IResolvable
+	AttrRouteTableId() interface{}
 	// Attribute VbrId: The ID of the VBR.
-	AttrVbrId() alicloudroscdkcore.IResolvable
+	AttrVbrId() interface{}
 	// Attribute VlanInterfaceId: The ID of the VBR interface.
-	AttrVlanInterfaceId() alicloudroscdkcore.IResolvable
+	AttrVlanInterfaceId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -36,7 +46,6 @@ type VirtualBorderRouter interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *VirtualBorderRouterProps
-	SetProps(val *VirtualBorderRouterProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -49,6 +58,9 @@ type VirtualBorderRouter interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -101,10 +113,11 @@ type VirtualBorderRouter interface {
 // The jsii proxy struct for VirtualBorderRouter
 type jsiiProxy_VirtualBorderRouter struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IVirtualBorderRouter
 }
 
-func (j *jsiiProxy_VirtualBorderRouter) AttrName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VirtualBorderRouter) AttrName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrName",
@@ -113,8 +126,8 @@ func (j *jsiiProxy_VirtualBorderRouter) AttrName() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_VirtualBorderRouter) AttrRouteTableId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VirtualBorderRouter) AttrRouteTableId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRouteTableId",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_VirtualBorderRouter) AttrRouteTableId() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_VirtualBorderRouter) AttrVbrId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VirtualBorderRouter) AttrVbrId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVbrId",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_VirtualBorderRouter) AttrVbrId() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_VirtualBorderRouter) AttrVlanInterfaceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VirtualBorderRouter) AttrVlanInterfaceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVlanInterfaceId",
@@ -148,6 +161,16 @@ func (j *jsiiProxy_VirtualBorderRouter) EnableResourcePropertyConstraint() *bool
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VirtualBorderRouter) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -285,17 +308,6 @@ func (j *jsiiProxy_VirtualBorderRouter)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_VirtualBorderRouter)SetProps(val *VirtualBorderRouterProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_VirtualBorderRouter)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -387,6 +399,45 @@ func (v *jsiiProxy_VirtualBorderRouter) ApplyRemovalPolicy(policy alicloudroscdk
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (v *jsiiProxy_VirtualBorderRouter) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		v,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (v *jsiiProxy_VirtualBorderRouter) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		v,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (v *jsiiProxy_VirtualBorderRouter) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		v,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (v *jsiiProxy_VirtualBorderRouter) GeneratePhysicalName() *string {

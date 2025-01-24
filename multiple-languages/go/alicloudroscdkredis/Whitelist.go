@@ -12,16 +12,26 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::Whitelist`, which is used to configure an IP address whitelist for an ApsaraDB for Redis instance.
 type Whitelist interface {
 	alicloudroscdkcore.Resource
+	IWhitelist
 	// Attribute SecurityIpGroupAttribute: The default is empty.
 	//
 	// For distinguishing between different attribute values, the console will not display the value of hidden whitelist packet.
-	AttrSecurityIpGroupAttribute() alicloudroscdkcore.IResolvable
+	AttrSecurityIpGroupAttribute() interface{}
 	// Attribute SecurityIpGroupName: Whitelist group.
-	AttrSecurityIpGroupName() alicloudroscdkcore.IResolvable
+	AttrSecurityIpGroupName() interface{}
 	// Attribute SecurityIps: IP address whitelist to be modified.
-	AttrSecurityIps() alicloudroscdkcore.IResolvable
+	AttrSecurityIps() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -36,7 +46,6 @@ type Whitelist interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *WhitelistProps
-	SetProps(val *WhitelistProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -49,6 +58,9 @@ type Whitelist interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -101,10 +113,11 @@ type Whitelist interface {
 // The jsii proxy struct for Whitelist
 type jsiiProxy_Whitelist struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IWhitelist
 }
 
-func (j *jsiiProxy_Whitelist) AttrSecurityIpGroupAttribute() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Whitelist) AttrSecurityIpGroupAttribute() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSecurityIpGroupAttribute",
@@ -113,8 +126,8 @@ func (j *jsiiProxy_Whitelist) AttrSecurityIpGroupAttribute() alicloudroscdkcore.
 	return returns
 }
 
-func (j *jsiiProxy_Whitelist) AttrSecurityIpGroupName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Whitelist) AttrSecurityIpGroupName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSecurityIpGroupName",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_Whitelist) AttrSecurityIpGroupName() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_Whitelist) AttrSecurityIps() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Whitelist) AttrSecurityIps() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSecurityIps",
@@ -138,6 +151,16 @@ func (j *jsiiProxy_Whitelist) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Whitelist) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -275,17 +298,6 @@ func (j *jsiiProxy_Whitelist)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Whitelist)SetProps(val *WhitelistProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Whitelist)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -377,6 +389,45 @@ func (w *jsiiProxy_Whitelist) ApplyRemovalPolicy(policy alicloudroscdkcore.Remov
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (w *jsiiProxy_Whitelist) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		w,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (w *jsiiProxy_Whitelist) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		w,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (w *jsiiProxy_Whitelist) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		w,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (w *jsiiProxy_Whitelist) GeneratePhysicalName() *string {

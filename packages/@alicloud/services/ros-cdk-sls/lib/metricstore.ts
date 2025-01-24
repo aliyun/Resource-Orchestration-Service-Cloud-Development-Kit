@@ -46,20 +46,31 @@ export interface MetricStoreProps {
 }
 
 /**
+ * Represents a `MetricStore`.
+ */
+export interface IMetricStore extends ros.IResource {
+    readonly props: MetricStoreProps;
+
+    /**
+     * Attribute LogstoreName: Metric store name.
+     */
+    readonly attrLogstoreName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::MetricStore`, which is used to create a Logstore.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMetricStore`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-metricstore
  */
-export class MetricStore extends ros.Resource {
+export class MetricStore extends ros.Resource implements IMetricStore {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: MetricStoreProps;
+    public readonly props: MetricStoreProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute LogstoreName: Metric store name.
      */
-    public readonly attrLogstoreName: ros.IResolvable;
+    public readonly attrLogstoreName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -52,10 +52,6 @@ func (j *jsiiProxy_FullNatEntry) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_FullNatEntry) validateSetPropsParameters(val *FullNatEntryProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_FullNatEntry) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

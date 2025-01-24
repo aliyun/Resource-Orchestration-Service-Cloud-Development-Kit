@@ -36,25 +36,41 @@ export interface ADInfoProps {
 }
 
 /**
+ * Represents a `ADInfo`.
+ */
+export interface IADInfo extends ros.IResource {
+    readonly props: ADInfoProps;
+
+    /**
+     * Attribute ADDNS: Active directory domain name.
+     */
+    readonly attrAddns: ros.IResolvable | string;
+
+    /**
+     * Attribute DBInstanceId: The ID of the instance.
+     */
+    readonly attrDbInstanceId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::ADInfo`, which is used to configure Active Directory Domain Services (AD DS).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosADInfo`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-adinfo
  */
-export class ADInfo extends ros.Resource {
+export class ADInfo extends ros.Resource implements IADInfo {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ADInfoProps;
+    public readonly props: ADInfoProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ADDNS: Active directory domain name.
      */
-    public readonly attrAddns: ros.IResolvable;
+    public readonly attrAddns: ros.IResolvable | string;
 
     /**
      * Attribute DBInstanceId: The ID of the instance.
      */
-    public readonly attrDbInstanceId: ros.IResolvable;
+    public readonly attrDbInstanceId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

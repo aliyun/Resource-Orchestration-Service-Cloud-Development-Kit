@@ -61,25 +61,41 @@ export interface BgpGroupProps {
 }
 
 /**
+ * Represents a `BgpGroup`.
+ */
+export interface IBgpGroup extends ros.IResource {
+    readonly props: BgpGroupProps;
+
+    /**
+     * Attribute BgpGroupId: The ID of the BGP group.
+     */
+    readonly attrBgpGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute Name: The name of the BGP group.
+     */
+    readonly attrName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::BgpGroup`, which is used to create a Border Gateway Protocol (BGP) (Multi-ISP) group for a virtual border router (VBR).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBgpGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgpgroup
  */
-export class BgpGroup extends ros.Resource {
+export class BgpGroup extends ros.Resource implements IBgpGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: BgpGroupProps;
+    public readonly props: BgpGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute BgpGroupId: The ID of the BGP group.
      */
-    public readonly attrBgpGroupId: ros.IResolvable;
+    public readonly attrBgpGroupId: ros.IResolvable | string;
 
     /**
      * Attribute Name: The name of the BGP group.
      */
-    public readonly attrName: ros.IResolvable;
+    public readonly attrName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

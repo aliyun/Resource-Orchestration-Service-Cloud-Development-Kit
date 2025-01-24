@@ -173,27 +173,45 @@ export interface DesktopsProps {
 }
 
 /**
+ * Represents a `Desktops`.
+ */
+export interface IDesktops extends ros.IResource {
+    readonly props: DesktopsProps;
+
+    /**
+     * Attribute DesktopId: The ID of the cloud desktop. If multiple cloud desktops are created in a call, the
+IDs of the cloud desktops are returned.
+     */
+    readonly attrDesktopId: ros.IResolvable | string;
+
+    /**
+     * Attribute OrderId: The ID of the order.
+Note This parameter is returned only when the ChargeType parameter is set to PrePaid.
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECD::Desktops`, which is used to create one or more cloud desktops.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDesktops`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-desktops
  */
-export class Desktops extends ros.Resource {
+export class Desktops extends ros.Resource implements IDesktops {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DesktopsProps;
+    public readonly props: DesktopsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DesktopId: The ID of the cloud desktop. If multiple cloud desktops are created in a call, the
 IDs of the cloud desktops are returned.
      */
-    public readonly attrDesktopId: ros.IResolvable;
+    public readonly attrDesktopId: ros.IResolvable | string;
 
     /**
      * Attribute OrderId: The ID of the order.
 Note This parameter is returned only when the ChargeType parameter is set to PrePaid.
      */
-    public readonly attrOrderId: ros.IResolvable;
+    public readonly attrOrderId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

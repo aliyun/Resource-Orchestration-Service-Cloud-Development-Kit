@@ -12,34 +12,44 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::PrometheusUrl`, which is used to query all URLs of a cluster, including the URLs for remote read, remote write, Pushgateway, and Grafana.
 type PrometheusUrl interface {
 	alicloudroscdkcore.Resource
+	IPrometheusUrl
 	// Attribute ClusterId: Cluster ID.
-	AttrClusterId() alicloudroscdkcore.IResolvable
+	AttrClusterId() interface{}
 	// Attribute ClusterType: Cluster type.
-	AttrClusterType() alicloudroscdkcore.IResolvable
+	AttrClusterType() interface{}
 	// Attribute GrafanaUrl: Internal HTTP API URL (Grafana read URL).
-	AttrGrafanaUrl() alicloudroscdkcore.IResolvable
+	AttrGrafanaUrl() interface{}
 	// Attribute InternetGrafanaUrl: Internet HTTP API URL (Grafana read URL).
-	AttrInternetGrafanaUrl() alicloudroscdkcore.IResolvable
+	AttrInternetGrafanaUrl() interface{}
 	// Attribute InternetOpenTelemetryUrl: Internet OpenTelemetry URL.
-	AttrInternetOpenTelemetryUrl() alicloudroscdkcore.IResolvable
+	AttrInternetOpenTelemetryUrl() interface{}
 	// Attribute InternetPushGatewayUrl: Internet push gateway URL.
-	AttrInternetPushGatewayUrl() alicloudroscdkcore.IResolvable
+	AttrInternetPushGatewayUrl() interface{}
 	// Attribute InternetRemoteReadUrl: Internet remote read URL.
-	AttrInternetRemoteReadUrl() alicloudroscdkcore.IResolvable
+	AttrInternetRemoteReadUrl() interface{}
 	// Attribute InternetRemoteWriteUrl: Internet remote write URL.
-	AttrInternetRemoteWriteUrl() alicloudroscdkcore.IResolvable
+	AttrInternetRemoteWriteUrl() interface{}
 	// Attribute OpenTelemetryUrl: Internal OpenTelemetry URL.
-	AttrOpenTelemetryUrl() alicloudroscdkcore.IResolvable
+	AttrOpenTelemetryUrl() interface{}
 	// Attribute PushGatewayUrl: Internal push gateway URL.
-	AttrPushGatewayUrl() alicloudroscdkcore.IResolvable
+	AttrPushGatewayUrl() interface{}
 	// Attribute RemoteReadUrl: Internal remote read URL.
-	AttrRemoteReadUrl() alicloudroscdkcore.IResolvable
+	AttrRemoteReadUrl() interface{}
 	// Attribute RemoteWriteUrl: Internal remote write URL.
-	AttrRemoteWriteUrl() alicloudroscdkcore.IResolvable
+	AttrRemoteWriteUrl() interface{}
 	// Attribute Token: The token for Grafana read URL.
-	AttrToken() alicloudroscdkcore.IResolvable
+	AttrToken() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -54,7 +64,6 @@ type PrometheusUrl interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *PrometheusUrlProps
-	SetProps(val *PrometheusUrlProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -67,6 +76,9 @@ type PrometheusUrl interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -119,10 +131,11 @@ type PrometheusUrl interface {
 // The jsii proxy struct for PrometheusUrl
 type jsiiProxy_PrometheusUrl struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IPrometheusUrl
 }
 
-func (j *jsiiProxy_PrometheusUrl) AttrClusterId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrometheusUrl) AttrClusterId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrClusterId",
@@ -131,8 +144,8 @@ func (j *jsiiProxy_PrometheusUrl) AttrClusterId() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_PrometheusUrl) AttrClusterType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrometheusUrl) AttrClusterType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrClusterType",
@@ -141,8 +154,8 @@ func (j *jsiiProxy_PrometheusUrl) AttrClusterType() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_PrometheusUrl) AttrGrafanaUrl() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrometheusUrl) AttrGrafanaUrl() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGrafanaUrl",
@@ -151,8 +164,8 @@ func (j *jsiiProxy_PrometheusUrl) AttrGrafanaUrl() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_PrometheusUrl) AttrInternetGrafanaUrl() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrometheusUrl) AttrInternetGrafanaUrl() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInternetGrafanaUrl",
@@ -161,8 +174,8 @@ func (j *jsiiProxy_PrometheusUrl) AttrInternetGrafanaUrl() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_PrometheusUrl) AttrInternetOpenTelemetryUrl() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrometheusUrl) AttrInternetOpenTelemetryUrl() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInternetOpenTelemetryUrl",
@@ -171,8 +184,8 @@ func (j *jsiiProxy_PrometheusUrl) AttrInternetOpenTelemetryUrl() alicloudroscdkc
 	return returns
 }
 
-func (j *jsiiProxy_PrometheusUrl) AttrInternetPushGatewayUrl() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrometheusUrl) AttrInternetPushGatewayUrl() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInternetPushGatewayUrl",
@@ -181,8 +194,8 @@ func (j *jsiiProxy_PrometheusUrl) AttrInternetPushGatewayUrl() alicloudroscdkcor
 	return returns
 }
 
-func (j *jsiiProxy_PrometheusUrl) AttrInternetRemoteReadUrl() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrometheusUrl) AttrInternetRemoteReadUrl() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInternetRemoteReadUrl",
@@ -191,8 +204,8 @@ func (j *jsiiProxy_PrometheusUrl) AttrInternetRemoteReadUrl() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_PrometheusUrl) AttrInternetRemoteWriteUrl() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrometheusUrl) AttrInternetRemoteWriteUrl() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInternetRemoteWriteUrl",
@@ -201,8 +214,8 @@ func (j *jsiiProxy_PrometheusUrl) AttrInternetRemoteWriteUrl() alicloudroscdkcor
 	return returns
 }
 
-func (j *jsiiProxy_PrometheusUrl) AttrOpenTelemetryUrl() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrometheusUrl) AttrOpenTelemetryUrl() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOpenTelemetryUrl",
@@ -211,8 +224,8 @@ func (j *jsiiProxy_PrometheusUrl) AttrOpenTelemetryUrl() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_PrometheusUrl) AttrPushGatewayUrl() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrometheusUrl) AttrPushGatewayUrl() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPushGatewayUrl",
@@ -221,8 +234,8 @@ func (j *jsiiProxy_PrometheusUrl) AttrPushGatewayUrl() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_PrometheusUrl) AttrRemoteReadUrl() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrometheusUrl) AttrRemoteReadUrl() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRemoteReadUrl",
@@ -231,8 +244,8 @@ func (j *jsiiProxy_PrometheusUrl) AttrRemoteReadUrl() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_PrometheusUrl) AttrRemoteWriteUrl() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrometheusUrl) AttrRemoteWriteUrl() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRemoteWriteUrl",
@@ -241,8 +254,8 @@ func (j *jsiiProxy_PrometheusUrl) AttrRemoteWriteUrl() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_PrometheusUrl) AttrToken() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_PrometheusUrl) AttrToken() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrToken",
@@ -256,6 +269,16 @@ func (j *jsiiProxy_PrometheusUrl) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_PrometheusUrl) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -393,17 +416,6 @@ func (j *jsiiProxy_PrometheusUrl)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_PrometheusUrl)SetProps(val *PrometheusUrlProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_PrometheusUrl)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -495,6 +507,45 @@ func (p *jsiiProxy_PrometheusUrl) ApplyRemovalPolicy(policy alicloudroscdkcore.R
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (p *jsiiProxy_PrometheusUrl) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		p,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_PrometheusUrl) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		p,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_PrometheusUrl) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		p,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (p *jsiiProxy_PrometheusUrl) GeneratePhysicalName() *string {

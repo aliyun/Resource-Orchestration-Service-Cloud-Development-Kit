@@ -169,30 +169,51 @@ export interface NatFirewallControlPolicyProps {
 }
 
 /**
+ * Represents a `NatFirewallControlPolicy`.
+ */
+export interface INatFirewallControlPolicy extends ros.IResource {
+    readonly props: NatFirewallControlPolicyProps;
+
+    /**
+     * Attribute AclUuid: The unique ID of the access control policy.
+     */
+    readonly attrAclUuid: ros.IResolvable | string;
+
+    /**
+     * Attribute Direction: The direction of the traffic to which the access control policy applies.
+     */
+    readonly attrDirection: ros.IResolvable | string;
+
+    /**
+     * Attribute NatGatewayId: The ID of the NAT gateway.
+     */
+    readonly attrNatGatewayId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::NatFirewallControlPolicy`, which is used to add an access control policy for a NAT firewall.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNatFirewallControlPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-natfirewallcontrolpolicy
  */
-export class NatFirewallControlPolicy extends ros.Resource {
+export class NatFirewallControlPolicy extends ros.Resource implements INatFirewallControlPolicy {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: NatFirewallControlPolicyProps;
+    public readonly props: NatFirewallControlPolicyProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AclUuid: The unique ID of the access control policy.
      */
-    public readonly attrAclUuid: ros.IResolvable;
+    public readonly attrAclUuid: ros.IResolvable | string;
 
     /**
      * Attribute Direction: The direction of the traffic to which the access control policy applies.
      */
-    public readonly attrDirection: ros.IResolvable;
+    public readonly attrDirection: ros.IResolvable | string;
 
     /**
      * Attribute NatGatewayId: The ID of the NAT gateway.
      */
-    public readonly attrNatGatewayId: ros.IResolvable;
+    public readonly attrNatGatewayId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

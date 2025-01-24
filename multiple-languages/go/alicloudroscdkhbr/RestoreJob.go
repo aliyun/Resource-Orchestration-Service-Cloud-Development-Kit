@@ -12,18 +12,28 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::HBR::RestoreJob`, which is used to create a restore job.
 type RestoreJob interface {
 	alicloudroscdkcore.Resource
+	IRestoreJob
 	// Attribute ErrorMessage: Error message of restore job.
-	AttrErrorMessage() alicloudroscdkcore.IResolvable
+	AttrErrorMessage() interface{}
 	// Attribute RestoreId: Restore job ID.
-	AttrRestoreId() alicloudroscdkcore.IResolvable
+	AttrRestoreId() interface{}
 	// Attribute RestoreType: Restore type.
-	AttrRestoreType() alicloudroscdkcore.IResolvable
+	AttrRestoreType() interface{}
 	// Attribute SourceType: Source type.
-	AttrSourceType() alicloudroscdkcore.IResolvable
+	AttrSourceType() interface{}
 	// Attribute Status: Restore job status.
-	AttrStatus() alicloudroscdkcore.IResolvable
+	AttrStatus() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -38,7 +48,6 @@ type RestoreJob interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *RestoreJobProps
-	SetProps(val *RestoreJobProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -51,6 +60,9 @@ type RestoreJob interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -103,10 +115,11 @@ type RestoreJob interface {
 // The jsii proxy struct for RestoreJob
 type jsiiProxy_RestoreJob struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IRestoreJob
 }
 
-func (j *jsiiProxy_RestoreJob) AttrErrorMessage() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_RestoreJob) AttrErrorMessage() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrErrorMessage",
@@ -115,8 +128,8 @@ func (j *jsiiProxy_RestoreJob) AttrErrorMessage() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_RestoreJob) AttrRestoreId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_RestoreJob) AttrRestoreId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRestoreId",
@@ -125,8 +138,8 @@ func (j *jsiiProxy_RestoreJob) AttrRestoreId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_RestoreJob) AttrRestoreType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_RestoreJob) AttrRestoreType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRestoreType",
@@ -135,8 +148,8 @@ func (j *jsiiProxy_RestoreJob) AttrRestoreType() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_RestoreJob) AttrSourceType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_RestoreJob) AttrSourceType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSourceType",
@@ -145,8 +158,8 @@ func (j *jsiiProxy_RestoreJob) AttrSourceType() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_RestoreJob) AttrStatus() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_RestoreJob) AttrStatus() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStatus",
@@ -160,6 +173,16 @@ func (j *jsiiProxy_RestoreJob) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RestoreJob) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -297,17 +320,6 @@ func (j *jsiiProxy_RestoreJob)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_RestoreJob)SetProps(val *RestoreJobProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_RestoreJob)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -399,6 +411,45 @@ func (r *jsiiProxy_RestoreJob) ApplyRemovalPolicy(policy alicloudroscdkcore.Remo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (r *jsiiProxy_RestoreJob) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		r,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_RestoreJob) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		r,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_RestoreJob) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		r,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (r *jsiiProxy_RestoreJob) GeneratePhysicalName() *string {

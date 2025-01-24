@@ -37,6 +37,20 @@ export class CodeName {
     );
   }
 
+  public static forResourceInterface(resourceName: CodeName): CodeName {
+    let className = resourceName.className;
+    if(!/[a-z]/.test(className)) {
+      let lowClassName: string = className.toLowerCase();
+      className = lowClassName.charAt(0).toUpperCase() + lowClassName.substring(1);
+    }
+    return new CodeName(
+      resourceName.packageName,
+      resourceName.namespace,
+      `I${className}`,
+      resourceName.specName,
+    );
+  }
+
   public static forPropertyType(specName: PropertyAttributeName, resourceClass: CodeName): CodeName {
     // Exception for an intrinsic type
     if (specName.propAttrName === 'Tag' && specName.resourceName === '') {

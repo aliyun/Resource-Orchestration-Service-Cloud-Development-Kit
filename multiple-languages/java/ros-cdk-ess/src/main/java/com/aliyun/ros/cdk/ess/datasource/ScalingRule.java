@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.ess.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ESS::ScalingRule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:08.444Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:40.086Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.datasource.ScalingRule")
-public class ScalingRule extends com.aliyun.ros.cdk.core.Resource {
+public class ScalingRule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ess.datasource.IScalingRule {
 
     protected ScalingRule(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -43,15 +43,17 @@ public class ScalingRule extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute AdjustmentType: The adjustment method of the scaling rule.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAdjustmentType() {
-        return software.amazon.jsii.Kernel.get(this, "attrAdjustmentType", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAdjustmentType() {
+        return software.amazon.jsii.Kernel.get(this, "attrAdjustmentType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute AdjustmentValue: The number of instances that must be scaled based on the scaling rule.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAdjustmentValue() {
-        return software.amazon.jsii.Kernel.get(this, "attrAdjustmentValue", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAdjustmentValue() {
+        return software.amazon.jsii.Kernel.get(this, "attrAdjustmentValue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -59,155 +61,182 @@ public class ScalingRule extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * The value of this parameter is returned only if you set ShowAlarmRules to true. Otherwise, null is returned.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAlarms() {
-        return software.amazon.jsii.Kernel.get(this, "attrAlarms", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAlarms() {
+        return software.amazon.jsii.Kernel.get(this, "attrAlarms", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute Cooldown: The cooldown period of the scaling rule.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCooldown() {
-        return software.amazon.jsii.Kernel.get(this, "attrCooldown", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCooldown() {
+        return software.amazon.jsii.Kernel.get(this, "attrCooldown", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute DisableScaleIn: Indicates whether scale-in is disabled.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDisableScaleIn() {
-        return software.amazon.jsii.Kernel.get(this, "attrDisableScaleIn", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDisableScaleIn() {
+        return software.amazon.jsii.Kernel.get(this, "attrDisableScaleIn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute EstimatedInstanceWarmup: The warm-up period of instances.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrEstimatedInstanceWarmup() {
-        return software.amazon.jsii.Kernel.get(this, "attrEstimatedInstanceWarmup", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrEstimatedInstanceWarmup() {
+        return software.amazon.jsii.Kernel.get(this, "attrEstimatedInstanceWarmup", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute InitialMaxSize: The maximum number of ECS instances that can be contained in the scaling group.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInitialMaxSize() {
-        return software.amazon.jsii.Kernel.get(this, "attrInitialMaxSize", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrInitialMaxSize() {
+        return software.amazon.jsii.Kernel.get(this, "attrInitialMaxSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute MaxSize: The maximum number of ECS instances that can be contained in the scaling group.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrMaxSize() {
-        return software.amazon.jsii.Kernel.get(this, "attrMaxSize", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrMaxSize() {
+        return software.amazon.jsii.Kernel.get(this, "attrMaxSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute MetricName: The name of the metric of the event-triggered task that is associated with the scaling rule.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrMetricName() {
-        return software.amazon.jsii.Kernel.get(this, "attrMetricName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrMetricName() {
+        return software.amazon.jsii.Kernel.get(this, "attrMetricName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute MinAdjustmentMagnitude: The minimum number of instances that must be scaled.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrMinAdjustmentMagnitude() {
-        return software.amazon.jsii.Kernel.get(this, "attrMinAdjustmentMagnitude", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrMinAdjustmentMagnitude() {
+        return software.amazon.jsii.Kernel.get(this, "attrMinAdjustmentMagnitude", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute MinSize: The minimum number of ECS instances that must be contained in the scaling group.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrMinSize() {
-        return software.amazon.jsii.Kernel.get(this, "attrMinSize", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrMinSize() {
+        return software.amazon.jsii.Kernel.get(this, "attrMinSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute PredictiveScalingMode: The mode of the predictive scaling rule.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPredictiveScalingMode() {
-        return software.amazon.jsii.Kernel.get(this, "attrPredictiveScalingMode", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPredictiveScalingMode() {
+        return software.amazon.jsii.Kernel.get(this, "attrPredictiveScalingMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute PredictiveTaskBufferTime: The amount of buffer time before prediction tasks are executed.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPredictiveTaskBufferTime() {
-        return software.amazon.jsii.Kernel.get(this, "attrPredictiveTaskBufferTime", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPredictiveTaskBufferTime() {
+        return software.amazon.jsii.Kernel.get(this, "attrPredictiveTaskBufferTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute PredictiveValueBehavior: The action on the predicted maximum value.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPredictiveValueBehavior() {
-        return software.amazon.jsii.Kernel.get(this, "attrPredictiveValueBehavior", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPredictiveValueBehavior() {
+        return software.amazon.jsii.Kernel.get(this, "attrPredictiveValueBehavior", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute PredictiveValueBuffer: The ratio based on which the predicted value is increased when PredictiveValueBehavior is set to PredictiveValueOverrideMaxWithBuffer.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPredictiveValueBuffer() {
-        return software.amazon.jsii.Kernel.get(this, "attrPredictiveValueBuffer", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPredictiveValueBuffer() {
+        return software.amazon.jsii.Kernel.get(this, "attrPredictiveValueBuffer", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute ScaleInEvaluationCount: The number of consecutive times that the event-triggered task for scale-in purposes must meet the threshold conditions before an alert is triggered.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrScaleInEvaluationCount() {
-        return software.amazon.jsii.Kernel.get(this, "attrScaleInEvaluationCount", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrScaleInEvaluationCount() {
+        return software.amazon.jsii.Kernel.get(this, "attrScaleInEvaluationCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute ScaleOutEvaluationCount: The number of consecutive times that the event-triggered task created for scale-out purposes must meet the threshold conditions before an alert is triggered.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrScaleOutEvaluationCount() {
-        return software.amazon.jsii.Kernel.get(this, "attrScaleOutEvaluationCount", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrScaleOutEvaluationCount() {
+        return software.amazon.jsii.Kernel.get(this, "attrScaleOutEvaluationCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute ScalingGroupId: The ID of the scaling group.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrScalingGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "attrScalingGroupId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrScalingGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "attrScalingGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute ScalingRuleAri: The unique identifier of the scaling rule.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrScalingRuleAri() {
-        return software.amazon.jsii.Kernel.get(this, "attrScalingRuleAri", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrScalingRuleAri() {
+        return software.amazon.jsii.Kernel.get(this, "attrScalingRuleAri", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute ScalingRuleId: The ID of the scaling rule.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrScalingRuleId() {
-        return software.amazon.jsii.Kernel.get(this, "attrScalingRuleId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrScalingRuleId() {
+        return software.amazon.jsii.Kernel.get(this, "attrScalingRuleId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute ScalingRuleName: The name of the scaling rule.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrScalingRuleName() {
-        return software.amazon.jsii.Kernel.get(this, "attrScalingRuleName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrScalingRuleName() {
+        return software.amazon.jsii.Kernel.get(this, "attrScalingRuleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute ScalingRuleType: The type of the scaling rule.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrScalingRuleType() {
-        return software.amazon.jsii.Kernel.get(this, "attrScalingRuleType", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrScalingRuleType() {
+        return software.amazon.jsii.Kernel.get(this, "attrScalingRuleType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute StepAdjustments: The step adjustments of the step scaling rule.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrStepAdjustments() {
-        return software.amazon.jsii.Kernel.get(this, "attrStepAdjustments", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrStepAdjustments() {
+        return software.amazon.jsii.Kernel.get(this, "attrStepAdjustments", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute TargetValue: The target value of the metric.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTargetValue() {
-        return software.amazon.jsii.Kernel.get(this, "attrTargetValue", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTargetValue() {
+        return software.amazon.jsii.Kernel.get(this, "attrTargetValue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ess.datasource.ScalingRuleProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ess.datasource.ScalingRuleProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -224,14 +253,6 @@ public class ScalingRule extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ess.datasource.ScalingRuleProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ess.datasource.ScalingRuleProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ess.datasource.ScalingRuleProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {

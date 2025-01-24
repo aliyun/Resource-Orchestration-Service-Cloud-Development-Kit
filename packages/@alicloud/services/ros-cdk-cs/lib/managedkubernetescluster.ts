@@ -145,6 +145,11 @@ export interface ManagedKubernetesClusterProps {
     readonly loginPassword?: string | ros.IResolvable;
 
     /**
+     * Property maintenanceWindow: Cluster maintenance window.
+     */
+    readonly maintenanceWindow?: RosManagedKubernetesCluster.MaintenanceWindowProperty | ros.IResolvable;
+
+    /**
      * Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes. 
      * This number is determined by the specified pod CIDR block. 
      * This parameter takes effect only if the cluster uses the Flannel plug-in.Default value: 25.
@@ -272,70 +277,131 @@ export interface ManagedKubernetesClusterProps {
 }
 
 /**
+ * Represents a `ManagedKubernetesCluster`.
+ */
+export interface IManagedKubernetesCluster extends ros.IResource {
+    readonly props: ManagedKubernetesClusterProps;
+
+    /**
+     * Attribute APIServerSLBId: The id of API server SLB
+     */
+    readonly attrApiServerSlbId: ros.IResolvable | string;
+
+    /**
+     * Attribute ClusterId: Cluster instance ID.
+     */
+    readonly attrClusterId: ros.IResolvable | string;
+
+    /**
+     * Attribute DefaultUserKubeConfig: Default user kubernetes config which is used for configuring cluster credentials.
+     */
+    readonly attrDefaultUserKubeConfig: ros.IResolvable | string;
+
+    /**
+     * Attribute IngressSLBId: The id of ingress SLB
+     */
+    readonly attrIngressSlbId: ros.IResolvable | string;
+
+    /**
+     * Attribute Nodes: The list of cluster nodes.
+     */
+    readonly attrNodes: ros.IResolvable | string;
+
+    /**
+     * Attribute PrivateUserKubConfig: Private user kubernetes config which is used for configuring cluster credentials.
+     */
+    readonly attrPrivateUserKubConfig: ros.IResolvable | string;
+
+    /**
+     * Attribute ScalingConfigurationId: Scaling configuration id
+     */
+    readonly attrScalingConfigurationId: ros.IResolvable | string;
+
+    /**
+     * Attribute ScalingGroupId: Scaling group id
+     */
+    readonly attrScalingGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute ScalingRuleId: Scaling rule id
+     */
+    readonly attrScalingRuleId: ros.IResolvable | string;
+
+    /**
+     * Attribute TaskId: Task ID. Automatically assigned by the system, the user queries the task status.
+     */
+    readonly attrTaskId: ros.IResolvable | string;
+
+    /**
+     * Attribute WorkerRamRoleName: Worker ram role name.
+     */
+    readonly attrWorkerRamRoleName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ManagedKubernetesCluster`, which is used to create a Container Service for Kubernetes (ACK) managed cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosManagedKubernetesCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managedkubernetescluster
  */
-export class ManagedKubernetesCluster extends ros.Resource {
+export class ManagedKubernetesCluster extends ros.Resource implements IManagedKubernetesCluster {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ManagedKubernetesClusterProps;
+    public readonly props: ManagedKubernetesClusterProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute APIServerSLBId: The id of API server SLB
      */
-    public readonly attrApiServerSlbId: ros.IResolvable;
+    public readonly attrApiServerSlbId: ros.IResolvable | string;
 
     /**
      * Attribute ClusterId: Cluster instance ID.
      */
-    public readonly attrClusterId: ros.IResolvable;
+    public readonly attrClusterId: ros.IResolvable | string;
 
     /**
      * Attribute DefaultUserKubeConfig: Default user kubernetes config which is used for configuring cluster credentials.
      */
-    public readonly attrDefaultUserKubeConfig: ros.IResolvable;
+    public readonly attrDefaultUserKubeConfig: ros.IResolvable | string;
 
     /**
      * Attribute IngressSLBId: The id of ingress SLB
      */
-    public readonly attrIngressSlbId: ros.IResolvable;
+    public readonly attrIngressSlbId: ros.IResolvable | string;
 
     /**
      * Attribute Nodes: The list of cluster nodes.
      */
-    public readonly attrNodes: ros.IResolvable;
+    public readonly attrNodes: ros.IResolvable | string;
 
     /**
      * Attribute PrivateUserKubConfig: Private user kubernetes config which is used for configuring cluster credentials.
      */
-    public readonly attrPrivateUserKubConfig: ros.IResolvable;
+    public readonly attrPrivateUserKubConfig: ros.IResolvable | string;
 
     /**
      * Attribute ScalingConfigurationId: Scaling configuration id
      */
-    public readonly attrScalingConfigurationId: ros.IResolvable;
+    public readonly attrScalingConfigurationId: ros.IResolvable | string;
 
     /**
      * Attribute ScalingGroupId: Scaling group id
      */
-    public readonly attrScalingGroupId: ros.IResolvable;
+    public readonly attrScalingGroupId: ros.IResolvable | string;
 
     /**
      * Attribute ScalingRuleId: Scaling rule id
      */
-    public readonly attrScalingRuleId: ros.IResolvable;
+    public readonly attrScalingRuleId: ros.IResolvable | string;
 
     /**
      * Attribute TaskId: Task ID. Automatically assigned by the system, the user queries the task status.
      */
-    public readonly attrTaskId: ros.IResolvable;
+    public readonly attrTaskId: ros.IResolvable | string;
 
     /**
      * Attribute WorkerRamRoleName: Worker ram role name.
      */
-    public readonly attrWorkerRamRoleName: ros.IResolvable;
+    public readonly attrWorkerRamRoleName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -379,8 +445,8 @@ export class ManagedKubernetesCluster extends ros.Resource {
             deleteOptions: props.deleteOptions,
             keyPair: props.keyPair,
             nodeCidrMask: props.nodeCidrMask,
-            securityGroupId: props.securityGroupId,
             timeoutMins: props.timeoutMins === undefined || props.timeoutMins === null ? 60 : props.timeoutMins,
+            securityGroupId: props.securityGroupId,
             clusterSpec: props.clusterSpec,
             deletionProtection: props.deletionProtection,
             controlPlaneLogTtl: props.controlPlaneLogTtl,
@@ -389,6 +455,7 @@ export class ManagedKubernetesCluster extends ros.Resource {
             nodePools: props.nodePools,
             encryptionProviderKey: props.encryptionProviderKey,
             snatEntry: props.snatEntry === undefined || props.snatEntry === null ? true : props.snatEntry,
+            maintenanceWindow: props.maintenanceWindow,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosManagedKubernetesCluster;
         this.attrApiServerSlbId = rosManagedKubernetesCluster.attrApiServerSlbId;

@@ -27,20 +27,31 @@ export interface MasterSlaveServerGroupProps {
 }
 
 /**
+ * Represents a `MasterSlaveServerGroup`.
+ */
+export interface IMasterSlaveServerGroup extends ros.IResource {
+    readonly props: MasterSlaveServerGroupProps;
+
+    /**
+     * Attribute MasterSlaveServerGroupId: Active/standby server group ID.
+     */
+    readonly attrMasterSlaveServerGroupId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::MasterSlaveServerGroup`, which is used to create a primary/secondary server group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMasterSlaveServerGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-masterslaveservergroup
  */
-export class MasterSlaveServerGroup extends ros.Resource {
+export class MasterSlaveServerGroup extends ros.Resource implements IMasterSlaveServerGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: MasterSlaveServerGroupProps;
+    public readonly props: MasterSlaveServerGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute MasterSlaveServerGroupId: Active/standby server group ID.
      */
-    public readonly attrMasterSlaveServerGroupId: ros.IResolvable;
+    public readonly attrMasterSlaveServerGroupId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

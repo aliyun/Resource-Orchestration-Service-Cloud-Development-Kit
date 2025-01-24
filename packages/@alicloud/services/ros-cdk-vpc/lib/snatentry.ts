@@ -44,20 +44,31 @@ export interface SnatEntryProps {
 }
 
 /**
+ * Represents a `SnatEntry`.
+ */
+export interface ISnatEntry extends ros.IResource {
+    readonly props: SnatEntryProps;
+
+    /**
+     * Attribute SnatEntryIds: The IDS of the SNAT entry.
+     */
+    readonly attrSnatEntryIds: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::SnatEntry`, which is used to add SNAT entries to an SNAT table.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSnatEntry`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-snatentry
  */
-export class SnatEntry extends ros.Resource {
+export class SnatEntry extends ros.Resource implements ISnatEntry {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SnatEntryProps;
+    public readonly props: SnatEntryProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SnatEntryIds: The IDS of the SNAT entry.
      */
-    public readonly attrSnatEntryIds: ros.IResolvable;
+    public readonly attrSnatEntryIds: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

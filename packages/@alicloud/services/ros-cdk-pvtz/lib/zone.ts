@@ -50,35 +50,61 @@ export interface ZoneProps {
 }
 
 /**
+ * Represents a `Zone`.
+ */
+export interface IZone extends ros.IResource {
+    readonly props: ZoneProps;
+
+    /**
+     * Attribute ZoneId: Zone ID.
+     */
+    readonly attrZoneId: ros.IResolvable | string;
+
+    /**
+     * Attribute ZoneName: Zone name.
+     */
+    readonly attrZoneName: ros.IResolvable | string;
+
+    /**
+     * Attribute ZoneTag: Zone label.
+     */
+    readonly attrZoneTag: ros.IResolvable | string;
+
+    /**
+     * Attribute ZoneType: Zone type.
+     */
+    readonly attrZoneType: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::PVTZ::Zone`, which is used to create a built-in authoritative zone.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosZone`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zone
  */
-export class Zone extends ros.Resource {
+export class Zone extends ros.Resource implements IZone {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ZoneProps;
+    public readonly props: ZoneProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ZoneId: Zone ID.
      */
-    public readonly attrZoneId: ros.IResolvable;
+    public readonly attrZoneId: ros.IResolvable | string;
 
     /**
      * Attribute ZoneName: Zone name.
      */
-    public readonly attrZoneName: ros.IResolvable;
+    public readonly attrZoneName: ros.IResolvable | string;
 
     /**
      * Attribute ZoneTag: Zone label.
      */
-    public readonly attrZoneTag: ros.IResolvable;
+    public readonly attrZoneTag: ros.IResolvable | string;
 
     /**
      * Attribute ZoneType: Zone type.
      */
-    public readonly attrZoneType: ros.IResolvable;
+    public readonly attrZoneType: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

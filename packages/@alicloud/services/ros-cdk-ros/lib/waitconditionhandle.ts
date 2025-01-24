@@ -32,40 +32,71 @@ export interface WaitConditionHandleProps {
 }
 
 /**
+ * Represents a `WaitConditionHandle`.
+ */
+export interface IWaitConditionHandle extends ros.IResource {
+    readonly props: WaitConditionHandleProps;
+
+    /**
+     * Attribute CurlCli: Convenience attribute, provides curl CLI command prefix, which can be used for signalling handle completion or failure.  You can signal success by adding --data-binary '{"status": "SUCCESS"}' , or signal failure by adding --data-binary '{"status": "FAILURE"}'
+     */
+    readonly attrCurlCli: ros.IResolvable | string;
+
+    /**
+     * Attribute Headers: HTTP POST Headers used for signalling handle completion or failure.
+     */
+    readonly attrHeaders: ros.IResolvable | string;
+
+    /**
+     * Attribute PowerShellCurlCli: Convenience attribute, provides curl CLI command prefix for PowerShell, which can be used for signalling handle completion or failure. As this cmdlet was introduced in PowerShell 3.0, ensure the version of PowerShell satisfies the constraint. (Show the version via $PSVersionTable.PSVersion.) You can signal success by adding -Body '{"status": "SUCCESS"}' , or signal failure by adding -Body '{"status": "FAILURE"}'
+     */
+    readonly attrPowerShellCurlCli: ros.IResolvable | string;
+
+    /**
+     * Attribute URL: HTTP POST URL used for signalling handle completion or failure.
+     */
+    readonly attrUrl: ros.IResolvable | string;
+
+    /**
+     * Attribute WindowsCurlCli: Convenience attribute, provides curl CLI command prefix for Windows, which can be used for signalling handle completion or failure. As Windows does not support curl command, you need to install curl.exe and add it to PATH first. You can signal success by adding --data-binary "{\"status\": \"SUCCESS\"}" , or signal failure by adding --data-binary "{\"status\": \"FAILURE\"}"
+     */
+    readonly attrWindowsCurlCli: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::WaitConditionHandle`, which is used to receive signals. You can use ALIYUN::ROS::WaitConditionHandle together with ALIYUN::ROS::WaitCondition to manage the execution process of a stack. When you create an Elastic Compute Service (ECS) instance, a signal is sent during the execution of the user data.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWaitConditionHandle`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-waitconditionhandle
  */
-export class WaitConditionHandle extends ros.Resource {
+export class WaitConditionHandle extends ros.Resource implements IWaitConditionHandle {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: WaitConditionHandleProps;
+    public readonly props: WaitConditionHandleProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CurlCli: Convenience attribute, provides curl CLI command prefix, which can be used for signalling handle completion or failure.  You can signal success by adding --data-binary '{"status": "SUCCESS"}' , or signal failure by adding --data-binary '{"status": "FAILURE"}'
      */
-    public readonly attrCurlCli: ros.IResolvable;
+    public readonly attrCurlCli: ros.IResolvable | string;
 
     /**
      * Attribute Headers: HTTP POST Headers used for signalling handle completion or failure.
      */
-    public readonly attrHeaders: ros.IResolvable;
+    public readonly attrHeaders: ros.IResolvable | string;
 
     /**
      * Attribute PowerShellCurlCli: Convenience attribute, provides curl CLI command prefix for PowerShell, which can be used for signalling handle completion or failure. As this cmdlet was introduced in PowerShell 3.0, ensure the version of PowerShell satisfies the constraint. (Show the version via $PSVersionTable.PSVersion.) You can signal success by adding -Body '{"status": "SUCCESS"}' , or signal failure by adding -Body '{"status": "FAILURE"}'
      */
-    public readonly attrPowerShellCurlCli: ros.IResolvable;
+    public readonly attrPowerShellCurlCli: ros.IResolvable | string;
 
     /**
      * Attribute URL: HTTP POST URL used for signalling handle completion or failure.
      */
-    public readonly attrUrl: ros.IResolvable;
+    public readonly attrUrl: ros.IResolvable | string;
 
     /**
      * Attribute WindowsCurlCli: Convenience attribute, provides curl CLI command prefix for Windows, which can be used for signalling handle completion or failure. As Windows does not support curl command, you need to install curl.exe and add it to PATH first. You can signal success by adding --data-binary "{\"status\": \"SUCCESS\"}" , or signal failure by adding --data-binary "{\"status\": \"FAILURE\"}"
      */
-    public readonly attrWindowsCurlCli: ros.IResolvable;
+    public readonly attrWindowsCurlCli: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

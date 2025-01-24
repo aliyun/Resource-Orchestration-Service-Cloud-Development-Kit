@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.adblake;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ADBLake::DBCluster</code>, which is used to create an AnalyticDB for MySQL Data Lakehouse Edition (V3.0) cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:03.866Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:33.909Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adblake.$Module.class, fqn = "@alicloud/ros-cdk-adblake.DBCluster")
-public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
+public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.adblake.IDBCluster {
 
     protected DBCluster(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -43,22 +43,30 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute ConnectionString: The public endpoint that is used to connect to the cluster.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrConnectionString() {
-        return software.amazon.jsii.Kernel.get(this, "attrConnectionString", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrConnectionString() {
+        return software.amazon.jsii.Kernel.get(this, "attrConnectionString", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute DBClusterId: The ID of the AnalyticDB for MySQL Data Lakehouse Edition (V3.0) cluster.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDbClusterId() {
-        return software.amazon.jsii.Kernel.get(this, "attrDbClusterId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDbClusterId() {
+        return software.amazon.jsii.Kernel.get(this, "attrDbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute OrderId: The order ID.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrOrderId() {
-        return software.amazon.jsii.Kernel.get(this, "attrOrderId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrOrderId() {
+        return software.amazon.jsii.Kernel.get(this, "attrOrderId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.adblake.DBClusterProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.adblake.DBClusterProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -75,14 +83,6 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.adblake.DBClusterProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.adblake.DBClusterProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.adblake.DBClusterProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {
@@ -328,6 +328,27 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property cloneSourceRegionId: The ID of the source region where the cluster is located.
+         * <p>
+         * @return {@code this}
+         * @param cloneSourceRegionId Property cloneSourceRegionId: The ID of the source region where the cluster is located. This parameter is required.
+         */
+        public Builder cloneSourceRegionId(final java.lang.String cloneSourceRegionId) {
+            this.props.cloneSourceRegionId(cloneSourceRegionId);
+            return this;
+        }
+        /**
+         * Property cloneSourceRegionId: The ID of the source region where the cluster is located.
+         * <p>
+         * @return {@code this}
+         * @param cloneSourceRegionId Property cloneSourceRegionId: The ID of the source region where the cluster is located. This parameter is required.
+         */
+        public Builder cloneSourceRegionId(final com.aliyun.ros.cdk.core.IResolvable cloneSourceRegionId) {
+            this.props.cloneSourceRegionId(cloneSourceRegionId);
+            return this;
+        }
+
+        /**
          * Property dbClusterDescription: The description of the cluster.
          * <p>
          * The description cannot start with http:// or https://.
@@ -351,6 +372,62 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder dbClusterDescription(final com.aliyun.ros.cdk.core.IResolvable dbClusterDescription) {
             this.props.dbClusterDescription(dbClusterDescription);
+            return this;
+        }
+
+        /**
+         * Property dbClusterNetworkType: The network type of the cluster.
+         * <p>
+         * Valid values:
+         * VPC
+         * <p>
+         * @return {@code this}
+         * @param dbClusterNetworkType Property dbClusterNetworkType: The network type of the cluster. This parameter is required.
+         */
+        public Builder dbClusterNetworkType(final java.lang.String dbClusterNetworkType) {
+            this.props.dbClusterNetworkType(dbClusterNetworkType);
+            return this;
+        }
+        /**
+         * Property dbClusterNetworkType: The network type of the cluster.
+         * <p>
+         * Valid values:
+         * VPC
+         * <p>
+         * @return {@code this}
+         * @param dbClusterNetworkType Property dbClusterNetworkType: The network type of the cluster. This parameter is required.
+         */
+        public Builder dbClusterNetworkType(final com.aliyun.ros.cdk.core.IResolvable dbClusterNetworkType) {
+            this.props.dbClusterNetworkType(dbClusterNetworkType);
+            return this;
+        }
+
+        /**
+         * Property diskEncryption: Specifies whether to encrypt the disk.
+         * <p>
+         * Valid values:
+         * true
+         * false (default)
+         * <p>
+         * @return {@code this}
+         * @param diskEncryption Property diskEncryption: Specifies whether to encrypt the disk. This parameter is required.
+         */
+        public Builder diskEncryption(final java.lang.Boolean diskEncryption) {
+            this.props.diskEncryption(diskEncryption);
+            return this;
+        }
+        /**
+         * Property diskEncryption: Specifies whether to encrypt the disk.
+         * <p>
+         * Valid values:
+         * true
+         * false (default)
+         * <p>
+         * @return {@code this}
+         * @param diskEncryption Property diskEncryption: Specifies whether to encrypt the disk. This parameter is required.
+         */
+        public Builder diskEncryption(final com.aliyun.ros.cdk.core.IResolvable diskEncryption) {
+            this.props.diskEncryption(diskEncryption);
             return this;
         }
 
@@ -380,6 +457,27 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder enableDefaultResourcePool(final com.aliyun.ros.cdk.core.IResolvable enableDefaultResourcePool) {
             this.props.enableDefaultResourcePool(enableDefaultResourcePool);
+            return this;
+        }
+
+        /**
+         * Property kmsId:.
+         * <p>
+         * @return {@code this}
+         * @param kmsId Property kmsId:. This parameter is required.
+         */
+        public Builder kmsId(final java.lang.String kmsId) {
+            this.props.kmsId(kmsId);
+            return this;
+        }
+        /**
+         * Property kmsId:.
+         * <p>
+         * @return {@code this}
+         * @param kmsId Property kmsId:. This parameter is required.
+         */
+        public Builder kmsId(final com.aliyun.ros.cdk.core.IResolvable kmsId) {
+            this.props.kmsId(kmsId);
             return this;
         }
 
@@ -440,6 +538,75 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder periodType(final com.aliyun.ros.cdk.core.IResolvable periodType) {
             this.props.periodType(periodType);
+            return this;
+        }
+
+        /**
+         * Property productForm: Valid values: IntegrationForm LegacyForm.
+         * <p>
+         * @return {@code this}
+         * @param productForm Property productForm: Valid values: IntegrationForm LegacyForm. This parameter is required.
+         */
+        public Builder productForm(final java.lang.String productForm) {
+            this.props.productForm(productForm);
+            return this;
+        }
+        /**
+         * Property productForm: Valid values: IntegrationForm LegacyForm.
+         * <p>
+         * @return {@code this}
+         * @param productForm Property productForm: Valid values: IntegrationForm LegacyForm. This parameter is required.
+         */
+        public Builder productForm(final com.aliyun.ros.cdk.core.IResolvable productForm) {
+            this.props.productForm(productForm);
+            return this;
+        }
+
+        /**
+         * Property reservedNodeCount: The number of reserved nodes.
+         * <p>
+         * Must be 1 for basic version and multiple
+         * of 3 for enterprise version.
+         * <p>
+         * @return {@code this}
+         * @param reservedNodeCount Property reservedNodeCount: The number of reserved nodes. This parameter is required.
+         */
+        public Builder reservedNodeCount(final java.lang.Number reservedNodeCount) {
+            this.props.reservedNodeCount(reservedNodeCount);
+            return this;
+        }
+        /**
+         * Property reservedNodeCount: The number of reserved nodes.
+         * <p>
+         * Must be 1 for basic version and multiple
+         * of 3 for enterprise version.
+         * <p>
+         * @return {@code this}
+         * @param reservedNodeCount Property reservedNodeCount: The number of reserved nodes. This parameter is required.
+         */
+        public Builder reservedNodeCount(final com.aliyun.ros.cdk.core.IResolvable reservedNodeCount) {
+            this.props.reservedNodeCount(reservedNodeCount);
+            return this;
+        }
+
+        /**
+         * Property reservedNodeSize: The size of each reserved node.
+         * <p>
+         * @return {@code this}
+         * @param reservedNodeSize Property reservedNodeSize: The size of each reserved node. This parameter is required.
+         */
+        public Builder reservedNodeSize(final java.lang.Number reservedNodeSize) {
+            this.props.reservedNodeSize(reservedNodeSize);
+            return this;
+        }
+        /**
+         * Property reservedNodeSize: The size of each reserved node.
+         * <p>
+         * @return {@code this}
+         * @param reservedNodeSize Property reservedNodeSize: The size of each reserved node. This parameter is required.
+         */
+        public Builder reservedNodeSize(final com.aliyun.ros.cdk.core.IResolvable reservedNodeSize) {
+            this.props.reservedNodeSize(reservedNodeSize);
             return this;
         }
 

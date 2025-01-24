@@ -21,40 +21,71 @@ export interface ResourceGroupProps {
 }
 
 /**
+ * Represents a `ResourceGroup`.
+ */
+export interface IResourceGroup extends ros.IResource {
+    readonly props: ResourceGroupProps;
+
+    /**
+     * Attribute AccountId: The ID of the Alibaba Cloud account to which the resource group belongs
+     */
+    readonly attrAccountId: ros.IResolvable | string;
+
+    /**
+     * Attribute DisplayName: The display name of the resource group
+     */
+    readonly attrDisplayName: ros.IResolvable | string;
+
+    /**
+     * Attribute Id: The ID of the resource group
+     */
+    readonly attrId: ros.IResolvable | string;
+
+    /**
+     * Attribute Name: The unique identifier of the resource group
+     */
+    readonly attrName: ros.IResolvable | string;
+
+    /**
+     * Attribute RegionStatuses: The status of the resource group in all regions
+     */
+    readonly attrRegionStatuses: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ResourceGroup`, which is used to create a resource group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosResourceGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourcegroup
  */
-export class ResourceGroup extends ros.Resource {
+export class ResourceGroup extends ros.Resource implements IResourceGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ResourceGroupProps;
+    public readonly props: ResourceGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccountId: The ID of the Alibaba Cloud account to which the resource group belongs
      */
-    public readonly attrAccountId: ros.IResolvable;
+    public readonly attrAccountId: ros.IResolvable | string;
 
     /**
      * Attribute DisplayName: The display name of the resource group
      */
-    public readonly attrDisplayName: ros.IResolvable;
+    public readonly attrDisplayName: ros.IResolvable | string;
 
     /**
      * Attribute Id: The ID of the resource group
      */
-    public readonly attrId: ros.IResolvable;
+    public readonly attrId: ros.IResolvable | string;
 
     /**
      * Attribute Name: The unique identifier of the resource group
      */
-    public readonly attrName: ros.IResolvable;
+    public readonly attrName: ros.IResolvable | string;
 
     /**
      * Attribute RegionStatuses: The status of the resource group in all regions
      */
-    public readonly attrRegionStatuses: ros.IResolvable;
+    public readonly attrRegionStatuses: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

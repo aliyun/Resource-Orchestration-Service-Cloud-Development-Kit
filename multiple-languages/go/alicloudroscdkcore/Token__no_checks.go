@@ -20,6 +20,10 @@ func validateToken_AsStringParameters(value interface{}, options *EncodingOption
 	return nil
 }
 
+func validateToken_CompareStringsParameters(possibleToken1 *string, possibleToken2 *string) error {
+	return nil
+}
+
 func validateToken_IsUnresolvedParameters(obj interface{}) error {
 	return nil
 }

@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::XTraceApps`.
 type XTraceApps interface {
 	alicloudroscdkcore.Resource
+	IXTraceApps
 	// Attribute Pids: The list of Pids.
-	AttrPids() alicloudroscdkcore.IResolvable
+	AttrPids() interface{}
 	// Attribute XTraceApps: The list of Application Monitoring tasks.
-	AttrXTraceApps() alicloudroscdkcore.IResolvable
+	AttrXTraceApps() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type XTraceApps interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *XTraceAppsProps
-	SetProps(val *XTraceAppsProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type XTraceApps interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type XTraceApps interface {
 // The jsii proxy struct for XTraceApps
 type jsiiProxy_XTraceApps struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IXTraceApps
 }
 
-func (j *jsiiProxy_XTraceApps) AttrPids() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_XTraceApps) AttrPids() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPids",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_XTraceApps) AttrPids() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_XTraceApps) AttrXTraceApps() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_XTraceApps) AttrXTraceApps() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrXTraceApps",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_XTraceApps) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_XTraceApps) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_XTraceApps)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_XTraceApps)SetProps(val *XTraceAppsProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_XTraceApps)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (x *jsiiProxy_XTraceApps) ApplyRemovalPolicy(policy alicloudroscdkcore.Remo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (x *jsiiProxy_XTraceApps) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		x,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (x *jsiiProxy_XTraceApps) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		x,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (x *jsiiProxy_XTraceApps) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		x,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (x *jsiiProxy_XTraceApps) GeneratePhysicalName() *string {

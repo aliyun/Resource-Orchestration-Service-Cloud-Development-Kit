@@ -12,74 +12,84 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::GraphDatabase::DbInstance`, which is used to query the information about an instance.
 type DbInstance interface {
 	alicloudroscdkcore.Resource
+	IDbInstance
 	// Attribute ConnectionString: Virtual Private Cloud (vpc connection such as a VPN connection or leased line domain name.
-	AttrConnectionString() alicloudroscdkcore.IResolvable
+	AttrConnectionString() interface{}
 	// Attribute CreateTime: Creation time, which follows the format of YYYY-MM-DD 'T'hh:mm:ssZ, such as 2011-05-30 T12:11:4Z.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute CurrentMinorVersion: The current kernel image version.
-	AttrCurrentMinorVersion() alicloudroscdkcore.IResolvable
+	AttrCurrentMinorVersion() interface{}
 	// Attribute DbInstanceCategory: The category of the db instance.
-	AttrDbInstanceCategory() alicloudroscdkcore.IResolvable
+	AttrDbInstanceCategory() interface{}
 	// Attribute DbInstanceCpu: For example, instances can be grouped according to Cpu core count.
-	AttrDbInstanceCpu() alicloudroscdkcore.IResolvable
+	AttrDbInstanceCpu() interface{}
 	// Attribute DbInstanceDescription: According to the practical example or notes.
-	AttrDbInstanceDescription() alicloudroscdkcore.IResolvable
+	AttrDbInstanceDescription() interface{}
 	// Attribute DbInstanceId: The ID of the GDB Instance.
-	AttrDbInstanceId() alicloudroscdkcore.IResolvable
+	AttrDbInstanceId() interface{}
 	// Attribute DBInstanceIPArray: IP ADDRESS whitelist for the instance group list.
-	AttrDbInstanceIpArray() alicloudroscdkcore.IResolvable
+	AttrDbInstanceIpArray() interface{}
 	// Attribute DbInstanceMemory: Instance memory, which is measured in MB.
-	AttrDbInstanceMemory() alicloudroscdkcore.IResolvable
+	AttrDbInstanceMemory() interface{}
 	// Attribute DbInstanceNetworkType: The network type of the db instance.
-	AttrDbInstanceNetworkType() alicloudroscdkcore.IResolvable
+	AttrDbInstanceNetworkType() interface{}
 	// Attribute DbInstanceStorageType: Cloud Disk.
-	AttrDbInstanceStorageType() alicloudroscdkcore.IResolvable
+	AttrDbInstanceStorageType() interface{}
 	// Attribute DbInstanceType: The type of the db instance.
-	AttrDbInstanceType() alicloudroscdkcore.IResolvable
+	AttrDbInstanceType() interface{}
 	// Attribute DbNodeClass: The class of the db node.
-	AttrDbNodeClass() alicloudroscdkcore.IResolvable
+	AttrDbNodeClass() interface{}
 	// Attribute DbNodeCount: The count of the db node.
-	AttrDbNodeCount() alicloudroscdkcore.IResolvable
+	AttrDbNodeCount() interface{}
 	// Attribute DbNodeStorage: Instance storage space, which is measured in GB.
-	AttrDbNodeStorage() alicloudroscdkcore.IResolvable
+	AttrDbNodeStorage() interface{}
 	// Attribute DbVersion: Kernel Version 1.0 is represented as gremlin,1.
-	AttrDbVersion() alicloudroscdkcore.IResolvable
+	AttrDbVersion() interface{}
 	// Attribute EcsSecurityGroupRelations: Security group information array.
-	AttrEcsSecurityGroupRelations() alicloudroscdkcore.IResolvable
+	AttrEcsSecurityGroupRelations() interface{}
 	// Attribute Expired: The expire status of the db instance.
-	AttrExpired() alicloudroscdkcore.IResolvable
+	AttrExpired() interface{}
 	// Attribute ExpireTime: The instance after it expires time for subscription instance.
-	AttrExpireTime() alicloudroscdkcore.IResolvable
+	AttrExpireTime() interface{}
 	// Attribute LatestMinorVersion: The latest kernel image version.
-	AttrLatestMinorVersion() alicloudroscdkcore.IResolvable
+	AttrLatestMinorVersion() interface{}
 	// Attribute LockMode: Instance lock state.
-	AttrLockMode() alicloudroscdkcore.IResolvable
+	AttrLockMode() interface{}
 	// Attribute LockReason: An instance is locked the reason.
-	AttrLockReason() alicloudroscdkcore.IResolvable
+	AttrLockReason() interface{}
 	// Attribute MaintainTime: Instance maintenance time such as 00:00Z-02:00Z, 0 to 2 points to carry out routine maintenance.
-	AttrMaintainTime() alicloudroscdkcore.IResolvable
+	AttrMaintainTime() interface{}
 	// Attribute PaymentType: The DB instance attribute field representing the paid type is desirable.
-	AttrPaymentType() alicloudroscdkcore.IResolvable
+	AttrPaymentType() interface{}
 	// Attribute Port: Application Port.
-	AttrPort() alicloudroscdkcore.IResolvable
+	AttrPort() interface{}
 	// Attribute PublicConnectionString: The public connection string ID of the DB instance.
-	AttrPublicConnectionString() alicloudroscdkcore.IResolvable
+	AttrPublicConnectionString() interface{}
 	// Attribute PublicPort: The public port ID of the DB instance.
-	AttrPublicPort() alicloudroscdkcore.IResolvable
+	AttrPublicPort() interface{}
 	// Attribute ReadOnlyDbInstanceIds: The array of the readonly db instances.
-	AttrReadOnlyDbInstanceIds() alicloudroscdkcore.IResolvable
+	AttrReadOnlyDbInstanceIds() interface{}
 	// Attribute ResourceGroupId: Resource Group ID.
-	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() interface{}
 	// Attribute Tags: The tags of the GDB Instance.
-	AttrTags() alicloudroscdkcore.IResolvable
+	AttrTags() interface{}
 	// Attribute VpcId: The vpc id of the db instance.
-	AttrVpcId() alicloudroscdkcore.IResolvable
+	AttrVpcId() interface{}
 	// Attribute VSwitchId: The vswitch id of the DB instance.
-	AttrVSwitchId() alicloudroscdkcore.IResolvable
+	AttrVSwitchId() interface{}
 	// Attribute ZoneId: The zone ID of the instance.
-	AttrZoneId() alicloudroscdkcore.IResolvable
+	AttrZoneId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -94,7 +104,6 @@ type DbInstance interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DbInstanceProps
-	SetProps(val *DbInstanceProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -107,6 +116,9 @@ type DbInstance interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -159,10 +171,11 @@ type DbInstance interface {
 // The jsii proxy struct for DbInstance
 type jsiiProxy_DbInstance struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDbInstance
 }
 
-func (j *jsiiProxy_DbInstance) AttrConnectionString() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrConnectionString() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrConnectionString",
@@ -171,8 +184,8 @@ func (j *jsiiProxy_DbInstance) AttrConnectionString() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -181,8 +194,8 @@ func (j *jsiiProxy_DbInstance) AttrCreateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrCurrentMinorVersion() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrCurrentMinorVersion() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCurrentMinorVersion",
@@ -191,8 +204,8 @@ func (j *jsiiProxy_DbInstance) AttrCurrentMinorVersion() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrDbInstanceCategory() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrDbInstanceCategory() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbInstanceCategory",
@@ -201,8 +214,8 @@ func (j *jsiiProxy_DbInstance) AttrDbInstanceCategory() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrDbInstanceCpu() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrDbInstanceCpu() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbInstanceCpu",
@@ -211,8 +224,8 @@ func (j *jsiiProxy_DbInstance) AttrDbInstanceCpu() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrDbInstanceDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrDbInstanceDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbInstanceDescription",
@@ -221,8 +234,8 @@ func (j *jsiiProxy_DbInstance) AttrDbInstanceDescription() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrDbInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrDbInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbInstanceId",
@@ -231,8 +244,8 @@ func (j *jsiiProxy_DbInstance) AttrDbInstanceId() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrDbInstanceIpArray() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrDbInstanceIpArray() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbInstanceIpArray",
@@ -241,8 +254,8 @@ func (j *jsiiProxy_DbInstance) AttrDbInstanceIpArray() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrDbInstanceMemory() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrDbInstanceMemory() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbInstanceMemory",
@@ -251,8 +264,8 @@ func (j *jsiiProxy_DbInstance) AttrDbInstanceMemory() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrDbInstanceNetworkType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrDbInstanceNetworkType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbInstanceNetworkType",
@@ -261,8 +274,8 @@ func (j *jsiiProxy_DbInstance) AttrDbInstanceNetworkType() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrDbInstanceStorageType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrDbInstanceStorageType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbInstanceStorageType",
@@ -271,8 +284,8 @@ func (j *jsiiProxy_DbInstance) AttrDbInstanceStorageType() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrDbInstanceType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrDbInstanceType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbInstanceType",
@@ -281,8 +294,8 @@ func (j *jsiiProxy_DbInstance) AttrDbInstanceType() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrDbNodeClass() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrDbNodeClass() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbNodeClass",
@@ -291,8 +304,8 @@ func (j *jsiiProxy_DbInstance) AttrDbNodeClass() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrDbNodeCount() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrDbNodeCount() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbNodeCount",
@@ -301,8 +314,8 @@ func (j *jsiiProxy_DbInstance) AttrDbNodeCount() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrDbNodeStorage() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrDbNodeStorage() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbNodeStorage",
@@ -311,8 +324,8 @@ func (j *jsiiProxy_DbInstance) AttrDbNodeStorage() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrDbVersion() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrDbVersion() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbVersion",
@@ -321,8 +334,8 @@ func (j *jsiiProxy_DbInstance) AttrDbVersion() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrEcsSecurityGroupRelations() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrEcsSecurityGroupRelations() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEcsSecurityGroupRelations",
@@ -331,8 +344,8 @@ func (j *jsiiProxy_DbInstance) AttrEcsSecurityGroupRelations() alicloudroscdkcor
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrExpired() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrExpired() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrExpired",
@@ -341,8 +354,8 @@ func (j *jsiiProxy_DbInstance) AttrExpired() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrExpireTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrExpireTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrExpireTime",
@@ -351,8 +364,8 @@ func (j *jsiiProxy_DbInstance) AttrExpireTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrLatestMinorVersion() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrLatestMinorVersion() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLatestMinorVersion",
@@ -361,8 +374,8 @@ func (j *jsiiProxy_DbInstance) AttrLatestMinorVersion() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrLockMode() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrLockMode() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLockMode",
@@ -371,8 +384,8 @@ func (j *jsiiProxy_DbInstance) AttrLockMode() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrLockReason() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrLockReason() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLockReason",
@@ -381,8 +394,8 @@ func (j *jsiiProxy_DbInstance) AttrLockReason() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrMaintainTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrMaintainTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMaintainTime",
@@ -391,8 +404,8 @@ func (j *jsiiProxy_DbInstance) AttrMaintainTime() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrPaymentType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrPaymentType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPaymentType",
@@ -401,8 +414,8 @@ func (j *jsiiProxy_DbInstance) AttrPaymentType() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrPort() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrPort() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPort",
@@ -411,8 +424,8 @@ func (j *jsiiProxy_DbInstance) AttrPort() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrPublicConnectionString() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrPublicConnectionString() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPublicConnectionString",
@@ -421,8 +434,8 @@ func (j *jsiiProxy_DbInstance) AttrPublicConnectionString() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrPublicPort() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrPublicPort() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPublicPort",
@@ -431,8 +444,8 @@ func (j *jsiiProxy_DbInstance) AttrPublicPort() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrReadOnlyDbInstanceIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrReadOnlyDbInstanceIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrReadOnlyDbInstanceIds",
@@ -441,8 +454,8 @@ func (j *jsiiProxy_DbInstance) AttrReadOnlyDbInstanceIds() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupId",
@@ -451,8 +464,8 @@ func (j *jsiiProxy_DbInstance) AttrResourceGroupId() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrTags() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrTags() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTags",
@@ -461,8 +474,8 @@ func (j *jsiiProxy_DbInstance) AttrTags() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrVpcId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrVpcId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVpcId",
@@ -471,8 +484,8 @@ func (j *jsiiProxy_DbInstance) AttrVpcId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrVSwitchId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrVSwitchId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVSwitchId",
@@ -481,8 +494,8 @@ func (j *jsiiProxy_DbInstance) AttrVSwitchId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbInstance) AttrZoneId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbInstance) AttrZoneId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrZoneId",
@@ -496,6 +509,16 @@ func (j *jsiiProxy_DbInstance) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DbInstance) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -633,17 +656,6 @@ func (j *jsiiProxy_DbInstance)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DbInstance)SetProps(val *DbInstanceProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_DbInstance)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -735,6 +747,45 @@ func (d *jsiiProxy_DbInstance) ApplyRemovalPolicy(policy alicloudroscdkcore.Remo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_DbInstance) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DbInstance) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DbInstance) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_DbInstance) GeneratePhysicalName() *string {

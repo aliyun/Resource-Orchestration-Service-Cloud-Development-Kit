@@ -34,25 +34,41 @@ export interface AccessControlsProps {
 }
 
 /**
+ * Represents a `AccessControls`.
+ */
+export interface IAccessControls extends ros.IResource {
+    readonly props: AccessControlsProps;
+
+    /**
+     * Attribute AccessControls: The list of access controls.
+     */
+    readonly attrAccessControls: ros.IResolvable | string;
+
+    /**
+     * Attribute AclIds: The list of acl IDs.
+     */
+    readonly attrAclIds: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::AccessControls`, which is used to query created access control lists (ACLs).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccessControls`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-accesscontrols
  */
-export class AccessControls extends ros.Resource {
+export class AccessControls extends ros.Resource implements IAccessControls {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AccessControlsProps;
+    public readonly props: AccessControlsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccessControls: The list of access controls.
      */
-    public readonly attrAccessControls: ros.IResolvable;
+    public readonly attrAccessControls: ros.IResolvable | string;
 
     /**
      * Attribute AclIds: The list of acl IDs.
      */
-    public readonly attrAclIds: ros.IResolvable;
+    public readonly attrAclIds: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

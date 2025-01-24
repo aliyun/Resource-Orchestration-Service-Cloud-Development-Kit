@@ -19,25 +19,41 @@ export interface UserDefineRegionsProps {
 }
 
 /**
+ * Represents a `UserDefineRegions`.
+ */
+export interface IUserDefineRegions extends ros.IResource {
+    readonly props: UserDefineRegionsProps;
+
+    /**
+     * Attribute Ids: The list of user define region IDs.
+     */
+    readonly attrIds: ros.IResolvable | string;
+
+    /**
+     * Attribute UserDefineRegions: The list of user define regions.
+     */
+    readonly attrUserDefineRegions: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::EDAS::UserDefineRegions`, which is used to query custom namespaces.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUserDefineRegions`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-edas-userdefineregions
  */
-export class UserDefineRegions extends ros.Resource {
+export class UserDefineRegions extends ros.Resource implements IUserDefineRegions {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: UserDefineRegionsProps;
+    public readonly props: UserDefineRegionsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Ids: The list of user define region IDs.
      */
-    public readonly attrIds: ros.IResolvable;
+    public readonly attrIds: ros.IResolvable | string;
 
     /**
      * Attribute UserDefineRegions: The list of user define regions.
      */
-    public readonly attrUserDefineRegions: ros.IResolvable;
+    public readonly attrUserDefineRegions: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

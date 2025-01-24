@@ -80,20 +80,31 @@ export interface BasicAcceleratorProps {
 }
 
 /**
+ * Represents a `BasicAccelerator`.
+ */
+export interface IBasicAccelerator extends ros.IResource {
+    readonly props: BasicAcceleratorProps;
+
+    /**
+     * Attribute AcceleratorId: The ID of the accelerated IP address.
+     */
+    readonly attrAcceleratorId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::GA::BasicAccelerator`, which is used to create a basic Global Accelerator (GA) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBasicAccelerator`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicaccelerator
  */
-export class BasicAccelerator extends ros.Resource {
+export class BasicAccelerator extends ros.Resource implements IBasicAccelerator {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: BasicAcceleratorProps;
+    public readonly props: BasicAcceleratorProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AcceleratorId: The ID of the accelerated IP address.
      */
-    public readonly attrAcceleratorId: ros.IResolvable;
+    public readonly attrAcceleratorId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

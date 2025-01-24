@@ -21,30 +21,51 @@ export interface DeployGroupProps {
 }
 
 /**
+ * Represents a `DeployGroup`.
+ */
+export interface IDeployGroup extends ros.IResource {
+    readonly props: DeployGroupProps;
+
+    /**
+     * Attribute AppId: Application ID
+     */
+    readonly attrAppId: ros.IResolvable | string;
+
+    /**
+     * Attribute GroupName: Deploy group name
+     */
+    readonly attrGroupName: ros.IResolvable | string;
+
+    /**
+     * Attribute Id: Deploy group ID
+     */
+    readonly attrId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::DeployGroup`, which is used to create an instance group for an application.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDeployGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-deploygroup
  */
-export class DeployGroup extends ros.Resource {
+export class DeployGroup extends ros.Resource implements IDeployGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DeployGroupProps;
+    public readonly props: DeployGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AppId: Application ID
      */
-    public readonly attrAppId: ros.IResolvable;
+    public readonly attrAppId: ros.IResolvable | string;
 
     /**
      * Attribute GroupName: Deploy group name
      */
-    public readonly attrGroupName: ros.IResolvable;
+    public readonly attrGroupName: ros.IResolvable | string;
 
     /**
      * Attribute Id: Deploy group ID
      */
-    public readonly attrId: ros.IResolvable;
+    public readonly attrId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

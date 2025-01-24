@@ -33,40 +33,71 @@ export interface RouteTableProps {
 }
 
 /**
+ * Represents a `RouteTable`.
+ */
+export interface IRouteTable extends ros.IResource {
+    readonly props: RouteTableProps;
+
+    /**
+     * Attribute RouteTableId: The ID of the route table.
+     */
+    readonly attrRouteTableId: ros.IResolvable | string;
+
+    /**
+     * Attribute RouteTableName: The name of the route table.
+     */
+    readonly attrRouteTableName: ros.IResolvable | string;
+
+    /**
+     * Attribute RouteTableType: The type of the route table.
+     */
+    readonly attrRouteTableType: ros.IResolvable | string;
+
+    /**
+     * Attribute VSwitchIds: A list of VSwitches under the VPC.
+     */
+    readonly attrVSwitchIds: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcId: The ID of the VRouter to which the route table belongs.
+     */
+    readonly attrVpcId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::RouteTable`, which is used to create a custom route table.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRouteTable`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-routetable
  */
-export class RouteTable extends ros.Resource {
+export class RouteTable extends ros.Resource implements IRouteTable {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: RouteTableProps;
+    public readonly props: RouteTableProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RouteTableId: The ID of the route table.
      */
-    public readonly attrRouteTableId: ros.IResolvable;
+    public readonly attrRouteTableId: ros.IResolvable | string;
 
     /**
      * Attribute RouteTableName: The name of the route table.
      */
-    public readonly attrRouteTableName: ros.IResolvable;
+    public readonly attrRouteTableName: ros.IResolvable | string;
 
     /**
      * Attribute RouteTableType: The type of the route table.
      */
-    public readonly attrRouteTableType: ros.IResolvable;
+    public readonly attrRouteTableType: ros.IResolvable | string;
 
     /**
      * Attribute VSwitchIds: A list of VSwitches under the VPC.
      */
-    public readonly attrVSwitchIds: ros.IResolvable;
+    public readonly attrVSwitchIds: ros.IResolvable | string;
 
     /**
      * Attribute VpcId: The ID of the VRouter to which the route table belongs.
      */
-    public readonly attrVpcId: ros.IResolvable;
+    public readonly attrVpcId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

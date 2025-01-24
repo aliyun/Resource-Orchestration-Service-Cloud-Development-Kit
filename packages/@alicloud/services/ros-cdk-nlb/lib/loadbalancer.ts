@@ -84,50 +84,91 @@ export interface LoadBalancerProps {
 }
 
 /**
+ * Represents a `LoadBalancer`.
+ */
+export interface ILoadBalancer extends ros.IResource {
+    readonly props: LoadBalancerProps;
+
+    /**
+     * Attribute AddressIpVersion: The version of IP address that the NLB instance uses to provide services.
+     */
+    readonly attrAddressIpVersion: ros.IResolvable | string;
+
+    /**
+     * Attribute AddressType: The type of IP address that the NLB instance uses to provide services.
+     */
+    readonly attrAddressType: ros.IResolvable | string;
+
+    /**
+     * Attribute DNSName: The domain name of the NLB instance.
+     */
+    readonly attrDnsName: ros.IResolvable | string;
+
+    /**
+     * Attribute LoadBalancerId: The ID of the NLB instance.
+     */
+    readonly attrLoadBalancerId: ros.IResolvable | string;
+
+    /**
+     * Attribute LoadBalancerType: The type of the NLB instance.
+     */
+    readonly attrLoadBalancerType: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcId: The ID of the virtual private cloud (VPC) where the NLB instance is deployed.
+     */
+    readonly attrVpcId: ros.IResolvable | string;
+
+    /**
+     * Attribute ZoneMappings: The zones, vSwitches and addresses which are mapped to the zones.
+     */
+    readonly attrZoneMappings: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::NLB::LoadBalancer`, which is used to create a Network Load Balancer (NLB) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLoadBalancer`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-loadbalancer
  */
-export class LoadBalancer extends ros.Resource {
+export class LoadBalancer extends ros.Resource implements ILoadBalancer {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: LoadBalancerProps;
+    public readonly props: LoadBalancerProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AddressIpVersion: The version of IP address that the NLB instance uses to provide services.
      */
-    public readonly attrAddressIpVersion: ros.IResolvable;
+    public readonly attrAddressIpVersion: ros.IResolvable | string;
 
     /**
      * Attribute AddressType: The type of IP address that the NLB instance uses to provide services.
      */
-    public readonly attrAddressType: ros.IResolvable;
+    public readonly attrAddressType: ros.IResolvable | string;
 
     /**
      * Attribute DNSName: The domain name of the NLB instance.
      */
-    public readonly attrDnsName: ros.IResolvable;
+    public readonly attrDnsName: ros.IResolvable | string;
 
     /**
      * Attribute LoadBalancerId: The ID of the NLB instance.
      */
-    public readonly attrLoadBalancerId: ros.IResolvable;
+    public readonly attrLoadBalancerId: ros.IResolvable | string;
 
     /**
      * Attribute LoadBalancerType: The type of the NLB instance.
      */
-    public readonly attrLoadBalancerType: ros.IResolvable;
+    public readonly attrLoadBalancerType: ros.IResolvable | string;
 
     /**
      * Attribute VpcId: The ID of the virtual private cloud (VPC) where the NLB instance is deployed.
      */
-    public readonly attrVpcId: ros.IResolvable;
+    public readonly attrVpcId: ros.IResolvable | string;
 
     /**
      * Attribute ZoneMappings: The zones, vSwitches and addresses which are mapped to the zones.
      */
-    public readonly attrZoneMappings: ros.IResolvable;
+    public readonly attrZoneMappings: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

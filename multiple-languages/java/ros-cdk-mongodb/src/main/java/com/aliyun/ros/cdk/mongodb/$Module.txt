@@ -1,3 +1,5 @@
+@alicloud/ros-cdk-mongodb.IInstance=com.aliyun.ros.cdk.mongodb.IInstance
+@alicloud/ros-cdk-mongodb.IShardingInstance=com.aliyun.ros.cdk.mongodb.IShardingInstance
 @alicloud/ros-cdk-mongodb.Instance=com.aliyun.ros.cdk.mongodb.Instance
 @alicloud/ros-cdk-mongodb.InstanceProps=com.aliyun.ros.cdk.mongodb.InstanceProps
 @alicloud/ros-cdk-mongodb.RosInstance=com.aliyun.ros.cdk.mongodb.RosInstance
@@ -13,6 +15,9 @@
 @alicloud/ros-cdk-mongodb.RosShardingInstanceProps=com.aliyun.ros.cdk.mongodb.RosShardingInstanceProps
 @alicloud/ros-cdk-mongodb.ShardingInstance=com.aliyun.ros.cdk.mongodb.ShardingInstance
 @alicloud/ros-cdk-mongodb.ShardingInstanceProps=com.aliyun.ros.cdk.mongodb.ShardingInstanceProps
+@alicloud/ros-cdk-mongodb.datasource.IInstance=com.aliyun.ros.cdk.mongodb.datasource.IInstance
+@alicloud/ros-cdk-mongodb.datasource.IInstanceClasses=com.aliyun.ros.cdk.mongodb.datasource.IInstanceClasses
+@alicloud/ros-cdk-mongodb.datasource.IInstances=com.aliyun.ros.cdk.mongodb.datasource.IInstances
 @alicloud/ros-cdk-mongodb.datasource.Instance=com.aliyun.ros.cdk.mongodb.datasource.Instance
 @alicloud/ros-cdk-mongodb.datasource.InstanceClasses=com.aliyun.ros.cdk.mongodb.datasource.InstanceClasses
 @alicloud/ros-cdk-mongodb.datasource.InstanceClassesProps=com.aliyun.ros.cdk.mongodb.datasource.InstanceClassesProps

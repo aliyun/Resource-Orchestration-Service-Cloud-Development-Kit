@@ -42,20 +42,31 @@ export interface InsertMediaToSearchLibProps {
 }
 
 /**
+ * Represents a `InsertMediaToSearchLib`.
+ */
+export interface IInsertMediaToSearchLib extends ros.IResource {
+    readonly props: InsertMediaToSearchLibProps;
+
+    /**
+     * Attribute MediaId: The ID of the media asset.
+     */
+    readonly attrMediaId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ICE::InsertMediaToSearchLib`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInsertMediaToSearchLib`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ice-insertmediatosearchlib
  */
-export class InsertMediaToSearchLib extends ros.Resource {
+export class InsertMediaToSearchLib extends ros.Resource implements IInsertMediaToSearchLib {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InsertMediaToSearchLibProps;
+    public readonly props: InsertMediaToSearchLibProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute MediaId: The ID of the media asset.
      */
-    public readonly attrMediaId: ros.IResolvable;
+    public readonly attrMediaId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

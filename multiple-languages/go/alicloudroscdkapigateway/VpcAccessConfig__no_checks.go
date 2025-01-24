@@ -52,10 +52,6 @@ func (j *jsiiProxy_VpcAccessConfig) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_VpcAccessConfig) validateSetPropsParameters(val *VpcAccessConfigProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_VpcAccessConfig) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

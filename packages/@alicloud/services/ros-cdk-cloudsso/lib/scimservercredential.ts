@@ -24,25 +24,41 @@ export interface SCIMServerCredentialProps {
 }
 
 /**
+ * Represents a `SCIMServerCredential`.
+ */
+export interface ISCIMServerCredential extends ros.IResource {
+    readonly props: SCIMServerCredentialProps;
+
+    /**
+     * Attribute CredentialId: The ID of the SCIM credential.
+     */
+    readonly attrCredentialId: ros.IResolvable | string;
+
+    /**
+     * Attribute CredentialSecret: The secret of the SCIM credential.
+     */
+    readonly attrCredentialSecret: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::SCIMServerCredential`, which is used to create a System for Cross-domain Identity Management (SCIM) credential.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSCIMServerCredential`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-scimservercredential
  */
-export class SCIMServerCredential extends ros.Resource {
+export class SCIMServerCredential extends ros.Resource implements ISCIMServerCredential {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SCIMServerCredentialProps;
+    public readonly props: SCIMServerCredentialProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CredentialId: The ID of the SCIM credential.
      */
-    public readonly attrCredentialId: ros.IResolvable;
+    public readonly attrCredentialId: ros.IResolvable | string;
 
     /**
      * Attribute CredentialSecret: The secret of the SCIM credential.
      */
-    public readonly attrCredentialSecret: ros.IResolvable;
+    public readonly attrCredentialSecret: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -36,6 +36,8 @@ type AutoProvisioningGroupProps struct {
 	//
 	// If set true, ROS will check the state of AutoProvisioningGroup to be fulfilled. Otherwise ROS will regard AutoProvisioningGroup create failed.
 	CheckExecutionStatus interface{} `field:"optional" json:"checkExecutionStatus" yaml:"checkExecutionStatus"`
+	// Property dataDiskConfig: List of instance data disk information.
+	DataDiskConfig interface{} `field:"optional" json:"dataDiskConfig" yaml:"dataDiskConfig"`
 	// Property defaultTargetCapacityType: The type of supplemental instances.
 	//
 	// When the total value of PayAsYouGoTargetCapacity and SpotTargetCapacity is smaller than the value of TotalTargetCapacity, the auto provisioning group will create instances of the specified type to meet
@@ -73,6 +75,14 @@ type AutoProvisioningGroupProps struct {
 	//
 	// If both the MaxSpotPrice and LaunchTemplateConfig.N.MaxPrice parameters are specified, the maximum price is the lower value of the two.
 	MaxSpotPrice interface{} `field:"optional" json:"maxSpotPrice" yaml:"maxSpotPrice"`
+	// Property minTargetCapacity: The target minimum capacity of the elastic supply group.
+	//
+	// Value range: Positive integer.
+	// Once you have set this parameter, note that:
+	// Only create one-time synchronous delivery type elastic supply group (AutoProvisioningGroupType = instant), the parameters to take effect.
+	// If the inventory of instances in the current domain is less than this value, the call to the interface will fail and no instance will be created.
+	// If the instance inventory in the current domain is greater than the parameter value, the instance is created normally according to the other parameter values that have been set.
+	MinTargetCapacity interface{} `field:"optional" json:"minTargetCapacity" yaml:"minTargetCapacity"`
 	// Property payAsYouGoAllocationStrategy: The scale-out policy for pay-as-you-go instances.
 	//
 	// Valid values:
@@ -84,6 +94,14 @@ type AutoProvisioningGroupProps struct {
 	PayAsYouGoAllocationStrategy interface{} `field:"optional" json:"payAsYouGoAllocationStrategy" yaml:"payAsYouGoAllocationStrategy"`
 	// Property payAsYouGoTargetCapacity: The target capacity of pay-as-you-go instances in the auto provisioning group.
 	PayAsYouGoTargetCapacity interface{} `field:"optional" json:"payAsYouGoTargetCapacity" yaml:"payAsYouGoTargetCapacity"`
+	// Property resourceGroupId: The resource group ID.
+	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
+	// Property resourcePoolOptions: Resource pooling policy to use when creating an instance.
+	//
+	// Once you have set this parameter, note that:
+	// This parameter only applies if a pay-as-you-go instance is created.
+	// Only create one-time synchronous delivery type elastic supply group (AutoProvisioningGroupType = instant), the parameters to take effect.
+	ResourcePoolOptions interface{} `field:"optional" json:"resourcePoolOptions" yaml:"resourcePoolOptions"`
 	// Property spotAllocationStrategy: The scale-out policy for preemptible instances.
 	//
 	// Valid values:
@@ -107,6 +125,8 @@ type AutoProvisioningGroupProps struct {
 	SpotInstancePoolsToUseCount interface{} `field:"optional" json:"spotInstancePoolsToUseCount" yaml:"spotInstancePoolsToUseCount"`
 	// Property spotTargetCapacity: The target capacity of preemptible instances in the auto provisioning group.
 	SpotTargetCapacity interface{} `field:"optional" json:"spotTargetCapacity" yaml:"spotTargetCapacity"`
+	// Property systemDiskConfig: List of instance system disk information.
+	SystemDiskConfig interface{} `field:"optional" json:"systemDiskConfig" yaml:"systemDiskConfig"`
 	// Property terminateInstances: Specifies whether to release instances of the auto provisioning group.
 	//
 	// Valid values:

@@ -61,35 +61,61 @@ export interface UserProps {
 }
 
 /**
+ * Represents a `User`.
+ */
+export interface IUser extends ros.IResource {
+    readonly props: UserProps;
+
+    /**
+     * Attribute CreateDate: Create date of ram user.
+     */
+    readonly attrCreateDate: ros.IResolvable | string;
+
+    /**
+     * Attribute LastLoginDate: Last login date of ram user.
+     */
+    readonly attrLastLoginDate: ros.IResolvable | string;
+
+    /**
+     * Attribute UserId: Id of ram user.
+     */
+    readonly attrUserId: ros.IResolvable | string;
+
+    /**
+     * Attribute UserName: Name of ram user.
+     */
+    readonly attrUserName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::User`, which is used to create a Resource Access Management (RAM) user.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUser`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-user
  */
-export class User extends ros.Resource {
+export class User extends ros.Resource implements IUser {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: UserProps;
+    public readonly props: UserProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateDate: Create date of ram user.
      */
-    public readonly attrCreateDate: ros.IResolvable;
+    public readonly attrCreateDate: ros.IResolvable | string;
 
     /**
      * Attribute LastLoginDate: Last login date of ram user.
      */
-    public readonly attrLastLoginDate: ros.IResolvable;
+    public readonly attrLastLoginDate: ros.IResolvable | string;
 
     /**
      * Attribute UserId: Id of ram user.
      */
-    public readonly attrUserId: ros.IResolvable;
+    public readonly attrUserId: ros.IResolvable | string;
 
     /**
      * Attribute UserName: Name of ram user.
      */
-    public readonly attrUserName: ros.IResolvable;
+    public readonly attrUserName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

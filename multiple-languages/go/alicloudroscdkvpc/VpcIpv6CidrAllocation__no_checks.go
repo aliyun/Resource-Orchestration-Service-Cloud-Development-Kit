@@ -52,10 +52,6 @@ func (j *jsiiProxy_VpcIpv6CidrAllocation) validateSetIdParameters(val *string) e
 	return nil
 }
 
-func (j *jsiiProxy_VpcIpv6CidrAllocation) validateSetPropsParameters(val *VpcIpv6CidrAllocationProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_VpcIpv6CidrAllocation) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

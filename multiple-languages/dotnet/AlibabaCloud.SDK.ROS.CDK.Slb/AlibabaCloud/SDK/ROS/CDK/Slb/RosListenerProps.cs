@@ -344,7 +344,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         private object? _backendServerPort;
 
         /// <remarks>
-        /// <strong>Property</strong>: backendServerPort: Backend server can listen on ports from 1 to 65535.
+        /// <strong>Property</strong>: backendServerPort: Backend server can listen on ports from 0 to 65535.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "backendServerPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -581,6 +581,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                     }
                 }
                 _enableHttp2 = value;
+            }
+        }
+
+        private object? _fullNatEnabled;
+
+        /// <remarks>
+        /// <strong>Property</strong>: fullNatEnabled: When Full NAT mode is enabled, it can support the backend servers as clients for access. Default value is false.
+        /// Note: Only effective for TCP or UDP listener.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "fullNatEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? FullNatEnabled
+        {
+            get => _fullNatEnabled;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _fullNatEnabled = value;
             }
         }
 

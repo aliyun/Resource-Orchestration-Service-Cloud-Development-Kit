@@ -12,16 +12,26 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Environment`.
 type Environment interface {
 	alicloudroscdkcore.Resource
+	IEnvironment
 	// Attribute Description: Description of the environment.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute EnvironmentId: The ID of the environment.
-	AttrEnvironmentId() alicloudroscdkcore.IResolvable
+	AttrEnvironmentId() interface{}
 	// Attribute EnvironmentName: The name of the resource.
-	AttrEnvironmentName() alicloudroscdkcore.IResolvable
+	AttrEnvironmentName() interface{}
 	// Attribute GatewayId: The ID of the Gateway.
-	AttrGatewayId() alicloudroscdkcore.IResolvable
+	AttrGatewayId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -36,7 +46,6 @@ type Environment interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *EnvironmentProps
-	SetProps(val *EnvironmentProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -49,6 +58,9 @@ type Environment interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -101,10 +113,11 @@ type Environment interface {
 // The jsii proxy struct for Environment
 type jsiiProxy_Environment struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IEnvironment
 }
 
-func (j *jsiiProxy_Environment) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Environment) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -113,8 +126,8 @@ func (j *jsiiProxy_Environment) AttrDescription() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Environment) AttrEnvironmentId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Environment) AttrEnvironmentId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEnvironmentId",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_Environment) AttrEnvironmentId() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_Environment) AttrEnvironmentName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Environment) AttrEnvironmentName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEnvironmentName",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_Environment) AttrEnvironmentName() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_Environment) AttrGatewayId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Environment) AttrGatewayId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGatewayId",
@@ -148,6 +161,16 @@ func (j *jsiiProxy_Environment) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Environment) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -285,17 +308,6 @@ func (j *jsiiProxy_Environment)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Environment)SetProps(val *EnvironmentProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Environment)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -387,6 +399,45 @@ func (e *jsiiProxy_Environment) ApplyRemovalPolicy(policy alicloudroscdkcore.Rem
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (e *jsiiProxy_Environment) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		e,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (e *jsiiProxy_Environment) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		e,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (e *jsiiProxy_Environment) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		e,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (e *jsiiProxy_Environment) GeneratePhysicalName() *string {

@@ -24,97 +24,185 @@ export interface VpcProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::Vpc`, which is used to query the information about a virtual private cloud (VPC).
- * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpc`for a more convenient development experience.
- * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-vpc
+ * Represents a `Vpc`.
  */
-export class Vpc extends ros.Resource {
-    protected scope: ros.Construct;
-    protected id: string;
-    protected props: VpcProps;
-    protected enableResourcePropertyConstraint: boolean;
+export interface IVpc extends ros.IResource {
+    readonly props: VpcProps;
 
     /**
      * Attribute CidrBlock: The IPv4 CIDR block of the VPC.
      */
-    public readonly attrCidrBlock: ros.IResolvable;
+    readonly attrCidrBlock: ros.IResolvable | string;
 
     /**
      * Attribute ClassicLinkEnabled: status of vpc  ClassicLink..
      */
-    public readonly attrClassicLinkEnabled: ros.IResolvable;
+    readonly attrClassicLinkEnabled: ros.IResolvable | string;
 
     /**
      * Attribute CreateTime: The time at which the VPC was created.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute Description: The description of the VPC.
      */
-    public readonly attrDescription: ros.IResolvable;
+    readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute DhcpOptionsSetId: The ID of the DHCP option set.
      */
-    public readonly attrDhcpOptionsSetId: ros.IResolvable;
+    readonly attrDhcpOptionsSetId: ros.IResolvable | string;
 
     /**
      * Attribute Ipv6CidrBlock: The ipv6 cidr block of vpc.
      */
-    public readonly attrIpv6CidrBlock: ros.IResolvable;
+    readonly attrIpv6CidrBlock: ros.IResolvable | string;
 
     /**
      * Attribute Ipv6CidrBlocks: The IPv6 network segment of the VPC.
      */
-    public readonly attrIpv6CidrBlocks: ros.IResolvable;
+    readonly attrIpv6CidrBlocks: ros.IResolvable | string;
 
     /**
      * Attribute IsDefault: Indicates whether to query the default VPC in the specified region. Valid values: 
 - true (default): All VPCs in the specified region are queried.
 - false: The default VPC is not queried.
      */
-    public readonly attrIsDefault: ros.IResolvable;
+    readonly attrIsDefault: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroupId: The ID of the resource group to which the VPC belongs.
      */
-    public readonly attrResourceGroupId: ros.IResolvable;
+    readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Attribute RouterId: The ID of the VRouter.
      */
-    public readonly attrRouterId: ros.IResolvable;
+    readonly attrRouterId: ros.IResolvable | string;
 
     /**
      * Attribute SecondaryCidrBlocks: Additional network segment information.
      */
-    public readonly attrSecondaryCidrBlocks: ros.IResolvable;
+    readonly attrSecondaryCidrBlocks: ros.IResolvable | string;
 
     /**
      * Attribute Tags: The tags of Vpc.
      */
-    public readonly attrTags: ros.IResolvable;
+    readonly attrTags: ros.IResolvable | string;
 
     /**
      * Attribute UserCidrs: A list of user CIDRs.
      */
-    public readonly attrUserCidrs: ros.IResolvable;
+    readonly attrUserCidrs: ros.IResolvable | string;
 
     /**
      * Attribute VSwitchIds: A list of VSwitches in the VPC.
      */
-    public readonly attrVSwitchIds: ros.IResolvable;
+    readonly attrVSwitchIds: ros.IResolvable | string;
 
     /**
      * Attribute VpcId: The ID of the VPC.
      */
-    public readonly attrVpcId: ros.IResolvable;
+    readonly attrVpcId: ros.IResolvable | string;
 
     /**
      * Attribute VpcName: The name of the VPC.
      */
-    public readonly attrVpcName: ros.IResolvable;
+    readonly attrVpcName: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::Vpc`, which is used to query the information about a virtual private cloud (VPC).
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpc`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-vpc
+ */
+export class Vpc extends ros.Resource implements IVpc {
+    protected scope: ros.Construct;
+    protected id: string;
+    public readonly props: VpcProps;
+    protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute CidrBlock: The IPv4 CIDR block of the VPC.
+     */
+    public readonly attrCidrBlock: ros.IResolvable | string;
+
+    /**
+     * Attribute ClassicLinkEnabled: status of vpc  ClassicLink..
+     */
+    public readonly attrClassicLinkEnabled: ros.IResolvable | string;
+
+    /**
+     * Attribute CreateTime: The time at which the VPC was created.
+     */
+    public readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: The description of the VPC.
+     */
+    public readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute DhcpOptionsSetId: The ID of the DHCP option set.
+     */
+    public readonly attrDhcpOptionsSetId: ros.IResolvable | string;
+
+    /**
+     * Attribute Ipv6CidrBlock: The ipv6 cidr block of vpc.
+     */
+    public readonly attrIpv6CidrBlock: ros.IResolvable | string;
+
+    /**
+     * Attribute Ipv6CidrBlocks: The IPv6 network segment of the VPC.
+     */
+    public readonly attrIpv6CidrBlocks: ros.IResolvable | string;
+
+    /**
+     * Attribute IsDefault: Indicates whether to query the default VPC in the specified region. Valid values: 
+- true (default): All VPCs in the specified region are queried.
+- false: The default VPC is not queried.
+     */
+    public readonly attrIsDefault: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: The ID of the resource group to which the VPC belongs.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute RouterId: The ID of the VRouter.
+     */
+    public readonly attrRouterId: ros.IResolvable | string;
+
+    /**
+     * Attribute SecondaryCidrBlocks: Additional network segment information.
+     */
+    public readonly attrSecondaryCidrBlocks: ros.IResolvable | string;
+
+    /**
+     * Attribute Tags: The tags of Vpc.
+     */
+    public readonly attrTags: ros.IResolvable | string;
+
+    /**
+     * Attribute UserCidrs: A list of user CIDRs.
+     */
+    public readonly attrUserCidrs: ros.IResolvable | string;
+
+    /**
+     * Attribute VSwitchIds: A list of VSwitches in the VPC.
+     */
+    public readonly attrVSwitchIds: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcId: The ID of the VPC.
+     */
+    public readonly attrVpcId: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcName: The name of the VPC.
+     */
+    public readonly attrVpcName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

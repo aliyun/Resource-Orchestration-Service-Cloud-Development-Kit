@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::ROS::StackGroups`, which is used to query the details of stack groups.
 type StackGroups interface {
 	alicloudroscdkcore.Resource
+	IStackGroups
 	// Attribute StackGroupNames: The list of stack group names.
-	AttrStackGroupNames() alicloudroscdkcore.IResolvable
+	AttrStackGroupNames() interface{}
 	// Attribute StackGroups: The list of stack groups.
-	AttrStackGroups() alicloudroscdkcore.IResolvable
+	AttrStackGroups() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type StackGroups interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *StackGroupsProps
-	SetProps(val *StackGroupsProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type StackGroups interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type StackGroups interface {
 // The jsii proxy struct for StackGroups
 type jsiiProxy_StackGroups struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IStackGroups
 }
 
-func (j *jsiiProxy_StackGroups) AttrStackGroupNames() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_StackGroups) AttrStackGroupNames() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStackGroupNames",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_StackGroups) AttrStackGroupNames() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_StackGroups) AttrStackGroups() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_StackGroups) AttrStackGroups() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStackGroups",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_StackGroups) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StackGroups) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_StackGroups)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_StackGroups)SetProps(val *StackGroupsProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_StackGroups)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (s *jsiiProxy_StackGroups) ApplyRemovalPolicy(policy alicloudroscdkcore.Rem
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (s *jsiiProxy_StackGroups) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		s,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_StackGroups) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_StackGroups) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (s *jsiiProxy_StackGroups) GeneratePhysicalName() *string {

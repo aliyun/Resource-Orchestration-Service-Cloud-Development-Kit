@@ -19,25 +19,41 @@ export interface StorageBundlesProps {
 }
 
 /**
+ * Represents a `StorageBundles`.
+ */
+export interface IStorageBundles extends ros.IResource {
+    readonly props: StorageBundlesProps;
+
+    /**
+     * Attribute StorageBundleIds: The list of storage bundle IDs.
+     */
+    readonly attrStorageBundleIds: ros.IResolvable | string;
+
+    /**
+     * Attribute StorageBundles: The list of storage bundles.
+     */
+    readonly attrStorageBundles: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::CloudStorageGateway::StorageBundles`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosStorageBundles`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudstoragegateway-storagebundles
  */
-export class StorageBundles extends ros.Resource {
+export class StorageBundles extends ros.Resource implements IStorageBundles {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: StorageBundlesProps;
+    public readonly props: StorageBundlesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute StorageBundleIds: The list of storage bundle IDs.
      */
-    public readonly attrStorageBundleIds: ros.IResolvable;
+    public readonly attrStorageBundleIds: ros.IResolvable | string;
 
     /**
      * Attribute StorageBundles: The list of storage bundles.
      */
-    public readonly attrStorageBundles: ros.IResolvable;
+    public readonly attrStorageBundles: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

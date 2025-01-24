@@ -12,18 +12,28 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::PolarDBX::Database`.
 type Database interface {
 	alicloudroscdkcore.Resource
+	IDatabase
 	// Attribute Accounts: The list of accounts that can be used to access the database.
-	AttrAccounts() alicloudroscdkcore.IResolvable
+	AttrAccounts() interface{}
 	// Attribute CharacterSetName: The character set that is supported by the database.
-	AttrCharacterSetName() alicloudroscdkcore.IResolvable
+	AttrCharacterSetName() interface{}
 	// Attribute DatabaseDescription: The description of the database.
-	AttrDatabaseDescription() alicloudroscdkcore.IResolvable
+	AttrDatabaseDescription() interface{}
 	// Attribute DBInstanceId: The ID of the PolarDB-X 2.0 instance.
-	AttrDbInstanceId() alicloudroscdkcore.IResolvable
+	AttrDbInstanceId() interface{}
 	// Attribute PolarDBXDatabaseName: The name of the PolarDB-X instance.
-	AttrPolarDbxDatabaseName() alicloudroscdkcore.IResolvable
+	AttrPolarDbxDatabaseName() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -38,7 +48,6 @@ type Database interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DatabaseProps
-	SetProps(val *DatabaseProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -51,6 +60,9 @@ type Database interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -103,10 +115,11 @@ type Database interface {
 // The jsii proxy struct for Database
 type jsiiProxy_Database struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDatabase
 }
 
-func (j *jsiiProxy_Database) AttrAccounts() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Database) AttrAccounts() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAccounts",
@@ -115,8 +128,8 @@ func (j *jsiiProxy_Database) AttrAccounts() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Database) AttrCharacterSetName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Database) AttrCharacterSetName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCharacterSetName",
@@ -125,8 +138,8 @@ func (j *jsiiProxy_Database) AttrCharacterSetName() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_Database) AttrDatabaseDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Database) AttrDatabaseDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDatabaseDescription",
@@ -135,8 +148,8 @@ func (j *jsiiProxy_Database) AttrDatabaseDescription() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_Database) AttrDbInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Database) AttrDbInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbInstanceId",
@@ -145,8 +158,8 @@ func (j *jsiiProxy_Database) AttrDbInstanceId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Database) AttrPolarDbxDatabaseName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Database) AttrPolarDbxDatabaseName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPolarDbxDatabaseName",
@@ -160,6 +173,16 @@ func (j *jsiiProxy_Database) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Database) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -297,17 +320,6 @@ func (j *jsiiProxy_Database)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Database)SetProps(val *DatabaseProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Database)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -399,6 +411,45 @@ func (d *jsiiProxy_Database) ApplyRemovalPolicy(policy alicloudroscdkcore.Remova
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_Database) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_Database) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_Database) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_Database) GeneratePhysicalName() *string {

@@ -71,20 +71,31 @@ export interface KeyProps {
 }
 
 /**
+ * Represents a `Key`.
+ */
+export interface IKey extends ros.IResource {
+    readonly props: KeyProps;
+
+    /**
+     * Attribute KeyId: The globally unique identifier for the CMK.
+     */
+    readonly attrKeyId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Key`, which is used to create a customer master key (CMK).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosKey`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-key
  */
-export class Key extends ros.Resource {
+export class Key extends ros.Resource implements IKey {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: KeyProps;
+    public readonly props: KeyProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute KeyId: The globally unique identifier for the CMK.
      */
-    public readonly attrKeyId: ros.IResolvable;
+    public readonly attrKeyId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -41,30 +41,51 @@ export interface ScheduleProps {
 }
 
 /**
+ * Represents a `Schedule`.
+ */
+export interface ISchedule extends ros.IResource {
+    readonly props: ScheduleProps;
+
+    /**
+     * Attribute FlowName: Flow name.
+     */
+    readonly attrFlowName: ros.IResolvable | string;
+
+    /**
+     * Attribute ScheduleId: Schedule Id
+     */
+    readonly attrScheduleId: ros.IResolvable | string;
+
+    /**
+     * Attribute ScheduleName: Schedule name.
+     */
+    readonly attrScheduleName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::FNF::Schedule`, which is used to create a time-based schedule.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSchedule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fnf-schedule
  */
-export class Schedule extends ros.Resource {
+export class Schedule extends ros.Resource implements ISchedule {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ScheduleProps;
+    public readonly props: ScheduleProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute FlowName: Flow name.
      */
-    public readonly attrFlowName: ros.IResolvable;
+    public readonly attrFlowName: ros.IResolvable | string;
 
     /**
      * Attribute ScheduleId: Schedule Id
      */
-    public readonly attrScheduleId: ros.IResolvable;
+    public readonly attrScheduleId: ros.IResolvable | string;
 
     /**
      * Attribute ScheduleName: Schedule name.
      */
-    public readonly attrScheduleName: ros.IResolvable;
+    public readonly attrScheduleName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

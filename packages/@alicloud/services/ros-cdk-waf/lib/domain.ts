@@ -91,90 +91,171 @@ export interface DomainProps {
 }
 
 /**
+ * Represents a `Domain`.
+ */
+export interface IDomain extends ros.IResource {
+    readonly props: DomainProps;
+
+    /**
+     * Attribute ClusterType: Cluster type
+     */
+    readonly attrClusterType: ros.IResolvable | string;
+
+    /**
+     * Attribute Cname: CNAME assigned by WAF instance
+     */
+    readonly attrCname: ros.IResolvable | string;
+
+    /**
+     * Attribute DomainName: Domain name
+     */
+    readonly attrDomainName: ros.IResolvable | string;
+
+    /**
+     * Attribute Http2Port: Http2 port configuration
+     */
+    readonly attrHttp2Port: ros.IResolvable | string;
+
+    /**
+     * Attribute HttpPort: Http port configuration
+     */
+    readonly attrHttpPort: ros.IResolvable | string;
+
+    /**
+     * Attribute HttpToUserIp: Http back to source
+     */
+    readonly attrHttpToUserIp: ros.IResolvable | string;
+
+    /**
+     * Attribute HttpsPort: Https port configuration
+     */
+    readonly attrHttpsPort: ros.IResolvable | string;
+
+    /**
+     * Attribute HttpsRedirect: Https forced redirect configuration
+     */
+    readonly attrHttpsRedirect: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: Instance id
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute IsAccessProduct: Is there a seven-layer agency before WAF
+     */
+    readonly attrIsAccessProduct: ros.IResolvable | string;
+
+    /**
+     * Attribute LoadBalancing: Load balancing configuration
+     */
+    readonly attrLoadBalancing: ros.IResolvable | string;
+
+    /**
+     * Attribute LogHeaders: Domain traffic tagging
+     */
+    readonly attrLogHeaders: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: Resource group Id
+     */
+    readonly attrResourceGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute SourceIps: Back to source IP configuration
+     */
+    readonly attrSourceIps: ros.IResolvable | string;
+
+    /**
+     * Attribute Version: Optimistic lock version
+     */
+    readonly attrVersion: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::WAF::Domain`, which is used to add a domain to Web Application Firewall (WAF).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomain`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-domain
  */
-export class Domain extends ros.Resource {
+export class Domain extends ros.Resource implements IDomain {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DomainProps;
+    public readonly props: DomainProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterType: Cluster type
      */
-    public readonly attrClusterType: ros.IResolvable;
+    public readonly attrClusterType: ros.IResolvable | string;
 
     /**
      * Attribute Cname: CNAME assigned by WAF instance
      */
-    public readonly attrCname: ros.IResolvable;
+    public readonly attrCname: ros.IResolvable | string;
 
     /**
      * Attribute DomainName: Domain name
      */
-    public readonly attrDomainName: ros.IResolvable;
+    public readonly attrDomainName: ros.IResolvable | string;
 
     /**
      * Attribute Http2Port: Http2 port configuration
      */
-    public readonly attrHttp2Port: ros.IResolvable;
+    public readonly attrHttp2Port: ros.IResolvable | string;
 
     /**
      * Attribute HttpPort: Http port configuration
      */
-    public readonly attrHttpPort: ros.IResolvable;
+    public readonly attrHttpPort: ros.IResolvable | string;
 
     /**
      * Attribute HttpToUserIp: Http back to source
      */
-    public readonly attrHttpToUserIp: ros.IResolvable;
+    public readonly attrHttpToUserIp: ros.IResolvable | string;
 
     /**
      * Attribute HttpsPort: Https port configuration
      */
-    public readonly attrHttpsPort: ros.IResolvable;
+    public readonly attrHttpsPort: ros.IResolvable | string;
 
     /**
      * Attribute HttpsRedirect: Https forced redirect configuration
      */
-    public readonly attrHttpsRedirect: ros.IResolvable;
+    public readonly attrHttpsRedirect: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: Instance id
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute IsAccessProduct: Is there a seven-layer agency before WAF
      */
-    public readonly attrIsAccessProduct: ros.IResolvable;
+    public readonly attrIsAccessProduct: ros.IResolvable | string;
 
     /**
      * Attribute LoadBalancing: Load balancing configuration
      */
-    public readonly attrLoadBalancing: ros.IResolvable;
+    public readonly attrLoadBalancing: ros.IResolvable | string;
 
     /**
      * Attribute LogHeaders: Domain traffic tagging
      */
-    public readonly attrLogHeaders: ros.IResolvable;
+    public readonly attrLogHeaders: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroupId: Resource group Id
      */
-    public readonly attrResourceGroupId: ros.IResolvable;
+    public readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Attribute SourceIps: Back to source IP configuration
      */
-    public readonly attrSourceIps: ros.IResolvable;
+    public readonly attrSourceIps: ros.IResolvable | string;
 
     /**
      * Attribute Version: Optimistic lock version
      */
-    public readonly attrVersion: ros.IResolvable;
+    public readonly attrVersion: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

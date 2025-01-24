@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * A root construct which represents a single ROS stack.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:03.719Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:33.745Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Stack")
 public class Stack extends com.aliyun.ros.cdk.core.Construct implements com.aliyun.ros.cdk.core.ITaggable {
 
@@ -202,6 +202,34 @@ public class Stack extends com.aliyun.ros.cdk.core.Construct implements com.aliy
      */
     public @org.jetbrains.annotations.NotNull java.lang.Object resolve(final @org.jetbrains.annotations.NotNull java.lang.Object obj) {
         return software.amazon.jsii.Kernel.call(this, "resolve", software.amazon.jsii.NativeType.forClass(java.lang.Object.class), new Object[] { obj });
+    }
+
+    /**
+     * Splits the provided ARN into its components.
+     * <p>
+     * Works both if 'arn' is a string like 'acs:ram::123456789012****:role/RoleName',
+     * and a Token representing a dynamic ROS expression
+     * (in which case the returned components will also be dynamic ROS expressions,
+     * encoded as Tokens).
+     * <p>
+     * @param arn the ARN to split into its components. This parameter is required.
+     * @param arnFormat the expected format of 'arn' - depends on what format the service 'arn' represents uses. This parameter is required.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.ArnComponents splitArn(final @org.jetbrains.annotations.NotNull java.lang.Object arn, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.ArnFormat arnFormat) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            if (
+                 !(arn instanceof java.lang.String)
+                && !(arn instanceof com.aliyun.ros.cdk.core.IResolvable)
+                && !(arn.getClass().equals(software.amazon.jsii.JsiiObject.class))
+            ) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("arn")
+                        .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                        .append(arn.getClass()).toString());
+            }
+        }
+        return software.amazon.jsii.Kernel.call(this, "splitArn", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.ArnComponents.class), new Object[] { java.util.Objects.requireNonNull(arn, "arn is required"), java.util.Objects.requireNonNull(arnFormat, "arnFormat is required") });
     }
 
     /**

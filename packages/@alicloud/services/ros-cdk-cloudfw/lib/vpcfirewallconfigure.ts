@@ -58,20 +58,31 @@ export interface VpcFirewallConfigureProps {
 }
 
 /**
+ * Represents a `VpcFirewallConfigure`.
+ */
+export interface IVpcFirewallConfigure extends ros.IResource {
+    readonly props: VpcFirewallConfigureProps;
+
+    /**
+     * Attribute VpcFirewallId: The instance ID of the VPC firewall.
+     */
+    readonly attrVpcFirewallId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallConfigure`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpcFirewallConfigure`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallconfigure
  */
-export class VpcFirewallConfigure extends ros.Resource {
+export class VpcFirewallConfigure extends ros.Resource implements IVpcFirewallConfigure {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: VpcFirewallConfigureProps;
+    public readonly props: VpcFirewallConfigureProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute VpcFirewallId: The instance ID of the VPC firewall.
      */
-    public readonly attrVpcFirewallId: ros.IResolvable;
+    public readonly attrVpcFirewallId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

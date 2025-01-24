@@ -67,50 +67,91 @@ export interface HiTSDBInstanceProps {
 }
 
 /**
+ * Represents a `HiTSDBInstance`.
+ */
+export interface IHiTSDBInstance extends ros.IResource {
+    readonly props: HiTSDBInstanceProps;
+
+    /**
+     * Attribute ConnectionString: Connection string of the instance.
+     */
+    readonly attrConnectionString: ros.IResolvable | string;
+
+    /**
+     * Attribute EngineType: Engine type of the instance.
+     */
+    readonly attrEngineType: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: The ID of the instance.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute OrderId: Order id of created instance.
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+
+    /**
+     * Attribute PublicConnectionString: Public connection string of the instance.
+     */
+    readonly attrPublicConnectionString: ros.IResolvable | string;
+
+    /**
+     * Attribute ReverseVpcIp: Reverse vpc ip of the instance.
+     */
+    readonly attrReverseVpcIp: ros.IResolvable | string;
+
+    /**
+     * Attribute ReverseVpcPort: Reverse vpc port of the instance.
+     */
+    readonly attrReverseVpcPort: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::TSDB::HiTSDBInstance`, which is used to create a Time Series Database (TSDB) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosHiTSDBInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-tsdb-hitsdbinstance
  */
-export class HiTSDBInstance extends ros.Resource {
+export class HiTSDBInstance extends ros.Resource implements IHiTSDBInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: HiTSDBInstanceProps;
+    public readonly props: HiTSDBInstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ConnectionString: Connection string of the instance.
      */
-    public readonly attrConnectionString: ros.IResolvable;
+    public readonly attrConnectionString: ros.IResolvable | string;
 
     /**
      * Attribute EngineType: Engine type of the instance.
      */
-    public readonly attrEngineType: ros.IResolvable;
+    public readonly attrEngineType: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: The ID of the instance.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute OrderId: Order id of created instance.
      */
-    public readonly attrOrderId: ros.IResolvable;
+    public readonly attrOrderId: ros.IResolvable | string;
 
     /**
      * Attribute PublicConnectionString: Public connection string of the instance.
      */
-    public readonly attrPublicConnectionString: ros.IResolvable;
+    public readonly attrPublicConnectionString: ros.IResolvable | string;
 
     /**
      * Attribute ReverseVpcIp: Reverse vpc ip of the instance.
      */
-    public readonly attrReverseVpcIp: ros.IResolvable;
+    public readonly attrReverseVpcIp: ros.IResolvable | string;
 
     /**
      * Attribute ReverseVpcPort: Reverse vpc port of the instance.
      */
-    public readonly attrReverseVpcPort: ros.IResolvable;
+    public readonly attrReverseVpcPort: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

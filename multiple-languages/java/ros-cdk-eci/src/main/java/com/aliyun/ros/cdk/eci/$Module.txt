@@ -1,5 +1,7 @@
 @alicloud/ros-cdk-eci.ContainerGroup=com.aliyun.ros.cdk.eci.ContainerGroup
 @alicloud/ros-cdk-eci.ContainerGroupProps=com.aliyun.ros.cdk.eci.ContainerGroupProps
+@alicloud/ros-cdk-eci.IContainerGroup=com.aliyun.ros.cdk.eci.IContainerGroup
+@alicloud/ros-cdk-eci.IImageCache=com.aliyun.ros.cdk.eci.IImageCache
 @alicloud/ros-cdk-eci.ImageCache=com.aliyun.ros.cdk.eci.ImageCache
 @alicloud/ros-cdk-eci.ImageCacheProps=com.aliyun.ros.cdk.eci.ImageCacheProps
 @alicloud/ros-cdk-eci.RosContainerGroup=com.aliyun.ros.cdk.eci.RosContainerGroup
@@ -28,6 +30,8 @@
 @alicloud/ros-cdk-eci.RosImageCache=com.aliyun.ros.cdk.eci.RosImageCache
 @alicloud/ros-cdk-eci.RosImageCache.AcrRegistryInfoProperty=com.aliyun.ros.cdk.eci.RosImageCache$AcrRegistryInfoProperty
 @alicloud/ros-cdk-eci.RosImageCacheProps=com.aliyun.ros.cdk.eci.RosImageCacheProps
+@alicloud/ros-cdk-eci.datasource.IImageCache=com.aliyun.ros.cdk.eci.datasource.IImageCache
+@alicloud/ros-cdk-eci.datasource.IImageCaches=com.aliyun.ros.cdk.eci.datasource.IImageCaches
 @alicloud/ros-cdk-eci.datasource.ImageCache=com.aliyun.ros.cdk.eci.datasource.ImageCache
 @alicloud/ros-cdk-eci.datasource.ImageCacheProps=com.aliyun.ros.cdk.eci.datasource.ImageCacheProps
 @alicloud/ros-cdk-eci.datasource.ImageCaches=com.aliyun.ros.cdk.eci.datasource.ImageCaches

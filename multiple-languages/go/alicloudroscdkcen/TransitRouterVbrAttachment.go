@@ -12,28 +12,38 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterVbrAttachment`, which is used to create a virtual border router (VBR) connection on an Enterprise Edition transit router.
 type TransitRouterVbrAttachment interface {
 	alicloudroscdkcore.Resource
+	ITransitRouterVbrAttachment
 	// Attribute AutoPublishRouteEnabled: AutoPublishRouteEnabled.
-	AttrAutoPublishRouteEnabled() alicloudroscdkcore.IResolvable
+	AttrAutoPublishRouteEnabled() interface{}
 	// Attribute CenId: CenId.
-	AttrCenId() alicloudroscdkcore.IResolvable
+	AttrCenId() interface{}
 	// Attribute ClientToken: ClientToken.
-	AttrClientToken() alicloudroscdkcore.IResolvable
+	AttrClientToken() interface{}
 	// Attribute ResourceType: ResourceType.
-	AttrResourceType() alicloudroscdkcore.IResolvable
+	AttrResourceType() interface{}
 	// Attribute TransitRouterAttachmentDescription: TransitRouterAttachmentDescription.
-	AttrTransitRouterAttachmentDescription() alicloudroscdkcore.IResolvable
+	AttrTransitRouterAttachmentDescription() interface{}
 	// Attribute TransitRouterAttachmentId: The first ID of the resource.
-	AttrTransitRouterAttachmentId() alicloudroscdkcore.IResolvable
+	AttrTransitRouterAttachmentId() interface{}
 	// Attribute TransitRouterAttachmentName: TransitRouterAttachmentName.
-	AttrTransitRouterAttachmentName() alicloudroscdkcore.IResolvable
+	AttrTransitRouterAttachmentName() interface{}
 	// Attribute TransitRouterId: TransitRouterId.
-	AttrTransitRouterId() alicloudroscdkcore.IResolvable
+	AttrTransitRouterId() interface{}
 	// Attribute VbrId: VbrId.
-	AttrVbrId() alicloudroscdkcore.IResolvable
+	AttrVbrId() interface{}
 	// Attribute VbrOwnerId: VbrOwnerId.
-	AttrVbrOwnerId() alicloudroscdkcore.IResolvable
+	AttrVbrOwnerId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -48,7 +58,6 @@ type TransitRouterVbrAttachment interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *TransitRouterVbrAttachmentProps
-	SetProps(val *TransitRouterVbrAttachmentProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -61,6 +70,9 @@ type TransitRouterVbrAttachment interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -113,10 +125,11 @@ type TransitRouterVbrAttachment interface {
 // The jsii proxy struct for TransitRouterVbrAttachment
 type jsiiProxy_TransitRouterVbrAttachment struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ITransitRouterVbrAttachment
 }
 
-func (j *jsiiProxy_TransitRouterVbrAttachment) AttrAutoPublishRouteEnabled() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_TransitRouterVbrAttachment) AttrAutoPublishRouteEnabled() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAutoPublishRouteEnabled",
@@ -125,8 +138,8 @@ func (j *jsiiProxy_TransitRouterVbrAttachment) AttrAutoPublishRouteEnabled() ali
 	return returns
 }
 
-func (j *jsiiProxy_TransitRouterVbrAttachment) AttrCenId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_TransitRouterVbrAttachment) AttrCenId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCenId",
@@ -135,8 +148,8 @@ func (j *jsiiProxy_TransitRouterVbrAttachment) AttrCenId() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_TransitRouterVbrAttachment) AttrClientToken() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_TransitRouterVbrAttachment) AttrClientToken() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrClientToken",
@@ -145,8 +158,8 @@ func (j *jsiiProxy_TransitRouterVbrAttachment) AttrClientToken() alicloudroscdkc
 	return returns
 }
 
-func (j *jsiiProxy_TransitRouterVbrAttachment) AttrResourceType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_TransitRouterVbrAttachment) AttrResourceType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceType",
@@ -155,8 +168,8 @@ func (j *jsiiProxy_TransitRouterVbrAttachment) AttrResourceType() alicloudroscdk
 	return returns
 }
 
-func (j *jsiiProxy_TransitRouterVbrAttachment) AttrTransitRouterAttachmentDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_TransitRouterVbrAttachment) AttrTransitRouterAttachmentDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTransitRouterAttachmentDescription",
@@ -165,8 +178,8 @@ func (j *jsiiProxy_TransitRouterVbrAttachment) AttrTransitRouterAttachmentDescri
 	return returns
 }
 
-func (j *jsiiProxy_TransitRouterVbrAttachment) AttrTransitRouterAttachmentId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_TransitRouterVbrAttachment) AttrTransitRouterAttachmentId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTransitRouterAttachmentId",
@@ -175,8 +188,8 @@ func (j *jsiiProxy_TransitRouterVbrAttachment) AttrTransitRouterAttachmentId() a
 	return returns
 }
 
-func (j *jsiiProxy_TransitRouterVbrAttachment) AttrTransitRouterAttachmentName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_TransitRouterVbrAttachment) AttrTransitRouterAttachmentName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTransitRouterAttachmentName",
@@ -185,8 +198,8 @@ func (j *jsiiProxy_TransitRouterVbrAttachment) AttrTransitRouterAttachmentName()
 	return returns
 }
 
-func (j *jsiiProxy_TransitRouterVbrAttachment) AttrTransitRouterId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_TransitRouterVbrAttachment) AttrTransitRouterId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTransitRouterId",
@@ -195,8 +208,8 @@ func (j *jsiiProxy_TransitRouterVbrAttachment) AttrTransitRouterId() alicloudros
 	return returns
 }
 
-func (j *jsiiProxy_TransitRouterVbrAttachment) AttrVbrId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_TransitRouterVbrAttachment) AttrVbrId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVbrId",
@@ -205,8 +218,8 @@ func (j *jsiiProxy_TransitRouterVbrAttachment) AttrVbrId() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_TransitRouterVbrAttachment) AttrVbrOwnerId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_TransitRouterVbrAttachment) AttrVbrOwnerId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVbrOwnerId",
@@ -220,6 +233,16 @@ func (j *jsiiProxy_TransitRouterVbrAttachment) EnableResourcePropertyConstraint(
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_TransitRouterVbrAttachment) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -357,17 +380,6 @@ func (j *jsiiProxy_TransitRouterVbrAttachment)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_TransitRouterVbrAttachment)SetProps(val *TransitRouterVbrAttachmentProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_TransitRouterVbrAttachment)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -459,6 +471,45 @@ func (t *jsiiProxy_TransitRouterVbrAttachment) ApplyRemovalPolicy(policy aliclou
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (t *jsiiProxy_TransitRouterVbrAttachment) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		t,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (t *jsiiProxy_TransitRouterVbrAttachment) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		t,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (t *jsiiProxy_TransitRouterVbrAttachment) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		t,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (t *jsiiProxy_TransitRouterVbrAttachment) GeneratePhysicalName() *string {

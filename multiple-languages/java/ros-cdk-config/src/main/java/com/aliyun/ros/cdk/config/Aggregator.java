@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.config;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::Config::Aggregator</code>, which is used to create an account group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:05.845Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:36.291Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.Aggregator")
-public class Aggregator extends com.aliyun.ros.cdk.core.Resource {
+public class Aggregator extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.config.IAggregator {
 
     protected Aggregator(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -43,8 +43,14 @@ public class Aggregator extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute AggregatorId: The ID of the aggregator.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAggregatorId() {
-        return software.amazon.jsii.Kernel.get(this, "attrAggregatorId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAggregatorId() {
+        return software.amazon.jsii.Kernel.get(this, "attrAggregatorId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.config.AggregatorProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.config.AggregatorProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -61,14 +67,6 @@ public class Aggregator extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.config.AggregatorProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.config.AggregatorProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.config.AggregatorProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {
@@ -156,20 +154,20 @@ public class Aggregator extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property aggregatorAccounts: The member account in aggregator.When the AggregatorType is RD, this parameter can be empty, which means that all accounts in the resource directory will be added to the global account group.
+         * Property aggregatorAccounts: The member account in aggregator.When the AggregatorType is RD, this parameter can be empty, which means that all accounts in the resource directory will be added to the global account group.When the AggregatorType is FOLDER, this parameter can be empty,which means that all accounts in the resource folder will be added to the global account group.
          * <p>
          * @return {@code this}
-         * @param aggregatorAccounts Property aggregatorAccounts: The member account in aggregator.When the AggregatorType is RD, this parameter can be empty, which means that all accounts in the resource directory will be added to the global account group. This parameter is required.
+         * @param aggregatorAccounts Property aggregatorAccounts: The member account in aggregator.When the AggregatorType is RD, this parameter can be empty, which means that all accounts in the resource directory will be added to the global account group.When the AggregatorType is FOLDER, this parameter can be empty,which means that all accounts in the resource folder will be added to the global account group. This parameter is required.
          */
         public Builder aggregatorAccounts(final com.aliyun.ros.cdk.core.IResolvable aggregatorAccounts) {
             this.props.aggregatorAccounts(aggregatorAccounts);
             return this;
         }
         /**
-         * Property aggregatorAccounts: The member account in aggregator.When the AggregatorType is RD, this parameter can be empty, which means that all accounts in the resource directory will be added to the global account group.
+         * Property aggregatorAccounts: The member account in aggregator.When the AggregatorType is RD, this parameter can be empty, which means that all accounts in the resource directory will be added to the global account group.When the AggregatorType is FOLDER, this parameter can be empty,which means that all accounts in the resource folder will be added to the global account group.
          * <p>
          * @return {@code this}
-         * @param aggregatorAccounts Property aggregatorAccounts: The member account in aggregator.When the AggregatorType is RD, this parameter can be empty, which means that all accounts in the resource directory will be added to the global account group. This parameter is required.
+         * @param aggregatorAccounts Property aggregatorAccounts: The member account in aggregator.When the AggregatorType is RD, this parameter can be empty, which means that all accounts in the resource directory will be added to the global account group.When the AggregatorType is FOLDER, this parameter can be empty,which means that all accounts in the resource folder will be added to the global account group. This parameter is required.
          */
         public Builder aggregatorAccounts(final java.util.List<? extends java.lang.Object> aggregatorAccounts) {
             this.props.aggregatorAccounts(aggregatorAccounts);
@@ -180,7 +178,9 @@ public class Aggregator extends com.aliyun.ros.cdk.core.Resource {
          * Property aggregatorType: Account group type.
          * <p>
          * Value:
-         * RD: Global account group.CUSTOM: Custom account group (default value).
+         * RD: Global account group.
+         * CUSTOM: Custom account group (default value).
+         * FOLDER: Folder account group. Must set FolderId if the AggregatorType is FOLDER. Please refer to ListAccounts for accessing FolderId.
          * <p>
          * @return {@code this}
          * @param aggregatorType Property aggregatorType: Account group type. This parameter is required.
@@ -193,13 +193,36 @@ public class Aggregator extends com.aliyun.ros.cdk.core.Resource {
          * Property aggregatorType: Account group type.
          * <p>
          * Value:
-         * RD: Global account group.CUSTOM: Custom account group (default value).
+         * RD: Global account group.
+         * CUSTOM: Custom account group (default value).
+         * FOLDER: Folder account group. Must set FolderId if the AggregatorType is FOLDER. Please refer to ListAccounts for accessing FolderId.
          * <p>
          * @return {@code this}
          * @param aggregatorType Property aggregatorType: Account group type. This parameter is required.
          */
         public Builder aggregatorType(final com.aliyun.ros.cdk.core.IResolvable aggregatorType) {
             this.props.aggregatorType(aggregatorType);
+            return this;
+        }
+
+        /**
+         * Property folderId: The folder ID.
+         * <p>
+         * @return {@code this}
+         * @param folderId Property folderId: The folder ID. This parameter is required.
+         */
+        public Builder folderId(final java.lang.String folderId) {
+            this.props.folderId(folderId);
+            return this;
+        }
+        /**
+         * Property folderId: The folder ID.
+         * <p>
+         * @return {@code this}
+         * @param folderId Property folderId: The folder ID. This parameter is required.
+         */
+        public Builder folderId(final com.aliyun.ros.cdk.core.IResolvable folderId) {
+            this.props.folderId(folderId);
             return this;
         }
 

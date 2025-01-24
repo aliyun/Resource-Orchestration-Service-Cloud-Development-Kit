@@ -33,6 +33,7 @@ type RosKubernetesCluster interface {
 	AttrRegionId() alicloudroscdkcore.IResolvable
 	AttrResourceGroupId() alicloudroscdkcore.IResolvable
 	AttrSecurityGroupId() alicloudroscdkcore.IResolvable
+	AttrServiceCidr() alicloudroscdkcore.IResolvable
 	AttrSize() alicloudroscdkcore.IResolvable
 	AttrState() alicloudroscdkcore.IResolvable
 	AttrSubnetCidr() alicloudroscdkcore.IResolvable
@@ -40,6 +41,7 @@ type RosKubernetesCluster interface {
 	AttrUpdated() alicloudroscdkcore.IResolvable
 	AttrVpcId() alicloudroscdkcore.IResolvable
 	AttrVSwitchId() alicloudroscdkcore.IResolvable
+	AttrVSwitchIds() alicloudroscdkcore.IResolvable
 	AttrWorkerRamRoleName() alicloudroscdkcore.IResolvable
 	AttrZoneId() alicloudroscdkcore.IResolvable
 	ClusterId() interface{}
@@ -137,6 +139,9 @@ type RosKubernetesCluster interface {
 	AddRosDependency(target *string)
 	// Sets the deletion policy of the resource based on the removal policy specified.
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy, options *alicloudroscdkcore.RemovalPolicyOptions)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDesc() *string
+	FetchRosDependency() *[]*string
 	// Returns a token for an runtime attribute of this resource.
 	//
 	// Ideally, use generated attribute accessors (e.g. `resource.arn`), but this can be used for future compatibility
@@ -409,6 +414,16 @@ func (j *jsiiProxy_RosKubernetesCluster) AttrSecurityGroupId() alicloudroscdkcor
 	return returns
 }
 
+func (j *jsiiProxy_RosKubernetesCluster) AttrServiceCidr() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrServiceCidr",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosKubernetesCluster) AttrSize() alicloudroscdkcore.IResolvable {
 	var returns alicloudroscdkcore.IResolvable
 	_jsii_.Get(
@@ -474,6 +489,16 @@ func (j *jsiiProxy_RosKubernetesCluster) AttrVSwitchId() alicloudroscdkcore.IRes
 	_jsii_.Get(
 		j,
 		"attrVSwitchId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosKubernetesCluster) AttrVSwitchIds() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrVSwitchIds",
 		&returns,
 	)
 	return returns
@@ -872,6 +897,45 @@ func (r *jsiiProxy_RosKubernetesCluster) ApplyRemovalPolicy(policy alicloudroscd
 		"applyRemovalPolicy",
 		[]interface{}{policy, options},
 	)
+}
+
+func (r *jsiiProxy_RosKubernetesCluster) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		r,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_RosKubernetesCluster) FetchDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		r,
+		"fetchDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_RosKubernetesCluster) FetchRosDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		r,
+		"fetchRosDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (r *jsiiProxy_RosKubernetesCluster) GetAtt(attributeName *string) alicloudroscdkcore.Reference {

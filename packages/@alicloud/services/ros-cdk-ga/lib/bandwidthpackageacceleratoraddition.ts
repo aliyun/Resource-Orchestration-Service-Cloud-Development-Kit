@@ -22,25 +22,41 @@ export interface BandwidthPackageAcceleratorAdditionProps {
 }
 
 /**
+ * Represents a `BandwidthPackageAcceleratorAddition`.
+ */
+export interface IBandwidthPackageAcceleratorAddition extends ros.IResource {
+    readonly props: BandwidthPackageAcceleratorAdditionProps;
+
+    /**
+     * Attribute AcceleratorId: The ID of the Global Accelerator instance
+     */
+    readonly attrAcceleratorId: ros.IResolvable | string;
+
+    /**
+     * Attribute BandwidthPackageId: The ID of the bandwidth package which is associated
+     */
+    readonly attrBandwidthPackageId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::GA::BandwidthPackageAcceleratorAddition`, which is used to bind a bandwidth plan to a global acceleration instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBandwidthPackageAcceleratorAddition`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-bandwidthpackageacceleratoraddition
  */
-export class BandwidthPackageAcceleratorAddition extends ros.Resource {
+export class BandwidthPackageAcceleratorAddition extends ros.Resource implements IBandwidthPackageAcceleratorAddition {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: BandwidthPackageAcceleratorAdditionProps;
+    public readonly props: BandwidthPackageAcceleratorAdditionProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AcceleratorId: The ID of the Global Accelerator instance
      */
-    public readonly attrAcceleratorId: ros.IResolvable;
+    public readonly attrAcceleratorId: ros.IResolvable | string;
 
     /**
      * Attribute BandwidthPackageId: The ID of the bandwidth package which is associated
      */
-    public readonly attrBandwidthPackageId: ros.IResolvable;
+    public readonly attrBandwidthPackageId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

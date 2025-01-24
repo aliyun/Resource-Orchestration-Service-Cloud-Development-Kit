@@ -52,10 +52,6 @@ func (j *jsiiProxy_SynchronizationJob) validateSetIdParameters(val *string) erro
 	return nil
 }
 
-func (j *jsiiProxy_SynchronizationJob) validateSetPropsParameters(val *SynchronizationJobProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_SynchronizationJob) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

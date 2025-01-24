@@ -12,18 +12,28 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::PolarDBX::Account`.
 type Account interface {
 	alicloudroscdkcore.Resource
+	IAccount
 	// Attribute AccountDescription: The description of the account.
-	AttrAccountDescription() alicloudroscdkcore.IResolvable
+	AttrAccountDescription() interface{}
 	// Attribute AccountType: The type of the account.
-	AttrAccountType() alicloudroscdkcore.IResolvable
+	AttrAccountType() interface{}
 	// Attribute CreateTime: The point in time when the account was created.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute DBInstanceId: The ID of the PolarDB-X 2.0 instance.
-	AttrDbInstanceId() alicloudroscdkcore.IResolvable
+	AttrDbInstanceId() interface{}
 	// Attribute PolarDBXAccountName: The username of the account.
-	AttrPolarDbxAccountName() alicloudroscdkcore.IResolvable
+	AttrPolarDbxAccountName() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -38,7 +48,6 @@ type Account interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *AccountProps
-	SetProps(val *AccountProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -51,6 +60,9 @@ type Account interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -103,10 +115,11 @@ type Account interface {
 // The jsii proxy struct for Account
 type jsiiProxy_Account struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IAccount
 }
 
-func (j *jsiiProxy_Account) AttrAccountDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Account) AttrAccountDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAccountDescription",
@@ -115,8 +128,8 @@ func (j *jsiiProxy_Account) AttrAccountDescription() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_Account) AttrAccountType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Account) AttrAccountType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAccountType",
@@ -125,8 +138,8 @@ func (j *jsiiProxy_Account) AttrAccountType() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Account) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Account) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -135,8 +148,8 @@ func (j *jsiiProxy_Account) AttrCreateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Account) AttrDbInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Account) AttrDbInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbInstanceId",
@@ -145,8 +158,8 @@ func (j *jsiiProxy_Account) AttrDbInstanceId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Account) AttrPolarDbxAccountName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Account) AttrPolarDbxAccountName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPolarDbxAccountName",
@@ -160,6 +173,16 @@ func (j *jsiiProxy_Account) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Account) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -297,17 +320,6 @@ func (j *jsiiProxy_Account)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Account)SetProps(val *AccountProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Account)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -399,6 +411,45 @@ func (a *jsiiProxy_Account) ApplyRemovalPolicy(policy alicloudroscdkcore.Removal
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (a *jsiiProxy_Account) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		a,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_Account) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_Account) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (a *jsiiProxy_Account) GeneratePhysicalName() *string {

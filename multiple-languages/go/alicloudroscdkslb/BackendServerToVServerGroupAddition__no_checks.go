@@ -52,10 +52,6 @@ func (j *jsiiProxy_BackendServerToVServerGroupAddition) validateSetIdParameters(
 	return nil
 }
 
-func (j *jsiiProxy_BackendServerToVServerGroupAddition) validateSetPropsParameters(val *BackendServerToVServerGroupAdditionProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_BackendServerToVServerGroupAddition) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

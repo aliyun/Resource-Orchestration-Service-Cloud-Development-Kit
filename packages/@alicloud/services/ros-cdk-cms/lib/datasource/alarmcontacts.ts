@@ -24,25 +24,41 @@ export interface AlarmContactsProps {
 }
 
 /**
+ * Represents a `AlarmContacts`.
+ */
+export interface IAlarmContacts extends ros.IResource {
+    readonly props: AlarmContactsProps;
+
+    /**
+     * Attribute AlarmContactNames: The list of alarm contact names.
+     */
+    readonly attrAlarmContactNames: ros.IResolvable | string;
+
+    /**
+     * Attribute AlarmContacts: The list of alarm contacts.
+     */
+    readonly attrAlarmContacts: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::CMS::AlarmContacts`, which is used to query the information about alert contacts.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAlarmContacts`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-alarmcontacts
  */
-export class AlarmContacts extends ros.Resource {
+export class AlarmContacts extends ros.Resource implements IAlarmContacts {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AlarmContactsProps;
+    public readonly props: AlarmContactsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AlarmContactNames: The list of alarm contact names.
      */
-    public readonly attrAlarmContactNames: ros.IResolvable;
+    public readonly attrAlarmContactNames: ros.IResolvable | string;
 
     /**
      * Attribute AlarmContacts: The list of alarm contacts.
      */
-    public readonly attrAlarmContacts: ros.IResolvable;
+    public readonly attrAlarmContacts: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

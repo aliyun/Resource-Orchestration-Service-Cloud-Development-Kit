@@ -12,24 +12,34 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::DTS::JobMonitorRule`.
 type JobMonitorRule interface {
 	alicloudroscdkcore.Resource
+	IJobMonitorRule
 	// Attribute DelayRuleTime: The threshold that triggers the alert.
-	AttrDelayRuleTime() alicloudroscdkcore.IResolvable
+	AttrDelayRuleTime() interface{}
 	// Attribute DtsJobId: The ID of the data migration, data synchronization, or change tracking task.
-	AttrDtsJobId() alicloudroscdkcore.IResolvable
+	AttrDtsJobId() interface{}
 	// Attribute Period: The statistical period for incremental validation tasks, in minutes.
-	AttrPeriod() alicloudroscdkcore.IResolvable
+	AttrPeriod() interface{}
 	// Attribute Phone: The mobile phone numbers that receive alert notifications.
 	//
 	// Multiple mobile numbers are separated by commas (,).
-	AttrPhone() alicloudroscdkcore.IResolvable
+	AttrPhone() interface{}
 	// Attribute State: Indicates whether the monitoring rule is enabled.
-	AttrState() alicloudroscdkcore.IResolvable
+	AttrState() interface{}
 	// Attribute Times: The number of cycles for the incremental validation task.
-	AttrTimes() alicloudroscdkcore.IResolvable
+	AttrTimes() interface{}
 	// Attribute Type: The type of the monitoring rule.
-	AttrType() alicloudroscdkcore.IResolvable
+	AttrType() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -44,7 +54,6 @@ type JobMonitorRule interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *JobMonitorRuleProps
-	SetProps(val *JobMonitorRuleProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -57,6 +66,9 @@ type JobMonitorRule interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -109,10 +121,11 @@ type JobMonitorRule interface {
 // The jsii proxy struct for JobMonitorRule
 type jsiiProxy_JobMonitorRule struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IJobMonitorRule
 }
 
-func (j *jsiiProxy_JobMonitorRule) AttrDelayRuleTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_JobMonitorRule) AttrDelayRuleTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDelayRuleTime",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_JobMonitorRule) AttrDelayRuleTime() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_JobMonitorRule) AttrDtsJobId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_JobMonitorRule) AttrDtsJobId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDtsJobId",
@@ -131,8 +144,8 @@ func (j *jsiiProxy_JobMonitorRule) AttrDtsJobId() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_JobMonitorRule) AttrPeriod() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_JobMonitorRule) AttrPeriod() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPeriod",
@@ -141,8 +154,8 @@ func (j *jsiiProxy_JobMonitorRule) AttrPeriod() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_JobMonitorRule) AttrPhone() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_JobMonitorRule) AttrPhone() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPhone",
@@ -151,8 +164,8 @@ func (j *jsiiProxy_JobMonitorRule) AttrPhone() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_JobMonitorRule) AttrState() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_JobMonitorRule) AttrState() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrState",
@@ -161,8 +174,8 @@ func (j *jsiiProxy_JobMonitorRule) AttrState() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_JobMonitorRule) AttrTimes() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_JobMonitorRule) AttrTimes() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTimes",
@@ -171,8 +184,8 @@ func (j *jsiiProxy_JobMonitorRule) AttrTimes() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_JobMonitorRule) AttrType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_JobMonitorRule) AttrType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrType",
@@ -186,6 +199,16 @@ func (j *jsiiProxy_JobMonitorRule) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_JobMonitorRule) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -323,17 +346,6 @@ func (j *jsiiProxy_JobMonitorRule)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_JobMonitorRule)SetProps(val *JobMonitorRuleProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_JobMonitorRule)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -425,6 +437,45 @@ func (j *jsiiProxy_JobMonitorRule) ApplyRemovalPolicy(policy alicloudroscdkcore.
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (j *jsiiProxy_JobMonitorRule) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		j,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (j *jsiiProxy_JobMonitorRule) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		j,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (j *jsiiProxy_JobMonitorRule) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		j,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (j *jsiiProxy_JobMonitorRule) GeneratePhysicalName() *string {

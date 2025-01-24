@@ -36,14 +36,20 @@ export interface SleepProps {
 }
 
 /**
+ * Represents a `Sleep`.
+ */
+export interface ISleep extends ros.IResource {
+    readonly props: SleepProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::Sleep`, which is used to delay the creation, deletion, update, and rollback of other resources.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSleep`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-sleep
  */
-export class Sleep extends ros.Resource {
+export class Sleep extends ros.Resource implements ISleep {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SleepProps;
+    public readonly props: SleepProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

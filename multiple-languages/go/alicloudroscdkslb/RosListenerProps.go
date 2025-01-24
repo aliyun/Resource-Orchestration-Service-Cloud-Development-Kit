@@ -19,6 +19,7 @@ type RosListenerProps struct {
 	ConnectionDrainTimeout interface{} `field:"optional" json:"connectionDrainTimeout" yaml:"connectionDrainTimeout"`
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
 	EnableHttp2 interface{} `field:"optional" json:"enableHttp2" yaml:"enableHttp2"`
+	FullNatEnabled interface{} `field:"optional" json:"fullNatEnabled" yaml:"fullNatEnabled"`
 	Gzip interface{} `field:"optional" json:"gzip" yaml:"gzip"`
 	HealthCheck interface{} `field:"optional" json:"healthCheck" yaml:"healthCheck"`
 	HttpConfig interface{} `field:"optional" json:"httpConfig" yaml:"httpConfig"`

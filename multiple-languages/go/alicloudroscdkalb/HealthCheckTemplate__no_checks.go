@@ -52,10 +52,6 @@ func (j *jsiiProxy_HealthCheckTemplate) validateSetIdParameters(val *string) err
 	return nil
 }
 
-func (j *jsiiProxy_HealthCheckTemplate) validateSetPropsParameters(val *HealthCheckTemplateProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_HealthCheckTemplate) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

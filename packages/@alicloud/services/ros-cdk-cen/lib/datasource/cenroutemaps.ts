@@ -44,25 +44,41 @@ export interface CenRouteMapsProps {
 }
 
 /**
+ * Represents a `CenRouteMaps`.
+ */
+export interface ICenRouteMaps extends ros.IResource {
+    readonly props: CenRouteMapsProps;
+
+    /**
+     * Attribute RouteMapIds: The list of The RouteMap ids.
+     */
+    readonly attrRouteMapIds: ros.IResolvable | string;
+
+    /**
+     * Attribute RouteMaps: The information about RouteMaps.
+     */
+    readonly attrRouteMaps: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::CEN::CenRouteMaps`, which is used to query the information about routing policies.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenRouteMaps`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-cenroutemaps
  */
-export class CenRouteMaps extends ros.Resource {
+export class CenRouteMaps extends ros.Resource implements ICenRouteMaps {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: CenRouteMapsProps;
+    public readonly props: CenRouteMapsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RouteMapIds: The list of The RouteMap ids.
      */
-    public readonly attrRouteMapIds: ros.IResolvable;
+    public readonly attrRouteMapIds: ros.IResolvable | string;
 
     /**
      * Attribute RouteMaps: The information about RouteMaps.
      */
-    public readonly attrRouteMaps: ros.IResolvable;
+    public readonly attrRouteMaps: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -124,30 +124,51 @@ export interface DBClusterProps {
 }
 
 /**
+ * Represents a `DBCluster`.
+ */
+export interface IDBCluster extends ros.IResource {
+    readonly props: DBClusterProps;
+
+    /**
+     * Attribute ConnectionString: Vpc connection string.
+     */
+    readonly attrConnectionString: ros.IResolvable | string;
+
+    /**
+     * Attribute DBClusterId: The ID of the cluster.
+     */
+    readonly attrDbClusterId: ros.IResolvable | string;
+
+    /**
+     * Attribute OrderId: The ID of the order.
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ADB::DBCluster`, which is used to create an AnalyticDB for MySQL cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-dbcluster
  */
-export class DBCluster extends ros.Resource {
+export class DBCluster extends ros.Resource implements IDBCluster {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DBClusterProps;
+    public readonly props: DBClusterProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ConnectionString: Vpc connection string.
      */
-    public readonly attrConnectionString: ros.IResolvable;
+    public readonly attrConnectionString: ros.IResolvable | string;
 
     /**
      * Attribute DBClusterId: The ID of the cluster.
      */
-    public readonly attrDbClusterId: ros.IResolvable;
+    public readonly attrDbClusterId: ros.IResolvable | string;
 
     /**
      * Attribute OrderId: The ID of the order.
      */
-    public readonly attrOrderId: ros.IResolvable;
+    public readonly attrOrderId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

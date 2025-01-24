@@ -1,5 +1,7 @@
 @alicloud/ros-cdk-fnf.Flow=com.aliyun.ros.cdk.fnf.Flow
 @alicloud/ros-cdk-fnf.FlowProps=com.aliyun.ros.cdk.fnf.FlowProps
+@alicloud/ros-cdk-fnf.IFlow=com.aliyun.ros.cdk.fnf.IFlow
+@alicloud/ros-cdk-fnf.ISchedule=com.aliyun.ros.cdk.fnf.ISchedule
 @alicloud/ros-cdk-fnf.RosFlow=com.aliyun.ros.cdk.fnf.RosFlow
 @alicloud/ros-cdk-fnf.RosFlowProps=com.aliyun.ros.cdk.fnf.RosFlowProps
 @alicloud/ros-cdk-fnf.RosSchedule=com.aliyun.ros.cdk.fnf.RosSchedule
@@ -10,6 +12,10 @@
 @alicloud/ros-cdk-fnf.datasource.FlowProps=com.aliyun.ros.cdk.fnf.datasource.FlowProps
 @alicloud/ros-cdk-fnf.datasource.Flows=com.aliyun.ros.cdk.fnf.datasource.Flows
 @alicloud/ros-cdk-fnf.datasource.FlowsProps=com.aliyun.ros.cdk.fnf.datasource.FlowsProps
+@alicloud/ros-cdk-fnf.datasource.IFlow=com.aliyun.ros.cdk.fnf.datasource.IFlow
+@alicloud/ros-cdk-fnf.datasource.IFlows=com.aliyun.ros.cdk.fnf.datasource.IFlows
+@alicloud/ros-cdk-fnf.datasource.ISchedule=com.aliyun.ros.cdk.fnf.datasource.ISchedule
+@alicloud/ros-cdk-fnf.datasource.ISchedules=com.aliyun.ros.cdk.fnf.datasource.ISchedules
 @alicloud/ros-cdk-fnf.datasource.RosFlow=com.aliyun.ros.cdk.fnf.datasource.RosFlow
 @alicloud/ros-cdk-fnf.datasource.RosFlowProps=com.aliyun.ros.cdk.fnf.datasource.RosFlowProps
 @alicloud/ros-cdk-fnf.datasource.RosFlows=com.aliyun.ros.cdk.fnf.datasource.RosFlows

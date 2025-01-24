@@ -13,7 +13,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
     {
         /// <summary>Property groupAttribute: Group attribute, default is null.</summary>
         /// <remarks>
-        /// The object value is groupToic and externalName
+        /// The object value is groupTopic and externalName
         /// </remarks>
         [JsiiProperty(name: "groupAttribute", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -96,7 +96,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
 
             /// <summary>Property groupAttribute: Group attribute, default is null.</summary>
             /// <remarks>
-            /// The object value is groupToic and externalName
+            /// The object value is groupTopic and externalName
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "groupAttribute", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

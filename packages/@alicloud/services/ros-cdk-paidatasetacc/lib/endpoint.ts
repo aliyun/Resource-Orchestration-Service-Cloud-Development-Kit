@@ -36,20 +36,31 @@ export interface EndpointProps {
 }
 
 /**
+ * Represents a `Endpoint`.
+ */
+export interface IEndpoint extends ros.IResource {
+    readonly props: EndpointProps;
+
+    /**
+     * Attribute EndpointId: The ID of the Mount Target.
+     */
+    readonly attrEndpointId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::PAIDatasetAcc::Endpoint`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEndpoint`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidatasetacc-endpoint
  */
-export class Endpoint extends ros.Resource {
+export class Endpoint extends ros.Resource implements IEndpoint {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: EndpointProps;
+    public readonly props: EndpointProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute EndpointId: The ID of the Mount Target.
      */
-    public readonly attrEndpointId: ros.IResolvable;
+    public readonly attrEndpointId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -26,20 +26,31 @@ export interface PipelineProps {
 }
 
 /**
+ * Represents a `Pipeline`.
+ */
+export interface IPipeline extends ros.IResource {
+    readonly props: PipelineProps;
+
+    /**
+     * Attribute PipelineId: Pipeline id.
+     */
+    readonly attrPipelineId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::DEVOPS::Pipeline`, which is used to create a pipeline. YAML-based pipelines are supported.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPipeline`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipeline
  */
-export class Pipeline extends ros.Resource {
+export class Pipeline extends ros.Resource implements IPipeline {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: PipelineProps;
+    public readonly props: PipelineProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute PipelineId: Pipeline id.
      */
-    public readonly attrPipelineId: ros.IResolvable;
+    public readonly attrPipelineId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

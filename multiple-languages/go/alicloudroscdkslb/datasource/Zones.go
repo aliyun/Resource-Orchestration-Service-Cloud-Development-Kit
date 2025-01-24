@@ -9,15 +9,25 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::Zones`, which is used to query the zones in which Server Load Balancer (SLB) instances are deployed.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::Zones`, which is used to query the zones of Server Load Balancer (SLB) instances.
 type Zones interface {
 	alicloudroscdkcore.Resource
+	IZones
 	// Attribute ZoneIds: The list of The primary zone Ids.
-	AttrZoneIds() alicloudroscdkcore.IResolvable
+	AttrZoneIds() interface{}
 	// Attribute Zones: The list of The Zones.
-	AttrZones() alicloudroscdkcore.IResolvable
+	AttrZones() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type Zones interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ZonesProps
-	SetProps(val *ZonesProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type Zones interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type Zones interface {
 // The jsii proxy struct for Zones
 type jsiiProxy_Zones struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IZones
 }
 
-func (j *jsiiProxy_Zones) AttrZoneIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Zones) AttrZoneIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrZoneIds",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_Zones) AttrZoneIds() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Zones) AttrZones() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Zones) AttrZones() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrZones",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_Zones) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Zones) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_Zones)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Zones)SetProps(val *ZonesProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Zones)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (z *jsiiProxy_Zones) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (z *jsiiProxy_Zones) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		z,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (z *jsiiProxy_Zones) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		z,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (z *jsiiProxy_Zones) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		z,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (z *jsiiProxy_Zones) GeneratePhysicalName() *string {

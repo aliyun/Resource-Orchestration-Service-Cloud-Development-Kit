@@ -19,20 +19,31 @@ export interface AccountAliasProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::RAM::AccountAlias`.
+ * Represents a `AccountAlias`.
+ */
+export interface IAccountAlias extends ros.IResource {
+    readonly props: AccountAliasProps;
+
+    /**
+     * Attribute AccountAlias: Account alias.
+     */
+    readonly attrAccountAlias: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::RAM::AccountAlias`, which is used to query the alias of a cloud account.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccountAlias`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-accountalias
  */
-export class AccountAlias extends ros.Resource {
+export class AccountAlias extends ros.Resource implements IAccountAlias {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AccountAliasProps;
+    public readonly props: AccountAliasProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccountAlias: Account alias.
      */
-    public readonly attrAccountAlias: ros.IResolvable;
+    public readonly attrAccountAlias: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

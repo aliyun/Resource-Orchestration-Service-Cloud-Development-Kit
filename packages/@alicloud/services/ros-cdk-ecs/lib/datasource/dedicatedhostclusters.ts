@@ -37,25 +37,41 @@ export interface DedicatedHostClustersProps {
 }
 
 /**
+ * Represents a `DedicatedHostClusters`.
+ */
+export interface IDedicatedHostClusters extends ros.IResource {
+    readonly props: DedicatedHostClustersProps;
+
+    /**
+     * Attribute DedicatedHostClusterIds: The list of dedicated host cluster IDs.
+     */
+    readonly attrDedicatedHostClusterIds: ros.IResolvable | string;
+
+    /**
+     * Attribute DedicatedHostClusters: The list of dedicated host clusters.
+     */
+    readonly attrDedicatedHostClusters: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::DedicatedHostClusters`, which is used to query the information about dedicated host clusters.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDedicatedHostClusters`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-dedicatedhostclusters
  */
-export class DedicatedHostClusters extends ros.Resource {
+export class DedicatedHostClusters extends ros.Resource implements IDedicatedHostClusters {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DedicatedHostClustersProps;
+    public readonly props: DedicatedHostClustersProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DedicatedHostClusterIds: The list of dedicated host cluster IDs.
      */
-    public readonly attrDedicatedHostClusterIds: ros.IResolvable;
+    public readonly attrDedicatedHostClusterIds: ros.IResolvable | string;
 
     /**
      * Attribute DedicatedHostClusters: The list of dedicated host clusters.
      */
-    public readonly attrDedicatedHostClusters: ros.IResolvable;
+    public readonly attrDedicatedHostClusters: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

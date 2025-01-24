@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.directmail;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-directmail-ipfilter
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:06.391Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:36.997Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.directmail.$Module.class, fqn = "@alicloud/ros-cdk-directmail.RosIpfilterProps")
 @software.amazon.jsii.Jsii.Proxy(RosIpfilterProps.Jsii$Proxy.class)
 public interface RosIpfilterProps extends software.amazon.jsii.JsiiSerializable {

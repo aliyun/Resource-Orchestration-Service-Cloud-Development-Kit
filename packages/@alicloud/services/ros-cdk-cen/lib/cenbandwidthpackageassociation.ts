@@ -21,14 +21,20 @@ export interface CenBandwidthPackageAssociationProps {
 }
 
 /**
+ * Represents a `CenBandwidthPackageAssociation`.
+ */
+export interface ICenBandwidthPackageAssociation extends ros.IResource {
+    readonly props: CenBandwidthPackageAssociationProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenBandwidthPackageAssociation`, which is used to associate a bandwidth plan with a Cloud Enterprise Network (CEN) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenBandwidthPackageAssociation`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthpackageassociation
  */
-export class CenBandwidthPackageAssociation extends ros.Resource {
+export class CenBandwidthPackageAssociation extends ros.Resource implements ICenBandwidthPackageAssociation {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: CenBandwidthPackageAssociationProps;
+    public readonly props: CenBandwidthPackageAssociationProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

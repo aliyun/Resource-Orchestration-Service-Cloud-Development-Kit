@@ -63,25 +63,41 @@ export interface MigrateTaskProps {
 }
 
 /**
+ * Represents a `MigrateTask`.
+ */
+export interface IMigrateTask extends ros.IResource {
+    readonly props: MigrateTaskProps;
+
+    /**
+     * Attribute DBName: The name of the database that you want to restore.
+     */
+    readonly attrDbName: ros.IResolvable | string;
+
+    /**
+     * Attribute MigrateTaskId: The ID of the migrate task.
+     */
+    readonly attrMigrateTaskId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::MigrateTask`, which is used to create a migration task to restore backup files from an Object Storage Service (OSS) bucket to an ApsaraDB RDS for SQL Server instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMigrateTask`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-migratetask
  */
-export class MigrateTask extends ros.Resource {
+export class MigrateTask extends ros.Resource implements IMigrateTask {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: MigrateTaskProps;
+    public readonly props: MigrateTaskProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DBName: The name of the database that you want to restore.
      */
-    public readonly attrDbName: ros.IResolvable;
+    public readonly attrDbName: ros.IResolvable | string;
 
     /**
      * Attribute MigrateTaskId: The ID of the migrate task.
      */
-    public readonly attrMigrateTaskId: ros.IResolvable;
+    public readonly attrMigrateTaskId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

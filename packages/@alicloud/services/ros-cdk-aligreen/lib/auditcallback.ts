@@ -36,40 +36,71 @@ export interface AuditCallbackProps {
 }
 
 /**
+ * Represents a `AuditCallback`.
+ */
+export interface IAuditCallback extends ros.IResource {
+    readonly props: AuditCallbackProps;
+
+    /**
+     * Attribute AuditCallbackName: The AuditCallback name defined by the customer.
+     */
+    readonly attrAuditCallbackName: ros.IResolvable | string;
+
+    /**
+     * Attribute CallbackSuggestions: List of audit results supported by message notification.
+     */
+    readonly attrCallbackSuggestions: ros.IResolvable | string;
+
+    /**
+     * Attribute CallbackTypes: A list of Callback types.
+     */
+    readonly attrCallbackTypes: ros.IResolvable | string;
+
+    /**
+     * Attribute CryptType: The encryption algorithm is used to verify that the callback request is sent by the content security service to your business service.
+     */
+    readonly attrCryptType: ros.IResolvable | string;
+
+    /**
+     * Attribute Url: The detection result will be called back to the url.
+     */
+    readonly attrUrl: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::Aligreen::AuditCallback`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAuditCallback`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-auditcallback
  */
-export class AuditCallback extends ros.Resource {
+export class AuditCallback extends ros.Resource implements IAuditCallback {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AuditCallbackProps;
+    public readonly props: AuditCallbackProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AuditCallbackName: The AuditCallback name defined by the customer.
      */
-    public readonly attrAuditCallbackName: ros.IResolvable;
+    public readonly attrAuditCallbackName: ros.IResolvable | string;
 
     /**
      * Attribute CallbackSuggestions: List of audit results supported by message notification.
      */
-    public readonly attrCallbackSuggestions: ros.IResolvable;
+    public readonly attrCallbackSuggestions: ros.IResolvable | string;
 
     /**
      * Attribute CallbackTypes: A list of Callback types.
      */
-    public readonly attrCallbackTypes: ros.IResolvable;
+    public readonly attrCallbackTypes: ros.IResolvable | string;
 
     /**
      * Attribute CryptType: The encryption algorithm is used to verify that the callback request is sent by the content security service to your business service.
      */
-    public readonly attrCryptType: ros.IResolvable;
+    public readonly attrCryptType: ros.IResolvable | string;
 
     /**
      * Attribute Url: The detection result will be called back to the url.
      */
-    public readonly attrUrl: ros.IResolvable;
+    public readonly attrUrl: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

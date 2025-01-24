@@ -12,26 +12,36 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::VOD::Storage`, which is used to add an Object Storage Service (OSS) bucket in ApsaraVideo VOD (VOD).
 type Storage interface {
 	alicloudroscdkcore.Resource
+	IStorage
 	// Attribute CreateTime: The creation time of the storage.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute DefaultUpload: Whether to upload by default.
-	AttrDefaultUpload() alicloudroscdkcore.IResolvable
+	AttrDefaultUpload() interface{}
 	// Attribute GmtModified: Modification time.
-	AttrGmtModified() alicloudroscdkcore.IResolvable
+	AttrGmtModified() interface{}
 	// Attribute GroupId: Group id.
-	AttrGroupId() alicloudroscdkcore.IResolvable
+	AttrGroupId() interface{}
 	// Attribute ResourceGroupId: The ID of the resource group.
-	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() interface{}
 	// Attribute StorageAcl: Storage ACL.
-	AttrStorageAcl() alicloudroscdkcore.IResolvable
+	AttrStorageAcl() interface{}
 	// Attribute StorageLocation: Storage address.
-	AttrStorageLocation() alicloudroscdkcore.IResolvable
+	AttrStorageLocation() interface{}
 	// Attribute StorageUsage: Storage usage.
-	AttrStorageUsage() alicloudroscdkcore.IResolvable
+	AttrStorageUsage() interface{}
 	// Attribute Type: Storage type.
-	AttrType() alicloudroscdkcore.IResolvable
+	AttrType() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -46,7 +56,6 @@ type Storage interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *StorageProps
-	SetProps(val *StorageProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -59,6 +68,9 @@ type Storage interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -111,10 +123,11 @@ type Storage interface {
 // The jsii proxy struct for Storage
 type jsiiProxy_Storage struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IStorage
 }
 
-func (j *jsiiProxy_Storage) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Storage) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_Storage) AttrCreateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Storage) AttrDefaultUpload() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Storage) AttrDefaultUpload() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDefaultUpload",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_Storage) AttrDefaultUpload() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Storage) AttrGmtModified() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Storage) AttrGmtModified() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGmtModified",
@@ -143,8 +156,8 @@ func (j *jsiiProxy_Storage) AttrGmtModified() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Storage) AttrGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Storage) AttrGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGroupId",
@@ -153,8 +166,8 @@ func (j *jsiiProxy_Storage) AttrGroupId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Storage) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Storage) AttrResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupId",
@@ -163,8 +176,8 @@ func (j *jsiiProxy_Storage) AttrResourceGroupId() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Storage) AttrStorageAcl() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Storage) AttrStorageAcl() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStorageAcl",
@@ -173,8 +186,8 @@ func (j *jsiiProxy_Storage) AttrStorageAcl() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Storage) AttrStorageLocation() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Storage) AttrStorageLocation() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStorageLocation",
@@ -183,8 +196,8 @@ func (j *jsiiProxy_Storage) AttrStorageLocation() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Storage) AttrStorageUsage() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Storage) AttrStorageUsage() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStorageUsage",
@@ -193,8 +206,8 @@ func (j *jsiiProxy_Storage) AttrStorageUsage() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Storage) AttrType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Storage) AttrType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrType",
@@ -208,6 +221,16 @@ func (j *jsiiProxy_Storage) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Storage) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -345,17 +368,6 @@ func (j *jsiiProxy_Storage)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Storage)SetProps(val *StorageProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Storage)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -447,6 +459,45 @@ func (s *jsiiProxy_Storage) ApplyRemovalPolicy(policy alicloudroscdkcore.Removal
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (s *jsiiProxy_Storage) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		s,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_Storage) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_Storage) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (s *jsiiProxy_Storage) GeneratePhysicalName() *string {

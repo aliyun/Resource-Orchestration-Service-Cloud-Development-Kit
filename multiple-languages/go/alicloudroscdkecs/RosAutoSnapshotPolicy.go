@@ -15,12 +15,18 @@ type RosAutoSnapshotPolicy interface {
 	AttrAutoSnapshotPolicyId() alicloudroscdkcore.IResolvable
 	AutoSnapshotPolicyName() interface{}
 	SetAutoSnapshotPolicyName(val interface{})
+	CopiedSnapshotsRetentionDays() interface{}
+	SetCopiedSnapshotsRetentionDays(val interface{})
+	CopyEncryptionConfiguration() interface{}
+	SetCopyEncryptionConfiguration(val interface{})
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
 	CreationStack() *[]*string
 	DiskIds() interface{}
 	SetDiskIds(val interface{})
+	EnableCrossRegionCopy() interface{}
+	SetEnableCrossRegionCopy(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
 	// The logical ID for this stack element.
@@ -57,6 +63,8 @@ type RosAutoSnapshotPolicy interface {
 	Stack() alicloudroscdkcore.Stack
 	Tags() *[]*RosAutoSnapshotPolicy_TagsProperty
 	SetTags(val *[]*RosAutoSnapshotPolicy_TagsProperty)
+	TargetCopyRegions() interface{}
+	SetTargetCopyRegions(val interface{})
 	TimePoints() interface{}
 	SetTimePoints(val interface{})
 	// Return properties modified after initiation.
@@ -118,6 +126,9 @@ type RosAutoSnapshotPolicy interface {
 	AddRosDependency(target *string)
 	// Sets the deletion policy of the resource based on the removal policy specified.
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy, options *alicloudroscdkcore.RemovalPolicyOptions)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDesc() *string
+	FetchRosDependency() *[]*string
 	// Returns a token for an runtime attribute of this resource.
 	//
 	// Ideally, use generated attribute accessors (e.g. `resource.arn`), but this can be used for future compatibility
@@ -200,6 +211,26 @@ func (j *jsiiProxy_RosAutoSnapshotPolicy) AutoSnapshotPolicyName() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosAutoSnapshotPolicy) CopiedSnapshotsRetentionDays() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"copiedSnapshotsRetentionDays",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosAutoSnapshotPolicy) CopyEncryptionConfiguration() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"copyEncryptionConfiguration",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosAutoSnapshotPolicy) CreationStack() *[]*string {
 	var returns *[]*string
 	_jsii_.Get(
@@ -215,6 +246,16 @@ func (j *jsiiProxy_RosAutoSnapshotPolicy) DiskIds() interface{} {
 	_jsii_.Get(
 		j,
 		"diskIds",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosAutoSnapshotPolicy) EnableCrossRegionCopy() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enableCrossRegionCopy",
 		&returns,
 	)
 	return returns
@@ -340,6 +381,16 @@ func (j *jsiiProxy_RosAutoSnapshotPolicy) Tags() *[]*RosAutoSnapshotPolicy_TagsP
 	return returns
 }
 
+func (j *jsiiProxy_RosAutoSnapshotPolicy) TargetCopyRegions() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"targetCopyRegions",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosAutoSnapshotPolicy) TimePoints() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -399,6 +450,28 @@ func (j *jsiiProxy_RosAutoSnapshotPolicy)SetAutoSnapshotPolicyName(val interface
 	)
 }
 
+func (j *jsiiProxy_RosAutoSnapshotPolicy)SetCopiedSnapshotsRetentionDays(val interface{}) {
+	if err := j.validateSetCopiedSnapshotsRetentionDaysParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"copiedSnapshotsRetentionDays",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosAutoSnapshotPolicy)SetCopyEncryptionConfiguration(val interface{}) {
+	if err := j.validateSetCopyEncryptionConfigurationParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"copyEncryptionConfiguration",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosAutoSnapshotPolicy)SetDiskIds(val interface{}) {
 	if err := j.validateSetDiskIdsParameters(val); err != nil {
 		panic(err)
@@ -406,6 +479,17 @@ func (j *jsiiProxy_RosAutoSnapshotPolicy)SetDiskIds(val interface{}) {
 	_jsii_.Set(
 		j,
 		"diskIds",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosAutoSnapshotPolicy)SetEnableCrossRegionCopy(val interface{}) {
+	if err := j.validateSetEnableCrossRegionCopyParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"enableCrossRegionCopy",
 		val,
 	)
 }
@@ -461,6 +545,17 @@ func (j *jsiiProxy_RosAutoSnapshotPolicy)SetTags(val *[]*RosAutoSnapshotPolicy_T
 	_jsii_.Set(
 		j,
 		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosAutoSnapshotPolicy)SetTargetCopyRegions(val interface{}) {
+	if err := j.validateSetTargetCopyRegionsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"targetCopyRegions",
 		val,
 	)
 }
@@ -668,6 +763,45 @@ func (r *jsiiProxy_RosAutoSnapshotPolicy) ApplyRemovalPolicy(policy alicloudrosc
 		"applyRemovalPolicy",
 		[]interface{}{policy, options},
 	)
+}
+
+func (r *jsiiProxy_RosAutoSnapshotPolicy) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		r,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_RosAutoSnapshotPolicy) FetchDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		r,
+		"fetchDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_RosAutoSnapshotPolicy) FetchRosDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		r,
+		"fetchRosDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (r *jsiiProxy_RosAutoSnapshotPolicy) GetAtt(attributeName *string) alicloudroscdkcore.Reference {

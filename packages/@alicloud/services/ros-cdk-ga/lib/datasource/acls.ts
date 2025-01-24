@@ -34,25 +34,41 @@ export interface AclsProps {
 }
 
 /**
+ * Represents a `Acls`.
+ */
+export interface IAcls extends ros.IResource {
+    readonly props: AclsProps;
+
+    /**
+     * Attribute AclIds: The list of acl IDs.
+     */
+    readonly attrAclIds: ros.IResolvable | string;
+
+    /**
+     * Attribute Acls: The list of acls.
+     */
+    readonly attrAcls: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::GA::Acls`, which is used to query access control lists (ACLs).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAcls`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ga-acls
  */
-export class Acls extends ros.Resource {
+export class Acls extends ros.Resource implements IAcls {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AclsProps;
+    public readonly props: AclsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AclIds: The list of acl IDs.
      */
-    public readonly attrAclIds: ros.IResolvable;
+    public readonly attrAclIds: ros.IResolvable | string;
 
     /**
      * Attribute Acls: The list of acls.
      */
-    public readonly attrAcls: ros.IResolvable;
+    public readonly attrAcls: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

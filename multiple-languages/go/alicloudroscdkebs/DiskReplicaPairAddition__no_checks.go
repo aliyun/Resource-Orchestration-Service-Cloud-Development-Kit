@@ -52,10 +52,6 @@ func (j *jsiiProxy_DiskReplicaPairAddition) validateSetIdParameters(val *string)
 	return nil
 }
 
-func (j *jsiiProxy_DiskReplicaPairAddition) validateSetPropsParameters(val *DiskReplicaPairAdditionProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_DiskReplicaPairAddition) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

@@ -12,16 +12,26 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::DBS::Download`, which is used to create an advanced download task.
 type Download interface {
 	alicloudroscdkcore.Resource
+	IDownload
 	// Attribute BakSetId: The ID of the backup set.
-	AttrBakSetId() alicloudroscdkcore.IResolvable
+	AttrBakSetId() interface{}
 	// Attribute DownloadAddressInfo: The download address information.
-	AttrDownloadAddressInfo() alicloudroscdkcore.IResolvable
+	AttrDownloadAddressInfo() interface{}
 	// Attribute InstanceName: The ID of the instance.
-	AttrInstanceName() alicloudroscdkcore.IResolvable
+	AttrInstanceName() interface{}
 	// Attribute TaskId: The ID of the download task.
-	AttrTaskId() alicloudroscdkcore.IResolvable
+	AttrTaskId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -36,7 +46,6 @@ type Download interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DownloadProps
-	SetProps(val *DownloadProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -49,6 +58,9 @@ type Download interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -101,10 +113,11 @@ type Download interface {
 // The jsii proxy struct for Download
 type jsiiProxy_Download struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDownload
 }
 
-func (j *jsiiProxy_Download) AttrBakSetId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Download) AttrBakSetId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBakSetId",
@@ -113,8 +126,8 @@ func (j *jsiiProxy_Download) AttrBakSetId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Download) AttrDownloadAddressInfo() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Download) AttrDownloadAddressInfo() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDownloadAddressInfo",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_Download) AttrDownloadAddressInfo() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_Download) AttrInstanceName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Download) AttrInstanceName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceName",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_Download) AttrInstanceName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Download) AttrTaskId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Download) AttrTaskId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTaskId",
@@ -148,6 +161,16 @@ func (j *jsiiProxy_Download) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Download) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -285,17 +308,6 @@ func (j *jsiiProxy_Download)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Download)SetProps(val *DownloadProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Download)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -387,6 +399,45 @@ func (d *jsiiProxy_Download) ApplyRemovalPolicy(policy alicloudroscdkcore.Remova
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_Download) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_Download) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_Download) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_Download) GeneratePhysicalName() *string {

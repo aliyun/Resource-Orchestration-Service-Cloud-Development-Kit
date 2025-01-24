@@ -41,55 +41,101 @@ export interface TransitRouterRouteEntryProps {
 }
 
 /**
+ * Represents a `TransitRouterRouteEntry`.
+ */
+export interface ITransitRouterRouteEntry extends ros.IResource {
+    readonly props: TransitRouterRouteEntryProps;
+
+    /**
+     * Attribute TransitRouterRouteEntryDescription: TransitRouterRouteEntryDescription
+     */
+    readonly attrTransitRouterRouteEntryDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute TransitRouterRouteEntryDestinationCidrBlock: TransitRouterRouteEntryDestinationCidrBlock
+     */
+    readonly attrTransitRouterRouteEntryDestinationCidrBlock: ros.IResolvable | string;
+
+    /**
+     * Attribute TransitRouterRouteEntryId: The first ID of the resource
+     */
+    readonly attrTransitRouterRouteEntryId: ros.IResolvable | string;
+
+    /**
+     * Attribute TransitRouterRouteEntryName: TransitRouterRouteEntryName
+     */
+    readonly attrTransitRouterRouteEntryName: ros.IResolvable | string;
+
+    /**
+     * Attribute TransitRouterRouteEntryNextHopId: TransitRouterRouteEntryNextHopId
+     */
+    readonly attrTransitRouterRouteEntryNextHopId: ros.IResolvable | string;
+
+    /**
+     * Attribute TransitRouterRouteEntryNextHopType: TransitRouterRouteEntryNextHopType
+     */
+    readonly attrTransitRouterRouteEntryNextHopType: ros.IResolvable | string;
+
+    /**
+     * Attribute TransitRouterRouteEntryType: TransitRouterRouteEntryType
+     */
+    readonly attrTransitRouterRouteEntryType: ros.IResolvable | string;
+
+    /**
+     * Attribute TransitRouterRouteTableId: TransitRouterRouteTableId
+     */
+    readonly attrTransitRouterRouteTableId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterRouteEntry`, which is used to add routes to a route table of an Enterprise Edition transit router.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouterRouteEntry`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterrouteentry
  */
-export class TransitRouterRouteEntry extends ros.Resource {
+export class TransitRouterRouteEntry extends ros.Resource implements ITransitRouterRouteEntry {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: TransitRouterRouteEntryProps;
+    public readonly props: TransitRouterRouteEntryProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute TransitRouterRouteEntryDescription: TransitRouterRouteEntryDescription
      */
-    public readonly attrTransitRouterRouteEntryDescription: ros.IResolvable;
+    public readonly attrTransitRouterRouteEntryDescription: ros.IResolvable | string;
 
     /**
      * Attribute TransitRouterRouteEntryDestinationCidrBlock: TransitRouterRouteEntryDestinationCidrBlock
      */
-    public readonly attrTransitRouterRouteEntryDestinationCidrBlock: ros.IResolvable;
+    public readonly attrTransitRouterRouteEntryDestinationCidrBlock: ros.IResolvable | string;
 
     /**
      * Attribute TransitRouterRouteEntryId: The first ID of the resource
      */
-    public readonly attrTransitRouterRouteEntryId: ros.IResolvable;
+    public readonly attrTransitRouterRouteEntryId: ros.IResolvable | string;
 
     /**
      * Attribute TransitRouterRouteEntryName: TransitRouterRouteEntryName
      */
-    public readonly attrTransitRouterRouteEntryName: ros.IResolvable;
+    public readonly attrTransitRouterRouteEntryName: ros.IResolvable | string;
 
     /**
      * Attribute TransitRouterRouteEntryNextHopId: TransitRouterRouteEntryNextHopId
      */
-    public readonly attrTransitRouterRouteEntryNextHopId: ros.IResolvable;
+    public readonly attrTransitRouterRouteEntryNextHopId: ros.IResolvable | string;
 
     /**
      * Attribute TransitRouterRouteEntryNextHopType: TransitRouterRouteEntryNextHopType
      */
-    public readonly attrTransitRouterRouteEntryNextHopType: ros.IResolvable;
+    public readonly attrTransitRouterRouteEntryNextHopType: ros.IResolvable | string;
 
     /**
      * Attribute TransitRouterRouteEntryType: TransitRouterRouteEntryType
      */
-    public readonly attrTransitRouterRouteEntryType: ros.IResolvable;
+    public readonly attrTransitRouterRouteEntryType: ros.IResolvable | string;
 
     /**
      * Attribute TransitRouterRouteTableId: TransitRouterRouteTableId
      */
-    public readonly attrTransitRouterRouteTableId: ros.IResolvable;
+    public readonly attrTransitRouterRouteTableId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

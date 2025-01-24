@@ -52,10 +52,6 @@ func (j *jsiiProxy_InstanceEndpointAclPolicy) validateSetIdParameters(val *strin
 	return nil
 }
 
-func (j *jsiiProxy_InstanceEndpointAclPolicy) validateSetPropsParameters(val *InstanceEndpointAclPolicyProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_InstanceEndpointAclPolicy) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

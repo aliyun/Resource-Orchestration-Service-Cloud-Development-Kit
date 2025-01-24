@@ -12,16 +12,26 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::Folder`, which is used to create a folder.
 type Folder interface {
 	alicloudroscdkcore.Resource
+	IFolder
 	// Attribute FolderId: The ID of the folder.
-	AttrFolderId() alicloudroscdkcore.IResolvable
+	AttrFolderId() interface{}
 	// Attribute FolderName: The name of the folder.
-	AttrFolderName() alicloudroscdkcore.IResolvable
+	AttrFolderName() interface{}
 	// Attribute ParentFolderId: The ID of the parent folder.
 	//
 	// If not set, the system default value will be used.
-	AttrParentFolderId() alicloudroscdkcore.IResolvable
+	AttrParentFolderId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -36,7 +46,6 @@ type Folder interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *FolderProps
-	SetProps(val *FolderProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -49,6 +58,9 @@ type Folder interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -101,10 +113,11 @@ type Folder interface {
 // The jsii proxy struct for Folder
 type jsiiProxy_Folder struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IFolder
 }
 
-func (j *jsiiProxy_Folder) AttrFolderId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Folder) AttrFolderId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrFolderId",
@@ -113,8 +126,8 @@ func (j *jsiiProxy_Folder) AttrFolderId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Folder) AttrFolderName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Folder) AttrFolderName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrFolderName",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_Folder) AttrFolderName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Folder) AttrParentFolderId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Folder) AttrParentFolderId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrParentFolderId",
@@ -138,6 +151,16 @@ func (j *jsiiProxy_Folder) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Folder) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -275,17 +298,6 @@ func (j *jsiiProxy_Folder)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Folder)SetProps(val *FolderProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Folder)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -377,6 +389,45 @@ func (f *jsiiProxy_Folder) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalP
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (f *jsiiProxy_Folder) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		f,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (f *jsiiProxy_Folder) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (f *jsiiProxy_Folder) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (f *jsiiProxy_Folder) GeneratePhysicalName() *string {

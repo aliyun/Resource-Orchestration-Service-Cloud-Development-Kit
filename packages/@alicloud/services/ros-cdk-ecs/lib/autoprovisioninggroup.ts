@@ -45,6 +45,11 @@ export interface AutoProvisioningGroupProps {
     readonly checkExecutionStatus?: boolean | ros.IResolvable;
 
     /**
+     * Property dataDiskConfig: List of instance data disk information.
+     */
+    readonly dataDiskConfig?: Array<RosAutoProvisioningGroup.DataDiskConfigProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * Property defaultTargetCapacityType: The type of supplemental instances. When the total value of PayAsYouGoTargetCapacity and SpotTargetCapacity is smaller than the value of TotalTargetCapacity, the auto provisioning group will create instances of the specified type to meet
      * the capacity requirements. Valid values:
      * PayAsYouGo: Pay-as-you-go instances.
@@ -100,6 +105,15 @@ export interface AutoProvisioningGroupProps {
     readonly maxSpotPrice?: number | ros.IResolvable;
 
     /**
+     * Property minTargetCapacity: The target minimum capacity of the elastic supply group. Value range: Positive integer.
+     * Once you have set this parameter, note that:
+     * Only create one-time synchronous delivery type elastic supply group (AutoProvisioningGroupType = instant), the parameters to take effect.
+     * If the inventory of instances in the current domain is less than this value, the call to the interface will fail and no instance will be created.
+     * If the instance inventory in the current domain is greater than the parameter value, the instance is created normally according to the other parameter values that have been set.
+     */
+    readonly minTargetCapacity?: string | ros.IResolvable;
+
+    /**
      * Property payAsYouGoAllocationStrategy: The scale-out policy for pay-as-you-go instances. Valid values:
      * lowest-price: The cost optimization policy the auto provisioning group follows to select instance
      * types of the lowest cost to create instances.
@@ -113,6 +127,18 @@ export interface AutoProvisioningGroupProps {
      * Property payAsYouGoTargetCapacity: The target capacity of pay-as-you-go instances in the auto provisioning group.
      */
     readonly payAsYouGoTargetCapacity?: string | ros.IResolvable;
+
+    /**
+     * Property resourceGroupId: The resource group ID.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property resourcePoolOptions: Resource pooling policy to use when creating an instance. Once you have set this parameter, note that:
+     * This parameter only applies if a pay-as-you-go instance is created.
+     * Only create one-time synchronous delivery type elastic supply group (AutoProvisioningGroupType = instant), the parameters to take effect.
+     */
+    readonly resourcePoolOptions?: RosAutoProvisioningGroup.ResourcePoolOptionsProperty | ros.IResolvable;
 
     /**
      * Property spotAllocationStrategy: The scale-out policy for preemptible instances. Valid values:
@@ -142,6 +168,11 @@ export interface AutoProvisioningGroupProps {
      * Property spotTargetCapacity: The target capacity of preemptible instances in the auto provisioning group.
      */
     readonly spotTargetCapacity?: string | ros.IResolvable;
+
+    /**
+     * Property systemDiskConfig: List of instance system disk information.
+     */
+    readonly systemDiskConfig?: Array<RosAutoProvisioningGroup.SystemDiskConfigProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property terminateInstances: Specifies whether to release instances of the auto provisioning group. Valid values:
@@ -177,25 +208,41 @@ export interface AutoProvisioningGroupProps {
 }
 
 /**
+ * Represents a `AutoProvisioningGroup`.
+ */
+export interface IAutoProvisioningGroup extends ros.IResource {
+    readonly props: AutoProvisioningGroupProps;
+
+    /**
+     * Attribute AutoProvisioningGroupId: The ID of the auto provisioning group.
+     */
+    readonly attrAutoProvisioningGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute AutoProvisioningGroupName: The name of the auto provisioning group.
+     */
+    readonly attrAutoProvisioningGroupName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::AutoProvisioningGroup`, which is used to create an auto provisioning group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAutoProvisioningGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autoprovisioninggroup
  */
-export class AutoProvisioningGroup extends ros.Resource {
+export class AutoProvisioningGroup extends ros.Resource implements IAutoProvisioningGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AutoProvisioningGroupProps;
+    public readonly props: AutoProvisioningGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AutoProvisioningGroupId: The ID of the auto provisioning group.
      */
-    public readonly attrAutoProvisioningGroupId: ros.IResolvable;
+    public readonly attrAutoProvisioningGroupId: ros.IResolvable | string;
 
     /**
      * Attribute AutoProvisioningGroupName: The name of the auto provisioning group.
      */
-    public readonly attrAutoProvisioningGroupName: ros.IResolvable;
+    public readonly attrAutoProvisioningGroupName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -210,28 +257,33 @@ export class AutoProvisioningGroup extends ros.Resource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosAutoProvisioningGroup = new RosAutoProvisioningGroup(this, id,  {
-            totalTargetCapacity: props.totalTargetCapacity,
-            autoProvisioningGroupName: props.autoProvisioningGroupName,
             description: props.description,
-            excessCapacityTerminationPolicy: props.excessCapacityTerminationPolicy,
-            launchTemplateConfig: props.launchTemplateConfig,
-            launchTemplateId: props.launchTemplateId,
+            resourceGroupId: props.resourceGroupId,
             checkExecutionStatus: props.checkExecutionStatus,
-            payAsYouGoTargetCapacity: props.payAsYouGoTargetCapacity,
             autoProvisioningGroupType: props.autoProvisioningGroupType,
-            spotInstanceInterruptionBehavior: props.spotInstanceInterruptionBehavior,
-            validUntil: props.validUntil,
-            terminateInstancesWithExpiration: props.terminateInstancesWithExpiration,
             defaultTargetCapacityType: props.defaultTargetCapacityType,
             launchConfiguration: props.launchConfiguration,
             spotInstancePoolsToUseCount: props.spotInstancePoolsToUseCount,
-            spotTargetCapacity: props.spotTargetCapacity,
-            launchTemplateVersion: props.launchTemplateVersion,
             validFrom: props.validFrom,
             maxSpotPrice: props.maxSpotPrice,
             spotAllocationStrategy: props.spotAllocationStrategy,
             terminateInstances: props.terminateInstances,
             payAsYouGoAllocationStrategy: props.payAsYouGoAllocationStrategy,
+            totalTargetCapacity: props.totalTargetCapacity,
+            resourcePoolOptions: props.resourcePoolOptions,
+            autoProvisioningGroupName: props.autoProvisioningGroupName,
+            excessCapacityTerminationPolicy: props.excessCapacityTerminationPolicy,
+            dataDiskConfig: props.dataDiskConfig,
+            launchTemplateConfig: props.launchTemplateConfig,
+            launchTemplateId: props.launchTemplateId,
+            payAsYouGoTargetCapacity: props.payAsYouGoTargetCapacity,
+            spotInstanceInterruptionBehavior: props.spotInstanceInterruptionBehavior,
+            validUntil: props.validUntil,
+            terminateInstancesWithExpiration: props.terminateInstancesWithExpiration,
+            spotTargetCapacity: props.spotTargetCapacity,
+            minTargetCapacity: props.minTargetCapacity,
+            launchTemplateVersion: props.launchTemplateVersion,
+            systemDiskConfig: props.systemDiskConfig,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAutoProvisioningGroup;
         this.attrAutoProvisioningGroupId = rosAutoProvisioningGroup.attrAutoProvisioningGroupId;

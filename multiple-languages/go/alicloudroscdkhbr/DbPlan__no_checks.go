@@ -52,10 +52,6 @@ func (j *jsiiProxy_DbPlan) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_DbPlan) validateSetPropsParameters(val *DbPlanProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_DbPlan) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

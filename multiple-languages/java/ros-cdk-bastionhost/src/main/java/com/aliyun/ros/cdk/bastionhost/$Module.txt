@@ -1,5 +1,7 @@
 @alicloud/ros-cdk-bastionhost.Host=com.aliyun.ros.cdk.bastionhost.Host
 @alicloud/ros-cdk-bastionhost.HostProps=com.aliyun.ros.cdk.bastionhost.HostProps
+@alicloud/ros-cdk-bastionhost.IHost=com.aliyun.ros.cdk.bastionhost.IHost
+@alicloud/ros-cdk-bastionhost.IInstance=com.aliyun.ros.cdk.bastionhost.IInstance
 @alicloud/ros-cdk-bastionhost.Instance=com.aliyun.ros.cdk.bastionhost.Instance
 @alicloud/ros-cdk-bastionhost.InstanceProps=com.aliyun.ros.cdk.bastionhost.InstanceProps
 @alicloud/ros-cdk-bastionhost.RosHost=com.aliyun.ros.cdk.bastionhost.RosHost

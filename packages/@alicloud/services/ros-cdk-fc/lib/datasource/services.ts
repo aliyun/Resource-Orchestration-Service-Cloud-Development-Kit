@@ -24,25 +24,41 @@ export interface ServicesProps {
 }
 
 /**
+ * Represents a `Services`.
+ */
+export interface IServices extends ros.IResource {
+    readonly props: ServicesProps;
+
+    /**
+     * Attribute ServiceNames: The list of service names.
+     */
+    readonly attrServiceNames: ros.IResolvable | string;
+
+    /**
+     * Attribute Services: The list of services.
+     */
+    readonly attrServices: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::FC::Services`, which is used to query services.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosServices`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-services
  */
-export class Services extends ros.Resource {
+export class Services extends ros.Resource implements IServices {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ServicesProps;
+    public readonly props: ServicesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ServiceNames: The list of service names.
      */
-    public readonly attrServiceNames: ros.IResolvable;
+    public readonly attrServiceNames: ros.IResolvable | string;
 
     /**
      * Attribute Services: The list of services.
      */
-    public readonly attrServices: ros.IResolvable;
+    public readonly attrServices: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

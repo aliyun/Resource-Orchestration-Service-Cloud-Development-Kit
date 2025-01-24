@@ -21,25 +21,41 @@ export interface UserInfoProps {
 }
 
 /**
+ * Represents a `UserInfo`.
+ */
+export interface IUserInfo extends ros.IResource {
+    readonly props: UserInfoProps;
+
+    /**
+     * Attribute LoginName: Login name.
+     */
+    readonly attrLoginName: ros.IResolvable | string;
+
+    /**
+     * Attribute UserId: User ID.
+     */
+    readonly attrUserId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CR::UserInfo`, which is used to create the information about a user.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUserInfo`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-userinfo
  */
-export class UserInfo extends ros.Resource {
+export class UserInfo extends ros.Resource implements IUserInfo {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: UserInfoProps;
+    public readonly props: UserInfoProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute LoginName: Login name.
      */
-    public readonly attrLoginName: ros.IResolvable;
+    public readonly attrLoginName: ros.IResolvable | string;
 
     /**
      * Attribute UserId: User ID.
      */
-    public readonly attrUserId: ros.IResolvable;
+    public readonly attrUserId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

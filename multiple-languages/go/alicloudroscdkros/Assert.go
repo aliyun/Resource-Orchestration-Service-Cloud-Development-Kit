@@ -14,12 +14,22 @@ import (
 // Assertions are used to evaluate conditions and support a variety of operation types. An assertion determines whether to terminate creation and return an error message when the assertion result is false.
 type Assert interface {
 	alicloudroscdkcore.Resource
+	IAssert
 	// Attribute FailureCause: The reason the assertion failed.
-	AttrFailureCause() alicloudroscdkcore.IResolvable
+	AttrFailureCause() interface{}
 	// Attribute Result: The result of the assert.
-	AttrResult() alicloudroscdkcore.IResolvable
+	AttrResult() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -34,7 +44,6 @@ type Assert interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *AssertProps
-	SetProps(val *AssertProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -47,6 +56,9 @@ type Assert interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -99,10 +111,11 @@ type Assert interface {
 // The jsii proxy struct for Assert
 type jsiiProxy_Assert struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IAssert
 }
 
-func (j *jsiiProxy_Assert) AttrFailureCause() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Assert) AttrFailureCause() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrFailureCause",
@@ -111,8 +124,8 @@ func (j *jsiiProxy_Assert) AttrFailureCause() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Assert) AttrResult() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Assert) AttrResult() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResult",
@@ -126,6 +139,16 @@ func (j *jsiiProxy_Assert) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Assert) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -263,17 +286,6 @@ func (j *jsiiProxy_Assert)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Assert)SetProps(val *AssertProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Assert)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -365,6 +377,45 @@ func (a *jsiiProxy_Assert) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalP
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (a *jsiiProxy_Assert) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		a,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_Assert) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_Assert) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (a *jsiiProxy_Assert) GeneratePhysicalName() *string {

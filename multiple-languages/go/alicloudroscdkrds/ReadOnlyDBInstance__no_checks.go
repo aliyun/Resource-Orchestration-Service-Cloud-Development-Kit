@@ -52,10 +52,6 @@ func (j *jsiiProxy_ReadOnlyDBInstance) validateSetIdParameters(val *string) erro
 	return nil
 }
 
-func (j *jsiiProxy_ReadOnlyDBInstance) validateSetPropsParameters(val *ReadOnlyDBInstanceProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_ReadOnlyDBInstance) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

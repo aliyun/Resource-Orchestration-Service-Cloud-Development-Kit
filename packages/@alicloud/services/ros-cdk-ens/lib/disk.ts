@@ -59,20 +59,31 @@ export interface DiskProps {
 }
 
 /**
+ * Represents a `Disk`.
+ */
+export interface IDisk extends ros.IResource {
+    readonly props: DiskProps;
+
+    /**
+     * Attribute DiskId: The ID of the instance.
+     */
+    readonly attrDiskId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ENS::Disk`, which is used to create a pay-as-you-go or subscription data disk.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDisk`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-disk
  */
-export class Disk extends ros.Resource {
+export class Disk extends ros.Resource implements IDisk {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DiskProps;
+    public readonly props: DiskProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DiskId: The ID of the instance.
      */
-    public readonly attrDiskId: ros.IResolvable;
+    public readonly attrDiskId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

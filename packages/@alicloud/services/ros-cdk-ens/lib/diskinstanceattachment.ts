@@ -30,25 +30,41 @@ export interface DiskInstanceAttachmentProps {
 }
 
 /**
+ * Represents a `DiskInstanceAttachment`.
+ */
+export interface IDiskInstanceAttachment extends ros.IResource {
+    readonly props: DiskInstanceAttachmentProps;
+
+    /**
+     * Attribute DiskId: The ID of the cloud disk to be mounted. The Cloud Disk (DiskId) and the instance (InstanceId) must be on the same node.
+     */
+    readonly attrDiskId: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: Instance ID.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ENS::DiskInstanceAttachment`, which is used to attach a data disk to an Edge Node Service (ENS) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDiskInstanceAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-diskinstanceattachment
  */
-export class DiskInstanceAttachment extends ros.Resource {
+export class DiskInstanceAttachment extends ros.Resource implements IDiskInstanceAttachment {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DiskInstanceAttachmentProps;
+    public readonly props: DiskInstanceAttachmentProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DiskId: The ID of the cloud disk to be mounted. The Cloud Disk (DiskId) and the instance (InstanceId) must be on the same node.
      */
-    public readonly attrDiskId: ros.IResolvable;
+    public readonly attrDiskId: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: Instance ID.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

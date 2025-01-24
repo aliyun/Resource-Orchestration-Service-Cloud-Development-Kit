@@ -96,20 +96,31 @@ export interface ProInstanceProps {
 }
 
 /**
+ * Represents a `ProInstance`.
+ */
+export interface IProInstance extends ros.IResource {
+    readonly props: ProInstanceProps;
+
+    /**
+     * Attribute InstanceId: The ID of the instance.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::DDoSPro::ProInstance`, which is used to create an Anti-DDoS Proxy (Chinese Mainland) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosProInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-proinstance
  */
-export class ProInstance extends ros.Resource {
+export class ProInstance extends ros.Resource implements IProInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ProInstanceProps;
+    public readonly props: ProInstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceId: The ID of the instance.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

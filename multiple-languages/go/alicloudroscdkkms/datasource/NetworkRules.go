@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::KMS::NetworkRules`, which is used to query the information about network access rules.
 type NetworkRules interface {
 	alicloudroscdkcore.Resource
+	INetworkRules
 	// Attribute NetworkRuleNames: The list of network rule names.
-	AttrNetworkRuleNames() alicloudroscdkcore.IResolvable
+	AttrNetworkRuleNames() interface{}
 	// Attribute NetworkRules: The list of network rules.
-	AttrNetworkRules() alicloudroscdkcore.IResolvable
+	AttrNetworkRules() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type NetworkRules interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *NetworkRulesProps
-	SetProps(val *NetworkRulesProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type NetworkRules interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type NetworkRules interface {
 // The jsii proxy struct for NetworkRules
 type jsiiProxy_NetworkRules struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_INetworkRules
 }
 
-func (j *jsiiProxy_NetworkRules) AttrNetworkRuleNames() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NetworkRules) AttrNetworkRuleNames() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNetworkRuleNames",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_NetworkRules) AttrNetworkRuleNames() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_NetworkRules) AttrNetworkRules() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_NetworkRules) AttrNetworkRules() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNetworkRules",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_NetworkRules) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_NetworkRules) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_NetworkRules)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_NetworkRules)SetProps(val *NetworkRulesProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_NetworkRules)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (n *jsiiProxy_NetworkRules) ApplyRemovalPolicy(policy alicloudroscdkcore.Re
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (n *jsiiProxy_NetworkRules) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		n,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (n *jsiiProxy_NetworkRules) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		n,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (n *jsiiProxy_NetworkRules) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		n,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (n *jsiiProxy_NetworkRules) GeneratePhysicalName() *string {

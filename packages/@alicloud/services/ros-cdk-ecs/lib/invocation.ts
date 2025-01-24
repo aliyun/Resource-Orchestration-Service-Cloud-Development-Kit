@@ -111,30 +111,51 @@ export interface InvocationProps {
 }
 
 /**
+ * Represents a `Invocation`.
+ */
+export interface IInvocation extends ros.IResource {
+    readonly props: InvocationProps;
+
+    /**
+     * Attribute InvokeId: The id of command execution.
+     */
+    readonly attrInvokeId: ros.IResolvable | string;
+
+    /**
+     * Attribute InvokeInstances: The InvokeInstances of command.
+     */
+    readonly attrInvokeInstances: ros.IResolvable | string;
+
+    /**
+     * Attribute InvokeResults: The results of invoke command.
+     */
+    readonly attrInvokeResults: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Invocation`, which is used to run a Cloud Assistant command on Elastic Compute Service (ECS) instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInvocation`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-invocation
  */
-export class Invocation extends ros.Resource {
+export class Invocation extends ros.Resource implements IInvocation {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InvocationProps;
+    public readonly props: InvocationProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InvokeId: The id of command execution.
      */
-    public readonly attrInvokeId: ros.IResolvable;
+    public readonly attrInvokeId: ros.IResolvable | string;
 
     /**
      * Attribute InvokeInstances: The InvokeInstances of command.
      */
-    public readonly attrInvokeInstances: ros.IResolvable;
+    public readonly attrInvokeInstances: ros.IResolvable | string;
 
     /**
      * Attribute InvokeResults: The results of invoke command.
      */
-    public readonly attrInvokeResults: ros.IResolvable;
+    public readonly attrInvokeResults: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

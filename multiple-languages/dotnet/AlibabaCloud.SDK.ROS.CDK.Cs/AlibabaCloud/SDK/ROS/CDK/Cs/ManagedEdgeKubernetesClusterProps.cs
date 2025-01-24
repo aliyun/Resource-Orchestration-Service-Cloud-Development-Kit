@@ -373,6 +373,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
+        private object? _maintenanceWindow;
+
+        /// <summary>Property maintenanceWindow: Cluster maintenance window.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "maintenanceWindow", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster.MaintenanceWindowProperty\"}]}}", isOptional: true)]
+        public object? MaintenanceWindow
+        {
+            get => _maintenanceWindow;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Cs.RosManagedEdgeKubernetesCluster.IMaintenanceWindowProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Cs.RosManagedEdgeKubernetesCluster.IMaintenanceWindowProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _maintenanceWindow = value;
+            }
+        }
+
         private object? _nodeCidrMask;
 
         /// <summary>Property nodeCidrMask: The maximum number of IP addresses that can be assigned to nodes.</summary>

@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::VPC::IpsecServer`, which is used to create an IPsec-VPN server.
 type IpsecServer interface {
 	alicloudroscdkcore.Resource
+	IIpsecServer
 	// Attribute IpsecServerId: IPsec server ID.
-	AttrIpsecServerId() alicloudroscdkcore.IResolvable
+	AttrIpsecServerId() interface{}
 	// Attribute IpsecServerName: IPsec server name.
-	AttrIpsecServerName() alicloudroscdkcore.IResolvable
+	AttrIpsecServerName() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type IpsecServer interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *IpsecServerProps
-	SetProps(val *IpsecServerProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type IpsecServer interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type IpsecServer interface {
 // The jsii proxy struct for IpsecServer
 type jsiiProxy_IpsecServer struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IIpsecServer
 }
 
-func (j *jsiiProxy_IpsecServer) AttrIpsecServerId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_IpsecServer) AttrIpsecServerId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIpsecServerId",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_IpsecServer) AttrIpsecServerId() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_IpsecServer) AttrIpsecServerName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_IpsecServer) AttrIpsecServerName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIpsecServerName",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_IpsecServer) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IpsecServer) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_IpsecServer)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_IpsecServer)SetProps(val *IpsecServerProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_IpsecServer)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (i *jsiiProxy_IpsecServer) ApplyRemovalPolicy(policy alicloudroscdkcore.Rem
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (i *jsiiProxy_IpsecServer) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		i,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_IpsecServer) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		i,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_IpsecServer) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		i,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (i *jsiiProxy_IpsecServer) GeneratePhysicalName() *string {

@@ -12,30 +12,40 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::PAI::Experiment`.
 type Experiment interface {
 	alicloudroscdkcore.Resource
+	IExperiment
 	// Attribute Accessibility: Experimental Visibility.
-	AttrAccessibility() alicloudroscdkcore.IResolvable
+	AttrAccessibility() interface{}
 	// Attribute ArtifactUri: ArtifactUri is default OSS storage path of the output of trials in the experiment.
-	AttrArtifactUri() alicloudroscdkcore.IResolvable
+	AttrArtifactUri() interface{}
 	// Attribute CreateTime: GmtCreateTime is time when this entity is created.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute ExperimentId: ExperimentId is globally unique identifier of the experiment.
-	AttrExperimentId() alicloudroscdkcore.IResolvable
+	AttrExperimentId() interface{}
 	// Attribute ExperimentName: Name is the name of the experiment, unique in a namespace.
-	AttrExperimentName() alicloudroscdkcore.IResolvable
+	AttrExperimentName() interface{}
 	// Attribute GmtModifiedTime: GmtModifiedTime is time when this entity is modified.
-	AttrGmtModifiedTime() alicloudroscdkcore.IResolvable
+	AttrGmtModifiedTime() interface{}
 	// Attribute Labels: Labels are tags of the experiment.
-	AttrLabels() alicloudroscdkcore.IResolvable
+	AttrLabels() interface{}
 	// Attribute OwnerId: OwnerId is the user account id which this entity belongs to.
-	AttrOwnerId() alicloudroscdkcore.IResolvable
+	AttrOwnerId() interface{}
 	// Attribute TensorboardLogUri: TensorboardLogUri is the default OSS storage path of tensorboard log of trials in the experiment.
-	AttrTensorboardLogUri() alicloudroscdkcore.IResolvable
+	AttrTensorboardLogUri() interface{}
 	// Attribute UserId: UserId is the user account id which created this entity.
-	AttrUserId() alicloudroscdkcore.IResolvable
+	AttrUserId() interface{}
 	// Attribute WorkspaceId: WorkspaceId is the workspace id which contains the experiment.
-	AttrWorkspaceId() alicloudroscdkcore.IResolvable
+	AttrWorkspaceId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -50,7 +60,6 @@ type Experiment interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ExperimentProps
-	SetProps(val *ExperimentProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -63,6 +72,9 @@ type Experiment interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -115,10 +127,11 @@ type Experiment interface {
 // The jsii proxy struct for Experiment
 type jsiiProxy_Experiment struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IExperiment
 }
 
-func (j *jsiiProxy_Experiment) AttrAccessibility() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Experiment) AttrAccessibility() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAccessibility",
@@ -127,8 +140,8 @@ func (j *jsiiProxy_Experiment) AttrAccessibility() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_Experiment) AttrArtifactUri() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Experiment) AttrArtifactUri() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrArtifactUri",
@@ -137,8 +150,8 @@ func (j *jsiiProxy_Experiment) AttrArtifactUri() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_Experiment) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Experiment) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -147,8 +160,8 @@ func (j *jsiiProxy_Experiment) AttrCreateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Experiment) AttrExperimentId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Experiment) AttrExperimentId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrExperimentId",
@@ -157,8 +170,8 @@ func (j *jsiiProxy_Experiment) AttrExperimentId() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Experiment) AttrExperimentName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Experiment) AttrExperimentName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrExperimentName",
@@ -167,8 +180,8 @@ func (j *jsiiProxy_Experiment) AttrExperimentName() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_Experiment) AttrGmtModifiedTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Experiment) AttrGmtModifiedTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGmtModifiedTime",
@@ -177,8 +190,8 @@ func (j *jsiiProxy_Experiment) AttrGmtModifiedTime() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_Experiment) AttrLabels() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Experiment) AttrLabels() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLabels",
@@ -187,8 +200,8 @@ func (j *jsiiProxy_Experiment) AttrLabels() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Experiment) AttrOwnerId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Experiment) AttrOwnerId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOwnerId",
@@ -197,8 +210,8 @@ func (j *jsiiProxy_Experiment) AttrOwnerId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Experiment) AttrTensorboardLogUri() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Experiment) AttrTensorboardLogUri() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTensorboardLogUri",
@@ -207,8 +220,8 @@ func (j *jsiiProxy_Experiment) AttrTensorboardLogUri() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_Experiment) AttrUserId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Experiment) AttrUserId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUserId",
@@ -217,8 +230,8 @@ func (j *jsiiProxy_Experiment) AttrUserId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Experiment) AttrWorkspaceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Experiment) AttrWorkspaceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrWorkspaceId",
@@ -232,6 +245,16 @@ func (j *jsiiProxy_Experiment) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Experiment) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -369,17 +392,6 @@ func (j *jsiiProxy_Experiment)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Experiment)SetProps(val *ExperimentProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Experiment)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -471,6 +483,45 @@ func (e *jsiiProxy_Experiment) ApplyRemovalPolicy(policy alicloudroscdkcore.Remo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (e *jsiiProxy_Experiment) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		e,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (e *jsiiProxy_Experiment) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		e,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (e *jsiiProxy_Experiment) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		e,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (e *jsiiProxy_Experiment) GeneratePhysicalName() *string {

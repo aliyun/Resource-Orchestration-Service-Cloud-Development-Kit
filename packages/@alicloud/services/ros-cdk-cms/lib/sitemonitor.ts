@@ -55,20 +55,31 @@ export interface SiteMonitorProps {
 }
 
 /**
+ * Represents a `SiteMonitor`.
+ */
+export interface ISiteMonitor extends ros.IResource {
+    readonly props: SiteMonitorProps;
+
+    /**
+     * Attribute TaskId: The ID of the site monitoring task.
+     */
+    readonly attrTaskId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::SiteMonitor`, which is used to create a site monitoring task.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSiteMonitor`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-sitemonitor
  */
-export class SiteMonitor extends ros.Resource {
+export class SiteMonitor extends ros.Resource implements ISiteMonitor {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SiteMonitorProps;
+    public readonly props: SiteMonitorProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute TaskId: The ID of the site monitoring task.
      */
-    public readonly attrTaskId: ros.IResolvable;
+    public readonly attrTaskId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

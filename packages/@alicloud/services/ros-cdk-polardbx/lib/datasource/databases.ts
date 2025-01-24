@@ -29,25 +29,41 @@ export interface DatabasesProps {
 }
 
 /**
+ * Represents a `Databases`.
+ */
+export interface IDatabases extends ros.IResource {
+    readonly props: DatabasesProps;
+
+    /**
+     * Attribute PolarDBXDatabaseNames: The list of PolarDB-X 2.0 database names.
+     */
+    readonly attrPolarDbxDatabaseNames: ros.IResolvable | string;
+
+    /**
+     * Attribute PolarDBXDatabases: The list of PolarDB-X 2.0 databases.
+     */
+    readonly attrPolarDbxDatabases: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::PolarDBX::Databases`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDatabases`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardbx-databases
  */
-export class Databases extends ros.Resource {
+export class Databases extends ros.Resource implements IDatabases {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DatabasesProps;
+    public readonly props: DatabasesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute PolarDBXDatabaseNames: The list of PolarDB-X 2.0 database names.
      */
-    public readonly attrPolarDbxDatabaseNames: ros.IResolvable;
+    public readonly attrPolarDbxDatabaseNames: ros.IResolvable | string;
 
     /**
      * Attribute PolarDBXDatabases: The list of PolarDB-X 2.0 databases.
      */
-    public readonly attrPolarDbxDatabases: ros.IResolvable;
+    public readonly attrPolarDbxDatabases: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -34,25 +34,41 @@ export interface GrantInstanceToCenProps {
 }
 
 /**
+ * Represents a `GrantInstanceToCen`.
+ */
+export interface IGrantInstanceToCen extends ros.IResource {
+    readonly props: GrantInstanceToCenProps;
+
+    /**
+     * Attribute CenId: The ID of the CEN instance to be authorized.
+     */
+    readonly attrCenId: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: The ID of the network instance.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::GrantInstanceToCen`, which is used to authorize a CEN instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGrantInstanceToCen`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-grantinstancetocen
  */
-export class GrantInstanceToCen extends ros.Resource {
+export class GrantInstanceToCen extends ros.Resource implements IGrantInstanceToCen {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: GrantInstanceToCenProps;
+    public readonly props: GrantInstanceToCenProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CenId: The ID of the CEN instance to be authorized.
      */
-    public readonly attrCenId: ros.IResolvable;
+    public readonly attrCenId: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: The ID of the network instance.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

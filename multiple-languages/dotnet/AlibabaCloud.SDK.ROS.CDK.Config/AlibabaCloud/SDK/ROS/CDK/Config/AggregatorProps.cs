@@ -75,7 +75,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
 
         private object? _aggregatorAccounts;
 
-        /// <summary>Property aggregatorAccounts: The member account in aggregator.When the AggregatorType is RD, this parameter can be empty, which means that all accounts in the resource directory will be added to the global account group.</summary>
+        /// <summary>Property aggregatorAccounts: The member account in aggregator.When the AggregatorType is RD, this parameter can be empty, which means that all accounts in the resource directory will be added to the global account group.When the AggregatorType is FOLDER, this parameter can be empty,which means that all accounts in the resource folder will be added to the global account group.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "aggregatorAccounts", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-config.RosAggregator.AggregatorAccountsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         public object? AggregatorAccounts
@@ -126,7 +126,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
         /// <summary>Property aggregatorType: Account group type.</summary>
         /// <remarks>
         /// Value:
-        /// RD: Global account group.CUSTOM: Custom account group (default value).
+        /// RD: Global account group.
+        /// CUSTOM: Custom account group (default value).
+        /// FOLDER: Folder account group. Must set FolderId if the AggregatorType is FOLDER. Please refer to ListAccounts for accessing FolderId.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "aggregatorType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -153,6 +155,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
                     }
                 }
                 _aggregatorType = value;
+            }
+        }
+
+        private object? _folderId;
+
+        /// <summary>Property folderId: The folder ID.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "folderId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? FolderId
+        {
+            get => _folderId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _folderId = value;
             }
         }
     }

@@ -12,20 +12,30 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::HBase::MultiZoneCluster`, which is used to create an ApsaraDB for HBase cluster that resides in multiple zones.
 type MultiZoneCluster interface {
 	alicloudroscdkcore.Resource
+	IMultiZoneCluster
 	// Attribute ClusterId: The ID of the instance.
-	AttrClusterId() alicloudroscdkcore.IResolvable
+	AttrClusterId() interface{}
 	// Attribute ServiceConnAddrs: LIST of ServiceConnAddr.
-	AttrServiceConnAddrs() alicloudroscdkcore.IResolvable
+	AttrServiceConnAddrs() interface{}
 	// Attribute SlbConnAddrs: LIST of SlbConnAddr.
-	AttrSlbConnAddrs() alicloudroscdkcore.IResolvable
+	AttrSlbConnAddrs() interface{}
 	// Attribute ThriftConn: Thrift Connection address list.
-	AttrThriftConn() alicloudroscdkcore.IResolvable
+	AttrThriftConn() interface{}
 	// Attribute UiProxyConnAddrInfo: WebUI connection information list.
-	AttrUiProxyConnAddrInfo() alicloudroscdkcore.IResolvable
+	AttrUiProxyConnAddrInfo() interface{}
 	// Attribute ZkConnAddrs: List of ZkConnAddr.
-	AttrZkConnAddrs() alicloudroscdkcore.IResolvable
+	AttrZkConnAddrs() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -40,7 +50,6 @@ type MultiZoneCluster interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *MultiZoneClusterProps
-	SetProps(val *MultiZoneClusterProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -53,6 +62,9 @@ type MultiZoneCluster interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -105,10 +117,11 @@ type MultiZoneCluster interface {
 // The jsii proxy struct for MultiZoneCluster
 type jsiiProxy_MultiZoneCluster struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IMultiZoneCluster
 }
 
-func (j *jsiiProxy_MultiZoneCluster) AttrClusterId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MultiZoneCluster) AttrClusterId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrClusterId",
@@ -117,8 +130,8 @@ func (j *jsiiProxy_MultiZoneCluster) AttrClusterId() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_MultiZoneCluster) AttrServiceConnAddrs() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MultiZoneCluster) AttrServiceConnAddrs() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrServiceConnAddrs",
@@ -127,8 +140,8 @@ func (j *jsiiProxy_MultiZoneCluster) AttrServiceConnAddrs() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_MultiZoneCluster) AttrSlbConnAddrs() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MultiZoneCluster) AttrSlbConnAddrs() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSlbConnAddrs",
@@ -137,8 +150,8 @@ func (j *jsiiProxy_MultiZoneCluster) AttrSlbConnAddrs() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_MultiZoneCluster) AttrThriftConn() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MultiZoneCluster) AttrThriftConn() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrThriftConn",
@@ -147,8 +160,8 @@ func (j *jsiiProxy_MultiZoneCluster) AttrThriftConn() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_MultiZoneCluster) AttrUiProxyConnAddrInfo() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MultiZoneCluster) AttrUiProxyConnAddrInfo() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUiProxyConnAddrInfo",
@@ -157,8 +170,8 @@ func (j *jsiiProxy_MultiZoneCluster) AttrUiProxyConnAddrInfo() alicloudroscdkcor
 	return returns
 }
 
-func (j *jsiiProxy_MultiZoneCluster) AttrZkConnAddrs() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MultiZoneCluster) AttrZkConnAddrs() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrZkConnAddrs",
@@ -172,6 +185,16 @@ func (j *jsiiProxy_MultiZoneCluster) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MultiZoneCluster) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -309,17 +332,6 @@ func (j *jsiiProxy_MultiZoneCluster)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_MultiZoneCluster)SetProps(val *MultiZoneClusterProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_MultiZoneCluster)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -411,6 +423,45 @@ func (m *jsiiProxy_MultiZoneCluster) ApplyRemovalPolicy(policy alicloudroscdkcor
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (m *jsiiProxy_MultiZoneCluster) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		m,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (m *jsiiProxy_MultiZoneCluster) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		m,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (m *jsiiProxy_MultiZoneCluster) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		m,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (m *jsiiProxy_MultiZoneCluster) GeneratePhysicalName() *string {

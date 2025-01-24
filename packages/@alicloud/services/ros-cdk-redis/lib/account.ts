@@ -57,25 +57,41 @@ export interface AccountProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::Account`, which is used to create an account that has the specified permissions on an ApsaraDB for Redis instance.
+ * Represents a `Account`.
+ */
+export interface IAccount extends ros.IResource {
+    readonly props: AccountProps;
+
+    /**
+     * Attribute AccountName: The name of the account.
+     */
+    readonly attrAccountName: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: The name of the instance.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::Account`, which is used to create an account that has specific permissions for a Tair (Redis OSS-compatible) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccount`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-account
  */
-export class Account extends ros.Resource {
+export class Account extends ros.Resource implements IAccount {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AccountProps;
+    public readonly props: AccountProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccountName: The name of the account.
      */
-    public readonly attrAccountName: ros.IResolvable;
+    public readonly attrAccountName: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: The name of the instance.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

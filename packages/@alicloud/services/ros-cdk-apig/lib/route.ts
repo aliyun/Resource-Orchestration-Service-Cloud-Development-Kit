@@ -51,50 +51,91 @@ export interface RouteProps {
 }
 
 /**
+ * Represents a `Route`.
+ */
+export interface IRoute extends ros.IResource {
+    readonly props: RouteProps;
+
+    /**
+     * Attribute Backend: Backend services.
+     */
+    readonly attrBackend: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: The description of route resource.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute DomainInfos: Domain items.
+     */
+    readonly attrDomainInfos: ros.IResolvable | string;
+
+    /**
+     * Attribute EnvironmentInfo: Environment information.
+     */
+    readonly attrEnvironmentInfo: ros.IResolvable | string;
+
+    /**
+     * Attribute Match: The match rule of route resource.
+     */
+    readonly attrMatch: ros.IResolvable | string;
+
+    /**
+     * Attribute RouteId: The ID of route resource.
+     */
+    readonly attrRouteId: ros.IResolvable | string;
+
+    /**
+     * Attribute RouteName: The name of the route.
+     */
+    readonly attrRouteName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Route`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRoute`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-route
  */
-export class Route extends ros.Resource {
+export class Route extends ros.Resource implements IRoute {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: RouteProps;
+    public readonly props: RouteProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Backend: Backend services.
      */
-    public readonly attrBackend: ros.IResolvable;
+    public readonly attrBackend: ros.IResolvable | string;
 
     /**
      * Attribute Description: The description of route resource.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute DomainInfos: Domain items.
      */
-    public readonly attrDomainInfos: ros.IResolvable;
+    public readonly attrDomainInfos: ros.IResolvable | string;
 
     /**
      * Attribute EnvironmentInfo: Environment information.
      */
-    public readonly attrEnvironmentInfo: ros.IResolvable;
+    public readonly attrEnvironmentInfo: ros.IResolvable | string;
 
     /**
      * Attribute Match: The match rule of route resource.
      */
-    public readonly attrMatch: ros.IResolvable;
+    public readonly attrMatch: ros.IResolvable | string;
 
     /**
      * Attribute RouteId: The ID of route resource.
      */
-    public readonly attrRouteId: ros.IResolvable;
+    public readonly attrRouteId: ros.IResolvable | string;
 
     /**
      * Attribute RouteName: The name of the route.
      */
-    public readonly attrRouteName: ros.IResolvable;
+    public readonly attrRouteName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

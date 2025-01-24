@@ -12,7 +12,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-alarmtaskenable
     /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Ess.AlarmTaskEnable), fullyQualifiedName: "@alicloud/ros-cdk-ess.AlarmTaskEnable", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-ess.AlarmTaskEnableProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"optional\":true,\"type\":{\"primitive\":\"boolean\"}}]")]
-    public class AlarmTaskEnable : AlibabaCloud.SDK.ROS.CDK.Core.Resource_
+    public class AlarmTaskEnable : AlibabaCloud.SDK.ROS.CDK.Core.Resource_, AlibabaCloud.SDK.ROS.CDK.Ess.IAlarmTaskEnable
     {
         /// <summary>Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.</summary>
         public AlarmTaskEnable(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Ess.IAlarmTaskEnableProps props, bool? enableResourcePropertyConstraint = null): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
@@ -39,6 +39,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         {
         }
 
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-ess.AlarmTaskEnableProps\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Ess.IAlarmTaskEnableProps Props
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Ess.IAlarmTaskEnableProps>()!;
+        }
+
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
         protected virtual bool EnableResourcePropertyConstraint
         {
@@ -50,13 +56,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         protected virtual string Id
         {
             get => GetInstanceProperty<string>()!;
-            set => SetInstanceProperty(value);
-        }
-
-        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-ess.AlarmTaskEnableProps\"}")]
-        protected virtual AlibabaCloud.SDK.ROS.CDK.Ess.IAlarmTaskEnableProps Props
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Ess.IAlarmTaskEnableProps>()!;
             set => SetInstanceProperty(value);
         }
 

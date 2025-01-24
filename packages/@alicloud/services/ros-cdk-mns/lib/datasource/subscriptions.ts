@@ -29,25 +29,41 @@ export interface SubscriptionsProps {
 }
 
 /**
+ * Represents a `Subscriptions`.
+ */
+export interface ISubscriptions extends ros.IResource {
+    readonly props: SubscriptionsProps;
+
+    /**
+     * Attribute SubscriptionIds: The list of subscription names.
+     */
+    readonly attrSubscriptionIds: ros.IResolvable | string;
+
+    /**
+     * Attribute Subscriptions: The list of subscriptions.
+     */
+    readonly attrSubscriptions: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::MNS::Subscriptions`, which is used to query the information about the subscriptions.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSubscriptions`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-subscriptions
  */
-export class Subscriptions extends ros.Resource {
+export class Subscriptions extends ros.Resource implements ISubscriptions {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SubscriptionsProps;
+    public readonly props: SubscriptionsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SubscriptionIds: The list of subscription names.
      */
-    public readonly attrSubscriptionIds: ros.IResolvable;
+    public readonly attrSubscriptionIds: ros.IResolvable | string;
 
     /**
      * Attribute Subscriptions: The list of subscriptions.
      */
-    public readonly attrSubscriptions: ros.IResolvable;
+    public readonly attrSubscriptions: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

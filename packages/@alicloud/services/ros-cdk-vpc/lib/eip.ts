@@ -97,35 +97,61 @@ export interface EIPProps {
 }
 
 /**
+ * Represents a `EIP`.
+ */
+export interface IEip extends ros.IResource {
+    readonly props: EIPProps;
+
+    /**
+     * Attribute AllocationId: ID that Aliyun assigns to represent the allocation of the address for use with VPC. Returned only for VPC elastic IP addresses.
+     */
+    readonly attrAllocationId: ros.IResolvable | string;
+
+    /**
+     * Attribute EipAddress: IP address of created EIP.
+     */
+    readonly attrEipAddress: ros.IResolvable | string;
+
+    /**
+     * Attribute Isp: The line type.
+     */
+    readonly attrIsp: ros.IResolvable | string;
+
+    /**
+     * Attribute OrderId: Order ID of prepaid EIP instance.
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::EIP`, which is used to apply for an elastic IP address (EIP).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEIP`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eip
  */
-export class Eip extends ros.Resource {
+export class Eip extends ros.Resource implements IEip {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: EIPProps;
+    public readonly props: EIPProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AllocationId: ID that Aliyun assigns to represent the allocation of the address for use with VPC. Returned only for VPC elastic IP addresses.
      */
-    public readonly attrAllocationId: ros.IResolvable;
+    public readonly attrAllocationId: ros.IResolvable | string;
 
     /**
      * Attribute EipAddress: IP address of created EIP.
      */
-    public readonly attrEipAddress: ros.IResolvable;
+    public readonly attrEipAddress: ros.IResolvable | string;
 
     /**
      * Attribute Isp: The line type.
      */
-    public readonly attrIsp: ros.IResolvable;
+    public readonly attrIsp: ros.IResolvable | string;
 
     /**
      * Attribute OrderId: Order ID of prepaid EIP instance.
      */
-    public readonly attrOrderId: ros.IResolvable;
+    public readonly attrOrderId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

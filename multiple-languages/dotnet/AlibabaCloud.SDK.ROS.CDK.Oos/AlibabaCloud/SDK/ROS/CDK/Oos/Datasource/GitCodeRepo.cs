@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos.Datasource
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-gitcoderepo
     /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Oos.Datasource.GitCodeRepo), fullyQualifiedName: "@alicloud/ros-cdk-oos.datasource.GitCodeRepo", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-oos.datasource.GitCodeRepoProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"optional\":true,\"type\":{\"primitive\":\"boolean\"}}]")]
-    public class GitCodeRepo : AlibabaCloud.SDK.ROS.CDK.Core.Resource_
+    public class GitCodeRepo : AlibabaCloud.SDK.ROS.CDK.Core.Resource_, AlibabaCloud.SDK.ROS.CDK.Oos.Datasource.IGitCodeRepo
     {
         /// <summary>Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.</summary>
         public GitCodeRepo(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Oos.Datasource.IGitCodeRepoProps props, bool? enableResourcePropertyConstraint = null): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
@@ -38,10 +38,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos.Datasource
         }
 
         /// <summary>Attribute AuthorizedUrl: Authorized url.</summary>
-        [JsiiProperty(name: "attrAuthorizedUrl", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAuthorizedUrl
+        [JsiiProperty(name: "attrAuthorizedUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrAuthorizedUrl
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
+        }
+
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-oos.datasource.GitCodeRepoProps\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Oos.Datasource.IGitCodeRepoProps Props
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Oos.Datasource.IGitCodeRepoProps>()!;
         }
 
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
@@ -55,13 +61,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos.Datasource
         protected virtual string Id
         {
             get => GetInstanceProperty<string>()!;
-            set => SetInstanceProperty(value);
-        }
-
-        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-oos.datasource.GitCodeRepoProps\"}")]
-        protected virtual AlibabaCloud.SDK.ROS.CDK.Oos.Datasource.IGitCodeRepoProps Props
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Oos.Datasource.IGitCodeRepoProps>()!;
             set => SetInstanceProperty(value);
         }
 

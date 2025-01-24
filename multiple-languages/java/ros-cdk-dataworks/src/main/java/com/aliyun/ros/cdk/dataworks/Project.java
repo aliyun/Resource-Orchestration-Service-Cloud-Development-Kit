@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.dataworks;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::DataWorks::Project</code>, which is used to create a DataWorks workspace.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:06.151Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:36.747Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dataworks.$Module.class, fqn = "@alicloud/ros-cdk-dataworks.Project")
-public class Project extends com.aliyun.ros.cdk.core.Resource {
+public class Project extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dataworks.IProject {
 
     protected Project(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -47,8 +47,9 @@ public class Project extends com.aliyun.ros.cdk.core.Resource {
      * The value PROD indicates the production environment. Workspaces in basic mode provide only the production environment.
      * The value DEV indicates the development environment. Workspaces in standard mode provide both the development environment and the production environment.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrEnvTypes() {
-        return software.amazon.jsii.Kernel.get(this, "attrEnvTypes", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrEnvTypes() {
+        return software.amazon.jsii.Kernel.get(this, "attrEnvTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -58,15 +59,17 @@ public class Project extends com.aliyun.ros.cdk.core.Resource {
      * 1: The workspace is the default workspace.
      * 0: The workspace is not the default workspace.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrIsDefault() {
-        return software.amazon.jsii.Kernel.get(this, "attrIsDefault", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrIsDefault() {
+        return software.amazon.jsii.Kernel.get(this, "attrIsDefault", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute ProjectId: The ID of the workspace.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrProjectId() {
-        return software.amazon.jsii.Kernel.get(this, "attrProjectId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrProjectId() {
+        return software.amazon.jsii.Kernel.get(this, "attrProjectId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -74,8 +77,9 @@ public class Project extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * The name can contain letters, digits, and underscores (_) and must start with a letter or digit.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrProjectIdentifier() {
-        return software.amazon.jsii.Kernel.get(this, "attrProjectIdentifier", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrProjectIdentifier() {
+        return software.amazon.jsii.Kernel.get(this, "attrProjectIdentifier", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -85,8 +89,9 @@ public class Project extends com.aliyun.ros.cdk.core.Resource {
      * 1: The workspace protection feature is enabled.
      * 0: The workspace protection feature is disabled.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrProtectedMode() {
-        return software.amazon.jsii.Kernel.get(this, "attrProtectedMode", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrProtectedMode() {
+        return software.amazon.jsii.Kernel.get(this, "attrProtectedMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -94,15 +99,17 @@ public class Project extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * Valid values: private and swap.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrResidentArea() {
-        return software.amazon.jsii.Kernel.get(this, "attrResidentArea", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrResidentArea() {
+        return software.amazon.jsii.Kernel.get(this, "attrResidentArea", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute SchedulerMaxRetryTimes: The default maximum number of automatic reruns that are allowed after an error occurs.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSchedulerMaxRetryTimes() {
-        return software.amazon.jsii.Kernel.get(this, "attrSchedulerMaxRetryTimes", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSchedulerMaxRetryTimes() {
+        return software.amazon.jsii.Kernel.get(this, "attrSchedulerMaxRetryTimes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -110,8 +117,9 @@ public class Project extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * Unit: milliseconds. The maximum interval is 30 minutes. You must pay attention to the conversion between units.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSchedulerRetryInterval() {
-        return software.amazon.jsii.Kernel.get(this, "attrSchedulerRetryInterval", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSchedulerRetryInterval() {
+        return software.amazon.jsii.Kernel.get(this, "attrSchedulerRetryInterval", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -121,8 +129,14 @@ public class Project extends com.aliyun.ros.cdk.core.Resource {
      * 0: The MaxCompute tables are invisible to the users within a tenant.
      * 1: The MaxCompute tables are visible to the users within a tenant.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTablePrivacyMode() {
-        return software.amazon.jsii.Kernel.get(this, "attrTablePrivacyMode", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTablePrivacyMode() {
+        return software.amazon.jsii.Kernel.get(this, "attrTablePrivacyMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.dataworks.ProjectProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.dataworks.ProjectProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -139,14 +153,6 @@ public class Project extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.dataworks.ProjectProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.dataworks.ProjectProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.dataworks.ProjectProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {

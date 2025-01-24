@@ -1,3 +1,5 @@
+@alicloud/ros-cdk-swas.IInstance=com.aliyun.ros.cdk.swas.IInstance
+@alicloud/ros-cdk-swas.IInstances=com.aliyun.ros.cdk.swas.IInstances
 @alicloud/ros-cdk-swas.Instance=com.aliyun.ros.cdk.swas.Instance
 @alicloud/ros-cdk-swas.InstanceProps=com.aliyun.ros.cdk.swas.InstanceProps
 @alicloud/ros-cdk-swas.Instances=com.aliyun.ros.cdk.swas.Instances

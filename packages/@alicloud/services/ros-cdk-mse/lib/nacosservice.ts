@@ -43,14 +43,20 @@ export interface NacosServiceProps {
 }
 
 /**
+ * Represents a `NacosService`.
+ */
+export interface INacosService extends ros.IResource {
+    readonly props: NacosServiceProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::NacosService`, which is used to create a Nacos service.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNacosService`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-nacosservice
  */
-export class NacosService extends ros.Resource {
+export class NacosService extends ros.Resource implements INacosService {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: NacosServiceProps;
+    public readonly props: NacosServiceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

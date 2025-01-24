@@ -22,20 +22,31 @@ export interface SslVpnClientCertProps {
 }
 
 /**
+ * Represents a `SslVpnClientCert`.
+ */
+export interface ISslVpnClientCert extends ros.IResource {
+    readonly props: SslVpnClientCertProps;
+
+    /**
+     * Attribute SslVpnClientCertId: The ID of the client certificate.
+     */
+    readonly attrSslVpnClientCertId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::SslVpnClientCert`, which is used to call the CreateSslVpnClientCert operation to create an SSL-VPN client certificate.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSslVpnClientCert`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-sslvpnclientcert
  */
-export class SslVpnClientCert extends ros.Resource {
+export class SslVpnClientCert extends ros.Resource implements ISslVpnClientCert {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SslVpnClientCertProps;
+    public readonly props: SslVpnClientCertProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SslVpnClientCertId: The ID of the client certificate.
      */
-    public readonly attrSslVpnClientCertId: ros.IResolvable;
+    public readonly attrSslVpnClientCertId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

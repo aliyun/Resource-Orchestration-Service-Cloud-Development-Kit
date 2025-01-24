@@ -52,10 +52,6 @@ func (j *jsiiProxy_CenBandwidthPackages) validateSetIdParameters(val *string) er
 	return nil
 }
 
-func (j *jsiiProxy_CenBandwidthPackages) validateSetPropsParameters(val *CenBandwidthPackagesProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_CenBandwidthPackages) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

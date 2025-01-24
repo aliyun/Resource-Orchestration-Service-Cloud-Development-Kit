@@ -22,20 +22,31 @@ export interface BackendServerAttachmentProps {
 }
 
 /**
+ * Represents a `BackendServerAttachment`.
+ */
+export interface IBackendServerAttachment extends ros.IResource {
+    readonly props: BackendServerAttachmentProps;
+
+    /**
+     * Attribute ServerGroupId: The ID of the server group.
+     */
+    readonly attrServerGroupId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::BackendServerAttachment`, which is used to add backend servers to a server group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBackendServerAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-backendserverattachment
  */
-export class BackendServerAttachment extends ros.Resource {
+export class BackendServerAttachment extends ros.Resource implements IBackendServerAttachment {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: BackendServerAttachmentProps;
+    public readonly props: BackendServerAttachmentProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ServerGroupId: The ID of the server group.
      */
-    public readonly attrServerGroupId: ros.IResolvable;
+    public readonly attrServerGroupId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

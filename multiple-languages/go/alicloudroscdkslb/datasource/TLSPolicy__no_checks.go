@@ -52,10 +52,6 @@ func (j *jsiiProxy_TLSPolicy) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_TLSPolicy) validateSetPropsParameters(val *TLSPolicyProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_TLSPolicy) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

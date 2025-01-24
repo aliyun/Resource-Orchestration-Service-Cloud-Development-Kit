@@ -29,25 +29,41 @@ export interface DomainGroupsProps {
 }
 
 /**
+ * Represents a `DomainGroups`.
+ */
+export interface IDomainGroups extends ros.IResource {
+    readonly props: DomainGroupsProps;
+
+    /**
+     * Attribute DomainGroupIds: The list of The DNS domain group ids.
+     */
+    readonly attrDomainGroupIds: ros.IResolvable | string;
+
+    /**
+     * Attribute DomainGroups: The information about DNS domain groups.
+     */
+    readonly attrDomainGroups: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::DNS::DomainGroups`, which is used to query domain name groups.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomainGroups`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dns-domaingroups
  */
-export class DomainGroups extends ros.Resource {
+export class DomainGroups extends ros.Resource implements IDomainGroups {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DomainGroupsProps;
+    public readonly props: DomainGroupsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DomainGroupIds: The list of The DNS domain group ids.
      */
-    public readonly attrDomainGroupIds: ros.IResolvable;
+    public readonly attrDomainGroupIds: ros.IResolvable | string;
 
     /**
      * Attribute DomainGroups: The information about DNS domain groups.
      */
-    public readonly attrDomainGroups: ros.IResolvable;
+    public readonly attrDomainGroups: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -133,25 +133,41 @@ export interface ProductProps {
 }
 
 /**
+ * Represents a `Product`.
+ */
+export interface IProduct extends ros.IResource {
+    readonly props: ProductProps;
+
+    /**
+     * Attribute IotInstanceId: IOT instance ID.
+     */
+    readonly attrIotInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute ProductKey: The globally unique identifier of the product issued by IoT Platform.
+     */
+    readonly attrProductKey: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::IOT::Product`, which is used to create a product.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosProduct`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-product
  */
-export class Product extends ros.Resource {
+export class Product extends ros.Resource implements IProduct {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ProductProps;
+    public readonly props: ProductProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute IotInstanceId: IOT instance ID.
      */
-    public readonly attrIotInstanceId: ros.IResolvable;
+    public readonly attrIotInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute ProductKey: The globally unique identifier of the product issued by IoT Platform.
      */
-    public readonly attrProductKey: ros.IResolvable;
+    public readonly attrProductKey: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

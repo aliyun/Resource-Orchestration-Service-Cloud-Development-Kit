@@ -46,20 +46,31 @@ export interface AlertContactProps {
 }
 
 /**
+ * Represents a `AlertContact`.
+ */
+export interface IAlertContact extends ros.IResource {
+    readonly props: AlertContactProps;
+
+    /**
+     * Attribute ContactId: The ID of the alert contact that you created.
+     */
+    readonly attrContactId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::AlertContact`, which is used to create an alert contact.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAlertContact`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-alertcontact
  */
-export class AlertContact extends ros.Resource {
+export class AlertContact extends ros.Resource implements IAlertContact {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AlertContactProps;
+    public readonly props: AlertContactProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ContactId: The ID of the alert contact that you created.
      */
-    public readonly attrContactId: ros.IResolvable;
+    public readonly attrContactId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

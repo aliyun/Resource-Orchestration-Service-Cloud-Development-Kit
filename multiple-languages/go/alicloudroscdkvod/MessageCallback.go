@@ -12,24 +12,34 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::VOD::MessageCallback`, which is used to configure the callback method, callback URL, and event types for an event notification.
 type MessageCallback interface {
 	alicloudroscdkcore.Resource
+	IMessageCallback
 	// Attribute AppId: appid.
-	AttrAppId() alicloudroscdkcore.IResolvable
+	AttrAppId() interface{}
 	// Attribute AuthKey: auth key.
-	AttrAuthKey() alicloudroscdkcore.IResolvable
+	AttrAuthKey() interface{}
 	// Attribute AuthSwitch: auth swith.
-	AttrAuthSwitch() alicloudroscdkcore.IResolvable
+	AttrAuthSwitch() interface{}
 	// Attribute CallbackType: callback type.
-	AttrCallbackType() alicloudroscdkcore.IResolvable
+	AttrCallbackType() interface{}
 	// Attribute CallbackUrl: url.
-	AttrCallbackUrl() alicloudroscdkcore.IResolvable
+	AttrCallbackUrl() interface{}
 	// Attribute EventTypeList: event type.
-	AttrEventTypeList() alicloudroscdkcore.IResolvable
+	AttrEventTypeList() interface{}
 	// Attribute MnsEndpoint: mns endpoint.
-	AttrMnsEndpoint() alicloudroscdkcore.IResolvable
+	AttrMnsEndpoint() interface{}
 	// Attribute MnsQueueName: queue name.
-	AttrMnsQueueName() alicloudroscdkcore.IResolvable
+	AttrMnsQueueName() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -44,7 +54,6 @@ type MessageCallback interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *MessageCallbackProps
-	SetProps(val *MessageCallbackProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -57,6 +66,9 @@ type MessageCallback interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -109,10 +121,11 @@ type MessageCallback interface {
 // The jsii proxy struct for MessageCallback
 type jsiiProxy_MessageCallback struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IMessageCallback
 }
 
-func (j *jsiiProxy_MessageCallback) AttrAppId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MessageCallback) AttrAppId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAppId",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_MessageCallback) AttrAppId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_MessageCallback) AttrAuthKey() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MessageCallback) AttrAuthKey() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAuthKey",
@@ -131,8 +144,8 @@ func (j *jsiiProxy_MessageCallback) AttrAuthKey() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_MessageCallback) AttrAuthSwitch() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MessageCallback) AttrAuthSwitch() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAuthSwitch",
@@ -141,8 +154,8 @@ func (j *jsiiProxy_MessageCallback) AttrAuthSwitch() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_MessageCallback) AttrCallbackType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MessageCallback) AttrCallbackType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCallbackType",
@@ -151,8 +164,8 @@ func (j *jsiiProxy_MessageCallback) AttrCallbackType() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_MessageCallback) AttrCallbackUrl() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MessageCallback) AttrCallbackUrl() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCallbackUrl",
@@ -161,8 +174,8 @@ func (j *jsiiProxy_MessageCallback) AttrCallbackUrl() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_MessageCallback) AttrEventTypeList() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MessageCallback) AttrEventTypeList() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEventTypeList",
@@ -171,8 +184,8 @@ func (j *jsiiProxy_MessageCallback) AttrEventTypeList() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_MessageCallback) AttrMnsEndpoint() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MessageCallback) AttrMnsEndpoint() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMnsEndpoint",
@@ -181,8 +194,8 @@ func (j *jsiiProxy_MessageCallback) AttrMnsEndpoint() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_MessageCallback) AttrMnsQueueName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_MessageCallback) AttrMnsQueueName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMnsQueueName",
@@ -196,6 +209,16 @@ func (j *jsiiProxy_MessageCallback) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MessageCallback) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -333,17 +356,6 @@ func (j *jsiiProxy_MessageCallback)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_MessageCallback)SetProps(val *MessageCallbackProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_MessageCallback)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -435,6 +447,45 @@ func (m *jsiiProxy_MessageCallback) ApplyRemovalPolicy(policy alicloudroscdkcore
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (m *jsiiProxy_MessageCallback) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		m,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (m *jsiiProxy_MessageCallback) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		m,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (m *jsiiProxy_MessageCallback) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		m,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (m *jsiiProxy_MessageCallback) GeneratePhysicalName() *string {

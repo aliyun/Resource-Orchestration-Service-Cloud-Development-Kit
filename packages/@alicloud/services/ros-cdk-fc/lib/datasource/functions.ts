@@ -34,25 +34,41 @@ export interface FunctionsProps {
 }
 
 /**
+ * Represents a `Functions`.
+ */
+export interface IFunctions extends ros.IResource {
+    readonly props: FunctionsProps;
+
+    /**
+     * Attribute FunctionNames: The list of function names.
+     */
+    readonly attrFunctionNames: ros.IResolvable | string;
+
+    /**
+     * Attribute Functions: The list of functions.
+     */
+    readonly attrFunctions: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::FC::Functions`, which is used to query functions.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFunctions`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-functions
  */
-export class Functions extends ros.Resource {
+export class Functions extends ros.Resource implements IFunctions {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: FunctionsProps;
+    public readonly props: FunctionsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute FunctionNames: The list of function names.
      */
-    public readonly attrFunctionNames: ros.IResolvable;
+    public readonly attrFunctionNames: ros.IResolvable | string;
 
     /**
      * Attribute Functions: The list of functions.
      */
-    public readonly attrFunctions: ros.IResolvable;
+    public readonly attrFunctions: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

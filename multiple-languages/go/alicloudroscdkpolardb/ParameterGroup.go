@@ -12,28 +12,38 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::ParameterGroup`, which is used to create a parameter template of PolarDB.
 type ParameterGroup interface {
 	alicloudroscdkcore.Resource
+	IParameterGroup
 	// Attribute CreateTime: The time when the parameter template was created.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute DbType: The type of the database engine.
-	AttrDbType() alicloudroscdkcore.IResolvable
+	AttrDbType() interface{}
 	// Attribute DbVersion: The version of the database engine.
-	AttrDbVersion() alicloudroscdkcore.IResolvable
+	AttrDbVersion() interface{}
 	// Attribute ForceRestart: Indicates whether to restart the cluster when this parameter template is applied.
-	AttrForceRestart() alicloudroscdkcore.IResolvable
+	AttrForceRestart() interface{}
 	// Attribute ParameterCounts: The number of parameters in the parameter template.
-	AttrParameterCounts() alicloudroscdkcore.IResolvable
+	AttrParameterCounts() interface{}
 	// Attribute ParameterGroupDesc: The description of the parameter template.
-	AttrParameterGroupDesc() alicloudroscdkcore.IResolvable
+	AttrParameterGroupDesc() interface{}
 	// Attribute ParameterGroupId: The ID of the parameter group.
-	AttrParameterGroupId() alicloudroscdkcore.IResolvable
+	AttrParameterGroupId() interface{}
 	// Attribute ParameterGroupName: The name of the parameter template.
-	AttrParameterGroupName() alicloudroscdkcore.IResolvable
+	AttrParameterGroupName() interface{}
 	// Attribute ParameterGroupType: The type of the parameter template.
-	AttrParameterGroupType() alicloudroscdkcore.IResolvable
+	AttrParameterGroupType() interface{}
 	// Attribute Parameters: The list of the parameters.
-	AttrParameters() alicloudroscdkcore.IResolvable
+	AttrParameters() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -48,7 +58,6 @@ type ParameterGroup interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ParameterGroupProps
-	SetProps(val *ParameterGroupProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -61,6 +70,9 @@ type ParameterGroup interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -113,10 +125,11 @@ type ParameterGroup interface {
 // The jsii proxy struct for ParameterGroup
 type jsiiProxy_ParameterGroup struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IParameterGroup
 }
 
-func (j *jsiiProxy_ParameterGroup) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ParameterGroup) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -125,8 +138,8 @@ func (j *jsiiProxy_ParameterGroup) AttrCreateTime() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_ParameterGroup) AttrDbType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ParameterGroup) AttrDbType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbType",
@@ -135,8 +148,8 @@ func (j *jsiiProxy_ParameterGroup) AttrDbType() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_ParameterGroup) AttrDbVersion() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ParameterGroup) AttrDbVersion() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDbVersion",
@@ -145,8 +158,8 @@ func (j *jsiiProxy_ParameterGroup) AttrDbVersion() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_ParameterGroup) AttrForceRestart() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ParameterGroup) AttrForceRestart() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrForceRestart",
@@ -155,8 +168,8 @@ func (j *jsiiProxy_ParameterGroup) AttrForceRestart() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_ParameterGroup) AttrParameterCounts() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ParameterGroup) AttrParameterCounts() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrParameterCounts",
@@ -165,8 +178,8 @@ func (j *jsiiProxy_ParameterGroup) AttrParameterCounts() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_ParameterGroup) AttrParameterGroupDesc() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ParameterGroup) AttrParameterGroupDesc() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrParameterGroupDesc",
@@ -175,8 +188,8 @@ func (j *jsiiProxy_ParameterGroup) AttrParameterGroupDesc() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_ParameterGroup) AttrParameterGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ParameterGroup) AttrParameterGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrParameterGroupId",
@@ -185,8 +198,8 @@ func (j *jsiiProxy_ParameterGroup) AttrParameterGroupId() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_ParameterGroup) AttrParameterGroupName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ParameterGroup) AttrParameterGroupName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrParameterGroupName",
@@ -195,8 +208,8 @@ func (j *jsiiProxy_ParameterGroup) AttrParameterGroupName() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_ParameterGroup) AttrParameterGroupType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ParameterGroup) AttrParameterGroupType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrParameterGroupType",
@@ -205,8 +218,8 @@ func (j *jsiiProxy_ParameterGroup) AttrParameterGroupType() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_ParameterGroup) AttrParameters() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ParameterGroup) AttrParameters() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrParameters",
@@ -220,6 +233,16 @@ func (j *jsiiProxy_ParameterGroup) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ParameterGroup) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -357,17 +380,6 @@ func (j *jsiiProxy_ParameterGroup)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ParameterGroup)SetProps(val *ParameterGroupProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_ParameterGroup)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -459,6 +471,45 @@ func (p *jsiiProxy_ParameterGroup) ApplyRemovalPolicy(policy alicloudroscdkcore.
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (p *jsiiProxy_ParameterGroup) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		p,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_ParameterGroup) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		p,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_ParameterGroup) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		p,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (p *jsiiProxy_ParameterGroup) GeneratePhysicalName() *string {

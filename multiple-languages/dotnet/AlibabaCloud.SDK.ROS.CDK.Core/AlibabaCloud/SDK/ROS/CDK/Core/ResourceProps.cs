@@ -8,6 +8,57 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     [JsiiByValue(fqn: "@alicloud/ros-cdk-core.ResourceProps")]
     public class ResourceProps : AlibabaCloud.SDK.ROS.CDK.Core.IResourceProps
     {
+        /// <summary>The Alibaba Cloud account ID this resource belongs to.</summary>
+        /// <remarks>
+        /// <strong>Default</strong>: - the resource is in the same account as the stack it belongs to
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "account", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        public string? Account
+        {
+            get;
+            set;
+        }
+
+        private object? _environmentFromArn;
+
+        /// <summary>ARN to deduce region and account from.</summary>
+        /// <remarks>
+        /// The ARN is parsed and the account and region are taken from the ARN.
+        /// This should be used for imported resources.
+        ///
+        /// Cannot be supplied together with either <c>account</c> or <c>region</c>.
+        ///
+        /// <strong>Default</strong>: - take environment from `account`, `region` parameters, or use Stack environment.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "environmentFromArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? EnvironmentFromArn
+        {
+            get => _environmentFromArn;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _environmentFromArn = value;
+            }
+        }
+
         /// <summary>The value passed in by users to the physical name prop of the resource.</summary>
         /// <remarks>
         /// <list type="bullet">
@@ -22,6 +73,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         [JsiiOptional]
         [JsiiProperty(name: "physicalName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
         public string? PhysicalName
+        {
+            get;
+            set;
+        }
+
+        /// <summary>The Alibaba Cloud region this resource belongs to.</summary>
+        /// <remarks>
+        /// <strong>Default</strong>: - the resource is in the same region as the stack it belongs to
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "region", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        public string? Region
         {
             get;
             set;

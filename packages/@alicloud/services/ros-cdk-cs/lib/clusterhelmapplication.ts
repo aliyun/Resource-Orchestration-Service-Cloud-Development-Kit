@@ -62,25 +62,41 @@ export interface ClusterHelmApplicationProps {
 }
 
 /**
+ * Represents a `ClusterHelmApplication`.
+ */
+export interface IClusterHelmApplication extends ros.IResource {
+    readonly props: ClusterHelmApplicationProps;
+
+    /**
+     * Attribute ClusterId: The ID of the cluster.
+     */
+    readonly attrClusterId: ros.IResolvable | string;
+
+    /**
+     * Attribute WaitUntilData: A list of values for each JsonPath in WaitUntil.
+     */
+    readonly attrWaitUntilData: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ClusterHelmApplication`, which is used to deploy an application by using Helm.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusterHelmApplication`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterhelmapplication
  */
-export class ClusterHelmApplication extends ros.Resource {
+export class ClusterHelmApplication extends ros.Resource implements IClusterHelmApplication {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ClusterHelmApplicationProps;
+    public readonly props: ClusterHelmApplicationProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterId: The ID of the cluster.
      */
-    public readonly attrClusterId: ros.IResolvable;
+    public readonly attrClusterId: ros.IResolvable | string;
 
     /**
      * Attribute WaitUntilData: A list of values for each JsonPath in WaitUntil.
      */
-    public readonly attrWaitUntilData: ros.IResolvable;
+    public readonly attrWaitUntilData: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

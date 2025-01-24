@@ -168,170 +168,331 @@ export interface PrepayInstanceProps {
 }
 
 /**
+ * Represents a `PrepayInstance`.
+ */
+export interface IPrepayInstance extends ros.IResource {
+    readonly props: PrepayInstanceProps;
+
+    /**
+     * Attribute ArchitectureType: The architecture.
+     */
+    readonly attrArchitectureType: ros.IResolvable | string;
+
+    /**
+     * Attribute Bandwidth: The bandwidth of the instance. Unit: Mbit/s.
+     */
+    readonly attrBandwidth: ros.IResolvable | string;
+
+    /**
+     * Attribute Capacity: The storage capacity of the instance. Unit: MB.
+     */
+    readonly attrCapacity: ros.IResolvable | string;
+
+    /**
+     * Attribute ChargeType: The billing method of the instance.
+     */
+    readonly attrChargeType: ros.IResolvable | string;
+
+    /**
+     * Attribute ClassicInnerConnectionPort: The classic inner connection port of the instance
+     */
+    readonly attrClassicInnerConnectionPort: ros.IResolvable | string;
+
+    /**
+     * Attribute ClassicInnerConnectionString: The classic inner connection string of the instance
+     */
+    readonly attrClassicInnerConnectionString: ros.IResolvable | string;
+
+    /**
+     * Attribute ConnectionDomain: Connection domain of created instance.
+     */
+    readonly attrConnectionDomain: ros.IResolvable | string;
+
+    /**
+     * Attribute Connections: The maximum number of connections supported by the instance.
+     */
+    readonly attrConnections: ros.IResolvable | string;
+
+    /**
+     * Attribute DirectConnectionPort: The direct connection port of the instance
+     */
+    readonly attrDirectConnectionPort: ros.IResolvable | string;
+
+    /**
+     * Attribute DirectConnectionString: The direct connection string of the instance
+     */
+    readonly attrDirectConnectionString: ros.IResolvable | string;
+
+    /**
+     * Attribute EngineVersion: The engine version of the instance.
+     */
+    readonly attrEngineVersion: ros.IResolvable | string;
+
+    /**
+     * Attribute HasRenewChangeOrder: Indicates whether the Alibaba Cloud account has pending renewal or scaling orders
+     */
+    readonly attrHasRenewChangeOrder: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceClass: Redis instance type.
+     */
+    readonly attrInstanceClass: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: Instance id of created redis instance.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceName: Name of created redis instance.
+     */
+    readonly attrInstanceName: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceType: The engine type of the instance.
+     */
+    readonly attrInstanceType: ros.IResolvable | string;
+
+    /**
+     * Attribute NetworkType: The network type.
+     */
+    readonly attrNetworkType: ros.IResolvable | string;
+
+    /**
+     * Attribute NodeType: The type of node.
+     */
+    readonly attrNodeType: ros.IResolvable | string;
+
+    /**
+     * Attribute OrderId: Order Id of created instance.
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+
+    /**
+     * Attribute PackageType: The plan type.
+     */
+    readonly attrPackageType: ros.IResolvable | string;
+
+    /**
+     * Attribute Port: Port of created instance.
+     */
+    readonly attrPort: ros.IResolvable | string;
+
+    /**
+     * Attribute PrivateIp: The internal IP address of the instance.
+     */
+    readonly attrPrivateIp: ros.IResolvable | string;
+
+    /**
+     * Attribute PublicConnectionPort: The public connection port of the instance
+     */
+    readonly attrPublicConnectionPort: ros.IResolvable | string;
+
+    /**
+     * Attribute PublicConnectionString: The public connection string of the instance
+     */
+    readonly attrPublicConnectionString: ros.IResolvable | string;
+
+    /**
+     * Attribute QPS: The queries per second (QPS) supported by the instance.
+     */
+    readonly attrQps: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: The ID of the resource group to which the instance belongs.
+     */
+    readonly attrResourceGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute VSwitchId: The ID of the vSwitch.
+     */
+    readonly attrVSwitchId: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcId: The ID of the VPC.
+     */
+    readonly attrVpcId: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcPrivateConnectionPort: The vpc private connection port of the instance
+     */
+    readonly attrVpcPrivateConnectionPort: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcPrivateConnectionString: The vpc private connection string of the instance
+     */
+    readonly attrVpcPrivateConnectionString: ros.IResolvable | string;
+
+    /**
+     * Attribute ZoneId: The ID of the zone.
+     */
+    readonly attrZoneId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::PrepayInstance`, which is used to create a subscription ApsaraDB for Redis instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPrepayInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-prepayinstance
  */
-export class PrepayInstance extends ros.Resource {
+export class PrepayInstance extends ros.Resource implements IPrepayInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: PrepayInstanceProps;
+    public readonly props: PrepayInstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ArchitectureType: The architecture.
      */
-    public readonly attrArchitectureType: ros.IResolvable;
+    public readonly attrArchitectureType: ros.IResolvable | string;
 
     /**
      * Attribute Bandwidth: The bandwidth of the instance. Unit: Mbit/s.
      */
-    public readonly attrBandwidth: ros.IResolvable;
+    public readonly attrBandwidth: ros.IResolvable | string;
 
     /**
      * Attribute Capacity: The storage capacity of the instance. Unit: MB.
      */
-    public readonly attrCapacity: ros.IResolvable;
+    public readonly attrCapacity: ros.IResolvable | string;
 
     /**
      * Attribute ChargeType: The billing method of the instance.
      */
-    public readonly attrChargeType: ros.IResolvable;
+    public readonly attrChargeType: ros.IResolvable | string;
 
     /**
      * Attribute ClassicInnerConnectionPort: The classic inner connection port of the instance
      */
-    public readonly attrClassicInnerConnectionPort: ros.IResolvable;
+    public readonly attrClassicInnerConnectionPort: ros.IResolvable | string;
 
     /**
      * Attribute ClassicInnerConnectionString: The classic inner connection string of the instance
      */
-    public readonly attrClassicInnerConnectionString: ros.IResolvable;
+    public readonly attrClassicInnerConnectionString: ros.IResolvable | string;
 
     /**
      * Attribute ConnectionDomain: Connection domain of created instance.
      */
-    public readonly attrConnectionDomain: ros.IResolvable;
+    public readonly attrConnectionDomain: ros.IResolvable | string;
 
     /**
      * Attribute Connections: The maximum number of connections supported by the instance.
      */
-    public readonly attrConnections: ros.IResolvable;
+    public readonly attrConnections: ros.IResolvable | string;
 
     /**
      * Attribute DirectConnectionPort: The direct connection port of the instance
      */
-    public readonly attrDirectConnectionPort: ros.IResolvable;
+    public readonly attrDirectConnectionPort: ros.IResolvable | string;
 
     /**
      * Attribute DirectConnectionString: The direct connection string of the instance
      */
-    public readonly attrDirectConnectionString: ros.IResolvable;
+    public readonly attrDirectConnectionString: ros.IResolvable | string;
 
     /**
      * Attribute EngineVersion: The engine version of the instance.
      */
-    public readonly attrEngineVersion: ros.IResolvable;
+    public readonly attrEngineVersion: ros.IResolvable | string;
 
     /**
      * Attribute HasRenewChangeOrder: Indicates whether the Alibaba Cloud account has pending renewal or scaling orders
      */
-    public readonly attrHasRenewChangeOrder: ros.IResolvable;
+    public readonly attrHasRenewChangeOrder: ros.IResolvable | string;
 
     /**
      * Attribute InstanceClass: Redis instance type.
      */
-    public readonly attrInstanceClass: ros.IResolvable;
+    public readonly attrInstanceClass: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: Instance id of created redis instance.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute InstanceName: Name of created redis instance.
      */
-    public readonly attrInstanceName: ros.IResolvable;
+    public readonly attrInstanceName: ros.IResolvable | string;
 
     /**
      * Attribute InstanceType: The engine type of the instance.
      */
-    public readonly attrInstanceType: ros.IResolvable;
+    public readonly attrInstanceType: ros.IResolvable | string;
 
     /**
      * Attribute NetworkType: The network type.
      */
-    public readonly attrNetworkType: ros.IResolvable;
+    public readonly attrNetworkType: ros.IResolvable | string;
 
     /**
      * Attribute NodeType: The type of node.
      */
-    public readonly attrNodeType: ros.IResolvable;
+    public readonly attrNodeType: ros.IResolvable | string;
 
     /**
      * Attribute OrderId: Order Id of created instance.
      */
-    public readonly attrOrderId: ros.IResolvable;
+    public readonly attrOrderId: ros.IResolvable | string;
 
     /**
      * Attribute PackageType: The plan type.
      */
-    public readonly attrPackageType: ros.IResolvable;
+    public readonly attrPackageType: ros.IResolvable | string;
 
     /**
      * Attribute Port: Port of created instance.
      */
-    public readonly attrPort: ros.IResolvable;
+    public readonly attrPort: ros.IResolvable | string;
 
     /**
      * Attribute PrivateIp: The internal IP address of the instance.
      */
-    public readonly attrPrivateIp: ros.IResolvable;
+    public readonly attrPrivateIp: ros.IResolvable | string;
 
     /**
      * Attribute PublicConnectionPort: The public connection port of the instance
      */
-    public readonly attrPublicConnectionPort: ros.IResolvable;
+    public readonly attrPublicConnectionPort: ros.IResolvable | string;
 
     /**
      * Attribute PublicConnectionString: The public connection string of the instance
      */
-    public readonly attrPublicConnectionString: ros.IResolvable;
+    public readonly attrPublicConnectionString: ros.IResolvable | string;
 
     /**
      * Attribute QPS: The queries per second (QPS) supported by the instance.
      */
-    public readonly attrQps: ros.IResolvable;
+    public readonly attrQps: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroupId: The ID of the resource group to which the instance belongs.
      */
-    public readonly attrResourceGroupId: ros.IResolvable;
+    public readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Attribute VSwitchId: The ID of the vSwitch.
      */
-    public readonly attrVSwitchId: ros.IResolvable;
+    public readonly attrVSwitchId: ros.IResolvable | string;
 
     /**
      * Attribute VpcId: The ID of the VPC.
      */
-    public readonly attrVpcId: ros.IResolvable;
+    public readonly attrVpcId: ros.IResolvable | string;
 
     /**
      * Attribute VpcPrivateConnectionPort: The vpc private connection port of the instance
      */
-    public readonly attrVpcPrivateConnectionPort: ros.IResolvable;
+    public readonly attrVpcPrivateConnectionPort: ros.IResolvable | string;
 
     /**
      * Attribute VpcPrivateConnectionString: The vpc private connection string of the instance
      */
-    public readonly attrVpcPrivateConnectionString: ros.IResolvable;
+    public readonly attrVpcPrivateConnectionString: ros.IResolvable | string;
 
     /**
      * Attribute ZoneId: The ID of the zone.
      */
-    public readonly attrZoneId: ros.IResolvable;
+    public readonly attrZoneId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

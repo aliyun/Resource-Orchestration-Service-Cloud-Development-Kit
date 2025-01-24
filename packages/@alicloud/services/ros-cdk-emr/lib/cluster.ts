@@ -235,35 +235,61 @@ export interface ClusterProps {
 }
 
 /**
+ * Represents a `Cluster`.
+ */
+export interface ICluster extends ros.IResource {
+    readonly props: ClusterProps;
+
+    /**
+     * Attribute ClusterId: The ID of the cluster.
+     */
+    readonly attrClusterId: ros.IResolvable | string;
+
+    /**
+     * Attribute HostGroups: The host group list of the cluster.
+     */
+    readonly attrHostGroups: ros.IResolvable | string;
+
+    /**
+     * Attribute MasterNodeInnerIps: The inner ip list of the cluster master nodes.
+     */
+    readonly attrMasterNodeInnerIps: ros.IResolvable | string;
+
+    /**
+     * Attribute MasterNodePubIps: The public ip list of the cluster master nodes.
+     */
+    readonly attrMasterNodePubIps: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::EMR::Cluster`, which is used to create an E-MapReduce (EMR) cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-cluster
  */
-export class Cluster extends ros.Resource {
+export class Cluster extends ros.Resource implements ICluster {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ClusterProps;
+    public readonly props: ClusterProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterId: The ID of the cluster.
      */
-    public readonly attrClusterId: ros.IResolvable;
+    public readonly attrClusterId: ros.IResolvable | string;
 
     /**
      * Attribute HostGroups: The host group list of the cluster.
      */
-    public readonly attrHostGroups: ros.IResolvable;
+    public readonly attrHostGroups: ros.IResolvable | string;
 
     /**
      * Attribute MasterNodeInnerIps: The inner ip list of the cluster master nodes.
      */
-    public readonly attrMasterNodeInnerIps: ros.IResolvable;
+    public readonly attrMasterNodeInnerIps: ros.IResolvable | string;
 
     /**
      * Attribute MasterNodePubIps: The public ip list of the cluster master nodes.
      */
-    public readonly attrMasterNodePubIps: ros.IResolvable;
+    public readonly attrMasterNodePubIps: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

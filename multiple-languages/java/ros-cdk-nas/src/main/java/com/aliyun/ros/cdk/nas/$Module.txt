@@ -8,6 +8,14 @@
 @alicloud/ros-cdk-nas.FileSystemProps=com.aliyun.ros.cdk.nas.FileSystemProps
 @alicloud/ros-cdk-nas.Fileset=com.aliyun.ros.cdk.nas.Fileset
 @alicloud/ros-cdk-nas.FilesetProps=com.aliyun.ros.cdk.nas.FilesetProps
+@alicloud/ros-cdk-nas.IAccessGroup=com.aliyun.ros.cdk.nas.IAccessGroup
+@alicloud/ros-cdk-nas.IAccessRule=com.aliyun.ros.cdk.nas.IAccessRule
+@alicloud/ros-cdk-nas.IDataFlow=com.aliyun.ros.cdk.nas.IDataFlow
+@alicloud/ros-cdk-nas.IFileSystem=com.aliyun.ros.cdk.nas.IFileSystem
+@alicloud/ros-cdk-nas.IFileset=com.aliyun.ros.cdk.nas.IFileset
+@alicloud/ros-cdk-nas.IMountTarget=com.aliyun.ros.cdk.nas.IMountTarget
+@alicloud/ros-cdk-nas.IProtocolMountTarget=com.aliyun.ros.cdk.nas.IProtocolMountTarget
+@alicloud/ros-cdk-nas.IProtocolService=com.aliyun.ros.cdk.nas.IProtocolService
 @alicloud/ros-cdk-nas.MountTarget=com.aliyun.ros.cdk.nas.MountTarget
 @alicloud/ros-cdk-nas.MountTargetProps=com.aliyun.ros.cdk.nas.MountTargetProps
 @alicloud/ros-cdk-nas.ProtocolMountTarget=com.aliyun.ros.cdk.nas.ProtocolMountTarget
@@ -40,6 +48,11 @@
 @alicloud/ros-cdk-nas.datasource.FileSystemProps=com.aliyun.ros.cdk.nas.datasource.FileSystemProps
 @alicloud/ros-cdk-nas.datasource.FileSystems=com.aliyun.ros.cdk.nas.datasource.FileSystems
 @alicloud/ros-cdk-nas.datasource.FileSystemsProps=com.aliyun.ros.cdk.nas.datasource.FileSystemsProps
+@alicloud/ros-cdk-nas.datasource.IAccessGroup=com.aliyun.ros.cdk.nas.datasource.IAccessGroup
+@alicloud/ros-cdk-nas.datasource.IAccessGroups=com.aliyun.ros.cdk.nas.datasource.IAccessGroups
+@alicloud/ros-cdk-nas.datasource.IFileSystem=com.aliyun.ros.cdk.nas.datasource.IFileSystem
+@alicloud/ros-cdk-nas.datasource.IFileSystems=com.aliyun.ros.cdk.nas.datasource.IFileSystems
+@alicloud/ros-cdk-nas.datasource.IZones=com.aliyun.ros.cdk.nas.datasource.IZones
 @alicloud/ros-cdk-nas.datasource.RosAccessGroup=com.aliyun.ros.cdk.nas.datasource.RosAccessGroup
 @alicloud/ros-cdk-nas.datasource.RosAccessGroupProps=com.aliyun.ros.cdk.nas.datasource.RosAccessGroupProps
 @alicloud/ros-cdk-nas.datasource.RosAccessGroups=com.aliyun.ros.cdk.nas.datasource.RosAccessGroups

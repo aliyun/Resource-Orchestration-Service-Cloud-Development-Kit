@@ -114,20 +114,31 @@ export interface HealthCheckTemplateProps {
 }
 
 /**
+ * Represents a `HealthCheckTemplate`.
+ */
+export interface IHealthCheckTemplate extends ros.IResource {
+    readonly props: HealthCheckTemplateProps;
+
+    /**
+     * Attribute HealthCheckTemplateId: The ID of the health check template.
+     */
+    readonly attrHealthCheckTemplateId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::HealthCheckTemplate`, which is used to create a health check template.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosHealthCheckTemplate`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-healthchecktemplate
  */
-export class HealthCheckTemplate extends ros.Resource {
+export class HealthCheckTemplate extends ros.Resource implements IHealthCheckTemplate {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: HealthCheckTemplateProps;
+    public readonly props: HealthCheckTemplateProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute HealthCheckTemplateId: The ID of the health check template.
      */
-    public readonly attrHealthCheckTemplateId: ros.IResolvable;
+    public readonly attrHealthCheckTemplateId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

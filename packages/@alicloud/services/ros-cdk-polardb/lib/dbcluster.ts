@@ -397,80 +397,151 @@ export interface DBClusterProps {
 }
 
 /**
+ * Represents a `DBCluster`.
+ */
+export interface IDBCluster extends ros.IResource {
+    readonly props: DBClusterProps;
+
+    /**
+     * Attribute ClusterConnectionString: The cluster connection string of the db cluster.
+     */
+    readonly attrClusterConnectionString: ros.IResolvable | string;
+
+    /**
+     * Attribute ClusterEndpointId: The cluster endpoint ID of the db cluster.
+     */
+    readonly attrClusterEndpointId: ros.IResolvable | string;
+
+    /**
+     * Attribute ColdStorageInstanceId: The ID of the cold storage instance.
+     */
+    readonly attrColdStorageInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute CustomConnectionStrings: The custom connection strings of the db cluster.
+     */
+    readonly attrCustomConnectionStrings: ros.IResolvable | string;
+
+    /**
+     * Attribute CustomEndpointIds: The custom endpoint IDs of the db cluster.
+     */
+    readonly attrCustomEndpointIds: ros.IResolvable | string;
+
+    /**
+     * Attribute DBClusterDescription: The description of the db cluster.
+     */
+    readonly attrDbClusterDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute DBClusterId: The ID of the ApsaraDB for POLARDB cluster.
+     */
+    readonly attrDbClusterId: ros.IResolvable | string;
+
+    /**
+     * Attribute DBNodeIds: The ID list of cluster nodes.
+     */
+    readonly attrDbNodeIds: ros.IResolvable | string;
+
+    /**
+     * Attribute OrderId: The Order ID.
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+
+    /**
+     * Attribute PrimaryConnectionString: The primary connection string of the db cluster.
+     */
+    readonly attrPrimaryConnectionString: ros.IResolvable | string;
+
+    /**
+     * Attribute PrimaryConnectionStrings: The primary connection strings of the db cluster.
+     */
+    readonly attrPrimaryConnectionStrings: ros.IResolvable | string;
+
+    /**
+     * Attribute PrimaryEndpointId: The primary endpoint ID of the db cluster.
+     */
+    readonly attrPrimaryEndpointId: ros.IResolvable | string;
+
+    /**
+     * Attribute PrimaryEndpointIds: The primary endpoint IDs of the db cluster.
+     */
+    readonly attrPrimaryEndpointIds: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::DBCluster`, which is used to create a PolarDB cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbcluster
  */
-export class DBCluster extends ros.Resource {
+export class DBCluster extends ros.Resource implements IDBCluster {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DBClusterProps;
+    public readonly props: DBClusterProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterConnectionString: The cluster connection string of the db cluster.
      */
-    public readonly attrClusterConnectionString: ros.IResolvable;
+    public readonly attrClusterConnectionString: ros.IResolvable | string;
 
     /**
      * Attribute ClusterEndpointId: The cluster endpoint ID of the db cluster.
      */
-    public readonly attrClusterEndpointId: ros.IResolvable;
+    public readonly attrClusterEndpointId: ros.IResolvable | string;
 
     /**
      * Attribute ColdStorageInstanceId: The ID of the cold storage instance.
      */
-    public readonly attrColdStorageInstanceId: ros.IResolvable;
+    public readonly attrColdStorageInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute CustomConnectionStrings: The custom connection strings of the db cluster.
      */
-    public readonly attrCustomConnectionStrings: ros.IResolvable;
+    public readonly attrCustomConnectionStrings: ros.IResolvable | string;
 
     /**
      * Attribute CustomEndpointIds: The custom endpoint IDs of the db cluster.
      */
-    public readonly attrCustomEndpointIds: ros.IResolvable;
+    public readonly attrCustomEndpointIds: ros.IResolvable | string;
 
     /**
      * Attribute DBClusterDescription: The description of the db cluster.
      */
-    public readonly attrDbClusterDescription: ros.IResolvable;
+    public readonly attrDbClusterDescription: ros.IResolvable | string;
 
     /**
      * Attribute DBClusterId: The ID of the ApsaraDB for POLARDB cluster.
      */
-    public readonly attrDbClusterId: ros.IResolvable;
+    public readonly attrDbClusterId: ros.IResolvable | string;
 
     /**
      * Attribute DBNodeIds: The ID list of cluster nodes.
      */
-    public readonly attrDbNodeIds: ros.IResolvable;
+    public readonly attrDbNodeIds: ros.IResolvable | string;
 
     /**
      * Attribute OrderId: The Order ID.
      */
-    public readonly attrOrderId: ros.IResolvable;
+    public readonly attrOrderId: ros.IResolvable | string;
 
     /**
      * Attribute PrimaryConnectionString: The primary connection string of the db cluster.
      */
-    public readonly attrPrimaryConnectionString: ros.IResolvable;
+    public readonly attrPrimaryConnectionString: ros.IResolvable | string;
 
     /**
      * Attribute PrimaryConnectionStrings: The primary connection strings of the db cluster.
      */
-    public readonly attrPrimaryConnectionStrings: ros.IResolvable;
+    public readonly attrPrimaryConnectionStrings: ros.IResolvable | string;
 
     /**
      * Attribute PrimaryEndpointId: The primary endpoint ID of the db cluster.
      */
-    public readonly attrPrimaryEndpointId: ros.IResolvable;
+    public readonly attrPrimaryEndpointId: ros.IResolvable | string;
 
     /**
      * Attribute PrimaryEndpointIds: The primary endpoint IDs of the db cluster.
      */
-    public readonly attrPrimaryEndpointIds: ros.IResolvable;
+    public readonly attrPrimaryEndpointIds: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

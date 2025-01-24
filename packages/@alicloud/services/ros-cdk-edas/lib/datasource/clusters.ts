@@ -29,25 +29,41 @@ export interface ClustersProps {
 }
 
 /**
+ * Represents a `Clusters`.
+ */
+export interface IClusters extends ros.IResource {
+    readonly props: ClustersProps;
+
+    /**
+     * Attribute ClusterIds: The list of cluster IDs.
+     */
+    readonly attrClusterIds: ros.IResolvable | string;
+
+    /**
+     * Attribute Clusters: The list of clusters.
+     */
+    readonly attrClusters: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::EDAS::Clusters`, which is used to query clusters in Enterprise Distributed Application Service (EDAS).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusters`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-edas-clusters
  */
-export class Clusters extends ros.Resource {
+export class Clusters extends ros.Resource implements IClusters {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ClustersProps;
+    public readonly props: ClustersProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterIds: The list of cluster IDs.
      */
-    public readonly attrClusterIds: ros.IResolvable;
+    public readonly attrClusterIds: ros.IResolvable | string;
 
     /**
      * Attribute Clusters: The list of clusters.
      */
-    public readonly attrClusters: ros.IResolvable;
+    public readonly attrClusters: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

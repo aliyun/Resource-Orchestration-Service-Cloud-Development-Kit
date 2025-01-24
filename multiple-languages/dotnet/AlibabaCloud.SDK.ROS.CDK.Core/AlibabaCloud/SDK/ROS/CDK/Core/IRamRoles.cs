@@ -8,8 +8,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     public interface IRamRoles
     {
         /// <summary>The RAM role ARN that grants FC function the required permissions.</summary>
-        [JsiiProperty(name: "fcRole", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        AlibabaCloud.SDK.ROS.CDK.Core.IResolvable FcRole
+        [JsiiProperty(name: "fcRole", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object FcRole
         {
             get;
         }
@@ -22,10 +22,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
 
             /// <summary>The RAM role ARN that grants FC function the required permissions.</summary>
-            [JsiiProperty(name: "fcRole", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-            public AlibabaCloud.SDK.ROS.CDK.Core.IResolvable FcRole
+            [JsiiProperty(name: "fcRole", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object FcRole
             {
-                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

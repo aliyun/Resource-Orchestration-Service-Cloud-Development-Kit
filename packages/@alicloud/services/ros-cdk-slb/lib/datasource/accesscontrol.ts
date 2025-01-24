@@ -24,50 +24,91 @@ export interface AccessControlProps {
 }
 
 /**
+ * Represents a `AccessControl`.
+ */
+export interface IAccessControl extends ros.IResource {
+    readonly props: AccessControlProps;
+
+    /**
+     * Attribute AclEntries: The IP entries that you want to remove from the network ACL.
+     */
+    readonly attrAclEntries: ros.IResolvable | string;
+
+    /**
+     * Attribute AclId: The ID of the ACL.
+     */
+    readonly attrAclId: ros.IResolvable | string;
+
+    /**
+     * Attribute AclName: The ACL name.
+     */
+    readonly attrAclName: ros.IResolvable | string;
+
+    /**
+     * Attribute AddressIpVersion: The IP version. Valid values: ipv4 and ipv6.
+     */
+    readonly attrAddressIpVersion: ros.IResolvable | string;
+
+    /**
+     * Attribute RelatedListeners: The listeners that are associated with the network ACL.
+     */
+    readonly attrRelatedListeners: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: The resource group ID.
+     */
+    readonly attrResourceGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute Tags: The tags of the resource.
+     */
+    readonly attrTags: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::AccessControl`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccessControl`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-accesscontrol
  */
-export class AccessControl extends ros.Resource {
+export class AccessControl extends ros.Resource implements IAccessControl {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AccessControlProps;
+    public readonly props: AccessControlProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AclEntries: The IP entries that you want to remove from the network ACL.
      */
-    public readonly attrAclEntries: ros.IResolvable;
+    public readonly attrAclEntries: ros.IResolvable | string;
 
     /**
      * Attribute AclId: The ID of the ACL.
      */
-    public readonly attrAclId: ros.IResolvable;
+    public readonly attrAclId: ros.IResolvable | string;
 
     /**
      * Attribute AclName: The ACL name.
      */
-    public readonly attrAclName: ros.IResolvable;
+    public readonly attrAclName: ros.IResolvable | string;
 
     /**
      * Attribute AddressIpVersion: The IP version. Valid values: ipv4 and ipv6.
      */
-    public readonly attrAddressIpVersion: ros.IResolvable;
+    public readonly attrAddressIpVersion: ros.IResolvable | string;
 
     /**
      * Attribute RelatedListeners: The listeners that are associated with the network ACL.
      */
-    public readonly attrRelatedListeners: ros.IResolvable;
+    public readonly attrRelatedListeners: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroupId: The resource group ID.
      */
-    public readonly attrResourceGroupId: ros.IResolvable;
+    public readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Attribute Tags: The tags of the resource.
      */
-    public readonly attrTags: ros.IResolvable;
+    public readonly attrTags: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.actiontrail;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ACTIONTRAIL::TrailLogging</code>, which is used to enable or disable trail logging.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:03.826Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:33.869Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.actiontrail.$Module.class, fqn = "@alicloud/ros-cdk-actiontrail.TrailLogging")
-public class TrailLogging extends com.aliyun.ros.cdk.core.Resource {
+public class TrailLogging extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.actiontrail.ITrailLogging {
 
     protected TrailLogging(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -43,36 +43,46 @@ public class TrailLogging extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute IsLogging: Indicates whether the trail is logging API invocations.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrIsLogging() {
-        return software.amazon.jsii.Kernel.get(this, "attrIsLogging", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrIsLogging() {
+        return software.amazon.jsii.Kernel.get(this, "attrIsLogging", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute LatestDeliveryError: The last time an error occurred when the trail attempted to deliver log files.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrLatestDeliveryError() {
-        return software.amazon.jsii.Kernel.get(this, "attrLatestDeliveryError", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrLatestDeliveryError() {
+        return software.amazon.jsii.Kernel.get(this, "attrLatestDeliveryError", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute LatestDeliveryTime: The date and time of the last successful delivery of a log file.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrLatestDeliveryTime() {
-        return software.amazon.jsii.Kernel.get(this, "attrLatestDeliveryTime", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrLatestDeliveryTime() {
+        return software.amazon.jsii.Kernel.get(this, "attrLatestDeliveryTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute StartLoggingTime: The most recent date and time when the user enables the trail.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrStartLoggingTime() {
-        return software.amazon.jsii.Kernel.get(this, "attrStartLoggingTime", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrStartLoggingTime() {
+        return software.amazon.jsii.Kernel.get(this, "attrStartLoggingTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute StopLoggingTime: The most recent date and time when the user disables the trail.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrStopLoggingTime() {
-        return software.amazon.jsii.Kernel.get(this, "attrStopLoggingTime", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrStopLoggingTime() {
+        return software.amazon.jsii.Kernel.get(this, "attrStopLoggingTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.actiontrail.TrailLoggingProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.actiontrail.TrailLoggingProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -89,14 +99,6 @@ public class TrailLogging extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.actiontrail.TrailLoggingProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.actiontrail.TrailLoggingProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.actiontrail.TrailLoggingProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {

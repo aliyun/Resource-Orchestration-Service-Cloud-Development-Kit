@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.adblake;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ADBLake::DBCluster</code>, which is used to create an AnalyticDB for MySQL Data Lakehouse Edition (V3.0) cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:03.878Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:33.922Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adblake.$Module.class, fqn = "@alicloud/ros-cdk-adblake.RosDBCluster")
 public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -217,6 +217,24 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCloneSourceRegionId() {
+        return software.amazon.jsii.Kernel.get(this, "cloneSourceRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setCloneSourceRegionId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "cloneSourceRegionId", value);
+    }
+
+    /**
+     */
+    public void setCloneSourceRegionId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "cloneSourceRegionId", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDbClusterDescription() {
         return software.amazon.jsii.Kernel.get(this, "dbClusterDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -235,6 +253,42 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDbClusterNetworkType() {
+        return software.amazon.jsii.Kernel.get(this, "dbClusterNetworkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDbClusterNetworkType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "dbClusterNetworkType", value);
+    }
+
+    /**
+     */
+    public void setDbClusterNetworkType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "dbClusterNetworkType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDiskEncryption() {
+        return software.amazon.jsii.Kernel.get(this, "diskEncryption", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDiskEncryption(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "diskEncryption", value);
+    }
+
+    /**
+     */
+    public void setDiskEncryption(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "diskEncryption", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getEnableDefaultResourcePool() {
         return software.amazon.jsii.Kernel.get(this, "enableDefaultResourcePool", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -249,6 +303,24 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setEnableDefaultResourcePool(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "enableDefaultResourcePool", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getKmsId() {
+        return software.amazon.jsii.Kernel.get(this, "kmsId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setKmsId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "kmsId", value);
+    }
+
+    /**
+     */
+    public void setKmsId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "kmsId", value);
     }
 
     /**
@@ -285,6 +357,60 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setPeriodType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "periodType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getProductForm() {
+        return software.amazon.jsii.Kernel.get(this, "productForm", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setProductForm(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "productForm", value);
+    }
+
+    /**
+     */
+    public void setProductForm(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "productForm", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getReservedNodeCount() {
+        return software.amazon.jsii.Kernel.get(this, "reservedNodeCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setReservedNodeCount(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "reservedNodeCount", value);
+    }
+
+    /**
+     */
+    public void setReservedNodeCount(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "reservedNodeCount", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getReservedNodeSize() {
+        return software.amazon.jsii.Kernel.get(this, "reservedNodeSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setReservedNodeSize(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "reservedNodeSize", value);
+    }
+
+    /**
+     */
+    public void setReservedNodeSize(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "reservedNodeSize", value);
     }
 
     /**
@@ -703,6 +829,23 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param cloneSourceRegionId This parameter is required.
+         */
+        public Builder cloneSourceRegionId(final java.lang.String cloneSourceRegionId) {
+            this.props.cloneSourceRegionId(cloneSourceRegionId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param cloneSourceRegionId This parameter is required.
+         */
+        public Builder cloneSourceRegionId(final com.aliyun.ros.cdk.core.IResolvable cloneSourceRegionId) {
+            this.props.cloneSourceRegionId(cloneSourceRegionId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param dbClusterDescription This parameter is required.
          */
         public Builder dbClusterDescription(final java.lang.String dbClusterDescription) {
@@ -720,6 +863,40 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param dbClusterNetworkType This parameter is required.
+         */
+        public Builder dbClusterNetworkType(final java.lang.String dbClusterNetworkType) {
+            this.props.dbClusterNetworkType(dbClusterNetworkType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param dbClusterNetworkType This parameter is required.
+         */
+        public Builder dbClusterNetworkType(final com.aliyun.ros.cdk.core.IResolvable dbClusterNetworkType) {
+            this.props.dbClusterNetworkType(dbClusterNetworkType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param diskEncryption This parameter is required.
+         */
+        public Builder diskEncryption(final java.lang.Boolean diskEncryption) {
+            this.props.diskEncryption(diskEncryption);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param diskEncryption This parameter is required.
+         */
+        public Builder diskEncryption(final com.aliyun.ros.cdk.core.IResolvable diskEncryption) {
+            this.props.diskEncryption(diskEncryption);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param enableDefaultResourcePool This parameter is required.
          */
         public Builder enableDefaultResourcePool(final java.lang.Boolean enableDefaultResourcePool) {
@@ -732,6 +909,23 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder enableDefaultResourcePool(final com.aliyun.ros.cdk.core.IResolvable enableDefaultResourcePool) {
             this.props.enableDefaultResourcePool(enableDefaultResourcePool);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param kmsId This parameter is required.
+         */
+        public Builder kmsId(final java.lang.String kmsId) {
+            this.props.kmsId(kmsId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param kmsId This parameter is required.
+         */
+        public Builder kmsId(final com.aliyun.ros.cdk.core.IResolvable kmsId) {
+            this.props.kmsId(kmsId);
             return this;
         }
 
@@ -766,6 +960,57 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder periodType(final com.aliyun.ros.cdk.core.IResolvable periodType) {
             this.props.periodType(periodType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param productForm This parameter is required.
+         */
+        public Builder productForm(final java.lang.String productForm) {
+            this.props.productForm(productForm);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param productForm This parameter is required.
+         */
+        public Builder productForm(final com.aliyun.ros.cdk.core.IResolvable productForm) {
+            this.props.productForm(productForm);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param reservedNodeCount This parameter is required.
+         */
+        public Builder reservedNodeCount(final java.lang.Number reservedNodeCount) {
+            this.props.reservedNodeCount(reservedNodeCount);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param reservedNodeCount This parameter is required.
+         */
+        public Builder reservedNodeCount(final com.aliyun.ros.cdk.core.IResolvable reservedNodeCount) {
+            this.props.reservedNodeCount(reservedNodeCount);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param reservedNodeSize This parameter is required.
+         */
+        public Builder reservedNodeSize(final java.lang.Number reservedNodeSize) {
+            this.props.reservedNodeSize(reservedNodeSize);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param reservedNodeSize This parameter is required.
+         */
+        public Builder reservedNodeSize(final com.aliyun.ros.cdk.core.IResolvable reservedNodeSize) {
+            this.props.reservedNodeSize(reservedNodeSize);
             return this;
         }
 

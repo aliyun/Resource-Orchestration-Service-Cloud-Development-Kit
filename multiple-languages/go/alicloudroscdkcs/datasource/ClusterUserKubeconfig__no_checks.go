@@ -52,10 +52,6 @@ func (j *jsiiProxy_ClusterUserKubeconfig) validateSetIdParameters(val *string) e
 	return nil
 }
 
-func (j *jsiiProxy_ClusterUserKubeconfig) validateSetPropsParameters(val *ClusterUserKubeconfigProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_ClusterUserKubeconfig) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

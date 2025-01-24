@@ -314,60 +314,111 @@ export interface InstanceGroupCloneProps {
 }
 
 /**
+ * Represents a `InstanceGroupClone`.
+ */
+export interface IInstanceGroupClone extends ros.IResource {
+    readonly props: InstanceGroupCloneProps;
+
+    /**
+     * Attribute HostNames: Host names of created instances.
+     */
+    readonly attrHostNames: ros.IResolvable | string;
+
+    /**
+     * Attribute InnerIps: Inner IP address list of the specified instances. Only for classical instances.
+     */
+    readonly attrInnerIps: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceIds: The instance id list of created ecs instances
+     */
+    readonly attrInstanceIds: ros.IResolvable | string;
+
+    /**
+     * Attribute Ipv6AddressIds: IPv6 address IDs list of created ecs instances. Note: The return type is a two-tier list.If the instance does not have any IPv6 address, the element at the corresponding position in the list is null. If all instances does not have any IPv address, will return null.
+     */
+    readonly attrIpv6AddressIds: ros.IResolvable | string;
+
+    /**
+     * Attribute Ipv6Addresses: IPv6 addresses list of created ecs instances. Note: The return type is a two-tier list. If the instance does not have any IPv6 address, the element at the corresponding position in the list is null. If all instances does not have any IPv address, will return null.
+     */
+    readonly attrIpv6Addresses: ros.IResolvable | string;
+
+    /**
+     * Attribute OrderId: The order id list of created instance.
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+
+    /**
+     * Attribute PrivateIps: Private IP address list of created ecs instances. Only for VPC instance.
+     */
+    readonly attrPrivateIps: ros.IResolvable | string;
+
+    /**
+     * Attribute PublicIps: Public IP address list of created ecs instances.
+     */
+    readonly attrPublicIps: ros.IResolvable | string;
+
+    /**
+     * Attribute ZoneIds: Zone id of created instances.
+     */
+    readonly attrZoneIds: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::InstanceGroupClone`, which is used to create clones of an Elastic Compute Service (ECS) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstanceGroupClone`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroupclone
  */
-export class InstanceGroupClone extends ros.Resource {
+export class InstanceGroupClone extends ros.Resource implements IInstanceGroupClone {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InstanceGroupCloneProps;
+    public readonly props: InstanceGroupCloneProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute HostNames: Host names of created instances.
      */
-    public readonly attrHostNames: ros.IResolvable;
+    public readonly attrHostNames: ros.IResolvable | string;
 
     /**
      * Attribute InnerIps: Inner IP address list of the specified instances. Only for classical instances.
      */
-    public readonly attrInnerIps: ros.IResolvable;
+    public readonly attrInnerIps: ros.IResolvable | string;
 
     /**
      * Attribute InstanceIds: The instance id list of created ecs instances
      */
-    public readonly attrInstanceIds: ros.IResolvable;
+    public readonly attrInstanceIds: ros.IResolvable | string;
 
     /**
      * Attribute Ipv6AddressIds: IPv6 address IDs list of created ecs instances. Note: The return type is a two-tier list.If the instance does not have any IPv6 address, the element at the corresponding position in the list is null. If all instances does not have any IPv address, will return null.
      */
-    public readonly attrIpv6AddressIds: ros.IResolvable;
+    public readonly attrIpv6AddressIds: ros.IResolvable | string;
 
     /**
      * Attribute Ipv6Addresses: IPv6 addresses list of created ecs instances. Note: The return type is a two-tier list. If the instance does not have any IPv6 address, the element at the corresponding position in the list is null. If all instances does not have any IPv address, will return null.
      */
-    public readonly attrIpv6Addresses: ros.IResolvable;
+    public readonly attrIpv6Addresses: ros.IResolvable | string;
 
     /**
      * Attribute OrderId: The order id list of created instance.
      */
-    public readonly attrOrderId: ros.IResolvable;
+    public readonly attrOrderId: ros.IResolvable | string;
 
     /**
      * Attribute PrivateIps: Private IP address list of created ecs instances. Only for VPC instance.
      */
-    public readonly attrPrivateIps: ros.IResolvable;
+    public readonly attrPrivateIps: ros.IResolvable | string;
 
     /**
      * Attribute PublicIps: Public IP address list of created ecs instances.
      */
-    public readonly attrPublicIps: ros.IResolvable;
+    public readonly attrPublicIps: ros.IResolvable | string;
 
     /**
      * Attribute ZoneIds: Zone id of created instances.
      */
-    public readonly attrZoneIds: ros.IResolvable;
+    public readonly attrZoneIds: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

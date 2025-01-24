@@ -26,75 +26,141 @@ export interface ImageProps {
 }
 
 /**
+ * Represents a `Image`.
+ */
+export interface IImage extends ros.IResource {
+    readonly props: ImageProps;
+
+    /**
+     * Attribute CreateTime: The time when the image was created. The time follows the ISO 8601 standard.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: The image description.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute ImageCategory: The image type.
+     */
+    readonly attrImageCategory: ros.IResolvable | string;
+
+    /**
+     * Attribute ImageId: The image ID.
+     */
+    readonly attrImageId: ros.IResolvable | string;
+
+    /**
+     * Attribute ImageName: The image name.
+     */
+    readonly attrImageName: ros.IResolvable | string;
+
+    /**
+     * Attribute IsSelfShared: Indicates whether the image is shared with other Alibaba Cloud accounts.
+     */
+    readonly attrIsSelfShared: ros.IResolvable | string;
+
+    /**
+     * Attribute OsName: The display name of the OS in Chinese.
+     */
+    readonly attrOsName: ros.IResolvable | string;
+
+    /**
+     * Attribute OsNameEn: The display name of the OS in English.
+     */
+    readonly attrOsNameEn: ros.IResolvable | string;
+
+    /**
+     * Attribute OsType: The image OS.
+     */
+    readonly attrOsType: ros.IResolvable | string;
+
+    /**
+     * Attribute Platform: The OS distribution.
+     */
+    readonly attrPlatform: ros.IResolvable | string;
+
+    /**
+     * Attribute Progress: The progress of image creation.
+     */
+    readonly attrProgress: ros.IResolvable | string;
+
+    /**
+     * Attribute Usage: Whether the image is already running in the cloud phone instance.
+     */
+    readonly attrUsage: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CloudPhone::Image`, which is used to create a custom image for a cloud phone.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosImage`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-image
  */
-export class Image extends ros.Resource {
+export class Image extends ros.Resource implements IImage {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ImageProps;
+    public readonly props: ImageProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateTime: The time when the image was created. The time follows the ISO 8601 standard.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute Description: The image description.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute ImageCategory: The image type.
      */
-    public readonly attrImageCategory: ros.IResolvable;
+    public readonly attrImageCategory: ros.IResolvable | string;
 
     /**
      * Attribute ImageId: The image ID.
      */
-    public readonly attrImageId: ros.IResolvable;
+    public readonly attrImageId: ros.IResolvable | string;
 
     /**
      * Attribute ImageName: The image name.
      */
-    public readonly attrImageName: ros.IResolvable;
+    public readonly attrImageName: ros.IResolvable | string;
 
     /**
      * Attribute IsSelfShared: Indicates whether the image is shared with other Alibaba Cloud accounts.
      */
-    public readonly attrIsSelfShared: ros.IResolvable;
+    public readonly attrIsSelfShared: ros.IResolvable | string;
 
     /**
      * Attribute OsName: The display name of the OS in Chinese.
      */
-    public readonly attrOsName: ros.IResolvable;
+    public readonly attrOsName: ros.IResolvable | string;
 
     /**
      * Attribute OsNameEn: The display name of the OS in English.
      */
-    public readonly attrOsNameEn: ros.IResolvable;
+    public readonly attrOsNameEn: ros.IResolvable | string;
 
     /**
      * Attribute OsType: The image OS.
      */
-    public readonly attrOsType: ros.IResolvable;
+    public readonly attrOsType: ros.IResolvable | string;
 
     /**
      * Attribute Platform: The OS distribution.
      */
-    public readonly attrPlatform: ros.IResolvable;
+    public readonly attrPlatform: ros.IResolvable | string;
 
     /**
      * Attribute Progress: The progress of image creation.
      */
-    public readonly attrProgress: ros.IResolvable;
+    public readonly attrProgress: ros.IResolvable | string;
 
     /**
      * Attribute Usage: Whether the image is already running in the cloud phone instance.
      */
-    public readonly attrUsage: ros.IResolvable;
+    public readonly attrUsage: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

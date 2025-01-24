@@ -31,30 +31,51 @@ export interface NetworkInterfaceAttachmentProps {
 }
 
 /**
+ * Represents a `NetworkInterfaceAttachment`.
+ */
+export interface INetworkInterfaceAttachment extends ros.IResource {
+    readonly props: NetworkInterfaceAttachmentProps;
+
+    /**
+     * Attribute InstanceId: ID of ECS instance.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute NetworkInterfaceId: ID of your Network Interface.
+     */
+    readonly attrNetworkInterfaceId: ros.IResolvable | string;
+
+    /**
+     * Attribute TrunkNetworkInstanceId: ID of Trunk Network Interface.
+     */
+    readonly attrTrunkNetworkInstanceId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::NetworkInterfaceAttachment`, which is used to bind an elastic network interface (ENI) to an Elastic Compute Service (ECS) instance in a virtual private cloud (VPC).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNetworkInterfaceAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterfaceattachment
  */
-export class NetworkInterfaceAttachment extends ros.Resource {
+export class NetworkInterfaceAttachment extends ros.Resource implements INetworkInterfaceAttachment {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: NetworkInterfaceAttachmentProps;
+    public readonly props: NetworkInterfaceAttachmentProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceId: ID of ECS instance.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute NetworkInterfaceId: ID of your Network Interface.
      */
-    public readonly attrNetworkInterfaceId: ros.IResolvable;
+    public readonly attrNetworkInterfaceId: ros.IResolvable | string;
 
     /**
      * Attribute TrunkNetworkInstanceId: ID of Trunk Network Interface.
      */
-    public readonly attrTrunkNetworkInstanceId: ros.IResolvable;
+    public readonly attrTrunkNetworkInstanceId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

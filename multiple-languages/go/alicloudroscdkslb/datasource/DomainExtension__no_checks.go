@@ -52,10 +52,6 @@ func (j *jsiiProxy_DomainExtension) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_DomainExtension) validateSetPropsParameters(val *DomainExtensionProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_DomainExtension) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

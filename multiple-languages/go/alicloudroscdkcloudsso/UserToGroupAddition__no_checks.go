@@ -52,10 +52,6 @@ func (j *jsiiProxy_UserToGroupAddition) validateSetIdParameters(val *string) err
 	return nil
 }
 
-func (j *jsiiProxy_UserToGroupAddition) validateSetPropsParameters(val *UserToGroupAdditionProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_UserToGroupAddition) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

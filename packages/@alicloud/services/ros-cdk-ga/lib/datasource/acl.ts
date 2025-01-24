@@ -24,45 +24,81 @@ export interface AclProps {
 }
 
 /**
+ * Represents a `Acl`.
+ */
+export interface IAcl extends ros.IResource {
+    readonly props: AclProps;
+
+    /**
+     * Attribute AclEntries: The entries of the ACL.
+     */
+    readonly attrAclEntries: ros.IResolvable | string;
+
+    /**
+     * Attribute AclId: The ID of the ACL.
+     */
+    readonly attrAclId: ros.IResolvable | string;
+
+    /**
+     * Attribute AclName: The ID of the GA instance.
+     */
+    readonly attrAclName: ros.IResolvable | string;
+
+    /**
+     * Attribute AddressIPVersion: The ID of the network ACL.
+     */
+    readonly attrAddressIpVersion: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: The name of the network ACL.
+     */
+    readonly attrResourceGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute Tags: The tag of the ACL.
+     */
+    readonly attrTags: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::GA::Acl`, which is used to query the information about an access control list (ACL).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAcl`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ga-acl
  */
-export class Acl extends ros.Resource {
+export class Acl extends ros.Resource implements IAcl {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AclProps;
+    public readonly props: AclProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AclEntries: The entries of the ACL.
      */
-    public readonly attrAclEntries: ros.IResolvable;
+    public readonly attrAclEntries: ros.IResolvable | string;
 
     /**
      * Attribute AclId: The ID of the ACL.
      */
-    public readonly attrAclId: ros.IResolvable;
+    public readonly attrAclId: ros.IResolvable | string;
 
     /**
      * Attribute AclName: The ID of the GA instance.
      */
-    public readonly attrAclName: ros.IResolvable;
+    public readonly attrAclName: ros.IResolvable | string;
 
     /**
      * Attribute AddressIPVersion: The ID of the network ACL.
      */
-    public readonly attrAddressIpVersion: ros.IResolvable;
+    public readonly attrAddressIpVersion: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroupId: The name of the network ACL.
      */
-    public readonly attrResourceGroupId: ros.IResolvable;
+    public readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Attribute Tags: The tag of the ACL.
      */
-    public readonly attrTags: ros.IResolvable;
+    public readonly attrTags: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

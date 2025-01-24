@@ -98,30 +98,51 @@ export interface VpnAttachmentProps {
 }
 
 /**
+ * Represents a `VpnAttachment`.
+ */
+export interface IVpnAttachment extends ros.IResource {
+    readonly props: VpnAttachmentProps;
+
+    /**
+     * Attribute InternetIp: The gateway IP address of the IPsec connection.
+     */
+    readonly attrInternetIp: ros.IResolvable | string;
+
+    /**
+     * Attribute PeerVpnAttachmentConfig: Peer vpc Attachment config.
+     */
+    readonly attrPeerVpnAttachmentConfig: ros.IResolvable | string;
+
+    /**
+     * Attribute VpnAttachmentId: ID of the IPsec attachment.
+     */
+    readonly attrVpnAttachmentId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpnAttachment`, which is used to create an IPsec-VPN connection. After you create the IPsec-VPN connection, you can associate the IPsec-VPN connection with a transit router.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpnAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnattachment
  */
-export class VpnAttachment extends ros.Resource {
+export class VpnAttachment extends ros.Resource implements IVpnAttachment {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: VpnAttachmentProps;
+    public readonly props: VpnAttachmentProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InternetIp: The gateway IP address of the IPsec connection.
      */
-    public readonly attrInternetIp: ros.IResolvable;
+    public readonly attrInternetIp: ros.IResolvable | string;
 
     /**
      * Attribute PeerVpnAttachmentConfig: Peer vpc Attachment config.
      */
-    public readonly attrPeerVpnAttachmentConfig: ros.IResolvable;
+    public readonly attrPeerVpnAttachmentConfig: ros.IResolvable | string;
 
     /**
      * Attribute VpnAttachmentId: ID of the IPsec attachment.
      */
-    public readonly attrVpnAttachmentId: ros.IResolvable;
+    public readonly attrVpnAttachmentId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

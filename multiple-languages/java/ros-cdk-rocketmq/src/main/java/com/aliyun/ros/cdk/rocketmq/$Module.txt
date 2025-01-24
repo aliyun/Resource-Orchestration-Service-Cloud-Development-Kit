@@ -1,5 +1,8 @@
 @alicloud/ros-cdk-rocketmq.Group=com.aliyun.ros.cdk.rocketmq.Group
 @alicloud/ros-cdk-rocketmq.GroupProps=com.aliyun.ros.cdk.rocketmq.GroupProps
+@alicloud/ros-cdk-rocketmq.IGroup=com.aliyun.ros.cdk.rocketmq.IGroup
+@alicloud/ros-cdk-rocketmq.IInstance=com.aliyun.ros.cdk.rocketmq.IInstance
+@alicloud/ros-cdk-rocketmq.ITopic=com.aliyun.ros.cdk.rocketmq.ITopic
 @alicloud/ros-cdk-rocketmq.Instance=com.aliyun.ros.cdk.rocketmq.Instance
 @alicloud/ros-cdk-rocketmq.InstanceProps=com.aliyun.ros.cdk.rocketmq.InstanceProps
 @alicloud/ros-cdk-rocketmq.RosGroup=com.aliyun.ros.cdk.rocketmq.RosGroup
@@ -13,6 +16,11 @@
 @alicloud/ros-cdk-rocketmq.TopicProps=com.aliyun.ros.cdk.rocketmq.TopicProps
 @alicloud/ros-cdk-rocketmq.datasource.Groups=com.aliyun.ros.cdk.rocketmq.datasource.Groups
 @alicloud/ros-cdk-rocketmq.datasource.GroupsProps=com.aliyun.ros.cdk.rocketmq.datasource.GroupsProps
+@alicloud/ros-cdk-rocketmq.datasource.IGroups=com.aliyun.ros.cdk.rocketmq.datasource.IGroups
+@alicloud/ros-cdk-rocketmq.datasource.IInstance=com.aliyun.ros.cdk.rocketmq.datasource.IInstance
+@alicloud/ros-cdk-rocketmq.datasource.IInstances=com.aliyun.ros.cdk.rocketmq.datasource.IInstances
+@alicloud/ros-cdk-rocketmq.datasource.ITopic=com.aliyun.ros.cdk.rocketmq.datasource.ITopic
+@alicloud/ros-cdk-rocketmq.datasource.ITopics=com.aliyun.ros.cdk.rocketmq.datasource.ITopics
 @alicloud/ros-cdk-rocketmq.datasource.Instance=com.aliyun.ros.cdk.rocketmq.datasource.Instance
 @alicloud/ros-cdk-rocketmq.datasource.InstanceProps=com.aliyun.ros.cdk.rocketmq.datasource.InstanceProps
 @alicloud/ros-cdk-rocketmq.datasource.Instances=com.aliyun.ros.cdk.rocketmq.datasource.Instances

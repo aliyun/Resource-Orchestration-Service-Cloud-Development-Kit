@@ -19,25 +19,41 @@ export interface JobMonitorRulesProps {
 }
 
 /**
+ * Represents a `JobMonitorRules`.
+ */
+export interface IJobMonitorRules extends ros.IResource {
+    readonly props: JobMonitorRulesProps;
+
+    /**
+     * Attribute DtsJobIds: The list of dts job IDs.
+     */
+    readonly attrDtsJobIds: ros.IResolvable | string;
+
+    /**
+     * Attribute JobMonitorRules: The list of job monitor rules.
+     */
+    readonly attrJobMonitorRules: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::DTS::JobMonitorRules`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosJobMonitorRules`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dts-jobmonitorrules
  */
-export class JobMonitorRules extends ros.Resource {
+export class JobMonitorRules extends ros.Resource implements IJobMonitorRules {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: JobMonitorRulesProps;
+    public readonly props: JobMonitorRulesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DtsJobIds: The list of dts job IDs.
      */
-    public readonly attrDtsJobIds: ros.IResolvable;
+    public readonly attrDtsJobIds: ros.IResolvable | string;
 
     /**
      * Attribute JobMonitorRules: The list of job monitor rules.
      */
-    public readonly attrJobMonitorRules: ros.IResolvable;
+    public readonly attrJobMonitorRules: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

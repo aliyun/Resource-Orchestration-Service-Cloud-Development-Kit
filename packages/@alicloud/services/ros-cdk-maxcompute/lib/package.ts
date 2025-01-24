@@ -26,25 +26,41 @@ export interface PackageProps {
 }
 
 /**
+ * Represents a `Package`.
+ */
+export interface IPackage extends ros.IResource {
+    readonly props: PackageProps;
+
+    /**
+     * Attribute PackageName: The name of the project package.
+     */
+    readonly attrPackageName: ros.IResolvable | string;
+
+    /**
+     * Attribute ProjectName: The name of the MaxCompute project.
+     */
+    readonly attrProjectName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::MaxCompute::Package`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPackage`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-package
  */
-export class Package extends ros.Resource {
+export class Package extends ros.Resource implements IPackage {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: PackageProps;
+    public readonly props: PackageProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute PackageName: The name of the project package.
      */
-    public readonly attrPackageName: ros.IResolvable;
+    public readonly attrPackageName: ros.IResolvable | string;
 
     /**
      * Attribute ProjectName: The name of the MaxCompute project.
      */
-    public readonly attrProjectName: ros.IResolvable;
+    public readonly attrProjectName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

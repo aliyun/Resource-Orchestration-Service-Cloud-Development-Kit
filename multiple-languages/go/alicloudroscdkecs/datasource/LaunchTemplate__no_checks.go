@@ -52,10 +52,6 @@ func (j *jsiiProxy_LaunchTemplate) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_LaunchTemplate) validateSetPropsParameters(val *LaunchTemplateProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_LaunchTemplate) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

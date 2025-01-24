@@ -12,28 +12,38 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::IOT::Device`, which is used to register a Device.
 type Device interface {
 	alicloudroscdkcore.Resource
+	IDevice
 	// Attribute DeviceName: Device name.
-	AttrDeviceName() alicloudroscdkcore.IResolvable
+	AttrDeviceName() interface{}
 	// Attribute DeviceSecret: Device key.
-	AttrDeviceSecret() alicloudroscdkcore.IResolvable
+	AttrDeviceSecret() interface{}
 	// Attribute IotId: Things internet device ID issued for the device, as the unique identifier of the device.
 	//
 	// Description Keep, do not leak.
-	AttrIotId() alicloudroscdkcore.IResolvable
+	AttrIotId() interface{}
 	// Attribute IotInstanceId: IOT instance ID.
-	AttrIotInstanceId() alicloudroscdkcore.IResolvable
+	AttrIotInstanceId() interface{}
 	// Attribute IpAddress: IP address.
-	AttrIpAddress() alicloudroscdkcore.IResolvable
+	AttrIpAddress() interface{}
 	// Attribute NickName: Nick name.
-	AttrNickName() alicloudroscdkcore.IResolvable
+	AttrNickName() interface{}
 	// Attribute NodeType: Node type.
-	AttrNodeType() alicloudroscdkcore.IResolvable
+	AttrNodeType() interface{}
 	// Attribute ProductKey: Product key.
-	AttrProductKey() alicloudroscdkcore.IResolvable
+	AttrProductKey() interface{}
 	// Attribute ProductName: Product name.
-	AttrProductName() alicloudroscdkcore.IResolvable
+	AttrProductName() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -48,7 +58,6 @@ type Device interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DeviceProps
-	SetProps(val *DeviceProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -61,6 +70,9 @@ type Device interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -113,10 +125,11 @@ type Device interface {
 // The jsii proxy struct for Device
 type jsiiProxy_Device struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDevice
 }
 
-func (j *jsiiProxy_Device) AttrDeviceName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Device) AttrDeviceName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDeviceName",
@@ -125,8 +138,8 @@ func (j *jsiiProxy_Device) AttrDeviceName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Device) AttrDeviceSecret() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Device) AttrDeviceSecret() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDeviceSecret",
@@ -135,8 +148,8 @@ func (j *jsiiProxy_Device) AttrDeviceSecret() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Device) AttrIotId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Device) AttrIotId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIotId",
@@ -145,8 +158,8 @@ func (j *jsiiProxy_Device) AttrIotId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Device) AttrIotInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Device) AttrIotInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIotInstanceId",
@@ -155,8 +168,8 @@ func (j *jsiiProxy_Device) AttrIotInstanceId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Device) AttrIpAddress() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Device) AttrIpAddress() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIpAddress",
@@ -165,8 +178,8 @@ func (j *jsiiProxy_Device) AttrIpAddress() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Device) AttrNickName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Device) AttrNickName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNickName",
@@ -175,8 +188,8 @@ func (j *jsiiProxy_Device) AttrNickName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Device) AttrNodeType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Device) AttrNodeType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNodeType",
@@ -185,8 +198,8 @@ func (j *jsiiProxy_Device) AttrNodeType() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Device) AttrProductKey() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Device) AttrProductKey() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrProductKey",
@@ -195,8 +208,8 @@ func (j *jsiiProxy_Device) AttrProductKey() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Device) AttrProductName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Device) AttrProductName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrProductName",
@@ -210,6 +223,16 @@ func (j *jsiiProxy_Device) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Device) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -347,17 +370,6 @@ func (j *jsiiProxy_Device)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Device)SetProps(val *DeviceProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Device)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -449,6 +461,45 @@ func (d *jsiiProxy_Device) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalP
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_Device) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_Device) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_Device) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_Device) GeneratePhysicalName() *string {

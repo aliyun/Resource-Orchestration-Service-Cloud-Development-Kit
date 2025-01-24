@@ -12,20 +12,30 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::HBR::DbVault`, which is used to create a mirror vault.
 type DbVault interface {
 	alicloudroscdkcore.Resource
+	IDbVault
 	// Attribute Description: Description of the vault.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute RetentionDays: Data retention days of the vault.
 	//
 	// Data will be deleted when it's older than this time.
-	AttrRetentionDays() alicloudroscdkcore.IResolvable
+	AttrRetentionDays() interface{}
 	// Attribute VaultId: Vault ID.
-	AttrVaultId() alicloudroscdkcore.IResolvable
+	AttrVaultId() interface{}
 	// Attribute VaultName: Display name of the vault.
-	AttrVaultName() alicloudroscdkcore.IResolvable
+	AttrVaultName() interface{}
 	// Attribute VaultRegionId: The region ID to create the vault.
-	AttrVaultRegionId() alicloudroscdkcore.IResolvable
+	AttrVaultRegionId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -40,7 +50,6 @@ type DbVault interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DbVaultProps
-	SetProps(val *DbVaultProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -53,6 +62,9 @@ type DbVault interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -105,10 +117,11 @@ type DbVault interface {
 // The jsii proxy struct for DbVault
 type jsiiProxy_DbVault struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDbVault
 }
 
-func (j *jsiiProxy_DbVault) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbVault) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -117,8 +130,8 @@ func (j *jsiiProxy_DbVault) AttrDescription() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbVault) AttrRetentionDays() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbVault) AttrRetentionDays() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRetentionDays",
@@ -127,8 +140,8 @@ func (j *jsiiProxy_DbVault) AttrRetentionDays() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbVault) AttrVaultId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbVault) AttrVaultId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVaultId",
@@ -137,8 +150,8 @@ func (j *jsiiProxy_DbVault) AttrVaultId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbVault) AttrVaultName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbVault) AttrVaultName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVaultName",
@@ -147,8 +160,8 @@ func (j *jsiiProxy_DbVault) AttrVaultName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DbVault) AttrVaultRegionId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DbVault) AttrVaultRegionId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVaultRegionId",
@@ -162,6 +175,16 @@ func (j *jsiiProxy_DbVault) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DbVault) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -299,17 +322,6 @@ func (j *jsiiProxy_DbVault)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DbVault)SetProps(val *DbVaultProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_DbVault)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -401,6 +413,45 @@ func (d *jsiiProxy_DbVault) ApplyRemovalPolicy(policy alicloudroscdkcore.Removal
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_DbVault) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DbVault) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DbVault) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_DbVault) GeneratePhysicalName() *string {

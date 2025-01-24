@@ -21,25 +21,41 @@ export interface BackupClientsProps {
 }
 
 /**
+ * Represents a `BackupClients`.
+ */
+export interface IBackupClients extends ros.IResource {
+    readonly props: BackupClientsProps;
+
+    /**
+     * Attribute ClientIds: ID list of clients installed in instances
+     */
+    readonly attrClientIds: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceIds: ID list of instances to install backup client
+     */
+    readonly attrInstanceIds: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::HBR::BackupClients`, which is used to install backup clients on Elastic Compute Service (ECS) instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBackupClients`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-backupclients
  */
-export class BackupClients extends ros.Resource {
+export class BackupClients extends ros.Resource implements IBackupClients {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: BackupClientsProps;
+    public readonly props: BackupClientsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClientIds: ID list of clients installed in instances
      */
-    public readonly attrClientIds: ros.IResolvable;
+    public readonly attrClientIds: ros.IResolvable | string;
 
     /**
      * Attribute InstanceIds: ID list of instances to install backup client
      */
-    public readonly attrInstanceIds: ros.IResolvable;
+    public readonly attrInstanceIds: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

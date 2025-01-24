@@ -34,25 +34,41 @@ export interface LaunchTemplatesProps {
 }
 
 /**
+ * Represents a `LaunchTemplates`.
+ */
+export interface ILaunchTemplates extends ros.IResource {
+    readonly props: LaunchTemplatesProps;
+
+    /**
+     * Attribute LaunchTemplateIds: The list of launch template IDs.
+     */
+    readonly attrLaunchTemplateIds: ros.IResolvable | string;
+
+    /**
+     * Attribute LaunchTemplates: The list of launch templates.
+     */
+    readonly attrLaunchTemplates: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::LaunchTemplates`, which is used to query launch templates.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLaunchTemplates`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-launchtemplates
  */
-export class LaunchTemplates extends ros.Resource {
+export class LaunchTemplates extends ros.Resource implements ILaunchTemplates {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: LaunchTemplatesProps;
+    public readonly props: LaunchTemplatesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute LaunchTemplateIds: The list of launch template IDs.
      */
-    public readonly attrLaunchTemplateIds: ros.IResolvable;
+    public readonly attrLaunchTemplateIds: ros.IResolvable | string;
 
     /**
      * Attribute LaunchTemplates: The list of launch templates.
      */
-    public readonly attrLaunchTemplates: ros.IResolvable;
+    public readonly attrLaunchTemplates: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

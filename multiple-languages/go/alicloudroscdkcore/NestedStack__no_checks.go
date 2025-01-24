@@ -40,6 +40,10 @@ func (n *jsiiProxy_NestedStack) validateSetParameterParameters(name *string, val
 	return nil
 }
 
+func (n *jsiiProxy_NestedStack) validateSplitArnParameters(arn interface{}, arnFormat ArnFormat) error {
+	return nil
+}
+
 func (n *jsiiProxy_NestedStack) validateSynthesizeParameters(session ISynthesisSession) error {
 	return nil
 }

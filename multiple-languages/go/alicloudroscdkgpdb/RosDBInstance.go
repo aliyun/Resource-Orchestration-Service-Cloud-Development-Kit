@@ -32,6 +32,8 @@ type RosDBInstance interface {
 	SetDbInstanceGroupCount(val interface{})
 	DbInstanceMode() interface{}
 	SetDbInstanceMode(val interface{})
+	DeployMode() interface{}
+	SetDeployMode(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
 	EncryptionKey() interface{}
@@ -94,6 +96,10 @@ type RosDBInstance interface {
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
 	Stack() alicloudroscdkcore.Stack
+	StandbyVSwitchId() interface{}
+	SetStandbyVSwitchId(val interface{})
+	StandbyZoneId() interface{}
+	SetStandbyZoneId(val interface{})
 	StorageSize() interface{}
 	SetStorageSize(val interface{})
 	Tags() *[]*RosDBInstance_TagsProperty
@@ -165,6 +171,9 @@ type RosDBInstance interface {
 	AddRosDependency(target *string)
 	// Sets the deletion policy of the resource based on the removal policy specified.
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy, options *alicloudroscdkcore.RemovalPolicyOptions)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDesc() *string
+	FetchRosDependency() *[]*string
 	// Returns a token for an runtime attribute of this resource.
 	//
 	// Ideally, use generated attribute accessors (e.g. `resource.arn`), but this can be used for future compatibility
@@ -332,6 +341,16 @@ func (j *jsiiProxy_RosDBInstance) DbInstanceMode() interface{} {
 	_jsii_.Get(
 		j,
 		"dbInstanceMode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDBInstance) DeployMode() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"deployMode",
 		&returns,
 	)
 	return returns
@@ -587,6 +606,26 @@ func (j *jsiiProxy_RosDBInstance) Stack() alicloudroscdkcore.Stack {
 	return returns
 }
 
+func (j *jsiiProxy_RosDBInstance) StandbyVSwitchId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"standbyVSwitchId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDBInstance) StandbyZoneId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"standbyZoneId",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosDBInstance) StorageSize() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -747,6 +786,17 @@ func (j *jsiiProxy_RosDBInstance)SetDbInstanceMode(val interface{}) {
 	_jsii_.Set(
 		j,
 		"dbInstanceMode",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDBInstance)SetDeployMode(val interface{}) {
+	if err := j.validateSetDeployModeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"deployMode",
 		val,
 	)
 }
@@ -945,6 +995,28 @@ func (j *jsiiProxy_RosDBInstance)SetServerlessResource(val interface{}) {
 	_jsii_.Set(
 		j,
 		"serverlessResource",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDBInstance)SetStandbyVSwitchId(val interface{}) {
+	if err := j.validateSetStandbyVSwitchIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"standbyVSwitchId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDBInstance)SetStandbyZoneId(val interface{}) {
+	if err := j.validateSetStandbyZoneIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"standbyZoneId",
 		val,
 	)
 }
@@ -1207,6 +1279,45 @@ func (r *jsiiProxy_RosDBInstance) ApplyRemovalPolicy(policy alicloudroscdkcore.R
 		"applyRemovalPolicy",
 		[]interface{}{policy, options},
 	)
+}
+
+func (r *jsiiProxy_RosDBInstance) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		r,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_RosDBInstance) FetchDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		r,
+		"fetchDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_RosDBInstance) FetchRosDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		r,
+		"fetchRosDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (r *jsiiProxy_RosDBInstance) GetAtt(attributeName *string) alicloudroscdkcore.Reference {

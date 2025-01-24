@@ -12,22 +12,32 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::APIG::HttpApi`.
 type HttpApi interface {
 	alicloudroscdkcore.Resource
+	IHttpApi
 	// Attribute BasePath: The base path of the API.
-	AttrBasePath() alicloudroscdkcore.IResolvable
+	AttrBasePath() interface{}
 	// Attribute Description: Description of API.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute Environments: Published Environmental Information of the API.
-	AttrEnvironments() alicloudroscdkcore.IResolvable
+	AttrEnvironments() interface{}
 	// Attribute HttpApiId: The ID of the API.
-	AttrHttpApiId() alicloudroscdkcore.IResolvable
+	AttrHttpApiId() interface{}
 	// Attribute HttpApiName: The name of the API.
-	AttrHttpApiName() alicloudroscdkcore.IResolvable
+	AttrHttpApiName() interface{}
 	// Attribute Protocols: List of API Access Protocols.
-	AttrProtocols() alicloudroscdkcore.IResolvable
+	AttrProtocols() interface{}
 	// Attribute Type: The type of HTTP API.
-	AttrType() alicloudroscdkcore.IResolvable
+	AttrType() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -42,7 +52,6 @@ type HttpApi interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *HttpApiProps
-	SetProps(val *HttpApiProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -55,6 +64,9 @@ type HttpApi interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -107,10 +119,11 @@ type HttpApi interface {
 // The jsii proxy struct for HttpApi
 type jsiiProxy_HttpApi struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IHttpApi
 }
 
-func (j *jsiiProxy_HttpApi) AttrBasePath() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HttpApi) AttrBasePath() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBasePath",
@@ -119,8 +132,8 @@ func (j *jsiiProxy_HttpApi) AttrBasePath() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_HttpApi) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HttpApi) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -129,8 +142,8 @@ func (j *jsiiProxy_HttpApi) AttrDescription() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_HttpApi) AttrEnvironments() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HttpApi) AttrEnvironments() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEnvironments",
@@ -139,8 +152,8 @@ func (j *jsiiProxy_HttpApi) AttrEnvironments() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_HttpApi) AttrHttpApiId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HttpApi) AttrHttpApiId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHttpApiId",
@@ -149,8 +162,8 @@ func (j *jsiiProxy_HttpApi) AttrHttpApiId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_HttpApi) AttrHttpApiName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HttpApi) AttrHttpApiName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHttpApiName",
@@ -159,8 +172,8 @@ func (j *jsiiProxy_HttpApi) AttrHttpApiName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_HttpApi) AttrProtocols() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HttpApi) AttrProtocols() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrProtocols",
@@ -169,8 +182,8 @@ func (j *jsiiProxy_HttpApi) AttrProtocols() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_HttpApi) AttrType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_HttpApi) AttrType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrType",
@@ -184,6 +197,16 @@ func (j *jsiiProxy_HttpApi) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HttpApi) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -321,17 +344,6 @@ func (j *jsiiProxy_HttpApi)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_HttpApi)SetProps(val *HttpApiProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_HttpApi)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -423,6 +435,45 @@ func (h *jsiiProxy_HttpApi) ApplyRemovalPolicy(policy alicloudroscdkcore.Removal
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (h *jsiiProxy_HttpApi) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		h,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (h *jsiiProxy_HttpApi) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		h,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (h *jsiiProxy_HttpApi) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		h,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (h *jsiiProxy_HttpApi) GeneratePhysicalName() *string {

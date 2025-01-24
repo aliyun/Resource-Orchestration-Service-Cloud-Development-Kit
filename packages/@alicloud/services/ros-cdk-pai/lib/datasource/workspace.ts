@@ -24,65 +24,121 @@ export interface WorkspaceProps {
 }
 
 /**
+ * Represents a `Workspace`.
+ */
+export interface IWorkspace extends ros.IResource {
+    readonly props: WorkspaceProps;
+
+    /**
+     * Attribute AdminNames: List of administrator account names.
+     */
+    readonly attrAdminNames: ros.IResolvable | string;
+
+    /**
+     * Attribute Creator: The user ID of the creator.
+     */
+    readonly attrCreator: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: The description of the workspace.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute DisplayName: The display name of the workspace.
+     */
+    readonly attrDisplayName: ros.IResolvable | string;
+
+    /**
+     * Attribute EnvTypes: The environments of the workspace.
+     */
+    readonly attrEnvTypes: ros.IResolvable | string;
+
+    /**
+     * Attribute ExtraInfos: Additional information, currently including TenantId (tenant ID).
+     */
+    readonly attrExtraInfos: ros.IResolvable | string;
+
+    /**
+     * Attribute IsDefault: Default Workspace.
+     */
+    readonly attrIsDefault: ros.IResolvable | string;
+
+    /**
+     * Attribute Users: List of users.
+     */
+    readonly attrUsers: ros.IResolvable | string;
+
+    /**
+     * Attribute WorkspaceId: The first ID of the resource.
+     */
+    readonly attrWorkspaceId: ros.IResolvable | string;
+
+    /**
+     * Attribute WorkspaceName: The name of the workspace.
+     */
+    readonly attrWorkspaceName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::Workspace`, which is used to query the information about a Platform for AI (PAI) workspace.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWorkspace`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-workspace
  */
-export class Workspace extends ros.Resource {
+export class Workspace extends ros.Resource implements IWorkspace {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: WorkspaceProps;
+    public readonly props: WorkspaceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AdminNames: List of administrator account names.
      */
-    public readonly attrAdminNames: ros.IResolvable;
+    public readonly attrAdminNames: ros.IResolvable | string;
 
     /**
      * Attribute Creator: The user ID of the creator.
      */
-    public readonly attrCreator: ros.IResolvable;
+    public readonly attrCreator: ros.IResolvable | string;
 
     /**
      * Attribute Description: The description of the workspace.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute DisplayName: The display name of the workspace.
      */
-    public readonly attrDisplayName: ros.IResolvable;
+    public readonly attrDisplayName: ros.IResolvable | string;
 
     /**
      * Attribute EnvTypes: The environments of the workspace.
      */
-    public readonly attrEnvTypes: ros.IResolvable;
+    public readonly attrEnvTypes: ros.IResolvable | string;
 
     /**
      * Attribute ExtraInfos: Additional information, currently including TenantId (tenant ID).
      */
-    public readonly attrExtraInfos: ros.IResolvable;
+    public readonly attrExtraInfos: ros.IResolvable | string;
 
     /**
      * Attribute IsDefault: Default Workspace.
      */
-    public readonly attrIsDefault: ros.IResolvable;
+    public readonly attrIsDefault: ros.IResolvable | string;
 
     /**
      * Attribute Users: List of users.
      */
-    public readonly attrUsers: ros.IResolvable;
+    public readonly attrUsers: ros.IResolvable | string;
 
     /**
      * Attribute WorkspaceId: The first ID of the resource.
      */
-    public readonly attrWorkspaceId: ros.IResolvable;
+    public readonly attrWorkspaceId: ros.IResolvable | string;
 
     /**
      * Attribute WorkspaceName: The name of the workspace.
      */
-    public readonly attrWorkspaceName: ros.IResolvable;
+    public readonly attrWorkspaceName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

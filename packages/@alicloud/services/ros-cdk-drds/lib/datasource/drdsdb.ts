@@ -24,49 +24,89 @@ export interface DrdsDBProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::DRDS::DrdsDB`, which is used to query the information about a single database on an instance.
- * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDrdsDB`for a more convenient development experience.
- * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-drds-drdsdb
+ * Represents a `DrdsDB`.
  */
-export class DrdsDB extends ros.Resource {
-    protected scope: ros.Construct;
-    protected id: string;
-    protected props: DrdsDBProps;
-    protected enableResourcePropertyConstraint: boolean;
+export interface IDrdsDB extends ros.IResource {
+    readonly props: DrdsDBProps;
 
     /**
      * Attribute CreateTime: Database creation timestamp.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute DrdsDatabaseName: The name of the Drds database.
      */
-    public readonly attrDrdsDatabaseName: ros.IResolvable;
+    readonly attrDrdsDatabaseName: ros.IResolvable | string;
 
     /**
      * Attribute InstRole: Database type: MASTER primary instance, SLAVE read-only instance.
      */
-    public readonly attrInstRole: ros.IResolvable;
+    readonly attrInstRole: ros.IResolvable | string;
 
     /**
      * Attribute Schema: The schema ID that is assigned to the partitioned database by the system.
      */
-    public readonly attrSchema: ros.IResolvable;
+    readonly attrSchema: ros.IResolvable | string;
 
     /**
      * Attribute SplitMode: The partition mode of the database.Valid values: 
 * HORIZONTAL: The database is horizontally partitioned.
 * VERTICAL: The database is vertically partitioned.
      */
-    public readonly attrSplitMode: ros.IResolvable;
+    readonly attrSplitMode: ros.IResolvable | string;
 
     /**
      * Attribute StorageType: The storage type of the Drds database. Valid values:
 * RDS
 * PolarDB
      */
-    public readonly attrStorageType: ros.IResolvable;
+    readonly attrStorageType: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::DRDS::DrdsDB`, which is used to query the information about a single database on an instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDrdsDB`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-drds-drdsdb
+ */
+export class DrdsDB extends ros.Resource implements IDrdsDB {
+    protected scope: ros.Construct;
+    protected id: string;
+    public readonly props: DrdsDBProps;
+    protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute CreateTime: Database creation timestamp.
+     */
+    public readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute DrdsDatabaseName: The name of the Drds database.
+     */
+    public readonly attrDrdsDatabaseName: ros.IResolvable | string;
+
+    /**
+     * Attribute InstRole: Database type: MASTER primary instance, SLAVE read-only instance.
+     */
+    public readonly attrInstRole: ros.IResolvable | string;
+
+    /**
+     * Attribute Schema: The schema ID that is assigned to the partitioned database by the system.
+     */
+    public readonly attrSchema: ros.IResolvable | string;
+
+    /**
+     * Attribute SplitMode: The partition mode of the database.Valid values: 
+* HORIZONTAL: The database is horizontally partitioned.
+* VERTICAL: The database is vertically partitioned.
+     */
+    public readonly attrSplitMode: ros.IResolvable | string;
+
+    /**
+     * Attribute StorageType: The storage type of the Drds database. Valid values:
+* RDS
+* PolarDB
+     */
+    public readonly attrStorageType: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

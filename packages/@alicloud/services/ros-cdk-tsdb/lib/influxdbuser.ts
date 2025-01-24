@@ -38,30 +38,51 @@ export interface InfluxDBUserProps {
 }
 
 /**
+ * Represents a `InfluxDBUser`.
+ */
+export interface IInfluxDBUser extends ros.IResource {
+    readonly props: InfluxDBUserProps;
+
+    /**
+     * Attribute InstanceId: The ID of TSDB for InfluxDB.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute UserName: The name of user.
+     */
+    readonly attrUserName: ros.IResolvable | string;
+
+    /**
+     * Attribute UserType: The type of user.
+     */
+    readonly attrUserType: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::TSDB::InfluxDBUser`, which is used to create a Time Series Database (TSDB) database account.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInfluxDBUser`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-tsdb-influxdbuser
  */
-export class InfluxDBUser extends ros.Resource {
+export class InfluxDBUser extends ros.Resource implements IInfluxDBUser {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InfluxDBUserProps;
+    public readonly props: InfluxDBUserProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceId: The ID of TSDB for InfluxDB.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute UserName: The name of user.
      */
-    public readonly attrUserName: ros.IResolvable;
+    public readonly attrUserName: ros.IResolvable | string;
 
     /**
      * Attribute UserType: The type of user.
      */
-    public readonly attrUserType: ros.IResolvable;
+    public readonly attrUserType: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

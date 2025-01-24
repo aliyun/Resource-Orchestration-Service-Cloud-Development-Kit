@@ -51,55 +51,101 @@ export interface CenVbrHealthCheckProps {
 }
 
 /**
+ * Represents a `CenVbrHealthCheck`.
+ */
+export interface ICenVbrHealthCheck extends ros.IResource {
+    readonly props: CenVbrHealthCheckProps;
+
+    /**
+     * Attribute CenId: The ID of the CEN instance.
+     */
+    readonly attrCenId: ros.IResolvable | string;
+
+    /**
+     * Attribute HealthCheckInterval: Specifies the time interval at which probe packets are sent during the health check.  Default value: 2. Valid values: 2 to 3.  Unit: second.
+     */
+    readonly attrHealthCheckInterval: ros.IResolvable | string;
+
+    /**
+     * Attribute HealthCheckSourceIp: You can use either of the following methods to specify the source IP address of the health check.  Automatic IP Address: The system automatically assigns an IP address within the CIDR block 100.96.0.0/16 (recommended).  Custom IP Address: You can specify a source IP address that is available within the CIDR block 10.0.0.0/8, 192.168.0.0/16, or 172.16.0.0/12. The specified source IP address must not overlap with the IP addresses of the Alibaba Cloud-facing and client-facing interfaces on the VBR instance, or the IP addresses of the instances with which the VBR instance needs to communicate in the CEN.
+     */
+    readonly attrHealthCheckSourceIp: ros.IResolvable | string;
+
+    /**
+     * Attribute HealthCheckTargetIp: Specifies the destination IP address of the health check. The destination IP address is the IP address of the client-facing interface on the VBR instance.
+     */
+    readonly attrHealthCheckTargetIp: ros.IResolvable | string;
+
+    /**
+     * Attribute HealthyThreshold: Specifies the number of probe packets to be sent during the health check.  Default value: 8. Valid values: 3 to 8.  Unit: packet.
+     */
+    readonly attrHealthyThreshold: ros.IResolvable | string;
+
+    /**
+     * Attribute VbrInstanceId: The ID of the VBR instance.
+     */
+    readonly attrVbrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute VbrInstanceOwnerId: The User ID (UID) of the account to which the VBR instance belongs.
+     */
+    readonly attrVbrInstanceOwnerId: ros.IResolvable | string;
+
+    /**
+     * Attribute VbrInstanceRegionId: The ID of the region where the VBR instance is deployed. You can call the DescribeRegionsoperation to query region IDs.
+     */
+    readonly attrVbrInstanceRegionId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenVbrHealthCheck`, which is used to enable the health check feature or modify the health check configurations for a virtual border router (VBR).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenVbrHealthCheck`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenvbrhealthcheck
  */
-export class CenVbrHealthCheck extends ros.Resource {
+export class CenVbrHealthCheck extends ros.Resource implements ICenVbrHealthCheck {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: CenVbrHealthCheckProps;
+    public readonly props: CenVbrHealthCheckProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CenId: The ID of the CEN instance.
      */
-    public readonly attrCenId: ros.IResolvable;
+    public readonly attrCenId: ros.IResolvable | string;
 
     /**
      * Attribute HealthCheckInterval: Specifies the time interval at which probe packets are sent during the health check.  Default value: 2. Valid values: 2 to 3.  Unit: second.
      */
-    public readonly attrHealthCheckInterval: ros.IResolvable;
+    public readonly attrHealthCheckInterval: ros.IResolvable | string;
 
     /**
      * Attribute HealthCheckSourceIp: You can use either of the following methods to specify the source IP address of the health check.  Automatic IP Address: The system automatically assigns an IP address within the CIDR block 100.96.0.0/16 (recommended).  Custom IP Address: You can specify a source IP address that is available within the CIDR block 10.0.0.0/8, 192.168.0.0/16, or 172.16.0.0/12. The specified source IP address must not overlap with the IP addresses of the Alibaba Cloud-facing and client-facing interfaces on the VBR instance, or the IP addresses of the instances with which the VBR instance needs to communicate in the CEN.
      */
-    public readonly attrHealthCheckSourceIp: ros.IResolvable;
+    public readonly attrHealthCheckSourceIp: ros.IResolvable | string;
 
     /**
      * Attribute HealthCheckTargetIp: Specifies the destination IP address of the health check. The destination IP address is the IP address of the client-facing interface on the VBR instance.
      */
-    public readonly attrHealthCheckTargetIp: ros.IResolvable;
+    public readonly attrHealthCheckTargetIp: ros.IResolvable | string;
 
     /**
      * Attribute HealthyThreshold: Specifies the number of probe packets to be sent during the health check.  Default value: 8. Valid values: 3 to 8.  Unit: packet.
      */
-    public readonly attrHealthyThreshold: ros.IResolvable;
+    public readonly attrHealthyThreshold: ros.IResolvable | string;
 
     /**
      * Attribute VbrInstanceId: The ID of the VBR instance.
      */
-    public readonly attrVbrInstanceId: ros.IResolvable;
+    public readonly attrVbrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute VbrInstanceOwnerId: The User ID (UID) of the account to which the VBR instance belongs.
      */
-    public readonly attrVbrInstanceOwnerId: ros.IResolvable;
+    public readonly attrVbrInstanceOwnerId: ros.IResolvable | string;
 
     /**
      * Attribute VbrInstanceRegionId: The ID of the region where the VBR instance is deployed. You can call the DescribeRegionsoperation to query region IDs.
      */
-    public readonly attrVbrInstanceRegionId: ros.IResolvable;
+    public readonly attrVbrInstanceRegionId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

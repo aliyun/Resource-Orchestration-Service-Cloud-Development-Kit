@@ -26,14 +26,20 @@ export interface AttachPolicyToRoleProps {
 }
 
 /**
+ * Represents a `AttachPolicyToRole`.
+ */
+export interface IAttachPolicyToRole extends ros.IResource {
+    readonly props: AttachPolicyToRoleProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::AttachPolicyToRole`, which is used to attach a policy to a specified role.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAttachPolicyToRole`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-attachpolicytorole
  */
-export class AttachPolicyToRole extends ros.Resource {
+export class AttachPolicyToRole extends ros.Resource implements IAttachPolicyToRole {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AttachPolicyToRoleProps;
+    public readonly props: AttachPolicyToRoleProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

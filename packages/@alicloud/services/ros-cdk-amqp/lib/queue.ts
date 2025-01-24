@@ -77,20 +77,31 @@ export interface QueueProps {
 }
 
 /**
+ * Represents a `Queue`.
+ */
+export interface IQueue extends ros.IResource {
+    readonly props: QueueProps;
+
+    /**
+     * Attribute QueueName: The name of the queue.
+     */
+    readonly attrQueueName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::AMQP::Queue`, which is used to create a queue.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosQueue`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-queue
  */
-export class Queue extends ros.Resource {
+export class Queue extends ros.Resource implements IQueue {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: QueueProps;
+    public readonly props: QueueProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute QueueName: The name of the queue.
      */
-    public readonly attrQueueName: ros.IResolvable;
+    public readonly attrQueueName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

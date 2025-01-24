@@ -41,65 +41,121 @@ export interface ParameterGroupProps {
 }
 
 /**
+ * Represents a `ParameterGroup`.
+ */
+export interface IParameterGroup extends ros.IResource {
+    readonly props: ParameterGroupProps;
+
+    /**
+     * Attribute CreateTime: The time when the parameter template was created.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute DbType: The type of the database engine.
+     */
+    readonly attrDbType: ros.IResolvable | string;
+
+    /**
+     * Attribute DbVersion: The version of the database engine.
+     */
+    readonly attrDbVersion: ros.IResolvable | string;
+
+    /**
+     * Attribute ForceRestart: Indicates whether to restart the cluster when this parameter template is applied.
+     */
+    readonly attrForceRestart: ros.IResolvable | string;
+
+    /**
+     * Attribute ParameterCounts: The number of parameters in the parameter template.
+     */
+    readonly attrParameterCounts: ros.IResolvable | string;
+
+    /**
+     * Attribute ParameterGroupDesc: The description of the parameter template.
+     */
+    readonly attrParameterGroupDesc: ros.IResolvable | string;
+
+    /**
+     * Attribute ParameterGroupId: The ID of the parameter group.
+     */
+    readonly attrParameterGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute ParameterGroupName: The name of the parameter template.
+     */
+    readonly attrParameterGroupName: ros.IResolvable | string;
+
+    /**
+     * Attribute ParameterGroupType: The type of the parameter template.
+     */
+    readonly attrParameterGroupType: ros.IResolvable | string;
+
+    /**
+     * Attribute Parameters: The list of the parameters.
+     */
+    readonly attrParameters: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::ParameterGroup`, which is used to create a parameter template of PolarDB.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosParameterGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-parametergroup
  */
-export class ParameterGroup extends ros.Resource {
+export class ParameterGroup extends ros.Resource implements IParameterGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ParameterGroupProps;
+    public readonly props: ParameterGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateTime: The time when the parameter template was created.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute DbType: The type of the database engine.
      */
-    public readonly attrDbType: ros.IResolvable;
+    public readonly attrDbType: ros.IResolvable | string;
 
     /**
      * Attribute DbVersion: The version of the database engine.
      */
-    public readonly attrDbVersion: ros.IResolvable;
+    public readonly attrDbVersion: ros.IResolvable | string;
 
     /**
      * Attribute ForceRestart: Indicates whether to restart the cluster when this parameter template is applied.
      */
-    public readonly attrForceRestart: ros.IResolvable;
+    public readonly attrForceRestart: ros.IResolvable | string;
 
     /**
      * Attribute ParameterCounts: The number of parameters in the parameter template.
      */
-    public readonly attrParameterCounts: ros.IResolvable;
+    public readonly attrParameterCounts: ros.IResolvable | string;
 
     /**
      * Attribute ParameterGroupDesc: The description of the parameter template.
      */
-    public readonly attrParameterGroupDesc: ros.IResolvable;
+    public readonly attrParameterGroupDesc: ros.IResolvable | string;
 
     /**
      * Attribute ParameterGroupId: The ID of the parameter group.
      */
-    public readonly attrParameterGroupId: ros.IResolvable;
+    public readonly attrParameterGroupId: ros.IResolvable | string;
 
     /**
      * Attribute ParameterGroupName: The name of the parameter template.
      */
-    public readonly attrParameterGroupName: ros.IResolvable;
+    public readonly attrParameterGroupName: ros.IResolvable | string;
 
     /**
      * Attribute ParameterGroupType: The type of the parameter template.
      */
-    public readonly attrParameterGroupType: ros.IResolvable;
+    public readonly attrParameterGroupType: ros.IResolvable | string;
 
     /**
      * Attribute Parameters: The list of the parameters.
      */
-    public readonly attrParameters: ros.IResolvable;
+    public readonly attrParameters: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

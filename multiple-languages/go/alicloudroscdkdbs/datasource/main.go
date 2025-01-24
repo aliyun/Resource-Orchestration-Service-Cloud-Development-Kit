@@ -43,6 +43,10 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "attrSourceEndpointSid", GoGetter: "AttrSourceEndpointSid"},
 			_jsii_.MemberProperty{JsiiProperty: "attrSourceEndpointUserName", GoGetter: "AttrSourceEndpointUserName"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDependency", GoMethod: "FetchDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchResourceDesc", GoMethod: "FetchResourceDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "generatePhysicalName", GoMethod: "GeneratePhysicalName"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
@@ -65,6 +69,7 @@ func init() {
 		func() interface{} {
 			j := jsiiProxy_BackupPlan{}
 			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreResource)
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IBackupPlan)
 			return &j
 		},
 	)
@@ -84,6 +89,10 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "attrBackupPlanIds", GoGetter: "AttrBackupPlanIds"},
 			_jsii_.MemberProperty{JsiiProperty: "attrBackupPlans", GoGetter: "AttrBackupPlans"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDependency", GoMethod: "FetchDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchResourceDesc", GoMethod: "FetchResourceDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "generatePhysicalName", GoMethod: "GeneratePhysicalName"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
@@ -106,12 +115,71 @@ func init() {
 		func() interface{} {
 			j := jsiiProxy_BackupPlans{}
 			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreResource)
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IBackupPlans)
 			return &j
 		},
 	)
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-dbs.datasource.BackupPlansProps",
 		reflect.TypeOf((*BackupPlansProps)(nil)).Elem(),
+	)
+	_jsii_.RegisterInterface(
+		"@alicloud/ros-cdk-dbs.datasource.IBackupPlan",
+		reflect.TypeOf((*IBackupPlan)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "attrBackupGatewayId", GoGetter: "AttrBackupGatewayId"},
+			_jsii_.MemberProperty{JsiiProperty: "attrBackupMethod", GoGetter: "AttrBackupMethod"},
+			_jsii_.MemberProperty{JsiiProperty: "attrBackupObjects", GoGetter: "AttrBackupObjects"},
+			_jsii_.MemberProperty{JsiiProperty: "attrBackupPeriod", GoGetter: "AttrBackupPeriod"},
+			_jsii_.MemberProperty{JsiiProperty: "attrBackupPlanId", GoGetter: "AttrBackupPlanId"},
+			_jsii_.MemberProperty{JsiiProperty: "attrBackupPlanName", GoGetter: "AttrBackupPlanName"},
+			_jsii_.MemberProperty{JsiiProperty: "attrBackupRetentionPeriod", GoGetter: "AttrBackupRetentionPeriod"},
+			_jsii_.MemberProperty{JsiiProperty: "attrBackupStartTime", GoGetter: "AttrBackupStartTime"},
+			_jsii_.MemberProperty{JsiiProperty: "attrBackupStorageType", GoGetter: "AttrBackupStorageType"},
+			_jsii_.MemberProperty{JsiiProperty: "attrCreateTime", GoGetter: "AttrCreateTime"},
+			_jsii_.MemberProperty{JsiiProperty: "attrCrossAliyunId", GoGetter: "AttrCrossAliyunId"},
+			_jsii_.MemberProperty{JsiiProperty: "attrCrossRoleName", GoGetter: "AttrCrossRoleName"},
+			_jsii_.MemberProperty{JsiiProperty: "attrDatabaseType", GoGetter: "AttrDatabaseType"},
+			_jsii_.MemberProperty{JsiiProperty: "attrDuplicationArchivePeriod", GoGetter: "AttrDuplicationArchivePeriod"},
+			_jsii_.MemberProperty{JsiiProperty: "attrDuplicationInfrequentAccessPeriod", GoGetter: "AttrDuplicationInfrequentAccessPeriod"},
+			_jsii_.MemberProperty{JsiiProperty: "attrEnableBackupLog", GoGetter: "AttrEnableBackupLog"},
+			_jsii_.MemberProperty{JsiiProperty: "attrInstanceClass", GoGetter: "AttrInstanceClass"},
+			_jsii_.MemberProperty{JsiiProperty: "attrOssBucketName", GoGetter: "AttrOssBucketName"},
+			_jsii_.MemberProperty{JsiiProperty: "attrPaymentType", GoGetter: "AttrPaymentType"},
+			_jsii_.MemberProperty{JsiiProperty: "attrResourceGroupId", GoGetter: "AttrResourceGroupId"},
+			_jsii_.MemberProperty{JsiiProperty: "attrSourceEndpointDatabaseName", GoGetter: "AttrSourceEndpointDatabaseName"},
+			_jsii_.MemberProperty{JsiiProperty: "attrSourceEndpointInstanceId", GoGetter: "AttrSourceEndpointInstanceId"},
+			_jsii_.MemberProperty{JsiiProperty: "attrSourceEndpointInstanceType", GoGetter: "AttrSourceEndpointInstanceType"},
+			_jsii_.MemberProperty{JsiiProperty: "attrSourceEndpointRegion", GoGetter: "AttrSourceEndpointRegion"},
+			_jsii_.MemberProperty{JsiiProperty: "attrSourceEndpointSid", GoGetter: "AttrSourceEndpointSid"},
+			_jsii_.MemberProperty{JsiiProperty: "attrSourceEndpointUserName", GoGetter: "AttrSourceEndpointUserName"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberProperty{JsiiProperty: "props", GoGetter: "Props"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+		},
+		func() interface{} {
+			j := jsiiProxy_IBackupPlan{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreIResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterInterface(
+		"@alicloud/ros-cdk-dbs.datasource.IBackupPlans",
+		reflect.TypeOf((*IBackupPlans)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "attrBackupPlanIds", GoGetter: "AttrBackupPlanIds"},
+			_jsii_.MemberProperty{JsiiProperty: "attrBackupPlans", GoGetter: "AttrBackupPlans"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberProperty{JsiiProperty: "props", GoGetter: "Props"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+		},
+		func() interface{} {
+			j := jsiiProxy_IBackupPlans{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreIResource)
+			return &j
+		},
 	)
 	_jsii_.RegisterClass(
 		"@alicloud/ros-cdk-dbs.datasource.RosBackupPlan",
@@ -157,6 +225,9 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "backupPlanId", GoGetter: "BackupPlanId"},
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDesc", GoMethod: "FetchDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchRosDependency", GoMethod: "FetchRosDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "logicalId", GoGetter: "LogicalId"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
@@ -209,6 +280,9 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "backupPlanName", GoGetter: "BackupPlanName"},
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDesc", GoMethod: "FetchDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchRosDependency", GoMethod: "FetchRosDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "logicalId", GoGetter: "LogicalId"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},

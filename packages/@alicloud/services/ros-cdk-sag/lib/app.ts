@@ -46,25 +46,41 @@ export interface AppProps {
 }
 
 /**
+ * Represents a `App`.
+ */
+export interface IApp extends ros.IResource {
+    readonly props: AppProps;
+
+    /**
+     * Attribute OrderId: The ID of the order that you placed to subscribe to the SAG APP instance.
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+
+    /**
+     * Attribute SmartAGId: The ID of the SAG APP instance.
+     */
+    readonly attrSmartAgId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::App`, which is used to create a Smart Access Gateway (SAG) app instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApp`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-app
  */
-export class App extends ros.Resource {
+export class App extends ros.Resource implements IApp {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AppProps;
+    public readonly props: AppProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute OrderId: The ID of the order that you placed to subscribe to the SAG APP instance.
      */
-    public readonly attrOrderId: ros.IResolvable;
+    public readonly attrOrderId: ros.IResolvable | string;
 
     /**
      * Attribute SmartAGId: The ID of the SAG APP instance.
      */
-    public readonly attrSmartAgId: ros.IResolvable;
+    public readonly attrSmartAgId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

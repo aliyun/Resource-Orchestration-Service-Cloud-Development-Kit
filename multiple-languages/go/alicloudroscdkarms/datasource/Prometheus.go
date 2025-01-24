@@ -12,38 +12,48 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::Prometheus`.
 type Prometheus interface {
 	alicloudroscdkcore.Resource
+	IPrometheus
 	// Attribute ClusterId: The ID of the Prometheus instance.
-	AttrClusterId() alicloudroscdkcore.IResolvable
+	AttrClusterId() interface{}
 	// Attribute ClusterType: The type of the instance.
-	AttrClusterType() alicloudroscdkcore.IResolvable
+	AttrClusterType() interface{}
 	// Attribute GrafanaInstanceId: The ID of the Grafana workspace.
-	AttrGrafanaInstanceId() alicloudroscdkcore.IResolvable
+	AttrGrafanaInstanceId() interface{}
 	// Attribute PaymentType: The billing method.
-	AttrPaymentType() alicloudroscdkcore.IResolvable
+	AttrPaymentType() interface{}
 	// Attribute PrometheusName: The name of the instance.
-	AttrPrometheusName() alicloudroscdkcore.IResolvable
+	AttrPrometheusName() interface{}
 	// Attribute ResourceGroupId: The ID of the resource group to which the instance belongs.
-	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() interface{}
 	// Attribute SecurityGroupId: The ID of the security group.
 	//
 	// This parameter is returned only for Prometheus instances for ECS.
-	AttrSecurityGroupId() alicloudroscdkcore.IResolvable
+	AttrSecurityGroupId() interface{}
 	// Attribute SubClustersJson: The child instances of the Prometheus instance for GlobalView.
-	AttrSubClustersJson() alicloudroscdkcore.IResolvable
+	AttrSubClustersJson() interface{}
 	// Attribute Tags: The tags of the instance.
-	AttrTags() alicloudroscdkcore.IResolvable
+	AttrTags() interface{}
 	// Attribute UserId: The user ID.
-	AttrUserId() alicloudroscdkcore.IResolvable
+	AttrUserId() interface{}
 	// Attribute VpcId: The VPC ID.
 	//
 	// This parameter is returned only for Prometheus instances for ECS.
-	AttrVpcId() alicloudroscdkcore.IResolvable
+	AttrVpcId() interface{}
 	// Attribute VSwitchId: The vSwitch ID.
 	//
 	// This parameter is returned only for Prometheus instances for ECS.
-	AttrVSwitchId() alicloudroscdkcore.IResolvable
+	AttrVSwitchId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -58,7 +68,6 @@ type Prometheus interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *PrometheusProps
-	SetProps(val *PrometheusProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -71,6 +80,9 @@ type Prometheus interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -123,10 +135,11 @@ type Prometheus interface {
 // The jsii proxy struct for Prometheus
 type jsiiProxy_Prometheus struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IPrometheus
 }
 
-func (j *jsiiProxy_Prometheus) AttrClusterId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Prometheus) AttrClusterId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrClusterId",
@@ -135,8 +148,8 @@ func (j *jsiiProxy_Prometheus) AttrClusterId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Prometheus) AttrClusterType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Prometheus) AttrClusterType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrClusterType",
@@ -145,8 +158,8 @@ func (j *jsiiProxy_Prometheus) AttrClusterType() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_Prometheus) AttrGrafanaInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Prometheus) AttrGrafanaInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGrafanaInstanceId",
@@ -155,8 +168,8 @@ func (j *jsiiProxy_Prometheus) AttrGrafanaInstanceId() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_Prometheus) AttrPaymentType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Prometheus) AttrPaymentType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPaymentType",
@@ -165,8 +178,8 @@ func (j *jsiiProxy_Prometheus) AttrPaymentType() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_Prometheus) AttrPrometheusName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Prometheus) AttrPrometheusName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPrometheusName",
@@ -175,8 +188,8 @@ func (j *jsiiProxy_Prometheus) AttrPrometheusName() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_Prometheus) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Prometheus) AttrResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupId",
@@ -185,8 +198,8 @@ func (j *jsiiProxy_Prometheus) AttrResourceGroupId() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_Prometheus) AttrSecurityGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Prometheus) AttrSecurityGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSecurityGroupId",
@@ -195,8 +208,8 @@ func (j *jsiiProxy_Prometheus) AttrSecurityGroupId() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_Prometheus) AttrSubClustersJson() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Prometheus) AttrSubClustersJson() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSubClustersJson",
@@ -205,8 +218,8 @@ func (j *jsiiProxy_Prometheus) AttrSubClustersJson() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_Prometheus) AttrTags() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Prometheus) AttrTags() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTags",
@@ -215,8 +228,8 @@ func (j *jsiiProxy_Prometheus) AttrTags() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Prometheus) AttrUserId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Prometheus) AttrUserId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUserId",
@@ -225,8 +238,8 @@ func (j *jsiiProxy_Prometheus) AttrUserId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Prometheus) AttrVpcId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Prometheus) AttrVpcId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVpcId",
@@ -235,8 +248,8 @@ func (j *jsiiProxy_Prometheus) AttrVpcId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Prometheus) AttrVSwitchId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Prometheus) AttrVSwitchId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVSwitchId",
@@ -250,6 +263,16 @@ func (j *jsiiProxy_Prometheus) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Prometheus) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -387,17 +410,6 @@ func (j *jsiiProxy_Prometheus)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Prometheus)SetProps(val *PrometheusProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Prometheus)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -489,6 +501,45 @@ func (p *jsiiProxy_Prometheus) ApplyRemovalPolicy(policy alicloudroscdkcore.Remo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (p *jsiiProxy_Prometheus) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		p,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_Prometheus) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		p,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_Prometheus) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		p,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (p *jsiiProxy_Prometheus) GeneratePhysicalName() *string {

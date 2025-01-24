@@ -52,10 +52,6 @@ func (j *jsiiProxy_DBInstanceSecurityIps) validateSetIdParameters(val *string) e
 	return nil
 }
 
-func (j *jsiiProxy_DBInstanceSecurityIps) validateSetPropsParameters(val *DBInstanceSecurityIpsProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_DBInstanceSecurityIps) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

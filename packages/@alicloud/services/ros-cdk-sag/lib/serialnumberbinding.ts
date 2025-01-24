@@ -21,20 +21,31 @@ export interface SerialNumberBindingProps {
 }
 
 /**
+ * Represents a `SerialNumberBinding`.
+ */
+export interface ISerialNumberBinding extends ros.IResource {
+    readonly props: SerialNumberBindingProps;
+
+    /**
+     * Attribute SmartAGId: The ID of the SAG instance.
+     */
+    readonly attrSmartAgId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::SerialNumberBinding`, which is used to associate a Smart Access Gateway (SAG) device with an SAG instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSerialNumberBinding`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-serialnumberbinding
  */
-export class SerialNumberBinding extends ros.Resource {
+export class SerialNumberBinding extends ros.Resource implements ISerialNumberBinding {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SerialNumberBindingProps;
+    public readonly props: SerialNumberBindingProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SmartAGId: The ID of the SAG instance.
      */
-    public readonly attrSmartAgId: ros.IResolvable;
+    public readonly attrSmartAgId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

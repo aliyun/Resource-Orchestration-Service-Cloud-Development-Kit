@@ -44,25 +44,41 @@ export interface GatewaysProps {
 }
 
 /**
+ * Represents a `Gateways`.
+ */
+export interface IGateways extends ros.IResource {
+    readonly props: GatewaysProps;
+
+    /**
+     * Attribute GatewayIds: The list of gateway IDs.
+     */
+    readonly attrGatewayIds: ros.IResolvable | string;
+
+    /**
+     * Attribute Gateways: The list of gateways.
+     */
+    readonly attrGateways: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::MSE::Gateways`, which is used to query the information about gateways.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGateways`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mse-gateways
  */
-export class Gateways extends ros.Resource {
+export class Gateways extends ros.Resource implements IGateways {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: GatewaysProps;
+    public readonly props: GatewaysProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute GatewayIds: The list of gateway IDs.
      */
-    public readonly attrGatewayIds: ros.IResolvable;
+    public readonly attrGatewayIds: ros.IResolvable | string;
 
     /**
      * Attribute Gateways: The list of gateways.
      */
-    public readonly attrGateways: ros.IResolvable;
+    public readonly attrGateways: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

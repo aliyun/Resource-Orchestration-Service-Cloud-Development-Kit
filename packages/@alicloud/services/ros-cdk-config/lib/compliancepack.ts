@@ -41,45 +41,81 @@ export interface CompliancePackProps {
 }
 
 /**
+ * Represents a `CompliancePack`.
+ */
+export interface ICompliancePack extends ros.IResource {
+    readonly props: CompliancePackProps;
+
+    /**
+     * Attribute AccountId: Aliyun User Id
+     */
+    readonly attrAccountId: ros.IResolvable | string;
+
+    /**
+     * Attribute CompliancePackId: Compliance Package ID
+     */
+    readonly attrCompliancePackId: ros.IResolvable | string;
+
+    /**
+     * Attribute CompliancePackName: Compliance Package Name
+     */
+    readonly attrCompliancePackName: ros.IResolvable | string;
+
+    /**
+     * Attribute CompliancePackTemplateId: Compliance Package Template Id
+     */
+    readonly attrCompliancePackTemplateId: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: Description
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute RiskLevel: Ris Level, valid values: 1 | 2 | 3
+     */
+    readonly attrRiskLevel: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::Config::CompliancePack`, which is used to create a compliance package.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCompliancePack`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-compliancepack
  */
-export class CompliancePack extends ros.Resource {
+export class CompliancePack extends ros.Resource implements ICompliancePack {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: CompliancePackProps;
+    public readonly props: CompliancePackProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccountId: Aliyun User Id
      */
-    public readonly attrAccountId: ros.IResolvable;
+    public readonly attrAccountId: ros.IResolvable | string;
 
     /**
      * Attribute CompliancePackId: Compliance Package ID
      */
-    public readonly attrCompliancePackId: ros.IResolvable;
+    public readonly attrCompliancePackId: ros.IResolvable | string;
 
     /**
      * Attribute CompliancePackName: Compliance Package Name
      */
-    public readonly attrCompliancePackName: ros.IResolvable;
+    public readonly attrCompliancePackName: ros.IResolvable | string;
 
     /**
      * Attribute CompliancePackTemplateId: Compliance Package Template Id
      */
-    public readonly attrCompliancePackTemplateId: ros.IResolvable;
+    public readonly attrCompliancePackTemplateId: ros.IResolvable | string;
 
     /**
      * Attribute Description: Description
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute RiskLevel: Ris Level, valid values: 1 | 2 | 3
      */
-    public readonly attrRiskLevel: ros.IResolvable;
+    public readonly attrRiskLevel: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -61,14 +61,20 @@ export interface NacosConfigProps {
 }
 
 /**
+ * Represents a `NacosConfig`.
+ */
+export interface INacosConfig extends ros.IResource {
+    readonly props: NacosConfigProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::NacosConfig`, which is used to create a Nacos configuration.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNacosConfig`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-nacosconfig
  */
-export class NacosConfig extends ros.Resource {
+export class NacosConfig extends ros.Resource implements INacosConfig {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: NacosConfigProps;
+    public readonly props: NacosConfigProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

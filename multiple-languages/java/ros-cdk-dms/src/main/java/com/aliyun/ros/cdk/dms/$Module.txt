@@ -1,3 +1,6 @@
+@alicloud/ros-cdk-dms.IInstance=com.aliyun.ros.cdk.dms.IInstance
+@alicloud/ros-cdk-dms.IInstance2=com.aliyun.ros.cdk.dms.IInstance2
+@alicloud/ros-cdk-dms.IUser=com.aliyun.ros.cdk.dms.IUser
 @alicloud/ros-cdk-dms.Instance=com.aliyun.ros.cdk.dms.Instance
 @alicloud/ros-cdk-dms.Instance2=com.aliyun.ros.cdk.dms.Instance2
 @alicloud/ros-cdk-dms.Instance2Props=com.aliyun.ros.cdk.dms.Instance2Props

@@ -61,20 +61,31 @@ export interface VpcCidrBlockAssociationProps {
 }
 
 /**
+ * Represents a `VpcCidrBlockAssociation`.
+ */
+export interface IVpcCidrBlockAssociation extends ros.IResource {
+    readonly props: VpcCidrBlockAssociationProps;
+
+    /**
+     * Attribute VpcId: The ID of the VPC to which you want to add a secondary CIDR block.
+     */
+    readonly attrVpcId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpcCidrBlockAssociation`, which is used to add a secondary CIDR block to a virtual private cloud (VPC).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpcCidrBlockAssociation`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpccidrblockassociation
  */
-export class VpcCidrBlockAssociation extends ros.Resource {
+export class VpcCidrBlockAssociation extends ros.Resource implements IVpcCidrBlockAssociation {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: VpcCidrBlockAssociationProps;
+    public readonly props: VpcCidrBlockAssociationProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute VpcId: The ID of the VPC to which you want to add a secondary CIDR block.
      */
-    public readonly attrVpcId: ros.IResolvable;
+    public readonly attrVpcId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

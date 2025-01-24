@@ -12,28 +12,38 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::CLOUDFW::AddressBook`.
 type AddressBook interface {
 	alicloudroscdkcore.Resource
+	IAddressBook
 	// Attribute AddressList: The addresses in the address book.
-	AttrAddressList() alicloudroscdkcore.IResolvable
+	AttrAddressList() interface{}
 	// Attribute AddressListCount: The number of addresses in the address book.
-	AttrAddressListCount() alicloudroscdkcore.IResolvable
+	AttrAddressListCount() interface{}
 	// Attribute AutoAddTagEcs: Indicates whether the public IP addresses of ECS instances are automatically added to the address book if the instances match the specified tags.
-	AttrAutoAddTagEcs() alicloudroscdkcore.IResolvable
+	AttrAutoAddTagEcs() interface{}
 	// Attribute Description: The description of the address book.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute GroupName: The name of the address book.
-	AttrGroupName() alicloudroscdkcore.IResolvable
+	AttrGroupName() interface{}
 	// Attribute GroupType: The type of the address book.
-	AttrGroupType() alicloudroscdkcore.IResolvable
+	AttrGroupType() interface{}
 	// Attribute GroupUuid: The UUID of the address book.
-	AttrGroupUuid() alicloudroscdkcore.IResolvable
+	AttrGroupUuid() interface{}
 	// Attribute ReferenceCount: The number of times that the address book is referenced.
-	AttrReferenceCount() alicloudroscdkcore.IResolvable
+	AttrReferenceCount() interface{}
 	// Attribute TagRelation: The logical relationship among ECS tags.
-	AttrTagRelation() alicloudroscdkcore.IResolvable
+	AttrTagRelation() interface{}
 	// Attribute Tags: The details about the ECS tags that can be automatically added to the address book.
-	AttrTags() alicloudroscdkcore.IResolvable
+	AttrTags() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -48,7 +58,6 @@ type AddressBook interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *AddressBookProps
-	SetProps(val *AddressBookProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -61,6 +70,9 @@ type AddressBook interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -113,10 +125,11 @@ type AddressBook interface {
 // The jsii proxy struct for AddressBook
 type jsiiProxy_AddressBook struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IAddressBook
 }
 
-func (j *jsiiProxy_AddressBook) AttrAddressList() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AddressBook) AttrAddressList() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAddressList",
@@ -125,8 +138,8 @@ func (j *jsiiProxy_AddressBook) AttrAddressList() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_AddressBook) AttrAddressListCount() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AddressBook) AttrAddressListCount() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAddressListCount",
@@ -135,8 +148,8 @@ func (j *jsiiProxy_AddressBook) AttrAddressListCount() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_AddressBook) AttrAutoAddTagEcs() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AddressBook) AttrAutoAddTagEcs() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAutoAddTagEcs",
@@ -145,8 +158,8 @@ func (j *jsiiProxy_AddressBook) AttrAutoAddTagEcs() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_AddressBook) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AddressBook) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -155,8 +168,8 @@ func (j *jsiiProxy_AddressBook) AttrDescription() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_AddressBook) AttrGroupName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AddressBook) AttrGroupName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGroupName",
@@ -165,8 +178,8 @@ func (j *jsiiProxy_AddressBook) AttrGroupName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_AddressBook) AttrGroupType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AddressBook) AttrGroupType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGroupType",
@@ -175,8 +188,8 @@ func (j *jsiiProxy_AddressBook) AttrGroupType() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_AddressBook) AttrGroupUuid() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AddressBook) AttrGroupUuid() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGroupUuid",
@@ -185,8 +198,8 @@ func (j *jsiiProxy_AddressBook) AttrGroupUuid() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_AddressBook) AttrReferenceCount() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AddressBook) AttrReferenceCount() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrReferenceCount",
@@ -195,8 +208,8 @@ func (j *jsiiProxy_AddressBook) AttrReferenceCount() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_AddressBook) AttrTagRelation() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AddressBook) AttrTagRelation() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTagRelation",
@@ -205,8 +218,8 @@ func (j *jsiiProxy_AddressBook) AttrTagRelation() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_AddressBook) AttrTags() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AddressBook) AttrTags() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTags",
@@ -220,6 +233,16 @@ func (j *jsiiProxy_AddressBook) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AddressBook) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -357,17 +380,6 @@ func (j *jsiiProxy_AddressBook)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AddressBook)SetProps(val *AddressBookProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_AddressBook)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -459,6 +471,45 @@ func (a *jsiiProxy_AddressBook) ApplyRemovalPolicy(policy alicloudroscdkcore.Rem
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (a *jsiiProxy_AddressBook) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		a,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AddressBook) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AddressBook) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (a *jsiiProxy_AddressBook) GeneratePhysicalName() *string {

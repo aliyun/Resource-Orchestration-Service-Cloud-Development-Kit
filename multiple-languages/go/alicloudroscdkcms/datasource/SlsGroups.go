@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::CMS::SlsGroups`, which is used to query the information about Logstore groups.
 type SlsGroups interface {
 	alicloudroscdkcore.Resource
+	ISlsGroups
 	// Attribute SlsGroupNames: The list of sls group names.
-	AttrSlsGroupNames() alicloudroscdkcore.IResolvable
+	AttrSlsGroupNames() interface{}
 	// Attribute SlsGroups: The list of sls groups.
-	AttrSlsGroups() alicloudroscdkcore.IResolvable
+	AttrSlsGroups() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type SlsGroups interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *SlsGroupsProps
-	SetProps(val *SlsGroupsProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type SlsGroups interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type SlsGroups interface {
 // The jsii proxy struct for SlsGroups
 type jsiiProxy_SlsGroups struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ISlsGroups
 }
 
-func (j *jsiiProxy_SlsGroups) AttrSlsGroupNames() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SlsGroups) AttrSlsGroupNames() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSlsGroupNames",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_SlsGroups) AttrSlsGroupNames() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_SlsGroups) AttrSlsGroups() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SlsGroups) AttrSlsGroups() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSlsGroups",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_SlsGroups) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SlsGroups) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_SlsGroups)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SlsGroups)SetProps(val *SlsGroupsProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_SlsGroups)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (s *jsiiProxy_SlsGroups) ApplyRemovalPolicy(policy alicloudroscdkcore.Remov
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (s *jsiiProxy_SlsGroups) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		s,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_SlsGroups) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_SlsGroups) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (s *jsiiProxy_SlsGroups) GeneratePhysicalName() *string {

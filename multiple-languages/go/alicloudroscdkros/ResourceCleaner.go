@@ -12,6 +12,7 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ROS::ResourceCleaner`, which is used to create a resource cleaner.
 type ResourceCleaner interface {
 	alicloudroscdkcore.Resource
+	IResourceCleaner
 	// Attribute CleanResult: The cleanup result.
 	//
 	// Valid values:
@@ -22,17 +23,17 @@ type ResourceCleaner interface {
 	// - UnknownFailure: Unexpected failure.
 	// - UserCancelled: Cleanup is cancelled by user.
 	// - None: Cleanup is not triggered.
-	AttrCleanResult() alicloudroscdkcore.IResolvable
+	AttrCleanResult() interface{}
 	// Attribute NoCleanupResourceDetails: The details of the resources that are scanned but filtered.
 	//
 	// Only resources with the resource types ResourceCleaner supports and the regions not filtered are scanned.
 	// The format is the same as ResourceDetails.
-	AttrNoCleanupResourceDetails() alicloudroscdkcore.IResolvable
+	AttrNoCleanupResourceDetails() interface{}
 	// Attribute NoCleanupResourcePartialDetails: The partial details of the resources that are scanned but filtered.
 	//
 	// Only resources with the resource types ResourceCleaner supports and the regions not filtered are scanned.
 	// The format is the same as ResourcePartialDetails.
-	AttrNoCleanupResourcePartialDetails() alicloudroscdkcore.IResolvable
+	AttrNoCleanupResourcePartialDetails() interface{}
 	// Attribute ResourceDetails: The details of resources to be cleaned up.
 	//
 	// The value is a list of dict. The dict contains the fields below:
@@ -56,7 +57,7 @@ type ResourceCleaner interface {
 	// - ResourceType: Resource type of the dependency resource.
 	// - RegionId: Region ID of the dependency resource.
 	// - ResourceId: ID of the dependency resource.
-	AttrResourceDetails() alicloudroscdkcore.IResolvable
+	AttrResourceDetails() interface{}
 	// Attribute ResourcePartialDetails: The partial details of resources to be cleaned up.
 	//
 	// The value is a list of dict. The dict contains the fields below:
@@ -71,7 +72,7 @@ type ResourceCleaner interface {
 	// - Skipped: The deletion of the resource is skipped.
 	// - Pending: The deletion of the resource is not started.
 	// - ResourceStatusReason: The information of the related ResourceStatus.
-	AttrResourcePartialDetails() alicloudroscdkcore.IResolvable
+	AttrResourcePartialDetails() interface{}
 	// Attribute ResourceSummary: The details of resources to be cleaned up.
 	//
 	// The value is a list of dict. The dict contains the fields below:
@@ -83,7 +84,7 @@ type ResourceCleaner interface {
 	// - PendingCount: Number of resources that have not been deleted of the resource type.
 	// - OtherCount: Number of other resources of the resource type.
 	// - TotalCount: Number of total resources of the resource type.
-	AttrResourceSummary() alicloudroscdkcore.IResolvable
+	AttrResourceSummary() interface{}
 	// Attribute ScanErrors: The scan errors.
 	//
 	// It takes effect only when property Mode is Loose.
@@ -91,9 +92,18 @@ type ResourceCleaner interface {
 	// - ResourceType: Resource type for scanning.
 	// - RegionId: Region ID for scanning.
 	// - ErrorMessage: Error message of scanning with specified resource type and region ID.
-	AttrScanErrors() alicloudroscdkcore.IResolvable
+	AttrScanErrors() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -108,7 +118,6 @@ type ResourceCleaner interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ResourceCleanerProps
-	SetProps(val *ResourceCleanerProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -121,6 +130,9 @@ type ResourceCleaner interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -173,10 +185,11 @@ type ResourceCleaner interface {
 // The jsii proxy struct for ResourceCleaner
 type jsiiProxy_ResourceCleaner struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IResourceCleaner
 }
 
-func (j *jsiiProxy_ResourceCleaner) AttrCleanResult() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ResourceCleaner) AttrCleanResult() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCleanResult",
@@ -185,8 +198,8 @@ func (j *jsiiProxy_ResourceCleaner) AttrCleanResult() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_ResourceCleaner) AttrNoCleanupResourceDetails() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ResourceCleaner) AttrNoCleanupResourceDetails() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNoCleanupResourceDetails",
@@ -195,8 +208,8 @@ func (j *jsiiProxy_ResourceCleaner) AttrNoCleanupResourceDetails() alicloudroscd
 	return returns
 }
 
-func (j *jsiiProxy_ResourceCleaner) AttrNoCleanupResourcePartialDetails() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ResourceCleaner) AttrNoCleanupResourcePartialDetails() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNoCleanupResourcePartialDetails",
@@ -205,8 +218,8 @@ func (j *jsiiProxy_ResourceCleaner) AttrNoCleanupResourcePartialDetails() aliclo
 	return returns
 }
 
-func (j *jsiiProxy_ResourceCleaner) AttrResourceDetails() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ResourceCleaner) AttrResourceDetails() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceDetails",
@@ -215,8 +228,8 @@ func (j *jsiiProxy_ResourceCleaner) AttrResourceDetails() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_ResourceCleaner) AttrResourcePartialDetails() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ResourceCleaner) AttrResourcePartialDetails() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourcePartialDetails",
@@ -225,8 +238,8 @@ func (j *jsiiProxy_ResourceCleaner) AttrResourcePartialDetails() alicloudroscdkc
 	return returns
 }
 
-func (j *jsiiProxy_ResourceCleaner) AttrResourceSummary() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ResourceCleaner) AttrResourceSummary() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceSummary",
@@ -235,8 +248,8 @@ func (j *jsiiProxy_ResourceCleaner) AttrResourceSummary() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_ResourceCleaner) AttrScanErrors() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ResourceCleaner) AttrScanErrors() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrScanErrors",
@@ -250,6 +263,16 @@ func (j *jsiiProxy_ResourceCleaner) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ResourceCleaner) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -387,17 +410,6 @@ func (j *jsiiProxy_ResourceCleaner)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ResourceCleaner)SetProps(val *ResourceCleanerProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_ResourceCleaner)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -489,6 +501,45 @@ func (r *jsiiProxy_ResourceCleaner) ApplyRemovalPolicy(policy alicloudroscdkcore
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (r *jsiiProxy_ResourceCleaner) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		r,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_ResourceCleaner) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		r,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_ResourceCleaner) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		r,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (r *jsiiProxy_ResourceCleaner) GeneratePhysicalName() *string {

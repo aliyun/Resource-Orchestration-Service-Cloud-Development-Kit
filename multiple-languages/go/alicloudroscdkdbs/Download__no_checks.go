@@ -52,10 +52,6 @@ func (j *jsiiProxy_Download) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_Download) validateSetPropsParameters(val *DownloadProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_Download) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

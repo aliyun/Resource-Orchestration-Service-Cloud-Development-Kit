@@ -52,10 +52,6 @@ func (j *jsiiProxy_BgpNetwork) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_BgpNetwork) validateSetPropsParameters(val *BgpNetworkProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_BgpNetwork) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

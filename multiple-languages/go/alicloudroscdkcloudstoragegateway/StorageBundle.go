@@ -12,16 +12,26 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::CloudStorageGateway::StorageBundle`, which is used to create a gateway cluster.
 type StorageBundle interface {
 	alicloudroscdkcore.Resource
+	IStorageBundle
 	// Attribute CreateTime: Create a gateway cluster timestamp.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute Description: Gateway cluster description.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute StorageBundleId: The ID of the gateway cluster.
-	AttrStorageBundleId() alicloudroscdkcore.IResolvable
+	AttrStorageBundleId() interface{}
 	// Attribute StorageBundleName: Gateway cluster name.
-	AttrStorageBundleName() alicloudroscdkcore.IResolvable
+	AttrStorageBundleName() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -36,7 +46,6 @@ type StorageBundle interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *StorageBundleProps
-	SetProps(val *StorageBundleProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -49,6 +58,9 @@ type StorageBundle interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -101,10 +113,11 @@ type StorageBundle interface {
 // The jsii proxy struct for StorageBundle
 type jsiiProxy_StorageBundle struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IStorageBundle
 }
 
-func (j *jsiiProxy_StorageBundle) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_StorageBundle) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -113,8 +126,8 @@ func (j *jsiiProxy_StorageBundle) AttrCreateTime() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_StorageBundle) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_StorageBundle) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_StorageBundle) AttrDescription() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_StorageBundle) AttrStorageBundleId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_StorageBundle) AttrStorageBundleId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStorageBundleId",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_StorageBundle) AttrStorageBundleId() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_StorageBundle) AttrStorageBundleName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_StorageBundle) AttrStorageBundleName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStorageBundleName",
@@ -148,6 +161,16 @@ func (j *jsiiProxy_StorageBundle) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StorageBundle) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -285,17 +308,6 @@ func (j *jsiiProxy_StorageBundle)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_StorageBundle)SetProps(val *StorageBundleProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_StorageBundle)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -387,6 +399,45 @@ func (s *jsiiProxy_StorageBundle) ApplyRemovalPolicy(policy alicloudroscdkcore.R
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (s *jsiiProxy_StorageBundle) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		s,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_StorageBundle) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_StorageBundle) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (s *jsiiProxy_StorageBundle) GeneratePhysicalName() *string {

@@ -52,10 +52,6 @@ func (j *jsiiProxy_CenRouteMaps) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_CenRouteMaps) validateSetPropsParameters(val *CenRouteMapsProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_CenRouteMaps) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

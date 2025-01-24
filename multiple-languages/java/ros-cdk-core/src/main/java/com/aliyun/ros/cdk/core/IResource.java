@@ -3,10 +3,22 @@ package com.aliyun.ros.cdk.core;
 /**
  * Interface for the Resource construct.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:03.669Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:33.680Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.IResource")
 @software.amazon.jsii.Jsii.Proxy(IResource.Jsii$Proxy.class)
 public interface IResource extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IConstruct {
+
+    /**
+     * The environment this resource belongs to.
+     * <p>
+     * For resources that are created and managed by the CDK
+     * (generally, those created by creating new class instances like Role, Bucket, etc.),
+     * this is always the same as the environment of the stack they belong to;
+     * however, for imported resources
+     * (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+     * that might be different than the stack they were imported into.
+     */
+    @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.ResourceEnvironment getEnv();
 
     /**
      * The stack in which this resource is defined.
@@ -31,6 +43,21 @@ public interface IResource extends software.amazon.jsii.JsiiSerializable, com.al
         }
 
         /**
+         * The environment this resource belongs to.
+         * <p>
+         * For resources that are created and managed by the CDK
+         * (generally, those created by creating new class instances like Role, Bucket, etc.),
+         * this is always the same as the environment of the stack they belong to;
+         * however, for imported resources
+         * (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+         * that might be different than the stack they were imported into.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.ResourceEnvironment getEnv() {
+            return software.amazon.jsii.Kernel.get(this, "env", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.ResourceEnvironment.class));
+        }
+
+        /**
          * The stack in which this resource is defined.
          */
         @Override
@@ -51,6 +78,21 @@ public interface IResource extends software.amazon.jsii.JsiiSerializable, com.al
         @Override
         default @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.ConstructNode getNode() {
             return software.amazon.jsii.Kernel.get(this, "node", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.ConstructNode.class));
+        }
+
+        /**
+         * The environment this resource belongs to.
+         * <p>
+         * For resources that are created and managed by the CDK
+         * (generally, those created by creating new class instances like Role, Bucket, etc.),
+         * this is always the same as the environment of the stack they belong to;
+         * however, for imported resources
+         * (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+         * that might be different than the stack they were imported into.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.ResourceEnvironment getEnv() {
+            return software.amazon.jsii.Kernel.get(this, "env", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.ResourceEnvironment.class));
         }
 
         /**

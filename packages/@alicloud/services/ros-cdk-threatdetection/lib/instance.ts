@@ -190,150 +190,291 @@ export interface InstanceProps {
 }
 
 /**
+ * Represents a `Instance`.
+ */
+export interface IInstance extends ros.IResource {
+    readonly props: InstanceProps;
+
+    /**
+     * Attribute BuyNumber: Number of servers.
+     */
+    readonly attrBuyNumber: ros.IResolvable | string;
+
+    /**
+     * Attribute ContainerImageScan: Container Image security scan. Interval type, value interval:[0,200000].
+     */
+    readonly attrContainerImageScan: ros.IResolvable | string;
+
+    /**
+     * Attribute ContainerImageScanNew: Container Image security scan. Interval type, value interval:[0,200000].
+     */
+    readonly attrContainerImageScanNew: ros.IResolvable | string;
+
+    /**
+     * Attribute CreateTime: The creation time of the resource.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Honeypot: Number of cloud honeypot licenses. Interval type, value interval:[20,500].
+     */
+    readonly attrHoneypot: ros.IResolvable | string;
+
+    /**
+     * Attribute HoneypotSwitch: Cloud honeypot.
+     */
+    readonly attrHoneypotSwitch: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: The first ID of the resource.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute PaymentType: The payment type of the resource.
+     */
+    readonly attrPaymentType: ros.IResolvable | string;
+
+    /**
+     * Attribute RaspCount: Number of application protection licenses. Interval type, value interval:[1,100000000].
+     */
+    readonly attrRaspCount: ros.IResolvable | string;
+
+    /**
+     * Attribute RenewPeriod: Automatic renewal cycle, in months.
+     */
+    readonly attrRenewPeriod: ros.IResolvable | string;
+
+    /**
+     * Attribute RenewalPeriodUnit: Automatic renewal period unit, value:.
+     */
+    readonly attrRenewalPeriodUnit: ros.IResolvable | string;
+
+    /**
+     * Attribute RenewalStatus: Automatic renewal status, value:.
+     */
+    readonly attrRenewalStatus: ros.IResolvable | string;
+
+    /**
+     * Attribute SasAntiRansomware: Anti-ransomware capacity. Unit: GB. Interval type, value interval:[0,9999999999].
+     */
+    readonly attrSasAntiRansomware: ros.IResolvable | string;
+
+    /**
+     * Attribute SasCspm: Cloud platform configuration check scan times, interval type, value range:[1000,9999999999].
+     */
+    readonly attrSasCspm: ros.IResolvable | string;
+
+    /**
+     * Attribute SasCspmSwitch: Cloud platform configuration check switch.
+     */
+    readonly attrSasCspmSwitch: ros.IResolvable | string;
+
+    /**
+     * Attribute SasSc: Security screen.
+     */
+    readonly attrSasSc: ros.IResolvable | string;
+
+    /**
+     * Attribute SasSdk: Number of malicious file detections. Unit: 10,000 times. Interval type, value interval:[10,9999999999].
+     */
+    readonly attrSasSdk: ros.IResolvable | string;
+
+    /**
+     * Attribute SasSdkSwitch: Malicious file detection SDK.
+     */
+    readonly attrSasSdkSwitch: ros.IResolvable | string;
+
+    /**
+     * Attribute SasSlsStorage: Log analysis storage capacity. Unit: GB. Interval type, value interval:[0,600000].
+     */
+    readonly attrSasSlsStorage: ros.IResolvable | string;
+
+    /**
+     * Attribute SasWebguardBoolean: Web tamper-proof switch.
+     */
+    readonly attrSasWebguardBoolean: ros.IResolvable | string;
+
+    /**
+     * Attribute SasWebguardOrderNum: Tamper-proof authorization number.
+     */
+    readonly attrSasWebguardOrderNum: ros.IResolvable | string;
+
+    /**
+     * Attribute ThreatAnalysis: Threat Analysis log storage capacity. Interval type, value interval:[0,9999999999].
+     */
+    readonly attrThreatAnalysis: ros.IResolvable | string;
+
+    /**
+     * Attribute ThreatAnalysisSwitch: Threat analysis.
+     */
+    readonly attrThreatAnalysisSwitch: ros.IResolvable | string;
+
+    /**
+     * Attribute VCore: Number of cores.
+     */
+    readonly attrVCore: ros.IResolvable | string;
+
+    /**
+     * Attribute VersionCode: Select the security center version.
+     */
+    readonly attrVersionCode: ros.IResolvable | string;
+
+    /**
+     * Attribute VulCount: Vulnerability repair times, interval type, value range:[20,100000000].
+     */
+    readonly attrVulCount: ros.IResolvable | string;
+
+    /**
+     * Attribute VulSwitch: Vulnerability fix switch.
+     */
+    readonly attrVulSwitch: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ThreatDetection::Instance`, which is used to purchase Security Center (SAS).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-threatdetection-instance
  */
-export class Instance extends ros.Resource {
+export class Instance extends ros.Resource implements IInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InstanceProps;
+    public readonly props: InstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute BuyNumber: Number of servers.
      */
-    public readonly attrBuyNumber: ros.IResolvable;
+    public readonly attrBuyNumber: ros.IResolvable | string;
 
     /**
      * Attribute ContainerImageScan: Container Image security scan. Interval type, value interval:[0,200000].
      */
-    public readonly attrContainerImageScan: ros.IResolvable;
+    public readonly attrContainerImageScan: ros.IResolvable | string;
 
     /**
      * Attribute ContainerImageScanNew: Container Image security scan. Interval type, value interval:[0,200000].
      */
-    public readonly attrContainerImageScanNew: ros.IResolvable;
+    public readonly attrContainerImageScanNew: ros.IResolvable | string;
 
     /**
      * Attribute CreateTime: The creation time of the resource.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute Honeypot: Number of cloud honeypot licenses. Interval type, value interval:[20,500].
      */
-    public readonly attrHoneypot: ros.IResolvable;
+    public readonly attrHoneypot: ros.IResolvable | string;
 
     /**
      * Attribute HoneypotSwitch: Cloud honeypot.
      */
-    public readonly attrHoneypotSwitch: ros.IResolvable;
+    public readonly attrHoneypotSwitch: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: The first ID of the resource.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute PaymentType: The payment type of the resource.
      */
-    public readonly attrPaymentType: ros.IResolvable;
+    public readonly attrPaymentType: ros.IResolvable | string;
 
     /**
      * Attribute RaspCount: Number of application protection licenses. Interval type, value interval:[1,100000000].
      */
-    public readonly attrRaspCount: ros.IResolvable;
+    public readonly attrRaspCount: ros.IResolvable | string;
 
     /**
      * Attribute RenewPeriod: Automatic renewal cycle, in months.
      */
-    public readonly attrRenewPeriod: ros.IResolvable;
+    public readonly attrRenewPeriod: ros.IResolvable | string;
 
     /**
      * Attribute RenewalPeriodUnit: Automatic renewal period unit, value:.
      */
-    public readonly attrRenewalPeriodUnit: ros.IResolvable;
+    public readonly attrRenewalPeriodUnit: ros.IResolvable | string;
 
     /**
      * Attribute RenewalStatus: Automatic renewal status, value:.
      */
-    public readonly attrRenewalStatus: ros.IResolvable;
+    public readonly attrRenewalStatus: ros.IResolvable | string;
 
     /**
      * Attribute SasAntiRansomware: Anti-ransomware capacity. Unit: GB. Interval type, value interval:[0,9999999999].
      */
-    public readonly attrSasAntiRansomware: ros.IResolvable;
+    public readonly attrSasAntiRansomware: ros.IResolvable | string;
 
     /**
      * Attribute SasCspm: Cloud platform configuration check scan times, interval type, value range:[1000,9999999999].
      */
-    public readonly attrSasCspm: ros.IResolvable;
+    public readonly attrSasCspm: ros.IResolvable | string;
 
     /**
      * Attribute SasCspmSwitch: Cloud platform configuration check switch.
      */
-    public readonly attrSasCspmSwitch: ros.IResolvable;
+    public readonly attrSasCspmSwitch: ros.IResolvable | string;
 
     /**
      * Attribute SasSc: Security screen.
      */
-    public readonly attrSasSc: ros.IResolvable;
+    public readonly attrSasSc: ros.IResolvable | string;
 
     /**
      * Attribute SasSdk: Number of malicious file detections. Unit: 10,000 times. Interval type, value interval:[10,9999999999].
      */
-    public readonly attrSasSdk: ros.IResolvable;
+    public readonly attrSasSdk: ros.IResolvable | string;
 
     /**
      * Attribute SasSdkSwitch: Malicious file detection SDK.
      */
-    public readonly attrSasSdkSwitch: ros.IResolvable;
+    public readonly attrSasSdkSwitch: ros.IResolvable | string;
 
     /**
      * Attribute SasSlsStorage: Log analysis storage capacity. Unit: GB. Interval type, value interval:[0,600000].
      */
-    public readonly attrSasSlsStorage: ros.IResolvable;
+    public readonly attrSasSlsStorage: ros.IResolvable | string;
 
     /**
      * Attribute SasWebguardBoolean: Web tamper-proof switch.
      */
-    public readonly attrSasWebguardBoolean: ros.IResolvable;
+    public readonly attrSasWebguardBoolean: ros.IResolvable | string;
 
     /**
      * Attribute SasWebguardOrderNum: Tamper-proof authorization number.
      */
-    public readonly attrSasWebguardOrderNum: ros.IResolvable;
+    public readonly attrSasWebguardOrderNum: ros.IResolvable | string;
 
     /**
      * Attribute ThreatAnalysis: Threat Analysis log storage capacity. Interval type, value interval:[0,9999999999].
      */
-    public readonly attrThreatAnalysis: ros.IResolvable;
+    public readonly attrThreatAnalysis: ros.IResolvable | string;
 
     /**
      * Attribute ThreatAnalysisSwitch: Threat analysis.
      */
-    public readonly attrThreatAnalysisSwitch: ros.IResolvable;
+    public readonly attrThreatAnalysisSwitch: ros.IResolvable | string;
 
     /**
      * Attribute VCore: Number of cores.
      */
-    public readonly attrVCore: ros.IResolvable;
+    public readonly attrVCore: ros.IResolvable | string;
 
     /**
      * Attribute VersionCode: Select the security center version.
      */
-    public readonly attrVersionCode: ros.IResolvable;
+    public readonly attrVersionCode: ros.IResolvable | string;
 
     /**
      * Attribute VulCount: Vulnerability repair times, interval type, value range:[20,100000000].
      */
-    public readonly attrVulCount: ros.IResolvable;
+    public readonly attrVulCount: ros.IResolvable | string;
 
     /**
      * Attribute VulSwitch: Vulnerability fix switch.
      */
-    public readonly attrVulSwitch: ros.IResolvable;
+    public readonly attrVulSwitch: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

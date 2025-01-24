@@ -85,130 +85,251 @@ export interface ServiceInstanceProps {
 }
 
 /**
+ * Represents a `ServiceInstance`.
+ */
+export interface IServiceInstance extends ros.IResource {
+    readonly props: ServiceInstanceProps;
+
+    /**
+     * Attribute Components: Additional billing items.
+     */
+    readonly attrComponents: ros.IResolvable | string;
+
+    /**
+     * Attribute CreateTime: Creation time.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute EnableInstanceOps: Whether the service instance has the O & M function.
+     */
+    readonly attrEnableInstanceOps: ros.IResolvable | string;
+
+    /**
+     * Attribute EnableUserPrometheus: Whether Prometheus monitoring is enabled.
+     */
+    readonly attrEnableUserPrometheus: ros.IResolvable | string;
+
+    /**
+     * Attribute IsOperated: Whether the generation O & M function of the service instance is enabled.
+     */
+    readonly attrIsOperated: ros.IResolvable | string;
+
+    /**
+     * Attribute LicenseEndTime: License expiration time.
+     */
+    readonly attrLicenseEndTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Name: The name of the service instance.
+     */
+    readonly attrName: ros.IResolvable | string;
+
+    /**
+     * Attribute NetworkConfig: Network configuration information.
+     */
+    readonly attrNetworkConfig: ros.IResolvable | string;
+
+    /**
+     * Attribute Outputs: Create the output Field returned by the service instance.
+     */
+    readonly attrOutputs: ros.IResolvable | string;
+
+    /**
+     * Attribute Parameters: The parameters entered by the deployment service instance.
+     */
+    readonly attrParameters: ros.IResolvable | string;
+
+    /**
+     * Attribute PredefinedParameterName: Package name.
+     */
+    readonly attrPredefinedParameterName: ros.IResolvable | string;
+
+    /**
+     * Attribute Progress: The deployment progress of the service instance. Unit:%.
+     */
+    readonly attrProgress: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: The ID of the resource group.
+     */
+    readonly attrResourceGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute Service: Service details.
+     */
+    readonly attrService: ros.IResolvable | string;
+
+    /**
+     * Attribute ServiceInstanceId: The ID of the service instance.
+     */
+    readonly attrServiceInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute ServiceType: Service type.
+     */
+    readonly attrServiceType: ros.IResolvable | string;
+
+    /**
+     * Attribute Source: The source of the service instance.
+     */
+    readonly attrSource: ros.IResolvable | string;
+
+    /**
+     * Attribute StatusDetail: The status description of the deployment instance.
+     */
+    readonly attrStatusDetail: ros.IResolvable | string;
+
+    /**
+     * Attribute SupplierUid: Service provider AliUid.
+     */
+    readonly attrSupplierUid: ros.IResolvable | string;
+
+    /**
+     * Attribute Tags: User-defined labels.
+     */
+    readonly attrTags: ros.IResolvable | string;
+
+    /**
+     * Attribute TemplateName: Template name.
+     */
+    readonly attrTemplateName: ros.IResolvable | string;
+
+    /**
+     * Attribute UpdateTime: Update time.
+     */
+    readonly attrUpdateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute UserId: AliUid of the user.
+     */
+    readonly attrUserId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ComputeNest::ServiceInstance`, which is used to create and deploy a service instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosServiceInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-computenest-serviceinstance
  */
-export class ServiceInstance extends ros.Resource {
+export class ServiceInstance extends ros.Resource implements IServiceInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ServiceInstanceProps;
+    public readonly props: ServiceInstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Components: Additional billing items.
      */
-    public readonly attrComponents: ros.IResolvable;
+    public readonly attrComponents: ros.IResolvable | string;
 
     /**
      * Attribute CreateTime: Creation time.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute EnableInstanceOps: Whether the service instance has the O & M function.
      */
-    public readonly attrEnableInstanceOps: ros.IResolvable;
+    public readonly attrEnableInstanceOps: ros.IResolvable | string;
 
     /**
      * Attribute EnableUserPrometheus: Whether Prometheus monitoring is enabled.
      */
-    public readonly attrEnableUserPrometheus: ros.IResolvable;
+    public readonly attrEnableUserPrometheus: ros.IResolvable | string;
 
     /**
      * Attribute IsOperated: Whether the generation O & M function of the service instance is enabled.
      */
-    public readonly attrIsOperated: ros.IResolvable;
+    public readonly attrIsOperated: ros.IResolvable | string;
 
     /**
      * Attribute LicenseEndTime: License expiration time.
      */
-    public readonly attrLicenseEndTime: ros.IResolvable;
+    public readonly attrLicenseEndTime: ros.IResolvable | string;
 
     /**
      * Attribute Name: The name of the service instance.
      */
-    public readonly attrName: ros.IResolvable;
+    public readonly attrName: ros.IResolvable | string;
 
     /**
      * Attribute NetworkConfig: Network configuration information.
      */
-    public readonly attrNetworkConfig: ros.IResolvable;
+    public readonly attrNetworkConfig: ros.IResolvable | string;
 
     /**
      * Attribute Outputs: Create the output Field returned by the service instance.
      */
-    public readonly attrOutputs: ros.IResolvable;
+    public readonly attrOutputs: ros.IResolvable | string;
 
     /**
      * Attribute Parameters: The parameters entered by the deployment service instance.
      */
-    public readonly attrParameters: ros.IResolvable;
+    public readonly attrParameters: ros.IResolvable | string;
 
     /**
      * Attribute PredefinedParameterName: Package name.
      */
-    public readonly attrPredefinedParameterName: ros.IResolvable;
+    public readonly attrPredefinedParameterName: ros.IResolvable | string;
 
     /**
      * Attribute Progress: The deployment progress of the service instance. Unit:%.
      */
-    public readonly attrProgress: ros.IResolvable;
+    public readonly attrProgress: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroupId: The ID of the resource group.
      */
-    public readonly attrResourceGroupId: ros.IResolvable;
+    public readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Attribute Service: Service details.
      */
-    public readonly attrService: ros.IResolvable;
+    public readonly attrService: ros.IResolvable | string;
 
     /**
      * Attribute ServiceInstanceId: The ID of the service instance.
      */
-    public readonly attrServiceInstanceId: ros.IResolvable;
+    public readonly attrServiceInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute ServiceType: Service type.
      */
-    public readonly attrServiceType: ros.IResolvable;
+    public readonly attrServiceType: ros.IResolvable | string;
 
     /**
      * Attribute Source: The source of the service instance.
      */
-    public readonly attrSource: ros.IResolvable;
+    public readonly attrSource: ros.IResolvable | string;
 
     /**
      * Attribute StatusDetail: The status description of the deployment instance.
      */
-    public readonly attrStatusDetail: ros.IResolvable;
+    public readonly attrStatusDetail: ros.IResolvable | string;
 
     /**
      * Attribute SupplierUid: Service provider AliUid.
      */
-    public readonly attrSupplierUid: ros.IResolvable;
+    public readonly attrSupplierUid: ros.IResolvable | string;
 
     /**
      * Attribute Tags: User-defined labels.
      */
-    public readonly attrTags: ros.IResolvable;
+    public readonly attrTags: ros.IResolvable | string;
 
     /**
      * Attribute TemplateName: Template name.
      */
-    public readonly attrTemplateName: ros.IResolvable;
+    public readonly attrTemplateName: ros.IResolvable | string;
 
     /**
      * Attribute UpdateTime: Update time.
      */
-    public readonly attrUpdateTime: ros.IResolvable;
+    public readonly attrUpdateTime: ros.IResolvable | string;
 
     /**
      * Attribute UserId: AliUid of the user.
      */
-    public readonly attrUserId: ros.IResolvable;
+    public readonly attrUserId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

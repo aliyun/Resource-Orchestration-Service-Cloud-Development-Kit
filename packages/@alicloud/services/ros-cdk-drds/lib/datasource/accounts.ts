@@ -24,25 +24,41 @@ export interface AccountsProps {
 }
 
 /**
+ * Represents a `Accounts`.
+ */
+export interface IAccounts extends ros.IResource {
+    readonly props: AccountsProps;
+
+    /**
+     * Attribute Accounts: Indicates the information about the instance accounts.
+     */
+    readonly attrAccounts: ros.IResolvable | string;
+
+    /**
+     * Attribute DrdsAccountNames: Indicates the username of an instance accounts.
+     */
+    readonly attrDrdsAccountNames: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::DRDS::Accounts`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccounts`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-drds-accounts
  */
-export class Accounts extends ros.Resource {
+export class Accounts extends ros.Resource implements IAccounts {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AccountsProps;
+    public readonly props: AccountsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Accounts: Indicates the information about the instance accounts.
      */
-    public readonly attrAccounts: ros.IResolvable;
+    public readonly attrAccounts: ros.IResolvable | string;
 
     /**
      * Attribute DrdsAccountNames: Indicates the username of an instance accounts.
      */
-    public readonly attrDrdsAccountNames: ros.IResolvable;
+    public readonly attrDrdsAccountNames: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

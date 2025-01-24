@@ -19,25 +19,41 @@ export interface FlowsProps {
 }
 
 /**
+ * Represents a `Flows`.
+ */
+export interface IFlows extends ros.IResource {
+    readonly props: FlowsProps;
+
+    /**
+     * Attribute FlowNames: The list of flow names.
+     */
+    readonly attrFlowNames: ros.IResolvable | string;
+
+    /**
+     * Attribute Flows: The details about flows.
+     */
+    readonly attrFlows: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::FNF::Flows`, which is used to query multiple flows at a time.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFlows`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fnf-flows
  */
-export class Flows extends ros.Resource {
+export class Flows extends ros.Resource implements IFlows {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: FlowsProps;
+    public readonly props: FlowsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute FlowNames: The list of flow names.
      */
-    public readonly attrFlowNames: ros.IResolvable;
+    public readonly attrFlowNames: ros.IResolvable | string;
 
     /**
      * Attribute Flows: The details about flows.
      */
-    public readonly attrFlows: ros.IResolvable;
+    public readonly attrFlows: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

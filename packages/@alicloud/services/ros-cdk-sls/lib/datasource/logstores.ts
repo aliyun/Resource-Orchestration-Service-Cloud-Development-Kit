@@ -29,20 +29,31 @@ export interface LogstoresProps {
 }
 
 /**
+ * Represents a `Logstores`.
+ */
+export interface ILogstores extends ros.IResource {
+    readonly props: LogstoresProps;
+
+    /**
+     * Attribute Logstores: The list of logstores.
+     */
+    readonly attrLogstores: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::SLS::Logstores`, which is used to query Logstores.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLogstores`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sls-logstores
  */
-export class Logstores extends ros.Resource {
+export class Logstores extends ros.Resource implements ILogstores {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: LogstoresProps;
+    public readonly props: LogstoresProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Logstores: The list of logstores.
      */
-    public readonly attrLogstores: ros.IResolvable;
+    public readonly attrLogstores: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

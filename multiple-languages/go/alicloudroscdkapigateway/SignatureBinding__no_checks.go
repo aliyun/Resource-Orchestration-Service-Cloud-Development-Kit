@@ -52,10 +52,6 @@ func (j *jsiiProxy_SignatureBinding) validateSetIdParameters(val *string) error 
 	return nil
 }
 
-func (j *jsiiProxy_SignatureBinding) validateSetPropsParameters(val *SignatureBindingProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_SignatureBinding) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

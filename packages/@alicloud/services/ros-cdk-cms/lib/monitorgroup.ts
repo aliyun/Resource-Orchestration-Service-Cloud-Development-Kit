@@ -22,20 +22,31 @@ export interface MonitorGroupProps {
 }
 
 /**
+ * Represents a `MonitorGroup`.
+ */
+export interface IMonitorGroup extends ros.IResource {
+    readonly props: MonitorGroupProps;
+
+    /**
+     * Attribute GroupId: Application group ID generated after the group is created.
+     */
+    readonly attrGroupId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::MonitorGroup`, which is used to create an application group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMonitorGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitorgroup
  */
-export class MonitorGroup extends ros.Resource {
+export class MonitorGroup extends ros.Resource implements IMonitorGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: MonitorGroupProps;
+    public readonly props: MonitorGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute GroupId: Application group ID generated after the group is created.
      */
-    public readonly attrGroupId: ros.IResolvable;
+    public readonly attrGroupId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -12,34 +12,44 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::OOS::Execution`, which is used to start an execution.
 type Execution interface {
 	alicloudroscdkcore.Resource
+	IExecution
 	// Attribute Counters: Task statistics: FailedTasks, SuccessTasks, TotalTasks.
-	AttrCounters() alicloudroscdkcore.IResolvable
+	AttrCounters() interface{}
 	// Attribute CurlCli: Convenience attribute, provides curl CLI command prefix, which can be used to notify oos execution instead of OOS API NotifyExecution.
 	//
 	// You can notify approve to oos execution by adding --data-binary '{"data": {"NotifyType": "Approve"}}'
 	// For more parameters in data, refer to https://help.aliyun.com/document_detail/120777.html.
 	// You can also notify execution via ROS API SignalResource. API parameters Status and UniqueId are ignored. Use API parameter Data to pass data.
-	AttrCurlCli() alicloudroscdkcore.IResolvable
+	AttrCurlCli() interface{}
 	// Attribute ExecutionId: Execution ID.
-	AttrExecutionId() alicloudroscdkcore.IResolvable
+	AttrExecutionId() interface{}
 	// Attribute Outputs: Execution output.
-	AttrOutputs() alicloudroscdkcore.IResolvable
+	AttrOutputs() interface{}
 	// Attribute PowerShellCurlCli: Convenience attribute, provides curl CLI command prefix for PowerShell, which can be used to notify oos execution instead of OOS API NotifyExecution.
 	//
 	// You can notify approve to oos execution by adding -Body '{"data": {"NotifyType": "Approve"}}'
 	// For more parameters in data, refer to https://help.aliyun.com/document_detail/120777.html.You can also notify execution via ROS API SignalResource. API parameters Status and UniqueId are ignored. Use API parameter Data to pass data.
-	AttrPowerShellCurlCli() alicloudroscdkcore.IResolvable
+	AttrPowerShellCurlCli() interface{}
 	// Attribute Status: Execution status.
-	AttrStatus() alicloudroscdkcore.IResolvable
+	AttrStatus() interface{}
 	// Attribute StatusMessage: Execution status information.
-	AttrStatusMessage() alicloudroscdkcore.IResolvable
+	AttrStatusMessage() interface{}
 	// Attribute WindowsCurlCli: Convenience attribute, provides curl CLI command prefix for Windows, which can be used to notify oos execution instead of OOS API NotifyExecution.
 	//
 	// You can notify approve to oos execution by adding --data-binary "{\"data\": {\"NotifyType\": \"Approve\"}}"
 	// For more parameters in data, refer to https://help.aliyun.com/document_detail/120777.html.You can also notify execution via ROS API SignalResource. API parameters Status and UniqueId are ignored. Use API parameter Data to pass data.
-	AttrWindowsCurlCli() alicloudroscdkcore.IResolvable
+	AttrWindowsCurlCli() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -54,7 +64,6 @@ type Execution interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ExecutionProps
-	SetProps(val *ExecutionProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -67,6 +76,9 @@ type Execution interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -119,10 +131,11 @@ type Execution interface {
 // The jsii proxy struct for Execution
 type jsiiProxy_Execution struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IExecution
 }
 
-func (j *jsiiProxy_Execution) AttrCounters() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Execution) AttrCounters() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCounters",
@@ -131,8 +144,8 @@ func (j *jsiiProxy_Execution) AttrCounters() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Execution) AttrCurlCli() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Execution) AttrCurlCli() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCurlCli",
@@ -141,8 +154,8 @@ func (j *jsiiProxy_Execution) AttrCurlCli() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Execution) AttrExecutionId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Execution) AttrExecutionId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrExecutionId",
@@ -151,8 +164,8 @@ func (j *jsiiProxy_Execution) AttrExecutionId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Execution) AttrOutputs() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Execution) AttrOutputs() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOutputs",
@@ -161,8 +174,8 @@ func (j *jsiiProxy_Execution) AttrOutputs() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Execution) AttrPowerShellCurlCli() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Execution) AttrPowerShellCurlCli() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPowerShellCurlCli",
@@ -171,8 +184,8 @@ func (j *jsiiProxy_Execution) AttrPowerShellCurlCli() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_Execution) AttrStatus() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Execution) AttrStatus() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStatus",
@@ -181,8 +194,8 @@ func (j *jsiiProxy_Execution) AttrStatus() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Execution) AttrStatusMessage() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Execution) AttrStatusMessage() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStatusMessage",
@@ -191,8 +204,8 @@ func (j *jsiiProxy_Execution) AttrStatusMessage() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Execution) AttrWindowsCurlCli() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Execution) AttrWindowsCurlCli() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrWindowsCurlCli",
@@ -206,6 +219,16 @@ func (j *jsiiProxy_Execution) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Execution) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -343,17 +366,6 @@ func (j *jsiiProxy_Execution)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Execution)SetProps(val *ExecutionProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Execution)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -445,6 +457,45 @@ func (e *jsiiProxy_Execution) ApplyRemovalPolicy(policy alicloudroscdkcore.Remov
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (e *jsiiProxy_Execution) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		e,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (e *jsiiProxy_Execution) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		e,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (e *jsiiProxy_Execution) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		e,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (e *jsiiProxy_Execution) GeneratePhysicalName() *string {

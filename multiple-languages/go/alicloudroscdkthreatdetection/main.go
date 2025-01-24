@@ -25,6 +25,10 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "attrSpan", GoGetter: "AttrSpan"},
 			_jsii_.MemberProperty{JsiiProperty: "attrUuidList", GoGetter: "AttrUuidList"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDependency", GoMethod: "FetchDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchResourceDesc", GoMethod: "FetchResourceDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "generatePhysicalName", GoMethod: "GeneratePhysicalName"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
@@ -47,12 +51,77 @@ func init() {
 		func() interface{} {
 			j := jsiiProxy_AntiBruteForceRule{}
 			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreResource)
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IAntiBruteForceRule)
 			return &j
 		},
 	)
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-threatdetection.AntiBruteForceRuleProps",
 		reflect.TypeOf((*AntiBruteForceRuleProps)(nil)).Elem(),
+	)
+	_jsii_.RegisterInterface(
+		"@alicloud/ros-cdk-threatdetection.IAntiBruteForceRule",
+		reflect.TypeOf((*IAntiBruteForceRule)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "attrAntiBruteForceRuleId", GoGetter: "AttrAntiBruteForceRuleId"},
+			_jsii_.MemberProperty{JsiiProperty: "attrAntiBruteForceRuleName", GoGetter: "AttrAntiBruteForceRuleName"},
+			_jsii_.MemberProperty{JsiiProperty: "attrDefaultRule", GoGetter: "AttrDefaultRule"},
+			_jsii_.MemberProperty{JsiiProperty: "attrFailCount", GoGetter: "AttrFailCount"},
+			_jsii_.MemberProperty{JsiiProperty: "attrForbiddenTime", GoGetter: "AttrForbiddenTime"},
+			_jsii_.MemberProperty{JsiiProperty: "attrSpan", GoGetter: "AttrSpan"},
+			_jsii_.MemberProperty{JsiiProperty: "attrUuidList", GoGetter: "AttrUuidList"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberProperty{JsiiProperty: "props", GoGetter: "Props"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+		},
+		func() interface{} {
+			j := jsiiProxy_IAntiBruteForceRule{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreIResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterInterface(
+		"@alicloud/ros-cdk-threatdetection.IInstance",
+		reflect.TypeOf((*IInstance)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "attrBuyNumber", GoGetter: "AttrBuyNumber"},
+			_jsii_.MemberProperty{JsiiProperty: "attrContainerImageScan", GoGetter: "AttrContainerImageScan"},
+			_jsii_.MemberProperty{JsiiProperty: "attrContainerImageScanNew", GoGetter: "AttrContainerImageScanNew"},
+			_jsii_.MemberProperty{JsiiProperty: "attrCreateTime", GoGetter: "AttrCreateTime"},
+			_jsii_.MemberProperty{JsiiProperty: "attrHoneypot", GoGetter: "AttrHoneypot"},
+			_jsii_.MemberProperty{JsiiProperty: "attrHoneypotSwitch", GoGetter: "AttrHoneypotSwitch"},
+			_jsii_.MemberProperty{JsiiProperty: "attrInstanceId", GoGetter: "AttrInstanceId"},
+			_jsii_.MemberProperty{JsiiProperty: "attrPaymentType", GoGetter: "AttrPaymentType"},
+			_jsii_.MemberProperty{JsiiProperty: "attrRaspCount", GoGetter: "AttrRaspCount"},
+			_jsii_.MemberProperty{JsiiProperty: "attrRenewalPeriodUnit", GoGetter: "AttrRenewalPeriodUnit"},
+			_jsii_.MemberProperty{JsiiProperty: "attrRenewalStatus", GoGetter: "AttrRenewalStatus"},
+			_jsii_.MemberProperty{JsiiProperty: "attrRenewPeriod", GoGetter: "AttrRenewPeriod"},
+			_jsii_.MemberProperty{JsiiProperty: "attrSasAntiRansomware", GoGetter: "AttrSasAntiRansomware"},
+			_jsii_.MemberProperty{JsiiProperty: "attrSasCspm", GoGetter: "AttrSasCspm"},
+			_jsii_.MemberProperty{JsiiProperty: "attrSasCspmSwitch", GoGetter: "AttrSasCspmSwitch"},
+			_jsii_.MemberProperty{JsiiProperty: "attrSasSc", GoGetter: "AttrSasSc"},
+			_jsii_.MemberProperty{JsiiProperty: "attrSasSdk", GoGetter: "AttrSasSdk"},
+			_jsii_.MemberProperty{JsiiProperty: "attrSasSdkSwitch", GoGetter: "AttrSasSdkSwitch"},
+			_jsii_.MemberProperty{JsiiProperty: "attrSasSlsStorage", GoGetter: "AttrSasSlsStorage"},
+			_jsii_.MemberProperty{JsiiProperty: "attrSasWebguardBoolean", GoGetter: "AttrSasWebguardBoolean"},
+			_jsii_.MemberProperty{JsiiProperty: "attrSasWebguardOrderNum", GoGetter: "AttrSasWebguardOrderNum"},
+			_jsii_.MemberProperty{JsiiProperty: "attrThreatAnalysis", GoGetter: "AttrThreatAnalysis"},
+			_jsii_.MemberProperty{JsiiProperty: "attrThreatAnalysisSwitch", GoGetter: "AttrThreatAnalysisSwitch"},
+			_jsii_.MemberProperty{JsiiProperty: "attrVCore", GoGetter: "AttrVCore"},
+			_jsii_.MemberProperty{JsiiProperty: "attrVersionCode", GoGetter: "AttrVersionCode"},
+			_jsii_.MemberProperty{JsiiProperty: "attrVulCount", GoGetter: "AttrVulCount"},
+			_jsii_.MemberProperty{JsiiProperty: "attrVulSwitch", GoGetter: "AttrVulSwitch"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberProperty{JsiiProperty: "props", GoGetter: "Props"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+		},
+		func() interface{} {
+			j := jsiiProxy_IInstance{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreIResource)
+			return &j
+		},
 	)
 	_jsii_.RegisterClass(
 		"@alicloud/ros-cdk-threatdetection.Instance",
@@ -91,6 +160,10 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "attrVulCount", GoGetter: "AttrVulCount"},
 			_jsii_.MemberProperty{JsiiProperty: "attrVulSwitch", GoGetter: "AttrVulSwitch"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDependency", GoMethod: "FetchDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchResourceDesc", GoMethod: "FetchResourceDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "generatePhysicalName", GoMethod: "GeneratePhysicalName"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
@@ -113,6 +186,7 @@ func init() {
 		func() interface{} {
 			j := jsiiProxy_Instance{}
 			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreResource)
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IInstance)
 			return &j
 		},
 	)
@@ -147,6 +221,9 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "defaultRule", GoGetter: "DefaultRule"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
 			_jsii_.MemberProperty{JsiiProperty: "failCount", GoGetter: "FailCount"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDesc", GoMethod: "FetchDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchRosDependency", GoMethod: "FetchRosDependency"},
 			_jsii_.MemberProperty{JsiiProperty: "forbiddenTime", GoGetter: "ForbiddenTime"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "logicalId", GoGetter: "LogicalId"},
@@ -227,6 +304,9 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "containerImageScanNew", GoGetter: "ContainerImageScanNew"},
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDesc", GoMethod: "FetchDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchRosDependency", GoMethod: "FetchRosDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "honeypot", GoGetter: "Honeypot"},
 			_jsii_.MemberProperty{JsiiProperty: "honeypotSwitch", GoGetter: "HoneypotSwitch"},

@@ -1197,15 +1197,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
         public interface IReplicaConnectionsProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: connectionPort: The service port number of the ApsaraDB for MongoDB instance. Valid values: 1000 to 65535.
-            /// </remarks>
-            [JsiiProperty(name: "connectionPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            object ConnectionPort
-            {
-                get;
-            }
-
-            /// <remarks>
             /// <strong>Property</strong>: connectionString: The prefix of the connection string.
             /// The prefix must be 8 to 64 characters in length,
             /// and can contain lowercase letters and digits.
@@ -1217,20 +1208,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
                 get;
             }
 
+            /// <remarks>
+            /// <strong>Property</strong>: connectionPort: The service port number of the ApsaraDB for MongoDB instance. Valid values: 1000 to 65535.
+            /// </remarks>
+            [JsiiProperty(name: "connectionPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ConnectionPort
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
             [JsiiTypeProxy(nativeType: typeof(IReplicaConnectionsProperty), fullyQualifiedName: "@alicloud/ros-cdk-mongodb.RosInstance.ReplicaConnectionsProperty")]
             internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Mongodb.RosInstance.IReplicaConnectionsProperty
             {
                 private _Proxy(ByRefValue reference): base(reference)
                 {
-                }
-
-                /// <remarks>
-                /// <strong>Property</strong>: connectionPort: The service port number of the ApsaraDB for MongoDB instance. Valid values: 1000 to 65535.
-                /// </remarks>
-                [JsiiProperty(name: "connectionPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-                public object ConnectionPort
-                {
-                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
@@ -1244,6 +1239,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
                 {
                     get => GetInstanceProperty<object>()!;
                 }
+
+                /// <remarks>
+                /// <strong>Property</strong>: connectionPort: The service port number of the ApsaraDB for MongoDB instance. Valid values: 1000 to 65535.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "connectionPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ConnectionPort
+                {
+                    get => GetInstanceProperty<object?>();
+                }
             }
         }
         #pragma warning disable CS8618
@@ -1251,13 +1256,49 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
         [JsiiByValue(fqn: "@alicloud/ros-cdk-mongodb.RosInstance.ReplicaConnectionsProperty")]
         public class ReplicaConnectionsProperty : AlibabaCloud.SDK.ROS.CDK.Mongodb.RosInstance.IReplicaConnectionsProperty
         {
-            private object _connectionPort;
+            private object _connectionString;
+
+            /// <remarks>
+            /// <strong>Property</strong>: connectionString: The prefix of the connection string.
+            /// The prefix must be 8 to 64 characters in length,
+            /// and can contain lowercase letters and digits.
+            /// It must start with a lowercase letter.
+            /// </remarks>
+            [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ConnectionString
+            {
+                get => _connectionString;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _connectionString = value;
+                }
+            }
+
+            private object? _connectionPort;
 
             /// <remarks>
             /// <strong>Property</strong>: connectionPort: The service port number of the ApsaraDB for MongoDB instance. Valid values: 1000 to 65535.
             /// </remarks>
-            [JsiiProperty(name: "connectionPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object ConnectionPort
+            [JsiiOptional]
+            [JsiiProperty(name: "connectionPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ConnectionPort
             {
                 get => _connectionPort;
                 set
@@ -1294,47 +1335,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
                                 // Not enough information to type-check...
                                 break;
                             case null:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                                break;
                             default:
                                 throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                         }
                     }
                     _connectionPort = value;
-                }
-            }
-
-            private object _connectionString;
-
-            /// <remarks>
-            /// <strong>Property</strong>: connectionString: The prefix of the connection string.
-            /// The prefix must be 8 to 64 characters in length,
-            /// and can contain lowercase letters and digits.
-            /// It must start with a lowercase letter.
-            /// </remarks>
-            [JsiiProperty(name: "connectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object ConnectionString
-            {
-                get => _connectionString;
-                set
-                {
-                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                    {
-                        switch (value)
-                        {
-                            case string cast_cd4240:
-                                break;
-                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                                break;
-                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                                // Not enough information to type-check...
-                                break;
-                            case null:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
-                            default:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                        }
-                    }
-                    _connectionString = value;
                 }
             }
         }

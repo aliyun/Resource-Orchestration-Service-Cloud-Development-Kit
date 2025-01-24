@@ -48,6 +48,18 @@ func validateToken_AsStringParameters(value interface{}, options *EncodingOption
 	return nil
 }
 
+func validateToken_CompareStringsParameters(possibleToken1 *string, possibleToken2 *string) error {
+	if possibleToken1 == nil {
+		return fmt.Errorf("parameter possibleToken1 is required, but nil was provided")
+	}
+
+	if possibleToken2 == nil {
+		return fmt.Errorf("parameter possibleToken2 is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func validateToken_IsUnresolvedParameters(obj interface{}) error {
 	if obj == nil {
 		return fmt.Errorf("parameter obj is required, but nil was provided")

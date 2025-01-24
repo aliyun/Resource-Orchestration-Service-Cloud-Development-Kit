@@ -114,25 +114,41 @@ export interface SnapshotsProps {
 }
 
 /**
+ * Represents a `Snapshots`.
+ */
+export interface ISnapshots extends ros.IResource {
+    readonly props: SnapshotsProps;
+
+    /**
+     * Attribute SnapshotIds: the list of snapshot ids.
+     */
+    readonly attrSnapshotIds: ros.IResolvable | string;
+
+    /**
+     * Attribute Snapshots: the list of snapshots.
+     */
+    readonly attrSnapshots: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Snapshots`, which is used to query all snapshots of an Elastic Compute Service (ECS) instance or a disk.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSnapshots`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-snapshots
  */
-export class Snapshots extends ros.Resource {
+export class Snapshots extends ros.Resource implements ISnapshots {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SnapshotsProps;
+    public readonly props: SnapshotsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute SnapshotIds: the list of snapshot ids.
      */
-    public readonly attrSnapshotIds: ros.IResolvable;
+    public readonly attrSnapshotIds: ros.IResolvable | string;
 
     /**
      * Attribute Snapshots: the list of snapshots.
      */
-    public readonly attrSnapshots: ros.IResolvable;
+    public readonly attrSnapshots: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

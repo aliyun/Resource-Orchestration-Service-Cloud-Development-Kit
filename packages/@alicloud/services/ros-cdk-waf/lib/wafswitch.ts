@@ -36,14 +36,20 @@ export interface WafSwitchProps {
 }
 
 /**
+ * Represents a `WafSwitch`.
+ */
+export interface IWafSwitch extends ros.IResource {
+    readonly props: WafSwitchProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::WAF::WafSwitch`, which is used to enable or disable Web attack protection.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWafSwitch`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-wafswitch
  */
-export class WafSwitch extends ros.Resource {
+export class WafSwitch extends ros.Resource implements IWafSwitch {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: WafSwitchProps;
+    public readonly props: WafSwitchProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

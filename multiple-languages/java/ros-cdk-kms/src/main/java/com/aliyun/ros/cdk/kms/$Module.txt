@@ -1,5 +1,11 @@
 @alicloud/ros-cdk-kms.Alias=com.aliyun.ros.cdk.kms.Alias
 @alicloud/ros-cdk-kms.AliasProps=com.aliyun.ros.cdk.kms.AliasProps
+@alicloud/ros-cdk-kms.IAlias=com.aliyun.ros.cdk.kms.IAlias
+@alicloud/ros-cdk-kms.IInstance=com.aliyun.ros.cdk.kms.IInstance
+@alicloud/ros-cdk-kms.IKey=com.aliyun.ros.cdk.kms.IKey
+@alicloud/ros-cdk-kms.INetworkRule=com.aliyun.ros.cdk.kms.INetworkRule
+@alicloud/ros-cdk-kms.IPolicy=com.aliyun.ros.cdk.kms.IPolicy
+@alicloud/ros-cdk-kms.ISecret=com.aliyun.ros.cdk.kms.ISecret
 @alicloud/ros-cdk-kms.Instance=com.aliyun.ros.cdk.kms.Instance
 @alicloud/ros-cdk-kms.InstanceProps=com.aliyun.ros.cdk.kms.InstanceProps
 @alicloud/ros-cdk-kms.Key=com.aliyun.ros.cdk.kms.Key
@@ -24,6 +30,14 @@
 @alicloud/ros-cdk-kms.RosSecretProps=com.aliyun.ros.cdk.kms.RosSecretProps
 @alicloud/ros-cdk-kms.Secret=com.aliyun.ros.cdk.kms.Secret
 @alicloud/ros-cdk-kms.SecretProps=com.aliyun.ros.cdk.kms.SecretProps
+@alicloud/ros-cdk-kms.datasource.IInstance=com.aliyun.ros.cdk.kms.datasource.IInstance
+@alicloud/ros-cdk-kms.datasource.IInstances=com.aliyun.ros.cdk.kms.datasource.IInstances
+@alicloud/ros-cdk-kms.datasource.INetworkRule=com.aliyun.ros.cdk.kms.datasource.INetworkRule
+@alicloud/ros-cdk-kms.datasource.INetworkRules=com.aliyun.ros.cdk.kms.datasource.INetworkRules
+@alicloud/ros-cdk-kms.datasource.IPolicies=com.aliyun.ros.cdk.kms.datasource.IPolicies
+@alicloud/ros-cdk-kms.datasource.IPolicy=com.aliyun.ros.cdk.kms.datasource.IPolicy
+@alicloud/ros-cdk-kms.datasource.ISecret=com.aliyun.ros.cdk.kms.datasource.ISecret
+@alicloud/ros-cdk-kms.datasource.ISecrets=com.aliyun.ros.cdk.kms.datasource.ISecrets
 @alicloud/ros-cdk-kms.datasource.Instance=com.aliyun.ros.cdk.kms.datasource.Instance
 @alicloud/ros-cdk-kms.datasource.InstanceProps=com.aliyun.ros.cdk.kms.datasource.InstanceProps
 @alicloud/ros-cdk-kms.datasource.Instances=com.aliyun.ros.cdk.kms.datasource.Instances

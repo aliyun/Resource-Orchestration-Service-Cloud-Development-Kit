@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.paidlc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidlc-job
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:10.452Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:42.205Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.paidlc.$Module.class, fqn = "@alicloud/ros-cdk-paidlc.RosJobProps")
 @software.amazon.jsii.Jsii.Proxy(RosJobProps.Jsii$Proxy.class)
 public interface RosJobProps extends software.amazon.jsii.JsiiSerializable {

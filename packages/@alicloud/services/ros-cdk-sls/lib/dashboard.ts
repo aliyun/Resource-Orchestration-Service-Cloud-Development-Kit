@@ -39,25 +39,41 @@ export interface DashboardProps {
 }
 
 /**
+ * Represents a `Dashboard`.
+ */
+export interface IDashboard extends ros.IResource {
+    readonly props: DashboardProps;
+
+    /**
+     * Attribute DashboardName: Dashboard name.
+     */
+    readonly attrDashboardName: ros.IResolvable | string;
+
+    /**
+     * Attribute DisplayName: Display name.
+     */
+    readonly attrDisplayName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Dashboard`, which is used to create a dashboard.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDashboard`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-dashboard
  */
-export class Dashboard extends ros.Resource {
+export class Dashboard extends ros.Resource implements IDashboard {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DashboardProps;
+    public readonly props: DashboardProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DashboardName: Dashboard name.
      */
-    public readonly attrDashboardName: ros.IResolvable;
+    public readonly attrDashboardName: ros.IResolvable | string;
 
     /**
      * Attribute DisplayName: Display name.
      */
-    public readonly attrDisplayName: ros.IResolvable;
+    public readonly attrDisplayName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

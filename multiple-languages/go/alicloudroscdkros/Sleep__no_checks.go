@@ -52,10 +52,6 @@ func (j *jsiiProxy_Sleep) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_Sleep) validateSetPropsParameters(val *SleepProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_Sleep) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

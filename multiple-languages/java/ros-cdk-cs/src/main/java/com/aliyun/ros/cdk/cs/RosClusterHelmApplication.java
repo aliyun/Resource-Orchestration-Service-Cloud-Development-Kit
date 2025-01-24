@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CS::ClusterHelmApplication</code>, which is used to deploy an application by using Helm.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:06.034Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:36.600Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosClusterHelmApplication")
 public class RosClusterHelmApplication extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -443,6 +443,13 @@ public class RosClusterHelmApplication extends com.aliyun.ros.cdk.core.RosResour
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getApiVersion() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getFirstMatch() {
             return null;
         }
@@ -504,6 +511,7 @@ public class RosClusterHelmApplication extends com.aliyun.ros.cdk.core.RosResour
             java.lang.Object kind;
             java.lang.Object name;
             java.lang.Object operator;
+            java.lang.Object apiVersion;
             java.lang.Object firstMatch;
             java.lang.Object jsonPath;
             java.lang.Object namespace;
@@ -575,6 +583,28 @@ public class RosClusterHelmApplication extends com.aliyun.ros.cdk.core.RosResour
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder operator(com.aliyun.ros.cdk.core.IResolvable operator) {
                 this.operator = operator;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link WaitUntilProperty#getApiVersion}
+             * @param apiVersion the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder apiVersion(java.lang.String apiVersion) {
+                this.apiVersion = apiVersion;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link WaitUntilProperty#getApiVersion}
+             * @param apiVersion the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder apiVersion(com.aliyun.ros.cdk.core.IResolvable apiVersion) {
+                this.apiVersion = apiVersion;
                 return this;
             }
 
@@ -753,6 +783,7 @@ public class RosClusterHelmApplication extends com.aliyun.ros.cdk.core.RosResour
             private final java.lang.Object kind;
             private final java.lang.Object name;
             private final java.lang.Object operator;
+            private final java.lang.Object apiVersion;
             private final java.lang.Object firstMatch;
             private final java.lang.Object jsonPath;
             private final java.lang.Object namespace;
@@ -770,6 +801,7 @@ public class RosClusterHelmApplication extends com.aliyun.ros.cdk.core.RosResour
                 this.kind = software.amazon.jsii.Kernel.get(this, "kind", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.operator = software.amazon.jsii.Kernel.get(this, "operator", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.apiVersion = software.amazon.jsii.Kernel.get(this, "apiVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.firstMatch = software.amazon.jsii.Kernel.get(this, "firstMatch", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.jsonPath = software.amazon.jsii.Kernel.get(this, "jsonPath", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.namespace = software.amazon.jsii.Kernel.get(this, "namespace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -787,6 +819,7 @@ public class RosClusterHelmApplication extends com.aliyun.ros.cdk.core.RosResour
                 this.kind = java.util.Objects.requireNonNull(builder.kind, "kind is required");
                 this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
                 this.operator = java.util.Objects.requireNonNull(builder.operator, "operator is required");
+                this.apiVersion = builder.apiVersion;
                 this.firstMatch = builder.firstMatch;
                 this.jsonPath = builder.jsonPath;
                 this.namespace = builder.namespace;
@@ -809,6 +842,11 @@ public class RosClusterHelmApplication extends com.aliyun.ros.cdk.core.RosResour
             @Override
             public final java.lang.Object getOperator() {
                 return this.operator;
+            }
+
+            @Override
+            public final java.lang.Object getApiVersion() {
+                return this.apiVersion;
             }
 
             @Override
@@ -855,6 +893,9 @@ public class RosClusterHelmApplication extends com.aliyun.ros.cdk.core.RosResour
                 data.set("kind", om.valueToTree(this.getKind()));
                 data.set("name", om.valueToTree(this.getName()));
                 data.set("operator", om.valueToTree(this.getOperator()));
+                if (this.getApiVersion() != null) {
+                    data.set("apiVersion", om.valueToTree(this.getApiVersion()));
+                }
                 if (this.getFirstMatch() != null) {
                     data.set("firstMatch", om.valueToTree(this.getFirstMatch()));
                 }
@@ -897,6 +938,7 @@ public class RosClusterHelmApplication extends com.aliyun.ros.cdk.core.RosResour
                 if (!kind.equals(that.kind)) return false;
                 if (!name.equals(that.name)) return false;
                 if (!operator.equals(that.operator)) return false;
+                if (this.apiVersion != null ? !this.apiVersion.equals(that.apiVersion) : that.apiVersion != null) return false;
                 if (this.firstMatch != null ? !this.firstMatch.equals(that.firstMatch) : that.firstMatch != null) return false;
                 if (this.jsonPath != null ? !this.jsonPath.equals(that.jsonPath) : that.jsonPath != null) return false;
                 if (this.namespace != null ? !this.namespace.equals(that.namespace) : that.namespace != null) return false;
@@ -911,6 +953,7 @@ public class RosClusterHelmApplication extends com.aliyun.ros.cdk.core.RosResour
                 int result = this.kind.hashCode();
                 result = 31 * result + (this.name.hashCode());
                 result = 31 * result + (this.operator.hashCode());
+                result = 31 * result + (this.apiVersion != null ? this.apiVersion.hashCode() : 0);
                 result = 31 * result + (this.firstMatch != null ? this.firstMatch.hashCode() : 0);
                 result = 31 * result + (this.jsonPath != null ? this.jsonPath.hashCode() : 0);
                 result = 31 * result + (this.namespace != null ? this.namespace.hashCode() : 0);

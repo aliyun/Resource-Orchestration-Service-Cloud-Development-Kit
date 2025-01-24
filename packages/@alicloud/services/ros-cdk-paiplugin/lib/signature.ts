@@ -21,40 +21,71 @@ export interface SignatureProps {
 }
 
 /**
+ * Represents a `Signature`.
+ */
+export interface ISignature extends ros.IResource {
+    readonly props: SignatureProps;
+
+    /**
+     * Attribute CreatedTime: The creation time of the Signature.
+     */
+    readonly attrCreatedTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: Application instructions.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute Id: The ID of the Signature.
+     */
+    readonly attrId: ros.IResolvable | string;
+
+    /**
+     * Attribute Name: The name of the Signature.
+     */
+    readonly attrName: ros.IResolvable | string;
+
+    /**
+     * Attribute Reason: Review recommendations.
+     */
+    readonly attrReason: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::PAIPlugin::Signature`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSignature`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paiplugin-signature
  */
-export class Signature extends ros.Resource {
+export class Signature extends ros.Resource implements ISignature {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SignatureProps;
+    public readonly props: SignatureProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreatedTime: The creation time of the Signature.
      */
-    public readonly attrCreatedTime: ros.IResolvable;
+    public readonly attrCreatedTime: ros.IResolvable | string;
 
     /**
      * Attribute Description: Application instructions.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute Id: The ID of the Signature.
      */
-    public readonly attrId: ros.IResolvable;
+    public readonly attrId: ros.IResolvable | string;
 
     /**
      * Attribute Name: The name of the Signature.
      */
-    public readonly attrName: ros.IResolvable;
+    public readonly attrName: ros.IResolvable | string;
 
     /**
      * Attribute Reason: Review recommendations.
      */
-    public readonly attrReason: ros.IResolvable;
+    public readonly attrReason: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

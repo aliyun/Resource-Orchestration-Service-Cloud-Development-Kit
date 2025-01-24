@@ -21,25 +21,41 @@ export interface DomainProps {
 }
 
 /**
+ * Represents a `Domain`.
+ */
+export interface IDomain extends ros.IResource {
+    readonly props: DomainProps;
+
+    /**
+     * Attribute BucketName: The name of Bucket
+     */
+    readonly attrBucketName: ros.IResolvable | string;
+
+    /**
+     * Attribute DomainName: The custom domain name.
+     */
+    readonly attrDomainName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::OSS::Domain`, which is used to bind a custom domain name.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomain`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-domain
  */
-export class Domain extends ros.Resource {
+export class Domain extends ros.Resource implements IDomain {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DomainProps;
+    public readonly props: DomainProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute BucketName: The name of Bucket
      */
-    public readonly attrBucketName: ros.IResolvable;
+    public readonly attrBucketName: ros.IResolvable | string;
 
     /**
      * Attribute DomainName: The custom domain name.
      */
-    public readonly attrDomainName: ros.IResolvable;
+    public readonly attrDomainName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

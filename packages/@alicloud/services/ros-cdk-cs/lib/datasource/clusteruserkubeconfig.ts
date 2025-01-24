@@ -38,30 +38,51 @@ export interface ClusterUserKubeconfigProps {
 }
 
 /**
+ * Represents a `ClusterUserKubeconfig`.
+ */
+export interface IClusterUserKubeconfig extends ros.IResource {
+    readonly props: ClusterUserKubeconfigProps;
+
+    /**
+     * Attribute ClusterId: The ID of the ACK cluster.
+     */
+    readonly attrClusterId: ros.IResolvable | string;
+
+    /**
+     * Attribute Config: The content of the kubeconfig file.
+     */
+    readonly attrConfig: ros.IResolvable | string;
+
+    /**
+     * Attribute Expiration: The expiration time of the kubeconfig file. The value is the UTC time displayed in RFC3339 format.
+     */
+    readonly attrExpiration: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::CS::ClusterUserKubeconfig`, which is used to query the kubeconfig file of a Container Service for Kubernetes (ACK) cluster by cluster ID.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusterUserKubeconfig`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-clusteruserkubeconfig
  */
-export class ClusterUserKubeconfig extends ros.Resource {
+export class ClusterUserKubeconfig extends ros.Resource implements IClusterUserKubeconfig {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ClusterUserKubeconfigProps;
+    public readonly props: ClusterUserKubeconfigProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterId: The ID of the ACK cluster.
      */
-    public readonly attrClusterId: ros.IResolvable;
+    public readonly attrClusterId: ros.IResolvable | string;
 
     /**
      * Attribute Config: The content of the kubeconfig file.
      */
-    public readonly attrConfig: ros.IResolvable;
+    public readonly attrConfig: ros.IResolvable | string;
 
     /**
      * Attribute Expiration: The expiration time of the kubeconfig file. The value is the UTC time displayed in RFC3339 format.
      */
-    public readonly attrExpiration: ros.IResolvable;
+    public readonly attrExpiration: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

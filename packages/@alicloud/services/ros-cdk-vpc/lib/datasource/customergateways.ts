@@ -24,25 +24,41 @@ export interface CustomerGatewaysProps {
 }
 
 /**
+ * Represents a `CustomerGateways`.
+ */
+export interface ICustomerGateways extends ros.IResource {
+    readonly props: CustomerGatewaysProps;
+
+    /**
+     * Attribute CustomerGatewayIds: The list of customer gateway IDs.
+     */
+    readonly attrCustomerGatewayIds: ros.IResolvable | string;
+
+    /**
+     * Attribute CustomerGateways: The list of customer gateways.
+     */
+    readonly attrCustomerGateways: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::CustomerGateways`, which is used to query customer gateways.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCustomerGateways`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-customergateways
  */
-export class CustomerGateways extends ros.Resource {
+export class CustomerGateways extends ros.Resource implements ICustomerGateways {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: CustomerGatewaysProps;
+    public readonly props: CustomerGatewaysProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CustomerGatewayIds: The list of customer gateway IDs.
      */
-    public readonly attrCustomerGatewayIds: ros.IResolvable;
+    public readonly attrCustomerGatewayIds: ros.IResolvable | string;
 
     /**
      * Attribute CustomerGateways: The list of customer gateways.
      */
-    public readonly attrCustomerGateways: ros.IResolvable;
+    public readonly attrCustomerGateways: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -12,16 +12,26 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::EventBridge::Rule`, which is used to create an event rule for an event bus.
 type Rule interface {
 	alicloudroscdkcore.Resource
+	IRule
 	// Attribute EventBusName: The name of the event bus.
-	AttrEventBusName() alicloudroscdkcore.IResolvable
+	AttrEventBusName() interface{}
 	// Attribute RuleARN: The Alibaba Cloud Resource Name (ARN) of the event rule.
 	//
 	// The ARN is used for authorization.
-	AttrRuleArn() alicloudroscdkcore.IResolvable
+	AttrRuleArn() interface{}
 	// Attribute RuleName: The name of the event rule.
-	AttrRuleName() alicloudroscdkcore.IResolvable
+	AttrRuleName() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -36,7 +46,6 @@ type Rule interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *RuleProps
-	SetProps(val *RuleProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -49,6 +58,9 @@ type Rule interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -101,10 +113,11 @@ type Rule interface {
 // The jsii proxy struct for Rule
 type jsiiProxy_Rule struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IRule
 }
 
-func (j *jsiiProxy_Rule) AttrEventBusName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Rule) AttrEventBusName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEventBusName",
@@ -113,8 +126,8 @@ func (j *jsiiProxy_Rule) AttrEventBusName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Rule) AttrRuleArn() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Rule) AttrRuleArn() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRuleArn",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_Rule) AttrRuleArn() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Rule) AttrRuleName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Rule) AttrRuleName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRuleName",
@@ -138,6 +151,16 @@ func (j *jsiiProxy_Rule) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Rule) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -275,17 +298,6 @@ func (j *jsiiProxy_Rule)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Rule)SetProps(val *RuleProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Rule)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -377,6 +389,45 @@ func (r *jsiiProxy_Rule) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPol
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (r *jsiiProxy_Rule) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		r,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_Rule) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		r,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_Rule) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		r,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (r *jsiiProxy_Rule) GeneratePhysicalName() *string {

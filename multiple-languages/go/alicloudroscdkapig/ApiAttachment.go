@@ -12,16 +12,26 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::APIG::ApiAttachment`.
 type ApiAttachment interface {
 	alicloudroscdkcore.Resource
+	IApiAttachment
 	// Attribute EnvironmentId: The ID of the environment to which the API is to deploy.
-	AttrEnvironmentId() alicloudroscdkcore.IResolvable
+	AttrEnvironmentId() interface{}
 	// Attribute HttpApiId: The ID of the HTTP API.
-	AttrHttpApiId() alicloudroscdkcore.IResolvable
+	AttrHttpApiId() interface{}
 	// Attribute RouteId: The route ID.
 	//
 	// When publishing an HTTP API route, it must be passed in.
-	AttrRouteId() alicloudroscdkcore.IResolvable
+	AttrRouteId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -36,7 +46,6 @@ type ApiAttachment interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ApiAttachmentProps
-	SetProps(val *ApiAttachmentProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -49,6 +58,9 @@ type ApiAttachment interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -101,10 +113,11 @@ type ApiAttachment interface {
 // The jsii proxy struct for ApiAttachment
 type jsiiProxy_ApiAttachment struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IApiAttachment
 }
 
-func (j *jsiiProxy_ApiAttachment) AttrEnvironmentId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ApiAttachment) AttrEnvironmentId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEnvironmentId",
@@ -113,8 +126,8 @@ func (j *jsiiProxy_ApiAttachment) AttrEnvironmentId() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_ApiAttachment) AttrHttpApiId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ApiAttachment) AttrHttpApiId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHttpApiId",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_ApiAttachment) AttrHttpApiId() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_ApiAttachment) AttrRouteId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ApiAttachment) AttrRouteId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRouteId",
@@ -138,6 +151,16 @@ func (j *jsiiProxy_ApiAttachment) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApiAttachment) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -275,17 +298,6 @@ func (j *jsiiProxy_ApiAttachment)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ApiAttachment)SetProps(val *ApiAttachmentProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_ApiAttachment)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -377,6 +389,45 @@ func (a *jsiiProxy_ApiAttachment) ApplyRemovalPolicy(policy alicloudroscdkcore.R
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (a *jsiiProxy_ApiAttachment) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		a,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_ApiAttachment) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_ApiAttachment) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (a *jsiiProxy_ApiAttachment) GeneratePhysicalName() *string {

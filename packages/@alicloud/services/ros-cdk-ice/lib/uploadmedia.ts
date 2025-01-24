@@ -67,43 +67,77 @@ export interface UploadMediaProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ICE::UploadMedia`.
- * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUploadMedia`for a more convenient development experience.
- * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ice-uploadmedia
+ * Represents a `UploadMedia`.
  */
-export class UploadMedia extends ros.Resource {
-    protected scope: ros.Construct;
-    protected id: string;
-    protected props: UploadMediaProps;
-    protected enableResourcePropertyConstraint: boolean;
+export interface IUploadMedia extends ros.IResource {
+    readonly props: UploadMediaProps;
 
     /**
      * Attribute FileURL: The OSS URL of the file. The URL does not contain the information used for authentication.
      */
-    public readonly attrFileUrl: ros.IResolvable;
+    readonly attrFileUrl: ros.IResolvable | string;
 
     /**
      * Attribute MediaId: The ID of the media asset.
      */
-    public readonly attrMediaId: ros.IResolvable;
+    readonly attrMediaId: ros.IResolvable | string;
 
     /**
      * Attribute MediaURL: The URL of the media asset.
 Note If a domain name for Alibaba Cloud CDN (CDN) is specified, a CDN URL is returned. Otherwise, an OSS URL is returned. If the HTTP status code 403 is returned when you access the URL from your browser, the URL authentication feature of ApsaraVideo VOD is enabled. To resolve this issue, disable URL authentication or generate an authentication signature.
      */
-    public readonly attrMediaUrl: ros.IResolvable;
+    readonly attrMediaUrl: ros.IResolvable | string;
 
     /**
      * Attribute UploadAddress: The upload URL.
 Note The returned upload URL is a Base64-encoded URL. You must decode the Base64-encoded upload URL before you use an SDK or call an API operation to upload media files. You need to parse UploadAddress only if you use OSS SDK or call an OSS API operation to upload media files.
      */
-    public readonly attrUploadAddress: ros.IResolvable;
+    readonly attrUploadAddress: ros.IResolvable | string;
 
     /**
      * Attribute UploadAuth: The upload credential.
 Note The returned upload credential is a Base64-encoded value. You must decode the Base64-encoded upload URL before you use an SDK or call an API operation to upload media files. You need to parse UploadAuth only if you use OSS SDK or call an OSS API operation to upload media files.
      */
-    public readonly attrUploadAuth: ros.IResolvable;
+    readonly attrUploadAuth: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ICE::UploadMedia`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUploadMedia`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ice-uploadmedia
+ */
+export class UploadMedia extends ros.Resource implements IUploadMedia {
+    protected scope: ros.Construct;
+    protected id: string;
+    public readonly props: UploadMediaProps;
+    protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute FileURL: The OSS URL of the file. The URL does not contain the information used for authentication.
+     */
+    public readonly attrFileUrl: ros.IResolvable | string;
+
+    /**
+     * Attribute MediaId: The ID of the media asset.
+     */
+    public readonly attrMediaId: ros.IResolvable | string;
+
+    /**
+     * Attribute MediaURL: The URL of the media asset.
+Note If a domain name for Alibaba Cloud CDN (CDN) is specified, a CDN URL is returned. Otherwise, an OSS URL is returned. If the HTTP status code 403 is returned when you access the URL from your browser, the URL authentication feature of ApsaraVideo VOD is enabled. To resolve this issue, disable URL authentication or generate an authentication signature.
+     */
+    public readonly attrMediaUrl: ros.IResolvable | string;
+
+    /**
+     * Attribute UploadAddress: The upload URL.
+Note The returned upload URL is a Base64-encoded URL. You must decode the Base64-encoded upload URL before you use an SDK or call an API operation to upload media files. You need to parse UploadAddress only if you use OSS SDK or call an OSS API operation to upload media files.
+     */
+    public readonly attrUploadAddress: ros.IResolvable | string;
+
+    /**
+     * Attribute UploadAuth: The upload credential.
+Note The returned upload credential is a Base64-encoded value. You must decode the Base64-encoded upload URL before you use an SDK or call an API operation to upload media files. You need to parse UploadAuth only if you use OSS SDK or call an OSS API operation to upload media files.
+     */
+    public readonly attrUploadAuth: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

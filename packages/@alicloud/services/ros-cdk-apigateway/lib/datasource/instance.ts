@@ -24,150 +24,291 @@ export interface InstanceProps {
 }
 
 /**
+ * Represents a `Instance`.
+ */
+export interface IInstance extends ros.IResource {
+    readonly props: InstanceProps;
+
+    /**
+     * Attribute AclId: Access control ID.
+     */
+    readonly attrAclId: ros.IResolvable | string;
+
+    /**
+     * Attribute AclName: Access control name.
+     */
+    readonly attrAclName: ros.IResolvable | string;
+
+    /**
+     * Attribute AclStatus: Access control type.
+     */
+    readonly attrAclStatus: ros.IResolvable | string;
+
+    /**
+     * Attribute AclType: Access control type.
+     */
+    readonly attrAclType: ros.IResolvable | string;
+
+    /**
+     * Attribute ClassicEgressAddress: Classic network exit address.
+     */
+    readonly attrClassicEgressAddress: ros.IResolvable | string;
+
+    /**
+     * Attribute CreateTime: Creation time.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute EgressIpv6Enable: Does IPV6 Capability Support.
+     */
+    readonly attrEgressIpv6Enable: ros.IResolvable | string;
+
+    /**
+     * Attribute ExpiredTime: Instance expiration time.
+     */
+    readonly attrExpiredTime: ros.IResolvable | string;
+
+    /**
+     * Attribute HttpsPolicy: Https policy.
+     */
+    readonly attrHttpsPolicy: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: Instance id.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceName: Instance name.
+     */
+    readonly attrInstanceName: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceRpsLimit: Instance rps limits.
+     */
+    readonly attrInstanceRpsLimit: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceSpec: Instance type.
+     */
+    readonly attrInstanceSpec: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceSpecAttributes: Instance type.
+     */
+    readonly attrInstanceSpecAttributes: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceType: Instance type.
+     */
+    readonly attrInstanceType: ros.IResolvable | string;
+
+    /**
+     * Attribute InternetEgressAddress: Public network exit address.
+     */
+    readonly attrInternetEgressAddress: ros.IResolvable | string;
+
+    /**
+     * Attribute PaymentType: The payment type of the resource.
+     */
+    readonly attrPaymentType: ros.IResolvable | string;
+
+    /**
+     * Attribute SupportIpv6: Does ipv6 support.
+     */
+    readonly attrSupportIpv6: ros.IResolvable | string;
+
+    /**
+     * Attribute UserVpcId: User's VpcID.
+     */
+    readonly attrUserVpcId: ros.IResolvable | string;
+
+    /**
+     * Attribute UserVswitchId: DescribeInstances.
+     */
+    readonly attrUserVswitchId: ros.IResolvable | string;
+
+    /**
+     * Attribute VipTypeList: Vip type.
+     */
+    readonly attrVipTypeList: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcEgressAddress: Intranet VPC exit network segment.
+     */
+    readonly attrVpcEgressAddress: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcIntranetEnable: Whether Vpc allows authorization.
+     */
+    readonly attrVpcIntranetEnable: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcOwnerId: Vpc licensor ID.
+     */
+    readonly attrVpcOwnerId: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcSlbIntranetEnable: Whether the slb of the Vpc supports.
+     */
+    readonly attrVpcSlbIntranetEnable: ros.IResolvable | string;
+
+    /**
+     * Attribute ZoneId: Zone.
+     */
+    readonly attrZoneId: ros.IResolvable | string;
+
+    /**
+     * Attribute ZoneLocalName: Available area.
+     */
+    readonly attrZoneLocalName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ApiGateway::Instance`, which is used to query the information about an instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-instance
  */
-export class Instance extends ros.Resource {
+export class Instance extends ros.Resource implements IInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InstanceProps;
+    public readonly props: InstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AclId: Access control ID.
      */
-    public readonly attrAclId: ros.IResolvable;
+    public readonly attrAclId: ros.IResolvable | string;
 
     /**
      * Attribute AclName: Access control name.
      */
-    public readonly attrAclName: ros.IResolvable;
+    public readonly attrAclName: ros.IResolvable | string;
 
     /**
      * Attribute AclStatus: Access control type.
      */
-    public readonly attrAclStatus: ros.IResolvable;
+    public readonly attrAclStatus: ros.IResolvable | string;
 
     /**
      * Attribute AclType: Access control type.
      */
-    public readonly attrAclType: ros.IResolvable;
+    public readonly attrAclType: ros.IResolvable | string;
 
     /**
      * Attribute ClassicEgressAddress: Classic network exit address.
      */
-    public readonly attrClassicEgressAddress: ros.IResolvable;
+    public readonly attrClassicEgressAddress: ros.IResolvable | string;
 
     /**
      * Attribute CreateTime: Creation time.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute EgressIpv6Enable: Does IPV6 Capability Support.
      */
-    public readonly attrEgressIpv6Enable: ros.IResolvable;
+    public readonly attrEgressIpv6Enable: ros.IResolvable | string;
 
     /**
      * Attribute ExpiredTime: Instance expiration time.
      */
-    public readonly attrExpiredTime: ros.IResolvable;
+    public readonly attrExpiredTime: ros.IResolvable | string;
 
     /**
      * Attribute HttpsPolicy: Https policy.
      */
-    public readonly attrHttpsPolicy: ros.IResolvable;
+    public readonly attrHttpsPolicy: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: Instance id.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute InstanceName: Instance name.
      */
-    public readonly attrInstanceName: ros.IResolvable;
+    public readonly attrInstanceName: ros.IResolvable | string;
 
     /**
      * Attribute InstanceRpsLimit: Instance rps limits.
      */
-    public readonly attrInstanceRpsLimit: ros.IResolvable;
+    public readonly attrInstanceRpsLimit: ros.IResolvable | string;
 
     /**
      * Attribute InstanceSpec: Instance type.
      */
-    public readonly attrInstanceSpec: ros.IResolvable;
+    public readonly attrInstanceSpec: ros.IResolvable | string;
 
     /**
      * Attribute InstanceSpecAttributes: Instance type.
      */
-    public readonly attrInstanceSpecAttributes: ros.IResolvable;
+    public readonly attrInstanceSpecAttributes: ros.IResolvable | string;
 
     /**
      * Attribute InstanceType: Instance type.
      */
-    public readonly attrInstanceType: ros.IResolvable;
+    public readonly attrInstanceType: ros.IResolvable | string;
 
     /**
      * Attribute InternetEgressAddress: Public network exit address.
      */
-    public readonly attrInternetEgressAddress: ros.IResolvable;
+    public readonly attrInternetEgressAddress: ros.IResolvable | string;
 
     /**
      * Attribute PaymentType: The payment type of the resource.
      */
-    public readonly attrPaymentType: ros.IResolvable;
+    public readonly attrPaymentType: ros.IResolvable | string;
 
     /**
      * Attribute SupportIpv6: Does ipv6 support.
      */
-    public readonly attrSupportIpv6: ros.IResolvable;
+    public readonly attrSupportIpv6: ros.IResolvable | string;
 
     /**
      * Attribute UserVpcId: User's VpcID.
      */
-    public readonly attrUserVpcId: ros.IResolvable;
+    public readonly attrUserVpcId: ros.IResolvable | string;
 
     /**
      * Attribute UserVswitchId: DescribeInstances.
      */
-    public readonly attrUserVswitchId: ros.IResolvable;
+    public readonly attrUserVswitchId: ros.IResolvable | string;
 
     /**
      * Attribute VipTypeList: Vip type.
      */
-    public readonly attrVipTypeList: ros.IResolvable;
+    public readonly attrVipTypeList: ros.IResolvable | string;
 
     /**
      * Attribute VpcEgressAddress: Intranet VPC exit network segment.
      */
-    public readonly attrVpcEgressAddress: ros.IResolvable;
+    public readonly attrVpcEgressAddress: ros.IResolvable | string;
 
     /**
      * Attribute VpcIntranetEnable: Whether Vpc allows authorization.
      */
-    public readonly attrVpcIntranetEnable: ros.IResolvable;
+    public readonly attrVpcIntranetEnable: ros.IResolvable | string;
 
     /**
      * Attribute VpcOwnerId: Vpc licensor ID.
      */
-    public readonly attrVpcOwnerId: ros.IResolvable;
+    public readonly attrVpcOwnerId: ros.IResolvable | string;
 
     /**
      * Attribute VpcSlbIntranetEnable: Whether the slb of the Vpc supports.
      */
-    public readonly attrVpcSlbIntranetEnable: ros.IResolvable;
+    public readonly attrVpcSlbIntranetEnable: ros.IResolvable | string;
 
     /**
      * Attribute ZoneId: Zone.
      */
-    public readonly attrZoneId: ros.IResolvable;
+    public readonly attrZoneId: ros.IResolvable | string;
 
     /**
      * Attribute ZoneLocalName: Available area.
      */
-    public readonly attrZoneLocalName: ros.IResolvable;
+    public readonly attrZoneLocalName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

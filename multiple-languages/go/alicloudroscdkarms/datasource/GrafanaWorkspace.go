@@ -12,24 +12,34 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::GrafanaWorkspace`.
 type GrafanaWorkspace interface {
 	alicloudroscdkcore.Resource
+	IGrafanaWorkspace
 	// Attribute CreateTime: The time when the workspace was created.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute Description: The description of the workspace.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute GrafanaVersion: The version number of Grafana.
-	AttrGrafanaVersion() alicloudroscdkcore.IResolvable
+	AttrGrafanaVersion() interface{}
 	// Attribute GrafanaWorkspaceEdition: The version of the workspace.
-	AttrGrafanaWorkspaceEdition() alicloudroscdkcore.IResolvable
+	AttrGrafanaWorkspaceEdition() interface{}
 	// Attribute GrafanaWorkspaceId: The ID of the workspace.
-	AttrGrafanaWorkspaceId() alicloudroscdkcore.IResolvable
+	AttrGrafanaWorkspaceId() interface{}
 	// Attribute GrafanaWorkspaceName: The workspace name.
-	AttrGrafanaWorkspaceName() alicloudroscdkcore.IResolvable
+	AttrGrafanaWorkspaceName() interface{}
 	// Attribute ResourceGroupId: The resource group ID.
-	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() interface{}
 	// Attribute Tags: The tags of the resource.
-	AttrTags() alicloudroscdkcore.IResolvable
+	AttrTags() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -44,7 +54,6 @@ type GrafanaWorkspace interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *GrafanaWorkspaceProps
-	SetProps(val *GrafanaWorkspaceProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -57,6 +66,9 @@ type GrafanaWorkspace interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -109,10 +121,11 @@ type GrafanaWorkspace interface {
 // The jsii proxy struct for GrafanaWorkspace
 type jsiiProxy_GrafanaWorkspace struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IGrafanaWorkspace
 }
 
-func (j *jsiiProxy_GrafanaWorkspace) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_GrafanaWorkspace) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_GrafanaWorkspace) AttrCreateTime() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_GrafanaWorkspace) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_GrafanaWorkspace) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -131,8 +144,8 @@ func (j *jsiiProxy_GrafanaWorkspace) AttrDescription() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_GrafanaWorkspace) AttrGrafanaVersion() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_GrafanaWorkspace) AttrGrafanaVersion() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGrafanaVersion",
@@ -141,8 +154,8 @@ func (j *jsiiProxy_GrafanaWorkspace) AttrGrafanaVersion() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_GrafanaWorkspace) AttrGrafanaWorkspaceEdition() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_GrafanaWorkspace) AttrGrafanaWorkspaceEdition() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGrafanaWorkspaceEdition",
@@ -151,8 +164,8 @@ func (j *jsiiProxy_GrafanaWorkspace) AttrGrafanaWorkspaceEdition() alicloudroscd
 	return returns
 }
 
-func (j *jsiiProxy_GrafanaWorkspace) AttrGrafanaWorkspaceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_GrafanaWorkspace) AttrGrafanaWorkspaceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGrafanaWorkspaceId",
@@ -161,8 +174,8 @@ func (j *jsiiProxy_GrafanaWorkspace) AttrGrafanaWorkspaceId() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_GrafanaWorkspace) AttrGrafanaWorkspaceName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_GrafanaWorkspace) AttrGrafanaWorkspaceName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGrafanaWorkspaceName",
@@ -171,8 +184,8 @@ func (j *jsiiProxy_GrafanaWorkspace) AttrGrafanaWorkspaceName() alicloudroscdkco
 	return returns
 }
 
-func (j *jsiiProxy_GrafanaWorkspace) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_GrafanaWorkspace) AttrResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupId",
@@ -181,8 +194,8 @@ func (j *jsiiProxy_GrafanaWorkspace) AttrResourceGroupId() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_GrafanaWorkspace) AttrTags() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_GrafanaWorkspace) AttrTags() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTags",
@@ -196,6 +209,16 @@ func (j *jsiiProxy_GrafanaWorkspace) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_GrafanaWorkspace) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -333,17 +356,6 @@ func (j *jsiiProxy_GrafanaWorkspace)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_GrafanaWorkspace)SetProps(val *GrafanaWorkspaceProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_GrafanaWorkspace)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -435,6 +447,45 @@ func (g *jsiiProxy_GrafanaWorkspace) ApplyRemovalPolicy(policy alicloudroscdkcor
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (g *jsiiProxy_GrafanaWorkspace) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		g,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (g *jsiiProxy_GrafanaWorkspace) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		g,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (g *jsiiProxy_GrafanaWorkspace) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		g,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (g *jsiiProxy_GrafanaWorkspace) GeneratePhysicalName() *string {

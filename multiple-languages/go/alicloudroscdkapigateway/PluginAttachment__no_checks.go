@@ -52,10 +52,6 @@ func (j *jsiiProxy_PluginAttachment) validateSetIdParameters(val *string) error 
 	return nil
 }
 
-func (j *jsiiProxy_PluginAttachment) validateSetPropsParameters(val *PluginAttachmentProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_PluginAttachment) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

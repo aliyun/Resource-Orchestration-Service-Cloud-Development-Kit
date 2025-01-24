@@ -56,40 +56,71 @@ export interface RestoreJobProps {
 }
 
 /**
+ * Represents a `RestoreJob`.
+ */
+export interface IRestoreJob extends ros.IResource {
+    readonly props: RestoreJobProps;
+
+    /**
+     * Attribute ErrorMessage: Error message of restore job
+     */
+    readonly attrErrorMessage: ros.IResolvable | string;
+
+    /**
+     * Attribute RestoreId: Restore job ID
+     */
+    readonly attrRestoreId: ros.IResolvable | string;
+
+    /**
+     * Attribute RestoreType: Restore type
+     */
+    readonly attrRestoreType: ros.IResolvable | string;
+
+    /**
+     * Attribute SourceType: Source type
+     */
+    readonly attrSourceType: ros.IResolvable | string;
+
+    /**
+     * Attribute Status: Restore job status
+     */
+    readonly attrStatus: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::HBR::RestoreJob`, which is used to create a restore job.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRestoreJob`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-restorejob
  */
-export class RestoreJob extends ros.Resource {
+export class RestoreJob extends ros.Resource implements IRestoreJob {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: RestoreJobProps;
+    public readonly props: RestoreJobProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ErrorMessage: Error message of restore job
      */
-    public readonly attrErrorMessage: ros.IResolvable;
+    public readonly attrErrorMessage: ros.IResolvable | string;
 
     /**
      * Attribute RestoreId: Restore job ID
      */
-    public readonly attrRestoreId: ros.IResolvable;
+    public readonly attrRestoreId: ros.IResolvable | string;
 
     /**
      * Attribute RestoreType: Restore type
      */
-    public readonly attrRestoreType: ros.IResolvable;
+    public readonly attrRestoreType: ros.IResolvable | string;
 
     /**
      * Attribute SourceType: Source type
      */
-    public readonly attrSourceType: ros.IResolvable;
+    public readonly attrSourceType: ros.IResolvable | string;
 
     /**
      * Attribute Status: Restore job status
      */
-    public readonly attrStatus: ros.IResolvable;
+    public readonly attrStatus: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

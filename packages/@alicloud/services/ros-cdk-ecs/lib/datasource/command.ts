@@ -24,70 +24,131 @@ export interface CommandProps {
 }
 
 /**
+ * Represents a `Command`.
+ */
+export interface ICommand extends ros.IResource {
+    readonly props: CommandProps;
+
+    /**
+     * Attribute CommandContent: Command content, encoded in Base64 and transmitted.
+     */
+    readonly attrCommandContent: ros.IResolvable | string;
+
+    /**
+     * Attribute CommandId: Command ID.
+     */
+    readonly attrCommandId: ros.IResolvable | string;
+
+    /**
+     * Attribute CommandName: Command name.
+     */
+    readonly attrCommandName: ros.IResolvable | string;
+
+    /**
+     * Attribute CreateTime: Command creation time.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: Command description.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute EnableParameter: Whether to use parameters.
+     */
+    readonly attrEnableParameter: ros.IResolvable | string;
+
+    /**
+     * Attribute ParameterNames: Parameter name.
+     */
+    readonly attrParameterNames: ros.IResolvable | string;
+
+    /**
+     * Attribute Tags: The label information of the command.
+     */
+    readonly attrTags: ros.IResolvable | string;
+
+    /**
+     * Attribute Timeout: Timeout.
+     */
+    readonly attrTimeout: ros.IResolvable | string;
+
+    /**
+     * Attribute Type: Command type.
+     */
+    readonly attrType: ros.IResolvable | string;
+
+    /**
+     * Attribute WorkingDir: Execution path.
+     */
+    readonly attrWorkingDir: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Command`, which is used to query an available command that is manually created.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCommand`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-command
  */
-export class Command extends ros.Resource {
+export class Command extends ros.Resource implements ICommand {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: CommandProps;
+    public readonly props: CommandProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CommandContent: Command content, encoded in Base64 and transmitted.
      */
-    public readonly attrCommandContent: ros.IResolvable;
+    public readonly attrCommandContent: ros.IResolvable | string;
 
     /**
      * Attribute CommandId: Command ID.
      */
-    public readonly attrCommandId: ros.IResolvable;
+    public readonly attrCommandId: ros.IResolvable | string;
 
     /**
      * Attribute CommandName: Command name.
      */
-    public readonly attrCommandName: ros.IResolvable;
+    public readonly attrCommandName: ros.IResolvable | string;
 
     /**
      * Attribute CreateTime: Command creation time.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute Description: Command description.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute EnableParameter: Whether to use parameters.
      */
-    public readonly attrEnableParameter: ros.IResolvable;
+    public readonly attrEnableParameter: ros.IResolvable | string;
 
     /**
      * Attribute ParameterNames: Parameter name.
      */
-    public readonly attrParameterNames: ros.IResolvable;
+    public readonly attrParameterNames: ros.IResolvable | string;
 
     /**
      * Attribute Tags: The label information of the command.
      */
-    public readonly attrTags: ros.IResolvable;
+    public readonly attrTags: ros.IResolvable | string;
 
     /**
      * Attribute Timeout: Timeout.
      */
-    public readonly attrTimeout: ros.IResolvable;
+    public readonly attrTimeout: ros.IResolvable | string;
 
     /**
      * Attribute Type: Command type.
      */
-    public readonly attrType: ros.IResolvable;
+    public readonly attrType: ros.IResolvable | string;
 
     /**
      * Attribute WorkingDir: Execution path.
      */
-    public readonly attrWorkingDir: ros.IResolvable;
+    public readonly attrWorkingDir: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

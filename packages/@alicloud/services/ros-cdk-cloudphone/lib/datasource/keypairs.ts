@@ -29,25 +29,41 @@ export interface KeyPairsProps {
 }
 
 /**
+ * Represents a `KeyPairs`.
+ */
+export interface IKeyPairs extends ros.IResource {
+    readonly props: KeyPairsProps;
+
+    /**
+     * Attribute KeyPairNames: The list of key pair names.
+     */
+    readonly attrKeyPairNames: ros.IResolvable | string;
+
+    /**
+     * Attribute KeyPairs: The list of key pairs.
+     */
+    readonly attrKeyPairs: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::CloudPhone::KeyPairs`, which is used to query the information about key pairs.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosKeyPairs`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudphone-keypairs
  */
-export class KeyPairs extends ros.Resource {
+export class KeyPairs extends ros.Resource implements IKeyPairs {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: KeyPairsProps;
+    public readonly props: KeyPairsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute KeyPairNames: The list of key pair names.
      */
-    public readonly attrKeyPairNames: ros.IResolvable;
+    public readonly attrKeyPairNames: ros.IResolvable | string;
 
     /**
      * Attribute KeyPairs: The list of key pairs.
      */
-    public readonly attrKeyPairs: ros.IResolvable;
+    public readonly attrKeyPairs: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

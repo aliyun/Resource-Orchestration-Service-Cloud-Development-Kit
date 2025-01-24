@@ -91,25 +91,41 @@ export interface DomainConfigProps {
 }
 
 /**
+ * Represents a `DomainConfig`.
+ */
+export interface IDomainConfig extends ros.IResource {
+    readonly props: DomainConfigProps;
+
+    /**
+     * Attribute Cname: CNAME assigned by WAF instance.
+     */
+    readonly attrCname: ros.IResolvable | string;
+
+    /**
+     * Attribute ProtocolType: agreement type:0: indicates that the HTTP protocol is supported.1: indicates that the HTTPS protocol is supported.2: indicates that both HTTP and HTTPS protocols are supported.
+     */
+    readonly attrProtocolType: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::WAF::DomainConfig`ALIYUN::CDN::DomainConfig is used to add domain name settings.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomainConfig`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-domainconfig
  */
-export class DomainConfig extends ros.Resource {
+export class DomainConfig extends ros.Resource implements IDomainConfig {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DomainConfigProps;
+    public readonly props: DomainConfigProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Cname: CNAME assigned by WAF instance.
      */
-    public readonly attrCname: ros.IResolvable;
+    public readonly attrCname: ros.IResolvable | string;
 
     /**
      * Attribute ProtocolType: agreement type:0: indicates that the HTTP protocol is supported.1: indicates that the HTTPS protocol is supported.2: indicates that both HTTP and HTTPS protocols are supported.
      */
-    public readonly attrProtocolType: ros.IResolvable;
+    public readonly attrProtocolType: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

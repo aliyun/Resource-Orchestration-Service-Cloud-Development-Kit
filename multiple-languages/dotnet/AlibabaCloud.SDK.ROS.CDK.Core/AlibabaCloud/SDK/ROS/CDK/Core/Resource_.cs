@@ -99,6 +99,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             InvokeInstanceVoidMethod(new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Core.RemovalPolicy)}, new object[]{policy});
         }
 
+        [JsiiMethod(name: "fetchCondition", returnsJson: "{\"optional\":true,\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.RosCondition\"}}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.RosCondition? FetchCondition()
+        {
+            return InvokeInstanceMethod<AlibabaCloud.SDK.ROS.CDK.Core.RosCondition?>(new System.Type[]{}, new object[]{});
+        }
+
+        [JsiiMethod(name: "fetchDependency", returnsJson: "{\"optional\":true,\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}}")]
+        public virtual string[]? FetchDependency()
+        {
+            return InvokeInstanceMethod<string[]?>(new System.Type[]{}, new object[]{});
+        }
+
+        [JsiiMethod(name: "fetchResourceDesc", returnsJson: "{\"optional\":true,\"type\":{\"primitive\":\"string\"}}")]
+        public virtual string? FetchResourceDesc()
+        {
+            return InvokeInstanceMethod<string?>(new System.Type[]{}, new object[]{});
+        }
+
         [JsiiMethod(name: "generatePhysicalName", returnsJson: "{\"type\":{\"primitive\":\"string\"}}")]
         protected virtual string GeneratePhysicalName()
         {
@@ -115,6 +133,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         public virtual void SetMetadata(string key, object @value)
         {
             InvokeInstanceVoidMethod(new System.Type[]{typeof(string), typeof(object)}, new object[]{key, @value});
+        }
+
+        /// <summary>The environment this resource belongs to.</summary>
+        /// <remarks>
+        /// For resources that are created and managed by the CDK
+        /// (generally, those created by creating new class instances like Role, Bucket, etc.),
+        /// this is always the same as the environment of the stack they belong to;
+        /// however, for imported resources
+        /// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+        /// that might be different than the stack they were imported into.
+        /// </remarks>
+        [JsiiProperty(name: "env", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.ResourceEnvironment\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResourceEnvironment Env
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResourceEnvironment>()!;
         }
 
         /// <summary>(experimental) Returns a string-encoded token that resolves to the physical name that should be passed to the ROS resource.</summary>

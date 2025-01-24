@@ -52,10 +52,6 @@ func (j *jsiiProxy_AllFwSwitch) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_AllFwSwitch) validateSetPropsParameters(val *AllFwSwitchProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_AllFwSwitch) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

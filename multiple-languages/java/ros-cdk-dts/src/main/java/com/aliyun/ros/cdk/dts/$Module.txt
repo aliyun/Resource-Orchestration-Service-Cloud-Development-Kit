@@ -1,5 +1,10 @@
 @alicloud/ros-cdk-dts.ConsumerGroup=com.aliyun.ros.cdk.dts.ConsumerGroup
 @alicloud/ros-cdk-dts.ConsumerGroupProps=com.aliyun.ros.cdk.dts.ConsumerGroupProps
+@alicloud/ros-cdk-dts.IConsumerGroup=com.aliyun.ros.cdk.dts.IConsumerGroup
+@alicloud/ros-cdk-dts.IInstance=com.aliyun.ros.cdk.dts.IInstance
+@alicloud/ros-cdk-dts.IMigrationJob2=com.aliyun.ros.cdk.dts.IMigrationJob2
+@alicloud/ros-cdk-dts.ISubscriptionJob2=com.aliyun.ros.cdk.dts.ISubscriptionJob2
+@alicloud/ros-cdk-dts.ISynchronizationJob2=com.aliyun.ros.cdk.dts.ISynchronizationJob2
 @alicloud/ros-cdk-dts.Instance=com.aliyun.ros.cdk.dts.Instance
 @alicloud/ros-cdk-dts.InstanceProps=com.aliyun.ros.cdk.dts.InstanceProps
 @alicloud/ros-cdk-dts.MigrationJob2=com.aliyun.ros.cdk.dts.MigrationJob2
@@ -27,6 +32,13 @@
 @alicloud/ros-cdk-dts.SubscriptionJob2Props=com.aliyun.ros.cdk.dts.SubscriptionJob2Props
 @alicloud/ros-cdk-dts.SynchronizationJob2=com.aliyun.ros.cdk.dts.SynchronizationJob2
 @alicloud/ros-cdk-dts.SynchronizationJob2Props=com.aliyun.ros.cdk.dts.SynchronizationJob2Props
+@alicloud/ros-cdk-dts.datasource.IJobMonitorRule=com.aliyun.ros.cdk.dts.datasource.IJobMonitorRule
+@alicloud/ros-cdk-dts.datasource.IJobMonitorRules=com.aliyun.ros.cdk.dts.datasource.IJobMonitorRules
+@alicloud/ros-cdk-dts.datasource.IMigrationInstances=com.aliyun.ros.cdk.dts.datasource.IMigrationInstances
+@alicloud/ros-cdk-dts.datasource.IMigrationJob=com.aliyun.ros.cdk.dts.datasource.IMigrationJob
+@alicloud/ros-cdk-dts.datasource.IMigrationJobs=com.aliyun.ros.cdk.dts.datasource.IMigrationJobs
+@alicloud/ros-cdk-dts.datasource.ISynchronizationJob=com.aliyun.ros.cdk.dts.datasource.ISynchronizationJob
+@alicloud/ros-cdk-dts.datasource.ISynchronizationJobs=com.aliyun.ros.cdk.dts.datasource.ISynchronizationJobs
 @alicloud/ros-cdk-dts.datasource.JobMonitorRule=com.aliyun.ros.cdk.dts.datasource.JobMonitorRule
 @alicloud/ros-cdk-dts.datasource.JobMonitorRuleProps=com.aliyun.ros.cdk.dts.datasource.JobMonitorRuleProps
 @alicloud/ros-cdk-dts.datasource.JobMonitorRules=com.aliyun.ros.cdk.dts.datasource.JobMonitorRules

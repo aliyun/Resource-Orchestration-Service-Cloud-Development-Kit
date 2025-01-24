@@ -19,25 +19,41 @@ export interface NamespacesProps {
 }
 
 /**
+ * Represents a `Namespaces`.
+ */
+export interface INamespaces extends ros.IResource {
+    readonly props: NamespacesProps;
+
+    /**
+     * Attribute NamespaceIds: The list of namespace names.
+     */
+    readonly attrNamespaceIds: ros.IResolvable | string;
+
+    /**
+     * Attribute Namespaces: The list of namespaces.
+     */
+    readonly attrNamespaces: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::SAE::Namespaces`, which is used to query namespaces.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNamespaces`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sae-namespaces
  */
-export class Namespaces extends ros.Resource {
+export class Namespaces extends ros.Resource implements INamespaces {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: NamespacesProps;
+    public readonly props: NamespacesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute NamespaceIds: The list of namespace names.
      */
-    public readonly attrNamespaceIds: ros.IResolvable;
+    public readonly attrNamespaceIds: ros.IResolvable | string;
 
     /**
      * Attribute Namespaces: The list of namespaces.
      */
-    public readonly attrNamespaces: ros.IResolvable;
+    public readonly attrNamespaces: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

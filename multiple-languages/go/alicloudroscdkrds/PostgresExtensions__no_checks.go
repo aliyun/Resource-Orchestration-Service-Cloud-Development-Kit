@@ -52,10 +52,6 @@ func (j *jsiiProxy_PostgresExtensions) validateSetIdParameters(val *string) erro
 	return nil
 }
 
-func (j *jsiiProxy_PostgresExtensions) validateSetPropsParameters(val *PostgresExtensionsProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_PostgresExtensions) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

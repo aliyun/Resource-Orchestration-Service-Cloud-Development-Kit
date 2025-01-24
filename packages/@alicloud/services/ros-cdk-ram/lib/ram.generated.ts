@@ -491,6 +491,141 @@ export class RosApplication extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosAttachPolicyToGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-attachpolicytogroup
+ */
+export interface RosAttachPolicyToGroupProps {
+
+    /**
+     * @Property groupName: User group name.
+     */
+    readonly groupName: string | ros.IResolvable;
+
+    /**
+     * @Property policyName: Authorization policy name.
+     */
+    readonly policyName: string | ros.IResolvable;
+
+    /**
+     * @Property policyType: Authorization policy type. Value: "System" or "Custom".
+     */
+    readonly policyType: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAttachPolicyToGroupProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAttachPolicyToGroupProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAttachPolicyToGroupPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('groupName', ros.requiredValidator)(properties.groupName));
+    errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
+    errors.collect(ros.propertyValidator('policyType', ros.requiredValidator)(properties.policyType));
+    if(properties.policyType && (typeof properties.policyType) !== 'object') {
+        errors.collect(ros.propertyValidator('policyType', ros.validateAllowedValues)({
+          data: properties.policyType,
+          allowedValues: ["Custom","System"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('policyType', ros.validateString)(properties.policyType));
+    errors.collect(ros.propertyValidator('policyName', ros.requiredValidator)(properties.policyName));
+    errors.collect(ros.propertyValidator('policyName', ros.validateString)(properties.policyName));
+    return errors.wrap('supplied properties not correct for "RosAttachPolicyToGroupProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::RAM::AttachPolicyToGroup` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAttachPolicyToGroupProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::RAM::AttachPolicyToGroup` resource.
+ */
+// @ts-ignore TS6133
+function rosAttachPolicyToGroupPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAttachPolicyToGroupPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'GroupName': ros.stringToRosTemplate(properties.groupName),
+      'PolicyName': ros.stringToRosTemplate(properties.policyName),
+      'PolicyType': ros.stringToRosTemplate(properties.policyType),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AttachPolicyToGroup`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AttachPolicyToGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-attachpolicytogroup
+ */
+export class RosAttachPolicyToGroup extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RAM::AttachPolicyToGroup";
+
+    /**
+     * @Attribute GroupName: User group name.
+     */
+    public readonly attrGroupName: ros.IResolvable;
+
+    /**
+     * @Attribute PolicyName: Authorization policy name.
+     */
+    public readonly attrPolicyName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property groupName: User group name.
+     */
+    public groupName: string | ros.IResolvable;
+
+    /**
+     * @Property policyName: Authorization policy name.
+     */
+    public policyName: string | ros.IResolvable;
+
+    /**
+     * @Property policyType: Authorization policy type. Value: "System" or "Custom".
+     */
+    public policyType: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAttachPolicyToGroupProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAttachPolicyToGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrGroupName = this.getAtt('GroupName');
+        this.attrPolicyName = this.getAtt('PolicyName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.groupName = props.groupName;
+        this.policyName = props.policyName;
+        this.policyType = props.policyType;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            groupName: this.groupName,
+            policyName: this.policyName,
+            policyType: this.policyType,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAttachPolicyToGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosAttachPolicyToRole`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-attachpolicytorole
  */
@@ -1639,6 +1774,231 @@ function rosManagedPolicyStatementPropertyToRosTemplate(properties: any): any {
       'Resource': ros.listMapper(ros.objectToRosTemplate)(properties.resource),
       'Effect': ros.stringToRosTemplate(properties.effect),
     };
+}
+
+/**
+ * Properties for defining a `RosOIDCProvider`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-oidcprovider
+ */
+export interface RosOIDCProviderProps {
+
+    /**
+     * @Property fingerprints: The list of the fingerprints, max length is 5
+     */
+    readonly fingerprints: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property issuerUrl: The URL of the issuer, which is provided by the external IdP. The URL of the issuer must be unique within an Alibaba Cloud account.
+     * The URL of the issuer must start with https and be in the valid URL format. The URL cannot contain query parameters that follow a question mark (?) or logon information that is identified by at signs (@). The URL cannot be a fragment URL that contains number signs (#).
+     * The URL can be up to 255 characters in length.
+     */
+    readonly issuerUrl: string | ros.IResolvable;
+
+    /**
+     * @Property oidcProviderName: The name of the OIDC IdP.
+     * The name can contain letters, digits, and special characters and cannot start or end with the special characters. The special characters are periods, (.), hyphens (-), and underscores (_).``
+     * The name can be up to 128 characters in length.
+     */
+    readonly oidcProviderName: string | ros.IResolvable;
+
+    /**
+     * @Property clientIds: The list of the client IDs, max length is 20
+     */
+    readonly clientIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the OIDC IdP.
+     * The description can be up to 256 characters in length.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property issuanceLimitTime: The earliest time when an external IdP can issue an ID token. If the value of the iat field in the ID token is later than the current time, the request is rejected. Unit: hours. Valid values: 1 to 168.
+     */
+    readonly issuanceLimitTime?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosOIDCProviderProps`
+ *
+ * @param properties - the TypeScript properties of a `RosOIDCProviderProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosOIDCProviderPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
+        errors.collect(ros.propertyValidator('description', ros.validateLength)({
+            data: properties.description.length,
+            min: undefined,
+            max: 256,
+          }));
+    }
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('oidcProviderName', ros.requiredValidator)(properties.oidcProviderName));
+    if(properties.oidcProviderName && (Array.isArray(properties.oidcProviderName) || (typeof properties.oidcProviderName) === 'string')) {
+        errors.collect(ros.propertyValidator('oidcProviderName', ros.validateLength)({
+            data: properties.oidcProviderName.length,
+            min: undefined,
+            max: 128,
+          }));
+    }
+    if(properties.oidcProviderName && (typeof properties.oidcProviderName) !== 'object') {
+        errors.collect(ros.propertyValidator('oidcProviderName', ros.validateAllowedPattern)({
+          data: properties.oidcProviderName,
+          reg: /^[a-zA-Z0-9][a-zA-Z0-9._-]{0,126}[a-zA-Z0-9]$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('oidcProviderName', ros.validateString)(properties.oidcProviderName));
+    errors.collect(ros.propertyValidator('fingerprints', ros.requiredValidator)(properties.fingerprints));
+    if(properties.fingerprints && (Array.isArray(properties.fingerprints) || (typeof properties.fingerprints) === 'string')) {
+        errors.collect(ros.propertyValidator('fingerprints', ros.validateLength)({
+            data: properties.fingerprints.length,
+            min: 1,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('fingerprints', ros.listValidator(ros.validateString))(properties.fingerprints));
+    errors.collect(ros.propertyValidator('issuerUrl', ros.requiredValidator)(properties.issuerUrl));
+    if(properties.issuerUrl && (Array.isArray(properties.issuerUrl) || (typeof properties.issuerUrl) === 'string')) {
+        errors.collect(ros.propertyValidator('issuerUrl', ros.validateLength)({
+            data: properties.issuerUrl.length,
+            min: undefined,
+            max: 255,
+          }));
+    }
+    errors.collect(ros.propertyValidator('issuerUrl', ros.validateString)(properties.issuerUrl));
+    if(properties.issuanceLimitTime && (typeof properties.issuanceLimitTime) !== 'object') {
+        errors.collect(ros.propertyValidator('issuanceLimitTime', ros.validateRange)({
+            data: properties.issuanceLimitTime,
+            min: 1,
+            max: 168,
+          }));
+    }
+    errors.collect(ros.propertyValidator('issuanceLimitTime', ros.validateNumber)(properties.issuanceLimitTime));
+    if(properties.clientIds && (Array.isArray(properties.clientIds) || (typeof properties.clientIds) === 'string')) {
+        errors.collect(ros.propertyValidator('clientIds', ros.validateLength)({
+            data: properties.clientIds.length,
+            min: 1,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('clientIds', ros.listValidator(ros.validateString))(properties.clientIds));
+    return errors.wrap('supplied properties not correct for "RosOIDCProviderProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::RAM::OIDCProvider` resource
+ *
+ * @param properties - the TypeScript properties of a `RosOIDCProviderProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::RAM::OIDCProvider` resource.
+ */
+// @ts-ignore TS6133
+function rosOIDCProviderPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosOIDCProviderPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Fingerprints': ros.listMapper(ros.stringToRosTemplate)(properties.fingerprints),
+      'IssuerUrl': ros.stringToRosTemplate(properties.issuerUrl),
+      'OIDCProviderName': ros.stringToRosTemplate(properties.oidcProviderName),
+      'ClientIds': ros.listMapper(ros.stringToRosTemplate)(properties.clientIds),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'IssuanceLimitTime': ros.numberToRosTemplate(properties.issuanceLimitTime),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::OIDCProvider`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `OIDCProvider` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-oidcprovider
+ */
+export class RosOIDCProvider extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RAM::OIDCProvider";
+
+    /**
+     * @Attribute OIDCProviderName: The name of the OIDC IdP.
+The name can contain letters, digits, and special characters and cannot start or end with the special characters. The special characters are periods, (.), hyphens (-), and underscores (_).``
+The name can be up to 128 characters in length.
+     */
+    public readonly attrOidcProviderName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property fingerprints: The list of the fingerprints, max length is 5
+     */
+    public fingerprints: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property issuerUrl: The URL of the issuer, which is provided by the external IdP. The URL of the issuer must be unique within an Alibaba Cloud account.
+     * The URL of the issuer must start with https and be in the valid URL format. The URL cannot contain query parameters that follow a question mark (?) or logon information that is identified by at signs (@). The URL cannot be a fragment URL that contains number signs (#).
+     * The URL can be up to 255 characters in length.
+     */
+    public issuerUrl: string | ros.IResolvable;
+
+    /**
+     * @Property oidcProviderName: The name of the OIDC IdP.
+     * The name can contain letters, digits, and special characters and cannot start or end with the special characters. The special characters are periods, (.), hyphens (-), and underscores (_).``
+     * The name can be up to 128 characters in length.
+     */
+    public oidcProviderName: string | ros.IResolvable;
+
+    /**
+     * @Property clientIds: The list of the client IDs, max length is 20
+     */
+    public clientIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property description: The description of the OIDC IdP.
+     * The description can be up to 256 characters in length.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property issuanceLimitTime: The earliest time when an external IdP can issue an ID token. If the value of the iat field in the ID token is later than the current time, the request is rejected. Unit: hours. Valid values: 1 to 168.
+     */
+    public issuanceLimitTime: number | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosOIDCProviderProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosOIDCProvider.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrOidcProviderName = this.getAtt('OIDCProviderName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.fingerprints = props.fingerprints;
+        this.issuerUrl = props.issuerUrl;
+        this.oidcProviderName = props.oidcProviderName;
+        this.clientIds = props.clientIds;
+        this.description = props.description;
+        this.issuanceLimitTime = props.issuanceLimitTime;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            fingerprints: this.fingerprints,
+            issuerUrl: this.issuerUrl,
+            oidcProviderName: this.oidcProviderName,
+            clientIds: this.clientIds,
+            description: this.description,
+            issuanceLimitTime: this.issuanceLimitTime,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosOIDCProviderPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }
 
 /**

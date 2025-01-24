@@ -24,80 +24,151 @@ export interface ImageProps {
 }
 
 /**
+ * Represents a `Image`.
+ */
+export interface IImage extends ros.IResource {
+    readonly props: ImageProps;
+
+    /**
+     * Attribute CreateTime: Image creation time, in ISO 8601 format.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: Image description.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute ImageCategory: Image type.
+     */
+    readonly attrImageCategory: ros.IResolvable | string;
+
+    /**
+     * Attribute ImageId: Image ID.
+     */
+    readonly attrImageId: ros.IResolvable | string;
+
+    /**
+     * Attribute ImageName: The name of the mirror image.
+     */
+    readonly attrImageName: ros.IResolvable | string;
+
+    /**
+     * Attribute IsSelfShared: Whether the image has been shared with other users.
+     */
+    readonly attrIsSelfShared: ros.IResolvable | string;
+
+    /**
+     * Attribute OsName: The Chinese display name of the operating system.
+     */
+    readonly attrOsName: ros.IResolvable | string;
+
+    /**
+     * Attribute OsNameEn: The English display name of the operating system.
+     */
+    readonly attrOsNameEn: ros.IResolvable | string;
+
+    /**
+     * Attribute OsType: Operating system type.
+     */
+    readonly attrOsType: ros.IResolvable | string;
+
+    /**
+     * Attribute Platform: Operating system distribution.
+     */
+    readonly attrPlatform: ros.IResolvable | string;
+
+    /**
+     * Attribute Progress: The progress of mirror image production.
+     */
+    readonly attrProgress: ros.IResolvable | string;
+
+    /**
+     * Attribute Status: Image state.
+     */
+    readonly attrStatus: ros.IResolvable | string;
+
+    /**
+     * Attribute Usage: Whether the image is already running in the cloud phone instance.
+     */
+    readonly attrUsage: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::CloudPhone::Image`, which is used to query the information about an image.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosImage`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudphone-image
  */
-export class Image extends ros.Resource {
+export class Image extends ros.Resource implements IImage {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ImageProps;
+    public readonly props: ImageProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateTime: Image creation time, in ISO 8601 format.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute Description: Image description.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute ImageCategory: Image type.
      */
-    public readonly attrImageCategory: ros.IResolvable;
+    public readonly attrImageCategory: ros.IResolvable | string;
 
     /**
      * Attribute ImageId: Image ID.
      */
-    public readonly attrImageId: ros.IResolvable;
+    public readonly attrImageId: ros.IResolvable | string;
 
     /**
      * Attribute ImageName: The name of the mirror image.
      */
-    public readonly attrImageName: ros.IResolvable;
+    public readonly attrImageName: ros.IResolvable | string;
 
     /**
      * Attribute IsSelfShared: Whether the image has been shared with other users.
      */
-    public readonly attrIsSelfShared: ros.IResolvable;
+    public readonly attrIsSelfShared: ros.IResolvable | string;
 
     /**
      * Attribute OsName: The Chinese display name of the operating system.
      */
-    public readonly attrOsName: ros.IResolvable;
+    public readonly attrOsName: ros.IResolvable | string;
 
     /**
      * Attribute OsNameEn: The English display name of the operating system.
      */
-    public readonly attrOsNameEn: ros.IResolvable;
+    public readonly attrOsNameEn: ros.IResolvable | string;
 
     /**
      * Attribute OsType: Operating system type.
      */
-    public readonly attrOsType: ros.IResolvable;
+    public readonly attrOsType: ros.IResolvable | string;
 
     /**
      * Attribute Platform: Operating system distribution.
      */
-    public readonly attrPlatform: ros.IResolvable;
+    public readonly attrPlatform: ros.IResolvable | string;
 
     /**
      * Attribute Progress: The progress of mirror image production.
      */
-    public readonly attrProgress: ros.IResolvable;
+    public readonly attrProgress: ros.IResolvable | string;
 
     /**
      * Attribute Status: Image state.
      */
-    public readonly attrStatus: ros.IResolvable;
+    public readonly attrStatus: ros.IResolvable | string;
 
     /**
      * Attribute Usage: Whether the image is already running in the cloud phone instance.
      */
-    public readonly attrUsage: ros.IResolvable;
+    public readonly attrUsage: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

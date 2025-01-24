@@ -62,30 +62,51 @@ export interface CopyImageProps {
 }
 
 /**
+ * Represents a `CopyImage`.
+ */
+export interface ICopyImage extends ros.IResource {
+    readonly props: CopyImageProps;
+
+    /**
+     * Attribute DestinationRegionId: ID of the region to where the destination custom image belongs.
+     */
+    readonly attrDestinationRegionId: ros.IResolvable | string;
+
+    /**
+     * Attribute ImageId: ID of the source custom image.
+     */
+    readonly attrImageId: ros.IResolvable | string;
+
+    /**
+     * Attribute SourceRegionId: ID of the region to where the source image belongs.
+     */
+    readonly attrSourceRegionId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::CopyImage`, which is used to copy a custom image from one region to another region.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCopyImage`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-copyimage
  */
-export class CopyImage extends ros.Resource {
+export class CopyImage extends ros.Resource implements ICopyImage {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: CopyImageProps;
+    public readonly props: CopyImageProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DestinationRegionId: ID of the region to where the destination custom image belongs.
      */
-    public readonly attrDestinationRegionId: ros.IResolvable;
+    public readonly attrDestinationRegionId: ros.IResolvable | string;
 
     /**
      * Attribute ImageId: ID of the source custom image.
      */
-    public readonly attrImageId: ros.IResolvable;
+    public readonly attrImageId: ros.IResolvable | string;
 
     /**
      * Attribute SourceRegionId: ID of the region to where the source image belongs.
      */
-    public readonly attrSourceRegionId: ros.IResolvable;
+    public readonly attrSourceRegionId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

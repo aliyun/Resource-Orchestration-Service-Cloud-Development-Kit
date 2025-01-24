@@ -308,55 +308,101 @@ export interface InstanceProps {
 }
 
 /**
+ * Represents a `Instance`.
+ */
+export interface IInstance extends ros.IResource {
+    readonly props: InstanceProps;
+
+    /**
+     * Attribute HostName: Host name of created instance.
+     */
+    readonly attrHostName: ros.IResolvable | string;
+
+    /**
+     * Attribute InnerIp: Inner IP address of the specified instance. Only for classical instance.
+     */
+    readonly attrInnerIp: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: The instance ID of created ecs instance
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute PrimaryNetworkInterfaceId: Primary network interface ID of created instance.
+     */
+    readonly attrPrimaryNetworkInterfaceId: ros.IResolvable | string;
+
+    /**
+     * Attribute PrivateIp: Private IP address of created ecs instance. Only for VPC instance.
+     */
+    readonly attrPrivateIp: ros.IResolvable | string;
+
+    /**
+     * Attribute PublicIp: Public IP address of created ecs instance.
+     */
+    readonly attrPublicIp: ros.IResolvable | string;
+
+    /**
+     * Attribute SecurityGroupIds: Security group ID list of created instance.
+     */
+    readonly attrSecurityGroupIds: ros.IResolvable | string;
+
+    /**
+     * Attribute ZoneId: Zone ID of created instance.
+     */
+    readonly attrZoneId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Instance`, which is used to create an Elastic Compute Service (ECS) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instance
  */
-export class Instance extends ros.Resource {
+export class Instance extends ros.Resource implements IInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InstanceProps;
+    public readonly props: InstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute HostName: Host name of created instance.
      */
-    public readonly attrHostName: ros.IResolvable;
+    public readonly attrHostName: ros.IResolvable | string;
 
     /**
      * Attribute InnerIp: Inner IP address of the specified instance. Only for classical instance.
      */
-    public readonly attrInnerIp: ros.IResolvable;
+    public readonly attrInnerIp: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: The instance ID of created ecs instance
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute PrimaryNetworkInterfaceId: Primary network interface ID of created instance.
      */
-    public readonly attrPrimaryNetworkInterfaceId: ros.IResolvable;
+    public readonly attrPrimaryNetworkInterfaceId: ros.IResolvable | string;
 
     /**
      * Attribute PrivateIp: Private IP address of created ecs instance. Only for VPC instance.
      */
-    public readonly attrPrivateIp: ros.IResolvable;
+    public readonly attrPrivateIp: ros.IResolvable | string;
 
     /**
      * Attribute PublicIp: Public IP address of created ecs instance.
      */
-    public readonly attrPublicIp: ros.IResolvable;
+    public readonly attrPublicIp: ros.IResolvable | string;
 
     /**
      * Attribute SecurityGroupIds: Security group ID list of created instance.
      */
-    public readonly attrSecurityGroupIds: ros.IResolvable;
+    public readonly attrSecurityGroupIds: ros.IResolvable | string;
 
     /**
      * Attribute ZoneId: Zone ID of created instance.
      */
-    public readonly attrZoneId: ros.IResolvable;
+    public readonly attrZoneId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

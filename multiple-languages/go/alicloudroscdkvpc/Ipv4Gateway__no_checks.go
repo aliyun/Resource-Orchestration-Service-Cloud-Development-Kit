@@ -52,10 +52,6 @@ func (j *jsiiProxy_Ipv4Gateway) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_Ipv4Gateway) validateSetPropsParameters(val *Ipv4GatewayProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_Ipv4Gateway) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

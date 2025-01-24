@@ -7,6 +7,96 @@ import (
 )
 
 func init() {
+	_jsii_.RegisterInterface(
+		"@alicloud/ros-cdk-ess.datasource.IScalingConfigurations",
+		reflect.TypeOf((*IScalingConfigurations)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "attrScalingConfigurationIds", GoGetter: "AttrScalingConfigurationIds"},
+			_jsii_.MemberProperty{JsiiProperty: "attrScalingConfigurations", GoGetter: "AttrScalingConfigurations"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberProperty{JsiiProperty: "props", GoGetter: "Props"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+		},
+		func() interface{} {
+			j := jsiiProxy_IScalingConfigurations{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreIResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterInterface(
+		"@alicloud/ros-cdk-ess.datasource.IScalingGroups",
+		reflect.TypeOf((*IScalingGroups)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "attrScalingGroupIds", GoGetter: "AttrScalingGroupIds"},
+			_jsii_.MemberProperty{JsiiProperty: "attrScalingGroups", GoGetter: "AttrScalingGroups"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberProperty{JsiiProperty: "props", GoGetter: "Props"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+		},
+		func() interface{} {
+			j := jsiiProxy_IScalingGroups{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreIResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterInterface(
+		"@alicloud/ros-cdk-ess.datasource.IScalingRule",
+		reflect.TypeOf((*IScalingRule)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "attrAdjustmentType", GoGetter: "AttrAdjustmentType"},
+			_jsii_.MemberProperty{JsiiProperty: "attrAdjustmentValue", GoGetter: "AttrAdjustmentValue"},
+			_jsii_.MemberProperty{JsiiProperty: "attrAlarms", GoGetter: "AttrAlarms"},
+			_jsii_.MemberProperty{JsiiProperty: "attrCooldown", GoGetter: "AttrCooldown"},
+			_jsii_.MemberProperty{JsiiProperty: "attrDisableScaleIn", GoGetter: "AttrDisableScaleIn"},
+			_jsii_.MemberProperty{JsiiProperty: "attrEstimatedInstanceWarmup", GoGetter: "AttrEstimatedInstanceWarmup"},
+			_jsii_.MemberProperty{JsiiProperty: "attrInitialMaxSize", GoGetter: "AttrInitialMaxSize"},
+			_jsii_.MemberProperty{JsiiProperty: "attrMaxSize", GoGetter: "AttrMaxSize"},
+			_jsii_.MemberProperty{JsiiProperty: "attrMetricName", GoGetter: "AttrMetricName"},
+			_jsii_.MemberProperty{JsiiProperty: "attrMinAdjustmentMagnitude", GoGetter: "AttrMinAdjustmentMagnitude"},
+			_jsii_.MemberProperty{JsiiProperty: "attrMinSize", GoGetter: "AttrMinSize"},
+			_jsii_.MemberProperty{JsiiProperty: "attrPredictiveScalingMode", GoGetter: "AttrPredictiveScalingMode"},
+			_jsii_.MemberProperty{JsiiProperty: "attrPredictiveTaskBufferTime", GoGetter: "AttrPredictiveTaskBufferTime"},
+			_jsii_.MemberProperty{JsiiProperty: "attrPredictiveValueBehavior", GoGetter: "AttrPredictiveValueBehavior"},
+			_jsii_.MemberProperty{JsiiProperty: "attrPredictiveValueBuffer", GoGetter: "AttrPredictiveValueBuffer"},
+			_jsii_.MemberProperty{JsiiProperty: "attrScaleInEvaluationCount", GoGetter: "AttrScaleInEvaluationCount"},
+			_jsii_.MemberProperty{JsiiProperty: "attrScaleOutEvaluationCount", GoGetter: "AttrScaleOutEvaluationCount"},
+			_jsii_.MemberProperty{JsiiProperty: "attrScalingGroupId", GoGetter: "AttrScalingGroupId"},
+			_jsii_.MemberProperty{JsiiProperty: "attrScalingRuleAri", GoGetter: "AttrScalingRuleAri"},
+			_jsii_.MemberProperty{JsiiProperty: "attrScalingRuleId", GoGetter: "AttrScalingRuleId"},
+			_jsii_.MemberProperty{JsiiProperty: "attrScalingRuleName", GoGetter: "AttrScalingRuleName"},
+			_jsii_.MemberProperty{JsiiProperty: "attrScalingRuleType", GoGetter: "AttrScalingRuleType"},
+			_jsii_.MemberProperty{JsiiProperty: "attrStepAdjustments", GoGetter: "AttrStepAdjustments"},
+			_jsii_.MemberProperty{JsiiProperty: "attrTargetValue", GoGetter: "AttrTargetValue"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberProperty{JsiiProperty: "props", GoGetter: "Props"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+		},
+		func() interface{} {
+			j := jsiiProxy_IScalingRule{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreIResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterInterface(
+		"@alicloud/ros-cdk-ess.datasource.IScalingRules",
+		reflect.TypeOf((*IScalingRules)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "attrScalingRuleIds", GoGetter: "AttrScalingRuleIds"},
+			_jsii_.MemberProperty{JsiiProperty: "attrScalingRules", GoGetter: "AttrScalingRules"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberProperty{JsiiProperty: "props", GoGetter: "Props"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+		},
+		func() interface{} {
+			j := jsiiProxy_IScalingRules{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreIResource)
+			return &j
+		},
+	)
 	_jsii_.RegisterClass(
 		"@alicloud/ros-cdk-ess.datasource.RosScalingConfigurations",
 		reflect.TypeOf((*RosScalingConfigurations)(nil)).Elem(),
@@ -26,6 +116,9 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "attrScalingConfigurations", GoGetter: "AttrScalingConfigurations"},
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDesc", GoMethod: "FetchDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchRosDependency", GoMethod: "FetchRosDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "logicalId", GoGetter: "LogicalId"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
@@ -79,6 +172,9 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "attrScalingGroups", GoGetter: "AttrScalingGroups"},
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDesc", GoMethod: "FetchDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchRosDependency", GoMethod: "FetchRosDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "groupType", GoGetter: "GroupType"},
 			_jsii_.MemberProperty{JsiiProperty: "logicalId", GoGetter: "LogicalId"},
@@ -154,6 +250,9 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "attrTargetValue", GoGetter: "AttrTargetValue"},
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDesc", GoMethod: "FetchDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchRosDependency", GoMethod: "FetchRosDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "logicalId", GoGetter: "LogicalId"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
@@ -205,6 +304,9 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "attrScalingRules", GoGetter: "AttrScalingRules"},
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDesc", GoMethod: "FetchDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchRosDependency", GoMethod: "FetchRosDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "logicalId", GoGetter: "LogicalId"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
@@ -254,6 +356,10 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "attrScalingConfigurationIds", GoGetter: "AttrScalingConfigurationIds"},
 			_jsii_.MemberProperty{JsiiProperty: "attrScalingConfigurations", GoGetter: "AttrScalingConfigurations"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDependency", GoMethod: "FetchDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchResourceDesc", GoMethod: "FetchResourceDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "generatePhysicalName", GoMethod: "GeneratePhysicalName"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
@@ -276,6 +382,7 @@ func init() {
 		func() interface{} {
 			j := jsiiProxy_ScalingConfigurations{}
 			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreResource)
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IScalingConfigurations)
 			return &j
 		},
 	)
@@ -295,6 +402,10 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "attrScalingGroupIds", GoGetter: "AttrScalingGroupIds"},
 			_jsii_.MemberProperty{JsiiProperty: "attrScalingGroups", GoGetter: "AttrScalingGroups"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDependency", GoMethod: "FetchDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchResourceDesc", GoMethod: "FetchResourceDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "generatePhysicalName", GoMethod: "GeneratePhysicalName"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
@@ -317,6 +428,7 @@ func init() {
 		func() interface{} {
 			j := jsiiProxy_ScalingGroups{}
 			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreResource)
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IScalingGroups)
 			return &j
 		},
 	)
@@ -358,6 +470,10 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "attrStepAdjustments", GoGetter: "AttrStepAdjustments"},
 			_jsii_.MemberProperty{JsiiProperty: "attrTargetValue", GoGetter: "AttrTargetValue"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDependency", GoMethod: "FetchDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchResourceDesc", GoMethod: "FetchResourceDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "generatePhysicalName", GoMethod: "GeneratePhysicalName"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
@@ -380,6 +496,7 @@ func init() {
 		func() interface{} {
 			j := jsiiProxy_ScalingRule{}
 			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreResource)
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IScalingRule)
 			return &j
 		},
 	)
@@ -399,6 +516,10 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "attrScalingRuleIds", GoGetter: "AttrScalingRuleIds"},
 			_jsii_.MemberProperty{JsiiProperty: "attrScalingRules", GoGetter: "AttrScalingRules"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDependency", GoMethod: "FetchDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchResourceDesc", GoMethod: "FetchResourceDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "generatePhysicalName", GoMethod: "GeneratePhysicalName"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
@@ -421,6 +542,7 @@ func init() {
 		func() interface{} {
 			j := jsiiProxy_ScalingRules{}
 			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreResource)
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IScalingRules)
 			return &j
 		},
 	)

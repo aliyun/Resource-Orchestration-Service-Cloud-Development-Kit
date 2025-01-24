@@ -52,10 +52,6 @@ func (j *jsiiProxy_XTraceApp) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_XTraceApp) validateSetPropsParameters(val *XTraceAppProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_XTraceApp) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

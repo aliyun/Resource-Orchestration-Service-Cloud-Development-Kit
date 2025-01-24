@@ -12,28 +12,38 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::MNS::Subscription`, which is used to query the information about a subscription.
 type Subscription interface {
 	alicloudroscdkcore.Resource
+	ISubscription
 	// Attribute CreateTime: The time when the subscription was created.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute Endpoint: The endpoint that is used by the subscriber to receive messages.
-	AttrEndpoint() alicloudroscdkcore.IResolvable
+	AttrEndpoint() interface{}
 	// Attribute FilterTag: Describes the labels by which messages are filtered in this subscription (only messages with consistent labels are pushed).
-	AttrFilterTag() alicloudroscdkcore.IResolvable
+	AttrFilterTag() interface{}
 	// Attribute LastModifyTime: The time when the subscription was last modified.
-	AttrLastModifyTime() alicloudroscdkcore.IResolvable
+	AttrLastModifyTime() interface{}
 	// Attribute NotifyContentFormat: The format of the message that is pushed to the endpoint.
-	AttrNotifyContentFormat() alicloudroscdkcore.IResolvable
+	AttrNotifyContentFormat() interface{}
 	// Attribute NotifyStrategy: The retry policy that is applied if an error occurs when Message Service (MNS) pushes messages to the endpoint.
-	AttrNotifyStrategy() alicloudroscdkcore.IResolvable
+	AttrNotifyStrategy() interface{}
 	// Attribute SubscriptionName: The name of the subscription.
-	AttrSubscriptionName() alicloudroscdkcore.IResolvable
+	AttrSubscriptionName() interface{}
 	// Attribute SubscriptionURL: TThe URL of the subscription.
-	AttrSubscriptionUrl() alicloudroscdkcore.IResolvable
+	AttrSubscriptionUrl() interface{}
 	// Attribute TopicName: The name of the topic.
-	AttrTopicName() alicloudroscdkcore.IResolvable
+	AttrTopicName() interface{}
 	// Attribute TopicOwner: The owner of the topic.
-	AttrTopicOwner() alicloudroscdkcore.IResolvable
+	AttrTopicOwner() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -48,7 +58,6 @@ type Subscription interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *SubscriptionProps
-	SetProps(val *SubscriptionProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -61,6 +70,9 @@ type Subscription interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -113,10 +125,11 @@ type Subscription interface {
 // The jsii proxy struct for Subscription
 type jsiiProxy_Subscription struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ISubscription
 }
 
-func (j *jsiiProxy_Subscription) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Subscription) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -125,8 +138,8 @@ func (j *jsiiProxy_Subscription) AttrCreateTime() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Subscription) AttrEndpoint() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Subscription) AttrEndpoint() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEndpoint",
@@ -135,8 +148,8 @@ func (j *jsiiProxy_Subscription) AttrEndpoint() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Subscription) AttrFilterTag() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Subscription) AttrFilterTag() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrFilterTag",
@@ -145,8 +158,8 @@ func (j *jsiiProxy_Subscription) AttrFilterTag() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_Subscription) AttrLastModifyTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Subscription) AttrLastModifyTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLastModifyTime",
@@ -155,8 +168,8 @@ func (j *jsiiProxy_Subscription) AttrLastModifyTime() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_Subscription) AttrNotifyContentFormat() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Subscription) AttrNotifyContentFormat() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNotifyContentFormat",
@@ -165,8 +178,8 @@ func (j *jsiiProxy_Subscription) AttrNotifyContentFormat() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_Subscription) AttrNotifyStrategy() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Subscription) AttrNotifyStrategy() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNotifyStrategy",
@@ -175,8 +188,8 @@ func (j *jsiiProxy_Subscription) AttrNotifyStrategy() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_Subscription) AttrSubscriptionName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Subscription) AttrSubscriptionName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSubscriptionName",
@@ -185,8 +198,8 @@ func (j *jsiiProxy_Subscription) AttrSubscriptionName() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_Subscription) AttrSubscriptionUrl() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Subscription) AttrSubscriptionUrl() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSubscriptionUrl",
@@ -195,8 +208,8 @@ func (j *jsiiProxy_Subscription) AttrSubscriptionUrl() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_Subscription) AttrTopicName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Subscription) AttrTopicName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTopicName",
@@ -205,8 +218,8 @@ func (j *jsiiProxy_Subscription) AttrTopicName() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_Subscription) AttrTopicOwner() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Subscription) AttrTopicOwner() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTopicOwner",
@@ -220,6 +233,16 @@ func (j *jsiiProxy_Subscription) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Subscription) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -357,17 +380,6 @@ func (j *jsiiProxy_Subscription)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Subscription)SetProps(val *SubscriptionProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Subscription)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -459,6 +471,45 @@ func (s *jsiiProxy_Subscription) ApplyRemovalPolicy(policy alicloudroscdkcore.Re
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (s *jsiiProxy_Subscription) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		s,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_Subscription) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_Subscription) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (s *jsiiProxy_Subscription) GeneratePhysicalName() *string {

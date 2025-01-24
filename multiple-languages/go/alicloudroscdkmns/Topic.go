@@ -12,14 +12,24 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::MNS::Topic`, which is used to create a topic.
 type Topic interface {
 	alicloudroscdkcore.Resource
+	ITopic
 	// Attribute ARN.WithSlash: The ARN: acs:mns:$region:$accountid:/topics/$topicName.
-	AttrArnWithSlash() alicloudroscdkcore.IResolvable
+	AttrArnWithSlash() interface{}
 	// Attribute TopicName: Topic name.
-	AttrTopicName() alicloudroscdkcore.IResolvable
+	AttrTopicName() interface{}
 	// Attribute TopicUrl: URL of created topic.
-	AttrTopicUrl() alicloudroscdkcore.IResolvable
+	AttrTopicUrl() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -34,7 +44,6 @@ type Topic interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *TopicProps
-	SetProps(val *TopicProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -47,6 +56,9 @@ type Topic interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -99,10 +111,11 @@ type Topic interface {
 // The jsii proxy struct for Topic
 type jsiiProxy_Topic struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ITopic
 }
 
-func (j *jsiiProxy_Topic) AttrArnWithSlash() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Topic) AttrArnWithSlash() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrArnWithSlash",
@@ -111,8 +124,8 @@ func (j *jsiiProxy_Topic) AttrArnWithSlash() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Topic) AttrTopicName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Topic) AttrTopicName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTopicName",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_Topic) AttrTopicName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Topic) AttrTopicUrl() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Topic) AttrTopicUrl() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTopicUrl",
@@ -136,6 +149,16 @@ func (j *jsiiProxy_Topic) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Topic) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -273,17 +296,6 @@ func (j *jsiiProxy_Topic)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Topic)SetProps(val *TopicProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Topic)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -375,6 +387,45 @@ func (t *jsiiProxy_Topic) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (t *jsiiProxy_Topic) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		t,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (t *jsiiProxy_Topic) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		t,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (t *jsiiProxy_Topic) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		t,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (t *jsiiProxy_Topic) GeneratePhysicalName() *string {

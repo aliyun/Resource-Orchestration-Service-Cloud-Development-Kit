@@ -39,25 +39,41 @@ export interface ConfigurationsProps {
 }
 
 /**
+ * Represents a `Configurations`.
+ */
+export interface IConfigurations extends ros.IResource {
+    readonly props: ConfigurationsProps;
+
+    /**
+     * Attribute Configurations: The list of configurations.
+     */
+    readonly attrConfigurations: ros.IResolvable | string;
+
+    /**
+     * Attribute DataIds: The list of configuration data IDs.
+     */
+    readonly attrDataIds: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ACM::Configurations`, which is used to query the information about configurations.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosConfigurations`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-acm-configurations
  */
-export class Configurations extends ros.Resource {
+export class Configurations extends ros.Resource implements IConfigurations {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ConfigurationsProps;
+    public readonly props: ConfigurationsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Configurations: The list of configurations.
      */
-    public readonly attrConfigurations: ros.IResolvable;
+    public readonly attrConfigurations: ros.IResolvable | string;
 
     /**
      * Attribute DataIds: The list of configuration data IDs.
      */
-    public readonly attrDataIds: ros.IResolvable;
+    public readonly attrDataIds: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

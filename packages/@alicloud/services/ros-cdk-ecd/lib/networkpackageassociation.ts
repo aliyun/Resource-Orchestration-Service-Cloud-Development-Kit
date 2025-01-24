@@ -21,25 +21,41 @@ export interface NetworkPackageAssociationProps {
 }
 
 /**
+ * Represents a `NetworkPackageAssociation`.
+ */
+export interface INetworkPackageAssociation extends ros.IResource {
+    readonly props: NetworkPackageAssociationProps;
+
+    /**
+     * Attribute NetworkPackageId: The ID of the Internet access package.
+     */
+    readonly attrNetworkPackageId: ros.IResolvable | string;
+
+    /**
+     * Attribute OfficeSiteId: The ID of the workspace.
+     */
+    readonly attrOfficeSiteId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECD::NetworkPackageAssociation`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNetworkPackageAssociation`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-networkpackageassociation
  */
-export class NetworkPackageAssociation extends ros.Resource {
+export class NetworkPackageAssociation extends ros.Resource implements INetworkPackageAssociation {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: NetworkPackageAssociationProps;
+    public readonly props: NetworkPackageAssociationProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute NetworkPackageId: The ID of the Internet access package.
      */
-    public readonly attrNetworkPackageId: ros.IResolvable;
+    public readonly attrNetworkPackageId: ros.IResolvable | string;
 
     /**
      * Attribute OfficeSiteId: The ID of the workspace.
      */
-    public readonly attrOfficeSiteId: ros.IResolvable;
+    public readonly attrOfficeSiteId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

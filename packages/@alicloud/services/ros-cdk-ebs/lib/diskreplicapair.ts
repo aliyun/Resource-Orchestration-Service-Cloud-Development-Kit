@@ -89,85 +89,161 @@ export interface DiskReplicaPairProps {
 }
 
 /**
+ * Represents a `DiskReplicaPair`.
+ */
+export interface IDiskReplicaPair extends ros.IResource {
+    readonly props: DiskReplicaPairProps;
+
+    /**
+     * Attribute Bandwidth: The bandwidth for asynchronous data replication between cloud disks.
+     */
+    readonly attrBandwidth: ros.IResolvable | string;
+
+    /**
+     * Attribute CreateTime: The creation time of the resource.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: The description of the asynchronous replication relationship.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute DestinationDiskId: The ID of the standby disk.
+     */
+    readonly attrDestinationDiskId: ros.IResolvable | string;
+
+    /**
+     * Attribute DestinationRegionId: The ID of the region to which the disaster recovery site belongs.
+     */
+    readonly attrDestinationRegionId: ros.IResolvable | string;
+
+    /**
+     * Attribute DestinationZoneId: The ID of the zone to which the disaster recovery site belongs.
+     */
+    readonly attrDestinationZoneId: ros.IResolvable | string;
+
+    /**
+     * Attribute DiskId: The ID of the primary disk.
+     */
+    readonly attrDiskId: ros.IResolvable | string;
+
+    /**
+     * Attribute DiskReplicaPairName: The name of the asynchronous replication relationship.
+     */
+    readonly attrDiskReplicaPairName: ros.IResolvable | string;
+
+    /**
+     * Attribute PaymentType: The payment type of the resource.
+     */
+    readonly attrPaymentType: ros.IResolvable | string;
+
+    /**
+     * Attribute RPO: The RPO value set by the consistency group in seconds.
+     */
+    readonly attrRpo: ros.IResolvable | string;
+
+    /**
+     * Attribute ReplicaPairId: The ID of the disk replica pair.
+     */
+    readonly attrReplicaPairId: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: The ID of the resource group.
+     */
+    readonly attrResourceGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute SourceZoneId: The ID of the zone to which the production site belongs.
+     */
+    readonly attrSourceZoneId: ros.IResolvable | string;
+
+    /**
+     * Attribute Tags: The tags of the disk replica pair.
+     */
+    readonly attrTags: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::EBS::DiskReplicaPair`, which is used to create a replication pair.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDiskReplicaPair`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ebs-diskreplicapair
  */
-export class DiskReplicaPair extends ros.Resource {
+export class DiskReplicaPair extends ros.Resource implements IDiskReplicaPair {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DiskReplicaPairProps;
+    public readonly props: DiskReplicaPairProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Bandwidth: The bandwidth for asynchronous data replication between cloud disks.
      */
-    public readonly attrBandwidth: ros.IResolvable;
+    public readonly attrBandwidth: ros.IResolvable | string;
 
     /**
      * Attribute CreateTime: The creation time of the resource.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute Description: The description of the asynchronous replication relationship.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute DestinationDiskId: The ID of the standby disk.
      */
-    public readonly attrDestinationDiskId: ros.IResolvable;
+    public readonly attrDestinationDiskId: ros.IResolvable | string;
 
     /**
      * Attribute DestinationRegionId: The ID of the region to which the disaster recovery site belongs.
      */
-    public readonly attrDestinationRegionId: ros.IResolvable;
+    public readonly attrDestinationRegionId: ros.IResolvable | string;
 
     /**
      * Attribute DestinationZoneId: The ID of the zone to which the disaster recovery site belongs.
      */
-    public readonly attrDestinationZoneId: ros.IResolvable;
+    public readonly attrDestinationZoneId: ros.IResolvable | string;
 
     /**
      * Attribute DiskId: The ID of the primary disk.
      */
-    public readonly attrDiskId: ros.IResolvable;
+    public readonly attrDiskId: ros.IResolvable | string;
 
     /**
      * Attribute DiskReplicaPairName: The name of the asynchronous replication relationship.
      */
-    public readonly attrDiskReplicaPairName: ros.IResolvable;
+    public readonly attrDiskReplicaPairName: ros.IResolvable | string;
 
     /**
      * Attribute PaymentType: The payment type of the resource.
      */
-    public readonly attrPaymentType: ros.IResolvable;
+    public readonly attrPaymentType: ros.IResolvable | string;
 
     /**
      * Attribute RPO: The RPO value set by the consistency group in seconds.
      */
-    public readonly attrRpo: ros.IResolvable;
+    public readonly attrRpo: ros.IResolvable | string;
 
     /**
      * Attribute ReplicaPairId: The ID of the disk replica pair.
      */
-    public readonly attrReplicaPairId: ros.IResolvable;
+    public readonly attrReplicaPairId: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroupId: The ID of the resource group.
      */
-    public readonly attrResourceGroupId: ros.IResolvable;
+    public readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Attribute SourceZoneId: The ID of the zone to which the production site belongs.
      */
-    public readonly attrSourceZoneId: ros.IResolvable;
+    public readonly attrSourceZoneId: ros.IResolvable | string;
 
     /**
      * Attribute Tags: The tags of the disk replica pair.
      */
-    public readonly attrTags: ros.IResolvable;
+    public readonly attrTags: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

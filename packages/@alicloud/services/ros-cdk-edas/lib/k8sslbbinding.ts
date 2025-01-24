@@ -49,40 +49,71 @@ export interface K8sSlbBindingProps {
 }
 
 /**
+ * Represents a `K8sSlbBinding`.
+ */
+export interface IK8sSlbBinding extends ros.IResource {
+    readonly props: K8sSlbBindingProps;
+
+    /**
+     * Attribute Address: The address of load balancer instance.
+     */
+    readonly attrAddress: ros.IResolvable | string;
+
+    /**
+     * Attribute AppId: The ID of the application.
+     */
+    readonly attrAppId: ros.IResolvable | string;
+
+    /**
+     * Attribute ChangeOrderId: The ID of the change process.
+     */
+    readonly attrChangeOrderId: ros.IResolvable | string;
+
+    /**
+     * Attribute LoadBalancerId: The ID of load balancer instance.
+     */
+    readonly attrLoadBalancerId: ros.IResolvable | string;
+
+    /**
+     * Attribute LoadBalancerName: The name of load balancer instance defined in EDAS.
+     */
+    readonly attrLoadBalancerName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::K8sSlbBinding`, which is used to bind a Server Load Balancer (SLB) instance to an application in a Container Service for Kubernetes (ACK) cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosK8sSlbBinding`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8sslbbinding
  */
-export class K8sSlbBinding extends ros.Resource {
+export class K8sSlbBinding extends ros.Resource implements IK8sSlbBinding {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: K8sSlbBindingProps;
+    public readonly props: K8sSlbBindingProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Address: The address of load balancer instance.
      */
-    public readonly attrAddress: ros.IResolvable;
+    public readonly attrAddress: ros.IResolvable | string;
 
     /**
      * Attribute AppId: The ID of the application.
      */
-    public readonly attrAppId: ros.IResolvable;
+    public readonly attrAppId: ros.IResolvable | string;
 
     /**
      * Attribute ChangeOrderId: The ID of the change process.
      */
-    public readonly attrChangeOrderId: ros.IResolvable;
+    public readonly attrChangeOrderId: ros.IResolvable | string;
 
     /**
      * Attribute LoadBalancerId: The ID of load balancer instance.
      */
-    public readonly attrLoadBalancerId: ros.IResolvable;
+    public readonly attrLoadBalancerId: ros.IResolvable | string;
 
     /**
      * Attribute LoadBalancerName: The name of load balancer instance defined in EDAS.
      */
-    public readonly attrLoadBalancerName: ros.IResolvable;
+    public readonly attrLoadBalancerName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

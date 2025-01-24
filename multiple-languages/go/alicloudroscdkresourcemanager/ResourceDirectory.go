@@ -12,16 +12,26 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ResourceDirectory`.
 type ResourceDirectory interface {
 	alicloudroscdkcore.Resource
+	IResourceDirectory
 	// Attribute MasterAccountId: The ID of the master account.
-	AttrMasterAccountId() alicloudroscdkcore.IResolvable
+	AttrMasterAccountId() interface{}
 	// Attribute MasterAccountName: The name of the master account.
-	AttrMasterAccountName() alicloudroscdkcore.IResolvable
+	AttrMasterAccountName() interface{}
 	// Attribute ResourceDirectoryId: The ID of the resource directory.
-	AttrResourceDirectoryId() alicloudroscdkcore.IResolvable
+	AttrResourceDirectoryId() interface{}
 	// Attribute RootFolderId: The ID of the root folder.
-	AttrRootFolderId() alicloudroscdkcore.IResolvable
+	AttrRootFolderId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -36,7 +46,6 @@ type ResourceDirectory interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ResourceDirectoryProps
-	SetProps(val *ResourceDirectoryProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -49,6 +58,9 @@ type ResourceDirectory interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -101,10 +113,11 @@ type ResourceDirectory interface {
 // The jsii proxy struct for ResourceDirectory
 type jsiiProxy_ResourceDirectory struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IResourceDirectory
 }
 
-func (j *jsiiProxy_ResourceDirectory) AttrMasterAccountId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ResourceDirectory) AttrMasterAccountId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMasterAccountId",
@@ -113,8 +126,8 @@ func (j *jsiiProxy_ResourceDirectory) AttrMasterAccountId() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_ResourceDirectory) AttrMasterAccountName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ResourceDirectory) AttrMasterAccountName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMasterAccountName",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_ResourceDirectory) AttrMasterAccountName() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_ResourceDirectory) AttrResourceDirectoryId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ResourceDirectory) AttrResourceDirectoryId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceDirectoryId",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_ResourceDirectory) AttrResourceDirectoryId() alicloudroscdkco
 	return returns
 }
 
-func (j *jsiiProxy_ResourceDirectory) AttrRootFolderId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ResourceDirectory) AttrRootFolderId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRootFolderId",
@@ -148,6 +161,16 @@ func (j *jsiiProxy_ResourceDirectory) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ResourceDirectory) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -285,17 +308,6 @@ func (j *jsiiProxy_ResourceDirectory)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ResourceDirectory)SetProps(val *ResourceDirectoryProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_ResourceDirectory)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -387,6 +399,45 @@ func (r *jsiiProxy_ResourceDirectory) ApplyRemovalPolicy(policy alicloudroscdkco
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (r *jsiiProxy_ResourceDirectory) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		r,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_ResourceDirectory) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		r,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_ResourceDirectory) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		r,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (r *jsiiProxy_ResourceDirectory) GeneratePhysicalName() *string {

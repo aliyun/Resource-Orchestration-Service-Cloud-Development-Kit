@@ -20,6 +20,12 @@ type RosDbAgent interface {
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
 	CreationStack() *[]*string
+	CrossAccountRoleName() interface{}
+	SetCrossAccountRoleName(val interface{})
+	CrossAccountType() interface{}
+	SetCrossAccountType(val interface{})
+	CrossAccountUserId() interface{}
+	SetCrossAccountUserId(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
 	InstanceInfo() interface{}
@@ -109,6 +115,9 @@ type RosDbAgent interface {
 	AddRosDependency(target *string)
 	// Sets the deletion policy of the resource based on the removal policy specified.
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy, options *alicloudroscdkcore.RemovalPolicyOptions)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDesc() *string
+	FetchRosDependency() *[]*string
 	// Returns a token for an runtime attribute of this resource.
 	//
 	// Ideally, use generated attribute accessors (e.g. `resource.arn`), but this can be used for future compatibility
@@ -216,6 +225,36 @@ func (j *jsiiProxy_RosDbAgent) CreationStack() *[]*string {
 	_jsii_.Get(
 		j,
 		"creationStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDbAgent) CrossAccountRoleName() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"crossAccountRoleName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDbAgent) CrossAccountType() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"crossAccountType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDbAgent) CrossAccountUserId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"crossAccountUserId",
 		&returns,
 	)
 	return returns
@@ -346,6 +385,39 @@ func NewRosDbAgent_Override(r RosDbAgent, scope alicloudroscdkcore.Construct, id
 		"@alicloud/ros-cdk-hbr.RosDbAgent",
 		[]interface{}{scope, id, props, enableResourcePropertyConstraint},
 		r,
+	)
+}
+
+func (j *jsiiProxy_RosDbAgent)SetCrossAccountRoleName(val interface{}) {
+	if err := j.validateSetCrossAccountRoleNameParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"crossAccountRoleName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDbAgent)SetCrossAccountType(val interface{}) {
+	if err := j.validateSetCrossAccountTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"crossAccountType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDbAgent)SetCrossAccountUserId(val interface{}) {
+	if err := j.validateSetCrossAccountUserIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"crossAccountUserId",
+		val,
 	)
 }
 
@@ -563,6 +635,45 @@ func (r *jsiiProxy_RosDbAgent) ApplyRemovalPolicy(policy alicloudroscdkcore.Remo
 		"applyRemovalPolicy",
 		[]interface{}{policy, options},
 	)
+}
+
+func (r *jsiiProxy_RosDbAgent) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		r,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_RosDbAgent) FetchDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		r,
+		"fetchDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_RosDbAgent) FetchRosDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		r,
+		"fetchRosDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (r *jsiiProxy_RosDbAgent) GetAtt(attributeName *string) alicloudroscdkcore.Reference {

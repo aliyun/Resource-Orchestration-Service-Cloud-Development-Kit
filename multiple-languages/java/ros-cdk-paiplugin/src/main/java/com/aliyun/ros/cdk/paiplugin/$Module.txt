@@ -2,6 +2,12 @@
 @alicloud/ros-cdk-paiplugin.CampaignProps=com.aliyun.ros.cdk.paiplugin.CampaignProps
 @alicloud/ros-cdk-paiplugin.Group=com.aliyun.ros.cdk.paiplugin.Group
 @alicloud/ros-cdk-paiplugin.GroupProps=com.aliyun.ros.cdk.paiplugin.GroupProps
+@alicloud/ros-cdk-paiplugin.ICampaign=com.aliyun.ros.cdk.paiplugin.ICampaign
+@alicloud/ros-cdk-paiplugin.IGroup=com.aliyun.ros.cdk.paiplugin.IGroup
+@alicloud/ros-cdk-paiplugin.IInferenceJob=com.aliyun.ros.cdk.paiplugin.IInferenceJob
+@alicloud/ros-cdk-paiplugin.ISignature=com.aliyun.ros.cdk.paiplugin.ISignature
+@alicloud/ros-cdk-paiplugin.ITemplate=com.aliyun.ros.cdk.paiplugin.ITemplate
+@alicloud/ros-cdk-paiplugin.ITrainingJob=com.aliyun.ros.cdk.paiplugin.ITrainingJob
 @alicloud/ros-cdk-paiplugin.InferenceJob=com.aliyun.ros.cdk.paiplugin.InferenceJob
 @alicloud/ros-cdk-paiplugin.InferenceJobProps=com.aliyun.ros.cdk.paiplugin.InferenceJobProps
 @alicloud/ros-cdk-paiplugin.RosCampaign=com.aliyun.ros.cdk.paiplugin.RosCampaign

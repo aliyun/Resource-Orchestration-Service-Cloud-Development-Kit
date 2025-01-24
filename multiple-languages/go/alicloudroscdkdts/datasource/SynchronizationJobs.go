@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::DTS::SynchronizationJobs`.
 type SynchronizationJobs interface {
 	alicloudroscdkcore.Resource
+	ISynchronizationJobs
 	// Attribute DtsInstanceIds: The list of dts instance IDs.
-	AttrDtsInstanceIds() alicloudroscdkcore.IResolvable
+	AttrDtsInstanceIds() interface{}
 	// Attribute SynchronizationInstances: The list of synchronization instances.
-	AttrSynchronizationInstances() alicloudroscdkcore.IResolvable
+	AttrSynchronizationInstances() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type SynchronizationJobs interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *SynchronizationJobsProps
-	SetProps(val *SynchronizationJobsProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type SynchronizationJobs interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type SynchronizationJobs interface {
 // The jsii proxy struct for SynchronizationJobs
 type jsiiProxy_SynchronizationJobs struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ISynchronizationJobs
 }
 
-func (j *jsiiProxy_SynchronizationJobs) AttrDtsInstanceIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SynchronizationJobs) AttrDtsInstanceIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDtsInstanceIds",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_SynchronizationJobs) AttrDtsInstanceIds() alicloudroscdkcore.
 	return returns
 }
 
-func (j *jsiiProxy_SynchronizationJobs) AttrSynchronizationInstances() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SynchronizationJobs) AttrSynchronizationInstances() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSynchronizationInstances",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_SynchronizationJobs) EnableResourcePropertyConstraint() *bool
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SynchronizationJobs) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_SynchronizationJobs)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SynchronizationJobs)SetProps(val *SynchronizationJobsProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_SynchronizationJobs)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (s *jsiiProxy_SynchronizationJobs) ApplyRemovalPolicy(policy alicloudroscdk
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (s *jsiiProxy_SynchronizationJobs) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		s,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_SynchronizationJobs) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_SynchronizationJobs) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (s *jsiiProxy_SynchronizationJobs) GeneratePhysicalName() *string {

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managededgekubernetescluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:06.072Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:36.640Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosManagedEdgeKubernetesClusterProps.Jsii$Proxy.class)
 public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -65,6 +65,12 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getLoginPassword() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMaintenanceWindow() {
         return null;
     }
 
@@ -148,6 +154,7 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         java.lang.Object isEnterpriseSecurityGroup;
         java.lang.Object keyPair;
         java.lang.Object loginPassword;
+        java.lang.Object maintenanceWindow;
         java.lang.Object nodeCidrMask;
         java.lang.Object profile;
         java.lang.Object proxyMode;
@@ -356,6 +363,26 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
          */
         public Builder loginPassword(com.aliyun.ros.cdk.core.IResolvable loginPassword) {
             this.loginPassword = loginPassword;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getMaintenanceWindow}
+         * @param maintenanceWindow the value to be set.
+         * @return {@code this}
+         */
+        public Builder maintenanceWindow(com.aliyun.ros.cdk.core.IResolvable maintenanceWindow) {
+            this.maintenanceWindow = maintenanceWindow;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosManagedEdgeKubernetesClusterProps#getMaintenanceWindow}
+         * @param maintenanceWindow the value to be set.
+         * @return {@code this}
+         */
+        public Builder maintenanceWindow(com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster.MaintenanceWindowProperty maintenanceWindow) {
+            this.maintenanceWindow = maintenanceWindow;
             return this;
         }
 
@@ -576,6 +603,7 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         private final java.lang.Object isEnterpriseSecurityGroup;
         private final java.lang.Object keyPair;
         private final java.lang.Object loginPassword;
+        private final java.lang.Object maintenanceWindow;
         private final java.lang.Object nodeCidrMask;
         private final java.lang.Object profile;
         private final java.lang.Object proxyMode;
@@ -603,6 +631,7 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             this.isEnterpriseSecurityGroup = software.amazon.jsii.Kernel.get(this, "isEnterpriseSecurityGroup", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.keyPair = software.amazon.jsii.Kernel.get(this, "keyPair", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loginPassword = software.amazon.jsii.Kernel.get(this, "loginPassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.maintenanceWindow = software.amazon.jsii.Kernel.get(this, "maintenanceWindow", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nodeCidrMask = software.amazon.jsii.Kernel.get(this, "nodeCidrMask", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.profile = software.amazon.jsii.Kernel.get(this, "profile", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.proxyMode = software.amazon.jsii.Kernel.get(this, "proxyMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -631,6 +660,7 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             this.isEnterpriseSecurityGroup = builder.isEnterpriseSecurityGroup;
             this.keyPair = builder.keyPair;
             this.loginPassword = builder.loginPassword;
+            this.maintenanceWindow = builder.maintenanceWindow;
             this.nodeCidrMask = builder.nodeCidrMask;
             this.profile = builder.profile;
             this.proxyMode = builder.proxyMode;
@@ -691,6 +721,11 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
         @Override
         public final java.lang.Object getLoginPassword() {
             return this.loginPassword;
+        }
+
+        @Override
+        public final java.lang.Object getMaintenanceWindow() {
+            return this.maintenanceWindow;
         }
 
         @Override
@@ -777,6 +812,9 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             if (this.getLoginPassword() != null) {
                 data.set("loginPassword", om.valueToTree(this.getLoginPassword()));
             }
+            if (this.getMaintenanceWindow() != null) {
+                data.set("maintenanceWindow", om.valueToTree(this.getMaintenanceWindow()));
+            }
             if (this.getNodeCidrMask() != null) {
                 data.set("nodeCidrMask", om.valueToTree(this.getNodeCidrMask()));
             }
@@ -835,6 +873,7 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             if (this.isEnterpriseSecurityGroup != null ? !this.isEnterpriseSecurityGroup.equals(that.isEnterpriseSecurityGroup) : that.isEnterpriseSecurityGroup != null) return false;
             if (this.keyPair != null ? !this.keyPair.equals(that.keyPair) : that.keyPair != null) return false;
             if (this.loginPassword != null ? !this.loginPassword.equals(that.loginPassword) : that.loginPassword != null) return false;
+            if (this.maintenanceWindow != null ? !this.maintenanceWindow.equals(that.maintenanceWindow) : that.maintenanceWindow != null) return false;
             if (this.nodeCidrMask != null ? !this.nodeCidrMask.equals(that.nodeCidrMask) : that.nodeCidrMask != null) return false;
             if (this.profile != null ? !this.profile.equals(that.profile) : that.profile != null) return false;
             if (this.proxyMode != null ? !this.proxyMode.equals(that.proxyMode) : that.proxyMode != null) return false;
@@ -859,6 +898,7 @@ public interface RosManagedEdgeKubernetesClusterProps extends software.amazon.js
             result = 31 * result + (this.isEnterpriseSecurityGroup != null ? this.isEnterpriseSecurityGroup.hashCode() : 0);
             result = 31 * result + (this.keyPair != null ? this.keyPair.hashCode() : 0);
             result = 31 * result + (this.loginPassword != null ? this.loginPassword.hashCode() : 0);
+            result = 31 * result + (this.maintenanceWindow != null ? this.maintenanceWindow.hashCode() : 0);
             result = 31 * result + (this.nodeCidrMask != null ? this.nodeCidrMask.hashCode() : 0);
             result = 31 * result + (this.profile != null ? this.profile.hashCode() : 0);
             result = 31 * result + (this.proxyMode != null ? this.proxyMode.hashCode() : 0);

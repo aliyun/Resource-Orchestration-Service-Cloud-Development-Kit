@@ -1,4 +1,5 @@
 export * from './accesscontrol';
+export * from './accesslogsaddition';
 export * from './backendserverattachment';
 export * from './backendservertovservergroupaddition';
 export * from './certificate';

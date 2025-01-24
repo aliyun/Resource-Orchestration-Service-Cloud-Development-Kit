@@ -21,35 +21,61 @@ export interface TransitRouterRouteTableAssociationProps {
 }
 
 /**
+ * Represents a `TransitRouterRouteTableAssociation`.
+ */
+export interface ITransitRouterRouteTableAssociation extends ros.IResource {
+    readonly props: TransitRouterRouteTableAssociationProps;
+
+    /**
+     * Attribute ResourceId: ResourceId
+     */
+    readonly attrResourceId: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceType: ResourceType
+     */
+    readonly attrResourceType: ros.IResolvable | string;
+
+    /**
+     * Attribute TransitRouterAttachmentId: TransitRouterAttachmentId
+     */
+    readonly attrTransitRouterAttachmentId: ros.IResolvable | string;
+
+    /**
+     * Attribute TransitRouterRouteTableId: TransitRouterRouteTableId
+     */
+    readonly attrTransitRouterRouteTableId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterRouteTableAssociation`, which is used to create an associated forwarding correlation.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouterRouteTableAssociation`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterroutetableassociation
  */
-export class TransitRouterRouteTableAssociation extends ros.Resource {
+export class TransitRouterRouteTableAssociation extends ros.Resource implements ITransitRouterRouteTableAssociation {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: TransitRouterRouteTableAssociationProps;
+    public readonly props: TransitRouterRouteTableAssociationProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ResourceId: ResourceId
      */
-    public readonly attrResourceId: ros.IResolvable;
+    public readonly attrResourceId: ros.IResolvable | string;
 
     /**
      * Attribute ResourceType: ResourceType
      */
-    public readonly attrResourceType: ros.IResolvable;
+    public readonly attrResourceType: ros.IResolvable | string;
 
     /**
      * Attribute TransitRouterAttachmentId: TransitRouterAttachmentId
      */
-    public readonly attrTransitRouterAttachmentId: ros.IResolvable;
+    public readonly attrTransitRouterAttachmentId: ros.IResolvable | string;
 
     /**
      * Attribute TransitRouterRouteTableId: TransitRouterRouteTableId
      */
-    public readonly attrTransitRouterRouteTableId: ros.IResolvable;
+    public readonly attrTransitRouterRouteTableId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

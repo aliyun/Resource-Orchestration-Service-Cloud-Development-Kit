@@ -38,20 +38,31 @@ export interface MetricRuleTemplateProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::MetricRuleTemplate`, which is used to create an alert rule template.
+ * Represents a `MetricRuleTemplate`.
+ */
+export interface IMetricRuleTemplate extends ros.IResource {
+    readonly props: MetricRuleTemplateProps;
+
+    /**
+     * Attribute Id: Alarm template ID.
+     */
+    readonly attrId: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::MetricRuleTemplate`, which is used to create an alert template.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMetricRuleTemplate`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletemplate
  */
-export class MetricRuleTemplate extends ros.Resource {
+export class MetricRuleTemplate extends ros.Resource implements IMetricRuleTemplate {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: MetricRuleTemplateProps;
+    public readonly props: MetricRuleTemplateProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Id: Alarm template ID.
      */
-    public readonly attrId: ros.IResolvable;
+    public readonly attrId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

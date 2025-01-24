@@ -39,35 +39,61 @@ export interface InstanceProps {
 }
 
 /**
+ * Represents a `Instance`.
+ */
+export interface IInstance extends ros.IResource {
+    readonly props: InstanceProps;
+
+    /**
+     * Attribute InstanceName: Instance name
+     */
+    readonly attrInstanceName: ros.IResolvable | string;
+
+    /**
+     * Attribute PrivateEndpoint: Private endpoint
+     */
+    readonly attrPrivateEndpoint: ros.IResolvable | string;
+
+    /**
+     * Attribute PublicEndpoint: Public endpoint
+     */
+    readonly attrPublicEndpoint: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcEndpoint: Vpc endpoint
+     */
+    readonly attrVpcEndpoint: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::OTS::Instance`, which is used to create a Tablestore instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-instance
  */
-export class Instance extends ros.Resource {
+export class Instance extends ros.Resource implements IInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InstanceProps;
+    public readonly props: InstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceName: Instance name
      */
-    public readonly attrInstanceName: ros.IResolvable;
+    public readonly attrInstanceName: ros.IResolvable | string;
 
     /**
      * Attribute PrivateEndpoint: Private endpoint
      */
-    public readonly attrPrivateEndpoint: ros.IResolvable;
+    public readonly attrPrivateEndpoint: ros.IResolvable | string;
 
     /**
      * Attribute PublicEndpoint: Public endpoint
      */
-    public readonly attrPublicEndpoint: ros.IResolvable;
+    public readonly attrPublicEndpoint: ros.IResolvable | string;
 
     /**
      * Attribute VpcEndpoint: Vpc endpoint
      */
-    public readonly attrVpcEndpoint: ros.IResolvable;
+    public readonly attrVpcEndpoint: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

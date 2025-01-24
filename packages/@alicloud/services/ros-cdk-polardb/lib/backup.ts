@@ -16,25 +16,41 @@ export interface BackupProps {
 }
 
 /**
+ * Represents a `Backup`.
+ */
+export interface IBackup extends ros.IResource {
+    readonly props: BackupProps;
+
+    /**
+     * Attribute BackupJobId: The ID of the backup set.
+     */
+    readonly attrBackupJobId: ros.IResolvable | string;
+
+    /**
+     * Attribute DBClusterId: The ID of the cluster.
+     */
+    readonly attrDbClusterId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::Backup`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBackup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-backup
  */
-export class Backup extends ros.Resource {
+export class Backup extends ros.Resource implements IBackup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: BackupProps;
+    public readonly props: BackupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute BackupJobId: The ID of the backup set.
      */
-    public readonly attrBackupJobId: ros.IResolvable;
+    public readonly attrBackupJobId: ros.IResolvable | string;
 
     /**
      * Attribute DBClusterId: The ID of the cluster.
      */
-    public readonly attrDbClusterId: ros.IResolvable;
+    public readonly attrDbClusterId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

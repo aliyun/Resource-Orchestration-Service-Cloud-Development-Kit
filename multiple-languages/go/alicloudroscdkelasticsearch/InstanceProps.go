@@ -19,7 +19,7 @@ type InstanceProps struct {
 	VSwitchId interface{} `field:"required" json:"vSwitchId" yaml:"vSwitchId"`
 	// Property description: The description of instance.
 	//
-	// It a string of 0 to 30 characters. It can contain numbers, letters, underscores, (_) and hyphens (-). It must start with a letter, a number or Chinese character.
+	// It a string of 0 to 128 characters. It can contain numbers, letters, underscores, (_) and hyphens (-). It must start with a letter, a number or Chinese character.
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
 	// Property enableKibanaPrivate: Enables or disables intranet access to Kibana.
 	EnableKibanaPrivate interface{} `field:"optional" json:"enableKibanaPrivate" yaml:"enableKibanaPrivate"`

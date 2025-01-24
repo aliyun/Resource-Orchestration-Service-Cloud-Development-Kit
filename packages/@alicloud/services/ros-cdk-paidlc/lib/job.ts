@@ -105,20 +105,31 @@ export interface JobProps {
 }
 
 /**
+ * Represents a `Job`.
+ */
+export interface IJob extends ros.IResource {
+    readonly props: JobProps;
+
+    /**
+     * Attribute JobId: The task ID created this time.
+     */
+    readonly attrJobId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::PAIDLC::Job`, which is used to create a Machine Learning Platform for AI (PAI) job to run in a cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosJob`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidlc-job
  */
-export class Job extends ros.Resource {
+export class Job extends ros.Resource implements IJob {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: JobProps;
+    public readonly props: JobProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute JobId: The task ID created this time.
      */
-    public readonly attrJobId: ros.IResolvable;
+    public readonly attrJobId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

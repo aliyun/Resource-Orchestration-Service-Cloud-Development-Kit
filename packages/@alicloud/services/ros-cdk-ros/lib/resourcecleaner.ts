@@ -95,15 +95,10 @@ export interface ResourceCleanerProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::ResourceCleaner`, which is used to create a resource cleaner.
- * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosResourceCleaner`for a more convenient development experience.
- * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-resourcecleaner
+ * Represents a `ResourceCleaner`.
  */
-export class ResourceCleaner extends ros.Resource {
-    protected scope: ros.Construct;
-    protected id: string;
-    protected props: ResourceCleanerProps;
-    protected enableResourcePropertyConstraint: boolean;
+export interface IResourceCleaner extends ros.IResource {
+    readonly props: ResourceCleanerProps;
 
     /**
      * Attribute CleanResult: The cleanup result. Valid values:
@@ -115,21 +110,21 @@ export class ResourceCleaner extends ros.Resource {
 - UserCancelled: Cleanup is cancelled by user.
 - None: Cleanup is not triggered.
      */
-    public readonly attrCleanResult: ros.IResolvable;
+    readonly attrCleanResult: ros.IResolvable | string;
 
     /**
      * Attribute NoCleanupResourceDetails: The details of the resources that are scanned but filtered.
 Only resources with the resource types ResourceCleaner supports and the regions not filtered are scanned.
 The format is the same as ResourceDetails.
      */
-    public readonly attrNoCleanupResourceDetails: ros.IResolvable;
+    readonly attrNoCleanupResourceDetails: ros.IResolvable | string;
 
     /**
      * Attribute NoCleanupResourcePartialDetails: The partial details of the resources that are scanned but filtered.
 Only resources with the resource types ResourceCleaner supports and the regions not filtered are scanned.
 The format is the same as ResourcePartialDetails.
      */
-    public readonly attrNoCleanupResourcePartialDetails: ros.IResolvable;
+    readonly attrNoCleanupResourcePartialDetails: ros.IResolvable | string;
 
     /**
      * Attribute ResourceDetails: The details of resources to be cleaned up.
@@ -155,7 +150,7 @@ The value is a list of dict. The dict contains the fields below:
   - RegionId: Region ID of the dependency resource.
   - ResourceId: ID of the dependency resource.
      */
-    public readonly attrResourceDetails: ros.IResolvable;
+    readonly attrResourceDetails: ros.IResolvable | string;
 
     /**
      * Attribute ResourcePartialDetails: The partial details of resources to be cleaned up.
@@ -172,7 +167,7 @@ The value is a list of dict. The dict contains the fields below:
   - Pending: The deletion of the resource is not started.
 - ResourceStatusReason: The information of the related ResourceStatus.
      */
-    public readonly attrResourcePartialDetails: ros.IResolvable;
+    readonly attrResourcePartialDetails: ros.IResolvable | string;
 
     /**
      * Attribute ResourceSummary: The details of resources to be cleaned up.
@@ -186,7 +181,7 @@ The value is a list of dict. The dict contains the fields below:
 - OtherCount: Number of other resources of the resource type.
 - TotalCount: Number of total resources of the resource type.
      */
-    public readonly attrResourceSummary: ros.IResolvable;
+    readonly attrResourceSummary: ros.IResolvable | string;
 
     /**
      * Attribute ScanErrors: The scan errors. It takes effect only when property Mode is Loose.
@@ -195,7 +190,110 @@ The value is a list of dict. The dict contains the fields below:
 - RegionId: Region ID for scanning.
 - ErrorMessage: Error message of scanning with specified resource type and region ID.
      */
-    public readonly attrScanErrors: ros.IResolvable;
+    readonly attrScanErrors: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::ResourceCleaner`, which is used to create a resource cleaner.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosResourceCleaner`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-resourcecleaner
+ */
+export class ResourceCleaner extends ros.Resource implements IResourceCleaner {
+    protected scope: ros.Construct;
+    protected id: string;
+    public readonly props: ResourceCleanerProps;
+    protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute CleanResult: The cleanup result. Valid values:
+- Success: All resources are cleaned up successfully.
+- ResourceFailure: Partial resources fail to clean up.
+- Timeout: Timeout to clean up.
+- CheckFailure: Pre check of cleanup fails.
+- UnknownFailure: Unexpected failure.
+- UserCancelled: Cleanup is cancelled by user.
+- None: Cleanup is not triggered.
+     */
+    public readonly attrCleanResult: ros.IResolvable | string;
+
+    /**
+     * Attribute NoCleanupResourceDetails: The details of the resources that are scanned but filtered.
+Only resources with the resource types ResourceCleaner supports and the regions not filtered are scanned.
+The format is the same as ResourceDetails.
+     */
+    public readonly attrNoCleanupResourceDetails: ros.IResolvable | string;
+
+    /**
+     * Attribute NoCleanupResourcePartialDetails: The partial details of the resources that are scanned but filtered.
+Only resources with the resource types ResourceCleaner supports and the regions not filtered are scanned.
+The format is the same as ResourcePartialDetails.
+     */
+    public readonly attrNoCleanupResourcePartialDetails: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceDetails: The details of resources to be cleaned up.
+The value is a list of dict. The dict contains the fields below:
+- ResourceType: Resource type of the resource.
+- RegionId: Region ID of the resource.
+- ResourceId: ID of the resource.
+- ResourceName: Name of the resource.
+- CleanupType: Cleanup type of the resource. Valid values:
+  - Normal: The resource can be deleted normally.
+  - DeleteWithInstance: The resource will be deleted with the resource it belongs to. If the resource it belongs to is filtered or excluded, the deletion probably fails. CleanupTypeReasons give more information.
+  - UnableToDelete: Unable to delete the resource. CleanupTypeReasons give more information.
+- CleanupTypeReasons: The information of the related CleanupType.
+- ResourceStatus: Status of the resource. Valid values:
+  - Deleting: The resource is deleting.
+  - Failure: The deletion of the resource failed.
+  - Success: The resource is deleted.
+  - Skipped: The deletion of the resource is skipped.
+  - Pending: The deletion of the resource is not started.
+- ResourceStatusReason: The information of the related ResourceStatus.
+- Dependencies: The resources that need to be deleted before the deletion of the resource. The value is a list of dict. The dict contains the fields below:
+  - ResourceType: Resource type of the dependency resource.
+  - RegionId: Region ID of the dependency resource.
+  - ResourceId: ID of the dependency resource.
+     */
+    public readonly attrResourceDetails: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourcePartialDetails: The partial details of resources to be cleaned up.
+The value is a list of dict. The dict contains the fields below:
+- ResourceType: Resource type of the resource.
+- RegionId: Region ID of the resource.
+- ResourceId: ID of the resource.
+- ResourceName: Name of the resource.
+- ResourceStatus: Status of the resource. Valid values:
+  - Deleting: The resource is deleting.
+  - Failure: The deletion of the resource failed.
+  - Success: The resource is deleted.
+  - Skipped: The deletion of the resource is skipped.
+  - Pending: The deletion of the resource is not started.
+- ResourceStatusReason: The information of the related ResourceStatus.
+     */
+    public readonly attrResourcePartialDetails: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceSummary: The details of resources to be cleaned up.
+The value is a list of dict. The dict contains the fields below:
+- ResourceType: Resource type of the resources.
+- DeletingCount: Number of deleting resources of the resource type.
+- SuccessCount: Number of deleted resources of the resource type.
+- FailureCount: Number of resources that failed to delete of the resource type.
+- SkippedCount: Number of skipped resources of the resource type.
+- PendingCount: Number of resources that have not been deleted of the resource type.
+- OtherCount: Number of other resources of the resource type.
+- TotalCount: Number of total resources of the resource type.
+     */
+    public readonly attrResourceSummary: ros.IResolvable | string;
+
+    /**
+     * Attribute ScanErrors: The scan errors. It takes effect only when property Mode is Loose.
+The value is a list of dict. The dict contains the fields below:
+- ResourceType: Resource type for scanning.
+- RegionId: Region ID for scanning.
+- ErrorMessage: Error message of scanning with specified resource type and region ID.
+     */
+    public readonly attrScanErrors: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

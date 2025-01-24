@@ -19,25 +19,41 @@ export interface AntiBruteForceRulesProps {
 }
 
 /**
+ * Represents a `AntiBruteForceRules`.
+ */
+export interface IAntiBruteForceRules extends ros.IResource {
+    readonly props: AntiBruteForceRulesProps;
+
+    /**
+     * Attribute AntiBruteForceRuleIds: The list of anti brute force rule IDs.
+     */
+    readonly attrAntiBruteForceRuleIds: ros.IResolvable | string;
+
+    /**
+     * Attribute AntiBruteForceRules: The list of anti brute force rules.
+     */
+    readonly attrAntiBruteForceRules: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ThreatDetection::AntiBruteForceRules`, which is used to query the basic information about defense rules against brute-force attacks.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAntiBruteForceRules`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-threatdetection-antibruteforcerules
  */
-export class AntiBruteForceRules extends ros.Resource {
+export class AntiBruteForceRules extends ros.Resource implements IAntiBruteForceRules {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AntiBruteForceRulesProps;
+    public readonly props: AntiBruteForceRulesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AntiBruteForceRuleIds: The list of anti brute force rule IDs.
      */
-    public readonly attrAntiBruteForceRuleIds: ros.IResolvable;
+    public readonly attrAntiBruteForceRuleIds: ros.IResolvable | string;
 
     /**
      * Attribute AntiBruteForceRules: The list of anti brute force rules.
      */
-    public readonly attrAntiBruteForceRules: ros.IResolvable;
+    public readonly attrAntiBruteForceRules: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

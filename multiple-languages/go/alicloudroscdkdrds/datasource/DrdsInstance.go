@@ -12,83 +12,93 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::DRDS::DrdsInstance`, which is used to query the information about a PolarDB-X 1.0 instance.
 type DrdsInstance interface {
 	alicloudroscdkcore.Resource
+	IDrdsInstance
 	// Attribute CommodityCode: The commodity code of the service.
-	AttrCommodityCode() alicloudroscdkcore.IResolvable
+	AttrCommodityCode() interface{}
 	// Attribute CreateTime: The timestamp that indicates when the instance is created.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute Description: The description of the instance.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute DrdsInstanceId: The ID of the Drds instance.
-	AttrDrdsInstanceId() alicloudroscdkcore.IResolvable
+	AttrDrdsInstanceId() interface{}
 	// Attribute ExpireDate: The timestamp that indicates when the instance expires.
-	AttrExpireDate() alicloudroscdkcore.IResolvable
+	AttrExpireDate() interface{}
 	// Attribute InstanceSeries: The edition of the instance.
 	//
 	// Valid values:
 	// starter: Starter Edition
 	// enterprise: Enterprise Edition
 	// standard: Standard Edition.
-	AttrInstanceSeries() alicloudroscdkcore.IResolvable
+	AttrInstanceSeries() interface{}
 	// Attribute InstanceSpec: The specification of the instance.
-	AttrInstanceSpec() alicloudroscdkcore.IResolvable
+	AttrInstanceSpec() interface{}
 	// Attribute InstRole: The role of the instance.
 	//
 	// Valid values:
 	// MASTER: The instance is a primary instance.
 	// SLAVE: The instance is a read-only instance to analyze complex queries.
 	// SLAVE_FLOW: The instance is a read-only instance for high-concurrency scenarios.
-	AttrInstRole() alicloudroscdkcore.IResolvable
+	AttrInstRole() interface{}
 	// Attribute Label: The tag of the instance.
 	//
 	// Valid values:
 	// NORMAL: The instance is a standard instance.
 	// HA: The instance is a high-availability (HA) instance.
 	// VPC: The instance is a VPC-based instance.
-	AttrLabel() alicloudroscdkcore.IResolvable
+	AttrLabel() interface{}
 	// Attribute MachineType: The machine type of the instance.
 	//
 	// Valid value: ecs.
-	AttrMachineType() alicloudroscdkcore.IResolvable
+	AttrMachineType() interface{}
 	// Attribute MasterInstanceId: The ID of the primary instance.
-	AttrMasterInstanceId() alicloudroscdkcore.IResolvable
+	AttrMasterInstanceId() interface{}
 	// Attribute MysqlVersion: Engine version.
-	AttrMysqlVersion() alicloudroscdkcore.IResolvable
+	AttrMysqlVersion() interface{}
 	// Attribute NetworkType: The network type of the instance.
 	//
 	// Valid values:
 	// CLASSIC
 	// VPC.
-	AttrNetworkType() alicloudroscdkcore.IResolvable
+	AttrNetworkType() interface{}
 	// Attribute OrderInstanceId: The ID of the purchased instance.
-	AttrOrderInstanceId() alicloudroscdkcore.IResolvable
+	AttrOrderInstanceId() interface{}
 	// Attribute ReadOnlyDBInstanceIds: The IDs of read-only instances that are associated with the instance.
-	AttrReadOnlyDbInstanceIds() alicloudroscdkcore.IResolvable
+	AttrReadOnlyDbInstanceIds() interface{}
 	// Attribute ResourceGroupId: The ID of the resource group to which the instance belongs.
-	AttrResourceGroupId() alicloudroscdkcore.IResolvable
+	AttrResourceGroupId() interface{}
 	// Attribute StorageType: The storage type of the Drds database.
 	//
 	// Valid values:
 	// RDS
 	// PolarDB.
-	AttrStorageType() alicloudroscdkcore.IResolvable
+	AttrStorageType() interface{}
 	// Attribute Type: The type of the instance.
 	//
 	// Valid values:
 	// PUBLIC: The returned instance is a shared instance.
 	// PRIVATE: The returned instance is a dedicated instance.
-	AttrType() alicloudroscdkcore.IResolvable
+	AttrType() interface{}
 	// Attribute Version: The version of the instance.
-	AttrVersion() alicloudroscdkcore.IResolvable
+	AttrVersion() interface{}
 	// Attribute VersionAction: Indicates whether the version of the instance can be upgraded.
-	AttrVersionAction() alicloudroscdkcore.IResolvable
+	AttrVersionAction() interface{}
 	// Attribute Vips: The list of returned virtual IP addresses (VIPs).
-	AttrVips() alicloudroscdkcore.IResolvable
+	AttrVips() interface{}
 	// Attribute VpcCloudInstanceId: The ID of the instance that is deployed in the VPC.
-	AttrVpcCloudInstanceId() alicloudroscdkcore.IResolvable
+	AttrVpcCloudInstanceId() interface{}
 	// Attribute ZoneId: The ID of the zone in which the resource is located.
-	AttrZoneId() alicloudroscdkcore.IResolvable
+	AttrZoneId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -103,7 +113,6 @@ type DrdsInstance interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DrdsInstanceProps
-	SetProps(val *DrdsInstanceProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -116,6 +125,9 @@ type DrdsInstance interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -168,10 +180,11 @@ type DrdsInstance interface {
 // The jsii proxy struct for DrdsInstance
 type jsiiProxy_DrdsInstance struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDrdsInstance
 }
 
-func (j *jsiiProxy_DrdsInstance) AttrCommodityCode() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsInstance) AttrCommodityCode() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCommodityCode",
@@ -180,8 +193,8 @@ func (j *jsiiProxy_DrdsInstance) AttrCommodityCode() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_DrdsInstance) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsInstance) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -190,8 +203,8 @@ func (j *jsiiProxy_DrdsInstance) AttrCreateTime() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_DrdsInstance) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsInstance) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -200,8 +213,8 @@ func (j *jsiiProxy_DrdsInstance) AttrDescription() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_DrdsInstance) AttrDrdsInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsInstance) AttrDrdsInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDrdsInstanceId",
@@ -210,8 +223,8 @@ func (j *jsiiProxy_DrdsInstance) AttrDrdsInstanceId() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_DrdsInstance) AttrExpireDate() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsInstance) AttrExpireDate() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrExpireDate",
@@ -220,8 +233,8 @@ func (j *jsiiProxy_DrdsInstance) AttrExpireDate() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_DrdsInstance) AttrInstanceSeries() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsInstance) AttrInstanceSeries() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceSeries",
@@ -230,8 +243,8 @@ func (j *jsiiProxy_DrdsInstance) AttrInstanceSeries() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_DrdsInstance) AttrInstanceSpec() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsInstance) AttrInstanceSpec() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceSpec",
@@ -240,8 +253,8 @@ func (j *jsiiProxy_DrdsInstance) AttrInstanceSpec() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_DrdsInstance) AttrInstRole() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsInstance) AttrInstRole() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstRole",
@@ -250,8 +263,8 @@ func (j *jsiiProxy_DrdsInstance) AttrInstRole() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DrdsInstance) AttrLabel() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsInstance) AttrLabel() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLabel",
@@ -260,8 +273,8 @@ func (j *jsiiProxy_DrdsInstance) AttrLabel() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DrdsInstance) AttrMachineType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsInstance) AttrMachineType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMachineType",
@@ -270,8 +283,8 @@ func (j *jsiiProxy_DrdsInstance) AttrMachineType() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_DrdsInstance) AttrMasterInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsInstance) AttrMasterInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMasterInstanceId",
@@ -280,8 +293,8 @@ func (j *jsiiProxy_DrdsInstance) AttrMasterInstanceId() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_DrdsInstance) AttrMysqlVersion() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsInstance) AttrMysqlVersion() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMysqlVersion",
@@ -290,8 +303,8 @@ func (j *jsiiProxy_DrdsInstance) AttrMysqlVersion() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_DrdsInstance) AttrNetworkType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsInstance) AttrNetworkType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrNetworkType",
@@ -300,8 +313,8 @@ func (j *jsiiProxy_DrdsInstance) AttrNetworkType() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_DrdsInstance) AttrOrderInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsInstance) AttrOrderInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOrderInstanceId",
@@ -310,8 +323,8 @@ func (j *jsiiProxy_DrdsInstance) AttrOrderInstanceId() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_DrdsInstance) AttrReadOnlyDbInstanceIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsInstance) AttrReadOnlyDbInstanceIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrReadOnlyDbInstanceIds",
@@ -320,8 +333,8 @@ func (j *jsiiProxy_DrdsInstance) AttrReadOnlyDbInstanceIds() alicloudroscdkcore.
 	return returns
 }
 
-func (j *jsiiProxy_DrdsInstance) AttrResourceGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsInstance) AttrResourceGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceGroupId",
@@ -330,8 +343,8 @@ func (j *jsiiProxy_DrdsInstance) AttrResourceGroupId() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_DrdsInstance) AttrStorageType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsInstance) AttrStorageType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStorageType",
@@ -340,8 +353,8 @@ func (j *jsiiProxy_DrdsInstance) AttrStorageType() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_DrdsInstance) AttrType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsInstance) AttrType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrType",
@@ -350,8 +363,8 @@ func (j *jsiiProxy_DrdsInstance) AttrType() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DrdsInstance) AttrVersion() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsInstance) AttrVersion() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVersion",
@@ -360,8 +373,8 @@ func (j *jsiiProxy_DrdsInstance) AttrVersion() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DrdsInstance) AttrVersionAction() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsInstance) AttrVersionAction() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVersionAction",
@@ -370,8 +383,8 @@ func (j *jsiiProxy_DrdsInstance) AttrVersionAction() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_DrdsInstance) AttrVips() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsInstance) AttrVips() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVips",
@@ -380,8 +393,8 @@ func (j *jsiiProxy_DrdsInstance) AttrVips() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DrdsInstance) AttrVpcCloudInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsInstance) AttrVpcCloudInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVpcCloudInstanceId",
@@ -390,8 +403,8 @@ func (j *jsiiProxy_DrdsInstance) AttrVpcCloudInstanceId() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_DrdsInstance) AttrZoneId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsInstance) AttrZoneId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrZoneId",
@@ -405,6 +418,16 @@ func (j *jsiiProxy_DrdsInstance) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DrdsInstance) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -542,17 +565,6 @@ func (j *jsiiProxy_DrdsInstance)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DrdsInstance)SetProps(val *DrdsInstanceProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_DrdsInstance)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -644,6 +656,45 @@ func (d *jsiiProxy_DrdsInstance) ApplyRemovalPolicy(policy alicloudroscdkcore.Re
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_DrdsInstance) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DrdsInstance) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DrdsInstance) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_DrdsInstance) GeneratePhysicalName() *string {

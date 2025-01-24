@@ -15,6 +15,16 @@ export interface AssignPrivateIpAddressesProps {
     readonly networkInterfaceId: string | ros.IResolvable;
 
     /**
+     * Property ipv4PrefixCount: The specified number of IPv4 prefixes to be assigned to the ENI.
+     */
+    readonly ipv4PrefixCount?: number | ros.IResolvable;
+
+    /**
+     * Property ipv4Prefixes: One or multiple IPv4 prefixes to be assigned to the ENI.
+     */
+    readonly ipv4Prefixes?: Array<any | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * Property privateIpAddresses: One or multiple secondary private IP addresses selected from the CIDR block of the VSwitch that hosts the ENI. 
      * Valid values of number of private ip addresses:
      * When the ENI is in the Available state: 1 to 10.
@@ -31,25 +41,41 @@ export interface AssignPrivateIpAddressesProps {
 }
 
 /**
+ * Represents a `AssignPrivateIpAddresses`.
+ */
+export interface IAssignPrivateIpAddresses extends ros.IResource {
+    readonly props: AssignPrivateIpAddressesProps;
+
+    /**
+     * Attribute NetworkInterfaceId: The ID of the ENI.
+     */
+    readonly attrNetworkInterfaceId: ros.IResolvable | string;
+
+    /**
+     * Attribute PrivateIpAddresses: Assigned private ip addresses.
+     */
+    readonly attrPrivateIpAddresses: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::AssignPrivateIpAddresses`, which is used to assign one or more secondary private IP addresses to an ENI. You can specify private IP addresses within the CIDR block of the vSwitch that hosts the ENI. You can also specify the number of private IP addresses for ECS to assign them automatically.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAssignPrivateIpAddresses`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-assignprivateipaddresses
  */
-export class AssignPrivateIpAddresses extends ros.Resource {
+export class AssignPrivateIpAddresses extends ros.Resource implements IAssignPrivateIpAddresses {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AssignPrivateIpAddressesProps;
+    public readonly props: AssignPrivateIpAddressesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute NetworkInterfaceId: The ID of the ENI.
      */
-    public readonly attrNetworkInterfaceId: ros.IResolvable;
+    public readonly attrNetworkInterfaceId: ros.IResolvable | string;
 
     /**
      * Attribute PrivateIpAddresses: Assigned private ip addresses.
      */
-    public readonly attrPrivateIpAddresses: ros.IResolvable;
+    public readonly attrPrivateIpAddresses: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -66,6 +92,8 @@ export class AssignPrivateIpAddresses extends ros.Resource {
         const rosAssignPrivateIpAddresses = new RosAssignPrivateIpAddresses(this, id,  {
             secondaryPrivateIpAddressCount: props.secondaryPrivateIpAddressCount,
             privateIpAddresses: props.privateIpAddresses,
+            ipv4Prefixes: props.ipv4Prefixes,
+            ipv4PrefixCount: props.ipv4PrefixCount,
             networkInterfaceId: props.networkInterfaceId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAssignPrivateIpAddresses;

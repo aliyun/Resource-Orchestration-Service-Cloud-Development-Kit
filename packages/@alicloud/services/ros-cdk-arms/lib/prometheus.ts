@@ -61,75 +61,141 @@ export interface PrometheusProps {
 }
 
 /**
+ * Represents a `Prometheus`.
+ */
+export interface IPrometheus extends ros.IResource {
+    readonly props: PrometheusProps;
+
+    /**
+     * Attribute ClusterId: The ID of the cluster.
+     */
+    readonly attrClusterId: ros.IResolvable | string;
+
+    /**
+     * Attribute ClusterType: Instance type.
+     */
+    readonly attrClusterType: ros.IResolvable | string;
+
+    /**
+     * Attribute GrafanaInstanceId: Grafana workspace ID.
+     */
+    readonly attrGrafanaInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute PaymentType: Payment Type.
+     */
+    readonly attrPaymentType: ros.IResolvable | string;
+
+    /**
+     * Attribute PrometheusName: The name of the resource.
+     */
+    readonly attrPrometheusName: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: The ID of the resource group.
+     */
+    readonly attrResourceGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute SecurityGroupId: The ID of the security group.
+     */
+    readonly attrSecurityGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute SubClustersJson: Subcluster information of globalVeiw cluster.
+     */
+    readonly attrSubClustersJson: ros.IResolvable | string;
+
+    /**
+     * Attribute Tags: The tags of the prometheus.
+     */
+    readonly attrTags: ros.IResolvable | string;
+
+    /**
+     * Attribute UserId: User ID.
+     */
+    readonly attrUserId: ros.IResolvable | string;
+
+    /**
+     * Attribute VSwitchId: The ID of the vSwitch.
+     */
+    readonly attrVSwitchId: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcId: The ID of the virtual private cloud (VPC).
+     */
+    readonly attrVpcId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::Prometheus`, which is used to create a Prometheus instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPrometheus`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-prometheus
  */
-export class Prometheus extends ros.Resource {
+export class Prometheus extends ros.Resource implements IPrometheus {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: PrometheusProps;
+    public readonly props: PrometheusProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterId: The ID of the cluster.
      */
-    public readonly attrClusterId: ros.IResolvable;
+    public readonly attrClusterId: ros.IResolvable | string;
 
     /**
      * Attribute ClusterType: Instance type.
      */
-    public readonly attrClusterType: ros.IResolvable;
+    public readonly attrClusterType: ros.IResolvable | string;
 
     /**
      * Attribute GrafanaInstanceId: Grafana workspace ID.
      */
-    public readonly attrGrafanaInstanceId: ros.IResolvable;
+    public readonly attrGrafanaInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute PaymentType: Payment Type.
      */
-    public readonly attrPaymentType: ros.IResolvable;
+    public readonly attrPaymentType: ros.IResolvable | string;
 
     /**
      * Attribute PrometheusName: The name of the resource.
      */
-    public readonly attrPrometheusName: ros.IResolvable;
+    public readonly attrPrometheusName: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroupId: The ID of the resource group.
      */
-    public readonly attrResourceGroupId: ros.IResolvable;
+    public readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Attribute SecurityGroupId: The ID of the security group.
      */
-    public readonly attrSecurityGroupId: ros.IResolvable;
+    public readonly attrSecurityGroupId: ros.IResolvable | string;
 
     /**
      * Attribute SubClustersJson: Subcluster information of globalVeiw cluster.
      */
-    public readonly attrSubClustersJson: ros.IResolvable;
+    public readonly attrSubClustersJson: ros.IResolvable | string;
 
     /**
      * Attribute Tags: The tags of the prometheus.
      */
-    public readonly attrTags: ros.IResolvable;
+    public readonly attrTags: ros.IResolvable | string;
 
     /**
      * Attribute UserId: User ID.
      */
-    public readonly attrUserId: ros.IResolvable;
+    public readonly attrUserId: ros.IResolvable | string;
 
     /**
      * Attribute VSwitchId: The ID of the vSwitch.
      */
-    public readonly attrVSwitchId: ros.IResolvable;
+    public readonly attrVSwitchId: ros.IResolvable | string;
 
     /**
      * Attribute VpcId: The ID of the virtual private cloud (VPC).
      */
-    public readonly attrVpcId: ros.IResolvable;
+    public readonly attrVpcId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

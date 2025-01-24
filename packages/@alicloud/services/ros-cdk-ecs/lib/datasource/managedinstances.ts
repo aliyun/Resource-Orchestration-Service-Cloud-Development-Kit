@@ -51,25 +51,41 @@ export interface ManagedInstancesProps {
 }
 
 /**
+ * Represents a `ManagedInstances`.
+ */
+export interface IManagedInstances extends ros.IResource {
+    readonly props: ManagedInstancesProps;
+
+    /**
+     * Attribute InstanceIds: The list of managed instance ids.
+     */
+    readonly attrInstanceIds: ros.IResolvable | string;
+
+    /**
+     * Attribute Instances: The list of managed instances.
+     */
+    readonly attrInstances: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::ManagedInstances`, which is used to query managed instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosManagedInstances`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-managedinstances
  */
-export class ManagedInstances extends ros.Resource {
+export class ManagedInstances extends ros.Resource implements IManagedInstances {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ManagedInstancesProps;
+    public readonly props: ManagedInstancesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceIds: The list of managed instance ids.
      */
-    public readonly attrInstanceIds: ros.IResolvable;
+    public readonly attrInstanceIds: ros.IResolvable | string;
 
     /**
      * Attribute Instances: The list of managed instances.
      */
-    public readonly attrInstances: ros.IResolvable;
+    public readonly attrInstances: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

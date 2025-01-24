@@ -12,24 +12,34 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::FC::Trigger`, which is used to trigger the invocation of a function.
 type Trigger interface {
 	alicloudroscdkcore.Resource
+	ITrigger
 	// Attribute FunctionName: Function name.
-	AttrFunctionName() alicloudroscdkcore.IResolvable
+	AttrFunctionName() interface{}
 	// Attribute ServiceName: Service name.
-	AttrServiceName() alicloudroscdkcore.IResolvable
+	AttrServiceName() interface{}
 	// Attribute TriggerId: The trigger ID.
-	AttrTriggerId() alicloudroscdkcore.IResolvable
+	AttrTriggerId() interface{}
 	// Attribute TriggerName: Trigger name.
-	AttrTriggerName() alicloudroscdkcore.IResolvable
+	AttrTriggerName() interface{}
 	// Attribute UrlInternet: The public domain address.
 	//
 	// You can access HTTP triggers over the Internet by using HTTP or HTTPS.
-	AttrUrlInternet() alicloudroscdkcore.IResolvable
+	AttrUrlInternet() interface{}
 	// Attribute UrlIntranet: The private endpoint.
 	//
 	// In a VPC, you can access HTTP triggers by using HTTP or HTTPS.
-	AttrUrlIntranet() alicloudroscdkcore.IResolvable
+	AttrUrlIntranet() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -44,7 +54,6 @@ type Trigger interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *TriggerProps
-	SetProps(val *TriggerProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -57,6 +66,9 @@ type Trigger interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -109,10 +121,11 @@ type Trigger interface {
 // The jsii proxy struct for Trigger
 type jsiiProxy_Trigger struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ITrigger
 }
 
-func (j *jsiiProxy_Trigger) AttrFunctionName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Trigger) AttrFunctionName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrFunctionName",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_Trigger) AttrFunctionName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Trigger) AttrServiceName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Trigger) AttrServiceName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrServiceName",
@@ -131,8 +144,8 @@ func (j *jsiiProxy_Trigger) AttrServiceName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Trigger) AttrTriggerId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Trigger) AttrTriggerId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTriggerId",
@@ -141,8 +154,8 @@ func (j *jsiiProxy_Trigger) AttrTriggerId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Trigger) AttrTriggerName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Trigger) AttrTriggerName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTriggerName",
@@ -151,8 +164,8 @@ func (j *jsiiProxy_Trigger) AttrTriggerName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Trigger) AttrUrlInternet() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Trigger) AttrUrlInternet() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUrlInternet",
@@ -161,8 +174,8 @@ func (j *jsiiProxy_Trigger) AttrUrlInternet() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Trigger) AttrUrlIntranet() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Trigger) AttrUrlIntranet() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUrlIntranet",
@@ -176,6 +189,16 @@ func (j *jsiiProxy_Trigger) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Trigger) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -313,17 +336,6 @@ func (j *jsiiProxy_Trigger)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Trigger)SetProps(val *TriggerProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Trigger)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -415,6 +427,45 @@ func (t *jsiiProxy_Trigger) ApplyRemovalPolicy(policy alicloudroscdkcore.Removal
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (t *jsiiProxy_Trigger) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		t,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (t *jsiiProxy_Trigger) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		t,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (t *jsiiProxy_Trigger) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		t,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (t *jsiiProxy_Trigger) GeneratePhysicalName() *string {

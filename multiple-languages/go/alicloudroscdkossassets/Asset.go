@@ -21,6 +21,15 @@ type Asset interface {
 	AssetPath() *string
 	// Attribute that represents the name of the OSS bucket this asset exists in.
 	BucketName() *string
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	// Attribute which represents the OSS HTTP URL of this asset.
 	//
 	// For example, `https://${bucketName}.oss-${region}.aliyuncs.com/${objectKey}`
@@ -64,6 +73,9 @@ type Asset interface {
 	// behavior when synthesizing via the CDK Toolkit.
 	AddResourceMetadata(resource alicloudroscdkcore.RosResource, resourceProperty *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -143,6 +155,16 @@ func (j *jsiiProxy_Asset) BucketName() *string {
 	_jsii_.Get(
 		j,
 		"bucketName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Asset) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -357,6 +379,45 @@ func (a *jsiiProxy_Asset) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (a *jsiiProxy_Asset) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		a,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_Asset) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_Asset) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (a *jsiiProxy_Asset) GeneratePhysicalName() *string {

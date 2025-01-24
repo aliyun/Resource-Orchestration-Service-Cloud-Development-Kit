@@ -24,25 +24,41 @@ export interface RolesProps {
 }
 
 /**
+ * Represents a `Roles`.
+ */
+export interface IRoles extends ros.IResource {
+    readonly props: RolesProps;
+
+    /**
+     * Attribute RoleNames: The list of role names.
+     */
+    readonly attrRoleNames: ros.IResolvable | string;
+
+    /**
+     * Attribute Roles: The list of roles.
+     */
+    readonly attrRoles: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::RAM::Roles`, which is used to query the information about Resource Access Management (RAM) roles.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRoles`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-roles
  */
-export class Roles extends ros.Resource {
+export class Roles extends ros.Resource implements IRoles {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: RolesProps;
+    public readonly props: RolesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RoleNames: The list of role names.
      */
-    public readonly attrRoleNames: ros.IResolvable;
+    public readonly attrRoleNames: ros.IResolvable | string;
 
     /**
      * Attribute Roles: The list of roles.
      */
-    public readonly attrRoles: ros.IResolvable;
+    public readonly attrRoles: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

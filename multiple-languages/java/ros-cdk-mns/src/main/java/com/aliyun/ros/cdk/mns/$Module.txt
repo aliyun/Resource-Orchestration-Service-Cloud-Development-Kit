@@ -1,4 +1,8 @@
+@alicloud/ros-cdk-mns.IQueue=com.aliyun.ros.cdk.mns.IQueue
+@alicloud/ros-cdk-mns.ISubscription=com.aliyun.ros.cdk.mns.ISubscription
+@alicloud/ros-cdk-mns.ITopic=com.aliyun.ros.cdk.mns.ITopic
 @alicloud/ros-cdk-mns.Queue=com.aliyun.ros.cdk.mns.Queue
+@alicloud/ros-cdk-mns.QueueAttributes=com.aliyun.ros.cdk.mns.QueueAttributes
 @alicloud/ros-cdk-mns.QueueProps=com.aliyun.ros.cdk.mns.QueueProps
 @alicloud/ros-cdk-mns.RosQueue=com.aliyun.ros.cdk.mns.RosQueue
 @alicloud/ros-cdk-mns.RosQueueProps=com.aliyun.ros.cdk.mns.RosQueueProps
@@ -10,6 +14,12 @@
 @alicloud/ros-cdk-mns.SubscriptionProps=com.aliyun.ros.cdk.mns.SubscriptionProps
 @alicloud/ros-cdk-mns.Topic=com.aliyun.ros.cdk.mns.Topic
 @alicloud/ros-cdk-mns.TopicProps=com.aliyun.ros.cdk.mns.TopicProps
+@alicloud/ros-cdk-mns.datasource.IQueue=com.aliyun.ros.cdk.mns.datasource.IQueue
+@alicloud/ros-cdk-mns.datasource.IQueues=com.aliyun.ros.cdk.mns.datasource.IQueues
+@alicloud/ros-cdk-mns.datasource.ISubscription=com.aliyun.ros.cdk.mns.datasource.ISubscription
+@alicloud/ros-cdk-mns.datasource.ISubscriptions=com.aliyun.ros.cdk.mns.datasource.ISubscriptions
+@alicloud/ros-cdk-mns.datasource.ITopic=com.aliyun.ros.cdk.mns.datasource.ITopic
+@alicloud/ros-cdk-mns.datasource.ITopics=com.aliyun.ros.cdk.mns.datasource.ITopics
 @alicloud/ros-cdk-mns.datasource.Queue=com.aliyun.ros.cdk.mns.datasource.Queue
 @alicloud/ros-cdk-mns.datasource.QueueProps=com.aliyun.ros.cdk.mns.datasource.QueueProps
 @alicloud/ros-cdk-mns.datasource.Queues=com.aliyun.ros.cdk.mns.datasource.Queues

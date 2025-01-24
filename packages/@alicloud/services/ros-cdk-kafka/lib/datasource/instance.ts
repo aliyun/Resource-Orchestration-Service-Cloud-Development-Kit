@@ -24,150 +24,291 @@ export interface InstanceProps {
 }
 
 /**
+ * Represents a `Instance`.
+ */
+export interface IInstance extends ros.IResource {
+    readonly props: InstanceProps;
+
+    /**
+     * Attribute AllConfig: The current configuration of the deployed message queue Kafka version.
+     */
+    readonly attrAllConfig: ros.IResolvable | string;
+
+    /**
+     * Attribute AllowedList: White list.
+     */
+    readonly attrAllowedList: ros.IResolvable | string;
+
+    /**
+     * Attribute CreateTime: Creation time.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute DeployType: Deployment method.
+     */
+    readonly attrDeployType: ros.IResolvable | string;
+
+    /**
+     * Attribute DiskSize: Disk size.
+     */
+    readonly attrDiskSize: ros.IResolvable | string;
+
+    /**
+     * Attribute DiskType: Disk type.
+     */
+    readonly attrDiskType: ros.IResolvable | string;
+
+    /**
+     * Attribute DomainEndpoint: The domain name access point of the default access point. The Kafka instance supports domain name access points and IP access points.
+     */
+    readonly attrDomainEndpoint: ros.IResolvable | string;
+
+    /**
+     * Attribute EipMax: Peak public network traffic.
+     */
+    readonly attrEipMax: ros.IResolvable | string;
+
+    /**
+     * Attribute EndPoint: Access point.
+     */
+    readonly attrEndPoint: ros.IResolvable | string;
+
+    /**
+     * Attribute ExpiredTime: Expiration time.
+     */
+    readonly attrExpiredTime: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: The ID of the instance.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceName: Note name.
+     */
+    readonly attrInstanceName: ros.IResolvable | string;
+
+    /**
+     * Attribute IoMax: Peak flow.
+     */
+    readonly attrIoMax: ros.IResolvable | string;
+
+    /**
+     * Attribute IoMaxSpec: Flow specifications (recommended).
+     */
+    readonly attrIoMaxSpec: ros.IResolvable | string;
+
+    /**
+     * Attribute MsgRetain: Message save time.
+     */
+    readonly attrMsgRetain: ros.IResolvable | string;
+
+    /**
+     * Attribute PaymentType: The paymen type of the resource.
+     */
+    readonly attrPaymentType: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: The ID of the resource group.
+     */
+    readonly attrResourceGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute SaslDomainEndpoint: The domain name access point of the SASL access point. The Kafka instance supports domain name access points and IP access points.
+     */
+    readonly attrSaslDomainEndpoint: ros.IResolvable | string;
+
+    /**
+     * Attribute ServiceVersion: The version of the Kafka version of the deployed Message Queue. The value is 0.10.2 or 2.2.0.
+     */
+    readonly attrServiceVersion: ros.IResolvable | string;
+
+    /**
+     * Attribute SpecType: Instance type.
+     */
+    readonly attrSpecType: ros.IResolvable | string;
+
+    /**
+     * Attribute SslDomainEndpoint: The domain name of the SSL access point. The Kafka instance supports domain name access points and IP access points.
+     */
+    readonly attrSslDomainEndpoint: ros.IResolvable | string;
+
+    /**
+     * Attribute SslEndPoint: External access point.
+     */
+    readonly attrSslEndPoint: ros.IResolvable | string;
+
+    /**
+     * Attribute Tags: The tag of the kafka console, which is used to group instance,topic, and consumption.
+     */
+    readonly attrTags: ros.IResolvable | string;
+
+    /**
+     * Attribute TopicNumLimit: Maximum number of topic creation.
+     */
+    readonly attrTopicNumLimit: ros.IResolvable | string;
+
+    /**
+     * Attribute VSwitchId: Switch id.
+     */
+    readonly attrVSwitchId: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcId: VpcId.
+     */
+    readonly attrVpcId: ros.IResolvable | string;
+
+    /**
+     * Attribute ZoneId: The ID of the zone in which the instance is deployed.
+     */
+    readonly attrZoneId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::KAFKA::Instance`, which is used to query the information about an ApsaraMQ for Kafka instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kafka-instance
  */
-export class Instance extends ros.Resource {
+export class Instance extends ros.Resource implements IInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InstanceProps;
+    public readonly props: InstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AllConfig: The current configuration of the deployed message queue Kafka version.
      */
-    public readonly attrAllConfig: ros.IResolvable;
+    public readonly attrAllConfig: ros.IResolvable | string;
 
     /**
      * Attribute AllowedList: White list.
      */
-    public readonly attrAllowedList: ros.IResolvable;
+    public readonly attrAllowedList: ros.IResolvable | string;
 
     /**
      * Attribute CreateTime: Creation time.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute DeployType: Deployment method.
      */
-    public readonly attrDeployType: ros.IResolvable;
+    public readonly attrDeployType: ros.IResolvable | string;
 
     /**
      * Attribute DiskSize: Disk size.
      */
-    public readonly attrDiskSize: ros.IResolvable;
+    public readonly attrDiskSize: ros.IResolvable | string;
 
     /**
      * Attribute DiskType: Disk type.
      */
-    public readonly attrDiskType: ros.IResolvable;
+    public readonly attrDiskType: ros.IResolvable | string;
 
     /**
      * Attribute DomainEndpoint: The domain name access point of the default access point. The Kafka instance supports domain name access points and IP access points.
      */
-    public readonly attrDomainEndpoint: ros.IResolvable;
+    public readonly attrDomainEndpoint: ros.IResolvable | string;
 
     /**
      * Attribute EipMax: Peak public network traffic.
      */
-    public readonly attrEipMax: ros.IResolvable;
+    public readonly attrEipMax: ros.IResolvable | string;
 
     /**
      * Attribute EndPoint: Access point.
      */
-    public readonly attrEndPoint: ros.IResolvable;
+    public readonly attrEndPoint: ros.IResolvable | string;
 
     /**
      * Attribute ExpiredTime: Expiration time.
      */
-    public readonly attrExpiredTime: ros.IResolvable;
+    public readonly attrExpiredTime: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: The ID of the instance.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute InstanceName: Note name.
      */
-    public readonly attrInstanceName: ros.IResolvable;
+    public readonly attrInstanceName: ros.IResolvable | string;
 
     /**
      * Attribute IoMax: Peak flow.
      */
-    public readonly attrIoMax: ros.IResolvable;
+    public readonly attrIoMax: ros.IResolvable | string;
 
     /**
      * Attribute IoMaxSpec: Flow specifications (recommended).
      */
-    public readonly attrIoMaxSpec: ros.IResolvable;
+    public readonly attrIoMaxSpec: ros.IResolvable | string;
 
     /**
      * Attribute MsgRetain: Message save time.
      */
-    public readonly attrMsgRetain: ros.IResolvable;
+    public readonly attrMsgRetain: ros.IResolvable | string;
 
     /**
      * Attribute PaymentType: The paymen type of the resource.
      */
-    public readonly attrPaymentType: ros.IResolvable;
+    public readonly attrPaymentType: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroupId: The ID of the resource group.
      */
-    public readonly attrResourceGroupId: ros.IResolvable;
+    public readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Attribute SaslDomainEndpoint: The domain name access point of the SASL access point. The Kafka instance supports domain name access points and IP access points.
      */
-    public readonly attrSaslDomainEndpoint: ros.IResolvable;
+    public readonly attrSaslDomainEndpoint: ros.IResolvable | string;
 
     /**
      * Attribute ServiceVersion: The version of the Kafka version of the deployed Message Queue. The value is 0.10.2 or 2.2.0.
      */
-    public readonly attrServiceVersion: ros.IResolvable;
+    public readonly attrServiceVersion: ros.IResolvable | string;
 
     /**
      * Attribute SpecType: Instance type.
      */
-    public readonly attrSpecType: ros.IResolvable;
+    public readonly attrSpecType: ros.IResolvable | string;
 
     /**
      * Attribute SslDomainEndpoint: The domain name of the SSL access point. The Kafka instance supports domain name access points and IP access points.
      */
-    public readonly attrSslDomainEndpoint: ros.IResolvable;
+    public readonly attrSslDomainEndpoint: ros.IResolvable | string;
 
     /**
      * Attribute SslEndPoint: External access point.
      */
-    public readonly attrSslEndPoint: ros.IResolvable;
+    public readonly attrSslEndPoint: ros.IResolvable | string;
 
     /**
      * Attribute Tags: The tag of the kafka console, which is used to group instance,topic, and consumption.
      */
-    public readonly attrTags: ros.IResolvable;
+    public readonly attrTags: ros.IResolvable | string;
 
     /**
      * Attribute TopicNumLimit: Maximum number of topic creation.
      */
-    public readonly attrTopicNumLimit: ros.IResolvable;
+    public readonly attrTopicNumLimit: ros.IResolvable | string;
 
     /**
      * Attribute VSwitchId: Switch id.
      */
-    public readonly attrVSwitchId: ros.IResolvable;
+    public readonly attrVSwitchId: ros.IResolvable | string;
 
     /**
      * Attribute VpcId: VpcId.
      */
-    public readonly attrVpcId: ros.IResolvable;
+    public readonly attrVpcId: ros.IResolvable | string;
 
     /**
      * Attribute ZoneId: The ID of the zone in which the instance is deployed.
      */
-    public readonly attrZoneId: ros.IResolvable;
+    public readonly attrZoneId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

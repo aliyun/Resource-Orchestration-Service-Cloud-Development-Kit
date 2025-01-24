@@ -54,14 +54,36 @@ export interface FunctionInvokerProps {
 }
 
 /**
+ * Represents a `FunctionInvoker`.
+ */
+export interface IFunctionInvoker extends ros.IResource {
+    readonly props: FunctionInvokerProps;
+
+    /**
+     * Attribute Result: Depends on result type:
+NoResult: Async invoke has no result.
+Success: The response of the function. The response should be utf-8 encoded string, otherwise ROS will report an error. If the response is binary, encode it via base64 before it is returned.
+Failure: Error Message.
+     */
+    readonly attrResult: ros.IResolvable | string;
+
+    /**
+     * Attribute ResultType: Result type:
+NoResult: Async invoke has no result.
+Success: Sync invoke succeeds.
+Failure: Sync invoke fails.
+     */
+    readonly attrResultType: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::FC::FunctionInvoker`, which is used to invoke a function.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFunctionInvoker`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-functioninvoker
  */
-export class FunctionInvoker extends ros.Resource {
+export class FunctionInvoker extends ros.Resource implements IFunctionInvoker {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: FunctionInvokerProps;
+    public readonly props: FunctionInvokerProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
@@ -70,7 +92,7 @@ NoResult: Async invoke has no result.
 Success: The response of the function. The response should be utf-8 encoded string, otherwise ROS will report an error. If the response is binary, encode it via base64 before it is returned.
 Failure: Error Message.
      */
-    public readonly attrResult: ros.IResolvable;
+    public readonly attrResult: ros.IResolvable | string;
 
     /**
      * Attribute ResultType: Result type:
@@ -78,7 +100,7 @@ NoResult: Async invoke has no result.
 Success: Sync invoke succeeds.
 Failure: Sync invoke fails.
      */
-    public readonly attrResultType: ros.IResolvable;
+    public readonly attrResultType: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

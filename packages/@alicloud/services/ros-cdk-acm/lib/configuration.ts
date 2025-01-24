@@ -54,30 +54,51 @@ export interface ConfigurationProps {
 }
 
 /**
+ * Represents a `Configuration`.
+ */
+export interface IConfiguration extends ros.IResource {
+    readonly props: ConfigurationProps;
+
+    /**
+     * Attribute DataId: The ID of the configuration
+     */
+    readonly attrDataId: ros.IResolvable | string;
+
+    /**
+     * Attribute Group: Group
+     */
+    readonly attrGroup: ros.IResolvable | string;
+
+    /**
+     * Attribute NamespaceId: ID of namespace
+     */
+    readonly attrNamespaceId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ACM::Configuration`, which is used to create a configuration.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosConfiguration`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acm-configuration
  */
-export class Configuration extends ros.Resource {
+export class Configuration extends ros.Resource implements IConfiguration {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ConfigurationProps;
+    public readonly props: ConfigurationProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DataId: The ID of the configuration
      */
-    public readonly attrDataId: ros.IResolvable;
+    public readonly attrDataId: ros.IResolvable | string;
 
     /**
      * Attribute Group: Group
      */
-    public readonly attrGroup: ros.IResolvable;
+    public readonly attrGroup: ros.IResolvable | string;
 
     /**
      * Attribute NamespaceId: ID of namespace
      */
-    public readonly attrNamespaceId: ros.IResolvable;
+    public readonly attrNamespaceId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

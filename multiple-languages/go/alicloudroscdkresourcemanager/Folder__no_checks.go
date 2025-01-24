@@ -52,10 +52,6 @@ func (j *jsiiProxy_Folder) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_Folder) validateSetPropsParameters(val *FolderProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_Folder) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

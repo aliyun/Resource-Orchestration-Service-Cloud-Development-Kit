@@ -52,10 +52,6 @@ func (j *jsiiProxy_Dashboard) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_Dashboard) validateSetPropsParameters(val *DashboardProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_Dashboard) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

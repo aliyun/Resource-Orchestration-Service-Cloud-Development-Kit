@@ -1,5 +1,7 @@
 @alicloud/ros-cdk-eais.ClientInstanceAttachment=com.aliyun.ros.cdk.eais.ClientInstanceAttachment
 @alicloud/ros-cdk-eais.ClientInstanceAttachmentProps=com.aliyun.ros.cdk.eais.ClientInstanceAttachmentProps
+@alicloud/ros-cdk-eais.IClientInstanceAttachment=com.aliyun.ros.cdk.eais.IClientInstanceAttachment
+@alicloud/ros-cdk-eais.IInstance=com.aliyun.ros.cdk.eais.IInstance
 @alicloud/ros-cdk-eais.Instance=com.aliyun.ros.cdk.eais.Instance
 @alicloud/ros-cdk-eais.InstanceProps=com.aliyun.ros.cdk.eais.InstanceProps
 @alicloud/ros-cdk-eais.RosClientInstanceAttachment=com.aliyun.ros.cdk.eais.RosClientInstanceAttachment
@@ -7,10 +9,17 @@
 @alicloud/ros-cdk-eais.RosInstance=com.aliyun.ros.cdk.eais.RosInstance
 @alicloud/ros-cdk-eais.RosInstance.EnvironmentVarProperty=com.aliyun.ros.cdk.eais.RosInstance$EnvironmentVarProperty
 @alicloud/ros-cdk-eais.RosInstanceProps=com.aliyun.ros.cdk.eais.RosInstanceProps
+@alicloud/ros-cdk-eais.datasource.ClientInstanceAttachment=com.aliyun.ros.cdk.eais.datasource.ClientInstanceAttachment
+@alicloud/ros-cdk-eais.datasource.ClientInstanceAttachmentProps=com.aliyun.ros.cdk.eais.datasource.ClientInstanceAttachmentProps
+@alicloud/ros-cdk-eais.datasource.IClientInstanceAttachment=com.aliyun.ros.cdk.eais.datasource.IClientInstanceAttachment
+@alicloud/ros-cdk-eais.datasource.IInstance=com.aliyun.ros.cdk.eais.datasource.IInstance
+@alicloud/ros-cdk-eais.datasource.IInstances=com.aliyun.ros.cdk.eais.datasource.IInstances
 @alicloud/ros-cdk-eais.datasource.Instance=com.aliyun.ros.cdk.eais.datasource.Instance
 @alicloud/ros-cdk-eais.datasource.InstanceProps=com.aliyun.ros.cdk.eais.datasource.InstanceProps
 @alicloud/ros-cdk-eais.datasource.Instances=com.aliyun.ros.cdk.eais.datasource.Instances
 @alicloud/ros-cdk-eais.datasource.InstancesProps=com.aliyun.ros.cdk.eais.datasource.InstancesProps
+@alicloud/ros-cdk-eais.datasource.RosClientInstanceAttachment=com.aliyun.ros.cdk.eais.datasource.RosClientInstanceAttachment
+@alicloud/ros-cdk-eais.datasource.RosClientInstanceAttachmentProps=com.aliyun.ros.cdk.eais.datasource.RosClientInstanceAttachmentProps
 @alicloud/ros-cdk-eais.datasource.RosInstance=com.aliyun.ros.cdk.eais.datasource.RosInstance
 @alicloud/ros-cdk-eais.datasource.RosInstanceProps=com.aliyun.ros.cdk.eais.datasource.RosInstanceProps
 @alicloud/ros-cdk-eais.datasource.RosInstances=com.aliyun.ros.cdk.eais.datasource.RosInstances

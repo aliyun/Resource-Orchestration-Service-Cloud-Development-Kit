@@ -89,25 +89,41 @@ export interface LoadBalancersProps {
 }
 
 /**
+ * Represents a `LoadBalancers`.
+ */
+export interface ILoadBalancers extends ros.IResource {
+    readonly props: LoadBalancersProps;
+
+    /**
+     * Attribute LoadBalancerIds: The list of load balancer IDs.
+     */
+    readonly attrLoadBalancerIds: ros.IResolvable | string;
+
+    /**
+     * Attribute LoadBalancers: The list of load balancers.
+     */
+    readonly attrLoadBalancers: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::LoadBalancers`, which is used to query created Classic Load Balancer (CLB) instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLoadBalancers`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-loadbalancers
  */
-export class LoadBalancers extends ros.Resource {
+export class LoadBalancers extends ros.Resource implements ILoadBalancers {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: LoadBalancersProps;
+    public readonly props: LoadBalancersProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute LoadBalancerIds: The list of load balancer IDs.
      */
-    public readonly attrLoadBalancerIds: ros.IResolvable;
+    public readonly attrLoadBalancerIds: ros.IResolvable | string;
 
     /**
      * Attribute LoadBalancers: The list of load balancers.
      */
-    public readonly attrLoadBalancers: ros.IResolvable;
+    public readonly attrLoadBalancers: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

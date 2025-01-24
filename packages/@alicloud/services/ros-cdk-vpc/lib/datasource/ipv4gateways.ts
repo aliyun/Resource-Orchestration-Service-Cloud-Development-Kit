@@ -34,25 +34,41 @@ export interface Ipv4GatewaysProps {
 }
 
 /**
+ * Represents a `Ipv4Gateways`.
+ */
+export interface IIpv4Gateways extends ros.IResource {
+    readonly props: Ipv4GatewaysProps;
+
+    /**
+     * Attribute Ipv4GatewayIds: The list of ipv4 gateway IDs.
+     */
+    readonly attrIpv4GatewayIds: ros.IResolvable | string;
+
+    /**
+     * Attribute Ipv4Gateways: The list of ipv4 gateways.
+     */
+    readonly attrIpv4Gateways: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::Ipv4Gateways`, which is used to query the details of IPv4 gateways.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosIpv4Gateways`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-ipv4gateways
  */
-export class Ipv4Gateways extends ros.Resource {
+export class Ipv4Gateways extends ros.Resource implements IIpv4Gateways {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: Ipv4GatewaysProps;
+    public readonly props: Ipv4GatewaysProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Ipv4GatewayIds: The list of ipv4 gateway IDs.
      */
-    public readonly attrIpv4GatewayIds: ros.IResolvable;
+    public readonly attrIpv4GatewayIds: ros.IResolvable | string;
 
     /**
      * Attribute Ipv4Gateways: The list of ipv4 gateways.
      */
-    public readonly attrIpv4Gateways: ros.IResolvable;
+    public readonly attrIpv4Gateways: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

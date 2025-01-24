@@ -38,35 +38,61 @@ export interface BizTypeProps {
 }
 
 /**
+ * Represents a `BizType`.
+ */
+export interface IBizType extends ros.IResource {
+    readonly props: BizTypeProps;
+
+    /**
+     * Attribute BizTypeName: The name of the business scenario defined by the customer.
+     */
+    readonly attrBizTypeName: ros.IResolvable | string;
+
+    /**
+     * Attribute CiteTemplate: Specifies whether to import the configuration of an industry template. Default value: false.
+     */
+    readonly attrCiteTemplate: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: The description of the business scenario defined by the customer.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute IndustryInfo: The industry classification.
+     */
+    readonly attrIndustryInfo: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::Aligreen::BizType`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBizType`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-biztype
  */
-export class BizType extends ros.Resource {
+export class BizType extends ros.Resource implements IBizType {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: BizTypeProps;
+    public readonly props: BizTypeProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute BizTypeName: The name of the business scenario defined by the customer.
      */
-    public readonly attrBizTypeName: ros.IResolvable;
+    public readonly attrBizTypeName: ros.IResolvable | string;
 
     /**
      * Attribute CiteTemplate: Specifies whether to import the configuration of an industry template. Default value: false.
      */
-    public readonly attrCiteTemplate: ros.IResolvable;
+    public readonly attrCiteTemplate: ros.IResolvable | string;
 
     /**
      * Attribute Description: The description of the business scenario defined by the customer.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute IndustryInfo: The industry classification.
      */
-    public readonly attrIndustryInfo: ros.IResolvable;
+    public readonly attrIndustryInfo: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

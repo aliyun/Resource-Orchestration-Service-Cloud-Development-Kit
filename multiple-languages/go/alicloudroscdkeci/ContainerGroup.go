@@ -14,34 +14,44 @@ import (
 // A container group is an elastic container instance.
 type ContainerGroup interface {
 	alicloudroscdkcore.Resource
+	IContainerGroup
 	// Attribute ContainerGroupId: The ID of the container group.
-	AttrContainerGroupId() alicloudroscdkcore.IResolvable
+	AttrContainerGroupId() interface{}
 	// Attribute ContainerGroupName: The name of the container group.
-	AttrContainerGroupName() alicloudroscdkcore.IResolvable
+	AttrContainerGroupName() interface{}
 	// Attribute EniInstanceId: ENI instance ID.
-	AttrEniInstanceId() alicloudroscdkcore.IResolvable
+	AttrEniInstanceId() interface{}
 	// Attribute InternetIp: Internet IP.
-	AttrInternetIp() alicloudroscdkcore.IResolvable
+	AttrInternetIp() interface{}
 	// Attribute IntranetIp: Intranet IP.
-	AttrIntranetIp() alicloudroscdkcore.IResolvable
+	AttrIntranetIp() interface{}
 	// Attribute Ipv6Address: Ipv6 address.
-	AttrIpv6Address() alicloudroscdkcore.IResolvable
+	AttrIpv6Address() interface{}
 	// Attribute RegionId: The ID of the region in which the instance resides.
-	AttrRegionId() alicloudroscdkcore.IResolvable
+	AttrRegionId() interface{}
 	// Attribute SecurityGroupId: The ID of the security group to which the instance belongs.
 	//
 	// Instances in the same security group can access one another.
-	AttrSecurityGroupId() alicloudroscdkcore.IResolvable
+	AttrSecurityGroupId() interface{}
 	// Attribute VSwitchId: The ID of the VSwitch.
 	//
 	// Currently, ECI instances can only be deployed in VPCs.
-	AttrVSwitchId() alicloudroscdkcore.IResolvable
+	AttrVSwitchId() interface{}
 	// Attribute ZoneId: The ID of the zone in which the instance resides.
 	//
 	// If you leave the parameter blank, the system assigns a zone for you. The default value is blank.
-	AttrZoneId() alicloudroscdkcore.IResolvable
+	AttrZoneId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -56,7 +66,6 @@ type ContainerGroup interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ContainerGroupProps
-	SetProps(val *ContainerGroupProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -69,6 +78,9 @@ type ContainerGroup interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -121,10 +133,11 @@ type ContainerGroup interface {
 // The jsii proxy struct for ContainerGroup
 type jsiiProxy_ContainerGroup struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IContainerGroup
 }
 
-func (j *jsiiProxy_ContainerGroup) AttrContainerGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ContainerGroup) AttrContainerGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrContainerGroupId",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_ContainerGroup) AttrContainerGroupId() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_ContainerGroup) AttrContainerGroupName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ContainerGroup) AttrContainerGroupName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrContainerGroupName",
@@ -143,8 +156,8 @@ func (j *jsiiProxy_ContainerGroup) AttrContainerGroupName() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_ContainerGroup) AttrEniInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ContainerGroup) AttrEniInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEniInstanceId",
@@ -153,8 +166,8 @@ func (j *jsiiProxy_ContainerGroup) AttrEniInstanceId() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_ContainerGroup) AttrInternetIp() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ContainerGroup) AttrInternetIp() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInternetIp",
@@ -163,8 +176,8 @@ func (j *jsiiProxy_ContainerGroup) AttrInternetIp() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_ContainerGroup) AttrIntranetIp() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ContainerGroup) AttrIntranetIp() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIntranetIp",
@@ -173,8 +186,8 @@ func (j *jsiiProxy_ContainerGroup) AttrIntranetIp() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_ContainerGroup) AttrIpv6Address() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ContainerGroup) AttrIpv6Address() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrIpv6Address",
@@ -183,8 +196,8 @@ func (j *jsiiProxy_ContainerGroup) AttrIpv6Address() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_ContainerGroup) AttrRegionId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ContainerGroup) AttrRegionId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRegionId",
@@ -193,8 +206,8 @@ func (j *jsiiProxy_ContainerGroup) AttrRegionId() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_ContainerGroup) AttrSecurityGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ContainerGroup) AttrSecurityGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSecurityGroupId",
@@ -203,8 +216,8 @@ func (j *jsiiProxy_ContainerGroup) AttrSecurityGroupId() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_ContainerGroup) AttrVSwitchId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ContainerGroup) AttrVSwitchId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVSwitchId",
@@ -213,8 +226,8 @@ func (j *jsiiProxy_ContainerGroup) AttrVSwitchId() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_ContainerGroup) AttrZoneId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ContainerGroup) AttrZoneId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrZoneId",
@@ -228,6 +241,16 @@ func (j *jsiiProxy_ContainerGroup) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ContainerGroup) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -365,17 +388,6 @@ func (j *jsiiProxy_ContainerGroup)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ContainerGroup)SetProps(val *ContainerGroupProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_ContainerGroup)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -467,6 +479,45 @@ func (c *jsiiProxy_ContainerGroup) ApplyRemovalPolicy(policy alicloudroscdkcore.
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (c *jsiiProxy_ContainerGroup) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		c,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (c *jsiiProxy_ContainerGroup) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		c,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (c *jsiiProxy_ContainerGroup) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (c *jsiiProxy_ContainerGroup) GeneratePhysicalName() *string {

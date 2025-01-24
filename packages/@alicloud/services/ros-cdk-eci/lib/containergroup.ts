@@ -163,65 +163,121 @@ export interface ContainerGroupProps {
 }
 
 /**
+ * Represents a `ContainerGroup`.
+ */
+export interface IContainerGroup extends ros.IResource {
+    readonly props: ContainerGroupProps;
+
+    /**
+     * Attribute ContainerGroupId: The ID of the container group.
+     */
+    readonly attrContainerGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute ContainerGroupName: The name of the container group.
+     */
+    readonly attrContainerGroupName: ros.IResolvable | string;
+
+    /**
+     * Attribute EniInstanceId: ENI instance ID.
+     */
+    readonly attrEniInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute InternetIp: Internet IP.
+     */
+    readonly attrInternetIp: ros.IResolvable | string;
+
+    /**
+     * Attribute IntranetIp: Intranet IP.
+     */
+    readonly attrIntranetIp: ros.IResolvable | string;
+
+    /**
+     * Attribute Ipv6Address: Ipv6 address.
+     */
+    readonly attrIpv6Address: ros.IResolvable | string;
+
+    /**
+     * Attribute RegionId: The ID of the region in which the instance resides.
+     */
+    readonly attrRegionId: ros.IResolvable | string;
+
+    /**
+     * Attribute SecurityGroupId: The ID of the security group to which the instance belongs. Instances in the same security group can access one another.
+     */
+    readonly attrSecurityGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute VSwitchId: The ID of the VSwitch. Currently, ECI instances can only be deployed in VPCs.
+     */
+    readonly attrVSwitchId: ros.IResolvable | string;
+
+    /**
+     * Attribute ZoneId: The ID of the zone in which the instance resides. If you leave the parameter blank, the system assigns a zone for you. The default value is blank.
+     */
+    readonly attrZoneId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECI::ContainerGroup`, which is used to create a container group. A container group is an elastic container instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosContainerGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-containergroup
  */
-export class ContainerGroup extends ros.Resource {
+export class ContainerGroup extends ros.Resource implements IContainerGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ContainerGroupProps;
+    public readonly props: ContainerGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ContainerGroupId: The ID of the container group.
      */
-    public readonly attrContainerGroupId: ros.IResolvable;
+    public readonly attrContainerGroupId: ros.IResolvable | string;
 
     /**
      * Attribute ContainerGroupName: The name of the container group.
      */
-    public readonly attrContainerGroupName: ros.IResolvable;
+    public readonly attrContainerGroupName: ros.IResolvable | string;
 
     /**
      * Attribute EniInstanceId: ENI instance ID.
      */
-    public readonly attrEniInstanceId: ros.IResolvable;
+    public readonly attrEniInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute InternetIp: Internet IP.
      */
-    public readonly attrInternetIp: ros.IResolvable;
+    public readonly attrInternetIp: ros.IResolvable | string;
 
     /**
      * Attribute IntranetIp: Intranet IP.
      */
-    public readonly attrIntranetIp: ros.IResolvable;
+    public readonly attrIntranetIp: ros.IResolvable | string;
 
     /**
      * Attribute Ipv6Address: Ipv6 address.
      */
-    public readonly attrIpv6Address: ros.IResolvable;
+    public readonly attrIpv6Address: ros.IResolvable | string;
 
     /**
      * Attribute RegionId: The ID of the region in which the instance resides.
      */
-    public readonly attrRegionId: ros.IResolvable;
+    public readonly attrRegionId: ros.IResolvable | string;
 
     /**
      * Attribute SecurityGroupId: The ID of the security group to which the instance belongs. Instances in the same security group can access one another.
      */
-    public readonly attrSecurityGroupId: ros.IResolvable;
+    public readonly attrSecurityGroupId: ros.IResolvable | string;
 
     /**
      * Attribute VSwitchId: The ID of the VSwitch. Currently, ECI instances can only be deployed in VPCs.
      */
-    public readonly attrVSwitchId: ros.IResolvable;
+    public readonly attrVSwitchId: ros.IResolvable | string;
 
     /**
      * Attribute ZoneId: The ID of the zone in which the instance resides. If you leave the parameter blank, the system assigns a zone for you. The default value is blank.
      */
-    public readonly attrZoneId: ros.IResolvable;
+    public readonly attrZoneId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -24,64 +24,59 @@ export interface ImageProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ENS::Image`.
- * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosImage`for a more convenient development experience.
- * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ens-image
+ * Represents a `Image`.
  */
-export class Image extends ros.Resource {
-    protected scope: ros.Construct;
-    protected id: string;
-    protected props: ImageProps;
-    protected enableResourcePropertyConstraint: boolean;
+export interface IImage extends ros.IResource {
+    readonly props: ImageProps;
 
     /**
      * Attribute Architecture: The image architecture. Valid values:
 - **i386**
 - **x86_64**
      */
-    public readonly attrArchitecture: ros.IResolvable;
+    readonly attrArchitecture: ros.IResolvable | string;
 
     /**
      * Attribute ComputeType: Computing type. ens_vm/ens: x86 computing. bare_metal: x86 bare machine or x86 bare metal. arm_vm: ARM computing. arm_bare_metal: ARM bare machine or ARM bare metal. pcfarm: heterogeneous computing.
      */
-    public readonly attrComputeType: ros.IResolvable;
+    readonly attrComputeType: ros.IResolvable | string;
 
     /**
      * Attribute CreateTime: The image creation time. The time follows the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. The time is displayed in UTC.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute ImageId: The ID of the image.
      */
-    public readonly attrImageId: ros.IResolvable;
+    readonly attrImageId: ros.IResolvable | string;
 
     /**
      * Attribute ImageName: The name of the image.
      */
-    public readonly attrImageName: ros.IResolvable;
+    readonly attrImageName: ros.IResolvable | string;
 
     /**
      * Attribute ImageOwnerAlias: The source of the image. Valid values:
 - **others**: a custom image that is shared by other Alibaba Cloud accounts.
 - **self**: your own custom image.
      */
-    public readonly attrImageOwnerAlias: ros.IResolvable;
+    readonly attrImageOwnerAlias: ros.IResolvable | string;
 
     /**
      * Attribute ImageSize: The size of the image. Unit: GiB.
      */
-    public readonly attrImageSize: ros.IResolvable;
+    readonly attrImageSize: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: The ID of the instance corresponding to the image.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute OsVersion: The operating system version.
      */
-    public readonly attrOsVersion: ros.IResolvable;
+    readonly attrOsVersion: ros.IResolvable | string;
 
     /**
      * Attribute Platform: The type of operating system used by the image. Valid values:
@@ -92,12 +87,88 @@ export class Image extends ros.Resource {
 - **rhel**
 - **windows**
      */
-    public readonly attrPlatform: ros.IResolvable;
+    readonly attrPlatform: ros.IResolvable | string;
 
     /**
      * Attribute SnapshotId: The ID of the snapshot corresponding to the image.
      */
-    public readonly attrSnapshotId: ros.IResolvable;
+    readonly attrSnapshotId: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ENS::Image`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosImage`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ens-image
+ */
+export class Image extends ros.Resource implements IImage {
+    protected scope: ros.Construct;
+    protected id: string;
+    public readonly props: ImageProps;
+    protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Architecture: The image architecture. Valid values:
+- **i386**
+- **x86_64**
+     */
+    public readonly attrArchitecture: ros.IResolvable | string;
+
+    /**
+     * Attribute ComputeType: Computing type. ens_vm/ens: x86 computing. bare_metal: x86 bare machine or x86 bare metal. arm_vm: ARM computing. arm_bare_metal: ARM bare machine or ARM bare metal. pcfarm: heterogeneous computing.
+     */
+    public readonly attrComputeType: ros.IResolvable | string;
+
+    /**
+     * Attribute CreateTime: The image creation time. The time follows the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. The time is displayed in UTC.
+     */
+    public readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute ImageId: The ID of the image.
+     */
+    public readonly attrImageId: ros.IResolvable | string;
+
+    /**
+     * Attribute ImageName: The name of the image.
+     */
+    public readonly attrImageName: ros.IResolvable | string;
+
+    /**
+     * Attribute ImageOwnerAlias: The source of the image. Valid values:
+- **others**: a custom image that is shared by other Alibaba Cloud accounts.
+- **self**: your own custom image.
+     */
+    public readonly attrImageOwnerAlias: ros.IResolvable | string;
+
+    /**
+     * Attribute ImageSize: The size of the image. Unit: GiB.
+     */
+    public readonly attrImageSize: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: The ID of the instance corresponding to the image.
+     */
+    public readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute OsVersion: The operating system version.
+     */
+    public readonly attrOsVersion: ros.IResolvable | string;
+
+    /**
+     * Attribute Platform: The type of operating system used by the image. Valid values:
+- **centos**
+- **ubuntu**
+- **alios**
+- **debian**
+- **rhel**
+- **windows**
+     */
+    public readonly attrPlatform: ros.IResolvable | string;
+
+    /**
+     * Attribute SnapshotId: The ID of the snapshot corresponding to the image.
+     */
+    public readonly attrSnapshotId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

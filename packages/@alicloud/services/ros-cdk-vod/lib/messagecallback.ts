@@ -63,55 +63,101 @@ export interface MessageCallbackProps {
 }
 
 /**
+ * Represents a `MessageCallback`.
+ */
+export interface IMessageCallback extends ros.IResource {
+    readonly props: MessageCallbackProps;
+
+    /**
+     * Attribute AppId: appid.
+     */
+    readonly attrAppId: ros.IResolvable | string;
+
+    /**
+     * Attribute AuthKey: auth key.
+     */
+    readonly attrAuthKey: ros.IResolvable | string;
+
+    /**
+     * Attribute AuthSwitch: auth swith.
+     */
+    readonly attrAuthSwitch: ros.IResolvable | string;
+
+    /**
+     * Attribute CallbackType: callback type.
+     */
+    readonly attrCallbackType: ros.IResolvable | string;
+
+    /**
+     * Attribute CallbackUrl: url.
+     */
+    readonly attrCallbackUrl: ros.IResolvable | string;
+
+    /**
+     * Attribute EventTypeList: event type.
+     */
+    readonly attrEventTypeList: ros.IResolvable | string;
+
+    /**
+     * Attribute MnsEndpoint: mns endpoint.
+     */
+    readonly attrMnsEndpoint: ros.IResolvable | string;
+
+    /**
+     * Attribute MnsQueueName: queue name.
+     */
+    readonly attrMnsQueueName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VOD::MessageCallback`, which is used to configure the callback method, callback URL, and event types for an event notification.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMessageCallback`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-messagecallback
  */
-export class MessageCallback extends ros.Resource {
+export class MessageCallback extends ros.Resource implements IMessageCallback {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: MessageCallbackProps;
+    public readonly props: MessageCallbackProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AppId: appid.
      */
-    public readonly attrAppId: ros.IResolvable;
+    public readonly attrAppId: ros.IResolvable | string;
 
     /**
      * Attribute AuthKey: auth key.
      */
-    public readonly attrAuthKey: ros.IResolvable;
+    public readonly attrAuthKey: ros.IResolvable | string;
 
     /**
      * Attribute AuthSwitch: auth swith.
      */
-    public readonly attrAuthSwitch: ros.IResolvable;
+    public readonly attrAuthSwitch: ros.IResolvable | string;
 
     /**
      * Attribute CallbackType: callback type.
      */
-    public readonly attrCallbackType: ros.IResolvable;
+    public readonly attrCallbackType: ros.IResolvable | string;
 
     /**
      * Attribute CallbackUrl: url.
      */
-    public readonly attrCallbackUrl: ros.IResolvable;
+    public readonly attrCallbackUrl: ros.IResolvable | string;
 
     /**
      * Attribute EventTypeList: event type.
      */
-    public readonly attrEventTypeList: ros.IResolvable;
+    public readonly attrEventTypeList: ros.IResolvable | string;
 
     /**
      * Attribute MnsEndpoint: mns endpoint.
      */
-    public readonly attrMnsEndpoint: ros.IResolvable;
+    public readonly attrMnsEndpoint: ros.IResolvable | string;
 
     /**
      * Attribute MnsQueueName: queue name.
      */
-    public readonly attrMnsQueueName: ros.IResolvable;
+    public readonly attrMnsQueueName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

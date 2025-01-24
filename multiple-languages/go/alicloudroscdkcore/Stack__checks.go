@@ -74,6 +74,30 @@ func (s *jsiiProxy_Stack) validateResolveParameters(obj interface{}) error {
 	return nil
 }
 
+func (s *jsiiProxy_Stack) validateSplitArnParameters(arn interface{}, arnFormat ArnFormat) error {
+	if arn == nil {
+		return fmt.Errorf("parameter arn is required, but nil was provided")
+	}
+	switch arn.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(arn) {
+			return fmt.Errorf("parameter arn must be one of the allowed types: *string, IResolvable; received %#v (a %T)", arn, arn)
+		}
+	}
+
+	if arnFormat == "" {
+		return fmt.Errorf("parameter arnFormat is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (s *jsiiProxy_Stack) validateSynthesizeParameters(session ISynthesisSession) error {
 	if session == nil {
 		return fmt.Errorf("parameter session is required, but nil was provided")

@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::ESS::ScalingConfigurations`, which is used to query the information about scaling configurations.
 type ScalingConfigurations interface {
 	alicloudroscdkcore.Resource
+	IScalingConfigurations
 	// Attribute ScalingConfigurationIds: The list of scaling configuration IDs.
-	AttrScalingConfigurationIds() alicloudroscdkcore.IResolvable
+	AttrScalingConfigurationIds() interface{}
 	// Attribute ScalingConfigurations: The list of scaling configurations.
-	AttrScalingConfigurations() alicloudroscdkcore.IResolvable
+	AttrScalingConfigurations() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type ScalingConfigurations interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ScalingConfigurationsProps
-	SetProps(val *ScalingConfigurationsProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type ScalingConfigurations interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type ScalingConfigurations interface {
 // The jsii proxy struct for ScalingConfigurations
 type jsiiProxy_ScalingConfigurations struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IScalingConfigurations
 }
 
-func (j *jsiiProxy_ScalingConfigurations) AttrScalingConfigurationIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingConfigurations) AttrScalingConfigurationIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrScalingConfigurationIds",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_ScalingConfigurations) AttrScalingConfigurationIds() alicloud
 	return returns
 }
 
-func (j *jsiiProxy_ScalingConfigurations) AttrScalingConfigurations() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ScalingConfigurations) AttrScalingConfigurations() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrScalingConfigurations",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_ScalingConfigurations) EnableResourcePropertyConstraint() *bo
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ScalingConfigurations) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_ScalingConfigurations)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ScalingConfigurations)SetProps(val *ScalingConfigurationsProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_ScalingConfigurations)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (s *jsiiProxy_ScalingConfigurations) ApplyRemovalPolicy(policy alicloudrosc
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (s *jsiiProxy_ScalingConfigurations) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		s,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_ScalingConfigurations) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_ScalingConfigurations) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (s *jsiiProxy_ScalingConfigurations) GeneratePhysicalName() *string {

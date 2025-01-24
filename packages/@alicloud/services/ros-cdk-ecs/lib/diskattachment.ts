@@ -36,30 +36,51 @@ export interface DiskAttachmentProps {
 }
 
 /**
+ * Represents a `DiskAttachment`.
+ */
+export interface IDiskAttachment extends ros.IResource {
+    readonly props: DiskAttachmentProps;
+
+    /**
+     * Attribute Device: The device where the volume is exposed on ecs instance.
+     */
+    readonly attrDevice: ros.IResolvable | string;
+
+    /**
+     * Attribute DiskId: The disk id of created disk
+     */
+    readonly attrDiskId: ros.IResolvable | string;
+
+    /**
+     * Attribute Status: The disk status now.
+     */
+    readonly attrStatus: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::DiskAttachment`, which is used to attach a disk to an ECS instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDiskAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-diskattachment
  */
-export class DiskAttachment extends ros.Resource {
+export class DiskAttachment extends ros.Resource implements IDiskAttachment {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DiskAttachmentProps;
+    public readonly props: DiskAttachmentProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Device: The device where the volume is exposed on ecs instance.
      */
-    public readonly attrDevice: ros.IResolvable;
+    public readonly attrDevice: ros.IResolvable | string;
 
     /**
      * Attribute DiskId: The disk id of created disk
      */
-    public readonly attrDiskId: ros.IResolvable;
+    public readonly attrDiskId: ros.IResolvable | string;
 
     /**
      * Attribute Status: The disk status now.
      */
-    public readonly attrStatus: ros.IResolvable;
+    public readonly attrStatus: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

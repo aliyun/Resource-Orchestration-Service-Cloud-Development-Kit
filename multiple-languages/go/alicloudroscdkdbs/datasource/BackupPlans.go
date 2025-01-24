@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::DBS::BackupPlans`, which is used to query the information about backup schedules.
 type BackupPlans interface {
 	alicloudroscdkcore.Resource
+	IBackupPlans
 	// Attribute BackupPlanIds: The list of backup plan IDs.
-	AttrBackupPlanIds() alicloudroscdkcore.IResolvable
+	AttrBackupPlanIds() interface{}
 	// Attribute BackupPlans: The list of backup plans.
-	AttrBackupPlans() alicloudroscdkcore.IResolvable
+	AttrBackupPlans() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type BackupPlans interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *BackupPlansProps
-	SetProps(val *BackupPlansProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type BackupPlans interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type BackupPlans interface {
 // The jsii proxy struct for BackupPlans
 type jsiiProxy_BackupPlans struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IBackupPlans
 }
 
-func (j *jsiiProxy_BackupPlans) AttrBackupPlanIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BackupPlans) AttrBackupPlanIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBackupPlanIds",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_BackupPlans) AttrBackupPlanIds() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_BackupPlans) AttrBackupPlans() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BackupPlans) AttrBackupPlans() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBackupPlans",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_BackupPlans) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BackupPlans) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_BackupPlans)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_BackupPlans)SetProps(val *BackupPlansProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_BackupPlans)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (b *jsiiProxy_BackupPlans) ApplyRemovalPolicy(policy alicloudroscdkcore.Rem
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (b *jsiiProxy_BackupPlans) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		b,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (b *jsiiProxy_BackupPlans) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		b,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (b *jsiiProxy_BackupPlans) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		b,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (b *jsiiProxy_BackupPlans) GeneratePhysicalName() *string {

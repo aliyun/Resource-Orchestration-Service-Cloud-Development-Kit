@@ -52,10 +52,6 @@ func (j *jsiiProxy_Prometheus) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_Prometheus) validateSetPropsParameters(val *PrometheusProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_Prometheus) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

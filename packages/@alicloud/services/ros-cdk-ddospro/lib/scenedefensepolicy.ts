@@ -33,20 +33,31 @@ export interface SceneDefensePolicyProps {
 }
 
 /**
+ * Represents a `SceneDefensePolicy`.
+ */
+export interface ISceneDefensePolicy extends ros.IResource {
+    readonly props: SceneDefensePolicyProps;
+
+    /**
+     * Attribute Name: The name of the policy.
+     */
+    readonly attrName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::DDoSPro::SceneDefensePolicy`, which is used to create a scenario-specific custom policy.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSceneDefensePolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-scenedefensepolicy
  */
-export class SceneDefensePolicy extends ros.Resource {
+export class SceneDefensePolicy extends ros.Resource implements ISceneDefensePolicy {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SceneDefensePolicyProps;
+    public readonly props: SceneDefensePolicyProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Name: The name of the policy.
      */
-    public readonly attrName: ros.IResolvable;
+    public readonly attrName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

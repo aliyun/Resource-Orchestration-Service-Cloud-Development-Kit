@@ -52,10 +52,6 @@ func (j *jsiiProxy_MediaWorkflow) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_MediaWorkflow) validateSetPropsParameters(val *MediaWorkflowProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_MediaWorkflow) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

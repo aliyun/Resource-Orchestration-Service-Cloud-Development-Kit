@@ -12,78 +12,88 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ThreatDetection::Instance`, which is used to purchase Security Center (SAS).
 type Instance interface {
 	alicloudroscdkcore.Resource
+	IInstance
 	// Attribute BuyNumber: Number of servers.
-	AttrBuyNumber() alicloudroscdkcore.IResolvable
+	AttrBuyNumber() interface{}
 	// Attribute ContainerImageScan: Container Image security scan.
 	//
 	// Interval type, value interval:[0,200000].
-	AttrContainerImageScan() alicloudroscdkcore.IResolvable
+	AttrContainerImageScan() interface{}
 	// Attribute ContainerImageScanNew: Container Image security scan.
 	//
 	// Interval type, value interval:[0,200000].
-	AttrContainerImageScanNew() alicloudroscdkcore.IResolvable
+	AttrContainerImageScanNew() interface{}
 	// Attribute CreateTime: The creation time of the resource.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute Honeypot: Number of cloud honeypot licenses.
 	//
 	// Interval type, value interval:[20,500].
-	AttrHoneypot() alicloudroscdkcore.IResolvable
+	AttrHoneypot() interface{}
 	// Attribute HoneypotSwitch: Cloud honeypot.
-	AttrHoneypotSwitch() alicloudroscdkcore.IResolvable
+	AttrHoneypotSwitch() interface{}
 	// Attribute InstanceId: The first ID of the resource.
-	AttrInstanceId() alicloudroscdkcore.IResolvable
+	AttrInstanceId() interface{}
 	// Attribute PaymentType: The payment type of the resource.
-	AttrPaymentType() alicloudroscdkcore.IResolvable
+	AttrPaymentType() interface{}
 	// Attribute RaspCount: Number of application protection licenses.
 	//
 	// Interval type, value interval:[1,100000000].
-	AttrRaspCount() alicloudroscdkcore.IResolvable
+	AttrRaspCount() interface{}
 	// Attribute RenewalPeriodUnit: Automatic renewal period unit, value:.
-	AttrRenewalPeriodUnit() alicloudroscdkcore.IResolvable
+	AttrRenewalPeriodUnit() interface{}
 	// Attribute RenewalStatus: Automatic renewal status, value:.
-	AttrRenewalStatus() alicloudroscdkcore.IResolvable
+	AttrRenewalStatus() interface{}
 	// Attribute RenewPeriod: Automatic renewal cycle, in months.
-	AttrRenewPeriod() alicloudroscdkcore.IResolvable
+	AttrRenewPeriod() interface{}
 	// Attribute SasAntiRansomware: Anti-ransomware capacity.
 	//
 	// Unit: GB. Interval type, value interval:[0,9999999999].
-	AttrSasAntiRansomware() alicloudroscdkcore.IResolvable
+	AttrSasAntiRansomware() interface{}
 	// Attribute SasCspm: Cloud platform configuration check scan times, interval type, value range:[1000,9999999999].
-	AttrSasCspm() alicloudroscdkcore.IResolvable
+	AttrSasCspm() interface{}
 	// Attribute SasCspmSwitch: Cloud platform configuration check switch.
-	AttrSasCspmSwitch() alicloudroscdkcore.IResolvable
+	AttrSasCspmSwitch() interface{}
 	// Attribute SasSc: Security screen.
-	AttrSasSc() alicloudroscdkcore.IResolvable
+	AttrSasSc() interface{}
 	// Attribute SasSdk: Number of malicious file detections.
 	//
 	// Unit: 10,000 times. Interval type, value interval:[10,9999999999].
-	AttrSasSdk() alicloudroscdkcore.IResolvable
+	AttrSasSdk() interface{}
 	// Attribute SasSdkSwitch: Malicious file detection SDK.
-	AttrSasSdkSwitch() alicloudroscdkcore.IResolvable
+	AttrSasSdkSwitch() interface{}
 	// Attribute SasSlsStorage: Log analysis storage capacity.
 	//
 	// Unit: GB. Interval type, value interval:[0,600000].
-	AttrSasSlsStorage() alicloudroscdkcore.IResolvable
+	AttrSasSlsStorage() interface{}
 	// Attribute SasWebguardBoolean: Web tamper-proof switch.
-	AttrSasWebguardBoolean() alicloudroscdkcore.IResolvable
+	AttrSasWebguardBoolean() interface{}
 	// Attribute SasWebguardOrderNum: Tamper-proof authorization number.
-	AttrSasWebguardOrderNum() alicloudroscdkcore.IResolvable
+	AttrSasWebguardOrderNum() interface{}
 	// Attribute ThreatAnalysis: Threat Analysis log storage capacity.
 	//
 	// Interval type, value interval:[0,9999999999].
-	AttrThreatAnalysis() alicloudroscdkcore.IResolvable
+	AttrThreatAnalysis() interface{}
 	// Attribute ThreatAnalysisSwitch: Threat analysis.
-	AttrThreatAnalysisSwitch() alicloudroscdkcore.IResolvable
+	AttrThreatAnalysisSwitch() interface{}
 	// Attribute VCore: Number of cores.
-	AttrVCore() alicloudroscdkcore.IResolvable
+	AttrVCore() interface{}
 	// Attribute VersionCode: Select the security center version.
-	AttrVersionCode() alicloudroscdkcore.IResolvable
+	AttrVersionCode() interface{}
 	// Attribute VulCount: Vulnerability repair times, interval type, value range:[20,100000000].
-	AttrVulCount() alicloudroscdkcore.IResolvable
+	AttrVulCount() interface{}
 	// Attribute VulSwitch: Vulnerability fix switch.
-	AttrVulSwitch() alicloudroscdkcore.IResolvable
+	AttrVulSwitch() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -98,7 +108,6 @@ type Instance interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *InstanceProps
-	SetProps(val *InstanceProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -111,6 +120,9 @@ type Instance interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -163,10 +175,11 @@ type Instance interface {
 // The jsii proxy struct for Instance
 type jsiiProxy_Instance struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IInstance
 }
 
-func (j *jsiiProxy_Instance) AttrBuyNumber() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Instance) AttrBuyNumber() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBuyNumber",
@@ -175,8 +188,8 @@ func (j *jsiiProxy_Instance) AttrBuyNumber() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Instance) AttrContainerImageScan() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Instance) AttrContainerImageScan() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrContainerImageScan",
@@ -185,8 +198,8 @@ func (j *jsiiProxy_Instance) AttrContainerImageScan() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_Instance) AttrContainerImageScanNew() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Instance) AttrContainerImageScanNew() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrContainerImageScanNew",
@@ -195,8 +208,8 @@ func (j *jsiiProxy_Instance) AttrContainerImageScanNew() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_Instance) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Instance) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -205,8 +218,8 @@ func (j *jsiiProxy_Instance) AttrCreateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Instance) AttrHoneypot() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Instance) AttrHoneypot() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHoneypot",
@@ -215,8 +228,8 @@ func (j *jsiiProxy_Instance) AttrHoneypot() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Instance) AttrHoneypotSwitch() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Instance) AttrHoneypotSwitch() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHoneypotSwitch",
@@ -225,8 +238,8 @@ func (j *jsiiProxy_Instance) AttrHoneypotSwitch() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Instance) AttrInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Instance) AttrInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceId",
@@ -235,8 +248,8 @@ func (j *jsiiProxy_Instance) AttrInstanceId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Instance) AttrPaymentType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Instance) AttrPaymentType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPaymentType",
@@ -245,8 +258,8 @@ func (j *jsiiProxy_Instance) AttrPaymentType() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Instance) AttrRaspCount() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Instance) AttrRaspCount() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRaspCount",
@@ -255,8 +268,8 @@ func (j *jsiiProxy_Instance) AttrRaspCount() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Instance) AttrRenewalPeriodUnit() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Instance) AttrRenewalPeriodUnit() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRenewalPeriodUnit",
@@ -265,8 +278,8 @@ func (j *jsiiProxy_Instance) AttrRenewalPeriodUnit() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_Instance) AttrRenewalStatus() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Instance) AttrRenewalStatus() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRenewalStatus",
@@ -275,8 +288,8 @@ func (j *jsiiProxy_Instance) AttrRenewalStatus() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_Instance) AttrRenewPeriod() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Instance) AttrRenewPeriod() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRenewPeriod",
@@ -285,8 +298,8 @@ func (j *jsiiProxy_Instance) AttrRenewPeriod() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Instance) AttrSasAntiRansomware() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Instance) AttrSasAntiRansomware() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSasAntiRansomware",
@@ -295,8 +308,8 @@ func (j *jsiiProxy_Instance) AttrSasAntiRansomware() alicloudroscdkcore.IResolva
 	return returns
 }
 
-func (j *jsiiProxy_Instance) AttrSasCspm() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Instance) AttrSasCspm() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSasCspm",
@@ -305,8 +318,8 @@ func (j *jsiiProxy_Instance) AttrSasCspm() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Instance) AttrSasCspmSwitch() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Instance) AttrSasCspmSwitch() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSasCspmSwitch",
@@ -315,8 +328,8 @@ func (j *jsiiProxy_Instance) AttrSasCspmSwitch() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_Instance) AttrSasSc() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Instance) AttrSasSc() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSasSc",
@@ -325,8 +338,8 @@ func (j *jsiiProxy_Instance) AttrSasSc() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Instance) AttrSasSdk() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Instance) AttrSasSdk() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSasSdk",
@@ -335,8 +348,8 @@ func (j *jsiiProxy_Instance) AttrSasSdk() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Instance) AttrSasSdkSwitch() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Instance) AttrSasSdkSwitch() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSasSdkSwitch",
@@ -345,8 +358,8 @@ func (j *jsiiProxy_Instance) AttrSasSdkSwitch() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Instance) AttrSasSlsStorage() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Instance) AttrSasSlsStorage() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSasSlsStorage",
@@ -355,8 +368,8 @@ func (j *jsiiProxy_Instance) AttrSasSlsStorage() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_Instance) AttrSasWebguardBoolean() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Instance) AttrSasWebguardBoolean() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSasWebguardBoolean",
@@ -365,8 +378,8 @@ func (j *jsiiProxy_Instance) AttrSasWebguardBoolean() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_Instance) AttrSasWebguardOrderNum() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Instance) AttrSasWebguardOrderNum() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSasWebguardOrderNum",
@@ -375,8 +388,8 @@ func (j *jsiiProxy_Instance) AttrSasWebguardOrderNum() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_Instance) AttrThreatAnalysis() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Instance) AttrThreatAnalysis() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrThreatAnalysis",
@@ -385,8 +398,8 @@ func (j *jsiiProxy_Instance) AttrThreatAnalysis() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Instance) AttrThreatAnalysisSwitch() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Instance) AttrThreatAnalysisSwitch() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrThreatAnalysisSwitch",
@@ -395,8 +408,8 @@ func (j *jsiiProxy_Instance) AttrThreatAnalysisSwitch() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_Instance) AttrVCore() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Instance) AttrVCore() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVCore",
@@ -405,8 +418,8 @@ func (j *jsiiProxy_Instance) AttrVCore() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Instance) AttrVersionCode() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Instance) AttrVersionCode() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVersionCode",
@@ -415,8 +428,8 @@ func (j *jsiiProxy_Instance) AttrVersionCode() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Instance) AttrVulCount() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Instance) AttrVulCount() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVulCount",
@@ -425,8 +438,8 @@ func (j *jsiiProxy_Instance) AttrVulCount() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Instance) AttrVulSwitch() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Instance) AttrVulSwitch() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVulSwitch",
@@ -440,6 +453,16 @@ func (j *jsiiProxy_Instance) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Instance) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -577,17 +600,6 @@ func (j *jsiiProxy_Instance)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Instance)SetProps(val *InstanceProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Instance)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -679,6 +691,45 @@ func (i *jsiiProxy_Instance) ApplyRemovalPolicy(policy alicloudroscdkcore.Remova
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (i *jsiiProxy_Instance) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		i,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_Instance) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		i,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (i *jsiiProxy_Instance) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		i,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (i *jsiiProxy_Instance) GeneratePhysicalName() *string {

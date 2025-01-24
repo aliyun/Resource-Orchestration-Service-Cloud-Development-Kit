@@ -24,50 +24,91 @@ export interface AntiBruteForceRuleProps {
 }
 
 /**
+ * Represents a `AntiBruteForceRule`.
+ */
+export interface IAntiBruteForceRule extends ros.IResource {
+    readonly props: AntiBruteForceRuleProps;
+
+    /**
+     * Attribute AntiBruteForceRuleId: The ID of the defense rule.
+     */
+    readonly attrAntiBruteForceRuleId: ros.IResolvable | string;
+
+    /**
+     * Attribute AntiBruteForceRuleName: The name of the defense rule.
+     */
+    readonly attrAntiBruteForceRuleName: ros.IResolvable | string;
+
+    /**
+     * Attribute DefaultRule: Indicates whether the defense rule is the default rule.
+     */
+    readonly attrDefaultRule: ros.IResolvable | string;
+
+    /**
+     * Attribute FailCount: The threshold of logon failures that is specified in the defense rule.
+     */
+    readonly attrFailCount: ros.IResolvable | string;
+
+    /**
+     * Attribute ForbiddenTime: The period of time during which logons from an account are not allowed. Unit: minutes.
+     */
+    readonly attrForbiddenTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Span: The period of time during which logon failures from an account are measured. Unit: minutes. If Span is set to 10, the defense rule takes effect when the logon failures measured within 10 minutes reaches the specified threshold. The IP address of attackers cannot be used to log on to the server in the specified period of time.
+     */
+    readonly attrSpan: ros.IResolvable | string;
+
+    /**
+     * Attribute UuidList: An array consisting of the UUIDs of servers to which the defense rule is applied.
+     */
+    readonly attrUuidList: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ThreatDetection::AntiBruteForceRule`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAntiBruteForceRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-threatdetection-antibruteforcerule
  */
-export class AntiBruteForceRule extends ros.Resource {
+export class AntiBruteForceRule extends ros.Resource implements IAntiBruteForceRule {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AntiBruteForceRuleProps;
+    public readonly props: AntiBruteForceRuleProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AntiBruteForceRuleId: The ID of the defense rule.
      */
-    public readonly attrAntiBruteForceRuleId: ros.IResolvable;
+    public readonly attrAntiBruteForceRuleId: ros.IResolvable | string;
 
     /**
      * Attribute AntiBruteForceRuleName: The name of the defense rule.
      */
-    public readonly attrAntiBruteForceRuleName: ros.IResolvable;
+    public readonly attrAntiBruteForceRuleName: ros.IResolvable | string;
 
     /**
      * Attribute DefaultRule: Indicates whether the defense rule is the default rule.
      */
-    public readonly attrDefaultRule: ros.IResolvable;
+    public readonly attrDefaultRule: ros.IResolvable | string;
 
     /**
      * Attribute FailCount: The threshold of logon failures that is specified in the defense rule.
      */
-    public readonly attrFailCount: ros.IResolvable;
+    public readonly attrFailCount: ros.IResolvable | string;
 
     /**
      * Attribute ForbiddenTime: The period of time during which logons from an account are not allowed. Unit: minutes.
      */
-    public readonly attrForbiddenTime: ros.IResolvable;
+    public readonly attrForbiddenTime: ros.IResolvable | string;
 
     /**
      * Attribute Span: The period of time during which logon failures from an account are measured. Unit: minutes. If Span is set to 10, the defense rule takes effect when the logon failures measured within 10 minutes reaches the specified threshold. The IP address of attackers cannot be used to log on to the server in the specified period of time.
      */
-    public readonly attrSpan: ros.IResolvable;
+    public readonly attrSpan: ros.IResolvable | string;
 
     /**
      * Attribute UuidList: An array consisting of the UUIDs of servers to which the defense rule is applied.
      */
-    public readonly attrUuidList: ros.IResolvable;
+    public readonly attrUuidList: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

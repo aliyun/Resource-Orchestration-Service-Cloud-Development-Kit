@@ -36,45 +36,81 @@ export interface AclProps {
 }
 
 /**
+ * Represents a `Acl`.
+ */
+export interface IAcl extends ros.IResource {
+    readonly props: AclProps;
+
+    /**
+     * Attribute AclEntries: The entries of the ACL.
+     */
+    readonly attrAclEntries: ros.IResolvable | string;
+
+    /**
+     * Attribute AclId: The  ID of the ACL.
+     */
+    readonly attrAclId: ros.IResolvable | string;
+
+    /**
+     * Attribute AclName: The name of the ACL.
+     */
+    readonly attrAclName: ros.IResolvable | string;
+
+    /**
+     * Attribute AddressIPVersion: The IP version of the ACL.
+     */
+    readonly attrAddressIpVersion: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: The ID of the resource group.
+     */
+    readonly attrResourceGroupId: ros.IResolvable | string;
+
+    /**
+     * Attribute Tags: The tags of the resource.
+     */
+    readonly attrTags: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::GA::Acl`, which is used to create an access control list (ACL).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAcl`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-acl
  */
-export class Acl extends ros.Resource {
+export class Acl extends ros.Resource implements IAcl {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AclProps;
+    public readonly props: AclProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AclEntries: The entries of the ACL.
      */
-    public readonly attrAclEntries: ros.IResolvable;
+    public readonly attrAclEntries: ros.IResolvable | string;
 
     /**
      * Attribute AclId: The  ID of the ACL.
      */
-    public readonly attrAclId: ros.IResolvable;
+    public readonly attrAclId: ros.IResolvable | string;
 
     /**
      * Attribute AclName: The name of the ACL.
      */
-    public readonly attrAclName: ros.IResolvable;
+    public readonly attrAclName: ros.IResolvable | string;
 
     /**
      * Attribute AddressIPVersion: The IP version of the ACL.
      */
-    public readonly attrAddressIpVersion: ros.IResolvable;
+    public readonly attrAddressIpVersion: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroupId: The ID of the resource group.
      */
-    public readonly attrResourceGroupId: ros.IResolvable;
+    public readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Attribute Tags: The tags of the resource.
      */
-    public readonly attrTags: ros.IResolvable;
+    public readonly attrTags: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -12,36 +12,46 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::PAI::Run`.
 type Run interface {
 	alicloudroscdkcore.Resource
+	IRun
 	// Attribute Accessibility: Resource attribute fields representing visibility.
-	AttrAccessibility() alicloudroscdkcore.IResolvable
+	AttrAccessibility() interface{}
 	// Attribute CreateTime: The creation time of the Run.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute ExperimentId: Resource attribute field of the experiment ID to which Run belongs.
-	AttrExperimentId() alicloudroscdkcore.IResolvable
+	AttrExperimentId() interface{}
 	// Attribute GmtModifiedTime: Resource attribute fields representing edit time.
-	AttrGmtModifiedTime() alicloudroscdkcore.IResolvable
+	AttrGmtModifiedTime() interface{}
 	// Attribute Labels: Run attribute field representing the run tag.
-	AttrLabels() alicloudroscdkcore.IResolvable
+	AttrLabels() interface{}
 	// Attribute Metrics: Resource attribute field representing the run metric.
-	AttrMetrics() alicloudroscdkcore.IResolvable
+	AttrMetrics() interface{}
 	// Attribute OwnerId: Resource attribute field representing owner.
-	AttrOwnerId() alicloudroscdkcore.IResolvable
+	AttrOwnerId() interface{}
 	// Attribute Params: Resource attribute field representing the run parameter.
-	AttrParams() alicloudroscdkcore.IResolvable
+	AttrParams() interface{}
 	// Attribute RunId: The ID of the Run.
-	AttrRunId() alicloudroscdkcore.IResolvable
+	AttrRunId() interface{}
 	// Attribute RunName: The name of the Run.
-	AttrRunName() alicloudroscdkcore.IResolvable
+	AttrRunName() interface{}
 	// Attribute SourceId: Attribute Resource field representing the source task ID.
-	AttrSourceId() alicloudroscdkcore.IResolvable
+	AttrSourceId() interface{}
 	// Attribute SourceType: Run attribute fields representing the source type.
-	AttrSourceType() alicloudroscdkcore.IResolvable
+	AttrSourceType() interface{}
 	// Attribute UserId: Run attribute field representing creator ID.
-	AttrUserId() alicloudroscdkcore.IResolvable
+	AttrUserId() interface{}
 	// Attribute WorkspaceId: Resource attribute field of the workspace ID to which Run belongs.
-	AttrWorkspaceId() alicloudroscdkcore.IResolvable
+	AttrWorkspaceId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -56,7 +66,6 @@ type Run interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *RunProps
-	SetProps(val *RunProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -69,6 +78,9 @@ type Run interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -121,10 +133,11 @@ type Run interface {
 // The jsii proxy struct for Run
 type jsiiProxy_Run struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IRun
 }
 
-func (j *jsiiProxy_Run) AttrAccessibility() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Run) AttrAccessibility() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAccessibility",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_Run) AttrAccessibility() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Run) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Run) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -143,8 +156,8 @@ func (j *jsiiProxy_Run) AttrCreateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Run) AttrExperimentId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Run) AttrExperimentId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrExperimentId",
@@ -153,8 +166,8 @@ func (j *jsiiProxy_Run) AttrExperimentId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Run) AttrGmtModifiedTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Run) AttrGmtModifiedTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGmtModifiedTime",
@@ -163,8 +176,8 @@ func (j *jsiiProxy_Run) AttrGmtModifiedTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Run) AttrLabels() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Run) AttrLabels() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLabels",
@@ -173,8 +186,8 @@ func (j *jsiiProxy_Run) AttrLabels() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Run) AttrMetrics() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Run) AttrMetrics() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMetrics",
@@ -183,8 +196,8 @@ func (j *jsiiProxy_Run) AttrMetrics() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Run) AttrOwnerId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Run) AttrOwnerId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOwnerId",
@@ -193,8 +206,8 @@ func (j *jsiiProxy_Run) AttrOwnerId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Run) AttrParams() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Run) AttrParams() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrParams",
@@ -203,8 +216,8 @@ func (j *jsiiProxy_Run) AttrParams() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Run) AttrRunId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Run) AttrRunId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRunId",
@@ -213,8 +226,8 @@ func (j *jsiiProxy_Run) AttrRunId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Run) AttrRunName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Run) AttrRunName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRunName",
@@ -223,8 +236,8 @@ func (j *jsiiProxy_Run) AttrRunName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Run) AttrSourceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Run) AttrSourceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSourceId",
@@ -233,8 +246,8 @@ func (j *jsiiProxy_Run) AttrSourceId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Run) AttrSourceType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Run) AttrSourceType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSourceType",
@@ -243,8 +256,8 @@ func (j *jsiiProxy_Run) AttrSourceType() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Run) AttrUserId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Run) AttrUserId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUserId",
@@ -253,8 +266,8 @@ func (j *jsiiProxy_Run) AttrUserId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Run) AttrWorkspaceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Run) AttrWorkspaceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrWorkspaceId",
@@ -268,6 +281,16 @@ func (j *jsiiProxy_Run) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Run) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -405,17 +428,6 @@ func (j *jsiiProxy_Run)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Run)SetProps(val *RunProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Run)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -507,6 +519,45 @@ func (r *jsiiProxy_Run) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPoli
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (r *jsiiProxy_Run) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		r,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_Run) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		r,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_Run) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		r,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (r *jsiiProxy_Run) GeneratePhysicalName() *string {

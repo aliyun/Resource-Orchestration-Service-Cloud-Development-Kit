@@ -52,25 +52,41 @@ export interface VpcsProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::Vpcs`, which is used to query the virtual private clouds (VPCs) that you created.
+ * Represents a `Vpcs`.
+ */
+export interface IVpcs extends ros.IResource {
+    readonly props: VpcsProps;
+
+    /**
+     * Attribute VpcIds: The list of The VPC IDs.
+     */
+    readonly attrVpcIds: ros.IResolvable | string;
+
+    /**
+     * Attribute Vpcs: The detailed information about the VPCs.
+     */
+    readonly attrVpcs: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::Vpcs`, which is used to query created virtual private clouds (VPCs).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpcs`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-vpcs
  */
-export class Vpcs extends ros.Resource {
+export class Vpcs extends ros.Resource implements IVpcs {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: VpcsProps;
+    public readonly props: VpcsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute VpcIds: The list of The VPC IDs.
      */
-    public readonly attrVpcIds: ros.IResolvable;
+    public readonly attrVpcIds: ros.IResolvable | string;
 
     /**
      * Attribute Vpcs: The detailed information about the VPCs.
      */
-    public readonly attrVpcs: ros.IResolvable;
+    public readonly attrVpcs: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

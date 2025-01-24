@@ -52,10 +52,6 @@ func (j *jsiiProxy_AddressBooks) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_AddressBooks) validateSetPropsParameters(val *AddressBooksProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_AddressBooks) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

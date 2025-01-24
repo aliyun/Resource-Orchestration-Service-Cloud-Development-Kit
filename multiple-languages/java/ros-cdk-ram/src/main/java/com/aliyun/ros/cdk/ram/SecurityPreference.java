@@ -3,9 +3,9 @@ package com.aliyun.ros.cdk.ram;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::RAM::SecurityPreference</code>, which is used to configure security preferences for Resource Access Management (RAM) users.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:10.875Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:43.006Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.SecurityPreference")
-public class SecurityPreference extends com.aliyun.ros.cdk.core.Resource {
+public class SecurityPreference extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ram.ISecurityPreference {
 
     protected SecurityPreference(final software.amazon.jsii.JsiiObjectRef objRef) {
         super(objRef);
@@ -54,50 +54,62 @@ public class SecurityPreference extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Attribute AllowUserToChangePassword: Specifies whether RAM users can change their passwords.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAllowUserToChangePassword() {
-        return software.amazon.jsii.Kernel.get(this, "attrAllowUserToChangePassword", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAllowUserToChangePassword() {
+        return software.amazon.jsii.Kernel.get(this, "attrAllowUserToChangePassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute AllowUserToManageAccessKeys: Specifies whether RAM users can manage their AccessKey pairs.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAllowUserToManageAccessKeys() {
-        return software.amazon.jsii.Kernel.get(this, "attrAllowUserToManageAccessKeys", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAllowUserToManageAccessKeys() {
+        return software.amazon.jsii.Kernel.get(this, "attrAllowUserToManageAccessKeys", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute AllowUserToManageMFADevices: Specifies whether RAM users can manage their MFA devices.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAllowUserToManageMfaDevices() {
-        return software.amazon.jsii.Kernel.get(this, "attrAllowUserToManageMfaDevices", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAllowUserToManageMfaDevices() {
+        return software.amazon.jsii.Kernel.get(this, "attrAllowUserToManageMfaDevices", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute AllowUserToManagePublicKeys: Specifies whether RAM users can manage their public keys.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAllowUserToManagePublicKeys() {
-        return software.amazon.jsii.Kernel.get(this, "attrAllowUserToManagePublicKeys", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAllowUserToManagePublicKeys() {
+        return software.amazon.jsii.Kernel.get(this, "attrAllowUserToManagePublicKeys", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute EnableSaveMFATicket: Specifies whether RAM users can save multi-factor authentication (MFA) security codes during logon.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrEnableSaveMfaTicket() {
-        return software.amazon.jsii.Kernel.get(this, "attrEnableSaveMfaTicket", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrEnableSaveMfaTicket() {
+        return software.amazon.jsii.Kernel.get(this, "attrEnableSaveMfaTicket", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute LoginNetworkMasks: The subnet mask that specifies the IP addresses from which logon to the console is allowed.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrLoginNetworkMasks() {
-        return software.amazon.jsii.Kernel.get(this, "attrLoginNetworkMasks", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrLoginNetworkMasks() {
+        return software.amazon.jsii.Kernel.get(this, "attrLoginNetworkMasks", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      * Attribute LoginSessionDuration: The validity period of the logon session of the RAM user.
      */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrLoginSessionDuration() {
-        return software.amazon.jsii.Kernel.get(this, "attrLoginSessionDuration", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrLoginSessionDuration() {
+        return software.amazon.jsii.Kernel.get(this, "attrLoginSessionDuration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    @Override
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.SecurityPreferenceProps getProps() {
+        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ram.SecurityPreferenceProps.class));
     }
 
     protected @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -114,14 +126,6 @@ public class SecurityPreference extends com.aliyun.ros.cdk.core.Resource {
 
     protected void setId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "id", java.util.Objects.requireNonNull(value, "id is required"));
-    }
-
-    protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.SecurityPreferenceProps getProps() {
-        return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ram.SecurityPreferenceProps.class));
-    }
-
-    protected void setProps(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.SecurityPreferenceProps value) {
-        software.amazon.jsii.Kernel.set(this, "props", java.util.Objects.requireNonNull(value, "props is required"));
     }
 
     protected @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct getScope() {

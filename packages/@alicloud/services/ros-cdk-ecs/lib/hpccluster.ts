@@ -24,25 +24,41 @@ export interface HpcClusterProps {
 }
 
 /**
+ * Represents a `HpcCluster`.
+ */
+export interface IHpcCluster extends ros.IResource {
+    readonly props: HpcClusterProps;
+
+    /**
+     * Attribute HpcClusterId: The ID of the HPC cluster.
+     */
+    readonly attrHpcClusterId: ros.IResolvable | string;
+
+    /**
+     * Attribute Name: The name of the HPC cluster.
+     */
+    readonly attrName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::HpcCluster`, which is used to create a High Performance Computing (HPC) cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosHpcCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-hpccluster
  */
-export class HpcCluster extends ros.Resource {
+export class HpcCluster extends ros.Resource implements IHpcCluster {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: HpcClusterProps;
+    public readonly props: HpcClusterProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute HpcClusterId: The ID of the HPC cluster.
      */
-    public readonly attrHpcClusterId: ros.IResolvable;
+    public readonly attrHpcClusterId: ros.IResolvable | string;
 
     /**
      * Attribute Name: The name of the HPC cluster.
      */
-    public readonly attrName: ros.IResolvable;
+    public readonly attrName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

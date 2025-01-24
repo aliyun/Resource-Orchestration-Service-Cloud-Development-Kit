@@ -22,6 +22,10 @@ type RosAssignPrivateIpAddresses interface {
 	CreationStack() *[]*string
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	Ipv4PrefixCount() interface{}
+	SetIpv4PrefixCount(val interface{})
+	Ipv4Prefixes() interface{}
+	SetIpv4Prefixes(val interface{})
 	// The logical ID for this stack element.
 	//
 	// The logical ID of the element
@@ -113,6 +117,9 @@ type RosAssignPrivateIpAddresses interface {
 	AddRosDependency(target *string)
 	// Sets the deletion policy of the resource based on the removal policy specified.
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy, options *alicloudroscdkcore.RemovalPolicyOptions)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDesc() *string
+	FetchRosDependency() *[]*string
 	// Returns a token for an runtime attribute of this resource.
 	//
 	// Ideally, use generated attribute accessors (e.g. `resource.arn`), but this can be used for future compatibility
@@ -210,6 +217,26 @@ func (j *jsiiProxy_RosAssignPrivateIpAddresses) EnableResourcePropertyConstraint
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosAssignPrivateIpAddresses) Ipv4PrefixCount() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ipv4PrefixCount",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosAssignPrivateIpAddresses) Ipv4Prefixes() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ipv4Prefixes",
 		&returns,
 	)
 	return returns
@@ -360,6 +387,28 @@ func (j *jsiiProxy_RosAssignPrivateIpAddresses)SetEnableResourcePropertyConstrai
 	_jsii_.Set(
 		j,
 		"enableResourcePropertyConstraint",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosAssignPrivateIpAddresses)SetIpv4PrefixCount(val interface{}) {
+	if err := j.validateSetIpv4PrefixCountParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"ipv4PrefixCount",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosAssignPrivateIpAddresses)SetIpv4Prefixes(val interface{}) {
+	if err := j.validateSetIpv4PrefixesParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"ipv4Prefixes",
 		val,
 	)
 }
@@ -589,6 +638,45 @@ func (r *jsiiProxy_RosAssignPrivateIpAddresses) ApplyRemovalPolicy(policy aliclo
 		"applyRemovalPolicy",
 		[]interface{}{policy, options},
 	)
+}
+
+func (r *jsiiProxy_RosAssignPrivateIpAddresses) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		r,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_RosAssignPrivateIpAddresses) FetchDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		r,
+		"fetchDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (r *jsiiProxy_RosAssignPrivateIpAddresses) FetchRosDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		r,
+		"fetchRosDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (r *jsiiProxy_RosAssignPrivateIpAddresses) GetAtt(attributeName *string) alicloudroscdkcore.Reference {

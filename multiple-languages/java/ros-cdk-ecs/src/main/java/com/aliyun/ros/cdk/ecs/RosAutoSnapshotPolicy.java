@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECS::AutoSnapshotPolicy</code>, which is used to create an automatic snapshot policy.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:07.205Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:38.158Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosAutoSnapshotPolicy")
 public class RosAutoSnapshotPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -154,6 +154,42 @@ public class RosAutoSnapshotPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCopiedSnapshotsRetentionDays() {
+        return software.amazon.jsii.Kernel.get(this, "copiedSnapshotsRetentionDays", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setCopiedSnapshotsRetentionDays(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "copiedSnapshotsRetentionDays", value);
+    }
+
+    /**
+     */
+    public void setCopiedSnapshotsRetentionDays(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "copiedSnapshotsRetentionDays", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCopyEncryptionConfiguration() {
+        return software.amazon.jsii.Kernel.get(this, "copyEncryptionConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setCopyEncryptionConfiguration(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "copyEncryptionConfiguration", value);
+    }
+
+    /**
+     */
+    public void setCopyEncryptionConfiguration(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.CopyEncryptionConfigurationProperty value) {
+        software.amazon.jsii.Kernel.set(this, "copyEncryptionConfiguration", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDiskIds() {
         return software.amazon.jsii.Kernel.get(this, "diskIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -188,6 +224,24 @@ public class RosAutoSnapshotPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEnableCrossRegionCopy() {
+        return software.amazon.jsii.Kernel.get(this, "enableCrossRegionCopy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEnableCrossRegionCopy(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "enableCrossRegionCopy", value);
+    }
+
+    /**
+     */
+    public void setEnableCrossRegionCopy(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "enableCrossRegionCopy", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -214,6 +268,212 @@ public class RosAutoSnapshotPolicy extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setTags(final @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.TagsProperty> value) {
         software.amazon.jsii.Kernel.set(this, "tags", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTargetCopyRegions() {
+        return software.amazon.jsii.Kernel.get(this, "targetCopyRegions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setTargetCopyRegions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "targetCopyRegions", value);
+    }
+
+    /**
+     */
+    public void setTargetCopyRegions(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "targetCopyRegions", value);
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosAutoSnapshotPolicy.CopyEncryptionConfigurationProperty")
+    @software.amazon.jsii.Jsii.Proxy(CopyEncryptionConfigurationProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface CopyEncryptionConfigurationProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEncrypted() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getKmsKeyId() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link CopyEncryptionConfigurationProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link CopyEncryptionConfigurationProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<CopyEncryptionConfigurationProperty> {
+            java.lang.Object encrypted;
+            java.lang.Object kmsKeyId;
+
+            /**
+             * Sets the value of {@link CopyEncryptionConfigurationProperty#getEncrypted}
+             * @param encrypted the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder encrypted(java.lang.Boolean encrypted) {
+                this.encrypted = encrypted;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CopyEncryptionConfigurationProperty#getEncrypted}
+             * @param encrypted the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder encrypted(com.aliyun.ros.cdk.core.IResolvable encrypted) {
+                this.encrypted = encrypted;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CopyEncryptionConfigurationProperty#getKmsKeyId}
+             * @param kmsKeyId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder kmsKeyId(java.lang.String kmsKeyId) {
+                this.kmsKeyId = kmsKeyId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CopyEncryptionConfigurationProperty#getKmsKeyId}
+             * @param kmsKeyId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder kmsKeyId(com.aliyun.ros.cdk.core.IResolvable kmsKeyId) {
+                this.kmsKeyId = kmsKeyId;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link CopyEncryptionConfigurationProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public CopyEncryptionConfigurationProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link CopyEncryptionConfigurationProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements CopyEncryptionConfigurationProperty {
+            private final java.lang.Object encrypted;
+            private final java.lang.Object kmsKeyId;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.encrypted = software.amazon.jsii.Kernel.get(this, "encrypted", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.kmsKeyId = software.amazon.jsii.Kernel.get(this, "kmsKeyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.encrypted = builder.encrypted;
+                this.kmsKeyId = builder.kmsKeyId;
+            }
+
+            @Override
+            public final java.lang.Object getEncrypted() {
+                return this.encrypted;
+            }
+
+            @Override
+            public final java.lang.Object getKmsKeyId() {
+                return this.kmsKeyId;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getEncrypted() != null) {
+                    data.set("encrypted", om.valueToTree(this.getEncrypted()));
+                }
+                if (this.getKmsKeyId() != null) {
+                    data.set("kmsKeyId", om.valueToTree(this.getKmsKeyId()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ecs.RosAutoSnapshotPolicy.CopyEncryptionConfigurationProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                CopyEncryptionConfigurationProperty.Jsii$Proxy that = (CopyEncryptionConfigurationProperty.Jsii$Proxy) o;
+
+                if (this.encrypted != null ? !this.encrypted.equals(that.encrypted) : that.encrypted != null) return false;
+                return this.kmsKeyId != null ? this.kmsKeyId.equals(that.kmsKeyId) : that.kmsKeyId == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.encrypted != null ? this.encrypted.hashCode() : 0;
+                result = 31 * result + (this.kmsKeyId != null ? this.kmsKeyId.hashCode() : 0);
+                return result;
+            }
+        }
     }
     /**
      */
@@ -480,6 +740,40 @@ public class RosAutoSnapshotPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param copiedSnapshotsRetentionDays This parameter is required.
+         */
+        public Builder copiedSnapshotsRetentionDays(final java.lang.Number copiedSnapshotsRetentionDays) {
+            this.props.copiedSnapshotsRetentionDays(copiedSnapshotsRetentionDays);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param copiedSnapshotsRetentionDays This parameter is required.
+         */
+        public Builder copiedSnapshotsRetentionDays(final com.aliyun.ros.cdk.core.IResolvable copiedSnapshotsRetentionDays) {
+            this.props.copiedSnapshotsRetentionDays(copiedSnapshotsRetentionDays);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param copyEncryptionConfiguration This parameter is required.
+         */
+        public Builder copyEncryptionConfiguration(final com.aliyun.ros.cdk.core.IResolvable copyEncryptionConfiguration) {
+            this.props.copyEncryptionConfiguration(copyEncryptionConfiguration);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param copyEncryptionConfiguration This parameter is required.
+         */
+        public Builder copyEncryptionConfiguration(final com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.CopyEncryptionConfigurationProperty copyEncryptionConfiguration) {
+            this.props.copyEncryptionConfiguration(copyEncryptionConfiguration);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param diskIds This parameter is required.
          */
         public Builder diskIds(final com.aliyun.ros.cdk.core.IResolvable diskIds) {
@@ -492,6 +786,23 @@ public class RosAutoSnapshotPolicy extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder diskIds(final java.util.List<? extends java.lang.Object> diskIds) {
             this.props.diskIds(diskIds);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param enableCrossRegionCopy This parameter is required.
+         */
+        public Builder enableCrossRegionCopy(final java.lang.Boolean enableCrossRegionCopy) {
+            this.props.enableCrossRegionCopy(enableCrossRegionCopy);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param enableCrossRegionCopy This parameter is required.
+         */
+        public Builder enableCrossRegionCopy(final com.aliyun.ros.cdk.core.IResolvable enableCrossRegionCopy) {
+            this.props.enableCrossRegionCopy(enableCrossRegionCopy);
             return this;
         }
 
@@ -518,6 +829,23 @@ public class RosAutoSnapshotPolicy extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy.TagsProperty> tags) {
             this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param targetCopyRegions This parameter is required.
+         */
+        public Builder targetCopyRegions(final com.aliyun.ros.cdk.core.IResolvable targetCopyRegions) {
+            this.props.targetCopyRegions(targetCopyRegions);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param targetCopyRegions This parameter is required.
+         */
+        public Builder targetCopyRegions(final java.util.List<? extends java.lang.Object> targetCopyRegions) {
+            this.props.targetCopyRegions(targetCopyRegions);
             return this;
         }
 

@@ -53,40 +53,71 @@ export interface PolicyProps {
 }
 
 /**
+ * Represents a `Policy`.
+ */
+export interface IPolicy extends ros.IResource {
+    readonly props: PolicyProps;
+
+    /**
+     * Attribute PolicyClassId: The ID of policy class.
+     */
+    readonly attrPolicyClassId: ros.IResolvable | string;
+
+    /**
+     * Attribute PolicyClassName: The name of policy class.
+     */
+    readonly attrPolicyClassName: ros.IResolvable | string;
+
+    /**
+     * Attribute PolicyConfig: Policy Configuration.
+     */
+    readonly attrPolicyConfig: ros.IResolvable | string;
+
+    /**
+     * Attribute PolicyId: The ID of the policy.
+     */
+    readonly attrPolicyId: ros.IResolvable | string;
+
+    /**
+     * Attribute PolicyName: The name of the policy.
+     */
+    readonly attrPolicyName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Policy`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-policy
  */
-export class Policy extends ros.Resource {
+export class Policy extends ros.Resource implements IPolicy {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: PolicyProps;
+    public readonly props: PolicyProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute PolicyClassId: The ID of policy class.
      */
-    public readonly attrPolicyClassId: ros.IResolvable;
+    public readonly attrPolicyClassId: ros.IResolvable | string;
 
     /**
      * Attribute PolicyClassName: The name of policy class.
      */
-    public readonly attrPolicyClassName: ros.IResolvable;
+    public readonly attrPolicyClassName: ros.IResolvable | string;
 
     /**
      * Attribute PolicyConfig: Policy Configuration.
      */
-    public readonly attrPolicyConfig: ros.IResolvable;
+    public readonly attrPolicyConfig: ros.IResolvable | string;
 
     /**
      * Attribute PolicyId: The ID of the policy.
      */
-    public readonly attrPolicyId: ros.IResolvable;
+    public readonly attrPolicyId: ros.IResolvable | string;
 
     /**
      * Attribute PolicyName: The name of the policy.
      */
-    public readonly attrPolicyName: ros.IResolvable;
+    public readonly attrPolicyName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -12,44 +12,54 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::PAI::Dataset`, which is used to create a dataset.
 type Dataset interface {
 	alicloudroscdkcore.Resource
+	IDataset
 	// Attribute Accessibility: Workspace visibility.
-	AttrAccessibility() alicloudroscdkcore.IResolvable
+	AttrAccessibility() interface{}
 	// Attribute CreateTime: The creation time of the resource.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute DatasetId: The first ID of the resource.
-	AttrDatasetId() alicloudroscdkcore.IResolvable
+	AttrDatasetId() interface{}
 	// Attribute DatasetName: The name of the dataset.
-	AttrDatasetName() alicloudroscdkcore.IResolvable
+	AttrDatasetName() interface{}
 	// Attribute DataSourceType: The data source type.
-	AttrDataSourceType() alicloudroscdkcore.IResolvable
+	AttrDataSourceType() interface{}
 	// Attribute DataType: The dataset type.
 	//
 	// The default value is COMMON.
-	AttrDataType() alicloudroscdkcore.IResolvable
+	AttrDataType() interface{}
 	// Attribute Description: Custom descriptions of datasets to distinguish between different datasets.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute GmtModifiedTime: Update time.
-	AttrGmtModifiedTime() alicloudroscdkcore.IResolvable
+	AttrGmtModifiedTime() interface{}
 	// Attribute Options: The extended field, which is of the JsonString type.
-	AttrOptions() alicloudroscdkcore.IResolvable
+	AttrOptions() interface{}
 	// Attribute OwnerId: The ID of the primary account.
-	AttrOwnerId() alicloudroscdkcore.IResolvable
+	AttrOwnerId() interface{}
 	// Attribute Property: The properties of the dataset.
-	AttrProperty() alicloudroscdkcore.IResolvable
+	AttrProperty() interface{}
 	// Attribute SourceId: The data source ID.
-	AttrSourceId() alicloudroscdkcore.IResolvable
+	AttrSourceId() interface{}
 	// Attribute SourceType: The data source type.
 	//
 	// The default value is USER.
-	AttrSourceType() alicloudroscdkcore.IResolvable
+	AttrSourceType() interface{}
 	// Attribute Uri: The Uri configuration sample is as follows:.
-	AttrUri() alicloudroscdkcore.IResolvable
+	AttrUri() interface{}
 	// Attribute UserId: The ID of the user to which the dataset belongs.
-	AttrUserId() alicloudroscdkcore.IResolvable
+	AttrUserId() interface{}
 	// Attribute WorkspaceId: The ID of the workspace where the dataset is located.
-	AttrWorkspaceId() alicloudroscdkcore.IResolvable
+	AttrWorkspaceId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -64,7 +74,6 @@ type Dataset interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DatasetProps
-	SetProps(val *DatasetProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -77,6 +86,9 @@ type Dataset interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -129,10 +141,11 @@ type Dataset interface {
 // The jsii proxy struct for Dataset
 type jsiiProxy_Dataset struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDataset
 }
 
-func (j *jsiiProxy_Dataset) AttrAccessibility() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Dataset) AttrAccessibility() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAccessibility",
@@ -141,8 +154,8 @@ func (j *jsiiProxy_Dataset) AttrAccessibility() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Dataset) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Dataset) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -151,8 +164,8 @@ func (j *jsiiProxy_Dataset) AttrCreateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Dataset) AttrDatasetId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Dataset) AttrDatasetId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDatasetId",
@@ -161,8 +174,8 @@ func (j *jsiiProxy_Dataset) AttrDatasetId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Dataset) AttrDatasetName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Dataset) AttrDatasetName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDatasetName",
@@ -171,8 +184,8 @@ func (j *jsiiProxy_Dataset) AttrDatasetName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Dataset) AttrDataSourceType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Dataset) AttrDataSourceType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDataSourceType",
@@ -181,8 +194,8 @@ func (j *jsiiProxy_Dataset) AttrDataSourceType() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_Dataset) AttrDataType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Dataset) AttrDataType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDataType",
@@ -191,8 +204,8 @@ func (j *jsiiProxy_Dataset) AttrDataType() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Dataset) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Dataset) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -201,8 +214,8 @@ func (j *jsiiProxy_Dataset) AttrDescription() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Dataset) AttrGmtModifiedTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Dataset) AttrGmtModifiedTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrGmtModifiedTime",
@@ -211,8 +224,8 @@ func (j *jsiiProxy_Dataset) AttrGmtModifiedTime() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Dataset) AttrOptions() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Dataset) AttrOptions() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOptions",
@@ -221,8 +234,8 @@ func (j *jsiiProxy_Dataset) AttrOptions() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Dataset) AttrOwnerId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Dataset) AttrOwnerId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOwnerId",
@@ -231,8 +244,8 @@ func (j *jsiiProxy_Dataset) AttrOwnerId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Dataset) AttrProperty() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Dataset) AttrProperty() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrProperty",
@@ -241,8 +254,8 @@ func (j *jsiiProxy_Dataset) AttrProperty() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Dataset) AttrSourceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Dataset) AttrSourceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSourceId",
@@ -251,8 +264,8 @@ func (j *jsiiProxy_Dataset) AttrSourceId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Dataset) AttrSourceType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Dataset) AttrSourceType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSourceType",
@@ -261,8 +274,8 @@ func (j *jsiiProxy_Dataset) AttrSourceType() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Dataset) AttrUri() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Dataset) AttrUri() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUri",
@@ -271,8 +284,8 @@ func (j *jsiiProxy_Dataset) AttrUri() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Dataset) AttrUserId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Dataset) AttrUserId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUserId",
@@ -281,8 +294,8 @@ func (j *jsiiProxy_Dataset) AttrUserId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Dataset) AttrWorkspaceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Dataset) AttrWorkspaceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrWorkspaceId",
@@ -296,6 +309,16 @@ func (j *jsiiProxy_Dataset) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Dataset) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -433,17 +456,6 @@ func (j *jsiiProxy_Dataset)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Dataset)SetProps(val *DatasetProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Dataset)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -535,6 +547,45 @@ func (d *jsiiProxy_Dataset) ApplyRemovalPolicy(policy alicloudroscdkcore.Removal
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_Dataset) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_Dataset) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_Dataset) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_Dataset) GeneratePhysicalName() *string {

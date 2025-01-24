@@ -12,66 +12,76 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::CDDC::DedicatedHostGroup`.
 type DedicatedHostGroup interface {
 	alicloudroscdkcore.Resource
+	IDedicatedHostGroup
 	// Attribute AllocationPolicy: Allocation Policy.
-	AttrAllocationPolicy() alicloudroscdkcore.IResolvable
+	AttrAllocationPolicy() interface{}
 	// Attribute BastionInstanceId: BastionInstanceId.
-	AttrBastionInstanceId() alicloudroscdkcore.IResolvable
+	AttrBastionInstanceId() interface{}
 	// Attribute Category: The dedicated cluster family to which the host belongs.
-	AttrCategory() alicloudroscdkcore.IResolvable
+	AttrCategory() interface{}
 	// Attribute CpuAllocatedAmount: CpuAllocatedAmount.
-	AttrCpuAllocatedAmount() alicloudroscdkcore.IResolvable
+	AttrCpuAllocatedAmount() interface{}
 	// Attribute CpuAllocateRation: CpuAllocateRation.
-	AttrCpuAllocateRation() alicloudroscdkcore.IResolvable
+	AttrCpuAllocateRation() interface{}
 	// Attribute CpuAllocationRatio: Cpu Allocation Ratio.
-	AttrCpuAllocationRatio() alicloudroscdkcore.IResolvable
+	AttrCpuAllocationRatio() interface{}
 	// Attribute CreateTime: Create Time.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute DedicatedHostCountGroupByHostType: DedicatedHostCountGroupByHostType.
-	AttrDedicatedHostCountGroupByHostType() alicloudroscdkcore.IResolvable
+	AttrDedicatedHostCountGroupByHostType() interface{}
 	// Attribute DedicatedHostGroupDesc: Dedicated Host Group Description.
-	AttrDedicatedHostGroupDesc() alicloudroscdkcore.IResolvable
+	AttrDedicatedHostGroupDesc() interface{}
 	// Attribute DedicatedHostGroupId: Dedicated Host Group ID.
-	AttrDedicatedHostGroupId() alicloudroscdkcore.IResolvable
+	AttrDedicatedHostGroupId() interface{}
 	// Attribute DeployType: DeployType.
-	AttrDeployType() alicloudroscdkcore.IResolvable
+	AttrDeployType() interface{}
 	// Attribute DiskAllocatedAmount: DiskAllocatedAmount.
-	AttrDiskAllocatedAmount() alicloudroscdkcore.IResolvable
+	AttrDiskAllocatedAmount() interface{}
 	// Attribute DiskAllocateRation: DiskAllocateRation.
-	AttrDiskAllocateRation() alicloudroscdkcore.IResolvable
+	AttrDiskAllocateRation() interface{}
 	// Attribute DiskAllocationRatio: Disk Allocation Ratio.
-	AttrDiskAllocationRatio() alicloudroscdkcore.IResolvable
+	AttrDiskAllocationRatio() interface{}
 	// Attribute DiskUsedAmount: DiskUsedAmount.
-	AttrDiskUsedAmount() alicloudroscdkcore.IResolvable
+	AttrDiskUsedAmount() interface{}
 	// Attribute DiskUtility: DiskUtility.
-	AttrDiskUtility() alicloudroscdkcore.IResolvable
+	AttrDiskUtility() interface{}
 	// Attribute Engine: Database Engine Type.
-	AttrEngine() alicloudroscdkcore.IResolvable
+	AttrEngine() interface{}
 	// Attribute HostNumber: Total Host Number.
-	AttrHostNumber() alicloudroscdkcore.IResolvable
+	AttrHostNumber() interface{}
 	// Attribute HostReplacePolicy: Host Replace Policy.
-	AttrHostReplacePolicy() alicloudroscdkcore.IResolvable
+	AttrHostReplacePolicy() interface{}
 	// Attribute InstanceNumber: Total Instance Number.
-	AttrInstanceNumber() alicloudroscdkcore.IResolvable
+	AttrInstanceNumber() interface{}
 	// Attribute MemAllocatedAmount: MemAllocatedAmount.
-	AttrMemAllocatedAmount() alicloudroscdkcore.IResolvable
+	AttrMemAllocatedAmount() interface{}
 	// Attribute MemAllocateRation: MemAllocateRation.
-	AttrMemAllocateRation() alicloudroscdkcore.IResolvable
+	AttrMemAllocateRation() interface{}
 	// Attribute MemAllocationRatio: Memory Allocation Ratio.
-	AttrMemAllocationRatio() alicloudroscdkcore.IResolvable
+	AttrMemAllocationRatio() interface{}
 	// Attribute MemUsedAmount: MemUsedAmount.
-	AttrMemUsedAmount() alicloudroscdkcore.IResolvable
+	AttrMemUsedAmount() interface{}
 	// Attribute MemUtility: MemUtility.
-	AttrMemUtility() alicloudroscdkcore.IResolvable
+	AttrMemUtility() interface{}
 	// Attribute OpenPermission: Whether Open OS Permission.
-	AttrOpenPermission() alicloudroscdkcore.IResolvable
+	AttrOpenPermission() interface{}
 	// Attribute Text: Text.
-	AttrText() alicloudroscdkcore.IResolvable
+	AttrText() interface{}
 	// Attribute VpcId: VPC ID.
-	AttrVpcId() alicloudroscdkcore.IResolvable
+	AttrVpcId() interface{}
 	// Attribute ZoneIdList: ZoneIDList.
-	AttrZoneIdList() alicloudroscdkcore.IResolvable
+	AttrZoneIdList() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -86,7 +96,6 @@ type DedicatedHostGroup interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DedicatedHostGroupProps
-	SetProps(val *DedicatedHostGroupProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -99,6 +108,9 @@ type DedicatedHostGroup interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -151,10 +163,11 @@ type DedicatedHostGroup interface {
 // The jsii proxy struct for DedicatedHostGroup
 type jsiiProxy_DedicatedHostGroup struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDedicatedHostGroup
 }
 
-func (j *jsiiProxy_DedicatedHostGroup) AttrAllocationPolicy() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostGroup) AttrAllocationPolicy() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAllocationPolicy",
@@ -163,8 +176,8 @@ func (j *jsiiProxy_DedicatedHostGroup) AttrAllocationPolicy() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostGroup) AttrBastionInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostGroup) AttrBastionInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBastionInstanceId",
@@ -173,8 +186,8 @@ func (j *jsiiProxy_DedicatedHostGroup) AttrBastionInstanceId() alicloudroscdkcor
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostGroup) AttrCategory() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostGroup) AttrCategory() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCategory",
@@ -183,8 +196,8 @@ func (j *jsiiProxy_DedicatedHostGroup) AttrCategory() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostGroup) AttrCpuAllocatedAmount() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostGroup) AttrCpuAllocatedAmount() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCpuAllocatedAmount",
@@ -193,8 +206,8 @@ func (j *jsiiProxy_DedicatedHostGroup) AttrCpuAllocatedAmount() alicloudroscdkco
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostGroup) AttrCpuAllocateRation() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostGroup) AttrCpuAllocateRation() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCpuAllocateRation",
@@ -203,8 +216,8 @@ func (j *jsiiProxy_DedicatedHostGroup) AttrCpuAllocateRation() alicloudroscdkcor
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostGroup) AttrCpuAllocationRatio() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostGroup) AttrCpuAllocationRatio() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCpuAllocationRatio",
@@ -213,8 +226,8 @@ func (j *jsiiProxy_DedicatedHostGroup) AttrCpuAllocationRatio() alicloudroscdkco
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostGroup) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostGroup) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -223,8 +236,8 @@ func (j *jsiiProxy_DedicatedHostGroup) AttrCreateTime() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostGroup) AttrDedicatedHostCountGroupByHostType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostGroup) AttrDedicatedHostCountGroupByHostType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDedicatedHostCountGroupByHostType",
@@ -233,8 +246,8 @@ func (j *jsiiProxy_DedicatedHostGroup) AttrDedicatedHostCountGroupByHostType() a
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostGroup) AttrDedicatedHostGroupDesc() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostGroup) AttrDedicatedHostGroupDesc() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDedicatedHostGroupDesc",
@@ -243,8 +256,8 @@ func (j *jsiiProxy_DedicatedHostGroup) AttrDedicatedHostGroupDesc() alicloudrosc
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostGroup) AttrDedicatedHostGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostGroup) AttrDedicatedHostGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDedicatedHostGroupId",
@@ -253,8 +266,8 @@ func (j *jsiiProxy_DedicatedHostGroup) AttrDedicatedHostGroupId() alicloudroscdk
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostGroup) AttrDeployType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostGroup) AttrDeployType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDeployType",
@@ -263,8 +276,8 @@ func (j *jsiiProxy_DedicatedHostGroup) AttrDeployType() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostGroup) AttrDiskAllocatedAmount() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostGroup) AttrDiskAllocatedAmount() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDiskAllocatedAmount",
@@ -273,8 +286,8 @@ func (j *jsiiProxy_DedicatedHostGroup) AttrDiskAllocatedAmount() alicloudroscdkc
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostGroup) AttrDiskAllocateRation() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostGroup) AttrDiskAllocateRation() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDiskAllocateRation",
@@ -283,8 +296,8 @@ func (j *jsiiProxy_DedicatedHostGroup) AttrDiskAllocateRation() alicloudroscdkco
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostGroup) AttrDiskAllocationRatio() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostGroup) AttrDiskAllocationRatio() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDiskAllocationRatio",
@@ -293,8 +306,8 @@ func (j *jsiiProxy_DedicatedHostGroup) AttrDiskAllocationRatio() alicloudroscdkc
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostGroup) AttrDiskUsedAmount() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostGroup) AttrDiskUsedAmount() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDiskUsedAmount",
@@ -303,8 +316,8 @@ func (j *jsiiProxy_DedicatedHostGroup) AttrDiskUsedAmount() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostGroup) AttrDiskUtility() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostGroup) AttrDiskUtility() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDiskUtility",
@@ -313,8 +326,8 @@ func (j *jsiiProxy_DedicatedHostGroup) AttrDiskUtility() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostGroup) AttrEngine() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostGroup) AttrEngine() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEngine",
@@ -323,8 +336,8 @@ func (j *jsiiProxy_DedicatedHostGroup) AttrEngine() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostGroup) AttrHostNumber() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostGroup) AttrHostNumber() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHostNumber",
@@ -333,8 +346,8 @@ func (j *jsiiProxy_DedicatedHostGroup) AttrHostNumber() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostGroup) AttrHostReplacePolicy() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostGroup) AttrHostReplacePolicy() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHostReplacePolicy",
@@ -343,8 +356,8 @@ func (j *jsiiProxy_DedicatedHostGroup) AttrHostReplacePolicy() alicloudroscdkcor
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostGroup) AttrInstanceNumber() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostGroup) AttrInstanceNumber() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceNumber",
@@ -353,8 +366,8 @@ func (j *jsiiProxy_DedicatedHostGroup) AttrInstanceNumber() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostGroup) AttrMemAllocatedAmount() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostGroup) AttrMemAllocatedAmount() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMemAllocatedAmount",
@@ -363,8 +376,8 @@ func (j *jsiiProxy_DedicatedHostGroup) AttrMemAllocatedAmount() alicloudroscdkco
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostGroup) AttrMemAllocateRation() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostGroup) AttrMemAllocateRation() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMemAllocateRation",
@@ -373,8 +386,8 @@ func (j *jsiiProxy_DedicatedHostGroup) AttrMemAllocateRation() alicloudroscdkcor
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostGroup) AttrMemAllocationRatio() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostGroup) AttrMemAllocationRatio() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMemAllocationRatio",
@@ -383,8 +396,8 @@ func (j *jsiiProxy_DedicatedHostGroup) AttrMemAllocationRatio() alicloudroscdkco
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostGroup) AttrMemUsedAmount() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostGroup) AttrMemUsedAmount() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMemUsedAmount",
@@ -393,8 +406,8 @@ func (j *jsiiProxy_DedicatedHostGroup) AttrMemUsedAmount() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostGroup) AttrMemUtility() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostGroup) AttrMemUtility() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMemUtility",
@@ -403,8 +416,8 @@ func (j *jsiiProxy_DedicatedHostGroup) AttrMemUtility() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostGroup) AttrOpenPermission() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostGroup) AttrOpenPermission() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOpenPermission",
@@ -413,8 +426,8 @@ func (j *jsiiProxy_DedicatedHostGroup) AttrOpenPermission() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostGroup) AttrText() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostGroup) AttrText() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrText",
@@ -423,8 +436,8 @@ func (j *jsiiProxy_DedicatedHostGroup) AttrText() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostGroup) AttrVpcId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostGroup) AttrVpcId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVpcId",
@@ -433,8 +446,8 @@ func (j *jsiiProxy_DedicatedHostGroup) AttrVpcId() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHostGroup) AttrZoneIdList() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHostGroup) AttrZoneIdList() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrZoneIdList",
@@ -448,6 +461,16 @@ func (j *jsiiProxy_DedicatedHostGroup) EnableResourcePropertyConstraint() *bool 
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DedicatedHostGroup) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -585,17 +608,6 @@ func (j *jsiiProxy_DedicatedHostGroup)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DedicatedHostGroup)SetProps(val *DedicatedHostGroupProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_DedicatedHostGroup)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -687,6 +699,45 @@ func (d *jsiiProxy_DedicatedHostGroup) ApplyRemovalPolicy(policy alicloudroscdkc
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_DedicatedHostGroup) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DedicatedHostGroup) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DedicatedHostGroup) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_DedicatedHostGroup) GeneratePhysicalName() *string {

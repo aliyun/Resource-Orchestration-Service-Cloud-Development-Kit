@@ -26,50 +26,91 @@ export interface TransitRouterProps {
 }
 
 /**
+ * Represents a `TransitRouter`.
+ */
+export interface ITransitRouter extends ros.IResource {
+    readonly props: TransitRouterProps;
+
+    /**
+     * Attribute AliUid: AliUid
+     */
+    readonly attrAliUid: ros.IResolvable | string;
+
+    /**
+     * Attribute CenId: CenId
+     */
+    readonly attrCenId: ros.IResolvable | string;
+
+    /**
+     * Attribute SystemTransitRouterRouteTableId: The system route table ID of transit router.
+     */
+    readonly attrSystemTransitRouterRouteTableId: ros.IResolvable | string;
+
+    /**
+     * Attribute TransitRouterDescription: TransitRouterDescription
+     */
+    readonly attrTransitRouterDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute TransitRouterId: TransitRouterId
+     */
+    readonly attrTransitRouterId: ros.IResolvable | string;
+
+    /**
+     * Attribute TransitRouterName: TransitRouterName
+     */
+    readonly attrTransitRouterName: ros.IResolvable | string;
+
+    /**
+     * Attribute Type: Type
+     */
+    readonly attrType: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouter`, which is used to create an Enterprise Edition transit router.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouter`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouter
  */
-export class TransitRouter extends ros.Resource {
+export class TransitRouter extends ros.Resource implements ITransitRouter {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: TransitRouterProps;
+    public readonly props: TransitRouterProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AliUid: AliUid
      */
-    public readonly attrAliUid: ros.IResolvable;
+    public readonly attrAliUid: ros.IResolvable | string;
 
     /**
      * Attribute CenId: CenId
      */
-    public readonly attrCenId: ros.IResolvable;
+    public readonly attrCenId: ros.IResolvable | string;
 
     /**
      * Attribute SystemTransitRouterRouteTableId: The system route table ID of transit router.
      */
-    public readonly attrSystemTransitRouterRouteTableId: ros.IResolvable;
+    public readonly attrSystemTransitRouterRouteTableId: ros.IResolvable | string;
 
     /**
      * Attribute TransitRouterDescription: TransitRouterDescription
      */
-    public readonly attrTransitRouterDescription: ros.IResolvable;
+    public readonly attrTransitRouterDescription: ros.IResolvable | string;
 
     /**
      * Attribute TransitRouterId: TransitRouterId
      */
-    public readonly attrTransitRouterId: ros.IResolvable;
+    public readonly attrTransitRouterId: ros.IResolvable | string;
 
     /**
      * Attribute TransitRouterName: TransitRouterName
      */
-    public readonly attrTransitRouterName: ros.IResolvable;
+    public readonly attrTransitRouterName: ros.IResolvable | string;
 
     /**
      * Attribute Type: Type
      */
-    public readonly attrType: ros.IResolvable;
+    public readonly attrType: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

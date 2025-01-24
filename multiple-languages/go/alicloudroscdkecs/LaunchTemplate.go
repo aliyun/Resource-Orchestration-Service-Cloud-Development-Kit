@@ -14,16 +14,26 @@ import (
 // You can use a launch template to create an Elastic Compute Service (ECS) instance.
 type LaunchTemplate interface {
 	alicloudroscdkcore.Resource
+	ILaunchTemplate
 	// Attribute DefaultVersionNumber: The default version number of launch template.
-	AttrDefaultVersionNumber() alicloudroscdkcore.IResolvable
+	AttrDefaultVersionNumber() interface{}
 	// Attribute LatestVersionNumber: The latest version number of launch template.
-	AttrLatestVersionNumber() alicloudroscdkcore.IResolvable
+	AttrLatestVersionNumber() interface{}
 	// Attribute LaunchTemplateId: The id of launch template.
-	AttrLaunchTemplateId() alicloudroscdkcore.IResolvable
+	AttrLaunchTemplateId() interface{}
 	// Attribute LaunchTemplateName: The name of launch template.
-	AttrLaunchTemplateName() alicloudroscdkcore.IResolvable
+	AttrLaunchTemplateName() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -38,7 +48,6 @@ type LaunchTemplate interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *LaunchTemplateProps
-	SetProps(val *LaunchTemplateProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -51,6 +60,9 @@ type LaunchTemplate interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -103,10 +115,11 @@ type LaunchTemplate interface {
 // The jsii proxy struct for LaunchTemplate
 type jsiiProxy_LaunchTemplate struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ILaunchTemplate
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrDefaultVersionNumber() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrDefaultVersionNumber() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDefaultVersionNumber",
@@ -115,8 +128,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrDefaultVersionNumber() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrLatestVersionNumber() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrLatestVersionNumber() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLatestVersionNumber",
@@ -125,8 +138,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrLatestVersionNumber() alicloudroscdkcore.
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrLaunchTemplateId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrLaunchTemplateId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLaunchTemplateId",
@@ -135,8 +148,8 @@ func (j *jsiiProxy_LaunchTemplate) AttrLaunchTemplateId() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_LaunchTemplate) AttrLaunchTemplateName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LaunchTemplate) AttrLaunchTemplateName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLaunchTemplateName",
@@ -150,6 +163,16 @@ func (j *jsiiProxy_LaunchTemplate) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LaunchTemplate) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -287,17 +310,6 @@ func (j *jsiiProxy_LaunchTemplate)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_LaunchTemplate)SetProps(val *LaunchTemplateProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_LaunchTemplate)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -389,6 +401,45 @@ func (l *jsiiProxy_LaunchTemplate) ApplyRemovalPolicy(policy alicloudroscdkcore.
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (l *jsiiProxy_LaunchTemplate) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		l,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (l *jsiiProxy_LaunchTemplate) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		l,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (l *jsiiProxy_LaunchTemplate) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		l,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (l *jsiiProxy_LaunchTemplate) GeneratePhysicalName() *string {

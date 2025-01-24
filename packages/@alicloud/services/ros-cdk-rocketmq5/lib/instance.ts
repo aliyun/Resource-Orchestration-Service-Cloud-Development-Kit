@@ -78,35 +78,61 @@ export interface InstanceProps {
 }
 
 /**
+ * Represents a `Instance`.
+ */
+export interface IInstance extends ros.IResource {
+    readonly props: InstanceProps;
+
+    /**
+     * Attribute InstanceId: Instance ID created.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceName: Instance name.
+     */
+    readonly attrInstanceName: ros.IResolvable | string;
+
+    /**
+     * Attribute InternetEndpoint: Internet endpoint.
+     */
+    readonly attrInternetEndpoint: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcEndpoint: VPC endpoint.
+     */
+    readonly attrVpcEndpoint: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ROCKETMQ5::Instance`, which is used to create an ApsaraMQ for RocketMQ 5.0 instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-instance
  */
-export class Instance extends ros.Resource {
+export class Instance extends ros.Resource implements IInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InstanceProps;
+    public readonly props: InstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceId: Instance ID created.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute InstanceName: Instance name.
      */
-    public readonly attrInstanceName: ros.IResolvable;
+    public readonly attrInstanceName: ros.IResolvable | string;
 
     /**
      * Attribute InternetEndpoint: Internet endpoint.
      */
-    public readonly attrInternetEndpoint: ros.IResolvable;
+    public readonly attrInternetEndpoint: ros.IResolvable | string;
 
     /**
      * Attribute VpcEndpoint: VPC endpoint.
      */
-    public readonly attrVpcEndpoint: ros.IResolvable;
+    public readonly attrVpcEndpoint: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

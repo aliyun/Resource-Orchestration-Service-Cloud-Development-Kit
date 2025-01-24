@@ -52,10 +52,6 @@ func (j *jsiiProxy_Tensorboard) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_Tensorboard) validateSetPropsParameters(val *TensorboardProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_Tensorboard) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

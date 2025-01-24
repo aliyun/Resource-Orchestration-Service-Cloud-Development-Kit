@@ -54,20 +54,31 @@ export interface ClusterApplicationResourcesProps {
 }
 
 /**
+ * Represents a `ClusterApplicationResources`.
+ */
+export interface IClusterApplicationResources extends ros.IResource {
+    readonly props: ClusterApplicationResourcesProps;
+
+    /**
+     * Attribute Response: Query result of kubernetes resource(s).
+     */
+    readonly attrResponse: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::CS::ClusterApplicationResources`, which is used to query the information about resources of a specified type in a Container Service for Kubernetes (ACK) cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusterApplicationResources`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-clusterapplicationresources
  */
-export class ClusterApplicationResources extends ros.Resource {
+export class ClusterApplicationResources extends ros.Resource implements IClusterApplicationResources {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ClusterApplicationResourcesProps;
+    public readonly props: ClusterApplicationResourcesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Response: Query result of kubernetes resource(s).
      */
-    public readonly attrResponse: ros.IResolvable;
+    public readonly attrResponse: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

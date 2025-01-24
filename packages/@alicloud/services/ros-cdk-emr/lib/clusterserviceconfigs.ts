@@ -21,20 +21,31 @@ export interface ClusterServiceConfigsProps {
 }
 
 /**
+ * Represents a `ClusterServiceConfigs`.
+ */
+export interface IClusterServiceConfigs extends ros.IResource {
+    readonly props: ClusterServiceConfigsProps;
+
+    /**
+     * Attribute ClusterId: The ID of the cluster.
+     */
+    readonly attrClusterId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::EMR::ClusterServiceConfigs`, which is used to create or modify the configurations of a specified service in a cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusterServiceConfigs`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-clusterserviceconfigs
  */
-export class ClusterServiceConfigs extends ros.Resource {
+export class ClusterServiceConfigs extends ros.Resource implements IClusterServiceConfigs {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ClusterServiceConfigsProps;
+    public readonly props: ClusterServiceConfigsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ClusterId: The ID of the cluster.
      */
-    public readonly attrClusterId: ros.IResolvable;
+    public readonly attrClusterId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

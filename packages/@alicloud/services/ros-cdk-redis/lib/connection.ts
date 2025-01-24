@@ -36,20 +36,31 @@ export interface ConnectionProps {
 }
 
 /**
+ * Represents a `Connection`.
+ */
+export interface IConnection extends ros.IResource {
+    readonly props: ConnectionProps;
+
+    /**
+     * Attribute ConnectionString: The allocated connection string.
+     */
+    readonly attrConnectionString: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::Connection`, which is used to apply for a public endpoint for an ApsaraDB for Redis instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosConnection`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-connection
  */
-export class Connection extends ros.Resource {
+export class Connection extends ros.Resource implements IConnection {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ConnectionProps;
+    public readonly props: ConnectionProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ConnectionString: The allocated connection string.
      */
-    public readonly attrConnectionString: ros.IResolvable;
+    public readonly attrConnectionString: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

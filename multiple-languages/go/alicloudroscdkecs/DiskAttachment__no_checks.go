@@ -52,10 +52,6 @@ func (j *jsiiProxy_DiskAttachment) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_DiskAttachment) validateSetPropsParameters(val *DiskAttachmentProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_DiskAttachment) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

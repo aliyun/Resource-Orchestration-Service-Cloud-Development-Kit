@@ -431,6 +431,30 @@ func (j *jsiiProxy_RosASKCluster) validateSetKubernetesVersionParameters(val int
 	return nil
 }
 
+func (j *jsiiProxy_RosASKCluster) validateSetMaintenanceWindowParameters(val interface{}) error {
+	switch val.(type) {
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	case *RosASKCluster_MaintenanceWindowProperty:
+		val := val.(*RosASKCluster_MaintenanceWindowProperty)
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	case RosASKCluster_MaintenanceWindowProperty:
+		val_ := val.(RosASKCluster_MaintenanceWindowProperty)
+		val := &val_
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosASKCluster_MaintenanceWindowProperty; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosASKCluster) validateSetNameParameters(val interface{}) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")

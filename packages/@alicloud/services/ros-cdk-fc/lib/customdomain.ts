@@ -36,25 +36,41 @@ export interface CustomDomainProps {
 }
 
 /**
+ * Represents a `CustomDomain`.
+ */
+export interface ICustomDomain extends ros.IResource {
+    readonly props: CustomDomainProps;
+
+    /**
+     * Attribute Domain: The domain with protocol.
+     */
+    readonly attrDomain: ros.IResolvable | string;
+
+    /**
+     * Attribute DomainName: The domain name
+     */
+    readonly attrDomainName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::FC::CustomDomain`, which is used to create a custom domain name.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCustomDomain`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-customdomain
  */
-export class CustomDomain extends ros.Resource {
+export class CustomDomain extends ros.Resource implements ICustomDomain {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: CustomDomainProps;
+    public readonly props: CustomDomainProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Domain: The domain with protocol.
      */
-    public readonly attrDomain: ros.IResolvable;
+    public readonly attrDomain: ros.IResolvable | string;
 
     /**
      * Attribute DomainName: The domain name
      */
-    public readonly attrDomainName: ros.IResolvable;
+    public readonly attrDomainName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

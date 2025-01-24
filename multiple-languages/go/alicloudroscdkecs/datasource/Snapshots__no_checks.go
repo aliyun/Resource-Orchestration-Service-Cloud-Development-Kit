@@ -52,10 +52,6 @@ func (j *jsiiProxy_Snapshots) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_Snapshots) validateSetPropsParameters(val *SnapshotsProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_Snapshots) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

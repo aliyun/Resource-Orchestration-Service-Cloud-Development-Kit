@@ -12,14 +12,24 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::GA::BasicAcceleratorIpEndpointRelation`, which is used to create a mapping between an accelerated IP address and an endpoint for a basic Global Accelerator (GA) instance.
 type BasicAcceleratorIpEndpointRelation interface {
 	alicloudroscdkcore.Resource
+	IBasicAcceleratorIpEndpointRelation
 	// Attribute AccelerateIpId: The ID of the accelerated IP address.
-	AttrAccelerateIpId() alicloudroscdkcore.IResolvable
+	AttrAccelerateIpId() interface{}
 	// Attribute AcceleratorId: The ID of the basic GA instance.
-	AttrAcceleratorId() alicloudroscdkcore.IResolvable
+	AttrAcceleratorId() interface{}
 	// Attribute EndpointId: The ID of the endpoint.
-	AttrEndpointId() alicloudroscdkcore.IResolvable
+	AttrEndpointId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -34,7 +44,6 @@ type BasicAcceleratorIpEndpointRelation interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *BasicAcceleratorIpEndpointRelationProps
-	SetProps(val *BasicAcceleratorIpEndpointRelationProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -47,6 +56,9 @@ type BasicAcceleratorIpEndpointRelation interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -99,10 +111,11 @@ type BasicAcceleratorIpEndpointRelation interface {
 // The jsii proxy struct for BasicAcceleratorIpEndpointRelation
 type jsiiProxy_BasicAcceleratorIpEndpointRelation struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IBasicAcceleratorIpEndpointRelation
 }
 
-func (j *jsiiProxy_BasicAcceleratorIpEndpointRelation) AttrAccelerateIpId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BasicAcceleratorIpEndpointRelation) AttrAccelerateIpId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAccelerateIpId",
@@ -111,8 +124,8 @@ func (j *jsiiProxy_BasicAcceleratorIpEndpointRelation) AttrAccelerateIpId() alic
 	return returns
 }
 
-func (j *jsiiProxy_BasicAcceleratorIpEndpointRelation) AttrAcceleratorId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BasicAcceleratorIpEndpointRelation) AttrAcceleratorId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAcceleratorId",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_BasicAcceleratorIpEndpointRelation) AttrAcceleratorId() alicl
 	return returns
 }
 
-func (j *jsiiProxy_BasicAcceleratorIpEndpointRelation) AttrEndpointId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_BasicAcceleratorIpEndpointRelation) AttrEndpointId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEndpointId",
@@ -136,6 +149,16 @@ func (j *jsiiProxy_BasicAcceleratorIpEndpointRelation) EnableResourcePropertyCon
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BasicAcceleratorIpEndpointRelation) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -273,17 +296,6 @@ func (j *jsiiProxy_BasicAcceleratorIpEndpointRelation)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_BasicAcceleratorIpEndpointRelation)SetProps(val *BasicAcceleratorIpEndpointRelationProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_BasicAcceleratorIpEndpointRelation)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -375,6 +387,45 @@ func (b *jsiiProxy_BasicAcceleratorIpEndpointRelation) ApplyRemovalPolicy(policy
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (b *jsiiProxy_BasicAcceleratorIpEndpointRelation) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		b,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (b *jsiiProxy_BasicAcceleratorIpEndpointRelation) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		b,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (b *jsiiProxy_BasicAcceleratorIpEndpointRelation) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		b,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (b *jsiiProxy_BasicAcceleratorIpEndpointRelation) GeneratePhysicalName() *string {

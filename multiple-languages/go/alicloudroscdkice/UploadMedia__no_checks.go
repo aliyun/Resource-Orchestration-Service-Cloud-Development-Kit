@@ -52,10 +52,6 @@ func (j *jsiiProxy_UploadMedia) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_UploadMedia) validateSetPropsParameters(val *UploadMediaProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_UploadMedia) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Represents a ROS resource.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:03.715Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:33.740Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosResource")
 public class RosResource extends com.aliyun.ros.cdk.core.RosRefElement {
 
@@ -180,6 +180,18 @@ public class RosResource extends com.aliyun.ros.cdk.core.RosRefElement {
      */
     public void applyRemovalPolicy() {
         software.amazon.jsii.Kernel.call(this, "applyRemovalPolicy", software.amazon.jsii.NativeType.VOID);
+    }
+
+    public @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.RosCondition fetchCondition() {
+        return software.amazon.jsii.Kernel.call(this, "fetchCondition", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.RosCondition.class));
+    }
+
+    public @org.jetbrains.annotations.Nullable java.lang.String fetchDesc() {
+        return software.amazon.jsii.Kernel.call(this, "fetchDesc", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    }
+
+    public @org.jetbrains.annotations.NotNull java.util.List<java.lang.String> fetchRosDependency() {
+        return java.util.Collections.unmodifiableList(software.amazon.jsii.Kernel.call(this, "fetchRosDependency", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class))));
     }
 
     /**

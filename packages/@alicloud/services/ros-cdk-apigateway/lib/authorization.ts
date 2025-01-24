@@ -42,14 +42,20 @@ export interface AuthorizationProps {
 }
 
 /**
+ * Represents a `Authorization`.
+ */
+export interface IAuthorization extends ros.IResource {
+    readonly props: AuthorizationProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Authorization`, which is used to authorize applications to call APIs.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAuthorization`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-authorization
  */
-export class Authorization extends ros.Resource {
+export class Authorization extends ros.Resource implements IAuthorization {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AuthorizationProps;
+    public readonly props: AuthorizationProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

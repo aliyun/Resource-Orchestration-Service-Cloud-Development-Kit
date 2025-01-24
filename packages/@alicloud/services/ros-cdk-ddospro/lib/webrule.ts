@@ -53,20 +53,31 @@ export interface WebRuleProps {
 }
 
 /**
+ * Represents a `WebRule`.
+ */
+export interface IWebRule extends ros.IResource {
+    readonly props: WebRuleProps;
+
+    /**
+     * Attribute Domain: The domain name of the website that you want to add to the instance.
+     */
+    readonly attrDomain: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::DDoSPro::WebRule`, which is used to create a forwarding rule for a website.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWebRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-webrule
  */
-export class WebRule extends ros.Resource {
+export class WebRule extends ros.Resource implements IWebRule {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: WebRuleProps;
+    public readonly props: WebRuleProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Domain: The domain name of the website that you want to add to the instance.
      */
-    public readonly attrDomain: ros.IResolvable;
+    public readonly attrDomain: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

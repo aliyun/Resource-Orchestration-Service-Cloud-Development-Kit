@@ -126,25 +126,41 @@ export interface ImagesProps {
 }
 
 /**
+ * Represents a `Images`.
+ */
+export interface IImages extends ros.IResource {
+    readonly props: ImagesProps;
+
+    /**
+     * Attribute ImageIds: The list of image IDs.
+     */
+    readonly attrImageIds: ros.IResolvable | string;
+
+    /**
+     * Attribute Images: The list of images.
+     */
+    readonly attrImages: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Images`, which is used to query available images.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosImages`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-images
  */
-export class Images extends ros.Resource {
+export class Images extends ros.Resource implements IImages {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ImagesProps;
+    public readonly props: ImagesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ImageIds: The list of image IDs.
      */
-    public readonly attrImageIds: ros.IResolvable;
+    public readonly attrImageIds: ros.IResolvable | string;
 
     /**
      * Attribute Images: The list of images.
      */
-    public readonly attrImages: ros.IResolvable;
+    public readonly attrImages: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

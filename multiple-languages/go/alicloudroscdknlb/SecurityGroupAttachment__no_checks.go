@@ -52,10 +52,6 @@ func (j *jsiiProxy_SecurityGroupAttachment) validateSetIdParameters(val *string)
 	return nil
 }
 
-func (j *jsiiProxy_SecurityGroupAttachment) validateSetPropsParameters(val *SecurityGroupAttachmentProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_SecurityGroupAttachment) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

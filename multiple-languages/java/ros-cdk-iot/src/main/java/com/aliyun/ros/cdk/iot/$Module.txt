@@ -2,6 +2,12 @@
 @alicloud/ros-cdk-iot.DeviceGroup=com.aliyun.ros.cdk.iot.DeviceGroup
 @alicloud/ros-cdk-iot.DeviceGroupProps=com.aliyun.ros.cdk.iot.DeviceGroupProps
 @alicloud/ros-cdk-iot.DeviceProps=com.aliyun.ros.cdk.iot.DeviceProps
+@alicloud/ros-cdk-iot.IDevice=com.aliyun.ros.cdk.iot.IDevice
+@alicloud/ros-cdk-iot.IDeviceGroup=com.aliyun.ros.cdk.iot.IDeviceGroup
+@alicloud/ros-cdk-iot.IProduct=com.aliyun.ros.cdk.iot.IProduct
+@alicloud/ros-cdk-iot.IProductTopic=com.aliyun.ros.cdk.iot.IProductTopic
+@alicloud/ros-cdk-iot.IRule=com.aliyun.ros.cdk.iot.IRule
+@alicloud/ros-cdk-iot.IRuleAction=com.aliyun.ros.cdk.iot.IRuleAction
 @alicloud/ros-cdk-iot.Product=com.aliyun.ros.cdk.iot.Product
 @alicloud/ros-cdk-iot.ProductProps=com.aliyun.ros.cdk.iot.ProductProps
 @alicloud/ros-cdk-iot.ProductTopic=com.aliyun.ros.cdk.iot.ProductTopic

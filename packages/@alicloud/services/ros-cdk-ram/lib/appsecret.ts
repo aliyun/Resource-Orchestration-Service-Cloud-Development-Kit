@@ -16,25 +16,41 @@ export interface AppSecretProps {
 }
 
 /**
+ * Represents a `AppSecret`.
+ */
+export interface IAppSecret extends ros.IResource {
+    readonly props: AppSecretProps;
+
+    /**
+     * Attribute AppSecretId: The ID of the application secret.
+     */
+    readonly attrAppSecretId: ros.IResolvable | string;
+
+    /**
+     * Attribute AppSecretValue: The content of the application secret. This value can be used as the client secret for open authorization.
+     */
+    readonly attrAppSecretValue: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::AppSecret`, which is used to create an application secret.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAppSecret`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-appsecret
  */
-export class AppSecret extends ros.Resource {
+export class AppSecret extends ros.Resource implements IAppSecret {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AppSecretProps;
+    public readonly props: AppSecretProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AppSecretId: The ID of the application secret.
      */
-    public readonly attrAppSecretId: ros.IResolvable;
+    public readonly attrAppSecretId: ros.IResolvable | string;
 
     /**
      * Attribute AppSecretValue: The content of the application secret. This value can be used as the client secret for open authorization.
      */
-    public readonly attrAppSecretValue: ros.IResolvable;
+    public readonly attrAppSecretValue: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

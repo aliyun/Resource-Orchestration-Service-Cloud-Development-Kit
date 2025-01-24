@@ -116,25 +116,41 @@ export interface ListenerProps {
 }
 
 /**
+ * Represents a `Listener`.
+ */
+export interface IListener extends ros.IResource {
+    readonly props: ListenerProps;
+
+    /**
+     * Attribute ListenerId: Id of created Listener
+     */
+    readonly attrListenerId: ros.IResolvable | string;
+
+    /**
+     * Attribute ListenerPort: ListenerPort of created Listener
+     */
+    readonly attrListenerPort: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::NLB::Listener`, which is used to create a listener.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosListener`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-listener
  */
-export class Listener extends ros.Resource {
+export class Listener extends ros.Resource implements IListener {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ListenerProps;
+    public readonly props: ListenerProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ListenerId: Id of created Listener
      */
-    public readonly attrListenerId: ros.IResolvable;
+    public readonly attrListenerId: ros.IResolvable | string;
 
     /**
      * Attribute ListenerPort: ListenerPort of created Listener
      */
-    public readonly attrListenerPort: ros.IResolvable;
+    public readonly attrListenerPort: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

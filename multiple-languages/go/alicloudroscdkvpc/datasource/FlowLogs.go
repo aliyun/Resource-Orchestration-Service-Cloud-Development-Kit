@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::FlowLogs`, which is used to query flow logs.
 type FlowLogs interface {
 	alicloudroscdkcore.Resource
+	IFlowLogs
 	// Attribute FlowLogIds: The list of flow log IDs.
-	AttrFlowLogIds() alicloudroscdkcore.IResolvable
+	AttrFlowLogIds() interface{}
 	// Attribute FlowLogs: The list of flow logs.
-	AttrFlowLogs() alicloudroscdkcore.IResolvable
+	AttrFlowLogs() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type FlowLogs interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *FlowLogsProps
-	SetProps(val *FlowLogsProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type FlowLogs interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type FlowLogs interface {
 // The jsii proxy struct for FlowLogs
 type jsiiProxy_FlowLogs struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IFlowLogs
 }
 
-func (j *jsiiProxy_FlowLogs) AttrFlowLogIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FlowLogs) AttrFlowLogIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrFlowLogIds",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_FlowLogs) AttrFlowLogIds() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_FlowLogs) AttrFlowLogs() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FlowLogs) AttrFlowLogs() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrFlowLogs",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_FlowLogs) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FlowLogs) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_FlowLogs)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_FlowLogs)SetProps(val *FlowLogsProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_FlowLogs)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (f *jsiiProxy_FlowLogs) ApplyRemovalPolicy(policy alicloudroscdkcore.Remova
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (f *jsiiProxy_FlowLogs) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		f,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (f *jsiiProxy_FlowLogs) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (f *jsiiProxy_FlowLogs) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (f *jsiiProxy_FlowLogs) GeneratePhysicalName() *string {

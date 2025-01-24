@@ -36,45 +36,81 @@ export interface CallbackProps {
 }
 
 /**
+ * Represents a `Callback`.
+ */
+export interface ICallback extends ros.IResource {
+    readonly props: CallbackProps;
+
+    /**
+     * Attribute CallbackId: The ID of the primary key of the Callback.
+     */
+    readonly attrCallbackId: ros.IResolvable | string;
+
+    /**
+     * Attribute CallbackName: The Callback name defined by the customer.
+     */
+    readonly attrCallbackName: ros.IResolvable | string;
+
+    /**
+     * Attribute CallbackSuggestions: List of audit results supported by message notification.
+     */
+    readonly attrCallbackSuggestions: ros.IResolvable | string;
+
+    /**
+     * Attribute CallbackTypes: The list of Callback types.
+     */
+    readonly attrCallbackTypes: ros.IResolvable | string;
+
+    /**
+     * Attribute CallbackUrl: The detection result will be called back to the url.
+     */
+    readonly attrCallbackUrl: ros.IResolvable | string;
+
+    /**
+     * Attribute CryptType: The encryption algorithm is used to verify that the callback request is sent by the Aliyun Green Service to your business service.
+     */
+    readonly attrCryptType: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::Aligreen::Callback`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCallback`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-callback
  */
-export class Callback extends ros.Resource {
+export class Callback extends ros.Resource implements ICallback {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: CallbackProps;
+    public readonly props: CallbackProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CallbackId: The ID of the primary key of the Callback.
      */
-    public readonly attrCallbackId: ros.IResolvable;
+    public readonly attrCallbackId: ros.IResolvable | string;
 
     /**
      * Attribute CallbackName: The Callback name defined by the customer.
      */
-    public readonly attrCallbackName: ros.IResolvable;
+    public readonly attrCallbackName: ros.IResolvable | string;
 
     /**
      * Attribute CallbackSuggestions: List of audit results supported by message notification.
      */
-    public readonly attrCallbackSuggestions: ros.IResolvable;
+    public readonly attrCallbackSuggestions: ros.IResolvable | string;
 
     /**
      * Attribute CallbackTypes: The list of Callback types.
      */
-    public readonly attrCallbackTypes: ros.IResolvable;
+    public readonly attrCallbackTypes: ros.IResolvable | string;
 
     /**
      * Attribute CallbackUrl: The detection result will be called back to the url.
      */
-    public readonly attrCallbackUrl: ros.IResolvable;
+    public readonly attrCallbackUrl: ros.IResolvable | string;
 
     /**
      * Attribute CryptType: The encryption algorithm is used to verify that the callback request is sent by the Aliyun Green Service to your business service.
      */
-    public readonly attrCryptType: ros.IResolvable;
+    public readonly attrCryptType: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

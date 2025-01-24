@@ -34,25 +34,41 @@ export interface BgpPeersProps {
 }
 
 /**
+ * Represents a `BgpPeers`.
+ */
+export interface IBgpPeers extends ros.IResource {
+    readonly props: BgpPeersProps;
+
+    /**
+     * Attribute BgpPeerIds: The list of The BGP peer ids.
+     */
+    readonly attrBgpPeerIds: ros.IResolvable | string;
+
+    /**
+     * Attribute BgpPeers: The list of The BGP peers.
+     */
+    readonly attrBgpPeers: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::BgpPeers`, which is used to query Border Gateway Protocol (BGP) peers in a region.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBgpPeers`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-bgppeers
  */
-export class BgpPeers extends ros.Resource {
+export class BgpPeers extends ros.Resource implements IBgpPeers {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: BgpPeersProps;
+    public readonly props: BgpPeersProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute BgpPeerIds: The list of The BGP peer ids.
      */
-    public readonly attrBgpPeerIds: ros.IResolvable;
+    public readonly attrBgpPeerIds: ros.IResolvable | string;
 
     /**
      * Attribute BgpPeers: The list of The BGP peers.
      */
-    public readonly attrBgpPeers: ros.IResolvable;
+    public readonly attrBgpPeers: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -52,10 +52,6 @@ func (j *jsiiProxy_RetcodeApp) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_RetcodeApp) validateSetPropsParameters(val *RetcodeAppProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_RetcodeApp) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

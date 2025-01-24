@@ -12,24 +12,34 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::ROCKETMQ5::ConsumerGroup`.
 type ConsumerGroup interface {
 	alicloudroscdkcore.Resource
+	IConsumerGroup
 	// Attribute ConsumeRetryPolicy: The consumption retry policy that you want to configure for the consumer group.
-	AttrConsumeRetryPolicy() alicloudroscdkcore.IResolvable
+	AttrConsumeRetryPolicy() interface{}
 	// Attribute ConsumerGroupId: The ID of the consumer group.
-	AttrConsumerGroupId() alicloudroscdkcore.IResolvable
+	AttrConsumerGroupId() interface{}
 	// Attribute CreateTime: The time when the consumer group was created.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute DeliveryOrderType: The message delivery order of the consumer group.
-	AttrDeliveryOrderType() alicloudroscdkcore.IResolvable
+	AttrDeliveryOrderType() interface{}
 	// Attribute InstanceId: The ID of the RocketMQ instance.
-	AttrInstanceId() alicloudroscdkcore.IResolvable
+	AttrInstanceId() interface{}
 	// Attribute Remark: The remarks on the consumer group.
-	AttrRemark() alicloudroscdkcore.IResolvable
+	AttrRemark() interface{}
 	// Attribute Status: The state of the consumer group.
-	AttrStatus() alicloudroscdkcore.IResolvable
+	AttrStatus() interface{}
 	// Attribute UpdateTime: The time when the consumer group was last updated.
-	AttrUpdateTime() alicloudroscdkcore.IResolvable
+	AttrUpdateTime() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -44,7 +54,6 @@ type ConsumerGroup interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ConsumerGroupProps
-	SetProps(val *ConsumerGroupProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -57,6 +66,9 @@ type ConsumerGroup interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -109,10 +121,11 @@ type ConsumerGroup interface {
 // The jsii proxy struct for ConsumerGroup
 type jsiiProxy_ConsumerGroup struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IConsumerGroup
 }
 
-func (j *jsiiProxy_ConsumerGroup) AttrConsumeRetryPolicy() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ConsumerGroup) AttrConsumeRetryPolicy() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrConsumeRetryPolicy",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_ConsumerGroup) AttrConsumeRetryPolicy() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_ConsumerGroup) AttrConsumerGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ConsumerGroup) AttrConsumerGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrConsumerGroupId",
@@ -131,8 +144,8 @@ func (j *jsiiProxy_ConsumerGroup) AttrConsumerGroupId() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_ConsumerGroup) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ConsumerGroup) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -141,8 +154,8 @@ func (j *jsiiProxy_ConsumerGroup) AttrCreateTime() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_ConsumerGroup) AttrDeliveryOrderType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ConsumerGroup) AttrDeliveryOrderType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDeliveryOrderType",
@@ -151,8 +164,8 @@ func (j *jsiiProxy_ConsumerGroup) AttrDeliveryOrderType() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_ConsumerGroup) AttrInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ConsumerGroup) AttrInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstanceId",
@@ -161,8 +174,8 @@ func (j *jsiiProxy_ConsumerGroup) AttrInstanceId() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_ConsumerGroup) AttrRemark() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ConsumerGroup) AttrRemark() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRemark",
@@ -171,8 +184,8 @@ func (j *jsiiProxy_ConsumerGroup) AttrRemark() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_ConsumerGroup) AttrStatus() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ConsumerGroup) AttrStatus() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStatus",
@@ -181,8 +194,8 @@ func (j *jsiiProxy_ConsumerGroup) AttrStatus() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_ConsumerGroup) AttrUpdateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ConsumerGroup) AttrUpdateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUpdateTime",
@@ -196,6 +209,16 @@ func (j *jsiiProxy_ConsumerGroup) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ConsumerGroup) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -333,17 +356,6 @@ func (j *jsiiProxy_ConsumerGroup)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ConsumerGroup)SetProps(val *ConsumerGroupProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_ConsumerGroup)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -435,6 +447,45 @@ func (c *jsiiProxy_ConsumerGroup) ApplyRemovalPolicy(policy alicloudroscdkcore.R
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (c *jsiiProxy_ConsumerGroup) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		c,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (c *jsiiProxy_ConsumerGroup) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		c,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (c *jsiiProxy_ConsumerGroup) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (c *jsiiProxy_ConsumerGroup) GeneratePhysicalName() *string {

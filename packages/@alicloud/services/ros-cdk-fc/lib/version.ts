@@ -21,25 +21,41 @@ export interface VersionProps {
 }
 
 /**
+ * Represents a `Version`.
+ */
+export interface IVersion extends ros.IResource {
+    readonly props: VersionProps;
+
+    /**
+     * Attribute ServiceName: The service name
+     */
+    readonly attrServiceName: ros.IResolvable | string;
+
+    /**
+     * Attribute VersionId: The version ID
+     */
+    readonly attrVersionId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::FC::Version`, which is used to release a Version.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVersion`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-version
  */
-export class Version extends ros.Resource {
+export class Version extends ros.Resource implements IVersion {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: VersionProps;
+    public readonly props: VersionProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ServiceName: The service name
      */
-    public readonly attrServiceName: ros.IResolvable;
+    public readonly attrServiceName: ros.IResolvable | string;
 
     /**
      * Attribute VersionId: The version ID
      */
-    public readonly attrVersionId: ros.IResolvable;
+    public readonly attrVersionId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

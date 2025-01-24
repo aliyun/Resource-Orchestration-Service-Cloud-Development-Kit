@@ -52,10 +52,6 @@ func (j *jsiiProxy_SerialNumberBinding) validateSetIdParameters(val *string) err
 	return nil
 }
 
-func (j *jsiiProxy_SerialNumberBinding) validateSetPropsParameters(val *SerialNumberBindingProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_SerialNumberBinding) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

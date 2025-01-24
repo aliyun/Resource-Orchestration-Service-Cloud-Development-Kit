@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::MOBI::Workspaces`.
 type Workspaces interface {
 	alicloudroscdkcore.Resource
+	IWorkspaces
 	// Attribute WorkspaceIds: The list of workspace IDs.
-	AttrWorkspaceIds() alicloudroscdkcore.IResolvable
+	AttrWorkspaceIds() interface{}
 	// Attribute Workspaces: The list of workspaces.
-	AttrWorkspaces() alicloudroscdkcore.IResolvable
+	AttrWorkspaces() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type Workspaces interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *WorkspacesProps
-	SetProps(val *WorkspacesProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type Workspaces interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type Workspaces interface {
 // The jsii proxy struct for Workspaces
 type jsiiProxy_Workspaces struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IWorkspaces
 }
 
-func (j *jsiiProxy_Workspaces) AttrWorkspaceIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Workspaces) AttrWorkspaceIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrWorkspaceIds",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_Workspaces) AttrWorkspaceIds() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Workspaces) AttrWorkspaces() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Workspaces) AttrWorkspaces() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrWorkspaces",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_Workspaces) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Workspaces) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_Workspaces)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Workspaces)SetProps(val *WorkspacesProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Workspaces)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (w *jsiiProxy_Workspaces) ApplyRemovalPolicy(policy alicloudroscdkcore.Remo
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (w *jsiiProxy_Workspaces) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		w,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (w *jsiiProxy_Workspaces) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		w,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (w *jsiiProxy_Workspaces) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		w,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (w *jsiiProxy_Workspaces) GeneratePhysicalName() *string {

@@ -42,20 +42,31 @@ export interface Ipv6GatewayProps {
 }
 
 /**
+ * Represents a `Ipv6Gateway`.
+ */
+export interface IIpv6Gateway extends ros.IResource {
+    readonly props: Ipv6GatewayProps;
+
+    /**
+     * Attribute Ipv6GatewayId: ID IPv6 gateway.
+     */
+    readonly attrIpv6GatewayId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::Ipv6Gateway`, which is used to create an IPv6 gateway.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosIpv6Gateway`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipv6gateway
  */
-export class Ipv6Gateway extends ros.Resource {
+export class Ipv6Gateway extends ros.Resource implements IIpv6Gateway {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: Ipv6GatewayProps;
+    public readonly props: Ipv6GatewayProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Ipv6GatewayId: ID IPv6 gateway.
      */
-    public readonly attrIpv6GatewayId: ros.IResolvable;
+    public readonly attrIpv6GatewayId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

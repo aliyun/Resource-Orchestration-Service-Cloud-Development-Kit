@@ -25,6 +25,7 @@ type RosManagedKubernetesClusterProps struct {
 	KubernetesVersion interface{} `field:"optional" json:"kubernetesVersion" yaml:"kubernetesVersion"`
 	LoadBalancerSpec interface{} `field:"optional" json:"loadBalancerSpec" yaml:"loadBalancerSpec"`
 	LoginPassword interface{} `field:"optional" json:"loginPassword" yaml:"loginPassword"`
+	MaintenanceWindow interface{} `field:"optional" json:"maintenanceWindow" yaml:"maintenanceWindow"`
 	NodeCidrMask interface{} `field:"optional" json:"nodeCidrMask" yaml:"nodeCidrMask"`
 	NodeNameMode interface{} `field:"optional" json:"nodeNameMode" yaml:"nodeNameMode"`
 	NodePools interface{} `field:"optional" json:"nodePools" yaml:"nodePools"`

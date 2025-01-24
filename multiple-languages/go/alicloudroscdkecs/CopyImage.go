@@ -12,14 +12,24 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ECS::CopyImage`, which is used to copy a custom image from one region to another region.
 type CopyImage interface {
 	alicloudroscdkcore.Resource
+	ICopyImage
 	// Attribute DestinationRegionId: ID of the region to where the destination custom image belongs.
-	AttrDestinationRegionId() alicloudroscdkcore.IResolvable
+	AttrDestinationRegionId() interface{}
 	// Attribute ImageId: ID of the source custom image.
-	AttrImageId() alicloudroscdkcore.IResolvable
+	AttrImageId() interface{}
 	// Attribute SourceRegionId: ID of the region to where the source image belongs.
-	AttrSourceRegionId() alicloudroscdkcore.IResolvable
+	AttrSourceRegionId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -34,7 +44,6 @@ type CopyImage interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *CopyImageProps
-	SetProps(val *CopyImageProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -47,6 +56,9 @@ type CopyImage interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -99,10 +111,11 @@ type CopyImage interface {
 // The jsii proxy struct for CopyImage
 type jsiiProxy_CopyImage struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ICopyImage
 }
 
-func (j *jsiiProxy_CopyImage) AttrDestinationRegionId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CopyImage) AttrDestinationRegionId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDestinationRegionId",
@@ -111,8 +124,8 @@ func (j *jsiiProxy_CopyImage) AttrDestinationRegionId() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_CopyImage) AttrImageId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CopyImage) AttrImageId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrImageId",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_CopyImage) AttrImageId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_CopyImage) AttrSourceRegionId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_CopyImage) AttrSourceRegionId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSourceRegionId",
@@ -136,6 +149,16 @@ func (j *jsiiProxy_CopyImage) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CopyImage) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -273,17 +296,6 @@ func (j *jsiiProxy_CopyImage)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_CopyImage)SetProps(val *CopyImageProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_CopyImage)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -375,6 +387,45 @@ func (c *jsiiProxy_CopyImage) ApplyRemovalPolicy(policy alicloudroscdkcore.Remov
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (c *jsiiProxy_CopyImage) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		c,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (c *jsiiProxy_CopyImage) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		c,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (c *jsiiProxy_CopyImage) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		c,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (c *jsiiProxy_CopyImage) GeneratePhysicalName() *string {

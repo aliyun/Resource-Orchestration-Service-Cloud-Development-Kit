@@ -39,14 +39,20 @@ export interface AccountPrivilegeProps {
 }
 
 /**
+ * Represents a `AccountPrivilege`.
+ */
+export interface IAccountPrivilege extends ros.IResource {
+    readonly props: AccountPrivilegeProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::AccountPrivilege`, which is used to grant access permissions on one or more databases in a specified ApsaraDB for POLARDB cluster to a standard account.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccountPrivilege`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-accountprivilege
  */
-export class AccountPrivilege extends ros.Resource {
+export class AccountPrivilege extends ros.Resource implements IAccountPrivilege {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AccountPrivilegeProps;
+    public readonly props: AccountPrivilegeProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

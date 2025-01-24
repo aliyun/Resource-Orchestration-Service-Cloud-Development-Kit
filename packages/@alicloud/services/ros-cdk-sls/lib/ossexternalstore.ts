@@ -56,25 +56,41 @@ export interface OssExternalStoreProps {
 }
 
 /**
+ * Represents a `OssExternalStore`.
+ */
+export interface IOssExternalStore extends ros.IResource {
+    readonly props: OssExternalStoreProps;
+
+    /**
+     * Attribute ExternalStoreName: The name of the external store.
+     */
+    readonly attrExternalStoreName: ros.IResolvable | string;
+
+    /**
+     * Attribute Project: The name of the project to which the external store belongs.
+     */
+    readonly attrProject: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::OssExternalStore`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosOssExternalStore`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-ossexternalstore
  */
-export class OssExternalStore extends ros.Resource {
+export class OssExternalStore extends ros.Resource implements IOssExternalStore {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: OssExternalStoreProps;
+    public readonly props: OssExternalStoreProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ExternalStoreName: The name of the external store.
      */
-    public readonly attrExternalStoreName: ros.IResolvable;
+    public readonly attrExternalStoreName: ros.IResolvable | string;
 
     /**
      * Attribute Project: The name of the project to which the external store belongs.
      */
-    public readonly attrProject: ros.IResolvable;
+    public readonly attrProject: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

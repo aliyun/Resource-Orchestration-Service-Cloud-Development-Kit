@@ -52,10 +52,6 @@ func (j *jsiiProxy_DBClusterEndpoint) validateSetIdParameters(val *string) error
 	return nil
 }
 
-func (j *jsiiProxy_DBClusterEndpoint) validateSetPropsParameters(val *DBClusterEndpointProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_DBClusterEndpoint) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

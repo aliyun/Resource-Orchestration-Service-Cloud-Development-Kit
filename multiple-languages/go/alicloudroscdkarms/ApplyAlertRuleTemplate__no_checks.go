@@ -52,10 +52,6 @@ func (j *jsiiProxy_ApplyAlertRuleTemplate) validateSetIdParameters(val *string) 
 	return nil
 }
 
-func (j *jsiiProxy_ApplyAlertRuleTemplate) validateSetPropsParameters(val *ApplyAlertRuleTemplateProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_ApplyAlertRuleTemplate) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

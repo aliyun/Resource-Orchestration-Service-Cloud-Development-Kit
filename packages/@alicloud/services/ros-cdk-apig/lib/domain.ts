@@ -23,30 +23,51 @@ export interface DomainProps {
 }
 
 /**
+ * Represents a `Domain`.
+ */
+export interface IDomain extends ros.IResource {
+    readonly props: DomainProps;
+
+    /**
+     * Attribute DomainId: The ID of the Domain.
+     */
+    readonly attrDomainId: ros.IResolvable | string;
+
+    /**
+     * Attribute DomainName: The name of the Domain.
+     */
+    readonly attrDomainName: ros.IResolvable | string;
+
+    /**
+     * Attribute Protocol: The types of protocols.
+     */
+    readonly attrProtocol: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Domain`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomain`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-domain
  */
-export class Domain extends ros.Resource {
+export class Domain extends ros.Resource implements IDomain {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DomainProps;
+    public readonly props: DomainProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DomainId: The ID of the Domain.
      */
-    public readonly attrDomainId: ros.IResolvable;
+    public readonly attrDomainId: ros.IResolvable | string;
 
     /**
      * Attribute DomainName: The name of the Domain.
      */
-    public readonly attrDomainName: ros.IResolvable;
+    public readonly attrDomainName: ros.IResolvable | string;
 
     /**
      * Attribute Protocol: The types of protocols.
      */
-    public readonly attrProtocol: ros.IResolvable;
+    public readonly attrProtocol: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

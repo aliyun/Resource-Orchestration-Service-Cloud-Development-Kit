@@ -24,35 +24,61 @@ export interface StorageBundleProps {
 }
 
 /**
+ * Represents a `StorageBundle`.
+ */
+export interface IStorageBundle extends ros.IResource {
+    readonly props: StorageBundleProps;
+
+    /**
+     * Attribute CreateTime: The timestamp when the gateway cluster was created. Unit: seconds.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: The description of the gateway cluster.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute StorageBundleId: The ID of the gateway cluster.
+     */
+    readonly attrStorageBundleId: ros.IResolvable | string;
+
+    /**
+     * Attribute StorageBundleName: The name of the gateway cluster.
+     */
+    readonly attrStorageBundleName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::CloudStorageGateway::StorageBundle`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosStorageBundle`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudstoragegateway-storagebundle
  */
-export class StorageBundle extends ros.Resource {
+export class StorageBundle extends ros.Resource implements IStorageBundle {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: StorageBundleProps;
+    public readonly props: StorageBundleProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute CreateTime: The timestamp when the gateway cluster was created. Unit: seconds.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute Description: The description of the gateway cluster.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute StorageBundleId: The ID of the gateway cluster.
      */
-    public readonly attrStorageBundleId: ros.IResolvable;
+    public readonly attrStorageBundleId: ros.IResolvable | string;
 
     /**
      * Attribute StorageBundleName: The name of the gateway cluster.
      */
-    public readonly attrStorageBundleName: ros.IResolvable;
+    public readonly attrStorageBundleName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

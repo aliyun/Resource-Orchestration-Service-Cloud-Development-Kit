@@ -71,55 +71,101 @@ export interface VpcEndpointProps {
 }
 
 /**
+ * Represents a `VpcEndpoint`.
+ */
+export interface IVpcEndpoint extends ros.IResource {
+    readonly props: VpcEndpointProps;
+
+    /**
+     * Attribute Bandwidth: The bandwidth of the endpoint.
+     */
+    readonly attrBandwidth: ros.IResolvable | string;
+
+    /**
+     * Attribute EndpointDomain: The domain name of the endpoint.
+     */
+    readonly attrEndpointDomain: ros.IResolvable | string;
+
+    /**
+     * Attribute EndpointId: The ID of the endpoint.
+     */
+    readonly attrEndpointId: ros.IResolvable | string;
+
+    /**
+     * Attribute EndpointName: The name of the endpoint.
+     */
+    readonly attrEndpointName: ros.IResolvable | string;
+
+    /**
+     * Attribute ServiceId: The ID of endpoint service that is associated with the endpoint.
+     */
+    readonly attrServiceId: ros.IResolvable | string;
+
+    /**
+     * Attribute ServiceName: The name of endpoint service that is associated with the endpoint.
+     */
+    readonly attrServiceName: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcId: The vpc ID of endpoint.
+     */
+    readonly attrVpcId: ros.IResolvable | string;
+
+    /**
+     * Attribute ZoneDomains: The zone domains.
+     */
+    readonly attrZoneDomains: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::PrivateLink::VpcEndpoint`, which is used to create an endpoint.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpcEndpoint`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpoint
  */
-export class VpcEndpoint extends ros.Resource {
+export class VpcEndpoint extends ros.Resource implements IVpcEndpoint {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: VpcEndpointProps;
+    public readonly props: VpcEndpointProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Bandwidth: The bandwidth of the endpoint.
      */
-    public readonly attrBandwidth: ros.IResolvable;
+    public readonly attrBandwidth: ros.IResolvable | string;
 
     /**
      * Attribute EndpointDomain: The domain name of the endpoint.
      */
-    public readonly attrEndpointDomain: ros.IResolvable;
+    public readonly attrEndpointDomain: ros.IResolvable | string;
 
     /**
      * Attribute EndpointId: The ID of the endpoint.
      */
-    public readonly attrEndpointId: ros.IResolvable;
+    public readonly attrEndpointId: ros.IResolvable | string;
 
     /**
      * Attribute EndpointName: The name of the endpoint.
      */
-    public readonly attrEndpointName: ros.IResolvable;
+    public readonly attrEndpointName: ros.IResolvable | string;
 
     /**
      * Attribute ServiceId: The ID of endpoint service that is associated with the endpoint.
      */
-    public readonly attrServiceId: ros.IResolvable;
+    public readonly attrServiceId: ros.IResolvable | string;
 
     /**
      * Attribute ServiceName: The name of endpoint service that is associated with the endpoint.
      */
-    public readonly attrServiceName: ros.IResolvable;
+    public readonly attrServiceName: ros.IResolvable | string;
 
     /**
      * Attribute VpcId: The vpc ID of endpoint.
      */
-    public readonly attrVpcId: ros.IResolvable;
+    public readonly attrVpcId: ros.IResolvable | string;
 
     /**
      * Attribute ZoneDomains: The zone domains.
      */
-    public readonly attrZoneDomains: ros.IResolvable;
+    public readonly attrZoneDomains: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

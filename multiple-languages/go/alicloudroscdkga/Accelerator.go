@@ -12,26 +12,36 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::GA::Accelerator`, which is used to create a Global Accelerator (GA) instance.
 type Accelerator interface {
 	alicloudroscdkcore.Resource
+	IAccelerator
 	// Attribute AcceleratorId: The ID of the GA instance to query.
-	AttrAcceleratorId() alicloudroscdkcore.IResolvable
+	AttrAcceleratorId() interface{}
 	// Attribute AcceleratorName: The Name of the GA instance.
-	AttrAcceleratorName() alicloudroscdkcore.IResolvable
+	AttrAcceleratorName() interface{}
 	// Attribute AutoPay: The AutoPay of the GA instance.
-	AttrAutoPay() alicloudroscdkcore.IResolvable
+	AttrAutoPay() interface{}
 	// Attribute AutoUseCoupon: The AutoUseCoupon of the GA instance.
-	AttrAutoUseCoupon() alicloudroscdkcore.IResolvable
+	AttrAutoUseCoupon() interface{}
 	// Attribute Duration: The Duration of the GA instance.
-	AttrDuration() alicloudroscdkcore.IResolvable
+	AttrDuration() interface{}
 	// Attribute OrderId: The OrderId of the GA instance.
-	AttrOrderId() alicloudroscdkcore.IResolvable
+	AttrOrderId() interface{}
 	// Attribute PaymentType: The Payment Typethe GA instance.
-	AttrPaymentType() alicloudroscdkcore.IResolvable
+	AttrPaymentType() interface{}
 	// Attribute PricingCycle: The PricingCycle of the GA instance.
-	AttrPricingCycle() alicloudroscdkcore.IResolvable
+	AttrPricingCycle() interface{}
 	// Attribute Spec: The instance type of the GA instance.
-	AttrSpec() alicloudroscdkcore.IResolvable
+	AttrSpec() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -46,7 +56,6 @@ type Accelerator interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *AcceleratorProps
-	SetProps(val *AcceleratorProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -59,6 +68,9 @@ type Accelerator interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -111,10 +123,11 @@ type Accelerator interface {
 // The jsii proxy struct for Accelerator
 type jsiiProxy_Accelerator struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IAccelerator
 }
 
-func (j *jsiiProxy_Accelerator) AttrAcceleratorId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Accelerator) AttrAcceleratorId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAcceleratorId",
@@ -123,8 +136,8 @@ func (j *jsiiProxy_Accelerator) AttrAcceleratorId() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_Accelerator) AttrAcceleratorName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Accelerator) AttrAcceleratorName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAcceleratorName",
@@ -133,8 +146,8 @@ func (j *jsiiProxy_Accelerator) AttrAcceleratorName() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_Accelerator) AttrAutoPay() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Accelerator) AttrAutoPay() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAutoPay",
@@ -143,8 +156,8 @@ func (j *jsiiProxy_Accelerator) AttrAutoPay() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Accelerator) AttrAutoUseCoupon() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Accelerator) AttrAutoUseCoupon() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAutoUseCoupon",
@@ -153,8 +166,8 @@ func (j *jsiiProxy_Accelerator) AttrAutoUseCoupon() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_Accelerator) AttrDuration() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Accelerator) AttrDuration() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDuration",
@@ -163,8 +176,8 @@ func (j *jsiiProxy_Accelerator) AttrDuration() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Accelerator) AttrOrderId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Accelerator) AttrOrderId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrOrderId",
@@ -173,8 +186,8 @@ func (j *jsiiProxy_Accelerator) AttrOrderId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_Accelerator) AttrPaymentType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Accelerator) AttrPaymentType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPaymentType",
@@ -183,8 +196,8 @@ func (j *jsiiProxy_Accelerator) AttrPaymentType() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_Accelerator) AttrPricingCycle() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Accelerator) AttrPricingCycle() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPricingCycle",
@@ -193,8 +206,8 @@ func (j *jsiiProxy_Accelerator) AttrPricingCycle() alicloudroscdkcore.IResolvabl
 	return returns
 }
 
-func (j *jsiiProxy_Accelerator) AttrSpec() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_Accelerator) AttrSpec() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSpec",
@@ -208,6 +221,16 @@ func (j *jsiiProxy_Accelerator) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Accelerator) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -345,17 +368,6 @@ func (j *jsiiProxy_Accelerator)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_Accelerator)SetProps(val *AcceleratorProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_Accelerator)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -447,6 +459,45 @@ func (a *jsiiProxy_Accelerator) ApplyRemovalPolicy(policy alicloudroscdkcore.Rem
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (a *jsiiProxy_Accelerator) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		a,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_Accelerator) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_Accelerator) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (a *jsiiProxy_Accelerator) GeneratePhysicalName() *string {

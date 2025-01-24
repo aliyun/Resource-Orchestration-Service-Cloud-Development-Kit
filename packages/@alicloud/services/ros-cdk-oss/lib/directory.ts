@@ -26,25 +26,41 @@ export interface DirectoryProps {
 }
 
 /**
+ * Represents a `Directory`.
+ */
+export interface IDirectory extends ros.IResource {
+    readonly props: DirectoryProps;
+
+    /**
+     * Attribute BucketName: The name of Bucket
+     */
+    readonly attrBucketName: ros.IResolvable | string;
+
+    /**
+     * Attribute DirectoryName: The name of Directory
+     */
+    readonly attrDirectoryName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::OSS::Directory`, which is used to create a directory for a specified bucket.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDirectory`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-directory
  */
-export class Directory extends ros.Resource {
+export class Directory extends ros.Resource implements IDirectory {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DirectoryProps;
+    public readonly props: DirectoryProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute BucketName: The name of Bucket
      */
-    public readonly attrBucketName: ros.IResolvable;
+    public readonly attrBucketName: ros.IResolvable | string;
 
     /**
      * Attribute DirectoryName: The name of Directory
      */
-    public readonly attrDirectoryName: ros.IResolvable;
+    public readonly attrDirectoryName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

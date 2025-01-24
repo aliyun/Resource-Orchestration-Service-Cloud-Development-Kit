@@ -24,40 +24,71 @@ export interface AccessGroupProps {
 }
 
 /**
+ * Represents a `AccessGroup`.
+ */
+export interface IAccessGroup extends ros.IResource {
+    readonly props: AccessGroupProps;
+
+    /**
+     * Attribute AccessGroupName: The name of the permission group.
+     */
+    readonly attrAccessGroupName: ros.IResolvable | string;
+
+    /**
+     * Attribute AccessGroupType: Permission group types, including VPC and Classic.
+     */
+    readonly attrAccessGroupType: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: Permission group description information.
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute MountTargetCount: The number of Mount points to which this permission group is applied.
+     */
+    readonly attrMountTargetCount: ros.IResolvable | string;
+
+    /**
+     * Attribute RuleCount: The number of permission group rules contained in this permission group.
+     */
+    readonly attrRuleCount: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::NAS::AccessGroup`, which is used to query the information about a permission group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccessGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-accessgroup
  */
-export class AccessGroup extends ros.Resource {
+export class AccessGroup extends ros.Resource implements IAccessGroup {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AccessGroupProps;
+    public readonly props: AccessGroupProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccessGroupName: The name of the permission group.
      */
-    public readonly attrAccessGroupName: ros.IResolvable;
+    public readonly attrAccessGroupName: ros.IResolvable | string;
 
     /**
      * Attribute AccessGroupType: Permission group types, including VPC and Classic.
      */
-    public readonly attrAccessGroupType: ros.IResolvable;
+    public readonly attrAccessGroupType: ros.IResolvable | string;
 
     /**
      * Attribute Description: Permission group description information.
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute MountTargetCount: The number of Mount points to which this permission group is applied.
      */
-    public readonly attrMountTargetCount: ros.IResolvable;
+    public readonly attrMountTargetCount: ros.IResolvable | string;
 
     /**
      * Attribute RuleCount: The number of permission group rules contained in this permission group.
      */
-    public readonly attrRuleCount: ros.IResolvable;
+    public readonly attrRuleCount: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

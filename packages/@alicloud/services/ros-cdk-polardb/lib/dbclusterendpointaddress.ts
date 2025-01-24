@@ -36,25 +36,41 @@ export interface DBClusterEndpointAddressProps {
 }
 
 /**
+ * Represents a `DBClusterEndpointAddress`.
+ */
+export interface IDBClusterEndpointAddress extends ros.IResource {
+    readonly props: DBClusterEndpointAddressProps;
+
+    /**
+     * Attribute Address: The details of the endpoint address.
+     */
+    readonly attrAddress: ros.IResolvable | string;
+
+    /**
+     * Attribute ConnectionString: The connection string of the endpoint address.
+     */
+    readonly attrConnectionString: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::DBClusterEndpointAddress`, which is used to create a public endpoint for an Apsara PolarDB cluster. The public endpoint can be a primary endpoint, the default cluster endpoint, or a custom cluster endpoint.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBClusterEndpointAddress`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusterendpointaddress
  */
-export class DBClusterEndpointAddress extends ros.Resource {
+export class DBClusterEndpointAddress extends ros.Resource implements IDBClusterEndpointAddress {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DBClusterEndpointAddressProps;
+    public readonly props: DBClusterEndpointAddressProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Address: The details of the endpoint address.
      */
-    public readonly attrAddress: ros.IResolvable;
+    public readonly attrAddress: ros.IResolvable | string;
 
     /**
      * Attribute ConnectionString: The connection string of the endpoint address.
      */
-    public readonly attrConnectionString: ros.IResolvable;
+    public readonly attrConnectionString: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

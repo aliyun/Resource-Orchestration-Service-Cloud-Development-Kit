@@ -83,20 +83,31 @@ export interface TrFirewallProps {
 }
 
 /**
+ * Represents a `TrFirewall`.
+ */
+export interface ITrFirewall extends ros.IResource {
+    readonly props: TrFirewallProps;
+
+    /**
+     * Attribute FirewallId: The instance ID of the VPC firewall.
+     */
+    readonly attrFirewallId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::TrFirewall`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTrFirewall`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-trfirewall
  */
-export class TrFirewall extends ros.Resource {
+export class TrFirewall extends ros.Resource implements ITrFirewall {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: TrFirewallProps;
+    public readonly props: TrFirewallProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute FirewallId: The instance ID of the VPC firewall.
      */
-    public readonly attrFirewallId: ros.IResolvable;
+    public readonly attrFirewallId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

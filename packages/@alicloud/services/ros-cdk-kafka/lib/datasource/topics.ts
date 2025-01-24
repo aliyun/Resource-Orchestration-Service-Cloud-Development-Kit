@@ -29,20 +29,31 @@ export interface TopicsProps {
 }
 
 /**
+ * Represents a `Topics`.
+ */
+export interface ITopics extends ros.IResource {
+    readonly props: TopicsProps;
+
+    /**
+     * Attribute Topics: The list of topics.
+     */
+    readonly attrTopics: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::KAFKA::Topics`, which is used to query the information about topics.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTopics`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kafka-topics
  */
-export class Topics extends ros.Resource {
+export class Topics extends ros.Resource implements ITopics {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: TopicsProps;
+    public readonly props: TopicsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Topics: The list of topics.
      */
-    public readonly attrTopics: ros.IResolvable;
+    public readonly attrTopics: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -124,35 +124,61 @@ export interface ElasticDBInstanceProps {
 }
 
 /**
+ * Represents a `ElasticDBInstance`.
+ */
+export interface IElasticDBInstance extends ros.IResource {
+    readonly props: ElasticDBInstanceProps;
+
+    /**
+     * Attribute ConnectionString: The endpoint of the instance.
+     */
+    readonly attrConnectionString: ros.IResolvable | string;
+
+    /**
+     * Attribute DBInstanceId: The ID of the instance.
+     */
+    readonly attrDbInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute OrderId: The order ID of the instance.
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+
+    /**
+     * Attribute Port: The port used to connect to the instance.
+     */
+    readonly attrPort: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::ElasticDBInstance`, which is used to create an AnalyticDB for PostgreSQL instance in elastic storage mode.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosElasticDBInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-elasticdbinstance
  */
-export class ElasticDBInstance extends ros.Resource {
+export class ElasticDBInstance extends ros.Resource implements IElasticDBInstance {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ElasticDBInstanceProps;
+    public readonly props: ElasticDBInstanceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ConnectionString: The endpoint of the instance.
      */
-    public readonly attrConnectionString: ros.IResolvable;
+    public readonly attrConnectionString: ros.IResolvable | string;
 
     /**
      * Attribute DBInstanceId: The ID of the instance.
      */
-    public readonly attrDbInstanceId: ros.IResolvable;
+    public readonly attrDbInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute OrderId: The order ID of the instance.
      */
-    public readonly attrOrderId: ros.IResolvable;
+    public readonly attrOrderId: ros.IResolvable | string;
 
     /**
      * Attribute Port: The port used to connect to the instance.
      */
-    public readonly attrPort: ros.IResolvable;
+    public readonly attrPort: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

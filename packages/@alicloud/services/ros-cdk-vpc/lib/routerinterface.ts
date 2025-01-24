@@ -109,20 +109,31 @@ export interface RouterInterfaceProps {
 }
 
 /**
+ * Represents a `RouterInterface`.
+ */
+export interface IRouterInterface extends ros.IResource {
+    readonly props: RouterInterfaceProps;
+
+    /**
+     * Attribute RouterInterfaceId: The ID of created RouterInterface.
+     */
+    readonly attrRouterInterfaceId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::RouterInterface`, which is used to create a router interface.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRouterInterface`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-routerinterface
  */
-export class RouterInterface extends ros.Resource {
+export class RouterInterface extends ros.Resource implements IRouterInterface {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: RouterInterfaceProps;
+    public readonly props: RouterInterfaceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute RouterInterfaceId: The ID of created RouterInterface.
      */
-    public readonly attrRouterInterfaceId: ros.IResolvable;
+    public readonly attrRouterInterfaceId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

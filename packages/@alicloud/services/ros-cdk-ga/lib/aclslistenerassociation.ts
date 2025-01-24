@@ -27,25 +27,41 @@ export interface AclsListenerAssociationProps {
 }
 
 /**
+ * Represents a `AclsListenerAssociation`.
+ */
+export interface IAclsListenerAssociation extends ros.IResource {
+    readonly props: AclsListenerAssociationProps;
+
+    /**
+     * Attribute AclIds: The IDs of the ACL.
+     */
+    readonly attrAclIds: ros.IResolvable | string;
+
+    /**
+     * Attribute ListenerId: The ID of the listener.
+     */
+    readonly attrListenerId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::GA::AclsListenerAssociation`, which is used to associate an access control list (ACL) with a listener.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAclsListenerAssociation`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-aclslistenerassociation
  */
-export class AclsListenerAssociation extends ros.Resource {
+export class AclsListenerAssociation extends ros.Resource implements IAclsListenerAssociation {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AclsListenerAssociationProps;
+    public readonly props: AclsListenerAssociationProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AclIds: The IDs of the ACL.
      */
-    public readonly attrAclIds: ros.IResolvable;
+    public readonly attrAclIds: ros.IResolvable | string;
 
     /**
      * Attribute ListenerId: The ID of the listener.
      */
-    public readonly attrListenerId: ros.IResolvable;
+    public readonly attrListenerId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

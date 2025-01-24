@@ -21,14 +21,20 @@ export interface SecurityGroupAttachmentProps {
 }
 
 /**
+ * Represents a `SecurityGroupAttachment`.
+ */
+export interface ISecurityGroupAttachment extends ros.IResource {
+    readonly props: SecurityGroupAttachmentProps;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::NLB::SecurityGroupAttachment`, which is used to bind a security group to a Network Load Balancer (NLB) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecurityGroupAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-securitygroupattachment
  */
-export class SecurityGroupAttachment extends ros.Resource {
+export class SecurityGroupAttachment extends ros.Resource implements ISecurityGroupAttachment {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: SecurityGroupAttachmentProps;
+    public readonly props: SecurityGroupAttachmentProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**

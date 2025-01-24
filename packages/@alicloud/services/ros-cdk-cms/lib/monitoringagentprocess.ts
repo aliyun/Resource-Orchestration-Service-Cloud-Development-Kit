@@ -26,20 +26,31 @@ export interface MonitoringAgentProcessProps {
 }
 
 /**
+ * Represents a `MonitoringAgentProcess`.
+ */
+export interface IMonitoringAgentProcess extends ros.IResource {
+    readonly props: MonitoringAgentProcessProps;
+
+    /**
+     * Attribute Id: The process ID.
+     */
+    readonly attrId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::MonitoringAgentProcess`, which is used to create a process monitoring task.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMonitoringAgentProcess`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitoringagentprocess
  */
-export class MonitoringAgentProcess extends ros.Resource {
+export class MonitoringAgentProcess extends ros.Resource implements IMonitoringAgentProcess {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: MonitoringAgentProcessProps;
+    public readonly props: MonitoringAgentProcessProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Id: The process ID.
      */
-    public readonly attrId: ros.IResolvable;
+    public readonly attrId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

@@ -72,55 +72,101 @@ export interface ServiceProps {
 }
 
 /**
+ * Represents a `Service`.
+ */
+export interface IService extends ros.IResource {
+    readonly props: ServiceProps;
+
+    /**
+     * Attribute InternetAccess: Whether enable Internet access
+     */
+    readonly attrInternetAccess: ros.IResolvable | string;
+
+    /**
+     * Attribute LogProject: Log project of service
+     */
+    readonly attrLogProject: ros.IResolvable | string;
+
+    /**
+     * Attribute Logstore: Log store of service
+     */
+    readonly attrLogstore: ros.IResolvable | string;
+
+    /**
+     * Attribute Role: Role of service
+     */
+    readonly attrRole: ros.IResolvable | string;
+
+    /**
+     * Attribute ServiceId: The service ID
+     */
+    readonly attrServiceId: ros.IResolvable | string;
+
+    /**
+     * Attribute ServiceName: The service name
+     */
+    readonly attrServiceName: ros.IResolvable | string;
+
+    /**
+     * Attribute Tags: Tags of service
+     */
+    readonly attrTags: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcId: VPC ID
+     */
+    readonly attrVpcId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::FC::Service`, which is used to create a service in Function Compute.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosService`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-service
  */
-export class Service extends ros.Resource {
+export class Service extends ros.Resource implements IService {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ServiceProps;
+    public readonly props: ServiceProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InternetAccess: Whether enable Internet access
      */
-    public readonly attrInternetAccess: ros.IResolvable;
+    public readonly attrInternetAccess: ros.IResolvable | string;
 
     /**
      * Attribute LogProject: Log project of service
      */
-    public readonly attrLogProject: ros.IResolvable;
+    public readonly attrLogProject: ros.IResolvable | string;
 
     /**
      * Attribute Logstore: Log store of service
      */
-    public readonly attrLogstore: ros.IResolvable;
+    public readonly attrLogstore: ros.IResolvable | string;
 
     /**
      * Attribute Role: Role of service
      */
-    public readonly attrRole: ros.IResolvable;
+    public readonly attrRole: ros.IResolvable | string;
 
     /**
      * Attribute ServiceId: The service ID
      */
-    public readonly attrServiceId: ros.IResolvable;
+    public readonly attrServiceId: ros.IResolvable | string;
 
     /**
      * Attribute ServiceName: The service name
      */
-    public readonly attrServiceName: ros.IResolvable;
+    public readonly attrServiceName: ros.IResolvable | string;
 
     /**
      * Attribute Tags: Tags of service
      */
-    public readonly attrTags: ros.IResolvable;
+    public readonly attrTags: ros.IResolvable | string;
 
     /**
      * Attribute VpcId: VPC ID
      */
-    public readonly attrVpcId: ros.IResolvable;
+    public readonly attrVpcId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

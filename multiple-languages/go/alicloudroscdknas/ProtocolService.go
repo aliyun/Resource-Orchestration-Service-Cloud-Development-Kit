@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::NAS::ProtocolService`, which is used to create a protocol service for a Cloud Paralleled File System (CPFS) file system.
 type ProtocolService interface {
 	alicloudroscdkcore.Resource
+	IProtocolService
 	// Attribute FileSystemId: File system ID.
-	AttrFileSystemId() alicloudroscdkcore.IResolvable
+	AttrFileSystemId() interface{}
 	// Attribute ProtocolServiceId: Agreement cluster group ID.
-	AttrProtocolServiceId() alicloudroscdkcore.IResolvable
+	AttrProtocolServiceId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type ProtocolService interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ProtocolServiceProps
-	SetProps(val *ProtocolServiceProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type ProtocolService interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type ProtocolService interface {
 // The jsii proxy struct for ProtocolService
 type jsiiProxy_ProtocolService struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IProtocolService
 }
 
-func (j *jsiiProxy_ProtocolService) AttrFileSystemId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ProtocolService) AttrFileSystemId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrFileSystemId",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_ProtocolService) AttrFileSystemId() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_ProtocolService) AttrProtocolServiceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ProtocolService) AttrProtocolServiceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrProtocolServiceId",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_ProtocolService) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ProtocolService) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_ProtocolService)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ProtocolService)SetProps(val *ProtocolServiceProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_ProtocolService)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (p *jsiiProxy_ProtocolService) ApplyRemovalPolicy(policy alicloudroscdkcore
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (p *jsiiProxy_ProtocolService) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		p,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_ProtocolService) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		p,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (p *jsiiProxy_ProtocolService) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		p,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (p *jsiiProxy_ProtocolService) GeneratePhysicalName() *string {

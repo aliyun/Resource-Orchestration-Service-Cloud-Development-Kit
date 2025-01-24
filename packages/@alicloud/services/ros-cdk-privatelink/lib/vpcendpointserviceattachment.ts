@@ -29,30 +29,51 @@ export interface VpcEndpointServiceAttachmentProps {
 }
 
 /**
+ * Represents a `VpcEndpointServiceAttachment`.
+ */
+export interface IVpcEndpointServiceAttachment extends ros.IResource {
+    readonly props: VpcEndpointServiceAttachmentProps;
+
+    /**
+     * Attribute ResourceId: The resource id.
+     */
+    readonly attrResourceId: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceType: The resource type.
+     */
+    readonly attrResourceType: ros.IResolvable | string;
+
+    /**
+     * Attribute ServiceId: The endpoint service that is associated with the endpoint.
+     */
+    readonly attrServiceId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::PrivateLink::VpcEndpointServiceAttachment`, which is used to add a service resource to an endpoint service.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpcEndpointServiceAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpointserviceattachment
  */
-export class VpcEndpointServiceAttachment extends ros.Resource {
+export class VpcEndpointServiceAttachment extends ros.Resource implements IVpcEndpointServiceAttachment {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: VpcEndpointServiceAttachmentProps;
+    public readonly props: VpcEndpointServiceAttachmentProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ResourceId: The resource id.
      */
-    public readonly attrResourceId: ros.IResolvable;
+    public readonly attrResourceId: ros.IResolvable | string;
 
     /**
      * Attribute ResourceType: The resource type.
      */
-    public readonly attrResourceType: ros.IResolvable;
+    public readonly attrResourceType: ros.IResolvable | string;
 
     /**
      * Attribute ServiceId: The endpoint service that is associated with the endpoint.
      */
-    public readonly attrServiceId: ros.IResolvable;
+    public readonly attrServiceId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

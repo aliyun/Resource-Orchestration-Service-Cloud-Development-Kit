@@ -12,14 +12,24 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::RAM::AppSecret`, which is used to create an application secret.
 type AppSecret interface {
 	alicloudroscdkcore.Resource
+	IAppSecret
 	// Attribute AppSecretId: The ID of the application secret.
-	AttrAppSecretId() alicloudroscdkcore.IResolvable
+	AttrAppSecretId() interface{}
 	// Attribute AppSecretValue: The content of the application secret.
 	//
 	// This value can be used as the client secret for open authorization.
-	AttrAppSecretValue() alicloudroscdkcore.IResolvable
+	AttrAppSecretValue() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -34,7 +44,6 @@ type AppSecret interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *AppSecretProps
-	SetProps(val *AppSecretProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -47,6 +56,9 @@ type AppSecret interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -99,10 +111,11 @@ type AppSecret interface {
 // The jsii proxy struct for AppSecret
 type jsiiProxy_AppSecret struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IAppSecret
 }
 
-func (j *jsiiProxy_AppSecret) AttrAppSecretId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AppSecret) AttrAppSecretId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAppSecretId",
@@ -111,8 +124,8 @@ func (j *jsiiProxy_AppSecret) AttrAppSecretId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_AppSecret) AttrAppSecretValue() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AppSecret) AttrAppSecretValue() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAppSecretValue",
@@ -126,6 +139,16 @@ func (j *jsiiProxy_AppSecret) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppSecret) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -263,17 +286,6 @@ func (j *jsiiProxy_AppSecret)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AppSecret)SetProps(val *AppSecretProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_AppSecret)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -365,6 +377,45 @@ func (a *jsiiProxy_AppSecret) ApplyRemovalPolicy(policy alicloudroscdkcore.Remov
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (a *jsiiProxy_AppSecret) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		a,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AppSecret) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AppSecret) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (a *jsiiProxy_AppSecret) GeneratePhysicalName() *string {

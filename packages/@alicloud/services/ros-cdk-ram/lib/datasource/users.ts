@@ -29,25 +29,41 @@ export interface UsersProps {
 }
 
 /**
+ * Represents a `Users`.
+ */
+export interface IUsers extends ros.IResource {
+    readonly props: UsersProps;
+
+    /**
+     * Attribute UserNames: The list of user names.
+     */
+    readonly attrUserNames: ros.IResolvable | string;
+
+    /**
+     * Attribute Users: The list of users.
+     */
+    readonly attrUsers: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::RAM::Users`, which is used to query the information about Resource Access Management (RAM) users.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUsers`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-users
  */
-export class Users extends ros.Resource {
+export class Users extends ros.Resource implements IUsers {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: UsersProps;
+    public readonly props: UsersProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute UserNames: The list of user names.
      */
-    public readonly attrUserNames: ros.IResolvable;
+    public readonly attrUserNames: ros.IResolvable | string;
 
     /**
      * Attribute Users: The list of users.
      */
-    public readonly attrUsers: ros.IResolvable;
+    public readonly attrUsers: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

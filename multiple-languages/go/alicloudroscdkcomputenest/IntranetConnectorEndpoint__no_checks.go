@@ -52,10 +52,6 @@ func (j *jsiiProxy_IntranetConnectorEndpoint) validateSetIdParameters(val *strin
 	return nil
 }
 
-func (j *jsiiProxy_IntranetConnectorEndpoint) validateSetPropsParameters(val *IntranetConnectorEndpointProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_IntranetConnectorEndpoint) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

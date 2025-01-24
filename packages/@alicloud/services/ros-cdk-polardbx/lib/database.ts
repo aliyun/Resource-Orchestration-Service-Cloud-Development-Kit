@@ -47,40 +47,71 @@ export interface DatabaseProps {
 }
 
 /**
+ * Represents a `Database`.
+ */
+export interface IDatabase extends ros.IResource {
+    readonly props: DatabaseProps;
+
+    /**
+     * Attribute Accounts: List of accounts.
+     */
+    readonly attrAccounts: ros.IResolvable | string;
+
+    /**
+     * Attribute CharacterSetName: Character set, which supports the following character sets:.
+     */
+    readonly attrCharacterSetName: ros.IResolvable | string;
+
+    /**
+     * Attribute DBInstanceId: The ID of the instance.
+     */
+    readonly attrDbInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute DatabaseDescription: Database description information.
+     */
+    readonly attrDatabaseDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute DatabaseName: The name of the database.
+     */
+    readonly attrDatabaseName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::PolarDBX::Database`, which is used to create a database.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDatabase`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardbx-database
  */
-export class Database extends ros.Resource {
+export class Database extends ros.Resource implements IDatabase {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DatabaseProps;
+    public readonly props: DatabaseProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Accounts: List of accounts.
      */
-    public readonly attrAccounts: ros.IResolvable;
+    public readonly attrAccounts: ros.IResolvable | string;
 
     /**
      * Attribute CharacterSetName: Character set, which supports the following character sets:.
      */
-    public readonly attrCharacterSetName: ros.IResolvable;
+    public readonly attrCharacterSetName: ros.IResolvable | string;
 
     /**
      * Attribute DBInstanceId: The ID of the instance.
      */
-    public readonly attrDbInstanceId: ros.IResolvable;
+    public readonly attrDbInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute DatabaseDescription: Database description information.
      */
-    public readonly attrDatabaseDescription: ros.IResolvable;
+    public readonly attrDatabaseDescription: ros.IResolvable | string;
 
     /**
      * Attribute DatabaseName: The name of the database.
      */
-    public readonly attrDatabaseName: ros.IResolvable;
+    public readonly attrDatabaseName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

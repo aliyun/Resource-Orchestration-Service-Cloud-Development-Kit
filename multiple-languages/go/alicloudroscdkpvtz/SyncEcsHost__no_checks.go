@@ -52,10 +52,6 @@ func (j *jsiiProxy_SyncEcsHost) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_SyncEcsHost) validateSetPropsParameters(val *SyncEcsHostProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_SyncEcsHost) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

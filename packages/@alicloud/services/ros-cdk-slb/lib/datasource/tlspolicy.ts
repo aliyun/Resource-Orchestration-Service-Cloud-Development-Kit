@@ -24,40 +24,71 @@ export interface TLSPolicyProps {
 }
 
 /**
+ * Represents a `TLSPolicy`.
+ */
+export interface ITLSPolicy extends ros.IResource {
+    readonly props: TLSPolicyProps;
+
+    /**
+     * Attribute Ciphers: The cipher suites supported by the TLS version.
+     */
+    readonly attrCiphers: ros.IResolvable | string;
+
+    /**
+     * Attribute CreateTime: The timestamp generated when the TLS policy is created.
+     */
+    readonly attrCreateTime: ros.IResolvable | string;
+
+    /**
+     * Attribute InstanceId: The ID of the TLS policy.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute TLSPolicyName: The name of the TLS policy.
+     */
+    readonly attrTlsPolicyName: ros.IResolvable | string;
+
+    /**
+     * Attribute TlsVersions: The version of the TLS protocol.
+     */
+    readonly attrTlsVersions: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::TLSPolicy`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTLSPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-tlspolicy
  */
-export class TLSPolicy extends ros.Resource {
+export class TLSPolicy extends ros.Resource implements ITLSPolicy {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: TLSPolicyProps;
+    public readonly props: TLSPolicyProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Ciphers: The cipher suites supported by the TLS version.
      */
-    public readonly attrCiphers: ros.IResolvable;
+    public readonly attrCiphers: ros.IResolvable | string;
 
     /**
      * Attribute CreateTime: The timestamp generated when the TLS policy is created.
      */
-    public readonly attrCreateTime: ros.IResolvable;
+    public readonly attrCreateTime: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: The ID of the TLS policy.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute TLSPolicyName: The name of the TLS policy.
      */
-    public readonly attrTlsPolicyName: ros.IResolvable;
+    public readonly attrTlsPolicyName: ros.IResolvable | string;
 
     /**
      * Attribute TlsVersions: The version of the TLS protocol.
      */
-    public readonly attrTlsVersions: ros.IResolvable;
+    public readonly attrTlsVersions: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

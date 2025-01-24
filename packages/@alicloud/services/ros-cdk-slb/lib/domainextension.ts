@@ -32,26 +32,43 @@ export interface DomainExtensionProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::DomainExtension`, which is used to create a domain extension for an SLB instance.
- * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomainExtension`for a more convenient development experience.
- * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-domainextension
+ * Represents a `DomainExtension`.
  */
-export class DomainExtension extends ros.Resource {
-    protected scope: ros.Construct;
-    protected id: string;
-    protected props: DomainExtensionProps;
-    protected enableResourcePropertyConstraint: boolean;
+export interface IDomainExtension extends ros.IResource {
+    readonly props: DomainExtensionProps;
 
     /**
      * Attribute DomainExtensionId: The ID of the created domain name extension.
      */
-    public readonly attrDomainExtensionId: ros.IResolvable;
+    readonly attrDomainExtensionId: ros.IResolvable | string;
 
     /**
      * Attribute ListenerPort: The front-end HTTPS listener port of the Server Load Balancer instance. Valid value:
 1-65535
      */
-    public readonly attrListenerPort: ros.IResolvable;
+    readonly attrListenerPort: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::DomainExtension`, which is used to create a domain extension for an SLB instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomainExtension`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-domainextension
+ */
+export class DomainExtension extends ros.Resource implements IDomainExtension {
+    protected scope: ros.Construct;
+    protected id: string;
+    public readonly props: DomainExtensionProps;
+    protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute DomainExtensionId: The ID of the created domain name extension.
+     */
+    public readonly attrDomainExtensionId: ros.IResolvable | string;
+
+    /**
+     * Attribute ListenerPort: The front-end HTTPS listener port of the Server Load Balancer instance. Valid value:
+1-65535
+     */
+    public readonly attrListenerPort: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

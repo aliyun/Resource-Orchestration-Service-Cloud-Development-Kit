@@ -24,25 +24,41 @@ export interface GrafanaWorkspacesProps {
 }
 
 /**
+ * Represents a `GrafanaWorkspaces`.
+ */
+export interface IGrafanaWorkspaces extends ros.IResource {
+    readonly props: GrafanaWorkspacesProps;
+
+    /**
+     * Attribute GrafanaWorkspaceIds: The list of grafana workspace IDs.
+     */
+    readonly attrGrafanaWorkspaceIds: ros.IResolvable | string;
+
+    /**
+     * Attribute GrafanaWorkspaces: The list of grafana workspaces.
+     */
+    readonly attrGrafanaWorkspaces: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::GrafanaWorkspaces`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGrafanaWorkspaces`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-grafanaworkspaces
  */
-export class GrafanaWorkspaces extends ros.Resource {
+export class GrafanaWorkspaces extends ros.Resource implements IGrafanaWorkspaces {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: GrafanaWorkspacesProps;
+    public readonly props: GrafanaWorkspacesProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute GrafanaWorkspaceIds: The list of grafana workspace IDs.
      */
-    public readonly attrGrafanaWorkspaceIds: ros.IResolvable;
+    public readonly attrGrafanaWorkspaceIds: ros.IResolvable | string;
 
     /**
      * Attribute GrafanaWorkspaces: The list of grafana workspaces.
      */
-    public readonly attrGrafanaWorkspaces: ros.IResolvable;
+    public readonly attrGrafanaWorkspaces: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

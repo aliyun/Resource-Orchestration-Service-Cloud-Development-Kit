@@ -3,6 +3,864 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosConcurrencyConfig`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-concurrencyconfig
+ */
+export interface RosConcurrencyConfigProps {
+
+    /**
+     * @Property functionName: Function name.
+     */
+    readonly functionName: string | ros.IResolvable;
+
+    /**
+     * @Property reservedConcurrency: To RESERVE concurrency, FUNCTIONS RESERVE a portion OF ACCOUNT concurrency that cannot be used by other functions. Reserved concurrency includes the total concurrency of reserved instances and instances by volume.
+     */
+    readonly reservedConcurrency: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosConcurrencyConfigProps`
+ *
+ * @param properties - the TypeScript properties of a `RosConcurrencyConfigProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosConcurrencyConfigPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('functionName', ros.requiredValidator)(properties.functionName));
+    errors.collect(ros.propertyValidator('functionName', ros.validateString)(properties.functionName));
+    errors.collect(ros.propertyValidator('reservedConcurrency', ros.requiredValidator)(properties.reservedConcurrency));
+    if(properties.reservedConcurrency && (typeof properties.reservedConcurrency) !== 'object') {
+        errors.collect(ros.propertyValidator('reservedConcurrency', ros.validateRange)({
+            data: properties.reservedConcurrency,
+            min: undefined,
+            max: 300,
+          }));
+    }
+    errors.collect(ros.propertyValidator('reservedConcurrency', ros.validateNumber)(properties.reservedConcurrency));
+    return errors.wrap('supplied properties not correct for "RosConcurrencyConfigProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC3::ConcurrencyConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `RosConcurrencyConfigProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC3::ConcurrencyConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosConcurrencyConfigPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosConcurrencyConfigPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'FunctionName': ros.stringToRosTemplate(properties.functionName),
+      'ReservedConcurrency': ros.numberToRosTemplate(properties.reservedConcurrency),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC3::ConcurrencyConfig`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ConcurrencyConfig` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-concurrencyconfig
+ */
+export class RosConcurrencyConfig extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::FC3::ConcurrencyConfig";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property functionName: Function name.
+     */
+    public functionName: string | ros.IResolvable;
+
+    /**
+     * @Property reservedConcurrency: To RESERVE concurrency, FUNCTIONS RESERVE a portion OF ACCOUNT concurrency that cannot be used by other functions. Reserved concurrency includes the total concurrency of reserved instances and instances by volume.
+     */
+    public reservedConcurrency: number | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosConcurrencyConfigProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosConcurrencyConfig.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.functionName = props.functionName;
+        this.reservedConcurrency = props.reservedConcurrency;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            functionName: this.functionName,
+            reservedConcurrency: this.reservedConcurrency,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosConcurrencyConfigPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosCustomDomain`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-customdomain
+ */
+export interface RosCustomDomainProps {
+
+    /**
+     * @Property authConfig: Permission authentication configuration.
+     */
+    readonly authConfig: RosCustomDomain.AuthConfigProperty | ros.IResolvable;
+
+    /**
+     * @Property domainName: Domain name. Fill in the custom domain name that has been filed in Ali cloud or access to the record.
+     */
+    readonly domainName: string | ros.IResolvable;
+
+    /**
+     * @Property protocol: Protocol types supported by the domain name. Valid values:
+     * - HTTP: Only HTTP protocol is supported. 
+     * - HTTPS: HTTPS only is supported. 
+     * - HTTP,HTTPS: Supports HTTP and HTTPS protocols.
+     */
+    readonly protocol: string | ros.IResolvable;
+
+    /**
+     * @Property certConfig: HTTPS certificate information.
+     */
+    readonly certConfig?: RosCustomDomain.CertConfigProperty | ros.IResolvable;
+
+    /**
+     * @Property routeConfig: Routing table: path to function mappingwhen a function is called with a custom domain name
+     */
+    readonly routeConfig?: RosCustomDomain.RouteConfigProperty | ros.IResolvable;
+
+    /**
+     * @Property tlsConfig: TLS config.
+     */
+    readonly tlsConfig?: RosCustomDomain.TlsConfigProperty | ros.IResolvable;
+
+    /**
+     * @Property wafConfig: Web application firewall configuration information.
+     */
+    readonly wafConfig?: RosCustomDomain.WafConfigProperty | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosCustomDomainProps`
+ *
+ * @param properties - the TypeScript properties of a `RosCustomDomainProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosCustomDomainPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('certConfig', RosCustomDomain_CertConfigPropertyValidator)(properties.certConfig));
+    errors.collect(ros.propertyValidator('domainName', ros.requiredValidator)(properties.domainName));
+    errors.collect(ros.propertyValidator('domainName', ros.validateString)(properties.domainName));
+    errors.collect(ros.propertyValidator('tlsConfig', RosCustomDomain_TlsConfigPropertyValidator)(properties.tlsConfig));
+    errors.collect(ros.propertyValidator('routeConfig', RosCustomDomain_RouteConfigPropertyValidator)(properties.routeConfig));
+    errors.collect(ros.propertyValidator('authConfig', ros.requiredValidator)(properties.authConfig));
+    errors.collect(ros.propertyValidator('authConfig', RosCustomDomain_AuthConfigPropertyValidator)(properties.authConfig));
+    errors.collect(ros.propertyValidator('protocol', ros.requiredValidator)(properties.protocol));
+    if(properties.protocol && (typeof properties.protocol) !== 'object') {
+        errors.collect(ros.propertyValidator('protocol', ros.validateAllowedValues)({
+          data: properties.protocol,
+          allowedValues: ["HTTP","HTTPS","HTTP,HTTPS"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('protocol', ros.validateString)(properties.protocol));
+    errors.collect(ros.propertyValidator('wafConfig', RosCustomDomain_WafConfigPropertyValidator)(properties.wafConfig));
+    return errors.wrap('supplied properties not correct for "RosCustomDomainProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC3::CustomDomain` resource
+ *
+ * @param properties - the TypeScript properties of a `RosCustomDomainProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC3::CustomDomain` resource.
+ */
+// @ts-ignore TS6133
+function rosCustomDomainPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosCustomDomainPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AuthConfig': rosCustomDomainAuthConfigPropertyToRosTemplate(properties.authConfig),
+      'DomainName': ros.stringToRosTemplate(properties.domainName),
+      'Protocol': ros.stringToRosTemplate(properties.protocol),
+      'CertConfig': rosCustomDomainCertConfigPropertyToRosTemplate(properties.certConfig),
+      'RouteConfig': rosCustomDomainRouteConfigPropertyToRosTemplate(properties.routeConfig),
+      'TlsConfig': rosCustomDomainTlsConfigPropertyToRosTemplate(properties.tlsConfig),
+      'WafConfig': rosCustomDomainWafConfigPropertyToRosTemplate(properties.wafConfig),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC3::CustomDomain`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CustomDomain` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-customdomain
+ */
+export class RosCustomDomain extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::FC3::CustomDomain";
+
+    /**
+     * @Attribute DomainName: The domain name
+     */
+    public readonly attrDomainName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property authConfig: Permission authentication configuration.
+     */
+    public authConfig: RosCustomDomain.AuthConfigProperty | ros.IResolvable;
+
+    /**
+     * @Property domainName: Domain name. Fill in the custom domain name that has been filed in Ali cloud or access to the record.
+     */
+    public domainName: string | ros.IResolvable;
+
+    /**
+     * @Property protocol: Protocol types supported by the domain name. Valid values:
+     * - HTTP: Only HTTP protocol is supported. 
+     * - HTTPS: HTTPS only is supported. 
+     * - HTTP,HTTPS: Supports HTTP and HTTPS protocols.
+     */
+    public protocol: string | ros.IResolvable;
+
+    /**
+     * @Property certConfig: HTTPS certificate information.
+     */
+    public certConfig: RosCustomDomain.CertConfigProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property routeConfig: Routing table: path to function mappingwhen a function is called with a custom domain name
+     */
+    public routeConfig: RosCustomDomain.RouteConfigProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property tlsConfig: TLS config.
+     */
+    public tlsConfig: RosCustomDomain.TlsConfigProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property wafConfig: Web application firewall configuration information.
+     */
+    public wafConfig: RosCustomDomain.WafConfigProperty | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosCustomDomainProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosCustomDomain.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDomainName = this.getAtt('DomainName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.authConfig = props.authConfig;
+        this.domainName = props.domainName;
+        this.protocol = props.protocol;
+        this.certConfig = props.certConfig;
+        this.routeConfig = props.routeConfig;
+        this.tlsConfig = props.tlsConfig;
+        this.wafConfig = props.wafConfig;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            authConfig: this.authConfig,
+            domainName: this.domainName,
+            protocol: this.protocol,
+            certConfig: this.certConfig,
+            routeConfig: this.routeConfig,
+            tlsConfig: this.tlsConfig,
+            wafConfig: this.wafConfig,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosCustomDomainPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosCustomDomain {
+    /**
+     * @stability external
+     */
+    export interface AuthConfigProperty {
+        /**
+         * @Property authInfo: Authentication information.
+         */
+        readonly authInfo?: string | ros.IResolvable;
+        /**
+         * @Property authType: Authentication type.
+         */
+        readonly authType: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AuthConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `AuthConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosCustomDomain_AuthConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('authInfo', ros.validateString)(properties.authInfo));
+    errors.collect(ros.propertyValidator('authType', ros.requiredValidator)(properties.authType));
+    if(properties.authType && (typeof properties.authType) !== 'object') {
+        errors.collect(ros.propertyValidator('authType', ros.validateAllowedValues)({
+          data: properties.authType,
+          allowedValues: ["anonymous","function","jwt"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('authType', ros.validateString)(properties.authType));
+    return errors.wrap('supplied properties not correct for "AuthConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC3::CustomDomain.AuthConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `AuthConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC3::CustomDomain.AuthConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosCustomDomainAuthConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosCustomDomain_AuthConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'AuthInfo': ros.stringToRosTemplate(properties.authInfo),
+      'AuthType': ros.stringToRosTemplate(properties.authType),
+    };
+}
+
+export namespace RosCustomDomain {
+    /**
+     * @stability external
+     */
+    export interface CertConfigProperty {
+        /**
+         * @Property privateKey: Private key in PEM format.
+         */
+        readonly privateKey: string | ros.IResolvable;
+        /**
+         * @Property certName: Certificate name.
+         */
+        readonly certName: string | ros.IResolvable;
+        /**
+         * @Property certificate: Certificates in PEM format.
+         */
+        readonly certificate: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `CertConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `CertConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosCustomDomain_CertConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('privateKey', ros.requiredValidator)(properties.privateKey));
+    errors.collect(ros.propertyValidator('privateKey', ros.validateString)(properties.privateKey));
+    errors.collect(ros.propertyValidator('certName', ros.requiredValidator)(properties.certName));
+    errors.collect(ros.propertyValidator('certName', ros.validateString)(properties.certName));
+    errors.collect(ros.propertyValidator('certificate', ros.requiredValidator)(properties.certificate));
+    errors.collect(ros.propertyValidator('certificate', ros.validateString)(properties.certificate));
+    return errors.wrap('supplied properties not correct for "CertConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC3::CustomDomain.CertConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `CertConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC3::CustomDomain.CertConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosCustomDomainCertConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosCustomDomain_CertConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'PrivateKey': ros.stringToRosTemplate(properties.privateKey),
+      'CertName': ros.stringToRosTemplate(properties.certName),
+      'Certificate': ros.stringToRosTemplate(properties.certificate),
+    };
+}
+
+export namespace RosCustomDomain {
+    /**
+     * @stability external
+     */
+    export interface EqualRulesProperty {
+        /**
+         * @Property replacement: Replacement.
+         */
+        readonly replacement: string | ros.IResolvable;
+        /**
+         * @Property match: Match.
+         */
+        readonly match: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `EqualRulesProperty`
+ *
+ * @param properties - the TypeScript properties of a `EqualRulesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosCustomDomain_EqualRulesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('replacement', ros.requiredValidator)(properties.replacement));
+    errors.collect(ros.propertyValidator('replacement', ros.validateString)(properties.replacement));
+    errors.collect(ros.propertyValidator('match', ros.requiredValidator)(properties.match));
+    errors.collect(ros.propertyValidator('match', ros.validateString)(properties.match));
+    return errors.wrap('supplied properties not correct for "EqualRulesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC3::CustomDomain.EqualRules` resource
+ *
+ * @param properties - the TypeScript properties of a `EqualRulesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC3::CustomDomain.EqualRules` resource.
+ */
+// @ts-ignore TS6133
+function rosCustomDomainEqualRulesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosCustomDomain_EqualRulesPropertyValidator(properties).assertSuccess();
+    return {
+      'Replacement': ros.stringToRosTemplate(properties.replacement),
+      'Match': ros.stringToRosTemplate(properties.match),
+    };
+}
+
+export namespace RosCustomDomain {
+    /**
+     * @stability external
+     */
+    export interface RegexRulesProperty {
+        /**
+         * @Property replacement: Replacement.
+         */
+        readonly replacement: string | ros.IResolvable;
+        /**
+         * @Property match: Match.
+         */
+        readonly match: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `RegexRulesProperty`
+ *
+ * @param properties - the TypeScript properties of a `RegexRulesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosCustomDomain_RegexRulesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('replacement', ros.requiredValidator)(properties.replacement));
+    errors.collect(ros.propertyValidator('replacement', ros.validateString)(properties.replacement));
+    errors.collect(ros.propertyValidator('match', ros.requiredValidator)(properties.match));
+    errors.collect(ros.propertyValidator('match', ros.validateString)(properties.match));
+    return errors.wrap('supplied properties not correct for "RegexRulesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC3::CustomDomain.RegexRules` resource
+ *
+ * @param properties - the TypeScript properties of a `RegexRulesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC3::CustomDomain.RegexRules` resource.
+ */
+// @ts-ignore TS6133
+function rosCustomDomainRegexRulesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosCustomDomain_RegexRulesPropertyValidator(properties).assertSuccess();
+    return {
+      'Replacement': ros.stringToRosTemplate(properties.replacement),
+      'Match': ros.stringToRosTemplate(properties.match),
+    };
+}
+
+export namespace RosCustomDomain {
+    /**
+     * @stability external
+     */
+    export interface RewriteConfigProperty {
+        /**
+         * @Property wildcardRules: Wildcard matching rules.
+         */
+        readonly wildcardRules?: Array<RosCustomDomain.WildcardRulesProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property regexRules: Regular matching rules.
+         */
+        readonly regexRules?: Array<RosCustomDomain.RegexRulesProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property equalRules: Exact matching rules.
+         */
+        readonly equalRules?: Array<RosCustomDomain.EqualRulesProperty | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `RewriteConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `RewriteConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosCustomDomain_RewriteConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.wildcardRules && (Array.isArray(properties.wildcardRules) || (typeof properties.wildcardRules) === 'string')) {
+        errors.collect(ros.propertyValidator('wildcardRules', ros.validateLength)({
+            data: properties.wildcardRules.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('wildcardRules', ros.listValidator(RosCustomDomain_WildcardRulesPropertyValidator))(properties.wildcardRules));
+    if(properties.regexRules && (Array.isArray(properties.regexRules) || (typeof properties.regexRules) === 'string')) {
+        errors.collect(ros.propertyValidator('regexRules', ros.validateLength)({
+            data: properties.regexRules.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('regexRules', ros.listValidator(RosCustomDomain_RegexRulesPropertyValidator))(properties.regexRules));
+    if(properties.equalRules && (Array.isArray(properties.equalRules) || (typeof properties.equalRules) === 'string')) {
+        errors.collect(ros.propertyValidator('equalRules', ros.validateLength)({
+            data: properties.equalRules.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('equalRules', ros.listValidator(RosCustomDomain_EqualRulesPropertyValidator))(properties.equalRules));
+    return errors.wrap('supplied properties not correct for "RewriteConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC3::CustomDomain.RewriteConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `RewriteConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC3::CustomDomain.RewriteConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosCustomDomainRewriteConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosCustomDomain_RewriteConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'WildcardRules': ros.listMapper(rosCustomDomainWildcardRulesPropertyToRosTemplate)(properties.wildcardRules),
+      'RegexRules': ros.listMapper(rosCustomDomainRegexRulesPropertyToRosTemplate)(properties.regexRules),
+      'EqualRules': ros.listMapper(rosCustomDomainEqualRulesPropertyToRosTemplate)(properties.equalRules),
+    };
+}
+
+export namespace RosCustomDomain {
+    /**
+     * @stability external
+     */
+    export interface RouteConfigProperty {
+        /**
+         * @Property routes: PathConfig Array
+         */
+        readonly routes: Array<RosCustomDomain.RoutesProperty | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `RouteConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `RouteConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosCustomDomain_RouteConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('routes', ros.requiredValidator)(properties.routes));
+    if(properties.routes && (Array.isArray(properties.routes) || (typeof properties.routes) === 'string')) {
+        errors.collect(ros.propertyValidator('routes', ros.validateLength)({
+            data: properties.routes.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('routes', ros.listValidator(RosCustomDomain_RoutesPropertyValidator))(properties.routes));
+    return errors.wrap('supplied properties not correct for "RouteConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC3::CustomDomain.RouteConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `RouteConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC3::CustomDomain.RouteConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosCustomDomainRouteConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosCustomDomain_RouteConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'Routes': ros.listMapper(rosCustomDomainRoutesPropertyToRosTemplate)(properties.routes),
+    };
+}
+
+export namespace RosCustomDomain {
+    /**
+     * @stability external
+     */
+    export interface RoutesProperty {
+        /**
+         * @Property path: HTTP request path when a function is called with a custom domain name, for example: "\/login\/*"
+         */
+        readonly path: string | ros.IResolvable;
+        /**
+         * @Property functionName: Path to the function, for example: "login"
+         */
+        readonly functionName: string | ros.IResolvable;
+        /**
+         * @Property qualifier: Service version or alias
+         */
+        readonly qualifier: string | ros.IResolvable;
+        /**
+         * @Property rewriteConfig: Rewrite configuration.
+         */
+        readonly rewriteConfig?: RosCustomDomain.RewriteConfigProperty | ros.IResolvable;
+        /**
+         * @Property methods: HTTP request methods. Valid values: HEAD, GET, POST, PUT, DELETE, PATCH, OPTIONS
+         */
+        readonly methods?: Array<string | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `RoutesProperty`
+ *
+ * @param properties - the TypeScript properties of a `RoutesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosCustomDomain_RoutesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('path', ros.requiredValidator)(properties.path));
+    errors.collect(ros.propertyValidator('path', ros.validateString)(properties.path));
+    errors.collect(ros.propertyValidator('functionName', ros.requiredValidator)(properties.functionName));
+    errors.collect(ros.propertyValidator('functionName', ros.validateString)(properties.functionName));
+    errors.collect(ros.propertyValidator('qualifier', ros.requiredValidator)(properties.qualifier));
+    errors.collect(ros.propertyValidator('qualifier', ros.validateString)(properties.qualifier));
+    errors.collect(ros.propertyValidator('rewriteConfig', RosCustomDomain_RewriteConfigPropertyValidator)(properties.rewriteConfig));
+    if(properties.methods && (Array.isArray(properties.methods) || (typeof properties.methods) === 'string')) {
+        errors.collect(ros.propertyValidator('methods', ros.validateLength)({
+            data: properties.methods.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('methods', ros.listValidator(ros.validateString))(properties.methods));
+    return errors.wrap('supplied properties not correct for "RoutesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC3::CustomDomain.Routes` resource
+ *
+ * @param properties - the TypeScript properties of a `RoutesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC3::CustomDomain.Routes` resource.
+ */
+// @ts-ignore TS6133
+function rosCustomDomainRoutesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosCustomDomain_RoutesPropertyValidator(properties).assertSuccess();
+    return {
+      'Path': ros.stringToRosTemplate(properties.path),
+      'FunctionName': ros.stringToRosTemplate(properties.functionName),
+      'Qualifier': ros.stringToRosTemplate(properties.qualifier),
+      'RewriteConfig': rosCustomDomainRewriteConfigPropertyToRosTemplate(properties.rewriteConfig),
+      'Methods': ros.listMapper(ros.stringToRosTemplate)(properties.methods),
+    };
+}
+
+export namespace RosCustomDomain {
+    /**
+     * @stability external
+     */
+    export interface TlsConfigProperty {
+        /**
+         * @Property minVersion: Minimum supported TLS version.
+         */
+        readonly minVersion: string | ros.IResolvable;
+        /**
+         * @Property maxVersion: Maximum supported TLS version.
+         */
+        readonly maxVersion?: string | ros.IResolvable;
+        /**
+         * @Property cipherSuites: TLS cipher suites.
+         */
+        readonly cipherSuites: Array<string | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TlsConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `TlsConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosCustomDomain_TlsConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('minVersion', ros.requiredValidator)(properties.minVersion));
+    errors.collect(ros.propertyValidator('minVersion', ros.validateString)(properties.minVersion));
+    errors.collect(ros.propertyValidator('maxVersion', ros.validateString)(properties.maxVersion));
+    errors.collect(ros.propertyValidator('cipherSuites', ros.requiredValidator)(properties.cipherSuites));
+    if(properties.cipherSuites && (Array.isArray(properties.cipherSuites) || (typeof properties.cipherSuites) === 'string')) {
+        errors.collect(ros.propertyValidator('cipherSuites', ros.validateLength)({
+            data: properties.cipherSuites.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('cipherSuites', ros.listValidator(ros.validateString))(properties.cipherSuites));
+    return errors.wrap('supplied properties not correct for "TlsConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC3::CustomDomain.TlsConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `TlsConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC3::CustomDomain.TlsConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosCustomDomainTlsConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosCustomDomain_TlsConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'MinVersion': ros.stringToRosTemplate(properties.minVersion),
+      'MaxVersion': ros.stringToRosTemplate(properties.maxVersion),
+      'CipherSuites': ros.listMapper(ros.stringToRosTemplate)(properties.cipherSuites),
+    };
+}
+
+export namespace RosCustomDomain {
+    /**
+     * @stability external
+     */
+    export interface WafConfigProperty {
+        /**
+         * @Property enableWaf: Whether to enable WAF.
+         */
+        readonly enableWaf?: boolean | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `WafConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `WafConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosCustomDomain_WafConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('enableWaf', ros.validateBoolean)(properties.enableWaf));
+    return errors.wrap('supplied properties not correct for "WafConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC3::CustomDomain.WafConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `WafConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC3::CustomDomain.WafConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosCustomDomainWafConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosCustomDomain_WafConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'EnableWAF': ros.booleanToRosTemplate(properties.enableWaf),
+    };
+}
+
+export namespace RosCustomDomain {
+    /**
+     * @stability external
+     */
+    export interface WildcardRulesProperty {
+        /**
+         * @Property replacement: Replacement.
+         */
+        readonly replacement: string | ros.IResolvable;
+        /**
+         * @Property match: Match.
+         */
+        readonly match: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `WildcardRulesProperty`
+ *
+ * @param properties - the TypeScript properties of a `WildcardRulesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosCustomDomain_WildcardRulesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('replacement', ros.requiredValidator)(properties.replacement));
+    errors.collect(ros.propertyValidator('replacement', ros.validateString)(properties.replacement));
+    errors.collect(ros.propertyValidator('match', ros.requiredValidator)(properties.match));
+    errors.collect(ros.propertyValidator('match', ros.validateString)(properties.match));
+    return errors.wrap('supplied properties not correct for "WildcardRulesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC3::CustomDomain.WildcardRules` resource
+ *
+ * @param properties - the TypeScript properties of a `WildcardRulesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC3::CustomDomain.WildcardRules` resource.
+ */
+// @ts-ignore TS6133
+function rosCustomDomainWildcardRulesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosCustomDomain_WildcardRulesPropertyValidator(properties).assertSuccess();
+    return {
+      'Replacement': ros.stringToRosTemplate(properties.replacement),
+      'Match': ros.stringToRosTemplate(properties.match),
+    };
+}
+
+/**
  * Properties for defining a `RosFunction`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-function
  */
@@ -518,6 +1376,103 @@ export namespace RosFunction {
     /**
      * @stability external
      */
+    export interface AuthConfigProperty {
+        /**
+         * @Property userName: The username that is used to log on to the image repository.
+         */
+        readonly userName: string | ros.IResolvable;
+        /**
+         * @Property password: The password of the username that is used to log on to the image repository.
+         */
+        readonly password: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AuthConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `AuthConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosFunction_AuthConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('userName', ros.requiredValidator)(properties.userName));
+    errors.collect(ros.propertyValidator('userName', ros.validateString)(properties.userName));
+    errors.collect(ros.propertyValidator('password', ros.requiredValidator)(properties.password));
+    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
+    return errors.wrap('supplied properties not correct for "AuthConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC3::Function.AuthConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `AuthConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC3::Function.AuthConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosFunctionAuthConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosFunction_AuthConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'UserName': ros.stringToRosTemplate(properties.userName),
+      'Password': ros.stringToRosTemplate(properties.password),
+    };
+}
+
+export namespace RosFunction {
+    /**
+     * @stability external
+     */
+    export interface CertConfigProperty {
+        /**
+         * @Property insecure: Whether to skip certificate verification. Default value is false.
+         */
+        readonly insecure: boolean | ros.IResolvable;
+        /**
+         * @Property rootCaCertBase64: The certificate authority (CA) certificate of the image repository.
+         */
+        readonly rootCaCertBase64?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `CertConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `CertConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosFunction_CertConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('insecure', ros.requiredValidator)(properties.insecure));
+    errors.collect(ros.propertyValidator('insecure', ros.validateBoolean)(properties.insecure));
+    errors.collect(ros.propertyValidator('rootCaCertBase64', ros.validateString)(properties.rootCaCertBase64));
+    return errors.wrap('supplied properties not correct for "CertConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC3::Function.CertConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `CertConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC3::Function.CertConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosFunctionCertConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosFunction_CertConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'Insecure': ros.booleanToRosTemplate(properties.insecure),
+      'RootCaCertBase64': ros.stringToRosTemplate(properties.rootCaCertBase64),
+    };
+}
+
+export namespace RosFunction {
+    /**
+     * @stability external
+     */
     export interface CodeProperty {
         /**
          * @Property sourceCode: (Node.js, PHP and Python) The source code for your FC function. If you include this parameter in a function source inline, ROS places it in a file called index (utf-8 encoded) and then compresses it to create a deployment package. For the Handler property, the first part of the handler identifier must be index. For example: index.handler.
@@ -594,17 +1549,21 @@ export namespace RosFunction {
      */
     export interface CustomContainerConfigProperty {
         /**
+         * @Property registryConfig: The configurations of the image repository.
+         */
+        readonly registryConfig?: RosFunction.RegistryConfigProperty | ros.IResolvable;
+        /**
          * @Property resolvedImageUri: The actual digest version of the deployed image. The code version specified by this digest is actually used when the function is started.
          */
         readonly resolvedImageUri?: string | ros.IResolvable;
         /**
-         * @Property accelerationInfo: Acceleration configuration.
-         */
-        readonly accelerationInfo?: RosFunction.AccelerationInfoProperty | ros.IResolvable;
-        /**
          * @Property acrInstanceId: The ID of the ACR instance.
          */
         readonly acrInstanceId?: string | ros.IResolvable;
+        /**
+         * @Property accelerationInfo: Acceleration configuration.
+         */
+        readonly accelerationInfo?: RosFunction.AccelerationInfoProperty | ros.IResolvable;
         /**
          * @Property entrypoint: The entrypoints to run in the container.
          */
@@ -641,9 +1600,10 @@ export namespace RosFunction {
 function RosFunction_CustomContainerConfigPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('registryConfig', RosFunction_RegistryConfigPropertyValidator)(properties.registryConfig));
     errors.collect(ros.propertyValidator('resolvedImageUri', ros.validateString)(properties.resolvedImageUri));
-    errors.collect(ros.propertyValidator('accelerationInfo', RosFunction_AccelerationInfoPropertyValidator)(properties.accelerationInfo));
     errors.collect(ros.propertyValidator('acrInstanceId', ros.validateString)(properties.acrInstanceId));
+    errors.collect(ros.propertyValidator('accelerationInfo', RosFunction_AccelerationInfoPropertyValidator)(properties.accelerationInfo));
     if(properties.entrypoint && (Array.isArray(properties.entrypoint) || (typeof properties.entrypoint) === 'string')) {
         errors.collect(ros.propertyValidator('entrypoint', ros.validateLength)({
             data: properties.entrypoint.length,
@@ -686,9 +1646,10 @@ function rosFunctionCustomContainerConfigPropertyToRosTemplate(properties: any):
     if (!ros.canInspect(properties)) { return properties; }
     RosFunction_CustomContainerConfigPropertyValidator(properties).assertSuccess();
     return {
+      'RegistryConfig': rosFunctionRegistryConfigPropertyToRosTemplate(properties.registryConfig),
       'ResolvedImageUri': ros.stringToRosTemplate(properties.resolvedImageUri),
-      'AccelerationInfo': rosFunctionAccelerationInfoPropertyToRosTemplate(properties.accelerationInfo),
       'AcrInstanceId': ros.stringToRosTemplate(properties.acrInstanceId),
+      'AccelerationInfo': rosFunctionAccelerationInfoPropertyToRosTemplate(properties.accelerationInfo),
       'Entrypoint': ros.listMapper(ros.stringToRosTemplate)(properties.entrypoint),
       'Command': ros.listMapper(ros.stringToRosTemplate)(properties.command),
       'AccelerationType': ros.stringToRosTemplate(properties.accelerationType),
@@ -1434,6 +2395,62 @@ export namespace RosFunction {
     /**
      * @stability external
      */
+    export interface NetworkConfigProperty {
+        /**
+         * @Property vpcId: The ID of the virtual private cloud (VPC) that can be used to connect to the image repository.
+         */
+        readonly vpcId: string | ros.IResolvable;
+        /**
+         * @Property vSwitchId: The ID of the vSwitch that can be used to connect to the image repository.
+         */
+        readonly vSwitchId: string | ros.IResolvable;
+        /**
+         * @Property securityGroupId: The ID of the security group that can be used to connect to the image repository.
+         */
+        readonly securityGroupId: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `NetworkConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `NetworkConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosFunction_NetworkConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.requiredValidator)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    return errors.wrap('supplied properties not correct for "NetworkConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC3::Function.NetworkConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `NetworkConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC3::Function.NetworkConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosFunctionNetworkConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosFunction_NetworkConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+    };
+}
+
+export namespace RosFunction {
+    /**
+     * @stability external
+     */
     export interface OssMountConfigProperty {
         /**
          * @Property mountPoints: The mount points of the function.
@@ -1594,6 +2611,60 @@ export namespace RosFunction {
     /**
      * @stability external
      */
+    export interface RegistryConfigProperty {
+        /**
+         * @Property certConfig: The certificate configurations.
+         */
+        readonly certConfig: RosFunction.CertConfigProperty | ros.IResolvable;
+        /**
+         * @Property networkConfig: The network information of the image repository.
+         */
+        readonly networkConfig?: RosFunction.NetworkConfigProperty | ros.IResolvable;
+        /**
+         * @Property authConfig: The authentication information of the image repository.
+         */
+        readonly authConfig?: RosFunction.AuthConfigProperty | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `RegistryConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `RegistryConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosFunction_RegistryConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('certConfig', ros.requiredValidator)(properties.certConfig));
+    errors.collect(ros.propertyValidator('certConfig', RosFunction_CertConfigPropertyValidator)(properties.certConfig));
+    errors.collect(ros.propertyValidator('networkConfig', RosFunction_NetworkConfigPropertyValidator)(properties.networkConfig));
+    errors.collect(ros.propertyValidator('authConfig', RosFunction_AuthConfigPropertyValidator)(properties.authConfig));
+    return errors.wrap('supplied properties not correct for "RegistryConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC3::Function.RegistryConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `RegistryConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC3::Function.RegistryConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosFunctionRegistryConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosFunction_RegistryConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'CertConfig': rosFunctionCertConfigPropertyToRosTemplate(properties.certConfig),
+      'NetworkConfig': rosFunctionNetworkConfigPropertyToRosTemplate(properties.networkConfig),
+      'AuthConfig': rosFunctionAuthConfigPropertyToRosTemplate(properties.authConfig),
+    };
+}
+
+export namespace RosFunction {
+    /**
+     * @stability external
+     */
     export interface TracingConfigProperty {
         /**
          * @Property type: The type of the function.
@@ -1694,6 +2765,397 @@ function rosFunctionVpcConfigPropertyToRosTemplate(properties: any): any {
       'VpcId': ros.stringToRosTemplate(properties.vpcId),
       'VSwitchIds': ros.listMapper(ros.stringToRosTemplate)(properties.vSwitchIds),
       'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+    };
+}
+
+/**
+ * Properties for defining a `RosProvisionConfig`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-provisionconfig
+ */
+export interface RosProvisionConfigProps {
+
+    /**
+     * @Property defaultTarget: The number of target resources to reserve.
+     */
+    readonly defaultTarget: number | ros.IResolvable;
+
+    /**
+     * @Property functionName: Function name.
+     */
+    readonly functionName: string | ros.IResolvable;
+
+    /**
+     * @Property alwaysAllocateCpu: Whether CPU should always be allocated; defaults to true.
+     */
+    readonly alwaysAllocateCpu?: boolean | ros.IResolvable;
+
+    /**
+     * @Property alwaysAllocateGpu: Whether GPU should always be allocated; defaults to true.
+     */
+    readonly alwaysAllocateGpu?: boolean | ros.IResolvable;
+
+    /**
+     * @Property qualifier: Function alias or LATEST.
+     */
+    readonly qualifier?: string | ros.IResolvable;
+
+    /**
+     * @Property scheduledActions: Timing policy configuration.
+     */
+    readonly scheduledActions?: Array<RosProvisionConfig.ScheduledActionsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property targetTrackingPolicies: Target tracking policy configuration.
+     */
+    readonly targetTrackingPolicies?: Array<RosProvisionConfig.TargetTrackingPoliciesProperty | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosProvisionConfigProps`
+ *
+ * @param properties - the TypeScript properties of a `RosProvisionConfigProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosProvisionConfigPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('defaultTarget', ros.requiredValidator)(properties.defaultTarget));
+    if(properties.defaultTarget && (typeof properties.defaultTarget) !== 'object') {
+        errors.collect(ros.propertyValidator('defaultTarget', ros.validateRange)({
+            data: properties.defaultTarget,
+            min: undefined,
+            max: 299,
+          }));
+    }
+    errors.collect(ros.propertyValidator('defaultTarget', ros.validateNumber)(properties.defaultTarget));
+    errors.collect(ros.propertyValidator('alwaysAllocateCpu', ros.validateBoolean)(properties.alwaysAllocateCpu));
+    errors.collect(ros.propertyValidator('functionName', ros.requiredValidator)(properties.functionName));
+    errors.collect(ros.propertyValidator('functionName', ros.validateString)(properties.functionName));
+    if(properties.targetTrackingPolicies && (Array.isArray(properties.targetTrackingPolicies) || (typeof properties.targetTrackingPolicies) === 'string')) {
+        errors.collect(ros.propertyValidator('targetTrackingPolicies', ros.validateLength)({
+            data: properties.targetTrackingPolicies.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('targetTrackingPolicies', ros.listValidator(RosProvisionConfig_TargetTrackingPoliciesPropertyValidator))(properties.targetTrackingPolicies));
+    if(properties.scheduledActions && (Array.isArray(properties.scheduledActions) || (typeof properties.scheduledActions) === 'string')) {
+        errors.collect(ros.propertyValidator('scheduledActions', ros.validateLength)({
+            data: properties.scheduledActions.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('scheduledActions', ros.listValidator(RosProvisionConfig_ScheduledActionsPropertyValidator))(properties.scheduledActions));
+    errors.collect(ros.propertyValidator('qualifier', ros.validateString)(properties.qualifier));
+    errors.collect(ros.propertyValidator('alwaysAllocateGpu', ros.validateBoolean)(properties.alwaysAllocateGpu));
+    return errors.wrap('supplied properties not correct for "RosProvisionConfigProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC3::ProvisionConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `RosProvisionConfigProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC3::ProvisionConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosProvisionConfigPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosProvisionConfigPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'DefaultTarget': ros.numberToRosTemplate(properties.defaultTarget),
+      'FunctionName': ros.stringToRosTemplate(properties.functionName),
+      'AlwaysAllocateCPU': ros.booleanToRosTemplate(properties.alwaysAllocateCpu),
+      'AlwaysAllocateGPU': ros.booleanToRosTemplate(properties.alwaysAllocateGpu),
+      'Qualifier': ros.stringToRosTemplate(properties.qualifier),
+      'ScheduledActions': ros.listMapper(rosProvisionConfigScheduledActionsPropertyToRosTemplate)(properties.scheduledActions),
+      'TargetTrackingPolicies': ros.listMapper(rosProvisionConfigTargetTrackingPoliciesPropertyToRosTemplate)(properties.targetTrackingPolicies),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC3::ProvisionConfig`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ProvisionConfig` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-provisionconfig
+ */
+export class RosProvisionConfig extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::FC3::ProvisionConfig";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property defaultTarget: The number of target resources to reserve.
+     */
+    public defaultTarget: number | ros.IResolvable;
+
+    /**
+     * @Property functionName: Function name.
+     */
+    public functionName: string | ros.IResolvable;
+
+    /**
+     * @Property alwaysAllocateCpu: Whether CPU should always be allocated; defaults to true.
+     */
+    public alwaysAllocateCpu: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property alwaysAllocateGpu: Whether GPU should always be allocated; defaults to true.
+     */
+    public alwaysAllocateGpu: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property qualifier: Function alias or LATEST.
+     */
+    public qualifier: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property scheduledActions: Timing policy configuration.
+     */
+    public scheduledActions: Array<RosProvisionConfig.ScheduledActionsProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property targetTrackingPolicies: Target tracking policy configuration.
+     */
+    public targetTrackingPolicies: Array<RosProvisionConfig.TargetTrackingPoliciesProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosProvisionConfigProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosProvisionConfig.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.defaultTarget = props.defaultTarget;
+        this.functionName = props.functionName;
+        this.alwaysAllocateCpu = props.alwaysAllocateCpu;
+        this.alwaysAllocateGpu = props.alwaysAllocateGpu;
+        this.qualifier = props.qualifier;
+        this.scheduledActions = props.scheduledActions;
+        this.targetTrackingPolicies = props.targetTrackingPolicies;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            defaultTarget: this.defaultTarget,
+            functionName: this.functionName,
+            alwaysAllocateCpu: this.alwaysAllocateCpu,
+            alwaysAllocateGpu: this.alwaysAllocateGpu,
+            qualifier: this.qualifier,
+            scheduledActions: this.scheduledActions,
+            targetTrackingPolicies: this.targetTrackingPolicies,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosProvisionConfigPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosProvisionConfig {
+    /**
+     * @stability external
+     */
+    export interface ScheduledActionsProperty {
+        /**
+         * @Property scheduleExpression: Cron expression.
+         */
+        readonly scheduleExpression?: string | ros.IResolvable;
+        /**
+         * @Property timeZone: Time zones. startTime, endTime, and scheduleExpression times need to be in UTC when the timezone argument is empty.
+         */
+        readonly timeZone?: string | ros.IResolvable;
+        /**
+         * @Property target: The number of target resources to reserve.
+         */
+        readonly target: number | ros.IResolvable;
+        /**
+         * @Property endTime: Policy expiration time.
+         */
+        readonly endTime?: string | ros.IResolvable;
+        /**
+         * @Property startTime: Policy start time.
+         */
+        readonly startTime?: string | ros.IResolvable;
+        /**
+         * @Property name: Policy name.
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ScheduledActionsProperty`
+ *
+ * @param properties - the TypeScript properties of a `ScheduledActionsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosProvisionConfig_ScheduledActionsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('scheduleExpression', ros.validateString)(properties.scheduleExpression));
+    errors.collect(ros.propertyValidator('timeZone', ros.validateString)(properties.timeZone));
+    errors.collect(ros.propertyValidator('target', ros.requiredValidator)(properties.target));
+    if(properties.target && (typeof properties.target) !== 'object') {
+        errors.collect(ros.propertyValidator('target', ros.validateRange)({
+            data: properties.target,
+            min: undefined,
+            max: 299,
+          }));
+    }
+    errors.collect(ros.propertyValidator('target', ros.validateNumber)(properties.target));
+    errors.collect(ros.propertyValidator('endTime', ros.validateString)(properties.endTime));
+    errors.collect(ros.propertyValidator('startTime', ros.validateString)(properties.startTime));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "ScheduledActionsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC3::ProvisionConfig.ScheduledActions` resource
+ *
+ * @param properties - the TypeScript properties of a `ScheduledActionsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC3::ProvisionConfig.ScheduledActions` resource.
+ */
+// @ts-ignore TS6133
+function rosProvisionConfigScheduledActionsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosProvisionConfig_ScheduledActionsPropertyValidator(properties).assertSuccess();
+    return {
+      'ScheduleExpression': ros.stringToRosTemplate(properties.scheduleExpression),
+      'TimeZone': ros.stringToRosTemplate(properties.timeZone),
+      'Target': ros.numberToRosTemplate(properties.target),
+      'EndTime': ros.stringToRosTemplate(properties.endTime),
+      'StartTime': ros.stringToRosTemplate(properties.startTime),
+      'Name': ros.stringToRosTemplate(properties.name),
+    };
+}
+
+export namespace RosProvisionConfig {
+    /**
+     * @stability external
+     */
+    export interface TargetTrackingPoliciesProperty {
+        /**
+         * @Property metricTarget: Tracking values for metrics.
+         */
+        readonly metricTarget: number | ros.IResolvable;
+        /**
+         * @Property timeZone: Time zones. startTime, endTime, and scheduleExpression times need to be in UTC when the timezone argument is empty.
+         */
+        readonly timeZone?: string | ros.IResolvable;
+        /**
+         * @Property endTime: Policy end time (UTC).
+         */
+        readonly endTime?: string | ros.IResolvable;
+        /**
+         * @Property metricType: Tracking target type. Valid values:
+     * - ProvisionedConcurrencyUtilization: reserve a pattern instance concurrent degree of utilization. 
+     * - CPUUtilization: CPU utilization. 
+     * - GPUMemUtilization: GPU utilization.
+         */
+        readonly metricType: string | ros.IResolvable;
+        /**
+         * @Property startTime: Policy start time (UTC).
+         */
+        readonly startTime?: string | ros.IResolvable;
+        /**
+         * @Property minCapacity: The minimum of the shrinkage.
+         */
+        readonly minCapacity: number | ros.IResolvable;
+        /**
+         * @Property name: Policy name.
+         */
+        readonly name: string | ros.IResolvable;
+        /**
+         * @Property maxCapacity: The maximum of the expansion.
+         */
+        readonly maxCapacity: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TargetTrackingPoliciesProperty`
+ *
+ * @param properties - the TypeScript properties of a `TargetTrackingPoliciesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosProvisionConfig_TargetTrackingPoliciesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('metricTarget', ros.requiredValidator)(properties.metricTarget));
+    if(properties.metricTarget && (typeof properties.metricTarget) !== 'object') {
+        errors.collect(ros.propertyValidator('metricTarget', ros.validateRange)({
+            data: properties.metricTarget,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('metricTarget', ros.validateNumber)(properties.metricTarget));
+    errors.collect(ros.propertyValidator('timeZone', ros.validateString)(properties.timeZone));
+    errors.collect(ros.propertyValidator('endTime', ros.validateString)(properties.endTime));
+    errors.collect(ros.propertyValidator('metricType', ros.requiredValidator)(properties.metricType));
+    if(properties.metricType && (typeof properties.metricType) !== 'object') {
+        errors.collect(ros.propertyValidator('metricType', ros.validateAllowedValues)({
+          data: properties.metricType,
+          allowedValues: ["ProvisionedConcurrencyUtilization","CPUUtilization","GPUMemUtilization"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('metricType', ros.validateString)(properties.metricType));
+    errors.collect(ros.propertyValidator('startTime', ros.validateString)(properties.startTime));
+    errors.collect(ros.propertyValidator('minCapacity', ros.requiredValidator)(properties.minCapacity));
+    if(properties.minCapacity && (typeof properties.minCapacity) !== 'object') {
+        errors.collect(ros.propertyValidator('minCapacity', ros.validateRange)({
+            data: properties.minCapacity,
+            min: undefined,
+            max: 299,
+          }));
+    }
+    errors.collect(ros.propertyValidator('minCapacity', ros.validateNumber)(properties.minCapacity));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('maxCapacity', ros.requiredValidator)(properties.maxCapacity));
+    if(properties.maxCapacity && (typeof properties.maxCapacity) !== 'object') {
+        errors.collect(ros.propertyValidator('maxCapacity', ros.validateRange)({
+            data: properties.maxCapacity,
+            min: undefined,
+            max: 299,
+          }));
+    }
+    errors.collect(ros.propertyValidator('maxCapacity', ros.validateNumber)(properties.maxCapacity));
+    return errors.wrap('supplied properties not correct for "TargetTrackingPoliciesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC3::ProvisionConfig.TargetTrackingPolicies` resource
+ *
+ * @param properties - the TypeScript properties of a `TargetTrackingPoliciesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC3::ProvisionConfig.TargetTrackingPolicies` resource.
+ */
+// @ts-ignore TS6133
+function rosProvisionConfigTargetTrackingPoliciesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosProvisionConfig_TargetTrackingPoliciesPropertyValidator(properties).assertSuccess();
+    return {
+      'MetricTarget': ros.numberToRosTemplate(properties.metricTarget),
+      'TimeZone': ros.stringToRosTemplate(properties.timeZone),
+      'EndTime': ros.stringToRosTemplate(properties.endTime),
+      'MetricType': ros.stringToRosTemplate(properties.metricType),
+      'StartTime': ros.stringToRosTemplate(properties.startTime),
+      'MinCapacity': ros.numberToRosTemplate(properties.minCapacity),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'MaxCapacity': ros.numberToRosTemplate(properties.maxCapacity),
     };
 }
 

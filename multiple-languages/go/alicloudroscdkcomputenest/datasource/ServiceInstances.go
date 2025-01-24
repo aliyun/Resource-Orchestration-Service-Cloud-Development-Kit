@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::ComputeNest::ServiceInstances`, which is used to query the information about service instances.
 type ServiceInstances interface {
 	alicloudroscdkcore.Resource
+	IServiceInstances
 	// Attribute ServiceInstanceIds: The list of service instance IDs.
-	AttrServiceInstanceIds() alicloudroscdkcore.IResolvable
+	AttrServiceInstanceIds() interface{}
 	// Attribute ServiceInstances: The list of service instances.
-	AttrServiceInstances() alicloudroscdkcore.IResolvable
+	AttrServiceInstances() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type ServiceInstances interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *ServiceInstancesProps
-	SetProps(val *ServiceInstancesProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type ServiceInstances interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type ServiceInstances interface {
 // The jsii proxy struct for ServiceInstances
 type jsiiProxy_ServiceInstances struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IServiceInstances
 }
 
-func (j *jsiiProxy_ServiceInstances) AttrServiceInstanceIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ServiceInstances) AttrServiceInstanceIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrServiceInstanceIds",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_ServiceInstances) AttrServiceInstanceIds() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_ServiceInstances) AttrServiceInstances() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_ServiceInstances) AttrServiceInstances() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrServiceInstances",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_ServiceInstances) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ServiceInstances) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_ServiceInstances)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_ServiceInstances)SetProps(val *ServiceInstancesProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_ServiceInstances)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (s *jsiiProxy_ServiceInstances) ApplyRemovalPolicy(policy alicloudroscdkcor
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (s *jsiiProxy_ServiceInstances) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		s,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_ServiceInstances) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_ServiceInstances) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (s *jsiiProxy_ServiceInstances) GeneratePhysicalName() *string {

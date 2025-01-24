@@ -40,20 +40,31 @@ export interface BasicIpSetProps {
 }
 
 /**
+ * Represents a `BasicIpSet`.
+ */
+export interface IBasicIpSet extends ros.IResource {
+    readonly props: BasicIpSetProps;
+
+    /**
+     * Attribute IpSetId: The ID of the acceleration region.
+     */
+    readonly attrIpSetId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::GA::BasicIpSet`, which is used to create an acceleration region for a basic Global Accelerator (GA) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBasicIpSet`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicipset
  */
-export class BasicIpSet extends ros.Resource {
+export class BasicIpSet extends ros.Resource implements IBasicIpSet {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: BasicIpSetProps;
+    public readonly props: BasicIpSetProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute IpSetId: The ID of the acceleration region.
      */
-    public readonly attrIpSetId: ros.IResolvable;
+    public readonly attrIpSetId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

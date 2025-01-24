@@ -187,6 +187,21 @@ export interface RosDbAgentProps {
      * @Property instanceInfo: Instance infos
      */
     readonly instanceInfo: Array<RosDbAgent.InstanceInfoProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property crossAccountRoleName: The RAM role name that the original account created for cross-account backup operations.
+     */
+    readonly crossAccountRoleName?: string | ros.IResolvable;
+
+    /**
+     * @Property crossAccountType: The type of cross-account backup. Supported values: SELF_ACCOUNT: backup within the same account; CROSS_ACCOUNT: cross-account backup. Example: CROSS_ACCOUNT
+     */
+    readonly crossAccountType?: string | ros.IResolvable;
+
+    /**
+     * @Property crossAccountUserId: The user ID of the original account for cross-account backup operations.
+     */
+    readonly crossAccountUserId?: number | ros.IResolvable;
 }
 
 /**
@@ -199,6 +214,22 @@ export interface RosDbAgentProps {
 function RosDbAgentPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.crossAccountUserId && (typeof properties.crossAccountUserId) !== 'object') {
+        errors.collect(ros.propertyValidator('crossAccountUserId', ros.validateRange)({
+            data: properties.crossAccountUserId,
+            min: undefined,
+            max: 9007199254740991,
+          }));
+    }
+    errors.collect(ros.propertyValidator('crossAccountUserId', ros.validateNumber)(properties.crossAccountUserId));
+    errors.collect(ros.propertyValidator('crossAccountRoleName', ros.validateString)(properties.crossAccountRoleName));
+    if(properties.crossAccountType && (typeof properties.crossAccountType) !== 'object') {
+        errors.collect(ros.propertyValidator('crossAccountType', ros.validateAllowedValues)({
+          data: properties.crossAccountType,
+          allowedValues: ["SELF_ACCOUNT","CROSS_ACCOUNT"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('crossAccountType', ros.validateString)(properties.crossAccountType));
     errors.collect(ros.propertyValidator('instanceInfo', ros.requiredValidator)(properties.instanceInfo));
     if(properties.instanceInfo && (Array.isArray(properties.instanceInfo) || (typeof properties.instanceInfo) === 'string')) {
         errors.collect(ros.propertyValidator('instanceInfo', ros.validateLength)({
@@ -226,6 +257,9 @@ function rosDbAgentPropsToRosTemplate(properties: any, enableResourcePropertyCon
     }
     return {
       'InstanceInfo': ros.listMapper(rosDbAgentInstanceInfoPropertyToRosTemplate)(properties.instanceInfo),
+      'CrossAccountRoleName': ros.stringToRosTemplate(properties.crossAccountRoleName),
+      'CrossAccountType': ros.stringToRosTemplate(properties.crossAccountType),
+      'CrossAccountUserId': ros.numberToRosTemplate(properties.crossAccountUserId),
     };
 }
 
@@ -269,6 +303,21 @@ export class RosDbAgent extends ros.RosResource {
     public instanceInfo: Array<RosDbAgent.InstanceInfoProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property crossAccountRoleName: The RAM role name that the original account created for cross-account backup operations.
+     */
+    public crossAccountRoleName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property crossAccountType: The type of cross-account backup. Supported values: SELF_ACCOUNT: backup within the same account; CROSS_ACCOUNT: cross-account backup. Example: CROSS_ACCOUNT
+     */
+    public crossAccountType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property crossAccountUserId: The user ID of the original account for cross-account backup operations.
+     */
+    public crossAccountUserId: number | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -282,12 +331,18 @@ export class RosDbAgent extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.instanceInfo = props.instanceInfo;
+        this.crossAccountRoleName = props.crossAccountRoleName;
+        this.crossAccountType = props.crossAccountType;
+        this.crossAccountUserId = props.crossAccountUserId;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             instanceInfo: this.instanceInfo,
+            crossAccountRoleName: this.crossAccountRoleName,
+            crossAccountType: this.crossAccountType,
+            crossAccountUserId: this.crossAccountUserId,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

@@ -29,25 +29,41 @@ export interface TopicsProps {
 }
 
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ROCKETMQ::Topics`, which is used to query topics in Message Queue for Apache RocketMQ.
+ * Represents a `Topics`.
+ */
+export interface ITopics extends ros.IResource {
+    readonly props: TopicsProps;
+
+    /**
+     * Attribute TopicNames: The list of topic names.
+     */
+    readonly attrTopicNames: ros.IResolvable | string;
+
+    /**
+     * Attribute Topics: The list of topics.
+     */
+    readonly attrTopics: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ROCKETMQ::Topics`, which is used to query topics on an ApsaraMQ for RocketMQ instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTopics`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq-topics
  */
-export class Topics extends ros.Resource {
+export class Topics extends ros.Resource implements ITopics {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: TopicsProps;
+    public readonly props: TopicsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute TopicNames: The list of topic names.
      */
-    public readonly attrTopicNames: ros.IResolvable;
+    public readonly attrTopicNames: ros.IResolvable | string;
 
     /**
      * Attribute Topics: The list of topics.
      */
-    public readonly attrTopics: ros.IResolvable;
+    public readonly attrTopics: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

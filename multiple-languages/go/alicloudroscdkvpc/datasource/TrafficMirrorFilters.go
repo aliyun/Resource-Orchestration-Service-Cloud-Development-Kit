@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::TrafficMirrorFilters`, which is used to query filters for traffic mirroring.
 type TrafficMirrorFilters interface {
 	alicloudroscdkcore.Resource
+	ITrafficMirrorFilters
 	// Attribute TrafficMirrorFilterIds: The list of traffic mirror filter IDs.
-	AttrTrafficMirrorFilterIds() alicloudroscdkcore.IResolvable
+	AttrTrafficMirrorFilterIds() interface{}
 	// Attribute TrafficMirrorFilters: The list of traffic mirror filters.
-	AttrTrafficMirrorFilters() alicloudroscdkcore.IResolvable
+	AttrTrafficMirrorFilters() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type TrafficMirrorFilters interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *TrafficMirrorFiltersProps
-	SetProps(val *TrafficMirrorFiltersProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type TrafficMirrorFilters interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type TrafficMirrorFilters interface {
 // The jsii proxy struct for TrafficMirrorFilters
 type jsiiProxy_TrafficMirrorFilters struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ITrafficMirrorFilters
 }
 
-func (j *jsiiProxy_TrafficMirrorFilters) AttrTrafficMirrorFilterIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_TrafficMirrorFilters) AttrTrafficMirrorFilterIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTrafficMirrorFilterIds",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_TrafficMirrorFilters) AttrTrafficMirrorFilterIds() alicloudro
 	return returns
 }
 
-func (j *jsiiProxy_TrafficMirrorFilters) AttrTrafficMirrorFilters() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_TrafficMirrorFilters) AttrTrafficMirrorFilters() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTrafficMirrorFilters",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_TrafficMirrorFilters) EnableResourcePropertyConstraint() *boo
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_TrafficMirrorFilters) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_TrafficMirrorFilters)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_TrafficMirrorFilters)SetProps(val *TrafficMirrorFiltersProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_TrafficMirrorFilters)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (t *jsiiProxy_TrafficMirrorFilters) ApplyRemovalPolicy(policy alicloudroscd
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (t *jsiiProxy_TrafficMirrorFilters) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		t,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (t *jsiiProxy_TrafficMirrorFilters) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		t,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (t *jsiiProxy_TrafficMirrorFilters) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		t,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (t *jsiiProxy_TrafficMirrorFilters) GeneratePhysicalName() *string {

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.gpdb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-dbinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:08.769Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:40.614Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.RosDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBInstanceProps.Jsii$Proxy.class)
 public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -55,6 +55,12 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceMode() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeployMode() {
         return null;
     }
 
@@ -156,6 +162,18 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStandbyVSwitchId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStandbyZoneId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getStorageSize() {
         return null;
     }
@@ -197,6 +215,7 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object dbInstanceDescription;
         java.lang.Object dbInstanceGroupCount;
         java.lang.Object dbInstanceMode;
+        java.lang.Object deployMode;
         java.lang.Object encryptionKey;
         java.lang.Object encryptionType;
         java.lang.Object idleTime;
@@ -213,6 +232,8 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object segStorageType;
         java.lang.Object serverlessMode;
         java.lang.Object serverlessResource;
+        java.lang.Object standbyVSwitchId;
+        java.lang.Object standbyZoneId;
         java.lang.Object storageSize;
         java.util.List<com.aliyun.ros.cdk.gpdb.RosDBInstance.TagsProperty> tags;
         java.lang.Object vectorConfigurationStatus;
@@ -395,6 +416,26 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
          */
         public Builder dbInstanceMode(com.aliyun.ros.cdk.core.IResolvable dbInstanceMode) {
             this.dbInstanceMode = dbInstanceMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceProps#getDeployMode}
+         * @param deployMode the value to be set.
+         * @return {@code this}
+         */
+        public Builder deployMode(java.lang.String deployMode) {
+            this.deployMode = deployMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceProps#getDeployMode}
+         * @param deployMode the value to be set.
+         * @return {@code this}
+         */
+        public Builder deployMode(com.aliyun.ros.cdk.core.IResolvable deployMode) {
+            this.deployMode = deployMode;
             return this;
         }
 
@@ -719,6 +760,46 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosDBInstanceProps#getStandbyVSwitchId}
+         * @param standbyVSwitchId the value to be set.
+         * @return {@code this}
+         */
+        public Builder standbyVSwitchId(java.lang.String standbyVSwitchId) {
+            this.standbyVSwitchId = standbyVSwitchId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceProps#getStandbyVSwitchId}
+         * @param standbyVSwitchId the value to be set.
+         * @return {@code this}
+         */
+        public Builder standbyVSwitchId(com.aliyun.ros.cdk.core.IResolvable standbyVSwitchId) {
+            this.standbyVSwitchId = standbyVSwitchId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceProps#getStandbyZoneId}
+         * @param standbyZoneId the value to be set.
+         * @return {@code this}
+         */
+        public Builder standbyZoneId(java.lang.String standbyZoneId) {
+            this.standbyZoneId = standbyZoneId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceProps#getStandbyZoneId}
+         * @param standbyZoneId the value to be set.
+         * @return {@code this}
+         */
+        public Builder standbyZoneId(com.aliyun.ros.cdk.core.IResolvable standbyZoneId) {
+            this.standbyZoneId = standbyZoneId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBInstanceProps#getStorageSize}
          * @param storageSize the value to be set.
          * @return {@code this}
@@ -814,6 +895,7 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object dbInstanceDescription;
         private final java.lang.Object dbInstanceGroupCount;
         private final java.lang.Object dbInstanceMode;
+        private final java.lang.Object deployMode;
         private final java.lang.Object encryptionKey;
         private final java.lang.Object encryptionType;
         private final java.lang.Object idleTime;
@@ -830,6 +912,8 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object segStorageType;
         private final java.lang.Object serverlessMode;
         private final java.lang.Object serverlessResource;
+        private final java.lang.Object standbyVSwitchId;
+        private final java.lang.Object standbyZoneId;
         private final java.lang.Object storageSize;
         private final java.util.List<com.aliyun.ros.cdk.gpdb.RosDBInstance.TagsProperty> tags;
         private final java.lang.Object vectorConfigurationStatus;
@@ -850,6 +934,7 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             this.dbInstanceDescription = software.amazon.jsii.Kernel.get(this, "dbInstanceDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbInstanceGroupCount = software.amazon.jsii.Kernel.get(this, "dbInstanceGroupCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbInstanceMode = software.amazon.jsii.Kernel.get(this, "dbInstanceMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deployMode = software.amazon.jsii.Kernel.get(this, "deployMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.encryptionKey = software.amazon.jsii.Kernel.get(this, "encryptionKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.encryptionType = software.amazon.jsii.Kernel.get(this, "encryptionType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.idleTime = software.amazon.jsii.Kernel.get(this, "idleTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -866,6 +951,8 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             this.segStorageType = software.amazon.jsii.Kernel.get(this, "segStorageType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serverlessMode = software.amazon.jsii.Kernel.get(this, "serverlessMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serverlessResource = software.amazon.jsii.Kernel.get(this, "serverlessResource", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.standbyVSwitchId = software.amazon.jsii.Kernel.get(this, "standbyVSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.standbyZoneId = software.amazon.jsii.Kernel.get(this, "standbyZoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.storageSize = software.amazon.jsii.Kernel.get(this, "storageSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.gpdb.RosDBInstance.TagsProperty.class)));
             this.vectorConfigurationStatus = software.amazon.jsii.Kernel.get(this, "vectorConfigurationStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -887,6 +974,7 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             this.dbInstanceDescription = builder.dbInstanceDescription;
             this.dbInstanceGroupCount = builder.dbInstanceGroupCount;
             this.dbInstanceMode = builder.dbInstanceMode;
+            this.deployMode = builder.deployMode;
             this.encryptionKey = builder.encryptionKey;
             this.encryptionType = builder.encryptionType;
             this.idleTime = builder.idleTime;
@@ -903,6 +991,8 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             this.segStorageType = builder.segStorageType;
             this.serverlessMode = builder.serverlessMode;
             this.serverlessResource = builder.serverlessResource;
+            this.standbyVSwitchId = builder.standbyVSwitchId;
+            this.standbyZoneId = builder.standbyZoneId;
             this.storageSize = builder.storageSize;
             this.tags = (java.util.List<com.aliyun.ros.cdk.gpdb.RosDBInstance.TagsProperty>)builder.tags;
             this.vectorConfigurationStatus = builder.vectorConfigurationStatus;
@@ -952,6 +1042,11 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         @Override
         public final java.lang.Object getDbInstanceMode() {
             return this.dbInstanceMode;
+        }
+
+        @Override
+        public final java.lang.Object getDeployMode() {
+            return this.deployMode;
         }
 
         @Override
@@ -1035,6 +1130,16 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getStandbyVSwitchId() {
+            return this.standbyVSwitchId;
+        }
+
+        @Override
+        public final java.lang.Object getStandbyZoneId() {
+            return this.standbyZoneId;
+        }
+
+        @Override
         public final java.lang.Object getStorageSize() {
             return this.storageSize;
         }
@@ -1080,6 +1185,9 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             }
             if (this.getDbInstanceMode() != null) {
                 data.set("dbInstanceMode", om.valueToTree(this.getDbInstanceMode()));
+            }
+            if (this.getDeployMode() != null) {
+                data.set("deployMode", om.valueToTree(this.getDeployMode()));
             }
             if (this.getEncryptionKey() != null) {
                 data.set("encryptionKey", om.valueToTree(this.getEncryptionKey()));
@@ -1129,6 +1237,12 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getServerlessResource() != null) {
                 data.set("serverlessResource", om.valueToTree(this.getServerlessResource()));
             }
+            if (this.getStandbyVSwitchId() != null) {
+                data.set("standbyVSwitchId", om.valueToTree(this.getStandbyVSwitchId()));
+            }
+            if (this.getStandbyZoneId() != null) {
+                data.set("standbyZoneId", om.valueToTree(this.getStandbyZoneId()));
+            }
             if (this.getStorageSize() != null) {
                 data.set("storageSize", om.valueToTree(this.getStorageSize()));
             }
@@ -1168,6 +1282,7 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             if (this.dbInstanceDescription != null ? !this.dbInstanceDescription.equals(that.dbInstanceDescription) : that.dbInstanceDescription != null) return false;
             if (this.dbInstanceGroupCount != null ? !this.dbInstanceGroupCount.equals(that.dbInstanceGroupCount) : that.dbInstanceGroupCount != null) return false;
             if (this.dbInstanceMode != null ? !this.dbInstanceMode.equals(that.dbInstanceMode) : that.dbInstanceMode != null) return false;
+            if (this.deployMode != null ? !this.deployMode.equals(that.deployMode) : that.deployMode != null) return false;
             if (this.encryptionKey != null ? !this.encryptionKey.equals(that.encryptionKey) : that.encryptionKey != null) return false;
             if (this.encryptionType != null ? !this.encryptionType.equals(that.encryptionType) : that.encryptionType != null) return false;
             if (this.idleTime != null ? !this.idleTime.equals(that.idleTime) : that.idleTime != null) return false;
@@ -1184,6 +1299,8 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             if (this.segStorageType != null ? !this.segStorageType.equals(that.segStorageType) : that.segStorageType != null) return false;
             if (this.serverlessMode != null ? !this.serverlessMode.equals(that.serverlessMode) : that.serverlessMode != null) return false;
             if (this.serverlessResource != null ? !this.serverlessResource.equals(that.serverlessResource) : that.serverlessResource != null) return false;
+            if (this.standbyVSwitchId != null ? !this.standbyVSwitchId.equals(that.standbyVSwitchId) : that.standbyVSwitchId != null) return false;
+            if (this.standbyZoneId != null ? !this.standbyZoneId.equals(that.standbyZoneId) : that.standbyZoneId != null) return false;
             if (this.storageSize != null ? !this.storageSize.equals(that.storageSize) : that.storageSize != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.vectorConfigurationStatus != null ? !this.vectorConfigurationStatus.equals(that.vectorConfigurationStatus) : that.vectorConfigurationStatus != null) return false;
@@ -1201,6 +1318,7 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.dbInstanceDescription != null ? this.dbInstanceDescription.hashCode() : 0);
             result = 31 * result + (this.dbInstanceGroupCount != null ? this.dbInstanceGroupCount.hashCode() : 0);
             result = 31 * result + (this.dbInstanceMode != null ? this.dbInstanceMode.hashCode() : 0);
+            result = 31 * result + (this.deployMode != null ? this.deployMode.hashCode() : 0);
             result = 31 * result + (this.encryptionKey != null ? this.encryptionKey.hashCode() : 0);
             result = 31 * result + (this.encryptionType != null ? this.encryptionType.hashCode() : 0);
             result = 31 * result + (this.idleTime != null ? this.idleTime.hashCode() : 0);
@@ -1217,6 +1335,8 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.segStorageType != null ? this.segStorageType.hashCode() : 0);
             result = 31 * result + (this.serverlessMode != null ? this.serverlessMode.hashCode() : 0);
             result = 31 * result + (this.serverlessResource != null ? this.serverlessResource.hashCode() : 0);
+            result = 31 * result + (this.standbyVSwitchId != null ? this.standbyVSwitchId.hashCode() : 0);
+            result = 31 * result + (this.standbyZoneId != null ? this.standbyZoneId.hashCode() : 0);
             result = 31 * result + (this.storageSize != null ? this.storageSize.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.vectorConfigurationStatus != null ? this.vectorConfigurationStatus.hashCode() : 0);

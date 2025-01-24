@@ -46,20 +46,31 @@ export interface TrailProps {
 }
 
 /**
+ * Represents a `Trail`.
+ */
+export interface ITrail extends ros.IResource {
+    readonly props: TrailProps;
+
+    /**
+     * Attribute Name: The name of the trail to be created, which must be unique for an account.
+     */
+    readonly attrName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ACTIONTRAIL::Trail`, which is used to create a trail to deliver events to Simple Log Service or Object Storage Service (OSS).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTrail`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-trail
  */
-export class Trail extends ros.Resource {
+export class Trail extends ros.Resource implements ITrail {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: TrailProps;
+    public readonly props: TrailProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute Name: The name of the trail to be created, which must be unique for an account.
      */
-    public readonly attrName: ros.IResolvable;
+    public readonly attrName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

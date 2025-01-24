@@ -21,45 +21,81 @@ export interface ControlPolicyAttachmentProps {
 }
 
 /**
+ * Represents a `ControlPolicyAttachment`.
+ */
+export interface IControlPolicyAttachment extends ros.IResource {
+    readonly props: ControlPolicyAttachmentProps;
+
+    /**
+     * Attribute AttachDate: AttachDate
+     */
+    readonly attrAttachDate: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: Description
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute PolicyId: PolicyId
+     */
+    readonly attrPolicyId: ros.IResolvable | string;
+
+    /**
+     * Attribute PolicyName: PolicyName
+     */
+    readonly attrPolicyName: ros.IResolvable | string;
+
+    /**
+     * Attribute PolicyType: PolicyType
+     */
+    readonly attrPolicyType: ros.IResolvable | string;
+
+    /**
+     * Attribute TargetId: TargetId
+     */
+    readonly attrTargetId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ControlPolicyAttachment`, which is used to attach a custom control policy.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosControlPolicyAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-controlpolicyattachment
  */
-export class ControlPolicyAttachment extends ros.Resource {
+export class ControlPolicyAttachment extends ros.Resource implements IControlPolicyAttachment {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ControlPolicyAttachmentProps;
+    public readonly props: ControlPolicyAttachmentProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AttachDate: AttachDate
      */
-    public readonly attrAttachDate: ros.IResolvable;
+    public readonly attrAttachDate: ros.IResolvable | string;
 
     /**
      * Attribute Description: Description
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute PolicyId: PolicyId
      */
-    public readonly attrPolicyId: ros.IResolvable;
+    public readonly attrPolicyId: ros.IResolvable | string;
 
     /**
      * Attribute PolicyName: PolicyName
      */
-    public readonly attrPolicyName: ros.IResolvable;
+    public readonly attrPolicyName: ros.IResolvable | string;
 
     /**
      * Attribute PolicyType: PolicyType
      */
-    public readonly attrPolicyType: ros.IResolvable;
+    public readonly attrPolicyType: ros.IResolvable | string;
 
     /**
      * Attribute TargetId: TargetId
      */
-    public readonly attrTargetId: ros.IResolvable;
+    public readonly attrTargetId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

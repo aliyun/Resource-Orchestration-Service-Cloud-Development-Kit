@@ -52,10 +52,6 @@ func (j *jsiiProxy_Dataset) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_Dataset) validateSetPropsParameters(val *DatasetProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_Dataset) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

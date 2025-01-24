@@ -46,6 +46,10 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "attrVpcId", GoGetter: "AttrVpcId"},
 			_jsii_.MemberProperty{JsiiProperty: "attrZoneIdList", GoGetter: "AttrZoneIdList"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDependency", GoMethod: "FetchDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchResourceDesc", GoMethod: "FetchResourceDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "generatePhysicalName", GoMethod: "GeneratePhysicalName"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
@@ -68,6 +72,7 @@ func init() {
 		func() interface{} {
 			j := jsiiProxy_DedicatedHostGroup{}
 			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreResource)
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IDedicatedHostGroup)
 			return &j
 		},
 	)
@@ -87,6 +92,10 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "attrDedicatedHostGroupIds", GoGetter: "AttrDedicatedHostGroupIds"},
 			_jsii_.MemberProperty{JsiiProperty: "attrDedicatedHostGroups", GoGetter: "AttrDedicatedHostGroups"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDependency", GoMethod: "FetchDependency"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchResourceDesc", GoMethod: "FetchResourceDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "generatePhysicalName", GoMethod: "GeneratePhysicalName"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
@@ -109,12 +118,74 @@ func init() {
 		func() interface{} {
 			j := jsiiProxy_DedicatedHostGroups{}
 			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreResource)
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IDedicatedHostGroups)
 			return &j
 		},
 	)
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-cddc.datasource.DedicatedHostGroupsProps",
 		reflect.TypeOf((*DedicatedHostGroupsProps)(nil)).Elem(),
+	)
+	_jsii_.RegisterInterface(
+		"@alicloud/ros-cdk-cddc.datasource.IDedicatedHostGroup",
+		reflect.TypeOf((*IDedicatedHostGroup)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "attrAllocationPolicy", GoGetter: "AttrAllocationPolicy"},
+			_jsii_.MemberProperty{JsiiProperty: "attrBastionInstanceId", GoGetter: "AttrBastionInstanceId"},
+			_jsii_.MemberProperty{JsiiProperty: "attrCategory", GoGetter: "AttrCategory"},
+			_jsii_.MemberProperty{JsiiProperty: "attrCpuAllocatedAmount", GoGetter: "AttrCpuAllocatedAmount"},
+			_jsii_.MemberProperty{JsiiProperty: "attrCpuAllocateRation", GoGetter: "AttrCpuAllocateRation"},
+			_jsii_.MemberProperty{JsiiProperty: "attrCpuAllocationRatio", GoGetter: "AttrCpuAllocationRatio"},
+			_jsii_.MemberProperty{JsiiProperty: "attrCreateTime", GoGetter: "AttrCreateTime"},
+			_jsii_.MemberProperty{JsiiProperty: "attrDedicatedHostCountGroupByHostType", GoGetter: "AttrDedicatedHostCountGroupByHostType"},
+			_jsii_.MemberProperty{JsiiProperty: "attrDedicatedHostGroupDesc", GoGetter: "AttrDedicatedHostGroupDesc"},
+			_jsii_.MemberProperty{JsiiProperty: "attrDedicatedHostGroupId", GoGetter: "AttrDedicatedHostGroupId"},
+			_jsii_.MemberProperty{JsiiProperty: "attrDeployType", GoGetter: "AttrDeployType"},
+			_jsii_.MemberProperty{JsiiProperty: "attrDiskAllocatedAmount", GoGetter: "AttrDiskAllocatedAmount"},
+			_jsii_.MemberProperty{JsiiProperty: "attrDiskAllocateRation", GoGetter: "AttrDiskAllocateRation"},
+			_jsii_.MemberProperty{JsiiProperty: "attrDiskAllocationRatio", GoGetter: "AttrDiskAllocationRatio"},
+			_jsii_.MemberProperty{JsiiProperty: "attrDiskUsedAmount", GoGetter: "AttrDiskUsedAmount"},
+			_jsii_.MemberProperty{JsiiProperty: "attrDiskUtility", GoGetter: "AttrDiskUtility"},
+			_jsii_.MemberProperty{JsiiProperty: "attrEngine", GoGetter: "AttrEngine"},
+			_jsii_.MemberProperty{JsiiProperty: "attrHostNumber", GoGetter: "AttrHostNumber"},
+			_jsii_.MemberProperty{JsiiProperty: "attrHostReplacePolicy", GoGetter: "AttrHostReplacePolicy"},
+			_jsii_.MemberProperty{JsiiProperty: "attrInstanceNumber", GoGetter: "AttrInstanceNumber"},
+			_jsii_.MemberProperty{JsiiProperty: "attrMemAllocatedAmount", GoGetter: "AttrMemAllocatedAmount"},
+			_jsii_.MemberProperty{JsiiProperty: "attrMemAllocateRation", GoGetter: "AttrMemAllocateRation"},
+			_jsii_.MemberProperty{JsiiProperty: "attrMemAllocationRatio", GoGetter: "AttrMemAllocationRatio"},
+			_jsii_.MemberProperty{JsiiProperty: "attrMemUsedAmount", GoGetter: "AttrMemUsedAmount"},
+			_jsii_.MemberProperty{JsiiProperty: "attrMemUtility", GoGetter: "AttrMemUtility"},
+			_jsii_.MemberProperty{JsiiProperty: "attrOpenPermission", GoGetter: "AttrOpenPermission"},
+			_jsii_.MemberProperty{JsiiProperty: "attrText", GoGetter: "AttrText"},
+			_jsii_.MemberProperty{JsiiProperty: "attrVpcId", GoGetter: "AttrVpcId"},
+			_jsii_.MemberProperty{JsiiProperty: "attrZoneIdList", GoGetter: "AttrZoneIdList"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberProperty{JsiiProperty: "props", GoGetter: "Props"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+		},
+		func() interface{} {
+			j := jsiiProxy_IDedicatedHostGroup{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreIResource)
+			return &j
+		},
+	)
+	_jsii_.RegisterInterface(
+		"@alicloud/ros-cdk-cddc.datasource.IDedicatedHostGroups",
+		reflect.TypeOf((*IDedicatedHostGroups)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "attrDedicatedHostGroupIds", GoGetter: "AttrDedicatedHostGroupIds"},
+			_jsii_.MemberProperty{JsiiProperty: "attrDedicatedHostGroups", GoGetter: "AttrDedicatedHostGroups"},
+			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
+			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberProperty{JsiiProperty: "props", GoGetter: "Props"},
+			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+		},
+		func() interface{} {
+			j := jsiiProxy_IDedicatedHostGroups{}
+			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreIResource)
+			return &j
+		},
 	)
 	_jsii_.RegisterClass(
 		"@alicloud/ros-cdk-cddc.datasource.RosDedicatedHostGroup",
@@ -163,6 +234,9 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
 			_jsii_.MemberProperty{JsiiProperty: "dedicatedHostGroupId", GoGetter: "DedicatedHostGroupId"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDesc", GoMethod: "FetchDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchRosDependency", GoMethod: "FetchRosDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "logicalId", GoGetter: "LogicalId"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
@@ -215,6 +289,9 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "dedicatedHostGroupId", GoGetter: "DedicatedHostGroupId"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
 			_jsii_.MemberProperty{JsiiProperty: "engine", GoGetter: "Engine"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchDesc", GoMethod: "FetchDesc"},
+			_jsii_.MemberMethod{JsiiMethod: "fetchRosDependency", GoMethod: "FetchRosDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "logicalId", GoGetter: "LogicalId"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},

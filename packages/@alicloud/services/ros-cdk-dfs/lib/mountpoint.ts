@@ -47,20 +47,31 @@ export interface MountPointProps {
 }
 
 /**
+ * Represents a `MountPoint`.
+ */
+export interface IMountPoint extends ros.IResource {
+    readonly props: MountPointProps;
+
+    /**
+     * Attribute MountPointId: The ID of the mount point.
+     */
+    readonly attrMountPointId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::DFS::MountPoint`, which is used to create a mount target.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMountPoint`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-mountpoint
  */
-export class MountPoint extends ros.Resource {
+export class MountPoint extends ros.Resource implements IMountPoint {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: MountPointProps;
+    public readonly props: MountPointProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute MountPointId: The ID of the mount point.
      */
-    public readonly attrMountPointId: ros.IResolvable;
+    public readonly attrMountPointId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

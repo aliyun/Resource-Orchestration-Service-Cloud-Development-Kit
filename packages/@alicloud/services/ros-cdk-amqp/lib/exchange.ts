@@ -64,20 +64,31 @@ export interface ExchangeProps {
 }
 
 /**
+ * Represents a `Exchange`.
+ */
+export interface IExchange extends ros.IResource {
+    readonly props: ExchangeProps;
+
+    /**
+     * Attribute ExchangeName: The name of the exchange.
+     */
+    readonly attrExchangeName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::AMQP::Exchange`, which is used to create an exchange.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosExchange`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-exchange
  */
-export class Exchange extends ros.Resource {
+export class Exchange extends ros.Resource implements IExchange {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ExchangeProps;
+    public readonly props: ExchangeProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ExchangeName: The name of the exchange.
      */
-    public readonly attrExchangeName: ros.IResolvable;
+    public readonly attrExchangeName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

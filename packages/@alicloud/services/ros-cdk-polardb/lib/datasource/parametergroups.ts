@@ -29,25 +29,41 @@ export interface ParameterGroupsProps {
 }
 
 /**
+ * Represents a `ParameterGroups`.
+ */
+export interface IParameterGroups extends ros.IResource {
+    readonly props: ParameterGroupsProps;
+
+    /**
+     * Attribute ParameterGroupIds: The list of parameter group IDs.
+     */
+    readonly attrParameterGroupIds: ros.IResolvable | string;
+
+    /**
+     * Attribute ParameterGroups: The list of parameter groups.
+     */
+    readonly attrParameterGroups: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::POLARDB::ParameterGroups`, which is used to query parameter templates in a region.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosParameterGroups`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-parametergroups
  */
-export class ParameterGroups extends ros.Resource {
+export class ParameterGroups extends ros.Resource implements IParameterGroups {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ParameterGroupsProps;
+    public readonly props: ParameterGroupsProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ParameterGroupIds: The list of parameter group IDs.
      */
-    public readonly attrParameterGroupIds: ros.IResolvable;
+    public readonly attrParameterGroupIds: ros.IResolvable | string;
 
     /**
      * Attribute ParameterGroups: The list of parameter groups.
      */
-    public readonly attrParameterGroups: ros.IResolvable;
+    public readonly attrParameterGroups: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

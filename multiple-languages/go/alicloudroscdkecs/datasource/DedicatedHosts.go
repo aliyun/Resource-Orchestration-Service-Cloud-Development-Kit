@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::DedicatedHosts`, which is used to query dedicated hosts.
 type DedicatedHosts interface {
 	alicloudroscdkcore.Resource
+	IDedicatedHosts
 	// Attribute DedicatedHostIds: The list of dedicated host ids.
-	AttrDedicatedHostIds() alicloudroscdkcore.IResolvable
+	AttrDedicatedHostIds() interface{}
 	// Attribute DedicatedHosts: The list of dedicated hosts.
-	AttrDedicatedHosts() alicloudroscdkcore.IResolvable
+	AttrDedicatedHosts() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type DedicatedHosts interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DedicatedHostsProps
-	SetProps(val *DedicatedHostsProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type DedicatedHosts interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type DedicatedHosts interface {
 // The jsii proxy struct for DedicatedHosts
 type jsiiProxy_DedicatedHosts struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDedicatedHosts
 }
 
-func (j *jsiiProxy_DedicatedHosts) AttrDedicatedHostIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHosts) AttrDedicatedHostIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDedicatedHostIds",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_DedicatedHosts) AttrDedicatedHostIds() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_DedicatedHosts) AttrDedicatedHosts() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DedicatedHosts) AttrDedicatedHosts() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDedicatedHosts",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_DedicatedHosts) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DedicatedHosts) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_DedicatedHosts)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DedicatedHosts)SetProps(val *DedicatedHostsProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_DedicatedHosts)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (d *jsiiProxy_DedicatedHosts) ApplyRemovalPolicy(policy alicloudroscdkcore.
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_DedicatedHosts) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DedicatedHosts) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DedicatedHosts) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_DedicatedHosts) GeneratePhysicalName() *string {

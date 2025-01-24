@@ -21,25 +21,41 @@ export interface InstanceSecurityGroupAttachmentProps {
 }
 
 /**
+ * Represents a `InstanceSecurityGroupAttachment`.
+ */
+export interface IInstanceSecurityGroupAttachment extends ros.IResource {
+    readonly props: InstanceSecurityGroupAttachmentProps;
+
+    /**
+     * Attribute InstanceId: Instance ID.
+     */
+    readonly attrInstanceId: ros.IResolvable | string;
+
+    /**
+     * Attribute SecurityGroupId: Security group ID.
+     */
+    readonly attrSecurityGroupId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ENS::InstanceSecurityGroupAttachment`, which is used to add an Edge Node Service (ENS) instance to a security group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstanceSecurityGroupAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-instancesecuritygroupattachment
  */
-export class InstanceSecurityGroupAttachment extends ros.Resource {
+export class InstanceSecurityGroupAttachment extends ros.Resource implements IInstanceSecurityGroupAttachment {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: InstanceSecurityGroupAttachmentProps;
+    public readonly props: InstanceSecurityGroupAttachmentProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute InstanceId: Instance ID.
      */
-    public readonly attrInstanceId: ros.IResolvable;
+    public readonly attrInstanceId: ros.IResolvable | string;
 
     /**
      * Attribute SecurityGroupId: Security group ID.
      */
-    public readonly attrSecurityGroupId: ros.IResolvable;
+    public readonly attrSecurityGroupId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

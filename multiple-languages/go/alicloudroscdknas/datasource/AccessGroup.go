@@ -12,18 +12,28 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::NAS::AccessGroup`, which is used to query the information about a permission group.
 type AccessGroup interface {
 	alicloudroscdkcore.Resource
+	IAccessGroup
 	// Attribute AccessGroupName: The name of the permission group.
-	AttrAccessGroupName() alicloudroscdkcore.IResolvable
+	AttrAccessGroupName() interface{}
 	// Attribute AccessGroupType: Permission group types, including VPC and Classic.
-	AttrAccessGroupType() alicloudroscdkcore.IResolvable
+	AttrAccessGroupType() interface{}
 	// Attribute Description: Permission group description information.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute MountTargetCount: The number of Mount points to which this permission group is applied.
-	AttrMountTargetCount() alicloudroscdkcore.IResolvable
+	AttrMountTargetCount() interface{}
 	// Attribute RuleCount: The number of permission group rules contained in this permission group.
-	AttrRuleCount() alicloudroscdkcore.IResolvable
+	AttrRuleCount() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -38,7 +48,6 @@ type AccessGroup interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *AccessGroupProps
-	SetProps(val *AccessGroupProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -51,6 +60,9 @@ type AccessGroup interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -103,10 +115,11 @@ type AccessGroup interface {
 // The jsii proxy struct for AccessGroup
 type jsiiProxy_AccessGroup struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IAccessGroup
 }
 
-func (j *jsiiProxy_AccessGroup) AttrAccessGroupName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AccessGroup) AttrAccessGroupName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAccessGroupName",
@@ -115,8 +128,8 @@ func (j *jsiiProxy_AccessGroup) AttrAccessGroupName() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_AccessGroup) AttrAccessGroupType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AccessGroup) AttrAccessGroupType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAccessGroupType",
@@ -125,8 +138,8 @@ func (j *jsiiProxy_AccessGroup) AttrAccessGroupType() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_AccessGroup) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AccessGroup) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -135,8 +148,8 @@ func (j *jsiiProxy_AccessGroup) AttrDescription() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_AccessGroup) AttrMountTargetCount() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AccessGroup) AttrMountTargetCount() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMountTargetCount",
@@ -145,8 +158,8 @@ func (j *jsiiProxy_AccessGroup) AttrMountTargetCount() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_AccessGroup) AttrRuleCount() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AccessGroup) AttrRuleCount() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrRuleCount",
@@ -160,6 +173,16 @@ func (j *jsiiProxy_AccessGroup) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AccessGroup) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -297,17 +320,6 @@ func (j *jsiiProxy_AccessGroup)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AccessGroup)SetProps(val *AccessGroupProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_AccessGroup)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -399,6 +411,45 @@ func (a *jsiiProxy_AccessGroup) ApplyRemovalPolicy(policy alicloudroscdkcore.Rem
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (a *jsiiProxy_AccessGroup) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		a,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AccessGroup) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AccessGroup) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (a *jsiiProxy_AccessGroup) GeneratePhysicalName() *string {

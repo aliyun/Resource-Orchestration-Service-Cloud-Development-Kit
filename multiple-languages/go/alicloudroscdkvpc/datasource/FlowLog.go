@@ -12,30 +12,40 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::FlowLog`, which is used to query a flow log by log ID.
 type FlowLog interface {
 	alicloudroscdkcore.Resource
+	IFlowLog
 	// Attribute AggregationInterval: Data aggregation interval.
-	AttrAggregationInterval() alicloudroscdkcore.IResolvable
+	AttrAggregationInterval() interface{}
 	// Attribute BusinessStatus: Business status.
-	AttrBusinessStatus() alicloudroscdkcore.IResolvable
+	AttrBusinessStatus() interface{}
 	// Attribute CreateTime: the time of creation.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute Description: The Description of flow log.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute FlowLogId: The flow log ID.
-	AttrFlowLogId() alicloudroscdkcore.IResolvable
+	AttrFlowLogId() interface{}
 	// Attribute FlowLogName: The flow log name.
-	AttrFlowLogName() alicloudroscdkcore.IResolvable
+	AttrFlowLogName() interface{}
 	// Attribute LogStoreName: The log store name.
-	AttrLogStoreName() alicloudroscdkcore.IResolvable
+	AttrLogStoreName() interface{}
 	// Attribute ProjectName: The project name.
-	AttrProjectName() alicloudroscdkcore.IResolvable
+	AttrProjectName() interface{}
 	// Attribute ResourceId: The resource id.
-	AttrResourceId() alicloudroscdkcore.IResolvable
+	AttrResourceId() interface{}
 	// Attribute ResourceType: The resource type.
-	AttrResourceType() alicloudroscdkcore.IResolvable
+	AttrResourceType() interface{}
 	// Attribute TrafficType: The traffic type.
-	AttrTrafficType() alicloudroscdkcore.IResolvable
+	AttrTrafficType() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -50,7 +60,6 @@ type FlowLog interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *FlowLogProps
-	SetProps(val *FlowLogProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -63,6 +72,9 @@ type FlowLog interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -115,10 +127,11 @@ type FlowLog interface {
 // The jsii proxy struct for FlowLog
 type jsiiProxy_FlowLog struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IFlowLog
 }
 
-func (j *jsiiProxy_FlowLog) AttrAggregationInterval() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FlowLog) AttrAggregationInterval() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAggregationInterval",
@@ -127,8 +140,8 @@ func (j *jsiiProxy_FlowLog) AttrAggregationInterval() alicloudroscdkcore.IResolv
 	return returns
 }
 
-func (j *jsiiProxy_FlowLog) AttrBusinessStatus() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FlowLog) AttrBusinessStatus() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBusinessStatus",
@@ -137,8 +150,8 @@ func (j *jsiiProxy_FlowLog) AttrBusinessStatus() alicloudroscdkcore.IResolvable 
 	return returns
 }
 
-func (j *jsiiProxy_FlowLog) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FlowLog) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -147,8 +160,8 @@ func (j *jsiiProxy_FlowLog) AttrCreateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_FlowLog) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FlowLog) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -157,8 +170,8 @@ func (j *jsiiProxy_FlowLog) AttrDescription() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_FlowLog) AttrFlowLogId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FlowLog) AttrFlowLogId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrFlowLogId",
@@ -167,8 +180,8 @@ func (j *jsiiProxy_FlowLog) AttrFlowLogId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_FlowLog) AttrFlowLogName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FlowLog) AttrFlowLogName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrFlowLogName",
@@ -177,8 +190,8 @@ func (j *jsiiProxy_FlowLog) AttrFlowLogName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_FlowLog) AttrLogStoreName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FlowLog) AttrLogStoreName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLogStoreName",
@@ -187,8 +200,8 @@ func (j *jsiiProxy_FlowLog) AttrLogStoreName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_FlowLog) AttrProjectName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FlowLog) AttrProjectName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrProjectName",
@@ -197,8 +210,8 @@ func (j *jsiiProxy_FlowLog) AttrProjectName() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_FlowLog) AttrResourceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FlowLog) AttrResourceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceId",
@@ -207,8 +220,8 @@ func (j *jsiiProxy_FlowLog) AttrResourceId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_FlowLog) AttrResourceType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FlowLog) AttrResourceType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrResourceType",
@@ -217,8 +230,8 @@ func (j *jsiiProxy_FlowLog) AttrResourceType() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_FlowLog) AttrTrafficType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_FlowLog) AttrTrafficType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrTrafficType",
@@ -232,6 +245,16 @@ func (j *jsiiProxy_FlowLog) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FlowLog) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -369,17 +392,6 @@ func (j *jsiiProxy_FlowLog)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_FlowLog)SetProps(val *FlowLogProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_FlowLog)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -471,6 +483,45 @@ func (f *jsiiProxy_FlowLog) ApplyRemovalPolicy(policy alicloudroscdkcore.Removal
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (f *jsiiProxy_FlowLog) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		f,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (f *jsiiProxy_FlowLog) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		f,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (f *jsiiProxy_FlowLog) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		f,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (f *jsiiProxy_FlowLog) GeneratePhysicalName() *string {

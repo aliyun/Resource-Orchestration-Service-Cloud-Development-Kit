@@ -36,50 +36,91 @@ export interface PolicyAttachmentProps {
 }
 
 /**
+ * Represents a `PolicyAttachment`.
+ */
+export interface IPolicyAttachment extends ros.IResource {
+    readonly props: PolicyAttachmentProps;
+
+    /**
+     * Attribute AttachDate: Authorization time
+     */
+    readonly attrAttachDate: ros.IResolvable | string;
+
+    /**
+     * Attribute Description: Policy description
+     */
+    readonly attrDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute PolicyName: The name of the policy
+     */
+    readonly attrPolicyName: ros.IResolvable | string;
+
+    /**
+     * Attribute PolicyType: The type of the policy
+     */
+    readonly attrPolicyType: ros.IResolvable | string;
+
+    /**
+     * Attribute PrincipalName: The name of the object to which you want to attach the policy
+     */
+    readonly attrPrincipalName: ros.IResolvable | string;
+
+    /**
+     * Attribute PrincipalType: The type of the object to which you want to attach the policy. Valid values: IMSUser: RAM user, IMSGroup: RAM user group, ServiceRole: RAM role
+     */
+    readonly attrPrincipalType: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceGroupId: The ID of the resource group or the ID of the Alibaba Cloud account to which the resource group belongs.
+     */
+    readonly attrResourceGroupId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::PolicyAttachment`, which is used to attach a policy to an object. After you attach a policy to an object, the object has the permissions to manage the resources in the current resource group or within the current Alibaba Cloud account.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPolicyAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-policyattachment
  */
-export class PolicyAttachment extends ros.Resource {
+export class PolicyAttachment extends ros.Resource implements IPolicyAttachment {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: PolicyAttachmentProps;
+    public readonly props: PolicyAttachmentProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AttachDate: Authorization time
      */
-    public readonly attrAttachDate: ros.IResolvable;
+    public readonly attrAttachDate: ros.IResolvable | string;
 
     /**
      * Attribute Description: Policy description
      */
-    public readonly attrDescription: ros.IResolvable;
+    public readonly attrDescription: ros.IResolvable | string;
 
     /**
      * Attribute PolicyName: The name of the policy
      */
-    public readonly attrPolicyName: ros.IResolvable;
+    public readonly attrPolicyName: ros.IResolvable | string;
 
     /**
      * Attribute PolicyType: The type of the policy
      */
-    public readonly attrPolicyType: ros.IResolvable;
+    public readonly attrPolicyType: ros.IResolvable | string;
 
     /**
      * Attribute PrincipalName: The name of the object to which you want to attach the policy
      */
-    public readonly attrPrincipalName: ros.IResolvable;
+    public readonly attrPrincipalName: ros.IResolvable | string;
 
     /**
      * Attribute PrincipalType: The type of the object to which you want to attach the policy. Valid values: IMSUser: RAM user, IMSGroup: RAM user group, ServiceRole: RAM role
      */
-    public readonly attrPrincipalType: ros.IResolvable;
+    public readonly attrPrincipalType: ros.IResolvable | string;
 
     /**
      * Attribute ResourceGroupId: The ID of the resource group or the ID of the Alibaba Cloud account to which the resource group belongs.
      */
-    public readonly attrResourceGroupId: ros.IResolvable;
+    public readonly attrResourceGroupId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

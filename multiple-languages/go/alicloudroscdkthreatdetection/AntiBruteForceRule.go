@@ -12,30 +12,40 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::ThreatDetection::AntiBruteForceRule`, which is used to create a defense rule against brute-force attacks.
 type AntiBruteForceRule interface {
 	alicloudroscdkcore.Resource
+	IAntiBruteForceRule
 	// Attribute AntiBruteForceRuleId: The ID of the defense rule.
-	AttrAntiBruteForceRuleId() alicloudroscdkcore.IResolvable
+	AttrAntiBruteForceRuleId() interface{}
 	// Attribute AntiBruteForceRuleName: The name of the defense rule.
-	AttrAntiBruteForceRuleName() alicloudroscdkcore.IResolvable
+	AttrAntiBruteForceRuleName() interface{}
 	// Attribute DefaultRule: Specifies whether to set the defense rule as the default rule.
 	//
 	// Valid values:
 	// - true: yes
 	// - false: no.
-	AttrDefaultRule() alicloudroscdkcore.IResolvable
+	AttrDefaultRule() interface{}
 	// Attribute FailCount: The threshold for the number of failed user logins when the brute-force defense rule takes effect.
-	AttrFailCount() alicloudroscdkcore.IResolvable
+	AttrFailCount() interface{}
 	// Attribute ForbiddenTime: The period of time during which logons from an account are not allowed.
 	//
 	// Unit: minutes.
-	AttrForbiddenTime() alicloudroscdkcore.IResolvable
+	AttrForbiddenTime() interface{}
 	// Attribute Span: The period of time during which logon failures from an account are measured.
 	//
 	// Unit: minutes. If Span is set to 10, the defense rule takes effect when the logon failures measured within 10 minutes reaches the specified threshold. The IP addresses of attackers cannot be used to log on to the server within the specified period of time.
-	AttrSpan() alicloudroscdkcore.IResolvable
+	AttrSpan() interface{}
 	// Attribute UuidList: The UUIDs of the server to which the defense rule is applied.
-	AttrUuidList() alicloudroscdkcore.IResolvable
+	AttrUuidList() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -50,7 +60,6 @@ type AntiBruteForceRule interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *AntiBruteForceRuleProps
-	SetProps(val *AntiBruteForceRuleProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -63,6 +72,9 @@ type AntiBruteForceRule interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -115,10 +127,11 @@ type AntiBruteForceRule interface {
 // The jsii proxy struct for AntiBruteForceRule
 type jsiiProxy_AntiBruteForceRule struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IAntiBruteForceRule
 }
 
-func (j *jsiiProxy_AntiBruteForceRule) AttrAntiBruteForceRuleId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AntiBruteForceRule) AttrAntiBruteForceRuleId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAntiBruteForceRuleId",
@@ -127,8 +140,8 @@ func (j *jsiiProxy_AntiBruteForceRule) AttrAntiBruteForceRuleId() alicloudroscdk
 	return returns
 }
 
-func (j *jsiiProxy_AntiBruteForceRule) AttrAntiBruteForceRuleName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AntiBruteForceRule) AttrAntiBruteForceRuleName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAntiBruteForceRuleName",
@@ -137,8 +150,8 @@ func (j *jsiiProxy_AntiBruteForceRule) AttrAntiBruteForceRuleName() alicloudrosc
 	return returns
 }
 
-func (j *jsiiProxy_AntiBruteForceRule) AttrDefaultRule() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AntiBruteForceRule) AttrDefaultRule() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDefaultRule",
@@ -147,8 +160,8 @@ func (j *jsiiProxy_AntiBruteForceRule) AttrDefaultRule() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_AntiBruteForceRule) AttrFailCount() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AntiBruteForceRule) AttrFailCount() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrFailCount",
@@ -157,8 +170,8 @@ func (j *jsiiProxy_AntiBruteForceRule) AttrFailCount() alicloudroscdkcore.IResol
 	return returns
 }
 
-func (j *jsiiProxy_AntiBruteForceRule) AttrForbiddenTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AntiBruteForceRule) AttrForbiddenTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrForbiddenTime",
@@ -167,8 +180,8 @@ func (j *jsiiProxy_AntiBruteForceRule) AttrForbiddenTime() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_AntiBruteForceRule) AttrSpan() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AntiBruteForceRule) AttrSpan() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSpan",
@@ -177,8 +190,8 @@ func (j *jsiiProxy_AntiBruteForceRule) AttrSpan() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_AntiBruteForceRule) AttrUuidList() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_AntiBruteForceRule) AttrUuidList() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUuidList",
@@ -192,6 +205,16 @@ func (j *jsiiProxy_AntiBruteForceRule) EnableResourcePropertyConstraint() *bool 
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AntiBruteForceRule) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -329,17 +352,6 @@ func (j *jsiiProxy_AntiBruteForceRule)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_AntiBruteForceRule)SetProps(val *AntiBruteForceRuleProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_AntiBruteForceRule)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -431,6 +443,45 @@ func (a *jsiiProxy_AntiBruteForceRule) ApplyRemovalPolicy(policy alicloudroscdkc
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (a *jsiiProxy_AntiBruteForceRule) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		a,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AntiBruteForceRule) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		a,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (a *jsiiProxy_AntiBruteForceRule) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		a,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (a *jsiiProxy_AntiBruteForceRule) GeneratePhysicalName() *string {

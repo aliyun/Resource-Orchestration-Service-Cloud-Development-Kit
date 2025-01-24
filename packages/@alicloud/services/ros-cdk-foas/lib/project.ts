@@ -43,20 +43,31 @@ export interface ProjectProps {
 }
 
 /**
+ * Represents a `Project`.
+ */
+export interface IProject extends ros.IResource {
+    readonly props: ProjectProps;
+
+    /**
+     * Attribute State: Project state.
+     */
+    readonly attrState: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::FOAS::Project`, which is used to create a project in a Realtime Compute cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosProject`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-foas-project
  */
-export class Project extends ros.Resource {
+export class Project extends ros.Resource implements IProject {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ProjectProps;
+    public readonly props: ProjectProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute State: Project state.
      */
-    public readonly attrState: ros.IResolvable;
+    public readonly attrState: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

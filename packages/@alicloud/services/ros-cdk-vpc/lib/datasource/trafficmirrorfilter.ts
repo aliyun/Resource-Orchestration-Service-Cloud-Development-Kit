@@ -24,40 +24,71 @@ export interface TrafficMirrorFilterProps {
 }
 
 /**
+ * Represents a `TrafficMirrorFilter`.
+ */
+export interface ITrafficMirrorFilter extends ros.IResource {
+    readonly props: TrafficMirrorFilterProps;
+
+    /**
+     * Attribute EgressRules: EgressRules.
+     */
+    readonly attrEgressRules: ros.IResolvable | string;
+
+    /**
+     * Attribute IngressRules: IngressRules.
+     */
+    readonly attrIngressRules: ros.IResolvable | string;
+
+    /**
+     * Attribute TrafficMirrorFilterDescription: The description of the TrafficMirrorFilter.
+     */
+    readonly attrTrafficMirrorFilterDescription: ros.IResolvable | string;
+
+    /**
+     * Attribute TrafficMirrorFilterId: The first ID of the resource.
+     */
+    readonly attrTrafficMirrorFilterId: ros.IResolvable | string;
+
+    /**
+     * Attribute TrafficMirrorFilterName: The name of the TrafficMirrorFilter.
+     */
+    readonly attrTrafficMirrorFilterName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::TrafficMirrorFilter`, which is used to query a filter for traffic mirroring.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTrafficMirrorFilter`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-trafficmirrorfilter
  */
-export class TrafficMirrorFilter extends ros.Resource {
+export class TrafficMirrorFilter extends ros.Resource implements ITrafficMirrorFilter {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: TrafficMirrorFilterProps;
+    public readonly props: TrafficMirrorFilterProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute EgressRules: EgressRules.
      */
-    public readonly attrEgressRules: ros.IResolvable;
+    public readonly attrEgressRules: ros.IResolvable | string;
 
     /**
      * Attribute IngressRules: IngressRules.
      */
-    public readonly attrIngressRules: ros.IResolvable;
+    public readonly attrIngressRules: ros.IResolvable | string;
 
     /**
      * Attribute TrafficMirrorFilterDescription: The description of the TrafficMirrorFilter.
      */
-    public readonly attrTrafficMirrorFilterDescription: ros.IResolvable;
+    public readonly attrTrafficMirrorFilterDescription: ros.IResolvable | string;
 
     /**
      * Attribute TrafficMirrorFilterId: The first ID of the resource.
      */
-    public readonly attrTrafficMirrorFilterId: ros.IResolvable;
+    public readonly attrTrafficMirrorFilterId: ros.IResolvable | string;
 
     /**
      * Attribute TrafficMirrorFilterName: The name of the TrafficMirrorFilter.
      */
-    public readonly attrTrafficMirrorFilterName: ros.IResolvable;
+    public readonly attrTrafficMirrorFilterName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

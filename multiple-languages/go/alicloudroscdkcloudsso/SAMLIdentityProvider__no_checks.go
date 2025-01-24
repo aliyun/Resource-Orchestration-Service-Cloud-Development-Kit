@@ -52,10 +52,6 @@ func (j *jsiiProxy_SAMLIdentityProvider) validateSetIdParameters(val *string) er
 	return nil
 }
 
-func (j *jsiiProxy_SAMLIdentityProvider) validateSetPropsParameters(val *SAMLIdentityProviderProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_SAMLIdentityProvider) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

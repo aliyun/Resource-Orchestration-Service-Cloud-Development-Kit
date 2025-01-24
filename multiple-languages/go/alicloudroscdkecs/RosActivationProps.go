@@ -9,6 +9,7 @@ type RosActivationProps struct {
 	InstanceCount interface{} `field:"optional" json:"instanceCount" yaml:"instanceCount"`
 	InstanceName interface{} `field:"optional" json:"instanceName" yaml:"instanceName"`
 	IpAddressRange interface{} `field:"optional" json:"ipAddressRange" yaml:"ipAddressRange"`
+	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 	Tags *[]*RosActivation_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 	TimeToLiveInHours interface{} `field:"optional" json:"timeToLiveInHours" yaml:"timeToLiveInHours"`
 }

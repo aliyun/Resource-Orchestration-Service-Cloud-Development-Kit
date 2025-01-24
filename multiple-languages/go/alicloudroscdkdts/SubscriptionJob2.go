@@ -12,14 +12,24 @@ import (
 // This class encapsulates and extends the ROS resource type `ALIYUN::DTS::SubscriptionJob2`, which is used to configure a change tracking task.
 type SubscriptionJob2 interface {
 	alicloudroscdkcore.Resource
+	ISubscriptionJob2
 	// Attribute DtsInstanceId: The ID of the DTS instance.
-	AttrDtsInstanceId() alicloudroscdkcore.IResolvable
+	AttrDtsInstanceId() interface{}
 	// Attribute DtsJobId: The ID of the task.
-	AttrDtsJobId() alicloudroscdkcore.IResolvable
+	AttrDtsJobId() interface{}
 	// Attribute DtsJobName: The name of the DTS job.
-	AttrDtsJobName() alicloudroscdkcore.IResolvable
+	AttrDtsJobName() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -34,7 +44,6 @@ type SubscriptionJob2 interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *SubscriptionJob2Props
-	SetProps(val *SubscriptionJob2Props)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -47,6 +56,9 @@ type SubscriptionJob2 interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -99,10 +111,11 @@ type SubscriptionJob2 interface {
 // The jsii proxy struct for SubscriptionJob2
 type jsiiProxy_SubscriptionJob2 struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ISubscriptionJob2
 }
 
-func (j *jsiiProxy_SubscriptionJob2) AttrDtsInstanceId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SubscriptionJob2) AttrDtsInstanceId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDtsInstanceId",
@@ -111,8 +124,8 @@ func (j *jsiiProxy_SubscriptionJob2) AttrDtsInstanceId() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_SubscriptionJob2) AttrDtsJobId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SubscriptionJob2) AttrDtsJobId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDtsJobId",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_SubscriptionJob2) AttrDtsJobId() alicloudroscdkcore.IResolvab
 	return returns
 }
 
-func (j *jsiiProxy_SubscriptionJob2) AttrDtsJobName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_SubscriptionJob2) AttrDtsJobName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDtsJobName",
@@ -136,6 +149,16 @@ func (j *jsiiProxy_SubscriptionJob2) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SubscriptionJob2) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -273,17 +296,6 @@ func (j *jsiiProxy_SubscriptionJob2)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_SubscriptionJob2)SetProps(val *SubscriptionJob2Props) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_SubscriptionJob2)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -375,6 +387,45 @@ func (s *jsiiProxy_SubscriptionJob2) ApplyRemovalPolicy(policy alicloudroscdkcor
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (s *jsiiProxy_SubscriptionJob2) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		s,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_SubscriptionJob2) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		s,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (s *jsiiProxy_SubscriptionJob2) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		s,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (s *jsiiProxy_SubscriptionJob2) GeneratePhysicalName() *string {

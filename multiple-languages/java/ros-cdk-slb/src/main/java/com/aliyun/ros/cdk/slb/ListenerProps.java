@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.slb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-listener
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:11.975Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:44.244Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.ListenerProps")
 @software.amazon.jsii.Jsii.Proxy(ListenerProps.Jsii$Proxy.class)
 public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
@@ -81,7 +81,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property backendServerPort: Backend server can listen on ports from 1 to 65535.
+     * Property backendServerPort: Backend server can listen on ports from 0 to 65535.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getBackendServerPort() {
         return null;
@@ -130,6 +130,16 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
      * off: no
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEnableHttp2() {
+        return null;
+    }
+
+    /**
+     * Property fullNatEnabled: When Full NAT mode is enabled, it can support the backend servers as clients for access.
+     * <p>
+     * Default value is false.
+     * Note: Only effective for TCP or UDP listener.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getFullNatEnabled() {
         return null;
     }
 
@@ -291,6 +301,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object connectionDrainTimeout;
         java.lang.Object description;
         java.lang.Object enableHttp2;
+        java.lang.Object fullNatEnabled;
         java.lang.Object gzip;
         java.lang.Object healthCheck;
         java.lang.Object httpConfig;
@@ -501,7 +512,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ListenerProps#getBackendServerPort}
-         * @param backendServerPort Property backendServerPort: Backend server can listen on ports from 1 to 65535.
+         * @param backendServerPort Property backendServerPort: Backend server can listen on ports from 0 to 65535.
          * @return {@code this}
          */
         public Builder backendServerPort(java.lang.Number backendServerPort) {
@@ -511,7 +522,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ListenerProps#getBackendServerPort}
-         * @param backendServerPort Property backendServerPort: Backend server can listen on ports from 1 to 65535.
+         * @param backendServerPort Property backendServerPort: Backend server can listen on ports from 0 to 65535.
          * @return {@code this}
          */
         public Builder backendServerPort(com.aliyun.ros.cdk.core.IResolvable backendServerPort) {
@@ -632,6 +643,30 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder enableHttp2(com.aliyun.ros.cdk.core.IResolvable enableHttp2) {
             this.enableHttp2 = enableHttp2;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ListenerProps#getFullNatEnabled}
+         * @param fullNatEnabled Property fullNatEnabled: When Full NAT mode is enabled, it can support the backend servers as clients for access.
+         *                       Default value is false.
+         *                       Note: Only effective for TCP or UDP listener.
+         * @return {@code this}
+         */
+        public Builder fullNatEnabled(java.lang.Boolean fullNatEnabled) {
+            this.fullNatEnabled = fullNatEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ListenerProps#getFullNatEnabled}
+         * @param fullNatEnabled Property fullNatEnabled: When Full NAT mode is enabled, it can support the backend servers as clients for access.
+         *                       Default value is false.
+         *                       Note: Only effective for TCP or UDP listener.
+         * @return {@code this}
+         */
+        public Builder fullNatEnabled(com.aliyun.ros.cdk.core.IResolvable fullNatEnabled) {
+            this.fullNatEnabled = fullNatEnabled;
             return this;
         }
 
@@ -995,6 +1030,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object connectionDrainTimeout;
         private final java.lang.Object description;
         private final java.lang.Object enableHttp2;
+        private final java.lang.Object fullNatEnabled;
         private final java.lang.Object gzip;
         private final java.lang.Object healthCheck;
         private final java.lang.Object httpConfig;
@@ -1031,6 +1067,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             this.connectionDrainTimeout = software.amazon.jsii.Kernel.get(this, "connectionDrainTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableHttp2 = software.amazon.jsii.Kernel.get(this, "enableHttp2", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.fullNatEnabled = software.amazon.jsii.Kernel.get(this, "fullNatEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.gzip = software.amazon.jsii.Kernel.get(this, "gzip", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.healthCheck = software.amazon.jsii.Kernel.get(this, "healthCheck", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.httpConfig = software.amazon.jsii.Kernel.get(this, "httpConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1068,6 +1105,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             this.connectionDrainTimeout = builder.connectionDrainTimeout;
             this.description = builder.description;
             this.enableHttp2 = builder.enableHttp2;
+            this.fullNatEnabled = builder.fullNatEnabled;
             this.gzip = builder.gzip;
             this.healthCheck = builder.healthCheck;
             this.httpConfig = builder.httpConfig;
@@ -1153,6 +1191,11 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getEnableHttp2() {
             return this.enableHttp2;
+        }
+
+        @Override
+        public final java.lang.Object getFullNatEnabled() {
+            return this.fullNatEnabled;
         }
 
         @Override
@@ -1270,6 +1313,9 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getEnableHttp2() != null) {
                 data.set("enableHttp2", om.valueToTree(this.getEnableHttp2()));
             }
+            if (this.getFullNatEnabled() != null) {
+                data.set("fullNatEnabled", om.valueToTree(this.getFullNatEnabled()));
+            }
             if (this.getGzip() != null) {
                 data.set("gzip", om.valueToTree(this.getGzip()));
             }
@@ -1347,6 +1393,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             if (this.connectionDrainTimeout != null ? !this.connectionDrainTimeout.equals(that.connectionDrainTimeout) : that.connectionDrainTimeout != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.enableHttp2 != null ? !this.enableHttp2.equals(that.enableHttp2) : that.enableHttp2 != null) return false;
+            if (this.fullNatEnabled != null ? !this.fullNatEnabled.equals(that.fullNatEnabled) : that.fullNatEnabled != null) return false;
             if (this.gzip != null ? !this.gzip.equals(that.gzip) : that.gzip != null) return false;
             if (this.healthCheck != null ? !this.healthCheck.equals(that.healthCheck) : that.healthCheck != null) return false;
             if (this.httpConfig != null ? !this.httpConfig.equals(that.httpConfig) : that.httpConfig != null) return false;
@@ -1380,6 +1427,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.connectionDrainTimeout != null ? this.connectionDrainTimeout.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.enableHttp2 != null ? this.enableHttp2.hashCode() : 0);
+            result = 31 * result + (this.fullNatEnabled != null ? this.fullNatEnabled.hashCode() : 0);
             result = 31 * result + (this.gzip != null ? this.gzip.hashCode() : 0);
             result = 31 * result + (this.healthCheck != null ? this.healthCheck.hashCode() : 0);
             result = 31 * result + (this.httpConfig != null ? this.httpConfig.hashCode() : 0);

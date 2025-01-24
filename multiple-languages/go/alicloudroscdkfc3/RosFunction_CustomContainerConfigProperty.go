@@ -10,6 +10,7 @@ type RosFunction_CustomContainerConfigProperty struct {
 	HealthCheckConfig interface{} `field:"optional" json:"healthCheckConfig" yaml:"healthCheckConfig"`
 	Image interface{} `field:"optional" json:"image" yaml:"image"`
 	Port interface{} `field:"optional" json:"port" yaml:"port"`
+	RegistryConfig interface{} `field:"optional" json:"registryConfig" yaml:"registryConfig"`
 	ResolvedImageUri interface{} `field:"optional" json:"resolvedImageUri" yaml:"resolvedImageUri"`
 }
 

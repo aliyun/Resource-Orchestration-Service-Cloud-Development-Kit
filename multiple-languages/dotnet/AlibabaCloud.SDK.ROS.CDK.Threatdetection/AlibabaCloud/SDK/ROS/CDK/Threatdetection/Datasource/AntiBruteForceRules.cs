@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Threatdetection.Datasource
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-threatdetection-antibruteforcerules
     /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Threatdetection.Datasource.AntiBruteForceRules), fullyQualifiedName: "@alicloud/ros-cdk-threatdetection.datasource.AntiBruteForceRules", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"optional\":true,\"type\":{\"fqn\":\"@alicloud/ros-cdk-threatdetection.datasource.AntiBruteForceRulesProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"optional\":true,\"type\":{\"primitive\":\"boolean\"}}]")]
-    public class AntiBruteForceRules : AlibabaCloud.SDK.ROS.CDK.Core.Resource_
+    public class AntiBruteForceRules : AlibabaCloud.SDK.ROS.CDK.Core.Resource_, AlibabaCloud.SDK.ROS.CDK.Threatdetection.Datasource.IAntiBruteForceRules
     {
         /// <summary>Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.</summary>
         public AntiBruteForceRules(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Threatdetection.Datasource.IAntiBruteForceRulesProps? props = null, bool? enableResourcePropertyConstraint = null): base(_MakeDeputyProps(scope, id, props, enableResourcePropertyConstraint))
@@ -38,17 +38,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Threatdetection.Datasource
         }
 
         /// <summary>Attribute AntiBruteForceRuleIds: The list of anti brute force rule IDs.</summary>
-        [JsiiProperty(name: "attrAntiBruteForceRuleIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAntiBruteForceRuleIds
+        [JsiiProperty(name: "attrAntiBruteForceRuleIds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrAntiBruteForceRuleIds
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute AntiBruteForceRules: The list of anti brute force rules.</summary>
-        [JsiiProperty(name: "attrAntiBruteForceRules", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAntiBruteForceRules
+        [JsiiProperty(name: "attrAntiBruteForceRules", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrAntiBruteForceRules
         {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+            get => GetInstanceProperty<object>()!;
+        }
+
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-threatdetection.datasource.AntiBruteForceRulesProps\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Threatdetection.Datasource.IAntiBruteForceRulesProps Props
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Threatdetection.Datasource.IAntiBruteForceRulesProps>()!;
         }
 
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
@@ -62,13 +68,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Threatdetection.Datasource
         protected virtual string Id
         {
             get => GetInstanceProperty<string>()!;
-            set => SetInstanceProperty(value);
-        }
-
-        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-threatdetection.datasource.AntiBruteForceRulesProps\"}")]
-        protected virtual AlibabaCloud.SDK.ROS.CDK.Threatdetection.Datasource.IAntiBruteForceRulesProps Props
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Threatdetection.Datasource.IAntiBruteForceRulesProps>()!;
             set => SetInstanceProperty(value);
         }
 

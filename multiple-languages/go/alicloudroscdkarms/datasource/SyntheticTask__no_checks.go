@@ -52,10 +52,6 @@ func (j *jsiiProxy_SyntheticTask) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_SyntheticTask) validateSetPropsParameters(val *SyntheticTaskProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_SyntheticTask) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

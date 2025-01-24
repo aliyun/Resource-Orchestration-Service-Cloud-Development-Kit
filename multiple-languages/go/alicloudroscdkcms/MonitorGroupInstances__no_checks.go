@@ -52,10 +52,6 @@ func (j *jsiiProxy_MonitorGroupInstances) validateSetIdParameters(val *string) e
 	return nil
 }
 
-func (j *jsiiProxy_MonitorGroupInstances) validateSetPropsParameters(val *MonitorGroupInstancesProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_MonitorGroupInstances) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

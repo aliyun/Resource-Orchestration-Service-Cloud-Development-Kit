@@ -31,45 +31,81 @@ export interface AccountProps {
 }
 
 /**
+ * Represents a `Account`.
+ */
+export interface IAccount extends ros.IResource {
+    readonly props: AccountProps;
+
+    /**
+     * Attribute AccountId: This ID of Resource Manager Account
+     */
+    readonly attrAccountId: ros.IResolvable | string;
+
+    /**
+     * Attribute DisplayName: Member name
+     */
+    readonly attrDisplayName: ros.IResolvable | string;
+
+    /**
+     * Attribute FolderId: The ID of the parent folder
+     */
+    readonly attrFolderId: ros.IResolvable | string;
+
+    /**
+     * Attribute JoinMethod: Ways for members to join the resource directory. Valid values: invited, created
+     */
+    readonly attrJoinMethod: ros.IResolvable | string;
+
+    /**
+     * Attribute ResourceDirectoryId: Resource directory ID
+     */
+    readonly attrResourceDirectoryId: ros.IResolvable | string;
+
+    /**
+     * Attribute Type: Member type. The value of ResourceAccount indicates the resource account
+     */
+    readonly attrType: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::Account`, which is used to create a member of the resource account type.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccount`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-account
  */
-export class Account extends ros.Resource {
+export class Account extends ros.Resource implements IAccount {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: AccountProps;
+    public readonly props: AccountProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute AccountId: This ID of Resource Manager Account
      */
-    public readonly attrAccountId: ros.IResolvable;
+    public readonly attrAccountId: ros.IResolvable | string;
 
     /**
      * Attribute DisplayName: Member name
      */
-    public readonly attrDisplayName: ros.IResolvable;
+    public readonly attrDisplayName: ros.IResolvable | string;
 
     /**
      * Attribute FolderId: The ID of the parent folder
      */
-    public readonly attrFolderId: ros.IResolvable;
+    public readonly attrFolderId: ros.IResolvable | string;
 
     /**
      * Attribute JoinMethod: Ways for members to join the resource directory. Valid values: invited, created
      */
-    public readonly attrJoinMethod: ros.IResolvable;
+    public readonly attrJoinMethod: ros.IResolvable | string;
 
     /**
      * Attribute ResourceDirectoryId: Resource directory ID
      */
-    public readonly attrResourceDirectoryId: ros.IResolvable;
+    public readonly attrResourceDirectoryId: ros.IResolvable | string;
 
     /**
      * Attribute Type: Member type. The value of ResourceAccount indicates the resource account
      */
-    public readonly attrType: ros.IResolvable;
+    public readonly attrType: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

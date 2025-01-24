@@ -12,12 +12,22 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::VServerGroups`, which is used to query the server groups of a Classic Load Balancer (CLB) instance.
 type VServerGroups interface {
 	alicloudroscdkcore.Resource
+	IVServerGroups
 	// Attribute VServerGroupIds: The list of VServer group IDs.
-	AttrVServerGroupIds() alicloudroscdkcore.IResolvable
+	AttrVServerGroupIds() interface{}
 	// Attribute VServerGroups: The list of VServer groups.
-	AttrVServerGroups() alicloudroscdkcore.IResolvable
+	AttrVServerGroups() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -32,7 +42,6 @@ type VServerGroups interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *VServerGroupsProps
-	SetProps(val *VServerGroupsProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -45,6 +54,9 @@ type VServerGroups interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -97,10 +109,11 @@ type VServerGroups interface {
 // The jsii proxy struct for VServerGroups
 type jsiiProxy_VServerGroups struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IVServerGroups
 }
 
-func (j *jsiiProxy_VServerGroups) AttrVServerGroupIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VServerGroups) AttrVServerGroupIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVServerGroupIds",
@@ -109,8 +122,8 @@ func (j *jsiiProxy_VServerGroups) AttrVServerGroupIds() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_VServerGroups) AttrVServerGroups() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_VServerGroups) AttrVServerGroups() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVServerGroups",
@@ -124,6 +137,16 @@ func (j *jsiiProxy_VServerGroups) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VServerGroups) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -261,17 +284,6 @@ func (j *jsiiProxy_VServerGroups)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_VServerGroups)SetProps(val *VServerGroupsProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_VServerGroups)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -363,6 +375,45 @@ func (v *jsiiProxy_VServerGroups) ApplyRemovalPolicy(policy alicloudroscdkcore.R
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (v *jsiiProxy_VServerGroups) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		v,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (v *jsiiProxy_VServerGroups) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		v,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (v *jsiiProxy_VServerGroups) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		v,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (v *jsiiProxy_VServerGroups) GeneratePhysicalName() *string {

@@ -21,25 +21,41 @@ export interface DhcpOptionsSetAttachmentProps {
 }
 
 /**
+ * Represents a `DhcpOptionsSetAttachment`.
+ */
+export interface IDhcpOptionsSetAttachment extends ros.IResource {
+    readonly props: DhcpOptionsSetAttachmentProps;
+
+    /**
+     * Attribute DhcpOptionsSetId: The ID of the DHCP options set.
+     */
+    readonly attrDhcpOptionsSetId: ros.IResolvable | string;
+
+    /**
+     * Attribute VpcId: The ID of the VPC network.
+     */
+    readonly attrVpcId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::DhcpOptionsSetAttachment`, which is used to associate a Dynamic Host Configuration Protocol (DHCP) options set with a virtual private cloud (VPC).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDhcpOptionsSetAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-dhcpoptionssetattachment
  */
-export class DhcpOptionsSetAttachment extends ros.Resource {
+export class DhcpOptionsSetAttachment extends ros.Resource implements IDhcpOptionsSetAttachment {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DhcpOptionsSetAttachmentProps;
+    public readonly props: DhcpOptionsSetAttachmentProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DhcpOptionsSetId: The ID of the DHCP options set.
      */
-    public readonly attrDhcpOptionsSetId: ros.IResolvable;
+    public readonly attrDhcpOptionsSetId: ros.IResolvable | string;
 
     /**
      * Attribute VpcId: The ID of the VPC network.
      */
-    public readonly attrVpcId: ros.IResolvable;
+    public readonly attrVpcId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

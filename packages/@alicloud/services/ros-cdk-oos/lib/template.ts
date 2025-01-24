@@ -31,30 +31,51 @@ export interface TemplateProps {
 }
 
 /**
+ * Represents a `Template`.
+ */
+export interface ITemplate extends ros.IResource {
+    readonly props: TemplateProps;
+
+    /**
+     * Attribute ExecutionPolicy: Execution Policy
+     */
+    readonly attrExecutionPolicy: ros.IResolvable | string;
+
+    /**
+     * Attribute TemplateId: Template ID
+     */
+    readonly attrTemplateId: ros.IResolvable | string;
+
+    /**
+     * Attribute TemplateName: Template Name
+     */
+    readonly attrTemplateName: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::Template`, which is used to create a template.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTemplate`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-template
  */
-export class Template extends ros.Resource {
+export class Template extends ros.Resource implements ITemplate {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: TemplateProps;
+    public readonly props: TemplateProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ExecutionPolicy: Execution Policy
      */
-    public readonly attrExecutionPolicy: ros.IResolvable;
+    public readonly attrExecutionPolicy: ros.IResolvable | string;
 
     /**
      * Attribute TemplateId: Template ID
      */
-    public readonly attrTemplateId: ros.IResolvable;
+    public readonly attrTemplateId: ros.IResolvable | string;
 
     /**
      * Attribute TemplateName: Template Name
      */
-    public readonly attrTemplateName: ros.IResolvable;
+    public readonly attrTemplateName: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

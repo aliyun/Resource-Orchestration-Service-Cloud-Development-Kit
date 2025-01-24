@@ -77,20 +77,31 @@ export interface ImageCacheProps {
 }
 
 /**
+ * Represents a `ImageCache`.
+ */
+export interface IImageCache extends ros.IResource {
+    readonly props: ImageCacheProps;
+
+    /**
+     * Attribute ImageCacheId: The ID of the image cache.
+     */
+    readonly attrImageCacheId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ECI::ImageCache`, which is used to create an image cache.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosImageCache`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-imagecache
  */
-export class ImageCache extends ros.Resource {
+export class ImageCache extends ros.Resource implements IImageCache {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ImageCacheProps;
+    public readonly props: ImageCacheProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ImageCacheId: The ID of the image cache.
      */
-    public readonly attrImageCacheId: ros.IResolvable;
+    public readonly attrImageCacheId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

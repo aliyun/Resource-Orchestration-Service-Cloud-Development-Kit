@@ -152,20 +152,31 @@ export interface ApiProps {
 }
 
 /**
+ * Represents a `Api`.
+ */
+export interface IApi extends ros.IResource {
+    readonly props: ApiProps;
+
+    /**
+     * Attribute ApiId: The id of the API.
+     */
+    readonly attrApiId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Api`, which is used to create an API.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApi`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-api
  */
-export class Api extends ros.Resource {
+export class Api extends ros.Resource implements IApi {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: ApiProps;
+    public readonly props: ApiProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute ApiId: The id of the API.
      */
-    public readonly attrApiId: ros.IResolvable;
+    public readonly attrApiId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

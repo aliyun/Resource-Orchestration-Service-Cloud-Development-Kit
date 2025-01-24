@@ -55,6 +55,11 @@ export interface RosDBClusterProps {
     readonly backupSetId?: string | ros.IResolvable;
 
     /**
+     * @Property cloneSourceRegionId: The ID of the source region where the cluster is located.
+     */
+    readonly cloneSourceRegionId?: string | ros.IResolvable;
+
+    /**
      * @Property dbClusterDescription: The description of the cluster.
      * The description cannot start with http:\/\/ or https:\/\/.
      * The description must be 2 to 256 characters in length
@@ -62,11 +67,29 @@ export interface RosDBClusterProps {
     readonly dbClusterDescription?: string | ros.IResolvable;
 
     /**
+     * @Property dbClusterNetworkType: The network type of the cluster. Valid values:
+     * VPC
+     */
+    readonly dbClusterNetworkType?: string | ros.IResolvable;
+
+    /**
+     * @Property diskEncryption: Specifies whether to encrypt the disk. Valid values:
+     * true
+     * false (default)
+     */
+    readonly diskEncryption?: boolean | ros.IResolvable;
+
+    /**
      * @Property enableDefaultResourcePool: Specifies whether to allocate all reserved computing resources to the user_default resource group. Valid values:
      * true (default)
      * false
      */
     readonly enableDefaultResourcePool?: boolean | ros.IResolvable;
+
+    /**
+     * @Property kmsId:
+     */
+    readonly kmsId?: string | ros.IResolvable;
 
     /**
      * @Property period: The subscription duration of the subscription cluster.
@@ -83,6 +106,24 @@ export interface RosDBClusterProps {
      * Note This parameter must be specified when PayType is set to Prepaid.
      */
     readonly periodType?: string | ros.IResolvable;
+
+    /**
+     * @Property productForm: Valid values:
+     * IntegrationForm
+     * LegacyForm
+     */
+    readonly productForm?: string | ros.IResolvable;
+
+    /**
+     * @Property reservedNodeCount: The number of reserved nodes. Must be 1 for basic version and multiple 
+     * of 3 for enterprise version.
+     */
+    readonly reservedNodeCount?: number | ros.IResolvable;
+
+    /**
+     * @Property reservedNodeSize: The size of each reserved node.
+     */
+    readonly reservedNodeSize?: number | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: The resource group ID.
@@ -129,10 +170,11 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('periodType', ros.validateString)(properties.periodType));
+    errors.collect(ros.propertyValidator('enableDefaultResourcePool', ros.validateBoolean)(properties.enableDefaultResourcePool));
     errors.collect(ros.propertyValidator('storageResource', ros.requiredValidator)(properties.storageResource));
     errors.collect(ros.propertyValidator('storageResource', ros.validateString)(properties.storageResource));
-    errors.collect(ros.propertyValidator('enableDefaultResourcePool', ros.validateBoolean)(properties.enableDefaultResourcePool));
     errors.collect(ros.propertyValidator('restoreToTime', ros.validateString)(properties.restoreToTime));
+    errors.collect(ros.propertyValidator('cloneSourceRegionId', ros.validateString)(properties.cloneSourceRegionId));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
@@ -141,9 +183,30 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('dbClusterDescription', ros.validateString)(properties.dbClusterDescription));
+    if(properties.productForm && (typeof properties.productForm) !== 'object') {
+        errors.collect(ros.propertyValidator('productForm', ros.validateAllowedValues)({
+          data: properties.productForm,
+          allowedValues: ["IntegrationForm","LegacyForm"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('productForm', ros.validateString)(properties.productForm));
+    if(properties.reservedNodeSize && (typeof properties.reservedNodeSize) !== 'object') {
+        errors.collect(ros.propertyValidator('reservedNodeSize', ros.validateAllowedValues)({
+          data: properties.reservedNodeSize,
+          allowedValues: [8,12,16,24,32],
+        }));
+    }
+    errors.collect(ros.propertyValidator('reservedNodeSize', ros.validateNumber)(properties.reservedNodeSize));
     errors.collect(ros.propertyValidator('computeResource', ros.requiredValidator)(properties.computeResource));
     errors.collect(ros.propertyValidator('computeResource', ros.validateString)(properties.computeResource));
     errors.collect(ros.propertyValidator('period', ros.validateString)(properties.period));
+    if(properties.dbClusterNetworkType && (typeof properties.dbClusterNetworkType) !== 'object') {
+        errors.collect(ros.propertyValidator('dbClusterNetworkType', ros.validateAllowedValues)({
+          data: properties.dbClusterNetworkType,
+          allowedValues: ["VPC"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('dbClusterNetworkType', ros.validateString)(properties.dbClusterNetworkType));
     errors.collect(ros.propertyValidator('payType', ros.requiredValidator)(properties.payType));
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
@@ -154,8 +217,18 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
     errors.collect(ros.propertyValidator('backupSetId', ros.validateString)(properties.backupSetId));
     errors.collect(ros.propertyValidator('sourceDbClusterId', ros.validateString)(properties.sourceDbClusterId));
+    if(properties.reservedNodeCount && (typeof properties.reservedNodeCount) !== 'object') {
+        errors.collect(ros.propertyValidator('reservedNodeCount', ros.validateRange)({
+            data: properties.reservedNodeCount,
+            min: 1,
+            max: 2147483646,
+          }));
+    }
+    errors.collect(ros.propertyValidator('reservedNodeCount', ros.validateNumber)(properties.reservedNodeCount));
+    errors.collect(ros.propertyValidator('diskEncryption', ros.validateBoolean)(properties.diskEncryption));
     errors.collect(ros.propertyValidator('dbClusterVersion', ros.requiredValidator)(properties.dbClusterVersion));
     errors.collect(ros.propertyValidator('dbClusterVersion', ros.validateString)(properties.dbClusterVersion));
+    errors.collect(ros.propertyValidator('kmsId', ros.validateString)(properties.kmsId));
     if(properties.restoreType && (typeof properties.restoreType) !== 'object') {
         errors.collect(ros.propertyValidator('restoreType', ros.validateAllowedValues)({
           data: properties.restoreType,
@@ -196,10 +269,17 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
       'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
       'ZoneId': ros.stringToRosTemplate(properties.zoneId),
       'BackupSetId': ros.stringToRosTemplate(properties.backupSetId),
+      'CloneSourceRegionId': ros.stringToRosTemplate(properties.cloneSourceRegionId),
       'DBClusterDescription': ros.stringToRosTemplate(properties.dbClusterDescription),
+      'DBClusterNetworkType': ros.stringToRosTemplate(properties.dbClusterNetworkType),
+      'DiskEncryption': ros.booleanToRosTemplate(properties.diskEncryption),
       'EnableDefaultResourcePool': ros.booleanToRosTemplate(properties.enableDefaultResourcePool),
+      'KmsId': ros.stringToRosTemplate(properties.kmsId),
       'Period': ros.stringToRosTemplate(properties.period),
       'PeriodType': ros.stringToRosTemplate(properties.periodType),
+      'ProductForm': ros.stringToRosTemplate(properties.productForm),
+      'ReservedNodeCount': ros.numberToRosTemplate(properties.reservedNodeCount),
+      'ReservedNodeSize': ros.numberToRosTemplate(properties.reservedNodeSize),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
       'RestoreToTime': ros.stringToRosTemplate(properties.restoreToTime),
       'RestoreType': ros.stringToRosTemplate(properties.restoreType),
@@ -284,6 +364,11 @@ export class RosDBCluster extends ros.RosResource {
     public backupSetId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property cloneSourceRegionId: The ID of the source region where the cluster is located.
+     */
+    public cloneSourceRegionId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property dbClusterDescription: The description of the cluster.
      * The description cannot start with http:\/\/ or https:\/\/.
      * The description must be 2 to 256 characters in length
@@ -291,11 +376,29 @@ export class RosDBCluster extends ros.RosResource {
     public dbClusterDescription: string | ros.IResolvable | undefined;
 
     /**
+     * @Property dbClusterNetworkType: The network type of the cluster. Valid values:
+     * VPC
+     */
+    public dbClusterNetworkType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property diskEncryption: Specifies whether to encrypt the disk. Valid values:
+     * true
+     * false (default)
+     */
+    public diskEncryption: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property enableDefaultResourcePool: Specifies whether to allocate all reserved computing resources to the user_default resource group. Valid values:
      * true (default)
      * false
      */
     public enableDefaultResourcePool: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property kmsId:
+     */
+    public kmsId: string | ros.IResolvable | undefined;
 
     /**
      * @Property period: The subscription duration of the subscription cluster.
@@ -312,6 +415,24 @@ export class RosDBCluster extends ros.RosResource {
      * Note This parameter must be specified when PayType is set to Prepaid.
      */
     public periodType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property productForm: Valid values:
+     * IntegrationForm
+     * LegacyForm
+     */
+    public productForm: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property reservedNodeCount: The number of reserved nodes. Must be 1 for basic version and multiple 
+     * of 3 for enterprise version.
+     */
+    public reservedNodeCount: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property reservedNodeSize: The size of each reserved node.
+     */
+    public reservedNodeSize: number | ros.IResolvable | undefined;
 
     /**
      * @Property resourceGroupId: The resource group ID.
@@ -360,10 +481,17 @@ export class RosDBCluster extends ros.RosResource {
         this.vSwitchId = props.vSwitchId;
         this.zoneId = props.zoneId;
         this.backupSetId = props.backupSetId;
+        this.cloneSourceRegionId = props.cloneSourceRegionId;
         this.dbClusterDescription = props.dbClusterDescription;
+        this.dbClusterNetworkType = props.dbClusterNetworkType;
+        this.diskEncryption = props.diskEncryption;
         this.enableDefaultResourcePool = props.enableDefaultResourcePool;
+        this.kmsId = props.kmsId;
         this.period = props.period;
         this.periodType = props.periodType;
+        this.productForm = props.productForm;
+        this.reservedNodeCount = props.reservedNodeCount;
+        this.reservedNodeSize = props.reservedNodeSize;
         this.resourceGroupId = props.resourceGroupId;
         this.restoreToTime = props.restoreToTime;
         this.restoreType = props.restoreType;
@@ -382,10 +510,17 @@ export class RosDBCluster extends ros.RosResource {
             vSwitchId: this.vSwitchId,
             zoneId: this.zoneId,
             backupSetId: this.backupSetId,
+            cloneSourceRegionId: this.cloneSourceRegionId,
             dbClusterDescription: this.dbClusterDescription,
+            dbClusterNetworkType: this.dbClusterNetworkType,
+            diskEncryption: this.diskEncryption,
             enableDefaultResourcePool: this.enableDefaultResourcePool,
+            kmsId: this.kmsId,
             period: this.period,
             periodType: this.periodType,
+            productForm: this.productForm,
+            reservedNodeCount: this.reservedNodeCount,
+            reservedNodeSize: this.reservedNodeSize,
             resourceGroupId: this.resourceGroupId,
             restoreToTime: this.restoreToTime,
             restoreType: this.restoreType,

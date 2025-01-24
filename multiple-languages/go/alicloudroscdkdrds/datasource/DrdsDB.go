@@ -12,24 +12,34 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::DRDS::DrdsDB`, which is used to query the information about a single database on an instance.
 type DrdsDB interface {
 	alicloudroscdkcore.Resource
+	IDrdsDB
 	// Attribute CreateTime: Database creation timestamp.
-	AttrCreateTime() alicloudroscdkcore.IResolvable
+	AttrCreateTime() interface{}
 	// Attribute DrdsDatabaseName: The name of the Drds database.
-	AttrDrdsDatabaseName() alicloudroscdkcore.IResolvable
+	AttrDrdsDatabaseName() interface{}
 	// Attribute InstRole: Database type: MASTER primary instance, SLAVE read-only instance.
-	AttrInstRole() alicloudroscdkcore.IResolvable
+	AttrInstRole() interface{}
 	// Attribute Schema: The schema ID that is assigned to the partitioned database by the system.
-	AttrSchema() alicloudroscdkcore.IResolvable
+	AttrSchema() interface{}
 	// Attribute SplitMode: The partition mode of the database.Valid values:  HORIZONTAL: The database is horizontally partitioned. VERTICAL: The database is vertically partitioned.
-	AttrSplitMode() alicloudroscdkcore.IResolvable
+	AttrSplitMode() interface{}
 	// Attribute StorageType: The storage type of the Drds database.
 	//
 	// Valid values:
 	// RDS
 	// PolarDB.
-	AttrStorageType() alicloudroscdkcore.IResolvable
+	AttrStorageType() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -44,7 +54,6 @@ type DrdsDB interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *DrdsDBProps
-	SetProps(val *DrdsDBProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -57,6 +66,9 @@ type DrdsDB interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -109,10 +121,11 @@ type DrdsDB interface {
 // The jsii proxy struct for DrdsDB
 type jsiiProxy_DrdsDB struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_IDrdsDB
 }
 
-func (j *jsiiProxy_DrdsDB) AttrCreateTime() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsDB) AttrCreateTime() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrCreateTime",
@@ -121,8 +134,8 @@ func (j *jsiiProxy_DrdsDB) AttrCreateTime() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DrdsDB) AttrDrdsDatabaseName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsDB) AttrDrdsDatabaseName() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDrdsDatabaseName",
@@ -131,8 +144,8 @@ func (j *jsiiProxy_DrdsDB) AttrDrdsDatabaseName() alicloudroscdkcore.IResolvable
 	return returns
 }
 
-func (j *jsiiProxy_DrdsDB) AttrInstRole() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsDB) AttrInstRole() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrInstRole",
@@ -141,8 +154,8 @@ func (j *jsiiProxy_DrdsDB) AttrInstRole() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DrdsDB) AttrSchema() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsDB) AttrSchema() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSchema",
@@ -151,8 +164,8 @@ func (j *jsiiProxy_DrdsDB) AttrSchema() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DrdsDB) AttrSplitMode() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsDB) AttrSplitMode() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSplitMode",
@@ -161,8 +174,8 @@ func (j *jsiiProxy_DrdsDB) AttrSplitMode() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_DrdsDB) AttrStorageType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_DrdsDB) AttrStorageType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrStorageType",
@@ -176,6 +189,16 @@ func (j *jsiiProxy_DrdsDB) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DrdsDB) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -313,17 +336,6 @@ func (j *jsiiProxy_DrdsDB)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_DrdsDB)SetProps(val *DrdsDBProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_DrdsDB)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -415,6 +427,45 @@ func (d *jsiiProxy_DrdsDB) ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalP
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (d *jsiiProxy_DrdsDB) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		d,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DrdsDB) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		d,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (d *jsiiProxy_DrdsDB) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		d,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (d *jsiiProxy_DrdsDB) GeneratePhysicalName() *string {

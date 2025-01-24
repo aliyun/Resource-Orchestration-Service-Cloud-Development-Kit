@@ -52,10 +52,6 @@ func (j *jsiiProxy_AggregateCompliancePack) validateSetIdParameters(val *string)
 	return nil
 }
 
-func (j *jsiiProxy_AggregateCompliancePack) validateSetPropsParameters(val *AggregateCompliancePackProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_AggregateCompliancePack) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

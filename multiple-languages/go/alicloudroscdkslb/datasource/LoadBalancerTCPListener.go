@@ -12,80 +12,90 @@ import (
 // This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::LoadBalancerTCPListener`.
 type LoadBalancerTCPListener interface {
 	alicloudroscdkcore.Resource
+	ILoadBalancerTCPListener
 	// Attribute AclId: The ID of the network ACL that is associated with the listener.
-	AttrAclId() alicloudroscdkcore.IResolvable
+	AttrAclId() interface{}
 	// Attribute AclIds: The ID list of the network ACL that is associated with the listener.
-	AttrAclIds() alicloudroscdkcore.IResolvable
+	AttrAclIds() interface{}
 	// Attribute AclStatus: Indicates whether access control is enabled.
-	AttrAclStatus() alicloudroscdkcore.IResolvable
+	AttrAclStatus() interface{}
 	// Attribute AclType: The type of the ACL.
-	AttrAclType() alicloudroscdkcore.IResolvable
+	AttrAclType() interface{}
 	// Attribute BackendServerPort: The backend port used by the CLB instance.
-	AttrBackendServerPort() alicloudroscdkcore.IResolvable
+	AttrBackendServerPort() interface{}
 	// Attribute Bandwidth: The maximum bandwidth of the listener.
 	//
 	// Unit: Mbit/s.
-	AttrBandwidth() alicloudroscdkcore.IResolvable
+	AttrBandwidth() interface{}
 	// Attribute ConnectionDrain: Indicates whether connection draining is enabled.
 	//
 	// If ConnectionDrain is set to on, the parameter is returned.
-	AttrConnectionDrain() alicloudroscdkcore.IResolvable
+	AttrConnectionDrain() interface{}
 	// Attribute ConnectionDrainTimeout: The timeout period of connection draining.
 	//
 	// If ConnectionDrain is set to on, the parameter is returned.
-	AttrConnectionDrainTimeout() alicloudroscdkcore.IResolvable
+	AttrConnectionDrainTimeout() interface{}
 	// Attribute Description: The description of the listener.
-	AttrDescription() alicloudroscdkcore.IResolvable
+	AttrDescription() interface{}
 	// Attribute EstablishedTimeout: The timeout period of a connection.
-	AttrEstablishedTimeout() alicloudroscdkcore.IResolvable
+	AttrEstablishedTimeout() interface{}
 	// Attribute HealthCheck: Indicates whether the health check feature is enabled.
-	AttrHealthCheck() alicloudroscdkcore.IResolvable
+	AttrHealthCheck() interface{}
 	// Attribute HealthCheckConnectPort: The port that is used for health checks.
-	AttrHealthCheckConnectPort() alicloudroscdkcore.IResolvable
+	AttrHealthCheckConnectPort() interface{}
 	// Attribute HealthCheckConnectTimeout: The timeout period.
 	//
 	// Unit: seconds.
-	AttrHealthCheckConnectTimeout() alicloudroscdkcore.IResolvable
+	AttrHealthCheckConnectTimeout() interface{}
 	// Attribute HealthCheckDomain: The domain name that is used for health checks.
-	AttrHealthCheckDomain() alicloudroscdkcore.IResolvable
+	AttrHealthCheckDomain() interface{}
 	// Attribute HealthCheckHttpCode: The HTTP status code for a successful health check.
-	AttrHealthCheckHttpCode() alicloudroscdkcore.IResolvable
+	AttrHealthCheckHttpCode() interface{}
 	// Attribute HealthCheckInterval: The interval between two consecutive health checks.
 	//
 	// Valid values: 1 to 50. Unit: seconds.
-	AttrHealthCheckInterval() alicloudroscdkcore.IResolvable
+	AttrHealthCheckInterval() interface{}
 	// Attribute HealthCheckMethod: The health check method.
-	AttrHealthCheckMethod() alicloudroscdkcore.IResolvable
+	AttrHealthCheckMethod() interface{}
 	// Attribute HealthCheckType: The health check method that is used by the TCP listener.
-	AttrHealthCheckType() alicloudroscdkcore.IResolvable
+	AttrHealthCheckType() interface{}
 	// Attribute HealthCheckUri: The URL that is used for health checks.
-	AttrHealthCheckUri() alicloudroscdkcore.IResolvable
+	AttrHealthCheckUri() interface{}
 	// Attribute HealthyThreshold: The healthy threshold.
 	//
 	// The number of times that an unhealthy backend server must consecutively pass health checks before it is declared healthy. In this case, the health status is changed from fail to success. Valid values: 2 to 10.
-	AttrHealthyThreshold() alicloudroscdkcore.IResolvable
+	AttrHealthyThreshold() interface{}
 	// Attribute ListenerPort: The frontend port used by the CLB instance.
-	AttrListenerPort() alicloudroscdkcore.IResolvable
+	AttrListenerPort() interface{}
 	// Attribute LoadBalancerId: The ID of the CLB instance.
-	AttrLoadBalancerId() alicloudroscdkcore.IResolvable
+	AttrLoadBalancerId() interface{}
 	// Attribute MasterSlaveServerGroupId: The ID of the primary/secondary server group that is associated with the listener.
-	AttrMasterSlaveServerGroupId() alicloudroscdkcore.IResolvable
+	AttrMasterSlaveServerGroupId() interface{}
 	// Attribute PersistenceTimeout: The timeout period of session persistence.
-	AttrPersistenceTimeout() alicloudroscdkcore.IResolvable
+	AttrPersistenceTimeout() interface{}
 	// Attribute ProxyProtocolV2Enabled: Indicates whether the Proxy protocol is used to pass client IP addresses to backend servers.
-	AttrProxyProtocolV2Enabled() alicloudroscdkcore.IResolvable
+	AttrProxyProtocolV2Enabled() interface{}
 	// Attribute Scheduler: The scheduling algorithm.
-	AttrScheduler() alicloudroscdkcore.IResolvable
+	AttrScheduler() interface{}
 	// Attribute SynProxy: Indicates whether the SynProxy feature of CLB is enabled for protection.
-	AttrSynProxy() alicloudroscdkcore.IResolvable
+	AttrSynProxy() interface{}
 	// Attribute UnhealthyThreshold: The unhealthy threshold.
 	//
 	// The number of times that a healthy backend server must consecutively fail health checks before it is declared unhealthy. In this case, the health status is changed from success to fail. Valid values: 2 to 10.
-	AttrUnhealthyThreshold() alicloudroscdkcore.IResolvable
+	AttrUnhealthyThreshold() interface{}
 	// Attribute VServerGroupId: The ID of the associated server group.
-	AttrVServerGroupId() alicloudroscdkcore.IResolvable
+	AttrVServerGroupId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	// The environment this resource belongs to.
+	//
+	// For resources that are created and managed by the CDK
+	// (generally, those created by creating new class instances like Role, Bucket, etc.),
+	// this is always the same as the environment of the stack they belong to;
+	// however, for imported resources
+	// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+	// that might be different than the stack they were imported into.
+	Env() *alicloudroscdkcore.ResourceEnvironment
 	Id() *string
 	SetId(val *string)
 	// The construct tree node associated with this construct.
@@ -100,7 +110,6 @@ type LoadBalancerTCPListener interface {
 	// Experimental.
 	PhysicalName() *string
 	Props() *LoadBalancerTCPListenerProps
-	SetProps(val *LoadBalancerTCPListenerProps)
 	Ref() *string
 	Resource() alicloudroscdkcore.RosResource
 	SetResource(val alicloudroscdkcore.RosResource)
@@ -113,6 +122,9 @@ type LoadBalancerTCPListener interface {
 	AddDependency(resource alicloudroscdkcore.Resource)
 	AddResourceDesc(desc *string)
 	ApplyRemovalPolicy(policy alicloudroscdkcore.RemovalPolicy)
+	FetchCondition() alicloudroscdkcore.RosCondition
+	FetchDependency() *[]*string
+	FetchResourceDesc() *string
 	GeneratePhysicalName() *string
 	GetAtt(name *string) alicloudroscdkcore.IResolvable
 	// Perform final modifications before synthesis.
@@ -165,10 +177,11 @@ type LoadBalancerTCPListener interface {
 // The jsii proxy struct for LoadBalancerTCPListener
 type jsiiProxy_LoadBalancerTCPListener struct {
 	internal.Type__alicloudroscdkcoreResource
+	jsiiProxy_ILoadBalancerTCPListener
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener) AttrAclId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancerTCPListener) AttrAclId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAclId",
@@ -177,8 +190,8 @@ func (j *jsiiProxy_LoadBalancerTCPListener) AttrAclId() alicloudroscdkcore.IReso
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener) AttrAclIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancerTCPListener) AttrAclIds() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAclIds",
@@ -187,8 +200,8 @@ func (j *jsiiProxy_LoadBalancerTCPListener) AttrAclIds() alicloudroscdkcore.IRes
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener) AttrAclStatus() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancerTCPListener) AttrAclStatus() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAclStatus",
@@ -197,8 +210,8 @@ func (j *jsiiProxy_LoadBalancerTCPListener) AttrAclStatus() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener) AttrAclType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancerTCPListener) AttrAclType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrAclType",
@@ -207,8 +220,8 @@ func (j *jsiiProxy_LoadBalancerTCPListener) AttrAclType() alicloudroscdkcore.IRe
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener) AttrBackendServerPort() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancerTCPListener) AttrBackendServerPort() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBackendServerPort",
@@ -217,8 +230,8 @@ func (j *jsiiProxy_LoadBalancerTCPListener) AttrBackendServerPort() alicloudrosc
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener) AttrBandwidth() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancerTCPListener) AttrBandwidth() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrBandwidth",
@@ -227,8 +240,8 @@ func (j *jsiiProxy_LoadBalancerTCPListener) AttrBandwidth() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener) AttrConnectionDrain() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancerTCPListener) AttrConnectionDrain() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrConnectionDrain",
@@ -237,8 +250,8 @@ func (j *jsiiProxy_LoadBalancerTCPListener) AttrConnectionDrain() alicloudroscdk
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener) AttrConnectionDrainTimeout() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancerTCPListener) AttrConnectionDrainTimeout() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrConnectionDrainTimeout",
@@ -247,8 +260,8 @@ func (j *jsiiProxy_LoadBalancerTCPListener) AttrConnectionDrainTimeout() aliclou
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancerTCPListener) AttrDescription() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrDescription",
@@ -257,8 +270,8 @@ func (j *jsiiProxy_LoadBalancerTCPListener) AttrDescription() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener) AttrEstablishedTimeout() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancerTCPListener) AttrEstablishedTimeout() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrEstablishedTimeout",
@@ -267,8 +280,8 @@ func (j *jsiiProxy_LoadBalancerTCPListener) AttrEstablishedTimeout() alicloudros
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthCheck() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthCheck() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHealthCheck",
@@ -277,8 +290,8 @@ func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthCheck() alicloudroscdkcore
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthCheckConnectPort() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthCheckConnectPort() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHealthCheckConnectPort",
@@ -287,8 +300,8 @@ func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthCheckConnectPort() aliclou
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthCheckConnectTimeout() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthCheckConnectTimeout() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHealthCheckConnectTimeout",
@@ -297,8 +310,8 @@ func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthCheckConnectTimeout() alic
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthCheckDomain() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthCheckDomain() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHealthCheckDomain",
@@ -307,8 +320,8 @@ func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthCheckDomain() alicloudrosc
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthCheckHttpCode() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthCheckHttpCode() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHealthCheckHttpCode",
@@ -317,8 +330,8 @@ func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthCheckHttpCode() alicloudro
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthCheckInterval() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthCheckInterval() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHealthCheckInterval",
@@ -327,8 +340,8 @@ func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthCheckInterval() alicloudro
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthCheckMethod() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthCheckMethod() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHealthCheckMethod",
@@ -337,8 +350,8 @@ func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthCheckMethod() alicloudrosc
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthCheckType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthCheckType() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHealthCheckType",
@@ -347,8 +360,8 @@ func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthCheckType() alicloudroscdk
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthCheckUri() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthCheckUri() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHealthCheckUri",
@@ -357,8 +370,8 @@ func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthCheckUri() alicloudroscdkc
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthyThreshold() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthyThreshold() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHealthyThreshold",
@@ -367,8 +380,8 @@ func (j *jsiiProxy_LoadBalancerTCPListener) AttrHealthyThreshold() alicloudroscd
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener) AttrListenerPort() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancerTCPListener) AttrListenerPort() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrListenerPort",
@@ -377,8 +390,8 @@ func (j *jsiiProxy_LoadBalancerTCPListener) AttrListenerPort() alicloudroscdkcor
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener) AttrLoadBalancerId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancerTCPListener) AttrLoadBalancerId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrLoadBalancerId",
@@ -387,8 +400,8 @@ func (j *jsiiProxy_LoadBalancerTCPListener) AttrLoadBalancerId() alicloudroscdkc
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener) AttrMasterSlaveServerGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancerTCPListener) AttrMasterSlaveServerGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrMasterSlaveServerGroupId",
@@ -397,8 +410,8 @@ func (j *jsiiProxy_LoadBalancerTCPListener) AttrMasterSlaveServerGroupId() alicl
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener) AttrPersistenceTimeout() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancerTCPListener) AttrPersistenceTimeout() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrPersistenceTimeout",
@@ -407,8 +420,8 @@ func (j *jsiiProxy_LoadBalancerTCPListener) AttrPersistenceTimeout() alicloudros
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener) AttrProxyProtocolV2Enabled() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancerTCPListener) AttrProxyProtocolV2Enabled() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrProxyProtocolV2Enabled",
@@ -417,8 +430,8 @@ func (j *jsiiProxy_LoadBalancerTCPListener) AttrProxyProtocolV2Enabled() aliclou
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener) AttrScheduler() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancerTCPListener) AttrScheduler() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrScheduler",
@@ -427,8 +440,8 @@ func (j *jsiiProxy_LoadBalancerTCPListener) AttrScheduler() alicloudroscdkcore.I
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener) AttrSynProxy() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancerTCPListener) AttrSynProxy() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrSynProxy",
@@ -437,8 +450,8 @@ func (j *jsiiProxy_LoadBalancerTCPListener) AttrSynProxy() alicloudroscdkcore.IR
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener) AttrUnhealthyThreshold() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancerTCPListener) AttrUnhealthyThreshold() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrUnhealthyThreshold",
@@ -447,8 +460,8 @@ func (j *jsiiProxy_LoadBalancerTCPListener) AttrUnhealthyThreshold() alicloudros
 	return returns
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener) AttrVServerGroupId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_LoadBalancerTCPListener) AttrVServerGroupId() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrVServerGroupId",
@@ -462,6 +475,16 @@ func (j *jsiiProxy_LoadBalancerTCPListener) EnableResourcePropertyConstraint() *
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LoadBalancerTCPListener) Env() *alicloudroscdkcore.ResourceEnvironment {
+	var returns *alicloudroscdkcore.ResourceEnvironment
+	_jsii_.Get(
+		j,
+		"env",
 		&returns,
 	)
 	return returns
@@ -599,17 +622,6 @@ func (j *jsiiProxy_LoadBalancerTCPListener)SetId(val *string) {
 	)
 }
 
-func (j *jsiiProxy_LoadBalancerTCPListener)SetProps(val *LoadBalancerTCPListenerProps) {
-	if err := j.validateSetPropsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"props",
-		val,
-	)
-}
-
 func (j *jsiiProxy_LoadBalancerTCPListener)SetResource(val alicloudroscdkcore.RosResource) {
 	_jsii_.Set(
 		j,
@@ -701,6 +713,45 @@ func (l *jsiiProxy_LoadBalancerTCPListener) ApplyRemovalPolicy(policy alicloudro
 		"applyRemovalPolicy",
 		[]interface{}{policy},
 	)
+}
+
+func (l *jsiiProxy_LoadBalancerTCPListener) FetchCondition() alicloudroscdkcore.RosCondition {
+	var returns alicloudroscdkcore.RosCondition
+
+	_jsii_.Invoke(
+		l,
+		"fetchCondition",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (l *jsiiProxy_LoadBalancerTCPListener) FetchDependency() *[]*string {
+	var returns *[]*string
+
+	_jsii_.Invoke(
+		l,
+		"fetchDependency",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
+}
+
+func (l *jsiiProxy_LoadBalancerTCPListener) FetchResourceDesc() *string {
+	var returns *string
+
+	_jsii_.Invoke(
+		l,
+		"fetchResourceDesc",
+		nil, // no parameters
+		&returns,
+	)
+
+	return returns
 }
 
 func (l *jsiiProxy_LoadBalancerTCPListener) GeneratePhysicalName() *string {

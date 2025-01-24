@@ -34,20 +34,31 @@ export interface DhcpOptionsSetProps {
 }
 
 /**
+ * Represents a `DhcpOptionsSet`.
+ */
+export interface IDhcpOptionsSet extends ros.IResource {
+    readonly props: DhcpOptionsSetProps;
+
+    /**
+     * Attribute DhcpOptionsSetId: The ID of the DHCP options set that is created.
+     */
+    readonly attrDhcpOptionsSetId: ros.IResolvable | string;
+}
+/**
  * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::DhcpOptionsSet`, which is used to create Dynamic Host Configuration Protocol (DHCP) options sets.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDhcpOptionsSet`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-dhcpoptionsset
  */
-export class DhcpOptionsSet extends ros.Resource {
+export class DhcpOptionsSet extends ros.Resource implements IDhcpOptionsSet {
     protected scope: ros.Construct;
     protected id: string;
-    protected props: DhcpOptionsSetProps;
+    public readonly props: DhcpOptionsSetProps;
     protected enableResourcePropertyConstraint: boolean;
 
     /**
      * Attribute DhcpOptionsSetId: The ID of the DHCP options set that is created.
      */
-    public readonly attrDhcpOptionsSetId: ros.IResolvable;
+    public readonly attrDhcpOptionsSetId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined

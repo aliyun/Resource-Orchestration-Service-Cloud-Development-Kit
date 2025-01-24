@@ -52,10 +52,6 @@ func (j *jsiiProxy_ForwardingRules) validateSetIdParameters(val *string) error {
 	return nil
 }
 
-func (j *jsiiProxy_ForwardingRules) validateSetPropsParameters(val *ForwardingRulesProps) error {
-	return nil
-}
-
 func (j *jsiiProxy_ForwardingRules) validateSetScopeParameters(val alicloudroscdkcore.Construct) error {
 	return nil
 }

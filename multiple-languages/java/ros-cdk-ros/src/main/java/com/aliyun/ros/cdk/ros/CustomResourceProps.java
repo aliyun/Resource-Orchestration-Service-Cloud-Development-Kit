@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ros;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-customresource
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2024-12-13T06:45:11.458Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:43.836Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.CustomResourceProps")
 @software.amazon.jsii.Jsii.Proxy(CustomResourceProps.Jsii$Proxy.class)
 public interface CustomResourceProps extends software.amazon.jsii.JsiiSerializable {
@@ -17,6 +17,7 @@ public interface CustomResourceProps extends software.amazon.jsii.JsiiSerializab
      * <p>
      * <ul>
      * <li>Function Compute: acs:fc:&lt;region_id&gt;:&lt;account_id&gt;:services/&lt;service_name&gt;/functions/&lt;function_name&gt;</li>
+     * <li>Function Compute 3: acs:fc:&lt;region_id&gt;:&lt;account_id&gt;:functions/&lt;function_name&gt;</li>
      * <li>MNS Queue: acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:queues/&lt;queue_name&gt; or acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:/queues/&lt;queue_name&gt;</li>
      * <li>MNS Topic: acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:topics/&lt;topic_name&gt; or acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:/topics/&lt;topic_name&gt;</li>
      * <li>HTTP&amp;HTTPS: web[options]:<url>
@@ -27,6 +28,7 @@ public interface CustomResourceProps extends software.amazon.jsii.JsiiSerializab
      * <li>idempotent: indicates that the Create request is idempotent. Update and Delete requests should be always idempotent.
      * Examples:</li>
      * <li>acs:fc:cn-hangzhou:123456789:services/test-service/functions/test-function</li>
+     * <li>acs:fc:cn-hangzhou:123456789:functions/test-function</li>
      * <li>acs:mns:cn-hangzhou:123456789:queues/test-queue</li>
      * <li>acs:mns:cn-hangzhou:123456789:/queues/test-queue</li>
      * <li>acs:mns:cn-hangzhou:123456789:topics/test-topic</li>
@@ -83,6 +85,7 @@ public interface CustomResourceProps extends software.amazon.jsii.JsiiSerializab
          *                     <p>
          *                     <ul>
          *                     <li>Function Compute: acs:fc:&lt;region_id&gt;:&lt;account_id&gt;:services/&lt;service_name&gt;/functions/&lt;function_name&gt;</li>
+         *                     <li>Function Compute 3: acs:fc:&lt;region_id&gt;:&lt;account_id&gt;:functions/&lt;function_name&gt;</li>
          *                     <li>MNS Queue: acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:queues/&lt;queue_name&gt; or acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:/queues/&lt;queue_name&gt;</li>
          *                     <li>MNS Topic: acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:topics/&lt;topic_name&gt; or acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:/topics/&lt;topic_name&gt;</li>
          *                     <li>HTTP&amp;HTTPS: web[options]:<url>
@@ -93,6 +96,7 @@ public interface CustomResourceProps extends software.amazon.jsii.JsiiSerializab
          *                     <li>idempotent: indicates that the Create request is idempotent. Update and Delete requests should be always idempotent.
          *                     Examples:</li>
          *                     <li>acs:fc:cn-hangzhou:123456789:services/test-service/functions/test-function</li>
+         *                     <li>acs:fc:cn-hangzhou:123456789:functions/test-function</li>
          *                     <li>acs:mns:cn-hangzhou:123456789:queues/test-queue</li>
          *                     <li>acs:mns:cn-hangzhou:123456789:/queues/test-queue</li>
          *                     <li>acs:mns:cn-hangzhou:123456789:topics/test-topic</li>
@@ -116,6 +120,7 @@ public interface CustomResourceProps extends software.amazon.jsii.JsiiSerializab
          *                     <p>
          *                     <ul>
          *                     <li>Function Compute: acs:fc:&lt;region_id&gt;:&lt;account_id&gt;:services/&lt;service_name&gt;/functions/&lt;function_name&gt;</li>
+         *                     <li>Function Compute 3: acs:fc:&lt;region_id&gt;:&lt;account_id&gt;:functions/&lt;function_name&gt;</li>
          *                     <li>MNS Queue: acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:queues/&lt;queue_name&gt; or acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:/queues/&lt;queue_name&gt;</li>
          *                     <li>MNS Topic: acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:topics/&lt;topic_name&gt; or acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:/topics/&lt;topic_name&gt;</li>
          *                     <li>HTTP&amp;HTTPS: web[options]:<url>
@@ -126,6 +131,7 @@ public interface CustomResourceProps extends software.amazon.jsii.JsiiSerializab
          *                     <li>idempotent: indicates that the Create request is idempotent. Update and Delete requests should be always idempotent.
          *                     Examples:</li>
          *                     <li>acs:fc:cn-hangzhou:123456789:services/test-service/functions/test-function</li>
+         *                     <li>acs:fc:cn-hangzhou:123456789:functions/test-function</li>
          *                     <li>acs:mns:cn-hangzhou:123456789:queues/test-queue</li>
          *                     <li>acs:mns:cn-hangzhou:123456789:/queues/test-queue</li>
          *                     <li>acs:mns:cn-hangzhou:123456789:topics/test-topic</li>
