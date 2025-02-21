@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Ingress`, which is used to create a routing rule.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Ingress`.
 type RosIngress interface {
 	alicloudroscdkcore.RosResource
 	AttrIngressId() alicloudroscdkcore.IResolvable

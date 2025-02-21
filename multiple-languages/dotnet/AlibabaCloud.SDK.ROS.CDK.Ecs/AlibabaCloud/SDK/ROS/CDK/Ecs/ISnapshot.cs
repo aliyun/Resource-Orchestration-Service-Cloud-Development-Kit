@@ -8,6 +8,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
     [JsiiInterface(nativeType: typeof(ISnapshot), fullyQualifiedName: "@alicloud/ros-cdk-ecs.ISnapshot")]
     public interface ISnapshot : AlibabaCloud.SDK.ROS.CDK.Core.IResource
     {
+        /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+        [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrArn
+        {
+            get;
+        }
+
         /// <summary>Attribute SnapshotId: The snapshot ID.</summary>
         [JsiiProperty(name: "attrSnapshotId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrSnapshotId
@@ -27,6 +34,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         {
             private _Proxy(ByRefValue reference): base(reference)
             {
+            }
+
+            /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+            [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrArn
+            {
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Attribute SnapshotId: The snapshot ID.</summary>

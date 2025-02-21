@@ -4,10 +4,8 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sag
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::SAG::CloudConnectNetwork`, which is used to create a Cloud Connect Network (CCN) instance.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::SAG::CloudConnectNetwork`.</summary>
     /// <remarks>
-    /// CNN is a device access matrix composed of Alibaba Cloud distributed Smart Access Gateways (SAGs). You can add multiple SAGs to a CCN instance and then attach the CCN instance to a Cloud Enterprise Network (CEN) instance. In this way, you can connect your local branches to Alibaba Cloud.
-    ///
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCloudConnectNetwork`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-cloudconnectnetwork
     /// </remarks>
@@ -37,6 +35,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         protected CloudConnectNetwork(DeputyProps props): base(props)
         {
+        }
+
+        /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+        [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrArn
+        {
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute CcnId: The ID of the CCN instance.</summary>

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::ObjectAcl`, which is used to modify the access control list (ACL) of an Object Storage Service (OSS) object.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::ObjectAcl`.
 type RosObjectAcl interface {
 	alicloudroscdkcore.RosResource
 	Bucket() interface{}

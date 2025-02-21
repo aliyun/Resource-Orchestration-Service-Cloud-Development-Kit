@@ -154,6 +154,11 @@ export class RosAccelerator extends ros.RosResource {
     public readonly attrAutoUseCoupon: ros.IResolvable;
 
     /**
+     * @Attribute DnsName: The DNS name of the accelerator.
+     */
+    public readonly attrDnsName: ros.IResolvable;
+
+    /**
      * @Attribute Duration: The Duration of the GA instance
      */
     public readonly attrDuration: ros.IResolvable;
@@ -247,6 +252,7 @@ export class RosAccelerator extends ros.RosResource {
         this.attrAcceleratorName = this.getAtt('AcceleratorName');
         this.attrAutoPay = this.getAtt('AutoPay');
         this.attrAutoUseCoupon = this.getAtt('AutoUseCoupon');
+        this.attrDnsName = this.getAtt('DnsName');
         this.attrDuration = this.getAtt('Duration');
         this.attrOrderId = this.getAtt('OrderId');
         this.attrPaymentType = this.getAtt('PaymentType');
@@ -2682,7 +2688,7 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Domain`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Domain`, which is used to create a domain name.
  * @Note This class does not contain additional functions, so it is recommended to use the `Domain` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-domain
  */
@@ -3752,7 +3758,7 @@ function rosForwardingRulesPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::ForwardingRules`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::ForwardingRules`, which is used to create forwarding rules.
  * @Note This class does not contain additional functions, so it is recommended to use the `ForwardingRules` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-forwardingrules
  */

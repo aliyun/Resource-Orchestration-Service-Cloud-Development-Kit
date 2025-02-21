@@ -45,7 +45,7 @@ export interface IResourceShareAssociation extends ros.IResource {
     readonly attrResourceShareId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ResourceShareAssociation`, which is used to associate a shared resource or a resource user.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ResourceShareAssociation`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosResourceShareAssociation`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourceshareassociation
  */

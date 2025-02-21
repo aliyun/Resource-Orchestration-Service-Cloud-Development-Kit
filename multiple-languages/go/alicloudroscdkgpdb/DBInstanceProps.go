@@ -16,6 +16,8 @@ type DBInstanceProps struct {
 	// You can call the DescribeRegions
 	// operation to query the most recent zone list.
 	ZoneId interface{} `field:"required" json:"zoneId" yaml:"zoneId"`
+	// Property aiNodeSpecInfos: AI node spec infos.
+	AiNodeSpecInfos interface{} `field:"optional" json:"aiNodeSpecInfos" yaml:"aiNodeSpecInfos"`
 	// Property createSampleData: Whether to load the sample data set after the instance is created.
 	//
 	// The value can be:
@@ -64,6 +66,10 @@ type DBInstanceProps struct {
 	// - When DBInstanceCategory is Serverless, Valid values: 4C16G, 8C32G.
 	// This parameter must be passed to create a storage elastic mode instance and a serverless version instance.
 	InstanceSpec interface{} `field:"optional" json:"instanceSpec" yaml:"instanceSpec"`
+	// Property masterCu: Master resources.
+	//
+	// Default is 8.
+	MasterCu interface{} `field:"optional" json:"masterCu" yaml:"masterCu"`
 	// Property masterNodeNum: The number of master nodes.
 	//
 	// Minimum is 1, max is 2.

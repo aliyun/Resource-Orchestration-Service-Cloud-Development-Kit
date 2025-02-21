@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ALB::ServerGroup</code>, which is used to create a server group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:34.162Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:11.400Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosServerGroup")
 public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -39,6 +39,12 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
      * The resource type name for this resource class.
      */
     public final static java.lang.String ROS_RESOURCE_TYPE_NAME;
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrArn() {
+        return software.amazon.jsii.Kernel.get(this, "attrArn", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
 
     /**
      */
@@ -97,24 +103,6 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getVpcId() {
-        return software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setVpcId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "vpcId", java.util.Objects.requireNonNull(value, "vpcId is required"));
-    }
-
-    /**
-     */
-    public void setVpcId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "vpcId", java.util.Objects.requireNonNull(value, "vpcId is required"));
-    }
-
-    /**
-     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getConnectionDrainConfig() {
         return software.amazon.jsii.Kernel.get(this, "connectionDrainConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -129,6 +117,42 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setConnectionDrainConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.alb.RosServerGroup.ConnectionDrainConfigProperty value) {
         software.amazon.jsii.Kernel.set(this, "connectionDrainConfig", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCrossZoneEnabled() {
+        return software.amazon.jsii.Kernel.get(this, "crossZoneEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setCrossZoneEnabled(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "crossZoneEnabled", value);
+    }
+
+    /**
+     */
+    public void setCrossZoneEnabled(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "crossZoneEnabled", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIpv6Enabled() {
+        return software.amazon.jsii.Kernel.get(this, "ipv6Enabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIpv6Enabled(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "ipv6Enabled", value);
+    }
+
+    /**
+     */
+    public void setIpv6Enabled(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ipv6Enabled", value);
     }
 
     /**
@@ -303,6 +327,24 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setUpstreamKeepaliveEnabled(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "upstreamKeepaliveEnabled", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
+        return software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setVpcId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "vpcId", value);
+    }
+
+    /**
+     */
+    public void setVpcId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "vpcId", value);
     }
     /**
      */
@@ -1883,23 +1925,6 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param vpcId This parameter is required.
-         */
-        public Builder vpcId(final java.lang.String vpcId) {
-            this.props.vpcId(vpcId);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param vpcId This parameter is required.
-         */
-        public Builder vpcId(final com.aliyun.ros.cdk.core.IResolvable vpcId) {
-            this.props.vpcId(vpcId);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param connectionDrainConfig This parameter is required.
          */
         public Builder connectionDrainConfig(final com.aliyun.ros.cdk.core.IResolvable connectionDrainConfig) {
@@ -1912,6 +1937,40 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder connectionDrainConfig(final com.aliyun.ros.cdk.alb.RosServerGroup.ConnectionDrainConfigProperty connectionDrainConfig) {
             this.props.connectionDrainConfig(connectionDrainConfig);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param crossZoneEnabled This parameter is required.
+         */
+        public Builder crossZoneEnabled(final java.lang.Boolean crossZoneEnabled) {
+            this.props.crossZoneEnabled(crossZoneEnabled);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param crossZoneEnabled This parameter is required.
+         */
+        public Builder crossZoneEnabled(final com.aliyun.ros.cdk.core.IResolvable crossZoneEnabled) {
+            this.props.crossZoneEnabled(crossZoneEnabled);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param ipv6Enabled This parameter is required.
+         */
+        public Builder ipv6Enabled(final java.lang.Boolean ipv6Enabled) {
+            this.props.ipv6Enabled(ipv6Enabled);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ipv6Enabled This parameter is required.
+         */
+        public Builder ipv6Enabled(final com.aliyun.ros.cdk.core.IResolvable ipv6Enabled) {
+            this.props.ipv6Enabled(ipv6Enabled);
             return this;
         }
 
@@ -2074,6 +2133,23 @@ public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder upstreamKeepaliveEnabled(final com.aliyun.ros.cdk.core.IResolvable upstreamKeepaliveEnabled) {
             this.props.upstreamKeepaliveEnabled(upstreamKeepaliveEnabled);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param vpcId This parameter is required.
+         */
+        public Builder vpcId(final java.lang.String vpcId) {
+            this.props.vpcId(vpcId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param vpcId This parameter is required.
+         */
+        public Builder vpcId(final com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.props.vpcId(vpcId);
             return this;
         }
 

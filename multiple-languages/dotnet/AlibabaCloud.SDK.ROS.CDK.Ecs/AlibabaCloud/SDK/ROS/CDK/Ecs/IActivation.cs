@@ -22,6 +22,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             get;
         }
 
+        /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+        [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrArn
+        {
+            get;
+        }
+
         /// <summary>Attribute DeregisteredCount: The number of instances that have been logged out.</summary>
         [JsiiProperty(name: "attrDeregisteredCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrDeregisteredCount
@@ -60,6 +67,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// <summary>Attribute ActivationId: Activation code ID.</summary>
             [JsiiProperty(name: "attrActivationId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AttrActivationId
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+            [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrArn
             {
                 get => GetInstanceProperty<object>()!;
             }

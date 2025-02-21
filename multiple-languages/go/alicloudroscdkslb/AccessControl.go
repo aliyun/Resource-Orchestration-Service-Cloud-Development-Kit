@@ -9,12 +9,14 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SLB::AccessControl`, which is used to create an access control list (ACL).
+// This class encapsulates and extends the ROS resource type `ALIYUN::SLB::AccessControl`.
 type AccessControl interface {
 	alicloudroscdkcore.Resource
 	IAccessControl
 	// Attribute AclId: The ID of the access control list.
 	AttrAclId() interface{}
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
 	// The environment this resource belongs to.
@@ -115,6 +117,16 @@ func (j *jsiiProxy_AccessControl) AttrAclId() interface{} {
 	_jsii_.Get(
 		j,
 		"attrAclId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AccessControl) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
 		&returns,
 	)
 	return returns

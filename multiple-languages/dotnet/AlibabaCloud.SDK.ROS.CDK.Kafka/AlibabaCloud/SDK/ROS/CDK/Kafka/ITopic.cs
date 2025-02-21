@@ -8,6 +8,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
     [JsiiInterface(nativeType: typeof(ITopic), fullyQualifiedName: "@alicloud/ros-cdk-kafka.ITopic")]
     public interface ITopic : AlibabaCloud.SDK.ROS.CDK.Core.IResource
     {
+        /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+        [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrArn
+        {
+            get;
+        }
+
         /// <summary>Attribute InstanceId: The ID of the Message Queue for Apache Kafka instance where the topic is located.</summary>
         /// <remarks>
         /// You can call the GetInstanceList operation to query instances.
@@ -37,6 +44,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         {
             private _Proxy(ByRefValue reference): base(reference)
             {
+            }
+
+            /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+            [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrArn
+            {
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Attribute InstanceId: The ID of the Message Queue for Apache Kafka instance where the topic is located.</summary>

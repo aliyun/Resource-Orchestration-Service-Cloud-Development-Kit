@@ -10,6 +10,8 @@ import (
 // Represents a `AutoSnapshotPolicy`.
 type IAutoSnapshotPolicy interface {
 	alicloudroscdkcore.IResource
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute AutoSnapshotPolicyId: The automatic snapshot policy ID.
 	AttrAutoSnapshotPolicyId() interface{}
 	Props() *AutoSnapshotPolicyProps
@@ -18,6 +20,16 @@ type IAutoSnapshotPolicy interface {
 // The jsii proxy for IAutoSnapshotPolicy
 type jsiiProxy_IAutoSnapshotPolicy struct {
 	internal.Type__alicloudroscdkcoreIResource
+}
+
+func (j *jsiiProxy_IAutoSnapshotPolicy) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_IAutoSnapshotPolicy) AttrAutoSnapshotPolicyId() interface{} {

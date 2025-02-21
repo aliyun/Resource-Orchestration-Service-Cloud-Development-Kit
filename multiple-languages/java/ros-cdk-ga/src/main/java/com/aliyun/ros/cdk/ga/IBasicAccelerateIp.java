@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * Represents a <code>BasicAccelerateIp</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:40.443Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:17.103Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.IBasicAccelerateIp")
 @software.amazon.jsii.Jsii.Proxy(IBasicAccelerateIp.Jsii$Proxy.class)
 public interface IBasicAccelerateIp extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -4,10 +4,8 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpnAttachment`, which is used to create an IPsec-VPN connection.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpnAttachment`.</summary>
     /// <remarks>
-    /// After you create the IPsec-VPN connection, you can associate the IPsec-VPN connection with a transit router.
-    ///
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpnAttachment`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnattachment
     /// </remarks>

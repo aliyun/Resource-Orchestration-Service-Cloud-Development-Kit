@@ -91,7 +91,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SWAS::Instance`, which is used to create a subscription simple application server.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SWAS::Instance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-swas-instance
  */
@@ -295,7 +295,7 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SWAS::Instances`, which is used to create subscription simple application servers.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SWAS::Instances`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instances` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-swas-instances
  */

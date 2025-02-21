@@ -17,6 +17,8 @@ type Activation interface {
 	AttrActivationCode() interface{}
 	// Attribute ActivationId: Activation code ID.
 	AttrActivationId() interface{}
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute DeregisteredCount: The number of instances that have been logged out.
 	AttrDeregisteredCount() interface{}
 	// Attribute RegisteredCount: The number of registered instances.
@@ -131,6 +133,16 @@ func (j *jsiiProxy_Activation) AttrActivationId() interface{} {
 	_jsii_.Get(
 		j,
 		"attrActivationId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Activation) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
 		&returns,
 	)
 	return returns

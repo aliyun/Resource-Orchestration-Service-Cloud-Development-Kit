@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc.datasource;
 /**
  * Represents a <code>Ipv4Gateways</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:45.394Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:22.326Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.IIpv4Gateways")
 @software.amazon.jsii.Jsii.Proxy(IIpv4Gateways.Jsii$Proxy.class)
 public interface IIpv4Gateways extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

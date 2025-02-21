@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.sag;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::SAG::QosAssociation</code>, which is used to associate a quality of service (QoS) policy with a Smart Access Gateway (SAG) instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::SAG::QosAssociation</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:44.094Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:20.427Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.QosAssociation")
 public class QosAssociation extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.sag.IQosAssociation {
 

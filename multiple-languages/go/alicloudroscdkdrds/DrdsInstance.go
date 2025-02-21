@@ -13,6 +13,8 @@ import (
 type DrdsInstance interface {
 	alicloudroscdkcore.Resource
 	IDrdsInstance
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute DrdsInstanceId: instance id.
 	AttrDrdsInstanceId() interface{}
 	// Attribute InternetEndpoint: Public endpoint.
@@ -114,6 +116,16 @@ type DrdsInstance interface {
 type jsiiProxy_DrdsInstance struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_IDrdsInstance
+}
+
+func (j *jsiiProxy_DrdsInstance) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_DrdsInstance) AttrDrdsInstanceId() interface{} {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ALB::Listener</code>, which is used to create an HTTP, HTTPS, or Quick UDP Internet Connections (QUIC) listener.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:34.036Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:11.353Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosListener")
 public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,6 +44,12 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrListenerId() {
         return software.amazon.jsii.Kernel.get(this, "attrListenerId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrLoadBalancerId() {
+        return software.amazon.jsii.Kernel.get(this, "attrLoadBalancerId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -325,6 +331,24 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getLogConfig() {
+        return software.amazon.jsii.Kernel.get(this, "logConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setLogConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "logConfig", value);
+    }
+
+    /**
+     */
+    public void setLogConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.alb.RosListener.LogConfigProperty value) {
+        software.amazon.jsii.Kernel.set(this, "logConfig", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getQuicConfig() {
         return software.amazon.jsii.Kernel.get(this, "quicConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -393,6 +417,221 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setXForwardedForConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.alb.RosListener.XForwardedForConfigProperty value) {
         software.amazon.jsii.Kernel.set(this, "xForwardedForConfig", value);
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosListener.AccessLogTracingConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(AccessLogTracingConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface AccessLogTracingConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getTracingEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getTracingSample() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getTracingType() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link AccessLogTracingConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link AccessLogTracingConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<AccessLogTracingConfigProperty> {
+            java.lang.Object tracingEnabled;
+            java.lang.Object tracingSample;
+            java.lang.Object tracingType;
+
+            /**
+             * Sets the value of {@link AccessLogTracingConfigProperty#getTracingEnabled}
+             * @param tracingEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder tracingEnabled(java.lang.Boolean tracingEnabled) {
+                this.tracingEnabled = tracingEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AccessLogTracingConfigProperty#getTracingEnabled}
+             * @param tracingEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder tracingEnabled(com.aliyun.ros.cdk.core.IResolvable tracingEnabled) {
+                this.tracingEnabled = tracingEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AccessLogTracingConfigProperty#getTracingSample}
+             * @param tracingSample the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder tracingSample(java.lang.Number tracingSample) {
+                this.tracingSample = tracingSample;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AccessLogTracingConfigProperty#getTracingSample}
+             * @param tracingSample the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder tracingSample(com.aliyun.ros.cdk.core.IResolvable tracingSample) {
+                this.tracingSample = tracingSample;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AccessLogTracingConfigProperty#getTracingType}
+             * @param tracingType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder tracingType(java.lang.String tracingType) {
+                this.tracingType = tracingType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AccessLogTracingConfigProperty#getTracingType}
+             * @param tracingType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder tracingType(com.aliyun.ros.cdk.core.IResolvable tracingType) {
+                this.tracingType = tracingType;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link AccessLogTracingConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public AccessLogTracingConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link AccessLogTracingConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AccessLogTracingConfigProperty {
+            private final java.lang.Object tracingEnabled;
+            private final java.lang.Object tracingSample;
+            private final java.lang.Object tracingType;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.tracingEnabled = software.amazon.jsii.Kernel.get(this, "tracingEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.tracingSample = software.amazon.jsii.Kernel.get(this, "tracingSample", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.tracingType = software.amazon.jsii.Kernel.get(this, "tracingType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.tracingEnabled = builder.tracingEnabled;
+                this.tracingSample = builder.tracingSample;
+                this.tracingType = builder.tracingType;
+            }
+
+            @Override
+            public final java.lang.Object getTracingEnabled() {
+                return this.tracingEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getTracingSample() {
+                return this.tracingSample;
+            }
+
+            @Override
+            public final java.lang.Object getTracingType() {
+                return this.tracingType;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getTracingEnabled() != null) {
+                    data.set("tracingEnabled", om.valueToTree(this.getTracingEnabled()));
+                }
+                if (this.getTracingSample() != null) {
+                    data.set("tracingSample", om.valueToTree(this.getTracingSample()));
+                }
+                if (this.getTracingType() != null) {
+                    data.set("tracingType", om.valueToTree(this.getTracingType()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-alb.RosListener.AccessLogTracingConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                AccessLogTracingConfigProperty.Jsii$Proxy that = (AccessLogTracingConfigProperty.Jsii$Proxy) o;
+
+                if (this.tracingEnabled != null ? !this.tracingEnabled.equals(that.tracingEnabled) : that.tracingEnabled != null) return false;
+                if (this.tracingSample != null ? !this.tracingSample.equals(that.tracingSample) : that.tracingSample != null) return false;
+                return this.tracingType != null ? this.tracingType.equals(that.tracingType) : that.tracingType == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.tracingEnabled != null ? this.tracingEnabled.hashCode() : 0;
+                result = 31 * result + (this.tracingSample != null ? this.tracingSample.hashCode() : 0);
+                result = 31 * result + (this.tracingType != null ? this.tracingType.hashCode() : 0);
+                return result;
+            }
+        }
     }
     /**
      */
@@ -943,6 +1182,178 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosListener.LogConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(LogConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface LogConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAccessLogRecordCustomizedHeadersEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAccessLogTracingConfig() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link LogConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link LogConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<LogConfigProperty> {
+            java.lang.Object accessLogRecordCustomizedHeadersEnabled;
+            java.lang.Object accessLogTracingConfig;
+
+            /**
+             * Sets the value of {@link LogConfigProperty#getAccessLogRecordCustomizedHeadersEnabled}
+             * @param accessLogRecordCustomizedHeadersEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder accessLogRecordCustomizedHeadersEnabled(java.lang.Boolean accessLogRecordCustomizedHeadersEnabled) {
+                this.accessLogRecordCustomizedHeadersEnabled = accessLogRecordCustomizedHeadersEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LogConfigProperty#getAccessLogRecordCustomizedHeadersEnabled}
+             * @param accessLogRecordCustomizedHeadersEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder accessLogRecordCustomizedHeadersEnabled(com.aliyun.ros.cdk.core.IResolvable accessLogRecordCustomizedHeadersEnabled) {
+                this.accessLogRecordCustomizedHeadersEnabled = accessLogRecordCustomizedHeadersEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LogConfigProperty#getAccessLogTracingConfig}
+             * @param accessLogTracingConfig the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder accessLogTracingConfig(com.aliyun.ros.cdk.core.IResolvable accessLogTracingConfig) {
+                this.accessLogTracingConfig = accessLogTracingConfig;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LogConfigProperty#getAccessLogTracingConfig}
+             * @param accessLogTracingConfig the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder accessLogTracingConfig(com.aliyun.ros.cdk.alb.RosListener.AccessLogTracingConfigProperty accessLogTracingConfig) {
+                this.accessLogTracingConfig = accessLogTracingConfig;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link LogConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public LogConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link LogConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements LogConfigProperty {
+            private final java.lang.Object accessLogRecordCustomizedHeadersEnabled;
+            private final java.lang.Object accessLogTracingConfig;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.accessLogRecordCustomizedHeadersEnabled = software.amazon.jsii.Kernel.get(this, "accessLogRecordCustomizedHeadersEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.accessLogTracingConfig = software.amazon.jsii.Kernel.get(this, "accessLogTracingConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.accessLogRecordCustomizedHeadersEnabled = builder.accessLogRecordCustomizedHeadersEnabled;
+                this.accessLogTracingConfig = builder.accessLogTracingConfig;
+            }
+
+            @Override
+            public final java.lang.Object getAccessLogRecordCustomizedHeadersEnabled() {
+                return this.accessLogRecordCustomizedHeadersEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getAccessLogTracingConfig() {
+                return this.accessLogTracingConfig;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getAccessLogRecordCustomizedHeadersEnabled() != null) {
+                    data.set("accessLogRecordCustomizedHeadersEnabled", om.valueToTree(this.getAccessLogRecordCustomizedHeadersEnabled()));
+                }
+                if (this.getAccessLogTracingConfig() != null) {
+                    data.set("accessLogTracingConfig", om.valueToTree(this.getAccessLogTracingConfig()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-alb.RosListener.LogConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                LogConfigProperty.Jsii$Proxy that = (LogConfigProperty.Jsii$Proxy) o;
+
+                if (this.accessLogRecordCustomizedHeadersEnabled != null ? !this.accessLogRecordCustomizedHeadersEnabled.equals(that.accessLogRecordCustomizedHeadersEnabled) : that.accessLogRecordCustomizedHeadersEnabled != null) return false;
+                return this.accessLogTracingConfig != null ? this.accessLogTracingConfig.equals(that.accessLogTracingConfig) : that.accessLogTracingConfig == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.accessLogRecordCustomizedHeadersEnabled != null ? this.accessLogRecordCustomizedHeadersEnabled.hashCode() : 0;
+                result = 31 * result + (this.accessLogTracingConfig != null ? this.accessLogTracingConfig.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosListener.QuicConfigProperty")
     @software.amazon.jsii.Jsii.Proxy(QuicConfigProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1332,6 +1743,20 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getXForwardedForHostEnabled() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getXForwardedForProcessingMode() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getXForwardedForProtoEnabled() {
             return null;
         }
@@ -1374,6 +1799,8 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object xForwardedForClientSourceIpsTrusted;
             java.lang.Object xForwardedForClientSrcPortEnabled;
             java.lang.Object xForwardedForEnabled;
+            java.lang.Object xForwardedForHostEnabled;
+            java.lang.Object xForwardedForProcessingMode;
             java.lang.Object xForwardedForProtoEnabled;
             java.lang.Object xForwardedForSlbIdEnabled;
             java.lang.Object xForwardedForSlbPortEnabled;
@@ -1643,6 +2070,50 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link XForwardedForConfigProperty#getXForwardedForHostEnabled}
+             * @param xForwardedForHostEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder xForwardedForHostEnabled(java.lang.Boolean xForwardedForHostEnabled) {
+                this.xForwardedForHostEnabled = xForwardedForHostEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link XForwardedForConfigProperty#getXForwardedForHostEnabled}
+             * @param xForwardedForHostEnabled the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder xForwardedForHostEnabled(com.aliyun.ros.cdk.core.IResolvable xForwardedForHostEnabled) {
+                this.xForwardedForHostEnabled = xForwardedForHostEnabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link XForwardedForConfigProperty#getXForwardedForProcessingMode}
+             * @param xForwardedForProcessingMode the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder xForwardedForProcessingMode(java.lang.String xForwardedForProcessingMode) {
+                this.xForwardedForProcessingMode = xForwardedForProcessingMode;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link XForwardedForConfigProperty#getXForwardedForProcessingMode}
+             * @param xForwardedForProcessingMode the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder xForwardedForProcessingMode(com.aliyun.ros.cdk.core.IResolvable xForwardedForProcessingMode) {
+                this.xForwardedForProcessingMode = xForwardedForProcessingMode;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link XForwardedForConfigProperty#getXForwardedForProtoEnabled}
              * @param xForwardedForProtoEnabled the value to be set.
              * @return {@code this}
@@ -1738,6 +2209,8 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object xForwardedForClientSourceIpsTrusted;
             private final java.lang.Object xForwardedForClientSrcPortEnabled;
             private final java.lang.Object xForwardedForEnabled;
+            private final java.lang.Object xForwardedForHostEnabled;
+            private final java.lang.Object xForwardedForProcessingMode;
             private final java.lang.Object xForwardedForProtoEnabled;
             private final java.lang.Object xForwardedForSlbIdEnabled;
             private final java.lang.Object xForwardedForSlbPortEnabled;
@@ -1760,6 +2233,8 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
                 this.xForwardedForClientSourceIpsTrusted = software.amazon.jsii.Kernel.get(this, "xForwardedForClientSourceIpsTrusted", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.xForwardedForClientSrcPortEnabled = software.amazon.jsii.Kernel.get(this, "xForwardedForClientSrcPortEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.xForwardedForEnabled = software.amazon.jsii.Kernel.get(this, "xForwardedForEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.xForwardedForHostEnabled = software.amazon.jsii.Kernel.get(this, "xForwardedForHostEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.xForwardedForProcessingMode = software.amazon.jsii.Kernel.get(this, "xForwardedForProcessingMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.xForwardedForProtoEnabled = software.amazon.jsii.Kernel.get(this, "xForwardedForProtoEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.xForwardedForSlbIdEnabled = software.amazon.jsii.Kernel.get(this, "xForwardedForSlbIdEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.xForwardedForSlbPortEnabled = software.amazon.jsii.Kernel.get(this, "xForwardedForSlbPortEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1782,6 +2257,8 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
                 this.xForwardedForClientSourceIpsTrusted = builder.xForwardedForClientSourceIpsTrusted;
                 this.xForwardedForClientSrcPortEnabled = builder.xForwardedForClientSrcPortEnabled;
                 this.xForwardedForEnabled = builder.xForwardedForEnabled;
+                this.xForwardedForHostEnabled = builder.xForwardedForHostEnabled;
+                this.xForwardedForProcessingMode = builder.xForwardedForProcessingMode;
                 this.xForwardedForProtoEnabled = builder.xForwardedForProtoEnabled;
                 this.xForwardedForSlbIdEnabled = builder.xForwardedForSlbIdEnabled;
                 this.xForwardedForSlbPortEnabled = builder.xForwardedForSlbPortEnabled;
@@ -1848,6 +2325,16 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getXForwardedForHostEnabled() {
+                return this.xForwardedForHostEnabled;
+            }
+
+            @Override
+            public final java.lang.Object getXForwardedForProcessingMode() {
+                return this.xForwardedForProcessingMode;
+            }
+
+            @Override
             public final java.lang.Object getXForwardedForProtoEnabled() {
                 return this.xForwardedForProtoEnabled;
             }
@@ -1904,6 +2391,12 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.getXForwardedForEnabled() != null) {
                     data.set("xForwardedForEnabled", om.valueToTree(this.getXForwardedForEnabled()));
                 }
+                if (this.getXForwardedForHostEnabled() != null) {
+                    data.set("xForwardedForHostEnabled", om.valueToTree(this.getXForwardedForHostEnabled()));
+                }
+                if (this.getXForwardedForProcessingMode() != null) {
+                    data.set("xForwardedForProcessingMode", om.valueToTree(this.getXForwardedForProcessingMode()));
+                }
                 if (this.getXForwardedForProtoEnabled() != null) {
                     data.set("xForwardedForProtoEnabled", om.valueToTree(this.getXForwardedForProtoEnabled()));
                 }
@@ -1943,6 +2436,8 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.xForwardedForClientSourceIpsTrusted != null ? !this.xForwardedForClientSourceIpsTrusted.equals(that.xForwardedForClientSourceIpsTrusted) : that.xForwardedForClientSourceIpsTrusted != null) return false;
                 if (this.xForwardedForClientSrcPortEnabled != null ? !this.xForwardedForClientSrcPortEnabled.equals(that.xForwardedForClientSrcPortEnabled) : that.xForwardedForClientSrcPortEnabled != null) return false;
                 if (this.xForwardedForEnabled != null ? !this.xForwardedForEnabled.equals(that.xForwardedForEnabled) : that.xForwardedForEnabled != null) return false;
+                if (this.xForwardedForHostEnabled != null ? !this.xForwardedForHostEnabled.equals(that.xForwardedForHostEnabled) : that.xForwardedForHostEnabled != null) return false;
+                if (this.xForwardedForProcessingMode != null ? !this.xForwardedForProcessingMode.equals(that.xForwardedForProcessingMode) : that.xForwardedForProcessingMode != null) return false;
                 if (this.xForwardedForProtoEnabled != null ? !this.xForwardedForProtoEnabled.equals(that.xForwardedForProtoEnabled) : that.xForwardedForProtoEnabled != null) return false;
                 if (this.xForwardedForSlbIdEnabled != null ? !this.xForwardedForSlbIdEnabled.equals(that.xForwardedForSlbIdEnabled) : that.xForwardedForSlbIdEnabled != null) return false;
                 return this.xForwardedForSlbPortEnabled != null ? this.xForwardedForSlbPortEnabled.equals(that.xForwardedForSlbPortEnabled) : that.xForwardedForSlbPortEnabled == null;
@@ -1962,6 +2457,8 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.xForwardedForClientSourceIpsTrusted != null ? this.xForwardedForClientSourceIpsTrusted.hashCode() : 0);
                 result = 31 * result + (this.xForwardedForClientSrcPortEnabled != null ? this.xForwardedForClientSrcPortEnabled.hashCode() : 0);
                 result = 31 * result + (this.xForwardedForEnabled != null ? this.xForwardedForEnabled.hashCode() : 0);
+                result = 31 * result + (this.xForwardedForHostEnabled != null ? this.xForwardedForHostEnabled.hashCode() : 0);
+                result = 31 * result + (this.xForwardedForProcessingMode != null ? this.xForwardedForProcessingMode.hashCode() : 0);
                 result = 31 * result + (this.xForwardedForProtoEnabled != null ? this.xForwardedForProtoEnabled.hashCode() : 0);
                 result = 31 * result + (this.xForwardedForSlbIdEnabled != null ? this.xForwardedForSlbIdEnabled.hashCode() : 0);
                 result = 31 * result + (this.xForwardedForSlbPortEnabled != null ? this.xForwardedForSlbPortEnabled.hashCode() : 0);
@@ -2197,6 +2694,23 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder listenerStatus(final com.aliyun.ros.cdk.core.IResolvable listenerStatus) {
             this.props.listenerStatus(listenerStatus);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param logConfig This parameter is required.
+         */
+        public Builder logConfig(final com.aliyun.ros.cdk.core.IResolvable logConfig) {
+            this.props.logConfig(logConfig);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param logConfig This parameter is required.
+         */
+        public Builder logConfig(final com.aliyun.ros.cdk.alb.RosListener.LogConfigProperty logConfig) {
+            this.props.logConfig(logConfig);
             return this;
         }
 

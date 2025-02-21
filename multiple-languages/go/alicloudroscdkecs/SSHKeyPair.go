@@ -13,6 +13,8 @@ import (
 type SSHKeyPair interface {
 	alicloudroscdkcore.Resource
 	ISSHKeyPair
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute KeyPairFingerPrint: The fingerprint of the key pair.
 	//
 	// The public key fingerprint format defined in RFC4716: MD5 message digest algorithm. Refer to http://tools.ietf.org/html/rfc4716.
@@ -116,6 +118,16 @@ type SSHKeyPair interface {
 type jsiiProxy_SSHKeyPair struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_ISSHKeyPair
+}
+
+func (j *jsiiProxy_SSHKeyPair) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SSHKeyPair) AttrKeyPairFingerPrint() interface{} {

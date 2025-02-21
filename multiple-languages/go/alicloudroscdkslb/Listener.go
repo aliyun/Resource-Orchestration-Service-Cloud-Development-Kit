@@ -9,10 +9,12 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SLB::Listener`, which is used to create a Server Load Balancer (SLB) listener.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SLB::Listener`.
 type Listener interface {
 	alicloudroscdkcore.Resource
 	IListener
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute ListenerPortsAndProtocol: The collection of listener.
 	AttrListenerPortsAndProtocol() interface{}
 	// Attribute LoadBalancerId: The id of load balancer.
@@ -110,6 +112,16 @@ type Listener interface {
 type jsiiProxy_Listener struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_IListener
+}
+
+func (j *jsiiProxy_Listener) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Listener) AttrListenerPortsAndProtocol() interface{} {

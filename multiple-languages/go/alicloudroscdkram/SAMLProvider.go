@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::RAM::SAMLProvider`, which is used to create an identity provider (IdP) for role-based single sign-on (SSO).
+// This class encapsulates and extends the ROS resource type `ALIYUN::RAM::SAMLProvider`.
 type SAMLProvider interface {
 	alicloudroscdkcore.Resource
 	ISAMLProvider

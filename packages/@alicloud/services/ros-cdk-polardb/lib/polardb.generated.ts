@@ -73,7 +73,7 @@ function rosAITaskPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::AITask`, which is used to enable the PolarDB for AI feature.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::AITask`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AITask` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-aitask
  */
@@ -294,7 +294,7 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::Account`, which is used to create a database account for a specified PolarDB cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::Account`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-account
  */
@@ -987,6 +987,14 @@ export interface RosDBClusterProps {
     readonly sourceResourceId?: string | ros.IResolvable;
 
     /**
+     * @Property sslEnabled: Modifies the SSL status. Valid values:
+     * Disable: disables SSL encryption.
+     * Enable: enables SSL encryption.
+     * Update: updates the SSL certificate.
+     */
+    readonly sslEnabled?: string | ros.IResolvable;
+
+    /**
      * @Property standbyAz: The zone where the hot standby storage cluster is stored. This is valid for Standard Edition clusters of Multi-zone Edition.
      * This parameter takes effect only when the multi-zone data consistency feature is enabled.
      */
@@ -1100,6 +1108,13 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('proxyClass', ros.validateString)(properties.proxyClass));
     errors.collect(ros.propertyValidator('dbVersion', ros.requiredValidator)(properties.dbVersion));
     errors.collect(ros.propertyValidator('dbVersion', ros.validateString)(properties.dbVersion));
+    if(properties.sslEnabled && (typeof properties.sslEnabled) !== 'object') {
+        errors.collect(ros.propertyValidator('sslEnabled', ros.validateAllowedValues)({
+          data: properties.sslEnabled,
+          allowedValues: ["Disable","Enable","Update"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('sslEnabled', ros.validateString)(properties.sslEnabled));
     errors.collect(ros.propertyValidator('dbMinorVersion', ros.validateString)(properties.dbMinorVersion));
     errors.collect(ros.propertyValidator('dbClusterParameters', RosDBCluster_DBClusterParametersPropertyValidator)(properties.dbClusterParameters));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
@@ -1310,6 +1325,7 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
       'SecurityIPList': ros.stringToRosTemplate(properties.securityIpList),
       'ServerlessType': ros.stringToRosTemplate(properties.serverlessType),
       'SourceResourceId': ros.stringToRosTemplate(properties.sourceResourceId),
+      'SSLEnabled': ros.stringToRosTemplate(properties.sslEnabled),
       'StandbyAZ': ros.stringToRosTemplate(properties.standbyAz),
       'StorageAutoScale': ros.stringToRosTemplate(properties.storageAutoScale),
       'StoragePayType': ros.stringToRosTemplate(properties.storagePayType),
@@ -1335,6 +1351,11 @@ export class RosDBCluster extends ros.RosResource {
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::POLARDB::DBCluster";
+
+    /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
 
     /**
      * @Attribute ClusterConnectionString: The cluster connection string of the db cluster.
@@ -1712,6 +1733,14 @@ export class RosDBCluster extends ros.RosResource {
     public sourceResourceId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property sslEnabled: Modifies the SSL status. Valid values:
+     * Disable: disables SSL encryption.
+     * Enable: enables SSL encryption.
+     * Update: updates the SSL certificate.
+     */
+    public sslEnabled: string | ros.IResolvable | undefined;
+
+    /**
      * @Property standbyAz: The zone where the hot standby storage cluster is stored. This is valid for Standard Edition clusters of Multi-zone Edition.
      * This parameter takes effect only when the multi-zone data consistency feature is enabled.
      */
@@ -1797,6 +1826,7 @@ export class RosDBCluster extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosDBClusterProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosDBCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrClusterConnectionString = this.getAtt('ClusterConnectionString');
         this.attrClusterEndpointId = this.getAtt('ClusterEndpointId');
         this.attrColdStorageInstanceId = this.getAtt('ColdStorageInstanceId');
@@ -1855,6 +1885,7 @@ export class RosDBCluster extends ros.RosResource {
         this.securityIpList = props.securityIpList;
         this.serverlessType = props.serverlessType;
         this.sourceResourceId = props.sourceResourceId;
+        this.sslEnabled = props.sslEnabled;
         this.standbyAz = props.standbyAz;
         this.storageAutoScale = props.storageAutoScale;
         this.storagePayType = props.storagePayType;
@@ -1915,6 +1946,7 @@ export class RosDBCluster extends ros.RosResource {
             securityIpList: this.securityIpList,
             serverlessType: this.serverlessType,
             sourceResourceId: this.sourceResourceId,
+            sslEnabled: this.sslEnabled,
             standbyAz: this.standbyAz,
             storageAutoScale: this.storageAutoScale,
             storagePayType: this.storagePayType,
@@ -2182,7 +2214,7 @@ function rosDBClusterAccessWhiteListPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBClusterAccessWhiteList`, which is used to modify the list of IP addresses that are allowed to access an ApsaraDB for POLARDB cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBClusterAccessWhiteList`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBClusterAccessWhiteList` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusteraccesswhitelist
  */
@@ -2357,7 +2389,7 @@ function rosDBClusterEndpointPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBClusterEndpoint`, which is used to create a custom endpoint for a PolarDB cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBClusterEndpoint`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBClusterEndpoint` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusterendpoint
  */
@@ -2865,7 +2897,7 @@ function rosDBNodesPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBNodes`, which is used to add nodes to a PolarDB cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBNodes`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBNodes` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbnodes
  */
@@ -3100,7 +3132,7 @@ function rosDatabasePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::Database`, which is used to create a database in a PolarDB cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::Database`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Database` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-database
  */
@@ -3267,7 +3299,7 @@ function rosGlobalDatabaseNetworkPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::GlobalDatabaseNetwork`, which is used to create a global database network (GDN).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::GlobalDatabaseNetwork`.
  * @Note This class does not contain additional functions, so it is recommended to use the `GlobalDatabaseNetwork` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-globaldatabasenetwork
  */
@@ -3365,6 +3397,156 @@ export class RosGlobalDatabaseNetwork extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosGlobalSecurityIPGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-globalsecurityipgroup
+ */
+export interface RosGlobalSecurityIPGroupProps {
+
+    /**
+     * @Property gIpList: The IP addresses in the whitelist template.
+     * You can create up to 1,000 IP addresses or CIDR blocks for all IP whitelists.
+     */
+    readonly gIpList: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property globalIgName: The name of the IP whitelist template. The name must meet the following requirements:
+     * The name can contain lowercase letters, digits, and underscores (_).
+     * The name must start with a letter and end with a letter or digit.
+     * The name must be 2 to 120 characters in length.
+     */
+    readonly globalIgName: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosGlobalSecurityIPGroupProps`
+ *
+ * @param properties - the TypeScript properties of a `RosGlobalSecurityIPGroupProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosGlobalSecurityIPGroupPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('globalIgName', ros.requiredValidator)(properties.globalIgName));
+    if(properties.globalIgName && (typeof properties.globalIgName) !== 'object') {
+        errors.collect(ros.propertyValidator('globalIgName', ros.validateAllowedPattern)({
+          data: properties.globalIgName,
+          reg: /^[a-z][a-z0-9_]*[a-z0-9]$/
+        }));
+    }
+    if(properties.globalIgName && (Array.isArray(properties.globalIgName) || (typeof properties.globalIgName) === 'string')) {
+        errors.collect(ros.propertyValidator('globalIgName', ros.validateLength)({
+            data: properties.globalIgName.length,
+            min: 2,
+            max: 120,
+          }));
+    }
+    errors.collect(ros.propertyValidator('globalIgName', ros.validateString)(properties.globalIgName));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('gIpList', ros.requiredValidator)(properties.gIpList));
+    if(properties.gIpList && (Array.isArray(properties.gIpList) || (typeof properties.gIpList) === 'string')) {
+        errors.collect(ros.propertyValidator('gIpList', ros.validateLength)({
+            data: properties.gIpList.length,
+            min: 1,
+            max: 1000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('gIpList', ros.listValidator(ros.validateString))(properties.gIpList));
+    return errors.wrap('supplied properties not correct for "RosGlobalSecurityIPGroupProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::GlobalSecurityIPGroup` resource
+ *
+ * @param properties - the TypeScript properties of a `RosGlobalSecurityIPGroupProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::GlobalSecurityIPGroup` resource.
+ */
+// @ts-ignore TS6133
+function rosGlobalSecurityIPGroupPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosGlobalSecurityIPGroupPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'GIpList': ros.listMapper(ros.stringToRosTemplate)(properties.gIpList),
+      'GlobalIgName': ros.stringToRosTemplate(properties.globalIgName),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::GlobalSecurityIPGroup`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `GlobalSecurityIPGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-globalsecurityipgroup
+ */
+export class RosGlobalSecurityIPGroup extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::POLARDB::GlobalSecurityIPGroup";
+
+    /**
+     * @Attribute GlobalSecurityGroupId: The ID of the IP whitelist template.
+     */
+    public readonly attrGlobalSecurityGroupId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property gIpList: The IP addresses in the whitelist template.
+     * You can create up to 1,000 IP addresses or CIDR blocks for all IP whitelists.
+     */
+    public gIpList: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property globalIgName: The name of the IP whitelist template. The name must meet the following requirements:
+     * The name can contain lowercase letters, digits, and underscores (_).
+     * The name must start with a letter and end with a letter or digit.
+     * The name must be 2 to 120 characters in length.
+     */
+    public globalIgName: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosGlobalSecurityIPGroupProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosGlobalSecurityIPGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrGlobalSecurityGroupId = this.getAtt('GlobalSecurityGroupId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.gIpList = props.gIpList;
+        this.globalIgName = props.globalIgName;
+        this.resourceGroupId = props.resourceGroupId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            gIpList: this.gIpList,
+            globalIgName: this.globalIgName,
+            resourceGroupId: this.resourceGroupId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosGlobalSecurityIPGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosParameterGroup`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-parametergroup
  */
@@ -3448,7 +3630,7 @@ function rosParameterGroupPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::ParameterGroup`, which is used to create a parameter template of PolarDB.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::ParameterGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ParameterGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-parametergroup
  */

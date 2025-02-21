@@ -9,10 +9,12 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::PrivateLink::VpcEndpoint`, which is used to create an endpoint.
+// This class encapsulates and extends the ROS resource type `ALIYUN::PrivateLink::VpcEndpoint`.
 type VpcEndpoint interface {
 	alicloudroscdkcore.Resource
 	IVpcEndpoint
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute Bandwidth: The bandwidth of the endpoint.
 	AttrBandwidth() interface{}
 	// Attribute EndpointDomain: The domain name of the endpoint.
@@ -122,6 +124,16 @@ type VpcEndpoint interface {
 type jsiiProxy_VpcEndpoint struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_IVpcEndpoint
+}
+
+func (j *jsiiProxy_VpcEndpoint) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_VpcEndpoint) AttrBandwidth() interface{} {

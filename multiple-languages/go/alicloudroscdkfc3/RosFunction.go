@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::FC3::Function`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::FC3::Function`, which is used to create a Function Compute 3.0 function.
 type RosFunction interface {
 	alicloudroscdkcore.RosResource
 	AttrArn() alicloudroscdkcore.IResolvable

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::PolarDBX::Account`, which is used to create an account.
+// This class encapsulates and extends the ROS resource type `ALIYUN::PolarDBX::Account`.
 type Account interface {
 	alicloudroscdkcore.Resource
 	IAccount

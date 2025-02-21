@@ -37,6 +37,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         {
         }
 
+        /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+        [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrArn
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
         /// <summary>Attribute MacAddress: The MAC address of your Network Interface.</summary>
         [JsiiProperty(name: "attrMacAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrMacAddress

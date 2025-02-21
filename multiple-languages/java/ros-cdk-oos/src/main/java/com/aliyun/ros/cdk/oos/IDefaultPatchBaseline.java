@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos;
 /**
  * Represents a <code>DefaultPatchBaseline</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:41.734Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:18.408Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.IDefaultPatchBaseline")
 @software.amazon.jsii.Jsii.Proxy(IDefaultPatchBaseline.Jsii$Proxy.class)
 public interface IDefaultPatchBaseline extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

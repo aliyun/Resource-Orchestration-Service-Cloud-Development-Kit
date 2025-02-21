@@ -88,7 +88,7 @@ function rosGroupPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ::Group`, which is used to create a Group ID on the ROCKETMQ client. The Group ID that you create is used to publish and subscribe to messages.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ::Group`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Group` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-group
  */
@@ -254,7 +254,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ::Instance`, which is used to create a Standard Edition instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ::Instance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-instance
  */
@@ -263,6 +263,11 @@ export class RosInstance extends ros.RosResource {
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ROCKETMQ::Instance";
+
+    /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
 
     /**
      * @Attribute HttpInternalEndpoint: The internal HTTP endpoint for the Message Queue for Apache RocketMQ instance.
@@ -329,6 +334,7 @@ export class RosInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrHttpInternalEndpoint = this.getAtt('HttpInternalEndpoint');
         this.attrHttpInternetEndpoint = this.getAtt('HttpInternetEndpoint');
         this.attrHttpInternetSecureEndpoint = this.getAtt('HttpInternetSecureEndpoint');
@@ -490,7 +496,7 @@ function rosTopicPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ::Topic`, which is used to create a topic.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ::Topic`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Topic` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-topic
  */

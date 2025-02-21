@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::SlbBinding`, which is used to bind an SLB instance to an application.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::SlbBinding`.
 type RosSlbBinding interface {
 	alicloudroscdkcore.RosResource
 	AppId() interface{}

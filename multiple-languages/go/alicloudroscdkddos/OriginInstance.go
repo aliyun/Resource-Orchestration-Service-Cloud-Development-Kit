@@ -13,6 +13,8 @@ import (
 type OriginInstance interface {
 	alicloudroscdkcore.Resource
 	IOriginInstance
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute InstanceId: The ID of the instance.
 	AttrInstanceId() interface{}
 	EnableResourcePropertyConstraint() *bool
@@ -108,6 +110,16 @@ type OriginInstance interface {
 type jsiiProxy_OriginInstance struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_IOriginInstance
+}
+
+func (j *jsiiProxy_OriginInstance) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_OriginInstance) AttrInstanceId() interface{} {

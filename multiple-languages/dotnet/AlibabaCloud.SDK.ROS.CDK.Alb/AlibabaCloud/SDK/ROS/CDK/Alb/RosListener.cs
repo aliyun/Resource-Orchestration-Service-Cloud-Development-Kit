@@ -62,6 +62,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
+        /// <remarks>
+        /// <strong>Attribute</strong>: LoadBalancerId: The ID of the ALB instance.
+        /// </remarks>
+        [JsiiProperty(name: "attrLoadBalancerId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrLoadBalancerId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
         protected override System.Collections.Generic.IDictionary<string, object> RosProperties
         {
@@ -398,7 +407,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         /// <strong>Property</strong>: http2Enabled: Specifies whether to enable HTTP\/2. Default value: on.
         /// Valid values: true and false.
         /// Default value: true.
-        /// Note Only HTTPS listeners support this parameter.
+        /// Note: Only HTTPS listeners support this parameter.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "http2Enabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -430,10 +439,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
         /// <remarks>
         /// <strong>Property</strong>: idleTimeout: The timeout period of idle connections.
-        /// Valid values: 1 to 180. Unit: seconds.
+        /// Valid values: 1 to 3600. Unit: seconds.
         /// Default value: 15.
-        /// If no request is received within the specified timeout period, ALB closes the connection.
-        /// ALB recreates the connection when a new connection request is received.
+        /// If no requests are received within the specified timeout period, ALB closes the current connection. When a new request is received, ALB establishes a new connection.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "idleTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -547,6 +555,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: logConfig: The configuration information about the access log.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "logConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosListener.LogConfigProperty\"}]}}", isOptional: true)]
+        public virtual object? LogConfig
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Alb.RosListener.ILogConfigProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosListener.ILogConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: quicConfig: Select a QUIC listener and associate it with the ALB instance.
         /// </remarks>
         [JsiiOptional]
@@ -579,7 +618,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
         /// <remarks>
         /// <strong>Property</strong>: requestTimeout: The timeout period of the request.
-        /// Valid values: 1 to 180. Unit: seconds.
+        /// Valid values: 1 to 900. Unit: seconds.
         /// Default value: 60.
         /// If no response is received from the backend server during the request timeout period,
         /// ALB sends an HTTP 504 error code to the client.
@@ -636,7 +675,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         /// <strong>Property</strong>: securityPolicyId: The ID of the security policy. System security policies and custom security policies
         /// are supported.
         /// Default value: tls_cipher_policy_1_0. This value indicates a system security policy.
-        /// Note Only HTTPS listeners support this parameter.
+        /// Note: Only HTTPS listeners support this parameter.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "securityPolicyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -694,6 +733,214 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                     }
                 }
                 SetInstanceProperty(value);
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IAccessLogTracingConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosListener.AccessLogTracingConfigProperty")]
+        public interface IAccessLogTracingConfigProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: tracingEnabled: Specifies whether to enable the Xtrace feature. Valid values:
+            /// true
+            /// false (default)
+            /// </remarks>
+            [JsiiProperty(name: "tracingEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? TracingEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: tracingSample: The sampling rate of the Xtrace feature. Valid values: 1 to 10000.
+            /// </remarks>
+            [JsiiProperty(name: "tracingSample", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? TracingSample
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: tracingType: The type of Xtrace. Set the value to Zipkin.
+            /// </remarks>
+            [JsiiProperty(name: "tracingType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? TracingType
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IAccessLogTracingConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosListener.AccessLogTracingConfigProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Alb.RosListener.IAccessLogTracingConfigProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: tracingEnabled: Specifies whether to enable the Xtrace feature. Valid values:
+                /// true
+                /// false (default)
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "tracingEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? TracingEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: tracingSample: The sampling rate of the Xtrace feature. Valid values: 1 to 10000.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "tracingSample", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? TracingSample
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: tracingType: The type of Xtrace. Set the value to Zipkin.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "tracingType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? TracingType
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosListener.AccessLogTracingConfigProperty")]
+        public class AccessLogTracingConfigProperty : AlibabaCloud.SDK.ROS.CDK.Alb.RosListener.IAccessLogTracingConfigProperty
+        {
+            private object? _tracingEnabled;
+
+            /// <remarks>
+            /// <strong>Property</strong>: tracingEnabled: Specifies whether to enable the Xtrace feature. Valid values:
+            /// true
+            /// false (default)
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tracingEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? TracingEnabled
+            {
+                get => _tracingEnabled;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _tracingEnabled = value;
+                }
+            }
+
+            private object? _tracingSample;
+
+            /// <remarks>
+            /// <strong>Property</strong>: tracingSample: The sampling rate of the Xtrace feature. Valid values: 1 to 10000.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tracingSample", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? TracingSample
+            {
+                get => _tracingSample;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _tracingSample = value;
+                }
+            }
+
+            private object? _tracingType;
+
+            /// <remarks>
+            /// <strong>Property</strong>: tracingType: The type of Xtrace. Set the value to Zipkin.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tracingType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? TracingType
+            {
+                get => _tracingType;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _tracingType = value;
+                }
             }
         }
         [JsiiInterface(nativeType: typeof(ICaCertificatesProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosListener.CaCertificatesProperty")]
@@ -1038,6 +1285,141 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 }
             }
         }
+        [JsiiInterface(nativeType: typeof(ILogConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosListener.LogConfigProperty")]
+        public interface ILogConfigProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: accessLogRecordCustomizedHeadersEnabled: Specifies whether to record custom headers in the access log.
+            /// Valid values:
+            /// true
+            /// false (default)
+            /// </remarks>
+            [JsiiProperty(name: "accessLogRecordCustomizedHeadersEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? AccessLogRecordCustomizedHeadersEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: accessLogTracingConfig: The configuration information about the Xtrace feature.
+            /// </remarks>
+            [JsiiProperty(name: "accessLogTracingConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosListener.AccessLogTracingConfigProperty\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? AccessLogTracingConfig
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(ILogConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosListener.LogConfigProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Alb.RosListener.ILogConfigProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: accessLogRecordCustomizedHeadersEnabled: Specifies whether to record custom headers in the access log.
+                /// Valid values:
+                /// true
+                /// false (default)
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "accessLogRecordCustomizedHeadersEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? AccessLogRecordCustomizedHeadersEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: accessLogTracingConfig: The configuration information about the Xtrace feature.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "accessLogTracingConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosListener.AccessLogTracingConfigProperty\"}]}}", isOptional: true)]
+                public object? AccessLogTracingConfig
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosListener.LogConfigProperty")]
+        public class LogConfigProperty : AlibabaCloud.SDK.ROS.CDK.Alb.RosListener.ILogConfigProperty
+        {
+            private object? _accessLogRecordCustomizedHeadersEnabled;
+
+            /// <remarks>
+            /// <strong>Property</strong>: accessLogRecordCustomizedHeadersEnabled: Specifies whether to record custom headers in the access log.
+            /// Valid values:
+            /// true
+            /// false (default)
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "accessLogRecordCustomizedHeadersEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AccessLogRecordCustomizedHeadersEnabled
+            {
+                get => _accessLogRecordCustomizedHeadersEnabled;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _accessLogRecordCustomizedHeadersEnabled = value;
+                }
+            }
+
+            private object? _accessLogTracingConfig;
+
+            /// <remarks>
+            /// <strong>Property</strong>: accessLogTracingConfig: The configuration information about the Xtrace feature.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "accessLogTracingConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosListener.AccessLogTracingConfigProperty\"}]}}", isOptional: true)]
+            public object? AccessLogTracingConfig
+            {
+                get => _accessLogTracingConfig;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Alb.RosListener.IAccessLogTracingConfigProperty cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosListener.IAccessLogTracingConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _accessLogTracingConfig = value;
+                }
+            }
+        }
         [JsiiInterface(nativeType: typeof(IQuicConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosListener.QuicConfigProperty")]
         public interface IQuicConfigProperty
         {
@@ -1060,7 +1442,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// <strong>Property</strong>: quicUpgradeEnabled: Specifies whether to enable the QUIC update feature.
             /// Valid values: true and false.
             /// Default value: false.
-            /// Note Only HTTPS listeners support this parameter.
+            /// Note: Only HTTPS listeners support this parameter.
             /// </remarks>
             [JsiiProperty(name: "quicUpgradeEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1095,7 +1477,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 /// <strong>Property</strong>: quicUpgradeEnabled: Specifies whether to enable the QUIC update feature.
                 /// Valid values: true and false.
                 /// Default value: false.
-                /// Note Only HTTPS listeners support this parameter.
+                /// Note: Only HTTPS listeners support this parameter.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "quicUpgradeEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1149,7 +1531,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// <strong>Property</strong>: quicUpgradeEnabled: Specifies whether to enable the QUIC update feature.
             /// Valid values: true and false.
             /// Default value: false.
-            /// Note Only HTTPS listeners support this parameter.
+            /// Note: Only HTTPS listeners support this parameter.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "quicUpgradeEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1252,7 +1634,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// <strong>Property</strong>: xForwardedForClientCertClientVerifyAlias: The name of the custom header. This parameter is valid only if XForwardedForClientCertClientVerifyEnabled is set to true.
             /// The name must be 1 to 40 characters in length, and can contain letters, hyphens (-),
             /// underscores (_), and digits.
-            /// Note Only HTTPS listeners support this parameter.
+            /// Note: Only HTTPS listeners support this parameter.
             /// </remarks>
             [JsiiProperty(name: "xForwardedForClientCertClientVerifyAlias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1268,7 +1650,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// <strong>Property</strong>: xForwardedForClientCertClientVerifyEnabled: Specifies whether to use the X-Forwarded-Clientcert-clientverify header field to obtain the verification result of the ALB client certificate.
             /// Valid values: true and false.
             /// Default value: false.
-            /// Note Only HTTPS listeners support this parameter.
+            /// Note: Only HTTPS listeners support this parameter.
             /// </remarks>
             [JsiiProperty(name: "xForwardedForClientCertClientVerifyEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1284,7 +1666,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// <strong>Property</strong>: xForwardedForClientCertFingerprintAlias: The name of the custom header. This parameter is valid only if XForwardedForClientCertFingerprintEnabled is set to true.
             /// The name must be 1 to 40 characters in length, and can contain letters, hyphens (-),
             /// underscores (_), and digits.
-            /// Note Only HTTPS listeners support this parameter.
+            /// Note: Only HTTPS listeners support this parameter.
             /// </remarks>
             [JsiiProperty(name: "xForwardedForClientCertFingerprintAlias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1300,7 +1682,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// <strong>Property</strong>: xForwardedForClientCertFingerprintEnabled: Specifies whether to use the X-Forwarded-Clientcert-fingerprint header field to obtain the fingerprint of the ALB client certificate.
             /// Valid values: true and false.
             /// Default value: false.
-            /// Note Only HTTPS listeners support this parameter.
+            /// Note: Only HTTPS listeners support this parameter.
             /// </remarks>
             [JsiiProperty(name: "xForwardedForClientCertFingerprintEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1316,7 +1698,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// <strong>Property</strong>: xForwardedForClientCertIssuerDnAlias: The name of the custom header. This parameter is valid only if XForwardedForClientCertIssuerDNEnabled is set to On.
             /// The name must be 1 to 40 characters in length, and can contain letters, hyphens (-),
             /// underscores (_), and digits.
-            /// Note Only HTTPS listeners support this parameter.
+            /// Note: Only HTTPS listeners support this parameter.
             /// </remarks>
             [JsiiProperty(name: "xForwardedForClientCertIssuerDnAlias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1333,7 +1715,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// certificate.
             /// Valid values: true and false.
             /// Default value: false.
-            /// Note Only HTTPS listeners support this parameter.
+            /// Note: Only HTTPS listeners support this parameter.
             /// </remarks>
             [JsiiProperty(name: "xForwardedForClientCertIssuerDnEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1350,7 +1732,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// is set to true.
             /// The name must be 1 to 40 characters in length, and can contain letters, hyphens (-),
             /// underscores (_), and digits.
-            /// Note Only HTTPS listeners support this parameter.
+            /// Note: Only HTTPS listeners support this parameter.
             /// </remarks>
             [JsiiProperty(name: "xForwardedForClientCertSubjectDnAlias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1366,7 +1748,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// <strong>Property</strong>: xForwardedForClientCertSubjectDnEnabled: Specifies whether to use the X-Forwarded-Clientcert-subjectdn header field to obtain information about the owner of the ALB client certificate.
             /// Valid values: true and false.
             /// Default value: false.
-            /// Note Only HTTPS listeners support this parameter.
+            /// Note: Only HTTPS listeners support this parameter.
             /// </remarks>
             [JsiiProperty(name: "xForwardedForClientCertSubjectDnEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1437,10 +1819,43 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: xForwardedForHostEnabled: Whether to enable obtaining the domain name of the client accessing the load balancer instance through the X-Forwarded-Host header field. Values:
+            /// true: Yes.
+            /// false (default): No.
+            /// Note: HTTP, HTTPS, and QUIC listeners support this parameter.
+            /// </remarks>
+            [JsiiProperty(name: "xForwardedForHostEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? XForwardedForHostEnabled
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: xForwardedForProcessingMode: The mode for handling the X-Forwarded-For header field. This value takes effect only when XForwardedForEnabled is true. Possible values:
+            /// append (default): Append.
+            /// remove: Remove.
+            /// Note: When configured as append, the last hop IP is added to the X-Forwarded-For header field before the request is sent to the backend service.
+            /// When configured as remove, the X-Forwarded-For header is deleted before the request is sent to the backend service, regardless of whether the request carries the X-Forwarded-For header field.This parameter is supported by both HTTP and HTTPS listeners.
+            /// </remarks>
+            [JsiiProperty(name: "xForwardedForProcessingMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? XForwardedForProcessingMode
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: xForwardedForProtoEnabled: Specifies whether to use the X-Forwarded-Proto header field to obtain the listener protocol of the ALB instance.
             /// Valid values: true and false.
             /// Default value: false.
-            /// Note HTTP, HTTPS, and QUIC listeners support this parameter.
+            /// Note: HTTP, HTTPS, and QUIC listeners support this parameter.
             /// </remarks>
             [JsiiProperty(name: "xForwardedForProtoEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1495,7 +1910,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 /// <strong>Property</strong>: xForwardedForClientCertClientVerifyAlias: The name of the custom header. This parameter is valid only if XForwardedForClientCertClientVerifyEnabled is set to true.
                 /// The name must be 1 to 40 characters in length, and can contain letters, hyphens (-),
                 /// underscores (_), and digits.
-                /// Note Only HTTPS listeners support this parameter.
+                /// Note: Only HTTPS listeners support this parameter.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "xForwardedForClientCertClientVerifyAlias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1508,7 +1923,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 /// <strong>Property</strong>: xForwardedForClientCertClientVerifyEnabled: Specifies whether to use the X-Forwarded-Clientcert-clientverify header field to obtain the verification result of the ALB client certificate.
                 /// Valid values: true and false.
                 /// Default value: false.
-                /// Note Only HTTPS listeners support this parameter.
+                /// Note: Only HTTPS listeners support this parameter.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "xForwardedForClientCertClientVerifyEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1521,7 +1936,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 /// <strong>Property</strong>: xForwardedForClientCertFingerprintAlias: The name of the custom header. This parameter is valid only if XForwardedForClientCertFingerprintEnabled is set to true.
                 /// The name must be 1 to 40 characters in length, and can contain letters, hyphens (-),
                 /// underscores (_), and digits.
-                /// Note Only HTTPS listeners support this parameter.
+                /// Note: Only HTTPS listeners support this parameter.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "xForwardedForClientCertFingerprintAlias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1534,7 +1949,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 /// <strong>Property</strong>: xForwardedForClientCertFingerprintEnabled: Specifies whether to use the X-Forwarded-Clientcert-fingerprint header field to obtain the fingerprint of the ALB client certificate.
                 /// Valid values: true and false.
                 /// Default value: false.
-                /// Note Only HTTPS listeners support this parameter.
+                /// Note: Only HTTPS listeners support this parameter.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "xForwardedForClientCertFingerprintEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1547,7 +1962,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 /// <strong>Property</strong>: xForwardedForClientCertIssuerDnAlias: The name of the custom header. This parameter is valid only if XForwardedForClientCertIssuerDNEnabled is set to On.
                 /// The name must be 1 to 40 characters in length, and can contain letters, hyphens (-),
                 /// underscores (_), and digits.
-                /// Note Only HTTPS listeners support this parameter.
+                /// Note: Only HTTPS listeners support this parameter.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "xForwardedForClientCertIssuerDnAlias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1561,7 +1976,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 /// certificate.
                 /// Valid values: true and false.
                 /// Default value: false.
-                /// Note Only HTTPS listeners support this parameter.
+                /// Note: Only HTTPS listeners support this parameter.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "xForwardedForClientCertIssuerDnEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1575,7 +1990,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 /// is set to true.
                 /// The name must be 1 to 40 characters in length, and can contain letters, hyphens (-),
                 /// underscores (_), and digits.
-                /// Note Only HTTPS listeners support this parameter.
+                /// Note: Only HTTPS listeners support this parameter.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "xForwardedForClientCertSubjectDnAlias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1588,7 +2003,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 /// <strong>Property</strong>: xForwardedForClientCertSubjectDnEnabled: Specifies whether to use the X-Forwarded-Clientcert-subjectdn header field to obtain information about the owner of the ALB client certificate.
                 /// Valid values: true and false.
                 /// Default value: false.
-                /// Note Only HTTPS listeners support this parameter.
+                /// Note: Only HTTPS listeners support this parameter.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "xForwardedForClientCertSubjectDnEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1644,10 +2059,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: xForwardedForHostEnabled: Whether to enable obtaining the domain name of the client accessing the load balancer instance through the X-Forwarded-Host header field. Values:
+                /// true: Yes.
+                /// false (default): No.
+                /// Note: HTTP, HTTPS, and QUIC listeners support this parameter.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "xForwardedForHostEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? XForwardedForHostEnabled
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: xForwardedForProcessingMode: The mode for handling the X-Forwarded-For header field. This value takes effect only when XForwardedForEnabled is true. Possible values:
+                /// append (default): Append.
+                /// remove: Remove.
+                /// Note: When configured as append, the last hop IP is added to the X-Forwarded-For header field before the request is sent to the backend service.
+                /// When configured as remove, the X-Forwarded-For header is deleted before the request is sent to the backend service, regardless of whether the request carries the X-Forwarded-For header field.This parameter is supported by both HTTP and HTTPS listeners.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "xForwardedForProcessingMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? XForwardedForProcessingMode
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: xForwardedForProtoEnabled: Specifies whether to use the X-Forwarded-Proto header field to obtain the listener protocol of the ALB instance.
                 /// Valid values: true and false.
                 /// Default value: false.
-                /// Note HTTP, HTTPS, and QUIC listeners support this parameter.
+                /// Note: HTTP, HTTPS, and QUIC listeners support this parameter.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "xForwardedForProtoEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1692,7 +2134,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// <strong>Property</strong>: xForwardedForClientCertClientVerifyAlias: The name of the custom header. This parameter is valid only if XForwardedForClientCertClientVerifyEnabled is set to true.
             /// The name must be 1 to 40 characters in length, and can contain letters, hyphens (-),
             /// underscores (_), and digits.
-            /// Note Only HTTPS listeners support this parameter.
+            /// Note: Only HTTPS listeners support this parameter.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "xForwardedForClientCertClientVerifyAlias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1728,7 +2170,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// <strong>Property</strong>: xForwardedForClientCertClientVerifyEnabled: Specifies whether to use the X-Forwarded-Clientcert-clientverify header field to obtain the verification result of the ALB client certificate.
             /// Valid values: true and false.
             /// Default value: false.
-            /// Note Only HTTPS listeners support this parameter.
+            /// Note: Only HTTPS listeners support this parameter.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "xForwardedForClientCertClientVerifyEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1764,7 +2206,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// <strong>Property</strong>: xForwardedForClientCertFingerprintAlias: The name of the custom header. This parameter is valid only if XForwardedForClientCertFingerprintEnabled is set to true.
             /// The name must be 1 to 40 characters in length, and can contain letters, hyphens (-),
             /// underscores (_), and digits.
-            /// Note Only HTTPS listeners support this parameter.
+            /// Note: Only HTTPS listeners support this parameter.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "xForwardedForClientCertFingerprintAlias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1800,7 +2242,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// <strong>Property</strong>: xForwardedForClientCertFingerprintEnabled: Specifies whether to use the X-Forwarded-Clientcert-fingerprint header field to obtain the fingerprint of the ALB client certificate.
             /// Valid values: true and false.
             /// Default value: false.
-            /// Note Only HTTPS listeners support this parameter.
+            /// Note: Only HTTPS listeners support this parameter.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "xForwardedForClientCertFingerprintEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1836,7 +2278,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// <strong>Property</strong>: xForwardedForClientCertIssuerDnAlias: The name of the custom header. This parameter is valid only if XForwardedForClientCertIssuerDNEnabled is set to On.
             /// The name must be 1 to 40 characters in length, and can contain letters, hyphens (-),
             /// underscores (_), and digits.
-            /// Note Only HTTPS listeners support this parameter.
+            /// Note: Only HTTPS listeners support this parameter.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "xForwardedForClientCertIssuerDnAlias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1873,7 +2315,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// certificate.
             /// Valid values: true and false.
             /// Default value: false.
-            /// Note Only HTTPS listeners support this parameter.
+            /// Note: Only HTTPS listeners support this parameter.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "xForwardedForClientCertIssuerDnEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1910,7 +2352,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// is set to true.
             /// The name must be 1 to 40 characters in length, and can contain letters, hyphens (-),
             /// underscores (_), and digits.
-            /// Note Only HTTPS listeners support this parameter.
+            /// Note: Only HTTPS listeners support this parameter.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "xForwardedForClientCertSubjectDnAlias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1946,7 +2388,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// <strong>Property</strong>: xForwardedForClientCertSubjectDnEnabled: Specifies whether to use the X-Forwarded-Clientcert-subjectdn header field to obtain information about the owner of the ALB client certificate.
             /// Valid values: true and false.
             /// Default value: false.
-            /// Note Only HTTPS listeners support this parameter.
+            /// Note: Only HTTPS listeners support this parameter.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "xForwardedForClientCertSubjectDnEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -2114,13 +2556,86 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 }
             }
 
+            private object? _xForwardedForHostEnabled;
+
+            /// <remarks>
+            /// <strong>Property</strong>: xForwardedForHostEnabled: Whether to enable obtaining the domain name of the client accessing the load balancer instance through the X-Forwarded-Host header field. Values:
+            /// true: Yes.
+            /// false (default): No.
+            /// Note: HTTP, HTTPS, and QUIC listeners support this parameter.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "xForwardedForHostEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? XForwardedForHostEnabled
+            {
+                get => _xForwardedForHostEnabled;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _xForwardedForHostEnabled = value;
+                }
+            }
+
+            private object? _xForwardedForProcessingMode;
+
+            /// <remarks>
+            /// <strong>Property</strong>: xForwardedForProcessingMode: The mode for handling the X-Forwarded-For header field. This value takes effect only when XForwardedForEnabled is true. Possible values:
+            /// append (default): Append.
+            /// remove: Remove.
+            /// Note: When configured as append, the last hop IP is added to the X-Forwarded-For header field before the request is sent to the backend service.
+            /// When configured as remove, the X-Forwarded-For header is deleted before the request is sent to the backend service, regardless of whether the request carries the X-Forwarded-For header field.This parameter is supported by both HTTP and HTTPS listeners.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "xForwardedForProcessingMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? XForwardedForProcessingMode
+            {
+                get => _xForwardedForProcessingMode;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _xForwardedForProcessingMode = value;
+                }
+            }
+
             private object? _xForwardedForProtoEnabled;
 
             /// <remarks>
             /// <strong>Property</strong>: xForwardedForProtoEnabled: Specifies whether to use the X-Forwarded-Proto header field to obtain the listener protocol of the ALB instance.
             /// Valid values: true and false.
             /// Default value: false.
-            /// Note HTTP, HTTPS, and QUIC listeners support this parameter.
+            /// Note: HTTP, HTTPS, and QUIC listeners support this parameter.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "xForwardedForProtoEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

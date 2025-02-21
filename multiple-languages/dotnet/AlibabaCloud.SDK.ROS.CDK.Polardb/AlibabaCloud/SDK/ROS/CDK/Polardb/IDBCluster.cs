@@ -8,6 +8,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
     [JsiiInterface(nativeType: typeof(IDBCluster), fullyQualifiedName: "@alicloud/ros-cdk-polardb.IDBCluster")]
     public interface IDBCluster : AlibabaCloud.SDK.ROS.CDK.Core.IResource
     {
+        /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+        [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrArn
+        {
+            get;
+        }
+
         /// <summary>Attribute ClusterConnectionString: The cluster connection string of the db cluster.</summary>
         [JsiiProperty(name: "attrClusterConnectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrClusterConnectionString
@@ -111,6 +118,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         {
             private _Proxy(ByRefValue reference): base(reference)
             {
+            }
+
+            /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+            [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrArn
+            {
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Attribute ClusterConnectionString: The cluster connection string of the db cluster.</summary>

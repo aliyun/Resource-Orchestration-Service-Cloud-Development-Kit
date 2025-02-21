@@ -12,6 +12,7 @@ import (
 // This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::AutoSnapshotPolicy`, which is used to create an automatic snapshot policy.
 type RosAutoSnapshotPolicy interface {
 	alicloudroscdkcore.RosResource
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrAutoSnapshotPolicyId() alicloudroscdkcore.IResolvable
 	AutoSnapshotPolicyName() interface{}
 	SetAutoSnapshotPolicyName(val interface{})
@@ -189,6 +190,16 @@ type RosAutoSnapshotPolicy interface {
 // The jsii proxy struct for RosAutoSnapshotPolicy
 type jsiiProxy_RosAutoSnapshotPolicy struct {
 	internal.Type__alicloudroscdkcoreRosResource
+}
+
+func (j *jsiiProxy_RosAutoSnapshotPolicy) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_RosAutoSnapshotPolicy) AttrAutoSnapshotPolicyId() alicloudroscdkcore.IResolvable {

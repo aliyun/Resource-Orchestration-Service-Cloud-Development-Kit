@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::HaVip`, which is used to create a high-availability virtual IP address (HAVIP).</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::HaVip`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `HaVip` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-havip
@@ -52,6 +52,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             get;
         }
         = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Vpc.RosHaVip))!;
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: Arn: The Alibaba Cloud Resource Name (ARN).
+        /// </remarks>
+        [JsiiProperty(name: "attrArn", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrArn
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
 
         /// <remarks>
         /// <strong>Attribute</strong>: HaVipId: Assigned HaVip ID.

@@ -9,10 +9,12 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::PrivateLink::VpcEndpointService`, which is used to create an endpoint service.
+// This class encapsulates and extends the ROS resource type `ALIYUN::PrivateLink::VpcEndpointService`.
 type VpcEndpointService interface {
 	alicloudroscdkcore.Resource
 	IVpcEndpointService
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute MaxBandwidth: The maximum bandwidth of the endpoint connection.
 	AttrMaxBandwidth() interface{}
 	// Attribute MinBandwidth: The minimum bandwidth of the endpoint connection.
@@ -118,6 +120,16 @@ type VpcEndpointService interface {
 type jsiiProxy_VpcEndpointService struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_IVpcEndpointService
+}
+
+func (j *jsiiProxy_VpcEndpointService) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_VpcEndpointService) AttrMaxBandwidth() interface{} {

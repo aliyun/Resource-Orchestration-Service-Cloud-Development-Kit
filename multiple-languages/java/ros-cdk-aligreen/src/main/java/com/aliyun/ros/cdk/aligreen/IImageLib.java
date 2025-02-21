@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.aligreen;
 /**
  * Represents a <code>ImageLib</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:34.321Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:11.489Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.aligreen.$Module.class, fqn = "@alicloud/ros-cdk-aligreen.IImageLib")
 @software.amazon.jsii.Jsii.Proxy(IImageLib.Jsii$Proxy.class)
 public interface IImageLib extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

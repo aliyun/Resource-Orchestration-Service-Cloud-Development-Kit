@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::OssExport`, which is used to create an Object Storage Service (OSS) data shipping job to manage Simple Log Service (SLS) data and ship Logstore data to OSS for storage.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::OssExport`.
 type RosOssExport interface {
 	alicloudroscdkcore.RosResource
 	AttrExportName() alicloudroscdkcore.IResolvable

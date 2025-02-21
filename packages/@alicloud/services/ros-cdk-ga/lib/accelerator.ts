@@ -92,6 +92,11 @@ export interface IAccelerator extends ros.IResource {
     readonly attrAutoUseCoupon: ros.IResolvable | string;
 
     /**
+     * Attribute DnsName: The DNS name of the accelerator.
+     */
+    readonly attrDnsName: ros.IResolvable | string;
+
+    /**
      * Attribute Duration: The Duration of the GA instance
      */
     readonly attrDuration: ros.IResolvable | string;
@@ -148,6 +153,11 @@ export class Accelerator extends ros.Resource implements IAccelerator {
     public readonly attrAutoUseCoupon: ros.IResolvable | string;
 
     /**
+     * Attribute DnsName: The DNS name of the accelerator.
+     */
+    public readonly attrDnsName: ros.IResolvable | string;
+
+    /**
      * Attribute Duration: The Duration of the GA instance
      */
     public readonly attrDuration: ros.IResolvable | string;
@@ -202,6 +212,7 @@ export class Accelerator extends ros.Resource implements IAccelerator {
         this.attrAcceleratorName = rosAccelerator.attrAcceleratorName;
         this.attrAutoPay = rosAccelerator.attrAutoPay;
         this.attrAutoUseCoupon = rosAccelerator.attrAutoUseCoupon;
+        this.attrDnsName = rosAccelerator.attrDnsName;
         this.attrDuration = rosAccelerator.attrDuration;
         this.attrOrderId = rosAccelerator.attrOrderId;
         this.attrPaymentType = rosAccelerator.attrPaymentType;

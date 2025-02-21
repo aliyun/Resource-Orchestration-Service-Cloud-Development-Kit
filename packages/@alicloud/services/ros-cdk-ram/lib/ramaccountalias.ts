@@ -31,7 +31,7 @@ export interface IRamAccountAlias extends ros.IResource {
     readonly attrAccountAlias: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::RamAccountAlias`, which is used to create an alias for an Alibaba Cloud account.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::RamAccountAlias`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRamAccountAlias`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-ramaccountalias
  */

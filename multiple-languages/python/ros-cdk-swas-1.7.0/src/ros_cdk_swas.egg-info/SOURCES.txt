@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+NOTICE
+README.md
+pyproject.toml
+setup.py
+src/ros_cdk_swas/__init__.py
+src/ros_cdk_swas/py.typed
+src/ros_cdk_swas.egg-info/PKG-INFO
+src/ros_cdk_swas.egg-info/SOURCES.txt
+src/ros_cdk_swas.egg-info/dependency_links.txt
+src/ros_cdk_swas.egg-info/requires.txt
+src/ros_cdk_swas.egg-info/top_level.txt
+src/ros_cdk_swas/_jsii/__init__.py
+src/ros_cdk_swas/_jsii/ros-cdk-swas@1.7.0.jsii.tgz

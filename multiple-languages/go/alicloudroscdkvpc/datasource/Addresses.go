@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::EIP::Addresses`, which is used to query the information about elastic IP addresses (EIPs).
+// This class encapsulates and extends the ROS resource type `DATASOURCE::EIP::Addresses`.
 type Addresses interface {
 	alicloudroscdkcore.Resource
 	IAddresses

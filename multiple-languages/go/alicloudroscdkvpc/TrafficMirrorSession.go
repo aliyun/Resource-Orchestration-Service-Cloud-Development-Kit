@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::TrafficMirrorSession`, which is used to create a traffic image session.
+// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::TrafficMirrorSession`.
 type TrafficMirrorSession interface {
 	alicloudroscdkcore.Resource
 	ITrafficMirrorSession

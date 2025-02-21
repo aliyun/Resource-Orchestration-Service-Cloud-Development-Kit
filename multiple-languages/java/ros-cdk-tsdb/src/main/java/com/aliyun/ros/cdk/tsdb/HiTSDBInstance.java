@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.tsdb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::TSDB::HiTSDBInstance</code>, which is used to create a Time Series Database (TSDB) instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::TSDB::HiTSDBInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:44.764Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:21.379Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.tsdb.$Module.class, fqn = "@alicloud/ros-cdk-tsdb.HiTSDBInstance")
 public class HiTSDBInstance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.tsdb.IHiTSDBInstance {
 

@@ -37,6 +37,11 @@ export interface IInstance extends ros.IResource {
     readonly props: InstanceProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute HttpInternalEndpoint: The internal HTTP endpoint for the Message Queue for Apache RocketMQ instance.
      */
     readonly attrHttpInternalEndpoint: ros.IResolvable | string;
@@ -72,7 +77,7 @@ export interface IInstance extends ros.IResource {
     readonly attrTcpEndpoint: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ROCKETMQ::Instance`, which is used to create a Standard Edition instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ROCKETMQ::Instance`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-instance
  */
@@ -81,6 +86,11 @@ export class Instance extends ros.Resource implements IInstance {
     protected id: string;
     public readonly props: InstanceProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute HttpInternalEndpoint: The internal HTTP endpoint for the Message Queue for Apache RocketMQ instance.
@@ -136,6 +146,7 @@ export class Instance extends ros.Resource implements IInstance {
             remark: props.remark,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;
+        this.attrArn = rosInstance.attrArn;
         this.attrHttpInternalEndpoint = rosInstance.attrHttpInternalEndpoint;
         this.attrHttpInternetEndpoint = rosInstance.attrHttpInternetEndpoint;
         this.attrHttpInternetSecureEndpoint = rosInstance.attrHttpInternetSecureEndpoint;

@@ -16,6 +16,7 @@ type RosScalingGroup interface {
 	alicloudroscdkcore.RosResource
 	AllocationStrategy() interface{}
 	SetAllocationStrategy(val interface{})
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrScalingGroupId() alicloudroscdkcore.IResolvable
 	AttrScalingGroupName() alicloudroscdkcore.IResolvable
 	AzBalance() interface{}
@@ -249,6 +250,16 @@ func (j *jsiiProxy_RosScalingGroup) AllocationStrategy() interface{} {
 	_jsii_.Get(
 		j,
 		"allocationStrategy",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosScalingGroup) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
 		&returns,
 	)
 	return returns

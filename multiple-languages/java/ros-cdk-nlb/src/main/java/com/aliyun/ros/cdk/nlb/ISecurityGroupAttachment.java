@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nlb;
 /**
  * Represents a <code>SecurityGroupAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:41.625Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:18.313Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.ISecurityGroupAttachment")
 @software.amazon.jsii.Jsii.Proxy(ISecurityGroupAttachment.Jsii$Proxy.class)
 public interface ISecurityGroupAttachment extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

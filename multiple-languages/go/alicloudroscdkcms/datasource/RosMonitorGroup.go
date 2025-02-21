@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::MonitorGroup`.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::MonitorGroup`, which is used to query the information about an application group.
 type RosMonitorGroup interface {
 	alicloudroscdkcore.RosResource
 	AttrBindUrl() alicloudroscdkcore.IResolvable

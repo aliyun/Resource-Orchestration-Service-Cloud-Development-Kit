@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.paidatasetacc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidatasetacc-endpoint
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:42.181Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:18.856Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.paidatasetacc.$Module.class, fqn = "@alicloud/ros-cdk-paidatasetacc.RosEndpointProps")
 @software.amazon.jsii.Jsii.Proxy(RosEndpointProps.Jsii$Proxy.class)
 public interface RosEndpointProps extends software.amazon.jsii.JsiiSerializable {

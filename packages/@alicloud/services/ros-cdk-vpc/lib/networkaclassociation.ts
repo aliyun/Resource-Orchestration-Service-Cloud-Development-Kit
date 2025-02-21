@@ -32,7 +32,7 @@ export interface INetworkAclAssociation extends ros.IResource {
     readonly attrNetworkAclId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::NetworkAclAssociation`, which is used to associate a network access control list (ACL) with a vSwitch.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::NetworkAclAssociation`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNetworkAclAssociation`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-networkaclassociation
  */

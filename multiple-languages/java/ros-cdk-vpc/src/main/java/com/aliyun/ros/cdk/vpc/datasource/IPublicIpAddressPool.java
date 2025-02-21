@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc.datasource;
 /**
  * Represents a <code>PublicIpAddressPool</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:45.408Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:22.340Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.IPublicIpAddressPool")
 @software.amazon.jsii.Jsii.Proxy(IPublicIpAddressPool.Jsii$Proxy.class)
 public interface IPublicIpAddressPool extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

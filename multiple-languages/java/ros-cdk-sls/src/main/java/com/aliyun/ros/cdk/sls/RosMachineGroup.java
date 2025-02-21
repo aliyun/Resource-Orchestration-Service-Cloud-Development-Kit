@@ -1,11 +1,9 @@
 package com.aliyun.ros.cdk.sls;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SLS::MachineGroup</code>, which is used to create a machine group.
- * <p>
- * Log Service manages all the ECS instances whose logs need to be collected using the Logtail client in the form of machine groups.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SLS::MachineGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:44.631Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:21.096Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosMachineGroup")
 public class RosMachineGroup extends com.aliyun.ros.cdk.core.RosResource {
 

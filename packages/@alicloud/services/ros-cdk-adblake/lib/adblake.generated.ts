@@ -3,6 +3,219 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosAccount`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-account
+ */
+export interface RosAccountProps {
+
+    /**
+     * @Property accountName: The name of the account.The database account name must meet the following requirements:Start with a lowercase letter and end with a lowercase letter or number.Consists of lowercase letters, numbers, or underscores (_).The length is 2 to 16 characters.Reserved user names such as root, admin, and opsadmin cannot be used.
+     */
+    readonly accountName: string | ros.IResolvable;
+
+    /**
+     * @Property accountPassword: The password of the account.The password must meet the following requirements:Database account password.It consists of any three of uppercase letters, lowercase letters, numbers, and special characters.Special symbols include: !@#$%^&*()_+-=The password length is 8 to 32 characters.
+     */
+    readonly accountPassword: string | ros.IResolvable;
+
+    /**
+     * @Property accountType: The type of the account.Valid values: Normal: normal account. Super: super account.
+     */
+    readonly accountType: string | ros.IResolvable;
+
+    /**
+     * @Property dbClusterId: The ID of the ADB Lake cluster.
+     */
+    readonly dbClusterId: string | ros.IResolvable;
+
+    /**
+     * @Property engine: The engine of the account.Valid values: AnalyticDB \/ Clickhouse.
+     */
+    readonly engine: string | ros.IResolvable;
+
+    /**
+     * @Property accountDescription: The description of the account.
+     */
+    readonly accountDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property ramUser: Bind the RAM user to the cluster database common account
+     */
+    readonly ramUser?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAccountProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAccountProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAccountPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('accountDescription', ros.validateString)(properties.accountDescription));
+    errors.collect(ros.propertyValidator('ramUser', ros.validateString)(properties.ramUser));
+    errors.collect(ros.propertyValidator('dbClusterId', ros.requiredValidator)(properties.dbClusterId));
+    errors.collect(ros.propertyValidator('dbClusterId', ros.validateString)(properties.dbClusterId));
+    errors.collect(ros.propertyValidator('accountType', ros.requiredValidator)(properties.accountType));
+    if(properties.accountType && (typeof properties.accountType) !== 'object') {
+        errors.collect(ros.propertyValidator('accountType', ros.validateAllowedValues)({
+          data: properties.accountType,
+          allowedValues: ["Normal","Super"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('accountType', ros.validateString)(properties.accountType));
+    errors.collect(ros.propertyValidator('engine', ros.requiredValidator)(properties.engine));
+    if(properties.engine && (typeof properties.engine) !== 'object') {
+        errors.collect(ros.propertyValidator('engine', ros.validateAllowedValues)({
+          data: properties.engine,
+          allowedValues: ["Clickhouse","AnalyticDB"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('engine', ros.validateString)(properties.engine));
+    errors.collect(ros.propertyValidator('accountName', ros.requiredValidator)(properties.accountName));
+    if(properties.accountName && (Array.isArray(properties.accountName) || (typeof properties.accountName) === 'string')) {
+        errors.collect(ros.propertyValidator('accountName', ros.validateLength)({
+            data: properties.accountName.length,
+            min: 2,
+            max: 16,
+          }));
+    }
+    if(properties.accountName && (typeof properties.accountName) !== 'object') {
+        errors.collect(ros.propertyValidator('accountName', ros.validateAllowedPattern)({
+          data: properties.accountName,
+          reg: /^[a-z][a-z0-9_]{0,14}[a-z0-9]$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
+    errors.collect(ros.propertyValidator('accountPassword', ros.requiredValidator)(properties.accountPassword));
+    if(properties.accountPassword && (Array.isArray(properties.accountPassword) || (typeof properties.accountPassword) === 'string')) {
+        errors.collect(ros.propertyValidator('accountPassword', ros.validateLength)({
+            data: properties.accountPassword.length,
+            min: 8,
+            max: 32,
+          }));
+    }
+    errors.collect(ros.propertyValidator('accountPassword', ros.validateString)(properties.accountPassword));
+    return errors.wrap('supplied properties not correct for "RosAccountProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ADBLake::Account` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAccountProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ADBLake::Account` resource.
+ */
+// @ts-ignore TS6133
+function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAccountPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AccountName': ros.stringToRosTemplate(properties.accountName),
+      'AccountPassword': ros.stringToRosTemplate(properties.accountPassword),
+      'AccountType': ros.stringToRosTemplate(properties.accountType),
+      'DBClusterId': ros.stringToRosTemplate(properties.dbClusterId),
+      'Engine': ros.stringToRosTemplate(properties.engine),
+      'AccountDescription': ros.stringToRosTemplate(properties.accountDescription),
+      'RamUser': ros.stringToRosTemplate(properties.ramUser),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::Account`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-account
+ */
+export class RosAccount extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ADBLake::Account";
+
+    /**
+     * @Attribute AccountName: The name of the account.
+     */
+    public readonly attrAccountName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property accountName: The name of the account.The database account name must meet the following requirements:Start with a lowercase letter and end with a lowercase letter or number.Consists of lowercase letters, numbers, or underscores (_).The length is 2 to 16 characters.Reserved user names such as root, admin, and opsadmin cannot be used.
+     */
+    public accountName: string | ros.IResolvable;
+
+    /**
+     * @Property accountPassword: The password of the account.The password must meet the following requirements:Database account password.It consists of any three of uppercase letters, lowercase letters, numbers, and special characters.Special symbols include: !@#$%^&*()_+-=The password length is 8 to 32 characters.
+     */
+    public accountPassword: string | ros.IResolvable;
+
+    /**
+     * @Property accountType: The type of the account.Valid values: Normal: normal account. Super: super account.
+     */
+    public accountType: string | ros.IResolvable;
+
+    /**
+     * @Property dbClusterId: The ID of the ADB Lake cluster.
+     */
+    public dbClusterId: string | ros.IResolvable;
+
+    /**
+     * @Property engine: The engine of the account.Valid values: AnalyticDB \/ Clickhouse.
+     */
+    public engine: string | ros.IResolvable;
+
+    /**
+     * @Property accountDescription: The description of the account.
+     */
+    public accountDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ramUser: Bind the RAM user to the cluster database common account
+     */
+    public ramUser: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAccountProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAccount.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAccountName = this.getAtt('AccountName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.accountName = props.accountName;
+        this.accountPassword = props.accountPassword;
+        this.accountType = props.accountType;
+        this.dbClusterId = props.dbClusterId;
+        this.engine = props.engine;
+        this.accountDescription = props.accountDescription;
+        this.ramUser = props.ramUser;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            accountName: this.accountName,
+            accountPassword: this.accountPassword,
+            accountType: this.accountType,
+            dbClusterId: this.dbClusterId,
+            engine: this.engine,
+            accountDescription: this.accountDescription,
+            ramUser: this.ramUser,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAccountPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosDBCluster`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-dbcluster
  */
@@ -579,4 +792,562 @@ function rosDBClusterTagsPropertyToRosTemplate(properties: any): any {
       'Value': ros.stringToRosTemplate(properties.value),
       'Key': ros.stringToRosTemplate(properties.key),
     };
+}
+
+/**
+ * Properties for defining a `RosResourceGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-resourcegroup
+ */
+export interface RosResourceGroupProps {
+
+    /**
+     * @Property dbClusterId: The ID of the AnalyticDB for MySQL Data Lakehouse Edition cluster.
+     */
+    readonly dbClusterId: string | ros.IResolvable;
+
+    /**
+     * @Property engine: Database engine, value:
+     * AnalyticDB (default): AnalyticDB for mysql engine.
+     * Sparkwarehouse: Sparkwarehous engine.
+     */
+    readonly engine: string | ros.IResolvable;
+
+    /**
+     * @Property groupName: The name of the resource group.
+     * The name can be up to 255 characters in length.
+     * The name must start with a letter or digit.
+     * The name can contain letters, digits, hyphens (-), and underscores (_).
+     */
+    readonly groupName: string | ros.IResolvable;
+
+    /**
+     * @Property groupType: The type of the resource group. Valid values:
+     * Interactive
+     * Job
+     * Note For more information about resource groups, see Resource group overview.
+     */
+    readonly groupType: string | ros.IResolvable;
+
+    /**
+     * @Property autoStopInterval: Automatically stop time, the unit is minutes (m).
+     */
+    readonly autoStopInterval?: string | ros.IResolvable;
+
+    /**
+     * @Property clusterMode: The mode of cluster. Default: AutoScale.
+     */
+    readonly clusterMode?: string | ros.IResolvable;
+
+    /**
+     * @Property clusterSizeResource: A reserved parameter.
+     */
+    readonly clusterSizeResource?: string | ros.IResolvable;
+
+    /**
+     * @Property enableSpot: Specifies whether to enable the spot instance feature for the resource group. After you enable the spot instance feature, you are charged for resources at a lower unit price but the resources are probably released. You can enable the spot instance feature only for job resource groups. Valid values:
+     * True
+     * False
+     */
+    readonly enableSpot?: boolean | ros.IResolvable;
+
+    /**
+     * @Property engineParams: Engine configuration.
+     */
+    readonly engineParams?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property maxClusterCount: A reserved parameter.
+     */
+    readonly maxClusterCount?: number | ros.IResolvable;
+
+    /**
+     * @Property maxComputeResource: The maximum reserved computing resources.
+     * If GroupType is set to Interactive, the maximum amount of reserved computing resources refers to the amount of resources that are not allocated in the cluster. Set this parameter to a value in increments of 16ACU.
+     * If GroupType is set to Job, the maximum amount of reserved computing resources refers to the amount of resources that are not allocated in the cluster. Set this parameter to a value in increments of 8ACU.
+     */
+    readonly maxComputeResource?: string | ros.IResolvable;
+
+    /**
+     * @Property minClusterCount: A reserved parameter.
+     */
+    readonly minClusterCount?: number | ros.IResolvable;
+
+    /**
+     * @Property minComputeResource: The minimum reserved computing resources.
+     * When GroupType is set to Interactive, set this parameter to 16ACU.
+     * When GroupType is set to Job, set this parameter to 0ACU.
+     */
+    readonly minComputeResource?: string | ros.IResolvable;
+
+    /**
+     * @Property rules: The job resubmission rules.
+     */
+    readonly rules?: Array<RosResourceGroup.RulesProperty | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosResourceGroupProps`
+ *
+ * @param properties - the TypeScript properties of a `RosResourceGroupProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosResourceGroupPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('groupName', ros.requiredValidator)(properties.groupName));
+    if(properties.groupName && (Array.isArray(properties.groupName) || (typeof properties.groupName) === 'string')) {
+        errors.collect(ros.propertyValidator('groupName', ros.validateLength)({
+            data: properties.groupName.length,
+            min: 1,
+            max: 255,
+          }));
+    }
+    if(properties.groupName && (typeof properties.groupName) !== 'object') {
+        errors.collect(ros.propertyValidator('groupName', ros.validateAllowedPattern)({
+          data: properties.groupName,
+          reg: /^[a-zA-Z0-9][a-zA-Z0-9_-]{0,254}$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
+    errors.collect(ros.propertyValidator('engineParams', ros.hashValidator(ros.validateAny))(properties.engineParams));
+    errors.collect(ros.propertyValidator('clusterMode', ros.validateString)(properties.clusterMode));
+    errors.collect(ros.propertyValidator('dbClusterId', ros.requiredValidator)(properties.dbClusterId));
+    errors.collect(ros.propertyValidator('dbClusterId', ros.validateString)(properties.dbClusterId));
+    errors.collect(ros.propertyValidator('autoStopInterval', ros.validateString)(properties.autoStopInterval));
+    errors.collect(ros.propertyValidator('maxComputeResource', ros.validateString)(properties.maxComputeResource));
+    errors.collect(ros.propertyValidator('enableSpot', ros.validateBoolean)(properties.enableSpot));
+    if(properties.rules && (Array.isArray(properties.rules) || (typeof properties.rules) === 'string')) {
+        errors.collect(ros.propertyValidator('rules', ros.validateLength)({
+            data: properties.rules.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('rules', ros.listValidator(RosResourceGroup_RulesPropertyValidator))(properties.rules));
+    errors.collect(ros.propertyValidator('minClusterCount', ros.validateNumber)(properties.minClusterCount));
+    errors.collect(ros.propertyValidator('groupType', ros.requiredValidator)(properties.groupType));
+    if(properties.groupType && (typeof properties.groupType) !== 'object') {
+        errors.collect(ros.propertyValidator('groupType', ros.validateAllowedValues)({
+          data: properties.groupType,
+          allowedValues: ["Interactive","Job"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('groupType', ros.validateString)(properties.groupType));
+    errors.collect(ros.propertyValidator('clusterSizeResource', ros.validateString)(properties.clusterSizeResource));
+    errors.collect(ros.propertyValidator('minComputeResource', ros.validateString)(properties.minComputeResource));
+    errors.collect(ros.propertyValidator('engine', ros.requiredValidator)(properties.engine));
+    if(properties.engine && (typeof properties.engine) !== 'object') {
+        errors.collect(ros.propertyValidator('engine', ros.validateAllowedValues)({
+          data: properties.engine,
+          allowedValues: ["SparkWarehouse","AnalyticDB"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('engine', ros.validateString)(properties.engine));
+    errors.collect(ros.propertyValidator('maxClusterCount', ros.validateNumber)(properties.maxClusterCount));
+    return errors.wrap('supplied properties not correct for "RosResourceGroupProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ADBLake::ResourceGroup` resource
+ *
+ * @param properties - the TypeScript properties of a `RosResourceGroupProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ADBLake::ResourceGroup` resource.
+ */
+// @ts-ignore TS6133
+function rosResourceGroupPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosResourceGroupPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'DBClusterId': ros.stringToRosTemplate(properties.dbClusterId),
+      'Engine': ros.stringToRosTemplate(properties.engine),
+      'GroupName': ros.stringToRosTemplate(properties.groupName),
+      'GroupType': ros.stringToRosTemplate(properties.groupType),
+      'AutoStopInterval': ros.stringToRosTemplate(properties.autoStopInterval),
+      'ClusterMode': ros.stringToRosTemplate(properties.clusterMode),
+      'ClusterSizeResource': ros.stringToRosTemplate(properties.clusterSizeResource),
+      'EnableSpot': ros.booleanToRosTemplate(properties.enableSpot),
+      'EngineParams': ros.hashMapper(ros.objectToRosTemplate)(properties.engineParams),
+      'MaxClusterCount': ros.numberToRosTemplate(properties.maxClusterCount),
+      'MaxComputeResource': ros.stringToRosTemplate(properties.maxComputeResource),
+      'MinClusterCount': ros.numberToRosTemplate(properties.minClusterCount),
+      'MinComputeResource': ros.stringToRosTemplate(properties.minComputeResource),
+      'Rules': ros.listMapper(rosResourceGroupRulesPropertyToRosTemplate)(properties.rules),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::ResourceGroup`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ResourceGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-resourcegroup
+ */
+export class RosResourceGroup extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ADBLake::ResourceGroup";
+
+    /**
+     * @Attribute GroupName: The name of the resource group.
+     */
+    public readonly attrGroupName: ros.IResolvable;
+
+    /**
+     * @Attribute GroupType: The type of the resource group.
+     */
+    public readonly attrGroupType: ros.IResolvable;
+
+    /**
+     * @Attribute GroupUsers: The list of users in the resource group.
+     */
+    public readonly attrGroupUsers: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property dbClusterId: The ID of the AnalyticDB for MySQL Data Lakehouse Edition cluster.
+     */
+    public dbClusterId: string | ros.IResolvable;
+
+    /**
+     * @Property engine: Database engine, value:
+     * AnalyticDB (default): AnalyticDB for mysql engine.
+     * Sparkwarehouse: Sparkwarehous engine.
+     */
+    public engine: string | ros.IResolvable;
+
+    /**
+     * @Property groupName: The name of the resource group.
+     * The name can be up to 255 characters in length.
+     * The name must start with a letter or digit.
+     * The name can contain letters, digits, hyphens (-), and underscores (_).
+     */
+    public groupName: string | ros.IResolvable;
+
+    /**
+     * @Property groupType: The type of the resource group. Valid values:
+     * Interactive
+     * Job
+     * Note For more information about resource groups, see Resource group overview.
+     */
+    public groupType: string | ros.IResolvable;
+
+    /**
+     * @Property autoStopInterval: Automatically stop time, the unit is minutes (m).
+     */
+    public autoStopInterval: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property clusterMode: The mode of cluster. Default: AutoScale.
+     */
+    public clusterMode: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property clusterSizeResource: A reserved parameter.
+     */
+    public clusterSizeResource: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableSpot: Specifies whether to enable the spot instance feature for the resource group. After you enable the spot instance feature, you are charged for resources at a lower unit price but the resources are probably released. You can enable the spot instance feature only for job resource groups. Valid values:
+     * True
+     * False
+     */
+    public enableSpot: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property engineParams: Engine configuration.
+     */
+    public engineParams: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property maxClusterCount: A reserved parameter.
+     */
+    public maxClusterCount: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property maxComputeResource: The maximum reserved computing resources.
+     * If GroupType is set to Interactive, the maximum amount of reserved computing resources refers to the amount of resources that are not allocated in the cluster. Set this parameter to a value in increments of 16ACU.
+     * If GroupType is set to Job, the maximum amount of reserved computing resources refers to the amount of resources that are not allocated in the cluster. Set this parameter to a value in increments of 8ACU.
+     */
+    public maxComputeResource: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property minClusterCount: A reserved parameter.
+     */
+    public minClusterCount: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property minComputeResource: The minimum reserved computing resources.
+     * When GroupType is set to Interactive, set this parameter to 16ACU.
+     * When GroupType is set to Job, set this parameter to 0ACU.
+     */
+    public minComputeResource: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property rules: The job resubmission rules.
+     */
+    public rules: Array<RosResourceGroup.RulesProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosResourceGroupProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosResourceGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrGroupName = this.getAtt('GroupName');
+        this.attrGroupType = this.getAtt('GroupType');
+        this.attrGroupUsers = this.getAtt('GroupUsers');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.dbClusterId = props.dbClusterId;
+        this.engine = props.engine;
+        this.groupName = props.groupName;
+        this.groupType = props.groupType;
+        this.autoStopInterval = props.autoStopInterval;
+        this.clusterMode = props.clusterMode;
+        this.clusterSizeResource = props.clusterSizeResource;
+        this.enableSpot = props.enableSpot;
+        this.engineParams = props.engineParams;
+        this.maxClusterCount = props.maxClusterCount;
+        this.maxComputeResource = props.maxComputeResource;
+        this.minClusterCount = props.minClusterCount;
+        this.minComputeResource = props.minComputeResource;
+        this.rules = props.rules;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            dbClusterId: this.dbClusterId,
+            engine: this.engine,
+            groupName: this.groupName,
+            groupType: this.groupType,
+            autoStopInterval: this.autoStopInterval,
+            clusterMode: this.clusterMode,
+            clusterSizeResource: this.clusterSizeResource,
+            enableSpot: this.enableSpot,
+            engineParams: this.engineParams,
+            maxClusterCount: this.maxClusterCount,
+            maxComputeResource: this.maxComputeResource,
+            minClusterCount: this.minClusterCount,
+            minComputeResource: this.minComputeResource,
+            rules: this.rules,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosResourceGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosResourceGroup {
+    /**
+     * @stability external
+     */
+    export interface RulesProperty {
+        /**
+         * @Property groupName: The name of the resource group.
+     * The name can be up to 255 characters in length.
+     * The name must start with a letter or digit.
+     * The name can contain letters, digits, hyphens (-), and underscores (_).
+         */
+        readonly groupName: string | ros.IResolvable;
+        /**
+         * @Property queryTime: The execution duration of the query. Unit: milliseconds.
+         */
+        readonly queryTime: string | ros.IResolvable;
+        /**
+         * @Property targetGroupName: The name of the resource group to which you want to resubmit the query job.
+         */
+        readonly targetGroupName: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `RulesProperty`
+ *
+ * @param properties - the TypeScript properties of a `RulesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosResourceGroup_RulesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('groupName', ros.requiredValidator)(properties.groupName));
+    errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
+    errors.collect(ros.propertyValidator('queryTime', ros.requiredValidator)(properties.queryTime));
+    errors.collect(ros.propertyValidator('queryTime', ros.validateString)(properties.queryTime));
+    errors.collect(ros.propertyValidator('targetGroupName', ros.requiredValidator)(properties.targetGroupName));
+    errors.collect(ros.propertyValidator('targetGroupName', ros.validateString)(properties.targetGroupName));
+    return errors.wrap('supplied properties not correct for "RulesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ADBLake::ResourceGroup.Rules` resource
+ *
+ * @param properties - the TypeScript properties of a `RulesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ADBLake::ResourceGroup.Rules` resource.
+ */
+// @ts-ignore TS6133
+function rosResourceGroupRulesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosResourceGroup_RulesPropertyValidator(properties).assertSuccess();
+    return {
+      'GroupName': ros.stringToRosTemplate(properties.groupName),
+      'QueryTime': ros.stringToRosTemplate(properties.queryTime),
+      'TargetGroupName': ros.stringToRosTemplate(properties.targetGroupName),
+    };
+}
+
+/**
+ * Properties for defining a `RosResourceGroupAccountBinding`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-resourcegroupaccountbinding
+ */
+export interface RosResourceGroupAccountBindingProps {
+
+    /**
+     * @Property accountName: The name of the account.
+     */
+    readonly accountName: string | ros.IResolvable;
+
+    /**
+     * @Property dbClusterId: The ID of the database cluster.
+     */
+    readonly dbClusterId: string | ros.IResolvable;
+
+    /**
+     * @Property groupName: The name of the resource group.
+     */
+    readonly groupName: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosResourceGroupAccountBindingProps`
+ *
+ * @param properties - the TypeScript properties of a `RosResourceGroupAccountBindingProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosResourceGroupAccountBindingPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('groupName', ros.requiredValidator)(properties.groupName));
+    if(properties.groupName && (Array.isArray(properties.groupName) || (typeof properties.groupName) === 'string')) {
+        errors.collect(ros.propertyValidator('groupName', ros.validateLength)({
+            data: properties.groupName.length,
+            min: 1,
+            max: 255,
+          }));
+    }
+    if(properties.groupName && (typeof properties.groupName) !== 'object') {
+        errors.collect(ros.propertyValidator('groupName', ros.validateAllowedPattern)({
+          data: properties.groupName,
+          reg: /^[a-zA-Z0-9][a-zA-Z0-9_-]{0,254}$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
+    errors.collect(ros.propertyValidator('dbClusterId', ros.requiredValidator)(properties.dbClusterId));
+    errors.collect(ros.propertyValidator('dbClusterId', ros.validateString)(properties.dbClusterId));
+    errors.collect(ros.propertyValidator('accountName', ros.requiredValidator)(properties.accountName));
+    if(properties.accountName && (Array.isArray(properties.accountName) || (typeof properties.accountName) === 'string')) {
+        errors.collect(ros.propertyValidator('accountName', ros.validateLength)({
+            data: properties.accountName.length,
+            min: 2,
+            max: 16,
+          }));
+    }
+    if(properties.accountName && (typeof properties.accountName) !== 'object') {
+        errors.collect(ros.propertyValidator('accountName', ros.validateAllowedPattern)({
+          data: properties.accountName,
+          reg: /^[a-z][a-z0-9_]{0,14}[a-z0-9]$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
+    return errors.wrap('supplied properties not correct for "RosResourceGroupAccountBindingProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ADBLake::ResourceGroupAccountBinding` resource
+ *
+ * @param properties - the TypeScript properties of a `RosResourceGroupAccountBindingProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ADBLake::ResourceGroupAccountBinding` resource.
+ */
+// @ts-ignore TS6133
+function rosResourceGroupAccountBindingPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosResourceGroupAccountBindingPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AccountName': ros.stringToRosTemplate(properties.accountName),
+      'DBClusterId': ros.stringToRosTemplate(properties.dbClusterId),
+      'GroupName': ros.stringToRosTemplate(properties.groupName),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::ResourceGroupAccountBinding`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ResourceGroupAccountBinding` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-resourcegroupaccountbinding
+ */
+export class RosResourceGroupAccountBinding extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ADBLake::ResourceGroupAccountBinding";
+
+    /**
+     * @Attribute GroupName: The name of the resource group.
+     */
+    public readonly attrGroupName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property accountName: The name of the account.
+     */
+    public accountName: string | ros.IResolvable;
+
+    /**
+     * @Property dbClusterId: The ID of the database cluster.
+     */
+    public dbClusterId: string | ros.IResolvable;
+
+    /**
+     * @Property groupName: The name of the resource group.
+     */
+    public groupName: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosResourceGroupAccountBindingProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosResourceGroupAccountBinding.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrGroupName = this.getAtt('GroupName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.accountName = props.accountName;
+        this.dbClusterId = props.dbClusterId;
+        this.groupName = props.groupName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            accountName: this.accountName,
+            dbClusterId: this.dbClusterId,
+            groupName: this.groupName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosResourceGroupAccountBindingPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }

@@ -54,6 +54,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
         = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Dns.RosDomain))!;
 
         /// <remarks>
+        /// <strong>Attribute</strong>: Arn: The Alibaba Cloud Resource Name (ARN).
+        /// </remarks>
+        [JsiiProperty(name: "attrArn", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrArn
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: DnsServers: The DNS list for the domain name under resolution
         /// </remarks>
         [JsiiProperty(name: "attrDnsServers", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]

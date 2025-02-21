@@ -10,6 +10,8 @@ import (
 // Represents a `BackupClients`.
 type IBackupClients interface {
 	alicloudroscdkcore.IResource
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute ClientIds: ID list of clients installed in instances.
 	AttrClientIds() interface{}
 	// Attribute InstanceIds: ID list of instances to install backup client.
@@ -20,6 +22,16 @@ type IBackupClients interface {
 // The jsii proxy for IBackupClients
 type jsiiProxy_IBackupClients struct {
 	internal.Type__alicloudroscdkcoreIResource
+}
+
+func (j *jsiiProxy_IBackupClients) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_IBackupClients) AttrClientIds() interface{} {

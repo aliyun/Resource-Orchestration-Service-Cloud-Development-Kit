@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::AITask`, which is used to enable the PolarDB for AI feature.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::AITask`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAITask`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-aitask

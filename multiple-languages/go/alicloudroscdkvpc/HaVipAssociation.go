@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::HaVipAssociation`, which is used to associate high-availability virtual IP addresses (HAVIPs) with an Elastic Compute Service (ECS) instance or an elastic network interface (ENI).
+// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::HaVipAssociation`.
 type HaVipAssociation interface {
 	alicloudroscdkcore.Resource
 	IHaVipAssociation

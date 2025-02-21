@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::VSwitchCidrReservation</code>, which is used to create a reserved CIDR block for a vSwitch.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::VSwitchCidrReservation</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:45.180Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:22.110Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosVSwitchCidrReservation")
 public class RosVSwitchCidrReservation extends com.aliyun.ros.cdk.core.RosResource {
 

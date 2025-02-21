@@ -57,6 +57,11 @@ export interface ICertificate extends ros.IResource {
     readonly props: CertificateProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute CertificateId: The ID of the certificate.
      */
     readonly attrCertificateId: ros.IResolvable | string;
@@ -67,7 +72,7 @@ export interface ICertificate extends ros.IResource {
     readonly attrFingerprint: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::Certificate`, which is used to upload a certificate to a Server Load Balancer (SLB) instance. Server certificates and certificate authority (CA) certificates are supported.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::Certificate`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCertificate`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-certificate
  */
@@ -76,6 +81,11 @@ export class Certificate extends ros.Resource implements ICertificate {
     protected id: string;
     public readonly props: CertificateProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute CertificateId: The ID of the certificate.
@@ -110,6 +120,7 @@ export class Certificate extends ros.Resource implements ICertificate {
             aliCloudCertificateId: props.aliCloudCertificateId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCertificate;
+        this.attrArn = rosCertificate.attrArn;
         this.attrCertificateId = rosCertificate.attrCertificateId;
         this.attrFingerprint = rosCertificate.attrFingerprint;
     }

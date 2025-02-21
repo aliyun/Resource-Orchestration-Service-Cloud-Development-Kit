@@ -12,6 +12,7 @@ import (
 // This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenBandwidthPackage`, which is used to purchase a bandwidth plan before you use Cloud Enterprise Network (CEN) to connect network instances that reside in different regions.
 type RosCenBandwidthPackage interface {
 	alicloudroscdkcore.RosResource
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrCenBandwidthPackageId() alicloudroscdkcore.IResolvable
 	AutoPay() interface{}
 	SetAutoPay(val interface{})
@@ -193,6 +194,16 @@ type RosCenBandwidthPackage interface {
 // The jsii proxy struct for RosCenBandwidthPackage
 type jsiiProxy_RosCenBandwidthPackage struct {
 	internal.Type__alicloudroscdkcoreRosResource
+}
+
+func (j *jsiiProxy_RosCenBandwidthPackage) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_RosCenBandwidthPackage) AttrCenBandwidthPackageId() alicloudroscdkcore.IResolvable {

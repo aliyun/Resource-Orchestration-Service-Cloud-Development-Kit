@@ -14,6 +14,8 @@ import (
 type Domain interface {
 	alicloudroscdkcore.Resource
 	IDomain
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute Cname: The CNAME generated for the CDN domain.You must add a CNAME record with your DNS provider to map the CDN domain name to the CNAME.
 	AttrCname() interface{}
 	// Attribute DomainName: The CDN domain name.
@@ -113,6 +115,16 @@ type Domain interface {
 type jsiiProxy_Domain struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_IDomain
+}
+
+func (j *jsiiProxy_Domain) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Domain) AttrCname() interface{} {

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SAG::GrantCcnToCen`, which is used to grant permissions on a Cloud Connect Network (CCN) instance to a Cloud Enterprise Network (CEN) instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SAG::GrantCcnToCen`.
 type GrantCcnToCen interface {
 	alicloudroscdkcore.Resource
 	IGrantCcnToCen

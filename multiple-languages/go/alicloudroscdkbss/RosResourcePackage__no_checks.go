@@ -84,6 +84,18 @@ func validateRosResourcePackage_IsRosResourceParameters(construct alicloudroscdk
 	return nil
 }
 
+func (j *jsiiProxy_RosResourcePackage) validateSetAutoRenewParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosResourcePackage) validateSetAutoRenewPeriodParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosResourcePackage) validateSetAutoRenewPeriodUnitParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosResourcePackage) validateSetDurationParameters(val interface{}) error {
 	return nil
 }

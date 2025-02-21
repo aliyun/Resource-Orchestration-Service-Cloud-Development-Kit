@@ -8,6 +8,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
     [JsiiInterface(nativeType: typeof(IInstance), fullyQualifiedName: "@alicloud/ros-cdk-kafka.IInstance")]
     public interface IInstance : AlibabaCloud.SDK.ROS.CDK.Core.IResource
     {
+        /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+        [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrArn
+        {
+            get;
+        }
+
         /// <summary>Attribute DomainEndpoint: The default endpoints of the instance in domain name mode.</summary>
         [JsiiProperty(name: "attrDomainEndpoint", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrDomainEndpoint
@@ -76,6 +83,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         {
             private _Proxy(ByRefValue reference): base(reference)
             {
+            }
+
+            /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+            [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrArn
+            {
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Attribute DomainEndpoint: The default endpoints of the instance in domain name mode.</summary>

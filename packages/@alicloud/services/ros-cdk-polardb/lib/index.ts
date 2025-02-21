@@ -9,6 +9,7 @@ export * from './dbclusterendpointaddress';
 export * from './dbnodes';
 export * from './database';
 export * from './globaldatabasenetwork';
+export * from './globalsecurityipgroup';
 export * from './parametergroup';
 
 // ALIYUN::POLARDB Resources:

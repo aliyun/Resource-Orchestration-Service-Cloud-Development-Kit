@@ -43,12 +43,17 @@ export interface ISecurityPolicy extends ros.IResource {
     readonly props: SecurityPolicyProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute SecurityPolicyId: The ID of the security policy.
      */
     readonly attrSecurityPolicyId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::NLB::SecurityPolicy`, which is used to create a custom security policy for a TCP/SSL listener.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::NLB::SecurityPolicy`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecurityPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-securitypolicy
  */
@@ -57,6 +62,11 @@ export class SecurityPolicy extends ros.Resource implements ISecurityPolicy {
     protected id: string;
     public readonly props: SecurityPolicyProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute SecurityPolicyId: The ID of the security policy.
@@ -83,6 +93,7 @@ export class SecurityPolicy extends ros.Resource implements ISecurityPolicy {
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosSecurityPolicy;
+        this.attrArn = rosSecurityPolicy.attrArn;
         this.attrSecurityPolicyId = rosSecurityPolicy.attrSecurityPolicyId;
     }
 }

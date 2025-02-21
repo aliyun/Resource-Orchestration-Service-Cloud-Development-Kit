@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dfs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::DFS::AccessGroup</code>, which is used to create a permission group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:36.948Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:13.998Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dfs.$Module.class, fqn = "@alicloud/ros-cdk-dfs.AccessGroup")
 public class AccessGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dfs.IAccessGroup {
 

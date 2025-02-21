@@ -55,7 +55,7 @@ export interface ISAMLProvider extends ros.IResource {
     readonly attrSamlProviderName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::SAMLProvider`, which is used to create an identity provider (IdP) for role-based single sign-on (SSO).
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::SAMLProvider`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSAMLProvider`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-samlprovider
  */

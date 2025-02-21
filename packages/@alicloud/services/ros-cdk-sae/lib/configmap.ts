@@ -49,7 +49,7 @@ export interface IConfigMap extends ros.IResource {
     readonly attrNamespaceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SAE::ConfigMap`, which is used to create a ConfigMap instance in a namespace.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SAE::ConfigMap`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosConfigMap`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-configmap
  */

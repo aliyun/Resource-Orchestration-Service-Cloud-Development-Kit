@@ -15,6 +15,8 @@ type Listener interface {
 	IListener
 	// Attribute ListenerId: The ID of the listener.
 	AttrListenerId() interface{}
+	// Attribute LoadBalancerId: The ID of the ALB instance.
+	AttrLoadBalancerId() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
 	// The environment this resource belongs to.
@@ -115,6 +117,16 @@ func (j *jsiiProxy_Listener) AttrListenerId() interface{} {
 	_jsii_.Get(
 		j,
 		"attrListenerId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Listener) AttrLoadBalancerId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrLoadBalancerId",
 		&returns,
 	)
 	return returns

@@ -54,6 +54,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Ecs.RosNetworkInterface))!;
 
         /// <remarks>
+        /// <strong>Attribute</strong>: Arn: The Alibaba Cloud Resource Name (ARN).
+        /// </remarks>
+        [JsiiProperty(name: "attrArn", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrArn
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: MacAddress: The MAC address of your Network Interface.
         /// </remarks>
         [JsiiProperty(name: "attrMacAddress", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]

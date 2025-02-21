@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::TrafficMirrorFilters`, which is used to query filters for traffic mirroring.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::TrafficMirrorFilters`.
 type TrafficMirrorFilters interface {
 	alicloudroscdkcore.Resource
 	ITrafficMirrorFilters

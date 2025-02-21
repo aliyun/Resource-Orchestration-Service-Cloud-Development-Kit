@@ -733,6 +733,11 @@ export class RosZone extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PVTZ::Zone";
 
     /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
      * @Attribute ZoneId: Zone ID.
      */
     public readonly attrZoneId: ros.IResolvable;
@@ -801,6 +806,7 @@ export class RosZone extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosZoneProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosZone.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrZoneId = this.getAtt('ZoneId');
         this.attrZoneName = this.getAtt('ZoneName');
         this.attrZoneTag = this.getAtt('ZoneTag');
@@ -1154,7 +1160,7 @@ function rosZoneVpcBinderPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::ZoneVpcBinder`, which is used to bind a private zone to or unbind a private zone from a virtual private cloud (VPC).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::ZoneVpcBinder`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ZoneVpcBinder` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zonevpcbinder
  */

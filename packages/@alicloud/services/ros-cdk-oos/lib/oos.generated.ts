@@ -48,7 +48,7 @@ function rosDefaultPatchBaselinePropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::DefaultPatchBaseline`, which is used to register a default patch baseline.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::DefaultPatchBaseline`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DefaultPatchBaseline` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-defaultpatchbaseline
  */
@@ -315,7 +315,7 @@ function rosExecutionPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Execution`, which is used to start an execution.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Execution`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Execution` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-execution
  */
@@ -672,7 +672,7 @@ function rosParameterPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Parameter`, which is used to create a common parameter.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Parameter`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Parameter` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-parameter
  */
@@ -895,7 +895,7 @@ function rosPatchBaselinePropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::PatchBaseline`, which is used to create a patch baseline.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::PatchBaseline`.
  * @Note This class does not contain additional functions, so it is recommended to use the `PatchBaseline` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-patchbaseline
  */
@@ -1553,7 +1553,7 @@ function rosServiceSettingsPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::ServiceSettings`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::ServiceSettings`, which is used to configure service settings.
  * @Note This class does not contain additional functions, so it is recommended to use the `ServiceSettings` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-servicesettings
  */
@@ -1741,7 +1741,7 @@ function rosStateConfigurationPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::StateConfiguration`, which is used to create a desired-state configuration.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::StateConfiguration`.
  * @Note This class does not contain additional functions, so it is recommended to use the `StateConfiguration` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-stateconfiguration
  */
@@ -1933,7 +1933,7 @@ function rosTemplatePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Template`, which is used to create a template.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Template`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Template` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-template
  */

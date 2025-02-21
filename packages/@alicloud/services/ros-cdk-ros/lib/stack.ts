@@ -60,7 +60,7 @@ export interface IStack extends ros.IResource {
     readonly props: StackProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::Stack`, which is used to create a nested stack. You can nest stacks up to five levels of depth.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::Stack`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosStack`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stack
  */

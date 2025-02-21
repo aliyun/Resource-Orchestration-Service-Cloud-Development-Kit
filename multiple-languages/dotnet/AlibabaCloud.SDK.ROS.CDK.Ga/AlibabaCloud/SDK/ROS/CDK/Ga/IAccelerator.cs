@@ -36,6 +36,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             get;
         }
 
+        /// <summary>Attribute DnsName: The DNS name of the accelerator.</summary>
+        [JsiiProperty(name: "attrDnsName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrDnsName
+        {
+            get;
+        }
+
         /// <summary>Attribute Duration: The Duration of the GA instance.</summary>
         [JsiiProperty(name: "attrDuration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrDuration
@@ -109,6 +116,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             /// <summary>Attribute AutoUseCoupon: The AutoUseCoupon of the GA instance.</summary>
             [JsiiProperty(name: "attrAutoUseCoupon", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AttrAutoUseCoupon
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Attribute DnsName: The DNS name of the accelerator.</summary>
+            [JsiiProperty(name: "attrDnsName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrDnsName
             {
                 get => GetInstanceProperty<object>()!;
             }

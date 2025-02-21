@@ -37,6 +37,11 @@ export interface IVServerGroup extends ros.IResource {
     readonly props: VServerGroupProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute BackendServers: Backend server list in this VServerGroup.
      */
     readonly attrBackendServers: ros.IResolvable | string;
@@ -52,7 +57,7 @@ export interface IVServerGroup extends ros.IResource {
     readonly attrVServerGroupId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::VServerGroup`, which is used to create a server group and attach backend servers to a Server Load Balancer (SLB) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::VServerGroup`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVServerGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-vservergroup
  */
@@ -61,6 +66,11 @@ export class VServerGroup extends ros.Resource implements IVServerGroup {
     protected id: string;
     public readonly props: VServerGroupProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute BackendServers: Backend server list in this VServerGroup.
@@ -96,6 +106,7 @@ export class VServerGroup extends ros.Resource implements IVServerGroup {
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosVServerGroup;
+        this.attrArn = rosVServerGroup.attrArn;
         this.attrBackendServers = rosVServerGroup.attrBackendServers;
         this.attrLoadBalancerId = rosVServerGroup.attrLoadBalancerId;
         this.attrVServerGroupId = rosVServerGroup.attrVServerGroupId;

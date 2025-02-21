@@ -40,7 +40,7 @@ export interface IGrafanaWorkspaces extends ros.IResource {
     readonly attrGrafanaWorkspaces: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::GrafanaWorkspaces`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::GrafanaWorkspaces`, which is used to query the information about Grafana workspaces.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGrafanaWorkspaces`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-grafanaworkspaces
  */

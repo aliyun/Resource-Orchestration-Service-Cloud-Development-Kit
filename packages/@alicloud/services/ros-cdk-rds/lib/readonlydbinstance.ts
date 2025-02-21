@@ -157,7 +157,7 @@ export interface IReadOnlyDBInstance extends ros.IResource {
     readonly attrPort: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::ReadOnlyDBInstance`, which is used to create a read-only ApsaraDB RDS instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::ReadOnlyDBInstance`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosReadOnlyDBInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-readonlydbinstance
  */

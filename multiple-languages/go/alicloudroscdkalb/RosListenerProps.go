@@ -17,6 +17,7 @@ type RosListenerProps struct {
 	IdleTimeout interface{} `field:"optional" json:"idleTimeout" yaml:"idleTimeout"`
 	ListenerDescription interface{} `field:"optional" json:"listenerDescription" yaml:"listenerDescription"`
 	ListenerStatus interface{} `field:"optional" json:"listenerStatus" yaml:"listenerStatus"`
+	LogConfig interface{} `field:"optional" json:"logConfig" yaml:"logConfig"`
 	QuicConfig interface{} `field:"optional" json:"quicConfig" yaml:"quicConfig"`
 	RequestTimeout interface{} `field:"optional" json:"requestTimeout" yaml:"requestTimeout"`
 	SecurityPolicyId interface{} `field:"optional" json:"securityPolicyId" yaml:"securityPolicyId"`

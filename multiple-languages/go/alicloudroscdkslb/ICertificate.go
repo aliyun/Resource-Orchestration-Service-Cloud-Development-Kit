@@ -10,6 +10,8 @@ import (
 // Represents a `Certificate`.
 type ICertificate interface {
 	alicloudroscdkcore.IResource
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute CertificateId: The ID of the certificate.
 	AttrCertificateId() interface{}
 	// Attribute Fingerprint: The fingerprint of the certificate.
@@ -20,6 +22,16 @@ type ICertificate interface {
 // The jsii proxy for ICertificate
 type jsiiProxy_ICertificate struct {
 	internal.Type__alicloudroscdkcoreIResource
+}
+
+func (j *jsiiProxy_ICertificate) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_ICertificate) AttrCertificateId() interface{} {

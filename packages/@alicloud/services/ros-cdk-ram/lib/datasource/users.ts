@@ -45,7 +45,7 @@ export interface IUsers extends ros.IResource {
     readonly attrUsers: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::RAM::Users`, which is used to query the information about Resource Access Management (RAM) users.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::RAM::Users`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUsers`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-users
  */

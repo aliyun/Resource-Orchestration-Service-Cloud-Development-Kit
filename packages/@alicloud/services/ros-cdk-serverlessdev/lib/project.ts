@@ -42,7 +42,7 @@ export interface IProject extends ros.IResource {
     readonly attrName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ServerlessDev::Project`, which is used to create a project. If a template is specified for the project, the project is automatically deployed.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ServerlessDev::Project`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosProject`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-serverlessdev-project
  */

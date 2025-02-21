@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::SLS::Logstores`, which is used to query Logstores.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::SLS::Logstores`.
 type RosLogstores interface {
 	alicloudroscdkcore.RosResource
 	AttrLogstores() alicloudroscdkcore.IResolvable

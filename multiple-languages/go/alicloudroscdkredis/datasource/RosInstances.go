@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::REDIS::Instances`, which is used to query the information about Tair (Redis OSS-compatible) instances.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::REDIS::Instances`.
 type RosInstances interface {
 	alicloudroscdkcore.RosResource
 	ArchitectureType() interface{}

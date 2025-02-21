@@ -1,11 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::VpnAttachment</code>, which is used to create an IPsec-VPN connection.
- * <p>
- * After you create the IPsec-VPN connection, you can associate the IPsec-VPN connection with a transit router.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::VpnAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:45.189Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:22.120Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosVpnAttachment")
 public class RosVpnAttachment extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::WAF::AclRule`, which is used to add an HTTP access control list (ACL) rule for a specified domain name.
+// This class encapsulates and extends the ROS resource type `ALIYUN::WAF::AclRule`.
 type AclRule interface {
 	alicloudroscdkcore.Resource
 	IAclRule

@@ -8,6 +8,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
     [JsiiInterface(nativeType: typeof(IElasticDBInstance), fullyQualifiedName: "@alicloud/ros-cdk-gpdb.IElasticDBInstance")]
     public interface IElasticDBInstance : AlibabaCloud.SDK.ROS.CDK.Core.IResource
     {
+        /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+        [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrArn
+        {
+            get;
+        }
+
         /// <summary>Attribute ConnectionString: The endpoint of the instance.</summary>
         [JsiiProperty(name: "attrConnectionString", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrConnectionString
@@ -48,6 +55,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         {
             private _Proxy(ByRefValue reference): base(reference)
             {
+            }
+
+            /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+            [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrArn
+            {
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Attribute ConnectionString: The endpoint of the instance.</summary>

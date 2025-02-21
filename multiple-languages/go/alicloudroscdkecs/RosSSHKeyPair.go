@@ -12,6 +12,7 @@ import (
 // This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SSHKeyPair`, which is used to create an SSH key pair or import an existing SSH key pair to access an Elastic Compute Service (ECS) instance.
 type RosSSHKeyPair interface {
 	alicloudroscdkcore.RosResource
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrKeyPairFingerPrint() alicloudroscdkcore.IResolvable
 	AttrKeyPairName() alicloudroscdkcore.IResolvable
 	AttrPrivateKeyBody() alicloudroscdkcore.IResolvable
@@ -177,6 +178,16 @@ type RosSSHKeyPair interface {
 // The jsii proxy struct for RosSSHKeyPair
 type jsiiProxy_RosSSHKeyPair struct {
 	internal.Type__alicloudroscdkcoreRosResource
+}
+
+func (j *jsiiProxy_RosSSHKeyPair) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_RosSSHKeyPair) AttrKeyPairFingerPrint() alicloudroscdkcore.IResolvable {

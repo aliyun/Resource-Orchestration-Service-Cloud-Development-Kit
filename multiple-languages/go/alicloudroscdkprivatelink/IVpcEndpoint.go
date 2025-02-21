@@ -10,6 +10,8 @@ import (
 // Represents a `VpcEndpoint`.
 type IVpcEndpoint interface {
 	alicloudroscdkcore.IResource
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute Bandwidth: The bandwidth of the endpoint.
 	AttrBandwidth() interface{}
 	// Attribute EndpointDomain: The domain name of the endpoint.
@@ -32,6 +34,16 @@ type IVpcEndpoint interface {
 // The jsii proxy for IVpcEndpoint
 type jsiiProxy_IVpcEndpoint struct {
 	internal.Type__alicloudroscdkcoreIResource
+}
+
+func (j *jsiiProxy_IVpcEndpoint) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_IVpcEndpoint) AttrBandwidth() interface{} {

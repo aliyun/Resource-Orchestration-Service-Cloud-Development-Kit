@@ -12,6 +12,7 @@ import (
 // This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::ConsumerGroup`, which is used to create a consumer group.
 type RosConsumerGroup interface {
 	alicloudroscdkcore.RosResource
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrConsumerId() alicloudroscdkcore.IResolvable
 	ConsumerId() interface{}
 	SetConsumerId(val interface{})
@@ -175,6 +176,16 @@ type RosConsumerGroup interface {
 // The jsii proxy struct for RosConsumerGroup
 type jsiiProxy_RosConsumerGroup struct {
 	internal.Type__alicloudroscdkcoreRosResource
+}
+
+func (j *jsiiProxy_RosConsumerGroup) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_RosConsumerGroup) AttrConsumerId() alicloudroscdkcore.IResolvable {

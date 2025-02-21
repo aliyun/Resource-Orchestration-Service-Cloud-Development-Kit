@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc3;
 /**
  * Represents a <code>ConcurrencyConfig</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:40.132Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:16.890Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc3.$Module.class, fqn = "@alicloud/ros-cdk-fc3.IConcurrencyConfig")
 @software.amazon.jsii.Jsii.Proxy(IConcurrencyConfig.Jsii$Proxy.class)
 public interface IConcurrencyConfig extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.rocketmq5;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ROCKETMQ5::ConsumerGroup</code>, which is used to create a consumer group in ApsaraMQ for RocketMQ 5.0.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ROCKETMQ5::ConsumerGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:43.770Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:20.049Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq5.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq5.RosConsumerGroup")
 public class RosConsumerGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -175,6 +175,13 @@ public class RosConsumerGroup extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDeadLetterTargetTopic() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getMaxRetryTimes() {
             return null;
         }
@@ -192,6 +199,7 @@ public class RosConsumerGroup extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ConsumeRetryPolicyProperty> {
             java.lang.Object retryPolicy;
+            java.lang.Object deadLetterTargetTopic;
             java.lang.Object maxRetryTimes;
 
             /**
@@ -213,6 +221,28 @@ public class RosConsumerGroup extends com.aliyun.ros.cdk.core.RosResource {
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder retryPolicy(com.aliyun.ros.cdk.core.IResolvable retryPolicy) {
                 this.retryPolicy = retryPolicy;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConsumeRetryPolicyProperty#getDeadLetterTargetTopic}
+             * @param deadLetterTargetTopic the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder deadLetterTargetTopic(java.lang.String deadLetterTargetTopic) {
+                this.deadLetterTargetTopic = deadLetterTargetTopic;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ConsumeRetryPolicyProperty#getDeadLetterTargetTopic}
+             * @param deadLetterTargetTopic the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder deadLetterTargetTopic(com.aliyun.ros.cdk.core.IResolvable deadLetterTargetTopic) {
+                this.deadLetterTargetTopic = deadLetterTargetTopic;
                 return this;
             }
 
@@ -257,6 +287,7 @@ public class RosConsumerGroup extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ConsumeRetryPolicyProperty {
             private final java.lang.Object retryPolicy;
+            private final java.lang.Object deadLetterTargetTopic;
             private final java.lang.Object maxRetryTimes;
 
             /**
@@ -266,6 +297,7 @@ public class RosConsumerGroup extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
                 this.retryPolicy = software.amazon.jsii.Kernel.get(this, "retryPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.deadLetterTargetTopic = software.amazon.jsii.Kernel.get(this, "deadLetterTargetTopic", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.maxRetryTimes = software.amazon.jsii.Kernel.get(this, "maxRetryTimes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
@@ -275,12 +307,18 @@ public class RosConsumerGroup extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.retryPolicy = java.util.Objects.requireNonNull(builder.retryPolicy, "retryPolicy is required");
+                this.deadLetterTargetTopic = builder.deadLetterTargetTopic;
                 this.maxRetryTimes = builder.maxRetryTimes;
             }
 
             @Override
             public final java.lang.Object getRetryPolicy() {
                 return this.retryPolicy;
+            }
+
+            @Override
+            public final java.lang.Object getDeadLetterTargetTopic() {
+                return this.deadLetterTargetTopic;
             }
 
             @Override
@@ -295,6 +333,9 @@ public class RosConsumerGroup extends com.aliyun.ros.cdk.core.RosResource {
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
                 data.set("retryPolicy", om.valueToTree(this.getRetryPolicy()));
+                if (this.getDeadLetterTargetTopic() != null) {
+                    data.set("deadLetterTargetTopic", om.valueToTree(this.getDeadLetterTargetTopic()));
+                }
                 if (this.getMaxRetryTimes() != null) {
                     data.set("maxRetryTimes", om.valueToTree(this.getMaxRetryTimes()));
                 }
@@ -317,12 +358,14 @@ public class RosConsumerGroup extends com.aliyun.ros.cdk.core.RosResource {
                 ConsumeRetryPolicyProperty.Jsii$Proxy that = (ConsumeRetryPolicyProperty.Jsii$Proxy) o;
 
                 if (!retryPolicy.equals(that.retryPolicy)) return false;
+                if (this.deadLetterTargetTopic != null ? !this.deadLetterTargetTopic.equals(that.deadLetterTargetTopic) : that.deadLetterTargetTopic != null) return false;
                 return this.maxRetryTimes != null ? this.maxRetryTimes.equals(that.maxRetryTimes) : that.maxRetryTimes == null;
             }
 
             @Override
             public final int hashCode() {
                 int result = this.retryPolicy.hashCode();
+                result = 31 * result + (this.deadLetterTargetTopic != null ? this.deadLetterTargetTopic.hashCode() : 0);
                 result = 31 * result + (this.maxRetryTimes != null ? this.maxRetryTimes.hashCode() : 0);
                 return result;
             }

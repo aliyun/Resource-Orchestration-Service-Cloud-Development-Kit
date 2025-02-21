@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gpdb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::GPDB::DBInstance</code>, which is used to create an AnalyticDB for PostgreSQL instance in reserved storage mode.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:40.611Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:17.273Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.RosDBInstance")
 public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -39,6 +39,12 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
      * The resource type name for this resource class.
      */
     public final static java.lang.String ROS_RESOURCE_TYPE_NAME;
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrArn() {
+        return software.amazon.jsii.Kernel.get(this, "attrArn", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
 
     /**
      */
@@ -129,6 +135,40 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setZoneId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "zoneId", java.util.Objects.requireNonNull(value, "zoneId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAiNodeSpecInfos() {
+        return software.amazon.jsii.Kernel.get(this, "aiNodeSpecInfos", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAiNodeSpecInfos(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "aiNodeSpecInfos", value);
+    }
+
+    /**
+     */
+    public void setAiNodeSpecInfos(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.gpdb.RosDBInstance.AINodeSpecInfosProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.gpdb.RosDBInstance.AINodeSpecInfosProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "aiNodeSpecInfos", value);
     }
 
     /**
@@ -327,6 +367,24 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setInstanceSpec(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "instanceSpec", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMasterCu() {
+        return software.amazon.jsii.Kernel.get(this, "masterCu", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setMasterCu(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "masterCu", value);
+    }
+
+    /**
+     */
+    public void setMasterCu(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "masterCu", value);
     }
 
     /**
@@ -648,6 +706,170 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.RosDBInstance.AINodeSpecInfosProperty")
+    @software.amazon.jsii.Jsii.Proxy(AINodeSpecInfosProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface AINodeSpecInfosProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getAiNodeNum();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getAiNodeSpec();
+
+        /**
+         * @return a {@link Builder} of {@link AINodeSpecInfosProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link AINodeSpecInfosProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<AINodeSpecInfosProperty> {
+            java.lang.Object aiNodeNum;
+            java.lang.Object aiNodeSpec;
+
+            /**
+             * Sets the value of {@link AINodeSpecInfosProperty#getAiNodeNum}
+             * @param aiNodeNum the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder aiNodeNum(java.lang.Number aiNodeNum) {
+                this.aiNodeNum = aiNodeNum;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AINodeSpecInfosProperty#getAiNodeNum}
+             * @param aiNodeNum the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder aiNodeNum(com.aliyun.ros.cdk.core.IResolvable aiNodeNum) {
+                this.aiNodeNum = aiNodeNum;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AINodeSpecInfosProperty#getAiNodeSpec}
+             * @param aiNodeSpec the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder aiNodeSpec(java.lang.String aiNodeSpec) {
+                this.aiNodeSpec = aiNodeSpec;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AINodeSpecInfosProperty#getAiNodeSpec}
+             * @param aiNodeSpec the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder aiNodeSpec(com.aliyun.ros.cdk.core.IResolvable aiNodeSpec) {
+                this.aiNodeSpec = aiNodeSpec;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link AINodeSpecInfosProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public AINodeSpecInfosProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link AINodeSpecInfosProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AINodeSpecInfosProperty {
+            private final java.lang.Object aiNodeNum;
+            private final java.lang.Object aiNodeSpec;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.aiNodeNum = software.amazon.jsii.Kernel.get(this, "aiNodeNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.aiNodeSpec = software.amazon.jsii.Kernel.get(this, "aiNodeSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.aiNodeNum = java.util.Objects.requireNonNull(builder.aiNodeNum, "aiNodeNum is required");
+                this.aiNodeSpec = java.util.Objects.requireNonNull(builder.aiNodeSpec, "aiNodeSpec is required");
+            }
+
+            @Override
+            public final java.lang.Object getAiNodeNum() {
+                return this.aiNodeNum;
+            }
+
+            @Override
+            public final java.lang.Object getAiNodeSpec() {
+                return this.aiNodeSpec;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("aiNodeNum", om.valueToTree(this.getAiNodeNum()));
+                data.set("aiNodeSpec", om.valueToTree(this.getAiNodeSpec()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-gpdb.RosDBInstance.AINodeSpecInfosProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                AINodeSpecInfosProperty.Jsii$Proxy that = (AINodeSpecInfosProperty.Jsii$Proxy) o;
+
+                if (!aiNodeNum.equals(that.aiNodeNum)) return false;
+                return this.aiNodeSpec.equals(that.aiNodeSpec);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.aiNodeNum.hashCode();
+                result = 31 * result + (this.aiNodeSpec.hashCode());
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.RosDBInstance.TagsProperty")
     @software.amazon.jsii.Jsii.Proxy(TagsProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -894,6 +1116,23 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param aiNodeSpecInfos This parameter is required.
+         */
+        public Builder aiNodeSpecInfos(final com.aliyun.ros.cdk.core.IResolvable aiNodeSpecInfos) {
+            this.props.aiNodeSpecInfos(aiNodeSpecInfos);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param aiNodeSpecInfos This parameter is required.
+         */
+        public Builder aiNodeSpecInfos(final java.util.List<? extends java.lang.Object> aiNodeSpecInfos) {
+            this.props.aiNodeSpecInfos(aiNodeSpecInfos);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param createSampleData This parameter is required.
          */
         public Builder createSampleData(final java.lang.Boolean createSampleData) {
@@ -1076,6 +1315,23 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder instanceSpec(final com.aliyun.ros.cdk.core.IResolvable instanceSpec) {
             this.props.instanceSpec(instanceSpec);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param masterCu This parameter is required.
+         */
+        public Builder masterCu(final java.lang.Number masterCu) {
+            this.props.masterCu(masterCu);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param masterCu This parameter is required.
+         */
+        public Builder masterCu(final com.aliyun.ros.cdk.core.IResolvable masterCu) {
+            this.props.masterCu(masterCu);
             return this;
         }
 

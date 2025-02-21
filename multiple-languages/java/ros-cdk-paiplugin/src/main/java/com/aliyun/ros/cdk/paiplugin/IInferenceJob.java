@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.paiplugin;
 /**
  * Represents a <code>InferenceJob</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:42.287Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:18.929Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.paiplugin.$Module.class, fqn = "@alicloud/ros-cdk-paiplugin.IInferenceJob")
 @software.amazon.jsii.Jsii.Proxy(IInferenceJob.Jsii$Proxy.class)
 public interface IInferenceJob extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

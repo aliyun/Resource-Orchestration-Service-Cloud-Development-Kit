@@ -8,6 +8,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
     [JsiiInterface(nativeType: typeof(IListener), fullyQualifiedName: "@alicloud/ros-cdk-slb.IListener")]
     public interface IListener : AlibabaCloud.SDK.ROS.CDK.Core.IResource
     {
+        /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+        [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrArn
+        {
+            get;
+        }
+
         /// <summary>Attribute ListenerPortsAndProtocol: The collection of listener.</summary>
         [JsiiProperty(name: "attrListenerPortsAndProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrListenerPortsAndProtocol
@@ -34,6 +41,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         {
             private _Proxy(ByRefValue reference): base(reference)
             {
+            }
+
+            /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+            [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrArn
+            {
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Attribute ListenerPortsAndProtocol: The collection of listener.</summary>

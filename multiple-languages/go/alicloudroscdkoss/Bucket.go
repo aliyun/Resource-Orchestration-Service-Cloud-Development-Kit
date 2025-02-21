@@ -13,6 +13,8 @@ import (
 type Bucket interface {
 	alicloudroscdkcore.Resource
 	IBucket
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute DomainName: The public DNS name of the specified bucket.
 	AttrDomainName() interface{}
 	// Attribute InternalDomainName: The internal DNS name of the specified bucket.
@@ -112,6 +114,16 @@ type Bucket interface {
 type jsiiProxy_Bucket struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_IBucket
+}
+
+func (j *jsiiProxy_Bucket) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Bucket) AttrDomainName() interface{} {

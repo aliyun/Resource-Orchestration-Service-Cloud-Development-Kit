@@ -3,10 +3,15 @@ package com.aliyun.ros.cdk.emr;
 /**
  * Represents a <code>Cluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:39.187Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:16.404Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.ICluster")
 @software.amazon.jsii.Jsii.Proxy(ICluster.Jsii$Proxy.class)
 public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrArn();
 
     /**
      * Attribute ClusterId: The ID of the cluster.
@@ -68,6 +73,14 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         @Override
         public final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Stack getStack() {
             return software.amazon.jsii.Kernel.get(this, "stack", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.Stack.class));
+        }
+
+        /**
+         * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrArn() {
+            return software.amazon.jsii.Kernel.get(this, "attrArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -143,6 +156,14 @@ public interface ICluster extends software.amazon.jsii.JsiiSerializable, com.ali
         @Override
         default @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Stack getStack() {
             return software.amazon.jsii.Kernel.get(this, "stack", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.Stack.class));
+        }
+
+        /**
+         * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrArn() {
+            return software.amazon.jsii.Kernel.get(this, "attrArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**

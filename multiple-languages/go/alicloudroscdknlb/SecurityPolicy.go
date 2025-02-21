@@ -9,10 +9,12 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::NLB::SecurityPolicy`, which is used to create a custom security policy for a TCP/SSL listener.
+// This class encapsulates and extends the ROS resource type `ALIYUN::NLB::SecurityPolicy`.
 type SecurityPolicy interface {
 	alicloudroscdkcore.Resource
 	ISecurityPolicy
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute SecurityPolicyId: The ID of the security policy.
 	AttrSecurityPolicyId() interface{}
 	EnableResourcePropertyConstraint() *bool
@@ -108,6 +110,16 @@ type SecurityPolicy interface {
 type jsiiProxy_SecurityPolicy struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_ISecurityPolicy
+}
+
+func (j *jsiiProxy_SecurityPolicy) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SecurityPolicy) AttrSecurityPolicyId() interface{} {

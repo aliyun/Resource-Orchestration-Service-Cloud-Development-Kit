@@ -57,7 +57,7 @@ export interface ITgw extends ros.IResource {
     readonly attrTgwId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::WAF3::TGW`, which is used to add a resource to Web Application Firewall (WAF) in transparent proxy mode.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::WAF3::TGW`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTGW`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf3-tgw
  */

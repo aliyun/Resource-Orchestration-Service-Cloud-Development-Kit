@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.waf3;
 /**
  * Represents a <code>TGW</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:45.636Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:22.559Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf3.$Module.class, fqn = "@alicloud/ros-cdk-waf3.ITgw")
 @software.amazon.jsii.Jsii.Proxy(ITgw.Jsii$Proxy.class)
 public interface ITgw extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

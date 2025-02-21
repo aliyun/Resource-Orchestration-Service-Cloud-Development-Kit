@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dfs;
 /**
  * Represents a <code>MountPoint</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:36.959Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:14.022Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dfs.$Module.class, fqn = "@alicloud/ros-cdk-dfs.IMountPoint")
 @software.amazon.jsii.Jsii.Proxy(IMountPoint.Jsii$Proxy.class)
 public interface IMountPoint extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

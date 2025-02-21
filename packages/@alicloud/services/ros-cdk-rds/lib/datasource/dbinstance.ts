@@ -421,7 +421,7 @@ Disabled
     readonly attrZoneId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::RDS::DBInstance`, which is used to query an ApsaraDB RDS instance.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::RDS::DBInstance`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-dbinstance
  */

@@ -1,11 +1,9 @@
 package com.aliyun.ros.cdk.rocketmq;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ROCKETMQ::Group</code>, which is used to create a Group ID on the ROCKETMQ client.
- * <p>
- * The Group ID that you create is used to publish and subscribe to messages.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ROCKETMQ::Group</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:43.702Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:19.986Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq.RosGroup")
 public class RosGroup extends com.aliyun.ros.cdk.core.RosResource {
 

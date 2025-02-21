@@ -9,9 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ROCKETMQ::Group`, which is used to create a Group ID on the ROCKETMQ client.
-//
-// The Group ID that you create is used to publish and subscribe to messages.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ROCKETMQ::Group`.
 type Group interface {
 	alicloudroscdkcore.Resource
 	IGroup

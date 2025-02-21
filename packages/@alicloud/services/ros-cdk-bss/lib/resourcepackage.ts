@@ -30,6 +30,24 @@ export interface ResourcePackageProps {
     readonly specification: string | ros.IResolvable;
 
     /**
+     * Property autoRenew: Whether to automatically renew the resource package. The value is true or false. Default value: false.
+     */
+    readonly autoRenew?: boolean | ros.IResolvable;
+
+    /**
+     * Property autoRenewPeriod: Duration of resource packs renewals. Valid values:
+     * - When AutoRenewPeriodUnit is Year: 1, 2, 3. 
+     * - When AutoRenewPeriodUnit is Month: 1, 2, 3, 6.
+     * Default is 1.
+     */
+    readonly autoRenewPeriod?: number | ros.IResolvable;
+
+    /**
+     * Property autoRenewPeriodUnit: Unit of resource pack renewals. Valid values: Month, Year. Default is Month.
+     */
+    readonly autoRenewPeriodUnit?: string | ros.IResolvable;
+
+    /**
      * Property effectiveDate: The effective date of the specified resource package. The resource package will take effect immediately if the effective date is unspecified. The date format follows the ISO8601 standard and uses UTC time. Format: yyyy-MM-ddTHH:mm:ssZ
      */
     readonly effectiveDate?: string | ros.IResolvable;
@@ -90,12 +108,15 @@ export class ResourcePackage extends ros.Resource implements IResourcePackage {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosResourcePackage = new RosResourcePackage(this, id,  {
+            autoRenewPeriod: props.autoRenewPeriod === undefined || props.autoRenewPeriod === null ? 1 : props.autoRenewPeriod,
             productCode: props.productCode,
             pricingCycle: props.pricingCycle,
+            autoRenew: props.autoRenew === undefined || props.autoRenew === null ? false : props.autoRenew,
             packageType: props.packageType,
             specification: props.specification,
             duration: props.duration,
             effectiveDate: props.effectiveDate,
+            autoRenewPeriodUnit: props.autoRenewPeriodUnit === undefined || props.autoRenewPeriodUnit === null ? 'Month' : props.autoRenewPeriodUnit,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosResourcePackage;
         this.attrInstanceId = rosResourcePackage.attrInstanceId;

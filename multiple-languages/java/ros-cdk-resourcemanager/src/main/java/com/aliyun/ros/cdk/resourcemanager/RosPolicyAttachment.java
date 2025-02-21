@@ -1,11 +1,9 @@
 package com.aliyun.ros.cdk.resourcemanager;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ResourceManager::PolicyAttachment</code>, which is used to attach a policy to an object.
- * <p>
- * After you attach a policy to an object, the object has the permissions to manage the resources in the current resource group or within the current Alibaba Cloud account.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ResourceManager::PolicyAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:43.670Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:19.955Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.RosPolicyAttachment")
 public class RosPolicyAttachment extends com.aliyun.ros.cdk.core.RosResource {
 

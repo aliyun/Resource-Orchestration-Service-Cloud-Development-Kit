@@ -70,7 +70,7 @@ export interface IAutoEnableService extends ros.IResource {
     readonly props: AutoEnableServiceProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::AutoEnableService`, which is used to automatically activate an Alibaba Cloud service or feature.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::AutoEnableService`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAutoEnableService`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-autoenableservice
  */

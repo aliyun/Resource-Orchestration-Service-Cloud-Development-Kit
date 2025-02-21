@@ -54,6 +54,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
         = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Elasticsearch.RosInstance))!;
 
         /// <remarks>
+        /// <strong>Attribute</strong>: Arn: The Alibaba Cloud Resource Name (ARN).
+        /// </remarks>
+        [JsiiProperty(name: "attrArn", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrArn
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: Domain: Instance connection domain (only VPC network access supported).
         /// </remarks>
         [JsiiProperty(name: "attrDomain", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]

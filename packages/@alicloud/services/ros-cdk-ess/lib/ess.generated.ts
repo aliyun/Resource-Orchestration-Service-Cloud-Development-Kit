@@ -901,7 +901,7 @@ function rosEciScalingConfigurationPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::EciScalingConfiguration`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::EciScalingConfiguration`, which is used to define a scaling configuration of the Elastic Container Instance type.
  * @Note This class does not contain additional functions, so it is recommended to use the `EciScalingConfiguration` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-eciscalingconfiguration
  */
@@ -5067,6 +5067,11 @@ export class RosScalingGroup extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESS::ScalingGroup";
 
     /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
      * @Attribute ScalingGroupId: Scaling group Id
      */
     public readonly attrScalingGroupId: ros.IResolvable;
@@ -5313,6 +5318,7 @@ export class RosScalingGroup extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosScalingGroupProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosScalingGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrScalingGroupId = this.getAtt('ScalingGroupId');
         this.attrScalingGroupName = this.getAtt('ScalingGroupName');
 

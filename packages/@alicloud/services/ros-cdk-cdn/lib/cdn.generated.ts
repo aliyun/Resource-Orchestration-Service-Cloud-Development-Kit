@@ -136,6 +136,11 @@ export class RosDomain extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CDN::Domain";
 
     /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
      * @Attribute Cname: The CNAME generated for the CDN domain.You must add a CNAME record with your DNS provider to map the CDN domain name to the CNAME.
      */
     public readonly attrCname: ros.IResolvable;
@@ -200,6 +205,7 @@ export class RosDomain extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosDomainProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosDomain.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrCname = this.getAtt('Cname');
         this.attrDomainName = this.getAtt('DomainName');
 

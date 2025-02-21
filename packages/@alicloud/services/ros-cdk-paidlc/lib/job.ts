@@ -116,7 +116,7 @@ export interface IJob extends ros.IResource {
     readonly attrJobId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::PAIDLC::Job`, which is used to create a Machine Learning Platform for AI (PAI) job to run in a cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PAIDLC::Job`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosJob`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidlc-job
  */

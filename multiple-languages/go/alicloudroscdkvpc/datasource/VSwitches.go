@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::VSwitches`, which is used to query created vSwitches.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::VSwitches`.
 type VSwitches interface {
 	alicloudroscdkcore.Resource
 	IVSwitches

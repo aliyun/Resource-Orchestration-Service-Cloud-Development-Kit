@@ -73,7 +73,7 @@ export interface IVpcPeerConnection extends ros.IResource {
     readonly attrInstanceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpcPeerConnection`, which is used to create a peering connection between virtual private clouds (VPCs).
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpcPeerConnection`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpcPeerConnection`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpcpeerconnection
  */

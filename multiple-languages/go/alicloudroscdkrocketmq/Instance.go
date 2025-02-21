@@ -9,10 +9,12 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ROCKETMQ::Instance`, which is used to create a Standard Edition instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ROCKETMQ::Instance`.
 type Instance interface {
 	alicloudroscdkcore.Resource
 	IInstance
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute HttpInternalEndpoint: The internal HTTP endpoint for the Message Queue for Apache RocketMQ instance.
 	AttrHttpInternalEndpoint() interface{}
 	// Attribute HttpInternetEndpoint: The Internet HTTP endpoint for the Message Queue for Apache RocketMQ instance.
@@ -120,6 +122,16 @@ type Instance interface {
 type jsiiProxy_Instance struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_IInstance
+}
+
+func (j *jsiiProxy_Instance) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Instance) AttrHttpInternalEndpoint() interface{} {

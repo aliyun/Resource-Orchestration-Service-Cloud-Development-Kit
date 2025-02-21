@@ -1,5 +1,6 @@
 export * from './codesource';
 export * from './dataset';
+export * from './datasetversion';
 export * from './experiment';
 export * from './run';
 export * from './service';

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::SyntheticTasks`.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::SyntheticTasks`, which is used to query scheduled synthetic monitoring tasks.
 type RosSyntheticTasks interface {
 	alicloudroscdkcore.RosResource
 	AttrSyntheticTasks() alicloudroscdkcore.IResolvable

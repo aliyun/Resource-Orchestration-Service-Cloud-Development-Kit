@@ -9,9 +9,10 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::PrivateLink::VpcEndpoint`, which is used to create an endpoint.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::PrivateLink::VpcEndpoint`.
 type RosVpcEndpoint interface {
 	alicloudroscdkcore.RosResource
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrBandwidth() alicloudroscdkcore.IResolvable
 	AttrEndpointDomain() alicloudroscdkcore.IResolvable
 	AttrEndpointId() alicloudroscdkcore.IResolvable
@@ -196,6 +197,16 @@ type RosVpcEndpoint interface {
 // The jsii proxy struct for RosVpcEndpoint
 type jsiiProxy_RosVpcEndpoint struct {
 	internal.Type__alicloudroscdkcoreRosResource
+}
+
+func (j *jsiiProxy_RosVpcEndpoint) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_RosVpcEndpoint) AttrBandwidth() alicloudroscdkcore.IResolvable {

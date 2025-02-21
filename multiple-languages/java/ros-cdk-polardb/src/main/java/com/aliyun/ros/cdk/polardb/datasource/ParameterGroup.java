@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.polardb.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::POLARDB::ParameterGroup</code>, which is used to query the information about a parameter template in a region.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::POLARDB::ParameterGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:42.557Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:19.125Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.datasource.ParameterGroup")
 public class ParameterGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.polardb.datasource.IParameterGroup {
 

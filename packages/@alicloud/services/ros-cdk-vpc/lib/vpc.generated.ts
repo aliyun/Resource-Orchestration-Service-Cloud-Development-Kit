@@ -100,7 +100,7 @@ function rosAnycastEIPPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::AnycastEIP`, which is used to create an Anycast elastic IP address (Anycast EIP).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::AnycastEIP`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AnycastEIP` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-anycasteip
  */
@@ -270,7 +270,7 @@ function rosAnycastEIPAssociationPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::AnycastEIPAssociation`, which is used to associate an Anycast elastic IP address (Anycast EIP) with a cloud resource in a specific region.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::AnycastEIPAssociation`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AnycastEIPAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-anycasteipassociation
  */
@@ -477,7 +477,7 @@ function rosBgpGroupPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::BgpGroup`, which is used to create a Border Gateway Protocol (BGP) (Multi-ISP) group for a virtual border router (VBR).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::BgpGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `BgpGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgpgroup
  */
@@ -646,7 +646,7 @@ function rosBgpNetworkPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::BgpNetwork`, which is used to advertise a Border Gateway Protocol (BGP) network.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::BgpNetwork`.
  * @Note This class does not contain additional functions, so it is recommended to use the `BgpNetwork` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgpnetwork
  */
@@ -771,7 +771,7 @@ function rosBgpPeerPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::BgpPeer`, which is used to add a Border Gateway Protocol (BGP) peer to a specific BGP group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::BgpPeer`.
  * @Note This class does not contain additional functions, so it is recommended to use the `BgpPeer` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgppeer
  */
@@ -988,7 +988,7 @@ function rosCommonBandwidthPackagePropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::CommonBandwidthPackage`, which is used to create an elastic IP address (EIP) bandwidth plan.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::CommonBandwidthPackage`.
  * @Note This class does not contain additional functions, so it is recommended to use the `CommonBandwidthPackage` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-commonbandwidthpackage
  */
@@ -997,6 +997,11 @@ export class RosCommonBandwidthPackage extends ros.RosResource {
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::CommonBandwidthPackage";
+
+    /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
 
     /**
      * @Attribute BandwidthPackageId: The ID of the Internet Shared Bandwidth instance.
@@ -1072,6 +1077,7 @@ export class RosCommonBandwidthPackage extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosCommonBandwidthPackageProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosCommonBandwidthPackage.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrBandwidthPackageId = this.getAtt('BandwidthPackageId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -1209,7 +1215,7 @@ function rosCommonBandwidthPackageIpPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::CommonBandwidthPackageIp`, which is used to add EIPs to the Internet shared bandwidth instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::CommonBandwidthPackageIp`.
  * @Note This class does not contain additional functions, so it is recommended to use the `CommonBandwidthPackageIp` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-commonbandwidthpackageip
  */
@@ -1416,7 +1422,7 @@ function rosCustomerGatewayPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::CustomerGateway`, which is used to create a customer gateway.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::CustomerGateway`.
  * @Note This class does not contain additional functions, so it is recommended to use the `CustomerGateway` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-customergateway
  */
@@ -1562,7 +1568,7 @@ function rosDhcpOptionsSetPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::DhcpOptionsSet`, which is used to create Dynamic Host Configuration Protocol (DHCP) options sets.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::DhcpOptionsSet`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DhcpOptionsSet` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-dhcpoptionsset
  */
@@ -1687,7 +1693,7 @@ function rosDhcpOptionsSetAttachmentPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::DhcpOptionsSetAttachment`, which is used to associate a Dynamic Host Configuration Protocol (DHCP) options set with a virtual private cloud (VPC).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::DhcpOptionsSetAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DhcpOptionsSetAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-dhcpoptionssetattachment
  */
@@ -1941,7 +1947,7 @@ function rosEIPPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::EIP`, which is used to apply for an elastic IP address (EIP).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::EIP`.
  * @Note This class does not contain additional functions, so it is recommended to use the `EIP` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eip
  */
@@ -2258,7 +2264,7 @@ function rosEIPAssociationPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::EIPAssociation`, which is used to associate an elastic IP address (EIP) with a cloud service instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::EIPAssociation`.
  * @Note This class does not contain additional functions, so it is recommended to use the `EIPAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eipassociation
  */
@@ -2538,7 +2544,7 @@ function rosEIPProPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::EIPPro`, which is used to create an elastic IP address (EIP).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::EIPPro`.
  * @Note This class does not contain additional functions, so it is recommended to use the `EIPPro` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eippro
  */
@@ -2877,7 +2883,7 @@ function rosEIPSegmentPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::EIPSegment`, which is used to apply for contiguous elastic IP addresses (EIPs).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::EIPSegment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `EIPSegment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eipsegment
  */
@@ -3066,7 +3072,7 @@ function rosFlowLogPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::FlowLog`, which is used to create a flow log.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::FlowLog`.
  * @Note This class does not contain additional functions, so it is recommended to use the `FlowLog` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-flowlog
  */
@@ -3303,7 +3309,7 @@ function rosForwardEntryPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::ForwardEntry`, which is used to add a DNAT entry to a DNAT table.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::ForwardEntry`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ForwardEntry` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-forwardentry
  */
@@ -3516,7 +3522,7 @@ function rosFullNatEntryPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::FullNatEntry`, which is used to add a FULLNAT entry to a FULLNAT table.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::FullNatEntry`.
  * @Note This class does not contain additional functions, so it is recommended to use the `FullNatEntry` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-fullnatentry
  */
@@ -3701,7 +3707,7 @@ function rosGrantInstanceToCenPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::GrantInstanceToCen`, which is used to authorize a CEN instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::GrantInstanceToCen`.
  * @Note This class does not contain additional functions, so it is recommended to use the `GrantInstanceToCen` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-grantinstancetocen
  */
@@ -3868,7 +3874,7 @@ function rosHaVipPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::HaVip`, which is used to create a high-availability virtual IP address (HAVIP).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::HaVip`.
  * @Note This class does not contain additional functions, so it is recommended to use the `HaVip` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-havip
  */
@@ -3877,6 +3883,11 @@ export class RosHaVip extends ros.RosResource {
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::HaVip";
+
+    /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
 
     /**
      * @Attribute HaVipId: Assigned HaVip ID.
@@ -3930,6 +3941,7 @@ export class RosHaVip extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosHaVipProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosHaVip.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrHaVipId = this.getAtt('HaVipId');
         this.attrIpAddress = this.getAtt('IpAddress');
 
@@ -4069,7 +4081,7 @@ function rosHaVipAssociationPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::HaVipAssociation`, which is used to associate high-availability virtual IP addresses (HAVIPs) with an Elastic Compute Service (ECS) instance or an elastic network interface (ENI).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::HaVipAssociation`.
  * @Note This class does not contain additional functions, so it is recommended to use the `HaVipAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-havipassociation
  */
@@ -4758,7 +4770,7 @@ function rosIpsecServerPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::IpsecServer`, which is used to create an IPsec-VPN server.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::IpsecServer`.
  * @Note This class does not contain additional functions, so it is recommended to use the `IpsecServer` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipsecserver
  */
@@ -5070,7 +5082,7 @@ function rosIpv4GatewayPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::Ipv4Gateway`, which is used to create an IPv4 gateway.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::Ipv4Gateway`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Ipv4Gateway` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipv4gateway
  */
@@ -5248,7 +5260,7 @@ function rosIpv6GatewayPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::Ipv6Gateway`, which is used to create an IPv6 gateway.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::Ipv6Gateway`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Ipv6Gateway` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipv6gateway
  */
@@ -5257,6 +5269,11 @@ export class RosIpv6Gateway extends ros.RosResource {
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::Ipv6Gateway";
+
+    /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
 
     /**
      * @Attribute Ipv6GatewayId: ID IPv6 gateway.
@@ -5304,6 +5321,7 @@ export class RosIpv6Gateway extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosIpv6GatewayProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosIpv6Gateway.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrIpv6GatewayId = this.getAtt('Ipv6GatewayId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -5466,7 +5484,7 @@ function rosIpv6InternetBandwidthPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::Ipv6InternetBandwidth`, which is used to purchase Internet bandwidth for an IPv6 address.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::Ipv6InternetBandwidth`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Ipv6InternetBandwidth` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipv6internetbandwidth
  */
@@ -5754,7 +5772,7 @@ function rosNatGatewayPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::NatGateway`, which is used to create a NAT gateway.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::NatGateway`.
  * @Note This class does not contain additional functions, so it is recommended to use the `NatGateway` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natgateway
  */
@@ -6090,7 +6108,7 @@ function rosNatIpPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::NatIp`, which is used to create a NAT IP address.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::NatIp`.
  * @Note This class does not contain additional functions, so it is recommended to use the `NatIp` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natip
  */
@@ -6263,7 +6281,7 @@ function rosNatIpCidrPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::NatIpCidr`, which is used to create a NAT CIDR block.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::NatIpCidr`.
  * @Note This class does not contain additional functions, so it is recommended to use the `NatIpCidr` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natipcidr
  */
@@ -6431,7 +6449,7 @@ function rosNetworkAclPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::NetworkAcl`, which is used to create a network access control list (ACL).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::NetworkAcl`.
  * @Note This class does not contain additional functions, so it is recommended to use the `NetworkAcl` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-networkacl
  */
@@ -6792,7 +6810,7 @@ function rosNetworkAclAssociationPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::NetworkAclAssociation`, which is used to associate a network access control list (ACL) with a vSwitch.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::NetworkAclAssociation`.
  * @Note This class does not contain additional functions, so it is recommended to use the `NetworkAclAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-networkaclassociation
  */
@@ -6968,7 +6986,7 @@ function rosPeeringRouterInterfaceBindingPropsToRosTemplate(properties: any, ena
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::PeeringRouterInterfaceBinding`, which is used to bind a router interface with another router interface.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::PeeringRouterInterfaceBinding`.
  * @Note This class does not contain additional functions, so it is recommended to use the `PeeringRouterInterfaceBinding` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-peeringrouterinterfacebinding
  */
@@ -7090,7 +7108,7 @@ function rosPeeringRouterInterfaceConnectionPropsToRosTemplate(properties: any, 
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::PeeringRouterInterfaceConnection`, which is used to initiate a router interface connection.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::PeeringRouterInterfaceConnection`.
  * @Note This class does not contain additional functions, so it is recommended to use the `PeeringRouterInterfaceConnection` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-peeringrouterinterfaceconnection
  */
@@ -7260,7 +7278,7 @@ function rosPrefixListPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::PrefixList`, which is used to create a prefix list.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::PrefixList`.
  * @Note This class does not contain additional functions, so it is recommended to use the `PrefixList` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-prefixlist
  */
@@ -7509,6 +7527,317 @@ function rosPrefixListTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
+ * Properties for defining a `RosPublicIpAddressPool`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-publicipaddresspool
+ */
+export interface RosPublicIpAddressPoolProps {
+
+    /**
+     * @Property bizType: The business type of IP address pool.Value:
+     * Cloudbox: Cloud Box.Cloud box users support to select this type.
+     * Default (default): default, indicating non -special types.
+     */
+    readonly bizType?: string | ros.IResolvable;
+
+    /**
+     * @Property description: Description of the address pool instance.
+     * The length is 0-256 characters, and you cannot start with http:\/\/ or https: \/\/.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property isp: The line type. Valid values:
+     * BGP (default): BGP (Multi-ISP) lines. All regions support BGP (Multi-ISP) EIPs.
+     * BGP_PRO: BGP (Multi-ISP) Pro lines. 
+     * Only the following regions support BGP (Multi-ISP) Pro lines: 
+     * China (Hong Kong), Singapore, Malaysia (Kuala Lumpur), Philippines (Manila), Indonesia (Jakarta), and Thailand (Bangkok).
+     * For more information about BGP (Multi-ISP) and BGP (Multi-ISP) Pro, see EIP line types.
+     * If you are allowed to use single-ISP bandwidth, you can also choose one of the following values:
+     * ChinaTelecom: China Telecom
+     * ChinaUnicom: China Unicom
+     * ChinaMobile: China Mobile
+     * ChinaTelecom_L2: China Telecom L2
+     * ChinaUnicom_L2: China Unicom L2
+     * ChinaMobile_L2: China Mobile L2
+     * If your services are deployed in China East 1 Finance, you must set this parameter to BGP_FinanceCloud.
+     */
+    readonly isp?: string | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the address pool instance.
+     * The length is 0-128 characters, and you cannot start with http: \/\/ or https: \/\/.
+     */
+    readonly name?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group that the IP address pool belongs to.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property securityProtectionTypes: Safety protection level.
+     * When configured as empty, the default is DDOS protection (basic version).
+     * When configured as Antiddos_enhanced, it means DDOS protection (enhanced version).
+     */
+    readonly securityProtectionTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property tags: The list of container group tags in the form of key\/value pairs. You can define a maximum of 20 tags for each container group.
+     */
+    readonly tags?: RosPublicIpAddressPool.TagsProperty[];
+
+    /**
+     * @Property zones: The available areas of the IP address pool.
+     * The Biztype value is Cloudbox, that is, when the type of IP address pool is a cloud box, the parameter must be filled.
+     */
+    readonly zones?: Array<string | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosPublicIpAddressPoolProps`
+ *
+ * @param properties - the TypeScript properties of a `RosPublicIpAddressPoolProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosPublicIpAddressPoolPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    if(properties.isp && (typeof properties.isp) !== 'object') {
+        errors.collect(ros.propertyValidator('isp', ros.validateAllowedValues)({
+          data: properties.isp,
+          allowedValues: ["BGP","BGP_PRO","RunShellScript","ChinaTelecom","ChinaUnicom","ChinaMobile","ChinaTelecom_L2","ChinaUnicom_L2","ChinaMobile_L2","BGP_FinanceCloud"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('isp', ros.validateString)(properties.isp));
+    if(properties.securityProtectionTypes && (Array.isArray(properties.securityProtectionTypes) || (typeof properties.securityProtectionTypes) === 'string')) {
+        errors.collect(ros.propertyValidator('securityProtectionTypes', ros.validateLength)({
+            data: properties.securityProtectionTypes.length,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('securityProtectionTypes', ros.listValidator(ros.validateString))(properties.securityProtectionTypes));
+    if(properties.bizType && (typeof properties.bizType) !== 'object') {
+        errors.collect(ros.propertyValidator('bizType', ros.validateAllowedValues)({
+          data: properties.bizType,
+          allowedValues: ["CloudBox"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('bizType', ros.validateString)(properties.bizType));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: 1,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosPublicIpAddressPool_TagsPropertyValidator))(properties.tags));
+    if(properties.zones && (Array.isArray(properties.zones) || (typeof properties.zones) === 'string')) {
+        errors.collect(ros.propertyValidator('zones', ros.validateLength)({
+            data: properties.zones.length,
+            min: undefined,
+            max: 1,
+          }));
+    }
+    errors.collect(ros.propertyValidator('zones', ros.listValidator(ros.validateString))(properties.zones));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "RosPublicIpAddressPoolProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::PublicIpAddressPool` resource
+ *
+ * @param properties - the TypeScript properties of a `RosPublicIpAddressPoolProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::PublicIpAddressPool` resource.
+ */
+// @ts-ignore TS6133
+function rosPublicIpAddressPoolPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosPublicIpAddressPoolPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'BizType': ros.stringToRosTemplate(properties.bizType),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Isp': ros.stringToRosTemplate(properties.isp),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'SecurityProtectionTypes': ros.listMapper(ros.stringToRosTemplate)(properties.securityProtectionTypes),
+      'Tags': ros.listMapper(rosPublicIpAddressPoolTagsPropertyToRosTemplate)(properties.tags),
+      'Zones': ros.listMapper(ros.stringToRosTemplate)(properties.zones),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::PublicIpAddressPool`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `PublicIpAddressPool` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-publicipaddresspool
+ */
+export class RosPublicIpAddressPool extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::PublicIpAddressPool";
+
+    /**
+     * @Attribute PublicIpAddressPoolId: Example ID of the IP address pool.
+     */
+    public readonly attrPublicIpAddressPoolId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property bizType: The business type of IP address pool.Value:
+     * Cloudbox: Cloud Box.Cloud box users support to select this type.
+     * Default (default): default, indicating non -special types.
+     */
+    public bizType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property description: Description of the address pool instance.
+     * The length is 0-256 characters, and you cannot start with http:\/\/ or https: \/\/.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property isp: The line type. Valid values:
+     * BGP (default): BGP (Multi-ISP) lines. All regions support BGP (Multi-ISP) EIPs.
+     * BGP_PRO: BGP (Multi-ISP) Pro lines. 
+     * Only the following regions support BGP (Multi-ISP) Pro lines: 
+     * China (Hong Kong), Singapore, Malaysia (Kuala Lumpur), Philippines (Manila), Indonesia (Jakarta), and Thailand (Bangkok).
+     * For more information about BGP (Multi-ISP) and BGP (Multi-ISP) Pro, see EIP line types.
+     * If you are allowed to use single-ISP bandwidth, you can also choose one of the following values:
+     * ChinaTelecom: China Telecom
+     * ChinaUnicom: China Unicom
+     * ChinaMobile: China Mobile
+     * ChinaTelecom_L2: China Telecom L2
+     * ChinaUnicom_L2: China Unicom L2
+     * ChinaMobile_L2: China Mobile L2
+     * If your services are deployed in China East 1 Finance, you must set this parameter to BGP_FinanceCloud.
+     */
+    public isp: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property name: The name of the address pool instance.
+     * The length is 0-128 characters, and you cannot start with http: \/\/ or https: \/\/.
+     */
+    public name: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group that the IP address pool belongs to.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property securityProtectionTypes: Safety protection level.
+     * When configured as empty, the default is DDOS protection (basic version).
+     * When configured as Antiddos_enhanced, it means DDOS protection (enhanced version).
+     */
+    public securityProtectionTypes: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: The list of container group tags in the form of key\/value pairs. You can define a maximum of 20 tags for each container group.
+     */
+    public tags: RosPublicIpAddressPool.TagsProperty[] | undefined;
+
+    /**
+     * @Property zones: The available areas of the IP address pool.
+     * The Biztype value is Cloudbox, that is, when the type of IP address pool is a cloud box, the parameter must be filled.
+     */
+    public zones: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosPublicIpAddressPoolProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosPublicIpAddressPool.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrPublicIpAddressPoolId = this.getAtt('PublicIpAddressPoolId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.bizType = props.bizType;
+        this.description = props.description;
+        this.isp = props.isp;
+        this.name = props.name;
+        this.resourceGroupId = props.resourceGroupId;
+        this.securityProtectionTypes = props.securityProtectionTypes;
+        this.tags = props.tags;
+        this.zones = props.zones;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            bizType: this.bizType,
+            description: this.description,
+            isp: this.isp,
+            name: this.name,
+            resourceGroupId: this.resourceGroupId,
+            securityProtectionTypes: this.securityProtectionTypes,
+            tags: this.tags,
+            zones: this.zones,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosPublicIpAddressPoolPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosPublicIpAddressPool {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: The value of the tag.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: The keyword of the tag.
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosPublicIpAddressPool_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::PublicIpAddressPool.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::PublicIpAddressPool.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosPublicIpAddressPoolTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosPublicIpAddressPool_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
  * Properties for defining a `RosRouteTable`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-routetable
  */
@@ -7584,7 +7913,7 @@ function rosRouteTablePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::RouteTable`, which is used to create a custom route table.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::RouteTable`.
  * @Note This class does not contain additional functions, so it is recommended to use the `RouteTable` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-routetable
  */
@@ -7780,7 +8109,7 @@ function rosRouteTableAssociationPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::RouteTableAssociation`, which is used to associate a custom routing table with a vSwitch in the same VPC.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::RouteTableAssociation`.
  * @Note This class does not contain additional functions, so it is recommended to use the `RouteTableAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-routetableassociation
  */
@@ -7837,6 +8166,143 @@ export class RosRouteTableAssociation extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosRouteTableAssociationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosRouteTableWithGatewayAssociation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-routetablewithgatewayassociation
+ */
+export interface RosRouteTableWithGatewayAssociationProps {
+
+    /**
+     * @Property gatewayId: The ID of the IPv4 gateway that is to be associated.
+     * The IPv4 gateway instance must be activated.
+     */
+    readonly gatewayId: string | ros.IResolvable;
+
+    /**
+     * @Property gatewayType: Types of the associated gateway instance.
+     */
+    readonly gatewayType: string | ros.IResolvable;
+
+    /**
+     * @Property routeTableId: The ID of route table that gateway is to be bound.
+     */
+    readonly routeTableId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosRouteTableWithGatewayAssociationProps`
+ *
+ * @param properties - the TypeScript properties of a `RosRouteTableWithGatewayAssociationProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosRouteTableWithGatewayAssociationPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('routeTableId', ros.requiredValidator)(properties.routeTableId));
+    errors.collect(ros.propertyValidator('routeTableId', ros.validateString)(properties.routeTableId));
+    errors.collect(ros.propertyValidator('gatewayType', ros.requiredValidator)(properties.gatewayType));
+    if(properties.gatewayType && (typeof properties.gatewayType) !== 'object') {
+        errors.collect(ros.propertyValidator('gatewayType', ros.validateAllowedValues)({
+          data: properties.gatewayType,
+          allowedValues: ["Ipv4Gateway"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('gatewayType', ros.validateString)(properties.gatewayType));
+    errors.collect(ros.propertyValidator('gatewayId', ros.requiredValidator)(properties.gatewayId));
+    errors.collect(ros.propertyValidator('gatewayId', ros.validateString)(properties.gatewayId));
+    return errors.wrap('supplied properties not correct for "RosRouteTableWithGatewayAssociationProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::RouteTableWithGatewayAssociation` resource
+ *
+ * @param properties - the TypeScript properties of a `RosRouteTableWithGatewayAssociationProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::RouteTableWithGatewayAssociation` resource.
+ */
+// @ts-ignore TS6133
+function rosRouteTableWithGatewayAssociationPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosRouteTableWithGatewayAssociationPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'GatewayId': ros.stringToRosTemplate(properties.gatewayId),
+      'GatewayType': ros.stringToRosTemplate(properties.gatewayType),
+      'RouteTableId': ros.stringToRosTemplate(properties.routeTableId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::RouteTableWithGatewayAssociation`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `RouteTableWithGatewayAssociation` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-routetablewithgatewayassociation
+ */
+export class RosRouteTableWithGatewayAssociation extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::RouteTableWithGatewayAssociation";
+
+    /**
+     * @Attribute GatewayId: The ID of the IPv4 gateway that is to be associated.
+     */
+    public readonly attrGatewayId: ros.IResolvable;
+
+    /**
+     * @Attribute RouteTableId: The ID of route table that gateway is to be bound.
+     */
+    public readonly attrRouteTableId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property gatewayId: The ID of the IPv4 gateway that is to be associated.
+     * The IPv4 gateway instance must be activated.
+     */
+    public gatewayId: string | ros.IResolvable;
+
+    /**
+     * @Property gatewayType: Types of the associated gateway instance.
+     */
+    public gatewayType: string | ros.IResolvable;
+
+    /**
+     * @Property routeTableId: The ID of route table that gateway is to be bound.
+     */
+    public routeTableId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosRouteTableWithGatewayAssociationProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosRouteTableWithGatewayAssociation.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrGatewayId = this.getAtt('GatewayId');
+        this.attrRouteTableId = this.getAtt('RouteTableId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.gatewayId = props.gatewayId;
+        this.gatewayType = props.gatewayType;
+        this.routeTableId = props.routeTableId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            gatewayId: this.gatewayId,
+            gatewayType: this.gatewayType,
+            routeTableId: this.routeTableId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosRouteTableWithGatewayAssociationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 
@@ -8052,7 +8518,7 @@ function rosRouterInterfacePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::RouterInterface`, which is used to create a router interface.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::RouterInterface`.
  * @Note This class does not contain additional functions, so it is recommended to use the `RouterInterface` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-routerinterface
  */
@@ -8319,7 +8785,7 @@ function rosSnatEntryPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::SnatEntry`, which is used to add SNAT entries to an SNAT table.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::SnatEntry`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SnatEntry` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-snatentry
  */
@@ -8465,7 +8931,7 @@ function rosSslVpnClientCertPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::SslVpnClientCert`, which is used to call the CreateSslVpnClientCert operation to create an SSL-VPN client certificate.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::SslVpnClientCert`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SslVpnClientCert` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-sslvpnclientcert
  */
@@ -8670,7 +9136,7 @@ function rosSslVpnServerPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::SslVpnServer`, which is used to create an SSL-VPN server.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::SslVpnServer`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SslVpnServer` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-sslvpnserver
  */
@@ -8880,7 +9346,7 @@ function rosTrafficMirrorFilterPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::TrafficMirrorFilter`, which is used to create a filter for traffic mirroring.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::TrafficMirrorFilter`.
  * @Note This class does not contain additional functions, so it is recommended to use the `TrafficMirrorFilter` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorfilter
  */
@@ -9329,7 +9795,7 @@ function rosTrafficMirrorSessionPropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::TrafficMirrorSession`, which is used to create a traffic image session.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::TrafficMirrorSession`.
  * @Note This class does not contain additional functions, so it is recommended to use the `TrafficMirrorSession` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorsession
  */
@@ -9562,7 +10028,7 @@ function rosTrafficMirrorSessionSourcesAdditionPropsToRosTemplate(properties: an
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::TrafficMirrorSessionSourcesAddition`, which is used to add traffic mirror sources to traffic mirror sessions.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::TrafficMirrorSessionSourcesAddition`.
  * @Note This class does not contain additional functions, so it is recommended to use the `TrafficMirrorSessionSourcesAddition` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorsessionsourcesaddition
  */
@@ -9735,7 +10201,7 @@ function rosVSwitchCidrReservationPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VSwitchCidrReservation`, which is used to create a reserved CIDR block for a vSwitch.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VSwitchCidrReservation`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VSwitchCidrReservation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vswitchcidrreservation
  */
@@ -10008,7 +10474,7 @@ function rosVirtualBorderRouterPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VirtualBorderRouter`, which is used to create a virtual border router (VBR).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VirtualBorderRouter`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VirtualBorderRouter` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-virtualborderrouter
  */
@@ -10250,7 +10716,7 @@ function rosVpcCidrBlockAssociationPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpcCidrBlockAssociation`, which is used to add a secondary CIDR block to a virtual private cloud (VPC).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpcCidrBlockAssociation`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpcCidrBlockAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpccidrblockassociation
  */
@@ -10431,7 +10897,7 @@ function rosVpcIpv6CidrAllocationPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpcIpv6CidrAllocation`, which is used to reserve an IPv6 CIDR block.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpcIpv6CidrAllocation`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpcIpv6CidrAllocation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpcipv6cidrallocation
  */
@@ -10609,7 +11075,7 @@ function rosVpcPeerConnectionPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpcPeerConnection`, which is used to create a peering connection between virtual private clouds (VPCs).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpcPeerConnection`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpcPeerConnection` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpcpeerconnection
  */
@@ -10883,7 +11349,7 @@ function rosVpnAttachmentPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpnAttachment`, which is used to create an IPsec-VPN connection. After you create the IPsec-VPN connection, you can associate the IPsec-VPN connection with a transit router.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpnAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpnAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnattachment
  */
@@ -11607,7 +12073,7 @@ function rosVpnConnectionPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpnConnection`, which is used to create an IPsec-VPN connection.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpnConnection`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpnConnection` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnconnection
  */
@@ -12769,7 +13235,7 @@ function rosVpnGatewayPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpnGateway`, which is used to create a VPN gateway.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpnGateway`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpnGateway` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpngateway
  */
@@ -12778,6 +13244,11 @@ export class RosVpnGateway extends ros.RosResource {
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::VpnGateway";
+
+    /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
 
     /**
      * @Attribute DisasterRecoveryInternetIp: The second IP address assigned by the system to create an IPsec-VPN connection.This attribute is returned only when the VPN gateway supports the dual-tunnel mode.
@@ -12935,6 +13406,7 @@ export class RosVpnGateway extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosVpnGatewayProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosVpnGateway.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrDisasterRecoveryInternetIp = this.getAtt('DisasterRecoveryInternetIp');
         this.attrDisasterRecoveryVSwitchId = this.getAtt('DisasterRecoveryVSwitchId');
         this.attrInternetIp = this.getAtt('InternetIp');
@@ -13155,7 +13627,7 @@ function rosVpnPbrRouteEntryPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpnPbrRouteEntry`, which is used to create a policy-based route for a VPN gateway.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpnPbrRouteEntry`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpnPbrRouteEntry` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnpbrrouteentry
  */
@@ -13373,7 +13845,7 @@ function rosVpnRouteEntryPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpnRouteEntry`, which is used to create a destination-based route for a VPN gateway.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpnRouteEntry`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpnRouteEntry` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnrouteentry
  */

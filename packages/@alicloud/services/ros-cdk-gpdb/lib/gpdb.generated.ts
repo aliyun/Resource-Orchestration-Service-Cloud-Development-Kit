@@ -200,6 +200,11 @@ export interface RosDBInstanceProps {
     readonly zoneId: string | ros.IResolvable;
 
     /**
+     * @Property aiNodeSpecInfos: AI node spec infos.
+     */
+    readonly aiNodeSpecInfos?: Array<RosDBInstance.AINodeSpecInfosProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * @Property createSampleData: Whether to load the sample data set after the instance is created. The value can be:
      * true: load the sample dataset.
      * false: not to load the sample dataset
@@ -264,6 +269,11 @@ export interface RosDBInstanceProps {
      * This parameter must be passed to create a storage elastic mode instance and a serverless version instance.
      */
     readonly instanceSpec?: string | ros.IResolvable;
+
+    /**
+     * @Property masterCu: Master resources. Default is 8.
+     */
+    readonly masterCu?: number | ros.IResolvable;
 
     /**
      * @Property masterNodeNum: The number of master nodes. Minimum is 1, max is 2.
@@ -400,6 +410,14 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('idleTime', ros.validateNumber)(properties.idleTime));
+    if(properties.aiNodeSpecInfos && (Array.isArray(properties.aiNodeSpecInfos) || (typeof properties.aiNodeSpecInfos) === 'string')) {
+        errors.collect(ros.propertyValidator('aiNodeSpecInfos', ros.validateLength)({
+            data: properties.aiNodeSpecInfos.length,
+            min: 1,
+            max: 1,
+          }));
+    }
+    errors.collect(ros.propertyValidator('aiNodeSpecInfos', ros.listValidator(RosDBInstance_AINodeSpecInfosPropertyValidator))(properties.aiNodeSpecInfos));
     if(properties.segNodeNum && (typeof properties.segNodeNum) !== 'object') {
         errors.collect(ros.propertyValidator('segNodeNum', ros.validateRange)({
             data: properties.segNodeNum,
@@ -517,6 +535,13 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
+    if(properties.masterCu && (typeof properties.masterCu) !== 'object') {
+        errors.collect(ros.propertyValidator('masterCu', ros.validateAllowedValues)({
+          data: properties.masterCu,
+          allowedValues: [2,4,8,16,32,64,128],
+        }));
+    }
+    errors.collect(ros.propertyValidator('masterCu', ros.validateNumber)(properties.masterCu));
     if(properties.dbInstanceMode && (typeof properties.dbInstanceMode) !== 'object') {
         errors.collect(ros.propertyValidator('dbInstanceMode', ros.validateAllowedValues)({
           data: properties.dbInstanceMode,
@@ -558,6 +583,7 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
       'EngineVersion': ros.stringToRosTemplate(properties.engineVersion),
       'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
       'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'AINodeSpecInfos': ros.listMapper(rosDBInstanceAINodeSpecInfosPropertyToRosTemplate)(properties.aiNodeSpecInfos),
       'CreateSampleData': ros.booleanToRosTemplate(properties.createSampleData),
       'DBInstanceCategory': ros.stringToRosTemplate(properties.dbInstanceCategory),
       'DBInstanceClass': ros.stringToRosTemplate(properties.dbInstanceClass),
@@ -569,6 +595,7 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
       'EncryptionType': ros.stringToRosTemplate(properties.encryptionType),
       'IdleTime': ros.numberToRosTemplate(properties.idleTime),
       'InstanceSpec': ros.stringToRosTemplate(properties.instanceSpec),
+      'MasterCU': ros.numberToRosTemplate(properties.masterCu),
       'MasterNodeNum': ros.numberToRosTemplate(properties.masterNodeNum),
       'PayType': ros.stringToRosTemplate(properties.payType),
       'Period': ros.numberToRosTemplate(properties.period),
@@ -600,6 +627,11 @@ export class RosDBInstance extends ros.RosResource {
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::GPDB::DBInstance";
+
+    /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
 
     /**
      * @Attribute ConnectionString: The endpoint of the instance.
@@ -639,6 +671,11 @@ export class RosDBInstance extends ros.RosResource {
      * operation to query the most recent zone list.
      */
     public zoneId: string | ros.IResolvable;
+
+    /**
+     * @Property aiNodeSpecInfos: AI node spec infos.
+     */
+    public aiNodeSpecInfos: Array<RosDBInstance.AINodeSpecInfosProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property createSampleData: Whether to load the sample data set after the instance is created. The value can be:
@@ -705,6 +742,11 @@ export class RosDBInstance extends ros.RosResource {
      * This parameter must be passed to create a storage elastic mode instance and a serverless version instance.
      */
     public instanceSpec: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property masterCu: Master resources. Default is 8.
+     */
+    public masterCu: number | ros.IResolvable | undefined;
 
     /**
      * @Property masterNodeNum: The number of master nodes. Minimum is 1, max is 2.
@@ -818,6 +860,7 @@ export class RosDBInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosDBInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosDBInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrConnectionString = this.getAtt('ConnectionString');
         this.attrDbInstanceId = this.getAtt('DBInstanceId');
         this.attrOrderId = this.getAtt('OrderId');
@@ -827,6 +870,7 @@ export class RosDBInstance extends ros.RosResource {
         this.engineVersion = props.engineVersion;
         this.vSwitchId = props.vSwitchId;
         this.zoneId = props.zoneId;
+        this.aiNodeSpecInfos = props.aiNodeSpecInfos;
         this.createSampleData = props.createSampleData;
         this.dbInstanceCategory = props.dbInstanceCategory;
         this.dbInstanceClass = props.dbInstanceClass;
@@ -838,6 +882,7 @@ export class RosDBInstance extends ros.RosResource {
         this.encryptionType = props.encryptionType;
         this.idleTime = props.idleTime;
         this.instanceSpec = props.instanceSpec;
+        this.masterCu = props.masterCu;
         this.masterNodeNum = props.masterNodeNum;
         this.payType = props.payType;
         this.period = props.period;
@@ -864,6 +909,7 @@ export class RosDBInstance extends ros.RosResource {
             engineVersion: this.engineVersion,
             vSwitchId: this.vSwitchId,
             zoneId: this.zoneId,
+            aiNodeSpecInfos: this.aiNodeSpecInfos,
             createSampleData: this.createSampleData,
             dbInstanceCategory: this.dbInstanceCategory,
             dbInstanceClass: this.dbInstanceClass,
@@ -875,6 +921,7 @@ export class RosDBInstance extends ros.RosResource {
             encryptionType: this.encryptionType,
             idleTime: this.idleTime,
             instanceSpec: this.instanceSpec,
+            masterCu: this.masterCu,
             masterNodeNum: this.masterNodeNum,
             payType: this.payType,
             period: this.period,
@@ -898,6 +945,55 @@ export class RosDBInstance extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosDBInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosDBInstance {
+    /**
+     * @stability external
+     */
+    export interface AINodeSpecInfosProperty {
+        /**
+         * @Property aiNodeSpec: The spec of ai node.
+         */
+        readonly aiNodeSpec: string | ros.IResolvable;
+        /**
+         * @Property aiNodeNum: The number of ai node.
+         */
+        readonly aiNodeNum: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AINodeSpecInfosProperty`
+ *
+ * @param properties - the TypeScript properties of a `AINodeSpecInfosProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosDBInstance_AINodeSpecInfosPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('aiNodeSpec', ros.requiredValidator)(properties.aiNodeSpec));
+    errors.collect(ros.propertyValidator('aiNodeSpec', ros.validateString)(properties.aiNodeSpec));
+    errors.collect(ros.propertyValidator('aiNodeNum', ros.requiredValidator)(properties.aiNodeNum));
+    errors.collect(ros.propertyValidator('aiNodeNum', ros.validateNumber)(properties.aiNodeNum));
+    return errors.wrap('supplied properties not correct for "AINodeSpecInfosProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::GPDB::DBInstance.AINodeSpecInfos` resource
+ *
+ * @param properties - the TypeScript properties of a `AINodeSpecInfosProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::GPDB::DBInstance.AINodeSpecInfos` resource.
+ */
+// @ts-ignore TS6133
+function rosDBInstanceAINodeSpecInfosPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosDBInstance_AINodeSpecInfosPropertyValidator(properties).assertSuccess();
+    return {
+      'AINodeSpec': ros.stringToRosTemplate(properties.aiNodeSpec),
+      'AINodeNum': ros.numberToRosTemplate(properties.aiNodeNum),
+    };
 }
 
 export namespace RosDBInstance {
@@ -1229,6 +1325,11 @@ export class RosElasticDBInstance extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::GPDB::ElasticDBInstance";
 
     /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
      * @Attribute ConnectionString: The endpoint of the instance.
      */
     public readonly attrConnectionString: ros.IResolvable;
@@ -1371,6 +1472,7 @@ export class RosElasticDBInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosElasticDBInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosElasticDBInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrConnectionString = this.getAtt('ConnectionString');
         this.attrDbInstanceId = this.getAtt('DBInstanceId');
         this.attrOrderId = this.getAtt('OrderId');

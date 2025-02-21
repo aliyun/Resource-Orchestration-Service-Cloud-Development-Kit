@@ -51,6 +51,54 @@ namespace AlibabaCloud.SDK.ROS.CDK.Bss
             get;
         }
 
+        /// <summary>Property autoRenew: Whether to automatically renew the resource package.</summary>
+        /// <remarks>
+        /// The value is true or false. Default value: false.
+        /// </remarks>
+        [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AutoRenew
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property autoRenewPeriod: Duration of resource packs renewals.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>When AutoRenewPeriodUnit is Year: 1, 2, 3.</description>
+        /// <description>When AutoRenewPeriodUnit is Month: 1, 2, 3, 6.
+        /// Default is 1.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AutoRenewPeriod
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property autoRenewPeriodUnit: Unit of resource pack renewals.</summary>
+        /// <remarks>
+        /// Valid values: Month, Year. Default is Month.
+        /// </remarks>
+        [JsiiProperty(name: "autoRenewPeriodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AutoRenewPeriodUnit
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property effectiveDate: The effective date of the specified resource package.</summary>
         /// <remarks>
         /// The resource package will take effect immediately if the effective date is unspecified. The date format follows the ISO8601 standard and uses UTC time. Format: yyyy-MM-ddTHH:mm:ssZ
@@ -128,6 +176,45 @@ namespace AlibabaCloud.SDK.ROS.CDK.Bss
             public object Specification
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property autoRenew: Whether to automatically renew the resource package.</summary>
+            /// <remarks>
+            /// The value is true or false. Default value: false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoRenew
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property autoRenewPeriod: Duration of resource packs renewals.</summary>
+            /// <remarks>
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>When AutoRenewPeriodUnit is Year: 1, 2, 3.</description>
+            /// <description>When AutoRenewPeriodUnit is Month: 1, 2, 3, 6.
+            /// Default is 1.</description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoRenewPeriod
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property autoRenewPeriodUnit: Unit of resource pack renewals.</summary>
+            /// <remarks>
+            /// Valid values: Month, Year. Default is Month.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "autoRenewPeriodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoRenewPeriodUnit
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property effectiveDate: The effective date of the specified resource package.</summary>

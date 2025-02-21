@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::RDS::Account`, which is used to create a database account for an ApsaraDB for RDS instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::RDS::Account`.
 type Account interface {
 	alicloudroscdkcore.Resource
 	IAccount

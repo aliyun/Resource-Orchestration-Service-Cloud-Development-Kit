@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Audit`, which is used to configure Log Audit Service.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Audit`.
 type Audit interface {
 	alicloudroscdkcore.Resource
 	IAudit

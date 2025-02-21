@@ -15,6 +15,8 @@ type LoadBalancer interface {
 	ILoadBalancer
 	// Attribute AddressType: The type of IP address that the ALB instance uses to provide services.
 	AttrAddressType() interface{}
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute DNSName: The domain name of the ALB instance.
 	AttrDnsName() interface{}
 	// Attribute LoadBalancerEdition: The edition of the ALB instance.
@@ -125,6 +127,16 @@ func (j *jsiiProxy_LoadBalancer) AttrAddressType() interface{} {
 	_jsii_.Get(
 		j,
 		"attrAddressType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LoadBalancer) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
 		&returns,
 	)
 	return returns

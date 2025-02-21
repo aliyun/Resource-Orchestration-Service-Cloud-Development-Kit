@@ -90,7 +90,7 @@ export interface IVirtualBorderRouter extends ros.IResource {
     readonly attrVlanInterfaceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VirtualBorderRouter`, which is used to create a virtual border router (VBR).
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VirtualBorderRouter`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVirtualBorderRouter`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-virtualborderrouter
  */

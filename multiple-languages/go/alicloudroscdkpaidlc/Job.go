@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::PAIDLC::Job`, which is used to create a Machine Learning Platform for AI (PAI) job to run in a cluster.
+// This class encapsulates and extends the ROS resource type `ALIYUN::PAIDLC::Job`.
 type Job interface {
 	alicloudroscdkcore.Resource
 	IJob

@@ -12,6 +12,7 @@ import (
 // This class is a base encapsulation around the ROS resource type `ALIYUN::DDoS::OriginInstance`, which is used to create an Anti-DDoS Origin instance.
 type RosOriginInstance interface {
 	alicloudroscdkcore.RosResource
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrInstanceId() alicloudroscdkcore.IResolvable
 	ChargeType() interface{}
 	SetChargeType(val interface{})
@@ -187,6 +188,16 @@ type RosOriginInstance interface {
 // The jsii proxy struct for RosOriginInstance
 type jsiiProxy_RosOriginInstance struct {
 	internal.Type__alicloudroscdkcoreRosResource
+}
+
+func (j *jsiiProxy_RosOriginInstance) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_RosOriginInstance) AttrInstanceId() alicloudroscdkcore.IResolvable {

@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Slb
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::SLB::AccessControl`, which is used to create an access control list (ACL).</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::SLB::AccessControl`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccessControl`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-accesscontrol
@@ -40,6 +40,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <summary>Attribute AclId: The ID of the access control list.</summary>
         [JsiiProperty(name: "attrAclId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrAclId
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
+        /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+        [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrArn
         {
             get => GetInstanceProperty<object>()!;
         }

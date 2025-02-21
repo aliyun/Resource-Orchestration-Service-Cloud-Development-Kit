@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::AppUser`, which is used to create a client account for a Smart Access Gateway (SAG) app instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::AppUser`.
 type RosAppUser interface {
 	alicloudroscdkcore.RosResource
 	AttrSmartAgId() alicloudroscdkcore.IResolvable

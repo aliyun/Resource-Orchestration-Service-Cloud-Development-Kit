@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::NatGateway`, which is used to create a NAT gateway.
+// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::NatGateway`.
 type NatGateway interface {
 	alicloudroscdkcore.Resource
 	INatGateway

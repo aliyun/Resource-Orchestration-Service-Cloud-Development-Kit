@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::KMS::Instance</code>, which is used to create a Key Management Service (KMS) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:41.054Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:17.742Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 

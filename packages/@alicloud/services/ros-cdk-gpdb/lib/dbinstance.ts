@@ -26,6 +26,11 @@ export interface DBInstanceProps {
     readonly zoneId: string | ros.IResolvable;
 
     /**
+     * Property aiNodeSpecInfos: AI node spec infos.
+     */
+    readonly aiNodeSpecInfos?: Array<RosDBInstance.AINodeSpecInfosProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * Property createSampleData: Whether to load the sample data set after the instance is created. The value can be:
      * true: load the sample dataset.
      * false: not to load the sample dataset
@@ -90,6 +95,11 @@ export interface DBInstanceProps {
      * This parameter must be passed to create a storage elastic mode instance and a serverless version instance.
      */
     readonly instanceSpec?: string | ros.IResolvable;
+
+    /**
+     * Property masterCu: Master resources. Default is 8.
+     */
+    readonly masterCu?: number | ros.IResolvable;
 
     /**
      * Property masterNodeNum: The number of master nodes. Minimum is 1, max is 2.
@@ -204,6 +214,11 @@ export interface IDBInstance extends ros.IResource {
     readonly props: DBInstanceProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute ConnectionString: The endpoint of the instance.
      */
     readonly attrConnectionString: ros.IResolvable | string;
@@ -233,6 +248,11 @@ export class DBInstance extends ros.Resource implements IDBInstance {
     protected id: string;
     public readonly props: DBInstanceProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute ConnectionString: The endpoint of the instance.
@@ -272,6 +292,7 @@ export class DBInstance extends ros.Resource implements IDBInstance {
             instanceSpec: props.instanceSpec,
             privateIpAddress: props.privateIpAddress,
             idleTime: props.idleTime,
+            aiNodeSpecInfos: props.aiNodeSpecInfos,
             segNodeNum: props.segNodeNum,
             segStorageType: props.segStorageType,
             encryptionKey: props.encryptionKey,
@@ -296,11 +317,13 @@ export class DBInstance extends ros.Resource implements IDBInstance {
             period: props.period,
             storageSize: props.storageSize,
             payType: props.payType === undefined || props.payType === null ? 'Postpaid' : props.payType,
+            masterCu: props.masterCu === undefined || props.masterCu === null ? 8 : props.masterCu,
             dbInstanceMode: props.dbInstanceMode,
             segDiskPerformanceLevel: props.segDiskPerformanceLevel,
             periodUnit: props.periodUnit === undefined || props.periodUnit === null ? 'Month' : props.periodUnit,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDBInstance;
+        this.attrArn = rosDBInstance.attrArn;
         this.attrConnectionString = rosDBInstance.attrConnectionString;
         this.attrDbInstanceId = rosDBInstance.attrDbInstanceId;
         this.attrOrderId = rosDBInstance.attrOrderId;

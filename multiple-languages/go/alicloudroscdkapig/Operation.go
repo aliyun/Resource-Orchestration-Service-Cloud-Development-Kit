@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Operation`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Operation`, which is used to create an operation for an HTTP API.
 type Operation interface {
 	alicloudroscdkcore.Resource
 	IOperation

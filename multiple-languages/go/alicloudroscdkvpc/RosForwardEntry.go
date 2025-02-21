@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::ForwardEntry`, which is used to add a DNAT entry to a DNAT table.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::ForwardEntry`.
 type RosForwardEntry interface {
 	alicloudroscdkcore.RosResource
 	AttrForwardEntryId() alicloudroscdkcore.IResolvable

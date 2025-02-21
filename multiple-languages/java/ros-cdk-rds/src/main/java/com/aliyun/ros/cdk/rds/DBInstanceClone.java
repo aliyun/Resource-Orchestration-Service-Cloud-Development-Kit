@@ -1,11 +1,9 @@
 package com.aliyun.ros.cdk.rds;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::RDS::DBInstanceClone</code>, which is used to restore historical data of an instance to a new instance.
- * <p>
- * The new instance is the clone of the instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::RDS::DBInstanceClone</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:43.180Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:19.509Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.DBInstanceClone")
 public class DBInstanceClone extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.rds.IDBInstanceClone {
 

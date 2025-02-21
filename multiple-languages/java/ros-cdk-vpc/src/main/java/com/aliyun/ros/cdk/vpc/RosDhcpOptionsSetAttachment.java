@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::DhcpOptionsSetAttachment</code>, which is used to associate a Dynamic Host Configuration Protocol (DHCP) options set with a virtual private cloud (VPC).
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::DhcpOptionsSetAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:45.071Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:21.985Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosDhcpOptionsSetAttachment")
 public class RosDhcpOptionsSetAttachment extends com.aliyun.ros.cdk.core.RosResource {
 

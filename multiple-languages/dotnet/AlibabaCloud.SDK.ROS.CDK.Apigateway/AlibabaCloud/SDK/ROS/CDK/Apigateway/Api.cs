@@ -44,6 +44,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             get => GetInstanceProperty<object>()!;
         }
 
+        /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+        [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrArn
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
         [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-apigateway.ApiProps\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Apigateway.IApiProps Props
         {

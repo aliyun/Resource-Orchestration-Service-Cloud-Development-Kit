@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.alb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-listener
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:34.052Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:11.360Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosListenerProps")
 @software.amazon.jsii.Jsii.Proxy(RosListenerProps.Jsii$Proxy.class)
 public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable {
@@ -76,6 +76,12 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLogConfig() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getQuicConfig() {
         return null;
     }
@@ -120,6 +126,7 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object idleTimeout;
         java.lang.Object listenerDescription;
         java.lang.Object listenerStatus;
+        java.lang.Object logConfig;
         java.lang.Object quicConfig;
         java.lang.Object requestTimeout;
         java.lang.Object securityPolicyId;
@@ -366,6 +373,26 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosListenerProps#getLogConfig}
+         * @param logConfig the value to be set.
+         * @return {@code this}
+         */
+        public Builder logConfig(com.aliyun.ros.cdk.core.IResolvable logConfig) {
+            this.logConfig = logConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getLogConfig}
+         * @param logConfig the value to be set.
+         * @return {@code this}
+         */
+        public Builder logConfig(com.aliyun.ros.cdk.alb.RosListener.LogConfigProperty logConfig) {
+            this.logConfig = logConfig;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosListenerProps#getQuicConfig}
          * @param quicConfig the value to be set.
          * @return {@code this}
@@ -473,6 +500,7 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object idleTimeout;
         private final java.lang.Object listenerDescription;
         private final java.lang.Object listenerStatus;
+        private final java.lang.Object logConfig;
         private final java.lang.Object quicConfig;
         private final java.lang.Object requestTimeout;
         private final java.lang.Object securityPolicyId;
@@ -496,6 +524,7 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             this.idleTimeout = software.amazon.jsii.Kernel.get(this, "idleTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.listenerDescription = software.amazon.jsii.Kernel.get(this, "listenerDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.listenerStatus = software.amazon.jsii.Kernel.get(this, "listenerStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.logConfig = software.amazon.jsii.Kernel.get(this, "logConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.quicConfig = software.amazon.jsii.Kernel.get(this, "quicConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.requestTimeout = software.amazon.jsii.Kernel.get(this, "requestTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityPolicyId = software.amazon.jsii.Kernel.get(this, "securityPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -519,6 +548,7 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             this.idleTimeout = builder.idleTimeout;
             this.listenerDescription = builder.listenerDescription;
             this.listenerStatus = builder.listenerStatus;
+            this.logConfig = builder.logConfig;
             this.quicConfig = builder.quicConfig;
             this.requestTimeout = builder.requestTimeout;
             this.securityPolicyId = builder.securityPolicyId;
@@ -586,6 +616,11 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getLogConfig() {
+            return this.logConfig;
+        }
+
+        @Override
         public final java.lang.Object getQuicConfig() {
             return this.quicConfig;
         }
@@ -639,6 +674,9 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getListenerStatus() != null) {
                 data.set("listenerStatus", om.valueToTree(this.getListenerStatus()));
             }
+            if (this.getLogConfig() != null) {
+                data.set("logConfig", om.valueToTree(this.getLogConfig()));
+            }
             if (this.getQuicConfig() != null) {
                 data.set("quicConfig", om.valueToTree(this.getQuicConfig()));
             }
@@ -681,6 +719,7 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             if (this.idleTimeout != null ? !this.idleTimeout.equals(that.idleTimeout) : that.idleTimeout != null) return false;
             if (this.listenerDescription != null ? !this.listenerDescription.equals(that.listenerDescription) : that.listenerDescription != null) return false;
             if (this.listenerStatus != null ? !this.listenerStatus.equals(that.listenerStatus) : that.listenerStatus != null) return false;
+            if (this.logConfig != null ? !this.logConfig.equals(that.logConfig) : that.logConfig != null) return false;
             if (this.quicConfig != null ? !this.quicConfig.equals(that.quicConfig) : that.quicConfig != null) return false;
             if (this.requestTimeout != null ? !this.requestTimeout.equals(that.requestTimeout) : that.requestTimeout != null) return false;
             if (this.securityPolicyId != null ? !this.securityPolicyId.equals(that.securityPolicyId) : that.securityPolicyId != null) return false;
@@ -701,6 +740,7 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.idleTimeout != null ? this.idleTimeout.hashCode() : 0);
             result = 31 * result + (this.listenerDescription != null ? this.listenerDescription.hashCode() : 0);
             result = 31 * result + (this.listenerStatus != null ? this.listenerStatus.hashCode() : 0);
+            result = 31 * result + (this.logConfig != null ? this.logConfig.hashCode() : 0);
             result = 31 * result + (this.quicConfig != null ? this.quicConfig.hashCode() : 0);
             result = 31 * result + (this.requestTimeout != null ? this.requestTimeout.hashCode() : 0);
             result = 31 * result + (this.securityPolicyId != null ? this.securityPolicyId.hashCode() : 0);

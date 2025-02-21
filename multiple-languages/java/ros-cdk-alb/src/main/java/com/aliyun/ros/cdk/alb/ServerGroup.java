@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ALB::ServerGroup</code>, which is used to create a server group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:34.249Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:11.413Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.ServerGroup")
 public class ServerGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.alb.IServerGroup {
 
@@ -38,6 +38,14 @@ public class ServerGroup extends com.aliyun.ros.cdk.core.Resource implements com
     public ServerGroup(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.alb.ServerGroupProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
         software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), java.util.Objects.requireNonNull(props, "props is required") });
+    }
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrArn() {
+        return software.amazon.jsii.Kernel.get(this, "attrArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -162,37 +170,6 @@ public class ServerGroup extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property vpcId: The ID of the virtual private cloud (VPC).
-         * <p>
-         * You can add only servers that are deployed
-         * in the specified VPC to the server group.
-         * Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
-         * Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
-         * <p>
-         * @return {@code this}
-         * @param vpcId Property vpcId: The ID of the virtual private cloud (VPC). This parameter is required.
-         */
-        public Builder vpcId(final java.lang.String vpcId) {
-            this.props.vpcId(vpcId);
-            return this;
-        }
-        /**
-         * Property vpcId: The ID of the virtual private cloud (VPC).
-         * <p>
-         * You can add only servers that are deployed
-         * in the specified VPC to the server group.
-         * Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
-         * Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
-         * <p>
-         * @return {@code this}
-         * @param vpcId Property vpcId: The ID of the virtual private cloud (VPC). This parameter is required.
-         */
-        public Builder vpcId(final com.aliyun.ros.cdk.core.IResolvable vpcId) {
-            this.props.vpcId(vpcId);
-            return this;
-        }
-
-        /**
          * Property connectionDrainConfig: Configuration related to graceful connection interruption.Enable graceful connection interruption. After the backend server is removed or the health check fails, the load balancing allows the existing connection to be transmitted normally within a certain period of time.Note:  Basic Edition instances do not support enabling graceful connection interruption. Only Standard Edition and WAF Enhanced Edition instances support it.Server type and IP type server group support graceful connection interruption. Function Compute type does not support it.
          * <p>
          * @return {@code this}
@@ -210,6 +187,64 @@ public class ServerGroup extends com.aliyun.ros.cdk.core.Resource implements com
          */
         public Builder connectionDrainConfig(final com.aliyun.ros.cdk.alb.RosServerGroup.ConnectionDrainConfigProperty connectionDrainConfig) {
             this.props.connectionDrainConfig(connectionDrainConfig);
+            return this;
+        }
+
+        /**
+         * Property crossZoneEnabled: Specifies whether to enable cross-zone load balancing.
+         * <p>
+         * Valid values:
+         * true (default)
+         * false
+         * Note:
+         * Basic ALB instances do not support server groups that have cross-zone load balancing disabled. Only Standard and WAF-enabled ALB instances support server groups that have cross-zone load balancing.
+         * Cross-zone load balancing can be disabled for server groups of the server and IP type, but not for server groups of the Function Compute type.
+         * When cross-zone load balancing is disabled, session persistence cannot be enabled.
+         * <p>
+         * @return {@code this}
+         * @param crossZoneEnabled Property crossZoneEnabled: Specifies whether to enable cross-zone load balancing. This parameter is required.
+         */
+        public Builder crossZoneEnabled(final java.lang.Boolean crossZoneEnabled) {
+            this.props.crossZoneEnabled(crossZoneEnabled);
+            return this;
+        }
+        /**
+         * Property crossZoneEnabled: Specifies whether to enable cross-zone load balancing.
+         * <p>
+         * Valid values:
+         * true (default)
+         * false
+         * Note:
+         * Basic ALB instances do not support server groups that have cross-zone load balancing disabled. Only Standard and WAF-enabled ALB instances support server groups that have cross-zone load balancing.
+         * Cross-zone load balancing can be disabled for server groups of the server and IP type, but not for server groups of the Function Compute type.
+         * When cross-zone load balancing is disabled, session persistence cannot be enabled.
+         * <p>
+         * @return {@code this}
+         * @param crossZoneEnabled Property crossZoneEnabled: Specifies whether to enable cross-zone load balancing. This parameter is required.
+         */
+        public Builder crossZoneEnabled(final com.aliyun.ros.cdk.core.IResolvable crossZoneEnabled) {
+            this.props.crossZoneEnabled(crossZoneEnabled);
+            return this;
+        }
+
+        /**
+         * Property ipv6Enabled: Whether to enable IPv6.
+         * <p>
+         * @return {@code this}
+         * @param ipv6Enabled Property ipv6Enabled: Whether to enable IPv6. This parameter is required.
+         */
+        public Builder ipv6Enabled(final java.lang.Boolean ipv6Enabled) {
+            this.props.ipv6Enabled(ipv6Enabled);
+            return this;
+        }
+        /**
+         * Property ipv6Enabled: Whether to enable IPv6.
+         * <p>
+         * @return {@code this}
+         * @param ipv6Enabled Property ipv6Enabled: Whether to enable IPv6. This parameter is required.
+         */
+        public Builder ipv6Enabled(final com.aliyun.ros.cdk.core.IResolvable ipv6Enabled) {
+            this.props.ipv6Enabled(ipv6Enabled);
             return this;
         }
 
@@ -454,6 +489,37 @@ public class ServerGroup extends com.aliyun.ros.cdk.core.Resource implements com
          */
         public Builder upstreamKeepaliveEnabled(final com.aliyun.ros.cdk.core.IResolvable upstreamKeepaliveEnabled) {
             this.props.upstreamKeepaliveEnabled(upstreamKeepaliveEnabled);
+            return this;
+        }
+
+        /**
+         * Property vpcId: The ID of the virtual private cloud (VPC).
+         * <p>
+         * You can add only servers that are deployed
+         * in the specified VPC to the server group.
+         * Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
+         * Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
+         * <p>
+         * @return {@code this}
+         * @param vpcId Property vpcId: The ID of the virtual private cloud (VPC). This parameter is required.
+         */
+        public Builder vpcId(final java.lang.String vpcId) {
+            this.props.vpcId(vpcId);
+            return this;
+        }
+        /**
+         * Property vpcId: The ID of the virtual private cloud (VPC).
+         * <p>
+         * You can add only servers that are deployed
+         * in the specified VPC to the server group.
+         * Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
+         * Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
+         * <p>
+         * @return {@code this}
+         * @param vpcId Property vpcId: The ID of the virtual private cloud (VPC). This parameter is required.
+         */
+        public Builder vpcId(final com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.props.vpcId(vpcId);
             return this;
         }
 

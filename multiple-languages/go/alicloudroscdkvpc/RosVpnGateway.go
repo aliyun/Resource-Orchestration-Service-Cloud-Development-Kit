@@ -9,9 +9,10 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpnGateway`, which is used to create a VPN gateway.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpnGateway`.
 type RosVpnGateway interface {
 	alicloudroscdkcore.RosResource
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrDisasterRecoveryInternetIp() alicloudroscdkcore.IResolvable
 	AttrDisasterRecoveryVSwitchId() alicloudroscdkcore.IResolvable
 	AttrInternetIp() alicloudroscdkcore.IResolvable
@@ -207,6 +208,16 @@ type RosVpnGateway interface {
 // The jsii proxy struct for RosVpnGateway
 type jsiiProxy_RosVpnGateway struct {
 	internal.Type__alicloudroscdkcoreRosResource
+}
+
+func (j *jsiiProxy_RosVpnGateway) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_RosVpnGateway) AttrDisasterRecoveryInternetIp() alicloudroscdkcore.IResolvable {

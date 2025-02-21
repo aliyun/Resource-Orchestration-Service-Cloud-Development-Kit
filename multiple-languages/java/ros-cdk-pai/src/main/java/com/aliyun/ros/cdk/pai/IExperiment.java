@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pai;
 /**
  * Represents a <code>Experiment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:41.982Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:18.679Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.IExperiment")
 @software.amazon.jsii.Jsii.Proxy(IExperiment.Jsii$Proxy.class)
 public interface IExperiment extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

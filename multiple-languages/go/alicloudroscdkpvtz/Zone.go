@@ -13,6 +13,8 @@ import (
 type Zone interface {
 	alicloudroscdkcore.Resource
 	IZone
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute ZoneId: Zone ID.
 	AttrZoneId() interface{}
 	// Attribute ZoneName: Zone name.
@@ -114,6 +116,16 @@ type Zone interface {
 type jsiiProxy_Zone struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_IZone
+}
+
+func (j *jsiiProxy_Zone) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Zone) AttrZoneId() interface{} {

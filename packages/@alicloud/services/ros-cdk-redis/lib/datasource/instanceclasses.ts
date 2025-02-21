@@ -97,7 +97,7 @@ export interface IInstanceClasses extends ros.IResource {
     readonly attrInstanceClasses: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::REDIS::InstanceClasses`, which is used to query Tair (Redis OSS-compatible) instance types.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::REDIS::InstanceClasses`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstanceClasses`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instanceclasses
  */

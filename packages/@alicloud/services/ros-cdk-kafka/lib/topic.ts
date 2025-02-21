@@ -91,6 +91,11 @@ export interface ITopic extends ros.IResource {
     readonly props: TopicProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute InstanceId: The ID of the Message Queue for Apache Kafka instance where the topic is located.
 You can call the GetInstanceList operation to query instances.
      */
@@ -111,6 +116,11 @@ export class Topic extends ros.Resource implements ITopic {
     protected id: string;
     public readonly props: TopicProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: The ID of the Message Queue for Apache Kafka instance where the topic is located.
@@ -148,6 +158,7 @@ You can call the GetInstanceList operation to query instances.
             remark: props.remark,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosTopic;
+        this.attrArn = rosTopic.attrArn;
         this.attrInstanceId = rosTopic.attrInstanceId;
         this.attrTopic = rosTopic.attrTopic;
     }

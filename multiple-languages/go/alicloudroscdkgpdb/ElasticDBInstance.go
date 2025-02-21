@@ -13,6 +13,8 @@ import (
 type ElasticDBInstance interface {
 	alicloudroscdkcore.Resource
 	IElasticDBInstance
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute ConnectionString: The endpoint of the instance.
 	AttrConnectionString() interface{}
 	// Attribute DBInstanceId: The ID of the instance.
@@ -114,6 +116,16 @@ type ElasticDBInstance interface {
 type jsiiProxy_ElasticDBInstance struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_IElasticDBInstance
+}
+
+func (j *jsiiProxy_ElasticDBInstance) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_ElasticDBInstance) AttrConnectionString() interface{} {

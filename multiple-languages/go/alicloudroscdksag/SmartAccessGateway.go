@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SAG::SmartAccessGateway`, which is used to create a Smart Access Gateway (SAG) instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SAG::SmartAccessGateway`.
 type SmartAccessGateway interface {
 	alicloudroscdkcore.Resource
 	ISmartAccessGateway

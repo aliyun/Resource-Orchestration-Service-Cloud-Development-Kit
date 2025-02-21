@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::HaVip`, which is used to query a high-availability virtual IP address (HAVIP).
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::HaVip`.
 type RosHaVip interface {
 	alicloudroscdkcore.RosResource
 	AttrAssociatedEipAddresses() alicloudroscdkcore.IResolvable

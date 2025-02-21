@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Listener`, which is used to create a Server Load Balancer (SLB) listener.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Listener`.
 type RosListener interface {
 	alicloudroscdkcore.RosResource
 	AclId() interface{}
@@ -20,6 +20,7 @@ type RosListener interface {
 	SetAclStatus(val interface{})
 	AclType() interface{}
 	SetAclType(val interface{})
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrListenerPortsAndProtocol() alicloudroscdkcore.IResolvable
 	AttrLoadBalancerId() alicloudroscdkcore.IResolvable
 	BackendServerPort() interface{}
@@ -265,6 +266,16 @@ func (j *jsiiProxy_RosListener) AclType() interface{} {
 	_jsii_.Get(
 		j,
 		"aclType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosListener) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
 		&returns,
 	)
 	return returns

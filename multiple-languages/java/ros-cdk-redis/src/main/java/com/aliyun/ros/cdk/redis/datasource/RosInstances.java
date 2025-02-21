@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.redis.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::REDIS::Instances</code>, which is used to query the information about Tair (Redis OSS-compatible) instances.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::REDIS::Instances</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:43.611Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:19.897Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.datasource.RosInstances")
 public class RosInstances extends com.aliyun.ros.cdk.core.RosResource {
 

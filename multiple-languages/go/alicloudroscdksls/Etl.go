@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Etl`, which is used to create a data transformation task.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Etl`.
 type Etl interface {
 	alicloudroscdkcore.Resource
 	IEtl

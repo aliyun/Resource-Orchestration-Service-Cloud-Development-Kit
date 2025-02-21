@@ -14,6 +14,12 @@ type RosResourcePackage interface {
 	alicloudroscdkcore.RosResource
 	AttrInstanceId() alicloudroscdkcore.IResolvable
 	AttrOrderId() alicloudroscdkcore.IResolvable
+	AutoRenew() interface{}
+	SetAutoRenew(val interface{})
+	AutoRenewPeriod() interface{}
+	SetAutoRenewPeriod(val interface{})
+	AutoRenewPeriodUnit() interface{}
+	SetAutoRenewPeriodUnit(val interface{})
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
@@ -197,6 +203,36 @@ func (j *jsiiProxy_RosResourcePackage) AttrOrderId() alicloudroscdkcore.IResolva
 	_jsii_.Get(
 		j,
 		"attrOrderId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosResourcePackage) AutoRenew() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"autoRenew",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosResourcePackage) AutoRenewPeriod() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"autoRenewPeriod",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosResourcePackage) AutoRenewPeriodUnit() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"autoRenewPeriodUnit",
 		&returns,
 	)
 	return returns
@@ -387,6 +423,39 @@ func NewRosResourcePackage_Override(r RosResourcePackage, scope alicloudroscdkco
 		"@alicloud/ros-cdk-bss.RosResourcePackage",
 		[]interface{}{scope, id, props, enableResourcePropertyConstraint},
 		r,
+	)
+}
+
+func (j *jsiiProxy_RosResourcePackage)SetAutoRenew(val interface{}) {
+	if err := j.validateSetAutoRenewParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"autoRenew",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosResourcePackage)SetAutoRenewPeriod(val interface{}) {
+	if err := j.validateSetAutoRenewPeriodParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"autoRenewPeriod",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosResourcePackage)SetAutoRenewPeriodUnit(val interface{}) {
+	if err := j.validateSetAutoRenewPeriodUnitParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"autoRenewPeriodUnit",
+		val,
 	)
 }
 

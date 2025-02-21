@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ALB::Listener</code>, which is used to create an HTTP, HTTPS, or Quick UDP Internet Connections (QUIC) listener.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:33.977Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:11.311Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.Listener")
 public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.alb.IListener {
 
@@ -46,6 +46,14 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.al
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrListenerId() {
         return software.amazon.jsii.Kernel.get(this, "attrListenerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     * Attribute LoadBalancerId: The ID of the ALB instance.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrLoadBalancerId() {
+        return software.amazon.jsii.Kernel.get(this, "attrLoadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     @Override
@@ -303,7 +311,7 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.al
          * Default value: on.
          * Valid values: true and false.
          * Default value: true.
-         * Note Only HTTPS listeners support this parameter.
+         * Note: Only HTTPS listeners support this parameter.
          * <p>
          * @return {@code this}
          * @param http2Enabled Property http2Enabled: Specifies whether to enable HTTP/2. This parameter is required.
@@ -318,7 +326,7 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.al
          * Default value: on.
          * Valid values: true and false.
          * Default value: true.
-         * Note Only HTTPS listeners support this parameter.
+         * Note: Only HTTPS listeners support this parameter.
          * <p>
          * @return {@code this}
          * @param http2Enabled Property http2Enabled: Specifies whether to enable HTTP/2. This parameter is required.
@@ -331,10 +339,9 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.al
         /**
          * Property idleTimeout: The timeout period of idle connections.
          * <p>
-         * Valid values: 1 to 180. Unit: seconds.
+         * Valid values: 1 to 3600. Unit: seconds.
          * Default value: 15.
-         * If no request is received within the specified timeout period, ALB closes the connection.
-         * ALB recreates the connection when a new connection request is received.
+         * If no requests are received within the specified timeout period, ALB closes the current connection. When a new request is received, ALB establishes a new connection.
          * <p>
          * @return {@code this}
          * @param idleTimeout Property idleTimeout: The timeout period of idle connections. This parameter is required.
@@ -346,10 +353,9 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.al
         /**
          * Property idleTimeout: The timeout period of idle connections.
          * <p>
-         * Valid values: 1 to 180. Unit: seconds.
+         * Valid values: 1 to 3600. Unit: seconds.
          * Default value: 15.
-         * If no request is received within the specified timeout period, ALB closes the connection.
-         * ALB recreates the connection when a new connection request is received.
+         * If no requests are received within the specified timeout period, ALB closes the current connection. When a new request is received, ALB establishes a new connection.
          * <p>
          * @return {@code this}
          * @param idleTimeout Property idleTimeout: The timeout period of idle connections. This parameter is required.
@@ -406,6 +412,27 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
+         * Property logConfig: The configuration information about the access log.
+         * <p>
+         * @return {@code this}
+         * @param logConfig Property logConfig: The configuration information about the access log. This parameter is required.
+         */
+        public Builder logConfig(final com.aliyun.ros.cdk.core.IResolvable logConfig) {
+            this.props.logConfig(logConfig);
+            return this;
+        }
+        /**
+         * Property logConfig: The configuration information about the access log.
+         * <p>
+         * @return {@code this}
+         * @param logConfig Property logConfig: The configuration information about the access log. This parameter is required.
+         */
+        public Builder logConfig(final com.aliyun.ros.cdk.alb.RosListener.LogConfigProperty logConfig) {
+            this.props.logConfig(logConfig);
+            return this;
+        }
+
+        /**
          * Property quicConfig: Select a QUIC listener and associate it with the ALB instance.
          * <p>
          * @return {@code this}
@@ -429,7 +456,7 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.al
         /**
          * Property requestTimeout: The timeout period of the request.
          * <p>
-         * Valid values: 1 to 180. Unit: seconds.
+         * Valid values: 1 to 900. Unit: seconds.
          * Default value: 60.
          * If no response is received from the backend server during the request timeout period,
          * ALB sends an HTTP 504 error code to the client.
@@ -444,7 +471,7 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.al
         /**
          * Property requestTimeout: The timeout period of the request.
          * <p>
-         * Valid values: 1 to 180. Unit: seconds.
+         * Valid values: 1 to 900. Unit: seconds.
          * Default value: 60.
          * If no response is received from the backend server during the request timeout period,
          * ALB sends an HTTP 504 error code to the client.
@@ -463,7 +490,7 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.al
          * System security policies and custom security policies
          * are supported.
          * Default value: tls_cipher_policy_1_0. This value indicates a system security policy.
-         * Note Only HTTPS listeners support this parameter.
+         * Note: Only HTTPS listeners support this parameter.
          * <p>
          * @return {@code this}
          * @param securityPolicyId Property securityPolicyId: The ID of the security policy. This parameter is required.
@@ -478,7 +505,7 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.al
          * System security policies and custom security policies
          * are supported.
          * Default value: tls_cipher_policy_1_0. This value indicates a system security policy.
-         * Note Only HTTPS listeners support this parameter.
+         * Note: Only HTTPS listeners support this parameter.
          * <p>
          * @return {@code this}
          * @param securityPolicyId Property securityPolicyId: The ID of the security policy. This parameter is required.

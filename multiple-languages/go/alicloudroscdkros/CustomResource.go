@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ROS::CustomResource`, which is used to create a custom resource.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ROS::CustomResource`.
 type CustomResource interface {
 	alicloudroscdkcore.Resource
 	ICustomResource

@@ -12,6 +12,8 @@ type IListener interface {
 	alicloudroscdkcore.IResource
 	// Attribute ListenerId: The ID of the listener.
 	AttrListenerId() interface{}
+	// Attribute LoadBalancerId: The ID of the ALB instance.
+	AttrLoadBalancerId() interface{}
 	Props() *ListenerProps
 }
 
@@ -25,6 +27,16 @@ func (j *jsiiProxy_IListener) AttrListenerId() interface{} {
 	_jsii_.Get(
 		j,
 		"attrListenerId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IListener) AttrLoadBalancerId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrLoadBalancerId",
 		&returns,
 	)
 	return returns

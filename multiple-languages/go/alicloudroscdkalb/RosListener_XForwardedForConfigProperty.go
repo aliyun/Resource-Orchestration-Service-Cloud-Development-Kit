@@ -14,6 +14,8 @@ type RosListener_XForwardedForConfigProperty struct {
 	XForwardedForClientSourceIpsTrusted interface{} `field:"optional" json:"xForwardedForClientSourceIpsTrusted" yaml:"xForwardedForClientSourceIpsTrusted"`
 	XForwardedForClientSrcPortEnabled interface{} `field:"optional" json:"xForwardedForClientSrcPortEnabled" yaml:"xForwardedForClientSrcPortEnabled"`
 	XForwardedForEnabled interface{} `field:"optional" json:"xForwardedForEnabled" yaml:"xForwardedForEnabled"`
+	XForwardedForHostEnabled interface{} `field:"optional" json:"xForwardedForHostEnabled" yaml:"xForwardedForHostEnabled"`
+	XForwardedForProcessingMode interface{} `field:"optional" json:"xForwardedForProcessingMode" yaml:"xForwardedForProcessingMode"`
 	XForwardedForProtoEnabled interface{} `field:"optional" json:"xForwardedForProtoEnabled" yaml:"xForwardedForProtoEnabled"`
 	XForwardedForSlbIdEnabled interface{} `field:"optional" json:"xForwardedForSlbIdEnabled" yaml:"xForwardedForSlbIdEnabled"`
 	XForwardedForSlbPortEnabled interface{} `field:"optional" json:"xForwardedForSlbPortEnabled" yaml:"xForwardedForSlbPortEnabled"`

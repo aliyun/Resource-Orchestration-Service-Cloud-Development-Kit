@@ -4,10 +4,8 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Slb
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::SLB::Certificate`, which is used to upload a certificate to a Server Load Balancer (SLB) instance.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::SLB::Certificate`.</summary>
     /// <remarks>
-    /// Server certificates and certificate authority (CA) certificates are supported.
-    ///
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCertificate`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-certificate
     /// </remarks>
@@ -37,6 +35,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         protected Certificate(DeputyProps props): base(props)
         {
+        }
+
+        /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+        [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrArn
+        {
+            get => GetInstanceProperty<object>()!;
         }
 
         /// <summary>Attribute CertificateId: The ID of the certificate.</summary>

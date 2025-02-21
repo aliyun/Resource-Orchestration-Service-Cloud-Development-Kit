@@ -13,6 +13,8 @@ import (
 type Rule interface {
 	alicloudroscdkcore.Resource
 	IRule
+	// Attribute ListenerId: The ID of the listener.
+	AttrListenerId() interface{}
 	// Attribute RuleId: The ID of the forwarding rules.
 	AttrRuleId() interface{}
 	EnableResourcePropertyConstraint() *bool
@@ -108,6 +110,16 @@ type Rule interface {
 type jsiiProxy_Rule struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_IRule
+}
+
+func (j *jsiiProxy_Rule) AttrListenerId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrListenerId",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Rule) AttrRuleId() interface{} {

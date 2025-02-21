@@ -621,6 +621,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
+        /// <summary>Property sslEnabled: Modifies the SSL status.</summary>
+        /// <remarks>
+        /// Valid values:
+        /// Disable: disables SSL encryption.
+        /// Enable: enables SSL encryption.
+        /// Update: updates the SSL certificate.
+        /// </remarks>
+        [JsiiProperty(name: "sslEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SslEnabled
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property standbyAz: The zone where the hot standby storage cluster is stored.</summary>
         /// <remarks>
         /// This is valid for Standard Edition clusters of Multi-zone Edition.
@@ -1298,6 +1315,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             [JsiiOptional]
             [JsiiProperty(name: "sourceResourceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SourceResourceId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property sslEnabled: Modifies the SSL status.</summary>
+            /// <remarks>
+            /// Valid values:
+            /// Disable: disables SSL encryption.
+            /// Enable: enables SSL encryption.
+            /// Update: updates the SSL certificate.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "sslEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SslEnabled
             {
                 get => GetInstanceProperty<object?>();
             }

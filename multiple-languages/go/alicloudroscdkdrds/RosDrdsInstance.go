@@ -12,6 +12,7 @@ import (
 // This class is a base encapsulation around the ROS resource type `ALIYUN::DRDS::DrdsInstance`, which is used to create a PolarDB-X 1.0 instance of specified instance specifications.
 type RosDrdsInstance interface {
 	alicloudroscdkcore.RosResource
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrDrdsInstanceId() alicloudroscdkcore.IResolvable
 	AttrInternetEndpoint() alicloudroscdkcore.IResolvable
 	AttrIntranetEndpoint() alicloudroscdkcore.IResolvable
@@ -198,6 +199,16 @@ type RosDrdsInstance interface {
 // The jsii proxy struct for RosDrdsInstance
 type jsiiProxy_RosDrdsInstance struct {
 	internal.Type__alicloudroscdkcoreRosResource
+}
+
+func (j *jsiiProxy_RosDrdsInstance) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_RosDrdsInstance) AttrDrdsInstanceId() alicloudroscdkcore.IResolvable {

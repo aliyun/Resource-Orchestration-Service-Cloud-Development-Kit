@@ -49,6 +49,11 @@ export interface IHaVip extends ros.IResource {
     readonly props: HaVipProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute HaVipId: Assigned HaVip ID.
      */
     readonly attrHaVipId: ros.IResolvable | string;
@@ -59,7 +64,7 @@ export interface IHaVip extends ros.IResource {
     readonly attrIpAddress: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::HaVip`, which is used to create a high-availability virtual IP address (HAVIP).
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::HaVip`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosHaVip`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-havip
  */
@@ -68,6 +73,11 @@ export class HaVip extends ros.Resource implements IHaVip {
     protected id: string;
     public readonly props: HaVipProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute HaVipId: Assigned HaVip ID.
@@ -100,6 +110,7 @@ export class HaVip extends ros.Resource implements IHaVip {
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosHaVip;
+        this.attrArn = rosHaVip.attrArn;
         this.attrHaVipId = rosHaVip.attrHaVipId;
         this.attrIpAddress = rosHaVip.attrIpAddress;
     }

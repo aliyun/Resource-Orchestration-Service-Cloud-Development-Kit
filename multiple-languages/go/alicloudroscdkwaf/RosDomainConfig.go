@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::DomainConfig`ALIYUN::CDN::DomainConfig is used to add domain name settings.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::DomainConfig`.
 type RosDomainConfig interface {
 	alicloudroscdkcore.RosResource
 	AttrCname() alicloudroscdkcore.IResolvable

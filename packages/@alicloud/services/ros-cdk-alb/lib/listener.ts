@@ -57,16 +57,15 @@ export interface ListenerProps {
      * Property http2Enabled: Specifies whether to enable HTTP\/2. Default value: on.
      * Valid values: true and false.
      * Default value: true.
-     * Note Only HTTPS listeners support this parameter.
+     * Note: Only HTTPS listeners support this parameter.
      */
     readonly http2Enabled?: boolean | ros.IResolvable;
 
     /**
      * Property idleTimeout: The timeout period of idle connections.
-     * Valid values: 1 to 180. Unit: seconds.
+     * Valid values: 1 to 3600. Unit: seconds.
      * Default value: 15.
-     * If no request is received within the specified timeout period, ALB closes the connection.
-     * ALB recreates the connection when a new connection request is received.
+     * If no requests are received within the specified timeout period, ALB closes the current connection. When a new request is received, ALB establishes a new connection.
      */
     readonly idleTimeout?: number | ros.IResolvable;
 
@@ -82,13 +81,18 @@ export interface ListenerProps {
     readonly listenerStatus?: string | ros.IResolvable;
 
     /**
+     * Property logConfig: The configuration information about the access log.
+     */
+    readonly logConfig?: RosListener.LogConfigProperty | ros.IResolvable;
+
+    /**
      * Property quicConfig: Select a QUIC listener and associate it with the ALB instance.
      */
     readonly quicConfig?: RosListener.QuicConfigProperty | ros.IResolvable;
 
     /**
      * Property requestTimeout: The timeout period of the request.
-     * Valid values: 1 to 180. Unit: seconds.
+     * Valid values: 1 to 900. Unit: seconds.
      * Default value: 60.
      * If no response is received from the backend server during the request timeout period,
      * ALB sends an HTTP 504 error code to the client.
@@ -99,7 +103,7 @@ export interface ListenerProps {
      * Property securityPolicyId: The ID of the security policy. System security policies and custom security policies
      * are supported.
      * Default value: tls_cipher_policy_1_0. This value indicates a system security policy.
-     * Note Only HTTPS listeners support this parameter.
+     * Note: Only HTTPS listeners support this parameter.
      */
     readonly securityPolicyId?: string | ros.IResolvable;
 
@@ -119,6 +123,11 @@ export interface IListener extends ros.IResource {
      * Attribute ListenerId: The ID of the listener.
      */
     readonly attrListenerId: ros.IResolvable | string;
+
+    /**
+     * Attribute LoadBalancerId: The ID of the ALB instance.
+     */
+    readonly attrLoadBalancerId: ros.IResolvable | string;
 }
 /**
  * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::Listener`, which is used to create an HTTP, HTTPS, or Quick UDP Internet Connections (QUIC) listener.
@@ -135,6 +144,11 @@ export class Listener extends ros.Resource implements IListener {
      * Attribute ListenerId: The ID of the listener.
      */
     public readonly attrListenerId: ros.IResolvable | string;
+
+    /**
+     * Attribute LoadBalancerId: The ID of the ALB instance.
+     */
+    public readonly attrLoadBalancerId: ros.IResolvable | string;
 
     /**
      * Param scope - scope in which this resource is defined
@@ -165,8 +179,10 @@ export class Listener extends ros.Resource implements IListener {
             listenerDescription: props.listenerDescription,
             xForwardedForConfig: props.xForwardedForConfig,
             caCertificates: props.caCertificates,
+            logConfig: props.logConfig,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosListener;
         this.attrListenerId = rosListener.attrListenerId;
+        this.attrLoadBalancerId = rosListener.attrLoadBalancerId;
     }
 }

@@ -37,6 +37,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         {
         }
 
+        /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+        [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrArn
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
         /// <summary>Attribute InstanceId: The ID of the Message Queue for Apache Kafka instance where the topic is located.</summary>
         /// <remarks>
         /// You can call the GetInstanceList operation to query instances.

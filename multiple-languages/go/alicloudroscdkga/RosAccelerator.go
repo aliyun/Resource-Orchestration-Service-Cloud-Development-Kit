@@ -18,6 +18,7 @@ type RosAccelerator interface {
 	AttrAcceleratorName() alicloudroscdkcore.IResolvable
 	AttrAutoPay() alicloudroscdkcore.IResolvable
 	AttrAutoUseCoupon() alicloudroscdkcore.IResolvable
+	AttrDnsName() alicloudroscdkcore.IResolvable
 	AttrDuration() alicloudroscdkcore.IResolvable
 	AttrOrderId() alicloudroscdkcore.IResolvable
 	AttrPaymentType() alicloudroscdkcore.IResolvable
@@ -244,6 +245,16 @@ func (j *jsiiProxy_RosAccelerator) AttrAutoUseCoupon() alicloudroscdkcore.IResol
 	_jsii_.Get(
 		j,
 		"attrAutoUseCoupon",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosAccelerator) AttrDnsName() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrDnsName",
 		&returns,
 	)
 	return returns

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts;
 /**
  * Represents a <code>SubscriptionJob2</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:37.241Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:14.275Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.ISubscriptionJob2")
 @software.amazon.jsii.Jsii.Proxy(ISubscriptionJob2.Jsii$Proxy.class)
 public interface ISubscriptionJob2 extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

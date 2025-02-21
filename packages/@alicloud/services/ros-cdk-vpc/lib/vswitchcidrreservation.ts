@@ -73,7 +73,7 @@ export interface IVSwitchCidrReservation extends ros.IResource {
     readonly attrVSwitchCidrReservationId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VSwitchCidrReservation`, which is used to create a reserved CIDR block for a vSwitch.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VSwitchCidrReservation`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVSwitchCidrReservation`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vswitchcidrreservation
  */

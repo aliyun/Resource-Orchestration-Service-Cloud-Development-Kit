@@ -64,7 +64,7 @@ function rosAlarmContactPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::AlarmContact`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::AlarmContact`, which is used to query the information about an alert contact.
  * @Note This class does not contain additional functions, so it is recommended to use the `AlarmContact` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-alarmcontact
  */
@@ -385,7 +385,7 @@ function rosMonitorGroupPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::MonitorGroup`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::MonitorGroup`, which is used to query the information about an application group.
  * @Note This class does not contain additional functions, so it is recommended to use the `MonitorGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-monitorgroup
  */
@@ -736,7 +736,7 @@ function rosNamespacePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::Namespace`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::Namespace`, which is used to query the information about a namespace and the metric data of the namespace.
  * @Note This class does not contain additional functions, so it is recommended to use the `Namespace` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-namespace
  */

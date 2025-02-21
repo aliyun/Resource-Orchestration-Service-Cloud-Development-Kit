@@ -9,10 +9,12 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SLB::VServerGroup`, which is used to create a server group and attach backend servers to a Server Load Balancer (SLB) instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SLB::VServerGroup`.
 type VServerGroup interface {
 	alicloudroscdkcore.Resource
 	IVServerGroup
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute BackendServers: Backend server list in this VServerGroup.
 	AttrBackendServers() interface{}
 	// Attribute LoadBalancerId: The id of load balancer.
@@ -112,6 +114,16 @@ type VServerGroup interface {
 type jsiiProxy_VServerGroup struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_IVServerGroup
+}
+
+func (j *jsiiProxy_VServerGroup) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_VServerGroup) AttrBackendServers() interface{} {

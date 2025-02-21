@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.alb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-servergroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:34.185Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:11.405Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosServerGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosServerGroupProps.Jsii$Proxy.class)
 public interface RosServerGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -20,11 +20,19 @@ public interface RosServerGroupProps extends software.amazon.jsii.JsiiSerializab
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Object getVpcId();
+    default @org.jetbrains.annotations.Nullable java.lang.Object getConnectionDrainConfig() {
+        return null;
+    }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getConnectionDrainConfig() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCrossZoneEnabled() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6Enabled() {
         return null;
     }
 
@@ -89,6 +97,12 @@ public interface RosServerGroupProps extends software.amazon.jsii.JsiiSerializab
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosServerGroupProps}
      */
     static Builder builder() {
@@ -100,8 +114,9 @@ public interface RosServerGroupProps extends software.amazon.jsii.JsiiSerializab
     public static final class Builder implements software.amazon.jsii.Builder<RosServerGroupProps> {
         java.lang.Object healthCheckConfig;
         java.lang.Object serverGroupName;
-        java.lang.Object vpcId;
         java.lang.Object connectionDrainConfig;
+        java.lang.Object crossZoneEnabled;
+        java.lang.Object ipv6Enabled;
         java.lang.Object protocol;
         java.lang.Object resourceGroupId;
         java.lang.Object scheduler;
@@ -112,6 +127,7 @@ public interface RosServerGroupProps extends software.amazon.jsii.JsiiSerializab
         java.util.List<com.aliyun.ros.cdk.alb.RosServerGroup.TagsProperty> tags;
         java.lang.Object uchConfig;
         java.lang.Object upstreamKeepaliveEnabled;
+        java.lang.Object vpcId;
 
         /**
          * Sets the value of {@link RosServerGroupProps#getHealthCheckConfig}
@@ -154,26 +170,6 @@ public interface RosServerGroupProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
-         * Sets the value of {@link RosServerGroupProps#getVpcId}
-         * @param vpcId the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder vpcId(java.lang.String vpcId) {
-            this.vpcId = vpcId;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosServerGroupProps#getVpcId}
-         * @param vpcId the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
-            this.vpcId = vpcId;
-            return this;
-        }
-
-        /**
          * Sets the value of {@link RosServerGroupProps#getConnectionDrainConfig}
          * @param connectionDrainConfig the value to be set.
          * @return {@code this}
@@ -190,6 +186,46 @@ public interface RosServerGroupProps extends software.amazon.jsii.JsiiSerializab
          */
         public Builder connectionDrainConfig(com.aliyun.ros.cdk.alb.RosServerGroup.ConnectionDrainConfigProperty connectionDrainConfig) {
             this.connectionDrainConfig = connectionDrainConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosServerGroupProps#getCrossZoneEnabled}
+         * @param crossZoneEnabled the value to be set.
+         * @return {@code this}
+         */
+        public Builder crossZoneEnabled(java.lang.Boolean crossZoneEnabled) {
+            this.crossZoneEnabled = crossZoneEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosServerGroupProps#getCrossZoneEnabled}
+         * @param crossZoneEnabled the value to be set.
+         * @return {@code this}
+         */
+        public Builder crossZoneEnabled(com.aliyun.ros.cdk.core.IResolvable crossZoneEnabled) {
+            this.crossZoneEnabled = crossZoneEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosServerGroupProps#getIpv6Enabled}
+         * @param ipv6Enabled the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipv6Enabled(java.lang.Boolean ipv6Enabled) {
+            this.ipv6Enabled = ipv6Enabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosServerGroupProps#getIpv6Enabled}
+         * @param ipv6Enabled the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipv6Enabled(com.aliyun.ros.cdk.core.IResolvable ipv6Enabled) {
+            this.ipv6Enabled = ipv6Enabled;
             return this;
         }
 
@@ -385,6 +421,26 @@ public interface RosServerGroupProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosServerGroupProps#getVpcId}
+         * @param vpcId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vpcId(java.lang.String vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosServerGroupProps#getVpcId}
+         * @param vpcId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosServerGroupProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -402,8 +458,9 @@ public interface RosServerGroupProps extends software.amazon.jsii.JsiiSerializab
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosServerGroupProps {
         private final java.lang.Object healthCheckConfig;
         private final java.lang.Object serverGroupName;
-        private final java.lang.Object vpcId;
         private final java.lang.Object connectionDrainConfig;
+        private final java.lang.Object crossZoneEnabled;
+        private final java.lang.Object ipv6Enabled;
         private final java.lang.Object protocol;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object scheduler;
@@ -414,6 +471,7 @@ public interface RosServerGroupProps extends software.amazon.jsii.JsiiSerializab
         private final java.util.List<com.aliyun.ros.cdk.alb.RosServerGroup.TagsProperty> tags;
         private final java.lang.Object uchConfig;
         private final java.lang.Object upstreamKeepaliveEnabled;
+        private final java.lang.Object vpcId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -423,8 +481,9 @@ public interface RosServerGroupProps extends software.amazon.jsii.JsiiSerializab
             super(objRef);
             this.healthCheckConfig = software.amazon.jsii.Kernel.get(this, "healthCheckConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serverGroupName = software.amazon.jsii.Kernel.get(this, "serverGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.connectionDrainConfig = software.amazon.jsii.Kernel.get(this, "connectionDrainConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.crossZoneEnabled = software.amazon.jsii.Kernel.get(this, "crossZoneEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipv6Enabled = software.amazon.jsii.Kernel.get(this, "ipv6Enabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.protocol = software.amazon.jsii.Kernel.get(this, "protocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.scheduler = software.amazon.jsii.Kernel.get(this, "scheduler", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -435,6 +494,7 @@ public interface RosServerGroupProps extends software.amazon.jsii.JsiiSerializab
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.alb.RosServerGroup.TagsProperty.class)));
             this.uchConfig = software.amazon.jsii.Kernel.get(this, "uchConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.upstreamKeepaliveEnabled = software.amazon.jsii.Kernel.get(this, "upstreamKeepaliveEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -445,8 +505,9 @@ public interface RosServerGroupProps extends software.amazon.jsii.JsiiSerializab
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.healthCheckConfig = java.util.Objects.requireNonNull(builder.healthCheckConfig, "healthCheckConfig is required");
             this.serverGroupName = java.util.Objects.requireNonNull(builder.serverGroupName, "serverGroupName is required");
-            this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
             this.connectionDrainConfig = builder.connectionDrainConfig;
+            this.crossZoneEnabled = builder.crossZoneEnabled;
+            this.ipv6Enabled = builder.ipv6Enabled;
             this.protocol = builder.protocol;
             this.resourceGroupId = builder.resourceGroupId;
             this.scheduler = builder.scheduler;
@@ -457,6 +518,7 @@ public interface RosServerGroupProps extends software.amazon.jsii.JsiiSerializab
             this.tags = (java.util.List<com.aliyun.ros.cdk.alb.RosServerGroup.TagsProperty>)builder.tags;
             this.uchConfig = builder.uchConfig;
             this.upstreamKeepaliveEnabled = builder.upstreamKeepaliveEnabled;
+            this.vpcId = builder.vpcId;
         }
 
         @Override
@@ -470,13 +532,18 @@ public interface RosServerGroupProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
-        public final java.lang.Object getVpcId() {
-            return this.vpcId;
+        public final java.lang.Object getConnectionDrainConfig() {
+            return this.connectionDrainConfig;
         }
 
         @Override
-        public final java.lang.Object getConnectionDrainConfig() {
-            return this.connectionDrainConfig;
+        public final java.lang.Object getCrossZoneEnabled() {
+            return this.crossZoneEnabled;
+        }
+
+        @Override
+        public final java.lang.Object getIpv6Enabled() {
+            return this.ipv6Enabled;
         }
 
         @Override
@@ -530,6 +597,11 @@ public interface RosServerGroupProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
+        public final java.lang.Object getVpcId() {
+            return this.vpcId;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -537,9 +609,14 @@ public interface RosServerGroupProps extends software.amazon.jsii.JsiiSerializab
 
             data.set("healthCheckConfig", om.valueToTree(this.getHealthCheckConfig()));
             data.set("serverGroupName", om.valueToTree(this.getServerGroupName()));
-            data.set("vpcId", om.valueToTree(this.getVpcId()));
             if (this.getConnectionDrainConfig() != null) {
                 data.set("connectionDrainConfig", om.valueToTree(this.getConnectionDrainConfig()));
+            }
+            if (this.getCrossZoneEnabled() != null) {
+                data.set("crossZoneEnabled", om.valueToTree(this.getCrossZoneEnabled()));
+            }
+            if (this.getIpv6Enabled() != null) {
+                data.set("ipv6Enabled", om.valueToTree(this.getIpv6Enabled()));
             }
             if (this.getProtocol() != null) {
                 data.set("protocol", om.valueToTree(this.getProtocol()));
@@ -571,6 +648,9 @@ public interface RosServerGroupProps extends software.amazon.jsii.JsiiSerializab
             if (this.getUpstreamKeepaliveEnabled() != null) {
                 data.set("upstreamKeepaliveEnabled", om.valueToTree(this.getUpstreamKeepaliveEnabled()));
             }
+            if (this.getVpcId() != null) {
+                data.set("vpcId", om.valueToTree(this.getVpcId()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-alb.RosServerGroupProps"));
@@ -591,8 +671,9 @@ public interface RosServerGroupProps extends software.amazon.jsii.JsiiSerializab
 
             if (!healthCheckConfig.equals(that.healthCheckConfig)) return false;
             if (!serverGroupName.equals(that.serverGroupName)) return false;
-            if (!vpcId.equals(that.vpcId)) return false;
             if (this.connectionDrainConfig != null ? !this.connectionDrainConfig.equals(that.connectionDrainConfig) : that.connectionDrainConfig != null) return false;
+            if (this.crossZoneEnabled != null ? !this.crossZoneEnabled.equals(that.crossZoneEnabled) : that.crossZoneEnabled != null) return false;
+            if (this.ipv6Enabled != null ? !this.ipv6Enabled.equals(that.ipv6Enabled) : that.ipv6Enabled != null) return false;
             if (this.protocol != null ? !this.protocol.equals(that.protocol) : that.protocol != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.scheduler != null ? !this.scheduler.equals(that.scheduler) : that.scheduler != null) return false;
@@ -602,15 +683,17 @@ public interface RosServerGroupProps extends software.amazon.jsii.JsiiSerializab
             if (this.stickySessionConfig != null ? !this.stickySessionConfig.equals(that.stickySessionConfig) : that.stickySessionConfig != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.uchConfig != null ? !this.uchConfig.equals(that.uchConfig) : that.uchConfig != null) return false;
-            return this.upstreamKeepaliveEnabled != null ? this.upstreamKeepaliveEnabled.equals(that.upstreamKeepaliveEnabled) : that.upstreamKeepaliveEnabled == null;
+            if (this.upstreamKeepaliveEnabled != null ? !this.upstreamKeepaliveEnabled.equals(that.upstreamKeepaliveEnabled) : that.upstreamKeepaliveEnabled != null) return false;
+            return this.vpcId != null ? this.vpcId.equals(that.vpcId) : that.vpcId == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.healthCheckConfig.hashCode();
             result = 31 * result + (this.serverGroupName.hashCode());
-            result = 31 * result + (this.vpcId.hashCode());
             result = 31 * result + (this.connectionDrainConfig != null ? this.connectionDrainConfig.hashCode() : 0);
+            result = 31 * result + (this.crossZoneEnabled != null ? this.crossZoneEnabled.hashCode() : 0);
+            result = 31 * result + (this.ipv6Enabled != null ? this.ipv6Enabled.hashCode() : 0);
             result = 31 * result + (this.protocol != null ? this.protocol.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.scheduler != null ? this.scheduler.hashCode() : 0);
@@ -621,6 +704,7 @@ public interface RosServerGroupProps extends software.amazon.jsii.JsiiSerializab
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.uchConfig != null ? this.uchConfig.hashCode() : 0);
             result = 31 * result + (this.upstreamKeepaliveEnabled != null ? this.upstreamKeepaliveEnabled.hashCode() : 0);
+            result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             return result;
         }
     }

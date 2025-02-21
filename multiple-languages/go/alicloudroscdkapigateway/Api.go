@@ -15,6 +15,8 @@ type Api interface {
 	IApi
 	// Attribute ApiId: The id of the API.
 	AttrApiId() interface{}
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
 	// The environment this resource belongs to.
@@ -115,6 +117,16 @@ func (j *jsiiProxy_Api) AttrApiId() interface{} {
 	_jsii_.Get(
 		j,
 		"attrApiId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Api) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
 		&returns,
 	)
 	return returns

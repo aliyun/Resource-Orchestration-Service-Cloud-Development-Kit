@@ -54,6 +54,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Apigateway.RosInstance))!;
 
         /// <remarks>
+        /// <strong>Attribute</strong>: Arn: The Alibaba Cloud Resource Name (ARN).
+        /// </remarks>
+        [JsiiProperty(name: "attrArn", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrArn
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: EgressIpv6Enable: Whether enable egress IPV6.
         /// </remarks>
         [JsiiProperty(name: "attrEgressIpv6Enable", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]

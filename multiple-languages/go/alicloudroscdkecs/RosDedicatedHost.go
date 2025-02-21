@@ -14,6 +14,7 @@ type RosDedicatedHost interface {
 	alicloudroscdkcore.RosResource
 	ActionOnMaintenance() interface{}
 	SetActionOnMaintenance(val interface{})
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrDedicatedHostIds() alicloudroscdkcore.IResolvable
 	AttrOrderId() alicloudroscdkcore.IResolvable
 	AutoPlacement() interface{}
@@ -209,6 +210,16 @@ func (j *jsiiProxy_RosDedicatedHost) ActionOnMaintenance() interface{} {
 	_jsii_.Get(
 		j,
 		"actionOnMaintenance",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosDedicatedHost) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
 		&returns,
 	)
 	return returns

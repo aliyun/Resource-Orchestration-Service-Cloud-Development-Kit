@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ICE::UploadMedia`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ICE::UploadMedia`, which is used to query the upload address and credential of a media asset.
 type RosUploadMedia interface {
 	alicloudroscdkcore.RosResource
 	AppId() interface{}

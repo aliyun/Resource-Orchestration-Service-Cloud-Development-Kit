@@ -19,6 +19,7 @@ type RosApi interface {
 	AppCodeAuthType() interface{}
 	SetAppCodeAuthType(val interface{})
 	AttrApiId() alicloudroscdkcore.IResolvable
+	AttrArn() alicloudroscdkcore.IResolvable
 	AuthType() interface{}
 	SetAuthType(val interface{})
 	ConstParameters() interface{}
@@ -254,6 +255,16 @@ func (j *jsiiProxy_RosApi) AttrApiId() alicloudroscdkcore.IResolvable {
 	_jsii_.Get(
 		j,
 		"attrApiId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosApi) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
 		&returns,
 	)
 	return returns

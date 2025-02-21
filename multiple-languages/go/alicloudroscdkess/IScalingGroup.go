@@ -10,6 +10,8 @@ import (
 // Represents a `ScalingGroup`.
 type IScalingGroup interface {
 	alicloudroscdkcore.IResource
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute ScalingGroupId: Scaling group Id.
 	AttrScalingGroupId() interface{}
 	// Attribute ScalingGroupName: Scaling group name.
@@ -20,6 +22,16 @@ type IScalingGroup interface {
 // The jsii proxy for IScalingGroup
 type jsiiProxy_IScalingGroup struct {
 	internal.Type__alicloudroscdkcoreIResource
+}
+
+func (j *jsiiProxy_IScalingGroup) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_IScalingGroup) AttrScalingGroupId() interface{} {

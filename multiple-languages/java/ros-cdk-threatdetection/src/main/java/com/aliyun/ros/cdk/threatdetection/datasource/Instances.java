@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.threatdetection.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ThreatDetection::Instances</code>, which is used to query the basic information about instances in Security Center.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ThreatDetection::Instances</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:44.758Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:21.350Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.threatdetection.$Module.class, fqn = "@alicloud/ros-cdk-threatdetection.datasource.Instances")
 public class Instances extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.threatdetection.datasource.IInstances {
 

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::PrefixList`, which is used to create a prefix list.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::PrefixList`.
 type RosPrefixList interface {
 	alicloudroscdkcore.RosResource
 	AttrCreateTime() alicloudroscdkcore.IResolvable

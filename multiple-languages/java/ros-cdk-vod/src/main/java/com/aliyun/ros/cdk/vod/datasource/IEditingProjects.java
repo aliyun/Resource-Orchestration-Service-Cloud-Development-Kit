@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vod.datasource;
 /**
  * Represents a <code>EditingProjects</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:44.823Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:21.491Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vod.$Module.class, fqn = "@alicloud/ros-cdk-vod.datasource.IEditingProjects")
 @software.amazon.jsii.Jsii.Proxy(IEditingProjects.Jsii$Proxy.class)
 public interface IEditingProjects extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

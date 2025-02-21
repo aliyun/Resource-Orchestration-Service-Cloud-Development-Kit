@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.sls;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::SLS::ApplyConfigToMachineGroup</code>, which is used to apply Log Service configurations to machine groups.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::SLS::ApplyConfigToMachineGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:44.471Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:20.947Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.ApplyConfigToMachineGroup")
 public class ApplyConfigToMachineGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.sls.IApplyConfigToMachineGroup {
 

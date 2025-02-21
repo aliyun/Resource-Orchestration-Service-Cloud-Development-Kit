@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.sag;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SAG::GrantCcnToCen</code>, which is used to grant permissions on a Cloud Connect Network (CCN) instance to a Cloud Enterprise Network (CEN) instance.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SAG::GrantCcnToCen</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:44.115Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:20.478Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.RosGrantCcnToCen")
 public class RosGrantCcnToCen extends com.aliyun.ros.cdk.core.RosResource {
 

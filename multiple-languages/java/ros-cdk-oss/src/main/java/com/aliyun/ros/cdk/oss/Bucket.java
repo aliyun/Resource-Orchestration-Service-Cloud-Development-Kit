@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oss;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::OSS::Bucket</code>, which is used to create a bucket in Object Storage Service (OSS).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:41.846Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:18.514Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.Bucket")
 public class Bucket extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.oss.IBucket {
 
@@ -47,6 +47,14 @@ public class Bucket extends com.aliyun.ros.cdk.core.Resource implements com.aliy
      */
     public static void validateBucketName(final @org.jetbrains.annotations.NotNull java.lang.String physicalName) {
         software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.oss.Bucket.class, "validateBucketName", software.amazon.jsii.NativeType.VOID, new Object[] { java.util.Objects.requireNonNull(physicalName, "physicalName is required") });
+    }
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrArn() {
+        return software.amazon.jsii.Kernel.get(this, "attrArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**

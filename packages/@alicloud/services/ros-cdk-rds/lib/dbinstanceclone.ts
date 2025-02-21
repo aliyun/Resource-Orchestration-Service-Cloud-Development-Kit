@@ -305,7 +305,7 @@ export interface IDBInstanceClone extends ros.IResource {
     readonly attrPublicPort: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::DBInstanceClone`, which is used to restore historical data of an instance to a new instance. The new instance is the clone of the instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::DBInstanceClone`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBInstanceClone`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstanceclone
  */

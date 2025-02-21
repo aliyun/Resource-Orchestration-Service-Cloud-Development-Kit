@@ -63,7 +63,7 @@ function rosStackGroupsPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ROS::StackGroups`, which is used to query the details of stack groups.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ROS::StackGroups`.
  * @Note This class does not contain additional functions, so it is recommended to use the `StackGroups` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ros-stackgroups
  */
@@ -214,7 +214,7 @@ function rosStackInstancePropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ROS::StackInstance`, which is used to query the information about a stack instance that is associated with a stack group.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ROS::StackInstance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `StackInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ros-stackinstance
  */

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::LoadBalancers`, which is used to query created Classic Load Balancer (CLB) instances.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::LoadBalancers`.
 type LoadBalancers interface {
 	alicloudroscdkcore.Resource
 	ILoadBalancers

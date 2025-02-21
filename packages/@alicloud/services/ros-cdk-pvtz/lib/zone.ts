@@ -56,6 +56,11 @@ export interface IZone extends ros.IResource {
     readonly props: ZoneProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute ZoneId: Zone ID.
      */
     readonly attrZoneId: ros.IResolvable | string;
@@ -85,6 +90,11 @@ export class Zone extends ros.Resource implements IZone {
     protected id: string;
     public readonly props: ZoneProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute ZoneId: Zone ID.
@@ -128,6 +138,7 @@ export class Zone extends ros.Resource implements IZone {
             remark: props.remark,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosZone;
+        this.attrArn = rosZone.attrArn;
         this.attrZoneId = rosZone.attrZoneId;
         this.attrZoneName = rosZone.attrZoneName;
         this.attrZoneTag = rosZone.attrZoneTag;

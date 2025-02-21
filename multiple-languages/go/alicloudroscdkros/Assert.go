@@ -9,9 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ROS::Assert`, which is used to create an assertion.
-//
-// Assertions are used to evaluate conditions and support a variety of operation types. An assertion determines whether to terminate creation and return an error message when the assertion result is false.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ROS::Assert`.
 type Assert interface {
 	alicloudroscdkcore.Resource
 	IAssert

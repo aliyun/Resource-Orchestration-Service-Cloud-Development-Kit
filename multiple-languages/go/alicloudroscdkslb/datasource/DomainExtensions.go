@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::DomainExtensions`, which is used to query the domain name extensions that are added to a listener of a Server Load Balancer (SLB) instance.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::DomainExtensions`.
 type DomainExtensions interface {
 	alicloudroscdkcore.Resource
 	IDomainExtensions

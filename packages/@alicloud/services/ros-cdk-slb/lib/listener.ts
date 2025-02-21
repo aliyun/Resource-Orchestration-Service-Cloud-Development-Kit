@@ -195,6 +195,11 @@ export interface IListener extends ros.IResource {
     readonly props: ListenerProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute ListenerPortsAndProtocol: The collection of listener.
      */
     readonly attrListenerPortsAndProtocol: ros.IResolvable | string;
@@ -205,7 +210,7 @@ export interface IListener extends ros.IResource {
     readonly attrLoadBalancerId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::Listener`, which is used to create a Server Load Balancer (SLB) listener.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::Listener`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosListener`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-listener
  */
@@ -214,6 +219,11 @@ export class Listener extends ros.Resource implements IListener {
     protected id: string;
     public readonly props: ListenerProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute ListenerPortsAndProtocol: The collection of listener.
@@ -270,6 +280,7 @@ export class Listener extends ros.Resource implements IListener {
             aclIds: props.aclIds,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosListener;
+        this.attrArn = rosListener.attrArn;
         this.attrListenerPortsAndProtocol = rosListener.attrListenerPortsAndProtocol;
         this.attrLoadBalancerId = rosListener.attrLoadBalancerId;
     }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * Represents a <code>QosPolicy</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:44.089Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:20.419Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.IQosPolicy")
 @software.amazon.jsii.Jsii.Proxy(IQosPolicy.Jsii$Proxy.class)
 public interface IQosPolicy extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

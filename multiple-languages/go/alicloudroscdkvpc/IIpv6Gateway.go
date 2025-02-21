@@ -10,6 +10,8 @@ import (
 // Represents a `Ipv6Gateway`.
 type IIpv6Gateway interface {
 	alicloudroscdkcore.IResource
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute Ipv6GatewayId: ID IPv6 gateway.
 	AttrIpv6GatewayId() interface{}
 	Props() *Ipv6GatewayProps
@@ -18,6 +20,16 @@ type IIpv6Gateway interface {
 // The jsii proxy for IIpv6Gateway
 type jsiiProxy_IIpv6Gateway struct {
 	internal.Type__alicloudroscdkcoreIResource
+}
+
+func (j *jsiiProxy_IIpv6Gateway) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_IIpv6Gateway) AttrIpv6GatewayId() interface{} {

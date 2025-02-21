@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::NLS::Project`, which is used to create a project in Intelligent Speech Interaction.
+// This class encapsulates and extends the ROS resource type `ALIYUN::NLS::Project`.
 type Project interface {
 	alicloudroscdkcore.Resource
 	IProject

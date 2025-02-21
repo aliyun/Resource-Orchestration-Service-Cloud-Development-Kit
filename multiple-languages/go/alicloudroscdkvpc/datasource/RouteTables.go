@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::RouteTables`, which is used to query route tables.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::RouteTables`.
 type RouteTables interface {
 	alicloudroscdkcore.Resource
 	IRouteTables

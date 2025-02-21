@@ -37,7 +37,7 @@ export interface IInfluxDBDatabase extends ros.IResource {
     readonly attrInstanceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::TSDB::InfluxDBDatabase`, which is used to create a Time Series Database (TSDB) database.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::TSDB::InfluxDBDatabase`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInfluxDBDatabase`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-tsdb-influxdbdatabase
  */

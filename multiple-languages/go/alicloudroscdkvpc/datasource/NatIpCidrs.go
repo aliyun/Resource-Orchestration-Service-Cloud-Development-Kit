@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::NatIpCidrs`, which is used to query the CIDR blocks of a NAT gateway.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::NatIpCidrs`.
 type NatIpCidrs interface {
 	alicloudroscdkcore.Resource
 	INatIpCidrs

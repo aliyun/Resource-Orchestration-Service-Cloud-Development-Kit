@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.bss;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::BSS::ResourcePackage</code>, which is used to create a resource plan.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:35.202Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:12.327Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bss.$Module.class, fqn = "@alicloud/ros-cdk-bss.ResourcePackage")
 public class ResourcePackage extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.bss.IResourcePackage {
 
@@ -216,6 +216,93 @@ public class ResourcePackage extends com.aliyun.ros.cdk.core.Resource implements
          */
         public Builder specification(final com.aliyun.ros.cdk.core.IResolvable specification) {
             this.props.specification(specification);
+            return this;
+        }
+
+        /**
+         * Property autoRenew: Whether to automatically renew the resource package.
+         * <p>
+         * The value is true or false. Default value: false.
+         * <p>
+         * @return {@code this}
+         * @param autoRenew Property autoRenew: Whether to automatically renew the resource package. This parameter is required.
+         */
+        public Builder autoRenew(final java.lang.Boolean autoRenew) {
+            this.props.autoRenew(autoRenew);
+            return this;
+        }
+        /**
+         * Property autoRenew: Whether to automatically renew the resource package.
+         * <p>
+         * The value is true or false. Default value: false.
+         * <p>
+         * @return {@code this}
+         * @param autoRenew Property autoRenew: Whether to automatically renew the resource package. This parameter is required.
+         */
+        public Builder autoRenew(final com.aliyun.ros.cdk.core.IResolvable autoRenew) {
+            this.props.autoRenew(autoRenew);
+            return this;
+        }
+
+        /**
+         * Property autoRenewPeriod: Duration of resource packs renewals.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>When AutoRenewPeriodUnit is Year: 1, 2, 3.</li>
+         * <li>When AutoRenewPeriodUnit is Month: 1, 2, 3, 6.
+         * Default is 1.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param autoRenewPeriod Property autoRenewPeriod: Duration of resource packs renewals. This parameter is required.
+         */
+        public Builder autoRenewPeriod(final java.lang.Number autoRenewPeriod) {
+            this.props.autoRenewPeriod(autoRenewPeriod);
+            return this;
+        }
+        /**
+         * Property autoRenewPeriod: Duration of resource packs renewals.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>When AutoRenewPeriodUnit is Year: 1, 2, 3.</li>
+         * <li>When AutoRenewPeriodUnit is Month: 1, 2, 3, 6.
+         * Default is 1.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param autoRenewPeriod Property autoRenewPeriod: Duration of resource packs renewals. This parameter is required.
+         */
+        public Builder autoRenewPeriod(final com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
+            this.props.autoRenewPeriod(autoRenewPeriod);
+            return this;
+        }
+
+        /**
+         * Property autoRenewPeriodUnit: Unit of resource pack renewals.
+         * <p>
+         * Valid values: Month, Year. Default is Month.
+         * <p>
+         * @return {@code this}
+         * @param autoRenewPeriodUnit Property autoRenewPeriodUnit: Unit of resource pack renewals. This parameter is required.
+         */
+        public Builder autoRenewPeriodUnit(final java.lang.String autoRenewPeriodUnit) {
+            this.props.autoRenewPeriodUnit(autoRenewPeriodUnit);
+            return this;
+        }
+        /**
+         * Property autoRenewPeriodUnit: Unit of resource pack renewals.
+         * <p>
+         * Valid values: Month, Year. Default is Month.
+         * <p>
+         * @return {@code this}
+         * @param autoRenewPeriodUnit Property autoRenewPeriodUnit: Unit of resource pack renewals. This parameter is required.
+         */
+        public Builder autoRenewPeriodUnit(final com.aliyun.ros.cdk.core.IResolvable autoRenewPeriodUnit) {
+            this.props.autoRenewPeriodUnit(autoRenewPeriodUnit);
             return this;
         }
 

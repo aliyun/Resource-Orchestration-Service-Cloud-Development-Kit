@@ -130,6 +130,11 @@ export interface IDBCluster extends ros.IResource {
     readonly props: DBClusterProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute ConnectionString: Vpc connection string.
      */
     readonly attrConnectionString: ros.IResolvable | string;
@@ -154,6 +159,11 @@ export class DBCluster extends ros.Resource implements IDBCluster {
     protected id: string;
     public readonly props: DBClusterProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute ConnectionString: Vpc connection string.
@@ -203,6 +213,7 @@ export class DBCluster extends ros.Resource implements IDBCluster {
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDBCluster;
+        this.attrArn = rosDBCluster.attrArn;
         this.attrConnectionString = rosDBCluster.attrConnectionString;
         this.attrDbClusterId = rosDBCluster.attrDbClusterId;
         this.attrOrderId = rosDBCluster.attrOrderId;

@@ -13,6 +13,8 @@ import (
 type NetworkInterface interface {
 	alicloudroscdkcore.Resource
 	INetworkInterface
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute MacAddress: The MAC address of your Network Interface.
 	AttrMacAddress() interface{}
 	// Attribute NetworkInterfaceId: ID of your Network Interface.
@@ -114,6 +116,16 @@ type NetworkInterface interface {
 type jsiiProxy_NetworkInterface struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_INetworkInterface
+}
+
+func (j *jsiiProxy_NetworkInterface) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_NetworkInterface) AttrMacAddress() interface{} {

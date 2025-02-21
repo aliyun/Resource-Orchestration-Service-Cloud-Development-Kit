@@ -348,6 +348,11 @@ export class RosCenBandwidthPackage extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::CenBandwidthPackage";
 
     /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
      * @Attribute CenBandwidthPackageId: The ID of the bandwidth package.
      */
     public readonly attrCenBandwidthPackageId: ros.IResolvable;
@@ -433,6 +438,7 @@ export class RosCenBandwidthPackage extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosCenBandwidthPackageProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosCenBandwidthPackage.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrCenBandwidthPackageId = this.getAtt('CenBandwidthPackageId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -719,6 +725,11 @@ export class RosCenInstance extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::CenInstance";
 
     /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
      * @Attribute CenId: The ID of the request.
      */
     public readonly attrCenId: ros.IResolvable;
@@ -762,6 +773,7 @@ export class RosCenInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosCenInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosCenInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrCenId = this.getAtt('CenId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;

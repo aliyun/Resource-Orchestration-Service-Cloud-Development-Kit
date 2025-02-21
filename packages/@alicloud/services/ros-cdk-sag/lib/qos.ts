@@ -36,7 +36,7 @@ export interface IQos extends ros.IResource {
     readonly attrQosId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::Qos`ALIYUN::SAG::QoS is used to create a quality of service (QoS) policy for a Smart Access Gateway (SAG) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::Qos`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosQos`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qos
  */

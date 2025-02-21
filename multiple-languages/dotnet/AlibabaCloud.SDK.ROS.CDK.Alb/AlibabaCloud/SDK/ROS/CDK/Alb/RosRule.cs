@@ -54,6 +54,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosRule))!;
 
         /// <remarks>
+        /// <strong>Attribute</strong>: ListenerId: The ID of the listener.
+        /// </remarks>
+        [JsiiProperty(name: "attrListenerId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrListenerId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: RuleId: The ID of the forwarding rules.
         /// </remarks>
         [JsiiProperty(name: "attrRuleId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]

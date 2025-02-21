@@ -87,6 +87,11 @@ export interface IDrdsInstance extends ros.IResource {
     readonly props: DrdsInstanceProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute DrdsInstanceId: instance id
      */
     readonly attrDrdsInstanceId: ros.IResolvable | string;
@@ -116,6 +121,11 @@ export class DrdsInstance extends ros.Resource implements IDrdsInstance {
     protected id: string;
     public readonly props: DrdsInstanceProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute DrdsInstanceId: instance id
@@ -166,6 +176,7 @@ export class DrdsInstance extends ros.Resource implements IDrdsInstance {
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDrdsInstance;
+        this.attrArn = rosDrdsInstance.attrArn;
         this.attrDrdsInstanceId = rosDrdsInstance.attrDrdsInstanceId;
         this.attrInternetEndpoint = rosDrdsInstance.attrInternetEndpoint;
         this.attrIntranetEndpoint = rosDrdsInstance.attrIntranetEndpoint;

@@ -1,3 +1,4 @@
+export * from './dedicatedblockstoragecluster';
 export * from './diskreplicagroup';
 export * from './diskreplicapair';
 export * from './diskreplicapairaddition';

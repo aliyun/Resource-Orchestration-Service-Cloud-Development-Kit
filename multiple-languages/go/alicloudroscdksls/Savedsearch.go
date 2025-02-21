@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Savedsearch`, which is used to save search results as a saved search.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Savedsearch`.
 type Savedsearch interface {
 	alicloudroscdkcore.Resource
 	ISavedsearch

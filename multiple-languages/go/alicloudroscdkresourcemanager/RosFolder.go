@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::Folder`, which is used to create a folder.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::Folder`.
 type RosFolder interface {
 	alicloudroscdkcore.RosResource
 	AttrFolderId() alicloudroscdkcore.IResolvable

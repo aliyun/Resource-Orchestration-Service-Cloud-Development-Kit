@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VOD::EditingProject`, which is used to create an online editing project.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VOD::EditingProject`.
 type RosEditingProject interface {
 	alicloudroscdkcore.RosResource
 	AttrCreateTime() alicloudroscdkcore.IResolvable

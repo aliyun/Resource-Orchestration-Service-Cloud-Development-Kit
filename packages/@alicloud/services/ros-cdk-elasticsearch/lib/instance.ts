@@ -131,6 +131,11 @@ export interface IInstance extends ros.IResource {
     readonly props: InstanceProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute Domain: Instance connection domain (only VPC network access supported).
      */
     readonly attrDomain: ros.IResolvable | string;
@@ -190,6 +195,11 @@ export class Instance extends ros.Resource implements IInstance {
     protected id: string;
     public readonly props: InstanceProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute Domain: Instance connection domain (only VPC network access supported).
@@ -278,6 +288,7 @@ export class Instance extends ros.Resource implements IInstance {
             zoneCount: props.zoneCount,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;
+        this.attrArn = rosInstance.attrArn;
         this.attrDomain = rosInstance.attrDomain;
         this.attrInstanceChargeType = rosInstance.attrInstanceChargeType;
         this.attrInstanceId = rosInstance.attrInstanceId;

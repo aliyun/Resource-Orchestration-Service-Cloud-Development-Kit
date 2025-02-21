@@ -12,6 +12,7 @@ import (
 // This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::Rule`ALIYUN::Config::Rule is used to create a forwarding rule.
 type RosRule interface {
 	alicloudroscdkcore.RosResource
+	AttrListenerId() alicloudroscdkcore.IResolvable
 	AttrRuleId() alicloudroscdkcore.IResolvable
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
@@ -179,6 +180,16 @@ type RosRule interface {
 // The jsii proxy struct for RosRule
 type jsiiProxy_RosRule struct {
 	internal.Type__alicloudroscdkcoreRosResource
+}
+
+func (j *jsiiProxy_RosRule) AttrListenerId() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrListenerId",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_RosRule) AttrRuleId() alicloudroscdkcore.IResolvable {

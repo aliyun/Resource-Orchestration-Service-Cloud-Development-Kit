@@ -112,7 +112,7 @@ export interface IInstance extends ros.IResource {
     readonly attrTrial: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::WAF::Instance`, which is used to create a Web Application Firewall (WAF) instance 2.0.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::WAF::Instance`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-instance
  */

@@ -80,6 +80,11 @@ export interface IOriginInstance extends ros.IResource {
     readonly props: OriginInstanceProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute InstanceId: The ID of the instance.
      */
     readonly attrInstanceId: ros.IResolvable | string;
@@ -94,6 +99,11 @@ export class OriginInstance extends ros.Resource implements IOriginInstance {
     protected id: string;
     public readonly props: OriginInstanceProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute InstanceId: The ID of the instance.
@@ -125,6 +135,7 @@ export class OriginInstance extends ros.Resource implements IOriginInstance {
             protectionMode: props.protectionMode,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosOriginInstance;
+        this.attrArn = rosOriginInstance.attrArn;
         this.attrInstanceId = rosOriginInstance.attrInstanceId;
     }
 }

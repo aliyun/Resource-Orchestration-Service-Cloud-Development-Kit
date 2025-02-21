@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::Account`, which is used to create a database account for a specified PolarDB cluster.
+// This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::Account`.
 type Account interface {
 	alicloudroscdkcore.Resource
 	IAccount

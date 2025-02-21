@@ -4,10 +4,8 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::PolicyAttachment`, which is used to attach a policy to an object.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::PolicyAttachment`.</summary>
     /// <remarks>
-    /// After you attach a policy to an object, the object has the permissions to manage the resources in the current resource group or within the current Alibaba Cloud account.
-    ///
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `PolicyAttachment` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-policyattachment
     /// </remarks>

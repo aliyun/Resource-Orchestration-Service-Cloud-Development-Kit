@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.polardb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbcluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:42.502Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:19.073Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosDBClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBClusterProps.Jsii$Proxy.class)
 public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -262,6 +262,12 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSslEnabled() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getStandbyAz() {
         return null;
     }
@@ -385,6 +391,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Object securityIpList;
         java.lang.Object serverlessType;
         java.lang.Object sourceResourceId;
+        java.lang.Object sslEnabled;
         java.lang.Object standbyAz;
         java.lang.Object storageAutoScale;
         java.lang.Object storagePayType;
@@ -1259,6 +1266,26 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link RosDBClusterProps#getSslEnabled}
+         * @param sslEnabled the value to be set.
+         * @return {@code this}
+         */
+        public Builder sslEnabled(java.lang.String sslEnabled) {
+            this.sslEnabled = sslEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getSslEnabled}
+         * @param sslEnabled the value to be set.
+         * @return {@code this}
+         */
+        public Builder sslEnabled(com.aliyun.ros.cdk.core.IResolvable sslEnabled) {
+            this.sslEnabled = sslEnabled;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBClusterProps#getStandbyAz}
          * @param standbyAz the value to be set.
          * @return {@code this}
@@ -1548,6 +1575,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object securityIpList;
         private final java.lang.Object serverlessType;
         private final java.lang.Object sourceResourceId;
+        private final java.lang.Object sslEnabled;
         private final java.lang.Object standbyAz;
         private final java.lang.Object storageAutoScale;
         private final java.lang.Object storagePayType;
@@ -1610,6 +1638,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             this.securityIpList = software.amazon.jsii.Kernel.get(this, "securityIpList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serverlessType = software.amazon.jsii.Kernel.get(this, "serverlessType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sourceResourceId = software.amazon.jsii.Kernel.get(this, "sourceResourceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sslEnabled = software.amazon.jsii.Kernel.get(this, "sslEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.standbyAz = software.amazon.jsii.Kernel.get(this, "standbyAz", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.storageAutoScale = software.amazon.jsii.Kernel.get(this, "storageAutoScale", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.storagePayType = software.amazon.jsii.Kernel.get(this, "storagePayType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1673,6 +1702,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             this.securityIpList = builder.securityIpList;
             this.serverlessType = builder.serverlessType;
             this.sourceResourceId = builder.sourceResourceId;
+            this.sslEnabled = builder.sslEnabled;
             this.standbyAz = builder.standbyAz;
             this.storageAutoScale = builder.storageAutoScale;
             this.storagePayType = builder.storagePayType;
@@ -1903,6 +1933,11 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.lang.Object getSslEnabled() {
+            return this.sslEnabled;
+        }
+
+        @Override
         public final java.lang.Object getStandbyAz() {
             return this.standbyAz;
         }
@@ -2089,6 +2124,9 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             if (this.getSourceResourceId() != null) {
                 data.set("sourceResourceId", om.valueToTree(this.getSourceResourceId()));
             }
+            if (this.getSslEnabled() != null) {
+                data.set("sslEnabled", om.valueToTree(this.getSslEnabled()));
+            }
             if (this.getStandbyAz() != null) {
                 data.set("standbyAz", om.valueToTree(this.getStandbyAz()));
             }
@@ -2186,6 +2224,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             if (this.securityIpList != null ? !this.securityIpList.equals(that.securityIpList) : that.securityIpList != null) return false;
             if (this.serverlessType != null ? !this.serverlessType.equals(that.serverlessType) : that.serverlessType != null) return false;
             if (this.sourceResourceId != null ? !this.sourceResourceId.equals(that.sourceResourceId) : that.sourceResourceId != null) return false;
+            if (this.sslEnabled != null ? !this.sslEnabled.equals(that.sslEnabled) : that.sslEnabled != null) return false;
             if (this.standbyAz != null ? !this.standbyAz.equals(that.standbyAz) : that.standbyAz != null) return false;
             if (this.storageAutoScale != null ? !this.storageAutoScale.equals(that.storageAutoScale) : that.storageAutoScale != null) return false;
             if (this.storagePayType != null ? !this.storagePayType.equals(that.storagePayType) : that.storagePayType != null) return false;
@@ -2245,6 +2284,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             result = 31 * result + (this.securityIpList != null ? this.securityIpList.hashCode() : 0);
             result = 31 * result + (this.serverlessType != null ? this.serverlessType.hashCode() : 0);
             result = 31 * result + (this.sourceResourceId != null ? this.sourceResourceId.hashCode() : 0);
+            result = 31 * result + (this.sslEnabled != null ? this.sslEnabled.hashCode() : 0);
             result = 31 * result + (this.standbyAz != null ? this.standbyAz.hashCode() : 0);
             result = 31 * result + (this.storageAutoScale != null ? this.storageAutoScale.hashCode() : 0);
             result = 31 * result + (this.storagePayType != null ? this.storagePayType.hashCode() : 0);

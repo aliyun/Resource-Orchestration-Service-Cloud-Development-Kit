@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::PrepayDBInstance`, which is used to create subscription ApsaraDB RDS instances.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::PrepayDBInstance`.
 type RosPrepayDBInstance interface {
 	alicloudroscdkcore.RosResource
 	AllocatePublicConnection() interface{}

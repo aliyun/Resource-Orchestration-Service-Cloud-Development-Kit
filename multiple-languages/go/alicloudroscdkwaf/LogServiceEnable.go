@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::WAF::LogServiceEnable`, which is used to enable the log collection feature for a specific domain name.
+// This class encapsulates and extends the ROS resource type `ALIYUN::WAF::LogServiceEnable`.
 type LogServiceEnable interface {
 	alicloudroscdkcore.Resource
 	ILogServiceEnable

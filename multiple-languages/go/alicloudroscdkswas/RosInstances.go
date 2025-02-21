@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::SWAS::Instances`, which is used to create subscription simple application servers.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::SWAS::Instances`.
 type RosInstances interface {
 	alicloudroscdkcore.RosResource
 	Amount() interface{}

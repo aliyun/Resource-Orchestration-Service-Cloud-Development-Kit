@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Represents a <code>SnatEntry</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:44.991Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:21.878Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.ISnatEntry")
 @software.amazon.jsii.Jsii.Proxy(ISnatEntry.Jsii$Proxy.class)
 public interface ISnatEntry extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

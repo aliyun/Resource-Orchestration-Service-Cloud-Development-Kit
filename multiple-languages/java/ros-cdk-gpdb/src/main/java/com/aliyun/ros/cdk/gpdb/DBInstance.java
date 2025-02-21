@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gpdb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::GPDB::DBInstance</code>, which is used to create an AnalyticDB for PostgreSQL instance in reserved storage mode.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:40.574Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:17.231Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.DBInstance")
 public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.gpdb.IDBInstance {
 
@@ -38,6 +38,14 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
     public DBInstance(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.gpdb.DBInstanceProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
         software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), java.util.Objects.requireNonNull(props, "props is required") });
+    }
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrArn() {
+        return software.amazon.jsii.Kernel.get(this, "attrArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -205,6 +213,27 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
          */
         public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.props.zoneId(zoneId);
+            return this;
+        }
+
+        /**
+         * Property aiNodeSpecInfos: AI node spec infos.
+         * <p>
+         * @return {@code this}
+         * @param aiNodeSpecInfos Property aiNodeSpecInfos: AI node spec infos. This parameter is required.
+         */
+        public Builder aiNodeSpecInfos(final com.aliyun.ros.cdk.core.IResolvable aiNodeSpecInfos) {
+            this.props.aiNodeSpecInfos(aiNodeSpecInfos);
+            return this;
+        }
+        /**
+         * Property aiNodeSpecInfos: AI node spec infos.
+         * <p>
+         * @return {@code this}
+         * @param aiNodeSpecInfos Property aiNodeSpecInfos: AI node spec infos. This parameter is required.
+         */
+        public Builder aiNodeSpecInfos(final java.util.List<? extends java.lang.Object> aiNodeSpecInfos) {
+            this.props.aiNodeSpecInfos(aiNodeSpecInfos);
             return this;
         }
 
@@ -492,6 +521,31 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.
          */
         public Builder instanceSpec(final com.aliyun.ros.cdk.core.IResolvable instanceSpec) {
             this.props.instanceSpec(instanceSpec);
+            return this;
+        }
+
+        /**
+         * Property masterCu: Master resources.
+         * <p>
+         * Default is 8.
+         * <p>
+         * @return {@code this}
+         * @param masterCu Property masterCu: Master resources. This parameter is required.
+         */
+        public Builder masterCu(final java.lang.Number masterCu) {
+            this.props.masterCu(masterCu);
+            return this;
+        }
+        /**
+         * Property masterCu: Master resources.
+         * <p>
+         * Default is 8.
+         * <p>
+         * @return {@code this}
+         * @param masterCu Property masterCu: Master resources. This parameter is required.
+         */
+        public Builder masterCu(final com.aliyun.ros.cdk.core.IResolvable masterCu) {
+            this.props.masterCu(masterCu);
             return this;
         }
 

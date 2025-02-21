@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::VPC::PrefixLists</code>, which is used to query prefix lists.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::VPC::PrefixLists</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:45.512Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:22.440Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.RosPrefixLists")
 public class RosPrefixLists extends com.aliyun.ros.cdk.core.RosResource {
 

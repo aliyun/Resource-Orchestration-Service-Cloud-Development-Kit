@@ -132,6 +132,11 @@ export interface INetworkInterface extends ros.IResource {
     readonly props: NetworkInterfaceProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute MacAddress: The MAC address of your Network Interface.
      */
     readonly attrMacAddress: ros.IResolvable | string;
@@ -161,6 +166,11 @@ export class NetworkInterface extends ros.Resource implements INetworkInterface 
     protected id: string;
     public readonly props: NetworkInterfaceProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute MacAddress: The MAC address of your Network Interface.
@@ -218,6 +228,7 @@ export class NetworkInterface extends ros.Resource implements INetworkInterface 
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosNetworkInterface;
+        this.attrArn = rosNetworkInterface.attrArn;
         this.attrMacAddress = rosNetworkInterface.attrMacAddress;
         this.attrNetworkInterfaceId = rosNetworkInterface.attrNetworkInterfaceId;
         this.attrPrivateIpAddress = rosNetworkInterface.attrPrivateIpAddress;

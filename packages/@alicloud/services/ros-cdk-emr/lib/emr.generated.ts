@@ -391,6 +391,11 @@ export class RosCluster extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EMR::Cluster";
 
     /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
      * @Attribute ClusterId: The ID of the cluster.
      */
     public readonly attrClusterId: ros.IResolvable;
@@ -644,6 +649,7 @@ export class RosCluster extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosClusterProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrClusterId = this.getAtt('ClusterId');
         this.attrHostGroups = this.getAtt('HostGroups');
         this.attrMasterNodeInnerIps = this.getAtt('MasterNodeInnerIps');

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Environment`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Environment`, which is used to create an environment.
 type RosEnvironment interface {
 	alicloudroscdkcore.RosResource
 	AttrDescription() alicloudroscdkcore.IResolvable

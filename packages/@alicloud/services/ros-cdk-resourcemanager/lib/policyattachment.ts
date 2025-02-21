@@ -77,7 +77,7 @@ export interface IPolicyAttachment extends ros.IResource {
     readonly attrResourceGroupId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::PolicyAttachment`, which is used to attach a policy to an object. After you attach a policy to an object, the object has the permissions to manage the resources in the current resource group or within the current Alibaba Cloud account.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::PolicyAttachment`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPolicyAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-policyattachment
  */

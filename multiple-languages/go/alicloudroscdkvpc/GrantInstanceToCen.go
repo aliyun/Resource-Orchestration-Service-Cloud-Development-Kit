@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::GrantInstanceToCen`, which is used to authorize a CEN instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::GrantInstanceToCen`.
 type GrantInstanceToCen interface {
 	alicloudroscdkcore.Resource
 	IGrantInstanceToCen

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::RouteTableAssociation`, which is used to associate a custom routing table with a vSwitch in the same VPC.
+// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::RouteTableAssociation`.
 type RouteTableAssociation interface {
 	alicloudroscdkcore.Resource
 	IRouteTableAssociation

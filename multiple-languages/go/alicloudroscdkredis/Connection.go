@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::Connection`, which is used to apply for a public endpoint for an ApsaraDB for Redis instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::Connection`.
 type Connection interface {
 	alicloudroscdkcore.Resource
 	IConnection

@@ -241,6 +241,11 @@ export interface ICluster extends ros.IResource {
     readonly props: ClusterProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute ClusterId: The ID of the cluster.
      */
     readonly attrClusterId: ros.IResolvable | string;
@@ -270,6 +275,11 @@ export class Cluster extends ros.Resource implements ICluster {
     protected id: string;
     public readonly props: ClusterProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute ClusterId: The ID of the cluster.
@@ -347,6 +357,7 @@ export class Cluster extends ros.Resource implements ICluster {
             initCustomHiveMetaDb: props.initCustomHiveMetaDb,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCluster;
+        this.attrArn = rosCluster.attrArn;
         this.attrClusterId = rosCluster.attrClusterId;
         this.attrHostGroups = rosCluster.attrHostGroups;
         this.attrMasterNodeInnerIps = rosCluster.attrMasterNodeInnerIps;

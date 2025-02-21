@@ -20,6 +20,7 @@ type RosInstanceGroupClone interface {
 	AttrOrderId() alicloudroscdkcore.IResolvable
 	AttrPrivateIps() alicloudroscdkcore.IResolvable
 	AttrPublicIps() alicloudroscdkcore.IResolvable
+	AttrRelatedOrderIds() alicloudroscdkcore.IResolvable
 	AttrZoneIds() alicloudroscdkcore.IResolvable
 	AutoReleaseTime() interface{}
 	SetAutoReleaseTime(val interface{})
@@ -358,6 +359,16 @@ func (j *jsiiProxy_RosInstanceGroupClone) AttrPublicIps() alicloudroscdkcore.IRe
 	_jsii_.Get(
 		j,
 		"attrPublicIps",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosInstanceGroupClone) AttrRelatedOrderIds() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrRelatedOrderIds",
 		&returns,
 	)
 	return returns

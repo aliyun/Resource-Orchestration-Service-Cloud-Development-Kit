@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SLS::MetricStore`, which is used to create a Logstore.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SLS::MetricStore`.
 type MetricStore interface {
 	alicloudroscdkcore.Resource
 	IMetricStore

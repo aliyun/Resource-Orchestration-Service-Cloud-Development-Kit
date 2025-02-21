@@ -244,6 +244,11 @@ export interface IScalingGroup extends ros.IResource {
     readonly props: ScalingGroupProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute ScalingGroupId: Scaling group Id
      */
     readonly attrScalingGroupId: ros.IResolvable | string;
@@ -263,6 +268,11 @@ export class ScalingGroup extends ros.Resource implements IScalingGroup {
     protected id: string;
     public readonly props: ScalingGroupProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute ScalingGroupId: Scaling group Id
@@ -325,6 +335,7 @@ export class ScalingGroup extends ros.Resource implements IScalingGroup {
             maxInstanceLifetime: props.maxInstanceLifetime,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosScalingGroup;
+        this.attrArn = rosScalingGroup.attrArn;
         this.attrScalingGroupId = rosScalingGroup.attrScalingGroupId;
         this.attrScalingGroupName = rosScalingGroup.attrScalingGroupName;
     }

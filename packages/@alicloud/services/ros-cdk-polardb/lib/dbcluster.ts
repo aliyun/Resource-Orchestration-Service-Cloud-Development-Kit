@@ -317,6 +317,14 @@ export interface DBClusterProps {
     readonly sourceResourceId?: string | ros.IResolvable;
 
     /**
+     * Property sslEnabled: Modifies the SSL status. Valid values:
+     * Disable: disables SSL encryption.
+     * Enable: enables SSL encryption.
+     * Update: updates the SSL certificate.
+     */
+    readonly sslEnabled?: string | ros.IResolvable;
+
+    /**
      * Property standbyAz: The zone where the hot standby storage cluster is stored. This is valid for Standard Edition clusters of Multi-zone Edition.
      * This parameter takes effect only when the multi-zone data consistency feature is enabled.
      */
@@ -403,6 +411,11 @@ export interface IDBCluster extends ros.IResource {
     readonly props: DBClusterProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute ClusterConnectionString: The cluster connection string of the db cluster.
      */
     readonly attrClusterConnectionString: ros.IResolvable | string;
@@ -477,6 +490,11 @@ export class DBCluster extends ros.Resource implements IDBCluster {
     protected id: string;
     public readonly props: DBClusterProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute ClusterConnectionString: The cluster connection string of the db cluster.
@@ -566,6 +584,7 @@ export class DBCluster extends ros.Resource implements IDBCluster {
             storageAutoScale: props.storageAutoScale,
             proxyClass: props.proxyClass,
             dbVersion: props.dbVersion,
+            sslEnabled: props.sslEnabled,
             dbMinorVersion: props.dbMinorVersion,
             dbClusterParameters: props.dbClusterParameters,
             tags: props.tags,
@@ -613,6 +632,7 @@ export class DBCluster extends ros.Resource implements IDBCluster {
             scaleMin: props.scaleMin,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDBCluster;
+        this.attrArn = rosDBCluster.attrArn;
         this.attrClusterConnectionString = rosDBCluster.attrClusterConnectionString;
         this.attrClusterEndpointId = rosDBCluster.attrClusterEndpointId;
         this.attrColdStorageInstanceId = rosDBCluster.attrColdStorageInstanceId;

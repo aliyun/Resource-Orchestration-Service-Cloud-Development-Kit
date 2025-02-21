@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::Account`, which is used to create an account that has specific permissions for a Tair (Redis OSS-compatible) instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::Account`.
 type Account interface {
 	alicloudroscdkcore.Resource
 	IAccount

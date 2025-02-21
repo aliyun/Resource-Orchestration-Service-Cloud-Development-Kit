@@ -378,6 +378,11 @@ export class RosConsumerGroup extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::KAFKA::ConsumerGroup";
 
     /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
      * @Attribute ConsumerId: Consumer group ID
      */
     public readonly attrConsumerId: ros.IResolvable;
@@ -415,6 +420,7 @@ export class RosConsumerGroup extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosConsumerGroupProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosConsumerGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrConsumerId = this.getAtt('ConsumerId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -696,6 +702,11 @@ export class RosInstance extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::KAFKA::Instance";
 
     /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
      * @Attribute DomainEndpoint: The default endpoints of the instance in domain name mode.
      */
     public readonly attrDomainEndpoint: ros.IResolvable;
@@ -844,6 +855,7 @@ export class RosInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrDomainEndpoint = this.getAtt('DomainEndpoint');
         this.attrEndpoint = this.getAtt('Endpoint');
         this.attrInstanceId = this.getAtt('InstanceId');
@@ -1590,6 +1602,11 @@ export class RosTopic extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::KAFKA::Topic";
 
     /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
      * @Attribute InstanceId: The ID of the Message Queue for Apache Kafka instance where the topic is located.
 You can call the GetInstanceList operation to query instances.
      */
@@ -1684,6 +1701,7 @@ You can call the GetInstanceList operation to query instances.
      */
     constructor(scope: ros.Construct, id: string, props: RosTopicProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosTopic.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrInstanceId = this.getAtt('InstanceId');
         this.attrTopic = this.getAtt('Topic');
 

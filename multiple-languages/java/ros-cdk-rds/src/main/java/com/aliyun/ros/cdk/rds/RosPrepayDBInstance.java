@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.rds;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::RDS::PrepayDBInstance</code>, which is used to create subscription ApsaraDB RDS instances.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::RDS::PrepayDBInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:43.351Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:19.677Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosPrepayDBInstance")
 public class RosPrepayDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 

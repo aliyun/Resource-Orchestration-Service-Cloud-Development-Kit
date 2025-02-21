@@ -8,6 +8,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
     [JsiiInterface(nativeType: typeof(ISecurityPolicy), fullyQualifiedName: "@alicloud/ros-cdk-nlb.ISecurityPolicy")]
     public interface ISecurityPolicy : AlibabaCloud.SDK.ROS.CDK.Core.IResource
     {
+        /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+        [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrArn
+        {
+            get;
+        }
+
         /// <summary>Attribute SecurityPolicyId: The ID of the security policy.</summary>
         [JsiiProperty(name: "attrSecurityPolicyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrSecurityPolicyId
@@ -27,6 +34,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
         {
             private _Proxy(ByRefValue reference): base(reference)
             {
+            }
+
+            /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+            [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrArn
+            {
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Attribute SecurityPolicyId: The ID of the security policy.</summary>

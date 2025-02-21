@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sae
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Ingress`, which is used to create a routing rule.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Ingress`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Ingress` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-ingress

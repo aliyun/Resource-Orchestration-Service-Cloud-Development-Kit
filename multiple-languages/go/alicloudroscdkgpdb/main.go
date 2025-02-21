@@ -63,6 +63,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "addDependency", GoMethod: "AddDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "addResourceDesc", GoMethod: "AddResourceDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
+			_jsii_.MemberProperty{JsiiProperty: "attrArn", GoGetter: "AttrArn"},
 			_jsii_.MemberProperty{JsiiProperty: "attrConnectionString", GoGetter: "AttrConnectionString"},
 			_jsii_.MemberProperty{JsiiProperty: "attrDbInstanceId", GoGetter: "AttrDbInstanceId"},
 			_jsii_.MemberProperty{JsiiProperty: "attrOrderId", GoGetter: "AttrOrderId"},
@@ -111,6 +112,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "addDependency", GoMethod: "AddDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "addResourceDesc", GoMethod: "AddResourceDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
+			_jsii_.MemberProperty{JsiiProperty: "attrArn", GoGetter: "AttrArn"},
 			_jsii_.MemberProperty{JsiiProperty: "attrConnectionString", GoGetter: "AttrConnectionString"},
 			_jsii_.MemberProperty{JsiiProperty: "attrDbInstanceId", GoGetter: "AttrDbInstanceId"},
 			_jsii_.MemberProperty{JsiiProperty: "attrOrderId", GoGetter: "AttrOrderId"},
@@ -171,6 +173,7 @@ func init() {
 		"@alicloud/ros-cdk-gpdb.IDBInstance",
 		reflect.TypeOf((*IDBInstance)(nil)).Elem(),
 		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "attrArn", GoGetter: "AttrArn"},
 			_jsii_.MemberProperty{JsiiProperty: "attrConnectionString", GoGetter: "AttrConnectionString"},
 			_jsii_.MemberProperty{JsiiProperty: "attrDbInstanceId", GoGetter: "AttrDbInstanceId"},
 			_jsii_.MemberProperty{JsiiProperty: "attrOrderId", GoGetter: "AttrOrderId"},
@@ -190,6 +193,7 @@ func init() {
 		"@alicloud/ros-cdk-gpdb.IElasticDBInstance",
 		reflect.TypeOf((*IElasticDBInstance)(nil)).Elem(),
 		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "attrArn", GoGetter: "AttrArn"},
 			_jsii_.MemberProperty{JsiiProperty: "attrConnectionString", GoGetter: "AttrConnectionString"},
 			_jsii_.MemberProperty{JsiiProperty: "attrDbInstanceId", GoGetter: "AttrDbInstanceId"},
 			_jsii_.MemberProperty{JsiiProperty: "attrOrderId", GoGetter: "AttrOrderId"},
@@ -338,7 +342,9 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "addPropertyDeletionOverride", GoMethod: "AddPropertyDeletionOverride"},
 			_jsii_.MemberMethod{JsiiMethod: "addPropertyOverride", GoMethod: "AddPropertyOverride"},
 			_jsii_.MemberMethod{JsiiMethod: "addRosDependency", GoMethod: "AddRosDependency"},
+			_jsii_.MemberProperty{JsiiProperty: "aiNodeSpecInfos", GoGetter: "AiNodeSpecInfos"},
 			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
+			_jsii_.MemberProperty{JsiiProperty: "attrArn", GoGetter: "AttrArn"},
 			_jsii_.MemberProperty{JsiiProperty: "attrConnectionString", GoGetter: "AttrConnectionString"},
 			_jsii_.MemberProperty{JsiiProperty: "attrDbInstanceId", GoGetter: "AttrDbInstanceId"},
 			_jsii_.MemberProperty{JsiiProperty: "attrOrderId", GoGetter: "AttrOrderId"},
@@ -362,6 +368,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "idleTime", GoGetter: "IdleTime"},
 			_jsii_.MemberProperty{JsiiProperty: "instanceSpec", GoGetter: "InstanceSpec"},
 			_jsii_.MemberProperty{JsiiProperty: "logicalId", GoGetter: "LogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "masterCu", GoGetter: "MasterCu"},
 			_jsii_.MemberProperty{JsiiProperty: "masterNodeNum", GoGetter: "MasterNodeNum"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
 			_jsii_.MemberMethod{JsiiMethod: "onPrepare", GoMethod: "OnPrepare"},
@@ -407,6 +414,10 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-gpdb.RosDBInstance.AINodeSpecInfosProperty",
+		reflect.TypeOf((*RosDBInstance_AINodeSpecInfosProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-gpdb.RosDBInstance.TagsProperty",
 		reflect.TypeOf((*RosDBInstance_TagsProperty)(nil)).Elem(),
 	)
@@ -429,6 +440,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "addPropertyOverride", GoMethod: "AddPropertyOverride"},
 			_jsii_.MemberMethod{JsiiMethod: "addRosDependency", GoMethod: "AddRosDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
+			_jsii_.MemberProperty{JsiiProperty: "attrArn", GoGetter: "AttrArn"},
 			_jsii_.MemberProperty{JsiiProperty: "attrConnectionString", GoGetter: "AttrConnectionString"},
 			_jsii_.MemberProperty{JsiiProperty: "attrDbInstanceId", GoGetter: "AttrDbInstanceId"},
 			_jsii_.MemberProperty{JsiiProperty: "attrOrderId", GoGetter: "AttrOrderId"},

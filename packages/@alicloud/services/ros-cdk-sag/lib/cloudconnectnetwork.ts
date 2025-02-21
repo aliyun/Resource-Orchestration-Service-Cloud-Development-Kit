@@ -39,12 +39,17 @@ export interface ICloudConnectNetwork extends ros.IResource {
     readonly props: CloudConnectNetworkProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute CcnId: The ID of the CCN instance.
      */
     readonly attrCcnId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::CloudConnectNetwork`, which is used to create a Cloud Connect Network (CCN) instance. CNN is a device access matrix composed of Alibaba Cloud distributed Smart Access Gateways (SAGs). You can add multiple SAGs to a CCN instance and then attach the CCN instance to a Cloud Enterprise Network (CEN) instance. In this way, you can connect your local branches to Alibaba Cloud.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::CloudConnectNetwork`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCloudConnectNetwork`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-cloudconnectnetwork
  */
@@ -53,6 +58,11 @@ export class CloudConnectNetwork extends ros.Resource implements ICloudConnectNe
     protected id: string;
     public readonly props: CloudConnectNetworkProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute CcnId: The ID of the CCN instance.
@@ -78,6 +88,7 @@ export class CloudConnectNetwork extends ros.Resource implements ICloudConnectNe
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCloudConnectNetwork;
+        this.attrArn = rosCloudConnectNetwork.attrArn;
         this.attrCcnId = rosCloudConnectNetwork.attrCcnId;
     }
 }

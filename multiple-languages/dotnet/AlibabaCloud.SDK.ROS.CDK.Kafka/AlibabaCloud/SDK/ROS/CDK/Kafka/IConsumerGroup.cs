@@ -8,6 +8,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
     [JsiiInterface(nativeType: typeof(IConsumerGroup), fullyQualifiedName: "@alicloud/ros-cdk-kafka.IConsumerGroup")]
     public interface IConsumerGroup : AlibabaCloud.SDK.ROS.CDK.Core.IResource
     {
+        /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+        [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrArn
+        {
+            get;
+        }
+
         /// <summary>Attribute ConsumerId: Consumer group ID.</summary>
         [JsiiProperty(name: "attrConsumerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrConsumerId
@@ -27,6 +34,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         {
             private _Proxy(ByRefValue reference): base(reference)
             {
+            }
+
+            /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+            [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrArn
+            {
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Attribute ConsumerId: Consumer group ID.</summary>

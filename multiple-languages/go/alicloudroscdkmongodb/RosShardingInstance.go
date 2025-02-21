@@ -14,6 +14,7 @@ type RosShardingInstance interface {
 	alicloudroscdkcore.RosResource
 	AccountPassword() interface{}
 	SetAccountPassword(val interface{})
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrDbInstanceId() alicloudroscdkcore.IResolvable
 	AttrDbInstanceStatus() alicloudroscdkcore.IResolvable
 	AttrOrderId() alicloudroscdkcore.IResolvable
@@ -222,6 +223,16 @@ func (j *jsiiProxy_RosShardingInstance) AccountPassword() interface{} {
 	_jsii_.Get(
 		j,
 		"accountPassword",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosShardingInstance) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
 		&returns,
 	)
 	return returns

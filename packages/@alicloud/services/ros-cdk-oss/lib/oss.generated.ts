@@ -185,6 +185,11 @@ export class RosBucket extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OSS::Bucket";
 
     /**
+     * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable;
+
+    /**
      * @Attribute DomainName: The public DNS name of the specified bucket.
      */
     public readonly attrDomainName: ros.IResolvable;
@@ -292,6 +297,7 @@ export class RosBucket extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosBucketProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosBucket.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrArn = this.getAtt('Arn');
         this.attrDomainName = this.getAtt('DomainName');
         this.attrInternalDomainName = this.getAtt('InternalDomainName');
         this.attrName = this.getAtt('Name');
@@ -1839,7 +1845,7 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Domain`, which is used to bind a custom domain name.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Domain`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Domain` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-domain
  */
@@ -1967,7 +1973,7 @@ function rosObjectAclPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::ObjectAcl`, which is used to modify the access control list (ACL) of an Object Storage Service (OSS) object.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::ObjectAcl`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ObjectAcl` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-objectacl
  */
@@ -2075,7 +2081,7 @@ function rosWebsitePropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Website`, which is used to configure static website hosting and redirection rules for an Object Storage Service (OSS) bucket.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Website`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Website` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-website
  */

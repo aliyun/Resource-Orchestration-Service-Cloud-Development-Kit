@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.mse;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::MSE::ServiceSource</code>, which is used to create a Nacos service source.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::MSE::ServiceSource</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:41.510Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:18.172Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.RosServiceSource")
 public class RosServiceSource extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.slb;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SLB::LoadBalancerClone</code>, which is used to clone a Server Load Balancer (SLB) instance.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SLB::LoadBalancerClone</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:44.305Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:20.763Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosLoadBalancerClone")
 public class RosLoadBalancerClone extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SLB::MasterSlaveServerGroup`, which is used to create a primary/secondary server group.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SLB::MasterSlaveServerGroup`.
 type MasterSlaveServerGroup interface {
 	alicloudroscdkcore.Resource
 	IMasterSlaveServerGroup

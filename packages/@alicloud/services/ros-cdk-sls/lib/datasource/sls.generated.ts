@@ -97,7 +97,7 @@ function rosLogstoresPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLS::Logstores`, which is used to query Logstores.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLS::Logstores`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Logstores` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sls-logstores
  */
@@ -388,7 +388,7 @@ function rosProjectsPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLS::Projects`, which is used to query the information about Simple Log Service (SLS) projects.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLS::Projects`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Projects` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sls-projects
  */

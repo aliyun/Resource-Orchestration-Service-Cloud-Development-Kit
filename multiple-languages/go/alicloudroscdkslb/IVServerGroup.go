@@ -10,6 +10,8 @@ import (
 // Represents a `VServerGroup`.
 type IVServerGroup interface {
 	alicloudroscdkcore.IResource
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute BackendServers: Backend server list in this VServerGroup.
 	AttrBackendServers() interface{}
 	// Attribute LoadBalancerId: The id of load balancer.
@@ -22,6 +24,16 @@ type IVServerGroup interface {
 // The jsii proxy for IVServerGroup
 type jsiiProxy_IVServerGroup struct {
 	internal.Type__alicloudroscdkcoreIResource
+}
+
+func (j *jsiiProxy_IVServerGroup) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_IVServerGroup) AttrBackendServers() interface{} {

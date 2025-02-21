@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SAG::QosCar`, which is used to create a traffic throttling rule for a quality of service (QoS) policy.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SAG::QosCar`.
 type QosCar interface {
 	alicloudroscdkcore.Resource
 	IQosCar

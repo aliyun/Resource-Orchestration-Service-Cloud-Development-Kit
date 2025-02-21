@@ -13,6 +13,8 @@ import (
 type Instance interface {
 	alicloudroscdkcore.Resource
 	IInstance
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute Domain: Instance connection domain (only VPC network access supported).
 	AttrDomain() interface{}
 	// Attribute InstanceChargeType: Instance charge type.
@@ -128,6 +130,16 @@ type Instance interface {
 type jsiiProxy_Instance struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_IInstance
+}
+
+func (j *jsiiProxy_Instance) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Instance) AttrDomain() interface{} {

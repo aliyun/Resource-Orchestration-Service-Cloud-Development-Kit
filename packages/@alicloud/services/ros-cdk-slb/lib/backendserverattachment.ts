@@ -47,7 +47,7 @@ export interface IBackendServerAttachment extends ros.IResource {
     readonly attrLoadBalancerId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::BackendServerAttachment`, which is used to attach backend servers to an SLB instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::BackendServerAttachment`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBackendServerAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-backendserverattachment
  */

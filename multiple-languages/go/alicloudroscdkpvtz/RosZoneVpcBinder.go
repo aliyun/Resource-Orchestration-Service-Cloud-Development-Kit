@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::ZoneVpcBinder`, which is used to bind a private zone to or unbind a private zone from a virtual private cloud (VPC).
+// This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::ZoneVpcBinder`.
 type RosZoneVpcBinder interface {
 	alicloudroscdkcore.RosResource
 	AttrVpcs() alicloudroscdkcore.IResolvable

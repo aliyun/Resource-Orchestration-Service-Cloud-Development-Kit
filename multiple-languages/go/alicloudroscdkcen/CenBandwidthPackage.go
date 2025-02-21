@@ -13,6 +13,8 @@ import (
 type CenBandwidthPackage interface {
 	alicloudroscdkcore.Resource
 	ICenBandwidthPackage
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute CenBandwidthPackageId: The ID of the bandwidth package.
 	AttrCenBandwidthPackageId() interface{}
 	EnableResourcePropertyConstraint() *bool
@@ -108,6 +110,16 @@ type CenBandwidthPackage interface {
 type jsiiProxy_CenBandwidthPackage struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_ICenBandwidthPackage
+}
+
+func (j *jsiiProxy_CenBandwidthPackage) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_CenBandwidthPackage) AttrCenBandwidthPackageId() interface{} {

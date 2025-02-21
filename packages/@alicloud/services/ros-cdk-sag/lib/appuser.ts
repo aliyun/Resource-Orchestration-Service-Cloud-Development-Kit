@@ -66,12 +66,12 @@ export interface IAppUser extends ros.IResource {
     readonly attrSmartAgId: ros.IResolvable | string;
 
     /**
-     * Attribute UserName: <heat.engine.properties.Schema object at 0x7f1d75314810>
+     * Attribute UserName: <heat.engine.properties.Schema object at 0x7fa3e6637c50>
      */
     readonly attrUserName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::AppUser`, which is used to create a client account for a Smart Access Gateway (SAG) app instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::AppUser`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAppUser`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-appuser
  */
@@ -87,7 +87,7 @@ export class AppUser extends ros.Resource implements IAppUser {
     public readonly attrSmartAgId: ros.IResolvable | string;
 
     /**
-     * Attribute UserName: <heat.engine.properties.Schema object at 0x7f1d75314810>
+     * Attribute UserName: <heat.engine.properties.Schema object at 0x7fa3e6637c50>
      */
     public readonly attrUserName: ros.IResolvable | string;
 

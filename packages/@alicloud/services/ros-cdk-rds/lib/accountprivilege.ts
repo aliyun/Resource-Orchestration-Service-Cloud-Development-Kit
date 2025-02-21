@@ -37,7 +37,7 @@ export interface IAccountPrivilege extends ros.IResource {
     readonly props: AccountPrivilegeProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::AccountPrivilege`, which is used to authorize an account to access a database.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::AccountPrivilege`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccountPrivilege`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-accountprivilege
  */

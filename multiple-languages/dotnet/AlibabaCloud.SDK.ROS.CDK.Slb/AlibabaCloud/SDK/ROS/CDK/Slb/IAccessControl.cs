@@ -15,6 +15,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             get;
         }
 
+        /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+        [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrArn
+        {
+            get;
+        }
+
         [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-slb.AccessControlProps\"}")]
         AlibabaCloud.SDK.ROS.CDK.Slb.IAccessControlProps Props
         {
@@ -32,6 +39,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <summary>Attribute AclId: The ID of the access control list.</summary>
             [JsiiProperty(name: "attrAclId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AttrAclId
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+            [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrArn
             {
                 get => GetInstanceProperty<object>()!;
             }

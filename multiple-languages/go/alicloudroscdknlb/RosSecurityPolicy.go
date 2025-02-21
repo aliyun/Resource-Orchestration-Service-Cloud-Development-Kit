@@ -9,9 +9,10 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::SecurityPolicy`, which is used to create a custom security policy for a TCP/SSL listener.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::SecurityPolicy`.
 type RosSecurityPolicy interface {
 	alicloudroscdkcore.RosResource
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrSecurityPolicyId() alicloudroscdkcore.IResolvable
 	Ciphers() interface{}
 	SetCiphers(val interface{})
@@ -177,6 +178,16 @@ type RosSecurityPolicy interface {
 // The jsii proxy struct for RosSecurityPolicy
 type jsiiProxy_RosSecurityPolicy struct {
 	internal.Type__alicloudroscdkcoreRosResource
+}
+
+func (j *jsiiProxy_RosSecurityPolicy) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_RosSecurityPolicy) AttrSecurityPolicyId() alicloudroscdkcore.IResolvable {

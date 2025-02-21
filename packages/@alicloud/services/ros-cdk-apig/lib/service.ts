@@ -62,7 +62,7 @@ export interface IService extends ros.IResource {
     readonly attrSourceType: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Service`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Service`, which is used to create a service.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosService`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-service
  */

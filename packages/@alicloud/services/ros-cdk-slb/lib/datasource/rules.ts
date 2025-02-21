@@ -50,7 +50,7 @@ export interface IRules extends ros.IResource {
     readonly attrRules: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::Rules`, which is used to query the forwarding rules that are configured for a listener.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::Rules`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRules`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-rules
  */

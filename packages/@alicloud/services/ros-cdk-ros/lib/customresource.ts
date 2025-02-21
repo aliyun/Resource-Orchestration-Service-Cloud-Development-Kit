@@ -63,7 +63,7 @@ export interface ICustomResource extends ros.IResource {
     readonly attrOutputs: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::CustomResource`, which is used to create a custom resource.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::CustomResource`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCustomResource`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-customresource
  */

@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Swas
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::SWAS::Instances`, which is used to create subscription simple application servers.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::SWAS::Instances`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstances`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-swas-instances

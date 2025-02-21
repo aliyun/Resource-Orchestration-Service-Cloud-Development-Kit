@@ -29,6 +29,24 @@ export interface RosResourcePackageProps {
     readonly specification: string | ros.IResolvable;
 
     /**
+     * @Property autoRenew: Whether to automatically renew the resource package. The value is true or false. Default value: false.
+     */
+    readonly autoRenew?: boolean | ros.IResolvable;
+
+    /**
+     * @Property autoRenewPeriod: Duration of resource packs renewals. Valid values:
+     * - When AutoRenewPeriodUnit is Year: 1, 2, 3. 
+     * - When AutoRenewPeriodUnit is Month: 1, 2, 3, 6.
+     * Default is 1.
+     */
+    readonly autoRenewPeriod?: number | ros.IResolvable;
+
+    /**
+     * @Property autoRenewPeriodUnit: Unit of resource pack renewals. Valid values: Month, Year. Default is Month.
+     */
+    readonly autoRenewPeriodUnit?: string | ros.IResolvable;
+
+    /**
      * @Property effectiveDate: The effective date of the specified resource package. The resource package will take effect immediately if the effective date is unspecified. The date format follows the ISO8601 standard and uses UTC time. Format: yyyy-MM-ddTHH:mm:ssZ
      */
     readonly effectiveDate?: string | ros.IResolvable;
@@ -49,6 +67,13 @@ export interface RosResourcePackageProps {
 function RosResourcePackagePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.autoRenewPeriod && (typeof properties.autoRenewPeriod) !== 'object') {
+        errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateAllowedValues)({
+          data: properties.autoRenewPeriod,
+          allowedValues: [1,2,3,6],
+        }));
+    }
+    errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
     errors.collect(ros.propertyValidator('productCode', ros.requiredValidator)(properties.productCode));
     errors.collect(ros.propertyValidator('productCode', ros.validateString)(properties.productCode));
     if(properties.pricingCycle && (typeof properties.pricingCycle) !== 'object') {
@@ -58,6 +83,7 @@ function RosResourcePackagePropsValidator(properties: any): ros.ValidationResult
         }));
     }
     errors.collect(ros.propertyValidator('pricingCycle', ros.validateString)(properties.pricingCycle));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     errors.collect(ros.propertyValidator('packageType', ros.requiredValidator)(properties.packageType));
     errors.collect(ros.propertyValidator('packageType', ros.validateString)(properties.packageType));
     errors.collect(ros.propertyValidator('specification', ros.requiredValidator)(properties.specification));
@@ -65,6 +91,13 @@ function RosResourcePackagePropsValidator(properties: any): ros.ValidationResult
     errors.collect(ros.propertyValidator('duration', ros.requiredValidator)(properties.duration));
     errors.collect(ros.propertyValidator('duration', ros.validateNumber)(properties.duration));
     errors.collect(ros.propertyValidator('effectiveDate', ros.validateString)(properties.effectiveDate));
+    if(properties.autoRenewPeriodUnit && (typeof properties.autoRenewPeriodUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('autoRenewPeriodUnit', ros.validateAllowedValues)({
+          data: properties.autoRenewPeriodUnit,
+          allowedValues: ["Month","Year"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('autoRenewPeriodUnit', ros.validateString)(properties.autoRenewPeriodUnit));
     return errors.wrap('supplied properties not correct for "RosResourcePackageProps"');
 }
 
@@ -86,6 +119,9 @@ function rosResourcePackagePropsToRosTemplate(properties: any, enableResourcePro
       'PackageType': ros.stringToRosTemplate(properties.packageType),
       'ProductCode': ros.stringToRosTemplate(properties.productCode),
       'Specification': ros.stringToRosTemplate(properties.specification),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'AutoRenewPeriod': ros.numberToRosTemplate(properties.autoRenewPeriod),
+      'AutoRenewPeriodUnit': ros.stringToRosTemplate(properties.autoRenewPeriodUnit),
       'EffectiveDate': ros.stringToRosTemplate(properties.effectiveDate),
       'PricingCycle': ros.stringToRosTemplate(properties.pricingCycle),
     };
@@ -136,6 +172,24 @@ export class RosResourcePackage extends ros.RosResource {
     public specification: string | ros.IResolvable;
 
     /**
+     * @Property autoRenew: Whether to automatically renew the resource package. The value is true or false. Default value: false.
+     */
+    public autoRenew: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoRenewPeriod: Duration of resource packs renewals. Valid values:
+     * - When AutoRenewPeriodUnit is Year: 1, 2, 3. 
+     * - When AutoRenewPeriodUnit is Month: 1, 2, 3, 6.
+     * Default is 1.
+     */
+    public autoRenewPeriod: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoRenewPeriodUnit: Unit of resource pack renewals. Valid values: Month, Year. Default is Month.
+     */
+    public autoRenewPeriodUnit: string | ros.IResolvable | undefined;
+
+    /**
      * @Property effectiveDate: The effective date of the specified resource package. The resource package will take effect immediately if the effective date is unspecified. The date format follows the ISO8601 standard and uses UTC time. Format: yyyy-MM-ddTHH:mm:ssZ
      */
     public effectiveDate: string | ros.IResolvable | undefined;
@@ -160,6 +214,9 @@ export class RosResourcePackage extends ros.RosResource {
         this.packageType = props.packageType;
         this.productCode = props.productCode;
         this.specification = props.specification;
+        this.autoRenew = props.autoRenew;
+        this.autoRenewPeriod = props.autoRenewPeriod;
+        this.autoRenewPeriodUnit = props.autoRenewPeriodUnit;
         this.effectiveDate = props.effectiveDate;
         this.pricingCycle = props.pricingCycle;
     }
@@ -171,6 +228,9 @@ export class RosResourcePackage extends ros.RosResource {
             packageType: this.packageType,
             productCode: this.productCode,
             specification: this.specification,
+            autoRenew: this.autoRenew,
+            autoRenewPeriod: this.autoRenewPeriod,
+            autoRenewPeriodUnit: this.autoRenewPeriodUnit,
             effectiveDate: this.effectiveDate,
             pricingCycle: this.pricingCycle,
         };

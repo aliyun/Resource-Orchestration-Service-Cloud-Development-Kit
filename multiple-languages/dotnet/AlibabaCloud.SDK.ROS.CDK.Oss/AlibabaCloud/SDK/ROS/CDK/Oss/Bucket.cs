@@ -45,6 +45,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
             InvokeStaticVoidMethod(typeof(AlibabaCloud.SDK.ROS.CDK.Oss.Bucket), new System.Type[]{typeof(string)}, new object[]{physicalName});
         }
 
+        /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+        [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrArn
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
         /// <summary>Attribute DomainName: The public DNS name of the specified bucket.</summary>
         [JsiiProperty(name: "attrDomainName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrDomainName

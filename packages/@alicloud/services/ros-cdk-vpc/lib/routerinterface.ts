@@ -120,7 +120,7 @@ export interface IRouterInterface extends ros.IResource {
     readonly attrRouterInterfaceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::RouterInterface`, which is used to create a router interface.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::RouterInterface`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRouterInterface`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-routerinterface
  */

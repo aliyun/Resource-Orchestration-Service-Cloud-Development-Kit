@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::AITask`, which is used to enable the PolarDB for AI feature.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::AITask`.
 type RosAITask interface {
 	alicloudroscdkcore.RosResource
 	AttrDbClusterId() alicloudroscdkcore.IResolvable

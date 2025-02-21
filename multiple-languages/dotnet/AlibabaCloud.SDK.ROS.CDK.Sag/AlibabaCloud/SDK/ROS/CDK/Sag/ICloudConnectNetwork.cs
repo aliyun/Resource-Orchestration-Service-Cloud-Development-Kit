@@ -8,6 +8,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
     [JsiiInterface(nativeType: typeof(ICloudConnectNetwork), fullyQualifiedName: "@alicloud/ros-cdk-sag.ICloudConnectNetwork")]
     public interface ICloudConnectNetwork : AlibabaCloud.SDK.ROS.CDK.Core.IResource
     {
+        /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+        [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrArn
+        {
+            get;
+        }
+
         /// <summary>Attribute CcnId: The ID of the CCN instance.</summary>
         [JsiiProperty(name: "attrCcnId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrCcnId
@@ -27,6 +34,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         {
             private _Proxy(ByRefValue reference): base(reference)
             {
+            }
+
+            /// <summary>Attribute Arn: The Alibaba Cloud Resource Name (ARN).</summary>
+            [JsiiProperty(name: "attrArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrArn
+            {
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Attribute CcnId: The ID of the CCN instance.</summary>

@@ -10,6 +10,8 @@ import (
 // Represents a `SecurityPolicy`.
 type ISecurityPolicy interface {
 	alicloudroscdkcore.IResource
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute SecurityPolicyId: The ID of the security policy.
 	AttrSecurityPolicyId() interface{}
 	Props() *SecurityPolicyProps
@@ -18,6 +20,16 @@ type ISecurityPolicy interface {
 // The jsii proxy for ISecurityPolicy
 type jsiiProxy_ISecurityPolicy struct {
 	internal.Type__alicloudroscdkcoreIResource
+}
+
+func (j *jsiiProxy_ISecurityPolicy) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_ISecurityPolicy) AttrSecurityPolicyId() interface{} {

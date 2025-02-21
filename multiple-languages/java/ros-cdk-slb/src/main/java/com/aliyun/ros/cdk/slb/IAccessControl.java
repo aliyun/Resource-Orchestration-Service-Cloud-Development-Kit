@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Represents a <code>AccessControl</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:44.224Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:20.617Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.IAccessControl")
 @software.amazon.jsii.Jsii.Proxy(IAccessControl.Jsii$Proxy.class)
 public interface IAccessControl extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
@@ -12,6 +12,11 @@ public interface IAccessControl extends software.amazon.jsii.JsiiSerializable, c
      * Attribute AclId: The ID of the access control list.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrAclId();
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrArn();
 
     @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.slb.AccessControlProps getProps();
 
@@ -63,6 +68,14 @@ public interface IAccessControl extends software.amazon.jsii.JsiiSerializable, c
             return software.amazon.jsii.Kernel.get(this, "attrAclId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
+        /**
+         * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrArn() {
+            return software.amazon.jsii.Kernel.get(this, "attrArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
         @Override
         public final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.slb.AccessControlProps getProps() {
             return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.slb.AccessControlProps.class));
@@ -112,6 +125,14 @@ public interface IAccessControl extends software.amazon.jsii.JsiiSerializable, c
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrAclId() {
             return software.amazon.jsii.Kernel.get(this, "attrAclId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrArn() {
+            return software.amazon.jsii.Kernel.get(this, "attrArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         @Override

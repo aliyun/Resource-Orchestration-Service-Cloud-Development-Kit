@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SAG::ACLAssociation`, which is used to associate an access control list (ACL) with a Smart Access Gateway (SAG) instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SAG::ACLAssociation`.
 type ACLAssociation interface {
 	alicloudroscdkcore.Resource
 	IACLAssociation

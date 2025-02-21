@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ram;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::RAM::AttachPolicyToRole</code>, which is used to attach a policy to a specified role.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::RAM::AttachPolicyToRole</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:42.875Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:19.314Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.AttachPolicyToRole")
 public class AttachPolicyToRole extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ram.IAttachPolicyToRole {
 

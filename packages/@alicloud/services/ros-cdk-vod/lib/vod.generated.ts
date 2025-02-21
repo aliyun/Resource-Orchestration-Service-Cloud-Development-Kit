@@ -63,7 +63,7 @@ function rosEditingProjectPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VOD::EditingProject`, which is used to create an online editing project.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VOD::EditingProject`.
  * @Note This class does not contain additional functions, so it is recommended to use the `EditingProject` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-editingproject
  */
@@ -264,7 +264,7 @@ function rosMessageCallbackPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VOD::MessageCallback`, which is used to configure the callback method, callback URL, and event types for an event notification.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VOD::MessageCallback`.
  * @Note This class does not contain additional functions, so it is recommended to use the `MessageCallback` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-messagecallback
  */
@@ -475,7 +475,7 @@ function rosStoragePropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::VOD::Storage`, which is used to add an Object Storage Service (OSS) bucket in ApsaraVideo VOD (VOD).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VOD::Storage`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Storage` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-storage
  */

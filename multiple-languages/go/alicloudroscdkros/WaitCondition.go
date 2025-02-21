@@ -9,9 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ROS::WaitCondition`, which is used to wait for signals.
-//
-// You can use ALIYUN::ROS::WaitCondition together with ALIYUN::ROS::WaitConditionHandle to manage the execution process of a stack. When you create an Elastic Compute Service (ECS) instance, a signal is sent during the execution of the user data.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ROS::WaitCondition`.
 type WaitCondition interface {
 	alicloudroscdkcore.Resource
 	IWaitCondition

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Whitelist`, which is used to configure an IP address whitelist for an ApsaraDB for Redis instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Whitelist`.
 type RosWhitelist interface {
 	alicloudroscdkcore.RosResource
 	AttrSecurityIpGroupAttribute() alicloudroscdkcore.IResolvable

@@ -12,6 +12,7 @@ import (
 // This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::ServerGroup`, which is used to create a server group.
 type RosServerGroup interface {
 	alicloudroscdkcore.RosResource
+	AttrArn() alicloudroscdkcore.IResolvable
 	AttrServerGroupId() alicloudroscdkcore.IResolvable
 	ConnectionDrainConfig() interface{}
 	SetConnectionDrainConfig(val interface{})
@@ -19,10 +20,14 @@ type RosServerGroup interface {
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
 	CreationStack() *[]*string
+	CrossZoneEnabled() interface{}
+	SetCrossZoneEnabled(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
 	HealthCheckConfig() interface{}
 	SetHealthCheckConfig(val interface{})
+	Ipv6Enabled() interface{}
+	SetIpv6Enabled(val interface{})
 	// The logical ID for this stack element.
 	//
 	// The logical ID of the element
@@ -197,6 +202,16 @@ type jsiiProxy_RosServerGroup struct {
 	internal.Type__alicloudroscdkcoreRosResource
 }
 
+func (j *jsiiProxy_RosServerGroup) AttrArn() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosServerGroup) AttrServerGroupId() alicloudroscdkcore.IResolvable {
 	var returns alicloudroscdkcore.IResolvable
 	_jsii_.Get(
@@ -227,6 +242,16 @@ func (j *jsiiProxy_RosServerGroup) CreationStack() *[]*string {
 	return returns
 }
 
+func (j *jsiiProxy_RosServerGroup) CrossZoneEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"crossZoneEnabled",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosServerGroup) EnableResourcePropertyConstraint() *bool {
 	var returns *bool
 	_jsii_.Get(
@@ -242,6 +267,16 @@ func (j *jsiiProxy_RosServerGroup) HealthCheckConfig() interface{} {
 	_jsii_.Get(
 		j,
 		"healthCheckConfig",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosServerGroup) Ipv6Enabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ipv6Enabled",
 		&returns,
 	)
 	return returns
@@ -486,6 +521,17 @@ func (j *jsiiProxy_RosServerGroup)SetConnectionDrainConfig(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosServerGroup)SetCrossZoneEnabled(val interface{}) {
+	if err := j.validateSetCrossZoneEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"crossZoneEnabled",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosServerGroup)SetEnableResourcePropertyConstraint(val *bool) {
 	if err := j.validateSetEnableResourcePropertyConstraintParameters(val); err != nil {
 		panic(err)
@@ -504,6 +550,17 @@ func (j *jsiiProxy_RosServerGroup)SetHealthCheckConfig(val interface{}) {
 	_jsii_.Set(
 		j,
 		"healthCheckConfig",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosServerGroup)SetIpv6Enabled(val interface{}) {
+	if err := j.validateSetIpv6EnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"ipv6Enabled",
 		val,
 	)
 }

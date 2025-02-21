@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::ParameterGroup`, which is used to create a parameter template of PolarDB.
+// This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::ParameterGroup`.
 type ParameterGroup interface {
 	alicloudroscdkcore.Resource
 	IParameterGroup

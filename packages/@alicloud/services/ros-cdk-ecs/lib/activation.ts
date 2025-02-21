@@ -62,6 +62,11 @@ export interface IActivation extends ros.IResource {
     readonly attrActivationId: ros.IResolvable | string;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute DeregisteredCount: The number of instances that have been logged out.
      */
     readonly attrDeregisteredCount: ros.IResolvable | string;
@@ -91,6 +96,11 @@ export class Activation extends ros.Resource implements IActivation {
      * Attribute ActivationId: Activation code ID.
      */
     public readonly attrActivationId: ros.IResolvable | string;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute DeregisteredCount: The number of instances that have been logged out.
@@ -126,6 +136,7 @@ export class Activation extends ros.Resource implements IActivation {
         this.resource = rosActivation;
         this.attrActivationCode = rosActivation.attrActivationCode;
         this.attrActivationId = rosActivation.attrActivationId;
+        this.attrArn = rosActivation.attrArn;
         this.attrDeregisteredCount = rosActivation.attrDeregisteredCount;
         this.attrRegisteredCount = rosActivation.attrRegisteredCount;
     }

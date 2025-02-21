@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ::Instance`, which is used to create a Standard Edition instance.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ::Instance`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-instance
@@ -52,6 +52,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
             get;
         }
         = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Rocketmq.RosInstance))!;
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: Arn: The Alibaba Cloud Resource Name (ARN).
+        /// </remarks>
+        [JsiiProperty(name: "attrArn", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrArn
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
 
         /// <remarks>
         /// <strong>Attribute</strong>: HttpInternalEndpoint: The internal HTTP endpoint for the Message Queue for Apache RocketMQ instance.

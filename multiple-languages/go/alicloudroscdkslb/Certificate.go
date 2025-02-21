@@ -9,12 +9,12 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SLB::Certificate`, which is used to upload a certificate to a Server Load Balancer (SLB) instance.
-//
-// Server certificates and certificate authority (CA) certificates are supported.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SLB::Certificate`.
 type Certificate interface {
 	alicloudroscdkcore.Resource
 	ICertificate
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute CertificateId: The ID of the certificate.
 	AttrCertificateId() interface{}
 	// Attribute Fingerprint: The fingerprint of the certificate.
@@ -112,6 +112,16 @@ type Certificate interface {
 type jsiiProxy_Certificate struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_ICertificate
+}
+
+func (j *jsiiProxy_Certificate) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_Certificate) AttrCertificateId() interface{} {

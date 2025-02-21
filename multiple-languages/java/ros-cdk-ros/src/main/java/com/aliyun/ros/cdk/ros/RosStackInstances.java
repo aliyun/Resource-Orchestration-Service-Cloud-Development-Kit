@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ros;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ROS::StackInstances</code>, which is used to create stack instances within specified accounts in specified regions.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ROS::StackInstances</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:43.889Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:20.169Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.RosStackInstances")
 public class RosStackInstances extends com.aliyun.ros.cdk.core.RosResource {
 

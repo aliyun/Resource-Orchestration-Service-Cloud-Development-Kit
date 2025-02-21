@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Dashboard`, which is used to create a dashboard.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Dashboard`.
 type Dashboard interface {
 	alicloudroscdkcore.Resource
 	IDashboard

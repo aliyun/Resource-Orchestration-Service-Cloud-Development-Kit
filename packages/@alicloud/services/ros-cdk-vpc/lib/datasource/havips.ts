@@ -40,7 +40,7 @@ export interface IHaVips extends ros.IResource {
     readonly attrHaVips: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::HaVips`, which is used to query the high-availability virtual IP addresses (HAVIPs) in a specific region.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::HaVips`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosHaVips`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-havips
  */

@@ -48,7 +48,7 @@ function rosAccessKeyPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AccessKey`, which is used to obtain the AccessKey pair (AccessKey ID and AccessKey secret) of a specified user and its status.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AccessKey`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AccessKey` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-accesskey
  */
@@ -153,7 +153,7 @@ function rosAppSecretPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AppSecret`, which is used to create an application secret.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AppSecret`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AppSecret` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-appsecret
  */
@@ -359,7 +359,7 @@ function rosApplicationPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::Application`, which is used to create an application.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::Application`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Application` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-application
  */
@@ -693,7 +693,7 @@ function rosAttachPolicyToRolePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AttachPolicyToRole`, which is used to attach a policy to a specified role.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AttachPolicyToRole`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AttachPolicyToRole` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-attachpolicytorole
  */
@@ -816,7 +816,7 @@ function rosAttachPolicyToUserPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AttachPolicyToUser`, which is used to grant permissions to a specified user.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AttachPolicyToUser`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AttachPolicyToUser` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-attachpolicytouser
  */
@@ -962,7 +962,7 @@ function rosGroupPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::Group`, which is used to create a Resource Access Management (RAM) user group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::Group`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Group` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-group
  */
@@ -1093,6 +1093,13 @@ function RosGroup_PoliciesPropertyValidator(properties: any): ros.ValidationResu
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('policyName', ros.requiredValidator)(properties.policyName));
+    if(properties.policyName && (Array.isArray(properties.policyName) || (typeof properties.policyName) === 'string')) {
+        errors.collect(ros.propertyValidator('policyName', ros.validateLength)({
+            data: properties.policyName.length,
+            min: undefined,
+            max: 128,
+          }));
+    }
     errors.collect(ros.propertyValidator('policyName', ros.validateString)(properties.policyName));
     errors.collect(ros.propertyValidator('policyDocument', ros.requiredValidator)(properties.policyDocument));
     errors.collect(ros.propertyValidator('policyDocument', RosGroup_PolicyDocumentPropertyValidator)(properties.policyDocument));
@@ -1378,7 +1385,7 @@ function rosLoginProfilePropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::LoginProfile`, which is used to create logon configurations for a Resource Access Management (RAM) user.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::LoginProfile`.
  * @Note This class does not contain additional functions, so it is recommended to use the `LoginProfile` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-loginprofile
  */
@@ -1535,6 +1542,13 @@ function RosManagedPolicyPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('groups', ros.listValidator(ros.validateAny))(properties.groups));
     errors.collect(ros.propertyValidator('policyName', ros.requiredValidator)(properties.policyName));
+    if(properties.policyName && (Array.isArray(properties.policyName) || (typeof properties.policyName) === 'string')) {
+        errors.collect(ros.propertyValidator('policyName', ros.validateLength)({
+            data: properties.policyName.length,
+            min: undefined,
+            max: 128,
+          }));
+    }
     errors.collect(ros.propertyValidator('policyName', ros.validateString)(properties.policyName));
     errors.collect(ros.propertyValidator('policyDocumentUnchecked', ros.hashValidator(ros.validateAny))(properties.policyDocumentUnchecked));
     errors.collect(ros.propertyValidator('policyDocument', RosManagedPolicy_PolicyDocumentPropertyValidator)(properties.policyDocument));
@@ -1569,7 +1583,7 @@ function rosManagedPolicyPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::ManagedPolicy`, which is used to create a Resource Access Management (RAM) policy.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::ManagedPolicy`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ManagedPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-managedpolicy
  */
@@ -2064,7 +2078,7 @@ function rosRamAccountAliasPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::RamAccountAlias`, which is used to create an alias for an Alibaba Cloud account.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::RamAccountAlias`.
  * @Note This class does not contain additional functions, so it is recommended to use the `RamAccountAlias` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-ramaccountalias
  */
@@ -2230,7 +2244,7 @@ function rosRolePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::Role`, which is used to create a Resource Access Management (RAM) role.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::Role`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Role` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-role
  */
@@ -2599,6 +2613,13 @@ function RosRole_PoliciesPropertyValidator(properties: any): ros.ValidationResul
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('policyName', ros.requiredValidator)(properties.policyName));
+    if(properties.policyName && (Array.isArray(properties.policyName) || (typeof properties.policyName) === 'string')) {
+        errors.collect(ros.propertyValidator('policyName', ros.validateLength)({
+            data: properties.policyName.length,
+            min: undefined,
+            max: 128,
+          }));
+    }
     errors.collect(ros.propertyValidator('policyName', ros.validateString)(properties.policyName));
     errors.collect(ros.propertyValidator('policyDocument', ros.requiredValidator)(properties.policyDocument));
     errors.collect(ros.propertyValidator('policyDocument', RosRole_PolicyDocumentPropertyValidator)(properties.policyDocument));
@@ -3017,7 +3038,7 @@ function rosSAMLProviderPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::SAMLProvider`, which is used to create an identity provider (IdP) for role-based single sign-on (SSO).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::SAMLProvider`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SAMLProvider` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-samlprovider
  */
@@ -3213,7 +3234,7 @@ function rosSecurityPreferencePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::SecurityPreference`, which is used to configure security preferences for Resource Access Management (RAM) users.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::SecurityPreference`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecurityPreference` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-securitypreference
  */
@@ -3479,7 +3500,7 @@ function rosUserPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::User`, which is used to create a Resource Access Management (RAM) user.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::User`.
  * @Note This class does not contain additional functions, so it is recommended to use the `User` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-user
  */
@@ -3713,6 +3734,13 @@ function RosUser_PoliciesPropertyValidator(properties: any): ros.ValidationResul
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('policyName', ros.requiredValidator)(properties.policyName));
+    if(properties.policyName && (Array.isArray(properties.policyName) || (typeof properties.policyName) === 'string')) {
+        errors.collect(ros.propertyValidator('policyName', ros.validateLength)({
+            data: properties.policyName.length,
+            min: undefined,
+            max: 128,
+          }));
+    }
     errors.collect(ros.propertyValidator('policyName', ros.validateString)(properties.policyName));
     errors.collect(ros.propertyValidator('policyDocument', ros.requiredValidator)(properties.policyDocument));
     errors.collect(ros.propertyValidator('policyDocument', RosUser_PolicyDocumentPropertyValidator)(properties.policyDocument));
@@ -3961,7 +3989,7 @@ function rosUserToGroupAdditionPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::UserToGroupAddition`, which is used to add users to a RAM group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::UserToGroupAddition`.
  * @Note This class does not contain additional functions, so it is recommended to use the `UserToGroupAddition` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-usertogroupaddition
  */

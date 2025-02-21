@@ -13,6 +13,8 @@ import (
 type ConsumerGroup interface {
 	alicloudroscdkcore.Resource
 	IConsumerGroup
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute ConsumerId: Consumer group ID.
 	AttrConsumerId() interface{}
 	EnableResourcePropertyConstraint() *bool
@@ -108,6 +110,16 @@ type ConsumerGroup interface {
 type jsiiProxy_ConsumerGroup struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_IConsumerGroup
+}
+
+func (j *jsiiProxy_ConsumerGroup) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_ConsumerGroup) AttrConsumerId() interface{} {

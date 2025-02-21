@@ -64,7 +64,7 @@ function rosAddressPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::EIP::Address`, which is used to query the information about a created elastic IP address (EIP).
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::EIP::Address`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Address` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eip-address
  */
@@ -455,7 +455,7 @@ function rosAddressesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::EIP::Addresses`, which is used to query the information about elastic IP addresses (EIPs).
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::EIP::Addresses`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Addresses` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eip-addresses
  */
@@ -655,7 +655,7 @@ function rosAnycastEipAddressPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::Eipanycast::AnycastEipAddress`, which is used to query the information about an Anycast elastic IP address (Anycast EIP).
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::Eipanycast::AnycastEipAddress`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AnycastEipAddress` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eipanycast-anycasteipaddress
  */
@@ -846,7 +846,7 @@ function rosBgpPeerPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::BgpPeer`, which is used to query the information about a Border Gateway Protocol (BGP) peer in a region.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::BgpPeer`.
  * @Note This class does not contain additional functions, so it is recommended to use the `BgpPeer` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-bgppeer
  */
@@ -1112,7 +1112,7 @@ function rosBgpPeersPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::BgpPeers`, which is used to query Border Gateway Protocol (BGP) peers in a region.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::BgpPeers`.
  * @Note This class does not contain additional functions, so it is recommended to use the `BgpPeers` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-bgppeers
  */
@@ -1257,7 +1257,7 @@ function rosCommonBandwidthPackagePropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::CommonBandwidthPackage`, which is used to query the information about an Internet Shared Bandwidth instance in a region.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::CommonBandwidthPackage`.
  * @Note This class does not contain additional functions, so it is recommended to use the `CommonBandwidthPackage` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-commonbandwidthpackage
  */
@@ -1547,7 +1547,7 @@ function rosCommonBandwidthPackagesPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::CommonBandwidthPackages`, which is used to query the Internet Shared Bandwidth instances in a region.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::CommonBandwidthPackages`.
  * @Note This class does not contain additional functions, so it is recommended to use the `CommonBandwidthPackages` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-commonbandwidthpackages
  */
@@ -1686,7 +1686,7 @@ function rosCustomerGatewayPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::CustomerGateway`, which is used to query the information about a customer gateway.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::CustomerGateway`.
  * @Note This class does not contain additional functions, so it is recommended to use the `CustomerGateway` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-customergateway
  */
@@ -1840,7 +1840,7 @@ function rosCustomerGatewaysPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::CustomerGateways`, which is used to query customer gateways.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::CustomerGateways`.
  * @Note This class does not contain additional functions, so it is recommended to use the `CustomerGateways` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-customergateways
  */
@@ -1965,7 +1965,7 @@ function rosFlowLogPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::FlowLog`, which is used to query a flow log by log ID.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::FlowLog`.
  * @Note This class does not contain additional functions, so it is recommended to use the `FlowLog` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-flowlog
  */
@@ -2210,7 +2210,7 @@ function rosFlowLogsPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::FlowLogs`, which is used to query flow logs.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::FlowLogs`.
  * @Note This class does not contain additional functions, so it is recommended to use the `FlowLogs` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-flowlogs
  */
@@ -2390,7 +2390,7 @@ function rosHaVipPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::HaVip`, which is used to query a high-availability virtual IP address (HAVIP).
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::HaVip`.
  * @Note This class does not contain additional functions, so it is recommended to use the `HaVip` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-havip
  */
@@ -2568,7 +2568,7 @@ function rosHaVipsPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::HaVips`, which is used to query the high-availability virtual IP addresses (HAVIPs) in a specific region.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::HaVips`.
  * @Note This class does not contain additional functions, so it is recommended to use the `HaVips` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-havips
  */
@@ -2693,7 +2693,7 @@ function rosIpv4GatewayPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::Ipv4Gateway`, which is used to query the information about an IPv4 gateway.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::Ipv4Gateway`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Ipv4Gateway` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-ipv4gateway
  */
@@ -2861,7 +2861,7 @@ function rosIpv4GatewaysPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::Ipv4Gateways`, which is used to query the details of IPv4 gateways.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::Ipv4Gateways`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Ipv4Gateways` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-ipv4gateways
  */
@@ -3000,7 +3000,7 @@ function rosNatGatewayPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NatGateway`, which is used to query the information about a NAT gateway.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NatGateway`.
  * @Note This class does not contain additional functions, so it is recommended to use the `NatGateway` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natgateway
  */
@@ -3246,7 +3246,7 @@ function rosNatGatewayZonesPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NatGatewayZones`, which is used to query the zones of a NAT gateway.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NatGatewayZones`.
  * @Note This class does not contain additional functions, so it is recommended to use the `NatGatewayZones` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natgatewayzones
  */
@@ -3420,7 +3420,7 @@ function rosNatGatewaysPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NatGateways`, which is used to query NAT gateways.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NatGateways`.
  * @Note This class does not contain additional functions, so it is recommended to use the `NatGateways` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natgateways
  */
@@ -3615,7 +3615,7 @@ function rosNatIpCidrsPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NatIpCidrs`, which is used to query the CIDR blocks of a NAT gateway.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NatIpCidrs`.
  * @Note This class does not contain additional functions, so it is recommended to use the `NatIpCidrs` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natipcidrs
  */
@@ -3776,7 +3776,7 @@ function rosNetworkAclsPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NetworkAcls`, which is used to query created network access control lists (ACLs).
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NetworkAcls`.
  * @Note This class does not contain additional functions, so it is recommended to use the `NetworkAcls` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-networkacls
  */
@@ -3931,7 +3931,7 @@ function rosPrefixListPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::PrefixList`, which is used to query the information about a prefix list.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::PrefixList`.
  * @Note This class does not contain additional functions, so it is recommended to use the `PrefixList` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-prefixlist
  */
@@ -4116,7 +4116,7 @@ function rosPrefixListsPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::PrefixLists`, which is used to query prefix lists.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::PrefixLists`.
  * @Note This class does not contain additional functions, so it is recommended to use the `PrefixLists` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-prefixlists
  */
@@ -4248,7 +4248,7 @@ function rosPublicIpAddressPoolPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::PublicIpAddressPool`, which is used to query the basic information about an available IP address pool.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::PublicIpAddressPool`.
  * @Note This class does not contain additional functions, so it is recommended to use the `PublicIpAddressPool` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-publicipaddresspool
  */
@@ -4455,7 +4455,7 @@ function rosPublicIpAddressPoolsPropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::PublicIpAddressPools`, which is used to query available IP address pools.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::PublicIpAddressPools`.
  * @Note This class does not contain additional functions, so it is recommended to use the `PublicIpAddressPools` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-publicipaddresspools
  */
@@ -4672,7 +4672,7 @@ function rosRouteEntriesPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::RouteEntries`, which is used to query routes.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::RouteEntries`.
  * @Note This class does not contain additional functions, so it is recommended to use the `RouteEntries` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-routeentries
  */
@@ -4860,7 +4860,7 @@ function rosRouteTablePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::RouteTable`, which is used to query the information about a route table.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::RouteTable`.
  * @Note This class does not contain additional functions, so it is recommended to use the `RouteTable` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-routetable
  */
@@ -5076,7 +5076,7 @@ function rosRouteTablesPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::RouteTables`, which is used to query route tables.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::RouteTables`.
  * @Note This class does not contain additional functions, so it is recommended to use the `RouteTables` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-routetables
  */
@@ -5239,7 +5239,7 @@ function rosTrafficMirrorFilterPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::TrafficMirrorFilter`, which is used to query a filter for traffic mirroring.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::TrafficMirrorFilter`.
  * @Note This class does not contain additional functions, so it is recommended to use the `TrafficMirrorFilter` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-trafficmirrorfilter
  */
@@ -5381,7 +5381,7 @@ function rosTrafficMirrorFiltersPropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::TrafficMirrorFilters`, which is used to query filters for traffic mirroring.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::TrafficMirrorFilters`.
  * @Note This class does not contain additional functions, so it is recommended to use the `TrafficMirrorFilters` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-trafficmirrorfilters
  */
@@ -5506,7 +5506,7 @@ function rosVSwitchPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::VSwitch`, which is used to query the information about a vSwitch.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::VSwitch`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VSwitch` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-vswitch
  */
@@ -5755,7 +5755,7 @@ function rosVSwitchesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::VSwitches`, which is used to query created vSwitches.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::VSwitches`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VSwitches` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-vswitches
  */
@@ -5932,7 +5932,7 @@ function rosVpcPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::Vpc`, which is used to query the information about a virtual private cloud (VPC).
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::Vpc`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Vpc` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-vpc
  */
@@ -6187,7 +6187,7 @@ function rosVpcsPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::Vpcs`, which is used to query created virtual private clouds (VPCs).
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::Vpcs`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Vpcs` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-vpcs
  */

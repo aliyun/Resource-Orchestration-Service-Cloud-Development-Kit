@@ -10,6 +10,8 @@ import (
 // Represents a `DedicatedHost`.
 type IDedicatedHost interface {
 	alicloudroscdkcore.IResource
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute DedicatedHostIds: The host id list of created hosts.
 	AttrDedicatedHostIds() interface{}
 	// Attribute OrderId: The order id list of created instance.
@@ -20,6 +22,16 @@ type IDedicatedHost interface {
 // The jsii proxy for IDedicatedHost
 type jsiiProxy_IDedicatedHost struct {
 	internal.Type__alicloudroscdkcoreIResource
+}
+
+func (j *jsiiProxy_IDedicatedHost) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_IDedicatedHost) AttrDedicatedHostIds() interface{} {

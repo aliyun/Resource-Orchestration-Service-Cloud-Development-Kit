@@ -86,7 +86,7 @@ function rosAssertPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::Assert`, which is used to create an assertion. Assertions are used to evaluate conditions and support a variety of operation types. An assertion determines whether to terminate creation and return an error message when the assertion result is false.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::Assert`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Assert` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-assert
  */
@@ -264,7 +264,7 @@ function rosAutoEnableServicePropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::AutoEnableService`, which is used to automatically activate an Alibaba Cloud service or feature.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::AutoEnableService`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AutoEnableService` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-autoenableservice
  */
@@ -456,7 +456,7 @@ function rosCustomResourcePropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::CustomResource`, which is used to create a custom resource.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::CustomResource`.
  * @Note This class does not contain additional functions, so it is recommended to use the `CustomResource` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-customresource
  */
@@ -851,7 +851,7 @@ function rosResourceCleanerPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::ResourceCleaner`, which is used to create a resource cleaner.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::ResourceCleaner`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ResourceCleaner` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-resourcecleaner
  */
@@ -1547,7 +1547,7 @@ function rosSleepPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::Sleep`, which is used to delay the creation, deletion, update, and rollback of other resources.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::Sleep`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Sleep` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-sleep
  */
@@ -1732,7 +1732,7 @@ function rosStackPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::Stack`, which is used to create a nested stack. You can nest stacks up to five levels of depth.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::Stack`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Stack` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stack
  */
@@ -2003,7 +2003,7 @@ function rosStackGroupPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::StackGroup`, which is used to create a stack group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::StackGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `StackGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stackgroup
  */
@@ -2292,7 +2292,7 @@ function rosStackInstancesPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::StackInstances`, which is used to create stack instances within specified accounts in specified regions.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::StackInstances`.
  * @Note This class does not contain additional functions, so it is recommended to use the `StackInstances` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stackinstances
  */
@@ -2589,7 +2589,7 @@ function rosWaitConditionPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::WaitCondition`, which is used to wait for signals. You can use ALIYUN::ROS::WaitCondition together with ALIYUN::ROS::WaitConditionHandle to manage the execution process of a stack. When you create an Elastic Compute Service (ECS) instance, a signal is sent during the execution of the user data.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::WaitCondition`.
  * @Note This class does not contain additional functions, so it is recommended to use the `WaitCondition` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-waitcondition
  */
@@ -2738,7 +2738,7 @@ function rosWaitConditionHandlePropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::WaitConditionHandle`, which is used to receive signals. You can use ALIYUN::ROS::WaitConditionHandle together with ALIYUN::ROS::WaitCondition to manage the execution process of a stack. When you create an Elastic Compute Service (ECS) instance, a signal is sent during the execution of the user data.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::WaitConditionHandle`.
  * @Note This class does not contain additional functions, so it is recommended to use the `WaitConditionHandle` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-waitconditionhandle
  */

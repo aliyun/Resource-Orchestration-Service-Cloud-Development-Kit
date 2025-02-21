@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ram;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::RAM::SAMLProvider</code>, which is used to create an identity provider (IdP) for role-based single sign-on (SSO).
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::RAM::SAMLProvider</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:43.003Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:19.413Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.SAMLProvider")
 public class SAMLProvider extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ram.ISAMLProvider {
 

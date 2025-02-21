@@ -9,10 +9,12 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpnGateway`, which is used to create a VPN gateway.
+// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpnGateway`.
 type VpnGateway interface {
 	alicloudroscdkcore.Resource
 	IVpnGateway
+	// Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+	AttrArn() interface{}
 	// Attribute DisasterRecoveryInternetIp: The second IP address assigned by the system to create an IPsec-VPN connection.This attribute is returned only when the VPN gateway supports the dual-tunnel mode.
 	AttrDisasterRecoveryInternetIp() interface{}
 	// Attribute DisasterRecoveryVSwitchId: The ID of the second vSwitch associated with the VPN gateway.This attribute is returned only when the VPN gateway supports the dual-tunnel mode.
@@ -128,6 +130,16 @@ type VpnGateway interface {
 type jsiiProxy_VpnGateway struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_IVpnGateway
+}
+
+func (j *jsiiProxy_VpnGateway) AttrArn() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrArn",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_VpnGateway) AttrDisasterRecoveryInternetIp() interface{} {

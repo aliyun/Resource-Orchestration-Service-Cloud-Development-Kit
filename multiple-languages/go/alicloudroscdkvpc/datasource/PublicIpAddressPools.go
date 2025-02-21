@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::PublicIpAddressPools`, which is used to query available IP address pools.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::PublicIpAddressPools`.
 type PublicIpAddressPools interface {
 	alicloudroscdkcore.Resource
 	IPublicIpAddressPools

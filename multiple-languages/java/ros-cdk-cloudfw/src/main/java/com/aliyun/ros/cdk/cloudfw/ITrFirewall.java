@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudfw;
 /**
  * Represents a <code>TrFirewall</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:35.696Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:12.799Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.ITrFirewall")
 @software.amazon.jsii.Jsii.Proxy(ITrFirewall.Jsii$Proxy.class)
 public interface ITrFirewall extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

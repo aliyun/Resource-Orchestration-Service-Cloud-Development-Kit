@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.slb.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::SLB::VServerGroups</code>, which is used to query the server groups of a Classic Load Balancer (CLB) instance.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::SLB::VServerGroups</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-01-23T09:30:44.463Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-02-21T03:23:20.939Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.datasource.VServerGroups")
 public class VServerGroups extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.slb.datasource.IVServerGroups {
 

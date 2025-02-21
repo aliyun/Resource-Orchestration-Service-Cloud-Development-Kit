@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SAE::Application`, which is used to create an application in Serverless App Engine (SAE).
+// This class encapsulates and extends the ROS resource type `ALIYUN::SAE::Application`.
 type Application interface {
 	alicloudroscdkcore.Resource
 	IApplication

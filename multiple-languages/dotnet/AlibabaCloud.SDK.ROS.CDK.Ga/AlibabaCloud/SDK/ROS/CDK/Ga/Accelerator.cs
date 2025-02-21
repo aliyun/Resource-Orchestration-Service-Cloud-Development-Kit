@@ -65,6 +65,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             get => GetInstanceProperty<object>()!;
         }
 
+        /// <summary>Attribute DnsName: The DNS name of the accelerator.</summary>
+        [JsiiProperty(name: "attrDnsName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrDnsName
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
         /// <summary>Attribute Duration: The Duration of the GA instance.</summary>
         [JsiiProperty(name: "attrDuration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrDuration

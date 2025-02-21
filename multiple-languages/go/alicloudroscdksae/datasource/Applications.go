@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::SAE::Applications`, which is used to query applications.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::SAE::Applications`.
 type Applications interface {
 	alicloudroscdkcore.Resource
 	IApplications

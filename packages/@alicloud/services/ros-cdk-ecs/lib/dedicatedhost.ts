@@ -102,6 +102,11 @@ export interface IDedicatedHost extends ros.IResource {
     readonly props: DedicatedHostProps;
 
     /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+
+    /**
      * Attribute DedicatedHostIds: The host id list of created hosts
      */
     readonly attrDedicatedHostIds: ros.IResolvable | string;
@@ -121,6 +126,11 @@ export class DedicatedHost extends ros.Resource implements IDedicatedHost {
     protected id: string;
     public readonly props: DedicatedHostProps;
     protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    public readonly attrArn: ros.IResolvable | string;
 
     /**
      * Attribute DedicatedHostIds: The host id list of created hosts
@@ -164,6 +174,7 @@ export class DedicatedHost extends ros.Resource implements IDedicatedHost {
             autoReleaseTime: props.autoReleaseTime,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDedicatedHost;
+        this.attrArn = rosDedicatedHost.attrArn;
         this.attrDedicatedHostIds = rosDedicatedHost.attrDedicatedHostIds;
         this.attrOrderId = rosDedicatedHost.attrOrderId;
     }
